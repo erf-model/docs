@@ -50,7 +50,7 @@ var ERF__IndexDefines_8H =
       [ "no_slip_wall", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acb8c716b8d9b499d9bc323d8f8a410d3", null ],
       [ "slip_wall", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a03ee6de9fd100444c5c0567ea01bd538", null ],
       [ "periodic", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9ae6ffdec5e14fce371eb7ae99edebbbee", null ],
-      [ "MOST", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a882dd232c0425bb9366544f84f0a7b6c", null ],
+      [ "surface_layer", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9af69483cb4bb9623dc65e76ce5bd0a3d5", null ],
       [ "undefined", "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a5e543256c480ac577d30f76f9120eb74", null ]
     ] ],
     [ "mathematicalBndryTypes", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01c", [
@@ -60,13 +60,13 @@ var ERF__IndexDefines_8H =
       [ "reflect_even", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9", null ],
       [ "foextrap", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846", null ],
       [ "ext_dir", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af", null ],
-      [ "MOST", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e", null ],
+      [ "surface_layer", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca700397885ead767d8b5988fe11ee4847", null ],
       [ "ext_dir_prim", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab", null ],
       [ "ext_dir_ingested", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462", null ],
       [ "neumann", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ],
       [ "neumann_int", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],
       [ "open", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ],
-      [ "hoextrapcc", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca71e344f745a7b29eb00c25df691f410d", null ],
+      [ "hoextrap", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5", null ],
       [ "ext_dir_upwind", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
     ] ]
 ];

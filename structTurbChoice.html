@@ -180,10 +180,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a96c1a42307db82ece270acdac75da9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af274e04335b259bb7b35f7c836f8310f"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f">pbl_ysu_unst_Ribcr</a> = 0.0</td></tr>
 <tr class="separator:af274e04335b259bb7b35f7c836f8310f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af151e25e9513f7c6a995ca82db98278c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c">advect_KE</a> = true</td></tr>
-<tr class="separator:af151e25e9513f7c6a995ca82db98278c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5864f0fe05bcbd45554301ade763d5ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca">diffuse_KE_3D</a> = true</td></tr>
-<tr class="separator:a5864f0fe05bcbd45554301ade763d5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61228dc0a9f929adf503d630fc926ede"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a61228dc0a9f929adf503d630fc926ede">advect_tke</a> = true</td></tr>
+<tr class="separator:a61228dc0a9f929adf503d630fc926ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa208b9a78837d3d533160834a727735f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#aa208b9a78837d3d533160834a727735f">diffuse_tke_3D</a> = true</td></tr>
+<tr class="separator:aa208b9a78837d3d533160834a727735f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Container holding quantities related to turbulence parametrizations </p>
@@ -428,8 +428,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">// Right now, solving the QKE equation is only supported when MYNN PBL is turned on</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25 || <a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF) {</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b">use_pbl_tke</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;advect_KE&quot;</span>    , <a class="code" href="structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c">advect_KE</a>, lev, max_level);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;diffuse_KE_3D&quot;</span>, <a class="code" href="structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca">diffuse_KE_3D</a>, lev, max_level);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;advect_tke&quot;</span>    , <a class="code" href="structTurbChoice.html#a61228dc0a9f929adf503d630fc926ede">advect_tke</a>, lev, max_level);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;diffuse_tke_3D&quot;</span>, <a class="code" href="structTurbChoice.html#aa208b9a78837d3d533160834a727735f">diffuse_tke_3D</a>, lev, max_level);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// LES constants...</span></div>
@@ -496,11 +496,11 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="astructTurbChoice_html_a2daa4d23f9d89ee777a0d0fbd43196b6"><div class="ttname"><a href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">TurbChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:244</div></div>
 <div class="ttc" id="astructTurbChoice_html_a38eba3d6626625fcb3d5815ba9efd343"><div class="ttname"><a href="structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343">TurbChoice::use_keqn</a></div><div class="ttdeci">bool use_keqn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:283</div></div>
 <div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:279</div></div>
-<div class="ttc" id="astructTurbChoice_html_a5864f0fe05bcbd45554301ade763d5ca"><div class="ttname"><a href="structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca">TurbChoice::diffuse_KE_3D</a></div><div class="ttdeci">bool diffuse_KE_3D</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:297</div></div>
+<div class="ttc" id="astructTurbChoice_html_a61228dc0a9f929adf503d630fc926ede"><div class="ttname"><a href="structTurbChoice.html#a61228dc0a9f929adf503d630fc926ede">TurbChoice::advect_tke</a></div><div class="ttdeci">bool advect_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:296</div></div>
 <div class="ttc" id="astructTurbChoice_html_a9af852bc81e32814ae4da218aa946406"><div class="ttname"><a href="structTurbChoice.html#a9af852bc81e32814ae4da218aa946406">TurbChoice::use_tke</a></div><div class="ttdeci">bool use_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:285</div></div>
+<div class="ttc" id="astructTurbChoice_html_aa208b9a78837d3d533160834a727735f"><div class="ttname"><a href="structTurbChoice.html#aa208b9a78837d3d533160834a727735f">TurbChoice::diffuse_tke_3D</a></div><div class="ttdeci">bool diffuse_tke_3D</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:297</div></div>
 <div class="ttc" id="astructTurbChoice_html_aa90aa6c577f632a8c4582a3538d98ad5"><div class="ttname"><a href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">TurbChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:240</div></div>
 <div class="ttc" id="astructTurbChoice_html_ae413138f8a3097389177d3fd96ec43fe"><div class="ttname"><a href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">TurbChoice::use_kturb</a></div><div class="ttdeci">bool use_kturb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:282</div></div>
-<div class="ttc" id="astructTurbChoice_html_af151e25e9513f7c6a995ca82db98278c"><div class="ttname"><a href="structTurbChoice.html#af151e25e9513f7c6a995ca82db98278c">TurbChoice::advect_KE</a></div><div class="ttdeci">bool advect_KE</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:296</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -516,19 +516,19 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af151e25e9513f7c6a995ca82db98278c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af151e25e9513f7c6a995ca82db98278c">&#9670;&nbsp;</a></span>advect_KE</h2>
+<a id="a61228dc0a9f929adf503d630fc926ede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61228dc0a9f929adf503d630fc926ede">&#9670;&nbsp;</a></span>advect_tke</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool TurbChoice::advect_KE = true</td>
+          <td class="memname">bool TurbChoice::advect_tke = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a576ac202bba3e0ddbfbb19a2c1401aa6">erf_slow_rhs_post()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a9e4d68bd9e79b7bacc2dea8c21f0b843">erf_slow_rhs_post()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -544,7 +544,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -560,7 +560,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -576,7 +576,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -592,7 +592,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -608,7 +608,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -624,18 +624,18 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
-<a id="a5864f0fe05bcbd45554301ade763d5ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5864f0fe05bcbd45554301ade763d5ca">&#9670;&nbsp;</a></span>diffuse_KE_3D</h2>
+<a id="aa208b9a78837d3d533160834a727735f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa208b9a78837d3d533160834a727735f">&#9670;&nbsp;</a></span>diffuse_tke_3D</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool TurbChoice::diffuse_KE_3D = true</td>
+          <td class="memname">bool TurbChoice::diffuse_tke_3D = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -656,7 +656,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -672,7 +672,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ab682a12550cbc038e95af12eeaaf49da">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a1522175302047617fa098c536f87288d">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a57d6f172982629e6a0c64e492e089cc4">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a3fff7b6d55b21f8cd44f2c1298149510">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a9e4d68bd9e79b7bacc2dea8c21f0b843">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#acee2b5dbcc66c0b9b0eb13035374f2aa">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -688,7 +688,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -704,7 +704,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#adcc6389bb07a9fa88881542c75625dd3">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a3cbfe71323c99ee9cdc865f3e2fcf6e4">ComputeDiffusivityMYNNEDMF()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a81a69a594e563b0bb99931d2338aa2ef">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#abbaa6f8655f81f03c1010933ecbb7f3c">ComputeDiffusivityMYNNEDMF()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a08e173a1c640916931a33d17f1f7a085">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#a52679f51bf95feb1dac300aaa1fc0cef">DiffusionSrcForState_T()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -720,7 +720,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#adcc6389bb07a9fa88881542c75625dd3">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a3cbfe71323c99ee9cdc865f3e2fcf6e4">ComputeDiffusivityMYNNEDMF()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a81a69a594e563b0bb99931d2338aa2ef">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#abbaa6f8655f81f03c1010933ecbb7f3c">ComputeDiffusivityMYNNEDMF()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -736,7 +736,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ab682a12550cbc038e95af12eeaaf49da">ComputeTurbulentViscosity()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a1522175302047617fa098c536f87288d">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a57d6f172982629e6a0c64e492e089cc4">ComputeTurbulentViscosity()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a3fff7b6d55b21f8cd44f2c1298149510">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a9e4d68bd9e79b7bacc2dea8c21f0b843">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#acee2b5dbcc66c0b9b0eb13035374f2aa">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -752,7 +752,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a00027c8befe278e41369d809ddb6dbcc">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -768,7 +768,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a00027c8befe278e41369d809ddb6dbcc">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -784,7 +784,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a00027c8befe278e41369d809ddb6dbcc">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -800,7 +800,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a00027c8befe278e41369d809ddb6dbcc">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -848,7 +848,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -864,7 +864,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ab682a12550cbc038e95af12eeaaf49da">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a1522175302047617fa098c536f87288d">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a57d6f172982629e6a0c64e492e089cc4">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a3fff7b6d55b21f8cd44f2c1298149510">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a9e4d68bd9e79b7bacc2dea8c21f0b843">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#acee2b5dbcc66c0b9b0eb13035374f2aa">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -880,7 +880,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -896,7 +896,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -928,7 +928,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -944,7 +944,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -960,7 +960,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -976,7 +976,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#acd9320f37597f453446a1e7e74804d0d">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a31dc0d2de3f7359bd296ad78bd179f6f">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a35a369f19fd3da2bc6beb25446c81728">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad5efeb82002de593df928885cdb46a10">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a08e173a1c640916931a33d17f1f7a085">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#a52679f51bf95feb1dac300aaa1fc0cef">DiffusionSrcForState_T()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -992,7 +992,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a7a7d71e3e796b67737a6931399588ae8">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a576ac202bba3e0ddbfbb19a2c1401aa6">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a1522175302047617fa098c536f87288d">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a08e173a1c640916931a33d17f1f7a085">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#a52679f51bf95feb1dac300aaa1fc0cef">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#acee2b5dbcc66c0b9b0eb13035374f2aa">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +1008,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e">ERF::advance_dycore()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ab682a12550cbc038e95af12eeaaf49da">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a7a7d71e3e796b67737a6931399588ae8">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a576ac202bba3e0ddbfbb19a2c1401aa6">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a1522175302047617fa098c536f87288d">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#af836d1bb05ac4c9f535358e14714f13e">ERF::advance_dycore()</a>, <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a08e173a1c640916931a33d17f1f7a085">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#a52679f51bf95feb1dac300aaa1fc0cef">DiffusionSrcForState_T()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a3fff7b6d55b21f8cd44f2c1298149510">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#acee2b5dbcc66c0b9b0eb13035374f2aa">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1024,7 +1024,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a61d842d8a45b6d97948ce19b106bba0a">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#ab29316749b16c72caa2fe0b7558397c9">DiffusionSrcForState_T()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForState__N_8cpp.html#a08e173a1c640916931a33d17f1f7a085">DiffusionSrcForState_N()</a>, <a class="el" href="ERF__DiffusionSrcForState__T_8cpp.html#a52679f51bf95feb1dac300aaa1fc0cef">DiffusionSrcForState_T()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1040,7 +1040,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a576ac202bba3e0ddbfbb19a2c1401aa6">erf_slow_rhs_post()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9b08d56e6e1c2eb2ec37b8bd3546eb72">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a9e4d68bd9e79b7bacc2dea8c21f0b843">erf_slow_rhs_post()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9b08d56e6e1c2eb2ec37b8bd3546eb72">make_sources()</a>.</p>
 
 </div>
 </div>

@@ -42,13 +42,13 @@ var namespaces_dup =
         [ "reflect_even", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9", null ],
         [ "foextrap", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846", null ],
         [ "ext_dir", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af", null ],
-        [ "MOST", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42d0838b4e8d40ee76fbaf2d55c3402e", null ],
+        [ "surface_layer", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca700397885ead767d8b5988fe11ee4847", null ],
         [ "ext_dir_prim", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab", null ],
         [ "ext_dir_ingested", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462", null ],
         [ "neumann", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ],
         [ "neumann_int", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],
         [ "open", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ],
-        [ "hoextrapcc", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca71e344f745a7b29eb00c25df691f410d", null ],
+        [ "hoextrap", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5", null ],
         [ "ext_dir_upwind", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
       ] ]
     ] ],

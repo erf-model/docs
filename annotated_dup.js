@@ -7,7 +7,6 @@ var annotated_dup =
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
       [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
     ] ],
-    [ "ABLMost", "classABLMost.html", "classABLMost" ],
     [ "adiabatic", "structadiabatic.html", "structadiabatic" ],
     [ "adiabatic_charnock", "structadiabatic__charnock.html", "structadiabatic__charnock" ],
     [ "adiabatic_donelan", "structadiabatic__donelan.html", "structadiabatic__donelan" ],
@@ -86,6 +85,7 @@ var annotated_dup =
     [ "surface_temp_donelan", "structsurface__temp__donelan.html", "structsurface__temp__donelan" ],
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", "structsurface__temp__mod__charnock" ],
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", "structsurface__temp__wave__coupled" ],
+    [ "SurfaceLayer", "classSurfaceLayer.html", "classSurfaceLayer" ],
     [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "TurbChoice", "structTurbChoice.html", "structTurbChoice" ],

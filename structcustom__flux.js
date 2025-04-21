@@ -1,11 +1,9 @@
 var structcustom__flux =
 [
-    [ "custom_flux", "structcustom__flux.html#aa9715fd8b84d6df19fa17c89a703210a", null ],
-    [ "compute_q_flux", "structcustom__flux.html#ae9e13bc10b4594df556671d9a042b48b", null ],
-    [ "compute_t_flux", "structcustom__flux.html#abb193ac77724a6452a6068c3b5954081", null ],
-    [ "compute_u_flux", "structcustom__flux.html#a6ab8b167f190f9b0c4c6adb05acfff40", null ],
-    [ "compute_v_flux", "structcustom__flux.html#a2fe8dd883e33e274f6e44f9c0c5cf118", null ],
-    [ "eps", "structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17", null ],
-    [ "eta_eps", "structcustom__flux.html#aa04871c3e8d2e06f502cde2404c90be4", null ],
-    [ "zlo", "structcustom__flux.html#a3b40812bce1c4be2d850abe1bbc2d208", null ]
+    [ "custom_flux", "structcustom__flux.html#a6ec6b65da182e9b15310a9fe33e6632c", null ],
+    [ "compute_q_flux", "structcustom__flux.html#a44c3eefb401c1feabf77805966ae90c9", null ],
+    [ "compute_t_flux", "structcustom__flux.html#aaeed136e0a74e3aac9eca272128a9333", null ],
+    [ "compute_u_flux", "structcustom__flux.html#a2afa941df86f576b698265d6ed1a7b92", null ],
+    [ "compute_v_flux", "structcustom__flux.html#afb1432cda6e9f3232c60de7be4f89a68", null ],
+    [ "eps", "structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17", null ]
 ];

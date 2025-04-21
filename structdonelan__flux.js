@@ -1,10 +1,8 @@
 var structdonelan__flux =
 [
-    [ "donelan_flux", "structdonelan__flux.html#a804902863523b5f641c44aadc3602e97", null ],
-    [ "compute_q_flux", "structdonelan__flux.html#adb397919f3dc33f33d8bdc7b99c52efc", null ],
-    [ "compute_t_flux", "structdonelan__flux.html#a999e3bdb322d29fcdfbd51047fb32ee0", null ],
-    [ "compute_u_flux", "structdonelan__flux.html#a44a032acc6bd6f42ff90f5a0ac14f4cf", null ],
-    [ "compute_v_flux", "structdonelan__flux.html#ad2da09025b821f79782fa580010c4df2", null ],
-    [ "eta_eps", "structdonelan__flux.html#aac38c6d44658be0daa32dc8bd0b29adb", null ],
-    [ "zlo", "structdonelan__flux.html#af7428f0272064ef770035521c9c9a98b", null ]
+    [ "donelan_flux", "structdonelan__flux.html#a2b903b51927ff9af8f6ca46ef819086a", null ],
+    [ "compute_q_flux", "structdonelan__flux.html#abdd350e34f2695535af29269bc95881f", null ],
+    [ "compute_t_flux", "structdonelan__flux.html#aadfb12bad6b3e26d4758e6a463dcb177", null ],
+    [ "compute_u_flux", "structdonelan__flux.html#a096731c0afa509937376769871bcaa63", null ],
+    [ "compute_v_flux", "structdonelan__flux.html#a5c14dc2bc0eb8d53d11d4d15fcb1b7ad", null ]
 ];
