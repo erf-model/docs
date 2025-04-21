@@ -12,6 +12,7 @@ var structTurbChoice =
     [ "diffuse_KE_3D", "structTurbChoice.html#a5864f0fe05bcbd45554301ade763d5ca", null ],
     [ "l_g_max", "structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b", null ],
     [ "les_type", "structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304", null ],
+    [ "mix_isotropic", "structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba", null ],
     [ "pbl_mynn", "structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0", null ],
     [ "pbl_mynn_level2", "structTurbChoice.html#a475d862a63ab672577fc2429f535feb9", null ],
     [ "pbl_type", "structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9", null ],
@@ -28,6 +29,10 @@ var structTurbChoice =
     [ "Sc_t", "structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a", null ],
     [ "Sc_t_inv", "structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6", null ],
     [ "sigma_k", "structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7", null ],
+    [ "smag2d", "structTurbChoice.html#a09d119ed891b452afb505806baec3af9", null ],
     [ "theta_ref", "structTurbChoice.html#aeb3c184b540858407426a606327fba3a", null ],
-    [ "use_KE", "structTurbChoice.html#a1cca3daa3eed11109607efa9983ae8ed", null ]
+    [ "use_keqn", "structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343", null ],
+    [ "use_kturb", "structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe", null ],
+    [ "use_pbl_tke", "structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b", null ],
+    [ "use_tke", "structTurbChoice.html#a9af852bc81e32814ae4da218aa946406", null ]
 ];

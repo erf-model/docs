@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e":[3,0,1,5,4,0],
 "ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb":[3,0,1,5,4,2],
 "ERF__InitFromMetgrid_8cpp.html":[3,0,1,5,5],
 "ERF__InitFromWRFInput_8cpp.html":[3,0,1,5,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__RRTMGP__Interface_8cpp.html":[3,0,1,13,4],
 "ERF__RRTMGP__Interface_8cpp.html#a009ddf7de8b3d47a8732243e945e431c":[3,0,1,13,4,14],
 "ERF__RRTMGP__Interface_8cpp.html#a06a67ef393d75f01c70b93039eac0191":[3,0,1,13,4,20],
-"ERF__RRTMGP__Interface_8cpp.html#a17dded4bc8d5f1da9fe401226ebdcf95":[3,0,1,13,4,7],
-"ERF__RRTMGP__Interface_8cpp.html#a4111d3c5505330953cc8139593b7be55":[3,0,1,13,4,18]
+"ERF__RRTMGP__Interface_8cpp.html#a17dded4bc8d5f1da9fe401226ebdcf95":[3,0,1,13,4,7]
 };

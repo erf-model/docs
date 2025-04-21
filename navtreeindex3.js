@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"ERF__RRTMGP__Interface_8cpp.html#a4111d3c5505330953cc8139593b7be55":[3,0,1,13,4,18],
 "ERF__RRTMGP__Interface_8cpp.html#a4b0b8286f5fee695d3d38e00375eb120":[3,0,1,13,4,8],
 "ERF__RRTMGP__Interface_8cpp.html#a4bc3c3c0bfb4314acb12c4bc7191de51":[3,0,1,13,4,1],
 "ERF__RRTMGP__Interface_8cpp.html#a4d85ce915c09aacaa00f7eee114e510b":[3,0,1,13,4,9],
@@ -171,8 +172,8 @@ var NAVTREEINDEX3 =
 "ERF__TurbPertStruct_8H_source.html":[3,0,1,2,6],
 "ERF__TurbStruct_8H.html":[3,0,1,2,7],
 "ERF__TurbStruct_8H.html#a366eb3a7d508374fda1324a610da7ece":[3,0,1,2,7,3],
+"ERF__TurbStruct_8H.html#a454c17db1a1fb2e88057dc6399effcd8":[3,0,1,2,7,1],
 "ERF__TurbStruct_8H.html#ad0e4b5f9933af4b3cd1b372f476deb85":[3,0,1,2,7,2],
-"ERF__TurbStruct_8H.html#adb69b8860ddef1a622fd387391d41efc":[3,0,1,2,7,1],
 "ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861":[3,0,1,2,7,4],
 "ERF__TurbStruct_8H_source.html":[3,0,1,2,7],
 "ERF__UpdateKessler_8cpp.html":[3,0,1,9,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__module__model__constants_8F90.html#a42f0f80d87715d7fe6e73e57cfa700d2":[3,0,1,9,1,2,56],
 "ERF__module__model__constants_8F90.html#a438907911bddbb24cab5e76b7a871a73":[3,0,1,9,1,2,61],
 "ERF__module__model__constants_8F90.html#a4ad772736a7aaecbec35eb9f99723896":[3,0,1,9,1,2,18],
-"ERF__module__model__constants_8F90.html#a4c9794a33c7f6a5fb1074690b5f64cbd":[3,0,1,9,1,2,91],
-"ERF__module__model__constants_8F90.html#a4fdb9d2ec61d6894ec20f71687ad84c4":[3,0,1,9,1,2,57]
+"ERF__module__model__constants_8F90.html#a4c9794a33c7f6a5fb1074690b5f64cbd":[3,0,1,9,1,2,91]
 };

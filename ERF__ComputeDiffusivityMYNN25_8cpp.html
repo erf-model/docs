@@ -278,7 +278,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(eddyViscosity,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(eddyViscosity,<span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">const</span> Box &amp;bx = mfi.growntilebox(1);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; cell_data = cons_in.array(mfi);</div>
@@ -509,8 +509,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
-<div class="ttc" id="astructTurbChoice_html_a11fd9429567c4dd4afa871170580aed0"><div class="ttname"><a href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">TurbChoice::pbl_mynn</a></div><div class="ttdeci">MYNNLevel25 pbl_mynn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:242</div></div>
-<div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:243</div></div>
+<div class="ttc" id="astructTurbChoice_html_a11fd9429567c4dd4afa871170580aed0"><div class="ttname"><a href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">TurbChoice::pbl_mynn</a></div><div class="ttdeci">MYNNLevel25 pbl_mynn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:278</div></div>
+<div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:279</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ab682a12550cbc038e95af12eeaaf49da">ComputeTurbulentViscosity()</a>.</p>
 <div class="dynheader">
