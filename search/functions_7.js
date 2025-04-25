@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['has_5fattr_3572',['has_attr',['../structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf',1,'ncutils::NCVar::has_attr()'],['../classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac',1,'ncutils::NCGroup::has_attr(const std::string &amp;) const']]],
-  ['has_5fdim_3573',['has_dim',['../classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042',1,'ncutils::NCGroup']]],
-  ['has_5fgroup_3574',['has_group',['../classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f',1,'ncutils::NCGroup']]],
-  ['has_5fvar_3575',['has_var',['../classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192',1,'ncutils::NCGroup']]],
-  ['have_5fvariable_5fsea_5froughness_3576',['have_variable_sea_roughness',['../classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d',1,'SurfaceLayer']]],
-  ['host_5fto_5fdevice_3577',['host_to_device',['../structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8',1,'InputSoundingData']]],
-  ['hurricanetracker_3578',['HurricaneTracker',['../classERF.html#a2710f0ac329fa022dd2df41679998b3b',1,'ERF']]]
+  ['has_5fattr_3574',['has_attr',['../structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf',1,'ncutils::NCVar::has_attr()'],['../classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac',1,'ncutils::NCGroup::has_attr(const std::string &amp;) const']]],
+  ['has_5fdim_3575',['has_dim',['../classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042',1,'ncutils::NCGroup']]],
+  ['has_5fgroup_3576',['has_group',['../classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f',1,'ncutils::NCGroup']]],
+  ['has_5fvar_3577',['has_var',['../classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192',1,'ncutils::NCGroup']]],
+  ['have_5fvariable_5fsea_5froughness_3578',['have_variable_sea_roughness',['../classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d',1,'SurfaceLayer']]],
+  ['host_5fto_5fdevice_3579',['host_to_device',['../structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8',1,'InputSoundingData']]],
+  ['hurricanetracker_3580',['HurricaneTracker',['../classERF.html#a2710f0ac329fa022dd2df41679998b3b',1,'ERF']]]
 ];

@@ -389,6 +389,7 @@ var classERF =
     [ "timeprecision", "classERF.html#a2307b817178b00e5cc38c0e163da0a39", null ],
     [ "tot_e_datalog", "classERF.html#ab546bcca3968440c6c24097f59b87f23", null ],
     [ "tot_e_datalogname", "classERF.html#a7bba2a8c0e4d0a0d5a6478301bf6c3fa", null ],
+    [ "tsk_lev", "classERF.html#af89fb8b555dde334c978cdfd3fcd9d07", null ],
     [ "turbPert", "classERF.html#ac1b9cce4a3c1736c4af78f6b0e2143ce", null ],
     [ "use_datetime", "classERF.html#a90e3592862d7330b39a11399d34a3539", null ],
     [ "use_fft", "classERF.html#a35e6065478296fac62affbf8f53b8c23", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classFitch.html":[2,0,29],
 "classFitch.html#a1a2db68abb0185de73bd870884f0b019":[2,0,29,5],
 "classFitch.html#a1edfa2cd3db9e6aa95130f24307ac623":[2,0,29,3],
 "classFitch.html#a2626dfdc3df0f209b2bcf6a265575228":[2,0,29,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classMRISplitIntegrator.html#af086d3c68787442d07f0a9d530618cc1":[2,0,43,17],
 "classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f":[2,0,43,29],
 "classMicrophysics.html":[2,0,37],
-"classMicrophysics.html#a069e6013efb78d268394868d0cfc6382":[2,0,37,6],
-"classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451":[2,0,37,1]
+"classMicrophysics.html#a069e6013efb78d268394868d0cfc6382":[2,0,37,6]
 };

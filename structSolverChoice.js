@@ -32,7 +32,6 @@ var structSolverChoice =
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
     [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],
     [ "has_lat_lon", "structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38", null ],
-    [ "has_SST", "structSolverChoice.html#a623dc5687a41c7907cc2932f6d91c92b", null ],
     [ "have_geo_wind_profile", "structSolverChoice.html#a65faffc1ea490b3934a9df768cfa26f1", null ],
     [ "init_type", "structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1", null ],
     [ "lsm_type", "structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31", null ],
