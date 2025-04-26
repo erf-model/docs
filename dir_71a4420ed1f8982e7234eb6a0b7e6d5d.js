@@ -6,6 +6,7 @@ var dir_71a4420ed1f8982e7234eb6a0b7e6d5d =
     [ "ERF_InitFromHSE.cpp", "ERF__InitFromHSE_8cpp.html", null ],
     [ "ERF_InitFromInputSounding.cpp", "ERF__InitFromInputSounding_8cpp.html", "ERF__InitFromInputSounding_8cpp" ],
     [ "ERF_InitFromMetgrid.cpp", "ERF__InitFromMetgrid_8cpp.html", null ],
+    [ "ERF_InitFromNCFile.cpp", "ERF__InitFromNCFile_8cpp.html", null ],
     [ "ERF_InitFromWRFInput.cpp", "ERF__InitFromWRFInput_8cpp.html", null ],
     [ "ERF_InitGeowind.cpp", "ERF__InitGeowind_8cpp.html", null ],
     [ "ERF_InitRayleigh.cpp", "ERF__InitRayleigh_8cpp.html", null ],

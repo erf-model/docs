@@ -74,21 +74,21 @@ var NAVTREEINDEX =
 [
 "ERFPCEvolve_8cpp.html",
 "ERF__Derive_8H.html",
-"ERF__InitFromWRFInput_8cpp.html",
-"ERF__RRTMGP__Interface_8cpp.html#a52228aa7239950f074075cfd57c1207f",
-"ERF__module__model__constants_8F90.html#a536d9843742c5b181fb4fcdb946b1521",
-"classERF.html#a1fcb440c67da60c86372aec1fe871cb7",
-"classERF.html#abb15119348ad5399947bc8883084b230",
-"classFitch.html",
-"classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451",
-"classRadiation.html#a282e8d6f16fe9af1d915e77676cc2b4b",
-"classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b",
-"classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca",
-"functions_func_w.html",
-"namespacemodule__model__constants.html#a23c5e8b28ac75e3a7148fe089484d6cd",
-"namespaceutils.html#a96faac6dfc503c947d30616ef766d77c",
-"structSolverChoice.html#aa368e98496254e9aaf594ecf0e4e9981",
-"structWENO__Z5.html#af5daab47aa96e124f3bf0508489e3017"
+"ERF__InitFromNCFile_8cpp.html",
+"ERF__RRTMGP__Interface_8cpp.html#a51cc9ae3b0ec6f502bf5f085d563dd30",
+"ERF__module__model__constants_8F90.html#a523ecb0e0a86f36393f14fa67661ed34",
+"classERF.html#a1f412097e565c23acb4c17c67db10e22",
+"classERF.html#ab5b66549344d8b04b126fa0ef16c7ca2",
+"classEulerianMicrophysics.html#af78c2f059431d49deec9f570ada4daaa",
+"classMicrophysics.html#a069e6013efb78d268394868d0cfc6382",
+"classRadiation.html#a2774c5ff28449f6c3af17639c593deb3",
+"classSampleData.html#a758122202ec5c9d4759242f77f40bed5",
+"classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb",
+"functions_func_v.html",
+"namespacemodule__model__constants.html#a21d2301ae381126785caa0fcea3b2516",
+"namespaceutils.html",
+"structSolverChoice.html#aa2e312b4e6d08797fc3c1b6d67313d48",
+"structWENO__Z5.html#af15d70f8e0513f44fb8fbab8c6b2020a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
