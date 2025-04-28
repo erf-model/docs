@@ -23,15 +23,15 @@ var structTurbulentPerturbation =
     [ "ref_ratio", "structTurbulentPerturbation.html#a2bc17c5bb50a345676f2f5f837734401", null ],
     [ "tpi_boxDim", "structTurbulentPerturbation.html#ab90f89bf4bf3d497f88c27d1b92f3d39", null ],
     [ "tpi_direction", "structTurbulentPerturbation.html#af2a72d18ce8c0f5bc011d3682ad93e0f", null ],
-    [ "tpi_Hpb", "structTurbulentPerturbation.html#aef47959ab81660b54f583a7304816ef4", null ],
+    [ "tpi_Hpb", "structTurbulentPerturbation.html#a91e5de7d9d9dabd8e05a2109ecce0029", null ],
     [ "tpi_layers", "structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915", null ],
-    [ "tpi_Lpb", "structTurbulentPerturbation.html#a22bb01b7314fa13bdfc1966456f5deed", null ],
-    [ "tpi_lref", "structTurbulentPerturbation.html#ab3db22cfce521750d46e44ed93c49bb8", null ],
+    [ "tpi_Lpb", "structTurbulentPerturbation.html#ad19db2f7bd30fce984c16314fd856116", null ],
+    [ "tpi_lref", "structTurbulentPerturbation.html#a68bf2a7cfa50abdad6e1751726ae60fb", null ],
     [ "tpi_net_buoyant", "structTurbulentPerturbation.html#adaf88736c8d43a23f8bb3eb8065f0b84", null ],
     [ "tpi_nonDim", "structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691", null ],
     [ "tpi_offset", "structTurbulentPerturbation.html#a7bcb39c84b03deefaa166c89f22c229c", null ],
     [ "tpi_pert_adjust", "structTurbulentPerturbation.html#aa4e6ee511ae71277885d87f5aa2ddad3", null ],
     [ "tpi_Ti", "structTurbulentPerturbation.html#aa2c2e894fc858d8cdaa9cde0092e896e", null ],
     [ "tpi_Tinf", "structTurbulentPerturbation.html#a20940c88c5c2f6ef1b90d1984867777a", null ],
-    [ "tpi_Wpb", "structTurbulentPerturbation.html#a21d9b84c0b8eac4d49ae5ca764247442", null ]
+    [ "tpi_Wpb", "structTurbulentPerturbation.html#aba54b975cfcff627752118e26576b4d6", null ]
 ];
