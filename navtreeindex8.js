@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f":[2,0,43,29],
+"classMicrophysics.html":[2,0,37],
 "classMicrophysics.html#a069e6013efb78d268394868d0cfc6382":[2,0,37,6],
 "classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451":[2,0,37,1],
 "classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a":[2,0,37,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "classRadiation.html#a1ea307ceb4e016b7c442dc37b955d471":[2,0,57,104],
 "classRadiation.html#a20355d7495d566ad3fc3d6f53324e57c":[2,0,57,132],
 "classRadiation.html#a210f29fa60019ccd221a155880457f83":[2,0,57,16],
-"classRadiation.html#a2126fa23092ac733c130ce5a4de97fe8":[2,0,57,45],
-"classRadiation.html#a24e38c9089cbbec5e990a86b52196b41":[2,0,57,0],
-"classRadiation.html#a250fcfd9752fdf532c610279d10d947b":[2,0,57,13]
+"classRadiation.html#a2126fa23092ac733c130ce5a4de97fe8":[2,0,57,45]
 };
