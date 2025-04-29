@@ -1,5 +1,14 @@
 var NAVTREEINDEX8 =
 {
+"classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86":[2,0,43,7],
+"classMRISplitIntegrator.html#abb86ebaf6ca5a42e59670d2b15549658":[2,0,43,28],
+"classMRISplitIntegrator.html#ac627f7a16fd409d33916eeccb9ab3c3f":[2,0,43,33],
+"classMRISplitIntegrator.html#acdfcd0a0bca3c145e2305248f0da36a0":[2,0,43,2],
+"classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052":[2,0,43,15],
+"classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1":[2,0,43,32],
+"classMRISplitIntegrator.html#ad698d348d3e7fa695077134839254738":[2,0,43,12],
+"classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b":[2,0,43,5],
+"classMRISplitIntegrator.html#af086d3c68787442d07f0a9d530618cc1":[2,0,43,17],
 "classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f":[2,0,43,29],
 "classMicrophysics.html":[2,0,37],
 "classMicrophysics.html#a069e6013efb78d268394868d0cfc6382":[2,0,37,6],
@@ -240,14 +249,5 @@ var NAVTREEINDEX8 =
 "classRadiation.html#a13235f897c18b59432508414cc4fe015":[2,0,57,127],
 "classRadiation.html#a1a0d0034fb8ba78ab59ecbcbb86c3c71":[2,0,57,3],
 "classRadiation.html#a1b000d473f78413bcacc7d530df9bdfd":[2,0,57,64],
-"classRadiation.html#a1b62f5c6d533259bde824b1789b9505c":[2,0,57,5],
-"classRadiation.html#a1c050ebeaf6e9e7ed131672f945025b3":[2,0,57,76],
-"classRadiation.html#a1cd75d9b9aefe0d4d470faf2b9830b55":[2,0,57,47],
-"classRadiation.html#a1d959706b58b37f628475f0d8b21572a":[2,0,57,110],
-"classRadiation.html#a1de288180cf97043ff2f83d2b5dc946d":[2,0,57,67],
-"classRadiation.html#a1e998061518606ae0e09aea8b8cb31d1":[2,0,57,130],
-"classRadiation.html#a1ea307ceb4e016b7c442dc37b955d471":[2,0,57,104],
-"classRadiation.html#a20355d7495d566ad3fc3d6f53324e57c":[2,0,57,132],
-"classRadiation.html#a210f29fa60019ccd221a155880457f83":[2,0,57,16],
-"classRadiation.html#a2126fa23092ac733c130ce5a4de97fe8":[2,0,57,45]
+"classRadiation.html#a1b62f5c6d533259bde824b1789b9505c":[2,0,57,5]
 };
