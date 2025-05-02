@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classWindFarm.html#ac1bd117bca25527ede4ea107ad22b07c":[2,0,96,45],
 "classWindFarm.html#ac57fc0cf5e0666fd8aabbf7863412eb5":[2,0,96,4],
 "classWindFarm.html#acddba73addcac3477acc274faaf62467":[2,0,96,10],
 "classWindFarm.html#ad0925f54be32d71ae431a2078afee91b":[2,0,96,39],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "functions_func_e.html":[2,3,1,4],
 "functions_func_f.html":[2,3,1,5],
 "functions_func_g.html":[2,3,1,6],
-"functions_func_h.html":[2,3,1,7],
-"functions_func_i.html":[2,3,1,8]
+"functions_func_h.html":[2,3,1,7]
 };
