@@ -18,6 +18,17 @@ var ERF__DataStruct_8H =
       [ "vbar_sponge", "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbaad1bdec1c0213a18483e81bcb4926964", null ],
       [ "nvars_sponge", "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4", null ]
     ] ],
+    [ "TauType", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248b", [
+      [ "tau11", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc", null ],
+      [ "tau22", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286", null ],
+      [ "tau33", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7", null ],
+      [ "tau12", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99", null ],
+      [ "tau13", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e", null ],
+      [ "tau23", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73", null ],
+      [ "tau21", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391", null ],
+      [ "tau31", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935", null ],
+      [ "tau32", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307", null ]
+    ] ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a01afbed431da562282cc06eef6fb9c88", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a7596cfba18ef8aeb937cfab4f9018550", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"functions_func_e.html":[2,3,1,4],
+"functions_func_f.html":[2,3,1,5],
 "functions_func_g.html":[2,3,1,6],
 "functions_func_h.html":[2,3,1,7],
 "functions_func_i.html":[2,3,1,8],
@@ -36,8 +38,8 @@ var NAVTREEINDEX12 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -121,8 +123,8 @@ var NAVTREEINDEX12 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "namespacemembers_vars_x.html":[1,1,2,20],
 "namespacemembers_vars_z.html":[1,1,2,21],
 "namespacemembers_w.html":[1,1,0,21],
-"namespacemembers_x.html":[1,1,0,22],
-"namespacemembers_y.html":[1,1,0,23],
-"namespacemembers_z.html":[1,1,0,24]
+"namespacemembers_x.html":[1,1,0,22]
 };

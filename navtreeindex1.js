@@ -1,5 +1,15 @@
 var NAVTREEINDEX1 =
 {
+"ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d":[3,0,1,2,1,1,1],
+"ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6":[3,0,1,2,1,1,0],
+"ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7":[3,0,1,2,1,1,2],
+"ERF__DataStruct_8H.html#a6f87a8134a146aad179f011f937a27d7":[3,0,1,2,1,12],
+"ERF__DataStruct_8H.html#a7596cfba18ef8aeb937cfab4f9018550":[3,0,1,2,1,7],
+"ERF__DataStruct_8H.html#a7957c75d5849d43f9e71c8bd89987237":[3,0,1,2,1,11],
+"ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7":[3,0,1,2,1,13],
+"ERF__DataStruct_8H.html#acdc002a92ddacce9c7f56a850ef3ea8c":[3,0,1,2,1,8],
+"ERF__DataStruct_8H.html#afb582070899c7011b2fb9c732a9b1f86":[3,0,1,2,1,14],
+"ERF__DataStruct_8H_source.html":[3,0,1,2,1],
 "ERF__Derive_8H.html":[3,0,1,22],
 "ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c":[3,0,1,22,11],
 "ERF__Derive_8H.html#a13666be87e55d1759f57322b33f7e495":[3,0,1,22,7],
@@ -129,8 +139,8 @@ var NAVTREEINDEX1 =
 "ERF__EWP_8H_source.html":[3,0,1,17,0,1],
 "ERF__EddyViscosity_8H.html":[3,0,1,3,10],
 "ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1":[3,0,1,3,10,1],
+"ERF__EddyViscosity_8H.html#a2271095f90b4f13187ef39e150a45402":[3,0,1,3,10,2],
 "ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8":[3,0,1,3,10,0],
-"ERF__EddyViscosity_8H.html#af50af7ff70dfd6a8960c996f102b851e":[3,0,1,3,10,2],
 "ERF__EddyViscosity_8H_source.html":[3,0,1,3,10],
 "ERF__EpochTime_8H.html":[3,0,1,16,6],
 "ERF__EpochTime_8H.html#a370a1cca0113b3529a59c031ff71ffb8":[3,0,1,16,6,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__IndexDefines_8H_source.html":[3,0,1,23],
 "ERF__Init1D_8cpp.html":[3,0,1,5,0],
 "ERF__InitBCs_8cpp.html":[3,0,1,5,1],
-"ERF__InitConstantDensityHSE_8H.html":[3,0,1,12,0],
-"ERF__InitConstantDensityHSE_8H.html#aa310c5ff8cdad11f3adfeeff0f5ad046":[3,0,1,12,0,0],
-"ERF__InitConstantDensityHSE_8H_source.html":[3,0,1,12,0],
-"ERF__InitCustom_8cpp.html":[3,0,1,5,2],
-"ERF__InitDensityHSEDry_8H.html":[3,0,1,12,1],
-"ERF__InitDensityHSEDry_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311":[3,0,1,12,1,0],
-"ERF__InitDensityHSEDry_8H_source.html":[3,0,1,12,1],
-"ERF__InitFromHSE_8cpp.html":[3,0,1,5,3],
-"ERF__InitFromInputSounding_8cpp.html":[3,0,1,5,4],
-"ERF__InitFromInputSounding_8cpp.html#a2fa99eca7f2a1ca02c504e6a3a2026b2":[3,0,1,5,4,1],
-"ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e":[3,0,1,5,4,0]
+"ERF__InitConstantDensityHSE_8H.html":[3,0,1,12,0]
 };
