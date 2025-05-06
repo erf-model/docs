@@ -685,7 +685,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    interp_u_UPW3.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            flx_u_arr[0](i,j,k) = u_afrac_x(i,j,k) * rho_u_avg * interpx;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            flx_u_arr[0](i,j,k) = rho_u_avg * interpx;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        {</div>
@@ -732,7 +732,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    interp_u_UPW3.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            flx_u_arr[1](i,j,k) = u_afrac_y(i,j,k) * rho_v_avg * interpy;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            flx_u_arr[1](i,j,k) = rho_v_avg * interpy;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        {</div>
@@ -779,7 +779,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    interp_u_UPW3.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                }</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            flx_u_arr[2](i,j,k) = u_afrac_z(i,j,k) * rho_w_avg * interpz;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            flx_u_arr[2](i,j,k) = rho_w_avg * interpz;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        {</div>
@@ -832,7 +832,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    interp_v_UPW3.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                }</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            flx_v_arr[0](i,j,k) = v_afrac_x(i,j,k) * rho_u_avg * interpx;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            flx_v_arr[0](i,j,k) = rho_u_avg * interpx;</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        {</div>
@@ -877,7 +877,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                    interp_v_UPW3.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            flx_v_arr[1](i,j,k) = v_afrac_y(i,j,k) * rho_v_avg * interpy;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            flx_v_arr[1](i,j,k) = rho_v_avg * interpy;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        }</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        {</div>
@@ -924,7 +924,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    interp_v_UPW3.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                }</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            }</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            flx_v_arr[2](i,j,k) = v_afrac_z(i,j,k) * rho_w_avg * interpz;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            flx_v_arr[2](i,j,k) = rho_w_avg * interpz;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        }</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        {</div>
@@ -977,7 +977,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                    interp_w_UPW3.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                }</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            flx_w_arr[0](i,j,k) = w_afrac_x(i,j,k) * rho_u_avg * interpx;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            flx_w_arr[0](i,j,k) = rho_u_avg * interpx;</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        }</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        {</div>
@@ -1024,7 +1024,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                    interp_w_UPW3.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                }</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            }</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            flx_w_arr[1](i,j,k) = w_afrac_y(i,j,k) * rho_v_avg * interpy;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            flx_w_arr[1](i,j,k) = rho_v_avg * interpy;</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        }</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        {</div>
@@ -1084,7 +1084,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                        interp_w_UPW3.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                    }</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                }</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                flx_w_arr[2](i,j,k) = w_afrac_z(i,j,k) * rho_w_avg * interpz;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                flx_w_arr[2](i,j,k) = rho_w_avg * interpz;</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;            } <span class="comment">// lo_z_face, hi_z_face</span></div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        }</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="keywordflow">else</span></div>

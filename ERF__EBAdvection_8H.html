@@ -154,12 +154,186 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a06cac388652ffaf9e7f3a53a3c048e20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBAdvection_8H.html#a06cac388652ffaf9e7f3a53a3c048e20">EBAdvectionSrcForScalars</a> (const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const int &gt; &amp;ccm_arr, const amrex::Array4&lt; const amrex::EBCellFlag &gt; &amp;cfg_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;az_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcx_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcy_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcz_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;vf_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h, bool already_on_centroids)</td></tr>
-<tr class="separator:a06cac388652ffaf9e7f3a53a3c048e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0016349b71a10751af97474680a81a8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBAdvection_8H.html#a0016349b71a10751af97474680a81a8e">EBAdvectionSrcForRho</a> (const amrex::Box &amp;bx, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;omega, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const int &gt; &amp;mask_arr, const amrex::Array4&lt; const amrex::EBCellFlag &gt; &amp;cfg_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;az_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcx_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcy_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcz_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const bool fixed_rho, bool already_on_centroids)</td></tr>
+<tr class="separator:a0016349b71a10751af97474680a81a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecaf41562cea9aad69b5d471ef444b4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBAdvection_8H.html#aecaf41562cea9aad69b5d471ef444b4a">EBAdvectionSrcForScalars</a> (const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const int &gt; &amp;mask_arr, const amrex::Array4&lt; const amrex::EBCellFlag &gt; &amp;cfg_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;az_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcx_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcy_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;fcz_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;vf_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_m, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> horiz_adv_type, const <a class="el" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h, bool already_on_centroids)</td></tr>
+<tr class="separator:aecaf41562cea9aad69b5d471ef444b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a06cac388652ffaf9e7f3a53a3c048e20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06cac388652ffaf9e7f3a53a3c048e20">&#9670;&nbsp;</a></span>EBAdvectionSrcForScalars()</h2>
+<a id="a0016349b71a10751af97474680a81a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0016349b71a10751af97474680a81a8e">&#9670;&nbsp;</a></span>EBAdvectionSrcForRho()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EBAdvectionSrcForRho </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::Box &amp;&#160;</td>
+          <td class="paramname"><em>bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rho_v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>omega</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_xmom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_ymom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>avg_zmom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mask_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::EBCellFlag &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cfg_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ax_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ay_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>az_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fcx_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fcy_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fcz_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>detJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cellSizeInv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf_m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf_u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>mf_v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>flx_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>fixed_rho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>already_on_centroids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute advection tendency for density and potential temperature </p>
+
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPre_8cpp.html#aec38c6b6c33e31784dab6947e460c794">erf_slow_rhs_pre()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__EBAdvection_8H_a0016349b71a10751af97474680a81a8e_icgraph.png" border="0" usemap="#aERF__EBAdvection_8H_a0016349b71a10751af97474680a81a8e_icgraph" alt=""/></div>
+<map name="aERF__EBAdvection_8H_a0016349b71a10751af97474680a81a8e_icgraph" id="aERF__EBAdvection_8H_a0016349b71a10751af97474680a81a8e_icgraph">
+<area shape="rect" title=" " alt="" coords="185,5,355,32"/>
+<area shape="rect" href="ERF__SlowRhsPre_8cpp.html#aec38c6b6c33e31784dab6947e460c794" title=" " alt="" coords="5,5,137,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aecaf41562cea9aad69b5d471ef444b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecaf41562cea9aad69b5d471ef444b4a">&#9670;&nbsp;</a></span>EBAdvectionSrcForScalars()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,7 +390,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; const int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ccm_arr</em>, </td>
+          <td class="paramname"><em>mask_arr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -339,8 +513,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__EBAdvection_8H_a06cac388652ffaf9e7f3a53a3c048e20_icgraph.png" border="0" usemap="#aERF__EBAdvection_8H_a06cac388652ffaf9e7f3a53a3c048e20_icgraph" alt=""/></div>
-<map name="aERF__EBAdvection_8H_a06cac388652ffaf9e7f3a53a3c048e20_icgraph" id="aERF__EBAdvection_8H_a06cac388652ffaf9e7f3a53a3c048e20_icgraph">
+<div class="center"><img src="ERF__EBAdvection_8H_aecaf41562cea9aad69b5d471ef444b4a_icgraph.png" border="0" usemap="#aERF__EBAdvection_8H_aecaf41562cea9aad69b5d471ef444b4a_icgraph" alt=""/></div>
+<map name="aERF__EBAdvection_8H_aecaf41562cea9aad69b5d471ef444b4a_icgraph" id="aERF__EBAdvection_8H_aecaf41562cea9aad69b5d471ef444b4a_icgraph">
 <area shape="rect" title=" " alt="" coords="192,31,383,57"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a9e4d68bd9e79b7bacc2dea8c21f0b843" title=" " alt="" coords="5,5,144,32"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#aec38c6b6c33e31784dab6947e460c794" title=" " alt="" coords="9,56,141,83"/>

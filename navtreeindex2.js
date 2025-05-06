@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb":[3,0,1,5,4,2],
+"ERF__InitFromMetgrid_8cpp.html":[3,0,1,5,5],
 "ERF__InitFromNCFile_8cpp.html":[3,0,1,5,6],
 "ERF__InitFromWRFInput_8cpp.html":[3,0,1,5,7],
 "ERF__InitGeowind_8cpp.html":[3,0,1,5,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__RRTMGP__Interface_8cpp.html#a06a67ef393d75f01c70b93039eac0191":[3,0,1,13,4,20],
 "ERF__RRTMGP__Interface_8cpp.html#a17dded4bc8d5f1da9fe401226ebdcf95":[3,0,1,13,4,7],
 "ERF__RRTMGP__Interface_8cpp.html#a4111d3c5505330953cc8139593b7be55":[3,0,1,13,4,18],
-"ERF__RRTMGP__Interface_8cpp.html#a4b0b8286f5fee695d3d38e00375eb120":[3,0,1,13,4,8],
-"ERF__RRTMGP__Interface_8cpp.html#a4bc3c3c0bfb4314acb12c4bc7191de51":[3,0,1,13,4,1],
-"ERF__RRTMGP__Interface_8cpp.html#a4d85ce915c09aacaa00f7eee114e510b":[3,0,1,13,4,9]
+"ERF__RRTMGP__Interface_8cpp.html#a4b0b8286f5fee695d3d38e00375eb120":[3,0,1,13,4,8]
 };
