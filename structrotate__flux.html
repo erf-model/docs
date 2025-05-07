@@ -239,14 +239,14 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;    {</div>
 <div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">rho</a>    = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01778"></a><span class="lineno"> 1778</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>    = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l01779"></a><span class="lineno"> 1779</span>&#160;        amrex::Real qstar  = 0.0; <span class="comment">//q_star_arr(i,j,k);</span></div>
-<div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;        amrex::Real moflux = (std::abs(qstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">rho</a> * qstar : 0.0;</div>
+<div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;        amrex::Real moflux = (std::abs(qstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * qstar : 0.0;</div>
 <div class="line"><a name="l01781"></a><span class="lineno"> 1781</span>&#160; </div>
 <div class="line"><a name="l01782"></a><span class="lineno"> 1782</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
 <div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
 <div class="ttc" id="astructrotate__flux_html_ae2e4dd388a9a609acf27d90fea305e11"><div class="ttname"><a href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">rotate_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1851</div></div>
 </div><!-- fragment -->
 </div>
@@ -342,9 +342,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
 <div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;        amrex::Real theta_mean = tm_arr(i,j,k);</div>
 <div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160;        amrex::Real theta_surf = t_surf_arr(i,j,k);</div>
-<div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">rho</a>        = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>        = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;        amrex::Real tstar      = t_star_arr(i,j,k);</div>
-<div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;        amrex::Real moflux = (std::abs(tstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">rho</a> * tstar * (theta_mean-theta_surf) : 0.0;</div>
+<div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;        amrex::Real moflux = (std::abs(tstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * tstar * (theta_mean-theta_surf) : 0.0;</div>
 <div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160; </div>
 <div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
 <div class="line"><a name="l01808"></a><span class="lineno"> 1808</span>&#160;    }</div>
@@ -428,9 +428,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l01822"></a><span class="lineno"> 1822</span>&#160;    {</div>
 <div class="line"><a name="l01823"></a><span class="lineno"> 1823</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l01824"></a><span class="lineno"> 1824</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">rho</a>     = 0.5 *( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i  ,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l01824"></a><span class="lineno"> 1824</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>     = 0.5 *( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i  ,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
 <div class="line"><a name="l01825"></a><span class="lineno"> 1825</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(i-1,j,k) + u_star_arr(i,j,k) );</div>
-<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar;</div>
+<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar;</div>
 <div class="line"><a name="l01827"></a><span class="lineno"> 1827</span>&#160; </div>
 <div class="line"><a name="l01828"></a><span class="lineno"> 1828</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
 <div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160;    }</div>

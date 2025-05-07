@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4":[2,0,28,10],
+"classEWP.html#ab9a34e54d36268a3f7a0b376543bbff5":[2,0,28,8],
+"classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016":[2,0,28,9],
+"classEWP.html#ad500c0f4245245d407e31633ec7cecff":[2,0,28,1],
 "classEWP.html#ad5aa60df138d71a40225791390e169e7":[2,0,28,14],
 "classEWP.html#af9cd3be628c58fca164e35db4a559fd9":[2,0,28,3],
 "classEulerianMicrophysics.html":[2,0,27],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "classMRISplitIntegrator.html#a6bcdee4380cd503256cb460b558184aa":[2,0,43,31],
 "classMRISplitIntegrator.html#a6ca4eef257ddfcb793de89d2309ac9a1":[2,0,43,22],
 "classMRISplitIntegrator.html#a7b54e96150eb521642b711f8e77b0454":[2,0,43,8],
-"classMRISplitIntegrator.html#a809aa55db013cd913fe3546ef8001fd4":[2,0,43,3],
-"classMRISplitIntegrator.html#a8549e46229b347585323bcc079b483f8":[2,0,43,34],
-"classMRISplitIntegrator.html#a8f0b8ba2224608975dd1cfae5d811ffb":[2,0,43,25],
-"classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99":[2,0,43,9],
-"classMRISplitIntegrator.html#a9ea1c36a75e04596ffe0fa29e614b6e2":[2,0,43,1]
+"classMRISplitIntegrator.html#a809aa55db013cd913fe3546ef8001fd4":[2,0,43,3]
 };

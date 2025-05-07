@@ -322,7 +322,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        <span class="comment">// highest is assumed to have no clouds</span></div>
 <div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ilay = 2; ilay &lt;= nlay; ++ilay) {</div>
 <div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;            <span class="comment">// Only do the calculation if certain conditions are met</span></div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keywordflow">if</span>((<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay)) &gt; q_threshold &amp;&amp;</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keywordflow">if</span>((<a class="code" href="namespaceMicVar__SatAdj.html#ac2be1e5fc951d23f27b621bed9836c16aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay)) &gt; q_threshold &amp;&amp;</div>
 <div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;               (cldfrac_tot(icol, ilay) &gt; cldfrac_tot_threshold)) {</div>
 <div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;                <span class="comment">/* PART I: Probabilistically determining cloud top */</span></div>
 <div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;                <span class="comment">// Populate aerocom_tmp as the clear-sky fraction</span></div>
@@ -336,7 +336,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;                <span class="comment">// Temporary variable for probability &quot;weights&quot;</span></div>
 <div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;                <span class="keyword">auto</span> aerocom_wts = aerocom_clr(icol) - aerocom_tmp;</div>
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;                <span class="comment">// Temporary variable for liquid &quot;phase&quot;</span></div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;                <span class="keyword">auto</span> aerocom_phi = <a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) / (<a class="code" href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay));</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;                <span class="keyword">auto</span> aerocom_phi = <a class="code" href="namespaceMicVar__SatAdj.html#ac2be1e5fc951d23f27b621bed9836c16aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) / (<a class="code" href="namespaceMicVar__SatAdj.html#ac2be1e5fc951d23f27b621bed9836c16aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay));</div>
 <div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;                <span class="comment">/* PART II: The inferred properties */</span></div>
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;                <span class="comment">/* In general, converting a 3D property X to a 2D cloud-top</span></div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;<span class="comment">                 * counterpart x follows: x(i) += X(i,k) * weights * Phase</span></div>
@@ -353,7 +353,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;                <span class="comment">/* We need to convert nc from 1/mass to 1/volume first, and</span></div>
 <div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;<span class="comment">                 * from grid-mean to in-cloud, but after that, the</span></div>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;<span class="comment">                 * calculation follows the general logic */</span></div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;                <span class="keyword">auto</span> cdnc = <a class="code" href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a32b6a00f33c7394555eff62ce6457bc6">nc</a>(icol, ilay) * p_del(icol, ilay) /</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;                <span class="keyword">auto</span> cdnc = <a class="code" href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa32b6a00f33c7394555eff62ce6457bc6">nc</a>(icol, ilay) * p_del(icol, ilay) /</div>
 <div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;                            z_del(icol, ilay) / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> /</div>
 <div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;                            cldfrac_tot(icol, ilay);</div>
 <div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;                cdnc_at_cldtop(icol) += cdnc * aerocom_phi * aerocom_wts;</div>
@@ -374,8 +374,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__OrbCosZenith_8H_html_a11d147c64891830c9e79b3315b1b2e21"><div class="ttname"><a href="ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21">real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> ERF_OrbCosZenith.H:9</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a3bbcd161d5650f41b41f14a1977ee2a0a32b6a00f33c7394555eff62ce6457bc6"><div class="ttname"><a href="namespaceMicVar__Morr.html#a3bbcd161d5650f41b41f14a1977ee2a0a32b6a00f33c7394555eff62ce6457bc6">MicVar_Morr::nc</a></div><div class="ttdeci">@ nc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:44</div></div>
-<div class="ttc" id="anamespaceMicVar__SatAdj_html_ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#ab8acc7ef47a63b5f03d4beeab01b214eaea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:36</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_ab6f5948b8eeb029d684e7b7d19cfc5daa32b6a00f33c7394555eff62ce6457bc6"><div class="ttname"><a href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa32b6a00f33c7394555eff62ce6457bc6">MicVar_Morr::nc</a></div><div class="ttdeci">@ nc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:44</div></div>
+<div class="ttc" id="anamespaceMicVar__SatAdj_html_ac2be1e5fc951d23f27b621bed9836c16aea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#ac2be1e5fc951d23f27b621bed9836c16aea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:36</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -778,7 +778,7 @@ template&lt;class T , int myMem, int myStyle&gt; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        heating_rate(icol,ilay) = ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                  - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                  / (<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * <a class="code" href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                  / (<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay));</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">        if (icol == 1) {</span></div>
@@ -791,7 +791,7 @@ template&lt;class T , int myMem, int myStyle&gt; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    });</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a889f8349e0684381d06cc26a8b1f49ffa89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df">Radiation::run_impl()</a>.</p>
 <div class="dynheader">

@@ -136,16 +136,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SrcHeaders_8H__dep__incl.png" border="0" usemap="#aSource_2SourceTerms_2ERF__SrcHeaders_8Hdep" alt=""/></div>
 <map name="aSource_2SourceTerms_2ERF__SrcHeaders_8Hdep" id="aSource_2SourceTerms_2ERF__SrcHeaders_8Hdep">
-<area shape="rect" title=" " alt="" coords="852,5,1005,47"/>
-<area shape="rect" href="ERF__AddThinBodySources_8cpp.html" title=" " alt="" coords="5,102,228,143"/>
-<area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html" title=" " alt="" coords="252,102,480,143"/>
-<area shape="rect" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html" title=" " alt="" coords="504,95,705,151"/>
-<area shape="rect" href="ERF__MakeBuoyancy_8cpp.html" title=" " alt="" coords="729,102,912,143"/>
-<area shape="rect" href="ERF__MakeMomSources_8cpp.html" title=" " alt="" coords="936,102,1140,143"/>
-<area shape="rect" href="ERF__MakeSources_8cpp.html" title=" " alt="" coords="1165,102,1335,143"/>
-<area shape="rect" href="ERF__SlowRhsPost_8cpp.html" title=" " alt="" coords="1360,102,1535,143"/>
-<area shape="rect" href="ERF__TI__slow__rhs__fun_8H.html" title=" " alt="" coords="1559,102,1735,143"/>
-<area shape="rect" href="ERF__AdvanceDycore_8cpp.html" title=" " alt="" coords="1554,199,1741,240"/>
+<area shape="rect" title=" " alt="" coords="1058,5,1211,47"/>
+<area shape="rect" href="ERF__Plotfile_8cpp.html" title=" " alt="" coords="5,109,197,136"/>
+<area shape="rect" href="ERF__AddThinBodySources_8cpp.html" title=" " alt="" coords="222,102,445,143"/>
+<area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html" title=" " alt="" coords="469,102,697,143"/>
+<area shape="rect" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html" title=" " alt="" coords="721,95,922,151"/>
+<area shape="rect" href="ERF__MakeBuoyancy_8cpp.html" title=" " alt="" coords="946,102,1129,143"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html" title=" " alt="" coords="1153,102,1311,143"/>
+<area shape="rect" href="ERF__MakeMomSources_8cpp.html" title=" " alt="" coords="1335,102,1539,143"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html" title=" " alt="" coords="1564,102,1735,143"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html" title=" " alt="" coords="1759,102,1934,143"/>
+<area shape="rect" href="ERF__TI__slow__rhs__fun_8H.html" title=" " alt="" coords="1959,102,2135,143"/>
+<area shape="rect" href="ERF__AdvanceDycore_8cpp.html" title=" " alt="" coords="1953,199,2140,240"/>
 </map>
 </div>
 </div>
@@ -155,6 +157,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a558d09c3ede64096bd3e5a792e6424e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#a558d09c3ede64096bd3e5a792e6424e4">make_buoyancy</a> (amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;buoyancy, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::MultiFab &amp;base_state, const int n_qstate, const int anelastic)</td></tr>
 <tr class="separator:a558d09c3ede64096bd3e5a792e6424e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f8da494dbc481cd1ac3a55a6da7278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#ab4f8da494dbc481cd1ac3a55a6da7278">make_gradp</a> (int level, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;S_data, amrex::MultiFab &amp;p0, const amrex::MultiFab &amp;pp_inc, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, amrex::Vector&lt; amrex::MultiFab &gt; &amp;gradp)</td></tr>
+<tr class="separator:ab4f8da494dbc481cd1ac3a55a6da7278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb510f120b26b8e74f86052548bace61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#aeb510f120b26b8e74f86052548bace61">make_sources</a> (int level, int nrk, amrex::Real dt, amrex::Real time, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;cc_source, const amrex::MultiFab &amp;base_state, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, amrex::MultiFab *terrain_blank, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, <a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;turbPert)</td></tr>
 <tr class="separator:aeb510f120b26b8e74f86052548bace61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a063abd25e0058189d8eb06a2d9bdca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#a7a063abd25e0058189d8eb06a2d9bdca">make_mom_sources</a> (int level, int nrk, amrex::Real dt, amrex::Real time, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;wvel, amrex::MultiFab &amp;xmom_source, amrex::MultiFab &amp;ymom_source, amrex::MultiFab &amp;zmom_source, const amrex::MultiFab &amp;base_state, amrex::MultiFab *forest_drag, amrex::MultiFab *terrain_blank, amrex::MultiFab *cosPhi_mf, amrex::MultiFab *sinPhi_mf, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_m, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_u, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;mapfac_v, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev, const amrex::Vector&lt; amrex::Real * &gt; d_sponge_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, const int n_qstate)</td></tr>
@@ -541,6 +545,76 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Function for computing the buoyancy term to be used in the evolution equation for the z-component of momentum in the slow integrator. There are three options for how buoyancy is computed (two are the same in the absence of moisture). </p>
+
+</div>
+</div>
+<a id="ab4f8da494dbc481cd1ac3a55a6da7278"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f8da494dbc481cd1ac3a55a6da7278">&#9670;&nbsp;</a></span>make_gradp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_gradp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>S_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>p0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>pp_inc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_cc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gradp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

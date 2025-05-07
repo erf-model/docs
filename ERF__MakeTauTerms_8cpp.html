@@ -313,8 +313,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Pre-computed quantities</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> BoxArray&amp; ba            = S_data[<a class="code" href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].boxArray();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> DistributionMapping&amp; dm = S_data[<a class="code" href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].DistributionMap();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> BoxArray&amp; ba            = S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].boxArray();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> DistributionMapping&amp; dm = S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].DistributionMap();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::unique_ptr&lt;MultiFab&gt; expr;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
@@ -330,7 +330,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;#ifdef _OPENMP</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;#pragma omp parallel if (Gpu::notInLaunchRegion())</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;#endif</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">const</span> Box&amp; valid_bx = mfi.validbox();</div>
@@ -348,7 +348,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">// Eddy viscosity</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; mu_turb   = l_use_turb       ? eddyDiffs-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                                     Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; cell_data = l_use_constAlpha ? S_data[<a class="code" href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi) :</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; cell_data = l_use_constAlpha ? S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi) :</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                                     Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="comment">// Terrain metrics</span></div>
@@ -681,7 +681,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:96</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:139</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
-<div class="ttc" id="anamespaceIntVars_html_acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#acdcfd9be55632ae5a8db4ddc7b0a7384a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:150</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:143</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
@@ -699,7 +699,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructTurbChoice_html_abbba68e0d699dd97701d31a0e37d5304"><div class="ttname"><a href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">TurbChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:236</div></div>
 <div class="ttc" id="astructTurbChoice_html_ae413138f8a3097389177d3fd96ec43fe"><div class="ttname"><a href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">TurbChoice::use_kturb</a></div><div class="ttdeci">bool use_kturb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:282</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPre_8cpp.html#abceb23acb9651c8a01047ee618922d5a">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPre_8cpp.html#a1ac03e0f8e69293f03a265b5ffdb88e0">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -737,7 +737,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__MakeTauTerms_8cpp_a6e5db0e2e9c9960f7311ee3160774e53_icgraph.png" border="0" usemap="#aERF__MakeTauTerms_8cpp_a6e5db0e2e9c9960f7311ee3160774e53_icgraph" alt=""/></div>
 <map name="aERF__MakeTauTerms_8cpp_a6e5db0e2e9c9960f7311ee3160774e53_icgraph" id="aERF__MakeTauTerms_8cpp_a6e5db0e2e9c9960f7311ee3160774e53_icgraph">
 <area shape="rect" title=" " alt="" coords="185,5,341,32"/>
-<area shape="rect" href="ERF__SlowRhsPre_8cpp.html#abceb23acb9651c8a01047ee618922d5a" title=" " alt="" coords="5,5,137,32"/>
+<area shape="rect" href="ERF__SlowRhsPre_8cpp.html#a1ac03e0f8e69293f03a265b5ffdb88e0" title=" " alt="" coords="5,5,137,32"/>
 </map>
 </div>
 

@@ -52,6 +52,7 @@ var namespaces_dup =
         [ "ext_dir_upwind", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
       ] ]
     ] ],
+    [ "GpVars", "namespaceGpVars.html", null ],
     [ "HSEutils", "namespaceHSEutils.html", [
       [ "init_isentropic_hse", "namespaceHSEutils.html#acea3d9d853ef0fbeee3f94b4b62cc224", null ],
       [ "init_isentropic_hse_terrain", "namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07", null ],
