@@ -34,6 +34,7 @@ var NAVTREEINDEX0 =
 "ERF__AdvanceRadiation_8cpp.html":[3,0,1,15,4],
 "ERF__AdvanceSimpleAD_8cpp.html":[3,0,1,17,4,0],
 "ERF__Advance_8cpp.html":[3,0,1,15,0],
+"ERF__Advance_8cpp.html#a9e781a79c3bc849e4b6876e91c7cdf34":[3,0,1,15,0,0],
 "ERF__AdvectionSrcForMom_8cpp.html":[3,0,1,0,1],
 "ERF__AdvectionSrcForMom_8cpp.html#a999d42b5cfb1790ac996bfcb088251c9":[3,0,1,0,1,0],
 "ERF__AdvectionSrcForMom__ConstantDz_8cpp.html":[3,0,1,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcba7f0566bdfe36c67d532a7e2aca33d9a4":[3,0,1,2,1,3,2],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbaad1bdec1c0213a18483e81bcb4926964":[3,0,1,2,1,3,1],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcbac159d9fae0d25be7ce907e1feb87cdaa":[3,0,1,2,1,3,0],
-"ERF__DataStruct_8H.html#a5d2c7f49777252f2c834e5906d1f106b":[3,0,1,2,1,15],
-"ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01":[3,0,1,2,1,1]
+"ERF__DataStruct_8H.html#a5d2c7f49777252f2c834e5906d1f106b":[3,0,1,2,1,15]
 };

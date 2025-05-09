@@ -153,18 +153,206 @@ Include dependency graph for ERF_MakeGradP.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a83158d2af632e1ca44c3837ebc772f53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeGradP_8cpp.html#a83158d2af632e1ca44c3837ebc772f53">make_gradp</a> (int level, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const Geometry &amp;geom, MultiFab &amp;S_data, MultiFab &amp;p0, const MultiFab &amp;pp_inc, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, Vector&lt; MultiFab &gt; &amp;gradp)</td></tr>
-<tr class="separator:a83158d2af632e1ca44c3837ebc772f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e845774072b7f3857162038b822656"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeGradP_8cpp.html#a93e845774072b7f3857162038b822656">make_gradp_pert</a> (int level, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const Geometry &amp;geom, MultiFab &amp;S_data, MultiFab &amp;p0, const MultiFab &amp;pp_inc, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, Vector&lt; MultiFab &gt; &amp;gradp)</td></tr>
+<tr class="separator:a93e845774072b7f3857162038b822656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeaf100724b470c313ce2859c5a82725"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeGradP_8cpp.html#abeaf100724b470c313ce2859c5a82725">compute_gradp</a> (const MultiFab &amp;p, const Geometry &amp;geom, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, Vector&lt; MultiFab &gt; &amp;gradp, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice)</td></tr>
+<tr class="separator:abeaf100724b470c313ce2859c5a82725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a83158d2af632e1ca44c3837ebc772f53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83158d2af632e1ca44c3837ebc772f53">&#9670;&nbsp;</a></span>make_gradp()</h2>
+<a id="abeaf100724b470c313ce2859c5a82725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeaf100724b470c313ce2859c5a82725">&#9670;&nbsp;</a></span>compute_gradp()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void make_gradp </td>
+          <td class="memname">void compute_gradp </td>
+          <td>(</td>
+          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_nd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_cc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>gradp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;&#160;</td>
+          <td class="paramname"><em>solverChoice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_terrain_fitted_coords = (solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> != MeshType::ConstantDz);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">const</span> Box domain = geom.Domain();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> klo = domain.smallEnd(2);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> khi = domain.bigEnd(2);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Take gradient of relevant quantity (p0, pres, or pert_pres = pres - p0)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(p); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        Box tbz = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// We don&#39;t compute gpz on the bottom or top domain boundary</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (tbz.smallEnd(2) == klo) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            tbz.growLo(2,-1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (tbz.bigEnd(2) == khi+1) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            tbz.growHi(2,-1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">// Terrain metrics</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd_arr = z_phys_nd-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr = z_phys_cc-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; p_arr = p.const_array(mfi);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; gpx_arr = gradp[<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">GpVars::gpx</a>].array(mfi);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; gpy_arr = gradp[<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">GpVars::gpy</a>].array(mfi);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; gpz_arr = gradp[<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">GpVars::gpz</a>].array(mfi);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = dxInv[0] * (p_arr(i,j,k) - p_arr(i-1,j,k));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                Real met_h_xi = (z_cc_arr(i,j,k) - z_cc_arr(i-1,j,k)) * dxInv[0];</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                Real dz_phys_hi, dz_phys_lo;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                Real gpz_lo, gpz_hi;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordflow">if</span> (k==klo) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    dz_phys_hi = z_cc_arr(i  ,j,k+1) -   z_cc_arr(i  ,j,k  );</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    dz_phys_lo = z_cc_arr(i-1,j,k+1) -   z_cc_arr(i-1,j,k  );</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    gpz_hi  = (p_arr(i  ,j,k+1) - p_arr(i  ,j,k  )) / dz_phys_hi;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    gpz_lo  = (p_arr(i-1,j,k+1) - p_arr(i-1,j,k  )) / dz_phys_lo;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==khi) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    dz_phys_hi = z_cc_arr(i  ,j,k  ) -   z_cc_arr(i  ,j,k-1);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    dz_phys_lo = z_cc_arr(i-1,j,k  ) -   z_cc_arr(i-1,j,k-1);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    gpz_hi  = (p_arr(i  ,j,k  ) - p_arr(i  ,j,k-1)) / dz_phys_hi;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    gpz_lo  = (p_arr(i-1,j,k  ) - p_arr(i-1,j,k-1)) / dz_phys_lo;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    dz_phys_hi = z_cc_arr(i  ,j,k+1) -   z_cc_arr(i  ,j,k-1);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    dz_phys_lo = z_cc_arr(i-1,j,k+1) -   z_cc_arr(i-1,j,k-1);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    gpz_hi  = (p_arr(i  ,j,k+1) - p_arr(i  ,j,k-1)) / dz_phys_hi;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    gpz_lo  = (p_arr(i-1,j,k+1) - p_arr(i-1,j,k-1)) / dz_phys_lo;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                Real gpx_metric = met_h_xi * 0.5 * (gpz_hi + gpz_lo);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> -= gpx_metric;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            gpx_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        });</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        ParallelFor(tby, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = dxInv[1] * (p_arr(i,j,k) - p_arr(i,j-1,k));</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                Real met_h_eta = (z_cc_arr(i,j,k) - z_cc_arr(i,j-1,k)) * dxInv[1];</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                Real dz_phys_hi, dz_phys_lo;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                Real gpz_lo, gpz_hi;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordflow">if</span> (k==klo) {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    dz_phys_hi = z_cc_arr(i,j  ,k+1) -   z_cc_arr(i,j  ,k  );</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    dz_phys_lo = z_cc_arr(i,j-1,k+1) -   z_cc_arr(i,j-1,k  );</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                    gpz_hi  = (p_arr(i,j  ,k+1) - p_arr(i,j  ,k  )) / dz_phys_hi;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    gpz_lo  = (p_arr(i,j-1,k+1) - p_arr(i,j-1,k  )) / dz_phys_lo;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==khi) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    dz_phys_hi = z_cc_arr(i,j  ,k  ) -   z_cc_arr(i,j  ,k-1);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    dz_phys_lo = z_cc_arr(i,j-1,k  ) -   z_cc_arr(i,j-1,k-1);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    gpz_hi  = (p_arr(i,j  ,k  ) - p_arr(i,j  ,k-1)) / dz_phys_hi;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    gpz_lo  = (p_arr(i,j-1,k  ) - p_arr(i,j-1,k-1)) / dz_phys_lo;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    dz_phys_hi = z_cc_arr(i,j  ,k+1) -   z_cc_arr(i,j  ,k-1);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    dz_phys_lo = z_cc_arr(i,j-1,k+1) -   z_cc_arr(i,j-1,k-1);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    gpz_hi  = (p_arr(i,j  ,k+1) - p_arr(i,j  ,k-1)) / dz_phys_hi;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    gpz_lo  = (p_arr(i,j-1,k+1) - p_arr(i,j-1,k-1)) / dz_phys_lo;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                Real gpy_metric = met_h_eta * 0.5 * (gpz_hi + gpz_lo);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> -= gpy_metric;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            } <span class="comment">// l_use_terrain_fitted_coords</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            gpy_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        });</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        ParallelFor(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            Real met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd_arr) : 1;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            gpz_arr(i,j,k) = dxInv[2] * ( p_arr(i,j,k)-p_arr(i,j,k-1) )  / met_h_zeta;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        });</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:182</div></div>
+<div class="ttc" id="anamespaceGpVars_html_ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517"><div class="ttname"><a href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">GpVars::gpz</a></div><div class="ttdeci">@ gpz</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:152</div></div>
+<div class="ttc" id="anamespaceGpVars_html_ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d"><div class="ttname"><a href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">GpVars::gpy</a></div><div class="ttdeci">@ gpy</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:151</div></div>
+<div class="ttc" id="anamespaceGpVars_html_ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323"><div class="ttname"><a href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">GpVars::gpx</a></div><div class="ttdeci">@ gpx</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:150</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:655</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__MakeGradP_8cpp.html#a93e845774072b7f3857162038b822656">make_gradp_pert()</a>, and <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_cgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_cgraph" alt=""/></div>
+<map name="aERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_cgraph" id="aERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="176,5,365,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_icgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_icgraph" alt=""/></div>
+<map name="aERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_icgraph" id="aERF__MakeGradP_8cpp_abeaf100724b470c313ce2859c5a82725_icgraph">
+<area shape="rect" title=" " alt="" coords="191,31,313,57"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#a93e845774072b7f3857162038b822656" title=" " alt="" coords="7,5,141,32"/>
+<area shape="rect" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf" title=" " alt="" coords="5,56,143,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93e845774072b7f3857162038b822656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e845774072b7f3857162038b822656">&#9670;&nbsp;</a></span>make_gradp_pert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void make_gradp_pert </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>level</em>, </td>
@@ -239,175 +427,56 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_terrain_fitted_coords = (solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> != MeshType::ConstantDz);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_anelastic = solverChoice.<a class="code" href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">anelastic</a>[level];</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_moisture  = (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> != MoistureType::None);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_anelastic = solverChoice.<a class="code" href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">anelastic</a>[level];</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> Box domain = geom.Domain();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> klo = domain.smallEnd(2);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> khi = domain.bigEnd(2);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_data); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        Box tbz = mfi.nodaltilebox(2);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// We don&#39;t compute gpz on the bottom or top domain boundary</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (tbz.smallEnd(2) == klo) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            tbz.growLo(2,-1);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (tbz.bigEnd(2) == khi+1) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            tbz.growHi(2,-1);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data = S_data.array(mfi);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; gpx_arr = gradp[<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">GpVars::gpx</a>].array(mfi);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; gpy_arr = gradp[<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">GpVars::gpy</a>].array(mfi);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; gpz_arr = gradp[<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">GpVars::gpz</a>].array(mfi);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (l_anelastic) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="ERF__MakeGradP_8cpp.html#abeaf100724b470c313ce2859c5a82725">compute_gradp</a>(pp_inc,geom,z_phys_nd,z_phys_cc,gradp,solverChoice);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        MultiFab p(S_data.boxArray(), S_data.DistributionMap(), 1, 1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// Compute pressure or perturbataional pressure</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(S_data); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (!l_anelastic) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                Box gbx = mfi.tilebox(); gbx.grow(IntVect(1,1,1));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; 0) gbx.setSmall(2,0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data = S_data.array(mfi);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; p0_arr = <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>.const_array(mfi);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; pptemp_arr = p.array(mfi);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    Real qv_for_p = (l_use_moisture) ? cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : 0.0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    pptemp_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),qv_for_p) - p0_arr(i,j,k);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                });</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Base state</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; p0_arr = <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>.const_array(mfi);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// Terrain metrics</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd = z_phys_nd-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc = z_phys_cc-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// Perturbational pressure field</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        FArrayBox pprime;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (!l_anelastic) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            Box gbx = mfi.tilebox(); gbx.grow(IntVect(1,1,1));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">if</span> (gbx.smallEnd(2) &lt; 0) gbx.setSmall(2,0);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            pprime.resize(gbx,1,The_Async_Arena());</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; pptemp_arr = pprime.array();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">if</span> (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) &lt;= 0.) AMREX_DEVICE_PRINTF(<span class="stringliteral">&quot;BAD THETA AT %d %d %d %e %e \n&quot;</span>,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    i,j,k,cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),cell_data(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">if</span> (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) &lt;= 0.) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    printf(<span class="stringliteral">&quot;BAD THETA AT %d %d %d %e %e \n&quot;</span>,</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    i,j,k,cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),cell_data(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    amrex::Abort(<span class="stringliteral">&quot;Bad theta in ERF_slow_rhs_pre&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                Real qv_for_p = (l_use_moisture) ? cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : 0.0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                pptemp_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),qv_for_p) - p0_arr(i,j,k);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            });</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; pp_arr = (l_anelastic) ? pp_inc.const_array(mfi) : pprime.const_array();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = dxInv[0] * (pp_arr(i,j,k) - pp_arr(i-1,j,k));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                Real met_h_xi = (z_cc(i,j,k) - z_cc(i-1,j,k)) * dxInv[0];</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                Real dz_phys_hi, dz_phys_lo;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                Real gpz_lo, gpz_hi;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">if</span> (k==klo) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    dz_phys_hi = z_cc(i  ,j,k+1) -   z_cc(i  ,j,k  );</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    dz_phys_lo = z_cc(i-1,j,k+1) -   z_cc(i-1,j,k  );</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    gpz_hi  = (pp_arr(i  ,j,k+1) - pp_arr(i  ,j,k  )) / dz_phys_hi;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    gpz_lo  = (pp_arr(i-1,j,k+1) - pp_arr(i-1,j,k  )) / dz_phys_lo;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==khi) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    dz_phys_hi = z_cc(i  ,j,k  ) -   z_cc(i  ,j,k-1);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    dz_phys_lo = z_cc(i-1,j,k  ) -   z_cc(i-1,j,k-1);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    gpz_hi  = (pp_arr(i  ,j,k  ) - pp_arr(i  ,j,k-1)) / dz_phys_hi;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    gpz_lo  = (pp_arr(i-1,j,k  ) - pp_arr(i-1,j,k-1)) / dz_phys_lo;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    dz_phys_hi = z_cc(i  ,j,k+1) -   z_cc(i  ,j,k-1);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    dz_phys_lo = z_cc(i-1,j,k+1) -   z_cc(i-1,j,k-1);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    gpz_hi  = (pp_arr(i  ,j,k+1) - pp_arr(i  ,j,k-1)) / dz_phys_hi;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    gpz_lo  = (pp_arr(i-1,j,k+1) - pp_arr(i-1,j,k-1)) / dz_phys_lo;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                }</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                Real gpx_metric = met_h_xi * 0.5 * (gpz_hi + gpz_lo);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> -= gpx_metric;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            gpx_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        });</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        ParallelFor(tby, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = dxInv[1] * (pp_arr(i,j,k) - pp_arr(i,j-1,k));</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                Real met_h_eta = (z_cc(i,j,k) - z_cc(i,j-1,k)) * dxInv[1];</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                Real dz_phys_hi, dz_phys_lo;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                Real gpz_lo, gpz_hi;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <span class="keywordflow">if</span> (k==klo) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    dz_phys_hi = z_cc(i,j  ,k+1) -   z_cc(i,j  ,k  );</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    dz_phys_lo = z_cc(i,j-1,k+1) -   z_cc(i,j-1,k  );</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    gpz_hi  = (pp_arr(i,j  ,k+1) - pp_arr(i,j  ,k  )) / dz_phys_hi;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    gpz_lo  = (pp_arr(i,j-1,k+1) - pp_arr(i,j-1,k  )) / dz_phys_lo;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==khi) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    dz_phys_hi = z_cc(i,j  ,k  ) -   z_cc(i,j  ,k-1);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                    dz_phys_lo = z_cc(i,j-1,k  ) -   z_cc(i,j-1,k-1);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    gpz_hi  = (pp_arr(i,j  ,k  ) - pp_arr(i,j  ,k-1)) / dz_phys_hi;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                    gpz_lo  = (pp_arr(i,j-1,k  ) - pp_arr(i,j-1,k-1)) / dz_phys_lo;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    dz_phys_hi = z_cc(i,j  ,k+1) -   z_cc(i,j  ,k-1);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    dz_phys_lo = z_cc(i,j-1,k+1) -   z_cc(i,j-1,k-1);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    gpz_hi  = (pp_arr(i,j  ,k+1) - pp_arr(i,j  ,k-1)) / dz_phys_hi;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    gpz_lo  = (pp_arr(i,j-1,k+1) - pp_arr(i,j-1,k-1)) / dz_phys_lo;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                Real gpy_metric = met_h_eta * 0.5 * (gpz_hi + gpz_lo);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> -= gpy_metric;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            } <span class="comment">// l_use_terrain_fitted_coords</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            gpy_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        });</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        ParallelFor(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            Real met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd) : 1;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            gpz_arr(i,j,k) = dxInv[2] * ( pp_arr(i,j,k)-pp_arr(i,j,k-1) )  / met_h_zeta;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        });</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="ERF__MakeGradP_8cpp.html#abeaf100724b470c313ce2859c5a82725">compute_gradp</a>(p,geom,z_phys_nd,z_phys_cc,gradp,solverChoice);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:84</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:182</div></div>
-<div class="ttc" id="anamespaceGpVars_html_ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517"><div class="ttname"><a href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">GpVars::gpz</a></div><div class="ttdeci">@ gpz</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:152</div></div>
-<div class="ttc" id="anamespaceGpVars_html_ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d"><div class="ttname"><a href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">GpVars::gpy</a></div><div class="ttdeci">@ gpy</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:151</div></div>
-<div class="ttc" id="anamespaceGpVars_html_ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323"><div class="ttname"><a href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">GpVars::gpx</a></div><div class="ttdeci">@ gpx</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:150</div></div>
+<div class="ttc" id="aERF__MakeGradP_8cpp_html_abeaf100724b470c313ce2859c5a82725"><div class="ttname"><a href="ERF__MakeGradP_8cpp.html#abeaf100724b470c313ce2859c5a82725">compute_gradp</a></div><div class="ttdeci">void compute_gradp(const MultiFab &amp;p, const Geometry &amp;geom, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, Vector&lt; MultiFab &gt; &amp;gradp, const SolverChoice &amp;solverChoice)</div><div class="ttdef"><b>Definition:</b> ERF_MakeGradP.cpp:68</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a2dcccd992b668c86eecdd9a825970d4a"><div class="ttname"><a href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">module_model_constants::p0</a></div><div class="ttdeci">real(c_double), parameter p0</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:40</div></div>
-<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:655</div></div>
 <div class="ttc" id="astructSolverChoice_html_aa7be0d60ce3de3441d44082cc1b725ec"><div class="ttname"><a href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">SolverChoice::anelastic</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; anelastic</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:671</div></div>
 <div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:746</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf">ERF::WritePlotFile()</a>.</p>
-<div class="dynheader">
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_cgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_cgraph" alt=""/></div>
-<map name="aERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_cgraph" id="aERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,108,57"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="156,5,345,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="195,56,306,83"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_icgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_icgraph" alt=""/></div>
-<map name="aERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_icgraph" id="aERF__MakeGradP_8cpp_a83158d2af632e1ca44c3837ebc772f53_icgraph">
-<area shape="rect" title=" " alt="" coords="191,5,293,32"/>
-<area shape="rect" href="classERF.html#a98cccb83ca76c44d6ae583d051e76faf" title=" " alt="" coords="5,5,143,32"/>
+<div class="center"><img src="ERF__MakeGradP_8cpp_a93e845774072b7f3857162038b822656_cgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_a93e845774072b7f3857162038b822656_cgraph" alt=""/></div>
+<map name="aERF__MakeGradP_8cpp_a93e845774072b7f3857162038b822656_cgraph" id="aERF__MakeGradP_8cpp_a93e845774072b7f3857162038b822656_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,140,57"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#abeaf100724b470c313ce2859c5a82725" title=" " alt="" coords="188,5,311,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="194,56,305,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="359,5,548,32"/>
 </map>
 </div>
 

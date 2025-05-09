@@ -148,12 +148,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad4983e19f621a55ad7d942c881215c72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ad4983e19f621a55ad7d942c881215c72">Get_Qmoist_Size</a> (const int &amp;) override</td></tr>
 <tr class="memdesc:ad4983e19f621a55ad7d942c881215c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of moisture model variables  <a href="classEulerianMicrophysics.html#ad4983e19f621a55ad7d942c881215c72">More...</a><br /></td></tr>
 <tr class="separator:ad4983e19f621a55ad7d942c881215c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e973738b4e0bbaa7269ab2395322929"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#a3e973738b4e0bbaa7269ab2395322929">Get_Qstate_Size</a> () override</td></tr>
-<tr class="memdesc:a3e973738b4e0bbaa7269ab2395322929"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of moisture-model-related conserved state variables  <a href="classEulerianMicrophysics.html#a3e973738b4e0bbaa7269ab2395322929">More...</a><br /></td></tr>
-<tr class="separator:a3e973738b4e0bbaa7269ab2395322929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2deffc61faaf4197f74dcfe0691a56b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#af2deffc61faaf4197f74dcfe0691a56b">Get_Qstate_Moist_Size</a> () override</td></tr>
+<tr class="memdesc:af2deffc61faaf4197f74dcfe0691a56b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of microphysics conserved moist (water-related) state variables  <a href="classEulerianMicrophysics.html#af2deffc61faaf4197f74dcfe0691a56b">More...</a><br /></td></tr>
+<tr class="separator:af2deffc61faaf4197f74dcfe0691a56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6497e305681af49fcec336f3c68eff46"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#a6497e305681af49fcec336f3c68eff46">Get_Qstate_NonMoist_Size</a> () override</td></tr>
+<tr class="memdesc:a6497e305681af49fcec336f3c68eff46"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) state variables  <a href="classEulerianMicrophysics.html#a6497e305681af49fcec336f3c68eff46">More...</a><br /></td></tr>
+<tr class="separator:a6497e305681af49fcec336f3c68eff46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bf4ba2dccc3aa4f2c462162ad54d1fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#a0bf4ba2dccc3aa4f2c462162ad54d1fc">Get_Qmoist_Restart_Vars</a> (const int a_lev, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;a_sc, std::vector&lt; int &gt; &amp;a_idx, std::vector&lt; std::string &gt; &amp;a_names) const override</td></tr>
 <tr class="memdesc:a0bf4ba2dccc3aa4f2c462162ad54d1fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the indices and names of moisture model variables for restart at a given level  <a href="classEulerianMicrophysics.html#a0bf4ba2dccc3aa4f2c462162ad54d1fc">More...</a><br /></td></tr>
 <tr class="separator:a0bf4ba2dccc3aa4f2c462162ad54d1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1c90868ba96910a57f4e8025f90723"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#aad1c90868ba96910a57f4e8025f90723">GetPlotVarNames</a> (amrex::Vector&lt; std::string &gt; &amp;a_vec) const override</td></tr>
+<tr class="memdesc:aad1c90868ba96910a57f4e8025f90723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a list of additional plot variable names.  <a href="classEulerianMicrophysics.html#aad1c90868ba96910a57f4e8025f90723">More...</a><br /></td></tr>
+<tr class="separator:aad1c90868ba96910a57f4e8025f90723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c4f2bee3a05609e796da336854ca89"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#aa1c4f2bee3a05609e796da336854ca89">GetPlotVar</a> (const std::string &amp;a_name, amrex::MultiFab &amp;a_mf, const int a_lev) const override</td></tr>
+<tr class="memdesc:aa1c4f2bee3a05609e796da336854ca89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills in a MultiFab for plotting.  <a href="classEulerianMicrophysics.html#aa1c4f2bee3a05609e796da336854ca89">More...</a><br /></td></tr>
+<tr class="separator:aa1c4f2bee3a05609e796da336854ca89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classMicrophysics"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMicrophysics')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMicrophysics.html">Microphysics</a></td></tr>
 <tr class="memitem:a79bf043906abc7e4d738318ec8e7aa2e inherit pub_methods_classMicrophysics"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">Microphysics</a> ()</td></tr>
 <tr class="memdesc:a79bf043906abc7e4d738318ec8e7aa2e inherit pub_methods_classMicrophysics"><td class="mdescLeft">&#160;</td><td class="mdescRight">Null constructor.  <a href="classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e">More...</a><br /></td></tr>
@@ -161,6 +170,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09486c3bc292538d5a26683fb1e19451 inherit pub_methods_classMicrophysics"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451">~Microphysics</a> ()=default</td></tr>
 <tr class="memdesc:a09486c3bc292538d5a26683fb1e19451 inherit pub_methods_classMicrophysics"><td class="mdescLeft">&#160;</td><td class="mdescRight">default destructor  <a href="classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451">More...</a><br /></td></tr>
 <tr class="separator:a09486c3bc292538d5a26683fb1e19451 inherit pub_methods_classMicrophysics"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa5855f1992b34c6e520f426ec0657d4 inherit pub_methods_classMicrophysics"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">Get_Qstate_Size</a> ()</td></tr>
+<tr class="memdesc:aaa5855f1992b34c6e520f426ec0657d4 inherit pub_methods_classMicrophysics"><td class="mdescLeft">&#160;</td><td class="mdescRight">get total number of conserved state variables  <a href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4">More...</a><br /></td></tr>
+<tr class="separator:aaa5855f1992b34c6e520f426ec0657d4 inherit pub_methods_classMicrophysics"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -302,8 +314,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;EulerianMicrophysics: Dont know this moisture_type!&quot;</span>) ;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="ttc" id="aclassEulerianMicrophysics_html_a3d8916fc5900c54728d7549c68b21048"><div class="ttname"><a href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">EulerianMicrophysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> ERF_EulerianMicrophysics.H:139</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:69</div></div>
+<div class="ttc" id="aclassEulerianMicrophysics_html_a3d8916fc5900c54728d7549c68b21048"><div class="ttname"><a href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">EulerianMicrophysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> ERF_EulerianMicrophysics.H:159</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:86</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -562,9 +574,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;Qmoist_Restart_Vars(a_sc, a_idx, a_names);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;Qmoist_Restart_Vars(a_sc, a_idx, a_names);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -601,8 +613,8 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a3e973738b4e0bbaa7269ab2395322929"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e973738b4e0bbaa7269ab2395322929">&#9670;&nbsp;</a></span>Get_Qstate_Size()</h2>
+<a id="af2deffc61faaf4197f74dcfe0691a56b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2deffc61faaf4197f74dcfe0691a56b">&#9670;&nbsp;</a></span>Get_Qstate_Moist_Size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -611,7 +623,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int EulerianMicrophysics::Get_Qstate_Size </td>
+          <td class="memname">int EulerianMicrophysics::Get_Qstate_Moist_Size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -624,12 +636,126 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>get the number of moisture-model-related conserved state variables </p>
+<p>get the number of microphysics conserved moist (water-related) state variables </p>
 
-<p>Implements <a class="el" href="classMicrophysics.html#a72f6091687c014c5be34275b0975d194">Microphysics</a>.</p>
+<p>Implements <a class="el" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Microphysics</a>.</p>
 <div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qstate_Size();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qstate_Moist_Size();</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6497e305681af49fcec336f3c68eff46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6497e305681af49fcec336f3c68eff46">&#9670;&nbsp;</a></span>Get_Qstate_NonMoist_Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EulerianMicrophysics::Get_Qstate_NonMoist_Size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the number of microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) state variables </p>
+
+<p>Implements <a class="el" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Microphysics</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qstate_NonMoist_Size();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa1c4f2bee3a05609e796da336854ca89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c4f2bee3a05609e796da336854ca89">&#9670;&nbsp;</a></span>GetPlotVar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void EulerianMicrophysics::GetPlotVar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>a_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>a_mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>a_lev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fills in a MultiFab for plotting. </p>
+
+<p>Implements <a class="el" href="classMicrophysics.html#ae16d9801d3db01fcc424345e54a47d3b">Microphysics</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;GetPlotVar(a_name, a_mf);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aad1c90868ba96910a57f4e8025f90723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad1c90868ba96910a57f4e8025f90723">&#9670;&nbsp;</a></span>GetPlotVarNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void EulerianMicrophysics::GetPlotVarNames </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a_vec</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a list of additional plot variable names. </p>
+
+<p>Implements <a class="el" href="classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7">Microphysics</a>.</p>
+<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;GetPlotVarNames(a_vec);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -743,11 +869,11 @@ template&lt;class NewMoistModel &gt; </div>
 </div><div class="memdoc">
 
 <p>Create and set the specified moisture model. </p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>.size(); ++lev) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev] = std::make_unique&lt;NewMoistModel&gt;();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>.size(); ++lev) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev] = std::make_unique&lt;NewMoistModel&gt;();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -872,7 +998,7 @@ template&lt;class NewMoistModel &gt; </div>
 </div><div class="memdoc">
 <p>moisture model </p>
 
-<p class="reference">Referenced by <a class="el" href="classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243">Advance()</a>, <a class="el" href="classEulerianMicrophysics.html#a444c916c5bb1167ea1efc9f2b9595436">Define()</a>, <a class="el" href="classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6">EulerianMicrophysics()</a>, <a class="el" href="classEulerianMicrophysics.html#a416981f230a126387b9a664a5a241e9c">Get_Qmoist_Ptr()</a>, <a class="el" href="classEulerianMicrophysics.html#a0bf4ba2dccc3aa4f2c462162ad54d1fc">Get_Qmoist_Restart_Vars()</a>, <a class="el" href="classEulerianMicrophysics.html#ad4983e19f621a55ad7d942c881215c72">Get_Qmoist_Size()</a>, <a class="el" href="classEulerianMicrophysics.html#a3e973738b4e0bbaa7269ab2395322929">Get_Qstate_Size()</a>, <a class="el" href="classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604">Init()</a>, <a class="el" href="classEulerianMicrophysics.html#aa882ea75f222099b16b43a579d11e2c1">SetModel()</a>, <a class="el" href="classEulerianMicrophysics.html#a0f8fc766c44f4331bfc86337eb43f6cc">Update_Micro_Vars_Lev()</a>, and <a class="el" href="classEulerianMicrophysics.html#a6f0dc90119a228e56c5616267eba6009">Update_State_Vars_Lev()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243">Advance()</a>, <a class="el" href="classEulerianMicrophysics.html#a444c916c5bb1167ea1efc9f2b9595436">Define()</a>, <a class="el" href="classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6">EulerianMicrophysics()</a>, <a class="el" href="classEulerianMicrophysics.html#a416981f230a126387b9a664a5a241e9c">Get_Qmoist_Ptr()</a>, <a class="el" href="classEulerianMicrophysics.html#a0bf4ba2dccc3aa4f2c462162ad54d1fc">Get_Qmoist_Restart_Vars()</a>, <a class="el" href="classEulerianMicrophysics.html#ad4983e19f621a55ad7d942c881215c72">Get_Qmoist_Size()</a>, <a class="el" href="classEulerianMicrophysics.html#af2deffc61faaf4197f74dcfe0691a56b">Get_Qstate_Moist_Size()</a>, <a class="el" href="classEulerianMicrophysics.html#a6497e305681af49fcec336f3c68eff46">Get_Qstate_NonMoist_Size()</a>, <a class="el" href="classEulerianMicrophysics.html#aa1c4f2bee3a05609e796da336854ca89">GetPlotVar()</a>, <a class="el" href="classEulerianMicrophysics.html#aad1c90868ba96910a57f4e8025f90723">GetPlotVarNames()</a>, <a class="el" href="classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604">Init()</a>, <a class="el" href="classEulerianMicrophysics.html#aa882ea75f222099b16b43a579d11e2c1">SetModel()</a>, <a class="el" href="classEulerianMicrophysics.html#a0f8fc766c44f4331bfc86337eb43f6cc">Update_Micro_Vars_Lev()</a>, and <a class="el" href="classEulerianMicrophysics.html#a6f0dc90119a228e56c5616267eba6009">Update_State_Vars_Lev()</a>.</p>
 
 </div>
 </div>
