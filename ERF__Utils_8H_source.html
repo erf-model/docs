@@ -370,7 +370,7 @@ $(document).ready(function(){initNavTree('ERF__Utils_8H_source.html',''); initRe
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// RHS computation</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">int</span> Spec_z  = set_width;</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">int</span> Relax_z = width - Spec_z + 1;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    amrex::Real num     = amrex::Real(Spec_z + Relax_z);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a>     = amrex::Real(Spec_z + Relax_z);</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    amrex::Real denom   = amrex::Real(Relax_z - 1);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    amrex::Real SpecExp = -std::log(0.1) / amrex::Real(width - Spec_z);</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    amrex::ParallelFor(bx_xlo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
@@ -381,7 +381,7 @@ $(document).ready(function(){initNavTree('ERF__Utils_8H_source.html',''); initRe
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordtype">int</span> n_ind = std::min(i-dom_lo.x,jj) + 1;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        amrex::Real Factor   = (num - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
@@ -405,7 +405,7 @@ $(document).ready(function(){initNavTree('ERF__Utils_8H_source.html',''); initRe
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordtype">int</span> n_ind = std::min(dom_hi.x-i,jj) + 1;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        amrex::Real Factor   = (num - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
@@ -427,7 +427,7 @@ $(document).ready(function(){initNavTree('ERF__Utils_8H_source.html',''); initRe
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">int</span> n_ind = j - dom_lo.y + 1;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        amrex::Real Factor   = (num - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
@@ -448,7 +448,7 @@ $(document).ready(function(){initNavTree('ERF__Utils_8H_source.html',''); initRe
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordtype">int</span> n_ind = dom_hi.y - j + 1;</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        amrex::Real Factor   = (num - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
@@ -522,6 +522,7 @@ $(document).ready(function(){initNavTree('ERF__Utils_8H_source.html',''); initRe
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                    std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_cc);</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a></div><div class="ttdeci">@ num</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:21</div></div>
 <div class="ttc" id="aERF__FillPatcher_8H_html"><div class="ttname"><a href="ERF__FillPatcher_8H.html">ERF_FillPatcher.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__SurfaceLayer_8H_html"><div class="ttname"><a href="ERF__SurfaceLayer_8H.html">ERF_SurfaceLayer.H</a></div></div>

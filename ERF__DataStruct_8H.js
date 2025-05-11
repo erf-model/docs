@@ -6,6 +6,15 @@ var ERF__DataStruct_8H =
       [ "y", "ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d", null ],
       [ "z", "ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7", null ]
     ] ],
+    [ "MapFacType", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85b", [
+      [ "mx", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba41632397635e3888e97fe9513e70cadb", null ],
+      [ "ux", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bafe3769d251ffee689a32b589c716f354", null ],
+      [ "vx", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba5e138a5408d6f2e04239286448b8697d", null ],
+      [ "num", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8", null ],
+      [ "my", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba27f1ec74b9935c0503ecbee1bc458015", null ],
+      [ "uy", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba7ccbb2faac8956bcd8b065037f334beb", null ],
+      [ "vy", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90d72c4cc9cb590cee12d437018b2484", null ]
+    ] ],
     [ "Rayleigh", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239", [
       [ "ubar", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d2cdf8cea6cb933d4ce759c1ff1b948", null ],
       [ "vbar", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239acb08c6a1b8bca5e9e4ef6162aef2cfa4", null ],
