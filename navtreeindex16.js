@@ -1,6 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"structWENO7.html#ab892b0bcfa15175a4791c64e222be320":[2,0,91,11],
 "structWENO7.html#af876dae4af7625a7db873c63fd8161d5":[2,0,91,0],
 "structWENO__MZQ3.html":[2,0,92],
 "structWENO__MZQ3.html#a074870251e62994daec13919faff1576":[2,0,92,7],
@@ -249,5 +248,6 @@ var NAVTREEINDEX16 =
 "structsurface__temp__mod__charnock.html#a85bd49a9221c24cd27422abc18190628":[2,0,77,5],
 "structsurface__temp__mod__charnock.html#a98f673e5030f4509a8874466337f50c4":[2,0,77,2],
 "structsurface__temp__mod__charnock.html#aee58e170ad409e01495f1f32a9e2efaa":[2,0,77,1],
-"structsurface__temp__wave__coupled.html":[2,0,78]
+"structsurface__temp__wave__coupled.html":[2,0,78],
+"structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf":[2,0,78,2]
 };
