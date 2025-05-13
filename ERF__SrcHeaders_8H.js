@@ -5,8 +5,8 @@ var ERF__SrcHeaders_8H =
     [ "ApplySpongeZoneBCsForMom", "ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf", null ],
     [ "ApplySpongeZoneBCsForMom_ReadFromFile", "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac", null ],
     [ "compute_gradp", "ERF__SrcHeaders_8H.html#ac77b1c32d93b67eada0223595fd32730", null ],
-    [ "make_buoyancy", "ERF__SrcHeaders_8H.html#a558d09c3ede64096bd3e5a792e6424e4", null ],
+    [ "make_buoyancy", "ERF__SrcHeaders_8H.html#ae77d1c41331c7086a26ae2a78c1465fc", null ],
     [ "make_gradp_pert", "ERF__SrcHeaders_8H.html#a8f2e3c6e513f5067d055e49d02dc9f80", null ],
-    [ "make_mom_sources", "ERF__SrcHeaders_8H.html#af7b0a28846042432d2b00e6ecfb6f43a", null ],
-    [ "make_sources", "ERF__SrcHeaders_8H.html#a12c680356d503e0aa52d30564bca7779", null ]
+    [ "make_mom_sources", "ERF__SrcHeaders_8H.html#a78b18302cd5c399ac4b3d975e1008466", null ],
+    [ "make_sources", "ERF__SrcHeaders_8H.html#ac04f4fd5e5ef259522e6f51c9d815700", null ]
 ];
