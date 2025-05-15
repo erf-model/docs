@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"classProblemBase.html#a9ef723333579aac2295b535c79193088":[2,0,55,12],
 "classProblemBase.html#aaf5cb14c8033c99df446fd943b1f2216":[2,0,55,3],
 "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f":[2,0,55,4],
 "classProblemBase.html#ac458b1e9108b54e2dd1621d6fb7e4de6":[2,0,55,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "classSAM.html#aba6460f2d34882d6b512574106e44531":[2,0,60,8],
 "classSAM.html#acdbfb54576b12ad828cee80ac3ecb2f4":[2,0,60,15],
 "classSAM.html#ad5815a7090e447ca821df2b09b1ea0f7":[2,0,60,11],
-"classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46":[2,0,60,16]
+"classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46":[2,0,60,16],
+"classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b":[2,0,60,13]
 };
