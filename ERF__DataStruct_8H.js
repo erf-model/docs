@@ -7,13 +7,13 @@ var ERF__DataStruct_8H =
       [ "z", "ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7", null ]
     ] ],
     [ "MapFacType", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85b", [
-      [ "mx", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba41632397635e3888e97fe9513e70cadb", null ],
-      [ "ux", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bafe3769d251ffee689a32b589c716f354", null ],
-      [ "vx", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba5e138a5408d6f2e04239286448b8697d", null ],
+      [ "m_x", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b", null ],
+      [ "u_x", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18", null ],
+      [ "v_x", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388", null ],
       [ "num", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8", null ],
-      [ "my", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba27f1ec74b9935c0503ecbee1bc458015", null ],
-      [ "uy", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba7ccbb2faac8956bcd8b065037f334beb", null ],
-      [ "vy", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90d72c4cc9cb590cee12d437018b2484", null ]
+      [ "m_y", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8", null ],
+      [ "u_y", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3", null ],
+      [ "v_y", "ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182", null ]
     ] ],
     [ "Rayleigh", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239", [
       [ "ubar", "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d2cdf8cea6cb933d4ce759c1ff1b948", null ],

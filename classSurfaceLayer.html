@@ -2313,20 +2313,20 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            Print()&lt;&lt;<span class="stringliteral">&quot;Reading MOST roughness file: &quot;</span>&lt;&lt; fname &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            std::ifstream file(fname);</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            Gpu::HostVector&lt;Real&gt; m_x,m_y,m_z0;</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            Gpu::HostVector&lt;Real&gt; <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>,<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>,m_z0;</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            Real value1,value2,value3;</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                m_x.push_back(value1);</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                m_y.push_back(value2);</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.push_back(value1);</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.push_back(value2);</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                m_z0.push_back(value3);</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            }</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            file.close();</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <span class="comment">// Copy data to the GPU</span></div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            <span class="keywordtype">int</span> nnode = m_x.size();</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            <span class="keywordtype">int</span> nnode = <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size();</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            Gpu::DeviceVector&lt;Real&gt; d_x(nnode),d_y(nnode),d_z0(nnode);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            Gpu::copy(Gpu::hostToDevice, m_x.begin(), m_x.end(), d_x.begin());</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            Gpu::copy(Gpu::hostToDevice, m_y.begin(), m_y.end(), d_y.begin());</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.end(), d_x.begin());</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.end(), d_y.begin());</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            Gpu::copy(Gpu::hostToDevice, m_z0.begin(), m_z0.end(), d_z0.begin());</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            Real* xp  = d_x.data();</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            Real* yp  = d_y.data();</div>
@@ -2402,6 +2402,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                       bcr, 0, 0, RunOn::Gpu);</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    }</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;}</div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a></div><div class="ttdeci">@ m_y</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:22</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a></div><div class="ttdeci">@ m_x</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:21</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:208</div></div>
