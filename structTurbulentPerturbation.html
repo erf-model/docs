@@ -779,12 +779,12 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="structTurbulentPerturbation.html#ac2f49dd6a95ab0bb291fa4977d9682e5" title=" " alt="" coords="216,71,421,112"/>
 <area shape="rect" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60" title=" " alt="" coords="237,136,400,177"/>
 <area shape="rect" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527" title=" " alt="" coords="231,201,407,243"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="299,398,338,425"/>
-<area shape="rect" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1" title=" " alt="" coords="237,267,400,308"/>
-<area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="237,449,400,491"/>
-<area shape="rect" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9" title=" " alt="" coords="237,332,400,373"/>
-<area shape="rect" href="namespaceutils.html#afd70db91466598d8531fdb706be70271" title=" " alt="" coords="469,111,567,138"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="481,209,555,235"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="299,449,338,475"/>
+<area shape="rect" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1" title=" " alt="" coords="237,332,400,373"/>
+<area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="469,361,632,403"/>
+<area shape="rect" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9" title=" " alt="" coords="237,267,400,308"/>
+<area shape="rect" href="namespaceutils.html#afd70db91466598d8531fdb706be70271" title=" " alt="" coords="502,111,599,138"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,209,587,235"/>
 </map>
 </div>
 
@@ -1328,14 +1328,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            amrex::Box vbx = mfi.validbox();</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            amrex::Box pbx = amrex::convert(<a class="code" href="structTurbulentPerturbation.html#a37cd2d582d2102a94d25a3fa6631e8dc">pb_ba</a>[lev][boxIdx], m_ixtype);</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            amrex::Box ubx = pbx &amp; vbx;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="keywordtype">double</span> rand_number = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(rand()) / RAND_MAX;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="keywordflow">if</span> (ubx.ok()) {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                amrex::Real amp_copy = <a class="code" href="structTurbulentPerturbation.html#afb4555887c198130cbb708257519db5f">pb_amp</a>[lev][boxIdx];</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; pert_cell = <a class="code" href="structTurbulentPerturbation.html#a0bc940e3c9b5cd1ebcf866aaa344cfed">pb_cell</a>[lev].array(mfi);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structTurbulentPerturbation.html#ad0d78e0adbb21ae36f4483dd30e15d58">pt_type</a> == 2) { <span class="comment">// CPM</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="keywordflow">if</span> (ubx.ok()) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                amrex::Real amp_copy = <a class="code" href="structTurbulentPerturbation.html#afb4555887c198130cbb708257519db5f">pb_amp</a>[lev][boxIdx];</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; pert_cell = <a class="code" href="structTurbulentPerturbation.html#a0bc940e3c9b5cd1ebcf866aaa344cfed">pb_cell</a>[lev].array(mfi);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structTurbulentPerturbation.html#ad0d78e0adbb21ae36f4483dd30e15d58">pt_type</a> == 2) { <span class="comment">// CPM</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    amrex::Real rand_number_const = <a class="code" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7">RandomReal</a>(-1.0, 1.0);</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                    ParallelFor(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                        pert_cell(i,j,k) = (rand_number*2.0 - 1.0) * amp_copy;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                        pert_cell(i,j,k) = rand_number_const * amp_copy;</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    });</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    ParallelForRNG(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keyword">const</span> amrex::RandomEngine&amp; engine) noexcept {</div>
@@ -1354,8 +1354,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" id="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,168,47"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="216,13,289,39"/>
+<area shape="rect" title=" " alt="" coords="5,35,168,76"/>
+<area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="216,5,379,47"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,71,334,98"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1408,14 +1409,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        <span class="keywordflow">return</span> min + r * (max - min);</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102">calc_tpi_update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102">calc_tpi_update()</a>, and <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">pseudoRandomPert()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbulentPerturbation_ad1831bbc1cee603520e0b66692cebfa7_icgraph.png" border="0" usemap="#astructTurbulentPerturbation_ad1831bbc1cee603520e0b66692cebfa7_icgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_ad1831bbc1cee603520e0b66692cebfa7_icgraph" id="astructTurbulentPerturbation_ad1831bbc1cee603520e0b66692cebfa7_icgraph">
-<area shape="rect" title=" " alt="" coords="216,5,379,47"/>
+<area shape="rect" title=" " alt="" coords="427,5,589,47"/>
 <area shape="rect" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102" title=" " alt="" coords="5,5,168,47"/>
+<area shape="rect" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1" title=" " alt="" coords="216,35,379,76"/>
 </map>
 </div>
 
