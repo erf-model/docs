@@ -158,12 +158,12 @@ Include dependency graph for ERF_MakeMomSources.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa8444ac104a6da10f5dee73a5871fc57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeMomSources_8cpp.html#aa8444ac104a6da10f5dee73a5871fc57">make_mom_sources</a> (Real time, const Vector&lt; MultiFab &gt; &amp;S_data, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;wvel, MultiFab &amp;xmom_src, MultiFab &amp;ymom_src, MultiFab &amp;zmom_src, const MultiFab &amp;base_state, MultiFab *forest_drag, MultiFab *terrain_blank, MultiFab *cosPhi_mf, MultiFab *sinPhi_mf, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const Real *dptr_u_geos, const Real *dptr_v_geos, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev, const Vector&lt; Real * &gt; d_sponge_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, bool is_slow_step)</td></tr>
-<tr class="separator:aa8444ac104a6da10f5dee73a5871fc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf38f75f5d6e82d1bfc3a30277d79658"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeMomSources_8cpp.html#adf38f75f5d6e82d1bfc3a30277d79658">make_mom_sources</a> (Real time, const Vector&lt; MultiFab &gt; &amp;S_data, MultiFab &amp;z_phys_nd, MultiFab &amp;z_phys_cc, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;wvel, MultiFab &amp;xmom_src, MultiFab &amp;ymom_src, MultiFab &amp;zmom_src, const MultiFab &amp;base_state, MultiFab *forest_drag, MultiFab *terrain_blank, MultiFab *cosPhi_mf, MultiFab *sinPhi_mf, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const Real *dptr_u_geos, const Real *dptr_v_geos, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev, const Vector&lt; Real * &gt; d_sponge_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, bool is_slow_step)</td></tr>
+<tr class="separator:adf38f75f5d6e82d1bfc3a30277d79658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa8444ac104a6da10f5dee73a5871fc57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8444ac104a6da10f5dee73a5871fc57">&#9670;&nbsp;</a></span>make_mom_sources()</h2>
+<a id="adf38f75f5d6e82d1bfc3a30277d79658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf38f75f5d6e82d1bfc3a30277d79658">&#9670;&nbsp;</a></span>make_mom_sources()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,13 +183,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::unique_ptr&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
           <td class="paramname"><em>z_phys_nd</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::unique_ptr&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
           <td class="paramname"><em>z_phys_cc</em>, </td>
         </tr>
         <tr>
@@ -528,8 +528,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; sphi_arr = (sinPhi_mf) ? sinPhi_mf-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                                           Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd_arr =  z_phys_nd-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr =  z_phys_cc-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd_arr =  z_phys_nd.const_array(mfi);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr =  z_phys_cc.const_array(mfi);</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// 2. Add CORIOLIS forcing (this assumes east is +x, north is +y)</span></div>
@@ -956,8 +956,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__MakeMomSources_8cpp_aa8444ac104a6da10f5dee73a5871fc57_cgraph.png" border="0" usemap="#aERF__MakeMomSources_8cpp_aa8444ac104a6da10f5dee73a5871fc57_cgraph" alt=""/></div>
-<map name="aERF__MakeMomSources_8cpp_aa8444ac104a6da10f5dee73a5871fc57_cgraph" id="aERF__MakeMomSources_8cpp_aa8444ac104a6da10f5dee73a5871fc57_cgraph">
+<div class="center"><img src="ERF__MakeMomSources_8cpp_adf38f75f5d6e82d1bfc3a30277d79658_cgraph.png" border="0" usemap="#aERF__MakeMomSources_8cpp_adf38f75f5d6e82d1bfc3a30277d79658_cgraph" alt=""/></div>
+<map name="aERF__MakeMomSources_8cpp_adf38f75f5d6e82d1bfc3a30277d79658_cgraph" id="aERF__MakeMomSources_8cpp_adf38f75f5d6e82d1bfc3a30277d79658_cgraph">
 <area shape="rect" title=" " alt="" coords="5,247,161,273"/>
 <area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784" title=" " alt="" coords="209,5,428,32"/>
 <area shape="rect" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e" title=" " alt="" coords="209,57,428,98"/>

@@ -153,12 +153,12 @@ Include dependency graph for ERF_SlowRhsPost.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4afc144baf96632d2590641caa3b1775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SlowRhsPost_8cpp.html#a4afc144baf96632d2590641caa3b1775">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, Real dt, int n_qstate, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_new, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;, const MultiFab &amp;source, const MultiFab *SmnSmn, const MultiFab *eddyDiffs, MultiFab *Hfx1, MultiFab *Hfx2, MultiFab *Hfx3, MultiFab *Q1fx1, MultiFab *Q1fx2, MultiFab *Q1fx3, MultiFab *Q2fx3, MultiFab *Diss, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const Gpu::DeviceVector&lt; BCRec &gt; &amp;domain_bcs_type_d, const Vector&lt; BCRec &gt; &amp;domain_bcs_type_h, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;ax, std::unique_ptr&lt; MultiFab &gt; &amp;ay, std::unique_ptr&lt; MultiFab &gt; &amp;az, std::unique_ptr&lt; MultiFab &gt; &amp;detJ, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_new, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, amrex::EBFArrayBoxFactory const &amp;ebfact, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine)</td></tr>
-<tr class="separator:a4afc144baf96632d2590641caa3b1775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca14e2f2a1f8d682557c65d30df32d73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SlowRhsPost_8cpp.html#aca14e2f2a1f8d682557c65d30df32d73">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, Real dt, int n_qstate, Vector&lt; MultiFab &gt; &amp;S_rhs, Vector&lt; MultiFab &gt; &amp;S_old, Vector&lt; MultiFab &gt; &amp;S_new, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, Vector&lt; MultiFab &gt; &amp;S_scratch, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;, const MultiFab &amp;source, const MultiFab *SmnSmn, const MultiFab *eddyDiffs, MultiFab *Hfx1, MultiFab *Hfx2, MultiFab *Hfx3, MultiFab *Q1fx1, MultiFab *Q1fx2, MultiFab *Q1fx3, MultiFab *Q2fx3, MultiFab *Diss, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const Gpu::DeviceVector&lt; BCRec &gt; &amp;domain_bcs_type_d, const Vector&lt; BCRec &gt; &amp;domain_bcs_type_h, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; MultiFab &gt; &amp;ax, std::unique_ptr&lt; MultiFab &gt; &amp;ay, std::unique_ptr&lt; MultiFab &gt; &amp;az, std::unique_ptr&lt; MultiFab &gt; &amp;detJ, MultiFab *detJ_new, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, amrex::EBFArrayBoxFactory const &amp;ebfact, YAFluxRegister *fr_as_crse, YAFluxRegister *fr_as_fine)</td></tr>
+<tr class="separator:aca14e2f2a1f8d682557c65d30df32d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4afc144baf96632d2590641caa3b1775"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4afc144baf96632d2590641caa3b1775">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
+<a id="aca14e2f2a1f8d682557c65d30df32d73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca14e2f2a1f8d682557c65d30df32d73">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -376,7 +376,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::unique_ptr&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramtype">MultiFab *&#160;</td>
           <td class="paramname"><em>detJ_new</em>, </td>
         </tr>
         <tr>
@@ -1069,8 +1069,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__SlowRhsPost_8cpp_a4afc144baf96632d2590641caa3b1775_cgraph.png" border="0" usemap="#aERF__SlowRhsPost_8cpp_a4afc144baf96632d2590641caa3b1775_cgraph" alt=""/></div>
-<map name="aERF__SlowRhsPost_8cpp_a4afc144baf96632d2590641caa3b1775_cgraph" id="aERF__SlowRhsPost_8cpp_a4afc144baf96632d2590641caa3b1775_cgraph">
+<div class="center"><img src="ERF__SlowRhsPost_8cpp_aca14e2f2a1f8d682557c65d30df32d73_cgraph.png" border="0" usemap="#aERF__SlowRhsPost_8cpp_aca14e2f2a1f8d682557c65d30df32d73_cgraph" alt=""/></div>
+<map name="aERF__SlowRhsPost_8cpp_aca14e2f2a1f8d682557c65d30df32d73_cgraph" id="aERF__SlowRhsPost_8cpp_aca14e2f2a1f8d682557c65d30df32d73_cgraph">
 <area shape="rect" title=" " alt="" coords="5,132,144,159"/>
 <area shape="rect" href="ERF__Advection_8H.html#ae2ff7a2475a59e0ec011b39a30875bab" title=" " alt="" coords="200,5,375,32"/>
 <area shape="rect" href="ERF__Diffusion_8H.html#a1f2f090a436b4ec245837fda143169a3" title=" " alt="" coords="202,56,373,83"/>
