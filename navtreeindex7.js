@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"classERFPhysBCFunct__w.html#afcaa9deb9258f849737281efb4327694":[2,0,26,5],
+"classEWP.html":[2,0,28],
+"classEWP.html#a00497b6ecc9493be40be6ce4f5ae02c5":[2,0,28,7],
 "classEWP.html#a22f50393881ced019cae2a74ee04cdea":[2,0,28,11],
 "classEWP.html#a2ee471b0dcad3057297b809f4c5141ab":[2,0,28,6],
 "classEWP.html#a30275b7045b523cfe7afb5683f66d87a":[2,0,28,12],
@@ -241,13 +244,10 @@ var NAVTREEINDEX7 =
 "classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f":[2,0,42,58],
 "classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda":[2,0,42,36],
 "classMRISplitIntegrator.html":[2,0,43],
-"classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7":[2,0,43,24],
-"classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80":[2,0,43,37],
-"classMRISplitIntegrator.html#a137a1ceb1e8051b5a97aaab40492c0e1":[2,0,43,18],
+"classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7":[2,0,43,23],
+"classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80":[2,0,43,35],
+"classMRISplitIntegrator.html#a137a1ceb1e8051b5a97aaab40492c0e1":[2,0,43,17],
 "classMRISplitIntegrator.html#a14fd551d7a7ff5bf6c58500740a64547":[2,0,43,10],
-"classMRISplitIntegrator.html#a168352ef9fbddab9850fc5d1686d3e66":[2,0,43,35],
-"classMRISplitIntegrator.html#a216903aa134536df210f489acdfd2b8b":[2,0,43,14],
-"classMRISplitIntegrator.html#a26955c190dfb0d6cef7237198dbfd099":[2,0,43,16],
-"classMRISplitIntegrator.html#a277f590efb755921c145d09f84e740af":[2,0,43,23],
-"classMRISplitIntegrator.html#a294f18465629a72da152b3e9aa4b0455":[2,0,43,21]
+"classMRISplitIntegrator.html#a168352ef9fbddab9850fc5d1686d3e66":[2,0,43,33],
+"classMRISplitIntegrator.html#a216903aa134536df210f489acdfd2b8b":[2,0,43,14]
 };

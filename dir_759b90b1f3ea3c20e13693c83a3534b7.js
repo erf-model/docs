@@ -1,5 +1,6 @@
 var dir_759b90b1f3ea3c20e13693c83a3534b7 =
 [
+    [ "NEW", "dir_4032c078f0e000e3118716b5b1a56433.html", "dir_4032c078f0e000e3118716b5b1a56433" ],
     [ "ERF_Advance.cpp", "ERF__Advance_8cpp.html", "ERF__Advance_8cpp" ],
     [ "ERF_AdvanceDycore.cpp", "ERF__AdvanceDycore_8cpp.html", null ],
     [ "ERF_AdvanceLSM.cpp", "ERF__AdvanceLSM_8cpp.html", null ],
@@ -19,7 +20,8 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_TI_fast_headers.H", "ERF__TI__fast__headers_8H.html", "ERF__TI__fast__headers_8H" ],
     [ "ERF_TI_no_substep_fun.H", "ERF__TI__no__substep__fun_8H.html", "ERF__TI__no__substep__fun_8H" ],
     [ "ERF_TI_slow_headers.H", "ERF__TI__slow__headers_8H.html", "ERF__TI__slow__headers_8H" ],
-    [ "ERF_TI_slow_rhs_fun.H", "ERF__TI__slow__rhs__fun_8H.html", "ERF__TI__slow__rhs__fun_8H" ],
+    [ "ERF_TI_slow_rhs_post.H", "ERF__TI__slow__rhs__post_8H.html", "ERF__TI__slow__rhs__post_8H" ],
+    [ "ERF_TI_slow_rhs_pre.H", "ERF__TI__slow__rhs__pre_8H.html", "ERF__TI__slow__rhs__pre_8H" ],
     [ "ERF_TI_substep_fun.H", "ERF__TI__substep__fun_8H.html", "ERF__TI__substep__fun_8H" ],
     [ "ERF_TI_utils.H", "ERF__TI__utils_8H.html", "ERF__TI__utils_8H" ],
     [ "ERF_TimeStep.cpp", "ERF__TimeStep_8cpp.html", null ]

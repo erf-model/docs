@@ -989,261 +989,260 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; source_arr   = cc_src.const_array(mfi);</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        {</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            <span class="keywordflow">if</span> (i == 128  and j == 0 and k == 18) amrex::Print() &lt;&lt;<span class="stringliteral">&quot; RHS &quot;</span> &lt;&lt; cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; source_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      += source_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += source_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        });</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="comment">// Multiply the slow RHS for rho and rhotheta by detJ here so we don&#39;t have to later</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain_fitted_coords &amp;&amp; l_moving_terrain) {</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            {</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      *= detJ_arr(i,j,k);</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *= detJ_arr(i,j,k);</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;            });</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        }</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="comment">// If anelastic and in second RK stage, take average of old-time and new-time source</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) )</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        {</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;            {</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                cell_rhs(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) *= 0.5;</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *= 0.5;</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                cell_rhs(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) += 0.5 / dt * (cell_data(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - cell_old(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += 0.5 / dt * (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - cell_old(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;            });</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        }</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        <span class="comment">// Define updates in the RHS of {x, y, z}-momentum equations</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="keywordtype">int</span> lo_z_face = domain.smallEnd(2);</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keywordtype">int</span> hi_z_face = domain.bigEnd(2)+1;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        <a class="code" href="ERF__Advection_8H.html#ab52062c0bae80497906b1c694fd1944a">AdvectionSrcForMom</a>(mfi, bx, tbx, tby, tbz, tbx_grown, tby_grown, tbz_grown,</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                           rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                           cell_data, u, v, w,</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                           rho_u, rho_v, omega_arr,</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                           z_nd, ax_arr, ay_arr, az_arr, detJ_arr,</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                           stretched_dz_d,</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                           dxInv, mf_mx, mf_ux, mf_vx, mf_my, mf_uy, mf_vy,</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                           l_horiz_adv_type, l_vert_adv_type,</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                           l_horiz_upw_frac, l_vert_upw_frac,</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                           solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a>, solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a>,</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                           ebfact, flx_u_arr, flx_v_arr, flx_w_arr,</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                           physbnd_mask, already_on_centroids,</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                           lo_z_face, hi_z_face, domain, bc_ptr_h);</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; </div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keywordflow">if</span> (l_use_diff) {</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            <span class="comment">// Note: tau** were calculated with calls to</span></div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            <span class="comment">// ComputeStress[Cons|Var]Visc_[N|T] in which ConsVisc (&quot;constant</span></div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            <span class="comment">// viscosity&quot;) means that there is no contribution from a</span></div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="comment">// turbulence model. However, whether this field truly is constant</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <span class="comment">// depends on whether MolecDiffType is Constant or ConstantAlpha.</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#a61a9da4b0d89ddf6f84e2b09bc14fa73">DiffusionSrcForMom_T</a>(tbx, tby, tbz,</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                     rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>,</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a>,</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935">tau31</a>,</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307">tau32</a>,</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                                     detJ_arr, dxInv,</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                                     mf_mx, mf_my);</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#a025cbe4fbc713a9fe56b276fe2d7e713">DiffusionSrcForMom_N</a>(tbx, tby, tbz,</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                                     rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>,</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, dxInv,</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                                     mf_mx, mf_ux, mf_vx,</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                                     mf_my, mf_uy, mf_vy);</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;            }</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        }</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;        <span class="keyword">auto</span> abl_pressure_grad    = solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        { <span class="comment">// x-momentum equation</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = gpx_arr(i,j,k) * mf_ux(i,j,0);</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            Real q = 0.0;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                q = 0.5 * ( cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + cell_prim(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                           +cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + cell_prim(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;            }</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;            rho_u_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> - abl_pressure_grad[0]) / (1.0 + q) + xmom_src_arr(i,j,k);</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                Real h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, dxInv, z_nd);</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                rho_u_rhs(i, j, k) *= h_zeta;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            }</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;              rho_u_rhs(i,j,k) *= 0.5;</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;              rho_u_rhs(i,j,k) += 0.5 / dt * (rho_u(i,j,k) - rho_u_old(i,j,k));</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;            }</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;        });</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        ParallelFor(tby, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        { <span class="comment">// y-momentum equation</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = gpy_arr(i,j,k) * mf_vy(i,j,0);</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160; </div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            Real q = 0.0;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                q = 0.5 * ( cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + cell_prim(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                           +cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + cell_prim(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            }</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            rho_v_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> - abl_pressure_grad[1]) / (1.0_rt + q) + ymom_src_arr(i,j,k);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                Real h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i, j, k, dxInv, z_nd);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                rho_v_rhs(i, j, k) *= h_zeta;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            }</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;              rho_v_rhs(i,j,k) *= 0.5;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;              rho_v_rhs(i,j,k) += 0.5 / dt * (rho_v(i,j,k) - rho_v_old(i,j,k));</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            }</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        });</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="comment">// Zero out source terms for x- and y- momenta if at walls or inflow</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="comment">// We need to do this -- even though we call the boundary conditions later --</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="comment">// because the slow source is used to update the state in the fast interpolater.</span></div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(0) == domain.smallEnd(0)) {</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            Box lo_x_dom_face(bx); lo_x_dom_face.setBig(0,bx.smallEnd(0));</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                ParallelFor(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                    rho_u_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                });</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                ParallelFor(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                    <span class="keywordflow">if</span> (u(i,j,k) &gt;= 0.) {</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                        rho_u_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                    }</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                });</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;            }</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        }</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(0) == domain.bigEnd(0)) {</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            Box hi_x_dom_face(bx); hi_x_dom_face.setSmall(0,bx.bigEnd(0)+1); hi_x_dom_face.setBig(0,bx.bigEnd(0)+1);</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                ParallelFor(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                    rho_u_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                });</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                ParallelFor(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    <span class="keywordflow">if</span> (u(i,j,k) &lt;= 0.) {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                        rho_u_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                    }</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                });</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            }</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        }</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(1) == domain.smallEnd(1)) {</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;            Box lo_y_dom_face(bx); lo_y_dom_face.setBig(1,bx.smallEnd(1));</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                ParallelFor(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    rho_v_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                });</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                ParallelFor(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    <span class="keywordflow">if</span> (v(i,j,k) &gt;= 0.) {</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                        rho_v_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                    }</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                });</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            }</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        }</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(1) == domain.bigEnd(1)) {</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            Box hi_y_dom_face(bx); hi_y_dom_face.setSmall(1,bx.bigEnd(1)+1); hi_y_dom_face.setBig(1,bx.bigEnd(1)+1);</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                ParallelFor(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                    rho_v_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                });</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                ParallelFor(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                    <span class="keywordflow">if</span> (v(i,j,k) &lt;= 0.) {</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                        rho_v_rhs(i,j,k) = 0.;</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    }</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                });</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            }</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        }</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        { <span class="comment">// z-momentum equation</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">gpz</a> = gpz_arr(i,j,k);</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            Real q = 0.0;</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                q = 0.5 * ( cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                           +cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            }</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            rho_w_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">gpz</a> - abl_pressure_grad[2] + buoyancy_arr(i,j,k)) / (1.0 + q) + zmom_src_arr(i,j,k);</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords &amp;&amp; l_moving_terrain) {</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                 rho_w_rhs(i, j, k) *= 0.5 * (detJ_arr(i,j,k) + detJ_arr(i,j,k-1));</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            }</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;        });</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> lo = lbound(bx);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> hi = ubound(bx);</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <span class="comment">// Note: the logic below assumes no tiling in z!</span></div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        <span class="keywordflow">if</span> (level &gt; 0) {</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; rho_w_rhs_crse = zmom_crse_rhs-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160; </div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            Box b2d = bx; b2d.setRange(2,0);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            <span class="keywordflow">if</span> (lo.z &gt; klo) {</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// bottom of box but not of domain</span></div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                {</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                    rho_w_rhs(i,j,lo.z) = rho_w_rhs_crse(i,j,lo.z);</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                });</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            }</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;            <span class="keywordflow">if</span> (hi.z &lt; khi+1) {</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// top of box but not of domain</span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                {</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                    rho_w_rhs(i,j,hi.z+1) = rho_w_rhs_crse(i,j,hi.z+1);</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                });</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            }</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        }</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160; </div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;        {</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_fluxreg&quot;</span>);</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        <span class="comment">// We only add to the flux registers in the final RK step</span></div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        <span class="comment">// NOTE: for now we are only refluxing density not (rho theta) since the latter seems to introduce</span></div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        <span class="comment">//       a problem at top and bottom boundaries</span></div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        <span class="keywordflow">if</span> (l_reflux) {</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            <span class="keywordtype">int</span> strt_comp_reflux = (l_fixed_rho) ? 1 : 0;</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            <span class="keywordtype">int</span>  num_comp_reflux = 1;</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            }</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;            }</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160; </div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            <span class="comment">// This is necessary here so we don&#39;t go on to the next FArrayBox without</span></div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            <span class="comment">// having finished copying the fluxes into the FluxRegisters (since the fluxes</span></div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <span class="comment">// are stored in temporary FArrayBox&#39;s)</span></div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        } <span class="comment">// two-way coupling</span></div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;    } <span class="comment">// OMP</span></div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;}</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      += source_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += source_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        });</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <span class="comment">// Multiply the slow RHS for rho and rhotheta by detJ here so we don&#39;t have to later</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="keywordflow">if</span> (l_use_terrain_fitted_coords &amp;&amp; l_moving_terrain) {</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            {</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      *= detJ_arr(i,j,k);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *= detJ_arr(i,j,k);</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            });</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        }</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <span class="comment">// If anelastic and in second RK stage, take average of old-time and new-time source</span></div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) )</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        {</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;            {</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                cell_rhs(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) *= 0.5;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *= 0.5;</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                cell_rhs(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) += 0.5 / dt * (cell_data(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - cell_old(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += 0.5 / dt * (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) - cell_old(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            });</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        }</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="comment">// Define updates in the RHS of {x, y, z}-momentum equations</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        <span class="keywordtype">int</span> lo_z_face = domain.smallEnd(2);</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="keywordtype">int</span> hi_z_face = domain.bigEnd(2)+1;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        <a class="code" href="ERF__Advection_8H.html#ab52062c0bae80497906b1c694fd1944a">AdvectionSrcForMom</a>(mfi, bx, tbx, tby, tbz, tbx_grown, tby_grown, tbz_grown,</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                           rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                           cell_data, u, v, w,</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                           rho_u, rho_v, omega_arr,</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                           z_nd, ax_arr, ay_arr, az_arr, detJ_arr,</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                           stretched_dz_d,</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                           dxInv, mf_mx, mf_ux, mf_vx, mf_my, mf_uy, mf_vy,</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                           l_horiz_adv_type, l_vert_adv_type,</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                           l_horiz_upw_frac, l_vert_upw_frac,</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                           solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a>, solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a>,</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                           ebfact, flx_u_arr, flx_v_arr, flx_w_arr,</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                           physbnd_mask, already_on_centroids,</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                           lo_z_face, hi_z_face, domain, bc_ptr_h);</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        <span class="keywordflow">if</span> (l_use_diff) {</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            <span class="comment">// Note: tau** were calculated with calls to</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            <span class="comment">// ComputeStress[Cons|Var]Visc_[N|T] in which ConsVisc (&quot;constant</span></div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            <span class="comment">// viscosity&quot;) means that there is no contribution from a</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            <span class="comment">// turbulence model. However, whether this field truly is constant</span></div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="comment">// depends on whether MolecDiffType is Constant or ConstantAlpha.</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#a61a9da4b0d89ddf6f84e2b09bc14fa73">DiffusionSrcForMom_T</a>(tbx, tby, tbz,</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                                     rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>,</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a>,</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935">tau31</a>,</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307">tau32</a>,</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                                     detJ_arr, dxInv,</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                                     mf_mx, mf_my);</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#a025cbe4fbc713a9fe56b276fe2d7e713">DiffusionSrcForMom_N</a>(tbx, tby, tbz,</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                                     rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>,</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                                     <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, dxInv,</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                                     mf_mx, mf_ux, mf_vx,</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                                     mf_my, mf_uy, mf_vy);</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            }</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        }</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="keyword">auto</span> abl_pressure_grad    = solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        { <span class="comment">// x-momentum equation</span></div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = gpx_arr(i,j,k) * mf_ux(i,j,0);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;            Real q = 0.0;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                q = 0.5 * ( cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + cell_prim(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                           +cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + cell_prim(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;            }</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;            rho_u_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> - abl_pressure_grad[0]) / (1.0 + q) + xmom_src_arr(i,j,k);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                Real h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                rho_u_rhs(i, j, k) *= h_zeta;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            }</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;              rho_u_rhs(i,j,k) *= 0.5;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;              rho_u_rhs(i,j,k) += 0.5 / dt * (rho_u(i,j,k) - rho_u_old(i,j,k));</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;            }</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        });</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        ParallelFor(tby, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        { <span class="comment">// y-momentum equation</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160; </div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = gpy_arr(i,j,k) * mf_vy(i,j,0);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;            Real q = 0.0;</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                q = 0.5 * ( cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + cell_prim(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                           +cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + cell_prim(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            }</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            rho_v_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> - abl_pressure_grad[1]) / (1.0_rt + q) + ymom_src_arr(i,j,k);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                Real h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                rho_v_rhs(i, j, k) *= h_zeta;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            }</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;              rho_v_rhs(i,j,k) *= 0.5;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;              rho_v_rhs(i,j,k) += 0.5 / dt * (rho_v(i,j,k) - rho_v_old(i,j,k));</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            }</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        });</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="comment">// Zero out source terms for x- and y- momenta if at walls or inflow</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="comment">// We need to do this -- even though we call the boundary conditions later --</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="comment">// because the slow source is used to update the state in the fast interpolater.</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(0) == domain.smallEnd(0)) {</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            Box lo_x_dom_face(bx); lo_x_dom_face.setBig(0,bx.smallEnd(0));</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                ParallelFor(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                    rho_u_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                });</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                ParallelFor(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                    <span class="keywordflow">if</span> (u(i,j,k) &gt;= 0.) {</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                        rho_u_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                    }</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                });</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            }</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        }</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(0) == domain.bigEnd(0)) {</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            Box hi_x_dom_face(bx); hi_x_dom_face.setSmall(0,bx.bigEnd(0)+1); hi_x_dom_face.setBig(0,bx.bigEnd(0)+1);</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                ParallelFor(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    rho_u_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                });</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                ParallelFor(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                    <span class="keywordflow">if</span> (u(i,j,k) &lt;= 0.) {</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                        rho_u_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                    }</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                });</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            }</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        }</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(1) == domain.smallEnd(1)) {</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;            Box lo_y_dom_face(bx); lo_y_dom_face.setBig(1,bx.smallEnd(1));</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                ParallelFor(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    rho_v_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                });</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                ParallelFor(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                    <span class="keywordflow">if</span> (v(i,j,k) &gt;= 0.) {</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                        rho_v_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                    }</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                });</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            }</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        }</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(1) == domain.bigEnd(1)) {</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;            Box hi_y_dom_face(bx); hi_y_dom_face.setSmall(1,bx.bigEnd(1)+1); hi_y_dom_face.setBig(1,bx.bigEnd(1)+1);</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                ParallelFor(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                    rho_v_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                });</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                ParallelFor(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                    <span class="keywordflow">if</span> (v(i,j,k) &lt;= 0.) {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                        rho_v_rhs(i,j,k) = 0.;</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                    }</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                });</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            }</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        }</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160; </div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        { <span class="comment">// z-momentum equation</span></div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">gpz</a> = gpz_arr(i,j,k);</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160; </div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            Real q = 0.0;</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            <span class="keywordflow">if</span> (l_use_moisture) {</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                q = 0.5 * ( cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) + cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>)</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                           +cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) + cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3">PrimQ2_comp</a>) );</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            }</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            rho_w_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">gpz</a> - abl_pressure_grad[2] + buoyancy_arr(i,j,k)) / (1.0 + q) + zmom_src_arr(i,j,k);</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords &amp;&amp; l_moving_terrain) {</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                 rho_w_rhs(i, j, k) *= 0.5 * (detJ_arr(i,j,k) + detJ_arr(i,j,k-1));</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            }</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;        });</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> lo = lbound(bx);</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span> hi = ubound(bx);</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;        <span class="comment">// Note: the logic below assumes no tiling in z!</span></div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <span class="keywordflow">if</span> (level &gt; 0) {</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; rho_w_rhs_crse = zmom_crse_rhs-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            Box b2d = bx; b2d.setRange(2,0);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            <span class="keywordflow">if</span> (lo.z &gt; klo) {</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// bottom of box but not of domain</span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                {</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                    rho_w_rhs(i,j,lo.z) = rho_w_rhs_crse(i,j,lo.z);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                });</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            }</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            <span class="keywordflow">if</span> (hi.z &lt; khi+1) {</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// top of box but not of domain</span></div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                {</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                    rho_w_rhs(i,j,hi.z+1) = rho_w_rhs_crse(i,j,hi.z+1);</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                });</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            }</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        }</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        {</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_pre_fluxreg&quot;</span>);</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        <span class="comment">// We only add to the flux registers in the final RK step</span></div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        <span class="comment">// NOTE: for now we are only refluxing density not (rho theta) since the latter seems to introduce</span></div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        <span class="comment">//       a problem at top and bottom boundaries</span></div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        <span class="keywordflow">if</span> (l_reflux) {</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            <span class="keywordtype">int</span> strt_comp_reflux = (l_fixed_rho) ? 1 : 0;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            <span class="keywordtype">int</span>  num_comp_reflux = 1;</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;            }</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;            }</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;            <span class="comment">// This is necessary here so we don&#39;t go on to the next FArrayBox without</span></div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            <span class="comment">// having finished copying the fluxes into the FluxRegisters (since the fluxes</span></div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            <span class="comment">// are stored in temporary FArrayBox&#39;s)</span></div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160; </div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        } <span class="comment">// two-way coupling</span></div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    } <span class="comment">// OMP</span></div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;}</div>
 <div class="ttc" id="aERF__Advection_8H_html_a1bbb1b8a1434bf45894d6a908f48cc60"><div class="ttname"><a href="ERF__Advection_8H.html#a1bbb1b8a1434bf45894d6a908f48cc60">AdvectionSrcForRho</a></div><div class="ttdeci">void AdvectionSrcForRho(const amrex::Box &amp;bx, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;omega, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;az_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_mx, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_my, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_uy, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_vx, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const bool fixed_rho)</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_ab52062c0bae80497906b1c694fd1944a"><div class="ttname"><a href="ERF__Advection_8H.html#ab52062c0bae80497906b1c694fd1944a">AdvectionSrcForMom</a></div><div class="ttdeci">void AdvectionSrcForMom(const amrex::MFIter &amp;mfi, const amrex::Box &amp;bx, const amrex::Box &amp;bxx, const amrex::Box &amp;bxy, const amrex::Box &amp;bxz, const amrex::Vector&lt; amrex::Box &gt; &amp;bxx_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxy_grown, const amrex::Vector&lt; amrex::Box &gt; &amp;bxz_grown, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho, const amrex::Array4&lt; const amrex::Real &gt; &amp;u, const amrex::Array4&lt; const amrex::Real &gt; &amp;v, const amrex::Array4&lt; const amrex::Real &gt; &amp;w, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;Omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;ax, const amrex::Array4&lt; const amrex::Real &gt; &amp;ay, const amrex::Array4&lt; const amrex::Real &gt; &amp;az, const amrex::Array4&lt; const amrex::Real &gt; &amp;detJ, amrex::Gpu::DeviceVector&lt; amrex::Real &gt; &amp;stretched_dz_d, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_mx, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_ux, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_vx, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_my, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_uy, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_vy, const AdvType horiz_adv_type, const AdvType vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, MeshType &amp;mesh_type, TerrainType &amp;terrain_type, const eb_ &amp;ebfact, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_u_arr, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_v_arr, amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_w_arr, const amrex::Vector&lt; amrex::iMultiFab &gt; &amp;physbnd_mask, const bool already_on_centroids, const int lo_z_face, const int hi_z_face, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_ae2ff7a2475a59e0ec011b39a30875bab"><div class="ttname"><a href="ERF__Advection_8H.html#ae2ff7a2475a59e0ec011b39a30875bab">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const amrex::Real &amp;dt, const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cur_cons, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const bool &amp;use_mono_adv, amrex::Real *max_s_ptr, amrex::Real *min_s_ptr, const amrex::Array4&lt; const amrex::Real &gt; &amp;vf_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_mx, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_my, const AdvType horiz_adv_type, const AdvType vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const amrex::GpuArray&lt; amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_tmp_arr, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</div></div>

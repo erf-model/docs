@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"namespacemodule__mp__morr__two__moment.html#aee4087d7161368589d1da4c618c09113":[1,0,19,25],
+"namespacemodule__mp__morr__two__moment.html#aefe7ad28dcb6d3d095f8d9ea86077369":[1,0,19,38],
 "namespacemodule__mp__morr__two__moment.html#af11f1d093484c24bcfe7ca392ab7f34f":[1,0,19,4],
 "namespacemodule__mp__morr__two__moment.html#af1754508fdbc9910fecca96245c777dc":[1,0,19,40],
 "namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227":[1,0,19,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3":[2,0,67,16],
 "structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2":[2,0,67,37],
 "structSolverChoice.html#a1b2950247c4d2789597b7610c69ff5b6":[2,0,67,84],
-"structSolverChoice.html#a1bae456f7b26e8ed50d78ce1af1b5ef0":[2,0,67,49],
-"structSolverChoice.html#a1d9237205fd632dcde1599511f203131":[2,0,67,57],
-"structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671":[2,0,67,2]
+"structSolverChoice.html#a1bae456f7b26e8ed50d78ce1af1b5ef0":[2,0,67,49]
 };

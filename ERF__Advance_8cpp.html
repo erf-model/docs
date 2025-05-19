@@ -195,7 +195,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordflow">if</span> (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) &lt;= 0.) {</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                printf(<span class="stringliteral">&quot;BAD THETA AT %d %d %d %e %e \n&quot;</span>,</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                i,j,k,cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),cell_data(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Bad theta in ERF_slow_rhs_pre&quot;</span>);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Bad theta in check_for_negative_theta&quot;</span>);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            }</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            });</div>
