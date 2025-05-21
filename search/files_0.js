@@ -245,7 +245,7 @@ var searchData=
   ['erf_5fti_5fslow_5fheaders_2eh_3210',['ERF_TI_slow_headers.H',['../ERF__TI__slow__headers_8H.html',1,'']]],
   ['erf_5fti_5fslow_5frhs_5fpost_2eh_3211',['ERF_TI_slow_rhs_post.H',['../ERF__TI__slow__rhs__post_8H.html',1,'']]],
   ['erf_5fti_5fslow_5frhs_5fpre_2eh_3212',['ERF_TI_slow_rhs_pre.H',['../ERF__TI__slow__rhs__pre_8H.html',1,'']]],
-  ['erf_5fti_5fsubstep_5ffun_2eh_3213',['ERF_TI_substep_fun.H',['../ERF__TI__substep__fun_8H.html',1,'(Global Namespace)'],['../NEW_2ERF__TI__substep__fun_8H.html',1,'(Global Namespace)']]],
+  ['erf_5fti_5fsubstep_5ffun_2eh_3213',['ERF_TI_substep_fun.H',['../ERF__TI__substep__fun_8H.html',1,'']]],
   ['erf_5fti_5futils_2eh_3214',['ERF_TI_utils.H',['../ERF__TI__utils_8H.html',1,'']]],
   ['erf_5ftilenoz_2eh_3215',['ERF_TileNoZ.H',['../ERF__TileNoZ_8H.html',1,'']]],
   ['erf_5ftimeavgvel_2ecpp_3216',['ERF_TimeAvgVel.cpp',['../ERF__TimeAvgVel_8cpp.html',1,'']]],

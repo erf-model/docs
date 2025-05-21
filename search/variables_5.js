@@ -12,7 +12,7 @@ var searchData=
   ['f2s_4512',['f2s',['../namespacemodule__mp__morr__two__moment.html#ae4091ddc548c5aa0876e710d792bf8fe',1,'module_mp_morr_two_moment']]],
   ['f_5fslow_4513',['F_slow',['../classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7',1,'MRISplitIntegrator']]],
   ['fast_5frhs_4514',['fast_rhs',['../classMRISplitIntegrator.html#a8f0b8ba2224608975dd1cfae5d811ffb',1,'MRISplitIntegrator']]],
-  ['fast_5frhs_5ffun_4515',['fast_rhs_fun',['../NEW_2ERF__TI__substep__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57',1,'fast_rhs_fun():&#160;ERF_TI_substep_fun.H'],['../ERF__TI__substep__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57',1,'fast_rhs_fun():&#160;ERF_TI_substep_fun.H']]],
+  ['fast_5frhs_5ffun_4515',['fast_rhs_fun',['../ERF__TI__substep__fun_8H.html#ac6afbd55bf5b7264098d44d9b8928f57',1,'ERF_TI_substep_fun.H']]],
   ['fcdif_4516',['fcdif',['../namespacemodule__model__constants.html#ac28992c1346d8ab11b854063df21a889',1,'module_model_constants']]],
   ['fcm_4517',['fcm',['../namespacemodule__model__constants.html#ad1a5ea22f95a547a3c2f8ef25733e0c9',1,'module_model_constants']]],
   ['fine_5fmask_4518',['fine_mask',['../classERF.html#a83c244120a15f0d9b9bca54e93976428',1,'ERF']]],

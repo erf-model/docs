@@ -156,12 +156,12 @@ Include dependency graph for ERF_MakeSources.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a353ca3d2217e17f27930e9bba978f99d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeSources_8cpp.html#a353ca3d2217e17f27930e9bba978f99d">make_sources</a> (int level, int, Real dt, Real time, const MultiFab &amp;S_data, const MultiFab &amp;S_prim, MultiFab &amp;source, const MultiFab &amp;base_state, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MultiFab *qheating_rates, MultiFab *terrain_blank, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const Real *dptr_rhotheta_src, const Real *dptr_rhoqt_src, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, <a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;turbPert, bool is_slow_step)</td></tr>
-<tr class="separator:a353ca3d2217e17f27930e9bba978f99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bca0061347f6a713a7f5defe5b511c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeSources_8cpp.html#a2bca0061347f6a713a7f5defe5b511c8">make_sources</a> (int level, int, Real dt, Real time, const Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;S_prim, MultiFab &amp;source, const MultiFab &amp;base_state, std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_cc, const MultiFab *qheating_rates, MultiFab *terrain_blank, const Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const Real *dptr_rhotheta_src, const Real *dptr_rhoqt_src, const Real *dptr_wbar_sub, const Vector&lt; Real * &gt; d_rayleigh_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, <a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;turbPert, bool is_slow_step)</td></tr>
+<tr class="separator:a2bca0061347f6a713a7f5defe5b511c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a353ca3d2217e17f27930e9bba978f99d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a353ca3d2217e17f27930e9bba978f99d">&#9670;&nbsp;</a></span>make_sources()</h2>
+<a id="a2bca0061347f6a713a7f5defe5b511c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bca0061347f6a713a7f5defe5b511c8">&#9670;&nbsp;</a></span>make_sources()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +193,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramtype">const Vector&lt; MultiFab &gt; &amp;&#160;</td>
           <td class="paramname"><em>S_data</em>, </td>
         </tr>
         <tr>
@@ -368,13 +368,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="comment">// We need just one ghost cell in the vertical</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        IntVect ng_c(S_data.nGrowVect()); ng_c[2] = 1;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        IntVect ng_c(S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nGrowVect()); ng_c[2] = 1;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">// With no moisture we only (rho) and (rho theta); with moisture we also do qv and qc</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">// We use the alias here to control ncomp inside the PlaneAverage</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">int</span> ncomp = (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::None) ? 2 : <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>+1;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        MultiFab <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">cons</a>(S_data, make_alias, 0, ncomp);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        MultiFab <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">cons</a>(S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], make_alias, 0, ncomp);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="classPlaneAverage.html">PlaneAverage</a> cons_ave(&amp;<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">cons</a>, geom, solverChoice.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>, ng_c);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        cons_ave.compute_averages(<a class="code" href="ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), cons_ave.field());</div>
@@ -460,11 +460,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_data,<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        Box bx  = mfi.tilebox();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data  = S_data.array(mfi);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data  = S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_prim  = S_prim.array(mfi);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;      &amp; cell_src   = source.array(mfi);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
@@ -650,7 +650,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="comment">// 8. Add perturbation</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="comment">// *************************************************************************************</span></div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#abfd94767b3721755632c45a5ef290544">pert_type</a> == PerturbationType::Source &amp;&amp; is_slow_step) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="keyword">auto</span> m_ixtype = S_data.boxArray().ixType(); <span class="comment">// Conserved term</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            <span class="keyword">auto</span> m_ixtype = S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].boxArray().ixType(); <span class="comment">// Conserved term</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; pert_cell = turbPert.<a class="code" href="structTurbulentPerturbation.html#a0bc940e3c9b5cd1ebcf866aaa344cfed">pb_cell</a>[level].const_array(mfi);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            turbPert.<a class="code" href="structTurbulentPerturbation.html#adcb414231654ad9f5232a1a3377c30f2">apply_tpi</a>(level, bx, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>, m_ixtype, cell_src, pert_cell); <span class="comment">// Applied as source term</span></div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
@@ -736,6 +736,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> ERF_PlaneAverage.H:14</div></div>
 <div class="ttc" id="anamespaceBaseState_html_a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93"><div class="ttname"><a href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a></div><div class="ttdeci">@ r0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:63</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
 <div class="ttc" id="anamespaceLsmVar__MM5_html_afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:20</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_ab6f5948b8eeb029d684e7b7d19cfc5daa32b6a00f33c7394555eff62ce6457bc6"><div class="ttname"><a href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa32b6a00f33c7394555eff62ce6457bc6">MicVar_Morr::nc</a></div><div class="ttdeci">@ nc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:44</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_ab6f5948b8eeb029d684e7b7d19cfc5daa6764e4c83976308b665ab846e77b53b0"><div class="ttname"><a href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa6764e4c83976308b665ab846e77b53b0">MicVar_Morr::nr</a></div><div class="ttdeci">@ nr</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:45</div></div>
@@ -772,8 +773,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__MakeSources_8cpp_a353ca3d2217e17f27930e9bba978f99d_cgraph.png" border="0" usemap="#aERF__MakeSources_8cpp_a353ca3d2217e17f27930e9bba978f99d_cgraph" alt=""/></div>
-<map name="aERF__MakeSources_8cpp_a353ca3d2217e17f27930e9bba978f99d_cgraph" id="aERF__MakeSources_8cpp_a353ca3d2217e17f27930e9bba978f99d_cgraph">
+<div class="center"><img src="ERF__MakeSources_8cpp_a2bca0061347f6a713a7f5defe5b511c8_cgraph.png" border="0" usemap="#aERF__MakeSources_8cpp_a2bca0061347f6a713a7f5defe5b511c8_cgraph" alt=""/></div>
+<map name="aERF__MakeSources_8cpp_a2bca0061347f6a713a7f5defe5b511c8_cgraph" id="aERF__MakeSources_8cpp_a2bca0061347f6a713a7f5defe5b511c8_cgraph">
 <area shape="rect" title=" " alt="" coords="5,247,120,274"/>
 <area shape="rect" href="structTurbulentPerturbation.html#adcb414231654ad9f5232a1a3377c30f2" title=" " alt="" coords="188,5,351,47"/>
 <area shape="rect" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab" title=" " alt="" coords="168,71,371,98"/>

@@ -1,6 +1,5 @@
 var dir_759b90b1f3ea3c20e13693c83a3534b7 =
 [
-    [ "NEW", "dir_4032c078f0e000e3118716b5b1a56433.html", "dir_4032c078f0e000e3118716b5b1a56433" ],
     [ "ERF_Advance.cpp", "ERF__Advance_8cpp.html", "ERF__Advance_8cpp" ],
     [ "ERF_AdvanceDycore.cpp", "ERF__AdvanceDycore_8cpp.html", null ],
     [ "ERF_AdvanceLSM.cpp", "ERF__AdvanceLSM_8cpp.html", null ],
