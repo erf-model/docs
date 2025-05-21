@@ -141,6 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0e04fe7c9b1f9025e8f4458c4522b1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61290767bd3f0bc65db7a0a344b10899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandSurface.html#a61290767bd3f0bc65db7a0a344b10899">Plot_Lsm_Data</a> (amrex::Real time, const amrex::Vector&lt; int &gt; &amp;level_steps, const amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio)</td></tr>
 <tr class="separator:a61290767bd3f0bc65db7a0a344b10899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3afba8302e18341bf3ecb62202704817"><td class="memTemplParams" colspan="2">template&lt;class SurfModelType &gt; </td></tr>
+<tr class="memitem:a3afba8302e18341bf3ecb62202704817"><td class="memTemplItemLeft" align="right" valign="top">SurfModelType *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classLandSurface.html#a3afba8302e18341bf3ecb62202704817">get_model_lev</a> (const int &amp;lev)</td></tr>
+<tr class="separator:a3afba8302e18341bf3ecb62202704817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -278,7 +281,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev]-&gt;Advance_With_State(lev, cons_in, xvel_in, yvel_in, hfx3_out, qfx3_out, dt_advance, nstep);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="ttc" id="aclassLandSurface_html_a7415e46b046f76ef34902fa6ef1ef628"><div class="ttname"><a href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">LandSurface::m_lsm_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullSurf &gt; &gt; m_lsm_model</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:135</div></div>
+<div class="ttc" id="aclassLandSurface_html_a7415e46b046f76ef34902fa6ef1ef628"><div class="ttname"><a href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">LandSurface::m_lsm_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullSurf &gt; &gt; m_lsm_model</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:140</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -520,6 +523,37 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3afba8302e18341bf3ecb62202704817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3afba8302e18341bf3ecb62202704817">&#9670;&nbsp;</a></span>get_model_lev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SurfModelType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SurfModelType* LandSurface::get_model_lev </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>lev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                                 {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>SurfModelType*<span class="keyword">&gt;</span>(<a class="code" href="classLandSurface.html#a7415e46b046f76ef34902fa6ef1ef628">m_lsm_model</a>[lev].get());</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a0e04fe7c9b1f9025e8f4458c4522b1d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0e04fe7c9b1f9025e8f4458c4522b1d5">&#9670;&nbsp;</a></span>Get_VarName()</h2>
 
@@ -679,13 +713,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">m_lsm_data_lev</a>.clear();</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="ttc" id="aclassLandSurface_html_a06a0bb4f12e604dbbd844bd4d2b0903f"><div class="ttname"><a href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">LandSurface::m_lsm_geom_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_lsm_geom_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:141</div></div>
+<div class="ttc" id="aclassLandSurface_html_a06a0bb4f12e604dbbd844bd4d2b0903f"><div class="ttname"><a href="classLandSurface.html#a06a0bb4f12e604dbbd844bd4d2b0903f">LandSurface::m_lsm_geom_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_lsm_geom_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:146</div></div>
 <div class="ttc" id="aclassLandSurface_html_a0e04fe7c9b1f9025e8f4458c4522b1d5"><div class="ttname"><a href="classLandSurface.html#a0e04fe7c9b1f9025e8f4458c4522b1d5">LandSurface::Get_VarName</a></div><div class="ttdeci">std::string Get_VarName(const int &amp;varIdx)</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:95</div></div>
 <div class="ttc" id="aclassLandSurface_html_a2652af07555cc98d15d3516371fa42e6"><div class="ttname"><a href="classLandSurface.html#a2652af07555cc98d15d3516371fa42e6">LandSurface::Get_Data_Size</a></div><div class="ttdeci">int Get_Data_Size()</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:92</div></div>
 <div class="ttc" id="aclassLandSurface_html_a368a57f198d060805dcd615677366c3c"><div class="ttname"><a href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">LandSurface::Get_Lsm_Geom</a></div><div class="ttdeci">amrex::Geometry Get_Lsm_Geom(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:89</div></div>
-<div class="ttc" id="aclassLandSurface_html_a5a134e93d42328bfaa9611a9e625e1bb"><div class="ttname"><a href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">LandSurface::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:144</div></div>
+<div class="ttc" id="aclassLandSurface_html_a5a134e93d42328bfaa9611a9e625e1bb"><div class="ttname"><a href="classLandSurface.html#a5a134e93d42328bfaa9611a9e625e1bb">LandSurface::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:149</div></div>
 <div class="ttc" id="aclassLandSurface_html_af125bc0c5860b3564afdfce10ec253ea"><div class="ttname"><a href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">LandSurface::Get_Data_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Get_Data_Ptr(const int &amp;lev, const int &amp;varIdx)</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:83</div></div>
-<div class="ttc" id="aclassLandSurface_html_af9c26970ce04b58725b9529fcc2fc62f"><div class="ttname"><a href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">LandSurface::plot_file_lsm</a></div><div class="ttdeci">std::string plot_file_lsm</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:138</div></div>
+<div class="ttc" id="aclassLandSurface_html_af9c26970ce04b58725b9529fcc2fc62f"><div class="ttname"><a href="classLandSurface.html#af9c26970ce04b58725b9529fcc2fc62f">LandSurface::plot_file_lsm</a></div><div class="ttdeci">std::string plot_file_lsm</div><div class="ttdef"><b>Definition:</b> ERF_LandSurface.H:143</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_ab6f5948b8eeb029d684e7b7d19cfc5daa281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -908,7 +942,7 @@ template&lt;class NewSurfModel &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classLandSurface.html#a1167c7d5604c92e612099313f1afe8e4">Advance()</a>, <a class="el" href="classLandSurface.html#ae2087847b83c6a9e4453ccaa110134ce">Define()</a>, <a class="el" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr()</a>, <a class="el" href="classLandSurface.html#a2652af07555cc98d15d3516371fa42e6">Get_Data_Size()</a>, <a class="el" href="classLandSurface.html#a967a4b0772dc721d0242d38613ac430e">Get_Flux_Ptr()</a>, <a class="el" href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">Get_Lsm_Geom()</a>, <a class="el" href="classLandSurface.html#a0e04fe7c9b1f9025e8f4458c4522b1d5">Get_VarName()</a>, <a class="el" href="classLandSurface.html#aac1216f5c2758361ddc016442f3c67cd">Init()</a>, <a class="el" href="classLandSurface.html#a61290767bd3f0bc65db7a0a344b10899">Plot_Lsm_Data()</a>, <a class="el" href="classLandSurface.html#a58bc8a6e1b1369cd863f8b4f424a6270">ReSize()</a>, <a class="el" href="classLandSurface.html#a91df3382b60a6566b78a23c87b46f065">SetModel()</a>, <a class="el" href="classLandSurface.html#afcb150f2d64cc46a8fbdc817d6fb9872">Update_Micro_Vars_Lev()</a>, and <a class="el" href="classLandSurface.html#adc42b59dad9dc817ee882778a2b3d273">Update_State_Vars_Lev()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classLandSurface.html#a1167c7d5604c92e612099313f1afe8e4">Advance()</a>, <a class="el" href="classLandSurface.html#ae2087847b83c6a9e4453ccaa110134ce">Define()</a>, <a class="el" href="classLandSurface.html#af125bc0c5860b3564afdfce10ec253ea">Get_Data_Ptr()</a>, <a class="el" href="classLandSurface.html#a2652af07555cc98d15d3516371fa42e6">Get_Data_Size()</a>, <a class="el" href="classLandSurface.html#a967a4b0772dc721d0242d38613ac430e">Get_Flux_Ptr()</a>, <a class="el" href="classLandSurface.html#a368a57f198d060805dcd615677366c3c">Get_Lsm_Geom()</a>, <a class="el" href="classLandSurface.html#a3afba8302e18341bf3ecb62202704817">get_model_lev()</a>, <a class="el" href="classLandSurface.html#a0e04fe7c9b1f9025e8f4458c4522b1d5">Get_VarName()</a>, <a class="el" href="classLandSurface.html#aac1216f5c2758361ddc016442f3c67cd">Init()</a>, <a class="el" href="classLandSurface.html#a61290767bd3f0bc65db7a0a344b10899">Plot_Lsm_Data()</a>, <a class="el" href="classLandSurface.html#a58bc8a6e1b1369cd863f8b4f424a6270">ReSize()</a>, <a class="el" href="classLandSurface.html#a91df3382b60a6566b78a23c87b46f065">SetModel()</a>, <a class="el" href="classLandSurface.html#afcb150f2d64cc46a8fbdc817d6fb9872">Update_Micro_Vars_Lev()</a>, and <a class="el" href="classLandSurface.html#adc42b59dad9dc817ee882778a2b3d273">Update_State_Vars_Lev()</a>.</p>
 
 </div>
 </div>

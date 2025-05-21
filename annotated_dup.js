@@ -40,6 +40,7 @@ var annotated_dup =
     [ "GeneralAD", "classGeneralAD.html", "classGeneralAD" ],
     [ "InputSoundingData", "structInputSoundingData.html", "structInputSoundingData" ],
     [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ],
+    [ "IRadiation", "classIRadiation.html", "classIRadiation" ],
     [ "Kessler", "classKessler.html", "classKessler" ],
     [ "LandSurface", "classLandSurface.html", "classLandSurface" ],
     [ "LineSampler", "structLineSampler.html", "structLineSampler" ],

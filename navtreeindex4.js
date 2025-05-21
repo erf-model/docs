@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"ERF__WriteJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,6,21,0],
+"ERF__WriteScalarProfiles_8cpp.html":[3,0,1,6,22],
+"ERF__WriteSubvolume_8cpp.html":[3,0,1,6,23],
+"ERF__Wstar_8H.html":[3,0,1,16,32],
+"ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600":[3,0,1,16,32,1],
 "ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,16,32,0],
 "ERF__Wstar_8H_source.html":[3,0,1,16,32],
 "ERF__module__model__constants_8F90.html":[3,0,1,9,1,2],
@@ -241,13 +246,8 @@ var NAVTREEINDEX4 =
 "NEW_2ERF__TI__substep__fun_8H_source.html":[3,0,1,15,0,0],
 "annotated.html":[2,0],
 "classERF.html":[2,0,20],
-"classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,20,78],
-"classERF.html#a01f3db32272f53dc68025f0a98195e57":[2,0,20,334],
-"classERF.html#a02722d16f3c26efe590702200f1296d7":[2,0,20,248],
-"classERF.html#a0276b556fdefec8b99be95846a3a35fe":[2,0,20,391],
-"classERF.html#a039a764a1d942c484e8aea49e87bc046":[2,0,20,69],
-"classERF.html#a04831a5a6bf49d8386d362379db84358":[2,0,20,276],
-"classERF.html#a050dbd236c9bf246554a53008e09f683":[2,0,20,168],
-"classERF.html#a0553967f1131860bb8ecb47c0f192eaa":[2,0,20,342],
-"classERF.html#a0572de619e757aab7ad9a4e0c7967da4":[2,0,20,77]
+"classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,20,79],
+"classERF.html#a01f3db32272f53dc68025f0a98195e57":[2,0,20,339],
+"classERF.html#a02722d16f3c26efe590702200f1296d7":[2,0,20,249],
+"classERF.html#a0276b556fdefec8b99be95846a3a35fe":[2,0,20,398]
 };

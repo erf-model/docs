@@ -46,6 +46,7 @@ var structSolverChoice =
     [ "poisson_abstol", "structSolverChoice.html#ad7f586d62fb0872ba0340fb03d462c64", null ],
     [ "poisson_reltol", "structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479", null ],
     [ "project_initial_velocity", "structSolverChoice.html#aa7bb7f3c8b475b0e446c271d8aa5497f", null ],
+    [ "rad_type", "structSolverChoice.html#a31c93846e0129221632347d2378e881d", null ],
     [ "rayleigh_damp_substep", "structSolverChoice.html#a23d4a699304f61c781f06b1e5028ca3e", null ],
     [ "rayleigh_damp_T", "structSolverChoice.html#a06a0dd1c8f7c1ed73a4f8d24b6b31cdf", null ],
     [ "rayleigh_damp_U", "structSolverChoice.html#a5aed4016dd7d17a2d2904c60af59ae9d", null ],

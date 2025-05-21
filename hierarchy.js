@@ -35,6 +35,9 @@ var hierarchy =
     ] ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],
+    [ "IRadiation", "classIRadiation.html", [
+      [ "Radiation", "classRadiation.html", null ]
+    ] ],
     [ "LandSurface", "classLandSurface.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
     [ "Microphysics", "classMicrophysics.html", [
@@ -77,7 +80,6 @@ var hierarchy =
     [ "polygon_", "classpolygon__.html", null ],
     [ "ProblemBase", "classProblemBase.html", null ],
     [ "ProbParmDefaults", "structProbParmDefaults.html", null ],
-    [ "Radiation", "classRadiation.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "rotate_flux", "structrotate__flux.html", null ],
     [ "SampleData", "classSampleData.html", null ],

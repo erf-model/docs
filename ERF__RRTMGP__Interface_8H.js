@@ -12,7 +12,7 @@ var ERF__RRTMGP__Interface_8H =
     [ "init_kls", "ERF__RRTMGP__Interface_8H.html#a8c92d15c28f0d375ae1e399359c4c3fb", null ],
     [ "rrtmgp_finalize", "ERF__RRTMGP__Interface_8H.html#a009ddf7de8b3d47a8732243e945e431c", null ],
     [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8H.html#a7d6bd0d2d81458bf0a624da720d39ebf", null ],
-    [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8H.html#a51cc9ae3b0ec6f502bf5f085d563dd30", null ],
-    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8H.html#a7c563b9d0cff01d27e91936598c3585d", null ],
+    [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8H.html#a06421de5142893781224a4d7e8ffc17f", null ],
+    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8H.html#aca00de2607b2c633f671c81a4505387c", null ],
     [ "rrtmgp_sw", "ERF__RRTMGP__Interface_8H.html#a4111d3c5505330953cc8139593b7be55", null ]
 ];

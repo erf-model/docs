@@ -168,9 +168,9 @@ $(document).ready(function(){initNavTree('ERF__RRTMGP__Utils_8H_source.html','')
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> nlay = flux_up.dimension[1]-1;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    yakl::fortran::parallel_for(yakl::fortran::SimpleBounds&lt;2&gt;(nlay,ncol), YAKL_LAMBDA(<span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol)</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        heating_rate(icol,ilay) = ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                  - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                  / (<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        heating_rate(icol,ilay) = -1.0 * ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                         - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                         / (<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay));</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">        if (icol == 1) {</span></div>
