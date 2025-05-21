@@ -11,8 +11,7 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
       [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
     ] ],
-    [ "ERF_NCPlotFile.cpp", "ERF__NCPlotFile_8cpp.html", null ],
-    [ "ERF_NCPlotFile.H", "ERF__NCPlotFile_8H.html", "ERF__NCPlotFile_8H" ],
+    [ "ERF_NCPlotFile.cpp", "ERF__NCPlotFile_8cpp.html", "ERF__NCPlotFile_8cpp" ],
     [ "ERF_NCWpsFile.H", "ERF__NCWpsFile_8H.html", "ERF__NCWpsFile_8H" ],
     [ "ERF_Plotfile.cpp", "ERF__Plotfile_8cpp.html", "ERF__Plotfile_8cpp" ],
     [ "ERF_ReadBndryPlanes.cpp", "ERF__ReadBndryPlanes_8cpp.html", "ERF__ReadBndryPlanes_8cpp" ],

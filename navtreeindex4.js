@@ -1,12 +1,15 @@
 var NAVTREEINDEX4 =
 {
-"ERF__WriteJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,6,21,0],
-"ERF__WriteScalarProfiles_8cpp.html":[3,0,1,6,22],
-"ERF__WriteSubvolume_8cpp.html":[3,0,1,6,23],
-"ERF__Wstar_8H.html":[3,0,1,16,32],
-"ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600":[3,0,1,16,32,1],
-"ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,16,32,0],
-"ERF__Wstar_8H_source.html":[3,0,1,16,32],
+"ERF__WriteBndryPlanes_8cpp.html":[3,0,1,6,18],
+"ERF__WriteBndryPlanes_8cpp.html#a84c19e5c5555fe13da12dc8ba44e7da8":[3,0,1,6,18,0],
+"ERF__WriteJobInfo_8cpp.html":[3,0,1,6,20],
+"ERF__WriteJobInfo_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,6,20,0],
+"ERF__WriteScalarProfiles_8cpp.html":[3,0,1,6,21],
+"ERF__WriteSubvolume_8cpp.html":[3,0,1,6,22],
+"ERF__Wstar_8H.html":[3,0,1,17,32],
+"ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600":[3,0,1,17,32,1],
+"ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,17,32,0],
+"ERF__Wstar_8H_source.html":[3,0,1,17,32],
 "ERF__module__model__constants_8F90.html":[3,0,1,9,1,2],
 "ERF__module__model__constants_8F90.html#a00368b9ce5c58c66771670d6503119de":[3,0,1,9,1,2,7],
 "ERF__module__model__constants_8F90.html#a04e78057d5cab0348637a50a2712efe6":[3,0,1,9,1,2,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "NEW_2ERF__TI__substep__fun_8H_source.html":[3,0,1,15,0,0],
 "annotated.html":[2,0],
 "classERF.html":[2,0,20],
-"classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,20,79],
-"classERF.html#a01f3db32272f53dc68025f0a98195e57":[2,0,20,339],
-"classERF.html#a02722d16f3c26efe590702200f1296d7":[2,0,20,249],
-"classERF.html#a0276b556fdefec8b99be95846a3a35fe":[2,0,20,398]
+"classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,20,79]
 };
