@@ -356,7 +356,7 @@ var searchData=
   ['erfpcevolve_2ecpp_897',['ERFPCEvolve.cpp',['../ERFPCEvolve_8cpp.html',1,'']]],
   ['erfpcinitializations_2ecpp_898',['ERFPCInitializations.cpp',['../ERFPCInitializations_8cpp.html',1,'']]],
   ['erfpcutils_2ecpp_899',['ERFPCUtils.cpp',['../ERFPCUtils_8cpp.html',1,'']]],
-  ['erfphysbcfunct_5fbase_900',['ERFPhysBCFunct_base',['../classERFPhysBCFunct__base.html#a4ba2333432141d41177dca92464e619d',1,'ERFPhysBCFunct_base::ERFPhysBCFunct_base()'],['../classERFPhysBCFunct__base.html',1,'ERFPhysBCFunct_base']]],
+  ['erfphysbcfunct_5fbase_900',['ERFPhysBCFunct_base',['../classERFPhysBCFunct__base.html#a0f9b13d91036f78cfb239f254375c7cc',1,'ERFPhysBCFunct_base::ERFPhysBCFunct_base()'],['../classERFPhysBCFunct__base.html',1,'ERFPhysBCFunct_base']]],
   ['erfphysbcfunct_5fcons_901',['ERFPhysBCFunct_cons',['../classERFPhysBCFunct__cons.html#ac48a655245c722a265f6a557f6634230',1,'ERFPhysBCFunct_cons::ERFPhysBCFunct_cons()'],['../classERFPhysBCFunct__cons.html',1,'ERFPhysBCFunct_cons']]],
   ['erfphysbcfunct_5fu_902',['ERFPhysBCFunct_u',['../classERFPhysBCFunct__u.html',1,'ERFPhysBCFunct_u'],['../classERFPhysBCFunct__u.html#a02e58c56eb025621156c134d7782e495',1,'ERFPhysBCFunct_u::ERFPhysBCFunct_u()']]],
   ['erfphysbcfunct_5fv_903',['ERFPhysBCFunct_v',['../classERFPhysBCFunct__v.html',1,'ERFPhysBCFunct_v'],['../classERFPhysBCFunct__v.html#a6dce68398d0b2711389dda67d222fedc',1,'ERFPhysBCFunct_v::ERFPhysBCFunct_v()']]],

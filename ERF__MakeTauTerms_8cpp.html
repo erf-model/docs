@@ -499,165 +499,169 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                tbxyz.grow(IntVect(-1,-1,0));</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordflow">if</span> (!l_use_turb) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <a class="code" href="ERF__ComputeStress__T_8cpp.html#aa50eb057a31448571ed49b6d35b4a7b9">ComputeStressConsVisc_T</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <a class="code" href="ERF__ComputeStress__T_8cpp.html#a5a87f75375e16c2f0b4db0465f4d5eb5">ComputeStressConsVisc_T</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff,</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                            cell_data,</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                            s11, s22, s33,</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                                            s12, s21,</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                            s13, s31,</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                            s23, s32,</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                            er_arr, z_nd, detJ_arr, dxInv);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    <a class="code" href="ERF__ComputeStress__T_8cpp.html#a54a91b315e44b9dc866418973141ee9a">ComputeStressVarVisc_T</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff, mu_turb,</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                                           cell_data,</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                                           s11, s22, s33,</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                           s12, s21,</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                           s13, s31,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                           s23, s32,</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                                           er_arr, z_nd, detJ_arr, dxInv);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <span class="comment">// Remove halo cells from tau_ii but extend across valid_box bdry</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                bxcc.grow(IntVect(-1,-1,0));</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(0) == valid_bx.smallEnd(0)) bxcc.growLo(0, 1);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(0)   == valid_bx.bigEnd(0))   bxcc.growHi(0, 1);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(1) == valid_bx.smallEnd(1)) bxcc.growLo(1, 1);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(1)   == valid_bx.bigEnd(1))   bxcc.growHi(1, 1);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="comment">// Copy from temp FABs back to tau</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                ParallelFor(bxcc,</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>(i,j,k) = s11(i,j,k);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>(i,j,k) = s22(i,j,k);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>(i,j,k) = s33(i,j,k);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                });</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                ParallelFor(tbxxy, tbxxz, tbxyz,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>(i,j,k) = s12(i,j,k);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a>(i,j,k) = s21(i,j,k);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                },</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                            er_arr, z_nd, detJ_arr, dxInv,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                            mf_mx, mf_ux, mf_vx,</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                            mf_my, mf_uy, mf_vy);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    <a class="code" href="ERF__ComputeStress__T_8cpp.html#abd3543e8a4f5a51083f78f5c19af3e9c">ComputeStressVarVisc_T</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff, mu_turb,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                                           cell_data,</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                                           s11, s22, s33,</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                           s12, s21,</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                                           s13, s31,</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                                           s23, s32,</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                           er_arr, z_nd, detJ_arr, dxInv,</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                           mf_mx, mf_ux, mf_vx,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                           mf_my, mf_uy, mf_vy);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="comment">// Remove halo cells from tau_ii but extend across valid_box bdry</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                bxcc.grow(IntVect(-1,-1,0));</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(0) == valid_bx.smallEnd(0)) bxcc.growLo(0, 1);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(0)   == valid_bx.bigEnd(0))   bxcc.growHi(0, 1);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(1) == valid_bx.smallEnd(1)) bxcc.growLo(1, 1);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(1)   == valid_bx.bigEnd(1))   bxcc.growHi(1, 1);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="comment">// Copy from temp FABs back to tau</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                ParallelFor(bxcc,</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>(i,j,k) = s11(i,j,k);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>(i,j,k) = s22(i,j,k);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>(i,j,k) = s33(i,j,k);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                });</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                ParallelFor(tbxxy, tbxxz, tbxyz,</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>(i,j,k) = s13(i,j,k);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935">tau31</a>(i,j,k) = s31(i,j,k);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>(i,j,k) = s12(i,j,k);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a>(i,j,k) = s21(i,j,k);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                },</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>(i,j,k) = s23(i,j,k);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307">tau32</a>(i,j,k) = s32(i,j,k);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                });</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="comment">// Expansion rate compute no terrain</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_er_N&quot;</span>);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                    Real mfsq = mf_mx(i,j,0)*mf_my(i,j,0);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                    er_arr(i,j,k) = (u(i+1, j  , k  )/mf_uy(i+1,j,0) - u(i, j, k)/mf_uy(i,j,0))*dxInv[0]*mfsq +</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                                    (v(i  , j+1, k  )/mf_vx(i,j+1,0) - v(i, j, k)/mf_vx(i,j,0))*dxInv[1]*mfsq +</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                                    (w(i  , j  , k+1) - w(i, j, k))*dxInv[2];</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                });</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="comment">// Strain tensor compute no terrain</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_strain_N&quot;</span>);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <a class="code" href="ERF__ComputeStrain__N_8cpp.html#a2dead18842af5b49518f9b7c7dba4831">ComputeStrain_N</a>(bxcc, tbxxy, tbxxz, tbxyz, domain,</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                                u, v, w,</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                                s11, s22, s33,</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                                s12, s13, s23,</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                bc_ptr_h, dxInv,</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                mf_mx, mf_ux, mf_vx,</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                mf_my, mf_uy, mf_vy);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="comment">// Populate SmnSmn if using Deardorff or k-eqn RANS (used as diff src in post)</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <span class="comment">// and in the first RK stage (TKE tendencies constant for nrk&gt;0, following WRF)</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                <span class="keywordflow">if</span> ((nrk==0) &amp;&amp; (need_SmnSmn)) {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                    SmnSmn_a = SmnSmn-&gt;array(mfi);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                    ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                    {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                        SmnSmn_a(i,j,k) = <a class="code" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a>(i,j,k,</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                                                        s11,s22,s33,</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                                                        s12,s13,s23);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    });</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="comment">// Stress tensor compute no terrain</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_stress_N&quot;</span>);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="comment">// Remove Halo cells just for tau_ij comps</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                tbxxy.grow(IntVect(-1,-1,0));</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                tbxxz.grow(IntVect(-1,-1,0));</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                tbxyz.grow(IntVect(-1,-1,0));</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="keywordflow">if</span> (tbxxy.smallEnd(2) &gt; domlo_z) {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    tbxxy.growLo(2,-1);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    tbxxz.growLo(2,-1);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                    tbxyz.growLo(2,-1);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                <span class="keywordflow">if</span> (tbxxy.bigEnd(2) &lt; domhi_z) {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    tbxxy.growHi(2,-1);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    tbxxz.growHi(2,-1);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    tbxyz.growHi(2,-1);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                }</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                <span class="keywordflow">if</span> (!l_use_turb) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                    <a class="code" href="ERF__ComputeStress__N_8cpp.html#a90e3a746cdb875f5eb328b01d5168506">ComputeStressConsVisc_N</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff,</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                                            cell_data,</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                                            s11, s22, s33,</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                                            s12, s13, s23,</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                                            er_arr);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                    <a class="code" href="ERF__ComputeStress__N_8cpp.html#a3ccb3579df8fa971a01bc7504db45a1e">ComputeStressVarVisc_N</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff, mu_turb,</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                                           cell_data,</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                           s11, s22, s33,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                                           s12, s13, s23,</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                           er_arr);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                }</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <span class="comment">// Remove halo cells from tau_ii but extend across valid_box bdry</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                bxcc.grow(IntVect(-1,-1,0));</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(0) == valid_bx.smallEnd(0)) bxcc.growLo(0, 1);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(0)   == valid_bx.bigEnd(0))   bxcc.growHi(0, 1);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(1) == valid_bx.smallEnd(1)) bxcc.growLo(1, 1);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(1)   == valid_bx.bigEnd(1))   bxcc.growHi(1, 1);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <span class="comment">// Copy from temp FABs back to tau</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                ParallelFor(bxcc,</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>(i,j,k) = s11(i,j,k);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>(i,j,k) = s22(i,j,k);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>(i,j,k) = s33(i,j,k);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                });</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                ParallelFor(tbxxy, tbxxz, tbxyz,</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>(i,j,k) = s12(i,j,k);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                },</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>(i,j,k) = s13(i,j,k);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                },</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>(i,j,k) = s23(i,j,k);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                });</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            } <span class="comment">// l_use_terrain_fitted_coords</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    } <span class="comment">// l_use_diff</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>(i,j,k) = s13(i,j,k);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935">tau31</a>(i,j,k) = s31(i,j,k);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                },</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>(i,j,k) = s23(i,j,k);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307">tau32</a>(i,j,k) = s32(i,j,k);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                });</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="comment">// Expansion rate compute no terrain</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_er_N&quot;</span>);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                ParallelFor(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    Real mfsq = mf_mx(i,j,0)*mf_my(i,j,0);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    er_arr(i,j,k) = (u(i+1, j  , k  )/mf_uy(i+1,j,0) - u(i, j, k)/mf_uy(i,j,0))*dxInv[0]*mfsq +</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                                    (v(i  , j+1, k  )/mf_vx(i,j+1,0) - v(i, j, k)/mf_vx(i,j,0))*dxInv[1]*mfsq +</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                    (w(i  , j  , k+1) - w(i, j, k))*dxInv[2];</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                });</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <span class="comment">// Strain tensor compute no terrain</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_strain_N&quot;</span>);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                <a class="code" href="ERF__ComputeStrain__N_8cpp.html#a2dead18842af5b49518f9b7c7dba4831">ComputeStrain_N</a>(bxcc, tbxxy, tbxxz, tbxyz, domain,</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                u, v, w,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                s11, s22, s33,</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                s12, s13, s23,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                bc_ptr_h, dxInv,</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                                mf_mx, mf_ux, mf_vx,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                                mf_my, mf_uy, mf_vy);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="comment">// Populate SmnSmn if using Deardorff or k-eqn RANS (used as diff src in post)</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="comment">// and in the first RK stage (TKE tendencies constant for nrk&gt;0, following WRF)</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">if</span> ((nrk==0) &amp;&amp; (need_SmnSmn)) {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    SmnSmn_a = SmnSmn-&gt;array(mfi);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                    ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                        SmnSmn_a(i,j,k) = <a class="code" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a>(i,j,k,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                                                        s11,s22,s33,</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                                        s12,s13,s23);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    });</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                }</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <span class="comment">// Stress tensor compute no terrain</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="comment">// *****************************************************************************</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                BL_PROFILE(<span class="stringliteral">&quot;slow_rhs_making_stress_N&quot;</span>);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="comment">// Remove Halo cells just for tau_ij comps</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                tbxxy.grow(IntVect(-1,-1,0));</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                tbxxz.grow(IntVect(-1,-1,0));</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                tbxyz.grow(IntVect(-1,-1,0));</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <span class="keywordflow">if</span> (tbxxy.smallEnd(2) &gt; domlo_z) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    tbxxy.growLo(2,-1);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    tbxxz.growLo(2,-1);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    tbxyz.growLo(2,-1);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                <span class="keywordflow">if</span> (tbxxy.bigEnd(2) &lt; domhi_z) {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                    tbxxy.growHi(2,-1);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                    tbxxz.growHi(2,-1);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                    tbxyz.growHi(2,-1);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                <span class="keywordflow">if</span> (!l_use_turb) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                    <a class="code" href="ERF__ComputeStress__N_8cpp.html#a90e3a746cdb875f5eb328b01d5168506">ComputeStressConsVisc_N</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff,</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                            cell_data,</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                            s11, s22, s33,</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                                            s12, s13, s23,</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                            er_arr);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                    <a class="code" href="ERF__ComputeStress__N_8cpp.html#a3ccb3579df8fa971a01bc7504db45a1e">ComputeStressVarVisc_N</a>(bxcc, tbxxy, tbxxz, tbxyz, mu_eff, mu_turb,</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                                           cell_data,</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                                           s11, s22, s33,</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                                           s12, s13, s23,</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                                           er_arr);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                }</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                <span class="comment">// Remove halo cells from tau_ii but extend across valid_box bdry</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                bxcc.grow(IntVect(-1,-1,0));</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(0) == valid_bx.smallEnd(0)) bxcc.growLo(0, 1);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(0)   == valid_bx.bigEnd(0))   bxcc.growHi(0, 1);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                <span class="keywordflow">if</span> (bxcc.smallEnd(1) == valid_bx.smallEnd(1)) bxcc.growLo(1, 1);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                <span class="keywordflow">if</span> (bxcc.bigEnd(1)   == valid_bx.bigEnd(1))   bxcc.growHi(1, 1);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <span class="comment">// Copy from temp FABs back to tau</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                ParallelFor(bxcc,</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>(i,j,k) = s11(i,j,k);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>(i,j,k) = s22(i,j,k);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>(i,j,k) = s33(i,j,k);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                });</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                ParallelFor(tbxxy, tbxxz, tbxyz,</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>(i,j,k) = s12(i,j,k);</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                },</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>(i,j,k) = s13(i,j,k);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                },</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>(i,j,k) = s23(i,j,k);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                });</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            } <span class="comment">// l_use_terrain_fitted_coords</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    } <span class="comment">// l_use_diff</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;}</div>
 <div class="ttc" id="aERF__ComputeStrain__N_8cpp_html_a2dead18842af5b49518f9b7c7dba4831"><div class="ttname"><a href="ERF__ComputeStrain__N_8cpp.html#a2dead18842af5b49518f9b7c7dba4831">ComputeStrain_N</a></div><div class="ttdeci">void ComputeStrain_N(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Box domain, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau23, const BCRec *bc_ptr, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_mx, const Array4&lt; const Real &gt; &amp;mf_ux, const Array4&lt; const Real &gt; &amp;mf_vx, const Array4&lt; const Real &gt; &amp;mf_my, const Array4&lt; const Real &gt; &amp;mf_uy, const Array4&lt; const Real &gt; &amp;mf_vy)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStrain_N.cpp:28</div></div>
 <div class="ttc" id="aERF__ComputeStrain__T_8cpp_html_a3231beec8df9dcd7fe36d1baf1e6d99f"><div class="ttname"><a href="ERF__ComputeStrain__T_8cpp.html#a3231beec8df9dcd7fe36d1baf1e6d99f">ComputeStrain_T</a></div><div class="ttdeci">void ComputeStrain_T(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Box domain, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau21, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau31, Array4&lt; Real &gt; &amp;tau23, Array4&lt; Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const BCRec *bc_ptr, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_mx, const Array4&lt; const Real &gt; &amp;mf_ux, const Array4&lt; const Real &gt; &amp;mf_vx, const Array4&lt; const Real &gt; &amp;mf_my, const Array4&lt; const Real &gt; &amp;mf_uy, const Array4&lt; const Real &gt; &amp;mf_vy)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStrain_T.cpp:36</div></div>
 <div class="ttc" id="aERF__ComputeStress__N_8cpp_html_a3ccb3579df8fa971a01bc7504db45a1e"><div class="ttname"><a href="ERF__ComputeStress__N_8cpp.html#a3ccb3579df8fa971a01bc7504db45a1e">ComputeStressVarVisc_N</a></div><div class="ttdeci">void ComputeStressVarVisc_N(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Real mu_eff, const Array4&lt; const Real &gt; &amp;mu_turb, const Array4&lt; const Real &gt; &amp;cell_data, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau23, const Array4&lt; const Real &gt; &amp;er_arr)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStress_N.cpp:105</div></div>
 <div class="ttc" id="aERF__ComputeStress__N_8cpp_html_a90e3a746cdb875f5eb328b01d5168506"><div class="ttname"><a href="ERF__ComputeStress__N_8cpp.html#a90e3a746cdb875f5eb328b01d5168506">ComputeStressConsVisc_N</a></div><div class="ttdeci">void ComputeStressConsVisc_N(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Real mu_eff, const Array4&lt; const Real &gt; &amp;cell_data, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau23, const Array4&lt; const Real &gt; &amp;er_arr)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStress_N.cpp:23</div></div>
-<div class="ttc" id="aERF__ComputeStress__T_8cpp_html_a54a91b315e44b9dc866418973141ee9a"><div class="ttname"><a href="ERF__ComputeStress__T_8cpp.html#a54a91b315e44b9dc866418973141ee9a">ComputeStressVarVisc_T</a></div><div class="ttdeci">void ComputeStressVarVisc_T(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Real mu_eff, const Array4&lt; const Real &gt; &amp;mu_turb, const Array4&lt; const Real &gt; &amp;cell_data, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau21, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau31, Array4&lt; Real &gt; &amp;tau23, Array4&lt; Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;er_arr, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStress_T.cpp:303</div></div>
-<div class="ttc" id="aERF__ComputeStress__T_8cpp_html_aa50eb057a31448571ed49b6d35b4a7b9"><div class="ttname"><a href="ERF__ComputeStress__T_8cpp.html#aa50eb057a31448571ed49b6d35b4a7b9">ComputeStressConsVisc_T</a></div><div class="ttdeci">void ComputeStressConsVisc_T(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Real mu_eff, const Array4&lt; const Real &gt; &amp;cell_data, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau21, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau31, Array4&lt; Real &gt; &amp;tau23, Array4&lt; Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;er_arr, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStress_T.cpp:29</div></div>
+<div class="ttc" id="aERF__ComputeStress__T_8cpp_html_a5a87f75375e16c2f0b4db0465f4d5eb5"><div class="ttname"><a href="ERF__ComputeStress__T_8cpp.html#a5a87f75375e16c2f0b4db0465f4d5eb5">ComputeStressConsVisc_T</a></div><div class="ttdeci">void ComputeStressConsVisc_T(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Real mu_eff, const Array4&lt; const Real &gt; &amp;cell_data, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau21, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau31, Array4&lt; Real &gt; &amp;tau23, Array4&lt; Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;er_arr, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_mx, const Array4&lt; const Real &gt; &amp;mf_ux, const Array4&lt; const Real &gt; &amp;mf_vx, const Array4&lt; const Real &gt; &amp;mf_my, const Array4&lt; const Real &gt; &amp;mf_uy, const Array4&lt; const Real &gt; &amp;mf_vy)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStress_T.cpp:29</div></div>
+<div class="ttc" id="aERF__ComputeStress__T_8cpp_html_abd3543e8a4f5a51083f78f5c19af3e9c"><div class="ttname"><a href="ERF__ComputeStress__T_8cpp.html#abd3543e8a4f5a51083f78f5c19af3e9c">ComputeStressVarVisc_T</a></div><div class="ttdeci">void ComputeStressVarVisc_T(Box bxcc, Box tbxxy, Box tbxxz, Box tbxyz, Real mu_eff, const Array4&lt; const Real &gt; &amp;mu_turb, const Array4&lt; const Real &gt; &amp;cell_data, Array4&lt; Real &gt; &amp;tau11, Array4&lt; Real &gt; &amp;tau22, Array4&lt; Real &gt; &amp;tau33, Array4&lt; Real &gt; &amp;tau12, Array4&lt; Real &gt; &amp;tau21, Array4&lt; Real &gt; &amp;tau13, Array4&lt; Real &gt; &amp;tau31, Array4&lt; Real &gt; &amp;tau23, Array4&lt; Real &gt; &amp;tau32, const Array4&lt; const Real &gt; &amp;er_arr, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;dxInv, const Array4&lt; const Real &gt; &amp;mf_mx, const Array4&lt; const Real &gt; &amp;mf_ux, const Array4&lt; const Real &gt; &amp;mf_vx, const Array4&lt; const Real &gt; &amp;mf_my, const Array4&lt; const Real &gt; &amp;mf_uy, const Array4&lt; const Real &gt; &amp;mf_vy)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeStress_T.cpp:335</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a></div><div class="ttdeci">@ tau12</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:26</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a></div><div class="ttdeci">@ tau23</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:26</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a></div><div class="ttdeci">@ tau33</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:26</div></div>
@@ -709,24 +713,24 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f" title=" " alt="" coords="216,56,400,83"/>
 <area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="239,107,377,133"/>
 <area shape="rect" href="ERF__ComputeStrain__N_8cpp.html#a2dead18842af5b49518f9b7c7dba4831" title=" " alt="" coords="240,157,376,184"/>
-<area shape="rect" href="ERF__ComputeStrain__T_8cpp.html#a3231beec8df9dcd7fe36d1baf1e6d99f" title=" " alt="" coords="241,309,375,336"/>
+<area shape="rect" href="ERF__ComputeStrain__T_8cpp.html#a3231beec8df9dcd7fe36d1baf1e6d99f" title=" " alt="" coords="241,208,375,235"/>
 <area shape="rect" href="ERF__ComputeStress__N_8cpp.html#a90e3a746cdb875f5eb328b01d5168506" title=" " alt="" coords="209,360,407,387"/>
-<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#aa50eb057a31448571ed49b6d35b4a7b9" title=" " alt="" coords="211,259,405,285"/>
+<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#a5a87f75375e16c2f0b4db0465f4d5eb5" title=" " alt="" coords="211,309,405,336"/>
 <area shape="rect" href="ERF__ComputeStress__N_8cpp.html#a3ccb3579df8fa971a01bc7504db45a1e" title=" " alt="" coords="215,411,401,437"/>
-<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#a54a91b315e44b9dc866418973141ee9a" title=" " alt="" coords="216,208,400,235"/>
+<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#abd3543e8a4f5a51083f78f5c19af3e9c" title=" " alt="" coords="216,259,400,285"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055" title=" " alt="" coords="251,461,365,488"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="271,512,345,539"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="466,107,679,133"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9" title=" " alt="" coords="461,157,685,184"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a" title=" " alt="" coords="458,461,687,488"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a" title=" " alt="" coords="458,5,687,32"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="471,208,675,235"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a1582797e6ac6cf0c1e0b94a619bc13b8" title=" " alt="" coords="465,259,680,285"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a07e83bf0f142a953679c9edfa42b398d" title=" " alt="" coords="463,512,683,539"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a07e83bf0f142a953679c9edfa42b398d" title=" " alt="" coords="463,56,683,83"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e" title=" " alt="" coords="457,309,688,336"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76" title=" " alt="" coords="457,360,688,387"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b" title=" " alt="" coords="455,411,691,437"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463" title=" " alt="" coords="461,5,685,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ad56aa9e0cc7428ea33d4ac90d91c1f56" title=" " alt="" coords="465,56,680,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463" title=" " alt="" coords="461,411,685,437"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ad56aa9e0cc7428ea33d4ac90d91c1f56" title=" " alt="" coords="465,461,680,488"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b" title=" " alt="" coords="455,512,691,539"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5" title=" " alt="" coords="493,563,653,589"/>
 </map>
 </div>
