@@ -404,6 +404,7 @@ var classERF =
     [ "yflux_imask", "classERF.html#aa4448d06a3e4fe9740927a636030939d", null ],
     [ "yvel_bc_data", "classERF.html#ae5e40fcd6dd76c80d0b5b09be5baef97", null ],
     [ "z_phys_cc", "classERF.html#a31be0f1ae705c52c8ccc520369013284", null ],
+    [ "z_phys_cc_src", "classERF.html#abfa333375bd02a72cc80ba1e7552aba5", null ],
     [ "z_phys_nd", "classERF.html#a93e63e5af35efa564fd4195e8703f84c", null ],
     [ "z_phys_nd_new", "classERF.html#a4ef635c22e72c715f5703a6b95a7abe5", null ],
     [ "z_phys_nd_src", "classERF.html#a30dcf40e8f104fb6b6132805d2eff47c", null ],
