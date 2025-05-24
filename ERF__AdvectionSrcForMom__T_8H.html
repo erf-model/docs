@@ -611,7 +611,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    {</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        rho_u_rhs(i, j, k) = -<a class="code" href="ERF__AdvectionSrcForMom__T_8H.html#a71c19ed85331fd5c112adbbc120dae0c">AdvectionSrcForXMom</a>(i, j, k, rho_u, rho_v, Omega, z_nd, ax, ay, az, detJ,</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                                  interp_u_h, interp_u_v,</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                                  cellSizeInv, mf_ux_inv, mf_uy_inv, mf_vy_inv);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                                                  cellSizeInv, mf_ux_inv, mf_uy_inv, mf_vx_inv);</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    });</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    amrex::ParallelFor(bxy,</div>
@@ -835,7 +835,7 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// ****************************************************************************************</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    amrex::Real mfsq = 1 / (mf_ux_inv(i,j,0) * mf_uy_inv(i,j,0));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    amrex::Real mfsq = 1. / (mf_ux_inv(i,j,0) * mf_uy_inv(i,j,0));</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    advectionSrc = (centFluxXXNext - centFluxXXPrev) * dxInv * mfsq</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                 + (edgeFluxXYNext - edgeFluxXYPrev) * dyInv * mfsq</div>

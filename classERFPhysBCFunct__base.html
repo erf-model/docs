@@ -576,47 +576,31 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    ParallelFor(</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        bx_zlo1, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="comment">// TODO: There is an inconsistency between getExnergivenP and getExnergivenRTh here</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            Real hz = <a class="code" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a>(i,j,k,z_phys_nd);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            Real r0 = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a>);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            Real <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a> = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a>)  = r0;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>)  = <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a> - r0 * hz * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf">BaseState::pi0_comp</a>) = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf">BaseState::pi0_comp</a>);</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a>) = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a>);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    );</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    Box bx_zlo(bx); bx_zlo.setBig(2,dom_lo.z-2);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    Box bx_zhi(bx); bx_zhi.setSmall(2,dom_hi.z+1);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    ParallelFor(</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        bx_zlo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a>)  = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a>);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>)  = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf">BaseState::pi0_comp</a>) = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf">BaseState::pi0_comp</a>);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            dest_arr(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a>) = dest_arr(i,j,dom_lo.z,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a>);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    );</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    Box bx_zlo(bx); bx_zlo.setBig(2,dom_lo.z-2);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    Box bx_zhi(bx); bx_zhi.setSmall(2,dom_hi.z+1);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    ParallelFor(</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        bx_zlo, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            dest_arr(i,j,k,n) = dest_arr(i,j,dom_lo.z-1,n);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        },</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        bx_zhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            dest_arr(i,j,k,n) = dest_arr(i,j,dom_lo.z-1,n);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        },</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        bx_zhi, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n)</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            dest_arr(i,j,k,n) = dest_arr(i,j,dom_hi.z,n);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    );</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
-<div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a41f9b3a5604791daf44935b10a55a565"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Zrel_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:390</div></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            dest_arr(i,j,k,n) = dest_arr(i,j,dom_hi.z,n);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    );</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
 <div class="ttc" id="anamespaceBaseState_html_a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf"><div class="ttname"><a href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91a3d99e10d828f251e465bc2c66062badf">BaseState::pi0_comp</a></div><div class="ttdeci">@ pi0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:65</div></div>
 <div class="ttc" id="anamespaceBaseState_html_a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e"><div class="ttname"><a href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a></div><div class="ttdeci">@ p0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:64</div></div>
 <div class="ttc" id="anamespaceBaseState_html_a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372"><div class="ttname"><a href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aaf394bbf6aa8da56fc479f2ed5a2a372">BaseState::th0_comp</a></div><div class="ttdeci">@ th0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:66</div></div>
 <div class="ttc" id="anamespaceBaseState_html_a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93"><div class="ttname"><a href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91abc888a343d4fcc4fc4ffb79c6ac7cb93">BaseState::r0_comp</a></div><div class="ttdeci">@ r0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:63</div></div>
-<div class="ttc" id="anamespacemodule__model__constants_html_a2dcccd992b668c86eecdd9a825970d4a"><div class="ttname"><a href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">module_model_constants::p0</a></div><div class="ttdeci">real(c_double), parameter p0</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:40</div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classERFPhysBCFunct__base_a2909a9aaf331651670a2ce1b94b3c02b_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct__base_a2909a9aaf331651670a2ce1b94b3c02b_cgraph" alt=""/></div>
-<map name="aclassERFPhysBCFunct__base_a2909a9aaf331651670a2ce1b94b3c02b_cgraph" id="aclassERFPhysBCFunct__base_a2909a9aaf331651670a2ce1b94b3c02b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,240,47"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="288,13,491,39"/>
-</map>
-</div>
-
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af2e8c70311e8e8e92a713ff1a5f18078"></a>
