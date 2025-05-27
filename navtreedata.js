@@ -78,7 +78,7 @@ var NAVTREEINDEX =
 "ERF__ProbCommon_8H.html#ab52e34d43a76555b971196399b63a67e",
 "ERF__WriteBndryPlanes_8H_source.html",
 "classERF.html#a0276b556fdefec8b99be95846a3a35fe",
-"classERF.html#a9866c7874624259ffcfc6edf46dd58ec",
+"classERF.html#a98cccb83ca76c44d6ae583d051e76faf",
 "classERFPhysBCFunct__w.html#a1e9f9a0981a60be4e8e3a2b906444878",
 "classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee",
 "classPlaneAverage.html#a6933fa8d1b71a55f5276250050c54216",
