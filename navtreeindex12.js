@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"classpolygon__.html#a418204875c722510d5b0396ac1639a2b":[2,0,55,2],
 "classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a":[2,0,55,5],
 "classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4":[2,0,55,3],
 "classpolygon__.html#a6ab3d0fa0f9d6faebc53101265068216":[2,0,55,10],
@@ -61,8 +62,8 @@ var NAVTREEINDEX12 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -190,8 +191,8 @@ var NAVTREEINDEX12 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "namespacederived.html":[1,0,4],
 "namespacederived.html#a0a37dd4fa4a044e34891e6222d06654c":[1,0,4,19],
 "namespacederived.html#a13666be87e55d1759f57322b33f7e495":[1,0,4,11],
-"namespacederived.html#a2a85aedf7c75ca416dbb931559c4b21e":[1,0,4,20],
-"namespacederived.html#a37560f4d3e2c7c10f64d41db2ce76a06":[1,0,4,12]
+"namespacederived.html#a2a85aedf7c75ca416dbb931559c4b21e":[1,0,4,20]
 };
