@@ -1005,10 +1005,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordtype">int</span> ihi = geom.Domain().bigEnd(0) + 1;</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordtype">int</span> jhi = geom.Domain().bigEnd(1) + 1;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        amrex::Box zbx = terrain_fab.box();</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        amrex::Box <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a> = terrain_fab.box();</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = terrain_fab.array();</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        amrex::ParallelFor(zbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        {</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            <span class="comment">// Clip indices for ghost cells</span></div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
@@ -1144,6 +1144,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    }</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__DiffSetup_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:23</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classProblemBase.html#a6a5f24caf2ce8eaf89097520455c70e4">init_terrain_surface()</a>.</p>
 <div class="dynheader">

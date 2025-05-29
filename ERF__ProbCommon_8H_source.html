@@ -518,10 +518,10 @@ $(document).ready(function(){initNavTree('ERF__ProbCommon_8H_source.html',''); i
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordtype">int</span> ihi = geom.Domain().bigEnd(0) + 1;</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordtype">int</span> jhi = geom.Domain().bigEnd(1) + 1;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        amrex::Box zbx = terrain_fab.box();</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        amrex::Box <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a> = terrain_fab.box();</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = terrain_fab.array();</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        amrex::ParallelFor(zbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        {</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            <span class="comment">// Clip indices for ghost cells</span></div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
@@ -751,6 +751,7 @@ $(document).ready(function(){initNavTree('ERF__ProbCommon_8H_source.html',''); i
 <div class="ttc" id="aERF__DataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd"><div class="ttname"><a href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd">wbar</a></div><div class="ttdeci">@ wbar</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:87</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__DiffSetup_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:23</div></div>
 <div class="ttc" id="aERF__EOS_8H_html"><div class="ttname"><a href="ERF__EOS_8H.html">ERF_EOS.H</a></div></div>
 <div class="ttc" id="aERF__HSEUtils_8H_html"><div class="ttname"><a href="ERF__HSEUtils_8H.html">ERF_HSEUtils.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>

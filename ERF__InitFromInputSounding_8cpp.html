@@ -592,14 +592,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    gbx.grow(0,1); gbx.grow(1,1); <span class="comment">// Grow by one in the lateral directions</span></div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// Construct a box that is on x-faces</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keyword">const</span> Box&amp; xbx = surroundingNodes(gbx,0);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keyword">const</span> Box&amp; <a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a> = surroundingNodes(gbx,0);</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="comment">// Construct a box that is on y-faces</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keyword">const</span> Box&amp; ybx = surroundingNodes(gbx,1);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keyword">const</span> Box&amp; <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a> = surroundingNodes(gbx,1);</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="comment">// Construct a box that is on z-faces</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">const</span> Box&amp; zbx = surroundingNodes(gbx,2);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">const</span> Box&amp; <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a> = surroundingNodes(gbx,2);</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// Set the x,y,z-velocities</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    ParallelFor(xbx, ybx, zbx,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>,</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">// Note that this is called on a box of x-faces</span></div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keyword">const</span> Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_nd_arr) ? 0.25*( z_nd_arr(i,j  ,k  )</div>
@@ -628,6 +628,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        z_vel(i, j, k) = 0.0;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    });</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
+<div class="ttc" id="aERF__DiffSetup_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:23</div></div>
+<div class="ttc" id="aERF__DiffSetup_8H_html_a853a144267414a8a59c87f80ca5c958c"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a></div><div class="ttdeci">const Box xbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:21</div></div>
+<div class="ttc" id="aERF__DiffSetup_8H_html_ae3d636c41f5271630a5816a4b8b668b2"><div class="ttname"><a href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a></div><div class="ttdeci">const Box ybx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:22</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>.</p>
 <div class="dynheader">
