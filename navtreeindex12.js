@@ -1,5 +1,11 @@
 var NAVTREEINDEX12 =
 {
+"classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19":[2,0,0,4,4],
+"classncutils_1_1NCFile.html#aa98d902ef67803393e80929bb73cb379":[2,0,0,4,7],
+"classncutils_1_1NCFile.html#aec0e1a7f0f93f2f806c0a0abaae66423":[2,0,0,4,1],
+"classncutils_1_1NCFile.html#af2c4a20c38edb3fae69087a80875b8b9":[2,0,0,4,2],
+"classncutils_1_1NCGroup.html":[2,0,0,3],
+"classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f":[2,0,0,3,20],
 "classncutils_1_1NCGroup.html#a0f24e998915e60b177d036595f0f2734":[2,0,0,3,13],
 "classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac":[2,0,0,3,18],
 "classncutils_1_1NCGroup.html#a2f10bc405d66f794c4e8a8fd71dc718d":[2,0,0,3,12],
@@ -176,8 +182,8 @@ var NAVTREEINDEX12 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_b.html":[3,1,0,1],
 "globals_c.html":[3,1,0,2],
 "globals_d.html":[3,1,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX12 =
 "namespaceBCVars.html":[1,0,3],
 "namespaceBaseBCVars.html":[1,0,1],
 "namespaceBaseState.html":[1,0,2],
-"namespaceERFBCType.html":[1,0,6],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,6,0],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,6,0,9],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,6,0,8],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914":[1,0,6,0,11],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[1,0,6,0,1],
-"namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5":[1,0,6,0,12]
+"namespaceERFBCType.html":[1,0,6]
 };

@@ -12881,7 +12881,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            }</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="comment">// dphi/dy</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <a class="code" href="ERF__DiffSetup_8H.html#afca5b3ce83f261bd8fd672ede110a213">if</a> (<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y != <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y) {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <a class="code" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if</a> (<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y != <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y) {</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                dpdy = 0.25 * invCellSize[1] * (</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                        (phi_arr(i  , j+1, k  ) - phi_arr(i  , j, k  ))</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                      + (phi_arr(i  , j+1, k+1) - phi_arr(i  , j, k+1))</div>
@@ -12890,7 +12890,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="comment">// dphi/dz</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <a class="code" href="ERF__DiffSetup_8H.html#afca5b3ce83f261bd8fd672ede110a213">if</a> (<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.z != <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.z) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <a class="code" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if</a> (<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.z != <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.z) {</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                dpdz = 0.25 * invCellSize[2] * (</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        (phi_arr(i  , j  , k+1) - phi_arr(i  , j  , k))</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                      + (phi_arr(i  , j+1, k+1) - phi_arr(i  , j+1, k))</div>
@@ -12909,7 +12909,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        });</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
-<div class="ttc" id="aERF__DiffSetup_8H_html_afca5b3ce83f261bd8fd672ede110a213"><div class="ttname"><a href="ERF__DiffSetup_8H.html#afca5b3ce83f261bd8fd672ede110a213">if</a></div><div class="ttdeci">if(l_consA)</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:29</div></div>
+<div class="ttc" id="aERF__DiffQKEAdjustment_8H_html_ad212ca7498a026ec3f73cef6a5f29738"><div class="ttname"><a href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if</a></div><div class="ttdeci">if(l_use_mynn &amp;&amp;start_comp&lt;=RhoKE_comp &amp;&amp;end_comp &gt;=RhoKE_comp)</div><div class="ttdef"><b>Definition:</b> ERF_DiffQKEAdjustment.H:2</div></div>
 <div class="ttc" id="aclassERF_html_a2c4e27d6b7928c7081f17e63d0834200"><div class="ttname"><a href="classERF.html#a2c4e27d6b7928c7081f17e63d0834200">ERF::mg_verbose</a></div><div class="ttdeci">static int mg_verbose</div><div class="ttdef"><b>Definition:</b> ERF.H:1028</div></div>
 <div class="ttc" id="astructSolverChoice_html_a238b0871f38f8b134ff3fe5af0d05479"><div class="ttname"><a href="structSolverChoice.html#a238b0871f38f8b134ff3fe5af0d05479">SolverChoice::poisson_reltol</a></div><div class="ttdeci">amrex::Real poisson_reltol</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:712</div></div>
 <div class="ttc" id="astructSolverChoice_html_ad7f586d62fb0872ba0340fb03d462c64"><div class="ttname"><a href="structSolverChoice.html#ad7f586d62fb0872ba0340fb03d462c64">SolverChoice::poisson_abstol</a></div><div class="ttdeci">amrex::Real poisson_abstol</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:711</div></div>
@@ -12919,8 +12919,10 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERF_a984c145a81739ab4c7f8fd03a334d239_cgraph.png" border="0" usemap="#aclassERF_a984c145a81739ab4c7f8fd03a334d239_cgraph" alt=""/></div>
 <map name="aclassERF_a984c145a81739ab4c7f8fd03a334d239_cgraph" id="aclassERF_a984c145a81739ab4c7f8fd03a334d239_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,175,32"/>
-<area shape="rect" href="ERF__DiffSetup_8H.html#afca5b3ce83f261bd8fd672ede110a213" title=" " alt="" coords="223,5,261,32"/>
-<area shape="rect" href="ERF__DiffSetup_8H.html#a2afd75147c5c19428c4c3bc45036ef74" title=" " alt="" coords="309,5,392,32"/>
+<area shape="rect" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="223,5,261,32"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a7482fcce3f236c59ab56a71405060813" title=" " alt="" coords="309,5,500,32"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#af84ec6ece6fad0da9e21461e60f58b2c" title=" " alt="" coords="548,5,777,32"/>
+<area shape="rect" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5" title=" " alt="" coords="825,5,892,32"/>
 </map>
 </div>
 

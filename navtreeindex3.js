@@ -1,5 +1,11 @@
 var NAVTREEINDEX3 =
 {
+"ERF__OrbCosZenith_8cpp.html":[3,0,1,13,0],
+"ERF__OrbCosZenith_8cpp.html#a1aeeb1a37c8ef6e659de80297e43bf36":[3,0,1,13,0,1],
+"ERF__OrbCosZenith_8cpp.html#a531e9e4f016d927864ec25ba17b89e86":[3,0,1,13,0,3],
+"ERF__OrbCosZenith_8cpp.html#a9c8445f2ac0ff59ba80cb7486d9a734f":[3,0,1,13,0,2],
+"ERF__OrbCosZenith_8cpp.html#ae518e4c0dd3f0334a76a0f16f994abb9":[3,0,1,13,0,0],
+"ERF__Orbit_8H.html":[3,0,1,17,19],
 "ERF__Orbit_8H.html#a3f0a40a53139be3e26be6fcf40c2bd14":[3,0,1,17,19,2],
 "ERF__Orbit_8H.html#a5e24c049c05ea5e14bfc131dcca54c93":[3,0,1,17,19,0],
 "ERF__Orbit_8H.html#a778a20e582ab3eaecfe3a5f67c73d68d":[3,0,1,17,19,1],
@@ -125,7 +131,7 @@ var NAVTREEINDEX3 =
 "ERF__SimpleAD_8H.html":[3,0,1,18,4,1],
 "ERF__SimpleAD_8H_source.html":[3,0,1,18,4,1],
 "ERF__SlowRhsPost_8cpp.html":[3,0,1,15,12],
-"ERF__SlowRhsPost_8cpp.html#a4158de2f7043a07f719424e4c67e7fa8":[3,0,1,15,12,0],
+"ERF__SlowRhsPost_8cpp.html#a19c65c3c58b54171441bee78e587e967":[3,0,1,15,12,0],
 "ERF__SlowRhsPre_8cpp.html":[3,0,1,15,13],
 "ERF__SlowRhsPre_8cpp.html#a2c44198e2024a3a7f5feb10385fe9ff0":[3,0,1,15,13,0],
 "ERF__SolveWithEBMLMG_8cpp.html":[3,0,1,8,6],
@@ -160,8 +166,8 @@ var NAVTREEINDEX3 =
 "ERF__TI__no__substep__fun_8H.html#a4cad8180e91d2eabd5638651fc24bcc7":[3,0,1,15,15,0],
 "ERF__TI__no__substep__fun_8H_source.html":[3,0,1,15,15],
 "ERF__TI__slow__headers_8H.html":[3,0,1,15,16],
+"ERF__TI__slow__headers_8H.html#a2d0bd196123ec9328216c6d3a822e1b8":[3,0,1,15,16,1],
 "ERF__TI__slow__headers_8H.html#a56568a118fd840c346a1d9182a9b4f94":[3,0,1,15,16,2],
-"ERF__TI__slow__headers_8H.html#ab1f45b323b3c7278be86bf56d4df76ad":[3,0,1,15,16,1],
 "ERF__TI__slow__headers_8H.html#aeede1944bb0ea61ca55b0ce3e8143926":[3,0,1,15,16,0],
 "ERF__TI__slow__headers_8H_source.html":[3,0,1,15,16],
 "ERF__TI__slow__rhs__post_8H.html":[3,0,1,15,17],
@@ -243,11 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__TimeAvgVel_8cpp.html#a2241063c19e843eaaa749c3b51b6b0fe":[3,0,1,17,28,0],
 "ERF__TimeInterpolatedData_8H.html":[3,0,1,1,21],
 "ERF__TimeInterpolatedData_8H_source.html":[3,0,1,1,21],
-"ERF__TimeStep_8cpp.html":[3,0,1,15,21],
-"ERF__TurbPertStruct_8H.html":[3,0,1,2,6],
-"ERF__TurbPertStruct_8H.html#a1cd6e2210df20afb1fdec3183cbef7ba":[3,0,1,2,6,1],
-"ERF__TurbPertStruct_8H.html#ab9e33f7c44aa5c08f1228c540aaf5275":[3,0,1,2,6,2],
-"ERF__TurbPertStruct_8H_source.html":[3,0,1,2,6],
-"ERF__TurbStruct_8H.html":[3,0,1,2,7],
-"ERF__TurbStruct_8H.html#a366eb3a7d508374fda1324a610da7ece":[3,0,1,2,7,3]
+"ERF__TimeStep_8cpp.html":[3,0,1,15,21]
 };

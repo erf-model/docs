@@ -1,5 +1,11 @@
 var NAVTREEINDEX2 =
 {
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846":[3,0,1,24,27,4],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af":[3,0,1,24,27,5],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab":[3,0,1,24,27,7],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4":[3,0,1,24,27,0],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca700397885ead767d8b5988fe11ee4847":[3,0,1,24,27,6],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d":[3,0,1,24,27,13],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca9f18284526a1054d4e7a4783852ead30":[3,0,1,24,27,2],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9":[3,0,1,24,27,10],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9":[3,0,1,24,27,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__OrbCosZenith_8H.html#a9c8445f2ac0ff59ba80cb7486d9a734f":[3,0,1,13,1,3],
 "ERF__OrbCosZenith_8H.html#acc28f9b4135425c9179d49e001ed768e":[3,0,1,13,1,2],
 "ERF__OrbCosZenith_8H.html#ae518e4c0dd3f0334a76a0f16f994abb9":[3,0,1,13,1,1],
-"ERF__OrbCosZenith_8H_source.html":[3,0,1,13,1],
-"ERF__OrbCosZenith_8cpp.html":[3,0,1,13,0],
-"ERF__OrbCosZenith_8cpp.html#a1aeeb1a37c8ef6e659de80297e43bf36":[3,0,1,13,0,1],
-"ERF__OrbCosZenith_8cpp.html#a531e9e4f016d927864ec25ba17b89e86":[3,0,1,13,0,3],
-"ERF__OrbCosZenith_8cpp.html#a9c8445f2ac0ff59ba80cb7486d9a734f":[3,0,1,13,0,2],
-"ERF__OrbCosZenith_8cpp.html#ae518e4c0dd3f0334a76a0f16f994abb9":[3,0,1,13,0,0],
-"ERF__Orbit_8H.html":[3,0,1,17,19]
+"ERF__OrbCosZenith_8H_source.html":[3,0,1,13,1]
 };

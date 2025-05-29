@@ -316,7 +316,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                         : 2.0 * dc.<a class="code" href="structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817">dynamic_viscosity</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;#ifdef _OPENMP</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;#pragma omp parallel <a class="code" href="ERF__DiffSetup_8H.html#afca5b3ce83f261bd8fd672ede110a213">if</a> (Gpu::notInLaunchRegion())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;#pragma omp parallel <a class="code" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if</a> (Gpu::notInLaunchRegion())</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;#endif</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
@@ -677,7 +677,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a></div><div class="ttdeci">@ m_y</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:23</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">u_x</a></div><div class="ttdeci">@ u_x</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:22</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a></div><div class="ttdeci">@ m_x</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:22</div></div>
-<div class="ttc" id="aERF__DiffSetup_8H_html_afca5b3ce83f261bd8fd672ede110a213"><div class="ttname"><a href="ERF__DiffSetup_8H.html#afca5b3ce83f261bd8fd672ede110a213">if</a></div><div class="ttdeci">if(l_consA)</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:29</div></div>
+<div class="ttc" id="aERF__DiffQKEAdjustment_8H_html_ad212ca7498a026ec3f73cef6a5f29738"><div class="ttname"><a href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if</a></div><div class="ttdeci">if(l_use_mynn &amp;&amp;start_comp&lt;=RhoKE_comp &amp;&amp;end_comp &gt;=RhoKE_comp)</div><div class="ttdef"><b>Definition:</b> ERF_DiffQKEAdjustment.H:2</div></div>
 <div class="ttc" id="aERF__DiffStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754">MolecDiffType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aERF__DiffStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"><div class="ttname"><a href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a></div><div class="ttdeci">@ ConstantAlpha</div></div>
 <div class="ttc" id="aERF__EddyViscosity_8H_html_ad1e6d314bfc2e508c86ee0e07cfbd8f8"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23)</div><div class="ttdef"><b>Definition:</b> ERF_EddyViscosity.H:37</div></div>
@@ -719,7 +719,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__ComputeStress__T_8cpp.html#a5a87f75375e16c2f0b4db0465f4d5eb5" title=" " alt="" coords="211,284,405,311"/>
 <area shape="rect" href="ERF__ComputeStress__N_8cpp.html#a3ccb3579df8fa971a01bc7504db45a1e" title=" " alt="" coords="215,436,401,463"/>
 <area shape="rect" href="ERF__ComputeStress__T_8cpp.html#abd3543e8a4f5a51083f78f5c19af3e9c" title=" " alt="" coords="216,335,400,361"/>
-<area shape="rect" href="ERF__DiffSetup_8H.html#afca5b3ce83f261bd8fd672ede110a213" title=" " alt="" coords="289,487,327,513"/>
+<area shape="rect" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="289,487,327,513"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055" title=" " alt="" coords="251,537,365,564"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="271,588,345,615"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="466,259,679,285"/>
@@ -733,7 +733,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463" title=" " alt="" coords="461,411,685,437"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ad56aa9e0cc7428ea33d4ac90d91c1f56" title=" " alt="" coords="465,461,680,488"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b" title=" " alt="" coords="455,512,691,539"/>
-<area shape="rect" href="ERF__DiffSetup_8H.html#a2afd75147c5c19428c4c3bc45036ef74" title=" " alt="" coords="531,563,614,589"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a7482fcce3f236c59ab56a71405060813" title=" " alt="" coords="477,563,668,589"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#af84ec6ece6fad0da9e21461e60f58b2c" title=" " alt="" coords="739,563,968,589"/>
+<area shape="rect" href="ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5" title=" " alt="" coords="1016,563,1083,589"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5" title=" " alt="" coords="493,613,653,640"/>
 </map>
 </div>
