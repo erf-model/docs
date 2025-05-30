@@ -4,6 +4,7 @@ var dir_fc0c15590968603ac439df7b0a572228 =
     [ "ERF_ComputeStrain_S.cpp", "ERF__ComputeStrain__S_8cpp.html", "ERF__ComputeStrain__S_8cpp" ],
     [ "ERF_ComputeStrain_T.cpp", "ERF__ComputeStrain__T_8cpp.html", "ERF__ComputeStrain__T_8cpp" ],
     [ "ERF_ComputeStress_N.cpp", "ERF__ComputeStress__N_8cpp.html", "ERF__ComputeStress__N_8cpp" ],
+    [ "ERF_ComputeStress_S.cpp", "ERF__ComputeStress__S_8cpp.html", "ERF__ComputeStress__S_8cpp" ],
     [ "ERF_ComputeStress_T.cpp", "ERF__ComputeStress__T_8cpp.html", "ERF__ComputeStress__T_8cpp" ],
     [ "ERF_ComputeTurbulentViscosity.cpp", "ERF__ComputeTurbulentViscosity_8cpp.html", "ERF__ComputeTurbulentViscosity_8cpp" ],
     [ "ERF_DiffQKEAdjustment.H", "ERF__DiffQKEAdjustment_8H.html", "ERF__DiffQKEAdjustment_8H" ],

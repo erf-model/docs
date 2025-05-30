@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"ERF__IndexDefines_8H.html#a38d6fda9ca3d40309838c64d398b54c1":[3,0,1,24,1],
+"ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16":[3,0,1,24,18],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01c":[3,0,1,24,27],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[3,0,1,24,27,9],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[3,0,1,24,27,8],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914":[3,0,1,24,27,11],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705":[3,0,1,24,27,1],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5":[3,0,1,24,27,12],
@@ -244,10 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__NumericalDiffusion_8H_source.html":[3,0,1,14,12],
 "ERF__NumericalDiffusion_8cpp.html":[3,0,1,14,11],
 "ERF__NumericalDiffusion_8cpp.html#a55bafde70bac8a562579a7ba5c0c53f3":[3,0,1,14,11,2],
-"ERF__NumericalDiffusion_8cpp.html#ab353f4b7d02ea8b6976aeb90f3b50543":[3,0,1,14,11,0],
-"ERF__NumericalDiffusion_8cpp.html#ac9ebbec8e0b9fe65aca431e66186fb1d":[3,0,1,14,11,1],
-"ERF__OrbCosZenith_8H.html":[3,0,1,13,1],
-"ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21":[3,0,1,13,1,0],
-"ERF__OrbCosZenith_8H.html#a531e9e4f016d927864ec25ba17b89e86":[3,0,1,13,1,4],
-"ERF__OrbCosZenith_8H.html#a9c8445f2ac0ff59ba80cb7486d9a734f":[3,0,1,13,1,3]
+"ERF__NumericalDiffusion_8cpp.html#ab353f4b7d02ea8b6976aeb90f3b50543":[3,0,1,14,11,0]
 };

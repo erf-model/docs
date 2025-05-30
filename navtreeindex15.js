@@ -1,5 +1,10 @@
 var NAVTREEINDEX15 =
 {
+"structLineSampler.html":[2,0,37],
+"structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d":[2,0,37,11],
+"structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,37,9],
+"structLineSampler.html#a290c3f1bc30a85e67ca18f2bbd3e2cdf":[2,0,37,1],
+"structLineSampler.html#a56da044954a236b411c1c52e42338883":[2,0,37,6],
 "structLineSampler.html#a62712c6e41a0e98a8a7d5841cc52cd09":[2,0,37,4],
 "structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076":[2,0,37,7],
 "structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904":[2,0,37,10],
@@ -244,10 +249,5 @@ var NAVTREEINDEX15 =
 "structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce":[2,0,83,24],
 "structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f":[2,0,83,19],
 "structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba":[2,0,83,12],
-"structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b":[2,0,83,10],
-"structTurbulentPerturbation.html":[2,0,84],
-"structTurbulentPerturbation.html#a0bc940e3c9b5cd1ebcf866aaa344cfed":[2,0,84,16],
-"structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915":[2,0,84,27],
-"structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1":[2,0,84,10],
-"structTurbulentPerturbation.html#a20940c88c5c2f6ef1b90d1984867777a":[2,0,84,35]
+"structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b":[2,0,83,10]
 };
