@@ -424,7 +424,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">//Real fac = qsat*L_v*L_v/(Cp_d*R_v*tabs_array(i,j,k)*tabs_array(i,j,k));</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                Real fac = 1.0 + (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                Real fac = (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat) {</div>
@@ -636,7 +636,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="comment">//Real fac = qsat*L_v*L_v/(Cp_d*R_v*tabs_array(i,j,k)*tabs_array(i,j,k));</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                Real fac = 1.0 + (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                Real fac = (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat){</div>
