@@ -1,5 +1,8 @@
 var NAVTREEINDEX13 =
 {
+"namespaceBaseBCVars.html":[1,0,1],
+"namespaceBaseState.html":[1,0,2],
+"namespaceERFBCType.html":[1,0,6],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,6,0],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,6,0,9],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[1,0,6,0,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX13 =
 "namespacemodule__mp__morr__two__moment.html#a33c179bab60ed85b517956a44ed052c0":[1,0,19,14],
 "namespacemodule__mp__morr__two__moment.html#a34c7af89f9a77e7d259694a06e588d84":[1,0,19,81],
 "namespacemodule__mp__morr__two__moment.html#a34d9f305a18d5e46bef489eebc4bee86":[1,0,19,71],
-"namespacemodule__mp__morr__two__moment.html#a3637812061af8835cc4446df09a2c2d8":[1,0,19,105],
-"namespacemodule__mp__morr__two__moment.html#a3774f28b7b011ba598c632e542671c5d":[1,0,19,36],
-"namespacemodule__mp__morr__two__moment.html#a39ea35349e8e0504e72c626a2b64ffe1":[1,0,19,92],
-"namespacemodule__mp__morr__two__moment.html#a41d2987970206b4d2d442913d056b5a3":[1,0,19,42]
+"namespacemodule__mp__morr__two__moment.html#a3637812061af8835cc4446df09a2c2d8":[1,0,19,105]
 };
