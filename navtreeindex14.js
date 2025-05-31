@@ -1,8 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"namespacemodule__mp__morr__two__moment.html#a30c8eb946614c02bc0df630ba9d5de12":[1,0,19,110],
-"namespacemodule__mp__morr__two__moment.html#a33c179bab60ed85b517956a44ed052c0":[1,0,19,14],
-"namespacemodule__mp__morr__two__moment.html#a34c7af89f9a77e7d259694a06e588d84":[1,0,19,81],
 "namespacemodule__mp__morr__two__moment.html#a34d9f305a18d5e46bef489eebc4bee86":[1,0,19,71],
 "namespacemodule__mp__morr__two__moment.html#a3637812061af8835cc4446df09a2c2d8":[1,0,19,105],
 "namespacemodule__mp__morr__two__moment.html#a3774f28b7b011ba598c632e542671c5d":[1,0,19,36],
@@ -249,5 +246,8 @@ var NAVTREEINDEX14 =
 "structInputSpongeData.html#a944b8ce681cef2752c8797d83cae5eae":[2,0,33,3],
 "structInputSpongeData.html#ae430ab35b7ded846911bd26b0d984155":[2,0,33,6],
 "structInputSpongeData.html#aece8029ec7a192a21d88a796ada8e917":[2,0,33,4],
-"structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd":[2,0,33,2]
+"structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd":[2,0,33,2],
+"structLineSampler.html":[2,0,37],
+"structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d":[2,0,37,11],
+"structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,37,9]
 };
