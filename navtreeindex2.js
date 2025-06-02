@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16":[3,0,1,24,18],
+"ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01c":[3,0,1,24,27],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[3,0,1,24,27,9],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462":[3,0,1,24,27,8],
 "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914":[3,0,1,24,27,11],
@@ -142,11 +144,11 @@ var NAVTREEINDEX2 =
 "ERF__MOSTStress_8H_source.html":[3,0,1,1,16],
 "ERF__MRI_8H.html":[3,0,1,15,11],
 "ERF__MRI_8H_source.html":[3,0,1,15,11],
-"ERF__MYNNStruct_8H.html":[3,0,1,11,3],
-"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25":[3,0,1,11,3,2],
-"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25aa2652637c68e16524ab7681e65eea95c":[3,0,1,11,3,2,0],
-"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e":[3,0,1,11,3,2,1],
-"ERF__MYNNStruct_8H_source.html":[3,0,1,11,3],
+"ERF__MYNNStruct_8H.html":[3,0,1,11,4],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25":[3,0,1,11,4,2],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25aa2652637c68e16524ab7681e65eea95c":[3,0,1,11,4,2,0],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e":[3,0,1,11,4,2,1],
+"ERF__MYNNStruct_8H_source.html":[3,0,1,11,4],
 "ERF__MakeBuoyancy_8cpp.html":[3,0,1,14,6],
 "ERF__MakeBuoyancy_8cpp.html#a189ce372c10d9168cd4ac475d9aac51b":[3,0,1,14,6,0],
 "ERF__MakeFastCoeffs_8cpp.html":[3,0,1,15,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__NumericalDiffusion_8cpp.html":[3,0,1,14,11],
 "ERF__NumericalDiffusion_8cpp.html#a55bafde70bac8a562579a7ba5c0c53f3":[3,0,1,14,11,2],
 "ERF__NumericalDiffusion_8cpp.html#ab353f4b7d02ea8b6976aeb90f3b50543":[3,0,1,14,11,0],
-"ERF__NumericalDiffusion_8cpp.html#ac9ebbec8e0b9fe65aca431e66186fb1d":[3,0,1,14,11,1],
-"ERF__OrbCosZenith_8H.html":[3,0,1,13,1],
-"ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21":[3,0,1,13,1,0]
+"ERF__NumericalDiffusion_8cpp.html#ac9ebbec8e0b9fe65aca431e66186fb1d":[3,0,1,14,11,1]
 };

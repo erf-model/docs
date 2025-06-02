@@ -9,7 +9,8 @@ var classSurfaceLayer =
     [ "PBLHeightCalcType", "classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7", [
       [ "None", "classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "MYNN25", "classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7abdeb9a753db1d1f3fe0e944eab1d0601", null ],
-      [ "YSU", "classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7ad032bccff1ff2e272cc68da5a0de09fe", null ]
+      [ "YSU", "classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7ad032bccff1ff2e272cc68da5a0de09fe", null ],
+      [ "MRF", "classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7ab573e0bb23d2f8009358b4d851deb66e", null ]
     ] ],
     [ "RoughCalcType", "classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05", [
       [ "CONSTANT", "classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a8d6b5cada83510220f59e00ce86d4d92", null ],
