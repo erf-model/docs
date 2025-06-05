@@ -8,6 +8,7 @@ var structmost__data =
     [ "Cnk_d", "structmost__data.html#a73b1c119aa9b4bcaac98753a4fde9e86", null ],
     [ "gravity", "structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b", null ],
     [ "kappa", "structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe", null ],
+    [ "surf_moist_flux", "structmost__data.html#a0171f1cdf5ab8c1685475e5212246888", null ],
     [ "surf_temp_flux", "structmost__data.html#af1d069399319831cf4ae17fba1dda19f", null ],
     [ "visc", "structmost__data.html#add81c9cef613709d079f42a22c7d15ac", null ],
     [ "z0_const", "structmost__data.html#ad18b8055b6887e821efe0c37c4076d08", null ],

@@ -97,25 +97,27 @@ Collaboration diagram for surface_temp_wave_coupled:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsurface__temp__wave__coupled__coll__graph.png" border="0" usemap="#asurface__temp__wave__coupled_coll__map" alt="Collaboration graph"/></div>
 <map name="asurface__temp__wave__coupled_coll__map" id="asurface__temp__wave__coupled_coll__map">
-<area shape="rect" title=" " alt="" coords="156,392,367,419"/>
-<area shape="rect" title=" " alt="" coords="204,5,255,32"/>
-<area shape="rect" href="structmost__data.html" title=" " alt="" coords="67,279,157,306"/>
-<area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="202,279,321,306"/>
-<area shape="rect" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title=" " alt="" coords="111,407,322,433"/>
+<area shape="rect" title=" " alt="" coords="170,5,221,32"/>
+<area shape="rect" href="structmost__data.html" title=" " alt="" coords="261,294,351,321"/>
+<area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="5,294,124,321"/>
+<area shape="rect" title=" " alt="" coords="406,5,457,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afb061b2c2b86edd4821efbcb70295412"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#afb061b2c2b86edd4821efbcb70295412">surface_temp_wave_coupled</a> (amrex::Real zref, amrex::Real flux)</td></tr>
-<tr class="separator:afb061b2c2b86edd4821efbcb70295412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46050c5d081b11e873c0078b3e7b5e7b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;max_iters, const amrex::Array4&lt; amrex::Real &gt; &amp;z0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;umm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tvm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qvm_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;u_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;w_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;q_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_surf_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;olen_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;pblh_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;Hwave_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;Lwave_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;eta_arr) const</td></tr>
-<tr class="separator:a46050c5d081b11e873c0078b3e7b5e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92fa641fdb56903e965455f05fd465d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#af92fa641fdb56903e965455f05fd465d">surface_temp_wave_coupled</a> (amrex::Real zref, amrex::Real Tflux, amrex::Real Qvflux, bool cons_qflux)</td></tr>
+<tr class="separator:af92fa641fdb56903e965455f05fd465d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc7697fdc53b7db6f63f5fc7db6f797"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;max_iters, const amrex::Array4&lt; amrex::Real &gt; &amp;z0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;umm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tvm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qvm_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;u_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;w_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;q_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_surf_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;q_surf_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;olen_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;pblh_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;Hwave_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;Lwave_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;eta_arr) const</td></tr>
+<tr class="separator:a3dc7697fdc53b7db6f63f5fc7db6f797"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a44d84ddefc6dc5572f1b1e614996b288"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmost__data.html">most_data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a></td></tr>
 <tr class="separator:a44d84ddefc6dc5572f1b1e614996b288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad527bfa0015e0d9e8f3fe0bc9b5bc448"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#ad527bfa0015e0d9e8f3fe0bc9b5bc448">spec_qflux</a></td></tr>
+<tr class="separator:ad527bfa0015e0d9e8f3fe0bc9b5bc448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf85e6ffabb9974a13bc03e6f7d11e96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsimilarity__funs.html">similarity_funs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a></td></tr>
 <tr class="separator:abf85e6ffabb9974a13bc03e6f7d11e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3715864e9c6bfdc6e4556925d0fc48fa"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa">tol</a> = 1.0e-5</td></tr>
@@ -132,8 +134,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Surface temperature with wave-coupled roughness </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afb061b2c2b86edd4821efbcb70295412"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb061b2c2b86edd4821efbcb70295412">&#9670;&nbsp;</a></span>surface_temp_wave_coupled()</h2>
+<a id="af92fa641fdb56903e965455f05fd465d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af92fa641fdb56903e965455f05fd465d">&#9670;&nbsp;</a></span>surface_temp_wave_coupled()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +153,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::Real&#160;</td>
-          <td class="paramname"><em>flux</em>&#160;</td>
+          <td class="paramname"><em>Tflux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>Qvflux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cons_qflux</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,19 +179,23 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;    {</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;        <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> = zref;</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;        <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> = flux;</div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;    {</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;        <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> = zref;</div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;        <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>  = Tflux;</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;        <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> = Qvflux;</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;        <a class="code" href="structsurface__temp__wave__coupled.html#ad527bfa0015e0d9e8f3fe0bc9b5bc448">spec_qflux</a> = cons_qflux;</div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;    }</div>
+<div class="ttc" id="astructmost__data_html_a0171f1cdf5ab8c1685475e5212246888"><div class="ttname"><a href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">most_data::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdoc">Moisture flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:20</div></div>
 <div class="ttc" id="astructmost__data_html_a1acd5276639042ca0834c56656302ea6"><div class="ttname"><a href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">most_data::zref</a></div><div class="ttdeci">amrex::Real zref</div><div class="ttdoc">Reference height (m)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:15</div></div>
 <div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:19</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html_a44d84ddefc6dc5572f1b1e614996b288"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">surface_temp_wave_coupled::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1353</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_a44d84ddefc6dc5572f1b1e614996b288"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">surface_temp_wave_coupled::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1559</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_ad527bfa0015e0d9e8f3fe0bc9b5bc448"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#ad527bfa0015e0d9e8f3fe0bc9b5bc448">surface_temp_wave_coupled::spec_qflux</a></div><div class="ttdeci">bool spec_qflux</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1560</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a46050c5d081b11e873c0078b3e7b5e7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46050c5d081b11e873c0078b3e7b5e7b">&#9670;&nbsp;</a></span>iterate_flux()</h2>
+<a id="a3dc7697fdc53b7db6f63f5fc7db6f797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc7697fdc53b7db6f63f5fc7db6f797">&#9670;&nbsp;</a></span>iterate_flux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,6 +291,12 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>q_surf_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>olen_arr</em>, </td>
         </tr>
         <tr>
@@ -311,84 +335,97 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160;    {</div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;        <span class="keywordtype">int</span> iter = 0;</div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;        amrex::Real ustar = 0.0;</div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;        amrex::Real wstar = 0.0;</div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;        amrex::Real z0    = 0.0;</div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;        amrex::Real tflux = 0.0;</div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;        amrex::Real zeta  = 0.0;</div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;        amrex::Real psi_m = 0.0;</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;        amrex::Real psi_h = 0.0;</div>
-<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;        amrex::Real Olen  = 0.0;</div>
-<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;        amrex::Real Oleno = 0.0;</div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;        <span class="keywordtype">int</span> ie, je;</div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;        ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;        je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;        ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;        je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;        amrex::Real umm   = std::max(umm_arr(i,j,k), <a class="code" href="structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee">WSMIN</a>);</div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;        <span class="keywordflow">if</span> (u_star_arr(i,j,k) == 1.E34) {</div>
-<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k));</div>
-<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01311"></a><span class="lineno"> 1311</span>&#160;            Olen  = olen_arr(i,j,k);</div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;            Oleno = Olen;</div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;            zeta  = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;            psi_m = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;            psi_h = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;        }</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;            ustar = u_star_arr(i,j,k);</div>
-<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;            z0    = std::min( std::max(1200.0 * Hwave_arr(i,j,k) * std::pow( Hwave_arr(i,j,k)/(Lwave_arr(i,j,k)+<a class="code" href="structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf">eps</a>), 4.5 )</div>
-<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;                                      + 0.11 * eta_arr(ie,je,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) / ustar, <a class="code" href="structsurface__temp__wave__coupled.html#abd39570dca269dda79fbb946df0a02ca">z0_eps</a>), <a class="code" href="structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01">z0_max</a> );</div>
-<div class="line"><a name="l01321"></a><span class="lineno"> 1321</span>&#160;            tflux = -(tm_arr(i,j,k) - t_surf_arr(i,j,k)) * ustar * <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> /</div>
-<div class="line"><a name="l01322"></a><span class="lineno"> 1322</span>&#160;                     (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h); <span class="comment">// &lt;w&#39;T&#39;&gt;</span></div>
-<div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;            tflux *= (1 + 0.61*qvm_arr(i,j,k));</div>
-<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;            tflux += 0.61*tm_arr(i,j,k) * -ustar*q_star_arr(i,j,k); <span class="comment">// ~= &lt;w&#39;Tv&#39;&gt;</span></div>
-<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;            <span class="keywordflow">if</span> (w_star_arr) {</div>
-<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;                <span class="comment">// update w* and Umagmean</span></div>
-<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;                w_star_arr(i,j,k) = <a class="code" href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a>(tflux, pblh_arr(i,j,k), tvm_arr(i,j,k));</div>
-<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;                wstar = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">Bjr_beta</a> * w_star_arr(i,j,k);</div>
-<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;                umm = std::sqrt(umm_arr(i,j,k)*umm_arr(i,j,k) + wstar*wstar);</div>
-<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;                umm = std::max(umm, <a class="code" href="structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee">WSMIN</a>);</div>
-<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;            }</div>
-<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;            Olen = -ustar * ustar * ustar * tvm_arr(i,j,k) / (<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">gravity</a> * tflux);</div>
-<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;            <span class="keywordflow">if</span> ( ((Olen &gt;= 0.0) &amp;&amp; (Oleno &lt;= 0.0)) ||</div>
-<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;                 ((Olen &lt;= 0.0) &amp;&amp; (Oleno &gt;= 0.0)) ) {</div>
-<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;                Olen = 0.5 * (Olen + Oleno);</div>
-<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;            }</div>
-<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;            Oleno = Olen;</div>
-<div class="line"><a name="l01338"></a><span class="lineno"> 1338</span>&#160;            zeta  = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
-<div class="line"><a name="l01339"></a><span class="lineno"> 1339</span>&#160;            psi_m = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
-<div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;            psi_h = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
-<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_m);</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;            ++iter;</div>
-<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
-<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(iter &lt; max_iters, <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
-<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160; </div>
-<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * (tm_arr(i,j,k) - t_surf_arr(i,j,k)) /</div>
-<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;                            (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h);</div>
-<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;          olen_arr(i,j,k) = Olen;</div>
-<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;            z0_arr(i,j,k) = z0;</div>
-<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;    {</div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;        <span class="keywordtype">int</span> iter = 0;</div>
+<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;        amrex::Real ustar = 0.0;</div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160;        amrex::Real wstar = 0.0;</div>
+<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;        amrex::Real z0    = 0.0;</div>
+<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;        amrex::Real tflux = 0.0;</div>
+<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;        amrex::Real qflux = 0.0;</div>
+<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;        amrex::Real zeta  = 0.0;</div>
+<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;        amrex::Real psi_m = 0.0;</div>
+<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160;        amrex::Real psi_h = 0.0;</div>
+<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;        amrex::Real Olen  = 0.0;</div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;        amrex::Real Oleno = 0.0;</div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;        <span class="keywordtype">int</span> ie, je;</div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;        ie = i  &lt; lbound(eta_arr).x ? lbound(eta_arr).x : i;</div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;        je = j  &lt; lbound(eta_arr).y ? lbound(eta_arr).y : j;</div>
+<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;        ie = ie &gt; ubound(eta_arr).x ? ubound(eta_arr).x : ie;</div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;        je = je &gt; ubound(eta_arr).y ? ubound(eta_arr).y : je;</div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;        amrex::Real umm   = std::max(umm_arr(i,j,k), <a class="code" href="structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee">WSMIN</a>);</div>
+<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;        <span class="keywordflow">if</span> (u_star_arr(i,j,k) == 1.E34) {</div>
+<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k));</div>
+<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;            Olen  = olen_arr(i,j,k);</div>
+<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;            Oleno = Olen;</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;            zeta  = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
+<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;            psi_m = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
+<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;            psi_h = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
+<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;        }</div>
+<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;        <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;            ustar = u_star_arr(i,j,k);</div>
+<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;            z0    = std::min( std::max(1200.0 * Hwave_arr(i,j,k) * std::pow( Hwave_arr(i,j,k)/(Lwave_arr(i,j,k)+<a class="code" href="structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf">eps</a>), 4.5 )</div>
+<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;                                      + 0.11 * eta_arr(ie,je,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) / ustar, <a class="code" href="structsurface__temp__wave__coupled.html#abd39570dca269dda79fbb946df0a02ca">z0_eps</a>), <a class="code" href="structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01">z0_max</a> );</div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;            tflux = -(tm_arr(i,j,k) - t_surf_arr(i,j,k)) * ustar * <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> /</div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;                     (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h); <span class="comment">// &lt;w&#39;T&#39;&gt;</span></div>
+<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;            tflux *= (1 + 0.61*qvm_arr(i,j,k));</div>
+<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;            qflux = (<a class="code" href="structsurface__temp__wave__coupled.html#ad527bfa0015e0d9e8f3fe0bc9b5bc448">spec_qflux</a>) ? <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> :</div>
+<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;                                 -(qvm_arr(i,j,k) - q_surf_arr(i,j,k)) * ustar * <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> /</div>
+<div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;                                  (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_h); <span class="comment">// &lt;w&#39;Qv&#39;&gt;</span></div>
+<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;            tflux += 0.61*tm_arr(i,j,k) * qflux; <span class="comment">// ~= &lt;w&#39;Tv&#39;&gt;</span></div>
+<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;            <span class="keywordflow">if</span> (w_star_arr) {</div>
+<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;                <span class="comment">// update w* and Umagmean</span></div>
+<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;                w_star_arr(i,j,k) = <a class="code" href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a>(tflux, pblh_arr(i,j,k), tvm_arr(i,j,k));</div>
+<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;                wstar = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">Bjr_beta</a> * w_star_arr(i,j,k);</div>
+<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;                umm = std::sqrt(umm_arr(i,j,k)*umm_arr(i,j,k) + wstar*wstar);</div>
+<div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;                umm = std::max(umm, <a class="code" href="structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee">WSMIN</a>);</div>
+<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;            }</div>
+<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;            Olen = -ustar * ustar * ustar * tvm_arr(i,j,k) / (<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">gravity</a> * tflux);</div>
+<div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;            <span class="keywordflow">if</span> ( (((Olen &gt;= 0.0) &amp;&amp; (Oleno &lt;= 0.0)) ||</div>
+<div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160;                  ((Olen &lt;= 0.0) &amp;&amp; (Oleno &gt;= 0.0))) &amp;&amp;</div>
+<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;                 std::fabs(Olen) + std::fabs(Oleno) &lt; 1.) {</div>
+<div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;                Olen = 0.5 * (Olen + Oleno);</div>
+<div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160;            }</div>
+<div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160;            Oleno = Olen;</div>
+<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;            zeta  = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
+<div class="line"><a name="l01537"></a><span class="lineno"> 1537</span>&#160;            psi_m = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
+<div class="line"><a name="l01538"></a><span class="lineno"> 1538</span>&#160;            psi_h = <a class="code" href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
+<div class="line"><a name="l01539"></a><span class="lineno"> 1539</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_m);</div>
+<div class="line"><a name="l01540"></a><span class="lineno"> 1540</span>&#160;            ++iter;</div>
+<div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
+<div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(iter &lt; max_iters, <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
+<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160; </div>
+<div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * (tm_arr(i,j,k) - t_surf_arr(i,j,k)) /</div>
+<div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;                            (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h);</div>
+<div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;          olen_arr(i,j,k) = Olen;</div>
+<div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;            z0_arr(i,j,k) = z0;</div>
+<div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structsurface__temp__wave__coupled.html#ad527bfa0015e0d9e8f3fe0bc9b5bc448">spec_qflux</a>) {</div>
+<div class="line"><a name="l01549"></a><span class="lineno"> 1549</span>&#160;            q_surf_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> * (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_h) /</div>
+<div class="line"><a name="l01550"></a><span class="lineno"> 1550</span>&#160;                                (u_star_arr(i,j,k) * <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + qvm_arr(i,j,k);</div>
+<div class="line"><a name="l01551"></a><span class="lineno"> 1551</span>&#160;            q_star_arr(i,j,k) = -<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> / u_star_arr(i,j,k);</div>
+<div class="line"><a name="l01552"></a><span class="lineno"> 1552</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01553"></a><span class="lineno"> 1553</span>&#160;            q_star_arr(i,j,k) = <a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * (qvm_arr(i,j,k) - q_surf_arr(i,j,k)) /</div>
+<div class="line"><a name="l01554"></a><span class="lineno"> 1554</span>&#160;                                (std::log(<a class="code" href="structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_h);</div>
+<div class="line"><a name="l01555"></a><span class="lineno"> 1555</span>&#160;        }</div>
+<div class="line"><a name="l01556"></a><span class="lineno"> 1556</span>&#160;    }</div>
 <div class="ttc" id="aERF__Wstar_8H_html_a07708294fc196cae6c560e47360c6600"><div class="ttname"><a href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real calc_wstar(const amrex::Real &amp;ust, const amrex::Real &amp;tst, const amrex::Real &amp;qst, const amrex::Real &amp;pblh, const amrex::Real &amp;th, const amrex::Real &amp;thv, const amrex::Real &amp;qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_Wstar.H:13</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:175</div></div>
 <div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:17</div></div>
 <div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:18</div></div>
-<div class="ttc" id="astructmost__data_html_acdc883c0d7a7eb90774ea0c8e376d91d"><div class="ttname"><a href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">most_data::Bjr_beta</a></div><div class="ttdeci">const amrex::Real Bjr_beta</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:28</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:40</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:54</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html_a2a663fad6d183ced2edb1dc99fe104bf"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf">surface_temp_wave_coupled::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1356</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html_a3715864e9c6bfdc6e4556925d0fc48fa"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa">surface_temp_wave_coupled::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1355</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html_abd39570dca269dda79fbb946df0a02ca"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#abd39570dca269dda79fbb946df0a02ca">surface_temp_wave_coupled::z0_eps</a></div><div class="ttdeci">const amrex::Real z0_eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1357</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html_abf85e6ffabb9974a13bc03e6f7d11e96"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">surface_temp_wave_coupled::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1354</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html_aedbd53ee9bf7b4c98f5a2b88207cbb01"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01">surface_temp_wave_coupled::z0_max</a></div><div class="ttdeci">const amrex::Real z0_max</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1358</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html_af09bca4efd34fd9d8b6bb6a2f363ebee"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee">surface_temp_wave_coupled::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1359</div></div>
+<div class="ttc" id="astructmost__data_html_acdc883c0d7a7eb90774ea0c8e376d91d"><div class="ttname"><a href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">most_data::Bjr_beta</a></div><div class="ttdeci">const amrex::Real Bjr_beta</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:29</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:41</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:55</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_a2a663fad6d183ced2edb1dc99fe104bf"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf">surface_temp_wave_coupled::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1563</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_a3715864e9c6bfdc6e4556925d0fc48fa"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa">surface_temp_wave_coupled::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1562</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_abd39570dca269dda79fbb946df0a02ca"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#abd39570dca269dda79fbb946df0a02ca">surface_temp_wave_coupled::z0_eps</a></div><div class="ttdeci">const amrex::Real z0_eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1564</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_abf85e6ffabb9974a13bc03e6f7d11e96"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96">surface_temp_wave_coupled::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1561</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_aedbd53ee9bf7b4c98f5a2b88207cbb01"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01">surface_temp_wave_coupled::z0_max</a></div><div class="ttdeci">const amrex::Real z0_max</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1565</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html_af09bca4efd34fd9d8b6bb6a2f363ebee"><div class="ttname"><a href="structsurface__temp__wave__coupled.html#af09bca4efd34fd9d8b6bb6a2f363ebee">surface_temp_wave_coupled::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1566</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structsurface__temp__wave__coupled_a46050c5d081b11e873c0078b3e7b5e7b_cgraph.png" border="0" usemap="#astructsurface__temp__wave__coupled_a46050c5d081b11e873c0078b3e7b5e7b_cgraph" alt=""/></div>
-<map name="astructsurface__temp__wave__coupled_a46050c5d081b11e873c0078b3e7b5e7b_cgraph" id="astructsurface__temp__wave__coupled_a46050c5d081b11e873c0078b3e7b5e7b_cgraph">
+<div class="center"><img src="structsurface__temp__wave__coupled_a3dc7697fdc53b7db6f63f5fc7db6f797_cgraph.png" border="0" usemap="#astructsurface__temp__wave__coupled_a3dc7697fdc53b7db6f63f5fc7db6f797_cgraph" alt=""/></div>
+<map name="astructsurface__temp__wave__coupled_a3dc7697fdc53b7db6f63f5fc7db6f797_cgraph" id="astructsurface__temp__wave__coupled_a3dc7697fdc53b7db6f63f5fc7db6f797_cgraph">
 <area shape="rect" title=" " alt="" coords="5,71,216,112"/>
 <area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="264,5,417,47"/>
 <area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="264,71,417,112"/>
@@ -419,7 +456,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>.</p>
 
 </div>
 </div>
@@ -443,7 +480,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux()</a>, and <a class="el" href="structsurface__temp__wave__coupled.html#afb061b2c2b86edd4821efbcb70295412">surface_temp_wave_coupled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>, and <a class="el" href="structsurface__temp__wave__coupled.html#af92fa641fdb56903e965455f05fd465d">surface_temp_wave_coupled()</a>.</p>
 
 </div>
 </div>
@@ -467,7 +504,31 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>.</p>
+
+</div>
+</div>
+<a id="ad527bfa0015e0d9e8f3fe0bc9b5bc448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad527bfa0015e0d9e8f3fe0bc9b5bc448">&#9670;&nbsp;</a></span>spec_qflux</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool surface_temp_wave_coupled::spec_qflux</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>, and <a class="el" href="structsurface__temp__wave__coupled.html#af92fa641fdb56903e965455f05fd465d">surface_temp_wave_coupled()</a>.</p>
 
 </div>
 </div>
@@ -491,7 +552,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>.</p>
 
 </div>
 </div>
@@ -515,7 +576,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>.</p>
 
 </div>
 </div>
@@ -539,7 +600,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>.</p>
 
 </div>
 </div>
@@ -563,7 +624,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a46050c5d081b11e873c0078b3e7b5e7b">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797">iterate_flux()</a>.</p>
 
 </div>
 </div>

@@ -97,25 +97,27 @@ Collaboration diagram for surface_flux_charnock:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsurface__flux__charnock__coll__graph.png" border="0" usemap="#asurface__flux__charnock_coll__map" alt="Collaboration graph"/></div>
 <map name="asurface__flux__charnock_coll__map" id="asurface__flux__charnock_coll__map">
-<area shape="rect" title=" " alt="" coords="178,348,345,375"/>
-<area shape="rect" title=" " alt="" coords="204,5,255,32"/>
-<area shape="rect" href="structmost__data.html" title=" " alt="" coords="67,257,157,284"/>
-<area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="202,257,321,284"/>
-<area shape="rect" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title=" " alt="" coords="133,363,300,389"/>
+<area shape="rect" title=" " alt="" coords="170,5,221,32"/>
+<area shape="rect" href="structmost__data.html" title=" " alt="" coords="261,272,351,299"/>
+<area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="5,272,124,299"/>
+<area shape="rect" title=" " alt="" coords="406,5,457,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8a063b2d326c7e8b184e80c0b68ea639"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a8a063b2d326c7e8b184e80c0b68ea639">surface_flux_charnock</a> (amrex::Real zref, amrex::Real flux, amrex::Real cnk_a, bool cnk_visc)</td></tr>
-<tr class="separator:a8a063b2d326c7e8b184e80c0b68ea639"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f88180c90bc865136d2f153c82d4fe3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a9f88180c90bc865136d2f153c82d4fe3">iterate_flux</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;max_iters, const amrex::Array4&lt; amrex::Real &gt; &amp;z0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;umm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tvm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qvm_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;u_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;w_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;q_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_surf_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;olen_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;pblh_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;) const</td></tr>
-<tr class="separator:a9f88180c90bc865136d2f153c82d4fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a932aba0b9d12528c8fc6a6d7a815701b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a932aba0b9d12528c8fc6a6d7a815701b">surface_flux_charnock</a> (amrex::Real zref, amrex::Real Tflux, amrex::Real Qvflux, amrex::Real cnk_a, bool cnk_visc, bool cons_qflux)</td></tr>
+<tr class="separator:a932aba0b9d12528c8fc6a6d7a815701b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e1d36114b4ca594053a1d70a839b5b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#ab5e1d36114b4ca594053a1d70a839b5b">iterate_flux</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;max_iters, const amrex::Array4&lt; amrex::Real &gt; &amp;z0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;umm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;tvm_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qvm_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;u_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;w_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;q_star_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;t_surf_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;q_surf_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;olen_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;pblh_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;) const</td></tr>
+<tr class="separator:ab5e1d36114b4ca594053a1d70a839b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a60030c5104987d6287efd5d9b996014c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmost__data.html">most_data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a></td></tr>
 <tr class="separator:a60030c5104987d6287efd5d9b996014c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67345ad36f06fec102713f20638e4da0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a67345ad36f06fec102713f20638e4da0">spec_qflux</a></td></tr>
+<tr class="separator:a67345ad36f06fec102713f20638e4da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4501ca4ecf49dccd6a1a914af03e1ed1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structsimilarity__funs.html">similarity_funs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a></td></tr>
 <tr class="separator:a4501ca4ecf49dccd6a1a914af03e1ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08529386a7d5012684c818249a7d76ba"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">tol</a> = 1.0e-5</td></tr>
@@ -126,8 +128,8 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Surface flux with charnock roughness </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8a063b2d326c7e8b184e80c0b68ea639"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a063b2d326c7e8b184e80c0b68ea639">&#9670;&nbsp;</a></span>surface_flux_charnock()</h2>
+<a id="a932aba0b9d12528c8fc6a6d7a815701b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a932aba0b9d12528c8fc6a6d7a815701b">&#9670;&nbsp;</a></span>surface_flux_charnock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,7 +147,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::Real&#160;</td>
-          <td class="paramname"><em>flux</em>, </td>
+          <td class="paramname"><em>Tflux</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramname"><em>Qvflux</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -157,7 +165,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>cnk_visc</em>&#160;</td>
+          <td class="paramname"><em>cnk_visc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cons_qflux</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -171,23 +185,27 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    {</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> = zref;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> = flux;</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">Cnk_a</a> = cnk_a;</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#add81c9cef613709d079f42a22c7d15ac">visc</a> = cnk_visc;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    {</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> = zref;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>  = Tflux;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> = Qvflux;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">Cnk_a</a> = cnk_a;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#add81c9cef613709d079f42a22c7d15ac">visc</a>  = cnk_visc;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <a class="code" href="structsurface__flux__charnock.html#a67345ad36f06fec102713f20638e4da0">spec_qflux</a> = cons_qflux;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    }</div>
+<div class="ttc" id="astructmost__data_html_a0171f1cdf5ab8c1685475e5212246888"><div class="ttname"><a href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">most_data::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdoc">Moisture flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:20</div></div>
 <div class="ttc" id="astructmost__data_html_a1acd5276639042ca0834c56656302ea6"><div class="ttname"><a href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">most_data::zref</a></div><div class="ttdeci">amrex::Real zref</div><div class="ttdoc">Reference height (m)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:15</div></div>
-<div class="ttc" id="astructmost__data_html_a83c3a7004441c335b630dd2d6973f518"><div class="ttname"><a href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">most_data::Cnk_a</a></div><div class="ttdeci">amrex::Real Cnk_a</div><div class="ttdoc">Standard Charnock constant https://doi.org/10.1175/JAMC-D-17-0137.1.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:21</div></div>
-<div class="ttc" id="astructmost__data_html_add81c9cef613709d079f42a22c7d15ac"><div class="ttname"><a href="structmost__data.html#add81c9cef613709d079f42a22c7d15ac">most_data::visc</a></div><div class="ttdeci">bool visc</div><div class="ttdoc">Use viscous Charnock formulation.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:26</div></div>
+<div class="ttc" id="astructmost__data_html_a83c3a7004441c335b630dd2d6973f518"><div class="ttname"><a href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">most_data::Cnk_a</a></div><div class="ttdeci">amrex::Real Cnk_a</div><div class="ttdoc">Standard Charnock constant https://doi.org/10.1175/JAMC-D-17-0137.1.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:22</div></div>
+<div class="ttc" id="astructmost__data_html_add81c9cef613709d079f42a22c7d15ac"><div class="ttname"><a href="structmost__data.html#add81c9cef613709d079f42a22c7d15ac">most_data::visc</a></div><div class="ttdeci">bool visc</div><div class="ttdoc">Use viscous Charnock formulation.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:27</div></div>
 <div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:19</div></div>
-<div class="ttc" id="astructsurface__flux__charnock_html_a60030c5104987d6287efd5d9b996014c"><div class="ttname"><a href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">surface_flux_charnock::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:575</div></div>
+<div class="ttc" id="astructsurface__flux__charnock_html_a60030c5104987d6287efd5d9b996014c"><div class="ttname"><a href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">surface_flux_charnock::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:631</div></div>
+<div class="ttc" id="astructsurface__flux__charnock_html_a67345ad36f06fec102713f20638e4da0"><div class="ttname"><a href="structsurface__flux__charnock.html#a67345ad36f06fec102713f20638e4da0">surface_flux_charnock::spec_qflux</a></div><div class="ttdeci">bool spec_qflux</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:632</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9f88180c90bc865136d2f153c82d4fe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f88180c90bc865136d2f153c82d4fe3">&#9670;&nbsp;</a></span>iterate_flux()</h2>
+<a id="ab5e1d36114b4ca594053a1d70a839b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e1d36114b4ca594053a1d70a839b5b">&#9670;&nbsp;</a></span>iterate_flux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,6 +301,12 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>q_surf_arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
           <td class="paramname"><em>olen_arr</em>, </td>
         </tr>
         <tr>
@@ -321,74 +345,86 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    {</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        <span class="keywordtype">int</span> iter = 0;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        amrex::Real ustar = 0.0;</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        amrex::Real wstar = 0.0;</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        amrex::Real tflux = 0.0;</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        amrex::Real z0    = 0.0;</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        amrex::Real zeta  = 0.0;</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        amrex::Real psi_m = 0.0;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        amrex::Real psi_h = 0.0;</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        amrex::Real Olen  = 0.0;</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        amrex::Real umm   = std::max(umm_arr(i,j,k), <a class="code" href="structsurface__flux__charnock.html#aadc72e53ca70ae1475fd787a0b71e717">WSMIN</a>);</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <span class="keywordflow">if</span> (u_star_arr(i,j,k) == 1.E34) {</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k));</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            Olen  = olen_arr(i,j,k);</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            zeta  = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            psi_m = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            psi_h = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        }</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            ustar = u_star_arr(i,j,k);</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">Cnk_a</a> &gt; 0) {</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                z0 = (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">Cnk_a</a> / <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">gravity</a>) * ustar * ustar;</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#add81c9cef613709d079f42a22c7d15ac">visc</a>) {</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                    z0 += <a class="code" href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674">air_viscosity</a>(tm_arr(i,j,k)) / std::max(ustar, 0.05);</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                }</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                z0 = <a class="code" href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e">COARE3_roughness</a>(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a>, umm, ustar);</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            }</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            tflux = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>*(1 + 0.61*qvm_arr(i,j,k)) - 0.61*tm_arr(i,j,k)*ustar*q_star_arr(i,j,k);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;            <span class="keywordflow">if</span> (w_star_arr) {</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                <span class="comment">// update w* and Umagmean</span></div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                w_star_arr(i,j,k) = <a class="code" href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a>(tflux, pblh_arr(i,j,k), tvm_arr(i,j,k));</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                wstar = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">Bjr_beta</a> * w_star_arr(i,j,k);</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                umm = std::sqrt(umm_arr(i,j,k)*umm_arr(i,j,k) + wstar*wstar);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                umm = std::max(umm, <a class="code" href="structsurface__flux__charnock.html#aadc72e53ca70ae1475fd787a0b71e717">WSMIN</a>);</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            }</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            Olen  = -ustar * ustar * ustar * tvm_arr(i,j,k) / (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">gravity</a> * tflux);</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            zeta  = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            psi_m = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            psi_h = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_m);</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            ++iter;</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(iter &lt; max_iters, <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        t_surf_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> * (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h) /</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                            (u_star_arr(i,j,k) * <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + tm_arr(i,j,k);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        t_star_arr(i,j,k) = -<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> / u_star_arr(i,j,k);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;          olen_arr(i,j,k) = Olen;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;           z0_arr(i,j,k)  = z0;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    {</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        <span class="keywordtype">int</span> iter = 0;</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;        amrex::Real ustar = 0.0;</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        amrex::Real wstar = 0.0;</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        amrex::Real tflux = 0.0;</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        amrex::Real qflux = 0.0;</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        amrex::Real z0    = 0.0;</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        amrex::Real zeta  = 0.0;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        amrex::Real psi_m = 0.0;</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;        amrex::Real psi_h = 0.0;</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        amrex::Real Olen  = 0.0;</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        amrex::Real umm   = std::max(umm_arr(i,j,k), <a class="code" href="structsurface__flux__charnock.html#aadc72e53ca70ae1475fd787a0b71e717">WSMIN</a>);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <span class="keywordflow">if</span> (u_star_arr(i,j,k) == 1.E34) {</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k));</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            Olen  = olen_arr(i,j,k);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            zeta  = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            psi_m = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            psi_h = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        }</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;        <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;            ustar = u_star_arr(i,j,k);</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">Cnk_a</a> &gt; 0) {</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                z0 = (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a83c3a7004441c335b630dd2d6973f518">Cnk_a</a> / <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">gravity</a>) * ustar * ustar;</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#add81c9cef613709d079f42a22c7d15ac">visc</a>) {</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;                    z0 += <a class="code" href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674">air_viscosity</a>(tm_arr(i,j,k)) / std::max(ustar, 0.05);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;                }</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                z0 = <a class="code" href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e">COARE3_roughness</a>(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a>, umm, ustar);</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;            }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            qflux = (<a class="code" href="structsurface__flux__charnock.html#a67345ad36f06fec102713f20638e4da0">spec_qflux</a>) ? <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> :</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                                 -(qvm_arr(i,j,k) - q_surf_arr(i,j,k)) * ustar * <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> /</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                                  (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_h); <span class="comment">// &lt;w&#39;Qv&#39;&gt;</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            tflux = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>*(1 + 0.61*qvm_arr(i,j,k)) + qflux*0.61*tm_arr(i,j,k);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="keywordflow">if</span> (w_star_arr) {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                <span class="comment">// update w* and Umagmean</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                w_star_arr(i,j,k) = <a class="code" href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a>(tflux, pblh_arr(i,j,k), tvm_arr(i,j,k));</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                wstar = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">Bjr_beta</a> * w_star_arr(i,j,k);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                umm = std::sqrt(umm_arr(i,j,k)*umm_arr(i,j,k) + wstar*wstar);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                umm = std::max(umm, <a class="code" href="structsurface__flux__charnock.html#aadc72e53ca70ae1475fd787a0b71e717">WSMIN</a>);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            }</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            Olen  = -ustar * ustar * ustar * tvm_arr(i,j,k) / (<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">gravity</a> * tflux);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;            zeta  = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / Olen;</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            psi_m = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">calc_psi_m</a>(zeta);</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            psi_h = <a class="code" href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">sfuns</a>.<a class="code" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">calc_psi_h</a>(zeta);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_m);</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            ++iter;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(iter &lt; max_iters, <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;        t_surf_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> * (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0) - psi_h) /</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                            (u_star_arr(i,j,k) * <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + tm_arr(i,j,k);</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        t_star_arr(i,j,k) = -<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a> / u_star_arr(i,j,k);</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;          olen_arr(i,j,k) = Olen;</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;           z0_arr(i,j,k)  = z0;</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structsurface__flux__charnock.html#a67345ad36f06fec102713f20638e4da0">spec_qflux</a>) {</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            q_surf_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> * (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_h) /</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                                (u_star_arr(i,j,k) * <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a>) + qvm_arr(i,j,k);</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;            q_star_arr(i,j,k) = -<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> / u_star_arr(i,j,k);</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            q_star_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * (qvm_arr(i,j,k) - q_surf_arr(i,j,k)) /</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                                (std::log(<a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a1acd5276639042ca0834c56656302ea6">zref</a> / z0_arr(i,j,k)) - psi_h);</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        }</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    }</div>
 <div class="ttc" id="aERF__MOSTRoughness_8H_html_a9fb5194b85e904a3f0a0500a05438b5e"><div class="ttname"><a href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e">COARE3_roughness</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real COARE3_roughness(amrex::Real zref, amrex::Real umm, amrex::Real ustar)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTRoughness.H:9</div></div>
-<div class="ttc" id="aERF__MOSTStress_8H_html_a83577688af6d1136ab7a0be1b16f4674"><div class="ttname"><a href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674">air_viscosity</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real air_viscosity(amrex::Real T_degK)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:79</div></div>
+<div class="ttc" id="aERF__MOSTStress_8H_html_a83577688af6d1136ab7a0be1b16f4674"><div class="ttname"><a href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674">air_viscosity</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real air_viscosity(amrex::Real T_degK)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:80</div></div>
 <div class="ttc" id="aERF__Wstar_8H_html_a07708294fc196cae6c560e47360c6600"><div class="ttname"><a href="ERF__Wstar_8H.html#a07708294fc196cae6c560e47360c6600">calc_wstar</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real calc_wstar(const amrex::Real &amp;ust, const amrex::Real &amp;tst, const amrex::Real &amp;qst, const amrex::Real &amp;pblh, const amrex::Real &amp;th, const amrex::Real &amp;thv, const amrex::Real &amp;qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_Wstar.H:13</div></div>
 <div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:17</div></div>
 <div class="ttc" id="astructmost__data_html_a7e3410c5a9916b84524bda4f324eec3b"><div class="ttname"><a href="structmost__data.html#a7e3410c5a9916b84524bda4f324eec3b">most_data::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdoc">Acceleration due to gravity (m/s^2)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:18</div></div>
-<div class="ttc" id="astructmost__data_html_acdc883c0d7a7eb90774ea0c8e376d91d"><div class="ttname"><a href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">most_data::Bjr_beta</a></div><div class="ttdeci">const amrex::Real Bjr_beta</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:28</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:40</div></div>
-<div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:54</div></div>
-<div class="ttc" id="astructsurface__flux__charnock_html_a08529386a7d5012684c818249a7d76ba"><div class="ttname"><a href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">surface_flux_charnock::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:577</div></div>
-<div class="ttc" id="astructsurface__flux__charnock_html_a4501ca4ecf49dccd6a1a914af03e1ed1"><div class="ttname"><a href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">surface_flux_charnock::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:576</div></div>
-<div class="ttc" id="astructsurface__flux__charnock_html_aadc72e53ca70ae1475fd787a0b71e717"><div class="ttname"><a href="structsurface__flux__charnock.html#aadc72e53ca70ae1475fd787a0b71e717">surface_flux_charnock::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:578</div></div>
+<div class="ttc" id="astructmost__data_html_acdc883c0d7a7eb90774ea0c8e376d91d"><div class="ttname"><a href="structmost__data.html#acdc883c0d7a7eb90774ea0c8e376d91d">most_data::Bjr_beta</a></div><div class="ttdeci">const amrex::Real Bjr_beta</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:29</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a21cb206b0dd78dc2ac7211de8dbcb8d2"><div class="ttname"><a href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2">similarity_funs::calc_psi_m</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_m(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:41</div></div>
+<div class="ttc" id="astructsimilarity__funs_html_a7dcb32f637eab66d2314902d03289bc2"><div class="ttname"><a href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2">similarity_funs::calc_psi_h</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_psi_h(amrex::Real zeta) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:55</div></div>
+<div class="ttc" id="astructsurface__flux__charnock_html_a08529386a7d5012684c818249a7d76ba"><div class="ttname"><a href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">surface_flux_charnock::tol</a></div><div class="ttdeci">const amrex::Real tol</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:634</div></div>
+<div class="ttc" id="astructsurface__flux__charnock_html_a4501ca4ecf49dccd6a1a914af03e1ed1"><div class="ttname"><a href="structsurface__flux__charnock.html#a4501ca4ecf49dccd6a1a914af03e1ed1">surface_flux_charnock::sfuns</a></div><div class="ttdeci">similarity_funs sfuns</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:633</div></div>
+<div class="ttc" id="astructsurface__flux__charnock_html_aadc72e53ca70ae1475fd787a0b71e717"><div class="ttname"><a href="structsurface__flux__charnock.html#aadc72e53ca70ae1475fd787a0b71e717">surface_flux_charnock::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:635</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structsurface__flux__charnock_a9f88180c90bc865136d2f153c82d4fe3_cgraph.png" border="0" usemap="#astructsurface__flux__charnock_a9f88180c90bc865136d2f153c82d4fe3_cgraph" alt=""/></div>
-<map name="astructsurface__flux__charnock_a9f88180c90bc865136d2f153c82d4fe3_cgraph" id="astructsurface__flux__charnock_a9f88180c90bc865136d2f153c82d4fe3_cgraph">
+<div class="center"><img src="structsurface__flux__charnock_ab5e1d36114b4ca594053a1d70a839b5b_cgraph.png" border="0" usemap="#astructsurface__flux__charnock_ab5e1d36114b4ca594053a1d70a839b5b_cgraph" alt=""/></div>
+<map name="astructsurface__flux__charnock_ab5e1d36114b4ca594053a1d70a839b5b_cgraph" id="astructsurface__flux__charnock_ab5e1d36114b4ca594053a1d70a839b5b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,122,172,163"/>
 <area shape="rect" href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674" title=" " alt="" coords="245,5,349,32"/>
 <area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="220,57,373,98"/>
@@ -421,7 +457,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a9f88180c90bc865136d2f153c82d4fe3">iterate_flux()</a>, and <a class="el" href="structsurface__flux__charnock.html#a8a063b2d326c7e8b184e80c0b68ea639">surface_flux_charnock()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#ab5e1d36114b4ca594053a1d70a839b5b">iterate_flux()</a>, and <a class="el" href="structsurface__flux__charnock.html#a932aba0b9d12528c8fc6a6d7a815701b">surface_flux_charnock()</a>.</p>
 
 </div>
 </div>
@@ -445,7 +481,31 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a9f88180c90bc865136d2f153c82d4fe3">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#ab5e1d36114b4ca594053a1d70a839b5b">iterate_flux()</a>.</p>
+
+</div>
+</div>
+<a id="a67345ad36f06fec102713f20638e4da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67345ad36f06fec102713f20638e4da0">&#9670;&nbsp;</a></span>spec_qflux</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool surface_flux_charnock::spec_qflux</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#ab5e1d36114b4ca594053a1d70a839b5b">iterate_flux()</a>, and <a class="el" href="structsurface__flux__charnock.html#a932aba0b9d12528c8fc6a6d7a815701b">surface_flux_charnock()</a>.</p>
 
 </div>
 </div>
@@ -469,7 +529,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a9f88180c90bc865136d2f153c82d4fe3">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#ab5e1d36114b4ca594053a1d70a839b5b">iterate_flux()</a>.</p>
 
 </div>
 </div>
@@ -493,7 +553,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#a9f88180c90bc865136d2f153c82d4fe3">iterate_flux()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structsurface__flux__charnock.html#ab5e1d36114b4ca594053a1d70a839b5b">iterate_flux()</a>.</p>
 
 </div>
 </div>
