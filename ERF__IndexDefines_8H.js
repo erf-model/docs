@@ -28,6 +28,7 @@ var ERF__IndexDefines_8H =
     [ "AdvType", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70", [
       [ "Centered_2nd", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049", null ],
       [ "Upwind_3rd", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f", null ],
+      [ "Upwind_3rd_SL", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a5b53c212c70ca8def8f3e0f2c5016998", null ],
       [ "Centered_4th", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161", null ],
       [ "Upwind_5th", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a", null ],
       [ "Centered_6th", "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9", null ],

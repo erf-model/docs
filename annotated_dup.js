@@ -93,6 +93,7 @@ var annotated_dup =
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", "structTurbulentPerturbation" ],
     [ "UnionListIF", "classUnionListIF.html", "classUnionListIF" ],
     [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
+    [ "UPWIND3SL", "structUPWIND3SL.html", "structUPWIND3SL" ],
     [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],
     [ "UPWINDALL", "structUPWINDALL.html", "structUPWINDALL" ],
     [ "WaterVaporSat", "classWaterVaporSat.html", "classWaterVaporSat" ],

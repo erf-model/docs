@@ -103,6 +103,7 @@ var hierarchy =
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", null ],
     [ "UnionListIF< F >", "classUnionListIF.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
+    [ "UPWIND3SL", "structUPWIND3SL.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],
     [ "UPWINDALL", "structUPWINDALL.html", null ],
     [ "WaterVaporSat", "classWaterVaporSat.html", null ],

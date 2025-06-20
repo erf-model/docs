@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,19],
 "globals_v.html":[3,1,0,20],
 "globals_vars.html":[3,1,2],
@@ -8,8 +9,8 @@ var NAVTREEINDEX13 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "namespacemodule__mp__morr__two__moment.html":[1,0,19],
 "namespacemodule__mp__morr__two__moment.html#a066467cadea7dac6760ea26260bdc820":[1,0,19,120],
 "namespacemodule__mp__morr__two__moment.html#a07d9b07e864c009aedd865a0086cf337":[1,0,19,94],
-"namespacemodule__mp__morr__two__moment.html#a0837c77c9c2ae661f249c87d9710274d":[1,0,19,90],
-"namespacemodule__mp__morr__two__moment.html#a0bb82f163dcece1b2d052202bf56bee3":[1,0,19,107]
+"namespacemodule__mp__morr__two__moment.html#a0837c77c9c2ae661f249c87d9710274d":[1,0,19,90]
 };

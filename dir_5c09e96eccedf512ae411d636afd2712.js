@@ -16,6 +16,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_Interpolation_UPW.H", "ERF__Interpolation__UPW_8H.html", [
       [ "CENTERED2", "structCENTERED2.html", "structCENTERED2" ],
       [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
+      [ "UPWIND3SL", "structUPWIND3SL.html", "structUPWIND3SL" ],
       [ "CENTERED4", "structCENTERED4.html", "structCENTERED4" ],
       [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],
       [ "CENTERED6", "structCENTERED6.html", "structCENTERED6" ],

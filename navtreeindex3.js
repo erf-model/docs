@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"ERF__NumericalDiffusion_8cpp.html#ac9ebbec8e0b9fe65aca431e66186fb1d":[3,0,1,14,11,1],
 "ERF__OrbCosZenith_8H.html":[3,0,1,13,1],
 "ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21":[3,0,1,13,1,0],
 "ERF__OrbCosZenith_8H.html#a531e9e4f016d927864ec25ba17b89e86":[3,0,1,13,1,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__TerrainPoisson__3D__K_8H.html#aca6415c5bc3af42823005c2348f2b050":[3,0,1,8,12,3],
 "ERF__TerrainPoisson__3D__K_8H.html#af2928deaaa17341fbd0de55109c6efc8":[3,0,1,8,12,2],
 "ERF__TerrainPoisson__3D__K_8H_source.html":[3,0,1,8,12],
-"ERF__Thetav_8H.html":[3,0,1,17,26],
-"ERF__Thetav_8H.html#a560eb559ee1d5b8dceaae23f4f4581d5":[3,0,1,17,26,0]
+"ERF__Thetav_8H.html":[3,0,1,17,26]
 };
