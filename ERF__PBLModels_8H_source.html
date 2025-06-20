@@ -341,25 +341,33 @@ $(document).ready(function(){initNavTree('ERF__PBLModels_8H_source.html',''); in
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                  dthetadz, dudz, dvdz,</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                                  RhoQv_comp, RhoQc_comp, RhoQr_comp);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// Note: Transport terms due to turbulence and pressure are included when</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// DiffusionSrcForState_* is called from ERF_slow_rhs_post.</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">// Shear Production</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// Buoyancy Production</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    source_term -= (<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// Dissipation</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    amrex::Real qke = 2.0 * cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        source_term -= cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                       (pbl_mynn_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>));</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">return</span> source_term;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// Notes:</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// - We transport TKE = 0.5*QKE rather than QKE, so the RHS terms do not</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="comment">//   have a factor of two.</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">// - Transport terms due to turbulence and pressure are included when</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">//   DiffusionSrcForState_* is called from ERF_slow_rhs_post.</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// - Eddy diffusivities are updated at the beginning of each time step only.</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// Second-order turbulent fluxes, e.g.:</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment">// -&lt;uw&gt; = L q SM dU/dz  (NN09, Eqn. 18)</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">//       = Kmv/rho dU/dz</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">// Shear Production</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// Buoyancy Production</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    source_term -= (<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">// Dissipation (NN09, Eqn. 12)</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    amrex::Real qke = 2.0 * cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (std::abs(qke) &gt; 0.0) {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        source_term -= cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,1.5) /</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                       (pbl_mynn_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>));</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">return</span> source_term;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a4a8c0178282c029acc3d37ed429f9f58"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a></div><div class="ttdeci">TurbChoice turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:2</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>

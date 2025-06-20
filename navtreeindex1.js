@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239acb08c6a1b8bca5e9e4ef6162aef2cfa4":[3,0,1,2,1,3,1],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb":[3,0,1,2,1,3,3],
 "ERF__DataStruct_8H.html#a527d8c0024ac44ed7d9d58920ba18924":[3,0,1,2,1,11],
 "ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb":[3,0,1,2,1,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49":[3,0,1,24,15],
 "ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da":[3,0,1,24,20],
 "ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877":[3,0,1,24,24],
-"ERF__IndexDefines_8H.html#a2e038955a3c380beab1941e422ef83ea":[3,0,1,24,10],
-"ERF__IndexDefines_8H.html#a38d6fda9ca3d40309838c64d398b54c1":[3,0,1,24,1]
+"ERF__IndexDefines_8H.html#a2e038955a3c380beab1941e422ef83ea":[3,0,1,24,10]
 };

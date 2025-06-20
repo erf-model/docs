@@ -15,5 +15,6 @@ var structMYNNLevel25 =
     [ "SHmax", "structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6", null ],
     [ "SHmin", "structMYNNLevel25.html#a7e65668ebad061e4f91fee27dc041208", null ],
     [ "SMmax", "structMYNNLevel25.html#a183889654d8da15f165f6385f05bb5ba", null ],
-    [ "SMmin", "structMYNNLevel25.html#ac7e13ad757f1bdcc4d92f3065cf34931", null ]
+    [ "SMmin", "structMYNNLevel25.html#ac7e13ad757f1bdcc4d92f3065cf34931", null ],
+    [ "SQfac", "structMYNNLevel25.html#a448ce1797630512782e92212036b675e", null ]
 ];
