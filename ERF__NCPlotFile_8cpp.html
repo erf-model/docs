@@ -272,12 +272,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;Geom.bigend&quot;</span>  , NC_INT, {ndim_name});</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;CellSize&quot;</span>     , NC_FLOAT, {ndim_name});</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;x_grid&quot;</span>, NC_FLOAT, {np_name});</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;y_grid&quot;</span>, NC_FLOAT, {np_name});</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;z_grid&quot;</span>, NC_FLOAT, {np_name});</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;x_grid&quot;</span>, NC_DOUBLE, {np_name});</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;y_grid&quot;</span>, NC_DOUBLE, {np_name});</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ncf.def_var(<span class="stringliteral">&quot;z_grid&quot;</span>, NC_DOUBLE, {np_name});</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; plot_var_names.size(); i++) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        ncf.def_var(plot_var_names[i], NC_FLOAT, {nz_name, ny_name, nx_name});</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        ncf.def_var(plot_var_names[i], NC_DOUBLE, {nz_name, ny_name, nx_name});</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    ncf.exit_def_mode();</div>
