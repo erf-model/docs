@@ -1,5 +1,9 @@
 var NAVTREEINDEX15 =
 {
+"structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1":[2,0,32,6],
+"structInputSoundingData.html#a749f99cf96305b40d55beb3d5d98bb93":[2,0,32,17],
+"structInputSoundingData.html#a7cde9c67da9ade1d385047732b106943":[2,0,32,20],
+"structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31":[2,0,32,1],
 "structInputSoundingData.html#a9cb5ab7b69363eca08231b634e94e109":[2,0,32,16],
 "structInputSoundingData.html#a9f73eb54af79291b72454e2840455b71":[2,0,32,27],
 "structInputSoundingData.html#aa6507429847a67925f1c7562f1c71553":[2,0,32,14],
@@ -245,9 +249,5 @@ var NAVTREEINDEX15 =
 "structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0":[2,0,83,18],
 "structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9":[2,0,83,20],
 "structTurbChoice.html#a1747326b209e7af178dcd29d1623414c":[2,0,83,14],
-"structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b":[2,0,83,38],
-"structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6":[2,0,83,32],
-"structTurbChoice.html#a31a9795822136f341f086e1504c67c20":[2,0,83,30],
-"structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343":[2,0,83,36],
-"structTurbChoice.html#a3d87abca891696f952b0347a3b2a58fe":[2,0,83,15]
+"structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b":[2,0,83,38]
 };
