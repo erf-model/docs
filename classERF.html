@@ -7634,40 +7634,50 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                });</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (bx_hi.y == <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">auto</span> bc_type = <a class="code" href="classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e">domain_bc_type</a>[Orientation(1,Orientation::high)];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            Box <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>(bx); <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>.grow(0,1); <span class="comment">// Grow in x-dir because we have filled that above</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">if</span> (bc_type == <span class="stringliteral">&quot;Outflow&quot;</span> || bc_type == <span class="stringliteral">&quot;Open&quot;</span>) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>,1,<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    pp_arr(i,j+1,k) = -pp_arr(i,j,k);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                });</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>,1,<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    pp_arr(i,j+1,k) = pp_arr(i,j,k);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                });</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        Box <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>(bx); <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>.grow(0,1); <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>.grow(1,1); <span class="comment">// Grow in x-dir and y-dir because we have filled that above</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (bx_lo.z == <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.z) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>,2,<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.z), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                pp_arr(i,j,k-1) = pp_arr(i,j,k);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            });</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (bx_hi.z == <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.z) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>,2,<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.z), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                pp_arr(i,j,k+1) = pp_arr(i,j,k);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            });</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Now overwrite with periodic fill outside domain and fine-fine fill inside</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    phi.FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (bx_hi.y == <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">auto</span> bc_type = <a class="code" href="classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e">domain_bc_type</a>[Orientation(1,Orientation::high)];</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            Box <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>(bx); <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>.grow(0,1); <span class="comment">// Grow in x-dir because we have filled that above</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">if</span> (bc_type == <span class="stringliteral">&quot;Outflow&quot;</span> || bc_type == <span class="stringliteral">&quot;Open&quot;</span>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>,1,<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    pp_arr(i,j+1,k) = -pp_arr(i,j,k);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                });</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>,1,<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    pp_arr(i,j+1,k) = pp_arr(i,j,k);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                });</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        Box <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>(bx); <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>.grow(0,1); <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>.grow(1,1); <span class="comment">// Grow in x-dir and y-dir because we have filled that above</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (bx_lo.z == <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.z) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>,2,<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.z), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                pp_arr(i,j,k-1) = pp_arr(i,j,k);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            });</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">auto</span> zbc_type = <a class="code" href="classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e">domain_bc_type</a>[Orientation(2,Orientation::high)];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (bx_hi.z == <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.z) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">if</span> (zbc_type == <span class="stringliteral">&quot;Outflow&quot;</span> || zbc_type == <span class="stringliteral">&quot;Open&quot;</span>) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>,2,<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.z), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    pp_arr(i,j,k+1) = -pp_arr(i,j,k);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                });</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                ParallelFor(makeSlab(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>,2,<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.z), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    pp_arr(i,j,k+1) = pp_arr(i,j,k);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                });</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// Now overwrite with periodic fill outside domain and fine-fine fill inside</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    phi.FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_ae3d636c41f5271630a5816a4b8b668b2"><div class="ttname"><a href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a></div><div class="ttdeci">const Box ybx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:22</div></div>
 </div><!-- fragment -->
 </div>
