@@ -10,6 +10,7 @@ var ERF__Diffusion_8H =
     [ "ComputeStressVarVisc_S", "ERF__Diffusion_8H.html#aceae43383c301c60016635f804263957", null ],
     [ "ComputeStressVarVisc_T", "ERF__Diffusion_8H.html#ae72870082e475d2bbf1d04cd617851a0", null ],
     [ "DiffusionSrcForMom", "ERF__Diffusion_8H.html#a261f5ab5cec018d4266bc1d833150fd4", null ],
+    [ "DiffusionSrcForMom_EB", "ERF__Diffusion_8H.html#a2b5c674d6286f0f8e8e65809a82604d1", null ],
     [ "DiffusionSrcForState_N", "ERF__Diffusion_8H.html#a5657f0300e58ec79479183c85440e951", null ],
     [ "DiffusionSrcForState_S", "ERF__Diffusion_8H.html#a057bd07ded897663c991c2439c17bde5", null ],
     [ "DiffusionSrcForState_T", "ERF__Diffusion_8H.html#ab73fe54609bd6ef0946d742e9b3317ea", null ]
