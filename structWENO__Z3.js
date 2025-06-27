@@ -8,6 +8,5 @@ var structWENO__Z3 =
     [ "eps", "structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b", null ],
     [ "g1", "structWENO__Z3.html#acc8bf5960d4d7e92184f50911c0a4871", null ],
     [ "g2", "structWENO__Z3.html#aa7976a5cf48e2e1cd1feecbaaa2218f9", null ],
-    [ "m_phi", "structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489", null ],
-    [ "tol", "structWENO__Z3.html#aec489e3be4dbc31eb46b729b8510fdfc", null ]
+    [ "m_phi", "structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489", null ]
 ];

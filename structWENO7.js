@@ -10,6 +10,5 @@ var structWENO7 =
     [ "g2", "structWENO7.html#a6fd89490f6c6a0c209bf34e7fee67d6b", null ],
     [ "g3", "structWENO7.html#a6da9486392dffd024784b275584612b1", null ],
     [ "g4", "structWENO7.html#a5bc057e9b0e1f937a32733802539acff", null ],
-    [ "m_phi", "structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637", null ],
-    [ "tol", "structWENO7.html#ab892b0bcfa15175a4791c64e222be320", null ]
+    [ "m_phi", "structWENO7.html#aacefd0bc2d7db63fa68026e0d041c637", null ]
 ];
