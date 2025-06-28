@@ -117,10 +117,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a684936c8b176bfd48a383ae1de421777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac827e8177214acaf67881ca049f5a3d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#ac827e8177214acaf67881ca049f5a3d0">operator()</a> (amrex::MultiFab &amp;mf, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::IntVect const &amp;nghost, const amrex::Real time, int bccomp, bool do_fb)</td></tr>
 <tr class="separator:ac827e8177214acaf67881ca049f5a3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5d1a9411e8d088fdcb15557db7c061f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#ad5d1a9411e8d088fdcb15557db7c061f">impose_lateral_yvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp)</td></tr>
-<tr class="separator:ad5d1a9411e8d088fdcb15557db7c061f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e295ac17321f4d577f1d103f6b665a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2">impose_vertical_yvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp)</td></tr>
-<tr class="separator:a9e295ac17321f4d577f1d103f6b665a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4105fbf47eb27b4429fd4f36c93ea66e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a4105fbf47eb27b4429fd4f36c93ea66e">impose_lateral_yvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp, const amrex::Real time)</td></tr>
+<tr class="separator:a4105fbf47eb27b4429fd4f36c93ea66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a709b7436e0640f89b5623a25245ccb69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classERFPhysBCFunct__v.html#a709b7436e0640f89b5623a25245ccb69">impose_vertical_yvel_bcs</a> (const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp, const amrex::Real time)</td></tr>
+<tr class="separator:a709b7436e0640f89b5623a25245ccb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -219,24 +219,24 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        : <a class="code" href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">m_lev</a>(lev),</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">m_geom</a>(geom), <a class="code" href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">m_domain_bcs_type</a>(domain_bcs_type),</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">m_domain_bcs_type_d</a>(domain_bcs_type_d),</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">m_bc_extdir_vals</a>(bc_extdir_vals),</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">m_bc_neumann_vals</a>(bc_neumann_vals),</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">m_z_phys_nd</a>(z_phys_nd.get()),</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">m_use_real_bcs</a>(use_real_bcs),</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>(v_bc_data)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    { }</div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a01f7c56f64ac414f4ec69ff8c45a2f2a"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">ERFPhysBCFunct_v::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:190</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a0bc0f76b47d1d805161695e977dad5fb"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">ERFPhysBCFunct_v::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:192</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a1abc171e8cfcd542f4d9e312e0f586c1"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">ERFPhysBCFunct_v::m_v_bc_data</a></div><div class="ttdeci">amrex::Real * m_v_bc_data</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:197</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a22e73a039ee130b072f3a9ad079fc160"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">ERFPhysBCFunct_v::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:189</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a7e82182923ff12b9ee242d7aaf8b25d9"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">ERFPhysBCFunct_v::m_bc_neumann_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_neumann_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:194</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_aa17ac5983f98d1b13f952fa7f2c39b54"><div class="ttname"><a href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">ERFPhysBCFunct_v::m_use_real_bcs</a></div><div class="ttdeci">bool m_use_real_bcs</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:196</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_ae26c0b8c1a5145f1e1f2d44717745cfd"><div class="ttname"><a href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">ERFPhysBCFunct_v::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:191</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_afac2b29228e83f3693609ae1374d91e2"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">ERFPhysBCFunct_v::m_bc_extdir_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_extdir_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:193</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_afffa0e227916c179928f9a3eb7a07c3c"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">ERFPhysBCFunct_v::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:195</div></div>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        : <a class="code" href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">m_lev</a>(lev),</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">m_geom</a>(geom), <a class="code" href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">m_domain_bcs_type</a>(domain_bcs_type),</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">m_domain_bcs_type_d</a>(domain_bcs_type_d),</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">m_bc_extdir_vals</a>(bc_extdir_vals),</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">m_bc_neumann_vals</a>(bc_neumann_vals),</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">m_z_phys_nd</a>(z_phys_nd.get()),</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">m_use_real_bcs</a>(use_real_bcs),</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;          <a class="code" href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">m_v_bc_data</a>(v_bc_data)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    { }</div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a01f7c56f64ac414f4ec69ff8c45a2f2a"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a">ERFPhysBCFunct_v::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:195</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a0bc0f76b47d1d805161695e977dad5fb"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb">ERFPhysBCFunct_v::m_domain_bcs_type_d</a></div><div class="ttdeci">amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; m_domain_bcs_type_d</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:197</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a1abc171e8cfcd542f4d9e312e0f586c1"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1">ERFPhysBCFunct_v::m_v_bc_data</a></div><div class="ttdeci">amrex::Real * m_v_bc_data</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:202</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a22e73a039ee130b072f3a9ad079fc160"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160">ERFPhysBCFunct_v::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:194</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a7e82182923ff12b9ee242d7aaf8b25d9"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9">ERFPhysBCFunct_v::m_bc_neumann_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_neumann_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:199</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_aa17ac5983f98d1b13f952fa7f2c39b54"><div class="ttname"><a href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">ERFPhysBCFunct_v::m_use_real_bcs</a></div><div class="ttdeci">bool m_use_real_bcs</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:201</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_ae26c0b8c1a5145f1e1f2d44717745cfd"><div class="ttname"><a href="classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd">ERFPhysBCFunct_v::m_domain_bcs_type</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BCRec &gt; m_domain_bcs_type</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:196</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_afac2b29228e83f3693609ae1374d91e2"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2">ERFPhysBCFunct_v::m_bc_extdir_vals</a></div><div class="ttdeci">amrex::Array&lt; amrex::Array&lt; amrex::Real, AMREX_SPACEDIM *2 &gt;, AMREX_SPACEDIM+NBCVAR_max &gt; m_bc_extdir_vals</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:198</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_afffa0e227916c179928f9a3eb7a07c3c"><div class="ttname"><a href="classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c">ERFPhysBCFunct_v::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_PhysBCFunct.H:200</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,13 +262,13 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad5d1a9411e8d088fdcb15557db7c061f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5d1a9411e8d088fdcb15557db7c061f">&#9670;&nbsp;</a></span>impose_lateral_yvel_bcs()</h2>
+<a id="a4105fbf47eb27b4429fd4f36c93ea66e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4105fbf47eb27b4429fd4f36c93ea66e">&#9670;&nbsp;</a></span>impose_lateral_yvel_bcs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +307,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bccomp</em>&#160;</td>
+          <td class="paramname"><em>bccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -317,7 +323,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_yvel_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct__v.html#ad5d1a9411e8d088fdcb15557db7c061f">impose_lateral_yvel_bcs</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_lateral_yvel_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct__v.html#a4105fbf47eb27b4429fd4f36c93ea66e">impose_lateral_yvel_bcs</a>);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a> = lbound(domain);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> = ubound(domain);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
@@ -480,7 +486,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:10</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a2987796b2d40db9890dd3497cc7e20ca"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a></div><div class="ttdeci">const auto &amp; dom_lo</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:9</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_ad5d1a9411e8d088fdcb15557db7c061f"><div class="ttname"><a href="classERFPhysBCFunct__v.html#ad5d1a9411e8d088fdcb15557db7c061f">ERFPhysBCFunct_v::impose_lateral_yvel_bcs</a></div><div class="ttdeci">void impose_lateral_yvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditionsYvel.cpp:14</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a4105fbf47eb27b4429fd4f36c93ea66e"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a4105fbf47eb27b4429fd4f36c93ea66e">ERFPhysBCFunct_v::impose_lateral_yvel_bcs</a></div><div class="ttdeci">void impose_lateral_yvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, int bccomp, const amrex::Real time)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditionsYvel.cpp:14</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914">ERFBCType::open</a></div><div class="ttdeci">@ open</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:215</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca41cecdb4487b15207675ae9ee564e705">ERFBCType::reflect_odd</a></div><div class="ttdeci">@ reflect_odd</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:205</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5">ERFBCType::hoextrap</a></div><div class="ttdeci">@ hoextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:216</div></div>
@@ -492,8 +498,8 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a9e295ac17321f4d577f1d103f6b665a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e295ac17321f4d577f1d103f6b665a2">&#9670;&nbsp;</a></span>impose_vertical_yvel_bcs()</h2>
+<a id="a709b7436e0640f89b5623a25245ccb69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a709b7436e0640f89b5623a25245ccb69">&#9670;&nbsp;</a></span>impose_vertical_yvel_bcs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -532,7 +538,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bccomp</em>&#160;</td>
+          <td class="paramname"><em>bccomp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -542,7 +554,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_vertical_yvel_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2">impose_vertical_yvel_bcs</a>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;impose_vertical_yvel_bcs()&quot;</span>,<a class="code" href="classERFPhysBCFunct__v.html#a709b7436e0640f89b5623a25245ccb69">impose_vertical_yvel_bcs</a>);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a> = lbound(domain);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> = ubound(domain);</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
@@ -696,12 +708,12 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a9ec5ec17f16954e56733db6dd98fe07d"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9ec5ec17f16954e56733db6dd98fe07d">Compute_h_xi_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:153</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_ada12bcb6beb3fa0d00dbdacb37f3c60f"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:139</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_ae609a5c1f84347b66e9a8b712271c4ce"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce">Compute_h_eta_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_eta_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:167</div></div>
-<div class="ttc" id="aclassERFPhysBCFunct__v_html_a9e295ac17321f4d577f1d103f6b665a2"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2">ERFPhysBCFunct_v::impose_vertical_yvel_bcs</a></div><div class="ttdeci">void impose_vertical_yvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditionsYvel.cpp:193</div></div>
+<div class="ttc" id="aclassERFPhysBCFunct__v_html_a709b7436e0640f89b5623a25245ccb69"><div class="ttname"><a href="classERFPhysBCFunct__v.html#a709b7436e0640f89b5623a25245ccb69">ERFPhysBCFunct_v::impose_vertical_yvel_bcs</a></div><div class="ttdeci">void impose_vertical_yvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp, const amrex::Real time)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditionsYvel.cpp:193</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classERFPhysBCFunct__v_a9e295ac17321f4d577f1d103f6b665a2_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct__v_a9e295ac17321f4d577f1d103f6b665a2_cgraph" alt=""/></div>
-<map name="aclassERFPhysBCFunct__v_a9e295ac17321f4d577f1d103f6b665a2_cgraph" id="aclassERFPhysBCFunct__v_a9e295ac17321f4d577f1d103f6b665a2_cgraph">
+<div class="center"><img src="classERFPhysBCFunct__v_a709b7436e0640f89b5623a25245ccb69_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct__v_a709b7436e0640f89b5623a25245ccb69_cgraph" alt=""/></div>
+<map name="aclassERFPhysBCFunct__v_a709b7436e0640f89b5623a25245ccb69_cgraph" id="aclassERFPhysBCFunct__v_a709b7436e0640f89b5623a25245ccb69_cgraph">
 <area shape="rect" title=" " alt="" coords="5,49,207,90"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="258,5,435,32"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a9ec5ec17f16954e56733db6dd98fe07d" title=" " alt="" coords="263,56,431,83"/>
@@ -826,10 +838,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54">m_use_real_bcs</a>)</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    <a class="code" href="classERFPhysBCFunct__v.html#ad5d1a9411e8d088fdcb15557db7c061f">impose_lateral_yvel_bcs</a>(dest_arr,velx_arr,vely_arr,ybx1,domain,bccomp);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    <a class="code" href="classERFPhysBCFunct__v.html#a4105fbf47eb27b4429fd4f36c93ea66e">impose_lateral_yvel_bcs</a>(dest_arr,velx_arr,vely_arr,ybx1,domain,bccomp,time);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <a class="code" href="classERFPhysBCFunct__v.html#a9e295ac17321f4d577f1d103f6b665a2">impose_vertical_yvel_bcs</a>(dest_arr,ybx2,domain,z_nd_arr,dxInv,bccomp);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <a class="code" href="classERFPhysBCFunct__v.html#a709b7436e0640f89b5623a25245ccb69">impose_vertical_yvel_bcs</a>(dest_arr,ybx2,domain,z_nd_arr,dxInv,bccomp,time);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            }</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        } <span class="comment">// MFIter</span></div>

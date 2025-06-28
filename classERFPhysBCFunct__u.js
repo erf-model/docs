@@ -2,7 +2,7 @@ var classERFPhysBCFunct__u =
 [
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html#a02e58c56eb025621156c134d7782e495", null ],
     [ "~ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html#aab6427322211c297482f81b39a03ea03", null ],
-    [ "impose_lateral_xvel_bcs", "classERFPhysBCFunct__u.html#a71f42bb804dc1a68856648978ebf6e57", null ],
+    [ "impose_lateral_xvel_bcs", "classERFPhysBCFunct__u.html#a11d892f799114aad9d33290adc7eb55f", null ],
     [ "impose_vertical_xvel_bcs", "classERFPhysBCFunct__u.html#afdf8afb39002a2daac0fc16a5db76d17", null ],
     [ "operator()", "classERFPhysBCFunct__u.html#acd64dc14d77ffac5878c830bb81fcc2f", null ],
     [ "m_bc_extdir_vals", "classERFPhysBCFunct__u.html#a24b743a8e87bbc7ff9a62c2abbe2b28c", null ],

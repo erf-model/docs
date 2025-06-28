@@ -2,8 +2,8 @@ var classERFPhysBCFunct__cons =
 [
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#ac48a655245c722a265f6a557f6634230", null ],
     [ "~ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html#ab1f895ffdda9477b380a088bdf48a6de", null ],
-    [ "impose_lateral_cons_bcs", "classERFPhysBCFunct__cons.html#afbe5bd9bac1a77ffc2e6af57ff9701e8", null ],
-    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#a1f0975393eb1c321d84d15734ae8cdf0", null ],
+    [ "impose_lateral_cons_bcs", "classERFPhysBCFunct__cons.html#a282797d77115e0d3cea474e42ebe89fe", null ],
+    [ "impose_vertical_cons_bcs", "classERFPhysBCFunct__cons.html#a33ba4596d11bd60f2a34b9926f2255a5", null ],
     [ "operator()", "classERFPhysBCFunct__cons.html#a75432b37b6dee17ad36faba2c359b64e", null ],
     [ "m_bc_extdir_vals", "classERFPhysBCFunct__cons.html#a2765ac9561c270b92ef8bd77c3c96045", null ],
     [ "m_bc_neumann_vals", "classERFPhysBCFunct__cons.html#a390ff8852b8e8807798c1adff0dc4a75", null ],
