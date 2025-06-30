@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rayleigh_5711',['Rayleigh',['../ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239',1,'ERF_DataStruct.H']]],
-  ['roughcalctype_5712',['RoughCalcType',['../classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05',1,'SurfaceLayer']]]
+  ['pblheightcalctype_5732',['PBLHeightCalcType',['../classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7',1,'SurfaceLayer']]]
 ];

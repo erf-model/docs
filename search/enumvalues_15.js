@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['x_5880',['x',['../ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6',1,'ERF_DataStruct.H']]],
-  ['xmom_5881',['xmom',['../namespaceIntVars.html#a52282f730c54deb760c414b54a12a269af661293a5a71ca532c214929b98c0bad',1,'IntVars']]],
-  ['xvel_5882',['xvel',['../namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c',1,'Vars']]],
-  ['xvel_5fbc_5883',['xvel_bc',['../namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4',1,'BCVars']]]
+  ['wave_5fcoupled_5897',['WAVE_COUPLED',['../classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a3e1545d84d0cc7da6edf47adda8a80f9',1,'SurfaceLayer']]],
+  ['wbar_5898',['wbar',['../ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd',1,'ERF_DataStruct.H']]],
+  ['weno_5f3_5899',['Weno_3',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195',1,'ERF_IndexDefines.H']]],
+  ['weno_5f3mzq_5900',['Weno_3MZQ',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210',1,'ERF_IndexDefines.H']]],
+  ['weno_5f3z_5901',['Weno_3Z',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351',1,'ERF_IndexDefines.H']]],
+  ['weno_5f5_5902',['Weno_5',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8',1,'ERF_IndexDefines.H']]],
+  ['weno_5f5z_5903',['Weno_5Z',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc',1,'ERF_IndexDefines.H']]],
+  ['weno_5f7_5904',['Weno_7',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a3095d588151e351b421893f62411d15e',1,'ERF_IndexDefines.H']]],
+  ['weno_5f7z_5905',['Weno_7Z',['../ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a6edd20e2cefe2061bec0e1ebbf5c8573',1,'ERF_IndexDefines.H']]]
 ];
