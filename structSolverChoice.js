@@ -80,7 +80,6 @@ var structSolverChoice =
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],
     [ "use_moist_background", "structSolverChoice.html#aab88dd74d39b1ad369ae6324e05d7a35", null ],
-    [ "use_mono_adv", "structSolverChoice.html#a3660145ad90d59b2a6693fd88bb01381", null ],
     [ "use_num_diff", "structSolverChoice.html#a8d039800497a1e5084afeef94d367932", null ],
     [ "use_real_bcs", "structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7", null ],
     [ "use_rotate_surface_flux", "structSolverChoice.html#ae6a9fda53f08dbed04adb4c63dc3176e", null ],
