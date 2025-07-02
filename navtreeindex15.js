@@ -1,5 +1,9 @@
 var NAVTREEINDEX15 =
 {
+"structDirectionSelector_3_010_01_4.html":[2,0,13],
+"structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e":[2,0,13,0],
+"structDirectionSelector_3_011_01_4.html":[2,0,14],
+"structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834":[2,0,14,0],
 "structDirectionSelector_3_012_01_4.html":[2,0,15],
 "structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160":[2,0,15,0],
 "structInputSoundingData.html":[2,0,32],
@@ -245,9 +249,5 @@ var NAVTREEINDEX15 =
 "structSpongeChoice.html#aec7c88a5686affc9c0ff6f9bb53fbd9f":[2,0,69,14],
 "structSpongeChoice.html#afc444169c9f347bb2e3dd4eb99bc4158":[2,0,69,17],
 "structTimeInterpolatedData.html":[2,0,82],
-"structTimeInterpolatedData.html#a0d6dcefbf7407a24669d2a37c7f558d4":[2,0,82,12],
-"structTimeInterpolatedData.html#a1184805b0ed3f51a5f64344e40913165":[2,0,82,0],
-"structTimeInterpolatedData.html#a14b102dca6a63a5def503e3704b8ff5c":[2,0,82,11],
-"structTimeInterpolatedData.html#a3b9292eb3012672361abacc2ab7d9b2c":[2,0,82,5],
-"structTimeInterpolatedData.html#a5b5af3383ee7cba684df54a2cb704d09":[2,0,82,7]
+"structTimeInterpolatedData.html#a0d6dcefbf7407a24669d2a37c7f558d4":[2,0,82,12]
 };

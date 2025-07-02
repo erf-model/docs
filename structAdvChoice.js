@@ -4,6 +4,7 @@ var structAdvChoice =
     [ "adv_type_convert_string_to_advtype", "structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528", null ],
     [ "display", "structAdvChoice.html#a064ffc0bac9fc0fdd1aa41a45f4e5ed4", null ],
     [ "init_params", "structAdvChoice.html#a0913a61ad5530639cdbf84579c34041a", null ],
+    [ "validate_weno_momentum_compatibility", "structAdvChoice.html#a13ccf0a64999d9da9c29474e7ddff27b", null ],
     [ "dryscal_horiz_adv_type", "structAdvChoice.html#a74a383e01c24980b72b920054ee5c1ab", null ],
     [ "dryscal_horiz_upw_frac", "structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae", null ],
     [ "dryscal_vert_adv_type", "structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78", null ],
