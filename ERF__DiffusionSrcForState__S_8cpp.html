@@ -537,7 +537,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                    + <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> * cell_prim(i, j, k-1, prim_index)</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                    + c3 * cell_prim(i, j, k-2, prim_index) ) );</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                Real dzk_inv = 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                Real dzk_inv = (k == 0) ? 1.0 / dz_ptr[k] : 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                GradCz = dzk_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            }</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
@@ -657,7 +657,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                    + <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> * cell_prim(i, j, k-1, prim_index)</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                                    + c3 * cell_prim(i, j, k-2, prim_index) ) );</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                Real dzk_inv = 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                Real dzk_inv = (k == 0) ? 1.0 / dz_ptr[k] : 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                GradCz = dzk_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
@@ -886,7 +886,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                                    + <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> * cell_prim(i, j, k-1, prim_index)</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                                    + c3 * cell_prim(i, j, k-2, prim_index) ) );</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                Real dzk_inv = 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                Real dzk_inv = (k == 0) ? 1.0 / dz_ptr[k] : 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                GradCz = dzk_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            }</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
