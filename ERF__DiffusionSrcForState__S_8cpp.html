@@ -773,7 +773,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                                    + <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> * cell_prim(i, j, k-1, prim_index)</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                                    + c3 * cell_prim(i, j, k-2, prim_index) ) );</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                Real dzk_inv = 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                Real dzk_inv = (k == 0) ? 1.0 / dz_ptr[k] : 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                GradCz = dzk_inv * ( cell_prim(i, j, k, prim_index) - cell_prim(i, j, k-1, prim_index) );</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            }</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
@@ -935,11 +935,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        cell_rhs(i,j,k,qty_index) -= stateContrib;</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    });</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    } <span class="comment">// n</span></div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DiffTKEAdjustment_8H.html">ERF_DiffTKEAdjustment.H</a>&quot;</span></div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DiffQKEAdjustment_8H.html">ERF_DiffQKEAdjustment.H</a>&quot;</span></div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;}</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    } <span class="comment">// n</span></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DiffTKEAdjustment_8H.html">ERF_DiffTKEAdjustment.H</a>&quot;</span></div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DiffQKEAdjustment_8H.html">ERF_DiffQKEAdjustment.H</a>&quot;</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;}</div>
 <div class="ttc" id="aERF__DiffQKEAdjustment_8H_html"><div class="ttname"><a href="ERF__DiffQKEAdjustment_8H.html">ERF_DiffQKEAdjustment.H</a></div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html"><div class="ttname"><a href="ERF__DiffSetup_8H.html">ERF_DiffSetup.H</a></div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:10</div></div>
