@@ -441,7 +441,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                Real mfsq = mf_mx(i,j,0) * mf_my(i,j,0);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                Real dzInv = 2.0 / (dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                Real dzInv = (k == 0) ? 1.0 / dz_ptr[k] : 2.0/(dz_ptr[k] + dz_ptr[k-1]);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                Real advectionSrc = (xflux_hi - xflux_lo) * dxInv * mfsq</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                  + (yflux_hi - yflux_lo) * dyInv * mfsq</div>

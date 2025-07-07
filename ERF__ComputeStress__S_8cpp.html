@@ -389,7 +389,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        Real mfy = mf_uy(i,j,0);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Real met_h_zeta = 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Real met_h_zeta = (k == 0) ? dz_ptr[k]*dxInv[2] : 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        Real mu_tot = 0.25 * ( rhoAlpha(i-1, j  , k  ) + rhoAlpha(i  , j  , k  )</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                             + rhoAlpha(i-1, j  , k-1) + rhoAlpha(i  , j  , k-1) );</div>
@@ -401,7 +401,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        Real mfx = mf_vx(i,j,0);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        Real met_h_zeta = 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        Real met_h_zeta = (k == 0) ? dz_ptr[k]*dxInv[2] : 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        Real mu_tot = 0.25 * ( rhoAlpha(i  , j-1, k  ) + rhoAlpha(i  , j  , k  )</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                             + rhoAlpha(i  , j-1, k-1) + rhoAlpha(i  , j  , k-1) );</div>
@@ -686,7 +686,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        Real mfy = mf_uy(i,j,0);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        Real met_h_zeta = 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        Real met_h_zeta = (k == 0) ? dz_ptr[k]*dxInv[2] : 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        Real mu_bar = 0.25*( mu_turb(i-1, j, k  , <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + mu_turb(i, j, k  , <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                           + mu_turb(i-1, j, k-1, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + mu_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
@@ -701,7 +701,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    {</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        Real mfx = mf_vx(i,j,0);</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        Real met_h_zeta = 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        Real met_h_zeta = (k == 0) ? dz_ptr[k]*dxInv[2] : 0.5 * (dz_ptr[k] + dz_ptr[k-1]) * dxInv[2];</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        Real mu_bar = 0.25*( mu_turb(i, j-1, k  , <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + mu_turb(i, j, k  , <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                           + mu_turb(i, j-1, k-1, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) + mu_turb(i, j, k-1, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) );</div>
