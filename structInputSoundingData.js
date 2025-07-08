@@ -2,10 +2,12 @@ var structInputSoundingData =
 [
     [ "InputSoundingData", "structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3", null ],
     [ "calc_rho_p", "structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31", null ],
+    [ "calc_rho_p_isentropic", "structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2", null ],
     [ "host_to_device", "structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8", null ],
     [ "read_from_file", "structInputSoundingData.html#a6742e8e0e37fd817097963bbd965692c", null ],
     [ "resize_arrays", "structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef", null ],
     [ "size", "structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc", null ],
+    [ "assume_dry", "structInputSoundingData.html#ae5eca764f358b991d1f36b4a679d744b", null ],
     [ "input_sounding_file", "structInputSoundingData.html#a704d3ca6f9b6a480ad2f8c5e4b4e32f1", null ],
     [ "input_sounding_time", "structInputSoundingData.html#a4f3f4e6859d978e727af01ca625aea1b", null ],
     [ "n_sounding_files", "structInputSoundingData.html#a5655f2f77d75c1b8a2abd92a0b264813", null ],

@@ -248,7 +248,6 @@ var classERF =
     [ "Hwave", "classERF.html#aef05cf88e9e9d2b56112336761493977", null ],
     [ "Hwave_onegrid", "classERF.html#a11f2d48d9af9b8f4574975cae06838f1", null ],
     [ "init_shrink", "classERF.html#ad353aa9e275612ff2110c5a1405c1176", null ],
-    [ "init_sounding_ideal", "classERF.html#a2eb81c590271b429f132103c9af25830", null ],
     [ "initial_state", "classERF.html#ae75de4a194326463b540e826d8051a07", null ],
     [ "input_bndry_planes", "classERF.html#a80ad08512968ec45635df68abe66b1fc", null ],
     [ "input_sounding_data", "classERF.html#a83572d8dfad51158945b4a5ab06b2f72", null ],

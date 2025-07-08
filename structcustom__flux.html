@@ -97,15 +97,16 @@ Collaboration diagram for custom_flux:</div>
 <div class="dyncontent">
 <div class="center"><img src="structcustom__flux__coll__graph.png" border="0" usemap="#acustom__flux_coll__map" alt="Collaboration graph"/></div>
 <map name="acustom__flux_coll__map" id="acustom__flux_coll__map">
-<area shape="rect" title=" " alt="" coords="5,95,107,121"/>
-<area shape="rect" title=" " alt="" coords="31,5,81,32"/>
+<area shape="rect" title=" " alt="" coords="17,95,119,121"/>
+<area shape="rect" title=" " alt="" coords="5,5,56,32"/>
+<area shape="rect" title=" " alt="" coords="80,5,131,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6ec6b65da182e9b15310a9fe33e6632c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcustom__flux.html#a6ec6b65da182e9b15310a9fe33e6632c">custom_flux</a> ()</td></tr>
-<tr class="separator:a6ec6b65da182e9b15310a9fe33e6632c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a506c43c116884c3ebce492369412b759"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcustom__flux.html#a506c43c116884c3ebce492369412b759">custom_flux</a> (bool specified_rho_surf)</td></tr>
+<tr class="separator:a506c43c116884c3ebce492369412b759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44c3eefb401c1feabf77805966ae90c9"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcustom__flux.html#a44c3eefb401c1feabf77805966ae90c9">compute_q_flux</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cons_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;q_star_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;) const</td></tr>
 <tr class="separator:a44c3eefb401c1feabf77805966ae90c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeed136e0a74e3aac9eca272128a9333"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcustom__flux.html#aaeed136e0a74e3aac9eca272128a9333">compute_t_flux</a> (const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;cons_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;, const amrex::Array4&lt; const amrex::Real &gt; &amp;t_star_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;) const</td></tr>
@@ -119,12 +120,14 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae0e2af01151c51f4c335f053a8bb8f17"><td class="memItemLeft" align="right" valign="top">const amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">eps</a> = 1e-15</td></tr>
 <tr class="separator:ae0e2af01151c51f4c335f053a8bb8f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a536802b8ad933875bd4dc17a1a4ca5e7"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7">fluxes_include_rho</a> {false}</td></tr>
+<tr class="separator:a536802b8ad933875bd4dc17a1a4ca5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Custom flux formulation </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6ec6b65da182e9b15310a9fe33e6632c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ec6b65da182e9b15310a9fe33e6632c">&#9670;&nbsp;</a></span>custom_flux()</h2>
+<a id="a506c43c116884c3ebce492369412b759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a506c43c116884c3ebce492369412b759">&#9670;&nbsp;</a></span>custom_flux()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,7 +138,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">custom_flux::custom_flux </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>specified_rho_surf</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -145,7 +149,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;    : <a class="code" href="structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7">fluxes_include_rho</a>(specified_rho_surf)</div>
+<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;    {}</div>
+<div class="ttc" id="astructcustom__flux_html_a536802b8ad933875bd4dc17a1a4ca5e7"><div class="ttname"><a href="structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7">custom_flux::fluxes_include_rho</a></div><div class="ttdeci">const bool fluxes_include_rho</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1978</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,18 +243,18 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01886"></a><span class="lineno"> 1886</span>&#160;    {</div>
-<div class="line"><a name="l01887"></a><span class="lineno"> 1887</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   =   cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;        amrex::Real qstar = q_star_arr(i,j,k);</div>
-<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160; </div>
-<div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;q&#39;w&#39;&gt; = -K dqdz</span></div>
-<div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160;        amrex::Real moflux  = (std::abs(qstar) &gt; <a class="code" href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">eps</a>) ? <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * qstar : 0.0;</div>
-<div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160; </div>
-<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01888"></a><span class="lineno"> 1888</span>&#160;    {</div>
+<div class="line"><a name="l01889"></a><span class="lineno"> 1889</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   = (<a class="code" href="structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7">fluxes_include_rho</a>) ? 1.0 : cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01890"></a><span class="lineno"> 1890</span>&#160;        amrex::Real qstar = q_star_arr(i,j,k);</div>
+<div class="line"><a name="l01891"></a><span class="lineno"> 1891</span>&#160; </div>
+<div class="line"><a name="l01892"></a><span class="lineno"> 1892</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;q&#39;w&#39;&gt; = -K dqdz</span></div>
+<div class="line"><a name="l01893"></a><span class="lineno"> 1893</span>&#160;        amrex::Real moflux  = (std::abs(qstar) &gt; <a class="code" href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">eps</a>) ? <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * qstar : 0.0;</div>
+<div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160; </div>
+<div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
-<div class="ttc" id="astructcustom__flux_html_ae0e2af01151c51f4c335f053a8bb8f17"><div class="ttname"><a href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">custom_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1975</div></div>
+<div class="ttc" id="astructcustom__flux_html_ae0e2af01151c51f4c335f053a8bb8f17"><div class="ttname"><a href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">custom_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1977</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,15 +345,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;    {</div>
-<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   =   cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;        amrex::Real tstar = t_star_arr(i,j,k);</div>
-<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160; </div>
-<div class="line"><a name="l01914"></a><span class="lineno"> 1914</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
-<div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160;        amrex::Real moflux  = (std::abs(tstar) &gt; <a class="code" href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">eps</a>) ? <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * tstar : 0.0;</div>
-<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160; </div>
-<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;    {</div>
+<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   = (<a class="code" href="structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7">fluxes_include_rho</a>) ? 1.0 : cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01914"></a><span class="lineno"> 1914</span>&#160;        amrex::Real tstar = t_star_arr(i,j,k);</div>
+<div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160; </div>
+<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
+<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;        amrex::Real moflux  = (std::abs(tstar) &gt; <a class="code" href="structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17">eps</a>) ? <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * tstar : 0.0;</div>
+<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160; </div>
+<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l01920"></a><span class="lineno"> 1920</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -426,20 +432,20 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01932"></a><span class="lineno"> 1932</span>&#160;    {</div>
-<div class="line"><a name="l01933"></a><span class="lineno"> 1933</span>&#160;        amrex::Real velx  = velx_arr(i,j,k);</div>
-<div class="line"><a name="l01934"></a><span class="lineno"> 1934</span>&#160;        amrex::Real vely  = 0.25 * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
-<div class="line"><a name="l01935"></a><span class="lineno"> 1935</span>&#160;                                   + vely_arr(i-1,j,k) + vely_arr(i-1,j+1,k) );</div>
-<div class="line"><a name="l01936"></a><span class="lineno"> 1936</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5  * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l01937"></a><span class="lineno"> 1937</span>&#160; </div>
-<div class="line"><a name="l01938"></a><span class="lineno"> 1938</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(i-1,j,k) + u_star_arr(i,j,k) );</div>
-<div class="line"><a name="l01939"></a><span class="lineno"> 1939</span>&#160;        amrex::Real wsp     = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160; </div>
-<div class="line"><a name="l01941"></a><span class="lineno"> 1941</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
-<div class="line"><a name="l01942"></a><span class="lineno"> 1942</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar * velx / wsp;</div>
-<div class="line"><a name="l01943"></a><span class="lineno"> 1943</span>&#160; </div>
-<div class="line"><a name="l01944"></a><span class="lineno"> 1944</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
-<div class="line"><a name="l01945"></a><span class="lineno"> 1945</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01934"></a><span class="lineno"> 1934</span>&#160;    {</div>
+<div class="line"><a name="l01935"></a><span class="lineno"> 1935</span>&#160;        amrex::Real velx  = velx_arr(i,j,k);</div>
+<div class="line"><a name="l01936"></a><span class="lineno"> 1936</span>&#160;        amrex::Real vely  = 0.25 * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
+<div class="line"><a name="l01937"></a><span class="lineno"> 1937</span>&#160;                                   + vely_arr(i-1,j,k) + vely_arr(i-1,j+1,k) );</div>
+<div class="line"><a name="l01938"></a><span class="lineno"> 1938</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   = (<a class="code" href="structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7">fluxes_include_rho</a>) ? 1.0 : 0.5 * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l01939"></a><span class="lineno"> 1939</span>&#160; </div>
+<div class="line"><a name="l01940"></a><span class="lineno"> 1940</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(i-1,j,k) + u_star_arr(i,j,k) );</div>
+<div class="line"><a name="l01941"></a><span class="lineno"> 1941</span>&#160;        amrex::Real wsp     = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01942"></a><span class="lineno"> 1942</span>&#160; </div>
+<div class="line"><a name="l01943"></a><span class="lineno"> 1943</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
+<div class="line"><a name="l01944"></a><span class="lineno"> 1944</span>&#160;        amrex::Real stressx = -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar * velx / wsp;</div>
+<div class="line"><a name="l01945"></a><span class="lineno"> 1945</span>&#160; </div>
+<div class="line"><a name="l01946"></a><span class="lineno"> 1946</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
+<div class="line"><a name="l01947"></a><span class="lineno"> 1947</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -518,20 +524,20 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01959"></a><span class="lineno"> 1959</span>&#160;    {</div>
-<div class="line"><a name="l01960"></a><span class="lineno"> 1960</span>&#160;        amrex::Real velx  = 0.25 * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
-<div class="line"><a name="l01961"></a><span class="lineno"> 1961</span>&#160;                                   + velx_arr(i,j-1,k) + velx_arr(i+1,j-1,k) );</div>
-<div class="line"><a name="l01962"></a><span class="lineno"> 1962</span>&#160;        amrex::Real vely  = vely_arr(i,j,k);</div>
-<div class="line"><a name="l01963"></a><span class="lineno"> 1963</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5  * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l01964"></a><span class="lineno"> 1964</span>&#160; </div>
-<div class="line"><a name="l01965"></a><span class="lineno"> 1965</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(i,j-1,k) + u_star_arr(i,j,k) );</div>
-<div class="line"><a name="l01966"></a><span class="lineno"> 1966</span>&#160;        amrex::Real wsp     = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01967"></a><span class="lineno"> 1967</span>&#160; </div>
-<div class="line"><a name="l01968"></a><span class="lineno"> 1968</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
-<div class="line"><a name="l01969"></a><span class="lineno"> 1969</span>&#160;        amrex::Real stressy = -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar * vely / wsp;</div>
-<div class="line"><a name="l01970"></a><span class="lineno"> 1970</span>&#160; </div>
-<div class="line"><a name="l01971"></a><span class="lineno"> 1971</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
-<div class="line"><a name="l01972"></a><span class="lineno"> 1972</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01961"></a><span class="lineno"> 1961</span>&#160;    {</div>
+<div class="line"><a name="l01962"></a><span class="lineno"> 1962</span>&#160;        amrex::Real velx  = 0.25 * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
+<div class="line"><a name="l01963"></a><span class="lineno"> 1963</span>&#160;                                   + velx_arr(i,j-1,k) + velx_arr(i+1,j-1,k) );</div>
+<div class="line"><a name="l01964"></a><span class="lineno"> 1964</span>&#160;        amrex::Real vely  = vely_arr(i,j,k);</div>
+<div class="line"><a name="l01965"></a><span class="lineno"> 1965</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>   = (<a class="code" href="structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7">fluxes_include_rho</a>) ? 1.0 : 0.5 * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l01966"></a><span class="lineno"> 1966</span>&#160; </div>
+<div class="line"><a name="l01967"></a><span class="lineno"> 1967</span>&#160;        amrex::Real ustar   = 0.5 * ( u_star_arr(i,j-1,k) + u_star_arr(i,j,k) );</div>
+<div class="line"><a name="l01968"></a><span class="lineno"> 1968</span>&#160;        amrex::Real wsp     = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01969"></a><span class="lineno"> 1969</span>&#160; </div>
+<div class="line"><a name="l01970"></a><span class="lineno"> 1970</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
+<div class="line"><a name="l01971"></a><span class="lineno"> 1971</span>&#160;        amrex::Real stressy = -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * ustar * ustar * vely / wsp;</div>
+<div class="line"><a name="l01972"></a><span class="lineno"> 1972</span>&#160; </div>
+<div class="line"><a name="l01973"></a><span class="lineno"> 1973</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
+<div class="line"><a name="l01974"></a><span class="lineno"> 1974</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -557,6 +563,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="structcustom__flux.html#a44c3eefb401c1feabf77805966ae90c9">compute_q_flux()</a>, and <a class="el" href="structcustom__flux.html#aaeed136e0a74e3aac9eca272128a9333">compute_t_flux()</a>.</p>
+
+</div>
+</div>
+<a id="a536802b8ad933875bd4dc17a1a4ca5e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a536802b8ad933875bd4dc17a1a4ca5e7">&#9670;&nbsp;</a></span>fluxes_include_rho</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool custom_flux::fluxes_include_rho {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structcustom__flux.html#a44c3eefb401c1feabf77805966ae90c9">compute_q_flux()</a>, <a class="el" href="structcustom__flux.html#aaeed136e0a74e3aac9eca272128a9333">compute_t_flux()</a>, <a class="el" href="structcustom__flux.html#a2afa941df86f576b698265d6ed1a7b92">compute_u_flux()</a>, and <a class="el" href="structcustom__flux.html#afb1432cda6e9f3232c60de7be4f89a68">compute_v_flux()</a>.</p>
 
 </div>
 </div>

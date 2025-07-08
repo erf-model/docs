@@ -356,7 +356,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="comment">//qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="comment">//------- Evaporation/condensation</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            Real qsat;</div>
@@ -364,53 +364,82 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="comment">// There is enough moisutre to drive to equilibrium</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">if</span> ((qv_array(i,j,k)+qc_array(i,j,k)) &gt; qsat) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="comment">// Update temperature</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                tabs_array(i,j,k) = <a class="code" href="classSatAdj.html#a76548bd9c2adb222480e5f5725a05048">NewtonIterSat</a>(i, j, k   ,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                  d_fac_cond, tabs_array, pres_array,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                  qv_array  , qc_array  );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="comment">// Update theta (constant pressure)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                Real qvprev = qv_array(i,j,k);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                Real qcprev = qc_array(i,j,k);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="comment">// clip qc but maintain total water</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">if</span> (qc_array(i,j,k) &lt; 0) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    qv_array(i,j,k) += qc_array(i,j,k);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    qc_array(i,j,k)  = 0.0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="comment">// We cannot blindly relax to qsat, but we can convert qc/qi -&gt; qv.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="comment">// The concept here is that if we put all the moisture into qv and modify</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// the temperature, we can then check if qv &gt; qsat occurs (for final T/P/qv).</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="comment">// If the reduction in T/qsat and increase in qv does trigger the</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// aforementioned condition, we can do Newton iteration to drive qv = qsat.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="comment">// Changes in each component</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                Real delta_qc = qc_array(i,j,k);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="comment">// Partition the change in non-precipitating q</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                qv_array(i,j,k) += qc_array(i,j,k);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                qc_array(i,j,k)  = 0.0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="comment">// Update temperature</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                tabs_array(i,j,k) = <a class="code" href="classSatAdj.html#a76548bd9c2adb222480e5f5725a05048">NewtonIterSat</a>(i, j, k   ,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                                  d_fac_cond, tabs_array, pres_array,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                  qv_array  , qc_array  );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                Real qsatnew;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pres_array(i,j,k), qsatnew);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                amrex::ignore_unused(qvprev);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                amrex::ignore_unused(qcprev);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                AMREX_ASSERT(std::abs(qv_array(i,j,k)-qsatnew) &lt; 1e-16);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-16);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="comment">// Update theta (constant pressure)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="comment">// Update temperature (endothermic since we evap/sublime)</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                tabs_array(i,j,k) -= d_fac_cond * delta_qc;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// Verify assumption that qv &gt; qsat does not occur</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pres_array(i,j,k), qsat);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <span class="comment">// Update temperature</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    tabs_array(i,j,k) = <a class="code" href="classSatAdj.html#a76548bd9c2adb222480e5f5725a05048">NewtonIterSat</a>(i, j, k     ,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                      d_fac_cond  , tabs_array, pres_array,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                      qv_array    , qc_array  );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">// We cannot blindly relax to qsat, but we can convert qc/qi -&gt; qv.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="comment">// The concept here is that if we put all the moisture into qv and modify</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="comment">// the temperature, we can then check if qv &gt; qsat occurs (for final T/P/qv).</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// If the reduction in T/qsat and increase in qv does trigger the</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="comment">// aforementioned condition, we can do Newton iteration to drive qv = qsat.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">//</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="comment">// Changes in each component</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                Real delta_qc = qc_array(i,j,k);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">// Partition the change in non-precipitating q</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                qv_array(i,j,k) += qc_array(i,j,k);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                qc_array(i,j,k)  = 0.0;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">// Update temperature (endothermic since we evap/sublime)</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                tabs_array(i,j,k) -= d_fac_cond * delta_qc;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        });</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// Update theta</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="comment">// Verify assumption that qv &gt; qsat does not occur</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pres_array(i,j,k), qsat);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    Real qvprev = qv_array(i,j,k);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    Real qcprev = qc_array(i,j,k);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    Real Tprev = tabs_array(i,j,k);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="comment">// Update temperature</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    tabs_array(i,j,k) = <a class="code" href="classSatAdj.html#a76548bd9c2adb222480e5f5725a05048">NewtonIterSat</a>(i, j, k     ,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                      d_fac_cond  , tabs_array, pres_array,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                      qv_array    , qc_array  );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    Real qsatnew;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pres_array(i,j,k), qsatnew);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    amrex::ignore_unused(qvprev);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    amrex::ignore_unused(qcprev);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    amrex::ignore_unused(Tprev);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    AMREX_ASSERT(qv_array(i,j,k) &lt; qvprev);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    AMREX_ASSERT(qc_array(i,j,k) &gt; qcprev);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    AMREX_ASSERT(tabs_array(i,j,k) &gt; Tprev);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    AMREX_ASSERT(std::abs(qv_array(i,j,k)-qsatnew) &lt; 1e-16);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-16);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="comment">// Update theta</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        });</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_acd37b404bbf95073ffef2a1003dc56c5"><div class="ttname"><a href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenPandT(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:163</div></div>
 <div class="ttc" id="aclassSatAdj_html_a0ae1171544417b83878bf00916cefb64"><div class="ttname"><a href="classSatAdj.html#a0ae1171544417b83878bf00916cefb64">SatAdj::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:205</div></div>
@@ -590,7 +619,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        });</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:84</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 </div><!-- fragment -->
@@ -647,8 +676,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classSatAdj.html#a27114b820d031f82462a0f378294042c">m_rdOcp</a>    = sc.<a class="code" href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">rdOcp</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:66</div></div>
-<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:756</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:755</div></div>
+<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:769</div></div>
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:768</div></div>
 </div><!-- fragment -->
 </div>
 </div>
