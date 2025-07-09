@@ -536,17 +536,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <span class="keywordtype">int</span> ifile = iline*nvar + ivar;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    std::ostream&amp; fs = *<a class="code" href="structLineSampler.html#a56da044954a236b411c1c52e42338883">m_datastream</a>[ifile];</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    fs &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(timeprecision) &lt;&lt; m_time</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    std::ostream&amp; <a class="code" href="namespaceMORRInd.html#ab95d9fb189b630bcf4a3b301cd442f2fad56b775ccff0d22bca292691513550cf">fs</a> = *<a class="code" href="structLineSampler.html#a56da044954a236b411c1c52e42338883">m_datastream</a>[ifile];</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <a class="code" href="namespaceMORRInd.html#ab95d9fb189b630bcf4a3b301cd442f2fad56b775ccff0d22bca292691513550cf">fs</a> &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(timeprecision) &lt;&lt; m_time</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                       &lt;&lt; std::setw(datwidth) &lt;&lt; std::setprecision(datprecision);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; val : vec) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        fs &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; val;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        <a class="code" href="namespaceMORRInd.html#ab95d9fb189b630bcf4a3b301cd442f2fad56b775ccff0d22bca292691513550cf">fs</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; val;</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    fs &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    <a class="code" href="namespaceMORRInd.html#ab95d9fb189b630bcf4a3b301cd442f2fad56b775ccff0d22bca292691513550cf">fs</a> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                }</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            }</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        }</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    }</div>
+<div class="ttc" id="anamespaceMORRInd_html_ab95d9fb189b630bcf4a3b301cd442f2fad56b775ccff0d22bca292691513550cf"><div class="ttname"><a href="namespaceMORRInd.html#ab95d9fb189b630bcf4a3b301cd442f2fad56b775ccff0d22bca292691513550cf">MORRInd::fs</a></div><div class="ttdeci">@ fs</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:117</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structLineSampler.html#af19a023c3d9e68973017453e2ae93c6f">write_line_mfs()</a>.</p>
 <div class="dynheader">

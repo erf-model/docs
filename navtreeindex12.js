@@ -152,8 +152,8 @@ var NAVTREEINDEX12 =
 "dir_fbd11baa4baa1a8b78c4a3d08373cbc6.html":[3,0,1,10],
 "dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -247,7 +247,7 @@ var NAVTREEINDEX12 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1,0],
 "globals_func.html":[3,1,1],
+"globals_func.html":[3,1,1,0],
 "globals_func_b.html":[3,1,1,1]
 };

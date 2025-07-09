@@ -502,7 +502,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//       direct copying between lsm data/flux vars cannot be done in a parfor.</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Set box array for lsm data</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa281c2ff050bdb2a9349d3408926af821">ng</a>(0,0,1);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>(0,0,1);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    BoxArray ba = cons_in.boxArray();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    DistributionMapping dm = cons_in.DistributionMap();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    BoxList bl_lsm = ba.boxList();</div>
@@ -526,7 +526,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmVar__NOAH.html#a8ea52b006c6d4fedf890e400a740fcaca46bb01b586f50d2ecfd43ebb87fb8f19">LsmVar_NOAH::NumVars</a>; ++ivar) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// State vars are CC</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        Real theta_0 = <a class="code" href="classNOAH.html#a704ac64bfa773958945664973a5b0f19">m_theta_dir</a>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classNOAH.html#a7841fe1945395924a92059cef7988dd0">lsm_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(ba_lsm, dm, 1, <a class="code" href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classNOAH.html#a7841fe1945395924a92059cef7988dd0">lsm_fab_vars</a>[ivar] = std::make_shared&lt;MultiFab&gt;(ba_lsm, dm, 1, <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classNOAH.html#a7841fe1945395924a92059cef7988dd0">lsm_fab_vars</a>[ivar]-&gt;setVal(theta_0);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">// Fluxes are nodal in z</span></div>
@@ -642,7 +642,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassNOAH_html_add6659db74ef9ba5837833b7dee906b0"><div class="ttname"><a href="classNOAH.html#add6659db74ef9ba5837833b7dee906b0">NOAH::m_dt</a></div><div class="ttdeci">amrex::Real m_dt</div><div class="ttdef"><b>Definition:</b> ERF_NOAH.H:119</div></div>
 <div class="ttc" id="anamespaceLsmVar__NOAH_html_a8ea52b006c6d4fedf890e400a740fcaca46bb01b586f50d2ecfd43ebb87fb8f19"><div class="ttname"><a href="namespaceLsmVar__NOAH.html#a8ea52b006c6d4fedf890e400a740fcaca46bb01b586f50d2ecfd43ebb87fb8f19">LsmVar_NOAH::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_NOAH.H:26</div></div>
 <div class="ttc" id="anamespaceLsmVar__NOAH_html_a8ea52b006c6d4fedf890e400a740fcacad007fc7afd9bf8521211aab83d21c98c"><div class="ttname"><a href="namespaceLsmVar__NOAH.html#a8ea52b006c6d4fedf890e400a740fcacad007fc7afd9bf8521211aab83d21c98c">LsmVar_NOAH::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_NOAH.H:25</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_ab6f5948b8eeb029d684e7b7d19cfc5daa281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#ab6f5948b8eeb029d684e7b7d19cfc5daa281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -39,7 +39,7 @@ var NAVTREE =
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", "namespacemembers_vars" ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
-        [ "Enumerator", "namespacemembers_eval.html", null ]
+        [ "Enumerator", "namespacemembers_eval.html", "namespacemembers_eval" ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -86,10 +86,10 @@ var NAVTREEINDEX =
 "classSurfaceLayer.html#a1ede1b55e3f50c6b98948cf256cb216e",
 "classeb__aux__.html#a982bec8ebf44ae49614d4246cc396608",
 "globals_func_c.html",
-"namespacemodule__model__constants.html#abcfb23fbc1087bf0a148dc4117c9bd49",
-"structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf",
-"structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2",
-"structadiabatic__mod__charnock.html#a32a281b393378ffdfc11b421f299e89c"
+"namespacemodule__model__constants.html#a7ccbb1686d6c039cd9400a515d9a068e",
+"structCENTERED4.html#a23fa637e0e86ce59e16a612b023d1e65",
+"structSolverChoice.html#ae6a9fda53f08dbed04adb4c63dc3176e",
+"structWENO__Z7.html#a855c42ed4611547c21451803fca96f9a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

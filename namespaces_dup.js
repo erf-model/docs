@@ -302,6 +302,7 @@ var namespaces_dup =
       [ "vi", "namespacemodule__mp__morr__two__moment.html#acc856b9730e94a52a571106b6c72d74a", null ],
       [ "xxx", "namespacemodule__mp__morr__two__moment.html#a5df471b24aa4ccbff0fce2ba1164d60c", null ]
     ] ],
+    [ "MORRInd", "namespaceMORRInd.html", null ],
     [ "mp_morr_two_moment_isohelper", "namespacemp__morr__two__moment__isohelper.html", [
       [ "morr_two_moment_init_c", "namespacemp__morr__two__moment__isohelper.html#ae19641d8681253b2c10ff7252446f702", null ],
       [ "mp_morr_two_moment_c", "namespacemp__morr__two__moment__isohelper.html#af867a413578382f914f3f518665333c0", null ]
