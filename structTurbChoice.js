@@ -40,5 +40,6 @@ var structTurbChoice =
     [ "use_keqn", "structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343", null ],
     [ "use_kturb", "structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe", null ],
     [ "use_pbl_tke", "structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b", null ],
+    [ "use_smag_stratification", "structTurbChoice.html#adfac4edb4b7f7ccc57906424d0fff9f2", null ],
     [ "use_tke", "structTurbChoice.html#a9af852bc81e32814ae4da218aa946406", null ]
 ];

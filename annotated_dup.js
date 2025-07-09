@@ -47,6 +47,7 @@ var annotated_dup =
     [ "Microphysics", "classMicrophysics.html", "classMicrophysics" ],
     [ "MM5", "classMM5.html", "classMM5" ],
     [ "moeng_flux", "structmoeng__flux.html", "structmoeng__flux" ],
+    [ "MoistureComponentIndices", "structMoistureComponentIndices.html", "structMoistureComponentIndices" ],
     [ "Morrison", "classMorrison.html", "classMorrison" ],
     [ "most_data", "structmost__data.html", "structmost__data" ],
     [ "MOSTAverage", "classMOSTAverage.html", "classMOSTAverage" ],

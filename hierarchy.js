@@ -44,6 +44,7 @@ var hierarchy =
       [ "EulerianMicrophysics", "classEulerianMicrophysics.html", null ]
     ] ],
     [ "moeng_flux", "structmoeng__flux.html", null ],
+    [ "MoistureComponentIndices", "structMoistureComponentIndices.html", null ],
     [ "most_data", "structmost__data.html", null ],
     [ "MOSTAverage", "classMOSTAverage.html", null ],
     [ "MRISplitIntegrator< T >", "classMRISplitIntegrator.html", null ],

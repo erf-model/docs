@@ -157,6 +157,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a53bf9b1ef0e50a6e25ffdb48f80de644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f0fe84d6885a0d776865e04e9f15ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a> = true</td></tr>
 <tr class="separator:af6f0fe84d6885a0d776865e04e9f15ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfac4edb4b7f7ccc57906424d0fff9f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#adfac4edb4b7f7ccc57906424d0fff9f2">use_smag_stratification</a> = true</td></tr>
+<tr class="separator:adfac4edb4b7f7ccc57906424d0fff9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52f7f04548a91715b142c88c2f214bc8"><td class="memItemLeft" align="right" valign="top">RANSType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a></td></tr>
 <tr class="separator:a52f7f04548a91715b142c88c2f214bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15b9bb58cde72bab3f5714934125f3f9"><td class="memItemLeft" align="right" valign="top">PBLType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a></td></tr>
@@ -224,130 +226,130 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Turbulence Settings at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">if</span> (</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::None &amp;&amp; <a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::None &amp;&amp;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::None) {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using DNS model at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Smagorinsky) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">smag2d</a>) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using 2D Smagorinsky LES model at level &quot;</span> &lt;&lt; lev</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using Smagorinsky LES model at level &quot;</span> &lt;&lt; lev</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using Deardorff LES model at level &quot;</span> &lt;&lt; lev</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      amrex::Print()</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;    Using Axell &amp; Liungman one-equation RANS k model at level &quot;</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        &lt;&lt; lev &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using MYNN2.5 PBL model at level &quot;</span> &lt;&lt; lev</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using MYNNEDMF PBL model at level &quot;</span> &lt;&lt; lev</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::YSU) {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using YSU PBL model at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MRF) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using MRF PBL model at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      amrex::Error(<span class="stringliteral">&quot;Unknown turbulence model&quot;</span>);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Smagorinsky) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Cs                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">Cs</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Ce                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">Ce</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Ce at wall                  : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">Ce_wall</a></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Ck                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">Ck</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sigma_k                     : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">sigma_k</a></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a> &gt; 0) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                           &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : n/a&quot;</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                           &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="comment">// Sullivan et al 1994, Eqn 14</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        amrex::Real Cs_equiv = std::sqrt(<a class="code" href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">Ck</a> * std::sqrt(<a class="code" href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">Ck</a> / <a class="code" href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">Ce</a>));</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;equivalent Cs               : &quot;</span> &lt;&lt; Cs_equiv</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;      }</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;isotropic mixing            : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None) {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn) {</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Cmu0                        : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a691c3fb4cfd3b097ab74174bf9e9a780">Cmu0</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sigma_k                     : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">sigma_k</a></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Cb                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a">Cb</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Rt_crit                     : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce">Rt_crit</a></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Rt_min                      : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a31a9795822136f341f086e1504c67c20">Rt_min</a></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;max_geom_lscale             : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b">l_g_max</a></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a> &gt; 0) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                           &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : n/a&quot;</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                           &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;      }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None)) {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Pr_t                        : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Sc_t                        : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25 || <a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF) {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_A1 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#af059aaff0f5dd837293d497198c5ca02">A1</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_A2 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a767313a41fbd7da7ede8d5f4037e4e6a">A2</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_B1 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a8a1dab3e8da3715b39e07436759b3e80">B1</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_B2 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#abcb530c05ffc485eafaec178d050b6ba">B2</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C1 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7">C1</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C2 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a6d0246567e40d4625f019983bb1ed8e8">C2</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C3 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a6b42dbf8b3f6a136e5d7a1517fa24119">C3</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C4 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a55fad52b96bc4c5d909e1cc4332c54ad">C4</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C5 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#abccb8d9a56c593f5f75ce7f6a170a3be">C5</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::YSU) {</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_coriolis_freq           : &quot;</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#ac20bc5ed8f1482a520b623dc9cc1ef52">pbl_ysu_coriolis_freq</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_use_consistent_coriolis : &quot;</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#a727a9673de0517e62e58647a5d939b07">pbl_ysu_use_consistent_coriolis</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_force_over_water        : &quot;</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#ac49c18b95424fe04c6a7c8eec934ec36">pbl_ysu_force_over_water</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_land_Ribcr              : &quot;</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3">pbl_ysu_land_Ribcr</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_unst_Ribcr              : &quot;</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f">pbl_ysu_unst_Ribcr</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MRF) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_coriolis_freq : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a3d87abca891696f952b0347a3b2a58fe">pbl_mrf_coriolis_freq</a></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_Ribcr         : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a58ad22fb3fd782ba10deaa3158a9b1d5">pbl_mrf_Ribcr</a></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_const_b       : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a1747326b209e7af178dcd29d1623414c">pbl_mrf_const_b</a></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_sf            : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a878d24adc08454fd536eb887067dbb4b">pbl_mrf_sf</a></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    mrf_moistvars         : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a9898dccda92477a5fff6183b0df47c95">mrf_moistvars</a></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                     &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    }</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  }</div>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Turbulence Settings at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::None &amp;&amp; <a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::None &amp;&amp;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::None) {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using DNS model at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Smagorinsky) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">smag2d</a>) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using 2D Smagorinsky LES model at level &quot;</span> &lt;&lt; lev</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using Smagorinsky LES model at level &quot;</span> &lt;&lt; lev</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using Deardorff LES model at level &quot;</span> &lt;&lt; lev</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      amrex::Print()</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;    Using Axell &amp; Liungman one-equation RANS k model at level &quot;</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        &lt;&lt; lev &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using MYNN2.5 PBL model at level &quot;</span> &lt;&lt; lev</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF) {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using MYNNEDMF PBL model at level &quot;</span> &lt;&lt; lev</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::YSU) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using YSU PBL model at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MRF) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using MRF PBL model at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      amrex::Error(<span class="stringliteral">&quot;Unknown turbulence model&quot;</span>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Smagorinsky) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Cs                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">Cs</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Ce                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">Ce</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Ce at wall                  : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">Ce_wall</a></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Ck                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">Ck</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sigma_k                     : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">sigma_k</a></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a> &gt; 0) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                           &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : n/a&quot;</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                           &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">// Sullivan et al 1994, Eqn 14</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        amrex::Real Cs_equiv = std::sqrt(<a class="code" href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">Ck</a> * std::sqrt(<a class="code" href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">Ck</a> / <a class="code" href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">Ce</a>));</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;equivalent Cs               : &quot;</span> &lt;&lt; Cs_equiv</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;      }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;isotropic mixing            : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None) {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Cmu0                        : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a691c3fb4cfd3b097ab74174bf9e9a780">Cmu0</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sigma_k                     : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">sigma_k</a></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Cb                          : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a">Cb</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Rt_crit                     : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce">Rt_crit</a></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Rt_min                      : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a31a9795822136f341f086e1504c67c20">Rt_min</a></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;max_geom_lscale             : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b">l_g_max</a></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a> &gt; 0) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                           &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;reference theta             : n/a&quot;</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                           &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None)) {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Pr_t                        : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">Pr_t</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Sc_t                        : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">Sc_t</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25 || <a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_A1 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#af059aaff0f5dd837293d497198c5ca02">A1</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_A2 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a767313a41fbd7da7ede8d5f4037e4e6a">A2</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_B1 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a8a1dab3e8da3715b39e07436759b3e80">B1</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_B2 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#abcb530c05ffc485eafaec178d050b6ba">B2</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C1 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7">C1</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C2 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a6d0246567e40d4625f019983bb1ed8e8">C2</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C3 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a6b42dbf8b3f6a136e5d7a1517fa24119">C3</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C4 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#a55fad52b96bc4c5d909e1cc4332c54ad">C4</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mynn_C5 : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>.<a class="code" href="structMYNNLevel25.html#abccb8d9a56c593f5f75ce7f6a170a3be">C5</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::YSU) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_coriolis_freq           : &quot;</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#ac20bc5ed8f1482a520b623dc9cc1ef52">pbl_ysu_coriolis_freq</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_use_consistent_coriolis : &quot;</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#a727a9673de0517e62e58647a5d939b07">pbl_ysu_use_consistent_coriolis</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_force_over_water        : &quot;</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#ac49c18b95424fe04c6a7c8eec934ec36">pbl_ysu_force_over_water</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_land_Ribcr              : &quot;</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3">pbl_ysu_land_Ribcr</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_ysu_unst_Ribcr              : &quot;</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                     &lt;&lt; <a class="code" href="structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f">pbl_ysu_unst_Ribcr</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MRF) {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_coriolis_freq : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a3d87abca891696f952b0347a3b2a58fe">pbl_mrf_coriolis_freq</a></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_Ribcr         : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a58ad22fb3fd782ba10deaa3158a9b1d5">pbl_mrf_Ribcr</a></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_const_b       : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a1747326b209e7af178dcd29d1623414c">pbl_mrf_const_b</a></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    pbl_mrf_sf            : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a878d24adc08454fd536eb887067dbb4b">pbl_mrf_sf</a></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;      amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    mrf_moistvars         : &quot;</span> &lt;&lt; <a class="code" href="structTurbChoice.html#a9898dccda92477a5fff6183b0df47c95">mrf_moistvars</a></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                     &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  }</div>
 <div class="ttc" id="astructMYNNLevel25_html_a55fad52b96bc4c5d909e1cc4332c54ad"><div class="ttname"><a href="structMYNNLevel25.html#a55fad52b96bc4c5d909e1cc4332c54ad">MYNNLevel25::C4</a></div><div class="ttdeci">amrex::Real C4</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:48</div></div>
 <div class="ttc" id="astructMYNNLevel25_html_a56b79a6d80bf23bedd64223516746ae7"><div class="ttname"><a href="structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7">MYNNLevel25::C1</a></div><div class="ttdeci">amrex::Real C1</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:45</div></div>
 <div class="ttc" id="astructMYNNLevel25_html_a6b42dbf8b3f6a136e5d7a1517fa24119"><div class="ttname"><a href="structMYNNLevel25.html#a6b42dbf8b3f6a136e5d7a1517fa24119">MYNNLevel25::C3</a></div><div class="ttdeci">amrex::Real C3</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:47</div></div>
@@ -357,35 +359,35 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="astructMYNNLevel25_html_abcb530c05ffc485eafaec178d050b6ba"><div class="ttname"><a href="structMYNNLevel25.html#abcb530c05ffc485eafaec178d050b6ba">MYNNLevel25::B2</a></div><div class="ttdeci">amrex::Real B2</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:44</div></div>
 <div class="ttc" id="astructMYNNLevel25_html_abccb8d9a56c593f5f75ce7f6a170a3be"><div class="ttname"><a href="structMYNNLevel25.html#abccb8d9a56c593f5f75ce7f6a170a3be">MYNNLevel25::C5</a></div><div class="ttdeci">amrex::Real C5</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:49</div></div>
 <div class="ttc" id="astructMYNNLevel25_html_af059aaff0f5dd837293d497198c5ca02"><div class="ttname"><a href="structMYNNLevel25.html#af059aaff0f5dd837293d497198c5ca02">MYNNLevel25::A1</a></div><div class="ttdeci">amrex::Real A1</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:41</div></div>
-<div class="ttc" id="astructTurbChoice_html_a09d119ed891b452afb505806baec3af9"><div class="ttname"><a href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">TurbChoice::smag2d</a></div><div class="ttdeci">bool smag2d</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:349</div></div>
-<div class="ttc" id="astructTurbChoice_html_a0bb2b38f64a12b0b50552e05dee629e7"><div class="ttname"><a href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">TurbChoice::sigma_k</a></div><div class="ttdeci">amrex::Real sigma_k</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:365</div></div>
-<div class="ttc" id="astructTurbChoice_html_a11fd9429567c4dd4afa871170580aed0"><div class="ttname"><a href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">TurbChoice::pbl_mynn</a></div><div class="ttdeci">MYNNLevel25 pbl_mynn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:381</div></div>
-<div class="ttc" id="astructTurbChoice_html_a15b9bb58cde72bab3f5714934125f3f9"><div class="ttname"><a href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">TurbChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:379</div></div>
-<div class="ttc" id="astructTurbChoice_html_a1747326b209e7af178dcd29d1623414c"><div class="ttname"><a href="structTurbChoice.html#a1747326b209e7af178dcd29d1623414c">TurbChoice::pbl_mrf_const_b</a></div><div class="ttdeci">amrex::Real pbl_mrf_const_b</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:412</div></div>
-<div class="ttc" id="astructTurbChoice_html_a31a9795822136f341f086e1504c67c20"><div class="ttname"><a href="structTurbChoice.html#a31a9795822136f341f086e1504c67c20">TurbChoice::Rt_min</a></div><div class="ttdeci">amrex::Real Rt_min</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:360</div></div>
-<div class="ttc" id="astructTurbChoice_html_a3d87abca891696f952b0347a3b2a58fe"><div class="ttname"><a href="structTurbChoice.html#a3d87abca891696f952b0347a3b2a58fe">TurbChoice::pbl_mrf_coriolis_freq</a></div><div class="ttdeci">amrex::Real pbl_mrf_coriolis_freq</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:409</div></div>
-<div class="ttc" id="astructTurbChoice_html_a52f7f04548a91715b142c88c2f214bc8"><div class="ttname"><a href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">TurbChoice::rans_type</a></div><div class="ttdeci">RANSType rans_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:376</div></div>
-<div class="ttc" id="astructTurbChoice_html_a58ad22fb3fd782ba10deaa3158a9b1d5"><div class="ttname"><a href="structTurbChoice.html#a58ad22fb3fd782ba10deaa3158a9b1d5">TurbChoice::pbl_mrf_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_mrf_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:410</div></div>
-<div class="ttc" id="astructTurbChoice_html_a61ff7dc6ee4001ae8f2978efd5ff57e4"><div class="ttname"><a href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">TurbChoice::Ck</a></div><div class="ttdeci">amrex::Real Ck</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:354</div></div>
-<div class="ttc" id="astructTurbChoice_html_a691c3fb4cfd3b097ab74174bf9e9a780"><div class="ttname"><a href="structTurbChoice.html#a691c3fb4cfd3b097ab74174bf9e9a780">TurbChoice::Cmu0</a></div><div class="ttdeci">amrex::Real Cmu0</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:357</div></div>
-<div class="ttc" id="astructTurbChoice_html_a727a9673de0517e62e58647a5d939b07"><div class="ttname"><a href="structTurbChoice.html#a727a9673de0517e62e58647a5d939b07">TurbChoice::pbl_ysu_use_consistent_coriolis</a></div><div class="ttdeci">bool pbl_ysu_use_consistent_coriolis</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:398</div></div>
-<div class="ttc" id="astructTurbChoice_html_a83a6313a910638e87513e6aac7149f6a"><div class="ttname"><a href="structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a">TurbChoice::Cb</a></div><div class="ttdeci">amrex::Real Cb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:358</div></div>
-<div class="ttc" id="astructTurbChoice_html_a878d24adc08454fd536eb887067dbb4b"><div class="ttname"><a href="structTurbChoice.html#a878d24adc08454fd536eb887067dbb4b">TurbChoice::pbl_mrf_sf</a></div><div class="ttdeci">amrex::Real pbl_mrf_sf</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:414</div></div>
-<div class="ttc" id="astructTurbChoice_html_a96c1a42307db82ece270acdac75da9a3"><div class="ttname"><a href="structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3">TurbChoice::pbl_ysu_land_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_ysu_land_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:404</div></div>
-<div class="ttc" id="astructTurbChoice_html_a9898dccda92477a5fff6183b0df47c95"><div class="ttname"><a href="structTurbChoice.html#a9898dccda92477a5fff6183b0df47c95">TurbChoice::mrf_moistvars</a></div><div class="ttdeci">bool mrf_moistvars</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:416</div></div>
-<div class="ttc" id="astructTurbChoice_html_aa75682bb872d7917ffb8fddb21532f40"><div class="ttname"><a href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">TurbChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:348</div></div>
-<div class="ttc" id="astructTurbChoice_html_ab2d1ecb36171ca19ea851e8e682a1478"><div class="ttname"><a href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">TurbChoice::Ce_wall</a></div><div class="ttdeci">amrex::Real Ce_wall</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:353</div></div>
-<div class="ttc" id="astructTurbChoice_html_ab6d0ae39e92dcbe7362abf53364c1a8e"><div class="ttname"><a href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">TurbChoice::Ce</a></div><div class="ttdeci">amrex::Real Ce</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:352</div></div>
-<div class="ttc" id="astructTurbChoice_html_abbba68e0d699dd97701d31a0e37d5304"><div class="ttname"><a href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">TurbChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:337</div></div>
-<div class="ttc" id="astructTurbChoice_html_ac20bc5ed8f1482a520b623dc9cc1ef52"><div class="ttname"><a href="structTurbChoice.html#ac20bc5ed8f1482a520b623dc9cc1ef52">TurbChoice::pbl_ysu_coriolis_freq</a></div><div class="ttdeci">amrex::Real pbl_ysu_coriolis_freq</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:395</div></div>
-<div class="ttc" id="astructTurbChoice_html_ac49c18b95424fe04c6a7c8eec934ec36"><div class="ttname"><a href="structTurbChoice.html#ac49c18b95424fe04c6a7c8eec934ec36">TurbChoice::pbl_ysu_force_over_water</a></div><div class="ttdeci">bool pbl_ysu_force_over_water</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:401</div></div>
-<div class="ttc" id="astructTurbChoice_html_ae1bec6cf14226b68f692f86daa1c5566"><div class="ttname"><a href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">TurbChoice::Pr_t</a></div><div class="ttdeci">amrex::Real Pr_t</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:340</div></div>
-<div class="ttc" id="astructTurbChoice_html_aeb3c184b540858407426a606327fba3a"><div class="ttname"><a href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">TurbChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:368</div></div>
-<div class="ttc" id="astructTurbChoice_html_aed763f56a6349187c9c0c0e4c952d05a"><div class="ttname"><a href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">TurbChoice::Sc_t</a></div><div class="ttdeci">amrex::Real Sc_t</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:344</div></div>
-<div class="ttc" id="astructTurbChoice_html_af1a3ee3179cdc41f8306027ce20722ce"><div class="ttname"><a href="structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce">TurbChoice::Rt_crit</a></div><div class="ttdeci">amrex::Real Rt_crit</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:359</div></div>
-<div class="ttc" id="astructTurbChoice_html_af274e04335b259bb7b35f7c836f8310f"><div class="ttname"><a href="structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f">TurbChoice::pbl_ysu_unst_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_ysu_unst_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:406</div></div>
-<div class="ttc" id="astructTurbChoice_html_af6f0fe84d6885a0d776865e04e9f15ba"><div class="ttname"><a href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">TurbChoice::mix_isotropic</a></div><div class="ttdeci">bool mix_isotropic</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:373</div></div>
-<div class="ttc" id="astructTurbChoice_html_af84d7f3d07437f121cc3784898f5be3b"><div class="ttname"><a href="structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b">TurbChoice::l_g_max</a></div><div class="ttdeci">amrex::Real l_g_max</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:361</div></div>
+<div class="ttc" id="astructTurbChoice_html_a09d119ed891b452afb505806baec3af9"><div class="ttname"><a href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">TurbChoice::smag2d</a></div><div class="ttdeci">bool smag2d</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:350</div></div>
+<div class="ttc" id="astructTurbChoice_html_a0bb2b38f64a12b0b50552e05dee629e7"><div class="ttname"><a href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">TurbChoice::sigma_k</a></div><div class="ttdeci">amrex::Real sigma_k</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:366</div></div>
+<div class="ttc" id="astructTurbChoice_html_a11fd9429567c4dd4afa871170580aed0"><div class="ttname"><a href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">TurbChoice::pbl_mynn</a></div><div class="ttdeci">MYNNLevel25 pbl_mynn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:385</div></div>
+<div class="ttc" id="astructTurbChoice_html_a15b9bb58cde72bab3f5714934125f3f9"><div class="ttname"><a href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">TurbChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:383</div></div>
+<div class="ttc" id="astructTurbChoice_html_a1747326b209e7af178dcd29d1623414c"><div class="ttname"><a href="structTurbChoice.html#a1747326b209e7af178dcd29d1623414c">TurbChoice::pbl_mrf_const_b</a></div><div class="ttdeci">amrex::Real pbl_mrf_const_b</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:416</div></div>
+<div class="ttc" id="astructTurbChoice_html_a31a9795822136f341f086e1504c67c20"><div class="ttname"><a href="structTurbChoice.html#a31a9795822136f341f086e1504c67c20">TurbChoice::Rt_min</a></div><div class="ttdeci">amrex::Real Rt_min</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:361</div></div>
+<div class="ttc" id="astructTurbChoice_html_a3d87abca891696f952b0347a3b2a58fe"><div class="ttname"><a href="structTurbChoice.html#a3d87abca891696f952b0347a3b2a58fe">TurbChoice::pbl_mrf_coriolis_freq</a></div><div class="ttdeci">amrex::Real pbl_mrf_coriolis_freq</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:413</div></div>
+<div class="ttc" id="astructTurbChoice_html_a52f7f04548a91715b142c88c2f214bc8"><div class="ttname"><a href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">TurbChoice::rans_type</a></div><div class="ttdeci">RANSType rans_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:380</div></div>
+<div class="ttc" id="astructTurbChoice_html_a58ad22fb3fd782ba10deaa3158a9b1d5"><div class="ttname"><a href="structTurbChoice.html#a58ad22fb3fd782ba10deaa3158a9b1d5">TurbChoice::pbl_mrf_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_mrf_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:414</div></div>
+<div class="ttc" id="astructTurbChoice_html_a61ff7dc6ee4001ae8f2978efd5ff57e4"><div class="ttname"><a href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">TurbChoice::Ck</a></div><div class="ttdeci">amrex::Real Ck</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:355</div></div>
+<div class="ttc" id="astructTurbChoice_html_a691c3fb4cfd3b097ab74174bf9e9a780"><div class="ttname"><a href="structTurbChoice.html#a691c3fb4cfd3b097ab74174bf9e9a780">TurbChoice::Cmu0</a></div><div class="ttdeci">amrex::Real Cmu0</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:358</div></div>
+<div class="ttc" id="astructTurbChoice_html_a727a9673de0517e62e58647a5d939b07"><div class="ttname"><a href="structTurbChoice.html#a727a9673de0517e62e58647a5d939b07">TurbChoice::pbl_ysu_use_consistent_coriolis</a></div><div class="ttdeci">bool pbl_ysu_use_consistent_coriolis</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:402</div></div>
+<div class="ttc" id="astructTurbChoice_html_a83a6313a910638e87513e6aac7149f6a"><div class="ttname"><a href="structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a">TurbChoice::Cb</a></div><div class="ttdeci">amrex::Real Cb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:359</div></div>
+<div class="ttc" id="astructTurbChoice_html_a878d24adc08454fd536eb887067dbb4b"><div class="ttname"><a href="structTurbChoice.html#a878d24adc08454fd536eb887067dbb4b">TurbChoice::pbl_mrf_sf</a></div><div class="ttdeci">amrex::Real pbl_mrf_sf</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:418</div></div>
+<div class="ttc" id="astructTurbChoice_html_a96c1a42307db82ece270acdac75da9a3"><div class="ttname"><a href="structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3">TurbChoice::pbl_ysu_land_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_ysu_land_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:408</div></div>
+<div class="ttc" id="astructTurbChoice_html_a9898dccda92477a5fff6183b0df47c95"><div class="ttname"><a href="structTurbChoice.html#a9898dccda92477a5fff6183b0df47c95">TurbChoice::mrf_moistvars</a></div><div class="ttdeci">bool mrf_moistvars</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:420</div></div>
+<div class="ttc" id="astructTurbChoice_html_aa75682bb872d7917ffb8fddb21532f40"><div class="ttname"><a href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">TurbChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:349</div></div>
+<div class="ttc" id="astructTurbChoice_html_ab2d1ecb36171ca19ea851e8e682a1478"><div class="ttname"><a href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">TurbChoice::Ce_wall</a></div><div class="ttdeci">amrex::Real Ce_wall</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:354</div></div>
+<div class="ttc" id="astructTurbChoice_html_ab6d0ae39e92dcbe7362abf53364c1a8e"><div class="ttname"><a href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">TurbChoice::Ce</a></div><div class="ttdeci">amrex::Real Ce</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:353</div></div>
+<div class="ttc" id="astructTurbChoice_html_abbba68e0d699dd97701d31a0e37d5304"><div class="ttname"><a href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">TurbChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:338</div></div>
+<div class="ttc" id="astructTurbChoice_html_ac20bc5ed8f1482a520b623dc9cc1ef52"><div class="ttname"><a href="structTurbChoice.html#ac20bc5ed8f1482a520b623dc9cc1ef52">TurbChoice::pbl_ysu_coriolis_freq</a></div><div class="ttdeci">amrex::Real pbl_ysu_coriolis_freq</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:399</div></div>
+<div class="ttc" id="astructTurbChoice_html_ac49c18b95424fe04c6a7c8eec934ec36"><div class="ttname"><a href="structTurbChoice.html#ac49c18b95424fe04c6a7c8eec934ec36">TurbChoice::pbl_ysu_force_over_water</a></div><div class="ttdeci">bool pbl_ysu_force_over_water</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:405</div></div>
+<div class="ttc" id="astructTurbChoice_html_ae1bec6cf14226b68f692f86daa1c5566"><div class="ttname"><a href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">TurbChoice::Pr_t</a></div><div class="ttdeci">amrex::Real Pr_t</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:341</div></div>
+<div class="ttc" id="astructTurbChoice_html_aeb3c184b540858407426a606327fba3a"><div class="ttname"><a href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">TurbChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:369</div></div>
+<div class="ttc" id="astructTurbChoice_html_aed763f56a6349187c9c0c0e4c952d05a"><div class="ttname"><a href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">TurbChoice::Sc_t</a></div><div class="ttdeci">amrex::Real Sc_t</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:345</div></div>
+<div class="ttc" id="astructTurbChoice_html_af1a3ee3179cdc41f8306027ce20722ce"><div class="ttname"><a href="structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce">TurbChoice::Rt_crit</a></div><div class="ttdeci">amrex::Real Rt_crit</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:360</div></div>
+<div class="ttc" id="astructTurbChoice_html_af274e04335b259bb7b35f7c836f8310f"><div class="ttname"><a href="structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f">TurbChoice::pbl_ysu_unst_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_ysu_unst_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:410</div></div>
+<div class="ttc" id="astructTurbChoice_html_af6f0fe84d6885a0d776865e04e9f15ba"><div class="ttname"><a href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">TurbChoice::mix_isotropic</a></div><div class="ttdeci">bool mix_isotropic</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:374</div></div>
+<div class="ttc" id="astructTurbChoice_html_af84d7f3d07437f121cc3784898f5be3b"><div class="ttname"><a href="structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b">TurbChoice::l_g_max</a></div><div class="ttdeci">amrex::Real l_g_max</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:362</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -570,29 +572,30 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;theta_ref&quot;</span>, <a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a>, lev, max_level);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;mix_isotropic&quot;</span>, <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a>, lev, max_level);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// Set common flags</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">use_kturb</a> =</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None) ||</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;       (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> != PBLType::None));</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343">use_keqn</a> =</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn));</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="structTurbChoice.html#a9af852bc81e32814ae4da218aa946406">use_tke</a> =</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn) ||</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;       (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25) || (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF));</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">// Validate inputs</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Smagorinsky) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">Cs</a> == 0) {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Need to specify Cs for Smagorsinky LES&quot;</span>);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">smag2d</a> &amp;&amp; <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a>) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Turning off mix_isotropic for 2-D Smagorinsky&quot;</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                       &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;use_smag_stratification&quot;</span>, <a class="code" href="structTurbChoice.html#adfac4edb4b7f7ccc57906424d0fff9f2">use_smag_stratification</a>, lev, max_level);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// Set common flags</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">use_kturb</a> =</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None) ||</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;       (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> != PBLType::None));</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343">use_keqn</a> =</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn));</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="structTurbChoice.html#a9af852bc81e32814ae4da218aa946406">use_tke</a> =</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      ((<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) || (<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> == RANSType::kEqn) ||</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;       (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25) || (<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF));</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// Validate inputs</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Smagorinsky) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">Cs</a> == 0) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Need to specify Cs for Smagorsinky LES&quot;</span>);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">smag2d</a> &amp;&amp; <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a>) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Turning off mix_isotropic for 2-D Smagorinsky&quot;</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                       &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  }</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:230</div></div>
 <div class="ttc" id="aERF__TurbStruct_8H_html_af7b9f201e04bee403b3d27170c324861"><div class="ttname"><a href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a></div><div class="ttdeci">void query_one_or_per_level(const amrex::ParmParse &amp;pp, const char *query_string, T &amp;query_var, const int lev, const int maxlev)</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:16</div></div>
 <div class="ttc" id="anamespaceLsmVar__MM5_html_afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:20</div></div>
@@ -603,16 +606,17 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="astructMYNNLevel25_html_ac7e13ad757f1bdcc4d92f3065cf34931"><div class="ttname"><a href="structMYNNLevel25.html#ac7e13ad757f1bdcc4d92f3065cf34931">MYNNLevel25::SMmin</a></div><div class="ttdeci">amrex::Real SMmin</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:55</div></div>
 <div class="ttc" id="astructMYNNLevel25_html_af677ab24bae6b1f78751489a8df5b1be"><div class="ttname"><a href="structMYNNLevel25.html#af677ab24bae6b1f78751489a8df5b1be">MYNNLevel25::diffuse_moistvars</a></div><div class="ttdeci">bool diffuse_moistvars</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:63</div></div>
 <div class="ttc" id="astructMYNNLevel2_html_aaab2f004c0ddd5b3fce84004d9d450b6"><div class="ttname"><a href="structMYNNLevel2.html#aaab2f004c0ddd5b3fce84004d9d450b6">MYNNLevel2::init_coeffs</a></div><div class="ttdeci">void init_coeffs(amrex::Real A1_lvl25, amrex::Real A2_lvl25, amrex::Real B1, amrex::Real B2, amrex::Real C1, amrex::Real C2, amrex::Real C3, amrex::Real, amrex::Real C5)</div><div class="ttdef"><b>Definition:</b> ERF_MYNNStruct.H:67</div></div>
-<div class="ttc" id="astructTurbChoice_html_a1c0bd3122b5d4d9ee9425d294ec3bf4b"><div class="ttname"><a href="structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b">TurbChoice::use_pbl_tke</a></div><div class="ttdeci">bool use_pbl_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:389</div></div>
-<div class="ttc" id="astructTurbChoice_html_a2daa4d23f9d89ee777a0d0fbd43196b6"><div class="ttname"><a href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">TurbChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:345</div></div>
-<div class="ttc" id="astructTurbChoice_html_a38eba3d6626625fcb3d5815ba9efd343"><div class="ttname"><a href="structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343">TurbChoice::use_keqn</a></div><div class="ttdeci">bool use_keqn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:386</div></div>
-<div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:382</div></div>
-<div class="ttc" id="astructTurbChoice_html_a53bf9b1ef0e50a6e25ffdb48f80de644"><div class="ttname"><a href="structTurbChoice.html#a53bf9b1ef0e50a6e25ffdb48f80de644">TurbChoice::strat_type</a></div><div class="ttdeci">StratType strat_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:370</div></div>
-<div class="ttc" id="astructTurbChoice_html_a61228dc0a9f929adf503d630fc926ede"><div class="ttname"><a href="structTurbChoice.html#a61228dc0a9f929adf503d630fc926ede">TurbChoice::advect_tke</a></div><div class="ttdeci">bool advect_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:419</div></div>
-<div class="ttc" id="astructTurbChoice_html_a9af852bc81e32814ae4da218aa946406"><div class="ttname"><a href="structTurbChoice.html#a9af852bc81e32814ae4da218aa946406">TurbChoice::use_tke</a></div><div class="ttdeci">bool use_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:391</div></div>
-<div class="ttc" id="astructTurbChoice_html_aa208b9a78837d3d533160834a727735f"><div class="ttname"><a href="structTurbChoice.html#aa208b9a78837d3d533160834a727735f">TurbChoice::diffuse_tke_3D</a></div><div class="ttdeci">bool diffuse_tke_3D</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:421</div></div>
-<div class="ttc" id="astructTurbChoice_html_aa90aa6c577f632a8c4582a3538d98ad5"><div class="ttname"><a href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">TurbChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:341</div></div>
-<div class="ttc" id="astructTurbChoice_html_ae413138f8a3097389177d3fd96ec43fe"><div class="ttname"><a href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">TurbChoice::use_kturb</a></div><div class="ttdeci">bool use_kturb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:385</div></div>
+<div class="ttc" id="astructTurbChoice_html_a1c0bd3122b5d4d9ee9425d294ec3bf4b"><div class="ttname"><a href="structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b">TurbChoice::use_pbl_tke</a></div><div class="ttdeci">bool use_pbl_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:393</div></div>
+<div class="ttc" id="astructTurbChoice_html_a2daa4d23f9d89ee777a0d0fbd43196b6"><div class="ttname"><a href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">TurbChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:346</div></div>
+<div class="ttc" id="astructTurbChoice_html_a38eba3d6626625fcb3d5815ba9efd343"><div class="ttname"><a href="structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343">TurbChoice::use_keqn</a></div><div class="ttdeci">bool use_keqn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:390</div></div>
+<div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:386</div></div>
+<div class="ttc" id="astructTurbChoice_html_a53bf9b1ef0e50a6e25ffdb48f80de644"><div class="ttname"><a href="structTurbChoice.html#a53bf9b1ef0e50a6e25ffdb48f80de644">TurbChoice::strat_type</a></div><div class="ttdeci">StratType strat_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:371</div></div>
+<div class="ttc" id="astructTurbChoice_html_a61228dc0a9f929adf503d630fc926ede"><div class="ttname"><a href="structTurbChoice.html#a61228dc0a9f929adf503d630fc926ede">TurbChoice::advect_tke</a></div><div class="ttdeci">bool advect_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:423</div></div>
+<div class="ttc" id="astructTurbChoice_html_a9af852bc81e32814ae4da218aa946406"><div class="ttname"><a href="structTurbChoice.html#a9af852bc81e32814ae4da218aa946406">TurbChoice::use_tke</a></div><div class="ttdeci">bool use_tke</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:395</div></div>
+<div class="ttc" id="astructTurbChoice_html_aa208b9a78837d3d533160834a727735f"><div class="ttname"><a href="structTurbChoice.html#aa208b9a78837d3d533160834a727735f">TurbChoice::diffuse_tke_3D</a></div><div class="ttdeci">bool diffuse_tke_3D</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:425</div></div>
+<div class="ttc" id="astructTurbChoice_html_aa90aa6c577f632a8c4582a3538d98ad5"><div class="ttname"><a href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">TurbChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:342</div></div>
+<div class="ttc" id="astructTurbChoice_html_adfac4edb4b7f7ccc57906424d0fff9f2"><div class="ttname"><a href="structTurbChoice.html#adfac4edb4b7f7ccc57906424d0fff9f2">TurbChoice::use_smag_stratification</a></div><div class="ttdeci">bool use_smag_stratification</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:377</div></div>
+<div class="ttc" id="astructTurbChoice_html_ae413138f8a3097389177d3fd96ec43fe"><div class="ttname"><a href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">TurbChoice::use_kturb</a></div><div class="ttdeci">bool use_kturb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:389</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -672,7 +676,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -688,7 +692,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -704,7 +708,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -736,7 +740,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -784,7 +788,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae12ec663c91831742bfdc87d17498a5f">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a7c74729385d4efdbe5ddb68234d7186d">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a19c65c3c58b54171441bee78e587e967">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2c44198e2024a3a7f5feb10385fe9ff0">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae12ec663c91831742bfdc87d17498a5f">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a7c74729385d4efdbe5ddb68234d7186d">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a19c65c3c58b54171441bee78e587e967">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2c44198e2024a3a7f5feb10385fe9ff0">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -800,7 +804,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -834,7 +838,7 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    7.8</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#adbd1371088057033925253b49b96be81">ComputeDiffusivityMRF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -868,7 +872,7 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    0.5</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#adbd1371088057033925253b49b96be81">ComputeDiffusivityMRF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -886,7 +890,7 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    0.1</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#adbd1371088057033925253b49b96be81">ComputeDiffusivityMRF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -902,7 +906,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a81a69a594e563b0bb99931d2338aa2ef">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#abbaa6f8655f81f03c1010933ecbb7f3c">ComputeDiffusivityMYNNEDMF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2">ComputeDiffusivityMYNNEDMF()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -918,7 +922,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a81a69a594e563b0bb99931d2338aa2ef">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#abbaa6f8655f81f03c1010933ecbb7f3c">ComputeDiffusivityMYNNEDMF()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183">ComputeDiffusivityMYNN25()</a>, <a class="el" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2">ComputeDiffusivityMYNNEDMF()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -952,7 +956,7 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    1.0e-4</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -970,7 +974,7 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    <span class="keyword">false</span></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -988,7 +992,7 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    0.25</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1006,7 +1010,7 @@ Here is the call graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    0.0</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#ab3c10d1ab614646b689f68d7efcf03fb">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a">ComputeDiffusivityYSU()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1056,7 +1060,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1136,7 +1140,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1152,7 +1156,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1168,7 +1172,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1184,7 +1188,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1200,7 +1204,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb5a672ad0622f1d6b76b0b8cedba345">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#afb98f24b064613be5cce58906d14f0ff">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1253,6 +1257,22 @@ Here is the call graph for this function:</div>
 <div class="line">    <span class="keyword">false</span></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+
+</div>
+</div>
+<a id="adfac4edb4b7f7ccc57906424d0fff9f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfac4edb4b7f7ccc57906424d0fff9f2">&#9670;&nbsp;</a></span>use_smag_stratification</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TurbChoice::use_smag_stratification = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
