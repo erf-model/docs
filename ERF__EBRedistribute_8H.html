@@ -131,8 +131,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:aa0f4e5eb5fa9158981ed7d2aad0f110e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#aa0f4e5eb5fa9158981ed7d2aad0f110e">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::BCRec const *bc, amrex::Real const dt)</td></tr>
 <tr class="separator:aa0f4e5eb5fa9158981ed7d2aad0f110e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2d767f4b6e51395a8f4247f5d1fc003"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#ad2d767f4b6e51395a8f4247f5d1fc003">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact, amrex::BCRec const *bc, amrex::Real const dt)</td></tr>
-<tr class="separator:ad2d767f4b6e51395a8f4247f5d1fc003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac729a61d01f146ee32da48c78f6e6685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#ac729a61d01f146ee32da48c78f6e6685">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact, amrex::BCRec const *bc, amrex::Real const dt, int const igrid)</td></tr>
+<tr class="separator:ac729a61d01f146ee32da48c78f6e6685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa0f4e5eb5fa9158981ed7d2aad0f110e"></a>
@@ -199,8 +199,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad2d767f4b6e51395a8f4247f5d1fc003"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2d767f4b6e51395a8f4247f5d1fc003">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[2/2]</span></h2>
+<a id="ac729a61d01f146ee32da48c78f6e6685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac729a61d01f146ee32da48c78f6e6685">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,7 +251,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::Real const&#160;</td>
-          <td class="paramname"><em>dt</em>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int const&#160;</td>
+          <td class="paramname"><em>igrid</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
