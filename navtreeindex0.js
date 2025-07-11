@@ -108,6 +108,7 @@ var NAVTREEINDEX0 =
 "ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f":[3,0,1,14,3,5],
 "ERF__BuoyancyUtils_8H.html#a5011865b681ba8438cde409a3d072ab7":[3,0,1,14,3,0],
 "ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451":[3,0,1,14,3,2],
+"ERF__BuoyancyUtils_8H.html#a6ea09a16772f9e6971ef85aa40f115c3":[3,0,1,14,3,8],
 "ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515":[3,0,1,14,3,3],
 "ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a":[3,0,1,14,3,1],
 "ERF__BuoyancyUtils_8H.html#acd2a476a9e226bf70a39ed0eb9b65846":[3,0,1,14,3,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb":[3,0,1,2,1,8],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239":[3,0,1,2,1,4],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d2cdf8cea6cb933d4ce759c1ff1b948":[3,0,1,2,1,4,0],
-"ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd":[3,0,1,2,1,4,2],
-"ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39":[3,0,1,2,1,4,4]
+"ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd":[3,0,1,2,1,4,2]
 };

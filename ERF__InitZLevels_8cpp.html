@@ -218,99 +218,98 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    amrex::Print() &lt;&lt;<span class="stringliteral">&quot; IN Z LEVELS &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> max_level = zlevels_stag.size()-1;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= max_level; lev++)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">auto</span> dx = geom[lev].CellSizeArray();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> Box&amp; domain = geom[lev].Domain();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">int</span> nz = domain.length(2)+1; <span class="comment">// staggered</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        zlevels_stag[lev].resize(nz);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        stretched_dz_h[lev].resize(domain.length(2));</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (grid_stretching_ratio == 0) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="comment">// This is the default for z_levels</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz; k++)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                zlevels_stag[lev][k] = k * dx[2];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz-1; k++)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                stretched_dz_h[lev][k] = dx[2];</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lev == 0) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="comment">// Create stretched grid based on initial dz and stretching ratio</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            zlevels_stag[lev][0] = zsurf;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Real dz = dz0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            stretched_dz_h[lev][0] = dz0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Stretched grid levels at level : &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt;  zsurf;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz; k++)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                zlevels_stag[lev][k] = zlevels_stag[lev][k-1] + dz;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">if</span> (k &lt; nz-1) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    stretched_dz_h[lev][k] = dz;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                Print() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; zlevels_stag[lev][k];</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                dz *= grid_stretching_ratio;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            Print() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lev &gt; 0) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a> = ref_ratio[lev-1][2];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <a class="code" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a>(zlevels_stag[lev], zlevels_stag[lev-1], <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz-1; k++)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                stretched_dz_h[lev][k] = (zlevels_stag[lev][k+1] - zlevels_stag[lev][k]);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Try reading in terrain_z_levels, which allows arbitrarily spaced grid</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// levels to be specified and will take precedence over the</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// grid_stretching_ratio parameter</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> n_zlevels = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (n_zlevels &gt; 0)</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> nz = geom[0].Domain().length(2)+1; <span class="comment">// staggered</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (n_zlevels != nz) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;You supplied &quot;</span> &lt;&lt; n_zlevels &lt;&lt; <span class="stringliteral">&quot; staggered terrain_z_levels &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;but n_cell+1 in the z-direction is &quot;</span> &lt;&lt;  nz &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            Abort(<span class="stringliteral">&quot;You must specify a z_level for every value of k&quot;</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (grid_stretching_ratio &gt; 0) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Note: Found terrain_z_levels, ignoring grid_stretching_ratio&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.getarr(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>, zlevels_stag[0], 0, nz);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// These levels should range from 0 at the surface to the height of the</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// top of model domain (see the coordinate surface height, zeta, in</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// Klemp 2011)</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        AMREX_ALWAYS_ASSERT(zlevels_stag[0][0] == 0);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= max_level; lev++) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a> = ref_ratio[lev-1][2];</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a>(zlevels_stag[lev], zlevels_stag[lev-1], <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= max_level; lev++) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordtype">int</span> nz_zlevs = zlevels_stag[lev].size();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz_zlevs-1; k++)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                stretched_dz_h[lev][k] = (zlevels_stag[lev][k+1] - zlevels_stag[lev][k]);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= max_level; lev++) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        stretched_dz_d[lev].resize(stretched_dz_h[lev].size());</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        Gpu::copy(Gpu::hostToDevice, stretched_dz_h[lev].begin(), stretched_dz_h[lev].end(), stretched_dz_d[lev].begin());</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> max_level = zlevels_stag.size()-1;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= max_level; lev++)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> dx = geom[lev].CellSizeArray();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> Box&amp; domain = geom[lev].Domain();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> nz = domain.length(2)+1; <span class="comment">// staggered</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        zlevels_stag[lev].resize(nz);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        stretched_dz_h[lev].resize(domain.length(2));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (grid_stretching_ratio == 0) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="comment">// This is the default for z_levels</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz; k++)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                zlevels_stag[lev][k] = k * dx[2];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz-1; k++)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                stretched_dz_h[lev][k] = dx[2];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lev == 0) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// Create stretched grid based on initial dz and stretching ratio</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            zlevels_stag[lev][0] = zsurf;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            Real dz = dz0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            stretched_dz_h[lev][0] = dz0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Stretched grid levels at level : &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt;  zsurf;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz; k++)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                zlevels_stag[lev][k] = zlevels_stag[lev][k-1] + dz;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">if</span> (k &lt; nz-1) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    stretched_dz_h[lev][k] = dz;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                Print() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; zlevels_stag[lev][k];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                dz *= grid_stretching_ratio;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            Print() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lev &gt; 0) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a> = ref_ratio[lev-1][2];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a>(zlevels_stag[lev], zlevels_stag[lev-1], <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz-1; k++)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                stretched_dz_h[lev][k] = (zlevels_stag[lev][k+1] - zlevels_stag[lev][k]);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Try reading in terrain_z_levels, which allows arbitrarily spaced grid</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// levels to be specified and will take precedence over the</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// grid_stretching_ratio parameter</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> n_zlevels = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (n_zlevels &gt; 0)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">int</span> nz = geom[0].Domain().length(2)+1; <span class="comment">// staggered</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (n_zlevels != nz) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;You supplied &quot;</span> &lt;&lt; n_zlevels &lt;&lt; <span class="stringliteral">&quot; staggered terrain_z_levels &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;but n_cell+1 in the z-direction is &quot;</span> &lt;&lt;  nz &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            Abort(<span class="stringliteral">&quot;You must specify a z_level for every value of k&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (grid_stretching_ratio &gt; 0) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Note: Found terrain_z_levels, ignoring grid_stretching_ratio&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.getarr(<span class="stringliteral">&quot;terrain_z_levels&quot;</span>, zlevels_stag[0], 0, nz);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// These levels should range from 0 at the surface to the height of the</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// top of model domain (see the coordinate surface height, zeta, in</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// Klemp 2011)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        AMREX_ALWAYS_ASSERT(zlevels_stag[0][0] == 0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= max_level; lev++) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a> = ref_ratio[lev-1][2];</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <a class="code" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a>(zlevels_stag[lev], zlevels_stag[lev-1], <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a>, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= max_level; lev++) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordtype">int</span> nz_zlevs = zlevels_stag[lev].size();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; nz_zlevs-1; k++)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                stretched_dz_h[lev][k] = (zlevels_stag[lev][k+1] - zlevels_stag[lev][k]);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= max_level; lev++) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        stretched_dz_d[lev].resize(stretched_dz_h[lev].size());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        Gpu::copy(Gpu::hostToDevice, stretched_dz_h[lev].begin(), stretched_dz_h[lev].end(), stretched_dz_d[lev].begin());</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_af71b362e58803c8c29aa5127adcf645f"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a></div><div class="ttdeci">AMREX_FORCE_INLINE void expand_and_interpolate_1d(amrex::Vector&lt; amrex::Real &gt; &amp;znew, const amrex::Vector&lt; amrex::Real &gt; &amp;zorig, int refine_fac, bool destag=false)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:85</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:230</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a649e184a5c5c6d2eef72a390c18eb4e4"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">module_mp_morr_two_moment::rr</a></div><div class="ttdeci">real(c_double), private rr</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:223</div></div>

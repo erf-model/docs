@@ -63,5 +63,6 @@ var searchData=
   ['buoyancy_5fmoist_5fthpert_194',['buoyancy_moist_Thpert',['../ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f',1,'ERF_BuoyancyUtils.H']]],
   ['buoyancy_5fmoist_5ftpert_195',['buoyancy_moist_Tpert',['../ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215',1,'ERF_BuoyancyUtils.H']]],
   ['buoyancy_5frhopert_196',['buoyancy_rhopert',['../ERF__BuoyancyUtils_8H.html#acd2a476a9e226bf70a39ed0eb9b65846',1,'ERF_BuoyancyUtils.H']]],
-  ['buoyancy_5ftype_197',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]]
+  ['buoyancy_5frhopert_5feb_197',['buoyancy_rhopert_eb',['../ERF__BuoyancyUtils_8H.html#a6ea09a16772f9e6971ef85aa40f115c3',1,'ERF_BuoyancyUtils.H']]],
+  ['buoyancy_5ftype_198',['buoyancy_type',['../structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0',1,'SolverChoice']]]
 ];

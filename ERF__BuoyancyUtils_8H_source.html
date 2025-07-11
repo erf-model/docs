@@ -171,154 +171,190 @@ $(document).ready(function(){initNavTree('ERF__BuoyancyUtils_8H_source.html','')
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;AMREX_GPU_DEVICE</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">   86</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">buoyancy_dry_Tpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a6ea09a16772f9e6971ef85aa40f115c3">   86</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a6ea09a16772f9e6971ef85aa40f115c3">buoyancy_rhopert_eb</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    amrex::Real <span class="keyword">const</span>&amp; rd_over_cp,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; p0_arr,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    amrex::Real t0_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k), th0_arr(i,j,k), rd_over_cp);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    amrex::Real  t_hi = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    amrex::Real t0_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), th0_arr(i,j,k-1), rd_over_cp);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    amrex::Real  t_lo = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    amrex::Real tprime_hi = (t_hi-t0_hi)/t0_hi;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    amrex::Real tprime_lo = (t_lo-t0_lo)/t0_lo;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    amrex::Real tp_avg = amrex::Real(0.5) * (tprime_hi + tprime_lo);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    amrex::Real r0_avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> ( -r0_avg * grav_gpu * tp_avg);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451">  112</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451">buoyancy_dry_Thpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                     amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                     <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                     <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                     <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    amrex::Real thetaprime_hi = (cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k  )) / th0_arr(i,j,k  );</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    amrex::Real thetaprime_lo = (cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k-1)) / th0_arr(i,j,k-1);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    amrex::Real thp_avg = amrex::Real(0.5) * (thetaprime_hi + thetaprime_lo);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    amrex::Real  r0_avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">return</span> ( -r0_avg * grav_gpu * thp_avg);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">  130</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">buoyancy_moist_Tpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n_qstate,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                      amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                      amrex::Real <span class="keyword">const</span>&amp; rd_over_cp,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qv0_arr,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; p0_arr,</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qt_arr)</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    amrex::Real qv_hi = (n_qstate &gt;= 1) ? cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    amrex::Real qv_lo = (n_qstate &gt;= 1) ? cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    amrex::Real t0_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k  ), th0_arr(i,j,k  ), rd_over_cp);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    amrex::Real t0_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), th0_arr(i,j,k-1), rd_over_cp);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    amrex::Real dt_hi  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_hi) - t0_hi;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    amrex::Real dt_lo  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_lo) - t0_lo;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    amrex::Real qv0_hi = qv0_arr(i,j,k  );</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    amrex::Real qv0_lo = qv0_arr(i,j,k-1);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    amrex::Real q_hi = amrex::Real(0.61) * (qv_hi-qv0_hi) - (qt_arr(i,j,k  )-qv_hi) + dt_hi/t0_hi;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    amrex::Real q_lo = amrex::Real(0.61) * (qv_lo-qv0_lo) - (qt_arr(i,j,k-1)-qv_lo) + dt_lo/t0_lo;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    amrex::Real qavg = amrex::Real(0.5)  * (q_hi + q_lo);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qt_arr,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    amrex::Array4&lt;amrex::EBCellFlag const&gt; <span class="keyword">const</span>&amp; flag)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    amrex::Real buoyancy = 0.0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">if</span> (flag(i,j,k).isRegular()) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        amrex::Real rhop_hi = cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k  ))- r0_arr(i,j,k  );</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        amrex::Real rhop_lo = cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k-1))- r0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        buoyancy = grav_gpu * amrex::Real(0.5) * ( rhop_hi + rhop_lo );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flag(i,j,k).isSingleValued()) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (flag(i,j,k-1).isCovered()) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            amrex::Real rhop_hihi = cell_data(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k+1))- r0_arr(i,j,k+1);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            amrex::Real rhop_hi   = cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k  ))- r0_arr(i,j,k  );</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            buoyancy = grav_gpu * 0.5 * ( 3.0 * rhop_hi - rhop_hihi );</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">// buoyancy = grav_gpu * rhop_hi;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            amrex::Real rhop_lo   = cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k-1))- r0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            amrex::Real rhop_lolo = cell_data(i,j,k-2,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k-2))- r0_arr(i,j,k-2);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            buoyancy = grav_gpu * 0.5 * ( 3.0 * rhop_lo - rhop_lolo );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="comment">// buoyancy = grav_gpu * rhop_lo;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            amrex::Real rhop_hi = cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k  ))- r0_arr(i,j,k  );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            amrex::Real rhop_lo = cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * (1.0 + qt_arr(i,j,k-1))- r0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            buoyancy = grav_gpu * amrex::Real(0.5) * ( rhop_hi + rhop_lo );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> buoyancy;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">  121</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">buoyancy_dry_Tpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    amrex::Real <span class="keyword">const</span>&amp; rd_over_cp,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; p0_arr,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    amrex::Real t0_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k), th0_arr(i,j,k), rd_over_cp);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    amrex::Real  t_hi = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    amrex::Real t0_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), th0_arr(i,j,k-1), rd_over_cp);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    amrex::Real  t_lo = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    amrex::Real tprime_hi = (t_hi-t0_hi)/t0_hi;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    amrex::Real tprime_lo = (t_lo-t0_lo)/t0_lo;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    amrex::Real tp_avg = amrex::Real(0.5) * (tprime_hi + tprime_lo);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    amrex::Real r0_avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">return</span> ( -r0_avg * grav_gpu * tp_avg);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451">  147</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451">buoyancy_dry_Thpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                     amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                     <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                     <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                     <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;{</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    amrex::Real thetaprime_hi = (cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k  )) / th0_arr(i,j,k  );</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    amrex::Real thetaprime_lo = (cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k-1)) / th0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    amrex::Real thp_avg = amrex::Real(0.5) * (thetaprime_hi + thetaprime_lo);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    amrex::Real  r0_avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    amrex::Real r0avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> ( -r0avg * grav_gpu * qavg);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f">  167</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f">buoyancy_moist_Thpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n_qstate,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                       amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qv0_arr,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim,</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qt_arr)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    amrex::Real qv_hi = (n_qstate &gt;= 1) ? cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    amrex::Real qv_lo = (n_qstate &gt;= 1) ? cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    amrex::Real qt_hi = qt_arr(i,j,k  ) - qv_hi;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    amrex::Real qt_lo = qt_arr(i,j,k-1) - qv_lo;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    amrex::Real dth_hi = cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k  );</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    amrex::Real dth_lo = cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k-1);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    amrex::Real qv0_hi = qv0_arr(i,j,k  );</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    amrex::Real qv0_lo = qv0_arr(i,j,k-1);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    amrex::Real q_hi = amrex::Real(0.61) * (qv_hi-qv0_hi) - qt_hi + dth_hi/th0_arr(i,j,k  );</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    amrex::Real q_lo = amrex::Real(0.61) * (qv_lo-qv0_lo) - qt_lo + dth_lo/th0_arr(i,j,k-1);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    amrex::Real qavg  = amrex::Real(0.5) * (q_hi + q_lo);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    amrex::Real r0avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> ( -r0avg * grav_gpu * qavg);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">// Routines below this line are not currently used</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">// **************************************************************************************</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;amrex::Real</div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a">  205</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a">buoyancy_dry_anelastic_T</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                          amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                          amrex::Real <span class="keyword">const</span>&amp; rd_over_cp,</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                          <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                          <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; p0_arr,</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                          <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    amrex::Real rt0_hi = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p0_arr(i,j,k));</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    amrex::Real  t0_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k), rt0_hi/r0_arr(i,j,k), rd_over_cp);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    amrex::Real   t_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k), cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/r0_arr(i,j,k), rd_over_cp);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    amrex::Real   q_hi  = (t_hi-t0_hi)/t0_hi;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> ( -r0_avg * grav_gpu * thp_avg);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">  165</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">buoyancy_moist_Tpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n_qstate,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                      amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                      amrex::Real <span class="keyword">const</span>&amp; rd_over_cp,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qv0_arr,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; p0_arr,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qt_arr)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    amrex::Real qv_hi = (n_qstate &gt;= 1) ? cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    amrex::Real qv_lo = (n_qstate &gt;= 1) ? cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    amrex::Real t0_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k  ), th0_arr(i,j,k  ), rd_over_cp);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    amrex::Real t0_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), th0_arr(i,j,k-1), rd_over_cp);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    amrex::Real dt_hi  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_hi) - t0_hi;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    amrex::Real dt_lo  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_lo) - t0_lo;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    amrex::Real qv0_hi = qv0_arr(i,j,k  );</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    amrex::Real qv0_lo = qv0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    amrex::Real q_hi = amrex::Real(0.61) * (qv_hi-qv0_hi) - (qt_arr(i,j,k  )-qv_hi) + dt_hi/t0_hi;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    amrex::Real q_lo = amrex::Real(0.61) * (qv_lo-qv0_lo) - (qt_arr(i,j,k-1)-qv_lo) + dt_lo/t0_lo;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    amrex::Real qavg = amrex::Real(0.5)  * (q_hi + q_lo);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    amrex::Real r0avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> ( -r0avg * grav_gpu * qavg);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f">  202</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f">buoyancy_moist_Thpert</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                       <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; n_qstate,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                       amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; th0_arr,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qv0_arr,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_prim,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; qt_arr)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    amrex::Real qv_hi = (n_qstate &gt;= 1) ? cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    amrex::Real qv_lo = (n_qstate &gt;= 1) ? cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : 0.0;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    amrex::Real qt_hi = qt_arr(i,j,k  ) - qv_hi;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    amrex::Real qt_lo = qt_arr(i,j,k-1) - qv_lo;</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    amrex::Real rt0_lo = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p0_arr(i,j,k-1));</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    amrex::Real  t0_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), rt0_lo/r0_arr(i,j,k-1), rd_over_cp);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    amrex::Real   t_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/r0_arr(i,j,k-1), rd_over_cp);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    amrex::Real   q_lo = (t_lo-t0_lo)/t0_lo;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    amrex::Real r0_q_avg = amrex::Real(0.5) * (r0_arr(i,j,k) * q_hi + r0_arr(i,j,k-1) * q_lo);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> (-r0_q_avg * grav_gpu);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    amrex::Real dth_hi = cell_prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k  );</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    amrex::Real dth_lo = cell_prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) - th0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    amrex::Real qv0_hi = qv0_arr(i,j,k  );</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    amrex::Real qv0_lo = qv0_arr(i,j,k-1);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    amrex::Real q_hi = amrex::Real(0.61) * (qv_hi-qv0_hi) - qt_hi + dth_hi/th0_arr(i,j,k  );</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    amrex::Real q_lo = amrex::Real(0.61) * (qv_lo-qv0_lo) - qt_lo + dth_lo/th0_arr(i,j,k-1);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    amrex::Real qavg  = amrex::Real(0.5) * (q_hi + q_lo);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    amrex::Real r0avg = amrex::Real(0.5) * (r0_arr(i,j,k) + r0_arr(i,j,k-1));</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> ( -r0avg * grav_gpu * qavg);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">// Routines below this line are not currently used</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">// **************************************************************************************</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;AMREX_GPU_DEVICE</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a">  240</a></span>&#160;<a class="code" href="ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a">buoyancy_dry_anelastic_T</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                          amrex::Real <span class="keyword">const</span>&amp; grav_gpu,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                          amrex::Real <span class="keyword">const</span>&amp; rd_over_cp,</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                          <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; r0_arr,</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                          <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; p0_arr,</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                          <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;{</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    amrex::Real rt0_hi = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p0_arr(i,j,k));</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    amrex::Real  t0_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k), rt0_hi/r0_arr(i,j,k), rd_over_cp);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    amrex::Real   t_hi = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k), cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/r0_arr(i,j,k), rd_over_cp);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    amrex::Real   q_hi  = (t_hi-t0_hi)/t0_hi;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    amrex::Real rt0_lo = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p0_arr(i,j,k-1));</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    amrex::Real  t0_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), rt0_lo/r0_arr(i,j,k-1), rd_over_cp);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    amrex::Real   t_lo = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p0_arr(i,j,k-1), cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/r0_arr(i,j,k-1), rd_over_cp);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    amrex::Real   q_lo = (t_lo-t0_lo)/t0_lo;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    amrex::Real r0_q_avg = amrex::Real(0.5) * (r0_arr(i,j,k) * q_hi + r0_arr(i,j,k-1) * q_lo);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">return</span> (-r0_q_avg * grav_gpu);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__BuoyancyUtils_8H_html_a2f1ede040208afa92456921c0208dfaa"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a2f1ede040208afa92456921c0208dfaa">buoyancy_moist_anelastic</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_moist_anelastic(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, amrex::Real const &amp;rv_over_rd, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qv0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;qt_arr)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:30</div></div>
-<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a3acc9035bcbdb59fc309645986d25215"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">buoyancy_moist_Tpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_moist_Tpert(int &amp;i, int &amp;j, int &amp;k, const int &amp;n_qstate, amrex::Real const &amp;grav_gpu, amrex::Real const &amp;rd_over_cp, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qv0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;p0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;qt_arr)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:130</div></div>
-<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a44e3cd1e8a6ae9c74301babfec64448f"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f">buoyancy_moist_Thpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_moist_Thpert(int &amp;i, int &amp;j, int &amp;k, const int &amp;n_qstate, amrex::Real const &amp;grav_gpu, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qv0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;qt_arr)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:167</div></div>
+<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a3acc9035bcbdb59fc309645986d25215"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">buoyancy_moist_Tpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_moist_Tpert(int &amp;i, int &amp;j, int &amp;k, const int &amp;n_qstate, amrex::Real const &amp;grav_gpu, amrex::Real const &amp;rd_over_cp, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qv0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;p0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;qt_arr)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:165</div></div>
+<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a44e3cd1e8a6ae9c74301babfec64448f"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a44e3cd1e8a6ae9c74301babfec64448f">buoyancy_moist_Thpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_moist_Thpert(int &amp;i, int &amp;j, int &amp;k, const int &amp;n_qstate, amrex::Real const &amp;grav_gpu, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;qv0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; const amrex::Real &gt; &amp;qt_arr)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:202</div></div>
 <div class="ttc" id="aERF__BuoyancyUtils_8H_html_a5011865b681ba8438cde409a3d072ab7"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a5011865b681ba8438cde409a3d072ab7">buoyancy_dry_anelastic</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_dry_anelastic(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:10</div></div>
-<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a5d830f8d1f69f421243bb525f1cb3451"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451">buoyancy_dry_Thpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_dry_Thpert(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:112</div></div>
-<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a7619875c059558175b6df4771ccc8515"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">buoyancy_dry_Tpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_dry_Tpert(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, amrex::Real const &amp;rd_over_cp, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;p0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:86</div></div>
-<div class="ttc" id="aERF__BuoyancyUtils_8H_html_abb7188746139971e303834720b94464a"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a">buoyancy_dry_anelastic_T</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_dry_anelastic_T(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, amrex::Real const &amp;rd_over_cp, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;p0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:205</div></div>
+<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a5d830f8d1f69f421243bb525f1cb3451"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451">buoyancy_dry_Thpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_dry_Thpert(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:147</div></div>
+<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a6ea09a16772f9e6971ef85aa40f115c3"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a6ea09a16772f9e6971ef85aa40f115c3">buoyancy_rhopert_eb</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_rhopert_eb(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;qt_arr, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:86</div></div>
+<div class="ttc" id="aERF__BuoyancyUtils_8H_html_a7619875c059558175b6df4771ccc8515"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">buoyancy_dry_Tpert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_dry_Tpert(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, amrex::Real const &amp;rd_over_cp, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;p0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;th0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:121</div></div>
+<div class="ttc" id="aERF__BuoyancyUtils_8H_html_abb7188746139971e303834720b94464a"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a">buoyancy_dry_anelastic_T</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_dry_anelastic_T(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, amrex::Real const &amp;rd_over_cp, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;p0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:240</div></div>
 <div class="ttc" id="aERF__BuoyancyUtils_8H_html_acd2a476a9e226bf70a39ed0eb9b65846"><div class="ttname"><a href="ERF__BuoyancyUtils_8H.html#acd2a476a9e226bf70a39ed0eb9b65846">buoyancy_rhopert</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real buoyancy_rhopert(int &amp;i, int &amp;j, int &amp;k, amrex::Real const &amp;grav_gpu, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;qt_arr)</div><div class="ttdef"><b>Definition:</b> ERF_BuoyancyUtils.H:72</div></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__EOS_8H_html"><div class="ttname"><a href="ERF__EOS_8H.html">ERF_EOS.H</a></div></div>
