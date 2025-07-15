@@ -126,9 +126,9 @@ Functions</h2></td></tr>
 <tr class="separator:aa97baa913e924dfefd5171f9c94e3216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a596e32b383e273f4355948b05366ad66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a596e32b383e273f4355948b05366ad66">compute_aerocom_cloudtop</a> (int ncol, int nlay, const real2d &amp;tmid, const real2d &amp;pmid, const real2d &amp;p_del, const real2d &amp;z_del, const real2d &amp;qc, const real2d &amp;qi, const real2d &amp;rel, const real2d &amp;rei, const real2d &amp;cldfrac_tot, const real2d &amp;nc, real1d &amp;T_mid_at_cldtop, real1d &amp;p_mid_at_cldtop, real1d &amp;cldfrac_ice_at_cldtop, real1d &amp;cldfrac_liq_at_cldtop, real1d &amp;cldfrac_tot_at_cldtop, real1d &amp;cdnc_at_cldtop, real1d &amp;eff_radius_qc_at_cldtop, real1d &amp;eff_radius_qi_at_cldtop)</td></tr>
 <tr class="separator:a596e32b383e273f4355948b05366ad66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff494d67f2566f594c5e54f30fce4021"><td class="memTemplParams" colspan="2">template&lt;class T , int myMem, int myStyle&gt; </td></tr>
-<tr class="memitem:aff494d67f2566f594c5e54f30fce4021"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#aff494d67f2566f594c5e54f30fce4021">mixing_ratio_to_cloud_mass</a> (yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;mixing_ratio, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;cloud_fraction, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;dp, yakl::Array&lt; T, 2, myMem, myStyle &gt; &amp;cloud_mass)</td></tr>
-<tr class="separator:aff494d67f2566f594c5e54f30fce4021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15015580091d4af38a35425da9b85955"><td class="memTemplParams" colspan="2">template&lt;class T , int myMem, int myStyle&gt; </td></tr>
+<tr class="memitem:a15015580091d4af38a35425da9b85955"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a15015580091d4af38a35425da9b85955">mixing_ratio_to_cloud_mass</a> (yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;mixing_ratio, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;cloud_fraction, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;rho, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;dz, yakl::Array&lt; T, 2, myMem, myStyle &gt; &amp;cloud_mass)</td></tr>
+<tr class="separator:a15015580091d4af38a35425da9b85955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf6278c157e027c58c26c644cf39ff07"><td class="memTemplParams" colspan="2">template&lt;class S , class T &gt; </td></tr>
 <tr class="memitem:acf6278c157e027c58c26c644cf39ff07"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#acf6278c157e027c58c26c644cf39ff07">limit_to_bounds</a> (S const &amp;arr_in, T const lower, T const upper, S &amp;arr_out)</td></tr>
 <tr class="separator:acf6278c157e027c58c26c644cf39ff07"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -773,25 +773,16 @@ template&lt;class T , int myMem, int myStyle&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">auto</span> ncol = flux_up.dimension[0];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> nlay = flux_up.dimension[1]-1;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    yakl::fortran::parallel_for(yakl::fortran::SimpleBounds&lt;2&gt;(nlay,ncol), YAKL_LAMBDA(<span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        heating_rate(icol,ilay) = -1.0 * ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                         - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                         / (<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">/*</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">        if (icol == 1) {</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">            printf(&quot;Heating Rate %i %e %e %e %e %e %e\n&quot;,ilay,</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">                   flux_up(icol,ilay+1), flux_up(icol,ilay),</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">                   flux_dn(icol,ilay+1), flux_dn(icol,ilay),</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">                   rho(icol,ilay), dz(icol,ilay));</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">        */</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    });</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> ncol = flux_up.dimension[0];</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">auto</span> nlay = flux_up.dimension[1]-1;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    yakl::fortran::parallel_for(yakl::fortran::SimpleBounds&lt;2&gt;(nlay,ncol), YAKL_LAMBDA(<span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        heating_rate(icol,ilay) = ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                  - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                  / ( -<a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay) * <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> );</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    });</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
 </div><!-- fragment -->
@@ -893,7 +884,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Return optics</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> clouds;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="ttc" id="anamespacerrtmgp_html_acf6278c157e027c58c26c644cf39ff07"><div class="ttname"><a href="namespacerrtmgp.html#acf6278c157e027c58c26c644cf39ff07">rrtmgp::limit_to_bounds</a></div><div class="ttdeci">void limit_to_bounds(S const &amp;arr_in, T const lower, T const upper, S &amp;arr_out)</div><div class="ttdef"><b>Definition:</b> ERF_RRTMGP_Utils.H:49</div></div>
+<div class="ttc" id="anamespacerrtmgp_html_acf6278c157e027c58c26c644cf39ff07"><div class="ttname"><a href="namespacerrtmgp.html#acf6278c157e027c58c26c644cf39ff07">rrtmgp::limit_to_bounds</a></div><div class="ttdeci">void limit_to_bounds(S const &amp;arr_in, T const lower, T const upper, S &amp;arr_out)</div><div class="ttdef"><b>Definition:</b> ERF_RRTMGP_Utils.H:50</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacerrtmgp.html#aca00de2607b2c633f671c81a4505387c">rrtmgp_main()</a>.</p>
 <div class="dynheader">
@@ -1581,12 +1572,12 @@ template&lt;class S , class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    yakl::c::parallel_for(arr_in.totElems(), YAKL_LAMBDA(<span class="keywordtype">int</span> i)</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        arr_out.data()[i] = std::min(std::max(arr_in.data()[i], lower), upper);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    });</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    yakl::c::parallel_for(arr_in.totElems(), YAKL_LAMBDA(<span class="keywordtype">int</span> i)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        arr_out.data()[i] = std::min(std::max(arr_in.data()[i], lower), upper);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    });</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacerrtmgp.html#ad8e77738714ea055005897bd76f6eabb">get_cloud_optics_lw()</a>, <a class="el" href="namespacerrtmgp.html#acaa235a2f5177c80af989b4ee45e985a">get_cloud_optics_sw()</a>, <a class="el" href="namespacerrtmgp.html#a06421de5142893781224a4d7e8ffc17f">rrtmgp_lw()</a>, and <a class="el" href="namespacerrtmgp.html#a4111d3c5505330953cc8139593b7be55">rrtmgp_sw()</a>.</p>
 <div class="dynheader">
@@ -1608,8 +1599,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aff494d67f2566f594c5e54f30fce4021"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff494d67f2566f594c5e54f30fce4021">&#9670;&nbsp;</a></span>mixing_ratio_to_cloud_mass()</h2>
+<a id="a15015580091d4af38a35425da9b85955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15015580091d4af38a35425da9b85955">&#9670;&nbsp;</a></span>mixing_ratio_to_cloud_mass()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1632,7 +1623,13 @@ template&lt;class T , int myMem, int myStyle&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>dp</em>, </td>
+          <td class="paramname"><em>rho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>dz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1647,31 +1644,31 @@ template&lt;class T , int myMem, int myStyle&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> ncol = mixing_ratio.dimension[0];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> nlay = mixing_ratio.dimension[1];</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    yakl::fortran::parallel_for(yakl::fortran::SimpleBounds&lt;2&gt;(nlay, ncol), YAKL_LAMBDA(<span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">// Compute in-cloud mixing ratio (mixing ratio of the cloudy part of the layer)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// NOTE: these thresholds (from E3SM) seem arbitrary, but included here for consistency</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// This limits in-cloud mixing ratio to 0.005 kg/kg. According to note in cloud_diagnostics</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// in EAM, this is consistent with limits in MG2. Is this true for P3?</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (cloud_fraction(icol,ilay) &gt; 0) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="comment">// Compute layer-integrated cloud mass (per unit area)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">auto</span> incloud_mixing_ratio = std::min(mixing_ratio(icol,ilay) / std::max(0.0001, cloud_fraction(icol,ilay)), 0.005);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            cloud_mass(icol,ilay) = incloud_mixing_ratio * dp(icol,ilay) / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            cloud_mass(icol,ilay) = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    });</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> ncol = mixing_ratio.dimension[0];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> nlay = mixing_ratio.dimension[1];</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    yakl::fortran::parallel_for(yakl::fortran::SimpleBounds&lt;2&gt;(nlay, ncol), YAKL_LAMBDA(<span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> icol)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// Compute in-cloud mixing ratio (mixing ratio of the cloudy part of the layer)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// NOTE: these thresholds (from E3SM) seem arbitrary, but included here for consistency</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">// This limits in-cloud mixing ratio to 0.005 kg/kg. According to note in cloud_diagnostics</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// in EAM, this is consistent with limits in MG2. Is this true for P3?</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (cloud_fraction(icol,ilay) &gt; 0) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="comment">// Compute layer-integrated cloud mass (per unit area)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">auto</span> incloud_mixing_ratio = std::min(mixing_ratio(icol,ilay) / std::max(0.0001, cloud_fraction(icol,ilay)), 0.005);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            cloud_mass(icol,ilay) = incloud_mixing_ratio * <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            cloud_mass(icol,ilay) = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    });</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df">Radiation::run_impl()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespacerrtmgp_aff494d67f2566f594c5e54f30fce4021_icgraph.png" border="0" usemap="#anamespacerrtmgp_aff494d67f2566f594c5e54f30fce4021_icgraph" alt=""/></div>
-<map name="anamespacerrtmgp_aff494d67f2566f594c5e54f30fce4021_icgraph" id="anamespacerrtmgp_aff494d67f2566f594c5e54f30fce4021_icgraph">
+<div class="center"><img src="namespacerrtmgp_a15015580091d4af38a35425da9b85955_icgraph.png" border="0" usemap="#anamespacerrtmgp_a15015580091d4af38a35425da9b85955_icgraph" alt=""/></div>
+<map name="anamespacerrtmgp_a15015580091d4af38a35425da9b85955_icgraph" id="anamespacerrtmgp_a15015580091d4af38a35425da9b85955_icgraph">
 <area shape="rect" title=" " alt="" coords="593,5,749,47"/>
 <area shape="rect" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df" title=" " alt="" coords="396,13,545,39"/>
 <area shape="rect" href="classRadiation.html#ae1d72c71f81bcb4379eb10931ebfb33f" title=" " alt="" coords="171,13,348,39"/>
@@ -1714,17 +1711,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// If irad == 0, then never do radiation;</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Otherwise, we always call radiation at the first step,</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// and afterwards we do radiation if the timestep is divisible</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// by irad</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (irad == 0) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> ( (nstep == 0) || (nstep % irad == 0) );</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// If irad == 0, then never do radiation;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Otherwise, we always call radiation at the first step,</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// and afterwards we do radiation if the timestep is divisible</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// by irad</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (irad == 0) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> ( (nstep == 0) || (nstep % irad == 0) );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

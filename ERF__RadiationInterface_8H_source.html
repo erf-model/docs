@@ -103,27 +103,27 @@ $(document).ready(function(){initNavTree('ERF__RadiationInterface_8H_source.html
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classIRadiation.html#ab95cafeff7c2b9960532aa5025daedfb">   16</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classIRadiation.html#ab95cafeff7c2b9960532aa5025daedfb">~IRadiation</a> () = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classIRadiation.html#a93a49facdea9a509245196a463491013">   18</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#a93a49facdea9a509245196a463491013">Init</a>(<span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                      <span class="keyword">const</span> amrex::BoxArray&amp; ba,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                      amrex::MultiFab* cons_in) = 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classIRadiation.html#a93a49facdea9a509245196a463491013">   18</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#a93a49facdea9a509245196a463491013">Init</a> (<span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                       <span class="keyword">const</span> amrex::BoxArray&amp; ba,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                       amrex::MultiFab* cons_in) = 0;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classIRadiation.html#abb7d08da38e036b2d795e471c870c3b7">   22</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#abb7d08da38e036b2d795e471c870c3b7">Run</a>(<span class="keywordtype">int</span>&amp; level,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                     <span class="keywordtype">int</span>&amp; step,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                     amrex::Real&amp; time,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                     <span class="keyword">const</span> amrex::Real&amp; dt,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                     <span class="keyword">const</span> amrex::BoxArray&amp; ba,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                     amrex::Geometry&amp; geom,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                     amrex::MultiFab* cons_in,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                     amrex::MultiFab* lsm_fluxes,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                     amrex::MultiFab* lsm_zenith,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                     amrex::MultiFab* qheating_rates,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                     amrex::MultiFab* z_phys,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                     amrex::MultiFab* lat,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                     amrex::MultiFab* lon) = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classIRadiation.html#abb7d08da38e036b2d795e471c870c3b7">   22</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#abb7d08da38e036b2d795e471c870c3b7">Run</a> (<span class="keywordtype">int</span>&amp; level,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                      <span class="keywordtype">int</span>&amp; step,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                      amrex::Real&amp; time,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                      <span class="keyword">const</span> amrex::Real&amp; dt,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                      <span class="keyword">const</span> amrex::BoxArray&amp; ba,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                      amrex::Geometry&amp; geom,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                      amrex::MultiFab* cons_in,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                      amrex::MultiFab* lsm_fluxes,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                      amrex::MultiFab* lsm_zenith,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                      amrex::MultiFab* qheating_rates,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                      amrex::MultiFab* z_phys,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                      amrex::MultiFab* lat,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                      amrex::MultiFab* lon) = 0;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">   36</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">WriteDataLog</a>(<span class="keyword">const</span> amrex::Real &amp;time) = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">   36</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">WriteDataLog</a> (<span class="keyword">const</span> amrex::Real &amp;time) = 0;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">setupDataLog</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">   38</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">setupDataLog</a> ()</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf.rad&quot;</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.contains(<span class="stringliteral">&quot;datalog&quot;</span>)) {</div>
@@ -133,11 +133,11 @@ $(document).ready(function(){initNavTree('ERF__RadiationInterface_8H_source.html
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classIRadiation.html#a869627344662a3d31c962dc8bc615868">   48</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#a869627344662a3d31c962dc8bc615868">setDataLogFrequency</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> nstep) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classIRadiation.html#a869627344662a3d31c962dc8bc615868">   48</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classIRadiation.html#a869627344662a3d31c962dc8bc615868">setDataLogFrequency</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> nstep) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classIRadiation.html#ab7a8ceb8c09be4f9df4241f81197f553">datalog_int</a> = nstep;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871">   52</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871">hasDatalog</a>() { <span class="keywordflow">return</span> (<a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;good()); }</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871">   52</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871">hasDatalog</a> () { <span class="keywordflow">return</span> (<a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;good()); }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">   55</a></span>&#160;    std::unique_ptr&lt;std::fstream&gt; <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> = <span class="keyword">nullptr</span>;</div>

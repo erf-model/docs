@@ -324,7 +324,7 @@ var namespaces_dup =
       [ "get_wavelength_index_lw", "namespacerrtmgp.html#a52228aa7239950f074075cfd57c1207f", null ],
       [ "get_wavelength_index_sw", "namespacerrtmgp.html#a7aace8b2376cb438643c8631b76a1603", null ],
       [ "limit_to_bounds", "namespacerrtmgp.html#acf6278c157e027c58c26c644cf39ff07", null ],
-      [ "mixing_ratio_to_cloud_mass", "namespacerrtmgp.html#aff494d67f2566f594c5e54f30fce4021", null ],
+      [ "mixing_ratio_to_cloud_mass", "namespacerrtmgp.html#a15015580091d4af38a35425da9b85955", null ],
       [ "radiation_do", "namespacerrtmgp.html#a330f3ddc4245c802986216ff51504e50", null ],
       [ "rrtmgp_finalize", "namespacerrtmgp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
       [ "rrtmgp_initialize", "namespacerrtmgp.html#a7d6bd0d2d81458bf0a624da720d39ebf", null ],
