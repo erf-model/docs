@@ -382,8 +382,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pres_array(i,j,k), qsatnew);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                amrex::ignore_unused(qvprev);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                amrex::ignore_unused(qcprev);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                AMREX_ASSERT(std::abs(qv_array(i,j,k)-qsatnew) &lt; 1e-16);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-16);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                AMREX_ASSERT(std::abs(qv_array(i,j,k)-qsatnew) &lt; 1e-14);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-14);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="comment">// Update theta (constant pressure)</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
@@ -429,8 +429,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    AMREX_ASSERT(qv_array(i,j,k) &lt; qvprev);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    AMREX_ASSERT(qc_array(i,j,k) &gt; qcprev);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    AMREX_ASSERT(tabs_array(i,j,k) &gt; Tprev);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    AMREX_ASSERT(std::abs(qv_array(i,j,k)-qsatnew) &lt; 1e-16);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-16);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    AMREX_ASSERT(std::abs(qv_array(i,j,k)-qsatnew) &lt; 1e-14);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-14);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="comment">// Update theta</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
