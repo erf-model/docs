@@ -37,8 +37,6 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_MicrophysicsUtils.H", "ERF__MicrophysicsUtils_8H.html", "ERF__MicrophysicsUtils_8H" ],
     [ "ERF_MoistUtils.H", "ERF__MoistUtils_8H.html", "ERF__MoistUtils_8H" ],
     [ "ERF_MomentumToVelocity.cpp", "ERF__MomentumToVelocity_8cpp.html", "ERF__MomentumToVelocity_8cpp" ],
-    [ "ERF_Orbit.cpp", "ERF__Orbit_8cpp.html", "ERF__Orbit_8cpp" ],
-    [ "ERF_Orbit.H", "ERF__Orbit_8H.html", "ERF__Orbit_8H" ],
     [ "ERF_ParFunctions.H", "ERF__ParFunctions_8H.html", "ERF__ParFunctions_8H" ],
     [ "ERF_PlaneAverage.H", "ERF__PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]

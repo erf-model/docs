@@ -84,12 +84,15 @@ $(document).ready(function(){initNavTree('ERF__RRTMGP__Interface_8H.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_RRTMGP_Interface.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;rrtmgp_const.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;Kokkos_Core.hpp&gt;</code><br />
+<code>#include &lt;AMReX_REAL.H&gt;</code><br />
+<code>#include &lt;rrtmgp_const.h&gt;</code><br />
 <code>#include &lt;mo_gas_optics_rrtmgp.h&gt;</code><br />
 <code>#include &lt;mo_cloud_optics.h&gt;</code><br />
 <code>#include &lt;mo_fluxes_byband.h&gt;</code><br />
@@ -100,26 +103,27 @@ $(document).ready(function(){initNavTree('ERF__RRTMGP__Interface_8H.html',''); i
 <code>#include &lt;mo_load_cloud_coefficients.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__RRTMGP__Utils_8H_source.html">ERF_RRTMGP_Utils.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__Kokkos__Radiation_8H_source.html">ERF_Kokkos_Radiation.H</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_RRTMGP_Interface.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__RRTMGP__Interface_8H__incl.png" border="0" usemap="#aSource_2Radiation_2ERF__RRTMGP__Interface_8H" alt=""/></div>
 <map name="aSource_2Radiation_2ERF__RRTMGP__Interface_8H" id="aSource_2Radiation_2ERF__RRTMGP__Interface_8H">
-<area shape="rect" title=" " alt="" coords="789,5,952,47"/>
-<area shape="rect" title=" " alt="" coords="585,169,705,196"/>
-<area shape="rect" title=" " alt="" coords="27,95,210,121"/>
-<area shape="rect" title=" " alt="" coords="234,95,377,121"/>
-<area shape="rect" title=" " alt="" coords="401,95,556,121"/>
-<area shape="rect" title=" " alt="" coords="581,95,753,121"/>
-<area shape="rect" title=" " alt="" coords="777,95,965,121"/>
-<area shape="rect" title=" " alt="" coords="989,95,1093,121"/>
-<area shape="rect" title=" " alt="" coords="1117,95,1219,121"/>
-<area shape="rect" title=" " alt="" coords="1243,95,1458,121"/>
-<area shape="rect" href="ERF__RRTMGP__Utils_8H.html" title=" " alt="" coords="1483,95,1643,121"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="1657,169,1791,196"/>
-<area shape="rect" title=" " alt="" coords="1369,169,1436,196"/>
-<area shape="rect" title=" " alt="" coords="1461,169,1633,196"/>
-<area shape="rect" title=" " alt="" coords="1663,244,1785,271"/>
+<area shape="rect" title=" " alt="" coords="924,5,1087,47"/>
+<area shape="rect" title=" " alt="" coords="5,95,139,121"/>
+<area shape="rect" title=" " alt="" coords="927,244,1049,271"/>
+<area shape="rect" title=" " alt="" coords="901,169,1021,196"/>
+<area shape="rect" title=" " alt="" coords="265,95,447,121"/>
+<area shape="rect" title=" " alt="" coords="471,95,614,121"/>
+<area shape="rect" title=" " alt="" coords="639,95,793,121"/>
+<area shape="rect" title=" " alt="" coords="818,95,990,121"/>
+<area shape="rect" title=" " alt="" coords="1014,95,1202,121"/>
+<area shape="rect" title=" " alt="" coords="1227,95,1331,121"/>
+<area shape="rect" title=" " alt="" coords="1355,95,1456,121"/>
+<area shape="rect" title=" " alt="" coords="1481,95,1695,121"/>
+<area shape="rect" href="ERF__RRTMGP__Utils_8H.html" title=" " alt="" coords="1720,95,1880,121"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="1733,169,1867,196"/>
+<area shape="rect" href="ERF__Kokkos__Radiation_8H.html" title=" " alt="" coords="1955,95,2138,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -141,39 +145,230 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacerrtmgp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html">rrtmgp</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a79b8d824a4fdc9fe2c06b2c83e914992"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a79b8d824a4fdc9fe2c06b2c83e914992"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a79b8d824a4fdc9fe2c06b2c83e914992">view_t</a> = Kokkos::View&lt; T, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a79b8d824a4fdc9fe2c06b2c83e914992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7361dde2a917858928a39f14f7fbf89"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#aa7361dde2a917858928a39f14f7fbf89">pool_t</a> = conv::MemPoolSingleton&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:aa7361dde2a917858928a39f14f7fbf89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3662ec62935e44a9d29d93fb1207bdca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> = GasOpticsRRTMGPK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a3662ec62935e44a9d29d93fb1207bdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33429317f079f3afdebd60fad82114cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a33429317f079f3afdebd60fad82114cf">cloud_optics_t</a> = CloudOpticsK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a33429317f079f3afdebd60fad82114cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af5a999487000155d18d7dc229d823c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a2af5a999487000155d18d7dc229d823c">gas_concs_t</a> = GasConcsK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a2af5a999487000155d18d7dc229d823c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6cda937cb3b829368b94e573d3f1245"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#af6cda937cb3b829368b94e573d3f1245">fluxes_t</a> = FluxesBybandK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:af6cda937cb3b829368b94e573d3f1245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a5e174935455a3a282860bf82243ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> = FluxesBroadbandK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:ac9a5e174935455a3a282860bf82243ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24eea71a6b6846337e176073ffd1cc0b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a24eea71a6b6846337e176073ffd1cc0b">optical_props_t</a> = OpticalPropsK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a24eea71a6b6846337e176073ffd1cc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e789e5a303cc4dc5a2733891f04a7fe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe">optical_props1_t</a> = OpticalProps1sclK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a1e789e5a303cc4dc5a2733891f04a7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19be83bff60636c680292016c1a14ffe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe">optical_props2_t</a> = OpticalProps2strK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a19be83bff60636c680292016c1a14ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1295c0f46670730601ab271de749fdf9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a1295c0f46670730601ab271de749fdf9">source_func_t</a> = SourceFuncLWK&lt; <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a> &gt;</td></tr>
+<tr class="separator:a1295c0f46670730601ab271de749fdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8c92d15c28f0d375ae1e399359c4c3fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a8c92d15c28f0d375ae1e399359c4c3fb">init_kls</a> ()</td></tr>
 <tr class="separator:a8c92d15c28f0d375ae1e399359c4c3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab21691e9747229e589f3d4758e51e0c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__RRTMGP__Interface_8H.html#ab21691e9747229e589f3d4758e51e0c0">finalize_kls</a> ()</td></tr>
 <tr class="separator:ab21691e9747229e589f3d4758e51e0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d6bd0d2d81458bf0a624da720d39ebf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a7d6bd0d2d81458bf0a624da720d39ebf">rrtmgp::rrtmgp_initialize</a> (GasConcs &amp;gas_concs, const std::string &amp;coefficients_file_sw, const std::string &amp;coefficients_file_lw, const std::string &amp;cloud_optics_file_sw, const std::string &amp;cloud_optics_file_lw)</td></tr>
-<tr class="separator:a7d6bd0d2d81458bf0a624da720d39ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825e4ec715986e7ce3ccbc7fa0a16959"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe">optical_props2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a825e4ec715986e7ce3ccbc7fa0a16959">rrtmgp::get_cloud_optics_sw</a> (const int ncol, const int nlay, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a33429317f079f3afdebd60fad82114cf">cloud_optics_t</a> &amp;cloud_optics, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> &amp;kdist, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lwp, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;iwp, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rel, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rei)</td></tr>
+<tr class="separator:a825e4ec715986e7ce3ccbc7fa0a16959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5880e93afd0b514fdeadc1a74b80001e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe">optical_props1_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a5880e93afd0b514fdeadc1a74b80001e">rrtmgp::get_cloud_optics_lw</a> (const int ncol, const int nlay, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a33429317f079f3afdebd60fad82114cf">cloud_optics_t</a> &amp;cloud_optics, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> &amp;kdist, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lwp, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;iwp, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rel, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rei)</td></tr>
+<tr class="separator:a5880e93afd0b514fdeadc1a74b80001e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acead9e93668a3956675a2cd920a0c491"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe">optical_props2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#acead9e93668a3956675a2cd920a0c491">rrtmgp::get_subsampled_clouds</a> (const int ncol, const int nlay, const int nbnd, const int ngpt, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe">optical_props2_t</a> &amp;cloud_optics, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> &amp;kdist, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;cld, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lay)</td></tr>
+<tr class="separator:acead9e93668a3956675a2cd920a0c491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea46949a2a093209cb2f55d8d763a9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe">optical_props1_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a5ea46949a2a093209cb2f55d8d763a9c">rrtmgp::get_subsampled_clouds</a> (const int ncol, const int nlay, const int nbnd, const int ngpt, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe">optical_props1_t</a> &amp;cloud_optics, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> &amp;kdist, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;cld, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lay)</td></tr>
+<tr class="separator:a5ea46949a2a093209cb2f55d8d763a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0753e963249f868a2d6f9e23110965eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a0753e963249f868a2d6f9e23110965eb">rrtmgp::rrtmgp_initialize</a> (<a class="el" href="ERF__RRTMGP__Interface_8H.html#a2af5a999487000155d18d7dc229d823c">gas_concs_t</a> &amp;gas_concs_k, const std::string &amp;coefficients_file_sw, const std::string &amp;coefficients_file_lw, const std::string &amp;cloud_optics_file_sw, const std::string &amp;cloud_optics_file_lw)</td></tr>
+<tr class="separator:a0753e963249f868a2d6f9e23110965eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a009ddf7de8b3d47a8732243e945e431c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a009ddf7de8b3d47a8732243e945e431c">rrtmgp::rrtmgp_finalize</a> ()</td></tr>
 <tr class="separator:a009ddf7de8b3d47a8732243e945e431c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bc3c3c0bfb4314acb12c4bc7191de51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a4bc3c3c0bfb4314acb12c4bc7191de51">rrtmgp::compute_band_by_band_surface_albedos</a> (const int ncol, const int nswbands, real1d &amp;sfc_alb_dir_vis, real1d &amp;sfc_alb_dir_nir, real1d &amp;sfc_alb_dif_vis, real1d &amp;sfc_alb_dif_nir, real2d &amp;sfc_alb_dir, real2d &amp;sfc_alb_dif)</td></tr>
-<tr class="separator:a4bc3c3c0bfb4314acb12c4bc7191de51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe00ea0e677675e3d283bb6c0edb4393"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#abe00ea0e677675e3d283bb6c0edb4393">rrtmgp::compute_broadband_surface_fluxes</a> (const int ncol, const int ktop, const int nswbands, real3d &amp;sw_bnd_flux_dir, real3d &amp;sw_bnd_flux_dif, real1d &amp;sfc_flux_dir_vis, real1d &amp;sfc_flux_dir_nir, real1d &amp;sfc_flux_dif_vis, real1d &amp;sfc_flux_dif_nir)</td></tr>
-<tr class="separator:abe00ea0e677675e3d283bb6c0edb4393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca00de2607b2c633f671c81a4505387c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#aca00de2607b2c633f671c81a4505387c">rrtmgp::rrtmgp_main</a> (const int ncol, const int nlay, real2d &amp;p_lay, real2d &amp;t_lay, real2d &amp;p_lev, real2d &amp;t_lev, GasConcs &amp;gas_concs, real2d &amp;sfc_alb_dir, real2d &amp;sfc_alb_dif, real1d &amp;mu0, real1d &amp;t_sfc, real2d &amp;emis_sfc, real1d &amp;lw_src, real2d &amp;lwp, real2d &amp;iwp, real2d &amp;rel, real2d &amp;rei, real2d &amp;cldfrac, real3d &amp;aer_tau_sw, real3d &amp;aer_ssa_sw, real3d &amp;aer_asm_sw, real3d &amp;aer_tau_lw, real3d &amp;cld_tau_sw_bnd, real3d &amp;cld_tau_lw_bnd, real3d &amp;cld_tau_sw_gpt, real3d &amp;cld_tau_lw_gpt, real2d &amp;sw_flux_up, real2d &amp;sw_flux_dn, real2d &amp;sw_flux_dn_dir, real2d &amp;lw_flux_up, real2d &amp;lw_flux_dn, real2d &amp;sw_clnclrsky_flux_up, real2d &amp;sw_clnclrsky_flux_dn, real2d &amp;sw_clnclrsky_flux_dn_dir, real2d &amp;sw_clrsky_flux_up, real2d &amp;sw_clrsky_flux_dn, real2d &amp;sw_clrsky_flux_dn_dir, real2d &amp;sw_clnsky_flux_up, real2d &amp;sw_clnsky_flux_dn, real2d &amp;sw_clnsky_flux_dn_dir, real2d &amp;lw_clnclrsky_flux_up, real2d &amp;lw_clnclrsky_flux_dn, real2d &amp;lw_clrsky_flux_up, real2d &amp;lw_clrsky_flux_dn, real2d &amp;lw_clnsky_flux_up, real2d &amp;lw_clnsky_flux_dn, real3d &amp;sw_bnd_flux_up, real3d &amp;sw_bnd_flux_dn, real3d &amp;sw_bnd_flux_dn_dir, real3d &amp;lw_bnd_flux_up, real3d &amp;lw_bnd_flux_dn, const <a class="el" href="ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21">real</a> tsi_scaling, const bool extra_clnclrsky_diag, const bool extra_clnsky_diag)</td></tr>
-<tr class="separator:aca00de2607b2c633f671c81a4505387c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4111d3c5505330953cc8139593b7be55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a4111d3c5505330953cc8139593b7be55">rrtmgp::rrtmgp_sw</a> (const int ncol, const int nlay, GasOpticsRRTMGP &amp;k_dist, real2d &amp;p_lay, real2d &amp;t_lay, real2d &amp;p_lev, real2d &amp;t_lev, GasConcs &amp;gas_concs, real2d &amp;sfc_alb_dir, real2d &amp;sfc_alb_dif, real1d &amp;mu0, OpticalProps2str &amp;aerosol, OpticalProps2str &amp;clouds, FluxesByband &amp;fluxes, FluxesBroadband &amp;clnclrsky_fluxes, FluxesBroadband &amp;clrsky_fluxes, FluxesBroadband &amp;clnsky_fluxes, const <a class="el" href="ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21">real</a> tsi_scaling, const bool extra_clnclrsky_diag, const bool extra_clnsky_diag)</td></tr>
-<tr class="separator:a4111d3c5505330953cc8139593b7be55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06421de5142893781224a4d7e8ffc17f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a06421de5142893781224a4d7e8ffc17f">rrtmgp::rrtmgp_lw</a> (const int ncol, const int nlay, GasOpticsRRTMGP &amp;k_dist, real2d &amp;p_lay, real2d &amp;t_lay, real2d &amp;p_lev, real2d &amp;t_lev, real1d &amp;t_sfc, real2d &amp;emis_sfc, real1d &amp;lw_src, GasConcs &amp;gas_concs, OpticalProps1scl &amp;aerosol, OpticalProps1scl &amp;clouds, FluxesByband &amp;fluxes, FluxesBroadband &amp;clnclrsky_fluxes, FluxesBroadband &amp;clrsky_fluxes, FluxesBroadband &amp;clnsky_fluxes, const bool extra_clnclrsky_diag, const bool extra_clnsky_diag)</td></tr>
-<tr class="separator:a06421de5142893781224a4d7e8ffc17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17dded4bc8d5f1da9fe401226ebdcf95"><td class="memItemLeft" align="right" valign="top">int3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a17dded4bc8d5f1da9fe401226ebdcf95">rrtmgp::get_subcolumn_mask</a> (const int ncol, const int nlay, const int ngpt, real2d &amp;cldf, const int overlap_option, int1d &amp;seeds)</td></tr>
-<tr class="separator:a17dded4bc8d5f1da9fe401226ebdcf95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8af5568f61a43a1985762f9df07f0557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a8af5568f61a43a1985762f9df07f0557">rrtmgp::compute_cloud_area</a> (int ncol, int nlay, int ngpt, const <a class="el" href="ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21">real</a> pmin, const <a class="el" href="ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21">real</a> pmax, const real2d &amp;pmid, const real3d &amp;cld_tau_gpt, real1d &amp;cld_area)</td></tr>
-<tr class="separator:a8af5568f61a43a1985762f9df07f0557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a596e32b383e273f4355948b05366ad66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a596e32b383e273f4355948b05366ad66">rrtmgp::compute_aerocom_cloudtop</a> (int ncol, int nlay, const real2d &amp;tmid, const real2d &amp;pmid, const real2d &amp;p_del, const real2d &amp;z_del, const real2d &amp;qc, const real2d &amp;qi, const real2d &amp;rel, const real2d &amp;rei, const real2d &amp;cldfrac_tot, const real2d &amp;nc, real1d &amp;T_mid_at_cldtop, real1d &amp;p_mid_at_cldtop, real1d &amp;cldfrac_ice_at_cldtop, real1d &amp;cldfrac_liq_at_cldtop, real1d &amp;cldfrac_tot_at_cldtop, real1d &amp;cdnc_at_cldtop, real1d &amp;eff_radius_qc_at_cldtop, real1d &amp;eff_radius_qi_at_cldtop)</td></tr>
-<tr class="separator:a596e32b383e273f4355948b05366ad66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa97baa913e924dfefd5171f9c94e3216"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#aa97baa913e924dfefd5171f9c94e3216">rrtmgp::get_wavelength_index</a> (OpticalProps &amp;kdist, double wavelength)</td></tr>
-<tr class="separator:aa97baa913e924dfefd5171f9c94e3216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aace8b2376cb438643c8631b76a1603"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a7aace8b2376cb438643c8631b76a1603">rrtmgp::get_wavelength_index_sw</a> (double wavelength)</td></tr>
-<tr class="separator:a7aace8b2376cb438643c8631b76a1603"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52228aa7239950f074075cfd57c1207f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a52228aa7239950f074075cfd57c1207f">rrtmgp::get_wavelength_index_lw</a> (double wavelength)</td></tr>
-<tr class="separator:a52228aa7239950f074075cfd57c1207f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bdcb46d3d0763ebe14aaab19d71f82e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a5bdcb46d3d0763ebe14aaab19d71f82e">rrtmgp::compute_band_by_band_surface_albedos</a> (const int ncol, const int nswbands, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_alb_dir_vis, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_alb_dir_nir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_alb_dif_vis, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_alb_dif_nir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sfc_alb_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sfc_alb_dif)</td></tr>
+<tr class="separator:a5bdcb46d3d0763ebe14aaab19d71f82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e91d19b115d642a8290a3324aa819e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a5e91d19b115d642a8290a3324aa819e4">rrtmgp::compute_broadband_surface_fluxes</a> (const int ncol, const int kbot, const int nswbands, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;sw_bnd_flux_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;sw_bnd_flux_dif, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_flux_dir_vis, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_flux_dir_nir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_flux_dif_vis, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;sfc_flux_dif_nir)</td></tr>
+<tr class="separator:a5e91d19b115d642a8290a3324aa819e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2da78cdf65c513bab1ed8bb5d6aa0ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#af2da78cdf65c513bab1ed8bb5d6aa0ec">rrtmgp::rrtmgp_main</a> (const int ncol, const int nlay, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lay, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;t_lay, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lev, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;t_lev, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a2af5a999487000155d18d7dc229d823c">gas_concs_t</a> &amp;gas_concs, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sfc_alb_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sfc_alb_dif, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;mu0, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;t_sfc, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;emis_sfc, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;lw_src, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lwp, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;iwp, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rel, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rei, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;cldfrac, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;aer_tau_sw, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;aer_ssa_sw, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;aer_asm_sw, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;aer_tau_lw, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;cld_tau_sw_bnd, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;cld_tau_lw_bnd, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;cld_tau_sw_gpt, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;cld_tau_lw_gpt, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_flux_dn_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clnclrsky_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clnclrsky_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clnclrsky_flux_dn_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clrsky_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clrsky_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clrsky_flux_dn_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clnsky_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clnsky_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sw_clnsky_flux_dn_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_clnclrsky_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_clnclrsky_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_clrsky_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_clrsky_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_clnsky_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;lw_clnsky_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;sw_bnd_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;sw_bnd_flux_dn, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;sw_bnd_flux_dn_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;lw_bnd_flux_up, <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;lw_bnd_flux_dn, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> tsi_scaling, const bool extra_clnclrsky_diag, const bool extra_clnsky_diag)</td></tr>
+<tr class="separator:af2da78cdf65c513bab1ed8bb5d6aa0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b2e0892e5b475f2f464b4285edfe47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a83b2e0892e5b475f2f464b4285edfe47">rrtmgp::rrtmgp_sw</a> (const int ncol, const int nlay, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> &amp;k_dist, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lay, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;t_lay, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lev, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;t_lev, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a2af5a999487000155d18d7dc229d823c">gas_concs_t</a> &amp;gas_concs, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sfc_alb_dir, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;sfc_alb_dif, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;mu0, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe">optical_props2_t</a> &amp;aerosol, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe">optical_props2_t</a> &amp;clouds, <a class="el" href="ERF__RRTMGP__Interface_8H.html#af6cda937cb3b829368b94e573d3f1245">fluxes_t</a> &amp;fluxes, <a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> &amp;clnclrsky_fluxes, <a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> &amp;clrsky_fluxes, <a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> &amp;clnsky_fluxes, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> tsi_scaling, const bool extra_clnclrsky_diag, const bool extra_clnsky_diag)</td></tr>
+<tr class="separator:a83b2e0892e5b475f2f464b4285edfe47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a981dec0614426817d7f129461a704ee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a981dec0614426817d7f129461a704ee2">rrtmgp::rrtmgp_lw</a> (const int ncol, const int nlay, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> &amp;k_dist, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lay, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;t_lay, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_lev, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;t_lev, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;t_sfc, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;emis_sfc, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;lw_src, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a2af5a999487000155d18d7dc229d823c">gas_concs_t</a> &amp;gas_concs, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe">optical_props1_t</a> &amp;aerosol, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe">optical_props1_t</a> &amp;clouds, <a class="el" href="ERF__RRTMGP__Interface_8H.html#af6cda937cb3b829368b94e573d3f1245">fluxes_t</a> &amp;fluxes, <a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> &amp;clnclrsky_fluxes, <a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> &amp;clrsky_fluxes, <a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> &amp;clnsky_fluxes, const bool extra_clnclrsky_diag, const bool extra_clnsky_diag)</td></tr>
+<tr class="separator:a981dec0614426817d7f129461a704ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab333c4574d3068f73b4b248d56588d6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__Kokkos__Radiation_8H.html#a0500e62d5c114093ae821e60723ff73d">int3d_k</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#ab333c4574d3068f73b4b248d56588d6d">rrtmgp::get_subcolumn_mask</a> (const int ncol, const int nlay, const int ngpt, <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;cldf, const int overlap_option, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a7777c5d93f906db29685ac44f74c542a">int1d_k</a> &amp;seeds)</td></tr>
+<tr class="separator:ab333c4574d3068f73b4b248d56588d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe3d1495ac1494713a0d88e0a0b00455"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#afe3d1495ac1494713a0d88e0a0b00455">rrtmgp::compute_cloud_area</a> (int ncol, int nlay, int ngpt, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> pmin, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> pmax, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;pmid, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#aeed696553ef6c9cca1657e3d6fb41762">real3d_k</a> &amp;cld_tau_gpt, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;cld_area)</td></tr>
+<tr class="separator:afe3d1495ac1494713a0d88e0a0b00455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49374093beae1d74627741563a8018f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a49374093beae1d74627741563a8018f9">rrtmgp::compute_aerocom_cloudtop</a> (int ncol, int nlay, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;tmid, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;pmid, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;p_del, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;z_del, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;qc, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;qi, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rel, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;rei, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;cldfrac_tot, const <a class="el" href="ERF__Kokkos__Radiation_8H.html#af3912e5a0753510731ff4fbc21a90e6f">real2d_k</a> &amp;nc, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;T_mid_at_cldtop, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;p_mid_at_cldtop, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;cldfrac_ice_at_cldtop, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;cldfrac_liq_at_cldtop, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;cldfrac_tot_at_cldtop, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;cdnc_at_cldtop, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;eff_radius_qc_at_cldtop, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a0718666ec53c780092a6b9d5f43a6abf">real1d_k</a> &amp;eff_radius_qi_at_cldtop)</td></tr>
+<tr class="separator:a49374093beae1d74627741563a8018f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686baa053db8c7c8b88243794e6eff5c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c">rrtmgp::get_wavelength_index</a> (<a class="el" href="ERF__RRTMGP__Interface_8H.html#a24eea71a6b6846337e176073ffd1cc0b">optical_props_t</a> &amp;kdist, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> wavelength)</td></tr>
+<tr class="separator:a686baa053db8c7c8b88243794e6eff5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e3587b50833fd1f2c5a910b1392c43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a28e3587b50833fd1f2c5a910b1392c43">rrtmgp::get_wavelength_index_sw</a> (<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> wavelength)</td></tr>
+<tr class="separator:a28e3587b50833fd1f2c5a910b1392c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36564577866391c3de00afc0f6c3e0fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a36564577866391c3de00afc0f6c3e0fe">rrtmgp::get_wavelength_index_lw</a> (<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> wavelength)</td></tr>
+<tr class="separator:a36564577866391c3de00afc0f6c3e0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a33429317f079f3afdebd60fad82114cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33429317f079f3afdebd60fad82114cf">&#9670;&nbsp;</a></span>cloud_optics_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a33429317f079f3afdebd60fad82114cf">cloud_optics_t</a> =  CloudOpticsK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac9a5e174935455a3a282860bf82243ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a5e174935455a3a282860bf82243ab">&#9670;&nbsp;</a></span>fluxes_broadband_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab">fluxes_broadband_t</a> =  FluxesBroadbandK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6cda937cb3b829368b94e573d3f1245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6cda937cb3b829368b94e573d3f1245">&#9670;&nbsp;</a></span>fluxes_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#af6cda937cb3b829368b94e573d3f1245">fluxes_t</a> =  FluxesBybandK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2af5a999487000155d18d7dc229d823c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af5a999487000155d18d7dc229d823c">&#9670;&nbsp;</a></span>gas_concs_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a2af5a999487000155d18d7dc229d823c">gas_concs_t</a> =  GasConcsK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3662ec62935e44a9d29d93fb1207bdca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3662ec62935e44a9d29d93fb1207bdca">&#9670;&nbsp;</a></span>gas_optics_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca">gas_optics_t</a> =  GasOpticsRRTMGPK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e789e5a303cc4dc5a2733891f04a7fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e789e5a303cc4dc5a2733891f04a7fe">&#9670;&nbsp;</a></span>optical_props1_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe">optical_props1_t</a> =  OpticalProps1sclK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19be83bff60636c680292016c1a14ffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19be83bff60636c680292016c1a14ffe">&#9670;&nbsp;</a></span>optical_props2_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe">optical_props2_t</a> =  OpticalProps2strK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24eea71a6b6846337e176073ffd1cc0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24eea71a6b6846337e176073ffd1cc0b">&#9670;&nbsp;</a></span>optical_props_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a24eea71a6b6846337e176073ffd1cc0b">optical_props_t</a> =  OpticalPropsK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7361dde2a917858928a39f14f7fbf89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7361dde2a917858928a39f14f7fbf89">&#9670;&nbsp;</a></span>pool_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#aa7361dde2a917858928a39f14f7fbf89">pool_t</a> =  conv::MemPoolSingleton&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1295c0f46670730601ab271de749fdf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1295c0f46670730601ab271de749fdf9">&#9670;&nbsp;</a></span>source_func_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a1295c0f46670730601ab271de749fdf9">source_func_t</a> =  SourceFuncLWK&lt;<a class="el" href="ERF__Kokkos__Radiation_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a79b8d824a4fdc9fe2c06b2c83e914992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79b8d824a4fdc9fe2c06b2c83e914992">&#9670;&nbsp;</a></span>view_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="ERF__RRTMGP__Interface_8H.html#a79b8d824a4fdc9fe2c06b2c83e914992">view_t</a> =  Kokkos::View&lt;T, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde">layout_t</a>, <a class="el" href="ERF__Kokkos__Radiation_8H.html#a9c7261ce4fdf931fd42be2fc4dc37e43">RadDefaultDevice</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ab21691e9747229e589f3d4758e51e0c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab21691e9747229e589f3d4758e51e0c0">&#9670;&nbsp;</a></span>finalize_kls()</h2>
@@ -190,8 +385,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="comment">// Finalize YAKL</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  yakl::finalize();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <span class="comment">// Finalize kokkos</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  Kokkos::finalize();</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -211,8 +406,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="comment">// Initialize yakl</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">if</span>(!yakl::isInitialized()) { yakl::init(); }</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;  <span class="comment">// Initialize kokkos</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;  <span class="keywordflow">if</span>(!Kokkos::is_initialized()) { Kokkos::initialize(); }</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;}</div>
 </div><!-- fragment -->
 </div>

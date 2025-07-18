@@ -1,7 +1,8 @@
 var ERF__RRTMGP__Utils_8H =
 [
-    [ "compute_heating_rate", "ERF__RRTMGP__Utils_8H.html#a8117070ffeb99e78d3c056c15d6aaca5", null ],
-    [ "limit_to_bounds", "ERF__RRTMGP__Utils_8H.html#acf6278c157e027c58c26c644cf39ff07", null ],
-    [ "mixing_ratio_to_cloud_mass", "ERF__RRTMGP__Utils_8H.html#a15015580091d4af38a35425da9b85955", null ],
+    [ "compute_heating_rate", "ERF__RRTMGP__Utils_8H.html#aa7956500d2e4612dfd097a3d3556c051", null ],
+    [ "limit_to_bounds_1d", "ERF__RRTMGP__Utils_8H.html#af4b69bff8dd184127a31693738155898", null ],
+    [ "limit_to_bounds_2d", "ERF__RRTMGP__Utils_8H.html#a8179e28926650ddbac40ebf2aecbe1a7", null ],
+    [ "mixing_ratio_to_cloud_mass", "ERF__RRTMGP__Utils_8H.html#a88d561ab08b6cffb186a838b5840b274", null ],
     [ "radiation_do", "ERF__RRTMGP__Utils_8H.html#a330f3ddc4245c802986216ff51504e50", null ]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['yakl_5fbuffers_5fto_5fmf_4445',['yakl_buffers_to_mf',['../classRadiation.html#ac4789f057a642e9adb798eae6e87f147',1,'Radiation']]]
+  ['z0_5fest_4466',['z0_est',['../ERF__MicrophysicsUtils_8H.html#a5e22e7c025af17b4983d25a5b81bfd4b',1,'ERF_MicrophysicsUtils.H']]],
+  ['zero_5famp_4467',['zero_amp',['../structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9',1,'TurbulentPerturbation']]]
 ];

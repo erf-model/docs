@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['real_5896',['real',['../ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21',1,'ERF_OrbCosZenith.H']]],
-  ['rtype_5897',['RType',['../structncutils_1_1NCDType.html#a079bbf4314ad09362b5c8124670c821f',1,'ncutils::NCDType']]]
+  ['gas_5fconcs_5ft_5917',['gas_concs_t',['../ERF__RRTMGP__Interface_8H.html#a2af5a999487000155d18d7dc229d823c',1,'ERF_RRTMGP_Interface.H']]],
+  ['gas_5foptics_5ft_5918',['gas_optics_t',['../ERF__RRTMGP__Interface_8H.html#a3662ec62935e44a9d29d93fb1207bdca',1,'ERF_RRTMGP_Interface.H']]]
 ];

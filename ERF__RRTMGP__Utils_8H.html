@@ -90,20 +90,16 @@ $(document).ready(function(){initNavTree('ERF__RRTMGP__Utils_8H.html',''); initR
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;rrtmgp_const.h&quot;</code><br />
-<code>#include &quot;YAKL.h&quot;</code><br />
-<code>#include &quot;YAKL_Bounds_fortran.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_RRTMGP_Utils.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__RRTMGP__Utils_8H__incl.png" border="0" usemap="#aSource_2Radiation_2ERF__RRTMGP__Utils_8H" alt=""/></div>
 <map name="aSource_2Radiation_2ERF__RRTMGP__Utils_8H" id="aSource_2Radiation_2ERF__RRTMGP__Utils_8H">
-<area shape="rect" title=" " alt="" coords="174,5,335,47"/>
+<area shape="rect" title=" " alt="" coords="59,5,221,47"/>
 <area shape="rect" title=" " alt="" coords="5,95,125,121"/>
-<area shape="rect" title=" " alt="" coords="149,95,216,121"/>
-<area shape="rect" title=" " alt="" coords="241,95,413,121"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="437,95,571,121"/>
-<area shape="rect" title=" " alt="" coords="443,169,565,196"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="149,95,283,121"/>
+<area shape="rect" title=" " alt="" coords="155,169,277,196"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -128,15 +124,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a15015580091d4af38a35425da9b85955"><td class="memTemplParams" colspan="2">template&lt;class T , int myMem, int myStyle&gt; </td></tr>
-<tr class="memitem:a15015580091d4af38a35425da9b85955"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a15015580091d4af38a35425da9b85955">rrtmgp::mixing_ratio_to_cloud_mass</a> (yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;mixing_ratio, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;cloud_fraction, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;rho, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;dz, yakl::Array&lt; T, 2, myMem, myStyle &gt; &amp;cloud_mass)</td></tr>
-<tr class="separator:a15015580091d4af38a35425da9b85955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf6278c157e027c58c26c644cf39ff07"><td class="memTemplParams" colspan="2">template&lt;class S , class T &gt; </td></tr>
-<tr class="memitem:acf6278c157e027c58c26c644cf39ff07"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#acf6278c157e027c58c26c644cf39ff07">rrtmgp::limit_to_bounds</a> (S const &amp;arr_in, T const lower, T const upper, S &amp;arr_out)</td></tr>
-<tr class="separator:acf6278c157e027c58c26c644cf39ff07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8117070ffeb99e78d3c056c15d6aaca5"><td class="memTemplParams" colspan="2">template&lt;class T , int myMem, int myStyle&gt; </td></tr>
-<tr class="memitem:a8117070ffeb99e78d3c056c15d6aaca5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a8117070ffeb99e78d3c056c15d6aaca5">rrtmgp::compute_heating_rate</a> (yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;flux_up, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;flux_dn, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;rho, yakl::Array&lt; T, 2, myMem, myStyle &gt; const &amp;dz, yakl::Array&lt; T, 2, myMem, myStyle &gt; &amp;heating_rate)</td></tr>
-<tr class="separator:a8117070ffeb99e78d3c056c15d6aaca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d561ab08b6cffb186a838b5840b274"><td class="memTemplParams" colspan="2">template&lt;class View1 , class View2 , class View3 , class View4 , class View5 &gt; </td></tr>
+<tr class="memitem:a88d561ab08b6cffb186a838b5840b274"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a88d561ab08b6cffb186a838b5840b274">rrtmgp::mixing_ratio_to_cloud_mass</a> (View1 const &amp;mixing_ratio, View2 const &amp;cloud_fraction, View3 const &amp;rho, View4 const &amp;dz, View5 const &amp;cloud_mass)</td></tr>
+<tr class="separator:a88d561ab08b6cffb186a838b5840b274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b69bff8dd184127a31693738155898"><td class="memTemplParams" colspan="2">template&lt;typename InT , typename OutT , typename T &gt; </td></tr>
+<tr class="memitem:af4b69bff8dd184127a31693738155898"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#af4b69bff8dd184127a31693738155898">rrtmgp::limit_to_bounds_1d</a> (InT const &amp;arr_in, T const lower, T const upper, OutT &amp;arr_out)</td></tr>
+<tr class="separator:af4b69bff8dd184127a31693738155898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8179e28926650ddbac40ebf2aecbe1a7"><td class="memTemplParams" colspan="2">template&lt;typename InT , typename OutT , typename T &gt; </td></tr>
+<tr class="memitem:a8179e28926650ddbac40ebf2aecbe1a7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a8179e28926650ddbac40ebf2aecbe1a7">rrtmgp::limit_to_bounds_2d</a> (InT const &amp;arr_in, T const lower, T const upper, OutT &amp;arr_out)</td></tr>
+<tr class="separator:a8179e28926650ddbac40ebf2aecbe1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7956500d2e4612dfd097a3d3556c051"><td class="memTemplParams" colspan="2">template&lt;class View1 , class View2 , class View3 , class View4 , class View5 &gt; </td></tr>
+<tr class="memitem:aa7956500d2e4612dfd097a3d3556c051"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#aa7956500d2e4612dfd097a3d3556c051">rrtmgp::compute_heating_rate</a> (View1 const &amp;flux_up, View2 const &amp;flux_dn, View3 const &amp;rho, View4 const &amp;dz, View5 &amp;heating_rate)</td></tr>
+<tr class="separator:aa7956500d2e4612dfd097a3d3556c051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a330f3ddc4245c802986216ff51504e50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a330f3ddc4245c802986216ff51504e50">rrtmgp::radiation_do</a> (const int irad, const int nstep)</td></tr>
 <tr class="separator:a330f3ddc4245c802986216ff51504e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

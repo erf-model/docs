@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['planevector_5895',['PlaneVector',['../ERF__NCWpsFile_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;ERF_NCWpsFile.H'],['../ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;ERF_ReadBndryPlanes.H']]]
+  ['fabptr_5914',['FabPtr',['../classMM5.html#a1c62f3c8eb0010c903b517e6ba49973d',1,'MM5::FabPtr()'],['../classNOAH.html#ae9d16b793b25f0bc7e07cb207e98554e',1,'NOAH::FabPtr()'],['../classSLM.html#abb12aea2d3e7bcc1e47b81581a9892ba',1,'SLM::FabPtr()'],['../classKessler.html#ad9b9b2f6662807890f9f2b016d6d0d1c',1,'Kessler::FabPtr()'],['../classMorrison.html#aeb27c9fd26acdb5c0ada38bef3763b6d',1,'Morrison::FabPtr()'],['../classSAM.html#a2ffb00984d39bfc39057c68f708774a9',1,'SAM::FabPtr()'],['../classSatAdj.html#a96e3b06ce00e69e0bf66d1665cee0938',1,'SatAdj::FabPtr()']]],
+  ['fluxes_5fbroadband_5ft_5915',['fluxes_broadband_t',['../ERF__RRTMGP__Interface_8H.html#ac9a5e174935455a3a282860bf82243ab',1,'ERF_RRTMGP_Interface.H']]],
+  ['fluxes_5ft_5916',['fluxes_t',['../ERF__RRTMGP__Interface_8H.html#af6cda937cb3b829368b94e573d3f1245',1,'ERF_RRTMGP_Interface.H']]]
 ];

@@ -1,5 +1,6 @@
 var dir_6ac3198e61556f99812dcb8dcfabb874 =
 [
+    [ "ERF_Kokkos_Radiation.H", "ERF__Kokkos__Radiation_8H.html", "ERF__Kokkos__Radiation_8H" ],
     [ "ERF_OrbCosZenith.cpp", "ERF__OrbCosZenith_8cpp.html", "ERF__OrbCosZenith_8cpp" ],
     [ "ERF_OrbCosZenith.H", "ERF__OrbCosZenith_8H.html", "ERF__OrbCosZenith_8H" ],
     [ "ERF_Radiation.cpp", "ERF__Radiation_8cpp.html", null ],

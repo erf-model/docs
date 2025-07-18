@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ydir_5899',['YDir',['../ERF__DirectionSelector_8H.html#a92990a19f43dc3cbbbd630362d1ece71',1,'ERF_DirectionSelector.H']]]
+  ['layout_5ft_5922',['layout_t',['../ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde',1,'ERF_Kokkos_Radiation.H']]]
 ];
