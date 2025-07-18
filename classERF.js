@@ -48,7 +48,7 @@ var classERF =
     [ "getCPUTime", "classERF.html#ae0597da6edf955cd138e52fd00380ff2", null ],
     [ "GotoNextLine", "classERF.html#aaee255b031e63bd9b5807f6612739dbd", null ],
     [ "HurricaneTracker", "classERF.html#a2710f0ac329fa022dd2df41679998b3b", null ],
-    [ "ImposeBCsOnPhi", "classERF.html#a4bc2457e48cf3347af7c600a07982006", null ],
+    [ "ImposeBCsOnPhi", "classERF.html#ac3a76da346ff580389d3ab81679d3807", null ],
     [ "init1DArrays", "classERF.html#a7261c4eb7722af0dfe6cdfb8e2e9e4db", null ],
     [ "init_bcs", "classERF.html#a618e8fdff3239cc79d4145d02b1ecaa2", null ],
     [ "init_coarse_weather_data", "classERF.html#a2cf83628f9d777632f0128c6c2423de2", null ],
