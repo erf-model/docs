@@ -7,7 +7,7 @@ var classNullSurf =
     [ "Copy_Micro_to_State", "classNullSurf.html#a45d066ae7b9d2435f5477e35dd75bcfb", null ],
     [ "Copy_State_to_Micro", "classNullSurf.html#a1c31c18677e12226716217ca87cd526c", null ],
     [ "Define", "classNullSurf.html#a5aec888a24181ce049b48ed10817489c", null ],
-    [ "Init", "classNullSurf.html#a013feb9e94f957304bedbc26b6da16b0", null ],
+    [ "Init", "classNullSurf.html#abc0d9751818330d8f32f0c3c2b81b072", null ],
     [ "Lsm_Data_Ptr", "classNullSurf.html#a23e0e00071c6220b8d1495cac4073ce3", null ],
     [ "Lsm_Data_Size", "classNullSurf.html#adf5c64f43a59af0d6caae7211cdfa480", null ],
     [ "Lsm_Flux_Ptr", "classNullSurf.html#a7a9b19e7d784323fd216468b7cca6574", null ],

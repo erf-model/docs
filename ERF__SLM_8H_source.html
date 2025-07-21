@@ -133,157 +133,158 @@ $(document).ready(function(){initNavTree('ERF__SLM_8H_source.html',''); initResi
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Initialize data structures</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classSLM.html#aef0a4802ed2d86fd1dedad55e51efc88">Init</a> (<span class="keyword">const</span> amrex::MultiFab&amp; cons_in,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;          <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          <span class="keyword">const</span> amrex::Real&amp; dt) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Wrapper to do all the updating</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classSLM.html#a31956746a8b8bbf207027cb784c9bfa4">   54</a></span>&#160;    <a class="code" href="classSLM.html#a31956746a8b8bbf207027cb784c9bfa4">Advance</a> (<span class="keyword">const</span> amrex::Real&amp; dt)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">m_dt</a> = dt;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        this-&gt;<a class="code" href="classSLM.html#aaafd49733163332a7f9616374d103cbb">ComputeFluxes</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        this-&gt;<a class="code" href="classSLM.html#ac051c05d408c3471b0206f232c5f1fbc">AdvanceSLM</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this-&gt;<a class="code" href="classSLM.html#a0db509945fed4bf6ffae276c1c183707">ComputeTsurf</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Compute surface temperature</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classSLM.html#a0db509945fed4bf6ffae276c1c183707">ComputeTsurf</a> ();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Compute diffusive fluxes</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classSLM.html#aaafd49733163332a7f9616374d103cbb">ComputeFluxes</a> ();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Advance the lsm state vars</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classSLM.html#ac051c05d408c3471b0206f232c5f1fbc">AdvanceSLM</a> ();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Get state vars from lsm class</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    amrex::MultiFab*</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classSLM.html#a900ca60e28871a22974a9f9267c8a4ab">   76</a></span>&#160;    <a class="code" href="classSLM.html#a900ca60e28871a22974a9f9267c8a4ab">Lsm_Data_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>[varIdx];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; SLM::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[lsmIdx].get();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Get flux vars from lsm class</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    amrex::MultiFab*</div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classSLM.html#a0f620560951627b138e0d6311fd47caa">   85</a></span>&#160;    <a class="code" href="classSLM.html#a0f620560951627b138e0d6311fd47caa">Lsm_Flux_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>[varIdx];</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; SLM::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">lsm_fab_flux</a>[lsmIdx].get();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Get lsm geometry</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    amrex::Geometry</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">   94</a></span>&#160;    <a class="code" href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">Lsm_Geom</a> ( )<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code" href="classSLM.html#ac41680d479e44b54678787b662c55fef">m_lsm_geom</a>; }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Get number of vars lsm class contains</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">   98</a></span>&#160;    <a class="code" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">Lsm_Data_Size</a> ()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">SLM::m_lsm_size</a>; }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Get variable names</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::string</div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classSLM.html#a3d4ce63e292a196220b9f4fabd96eaa6">  102</a></span>&#160;    <a class="code" href="classSLM.html#a3d4ce63e292a196220b9f4fabd96eaa6">Lsm_VarName</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>[varIdx];</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; SLM::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">LsmVarName</a>[lsmIdx];</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// number of lsm variables (theta)</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">  111</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">m_lsm_size</a> = 1;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// LsmVar map (state indices -&gt; LsmVar enum)</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">  114</a></span>&#160;    amrex::Vector&lt;int&gt; <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// Lsm varnames</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">  117</a></span>&#160;    amrex::Vector&lt;std::string&gt; <a class="code" href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">LsmVarName</a>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// geometry for atmosphere</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">  120</a></span>&#160;    amrex::Geometry <a class="code" href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">m_geom</a>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// geometry for lsm</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classSLM.html#ac41680d479e44b54678787b662c55fef">  123</a></span>&#160;    amrex::Geometry <a class="code" href="classSLM.html#ac41680d479e44b54678787b662c55fef">m_lsm_geom</a>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// timestep</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">  126</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">m_dt</a>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// domain klo-1 or lsm khi</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classSLM.html#a22738df1091f651c9c541abda9e2d5e7">  129</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSLM.html#a22738df1091f651c9c541abda9e2d5e7">khi_lsm</a>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// constants</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// amrex::Real m_fac_cond;</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// amrex::Real m_fac_fus;</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// amrex::Real m_fac_sub;</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// amrex::Real m_gOcp;</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// independent variables</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">  138</a></span>&#160;    amrex::Array&lt;FabPtr, LsmVar_SLM::NumVars&gt; <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// flux array for conjugate transfer</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">  141</a></span>&#160;    amrex::Array&lt;FabPtr, LsmVar_SLM::NumVars&gt; <a class="code" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">lsm_fab_flux</a>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// Vars that should be parsed</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// ==========================</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Number of grid points in z</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">  146</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">m_nz_lsm</a> = 30;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// Size of grid spacing in z</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classSLM.html#a6dcae265ee0a43c0d7ecdd52074431ce">  149</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a6dcae265ee0a43c0d7ecdd52074431ce">m_dz_lsm</a> = 0.1; <span class="comment">// 3 [m] below surface</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// Specific heat</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">  152</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">m_cp_soil</a> =  1.26e6; <span class="comment">// [J/m^3 K]</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// Conductivity</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">  155</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">m_k_soil</a> = 0.2; <span class="comment">// dry soil [W/m K]</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// Theta Dirichlet value at lowest point below surface</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classSLM.html#aec067697af550a8122138e57c4e0666d">  158</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#aec067697af550a8122138e57c4e0666d">m_theta_dir</a> = 400.0; <span class="comment">// [K]</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// Thermal diffusivity</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classSLM.html#a6ba8b659255822be9538ba66c22b2533">  161</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a6ba8b659255822be9538ba66c22b2533">m_d_soil</a> = <a class="code" href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">m_k_soil</a> / <a class="code" href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">m_cp_soil</a>; <span class="comment">// [m^2/s]</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;};</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classSLM.html#a141ae32786bb12daa875339732cfc14f">Init</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <span class="comment">/*lev*/</span>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;          <span class="keyword">const</span> amrex::MultiFab&amp; cons_in,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          <span class="keyword">const</span> amrex::Real&amp; dt) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Wrapper to do all the updating</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classSLM.html#a31956746a8b8bbf207027cb784c9bfa4">   55</a></span>&#160;    <a class="code" href="classSLM.html#a31956746a8b8bbf207027cb784c9bfa4">Advance</a> (<span class="keyword">const</span> amrex::Real&amp; dt)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">m_dt</a> = dt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        this-&gt;<a class="code" href="classSLM.html#aaafd49733163332a7f9616374d103cbb">ComputeFluxes</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        this-&gt;<a class="code" href="classSLM.html#ac051c05d408c3471b0206f232c5f1fbc">AdvanceSLM</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        this-&gt;<a class="code" href="classSLM.html#a0db509945fed4bf6ffae276c1c183707">ComputeTsurf</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Compute surface temperature</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classSLM.html#a0db509945fed4bf6ffae276c1c183707">ComputeTsurf</a> ();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Compute diffusive fluxes</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classSLM.html#aaafd49733163332a7f9616374d103cbb">ComputeFluxes</a> ();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Advance the lsm state vars</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classSLM.html#ac051c05d408c3471b0206f232c5f1fbc">AdvanceSLM</a> ();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Get state vars from lsm class</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    amrex::MultiFab*</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classSLM.html#a900ca60e28871a22974a9f9267c8a4ab">   77</a></span>&#160;    <a class="code" href="classSLM.html#a900ca60e28871a22974a9f9267c8a4ab">Lsm_Data_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>[varIdx];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; SLM::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[lsmIdx].get();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Get flux vars from lsm class</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::MultiFab*</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classSLM.html#a0f620560951627b138e0d6311fd47caa">   86</a></span>&#160;    <a class="code" href="classSLM.html#a0f620560951627b138e0d6311fd47caa">Lsm_Flux_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>[varIdx];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; SLM::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">lsm_fab_flux</a>[lsmIdx].get();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Get lsm geometry</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    amrex::Geometry</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">   95</a></span>&#160;    <a class="code" href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">Lsm_Geom</a> ( )<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code" href="classSLM.html#ac41680d479e44b54678787b662c55fef">m_lsm_geom</a>; }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Get number of vars lsm class contains</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">   99</a></span>&#160;    <a class="code" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">Lsm_Data_Size</a> ()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">SLM::m_lsm_size</a>; }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Get variable names</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::string</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classSLM.html#a3d4ce63e292a196220b9f4fabd96eaa6">  103</a></span>&#160;    <a class="code" href="classSLM.html#a3d4ce63e292a196220b9f4fabd96eaa6">Lsm_VarName</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>[varIdx];</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; SLM::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">LsmVarName</a>[lsmIdx];</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// number of lsm variables (theta)</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">  112</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">m_lsm_size</a> = 1;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// LsmVar map (state indices -&gt; LsmVar enum)</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">  115</a></span>&#160;    amrex::Vector&lt;int&gt; <a class="code" href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">LsmVarMap</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Lsm varnames</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">  118</a></span>&#160;    amrex::Vector&lt;std::string&gt; <a class="code" href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">LsmVarName</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// geometry for atmosphere</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">  121</a></span>&#160;    amrex::Geometry <a class="code" href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">m_geom</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// geometry for lsm</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classSLM.html#ac41680d479e44b54678787b662c55fef">  124</a></span>&#160;    amrex::Geometry <a class="code" href="classSLM.html#ac41680d479e44b54678787b662c55fef">m_lsm_geom</a>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// timestep</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">  127</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">m_dt</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// domain klo-1 or lsm khi</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classSLM.html#a22738df1091f651c9c541abda9e2d5e7">  130</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSLM.html#a22738df1091f651c9c541abda9e2d5e7">khi_lsm</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// constants</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// amrex::Real m_fac_cond;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// amrex::Real m_fac_fus;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// amrex::Real m_fac_sub;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// amrex::Real m_gOcp;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// independent variables</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">  139</a></span>&#160;    amrex::Array&lt;FabPtr, LsmVar_SLM::NumVars&gt; <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// flux array for conjugate transfer</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">  142</a></span>&#160;    amrex::Array&lt;FabPtr, LsmVar_SLM::NumVars&gt; <a class="code" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">lsm_fab_flux</a>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// Vars that should be parsed</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// ==========================</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// Number of grid points in z</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">  147</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">m_nz_lsm</a> = 30;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// Size of grid spacing in z</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classSLM.html#a6dcae265ee0a43c0d7ecdd52074431ce">  150</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a6dcae265ee0a43c0d7ecdd52074431ce">m_dz_lsm</a> = 0.1; <span class="comment">// 3 [m] below surface</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// Specific heat</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">  153</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">m_cp_soil</a> =  1.26e6; <span class="comment">// [J/m^3 K]</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Conductivity</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">  156</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">m_k_soil</a> = 0.2; <span class="comment">// dry soil [W/m K]</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// Theta Dirichlet value at lowest point below surface</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classSLM.html#aec067697af550a8122138e57c4e0666d">  159</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#aec067697af550a8122138e57c4e0666d">m_theta_dir</a> = 400.0; <span class="comment">// [K]</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Thermal diffusivity</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classSLM.html#a6ba8b659255822be9538ba66c22b2533">  162</a></span>&#160;    amrex::Real <a class="code" href="classSLM.html#a6ba8b659255822be9538ba66c22b2533">m_d_soil</a> = <a class="code" href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">m_k_soil</a> / <a class="code" href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">m_cp_soil</a>; <span class="comment">// [m^2/s]</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;};</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__NullSurf_8H_html"><div class="ttname"><a href="ERF__NullSurf_8H.html">ERF_NullSurf.H</a></div></div>
 <div class="ttc" id="aclassNullSurf_html"><div class="ttname"><a href="classNullSurf.html">NullSurf</a></div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:8</div></div>
 <div class="ttc" id="aclassSLM_html"><div class="ttname"><a href="classSLM.html">SLM</a></div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:26</div></div>
-<div class="ttc" id="aclassSLM_html_a0db509945fed4bf6ffae276c1c183707"><div class="ttname"><a href="classSLM.html#a0db509945fed4bf6ffae276c1c183707">SLM::ComputeTsurf</a></div><div class="ttdeci">void ComputeTsurf()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:63</div></div>
-<div class="ttc" id="aclassSLM_html_a0f620560951627b138e0d6311fd47caa"><div class="ttname"><a href="classSLM.html#a0f620560951627b138e0d6311fd47caa">SLM::Lsm_Flux_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Lsm_Flux_Ptr(const int &amp;varIdx) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:85</div></div>
+<div class="ttc" id="aclassSLM_html_a0db509945fed4bf6ffae276c1c183707"><div class="ttname"><a href="classSLM.html#a0db509945fed4bf6ffae276c1c183707">SLM::ComputeTsurf</a></div><div class="ttdeci">void ComputeTsurf()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:64</div></div>
+<div class="ttc" id="aclassSLM_html_a0f620560951627b138e0d6311fd47caa"><div class="ttname"><a href="classSLM.html#a0f620560951627b138e0d6311fd47caa">SLM::Lsm_Flux_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Lsm_Flux_Ptr(const int &amp;varIdx) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:86</div></div>
 <div class="ttc" id="aclassSLM_html_a0f889af6d11c1e5fc4afbe7841e1c5c0"><div class="ttname"><a href="classSLM.html#a0f889af6d11c1e5fc4afbe7841e1c5c0">SLM::SLM</a></div><div class="ttdeci">SLM()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:32</div></div>
-<div class="ttc" id="aclassSLM_html_a22738df1091f651c9c541abda9e2d5e7"><div class="ttname"><a href="classSLM.html#a22738df1091f651c9c541abda9e2d5e7">SLM::khi_lsm</a></div><div class="ttdeci">int khi_lsm</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:129</div></div>
+<div class="ttc" id="aclassSLM_html_a141ae32786bb12daa875339732cfc14f"><div class="ttname"><a href="classSLM.html#a141ae32786bb12daa875339732cfc14f">SLM::Init</a></div><div class="ttdeci">void Init(const int &amp;, const amrex::MultiFab &amp;cons_in, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:7</div></div>
+<div class="ttc" id="aclassSLM_html_a22738df1091f651c9c541abda9e2d5e7"><div class="ttname"><a href="classSLM.html#a22738df1091f651c9c541abda9e2d5e7">SLM::khi_lsm</a></div><div class="ttdeci">int khi_lsm</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:130</div></div>
 <div class="ttc" id="aclassSLM_html_a2db94368b4de4bf176393a628fdbd6a3"><div class="ttname"><a href="classSLM.html#a2db94368b4de4bf176393a628fdbd6a3">SLM::~SLM</a></div><div class="ttdeci">virtual ~SLM()=default</div></div>
-<div class="ttc" id="aclassSLM_html_a31956746a8b8bbf207027cb784c9bfa4"><div class="ttname"><a href="classSLM.html#a31956746a8b8bbf207027cb784c9bfa4">SLM::Advance</a></div><div class="ttdeci">void Advance(const amrex::Real &amp;dt) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:54</div></div>
-<div class="ttc" id="aclassSLM_html_a3bb65074894448f02b2e58b015dd580c"><div class="ttname"><a href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">SLM::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_SLM::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:141</div></div>
-<div class="ttc" id="aclassSLM_html_a3c284ad4d275aa9ce80eca787cab87a4"><div class="ttname"><a href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">SLM::m_cp_soil</a></div><div class="ttdeci">amrex::Real m_cp_soil</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:152</div></div>
-<div class="ttc" id="aclassSLM_html_a3d4ce63e292a196220b9f4fabd96eaa6"><div class="ttname"><a href="classSLM.html#a3d4ce63e292a196220b9f4fabd96eaa6">SLM::Lsm_VarName</a></div><div class="ttdeci">std::string Lsm_VarName(const int &amp;varIdx) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:102</div></div>
-<div class="ttc" id="aclassSLM_html_a41d6b4f925b97839d5cebec6d6a75133"><div class="ttname"><a href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">SLM::LsmVarName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmVarName</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:117</div></div>
-<div class="ttc" id="aclassSLM_html_a48b1e4c0290b62bafb4f6acb9291aa68"><div class="ttname"><a href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">SLM::m_dt</a></div><div class="ttdeci">amrex::Real m_dt</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:126</div></div>
-<div class="ttc" id="aclassSLM_html_a4b4498e80099eadbb5405ec7095c07a8"><div class="ttname"><a href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">SLM::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:111</div></div>
-<div class="ttc" id="aclassSLM_html_a6ba8b659255822be9538ba66c22b2533"><div class="ttname"><a href="classSLM.html#a6ba8b659255822be9538ba66c22b2533">SLM::m_d_soil</a></div><div class="ttdeci">amrex::Real m_d_soil</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:161</div></div>
-<div class="ttc" id="aclassSLM_html_a6dcae265ee0a43c0d7ecdd52074431ce"><div class="ttname"><a href="classSLM.html#a6dcae265ee0a43c0d7ecdd52074431ce">SLM::m_dz_lsm</a></div><div class="ttdeci">amrex::Real m_dz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:149</div></div>
-<div class="ttc" id="aclassSLM_html_a6fa497f40e1d0994cb3c2fb121faf40a"><div class="ttname"><a href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">SLM::lsm_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_SLM::NumVars &gt; lsm_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:138</div></div>
-<div class="ttc" id="aclassSLM_html_a870bfd56a5fe10dc6b7b8f0347a9b218"><div class="ttname"><a href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">SLM::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:120</div></div>
-<div class="ttc" id="aclassSLM_html_a8f171cb4d7b8c32b5158f7ac7d518ad7"><div class="ttname"><a href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">SLM::Lsm_Geom</a></div><div class="ttdeci">amrex::Geometry Lsm_Geom() override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:94</div></div>
-<div class="ttc" id="aclassSLM_html_a900ca60e28871a22974a9f9267c8a4ab"><div class="ttname"><a href="classSLM.html#a900ca60e28871a22974a9f9267c8a4ab">SLM::Lsm_Data_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Lsm_Data_Ptr(const int &amp;varIdx) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:76</div></div>
-<div class="ttc" id="aclassSLM_html_aa674dfa04bde7d418f1195f707f84f5c"><div class="ttname"><a href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">SLM::m_k_soil</a></div><div class="ttdeci">amrex::Real m_k_soil</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:155</div></div>
+<div class="ttc" id="aclassSLM_html_a31956746a8b8bbf207027cb784c9bfa4"><div class="ttname"><a href="classSLM.html#a31956746a8b8bbf207027cb784c9bfa4">SLM::Advance</a></div><div class="ttdeci">void Advance(const amrex::Real &amp;dt) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:55</div></div>
+<div class="ttc" id="aclassSLM_html_a3bb65074894448f02b2e58b015dd580c"><div class="ttname"><a href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">SLM::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_SLM::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:142</div></div>
+<div class="ttc" id="aclassSLM_html_a3c284ad4d275aa9ce80eca787cab87a4"><div class="ttname"><a href="classSLM.html#a3c284ad4d275aa9ce80eca787cab87a4">SLM::m_cp_soil</a></div><div class="ttdeci">amrex::Real m_cp_soil</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:153</div></div>
+<div class="ttc" id="aclassSLM_html_a3d4ce63e292a196220b9f4fabd96eaa6"><div class="ttname"><a href="classSLM.html#a3d4ce63e292a196220b9f4fabd96eaa6">SLM::Lsm_VarName</a></div><div class="ttdeci">std::string Lsm_VarName(const int &amp;varIdx) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:103</div></div>
+<div class="ttc" id="aclassSLM_html_a41d6b4f925b97839d5cebec6d6a75133"><div class="ttname"><a href="classSLM.html#a41d6b4f925b97839d5cebec6d6a75133">SLM::LsmVarName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmVarName</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:118</div></div>
+<div class="ttc" id="aclassSLM_html_a48b1e4c0290b62bafb4f6acb9291aa68"><div class="ttname"><a href="classSLM.html#a48b1e4c0290b62bafb4f6acb9291aa68">SLM::m_dt</a></div><div class="ttdeci">amrex::Real m_dt</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:127</div></div>
+<div class="ttc" id="aclassSLM_html_a4b4498e80099eadbb5405ec7095c07a8"><div class="ttname"><a href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">SLM::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:112</div></div>
+<div class="ttc" id="aclassSLM_html_a6ba8b659255822be9538ba66c22b2533"><div class="ttname"><a href="classSLM.html#a6ba8b659255822be9538ba66c22b2533">SLM::m_d_soil</a></div><div class="ttdeci">amrex::Real m_d_soil</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:162</div></div>
+<div class="ttc" id="aclassSLM_html_a6dcae265ee0a43c0d7ecdd52074431ce"><div class="ttname"><a href="classSLM.html#a6dcae265ee0a43c0d7ecdd52074431ce">SLM::m_dz_lsm</a></div><div class="ttdeci">amrex::Real m_dz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:150</div></div>
+<div class="ttc" id="aclassSLM_html_a6fa497f40e1d0994cb3c2fb121faf40a"><div class="ttname"><a href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">SLM::lsm_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_SLM::NumVars &gt; lsm_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:139</div></div>
+<div class="ttc" id="aclassSLM_html_a870bfd56a5fe10dc6b7b8f0347a9b218"><div class="ttname"><a href="classSLM.html#a870bfd56a5fe10dc6b7b8f0347a9b218">SLM::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:121</div></div>
+<div class="ttc" id="aclassSLM_html_a8f171cb4d7b8c32b5158f7ac7d518ad7"><div class="ttname"><a href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">SLM::Lsm_Geom</a></div><div class="ttdeci">amrex::Geometry Lsm_Geom() override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:95</div></div>
+<div class="ttc" id="aclassSLM_html_a900ca60e28871a22974a9f9267c8a4ab"><div class="ttname"><a href="classSLM.html#a900ca60e28871a22974a9f9267c8a4ab">SLM::Lsm_Data_Ptr</a></div><div class="ttdeci">amrex::MultiFab * Lsm_Data_Ptr(const int &amp;varIdx) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:77</div></div>
+<div class="ttc" id="aclassSLM_html_aa674dfa04bde7d418f1195f707f84f5c"><div class="ttname"><a href="classSLM.html#aa674dfa04bde7d418f1195f707f84f5c">SLM::m_k_soil</a></div><div class="ttdeci">amrex::Real m_k_soil</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:156</div></div>
 <div class="ttc" id="aclassSLM_html_aa6b96866fc326fe740b163be0141ff56"><div class="ttname"><a href="classSLM.html#aa6b96866fc326fe740b163be0141ff56">SLM::Define</a></div><div class="ttdeci">void Define(SolverChoice &amp;) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:39</div></div>
-<div class="ttc" id="aclassSLM_html_aaafd49733163332a7f9616374d103cbb"><div class="ttname"><a href="classSLM.html#aaafd49733163332a7f9616374d103cbb">SLM::ComputeFluxes</a></div><div class="ttdeci">void ComputeFluxes()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:82</div></div>
+<div class="ttc" id="aclassSLM_html_aaafd49733163332a7f9616374d103cbb"><div class="ttname"><a href="classSLM.html#aaafd49733163332a7f9616374d103cbb">SLM::ComputeFluxes</a></div><div class="ttdeci">void ComputeFluxes()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:83</div></div>
 <div class="ttc" id="aclassSLM_html_abb12aea2d3e7bcc1e47b81581a9892ba"><div class="ttname"><a href="classSLM.html#abb12aea2d3e7bcc1e47b81581a9892ba">SLM::FabPtr</a></div><div class="ttdeci">std::shared_ptr&lt; amrex::MultiFab &gt; FabPtr</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:28</div></div>
-<div class="ttc" id="aclassSLM_html_ac051c05d408c3471b0206f232c5f1fbc"><div class="ttname"><a href="classSLM.html#ac051c05d408c3471b0206f232c5f1fbc">SLM::AdvanceSLM</a></div><div class="ttdeci">void AdvanceSLM()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:107</div></div>
-<div class="ttc" id="aclassSLM_html_ac41680d479e44b54678787b662c55fef"><div class="ttname"><a href="classSLM.html#ac41680d479e44b54678787b662c55fef">SLM::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:123</div></div>
-<div class="ttc" id="aclassSLM_html_ac5eb0f0fb3b7c78777a95bad4b5370ee"><div class="ttname"><a href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">SLM::m_nz_lsm</a></div><div class="ttdeci">int m_nz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:146</div></div>
-<div class="ttc" id="aclassSLM_html_accf5369cbeeab014dd8aab4ed28c3516"><div class="ttname"><a href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">SLM::Lsm_Data_Size</a></div><div class="ttdeci">int Lsm_Data_Size() override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:98</div></div>
-<div class="ttc" id="aclassSLM_html_acf0247edc5d92d5fb7b5183a524bf246"><div class="ttname"><a href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">SLM::LsmVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; LsmVarMap</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:114</div></div>
-<div class="ttc" id="aclassSLM_html_aec067697af550a8122138e57c4e0666d"><div class="ttname"><a href="classSLM.html#aec067697af550a8122138e57c4e0666d">SLM::m_theta_dir</a></div><div class="ttdeci">amrex::Real m_theta_dir</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:158</div></div>
-<div class="ttc" id="aclassSLM_html_aef0a4802ed2d86fd1dedad55e51efc88"><div class="ttname"><a href="classSLM.html#aef0a4802ed2d86fd1dedad55e51efc88">SLM::Init</a></div><div class="ttdeci">void Init(const amrex::MultiFab &amp;cons_in, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt) override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:7</div></div>
+<div class="ttc" id="aclassSLM_html_ac051c05d408c3471b0206f232c5f1fbc"><div class="ttname"><a href="classSLM.html#ac051c05d408c3471b0206f232c5f1fbc">SLM::AdvanceSLM</a></div><div class="ttdeci">void AdvanceSLM()</div><div class="ttdef"><b>Definition:</b> ERF_SLM.cpp:108</div></div>
+<div class="ttc" id="aclassSLM_html_ac41680d479e44b54678787b662c55fef"><div class="ttname"><a href="classSLM.html#ac41680d479e44b54678787b662c55fef">SLM::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:124</div></div>
+<div class="ttc" id="aclassSLM_html_ac5eb0f0fb3b7c78777a95bad4b5370ee"><div class="ttname"><a href="classSLM.html#ac5eb0f0fb3b7c78777a95bad4b5370ee">SLM::m_nz_lsm</a></div><div class="ttdeci">int m_nz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:147</div></div>
+<div class="ttc" id="aclassSLM_html_accf5369cbeeab014dd8aab4ed28c3516"><div class="ttname"><a href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">SLM::Lsm_Data_Size</a></div><div class="ttdeci">int Lsm_Data_Size() override</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:99</div></div>
+<div class="ttc" id="aclassSLM_html_acf0247edc5d92d5fb7b5183a524bf246"><div class="ttname"><a href="classSLM.html#acf0247edc5d92d5fb7b5183a524bf246">SLM::LsmVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; LsmVarMap</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:115</div></div>
+<div class="ttc" id="aclassSLM_html_aec067697af550a8122138e57c4e0666d"><div class="ttname"><a href="classSLM.html#aec067697af550a8122138e57c4e0666d">SLM::m_theta_dir</a></div><div class="ttdeci">amrex::Real m_theta_dir</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:159</div></div>
 <div class="ttc" id="anamespaceLsmVar__SLM_html"><div class="ttname"><a href="namespaceLsmVar__SLM.html">LsmVar_SLM</a></div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:17</div></div>
 <div class="ttc" id="anamespaceLsmVar__SLM_html_aed5dce012d04ce0698e9efca008a8daba46379e2639967ccb36fdea0aa7fbda61"><div class="ttname"><a href="namespaceLsmVar__SLM.html#aed5dce012d04ce0698e9efca008a8daba46379e2639967ccb36fdea0aa7fbda61">LsmVar_SLM::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:21</div></div>
 <div class="ttc" id="anamespaceLsmVar__SLM_html_aed5dce012d04ce0698e9efca008a8daba8cbbe7ff58f91759c10f65b097bcfc0f"><div class="ttname"><a href="namespaceLsmVar__SLM.html#aed5dce012d04ce0698e9efca008a8daba8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:20</div></div>

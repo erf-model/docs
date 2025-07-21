@@ -8,7 +8,7 @@ var classSLM =
     [ "ComputeFluxes", "classSLM.html#aaafd49733163332a7f9616374d103cbb", null ],
     [ "ComputeTsurf", "classSLM.html#a0db509945fed4bf6ffae276c1c183707", null ],
     [ "Define", "classSLM.html#aa6b96866fc326fe740b163be0141ff56", null ],
-    [ "Init", "classSLM.html#aef0a4802ed2d86fd1dedad55e51efc88", null ],
+    [ "Init", "classSLM.html#a141ae32786bb12daa875339732cfc14f", null ],
     [ "Lsm_Data_Ptr", "classSLM.html#a900ca60e28871a22974a9f9267c8a4ab", null ],
     [ "Lsm_Data_Size", "classSLM.html#accf5369cbeeab014dd8aab4ed28c3516", null ],
     [ "Lsm_Flux_Ptr", "classSLM.html#a0f620560951627b138e0d6311fd47caa", null ],
