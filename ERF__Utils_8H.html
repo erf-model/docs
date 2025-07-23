@@ -222,8 +222,8 @@ Functions</h2></td></tr>
 <tr class="separator:a99e49d815ec54491e5a510b76f7d8245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8d345634b200fdd14e878954e222f4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a">realbdy_bc_bxs_xy</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int &amp;set_width, amrex::Box &amp;bx_xlo, amrex::Box &amp;bx_xhi, amrex::Box &amp;bx_ylo, amrex::Box &amp;bx_yhi, const amrex::IntVect &amp;ng_vect=amrex::IntVect(0, 0, 0))</td></tr>
 <tr class="separator:ab8d345634b200fdd14e878954e222f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab51cededbebe104355921aada3218c65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ab51cededbebe104355921aada3218c65">realbdy_compute_interior_ghost_rhs</a> (const amrex::Real &amp;bdy_time_interval, const amrex::Real &amp;start_bdy_time, const amrex::Real &amp;time, const amrex::Real &amp;delta_t, int width, int set_width, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_cur_data, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xlo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xhi, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_ylo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_yhi)</td></tr>
-<tr class="separator:ab51cededbebe104355921aada3218c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe38079e2c12d903861bd092c13b1c8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#afe38079e2c12d903861bd092c13b1c8b">realbdy_compute_interior_ghost_rhs</a> (const amrex::Real &amp;bdy_time_interval, const amrex::Real &amp;start_bdy_time, const amrex::Real &amp;time, const amrex::Real &amp;delta_t, const amrex::Real &amp;stop_time, int width, int set_width, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old_data, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_cur_data, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xlo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xhi, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_ylo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_yhi)</td></tr>
+<tr class="separator:afe38079e2c12d903861bd092c13b1c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666ef6030bc3baa94198a32754fc65f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a666ef6030bc3baa94198a32754fc65f2">fine_compute_interior_ghost_rhs</a> (const amrex::Real &amp;time, const amrex::Real &amp;delta_t, const int &amp;width, const int &amp;set_width, const amrex::Geometry &amp;geom, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_c, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_u, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_v, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_w, amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs_f, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data_f)</td></tr>
 <tr class="separator:a666ef6030bc3baa94198a32754fc65f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3d734b65fd91857925d381c476e7965"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ac3d734b65fd91857925d381c476e7965">Time_Avg_Vel_atCC</a> (const amrex::Real &amp;dt, amrex::Real &amp;t_avg_cnt, amrex::MultiFab *vel_t_avg, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::MultiFab &amp;zvel)</td></tr>
@@ -271,21 +271,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;{</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(dst,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    {</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(nghost);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">if</span> (bx.ok())</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            <span class="keyword">auto</span>        dstFab = dst.array(mfi);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> maskFab = imask.const_array(mfi);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            {</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                dstFab(i,j,k) *= (1-maskFab(i,j,k));</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            });</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        }</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    }</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;{</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(dst,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    {</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(nghost);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">if</span> (bx.ok())</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <span class="keyword">auto</span>        dstFab = dst.array(mfi);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> maskFab = imask.const_array(mfi);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            {</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                dstFab(i,j,k) *= (1-maskFab(i,j,k));</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            });</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        }</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__AddThinBodySources_8cpp.html#afe1f106475861ba9ed98d5163c7f4e20">add_thin_body_sources()</a>, and <a class="el" href="classERF.html#a2f36ab3750aa760fb621b40294e0f6c6">ERF::project_velocity_tb()</a>.</p>
 <div class="dynheader">
@@ -332,21 +332,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;{</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(dst,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(nghost);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">if</span> (bx.ok())</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="keyword">auto</span>        dstFab = dst.array(mfi);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> maskFab = imask.const_array(mfi);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            {</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                dstFab(i,j,k) *= maskFab(i,j,k);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            });</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        }</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    }</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;{</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">for</span> (amrex::MFIter mfi(dst,amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(nghost);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">if</span> (bx.ok())</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keyword">auto</span>        dstFab = dst.array(mfi);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> maskFab = imask.const_array(mfi);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                dstFab(i,j,k) *= maskFab(i,j,k);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            });</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a6f5c620a402f7b1be46e05c0cbe48743">ERF::FillIntermediatePatch()</a>, and <a class="el" href="classERF.html#a2f36ab3750aa760fb621b40294e0f6c6">ERF::project_velocity_tb()</a>.</p>
 <div class="dynheader">
@@ -818,8 +818,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ab51cededbebe104355921aada3218c65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab51cededbebe104355921aada3218c65">&#9670;&nbsp;</a></span>realbdy_compute_interior_ghost_rhs()</h2>
+<a id="afe38079e2c12d903861bd092c13b1c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe38079e2c12d903861bd092c13b1c8b">&#9670;&nbsp;</a></span>realbdy_compute_interior_ghost_rhs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -847,6 +847,12 @@ Here is the caller graph for this function:</div>
           <td></td>
           <td class="paramtype">const amrex::Real &amp;&#160;</td>
           <td class="paramname"><em>delta_t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramname"><em>stop_time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1064,117 +1070,117 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// RHS computation</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">int</span> Spec_z  = set_width;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">int</span> Relax_z = width - Spec_z + 1;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a>     = amrex::Real(Spec_z + Relax_z);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    amrex::Real denom   = amrex::Real(Relax_z - 1);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    amrex::Real SpecExp = -std::log(0.1) / amrex::Real(width - Spec_z);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    amrex::ParallelFor(bx_xlo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordtype">int</span> n_ind = std::min(i-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.x,jj) + 1;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        amrex::Real delta    = arr_xlo(i  ,j  ,k,n) - d;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        amrex::Real delta_xp = arr_xlo(i+1,j  ,k,n) - d_ip1;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        amrex::Real delta_xm = arr_xlo(i-1,j  ,k,n) - d_im1;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        amrex::Real delta_yp = arr_xlo(i  ,j+1,k,n) - d_jp1;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        amrex::Real delta_ym = arr_xlo(i  ,j-1,k,n) - d_jm1;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    },</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    bx_xhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordtype">int</span> n_ind = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.x-i,jj) + 1;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        amrex::Real delta    = arr_xhi(i  ,j  ,k,n) - d;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        amrex::Real delta_xp = arr_xhi(i+1,j  ,k,n) - d_ip1;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        amrex::Real delta_xm = arr_xhi(i-1,j  ,k,n) - d_im1;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        amrex::Real delta_yp = arr_xhi(i  ,j+1,k,n) - d_jp1;</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        amrex::Real delta_ym = arr_xhi(i  ,j-1,k,n) - d_jm1;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    });</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    amrex::ParallelFor(bx_ylo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">int</span> n_ind = j - <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y + 1;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        amrex::Real delta    = arr_ylo(i  ,j  ,k,n) - d;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        amrex::Real delta_xp = arr_ylo(i+1,j  ,k,n) - d_ip1;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        amrex::Real delta_xm = arr_ylo(i-1,j  ,k,n) - d_im1;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        amrex::Real delta_yp = arr_ylo(i  ,j+1,k,n) - d_jp1;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        amrex::Real delta_ym = arr_ylo(i  ,j-1,k,n) - d_jm1;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    },</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    bx_yhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordtype">int</span> n_ind = <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y - j + 1;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        amrex::Real delta    = arr_yhi(i  ,j  ,k,n) - d;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        amrex::Real delta_xp = arr_yhi(i+1,j  ,k,n) - d_ip1;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        amrex::Real delta_xm = arr_yhi(i-1,j  ,k,n) - d_im1;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        amrex::Real delta_yp = arr_yhi(i  ,j+1,k,n) - d_jp1;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        amrex::Real delta_ym = arr_yhi(i  ,j-1,k,n) - d_jm1;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    });</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;{</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="comment">// RHS computation</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">int</span> Spec_z  = set_width;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">int</span> Relax_z = width - Spec_z + 1;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a>     = amrex::Real(Spec_z + Relax_z);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    amrex::Real denom   = amrex::Real(Relax_z - 1);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    amrex::Real SpecExp = -std::log(0.1) / amrex::Real(width - Spec_z);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    amrex::ParallelFor(bx_xlo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordtype">int</span> n_ind = std::min(i-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.x,jj) + 1;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        amrex::Real delta    = arr_xlo(i  ,j  ,k,n) - d;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        amrex::Real delta_xp = arr_xlo(i+1,j  ,k,n) - d_ip1;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        amrex::Real delta_xm = arr_xlo(i-1,j  ,k,n) - d_im1;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        amrex::Real delta_yp = arr_xlo(i  ,j+1,k,n) - d_jp1;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        amrex::Real delta_ym = arr_xlo(i  ,j-1,k,n) - d_jm1;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    },</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    bx_xhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordtype">int</span> n_ind = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.x-i,jj) + 1;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        amrex::Real delta    = arr_xhi(i  ,j  ,k,n) - d;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        amrex::Real delta_xp = arr_xhi(i+1,j  ,k,n) - d_ip1;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        amrex::Real delta_xm = arr_xhi(i-1,j  ,k,n) - d_im1;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        amrex::Real delta_yp = arr_xhi(i  ,j+1,k,n) - d_jp1;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        amrex::Real delta_ym = arr_xhi(i  ,j-1,k,n) - d_jm1;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    });</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    amrex::ParallelFor(bx_ylo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">int</span> n_ind = j - <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y + 1;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        amrex::Real delta    = arr_ylo(i  ,j  ,k,n) - d;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        amrex::Real delta_xp = arr_ylo(i+1,j  ,k,n) - d_ip1;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        amrex::Real delta_xm = arr_ylo(i-1,j  ,k,n) - d_im1;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        amrex::Real delta_yp = arr_ylo(i  ,j+1,k,n) - d_jp1;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        amrex::Real delta_ym = arr_ylo(i  ,j-1,k,n) - d_jm1;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    },</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    bx_yhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keywordtype">int</span> n_ind = <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y - j + 1;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="comment">//AMREX_ASSERT(n_ind &gt; Spec_z);</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        amrex::Real Factor   = (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a> - amrex::Real(n_ind))/denom</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                              * std::exp(-SpecExp * amrex::Real(n_ind - Spec_z));</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        amrex::Real d        = data_arr(i  ,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        amrex::Real d_ip1    = data_arr(i+1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        amrex::Real d_im1    = data_arr(i-1,j  ,k  ,n+icomp);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        amrex::Real d_jp1    = data_arr(i  ,j+1,k  ,n+icomp);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        amrex::Real d_jm1    = data_arr(i  ,j-1,k  ,n+icomp);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        amrex::Real delta    = arr_yhi(i  ,j  ,k,n) - d;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        amrex::Real delta_xp = arr_yhi(i+1,j  ,k,n) - d_ip1;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        amrex::Real delta_xm = arr_yhi(i-1,j  ,k,n) - d_im1;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        amrex::Real delta_yp = arr_yhi(i  ,j+1,k,n) - d_jp1;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        amrex::Real delta_ym = arr_yhi(i  ,j-1,k,n) - d_jm1;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        amrex::Real Laplacian = delta_xp + delta_xm + delta_yp + delta_ym - 4.0*delta;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        amrex::Real Temp = (F1*delta - F2*Laplacian) * Factor;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        rhs_arr(i,j,k,n+icomp) += Temp;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    });</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba25361924f30bae15bbbc3346daaab6d8">num</a></div><div class="ttdeci">@ num</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:22</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:10</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a2987796b2d40db9890dd3497cc7e20ca"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a></div><div class="ttdeci">const auto &amp; dom_lo</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:9</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241">realbdy_compute_interior_ghost_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InteriorGhostCells_8cpp.html#ad977d040e8c4adf2aad8a4eae672fac6">realbdy_compute_interior_ghost_rhs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Utils_8H_afb1f55b5c43428fa5569f60ebd790767_icgraph.png" border="0" usemap="#aERF__Utils_8H_afb1f55b5c43428fa5569f60ebd790767_icgraph" alt=""/></div>
 <map name="aERF__Utils_8H_afb1f55b5c43428fa5569f60ebd790767_icgraph" id="aERF__Utils_8H_afb1f55b5c43428fa5569f60ebd790767_icgraph">
 <area shape="rect" title=" " alt="" coords="243,5,444,47"/>
-<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241" title=" " alt="" coords="5,5,195,47"/>
+<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#ad977d040e8c4adf2aad8a4eae672fac6" title=" " alt="" coords="5,5,195,47"/>
 </map>
 </div>
 
@@ -1390,64 +1396,64 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">int</span> Spec_z_x = set_width_x;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">int</span> Spec_z_y = set_width_y;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    amrex::ParallelFor(bx_xlo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordtype">int</span> n_ind_y = jj + 1;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">int</span> n_ind_x = i - <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.x + 1;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">if</span> ((n_ind_x &lt;= Spec_z_x) || (n_ind_y &lt;= Spec_z_y)) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            amrex::Real tend = ( arr_xlo(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    },</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    bx_xhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordtype">int</span> n_ind_y = jj + 1;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordtype">int</span> n_ind_x = <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.x - i + 1;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">if</span> ((n_ind_x &lt;= Spec_z_x) || (n_ind_y &lt;= Spec_z_y)) {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            amrex::Real tend = ( arr_xhi(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    });</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    amrex::ParallelFor(bx_ylo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="keywordtype">int</span> n_ind = j - <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y + 1;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">if</span> (n_ind &lt;= Spec_z_y) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            amrex::Real tend = ( arr_ylo(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    },</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    bx_yhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordtype">int</span> n_ind = <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y - j + 1;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">if</span> (n_ind &lt;= Spec_z_y) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            amrex::Real tend = ( arr_yhi(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    });</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">int</span> Spec_z_x = set_width_x;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">int</span> Spec_z_y = set_width_y;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    amrex::ParallelFor(bx_xlo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <span class="keywordtype">int</span> n_ind_y = jj + 1;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordtype">int</span> n_ind_x = i - <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.x + 1;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">if</span> ((n_ind_x &lt;= Spec_z_x) || (n_ind_y &lt;= Spec_z_y)) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            amrex::Real tend = ( arr_xlo(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    },</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    bx_xhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="comment">// Corners with x boxes</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">int</span> j_lo  = std::min(j-<a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y,width-1);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordtype">int</span> j_hi  = std::min(<a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-j,width-1);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordtype">int</span> jj    = std::min(j_lo,j_hi);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordtype">int</span> n_ind_y = jj + 1;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordtype">int</span> n_ind_x = <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.x - i + 1;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">if</span> ((n_ind_x &lt;= Spec_z_x) || (n_ind_y &lt;= Spec_z_y)) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            amrex::Real tend = ( arr_xhi(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    });</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    amrex::ParallelFor(bx_ylo, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordtype">int</span> n_ind = j - <a class="code" href="ERF__DiffSetup_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y + 1;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">if</span> (n_ind &lt;= Spec_z_y) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            amrex::Real tend = ( arr_ylo(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    },</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    bx_yhi, num_var, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">// No corners for y boxes</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordtype">int</span> n_ind = <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y - j + 1;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">if</span> (n_ind &lt;= Spec_z_y) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            amrex::Real tend = ( arr_yhi(i,j,k) - data_arr(i,j,k,n+icomp) ) / dt;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            rhs_arr(i,j,k,n+icomp) = tend;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    });</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241">realbdy_compute_interior_ghost_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InteriorGhostCells_8cpp.html#ad977d040e8c4adf2aad8a4eae672fac6">realbdy_compute_interior_ghost_rhs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Utils_8H_a0b88232fda28b980089ed84150bcf330_icgraph.png" border="0" usemap="#aERF__Utils_8H_a0b88232fda28b980089ed84150bcf330_icgraph" alt=""/></div>
 <map name="aERF__Utils_8H_a0b88232fda28b980089ed84150bcf330_icgraph" id="aERF__Utils_8H_a0b88232fda28b980089ed84150bcf330_icgraph">
 <area shape="rect" title=" " alt="" coords="243,5,387,47"/>
-<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a910beecdd2b6435fb9b14ff590bc2241" title=" " alt="" coords="5,5,195,47"/>
+<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#ad977d040e8c4adf2aad8a4eae672fac6" title=" " alt="" coords="5,5,195,47"/>
 </map>
 </div>
 

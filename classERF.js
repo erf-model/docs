@@ -136,7 +136,7 @@ var classERF =
     [ "setRecordSamplePointInfo", "classERF.html#af8d930dce1b926ecc3bdc6787dd47818", null ],
     [ "setSpongeRefFromSounding", "classERF.html#ae27a45d751287a887769df20dea60633", null ],
     [ "solve_with_EB_mlmg", "classERF.html#aa31ae8bd097ec65d711070aedf11a14a", null ],
-    [ "solve_with_gmres", "classERF.html#a9866c7874624259ffcfc6edf46dd58ec", null ],
+    [ "solve_with_gmres", "classERF.html#aa09aba9f7a6d042fd6ad83dc67eda1cb", null ],
     [ "solve_with_mlmg", "classERF.html#a8a7c7fe95147d8772047aa0772a09564", null ],
     [ "sum_derived_quantities", "classERF.html#a91c184ac7e5889fe785aa846112ce2e6", null ],
     [ "sum_energy_quantities", "classERF.html#a3e5b26e9aeb49e5318eb6cb68ed2ee97", null ],
