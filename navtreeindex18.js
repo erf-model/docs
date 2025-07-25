@@ -1,10 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"structsurface__temp__mod__charnock.html#a77dc7e5a012fbe6066fa21f57145c938":[2,0,79,5],
-"structsurface__temp__mod__charnock.html#a85bd49a9221c24cd27422abc18190628":[2,0,79,6],
-"structsurface__temp__mod__charnock.html#a8623647ee6cbbe0576bb040b5424a710":[2,0,79,0],
-"structsurface__temp__mod__charnock.html#a98f673e5030f4509a8874466337f50c4":[2,0,79,2],
-"structsurface__temp__mod__charnock.html#abdbaeb4415bea6e707230a7d9dcee56a":[2,0,79,4],
 "structsurface__temp__wave__coupled.html":[2,0,80],
 "structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf":[2,0,80,2],
 "structsurface__temp__wave__coupled.html#a3715864e9c6bfdc6e4556925d0fc48fa":[2,0,80,6],
