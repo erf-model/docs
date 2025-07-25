@@ -148,6 +148,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:adf5c64f43a59af0d6caae7211cdfa480"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd221d04045bb8114c1a2ae55a509252"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#acd221d04045bb8114c1a2ae55a509252">Lsm_VarName</a> (const int &amp;)</td></tr>
 <tr class="separator:acd221d04045bb8114c1a2ae55a509252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dac2fbc4cf710235c05b0773dcd724f"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a3dac2fbc4cf710235c05b0773dcd724f">Lsm_VarIndex</a> (std::string)</td></tr>
+<tr class="separator:a3dac2fbc4cf710235c05b0773dcd724f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -503,7 +505,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">SLM</a>, <a class="el" href="classNOAH.html#aa7074a49ac8362c70fd82e0980e960e9">NOAH</a>, and <a class="el" href="classMM5.html#abf2c797ae56fc93043e999db11515a8a">MM5</a>.</p>
 <div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:80</div></div>
+<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:87</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -561,7 +563,38 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">SLM</a>, <a class="el" href="classNOAH.html#a62e00a8fec969d1ba545f6a5a6910d0b">NOAH</a>, and <a class="el" href="classMM5.html#abe51eb4823a379cd70d05eef17832f7b">MM5</a>.</p>
 <div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">m_lsm_geom</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:81</div></div>
+<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:88</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3dac2fbc4cf710235c05b0773dcd724f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dac2fbc4cf710235c05b0773dcd724f">&#9670;&nbsp;</a></span>Lsm_VarIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int NullSurf::Lsm_VarIndex </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classNOAH.html#adc9484f5b4e890d3496fe13ac1209115">NOAH</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -593,7 +626,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#ae096eaa2ce9385fabf5692c6a7ac6c26">varname</a>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="ttc" id="aclassNullSurf_html_ae096eaa2ce9385fabf5692c6a7ac6c26"><div class="ttname"><a href="classNullSurf.html#ae096eaa2ce9385fabf5692c6a7ac6c26">NullSurf::varname</a></div><div class="ttdeci">std::string varname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:82</div></div>
+<div class="ttc" id="aclassNullSurf_html_ae096eaa2ce9385fabf5692c6a7ac6c26"><div class="ttname"><a href="classNullSurf.html#ae096eaa2ce9385fabf5692c6a7ac6c26">NullSurf::varname</a></div><div class="ttdeci">std::string varname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:89</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -720,7 +753,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classNullSurf.html#acd221d04045bb8114c1a2ae55a509252">Lsm_VarName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classNOAH.html#adc9484f5b4e890d3496fe13ac1209115">NOAH::Lsm_VarIndex()</a>, and <a class="el" href="classNullSurf.html#acd221d04045bb8114c1a2ae55a509252">Lsm_VarName()</a>.</p>
 
 </div>
 </div>

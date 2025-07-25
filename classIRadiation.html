@@ -123,10 +123,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab95cafeff7c2b9960532aa5025daedfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a49facdea9a509245196a463491013"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a93a49facdea9a509245196a463491013">Init</a> (const amrex::Geometry &amp;geom, const amrex::BoxArray &amp;ba, amrex::MultiFab *cons_in)=0</td></tr>
 <tr class="separator:a93a49facdea9a509245196a463491013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb7d08da38e036b2d795e471c870c3b7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#abb7d08da38e036b2d795e471c870c3b7">Run</a> (int &amp;level, int &amp;step, amrex::Real &amp;time, const amrex::Real &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::MultiFab *lsm_fluxes, amrex::MultiFab *lsm_zenith, amrex::MultiFab *qheating_rates, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon)=0</td></tr>
-<tr class="separator:abb7d08da38e036b2d795e471c870c3b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4ea94d80fa153daefc46bcf5df288e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a5c4ea94d80fa153daefc46bcf5df288e">Run</a> (int &amp;level, int &amp;step, amrex::Real &amp;time, const amrex::Real &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::MultiFab *lsm_fluxes, amrex::MultiFab *lsm_zenith, amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_input_ptrs, amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon)=0</td></tr>
+<tr class="separator:a5c4ea94d80fa153daefc46bcf5df288e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af105337c7d00bc0dfed8a5827bb52dc7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">WriteDataLog</a> (const amrex::Real &amp;time)=0</td></tr>
 <tr class="separator:af105337c7d00bc0dfed8a5827bb52dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34487f3ca47848919204d61c75c410f"><td class="memItemLeft" align="right" valign="top">virtual amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#af34487f3ca47848919204d61c75c410f">get_lsm_input_varnames</a> ()</td></tr>
+<tr class="separator:af34487f3ca47848919204d61c75c410f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afebf8a822642ddf2a5285b6f60157319"><td class="memItemLeft" align="right" valign="top">virtual amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#afebf8a822642ddf2a5285b6f60157319">get_lsm_output_varnames</a> ()</td></tr>
+<tr class="separator:afebf8a822642ddf2a5285b6f60157319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a399c98c8696ffca01b1af72297451"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">setupDataLog</a> ()</td></tr>
 <tr class="separator:a75a399c98c8696ffca01b1af72297451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a869627344662a3d31c962dc8bc615868"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a869627344662a3d31c962dc8bc615868">setDataLogFrequency</a> (const int nstep)</td></tr>
@@ -175,6 +179,68 @@ Private Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af34487f3ca47848919204d61c75c410f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34487f3ca47848919204d61c75c410f">&#9670;&nbsp;</a></span>get_lsm_input_varnames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual amrex::Vector&lt;std::string&gt; IRadiation::get_lsm_input_varnames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classRadiation.html#a7ec58b8b26858fe545d479e2aad5d9c4">Radiation</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        amrex::Vector&lt;std::string&gt; empty = {<span class="stringliteral">&quot; &quot;</span>};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> empty;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afebf8a822642ddf2a5285b6f60157319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afebf8a822642ddf2a5285b6f60157319">&#9670;&nbsp;</a></span>get_lsm_output_varnames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual amrex::Vector&lt;std::string&gt; IRadiation::get_lsm_output_varnames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classRadiation.html#a038bcfac8ac0960f2e065b8869724d38">Radiation</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        amrex::Vector&lt;std::string&gt; empty = {<span class="stringliteral">&quot; &quot;</span>};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> empty;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a077cf4e3cdf2e521e4bf856b27c4c871"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a077cf4e3cdf2e521e4bf856b27c4c871">&#9670;&nbsp;</a></span>hasDatalog()</h2>
 
@@ -197,8 +263,8 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> (<a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;good()); }</div>
-<div class="ttc" id="aclassIRadiation_html_a6046bc1cdbe95458b1d65c624058f1b4"><div class="ttname"><a href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">IRadiation::datalog</a></div><div class="ttdeci">std::unique_ptr&lt; std::fstream &gt; datalog</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:55</div></div>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{ <span class="keywordflow">return</span> (<a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> != <span class="keyword">nullptr</span> &amp;&amp; <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;good()); }</div>
+<div class="ttc" id="aclassIRadiation_html_a6046bc1cdbe95458b1d65c624058f1b4"><div class="ttname"><a href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">IRadiation::datalog</a></div><div class="ttdeci">std::unique_ptr&lt; std::fstream &gt; datalog</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:84</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -246,8 +312,8 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abb7d08da38e036b2d795e471c870c3b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb7d08da38e036b2d795e471c870c3b7">&#9670;&nbsp;</a></span>Run()</h2>
+<a id="a5c4ea94d80fa153daefc46bcf5df288e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4ea94d80fa153daefc46bcf5df288e">&#9670;&nbsp;</a></span>Run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -312,6 +378,18 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::MultiFab * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lsm_input_ptrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::Vector&lt; amrex::MultiFab * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lsm_output_ptrs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">amrex::MultiFab *&#160;</td>
           <td class="paramname"><em>qheating_rates</em>, </td>
         </tr>
@@ -346,7 +424,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRadiation.html#a325046d4efbcc413514d560c1d009a02">Radiation</a>.</p>
+<p>Implemented in <a class="el" href="classRadiation.html#aa33b926fe801ccf363e7a34c99d917b6">Radiation</a>.</p>
 
 </div>
 </div>
@@ -373,10 +451,10 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                               {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classIRadiation.html#ab7a8ceb8c09be4f9df4241f81197f553">datalog_int</a> = nstep;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="ttc" id="aclassIRadiation_html_ab7a8ceb8c09be4f9df4241f81197f553"><div class="ttname"><a href="classIRadiation.html#ab7a8ceb8c09be4f9df4241f81197f553">IRadiation::datalog_int</a></div><div class="ttdeci">int datalog_int</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:58</div></div>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                          {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classIRadiation.html#ab7a8ceb8c09be4f9df4241f81197f553">datalog_int</a> = nstep;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="ttc" id="aclassIRadiation_html_ab7a8ceb8c09be4f9df4241f81197f553"><div class="ttname"><a href="classIRadiation.html#ab7a8ceb8c09be4f9df4241f81197f553">IRadiation::datalog_int</a></div><div class="ttdeci">int datalog_int</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:87</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -403,19 +481,19 @@ Private Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> = std::make_unique&lt;std::fstream&gt;();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;good()) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                amrex::FileOpenFailed(filename);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">datalogname</a> = filename;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::Radiation::setRecordDataInfo&quot;</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
-<div class="ttc" id="aclassIRadiation_html_a2e4010d756cc604aa90ceb71a955584c"><div class="ttname"><a href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">IRadiation::datalogname</a></div><div class="ttdeci">std::string datalogname</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:56</div></div>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> = std::make_unique&lt;std::fstream&gt;();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;good()) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                amrex::FileOpenFailed(filename);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">datalogname</a> = filename;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::Radiation::setRecordDataInfo&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="ttc" id="aclassIRadiation_html_a2e4010d756cc604aa90ceb71a955584c"><div class="ttname"><a href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">IRadiation::datalogname</a></div><div class="ttdeci">std::string datalogname</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:85</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">setupDataLog()</a>.</p>
 <div class="dynheader">
@@ -452,16 +530,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf.rad&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.contains(<span class="stringliteral">&quot;datalog&quot;</span>)) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;datalog&quot;</span>, <a class="code" href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">datalogname</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classIRadiation.html#ae113ac6df98c25c0a48ab4452461dd2e">setRecordDataInfo</a>(<a class="code" href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">datalogname</a>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf.rad&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.contains(<span class="stringliteral">&quot;datalog&quot;</span>)) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;datalog&quot;</span>, <a class="code" href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">datalogname</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="classIRadiation.html#ae113ac6df98c25c0a48ab4452461dd2e">setRecordDataInfo</a>(<a class="code" href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">datalogname</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:230</div></div>
-<div class="ttc" id="aclassIRadiation_html_ae113ac6df98c25c0a48ab4452461dd2e"><div class="ttname"><a href="classIRadiation.html#ae113ac6df98c25c0a48ab4452461dd2e">IRadiation::setRecordDataInfo</a></div><div class="ttdeci">void setRecordDataInfo(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:61</div></div>
+<div class="ttc" id="aclassIRadiation_html_ae113ac6df98c25c0a48ab4452461dd2e"><div class="ttname"><a href="classIRadiation.html#ae113ac6df98c25c0a48ab4452461dd2e">IRadiation::setRecordDataInfo</a></div><div class="ttdeci">void setRecordDataInfo(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:91</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

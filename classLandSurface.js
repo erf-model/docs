@@ -10,6 +10,7 @@ var classLandSurface =
     [ "Get_Flux_Ptr", "classLandSurface.html#a967a4b0772dc721d0242d38613ac430e", null ],
     [ "Get_Lsm_Geom", "classLandSurface.html#a368a57f198d060805dcd615677366c3c", null ],
     [ "get_model_lev", "classLandSurface.html#a3afba8302e18341bf3ecb62202704817", null ],
+    [ "Get_VarIdx", "classLandSurface.html#adde8d60ff3a58ca5f39288d417b5feca", null ],
     [ "Get_VarName", "classLandSurface.html#a0e04fe7c9b1f9025e8f4458c4522b1d5", null ],
     [ "Init", "classLandSurface.html#aac1216f5c2758361ddc016442f3c67cd", null ],
     [ "Plot_Lsm_Data", "classLandSurface.html#a61290767bd3f0bc65db7a0a344b10899", null ],

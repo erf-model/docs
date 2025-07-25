@@ -12,6 +12,7 @@ var classNullSurf =
     [ "Lsm_Data_Size", "classNullSurf.html#adf5c64f43a59af0d6caae7211cdfa480", null ],
     [ "Lsm_Flux_Ptr", "classNullSurf.html#a7a9b19e7d784323fd216468b7cca6574", null ],
     [ "Lsm_Geom", "classNullSurf.html#af634e202eb05675a9bf2ee9b7e927b12", null ],
+    [ "Lsm_VarIndex", "classNullSurf.html#a3dac2fbc4cf710235c05b0773dcd724f", null ],
     [ "Lsm_VarName", "classNullSurf.html#acd221d04045bb8114c1a2ae55a509252", null ],
     [ "Update_Micro_Vars", "classNullSurf.html#aad733e954aefc643ed1f2c6a1bb564ac", null ],
     [ "Update_State_Vars", "classNullSurf.html#aec12d8aa3e358ea40f7d4371651eb73a", null ],

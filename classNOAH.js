@@ -10,6 +10,7 @@ var classNOAH =
     [ "Lsm_Data_Size", "classNOAH.html#aa7074a49ac8362c70fd82e0980e960e9", null ],
     [ "Lsm_Flux_Ptr", "classNOAH.html#a4d075d6523e66f3f27060050d55112ef", null ],
     [ "Lsm_Geom", "classNOAH.html#a62e00a8fec969d1ba545f6a5a6910d0b", null ],
+    [ "Lsm_VarIndex", "classNOAH.html#adc9484f5b4e890d3496fe13ac1209115", null ],
     [ "Lsm_VarName", "classNOAH.html#a0e19a58b5fbc78d22b9aae61a7631283", null ],
     [ "khi_lsm", "classNOAH.html#ac18256d3f2749729ea5cafe19427f7d5", null ],
     [ "lsm_fab_flux", "classNOAH.html#a30fccb9c7282d3ca314066f359a9e899", null ],
