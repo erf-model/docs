@@ -55,5 +55,6 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_WaterVaporSaturation.H", "ERF__WaterVaporSaturation_8H.html", [
       [ "WaterVaporSat", "classWaterVaporSat.html", "classWaterVaporSat" ]
     ] ],
+    [ "ERF_WeatherDataInterpolation.cpp", "ERF__WeatherDataInterpolation_8cpp.html", "ERF__WeatherDataInterpolation_8cpp" ],
     [ "ERF_Wstar.H", "ERF__Wstar_8H.html", "ERF__Wstar_8H" ]
 ];

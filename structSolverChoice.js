@@ -31,6 +31,7 @@ var structSolverChoice =
     [ "custom_w_subsidence", "structSolverChoice.html#a596f061b796ada0389c81a6125150b6e", null ],
     [ "diffChoice", "structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095", null ],
     [ "do_forest_drag", "structSolverChoice.html#aed9118172b234c3a0069a78776d09baa", null ],
+    [ "do_hurricane_simulation", "structSolverChoice.html#adf0643276dfd2c5dc6f8bb653b0be720", null ],
     [ "dz0", "structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c", null ],
     [ "fixed_density", "structSolverChoice.html#aa40fbbbb9a91d853a2d8290dbd728b48", null ],
     [ "force_stage1_single_substep", "structSolverChoice.html#a3f8ae511632557066f6662eec79591e1", null ],

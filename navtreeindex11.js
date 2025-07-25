@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7":[2,0,65,13],
 "classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e":[2,0,65,11],
 "classSimpleAD.html":[2,0,67],
 "classSimpleAD.html#a04490ef9f591e86588c5bb7870c1b77f":[2,0,67,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classeb__.html#aa2d82b2e424b832a9c0befaa160db5a9":[2,0,17,24],
 "classeb__.html#aaba2e6e2c803801d036e989a9c5799b2":[2,0,17,1],
 "classeb__.html#abcc4045a128dd42fe09f45af4f602576":[2,0,17,2],
-"classeb__.html#abfdaa6b21118610551e115d123390be9":[2,0,17,8],
-"classeb__.html#aca3aa793c432fe655b38759a26af6b96":[2,0,17,25]
+"classeb__.html#abfdaa6b21118610551e115d123390be9":[2,0,17,8]
 };
