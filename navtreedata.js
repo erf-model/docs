@@ -85,12 +85,12 @@ var NAVTREEINDEX =
 "classRadiation.html#aa99792db7a95022d5f59aa886a20ff12",
 "classSimpleAD.html#a4c17a08ad746b342bf62d7a1ad93781a",
 "classeb___1_1EBToPVD.html#a36c682e8e0dde352c80d13a0d8f172d1",
-"functions_vars_t.html",
-"namespacemodule__model__constants.html#a523ecb0e0a86f36393f14fa67661ed34",
-"structAdvChoice.html#a334139583accdc5718a939b20b308bb9",
-"structSolverChoice.html#a7e93900ec3e84826fcf1e02435bdae42",
-"structWENO__MZQ3.html#a8dcc9655166c1217b7056f244d4cfde2",
-"structsurface__temp__wave__coupled.html"
+"functions_vars_r.html",
+"namespacemodule__model__constants.html#a4c9794a33c7f6a5fb1074690b5f64cbd",
+"structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a",
+"structSolverChoice.html#a76659aa69edd3370626e3648cbead9be",
+"structWENO__MZQ3.html#a106585bb6e78f7027658c9c56f3ae892",
+"structsurface__temp__mod__charnock.html#a98f673e5030f4509a8874466337f50c4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
