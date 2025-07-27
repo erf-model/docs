@@ -400,14 +400,14 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classSAM.html#a363b3bb27b6e6cdad8693363b3262419" title=" " alt="" coords="180,157,281,184"/>
 <area shape="rect" href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c" title=" " alt="" coords="181,107,281,133"/>
 <area shape="rect" href="classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b" title=" " alt="" coords="169,208,292,235"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="368,5,447,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="364,56,451,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5" title=" " alt="" coords="340,107,475,133"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="527,5,605,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="523,56,609,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="657,56,764,83"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="371,157,444,184"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="352,208,463,235"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="367,5,446,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="363,56,450,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="340,107,473,133"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="525,5,604,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="521,56,608,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="656,56,763,83"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="370,157,443,184"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="351,208,462,235"/>
 </map>
 </div>
 
@@ -486,7 +486,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    tabs_array(i,j,k) -= fac_fus * delta_qi;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    pres_array(i,j,k)  = rho_array(i,j,k) * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * tabs_array(i,j,k)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                         * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * qv_array(i,j,k));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    pres_array(i,j,k) *= 0.01;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">// Cloud water not permitted (freeze to form ice)</span></div>
@@ -498,7 +498,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    tabs_array(i,j,k) += fac_fus * delta_qc;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    pres_array(i,j,k)  = rho_array(i,j,k) * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * tabs_array(i,j,k)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                         * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * qv_array(i,j,k));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    pres_array(i,j,k) *= 0.01;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment">// Mixed cloud phase (split according to omn)</span></div>
@@ -511,7 +511,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    tabs_array(i,j,k) += fac_fus * delta_qc;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    pres_array(i,j,k)  = rho_array(i,j,k) * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * tabs_array(i,j,k)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                         * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * qv_array(i,j,k));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    pres_array(i,j,k) *= 0.01;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
@@ -525,7 +525,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                tabs_array(i,j,k) += fac_cond * delta_qc;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                pres_array(i,j,k)  = rho_array(i,j,k) * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * tabs_array(i,j,k)</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                                     * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * qv_array(i,j,k));</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                pres_array(i,j,k) *= 0.01;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
@@ -546,7 +546,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                                  qn_array  , qt_array);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="comment">//</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="comment">// We cannot blindly relax to qsat, but we can convert qc/qi -&gt; qv.</span></div>
@@ -572,7 +572,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                tabs_array(i,j,k) -= fac_cond * delta_qc + fac_sub * delta_qi;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="comment">// Verify assumption that qv &gt; qsat does not occur</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pres_array(i,j,k), qsatw);</div>
@@ -589,7 +589,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                                      qn_array  , qt_array);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                }</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            }</div>
@@ -600,7 +600,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a2b4ea8a29735038e49703c7f8c1f20c8"><div class="ttname"><a href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a></div><div class="ttdeci">constexpr amrex::Real tbgmax</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:32</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_abf1e890912f1117211516f13b27ed2e8"><div class="ttname"><a href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a></div><div class="ttdeci">constexpr amrex::Real tbgmin</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:31</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_acd37b404bbf95073ffef2a1003dc56c5"><div class="ttname"><a href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenPandT(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a8770405e52bfe8feb427eca945370fb2"><div class="ttname"><a href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenTandP(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:163</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac39ef2a869ef543f708d5ed7da4754d3"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsati(amrex::Real t, amrex::Real p, amrex::Real &amp;qsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:152</div></div>
 <div class="ttc" id="aclassSAM_html_a36ee9e1e1a94d22304f46e064f16e11e"><div class="ttname"><a href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">SAM::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:316</div></div>
@@ -627,12 +627,12 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSAM_a48d25f57da2ba1d7ddb503ede0b8d998_cgraph.png" border="0" usemap="#aclassSAM_a48d25f57da2ba1d7ddb503ede0b8d998_cgraph" alt=""/></div>
 <map name="aclassSAM_a48d25f57da2ba1d7ddb503ede0b8d998_cgraph" id="aclassSAM_a48d25f57da2ba1d7ddb503ede0b8d998_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,103,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="179,5,257,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="175,56,261,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5" title=" " alt="" coords="151,107,285,133"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="337,5,416,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="333,56,420,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="468,56,575,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="178,5,257,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="174,56,261,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="151,107,284,133"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="336,5,415,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="332,56,419,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="467,56,573,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1885,7 +1885,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    tabs_array(i,j,k) += fac_fus * ( dqca * (1.0 - omp) - dqia * omp );</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                }</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="comment">//==================================================</span></div>
@@ -1928,7 +1928,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    tabs_array(i,j,k) -= fac_cond * dqpr + fac_sub * (dqps + dqpg);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5">getThgivenPandT</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), rdOcp);</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                }</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            }</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        });</div>
@@ -1954,12 +1954,12 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSAM_a05218bdc2187b79e456ade5b6f5bdb3c_cgraph.png" border="0" usemap="#aclassSAM_a05218bdc2187b79e456ade5b6f5bdb3c_cgraph" alt=""/></div>
 <map name="aclassSAM_a05218bdc2187b79e456ade5b6f5bdb3c_cgraph" id="aclassSAM_a05218bdc2187b79e456ade5b6f5bdb3c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,105,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="181,5,260,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="177,56,264,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#acd37b404bbf95073ffef2a1003dc56c5" title=" " alt="" coords="153,107,288,133"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="340,5,419,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="336,56,423,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="471,56,577,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="181,5,259,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="177,56,263,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="153,107,287,133"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="339,5,417,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="335,56,421,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="469,56,576,83"/>
 </map>
 </div>
 <div class="dynheader">
