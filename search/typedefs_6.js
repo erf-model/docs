@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['layout_5ft_5936',['layout_t',['../ERF__Kokkos__Radiation_8H.html#a9f6de9f44ad035816820dbb492be6cde',1,'ERF_Kokkos_Radiation.H']]]
+  ['kokkosdefaultdevice_5936',['KokkosDefaultDevice',['../ERF__Kokkos_8H.html#a1a1468fd1bcfcd7b8b2a701dc290783b',1,'ERF_Kokkos.H']]],
+  ['kokkoshostdevice_5937',['KokkosHostDevice',['../ERF__Kokkos_8H.html#a878d2d11bb29ca141a1af1674712aa2b',1,'ERF_Kokkos.H']]]
 ];

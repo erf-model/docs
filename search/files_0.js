@@ -147,7 +147,7 @@ var searchData=
   ['erf_5finterpolation_5fweno_5fz_2eh_3391',['ERF_Interpolation_WENO_Z.H',['../ERF__Interpolation__WENO__Z_8H.html',1,'']]],
   ['erf_5fkessler_2ecpp_3392',['ERF_Kessler.cpp',['../ERF__Kessler_8cpp.html',1,'']]],
   ['erf_5fkessler_2eh_3393',['ERF_Kessler.H',['../ERF__Kessler_8H.html',1,'']]],
-  ['erf_5fkokkos_5fradiation_2eh_3394',['ERF_Kokkos_Radiation.H',['../ERF__Kokkos__Radiation_8H.html',1,'']]],
+  ['erf_5fkokkos_2eh_3394',['ERF_Kokkos.H',['../ERF__Kokkos_8H.html',1,'']]],
   ['erf_5flagrangianmicrophysics_2eh_3395',['ERF_LagrangianMicrophysics.H',['../ERF__LagrangianMicrophysics_8H.html',1,'']]],
   ['erf_5flandsurface_2eh_3396',['ERF_LandSurface.H',['../ERF__LandSurface_8H.html',1,'']]],
   ['erf_5fmakebuoyancy_2ecpp_3397',['ERF_MakeBuoyancy.cpp',['../ERF__MakeBuoyancy_8cpp.html',1,'']]],

@@ -82,15 +82,15 @@ var NAVTREEINDEX =
 "classERF.html#af2e4de4eaa0f93149c1aefd58dc7068a",
 "classKessler.html#a48f29ab8e5d1232ee83851fd904e9354",
 "classNOAH.html#a1014c7cdd83cd894e7803484cf452eda",
-"classRadiation.html#a8d541bc029a5c90c83c573ead0f8587c",
+"classRadiation.html#a8d50b34d1c0b2a55755d483ddfb3d059",
 "classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e",
 "classeb__.html#ad75676c73387956ec2319062fc2a7a08",
-"functions_vars_h.html",
-"namespacemodule__model__constants.html#a29ca125c698248ebf50f0501969611c6",
-"namespaceutils.html#afd70db91466598d8531fdb706be70271",
-"structSolverChoice.html#a5a9eef80b6339778c29acb7fb87dd9f1",
-"structWENO7.html#a51bb3b4aafa54396917073e91d53140b",
-"structsurface__temp__donelan.html#a78d9b2c9e7acc59519c2e5d911e2a83d"
+"functions_vars_g.html",
+"namespacemodule__model__constants.html#a27151bc25adc1f076f00e283c8a4950e",
+"namespaceutils.html#ad80671a1807608fc40809f586dcf506a",
+"structSolverChoice.html#a596f061b796ada0389c81a6125150b6e",
+"structWENO7.html#a4e973458a5b3cfab8acf5b22b7617194",
+"structsurface__temp__donelan.html#a236c8eeebacbe63a2d87e101a90c70dc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

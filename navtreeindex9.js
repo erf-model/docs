@@ -247,7 +247,7 @@ var NAVTREEINDEX9 =
 "classRadiation.html#a85660baa46a0ead3c1efefd03ed0db7e":[2,0,59,148],
 "classRadiation.html#a857d3d3e328a7aa621f7b54ef68f4e23":[2,0,59,93],
 "classRadiation.html#a85e5c7a8f70d91d8762cc241dfda691a":[2,0,59,12],
+"classRadiation.html#a8ac5f743e89294cbb7d16e524da5e337":[2,0,59,67],
 "classRadiation.html#a8b6687dc65c676f5cf454b6a15ad93c3":[2,0,59,103],
-"classRadiation.html#a8ccd323c2998505189950ca541ce170f":[2,0,59,116],
-"classRadiation.html#a8d50b34d1c0b2a55755d483ddfb3d059":[2,0,59,18]
+"classRadiation.html#a8ccd323c2998505189950ca541ce170f":[2,0,59,116]
 };

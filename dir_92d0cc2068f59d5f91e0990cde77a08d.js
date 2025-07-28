@@ -1,6 +1,5 @@
-var dir_6ac3198e61556f99812dcb8dcfabb874 =
+var dir_92d0cc2068f59d5f91e0990cde77a08d =
 [
-    [ "ERF_Kokkos_Radiation.H", "ERF__Kokkos__Radiation_8H.html", "ERF__Kokkos__Radiation_8H" ],
     [ "ERF_OrbCosZenith.H", "ERF__OrbCosZenith_8H.html", "ERF__OrbCosZenith_8H" ],
     [ "ERF_Radiation.cpp", "ERF__Radiation_8cpp.html", null ],
     [ "ERF_Radiation.H", "ERF__Radiation_8H.html", [

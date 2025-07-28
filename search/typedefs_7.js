@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['optical_5fprops1_5ft_5937',['optical_props1_t',['../ERF__RRTMGP__Interface_8H.html#a1e789e5a303cc4dc5a2733891f04a7fe',1,'ERF_RRTMGP_Interface.H']]],
-  ['optical_5fprops2_5ft_5938',['optical_props2_t',['../ERF__RRTMGP__Interface_8H.html#a19be83bff60636c680292016c1a14ffe',1,'ERF_RRTMGP_Interface.H']]],
-  ['optical_5fprops_5ft_5939',['optical_props_t',['../ERF__RRTMGP__Interface_8H.html#a24eea71a6b6846337e176073ffd1cc0b',1,'ERF_RRTMGP_Interface.H']]]
+  ['layout_5ft_5938',['layout_t',['../ERF__Kokkos_8H.html#a9f6de9f44ad035816820dbb492be6cde',1,'ERF_Kokkos.H']]]
 ];

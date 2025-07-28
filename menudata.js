@@ -285,6 +285,7 @@ var menudata={children:[
 {text:"f",url:"globals_type.html#index_f"},
 {text:"g",url:"globals_type.html#index_g"},
 {text:"i",url:"globals_type.html#index_i"},
+{text:"k",url:"globals_type.html#index_k"},
 {text:"l",url:"globals_type.html#index_l"},
 {text:"o",url:"globals_type.html#index_o"},
 {text:"p",url:"globals_type.html#index_p"},

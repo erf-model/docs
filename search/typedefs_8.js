@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['planevector_5940',['PlaneVector',['../ERF__NCWpsFile_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;ERF_NCWpsFile.H'],['../ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85',1,'PlaneVector():&#160;ERF_ReadBndryPlanes.H']]],
-  ['pool_5ft_5941',['pool_t',['../ERF__RRTMGP__Interface_8H.html#aa7361dde2a917858928a39f14f7fbf89',1,'ERF_RRTMGP_Interface.H']]]
+  ['optical_5fprops1_5ft_5939',['optical_props1_t',['../ERF__RRTMGP__Interface_8H.html#a2335228956f5a705f37b6a0ebe7d772b',1,'ERF_RRTMGP_Interface.H']]],
+  ['optical_5fprops2_5ft_5940',['optical_props2_t',['../ERF__RRTMGP__Interface_8H.html#a59f6ccba18ab45608124b945cdbd585e',1,'ERF_RRTMGP_Interface.H']]],
+  ['optical_5fprops_5ft_5941',['optical_props_t',['../ERF__RRTMGP__Interface_8H.html#a699710d3987934ca5306477d2134e6c2',1,'ERF_RRTMGP_Interface.H']]]
 ];

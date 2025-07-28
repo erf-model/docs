@@ -67,7 +67,7 @@ var classRadiation =
     [ "m_fixed_orbital_year", "classRadiation.html#ad69a515d735698f357e6ac6f57217610", null ],
     [ "m_fixed_solar_zenith_angle", "classRadiation.html#acc0c682a620aa2482d5aee32fa68c400", null ],
     [ "m_fixed_total_solar_irradiance", "classRadiation.html#a733f8e7791dc37aa6a97de6e46cac30e", null ],
-    [ "m_gas_concs", "classRadiation.html#aaa4a671b6c8e463564e3222e772b4c6b", null ],
+    [ "m_gas_concs", "classRadiation.html#a8ac5f743e89294cbb7d16e524da5e337", null ],
     [ "m_gas_mol_weights", "classRadiation.html#a1a62ddc85106863b0a54c9cad8aff995", null ],
     [ "m_gas_names", "classRadiation.html#adcc5d2723f47737e8cef39b1bf9c0bda", null ],
     [ "m_geom", "classRadiation.html#ae5477e7b80b52cebf89ec3b8bdce0f3c", null ],

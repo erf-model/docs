@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xdir_5954',['XDir',['../ERF__DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f',1,'ERF_DirectionSelector.H']]]
+  ['view_5ft_5953',['view_t',['../ERF__RRTMGP__Interface_8H.html#ab2b94ab782c080b74717ae70f40fcf94',1,'ERF_RRTMGP_Interface.H']]]
 ];
