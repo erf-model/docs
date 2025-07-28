@@ -1,7 +1,7 @@
 var classRadiation =
 [
     [ "Radiation", "classRadiation.html#a24e38c9089cbbec5e990a86b52196b41", null ],
-    [ "~Radiation", "classRadiation.html#acde23acb9e9f7061d40634fbc24f330d", null ],
+    [ "~Radiation", "classRadiation.html#ab612392d4d1557339c9975ca73b34d10", null ],
     [ "alloc_buffers", "classRadiation.html#af93105fafe4abf6f923848e1061e3811", null ],
     [ "dealloc_buffers", "classRadiation.html#a1a0d0034fb8ba78ab59ecbcbb86c3c71", null ],
     [ "finalize_impl", "classRadiation.html#aabe9f54354a59aeb80f9f65bb3383298", null ],
