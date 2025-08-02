@@ -132,7 +132,7 @@ Variables</h2></td></tr>
 <tr class="separator:a2987796b2d40db9890dd3497cc7e20ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2c81fa9e8171e1116919f8b1ae0b28"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> = ubound(domain)</td></tr>
 <tr class="separator:a0f2c81fa9e8171e1116919f8b1ae0b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c210d1bb758efced9a042135e527691"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__DiffSetup_8H.html#a5c210d1bb758efced9a042135e527691">l_inv_theta0</a> = 1.0 / turbChoice.theta_ref</td></tr>
+<tr class="memitem:a5c210d1bb758efced9a042135e527691"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__DiffSetup_8H.html#a5c210d1bb758efced9a042135e527691">l_inv_theta0</a> = (turbChoice.theta_ref &gt; 0) ? 1.0 / turbChoice.theta_ref : 1.0</td></tr>
 <tr class="separator:a5c210d1bb758efced9a042135e527691"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96afe14234ec5c4b9fc00811d9d87bfd"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__DiffSetup_8H.html#a96afe14234ec5c4b9fc00811d9d87bfd">l_abs_g</a> = std::abs(grav_gpu[2])</td></tr>
 <tr class="separator:a96afe14234ec5c4b9fc00811d9d87bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -670,7 +670,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Real l_inv_theta0 = 1.0 / turbChoice.theta_ref</td>
+          <td class="memname">Real l_inv_theta0 = (turbChoice.theta_ref &gt; 0) ? 1.0 / turbChoice.theta_ref : 1.0</td>
         </tr>
       </table>
 </div><div class="memdoc">
