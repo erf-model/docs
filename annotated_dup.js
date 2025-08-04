@@ -56,7 +56,7 @@ var annotated_dup =
     [ "MYNNLevel25", "structMYNNLevel25.html", "structMYNNLevel25" ],
     [ "MYNNPBLH", "structMYNNPBLH.html", "structMYNNPBLH" ],
     [ "NDArray", "structNDArray.html", "structNDArray" ],
-    [ "NOAH", "classNOAH.html", "classNOAH" ],
+    [ "NOAHMP", "classNOAHMP.html", "classNOAHMP" ],
     [ "NullMoist", "classNullMoist.html", "classNullMoist" ],
     [ "NullSurf", "classNullSurf.html", "classNullSurf" ],
     [ "NullWindFarm", "classNullWindFarm.html", "classNullWindFarm" ],
