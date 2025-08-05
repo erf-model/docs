@@ -232,7 +232,7 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">        /*! Initialize particles in domain */</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> InitializeParticles (<span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; a_ptr = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> InitializeParticles (<span class="keyword">const</span> amrex::Real time, <span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; a_ptr = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">        /*! Evolve particles for one time step */</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> EvolveParticles (   <span class="keywordtype">int</span>,</div>
@@ -318,18 +318,22 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        std::string m_initialization_type;  <span class="comment">/*!&lt; initial particle distribution type */</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordtype">int</span> m_ppc_init;                     <span class="comment">/*!&lt; initial number of particles per cell */</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordtype">bool</span> m_stable_redistribute;         <span class="comment">/*!&lt; use stable redistribute for deterministic simulations */</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">        /*! read inputs from file */</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readInputs ();</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordtype">bool</span> place_randomly_in_cells; <span class="comment">/*!&lt; place particles at random positions? */</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;};</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        amrex::Real m_start_time;           <span class="comment">/*!&lt; particles will only be initialized if time &gt;= m_start_time */</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordtype">bool</span> m_initialized = <span class="keyword">false</span>;         <span class="comment">/*!&lt; have the particles been initialized */</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordtype">bool</span> m_stable_redistribute;         <span class="comment">/*!&lt; use stable redistribute for deterministic simulations */</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">        /*! read inputs from file */</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readInputs ();</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordtype">bool</span> place_randomly_in_cells; <span class="comment">/*!&lt; place particles at random positions? */</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;};</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
