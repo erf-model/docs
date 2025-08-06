@@ -168,8 +168,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1d0b1a97633a1a94caf6f6d4ddf416ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3394d69e77a8909b373ad1f709755cef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef">make_SurfaceLayer_at_level</a> (const int &amp;lev, int nlevs, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;mfv, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Theta_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qv_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qr_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, amrex::MultiFab *Hwave, amrex::MultiFab *Lwave, amrex::MultiFab *eddyDiffs, amrex::Vector&lt; amrex::MultiFab * &gt; lsm_data, amrex::Vector&lt; amrex::MultiFab * &gt; lsm_flux, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;sst_lev, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;tsk_lev, amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt;&gt; &amp;lmask_lev)</td></tr>
 <tr class="separator:a3394d69e77a8909b373ad1f709755cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a618cbcaab47d17156614b2e8ebf36e8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a618cbcaab47d17156614b2e8ebf36e8e">update_fluxes</a> (const int &amp;lev, const amrex::Real &amp;time, int max_iters=500)</td></tr>
-<tr class="separator:a618cbcaab47d17156614b2e8ebf36e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72491761271226a12f3c63a5a3fbd65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#af72491761271226a12f3c63a5a3fbd65">update_fluxes</a> (const int &amp;lev, const amrex::Real &amp;time, int max_iters=100)</td></tr>
+<tr class="separator:af72491761271226a12f3c63a5a3fbd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99d0e58548e1de65d32f8a0d14836216"><td class="memTemplParams" colspan="2">template&lt;typename FluxIter &gt; </td></tr>
 <tr class="memitem:a99d0e58548e1de65d32f8a0d14836216"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a99d0e58548e1de65d32f8a0d14836216">compute_fluxes</a> (const int &amp;lev, const int &amp;max_iters, const FluxIter &amp;most_flux, bool is_land)</td></tr>
 <tr class="separator:a99d0e58548e1de65d32f8a0d14836216"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2031,10 +2031,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
 <div class="ttc" id="aclassSurfaceLayer_html_a0988970eee96a31040dc991bdd7fd9e4"><div class="ttname"><a href="classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4">SurfaceLayer::specified_rho_surf</a></div><div class="ttdeci">bool specified_rho_surf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:577</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a5bc864f0c26c9488d5f84fc7bd89947f"><div class="ttname"><a href="classSurfaceLayer.html#a5bc864f0c26c9488d5f84fc7bd89947f">SurfaceLayer::compute_SurfaceLayer_bcs</a></div><div class="ttdeci">void compute_SurfaceLayer_bcs(const int &amp;lev, amrex::Vector&lt; const amrex::MultiFab * &gt; mfs, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_lev, amrex::MultiFab *xheat_flux, amrex::MultiFab *yheat_flux, amrex::MultiFab *zheat_flux, amrex::MultiFab *xqv_flux, amrex::MultiFab *yqv_flux, amrex::MultiFab *zqv_flux, const amrex::MultiFab *z_phys, const FluxCalc &amp;flux_comp)</div></div>
-<div class="ttc" id="astructcustom__flux_html"><div class="ttname"><a href="structcustom__flux.html">custom_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1869</div></div>
-<div class="ttc" id="astructdonelan__flux_html"><div class="ttname"><a href="structdonelan__flux.html">donelan_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1737</div></div>
-<div class="ttc" id="astructmoeng__flux_html"><div class="ttname"><a href="structmoeng__flux.html">moeng_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1574</div></div>
-<div class="ttc" id="astructrotate__flux_html"><div class="ttname"><a href="structrotate__flux.html">rotate_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1986</div></div>
+<div class="ttc" id="astructcustom__flux_html"><div class="ttname"><a href="structcustom__flux.html">custom_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2061</div></div>
+<div class="ttc" id="astructdonelan__flux_html"><div class="ttname"><a href="structdonelan__flux.html">donelan_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1929</div></div>
+<div class="ttc" id="astructmoeng__flux_html"><div class="ttname"><a href="structmoeng__flux.html">moeng_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1766</div></div>
+<div class="ttc" id="astructrotate__flux_html"><div class="ttname"><a href="structrotate__flux.html">rotate_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2178</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2537,8 +2537,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a618cbcaab47d17156614b2e8ebf36e8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a618cbcaab47d17156614b2e8ebf36e8e">&#9670;&nbsp;</a></span>update_fluxes()</h2>
+<a id="af72491761271226a12f3c63a5a3fbd65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72491761271226a12f3c63a5a3fbd65">&#9670;&nbsp;</a></span>update_fluxes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2559,7 +2559,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>max_iters</em> = <code>500</code>&#160;</td>
+          <td class="paramname"><em>max_iters</em> = <code>100</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -2734,21 +2734,21 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassSurfaceLayer_html_a48710baca749922263cbc9e3e7a06c75"><div class="ttname"><a href="classSurfaceLayer.html#a48710baca749922263cbc9e3e7a06c75">SurfaceLayer::get_lsm_tsurf</a></div><div class="ttdeci">void get_lsm_tsurf(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:525</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a99d0e58548e1de65d32f8a0d14836216"><div class="ttname"><a href="classSurfaceLayer.html#a99d0e58548e1de65d32f8a0d14836216">SurfaceLayer::compute_fluxes</a></div><div class="ttdeci">void compute_fluxes(const int &amp;lev, const int &amp;max_iters, const FluxIter &amp;most_flux, bool is_land)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:178</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_aabacea8c1fa769ca8f42c3adf448c015"><div class="ttname"><a href="classSurfaceLayer.html#aabacea8c1fa769ca8f42c3adf448c015">SurfaceLayer::fill_tsurf_with_sst_and_tsk</a></div><div class="ttdeci">void fill_tsurf_with_sst_and_tsk(const int &amp;lev, const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:452</div></div>
-<div class="ttc" id="astructadiabatic__charnock_html"><div class="ttname"><a href="structadiabatic__charnock.html">adiabatic_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:141</div></div>
-<div class="ttc" id="astructadiabatic__donelan_html"><div class="ttname"><a href="structadiabatic__donelan.html">adiabatic_donelan</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:283</div></div>
-<div class="ttc" id="astructadiabatic__mod__charnock_html"><div class="ttname"><a href="structadiabatic__mod__charnock.html">adiabatic_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:216</div></div>
-<div class="ttc" id="astructadiabatic__wave__coupled_html"><div class="ttname"><a href="structadiabatic__wave__coupled.html">adiabatic_wave_coupled</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:350</div></div>
-<div class="ttc" id="astructadiabatic_html"><div class="ttname"><a href="structadiabatic.html">adiabatic</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:91</div></div>
-<div class="ttc" id="astructsurface__flux__charnock_html"><div class="ttname"><a href="structsurface__flux__charnock.html">surface_flux_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:526</div></div>
-<div class="ttc" id="astructsurface__flux__donelan_html"><div class="ttname"><a href="structsurface__flux__donelan.html">surface_flux_donelan</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:752</div></div>
-<div class="ttc" id="astructsurface__flux__mod__charnock_html"><div class="ttname"><a href="structsurface__flux__mod__charnock.html">surface_flux_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:643</div></div>
-<div class="ttc" id="astructsurface__flux__wave__coupled_html"><div class="ttname"><a href="structsurface__flux__wave__coupled.html">surface_flux_wave_coupled</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:858</div></div>
-<div class="ttc" id="astructsurface__flux_html"><div class="ttname"><a href="structsurface__flux.html">surface_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:423</div></div>
-<div class="ttc" id="astructsurface__temp__charnock_html"><div class="ttname"><a href="structsurface__temp__charnock.html">surface_temp_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1087</div></div>
-<div class="ttc" id="astructsurface__temp__donelan_html"><div class="ttname"><a href="structsurface__temp__donelan.html">surface_temp_donelan</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1333</div></div>
-<div class="ttc" id="astructsurface__temp__mod__charnock_html"><div class="ttname"><a href="structsurface__temp__mod__charnock.html">surface_temp_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1214</div></div>
-<div class="ttc" id="astructsurface__temp__wave__coupled_html"><div class="ttname"><a href="structsurface__temp__wave__coupled.html">surface_temp_wave_coupled</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1449</div></div>
-<div class="ttc" id="astructsurface__temp_html"><div class="ttname"><a href="structsurface__temp.html">surface_temp</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:973</div></div>
+<div class="ttc" id="astructadiabatic__charnock_html"><div class="ttname"><a href="structadiabatic__charnock.html">adiabatic_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:187</div></div>
+<div class="ttc" id="astructadiabatic__donelan_html"><div class="ttname"><a href="structadiabatic__donelan.html">adiabatic_donelan</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:357</div></div>
+<div class="ttc" id="astructadiabatic__mod__charnock_html"><div class="ttname"><a href="structadiabatic__mod__charnock.html">adiabatic_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:276</div></div>
+<div class="ttc" id="astructadiabatic__wave__coupled_html"><div class="ttname"><a href="structadiabatic__wave__coupled.html">adiabatic_wave_coupled</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:427</div></div>
+<div class="ttc" id="astructadiabatic_html"><div class="ttname"><a href="structadiabatic.html">adiabatic</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:137</div></div>
+<div class="ttc" id="astructsurface__flux__charnock_html"><div class="ttname"><a href="structsurface__flux__charnock.html">surface_flux_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:608</div></div>
+<div class="ttc" id="astructsurface__flux__donelan_html"><div class="ttname"><a href="structsurface__flux__donelan.html">surface_flux_donelan</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:838</div></div>
+<div class="ttc" id="astructsurface__flux__mod__charnock_html"><div class="ttname"><a href="structsurface__flux__mod__charnock.html">surface_flux_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:727</div></div>
+<div class="ttc" id="astructsurface__flux__wave__coupled_html"><div class="ttname"><a href="structsurface__flux__wave__coupled.html">surface_flux_wave_coupled</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:946</div></div>
+<div class="ttc" id="astructsurface__flux_html"><div class="ttname"><a href="structsurface__flux.html">surface_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:503</div></div>
+<div class="ttc" id="astructsurface__temp__charnock_html"><div class="ttname"><a href="structsurface__temp__charnock.html">surface_temp_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1197</div></div>
+<div class="ttc" id="astructsurface__temp__donelan_html"><div class="ttname"><a href="structsurface__temp__donelan.html">surface_temp_donelan</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1521</div></div>
+<div class="ttc" id="astructsurface__temp__mod__charnock_html"><div class="ttname"><a href="structsurface__temp__mod__charnock.html">surface_temp_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1363</div></div>
+<div class="ttc" id="astructsurface__temp__wave__coupled_html"><div class="ttname"><a href="structsurface__temp__wave__coupled.html">surface_temp_wave_coupled</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1639</div></div>
+<div class="ttc" id="astructsurface__temp_html"><div class="ttname"><a href="structsurface__temp.html">surface_temp</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1063</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -54,7 +54,7 @@ var classSurfaceLayer =
     [ "lmask_min_reduce", "classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424", null ],
     [ "make_SurfaceLayer_at_level", "classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef", null ],
     [ "read_custom_roughness", "classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b", null ],
-    [ "update_fluxes", "classSurfaceLayer.html#a618cbcaab47d17156614b2e8ebf36e8e", null ],
+    [ "update_fluxes", "classSurfaceLayer.html#af72491761271226a12f3c63a5a3fbd65", null ],
     [ "update_mac_ptrs", "classSurfaceLayer.html#a325a1c27c6de3c673aa25ddf256eab7b", null ],
     [ "update_pblh", "classSurfaceLayer.html#a281f30a97e4623fa832dd826b055282f", null ],
     [ "update_surf_temp", "classSurfaceLayer.html#a1ede1b55e3f50c6b98948cf256cb216e", null ],
