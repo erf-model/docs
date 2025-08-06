@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('ERF__ParticleData_8H_source.html','');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">for</span> (ParticlesNamesVector::size_type i = 0; i &lt; m_namelist.size(); i++) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keyword">auto</span> name( m_namelist[i] );</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keyword">auto</span> particles( m_particle_species.at(name) );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    particles-&gt;Checkpoint( a_fname, name, <span class="keyword">true</span>, particles-&gt;varNames() );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    particles-&gt;WritePlotFile(a_fname, name, <span class="keyword">true</span>, particles-&gt;varNames());</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
