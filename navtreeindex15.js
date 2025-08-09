@@ -1,6 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"namespacerrtmgp.html#a83b2e0892e5b475f2f464b4285edfe47":[1,0,24,21],
 "namespacerrtmgp.html#a88d561ab08b6cffb186a838b5840b274":[1,0,24,15],
 "namespacerrtmgp.html#a8f137c1917fdc1c4dfd576fcb672e01a":[1,0,24,25],
 "namespacerrtmgp.html#a981dec0614426817d7f129461a704ee2":[1,0,24,19],
@@ -249,5 +248,6 @@ var NAVTREEINDEX15 =
 "structSolverChoice.html#a31c93846e0129221632347d2378e881d":[2,0,69,56],
 "structSolverChoice.html#a31e016e3da7c175ac02427767286bc42":[2,0,69,4],
 "structSolverChoice.html#a34c427126677860aa8acad633e6fb2be":[2,0,69,89],
-"structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095":[2,0,69,29]
+"structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095":[2,0,69,29],
+"structSolverChoice.html#a39ced5a090f246f82bdec3f5d288fcbc":[2,0,69,19]
 };

@@ -29,7 +29,7 @@ var classSurfaceLayer =
       [ "HEAT_FLUX", "classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04ac03b743c56d9316fbd3d327453b22226", null ],
       [ "SURFACE_TEMPERATURE", "classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1", null ]
     ] ],
-    [ "SurfaceLayer", "classSurfaceLayer.html#a1d0b1a97633a1a94caf6f6d4ddf416ed", null ],
+    [ "SurfaceLayer", "classSurfaceLayer.html#af1a12d906f3d45cd32e5063d7bc119da", null ],
     [ "compute_fluxes", "classSurfaceLayer.html#a99d0e58548e1de65d32f8a0d14836216", null ],
     [ "compute_pblh", "classSurfaceLayer.html#a33bed820551a152ab22cf2ebd34c7fb6", null ],
     [ "compute_pblh", "classSurfaceLayer.html#a708f91183578ca06644573cbcbc3bcc2", null ],
@@ -80,7 +80,6 @@ var classSurfaceLayer =
     [ "m_ma", "classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a", null ],
     [ "m_rotate", "classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40", null ],
     [ "m_sst_lev", "classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee", null ],
-    [ "m_start_bdy_time", "classSurfaceLayer.html#a3d273fcb243e59554ee88da4e346562c", null ],
     [ "m_tsk_lev", "classSurfaceLayer.html#ab789868247235aeb66757e34685008df", null ],
     [ "m_var_z0", "classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c", null ],
     [ "moist_type", "classSurfaceLayer.html#ace92867e82baf1acb7b6a5d3deb30ac1", null ],
