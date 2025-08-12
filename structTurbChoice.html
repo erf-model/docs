@@ -428,8 +428,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Handle 2-D Smag</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Smagorinsky2D) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> = LESType::Smagorinsky;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">smag2d</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> = LESType::Smagorinsky;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">smag2d</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Which RANS closure?</span></div>
@@ -437,7 +437,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;rans_type&quot;</span>, <a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a>, lev, max_level);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None) &amp;&amp; (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None)) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      amrex::Error(<span class="stringliteral">&quot;Hybrid RANS-LES not implemented&quot;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        amrex::Error(<span class="stringliteral">&quot;Hybrid RANS-LES not implemented&quot;</span>);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Which PBL Closure</span></div>
