@@ -264,7 +264,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Box bounding_region = (lev == 0) ? pf_data.probDomain(lev) : ba.minimalBox();</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="comment">// We assume only one &quot;subdomain&quot; at each level</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">int</span> which = lev;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">int</span> which = 0;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="ERF__PlotfileToNetCDF_8cpp.html#ad2c034bbf21c7d629b5798af8042d8e1">writeNCPlotFile</a>(lev, which, iFile, GetVecOfConstPtrs(mfvec), varnames, istep,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        pf_data.probLo(), pf_data.probHi(), pf_data.cellSize(lev), bounding_region, time, start_bdy_time);</div>
