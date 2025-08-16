@@ -89,8 +89,8 @@ var NAVTREEINDEX =
 "namespacemodule__model__constants.html#a00368b9ce5c58c66771670d6503119de",
 "namespacerrtmgp.html#a83b2e0892e5b475f2f464b4285edfe47",
 "structSolverChoice.html#a39ced5a090f246f82bdec3f5d288fcbc",
-"structWENO3.html#ae4d26c4b8879d4699cf6913e95002b6c",
-"structsurface__temp.html"
+"structWENO3.html#abb065bae6e4d07b414efe4edc7aa4315",
+"structsurface__flux__wave__coupled.html#af50227cf121b2114604664b5e16e17b6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -84,6 +84,7 @@ var structSolverChoice =
     [ "use_num_diff", "structSolverChoice.html#a8d039800497a1e5084afeef94d367932", null ],
     [ "use_real_bcs", "structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7", null ],
     [ "use_rotate_surface_flux", "structSolverChoice.html#ae6a9fda53f08dbed04adb4c63dc3176e", null ],
+    [ "use_shoc", "structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1", null ],
     [ "variable_coriolis", "structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf", null ],
     [ "windfarm_airfoil_tables", "structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412", null ],
     [ "windfarm_blade_table", "structSolverChoice.html#aa401d2a5d51cb382e0b6e18502d961a9", null ],
