@@ -9,6 +9,7 @@ var hierarchy =
     [ "amrex::AmrCore", null, [
       [ "ERF", "classERF.html", null ]
     ] ],
+    [ "SHOCInterface::Buffer", "structSHOCInterface_1_1Buffer.html", null ],
     [ "CENTERED2", "structCENTERED2.html", null ],
     [ "CENTERED4", "structCENTERED4.html", null ],
     [ "CENTERED6", "structCENTERED6.html", null ],
@@ -85,6 +86,9 @@ var hierarchy =
     [ "rotate_flux", "structrotate__flux.html", null ],
     [ "SampleData", "classSampleData.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
+    [ "SHOCInterface", "classSHOCInterface.html", null ],
+    [ "SHOCInterface::SHOCPostprocess", "structSHOCInterface_1_1SHOCPostprocess.html", null ],
+    [ "SHOCInterface::SHOCPreprocess", "structSHOCInterface_1_1SHOCPreprocess.html", null ],
     [ "similarity_funs", "structsimilarity__funs.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "SpongeChoice", "structSpongeChoice.html", null ],

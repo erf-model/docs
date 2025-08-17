@@ -1,16 +1,9 @@
 var searchData=
 [
-  ['eb_5f_3150',['eb_',['../classeb__.html',1,'']]],
-  ['eb_5faux_5f_3151',['eb_aux_',['../classeb__aux__.html',1,'']]],
-  ['eb_5fcut_5fcell_5f_3152',['eb_cut_cell_',['../classeb__cut__cell__.html',1,'']]],
-  ['ebtopvd_3153',['EBToPVD',['../classeb___1_1EBToPVD.html',1,'eb_']]],
-  ['erf_3154',['ERF',['../classERF.html',1,'']]],
-  ['erffillpatcher_3155',['ERFFillPatcher',['../classERFFillPatcher.html',1,'']]],
-  ['erfphysbcfunct_5fbase_3156',['ERFPhysBCFunct_base',['../classERFPhysBCFunct__base.html',1,'']]],
-  ['erfphysbcfunct_5fcons_3157',['ERFPhysBCFunct_cons',['../classERFPhysBCFunct__cons.html',1,'']]],
-  ['erfphysbcfunct_5fu_3158',['ERFPhysBCFunct_u',['../classERFPhysBCFunct__u.html',1,'']]],
-  ['erfphysbcfunct_5fv_3159',['ERFPhysBCFunct_v',['../classERFPhysBCFunct__v.html',1,'']]],
-  ['erfphysbcfunct_5fw_3160',['ERFPhysBCFunct_w',['../classERFPhysBCFunct__w.html',1,'']]],
-  ['eulerianmicrophysics_3161',['EulerianMicrophysics',['../classEulerianMicrophysics.html',1,'']]],
-  ['ewp_3162',['EWP',['../classEWP.html',1,'']]]
+  ['diffchoice_3263',['DiffChoice',['../structDiffChoice.html',1,'']]],
+  ['directionselector_3264',['DirectionSelector',['../structDirectionSelector.html',1,'']]],
+  ['directionselector_3c_200_20_3e_3265',['DirectionSelector&lt; 0 &gt;',['../structDirectionSelector_3_010_01_4.html',1,'']]],
+  ['directionselector_3c_201_20_3e_3266',['DirectionSelector&lt; 1 &gt;',['../structDirectionSelector_3_011_01_4.html',1,'']]],
+  ['directionselector_3c_202_20_3e_3267',['DirectionSelector&lt; 2 &gt;',['../structDirectionSelector_3_012_01_4.html',1,'']]],
+  ['donelan_5fflux_3268',['donelan_flux',['../structdonelan__flux.html',1,'']]]
 ];
