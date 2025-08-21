@@ -2,7 +2,7 @@ var structSHOCInterface_1_1SHOCPreprocess =
 [
     [ "SHOCPreprocess", "structSHOCInterface_1_1SHOCPreprocess.html#a757b3c41c2eea665846153b93a5c1ded", null ],
     [ "operator()", "structSHOCInterface_1_1SHOCPreprocess.html#a7bcb09bbe352bd2f9a31eee84ca0fe54", null ],
-    [ "set_variables", "structSHOCInterface_1_1SHOCPreprocess.html#af3b070d21d472756981fc96c8a1737a1", null ],
+    [ "set_variables", "structSHOCInterface_1_1SHOCPreprocess.html#a2099b50f90938f3b90e7df92cf25d3d0", null ],
     [ "cldfrac_liq", "structSHOCInterface_1_1SHOCPreprocess.html#a6ae0d19e928a3ba228ff6f378f9e52ad", null ],
     [ "cldfrac_liq_prev", "structSHOCInterface_1_1SHOCPreprocess.html#a25341d0585271949400aa9269194f40b", null ],
     [ "cloud_frac", "structSHOCInterface_1_1SHOCPreprocess.html#aa1d22767d3dca741d1d2e74c2318e919", null ],
@@ -39,7 +39,7 @@ var structSHOCInterface_1_1SHOCPreprocess =
     [ "wtracer_sfc", "structSHOCInterface_1_1SHOCPreprocess.html#a82146ba5b35cf820373f107d5945de3d", null ],
     [ "z_int", "structSHOCInterface_1_1SHOCPreprocess.html#acc952dc0b6d5bc1d51595d0d70958bbb", null ],
     [ "z_mid", "structSHOCInterface_1_1SHOCPreprocess.html#a874197013d59da0aa20946c48a78ba52", null ],
-    [ "z_surf", "structSHOCInterface_1_1SHOCPreprocess.html#aa263fb92915f266e1431edab39a867dd", null ],
+    [ "z_surf", "structSHOCInterface_1_1SHOCPreprocess.html#a72ca2c9ab2705174a3b2cdeaa739ffb5", null ],
     [ "zi_grid", "structSHOCInterface_1_1SHOCPreprocess.html#ae749c1543848862060836ddf961a0aa6", null ],
     [ "zt_grid", "structSHOCInterface_1_1SHOCPreprocess.html#a61eec511d6d6c29e3479ddb6b6a8b2b9", null ]
 ];

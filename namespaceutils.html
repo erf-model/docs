@@ -203,18 +203,20 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  amrex::Real np_dot_ne = a_plane_normal.dotProduct(edge_normal);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> ( amrex::Math::abs(np_dot_ne) &lt; std::numeric_limits&lt;amrex::Real&gt;::min() )</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  { <span class="keywordflow">return</span> 0; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  a_intersection_dist = a_plane_normal.dotProduct(a_plane_point - a_edge_point0);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  a_intersection_dist /= np_dot_ne;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  a_intersection_point = a_edge_point0 + a_intersection_dist*edge_normal;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">if</span> (0. &lt;= a_intersection_dist &amp;&amp; a_intersection_dist &lt;= edge_length) { <span class="keywordflow">return</span> 1;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// if ( amrex::Math::abs(np_dot_ne) &lt; std::numeric_limits&lt;amrex::Real&gt;::min() )</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span> ( amrex::Math::abs(np_dot_ne) &lt; 10.0 * <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>() )</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  a_intersection_dist = a_plane_normal.dotProduct(a_plane_point - a_edge_point0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  a_intersection_dist /= np_dot_ne;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  a_intersection_point = a_edge_point0 + a_intersection_dist*edge_normal;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (0. &lt;= a_intersection_dist &amp;&amp; a_intersection_dist &lt;= edge_length) { <span class="keywordflow">return</span> 1;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#ab1b3165bf53dae6da4930eacbe60652f">eb_cut_cell_::calc_edge_intersections()</a>.</p>
 <div class="dynheader">

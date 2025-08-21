@@ -339,7 +339,6 @@ var namespaces_dup =
       [ "k_dist_sw_k", "namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630", null ],
       [ "kokkos_mem_pool", "namespacerrtmgp.html#a6f617b76fca562b13696bc6bb84fcddc", null ]
     ] ],
-    [ "scream", "namespacescream.html", "namespacescream" ],
     [ "utils", "namespaceutils.html", [
       [ "avg_h", "namespaceutils.html#afd70db91466598d8531fdb706be70271", null ],
       [ "intersect_plane_edge", "namespaceutils.html#a96faac6dfc503c947d30616ef766d77c", null ],
