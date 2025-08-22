@@ -48,7 +48,7 @@ var classSurfaceLayer =
     [ "get_t_surf", "classSurfaceLayer.html#ae704d3a4c60a6ade525410294e886da1", null ],
     [ "get_u_star", "classSurfaceLayer.html#a6d9a5d774162242d94bc6ee3d4cc8a76", null ],
     [ "get_w_star", "classSurfaceLayer.html#a1e41539f9a2484694bac2674921704f9", null ],
-    [ "get_z0", "classSurfaceLayer.html#ae3ad1ac16213ad645fdfd888fe0f468c", null ],
+    [ "get_z0", "classSurfaceLayer.html#ab4a02e8a233917356742b1c036637474", null ],
     [ "get_zref", "classSurfaceLayer.html#af30f77d80439df3dbcb34c7dacbdd3d2", null ],
     [ "have_variable_sea_roughness", "classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d", null ],
     [ "impose_SurfaceLayer_bcs", "classSurfaceLayer.html#ad71d5b33900c768b3e3884898d468e01", null ],
@@ -104,5 +104,5 @@ var classSurfaceLayer =
     [ "use_moisture", "classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3", null ],
     [ "w_star", "classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3", null ],
     [ "z0_const", "classSurfaceLayer.html#a2ac3aa7e042bc2f249101e7c70ce6dd0", null ],
-    [ "z_0", "classSurfaceLayer.html#a2df4db346bc3b44cb6c42cb49be2ca7d", null ]
+    [ "z_0", "classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2", null ]
 ];

@@ -65,7 +65,7 @@ var searchData=
   ['get_5fwavelength_5findex_4087',['get_wavelength_index',['../namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c',1,'rrtmgp']]],
   ['get_5fwavelength_5findex_5flw_4088',['get_wavelength_index_lw',['../namespacerrtmgp.html#a36564577866391c3de00afc0f6c3e0fe',1,'rrtmgp']]],
   ['get_5fwavelength_5findex_5fsw_4089',['get_wavelength_index_sw',['../namespacerrtmgp.html#a28e3587b50833fd1f2c5a910b1392c43',1,'rrtmgp']]],
-  ['get_5fz0_4090',['get_z0',['../classSurfaceLayer.html#ae3ad1ac16213ad645fdfd888fe0f468c',1,'SurfaceLayer']]],
+  ['get_5fz0_4090',['get_z0',['../classSurfaceLayer.html#ab4a02e8a233917356742b1c036637474',1,'SurfaceLayer']]],
   ['get_5fzref_4091',['get_zref',['../classSurfaceLayer.html#af30f77d80439df3dbcb34c7dacbdd3d2',1,'SurfaceLayer::get_zref()'],['../classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174',1,'MOSTAverage::get_zref()']]],
   ['getadvfluxreg_4092',['getAdvFluxReg',['../classERF.html#a4d6d990d8111c170692b1e9cc0e918b8',1,'ERF']]],
   ['getareafrac_4093',['getAreaFrac',['../classeb__aux__.html#a06b985415165114100c0cf6aaa521f9b',1,'eb_aux_']]],

@@ -100,7 +100,7 @@ Include dependency graph for ERF_ComputeDiffusivityYSU.cpp:</div>
 <div class="center"><img src="ERF__ComputeDiffusivityYSU_8cpp__incl.png" border="0" usemap="#aSource_2PBL_2ERF__ComputeDiffusivityYSU_8cpp" alt=""/></div>
 <map name="aSource_2PBL_2ERF__ComputeDiffusivityYSU_8cpp" id="aSource_2PBL_2ERF__ComputeDiffusivityYSU_8cpp">
 <area shape="rect" title=" " alt="" coords="1729,5,1985,47"/>
-<area shape="rect" href="ERF__SurfaceLayer_8H.html" title=" " alt="" coords="951,169,1103,196"/>
+<area shape="rect" href="ERF__SurfaceLayer_8H.html" title=" " alt="" coords="941,169,1093,196"/>
 <area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="352,468,485,495"/>
 <area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="3251,393,3384,420"/>
 <area shape="rect" href="ERF__DirectionSelector_8H.html" title=" " alt="" coords="2049,95,2228,121"/>
@@ -111,7 +111,7 @@ Include dependency graph for ERF_ComputeDiffusivityYSU.cpp:</div>
 <area shape="rect" title=" " alt="" coords="791,319,947,345"/>
 <area shape="rect" title=" " alt="" coords="1057,393,1202,420"/>
 <area shape="rect" title=" " alt="" coords="972,319,1121,345"/>
-<area shape="rect" title=" " alt="" coords="944,244,1109,271"/>
+<area shape="rect" title=" " alt="" coords="925,244,1110,271"/>
 <area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1073,468,1226,495"/>
 <area shape="rect" href="ERF__MOSTAverage_8H.html" title=" " alt="" coords="1134,244,1293,271"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="1297,319,1457,345"/>
@@ -282,7 +282,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; uvel = <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; vvel = <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; z0_arr        = SurfLayer-&gt;get_z0(level)-&gt;const_array();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; z0_arr        = SurfLayer-&gt;get_z0(level)-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ws10av_arr    = SurfLayer-&gt;get_mac_avg(level,5)-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; t10av_arr     = SurfLayer-&gt;get_mac_avg(level,2)-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; t_surf_arr    = SurfLayer-&gt;get_t_surf(level)-&gt;const_array(mfi);</div>
@@ -515,7 +515,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructTurbChoice_html_ac49c18b95424fe04c6a7c8eec934ec36"><div class="ttname"><a href="structTurbChoice.html#ac49c18b95424fe04c6a7c8eec934ec36">TurbChoice::pbl_ysu_force_over_water</a></div><div class="ttdeci">bool pbl_ysu_force_over_water</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:392</div></div>
 <div class="ttc" id="astructTurbChoice_html_af274e04335b259bb7b35f7c836f8310f"><div class="ttname"><a href="structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f">TurbChoice::pbl_ysu_unst_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_ysu_unst_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:397</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae12ec663c91831742bfdc87d17498a5f">ComputeTurbulentViscosity()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c">ComputeTurbulentViscosity()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -536,7 +536,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__ComputeDiffusivityYSU_8cpp_a6f0b40cc12f4e48259a5daff2b51285a_icgraph.png" border="0" usemap="#aERF__ComputeDiffusivityYSU_8cpp_a6f0b40cc12f4e48259a5daff2b51285a_icgraph" alt=""/></div>
 <map name="aERF__ComputeDiffusivityYSU_8cpp_a6f0b40cc12f4e48259a5daff2b51285a_icgraph" id="aERF__ComputeDiffusivityYSU_8cpp_a6f0b40cc12f4e48259a5daff2b51285a_icgraph">
 <area shape="rect" title=" " alt="" coords="461,5,636,32"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ae12ec663c91831742bfdc87d17498a5f" title=" " alt="" coords="213,5,413,32"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c" title=" " alt="" coords="213,5,413,32"/>
 <area shape="rect" href="classERF.html#a96a272defae485c5b83fbc123a631f9f" title=" " alt="" coords="5,5,165,32"/>
 </map>
 </div>
