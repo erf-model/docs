@@ -265,11 +265,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04192"></a><span class="lineno"> 4192</span>&#160;    Print()&lt;&lt;<span class="stringliteral">&quot;reached mynnedmf&quot;</span>&lt;&lt;std::endl;</div>
 <div class="line"><a name="l04193"></a><span class="lineno"> 4193</span>&#160;    {</div>
 <div class="line"><a name="l04194"></a><span class="lineno"> 4194</span>&#160;      <span class="keywordtype">int</span> n=1;</div>
-<div class="line"><a name="l04195"></a><span class="lineno"> 4195</span>&#160;      Real a=1;</div>
-<div class="line"><a name="l04196"></a><span class="lineno"> 4196</span>&#160;      Real b=1;</div>
-<div class="line"><a name="l04197"></a><span class="lineno"> 4197</span>&#160;      Real c=1;</div>
-<div class="line"><a name="l04198"></a><span class="lineno"> 4198</span>&#160;      Real d=1;</div>
-<div class="line"><a name="l04199"></a><span class="lineno"> 4199</span>&#160;      Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>=0;</div>
+<div class="line"><a name="l04195"></a><span class="lineno"> 4195</span>&#160;      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> a=1;</div>
+<div class="line"><a name="l04196"></a><span class="lineno"> 4196</span>&#160;      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> b=1;</div>
+<div class="line"><a name="l04197"></a><span class="lineno"> 4197</span>&#160;      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> c=1;</div>
+<div class="line"><a name="l04198"></a><span class="lineno"> 4198</span>&#160;      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d=1;</div>
+<div class="line"><a name="l04199"></a><span class="lineno"> 4199</span>&#160;      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>=0;</div>
 <div class="line"><a name="l04200"></a><span class="lineno"> 4200</span>&#160;<span class="preprocessor">#if 0</span></div>
 <div class="line"><a name="l04201"></a><span class="lineno"> 4201</span>&#160;      tridiag2_cc(n,&amp;a,&amp;b,&amp;c,&amp;d,&amp;x);</div>
 <div class="line"><a name="l04202"></a><span class="lineno"> 4202</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -279,7 +279,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04206"></a><span class="lineno"> 4206</span>&#160;    <span class="keyword">auto</span> mynn     = <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">pbl_mynn</a>;</div>
 <div class="line"><a name="l04207"></a><span class="lineno"> 4207</span>&#160;    <span class="keyword">auto</span> level2   = <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">pbl_mynn_level2</a>;</div>
 <div class="line"><a name="l04208"></a><span class="lineno"> 4208</span>&#160; </div>
-<div class="line"><a name="l04209"></a><span class="lineno"> 4209</span>&#160;    Real Lt_alpha = (mynn.config == <a class="code" href="ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e">MYNNConfigType::CHEN2021</a>) ? 0.1 : 0.23;</div>
+<div class="line"><a name="l04209"></a><span class="lineno"> 4209</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Lt_alpha = (mynn.config == <a class="code" href="ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e">MYNNConfigType::CHEN2021</a>) ? 0.1 : 0.23;</div>
 <div class="line"><a name="l04210"></a><span class="lineno"> 4210</span>&#160; </div>
 <div class="line"><a name="l04211"></a><span class="lineno"> 4211</span>&#160;    <span class="comment">// Dirichlet flags to switch derivative stencil</span></div>
 <div class="line"><a name="l04212"></a><span class="lineno"> 4212</span>&#160;    <span class="keywordtype">bool</span> c_ext_dir_on_zlo = ( (bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) );</div>
@@ -290,7 +290,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04217"></a><span class="lineno"> 4217</span>&#160;    <span class="keywordtype">bool</span> v_ext_dir_on_zhi = ( (bc_ptr[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(5) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) );</div>
 <div class="line"><a name="l04218"></a><span class="lineno"> 4218</span>&#160; </div>
 <div class="line"><a name="l04219"></a><span class="lineno"> 4219</span>&#160;    <span class="comment">// Epsilon</span></div>
-<div class="line"><a name="l04220"></a><span class="lineno"> 4220</span>&#160;    Real eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
+<div class="line"><a name="l04220"></a><span class="lineno"> 4220</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l04221"></a><span class="lineno"> 4221</span>&#160; </div>
 <div class="line"><a name="l04222"></a><span class="lineno"> 4222</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
 <div class="line"><a name="l04223"></a><span class="lineno"> 4223</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
@@ -329,9 +329,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04256"></a><span class="lineno"> 4256</span>&#160;                qvel(i,j,k) = std::sqrt(2.0 * cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l04257"></a><span class="lineno"> 4257</span>&#160;                AMREX_ASSERT_WITH_MESSAGE(qvel(i,j,k) &gt; 0.0, <span class="stringliteral">&quot;KE must have a positive value&quot;</span>);</div>
 <div class="line"><a name="l04258"></a><span class="lineno"> 4258</span>&#160; </div>
-<div class="line"><a name="l04259"></a><span class="lineno"> 4259</span>&#160;                Real fac = (sbx.contains(i,j,k)) ? 1.0 : 0.0;</div>
-<div class="line"><a name="l04260"></a><span class="lineno"> 4260</span>&#160;                <span class="keyword">const</span> Real Zval = <a class="code" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a>(i,j,k,z_nd_arr);</div>
-<div class="line"><a name="l04261"></a><span class="lineno"> 4261</span>&#160;                <span class="keyword">const</span> Real dz   = <a class="code" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i,j,k,invCellSize,z_nd_arr);</div>
+<div class="line"><a name="l04259"></a><span class="lineno"> 4259</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = (sbx.contains(i,j,k)) ? 1.0 : 0.0;</div>
+<div class="line"><a name="l04260"></a><span class="lineno"> 4260</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Zval = <a class="code" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a>(i,j,k,z_nd_arr);</div>
+<div class="line"><a name="l04261"></a><span class="lineno"> 4261</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz   = <a class="code" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i,j,k,invCellSize,z_nd_arr);</div>
 <div class="line"><a name="l04262"></a><span class="lineno"> 4262</span>&#160;                Gpu::Atomic::Add(&amp;qint(i,j,0,0), Zval*qvel(i,j,k)*dz*fac);</div>
 <div class="line"><a name="l04263"></a><span class="lineno"> 4263</span>&#160;                Gpu::Atomic::Add(&amp;qint(i,j,0,1),      qvel(i,j,k)*dz*fac);</div>
 <div class="line"><a name="l04264"></a><span class="lineno"> 4264</span>&#160;            });</div>
@@ -343,21 +343,21 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04270"></a><span class="lineno"> 4270</span>&#160; </div>
 <div class="line"><a name="l04271"></a><span class="lineno"> 4271</span>&#160;                <span class="comment">// Not multiplying by dz: its constant and would fall out when we divide qint0/qint1 anyway</span></div>
 <div class="line"><a name="l04272"></a><span class="lineno"> 4272</span>&#160; </div>
-<div class="line"><a name="l04273"></a><span class="lineno"> 4273</span>&#160;                Real fac = (sbx.contains(i,j,k)) ? 1.0 : 0.0;</div>
-<div class="line"><a name="l04274"></a><span class="lineno"> 4274</span>&#160;                <span class="keyword">const</span> Real Zval = gdata.ProbLo(2) + (k + 0.5)*gdata.CellSize(2);</div>
+<div class="line"><a name="l04273"></a><span class="lineno"> 4273</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = (sbx.contains(i,j,k)) ? 1.0 : 0.0;</div>
+<div class="line"><a name="l04274"></a><span class="lineno"> 4274</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Zval = gdata.ProbLo(2) + (k + 0.5)*gdata.CellSize(2);</div>
 <div class="line"><a name="l04275"></a><span class="lineno"> 4275</span>&#160;                Gpu::Atomic::Add(&amp;qint(i,j,0,0), Zval*qvel(i,j,k)*fac);</div>
 <div class="line"><a name="l04276"></a><span class="lineno"> 4276</span>&#160;                Gpu::Atomic::Add(&amp;qint(i,j,0,1),      qvel(i,j,k)*fac);</div>
 <div class="line"><a name="l04277"></a><span class="lineno"> 4277</span>&#160;            });</div>
 <div class="line"><a name="l04278"></a><span class="lineno"> 4278</span>&#160;        }</div>
 <div class="line"><a name="l04279"></a><span class="lineno"> 4279</span>&#160; </div>
-<div class="line"><a name="l04280"></a><span class="lineno"> 4280</span>&#160;        Real dz_inv = geom.InvCellSize(2);</div>
+<div class="line"><a name="l04280"></a><span class="lineno"> 4280</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_inv = geom.InvCellSize(2);</div>
 <div class="line"><a name="l04281"></a><span class="lineno"> 4281</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dxInv = geom.InvCellSizeArray();</div>
 <div class="line"><a name="l04282"></a><span class="lineno"> 4282</span>&#160;        <span class="keywordtype">int</span> izmin = geom.Domain().smallEnd(2);</div>
 <div class="line"><a name="l04283"></a><span class="lineno"> 4283</span>&#160;        <span class="keywordtype">int</span> izmax = geom.Domain().bigEnd(2);</div>
 <div class="line"><a name="l04284"></a><span class="lineno"> 4284</span>&#160; </div>
 <div class="line"><a name="l04285"></a><span class="lineno"> 4285</span>&#160;        <span class="comment">// Spatially varying MOST</span></div>
-<div class="line"><a name="l04286"></a><span class="lineno"> 4286</span>&#160;        Real d_kappa   = <a class="code" href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a>;</div>
-<div class="line"><a name="l04287"></a><span class="lineno"> 4287</span>&#160;        Real d_gravity = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
+<div class="line"><a name="l04286"></a><span class="lineno"> 4286</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_kappa   = <a class="code" href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a>;</div>
+<div class="line"><a name="l04287"></a><span class="lineno"> 4287</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_gravity = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
 <div class="line"><a name="l04288"></a><span class="lineno"> 4288</span>&#160; </div>
 <div class="line"><a name="l04289"></a><span class="lineno"> 4289</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; t_mean_mf = SurfLayer-&gt;get_mac_avg(level,4); <span class="comment">// theta_v</span></div>
 <div class="line"><a name="l04290"></a><span class="lineno"> 4290</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; q_mean_mf = SurfLayer-&gt;get_mac_avg(level,3); <span class="comment">// q_v</span></div>
@@ -377,8 +377,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04304"></a><span class="lineno"> 4304</span>&#160;        {</div>
 <div class="line"><a name="l04305"></a><span class="lineno"> 4305</span>&#160;            <span class="comment">// Compute some partial derivatives that we will need (second order)</span></div>
 <div class="line"><a name="l04306"></a><span class="lineno"> 4306</span>&#160;            <span class="comment">// U and V derivatives are interpolated to account for staggered grid</span></div>
-<div class="line"><a name="l04307"></a><span class="lineno"> 4307</span>&#160;            <span class="keyword">const</span> Real met_h_zeta = use_terrain_fitted_coords ? <a class="code" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i,j,k,dxInv,z_nd_arr) : 1.0;</div>
-<div class="line"><a name="l04308"></a><span class="lineno"> 4308</span>&#160;            Real dthetadz, dudz, dvdz;</div>
+<div class="line"><a name="l04307"></a><span class="lineno"> 4307</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_zeta = use_terrain_fitted_coords ? <a class="code" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a>(i,j,k,dxInv,z_nd_arr) : 1.0;</div>
+<div class="line"><a name="l04308"></a><span class="lineno"> 4308</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dthetadz, dudz, dvdz;</div>
 <div class="line"><a name="l04309"></a><span class="lineno"> 4309</span>&#160;            <a class="code" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1">ComputeVerticalDerivativesPBL</a>(i, j, k,</div>
 <div class="line"><a name="l04310"></a><span class="lineno"> 4310</span>&#160;                                          uvel, vvel, cell_data, izmin, izmax, dz_inv/met_h_zeta,</div>
 <div class="line"><a name="l04311"></a><span class="lineno"> 4311</span>&#160;                                          c_ext_dir_on_zlo, c_ext_dir_on_zhi,</div>
@@ -388,10 +388,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04315"></a><span class="lineno"> 4315</span>&#160;                                          moisture_indices);</div>
 <div class="line"><a name="l04316"></a><span class="lineno"> 4316</span>&#160; </div>
 <div class="line"><a name="l04317"></a><span class="lineno"> 4317</span>&#160;            <span class="comment">// Spatially varying MOST</span></div>
-<div class="line"><a name="l04318"></a><span class="lineno"> 4318</span>&#160;            Real theta0 = tm_arr(i,j,0);</div>
-<div class="line"><a name="l04319"></a><span class="lineno"> 4319</span>&#160;            Real qv0    = qm_arr(i,j,0);</div>
-<div class="line"><a name="l04320"></a><span class="lineno"> 4320</span>&#160;            Real surface_heat_flux = -u_star_arr(i,j,0) * t_star_arr(i,j,0);</div>
-<div class="line"><a name="l04321"></a><span class="lineno"> 4321</span>&#160;            Real surface_latent_heat{0};</div>
+<div class="line"><a name="l04318"></a><span class="lineno"> 4318</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta0 = tm_arr(i,j,0);</div>
+<div class="line"><a name="l04319"></a><span class="lineno"> 4319</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv0    = qm_arr(i,j,0);</div>
+<div class="line"><a name="l04320"></a><span class="lineno"> 4320</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> surface_heat_flux = -u_star_arr(i,j,0) * t_star_arr(i,j,0);</div>
+<div class="line"><a name="l04321"></a><span class="lineno"> 4321</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> surface_latent_heat{0};</div>
 <div class="line"><a name="l04322"></a><span class="lineno"> 4322</span>&#160;            <span class="keywordflow">if</span> (use_moisture) {</div>
 <div class="line"><a name="l04323"></a><span class="lineno"> 4323</span>&#160;                <span class="comment">// Compute buoyancy flux (Stull Eqn. 4.4.5d)</span></div>
 <div class="line"><a name="l04324"></a><span class="lineno"> 4324</span>&#160;                surface_latent_heat = -u_star_arr(i,j,0) * q_star_arr(i,j,0);</div>
@@ -399,7 +399,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04326"></a><span class="lineno"> 4326</span>&#160;                surface_heat_flux += 0.61 * theta0 * surface_latent_heat;</div>
 <div class="line"><a name="l04327"></a><span class="lineno"> 4327</span>&#160;            }</div>
 <div class="line"><a name="l04328"></a><span class="lineno"> 4328</span>&#160; </div>
-<div class="line"><a name="l04329"></a><span class="lineno"> 4329</span>&#160;            Real l_obukhov;</div>
+<div class="line"><a name="l04329"></a><span class="lineno"> 4329</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> l_obukhov;</div>
 <div class="line"><a name="l04330"></a><span class="lineno"> 4330</span>&#160;            <span class="keywordflow">if</span> (std::abs(surface_heat_flux) &gt; eps) {</div>
 <div class="line"><a name="l04331"></a><span class="lineno"> 4331</span>&#160;                l_obukhov = -( theta0 * u_star_arr(i,j,0)*u_star_arr(i,j,0)*u_star_arr(i,j,0) )</div>
 <div class="line"><a name="l04332"></a><span class="lineno"> 4332</span>&#160;                           / ( d_kappa * d_gravity * surface_heat_flux );</div>
@@ -410,10 +410,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04337"></a><span class="lineno"> 4337</span>&#160;            <span class="comment">// Surface-layer length scale (NN09, Eqn. 53)</span></div>
 <div class="line"><a name="l04338"></a><span class="lineno"> 4338</span>&#160;            AMREX_ASSERT(l_obukhov != 0);</div>
 <div class="line"><a name="l04339"></a><span class="lineno"> 4339</span>&#160;            <span class="keywordtype">int</span> lk = amrex::max(k,0);</div>
-<div class="line"><a name="l04340"></a><span class="lineno"> 4340</span>&#160;            <span class="keyword">const</span> Real zval = use_terrain_fitted_coords ? <a class="code" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a>(i,j,lk,z_nd_arr)</div>
+<div class="line"><a name="l04340"></a><span class="lineno"> 4340</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zval = use_terrain_fitted_coords ? <a class="code" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a>(i,j,lk,z_nd_arr)</div>
 <div class="line"><a name="l04341"></a><span class="lineno"> 4341</span>&#160;                                          : gdata.ProbLo(2) + (lk + 0.5)*gdata.CellSize(2);</div>
-<div class="line"><a name="l04342"></a><span class="lineno"> 4342</span>&#160;            <span class="keyword">const</span> Real zeta = zval/l_obukhov;</div>
-<div class="line"><a name="l04343"></a><span class="lineno"> 4343</span>&#160;            Real l_S;</div>
+<div class="line"><a name="l04342"></a><span class="lineno"> 4342</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zeta = zval/l_obukhov;</div>
+<div class="line"><a name="l04343"></a><span class="lineno"> 4343</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> l_S;</div>
 <div class="line"><a name="l04344"></a><span class="lineno"> 4344</span>&#160;            <span class="keywordflow">if</span> (zeta &gt;= 1.0) {</div>
 <div class="line"><a name="l04345"></a><span class="lineno"> 4345</span>&#160;                l_S = <a class="code" href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a>*zval/3.7;</div>
 <div class="line"><a name="l04346"></a><span class="lineno"> 4346</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (zeta &gt;= 0) {</div>
@@ -423,7 +423,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04350"></a><span class="lineno"> 4350</span>&#160;            }</div>
 <div class="line"><a name="l04351"></a><span class="lineno"> 4351</span>&#160; </div>
 <div class="line"><a name="l04352"></a><span class="lineno"> 4352</span>&#160;            <span class="comment">// ABL-depth length scale (NN09, Eqn. 54)</span></div>
-<div class="line"><a name="l04353"></a><span class="lineno"> 4353</span>&#160;            Real l_T;</div>
+<div class="line"><a name="l04353"></a><span class="lineno"> 4353</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> l_T;</div>
 <div class="line"><a name="l04354"></a><span class="lineno"> 4354</span>&#160;            <span class="keywordflow">if</span> (qint(i,j,0,1) &gt; 0.0) {</div>
 <div class="line"><a name="l04355"></a><span class="lineno"> 4355</span>&#160;                l_T = Lt_alpha*qint(i,j,0,0)/qint(i,j,0,1);</div>
 <div class="line"><a name="l04356"></a><span class="lineno"> 4356</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -431,11 +431,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04358"></a><span class="lineno"> 4358</span>&#160;            }</div>
 <div class="line"><a name="l04359"></a><span class="lineno"> 4359</span>&#160; </div>
 <div class="line"><a name="l04360"></a><span class="lineno"> 4360</span>&#160;            <span class="comment">// Buoyancy length scale (NN09, Eqn. 55)</span></div>
-<div class="line"><a name="l04361"></a><span class="lineno"> 4361</span>&#160;            Real l_B;</div>
+<div class="line"><a name="l04361"></a><span class="lineno"> 4361</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> l_B;</div>
 <div class="line"><a name="l04362"></a><span class="lineno"> 4362</span>&#160;            <span class="keywordflow">if</span> (dthetadz &gt; 0) {</div>
-<div class="line"><a name="l04363"></a><span class="lineno"> 4363</span>&#160;                Real N_brunt_vaisala = std::sqrt(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta0 * dthetadz);</div>
+<div class="line"><a name="l04363"></a><span class="lineno"> 4363</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> N_brunt_vaisala = std::sqrt(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta0 * dthetadz);</div>
 <div class="line"><a name="l04364"></a><span class="lineno"> 4364</span>&#160;                <span class="keywordflow">if</span> (zeta &lt; 0) {</div>
-<div class="line"><a name="l04365"></a><span class="lineno"> 4365</span>&#160;                    Real <a class="code" href="namespaceMicVar__SatAdj.html#a6203c4654b816042e2db15d87dab4f42aea3777efcbbb3712ce373924287c2cb3">qc</a> = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta0 * surface_heat_flux * l_T; <span class="comment">// velocity scale</span></div>
+<div class="line"><a name="l04365"></a><span class="lineno"> 4365</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__SatAdj.html#a6203c4654b816042e2db15d87dab4f42aea3777efcbbb3712ce373924287c2cb3">qc</a> = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta0 * surface_heat_flux * l_T; <span class="comment">// velocity scale</span></div>
 <div class="line"><a name="l04366"></a><span class="lineno"> 4366</span>&#160;                    <a class="code" href="namespaceMicVar__SatAdj.html#a6203c4654b816042e2db15d87dab4f42aea3777efcbbb3712ce373924287c2cb3">qc</a> = std::pow(<a class="code" href="namespaceMicVar__SatAdj.html#a6203c4654b816042e2db15d87dab4f42aea3777efcbbb3712ce373924287c2cb3">qc</a>,1.0/3.0);</div>
 <div class="line"><a name="l04367"></a><span class="lineno"> 4367</span>&#160;                    l_B = (1.0 + 5.0*std::sqrt(<a class="code" href="namespaceMicVar__SatAdj.html#a6203c4654b816042e2db15d87dab4f42aea3777efcbbb3712ce373924287c2cb3">qc</a>/(N_brunt_vaisala * l_T))) * qvel(i,j,k)/N_brunt_vaisala;</div>
 <div class="line"><a name="l04368"></a><span class="lineno"> 4368</span>&#160;                } <span class="keywordflow">else</span> {</div>
@@ -446,7 +446,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04373"></a><span class="lineno"> 4373</span>&#160;            }</div>
 <div class="line"><a name="l04374"></a><span class="lineno"> 4374</span>&#160; </div>
 <div class="line"><a name="l04375"></a><span class="lineno"> 4375</span>&#160;            <span class="comment">// Master length scale</span></div>
-<div class="line"><a name="l04376"></a><span class="lineno"> 4376</span>&#160;            Real Lm;</div>
+<div class="line"><a name="l04376"></a><span class="lineno"> 4376</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Lm;</div>
 <div class="line"><a name="l04377"></a><span class="lineno"> 4377</span>&#160;            <span class="keywordflow">if</span> (mynn.config == <a class="code" href="ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e">MYNNConfigType::CHEN2021</a>) {</div>
 <div class="line"><a name="l04378"></a><span class="lineno"> 4378</span>&#160;                Lm = std::pow(1.0/(l_S*l_S) + 1.0/(l_T*l_T) + 1.0/(l_B*l_B), -0.5);</div>
 <div class="line"><a name="l04379"></a><span class="lineno"> 4379</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -455,23 +455,23 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04382"></a><span class="lineno"> 4382</span>&#160;            }</div>
 <div class="line"><a name="l04383"></a><span class="lineno"> 4383</span>&#160; </div>
 <div class="line"><a name="l04384"></a><span class="lineno"> 4384</span>&#160;            <span class="comment">// Calculate nondimensional production terms</span></div>
-<div class="line"><a name="l04385"></a><span class="lineno"> 4385</span>&#160;            Real shearProd  = dudz*dudz + dvdz*dvdz;</div>
-<div class="line"><a name="l04386"></a><span class="lineno"> 4386</span>&#160;            Real buoyProd   = -(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta0) * dthetadz;</div>
-<div class="line"><a name="l04387"></a><span class="lineno"> 4387</span>&#160;            Real L2_over_q2 = Lm*Lm/(qvel(i,j,k)*qvel(i,j,k));</div>
-<div class="line"><a name="l04388"></a><span class="lineno"> 4388</span>&#160;            Real GM         = L2_over_q2 * shearProd;</div>
-<div class="line"><a name="l04389"></a><span class="lineno"> 4389</span>&#160;            Real GH         = L2_over_q2 * buoyProd;</div>
+<div class="line"><a name="l04385"></a><span class="lineno"> 4385</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> shearProd  = dudz*dudz + dvdz*dvdz;</div>
+<div class="line"><a name="l04386"></a><span class="lineno"> 4386</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> buoyProd   = -(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta0) * dthetadz;</div>
+<div class="line"><a name="l04387"></a><span class="lineno"> 4387</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> L2_over_q2 = Lm*Lm/(qvel(i,j,k)*qvel(i,j,k));</div>
+<div class="line"><a name="l04388"></a><span class="lineno"> 4388</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> GM         = L2_over_q2 * shearProd;</div>
+<div class="line"><a name="l04389"></a><span class="lineno"> 4389</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> GH         = L2_over_q2 * buoyProd;</div>
 <div class="line"><a name="l04390"></a><span class="lineno"> 4390</span>&#160; </div>
 <div class="line"><a name="l04391"></a><span class="lineno"> 4391</span>&#160;            <span class="comment">// Equilibrium (Level-2) q calculation follows NN09, Appendix 2</span></div>
-<div class="line"><a name="l04392"></a><span class="lineno"> 4392</span>&#160;            Real Rf  = level2.calc_Rf(GM, GH);</div>
-<div class="line"><a name="l04393"></a><span class="lineno"> 4393</span>&#160;            Real SM2 = level2.calc_SM(Rf);</div>
-<div class="line"><a name="l04394"></a><span class="lineno"> 4394</span>&#160;            Real qe2 = mynn.B1*Lm*Lm*SM2*(1.0-Rf)*shearProd;</div>
-<div class="line"><a name="l04395"></a><span class="lineno"> 4395</span>&#160;            Real qe  = (qe2 &lt; 0.0) ? 0.0 : std::sqrt(qe2);</div>
+<div class="line"><a name="l04392"></a><span class="lineno"> 4392</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Rf  = level2.calc_Rf(GM, GH);</div>
+<div class="line"><a name="l04393"></a><span class="lineno"> 4393</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> SM2 = level2.calc_SM(Rf);</div>
+<div class="line"><a name="l04394"></a><span class="lineno"> 4394</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qe2 = mynn.B1*Lm*Lm*SM2*(1.0-Rf)*shearProd;</div>
+<div class="line"><a name="l04395"></a><span class="lineno"> 4395</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qe  = (qe2 &lt; 0.0) ? 0.0 : std::sqrt(qe2);</div>
 <div class="line"><a name="l04396"></a><span class="lineno"> 4396</span>&#160; </div>
 <div class="line"><a name="l04397"></a><span class="lineno"> 4397</span>&#160;            <span class="comment">// Level 2 limiting (Helfand and Labraga 1988)</span></div>
-<div class="line"><a name="l04398"></a><span class="lineno"> 4398</span>&#160;            Real alphac  = (qvel(i,j,k) &gt; qe) ? 1.0 : qvel(i,j,k) / (qe + eps);</div>
+<div class="line"><a name="l04398"></a><span class="lineno"> 4398</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> alphac  = (qvel(i,j,k) &gt; qe) ? 1.0 : qvel(i,j,k) / (qe + eps);</div>
 <div class="line"><a name="l04399"></a><span class="lineno"> 4399</span>&#160; </div>
 <div class="line"><a name="l04400"></a><span class="lineno"> 4400</span>&#160;            <span class="comment">// Level 2.5 stability functions</span></div>
-<div class="line"><a name="l04401"></a><span class="lineno"> 4401</span>&#160;            Real SM, SH, SQ;</div>
+<div class="line"><a name="l04401"></a><span class="lineno"> 4401</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> SM, SH, SQ;</div>
 <div class="line"><a name="l04402"></a><span class="lineno"> 4402</span>&#160;            mynn.calc_stability_funcs(SM,SH,SQ,GM,GH,alphac);</div>
 <div class="line"><a name="l04403"></a><span class="lineno"> 4403</span>&#160; </div>
 <div class="line"><a name="l04404"></a><span class="lineno"> 4404</span>&#160;            <span class="comment">// Clip SM, SH following WRF</span></div>
@@ -479,7 +479,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l04406"></a><span class="lineno"> 4406</span>&#160;            SH = amrex::min(amrex::max(SH,mynn.SHmin), mynn.SHmax);</div>
 <div class="line"><a name="l04407"></a><span class="lineno"> 4407</span>&#160; </div>
 <div class="line"><a name="l04408"></a><span class="lineno"> 4408</span>&#160;            <span class="comment">// Finally, compute the eddy viscosity/diffusivities</span></div>
-<div class="line"><a name="l04409"></a><span class="lineno"> 4409</span>&#160;            <span class="keyword">const</span> Real <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l04409"></a><span class="lineno"> 4409</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l04410"></a><span class="lineno"> 4410</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)   = <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SM;</div>
 <div class="line"><a name="l04411"></a><span class="lineno"> 4411</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>) = <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SH;</div>
 <div class="line"><a name="l04412"></a><span class="lineno"> 4412</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a>)    = <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SQ;</div>
@@ -507,6 +507,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
 <div class="ttc" id="aERF__MYNNStruct_8H_html_a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e"><div class="ttname"><a href="ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e">MYNNConfigType::CHEN2021</a></div><div class="ttdeci">@ CHEN2021</div></div>
 <div class="ttc" id="aERF__PBLModels_8H_html_a1deabe90a1d943d577b1e8ce80a6b4b1"><div class="ttname"><a href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1">ComputeVerticalDerivativesPBL</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeVerticalDerivativesPBL(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const amrex::Real &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:147</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a32eeeb066c70da970aa6a60918515987"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real Compute_h_zeta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:47</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a41f9b3a5604791daf44935b10a55a565"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Zrel_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:390</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a></div><div class="ttdeci">@ yvel_bc</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:88</div></div>

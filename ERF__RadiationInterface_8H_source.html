@@ -113,8 +113,8 @@ $(document).ready(function(){initNavTree('ERF__RadiationInterface_8H_source.html
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classIRadiation.html#a5c4ea94d80fa153daefc46bcf5df288e">   26</a></span>&#160;    <a class="code" href="classIRadiation.html#a5c4ea94d80fa153daefc46bcf5df288e">Run</a> (<span class="keywordtype">int</span>&amp; level,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         <span class="keywordtype">int</span>&amp; step,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         amrex::Real&amp; time,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;         <span class="keyword">const</span> amrex::Real&amp; dt,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; time,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;         <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dt,</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;         <span class="keyword">const</span> amrex::BoxArray&amp; ba,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;         amrex::Geometry&amp; geom,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;         amrex::MultiFab* cons_in,</div>
@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('ERF__RadiationInterface_8H_source.html
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">   44</a></span>&#160;    <a class="code" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">WriteDataLog</a> (<span class="keyword">const</span> amrex::Real&amp; time) = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">   44</a></span>&#160;    <a class="code" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">WriteDataLog</a> (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; time) = 0;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Get names input varnames for lsm</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span></div>
@@ -193,6 +193,7 @@ $(document).ready(function(){initNavTree('ERF__RadiationInterface_8H_source.html
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:230</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aclassIRadiation_html"><div class="ttname"><a href="classIRadiation.html">IRadiation</a></div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:14</div></div>
 <div class="ttc" id="aclassIRadiation_html_a077cf4e3cdf2e521e4bf856b27c4c871"><div class="ttname"><a href="classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871">IRadiation::hasDatalog</a></div><div class="ttdeci">bool hasDatalog()</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:81</div></div>
 <div class="ttc" id="aclassIRadiation_html_a2e4010d756cc604aa90ceb71a955584c"><div class="ttname"><a href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">IRadiation::datalogname</a></div><div class="ttdeci">std::string datalogname</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:85</div></div>

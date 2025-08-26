@@ -160,9 +160,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a803d0d35d4ca4791556cbe02bbf51cbb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a> (const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</td></tr>
+<tr class="memitem:a803d0d35d4ca4791556cbe02bbf51cbb"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *alpha, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *beta, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> alpha_interp, const int alpha_size)</td></tr>
 <tr class="separator:a803d0d35d4ca4791556cbe02bbf51cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71b362e58803c8c29aa5127adcf645f"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a> (amrex::Vector&lt; amrex::Real &gt; &amp;znew, const amrex::Vector&lt; amrex::Real &gt; &amp;zorig, int refine_fac, bool destag=false)</td></tr>
+<tr class="memitem:af71b362e58803c8c29aa5127adcf645f"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a> (amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;znew, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;zorig, int refine_fac, bool destag=false)</td></tr>
 <tr class="separator:af71b362e58803c8c29aa5127adcf645f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -175,13 +175,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">AMREX_FORCE_INLINE void expand_and_interpolate_1d </td>
           <td>(</td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>znew</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>zorig</em>, </td>
         </tr>
         <tr>
@@ -217,10 +217,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (refine_fac &gt; 1) {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; Nz-1; ++k) {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            amrex::Real z1 = zorig[k];</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            amrex::Real dz = zorig[k+1] - z1;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z1 = zorig[k];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz = zorig[k+1] - z1;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> koff=1; koff &lt; refine_fac; ++koff) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                znew_stag[refine_fac*k + koff] = amrex::Real(koff)/refine_fac * dz + z1;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                znew_stag[refine_fac*k + koff] = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(koff)/refine_fac * dz + z1;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
@@ -232,6 +232,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        znew = znew_stag;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__InitZLevels_8cpp.html#a6a0ddf4ef447c8f0129b403c8fd889fd">init_zlevels()</a>, and <a class="el" href="classERF.html#a0877d5a0263641c13b92d2d16f47b689">ERF::setRayleighRefFromSounding()</a>.</p>
 <div class="dynheader">
@@ -255,21 +256,21 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d </td>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpolate_1d </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>alpha</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>beta</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>alpha_interp</em>, </td>
         </tr>
         <tr>
@@ -287,7 +288,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Interpolates 1D array beta at the location alpha_interp in the array alpha requiring 1D arrays alpha and beta to be the same size alpha_size. This routine assumes the alpha data are monotonic from lowest to highest. </p>
 <div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    amrex::Real beta_interp = -1.0e34;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> beta_interp = -1.0e34;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// If the interpolation point already exists in the array,</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// just return it</span></div>
@@ -300,8 +301,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// We didn&#39;t find an exact match for alpha_interp in alpha,</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// so we need linear interpolation/extrapolation</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    amrex::Real alpha_min = alpha[0];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    amrex::Real alpha_max = alpha[alpha_size-1];</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> alpha_min = alpha[0];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> alpha_max = alpha[alpha_size-1];</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (alpha_interp &gt;= alpha_min &amp;&amp; alpha_interp &lt;= alpha_max) <span class="comment">//interpolate</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; alpha_size; ++i)</div>
@@ -309,11 +310,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">if</span> (alpha_interp &gt;= alpha[i] &amp;&amp; alpha_interp &lt;= alpha[i + 1])</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="comment">//y = y0 + (y1-y0)*(x-x0)/(x1-x0);</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                amrex::Real y0 = beta[i];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                amrex::Real y1 = beta[i + 1];</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = alpha_interp;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                amrex::Real x0 = alpha[i];</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                amrex::Real x1 = alpha[i + 1];</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0 = beta[i];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y1 = beta[i + 1];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = alpha_interp;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x0 = alpha[i];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x1 = alpha[i + 1];</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                beta_interp = y0 + (y1 - y0)*(x - x0) / (x1 - x0);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> beta_interp;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
@@ -332,11 +333,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;interpolate_1d: we shouldn&#39;t be here!&quot;</span>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        amrex::Real y0 = beta[i];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        amrex::Real y1 = beta[i + 1];</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = alpha_interp;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::Real x0 = alpha[i];</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        amrex::Real x1 = alpha[i + 1];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0 = beta[i];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y1 = beta[i + 1];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = alpha_interp;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x0 = alpha[i];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x1 = alpha[i + 1];</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        beta_interp = y0 + ((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - x0) / (x1 - x0)) * (y1 - y0);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> beta_interp;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>

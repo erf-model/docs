@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>    ,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>    ,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>    ,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keyword">const</span> amrex::Real* dx_arr,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* dx_arr,</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxInv,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_mx     ,</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_ux     ,</div>
@@ -259,7 +259,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                              amrex::Box tbxxy,</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                              amrex::Box tbxxz,</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                              amrex::Box tbxyz,</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                              amrex::Real mu_eff,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff,</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                              <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                              amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>,</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                              amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>,</div>
@@ -273,7 +273,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                              amrex::Box tbxxy,</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                              amrex::Box tbxxz,</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                              amrex::Box tbxyz,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                              amrex::Real mu_eff,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff,</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                              <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                              amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>,</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                              amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>,</div>
@@ -295,7 +295,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                              amrex::Box tbxxy,</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                              amrex::Box tbxxz,</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                              amrex::Box tbxyz,</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                              amrex::Real mu_eff,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff,</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                              <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                              amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>,</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                              amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>,</div>
@@ -320,7 +320,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                             amrex::Box tbxxy,</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                             amrex::Box tbxxz,</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                             amrex::Box tbxyz,</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                             amrex::Real mu_eff,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                             <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff,</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                             <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mu_turb,</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                             <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                             amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>,</div>
@@ -335,7 +335,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                             amrex::Box tbxxy,</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                             amrex::Box tbxxz,</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                             amrex::Box tbxyz,</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                             amrex::Real mu_eff,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                             <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff,</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                             <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mu_turb,</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                             <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                             amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>,</div>
@@ -358,7 +358,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                             amrex::Box tbxxy,</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                             amrex::Box tbxxz,</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                             amrex::Box tbxyz,</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                             amrex::Real mu_eff,</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                             <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mu_eff,</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                             <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mu_turb,</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                             <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; cell_data,</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                             amrex::Array4&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>,</div>
@@ -466,6 +466,7 @@ $(document).ready(function(){initNavTree('ERF__Diffusion_8H_source.html',''); in
 <div class="ttc" id="aERF__Diffusion_8H_html_af89bc368023b73bc1d4e3844d74b8ec2"><div class="ttname"><a href="ERF__Diffusion_8H.html#af89bc368023b73bc1d4e3844d74b8ec2">ComputeStressVarVisc_N</a></div><div class="ttdeci">void ComputeStressVarVisc_N(amrex::Box bxcc, amrex::Box tbxxy, amrex::Box tbxxz, amrex::Box tbxyz, amrex::Real mu_eff, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, amrex::Array4&lt; amrex::Real &gt; &amp;tau11, amrex::Array4&lt; amrex::Real &gt; &amp;tau22, amrex::Array4&lt; amrex::Real &gt; &amp;tau33, amrex::Array4&lt; amrex::Real &gt; &amp;tau12, amrex::Array4&lt; amrex::Real &gt; &amp;tau13, amrex::Array4&lt; amrex::Real &gt; &amp;tau23, const amrex::Array4&lt; const amrex::Real &gt; &amp;er_arr)</div></div>
 <div class="ttc" id="aERF__EB_8H_html"><div class="ttname"><a href="ERF__EB_8H.html">ERF_EB.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aERF__SurfaceLayer_8H_html"><div class="ttname"><a href="ERF__SurfaceLayer_8H.html">ERF_SurfaceLayer.H</a></div></div>
 <div class="ttc" id="aclasseb___html"><div class="ttname"><a href="classeb__.html">eb_</a></div><div class="ttdef"><b>Definition:</b> ERF_EB.H:13</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:123</div></div>

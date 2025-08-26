@@ -117,7 +117,7 @@ Include dependency graph for ERF_NCPlotFile.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad9a51088de1000816aac4e945c877b84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NCPlotFile_8cpp.html#ad9a51088de1000816aac4e945c877b84">writeNCPlotFile</a> (int lev, int which_subdomain, const std::string &amp;dir, const Vector&lt; const MultiFab * &gt; &amp;plotMF, const Vector&lt; std::string &gt; &amp;plot_var_names, const Vector&lt; int &gt; &amp;, Array&lt; Real, AMREX_SPACEDIM &gt; prob_lo, Array&lt; Real, AMREX_SPACEDIM &gt; prob_hi, Array&lt; Real, AMREX_SPACEDIM &gt; dx_in, const Box &amp;subdomain, const Real time, const Real start_bdy_time)</td></tr>
+<tr class="memitem:ad9a51088de1000816aac4e945c877b84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NCPlotFile_8cpp.html#ad9a51088de1000816aac4e945c877b84">writeNCPlotFile</a> (int lev, int which_subdomain, const std::string &amp;dir, const Vector&lt; const MultiFab * &gt; &amp;plotMF, const Vector&lt; std::string &gt; &amp;plot_var_names, const Vector&lt; int &gt; &amp;, Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt; prob_lo, Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt; prob_hi, Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt; dx_in, const Box &amp;subdomain, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> time, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> start_bdy_time)</td></tr>
 <tr class="separator:ad9a51088de1000816aac4e945c877b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -166,19 +166,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Array&lt; Real, AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramtype">Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td>
           <td class="paramname"><em>prob_lo</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Array&lt; Real, AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramtype">Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td>
           <td class="paramname"><em>prob_hi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Array&lt; Real, AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramtype">Array&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td>
           <td class="paramname"><em>dx_in</em>, </td>
         </tr>
         <tr>
@@ -190,13 +190,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>start_bdy_time</em>&#160;</td>
         </tr>
         <tr>
@@ -299,7 +299,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ncf.put_attr(<span class="stringliteral">&quot;start_time&quot;</span>, std::vector&lt;double&gt;{start_bdy_time});</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ncf.put_attr(<span class="stringliteral">&quot;CurrentLevel&quot;</span>, std::vector&lt;int&gt;{lev});</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    Real dx[AMREX_SPACEDIM];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dx[AMREX_SPACEDIM];</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; i++) {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;       dx[i] = dx_in[i];</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
@@ -362,9 +362,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> k3 = 0; k3 &lt; bx.length(2); ++k3) {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> k2 = 0; k2 &lt; bx.length(1); ++k2) {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = 0; <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> &lt; bx.length(0); ++<a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a>) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        x_grid.push_back(prob_lo[0]+dx[0]*(<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a>)+0.5));</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        y_grid.push_back(prob_lo[1]+dx[1]*(<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(k2)+0.5));</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        z_grid.push_back(prob_lo[2]+dx[2]*(<span class="keyword">static_cast&lt;</span>Real<span class="keyword">&gt;</span>(k3)+0.5));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        x_grid.push_back(prob_lo[0]+dx[0]*(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a>)+0.5));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                        y_grid.push_back(prob_lo[1]+dx[1]*(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(k2)+0.5));</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                        z_grid.push_back(prob_lo[2]+dx[2]*(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(k3)+0.5));</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                     }</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                }</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            }</div>
@@ -421,6 +421,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;   }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;   ncf.close();</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aclassncutils_1_1NCFile_html_a6607bd5f3f75b451e2436ff713931f19"><div class="ttname"><a href="classncutils_1_1NCFile.html#a6607bd5f3f75b451e2436ff713931f19">ncutils::NCFile::create_par</a></div><div class="ttdeci">static NCFile create_par(const std::string &amp;name, const int cmode=NC_CLOBBER|NC_NETCDF4|NC_MPIIO, MPI_Comm comm=MPI_COMM_WORLD, MPI_Info info=MPI_INFO_NULL)</div><div class="ttdef"><b>Definition:</b> ERF_NCInterface.cpp:714</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a1a6252db6f85ddc3b4e92d44682ad20a"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">module_mp_morr_two_moment::k1</a></div><div class="ttdeci">real(c_double), private k1</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:212</div></div>
 </div><!-- fragment -->

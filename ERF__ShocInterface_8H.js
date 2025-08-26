@@ -4,5 +4,6 @@ var ERF__ShocInterface_8H =
     [ "SHOCPreprocess", "structSHOCInterface_1_1SHOCPreprocess.html", "structSHOCInterface_1_1SHOCPreprocess" ],
     [ "SHOCPostprocess", "structSHOCInterface_1_1SHOCPostprocess.html", "structSHOCInterface_1_1SHOCPostprocess" ],
     [ "Buffer", "structSHOCInterface_1_1Buffer.html", "structSHOCInterface_1_1Buffer" ],
-    [ "view_t", "ERF__ShocInterface_8H.html#ab2b94ab782c080b74717ae70f40fcf94", null ]
+    [ "Int", "ERF__ShocInterface_8H.html#a008e7f6ae8f621fbb1d876061812b9b2", null ],
+    [ "Real", "ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57", null ]
 ];

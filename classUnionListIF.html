@@ -119,7 +119,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab92b409d80a4fafb0e47229800eaf0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a03205f1c8304860e5fe963febe853dd9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnionListIF.html#a03205f1c8304860e5fe963febe853dd9">is_empty</a> () const</td></tr>
 <tr class="separator:a03205f1c8304860e5fe963febe853dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fce6dd6374daaae5b37ea3c56e2aa1a"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnionListIF.html#a5fce6dd6374daaae5b37ea3c56e2aa1a">operator()</a> (const RealArray &amp;p) const</td></tr>
+<tr class="memitem:a5fce6dd6374daaae5b37ea3c56e2aa1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUnionListIF.html#a5fce6dd6374daaae5b37ea3c56e2aa1a">operator()</a> (const RealArray &amp;p) const</td></tr>
 <tr class="separator:a5fce6dd6374daaae5b37ea3c56e2aa1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -289,7 +289,7 @@ template&lt;class F &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Real <a class="el" href="classUnionListIF.html">UnionListIF</a>&lt; F &gt;::operator() </td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="classUnionListIF.html">UnionListIF</a>&lt; F &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">const RealArray &amp;&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -305,14 +305,15 @@ template&lt;class F &gt; </div>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                                {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// NOTE: this assumes that m_ifs is not empty</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Real vmax=<a class="code" href="classUnionListIF.html#a1aec36e20ba8a88e40c69b6df0aa78d2">m_ifs</a>[0](p);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vmax=<a class="code" href="classUnionListIF.html#a1aec36e20ba8a88e40c69b6df0aa78d2">m_ifs</a>[0](p);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=1; i&lt; <a class="code" href="classUnionListIF.html#a1aec36e20ba8a88e40c69b6df0aa78d2">m_ifs</a>.size(); i++) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            Real vcur = <a class="code" href="classUnionListIF.html#a1aec36e20ba8a88e40c69b6df0aa78d2">m_ifs</a>[i](p);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vcur = <a class="code" href="classUnionListIF.html#a1aec36e20ba8a88e40c69b6df0aa78d2">m_ifs</a>[i](p);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">if</span> ( vmax &lt; vcur ) vmax = vcur;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> vmax;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 </div><!-- fragment -->
 </div>
 </div>

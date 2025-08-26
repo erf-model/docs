@@ -138,7 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae870dc821f7cd01ffc3bfd7925b1d18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba6460f2d34882d6b512574106e44531"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aba6460f2d34882d6b512574106e44531">Define</a> (<a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc) override</td></tr>
 <tr class="separator:aba6460f2d34882d6b512574106e44531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a927f4531f9c2452e5b7fc7ab965c5b78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a927f4531f9c2452e5b7fc7ab965c5b78">Init</a> (const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc) override</td></tr>
+<tr class="memitem:a927f4531f9c2452e5b7fc7ab965c5b78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a927f4531f9c2452e5b7fc7ab965c5b78">Init</a> (const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc) override</td></tr>
 <tr class="separator:a927f4531f9c2452e5b7fc7ab965c5b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1df931f91be89514c09f69f24cfeca53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">Copy_State_to_Micro</a> (const amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:a1df931f91be89514c09f69f24cfeca53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,7 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2e6ff95cf827306bbcf3661c954a692e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea5fdd520cbb1bc936a0f11d55400029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aea5fdd520cbb1bc936a0f11d55400029">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:aea5fdd520cbb1bc936a0f11d55400029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a012056ae20ded7928adf1be8afa665b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a012056ae20ded7928adf1be8afa665b9">Advance</a> (const amrex::Real &amp;dt_advance, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc) override</td></tr>
+<tr class="memitem:a012056ae20ded7928adf1be8afa665b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a012056ae20ded7928adf1be8afa665b9">Advance</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc) override</td></tr>
 <tr class="separator:a012056ae20ded7928adf1be8afa665b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6652cb6f7b93a1e418da98b5a8b57b7"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#af6652cb6f7b93a1e418da98b5a8b57b7">Qmoist_Ptr</a> (const int &amp;varIdx) override</td></tr>
 <tr class="separator:af6652cb6f7b93a1e418da98b5a8b57b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,7 +174,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad5815a7090e447ca821df2b09b1ea0f7"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#ad5815a7090e447ca821df2b09b1ea0f7">NewtonIterSat</a> (int &amp;i, int &amp;j, int &amp;k, const int &amp;SAM_moisture_type, const amrex::Real &amp;fac_cond, const amrex::Real &amp;, const amrex::Real &amp;fac_sub, const amrex::Real &amp;an, const amrex::Real &amp;bn, const amrex::Array4&lt; amrex::Real &gt; &amp;tabs_array, const amrex::Array4&lt; amrex::Real &gt; &amp;pres_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qv_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qc_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qi_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qn_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qt_array)</td></tr>
+<tr class="memitem:ad5815a7090e447ca821df2b09b1ea0f7"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#ad5815a7090e447ca821df2b09b1ea0f7">NewtonIterSat</a> (int &amp;i, int &amp;j, int &amp;k, const int &amp;SAM_moisture_type, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;fac_cond, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;fac_sub, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;an, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;bn, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;tabs_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;pres_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qv_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qc_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qi_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qn_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qt_array)</td></tr>
 <tr class="separator:ad5815a7090e447ca821df2b09b1ea0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
@@ -194,7 +194,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a8242fff43eb2cf417036eb36f5e4a3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a579b5a1e16d7b9d8d317e475a6a43705"><td class="memItemLeft" align="right" valign="top">amrex::BoxArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705">m_gtoe</a></td></tr>
 <tr class="separator:a579b5a1e16d7b9d8d317e475a6a43705"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a></td></tr>
+<tr class="memitem:af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a></td></tr>
 <tr class="separator:af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7da420869410dc959c2442962524259f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a7da420869410dc959c2442962524259f">nlev</a></td></tr>
 <tr class="separator:a7da420869410dc959c2442962524259f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,15 +204,15 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aaf2fc082e80f1c5cc9de339ff25ca27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37854ec84283a4229cf86b54cfcfc72b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">m_axis</a></td></tr>
 <tr class="separator:a37854ec84283a4229cf86b54cfcfc72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66b0ffc2f98c96c5a3b3c760a854be95"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a></td></tr>
+<tr class="memitem:a66b0ffc2f98c96c5a3b3c760a854be95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a></td></tr>
 <tr class="separator:a66b0ffc2f98c96c5a3b3c760a854be95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53d38219476c32ba2dd751c02bcae53c"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a></td></tr>
+<tr class="memitem:a53d38219476c32ba2dd751c02bcae53c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a></td></tr>
 <tr class="separator:a53d38219476c32ba2dd751c02bcae53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8653cbf2c13ac3595f5f8710a3f1beec"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a></td></tr>
+<tr class="memitem:a8653cbf2c13ac3595f5f8710a3f1beec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a></td></tr>
 <tr class="separator:a8653cbf2c13ac3595f5f8710a3f1beec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a76b3fc76d33c147dcaab81a738f41c"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">m_gOcp</a></td></tr>
+<tr class="memitem:a3a76b3fc76d33c147dcaab81a738f41c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">m_gOcp</a></td></tr>
 <tr class="separator:a3a76b3fc76d33c147dcaab81a738f41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b461d5620f6b9a08a1e62b60a463af7"><td class="memItemLeft" align="right" valign="top">amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a></td></tr>
+<tr class="memitem:a3b461d5620f6b9a08a1e62b60a463af7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a></td></tr>
 <tr class="separator:a3b461d5620f6b9a08a1e62b60a463af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51af1452ad89711f8ddaa554cdc49ee6"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a51af1452ad89711f8ddaa554cdc49ee6">m_z_phys_nd</a></td></tr>
 <tr class="separator:a51af1452ad89711f8ddaa554cdc49ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,50 +220,50 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a1b09febe32fbfebb402091fd31cd9996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36ee9e1e1a94d22304f46e064f16e11e"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; <a class="el" href="classSAM.html#a2ffb00984d39bfc39057c68f708774a9">FabPtr</a>, <a class="el" href="namespaceMicVar.html#a18c76bda65bf6236f551c6b488417c25a0a8da919c111613d4806217dce5cd1e3">MicVar::NumVars</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a></td></tr>
 <tr class="separator:a36ee9e1e1a94d22304f46e064f16e11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74856cc0ee48b638ee5263cd51fd1090"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a74856cc0ee48b638ee5263cd51fd1090">accrrc</a></td></tr>
+<tr class="memitem:a74856cc0ee48b638ee5263cd51fd1090"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a74856cc0ee48b638ee5263cd51fd1090">accrrc</a></td></tr>
 <tr class="separator:a74856cc0ee48b638ee5263cd51fd1090"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b848cc96480f05c0c7b1e811cdb50d7"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7">accrsi</a></td></tr>
+<tr class="memitem:a6b848cc96480f05c0c7b1e811cdb50d7"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a6b848cc96480f05c0c7b1e811cdb50d7">accrsi</a></td></tr>
 <tr class="separator:a6b848cc96480f05c0c7b1e811cdb50d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa32720be8b27907466650050dc73e110"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aa32720be8b27907466650050dc73e110">accrsc</a></td></tr>
+<tr class="memitem:aa32720be8b27907466650050dc73e110"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aa32720be8b27907466650050dc73e110">accrsc</a></td></tr>
 <tr class="separator:aa32720be8b27907466650050dc73e110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8c4616221c01599e4e32f2ebb08698"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aad8c4616221c01599e4e32f2ebb08698">coefice</a></td></tr>
+<tr class="memitem:aad8c4616221c01599e4e32f2ebb08698"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aad8c4616221c01599e4e32f2ebb08698">coefice</a></td></tr>
 <tr class="separator:aad8c4616221c01599e4e32f2ebb08698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56c463cbd313722b567dd88e7ac6fccd"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a56c463cbd313722b567dd88e7ac6fccd">evaps1</a></td></tr>
+<tr class="memitem:a56c463cbd313722b567dd88e7ac6fccd"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a56c463cbd313722b567dd88e7ac6fccd">evaps1</a></td></tr>
 <tr class="separator:a56c463cbd313722b567dd88e7ac6fccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f9e9699afd94d393be846cd26933fd0"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a8f9e9699afd94d393be846cd26933fd0">evaps2</a></td></tr>
+<tr class="memitem:a8f9e9699afd94d393be846cd26933fd0"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a8f9e9699afd94d393be846cd26933fd0">evaps2</a></td></tr>
 <tr class="separator:a8f9e9699afd94d393be846cd26933fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ec33470030fdfd34b9b9436f0b56cfd"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a2ec33470030fdfd34b9b9436f0b56cfd">accrgi</a></td></tr>
+<tr class="memitem:a2ec33470030fdfd34b9b9436f0b56cfd"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a2ec33470030fdfd34b9b9436f0b56cfd">accrgi</a></td></tr>
 <tr class="separator:a2ec33470030fdfd34b9b9436f0b56cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2de795ae7721e5070a8f4844e3897f6"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aa2de795ae7721e5070a8f4844e3897f6">accrgc</a></td></tr>
+<tr class="memitem:aa2de795ae7721e5070a8f4844e3897f6"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aa2de795ae7721e5070a8f4844e3897f6">accrgc</a></td></tr>
 <tr class="separator:aa2de795ae7721e5070a8f4844e3897f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e241fff555231e1cc87947a624bb5d6"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a2e241fff555231e1cc87947a624bb5d6">evapg1</a></td></tr>
+<tr class="memitem:a2e241fff555231e1cc87947a624bb5d6"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a2e241fff555231e1cc87947a624bb5d6">evapg1</a></td></tr>
 <tr class="separator:a2e241fff555231e1cc87947a624bb5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3117e23160d027ccb4dacf744a477a40"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a3117e23160d027ccb4dacf744a477a40">evapg2</a></td></tr>
+<tr class="memitem:a3117e23160d027ccb4dacf744a477a40"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a3117e23160d027ccb4dacf744a477a40">evapg2</a></td></tr>
 <tr class="separator:a3117e23160d027ccb4dacf744a477a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8350a31a9f29bedee48b24bb43d5b0fc"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc">evapr1</a></td></tr>
+<tr class="memitem:a8350a31a9f29bedee48b24bb43d5b0fc"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a8350a31a9f29bedee48b24bb43d5b0fc">evapr1</a></td></tr>
 <tr class="separator:a8350a31a9f29bedee48b24bb43d5b0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edeaaddf7573079fdc9af1484ce5582"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a0edeaaddf7573079fdc9af1484ce5582">evapr2</a></td></tr>
+<tr class="memitem:a0edeaaddf7573079fdc9af1484ce5582"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a0edeaaddf7573079fdc9af1484ce5582">evapr2</a></td></tr>
 <tr class="separator:a0edeaaddf7573079fdc9af1484ce5582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0853b1a3a4ec94178ca208ea594fc455"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a0853b1a3a4ec94178ca208ea594fc455">rho1d</a></td></tr>
+<tr class="memitem:a0853b1a3a4ec94178ca208ea594fc455"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a0853b1a3a4ec94178ca208ea594fc455">rho1d</a></td></tr>
 <tr class="separator:a0853b1a3a4ec94178ca208ea594fc455"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77e43f5c8a68a43f8109aa18b71fa64e"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">pres1d</a></td></tr>
+<tr class="memitem:a77e43f5c8a68a43f8109aa18b71fa64e"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a77e43f5c8a68a43f8109aa18b71fa64e">pres1d</a></td></tr>
 <tr class="separator:a77e43f5c8a68a43f8109aa18b71fa64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee5da977a069c0b9cb98d150027f746c"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aee5da977a069c0b9cb98d150027f746c">tabs1d</a></td></tr>
+<tr class="memitem:aee5da977a069c0b9cb98d150027f746c"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aee5da977a069c0b9cb98d150027f746c">tabs1d</a></td></tr>
 <tr class="separator:aee5da977a069c0b9cb98d150027f746c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa3dd79bbd6ac41ae1170d003b1a423d"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aaa3dd79bbd6ac41ae1170d003b1a423d">qt1d</a></td></tr>
+<tr class="memitem:aaa3dd79bbd6ac41ae1170d003b1a423d"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#aaa3dd79bbd6ac41ae1170d003b1a423d">qt1d</a></td></tr>
 <tr class="separator:aaa3dd79bbd6ac41ae1170d003b1a423d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65e2ba7cb72946a8af2e7541b072e3ba"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a65e2ba7cb72946a8af2e7541b072e3ba">qv1d</a></td></tr>
+<tr class="memitem:a65e2ba7cb72946a8af2e7541b072e3ba"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a65e2ba7cb72946a8af2e7541b072e3ba">qv1d</a></td></tr>
 <tr class="separator:a65e2ba7cb72946a8af2e7541b072e3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fafcc2e5b063f7ccb94e2cc78324d35"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a9fafcc2e5b063f7ccb94e2cc78324d35">qn1d</a></td></tr>
+<tr class="memitem:a9fafcc2e5b063f7ccb94e2cc78324d35"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a9fafcc2e5b063f7ccb94e2cc78324d35">qn1d</a></td></tr>
 <tr class="separator:a9fafcc2e5b063f7ccb94e2cc78324d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af47c1dda6481ee4549b60f2c03bdec18"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#af47c1dda6481ee4549b60f2c03bdec18">gamaz</a></td></tr>
+<tr class="memitem:af47c1dda6481ee4549b60f2c03bdec18"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#af47c1dda6481ee4549b60f2c03bdec18">gamaz</a></td></tr>
 <tr class="separator:af47c1dda6481ee4549b60f2c03bdec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a5228929f2e9032152efe0a5cb9476b"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; amrex::Real, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">zmid</a></td></tr>
+<tr class="memitem:a5a5228929f2e9032152efe0a5cb9476b"><td class="memItemLeft" align="right" valign="top">amrex::TableData&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">zmid</a></td></tr>
 <tr class="separator:a5a5228929f2e9032152efe0a5cb9476b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:ab22f37f1f2b5d72ee2d20af56a29fc40"><td class="memItemLeft" align="right" valign="top">static constexpr amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40">CFL_MAX</a> = 0.5</td></tr>
+<tr class="memitem:ab22f37f1f2b5d72ee2d20af56a29fc40"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40">CFL_MAX</a> = 0.5</td></tr>
 <tr class="separator:ab22f37f1f2b5d72ee2d20af56a29fc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
@@ -354,7 +354,7 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void SAM::Advance </td>
           <td>(</td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>dt_advance</em>, </td>
         </tr>
         <tr>
@@ -431,13 +431,13 @@ Here is the call graph for this function:</div>
 <p>Split cloud components according to saturation pressures; source theta from latent heat. </p>
 <div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    constexpr Real an = 1.0/(<a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>-<a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    constexpr Real bn = <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>*an;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> an = 1.0/(<a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>-<a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> bn = <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>*an;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Real fac_cond = <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Real fac_sub  = <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Real fac_fus  = <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Real rdOcp    = <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac_cond = <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac_sub  = <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac_fus  = <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rdOcp    = <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> SAM_moisture_type = 1;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoIce ||</div>
@@ -462,13 +462,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Real omn;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Real qsat;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Real qsatw;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            Real qsati;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> omn;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsat;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsatw;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsati;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="comment">// Newton iteration vars</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Real delta_qv, delta_qc, delta_qi;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta_qv, delta_qc, delta_qi;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// NOTE: Conversion before iterations is necessary to</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">//       convert cloud water to ice or vice versa.</span></div>
@@ -603,6 +603,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__EOS_8H_html_a8770405e52bfe8feb427eca945370fb2"><div class="ttname"><a href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenTandP(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:163</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac39ef2a869ef543f708d5ed7da4754d3"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsati(amrex::Real t, amrex::Real p, amrex::Real &amp;qsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:152</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aclassSAM_html_a36ee9e1e1a94d22304f46e064f16e11e"><div class="ttname"><a href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">SAM::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:316</div></div>
 <div class="ttc" id="aclassSAM_html_a3b461d5620f6b9a08a1e62b60a463af7"><div class="ttname"><a href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">SAM::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:309</div></div>
 <div class="ttc" id="aclassSAM_html_a53d38219476c32ba2dd751c02bcae53c"><div class="ttname"><a href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">SAM::m_fac_fus</a></div><div class="ttdeci">amrex::Real m_fac_fus</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:306</div></div>
@@ -685,13 +686,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">auto</span> gamaz_t  = <a class="code" href="classSAM.html#af47c1dda6481ee4549b60f2c03bdec18">gamaz</a>.table();</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">auto</span> zmid_t   = <a class="code" href="classSAM.html#a5a5228929f2e9032152efe0a5cb9476b">zmid</a>.table();</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    Real gam3  = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0             );</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    Real gamr1 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0+<a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>      );</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    Real gamr2 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>((5.0+<a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>)/2.0);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    Real gams1 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>      );</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    Real gams2 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>((5.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>)/2.0);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    Real gamg1 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0+<a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>      );</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    Real gamg2 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>((5.0+<a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>)/2.0);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam3  = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0             );</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamr1 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0+<a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>      );</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamr2 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>((5.0+<a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>)/2.0);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gams1 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>      );</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gams2 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>((5.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>)/2.0);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamg1 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(3.0+<a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>      );</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamg2 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>((5.0+<a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>)/2.0);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// calculate the plane average variables</span></div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> rho_ave(<a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a18c76bda65bf6236f551c6b488417c25a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a>].get(), <a class="code" href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">m_geom</a>, <a class="code" href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">m_axis</a>);</div>
@@ -716,16 +717,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, qv_h.begin(), qv_h.end(), qv_d.begin());</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    Gpu::streamSynchronize();</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    Real* rho_dptr   = rho_d.data();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    Real* theta_dptr = theta_d.data();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    Real* qv_dptr    = qv_d.data();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* rho_dptr   = rho_d.data();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* theta_dptr = theta_d.data();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* qv_dptr    = qv_d.data();</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    Real gOcp = <a class="code" href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">m_gOcp</a>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gOcp = <a class="code" href="classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c">m_gOcp</a>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    ParallelFor(<a class="code" href="classSAM.html#a7da420869410dc959c2442962524259f">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        Real RhoTheta = rho_dptr[k]*theta_dptr[k];</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        Real pressure = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(RhoTheta, qv_dptr[k]);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> RhoTheta = rho_dptr[k]*theta_dptr[k];</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pressure = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(RhoTheta, qv_dptr[k]);</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        rho1d_t(k)    = rho_dptr[k];</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        pres1d_t(k)   = pressure*0.01;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="comment">// NOTE: Limit the temperature to the melting point of ice to avoid a divide by</span></div>
@@ -745,16 +746,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// Populate all the coefficients</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    ParallelFor(<a class="code" href="classSAM.html#a7da420869410dc959c2442962524259f">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        Real Prefactor;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        Real pratio = sqrt(1.29 / rho1d_t(k));</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Prefactor;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pratio = sqrt(1.29 / rho1d_t(k));</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="comment">//Real rrr1   = 393.0/(tabs1d_t(k)+120.0)*std::pow((tabs1d_t(k)/273.0),1.5);</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="comment">//Real rrr2   = std::pow((tabs1d_t(k)/273.0),1.94)*(1000.0/pres1d_t(k));</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        Real estw   = 100.0*<a class="code" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428">erf_esatw</a>(tabs1d_t(k));</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        Real esti   = 100.0*<a class="code" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a>(tabs1d_t(k));</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> estw   = 100.0*<a class="code" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428">erf_esatw</a>(tabs1d_t(k));</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> esti   = 100.0*<a class="code" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a>(tabs1d_t(k));</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// accretion by snow:</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        Real coef1   = 0.25 * <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * <a class="code" href="ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e">nzeros</a> * <a class="code" href="ERF__Constants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570">a_snow</a> * gams1 * pratio/pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * <a class="code" href="ERF__Constants_8H.html#ac0e05183a58d4400f06346d18371218f">rhos</a> * <a class="code" href="ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e">nzeros</a>/rho1d_t(k) ) , ((3.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>)/4.0));</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        Real coef2   = exp(0.025*(tabs1d_t(k) - 273.15));</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coef1   = 0.25 * <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * <a class="code" href="ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e">nzeros</a> * <a class="code" href="ERF__Constants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570">a_snow</a> * gams1 * pratio/pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * <a class="code" href="ERF__Constants_8H.html#ac0e05183a58d4400f06346d18371218f">rhos</a> * <a class="code" href="ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e">nzeros</a>/rho1d_t(k) ) , ((3.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>)/4.0));</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coef2   = exp(0.025*(tabs1d_t(k) - 273.15));</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        accrsi_t(k)  =  coef1 * coef2 * <a class="code" href="ERF__Constants_8H.html#a414035f12e97c86f4e40cb6763c29ddb">esicoef</a>;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        accrsc_t(k)  =  coef1 * <a class="code" href="ERF__Constants_8H.html#ac16a7511bec41b7d5a558b5841e8f3b1">esccoef</a>;</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        coefice_t(k) =  coef2;</div>
@@ -1141,9 +1142,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;       sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoPrecip_NoIce)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Real dz   = <a class="code" href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">m_geom</a>.CellSize(2);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Real dtn  = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Real coef = dtn/dz;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz   = <a class="code" href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">m_geom</a>.CellSize(2);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dtn  = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coef = dtn/dz;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span> domain = <a class="code" href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">m_geom</a>.Domain();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> k_lo = domain.smallEnd(2);</div>
@@ -1172,7 +1173,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Real rho_avg, qci_avg;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, qci_avg;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (k==k_lo) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                rho_avg = rho_array(i,j,k);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                qci_avg = qci_array(i,j,k);</div>
@@ -1183,7 +1184,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k));</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                qci_avg = 0.5*(qci_array(i,j,k-1) + qci_array(i,j,k));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            Real vt_ice = min( 0.4 , 8.66 * pow( (std::max(0.,qci_avg)+1.e-10) , 0.24) );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vt_ice = min( 0.4 , 8.66 * pow( (std::max(0.,qci_avg)+1.e-10) , 0.24) );</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
@@ -1196,7 +1197,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Compute number of substeps from maximum terminal velocity</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Real wt_max;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> wt_max;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> n_substep;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma_fz_arr = fz.const_arrays();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    GpuTuple&lt;Real&gt; max = ParReduce(TypeList&lt;ReduceOpMax&gt;{},</div>
@@ -1210,8 +1211,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    wt_max = get&lt;0&gt;(max) + <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    n_substep = int( std::ceil(wt_max * coef / <a class="code" href="classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40">CFL_MAX</a>) );</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    AMREX_ALWAYS_ASSERT(n_substep &gt;= 1);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    coef /= Real(n_substep);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    dtn  /= Real(n_substep);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    coef /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    dtn  /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Substep the vertical advection</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nsub(0); nsub&lt;n_substep; ++nsub) {</div>
@@ -1230,7 +1231,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">// Update vertical flux every substep</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            ParallelFor(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                Real rho_avg, qci_avg;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, qci_avg;</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">if</span> (k==k_lo) {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    rho_avg = rho_array(i,j,k);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    qci_avg = qci_array(i,j,k);</div>
@@ -1241,7 +1242,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k));</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    qci_avg = 0.5*(qci_array(i,j,k-1) + qci_array(i,j,k));</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                Real vt_ice = min( 0.4 , 8.66 * pow( (std::max(0.,qci_avg)+1.e-10) , 0.24) );</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vt_ice = min( 0.4 , 8.66 * pow( (std::max(0.,qci_avg)+1.e-10) , 0.24) );</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
@@ -1256,12 +1257,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="comment">// Jacobian determinant</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                Real dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="comment">//==================================================</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                <span class="comment">// Cloud ice sedimentation (A32)</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                Real dqi  = dJinv * (1.0/rho_array(i,j,k)) * ( fz_array(i,j,k+1) - fz_array(i,j,k) ) * coef;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dqi  = dJinv * (1.0/rho_array(i,j,k)) * ( fz_array(i,j,k+1) - fz_array(i,j,k) ) * coef;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                dqi = std::max(-qci_array(i,j,k), dqi);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <span class="comment">// Add this increment to both non-precipitating and total water.</span></div>
@@ -1340,7 +1341,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>dt_advance</em>, </td>
         </tr>
         <tr>
@@ -1465,7 +1466,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real SAM::NewtonIterSat </td>
+          <td class="memname">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::NewtonIterSat </td>
           <td>(</td>
           <td class="paramtype">int &amp;&#160;</td>
           <td class="paramname"><em>i</em>, </td>
@@ -1491,73 +1492,73 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>fac_cond</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>fac_sub</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>an</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>bn</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>tabs_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>pres_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>qv_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>qc_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>qi_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>qn_array</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>qt_array</em>&#160;</td>
         </tr>
         <tr>
@@ -1574,24 +1575,24 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">// Solution tolerance</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        amrex::Real tol = 1.0e-4;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = 1.0e-4;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        amrex::Real omn, domn;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        amrex::Real qsat, dqsat;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        amrex::Real qsatw, dqsatw;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        amrex::Real qsati, dqsati;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> omn, domn;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsat, dqsat;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsatw, dqsatw;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsati, dqsati;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">// Newton iteration vars</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordtype">int</span>  niter;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        amrex::Real fff, dfff, dtabs;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        amrex::Real lstar, dlstar;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        amrex::Real lstarw, lstari;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        amrex::Real delta_qv, delta_qc, delta_qi;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fff, dfff, dtabs;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lstar, dlstar;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lstarw, lstari;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta_qv, delta_qc, delta_qi;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// Initial guess for temperature &amp; pressure</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar.html#a18c76bda65bf6236f551c6b488417c25aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> = tabs_array(i,j,k);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar.html#a18c76bda65bf6236f551c6b488417c25a147204d9af51dec01fb0d95c5cde8d37">pres</a> = pres_array(i,j,k);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar.html#a18c76bda65bf6236f551c6b488417c25aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a> = tabs_array(i,j,k);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar.html#a18c76bda65bf6236f551c6b488417c25a147204d9af51dec01fb0d95c5cde8d37">pres</a> = pres_array(i,j,k);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        niter = 0;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        dtabs = 1;</div>
@@ -1712,12 +1713,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoPrecip_NoIce) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Real powr1 = (3.0 + <a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>) / 4.0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Real powr2 = (5.0 + <a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>) / 8.0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Real pows1 = (3.0 + <a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>) / 4.0;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Real pows2 = (5.0 + <a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>) / 8.0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Real powg1 = (3.0 + <a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>) / 4.0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Real powg2 = (5.0 + <a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>) / 8.0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> powr1 = (3.0 + <a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>) / 4.0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> powr2 = (5.0 + <a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>) / 8.0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pows1 = (3.0 + <a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>) / 4.0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pows2 = (5.0 + <a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>) / 8.0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> powg1 = (3.0 + <a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>) / 4.0;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> powg2 = (5.0 + <a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>) / 8.0;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">auto</span> accrrc_t  = <a class="code" href="classSAM.html#a74856cc0ee48b638ee5263cd51fd1090">accrrc</a>.table();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> accrsc_t  = <a class="code" href="classSAM.html#aa32720be8b27907466650050dc73e110">accrsc</a>.table();</div>
@@ -1732,14 +1733,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">auto</span> evapg1_t  = <a class="code" href="classSAM.html#a2e241fff555231e1cc87947a624bb5d6">evapg1</a>.table();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">auto</span> evapg2_t  = <a class="code" href="classSAM.html#a3117e23160d027ccb4dacf744a477a40">evapg2</a>.table();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Real fac_cond = <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Real fac_sub  = <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Real fac_fus  = <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Real rdOcp    = <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac_cond = <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac_sub  = <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac_fus  = <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rdOcp    = <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Real eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    Real dtn = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dtn = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> SAM_moisture_type = 1;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoIce) {</div>
@@ -1770,18 +1771,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">//------- Autoconversion/accretion</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            Real omn, omp, omg;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            Real qsat, qsatw, qsati;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> omn, omp, omg;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsat, qsatw, qsati;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            Real qcc, qii, <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>, <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643aa1b82f9b40da8ffccead09f9e102ff82">qps</a>, <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a434cf2c831802bb076e8bc31d16f0887">qpg</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            Real dprc, dpsc, dpgc;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            Real dpsi, dpgi;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qcc, qii, <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>, <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643aa1b82f9b40da8ffccead09f9e102ff82">qps</a>, <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a434cf2c831802bb076e8bc31d16f0887">qpg</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dprc, dpsc, dpgc;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dpsi, dpgi;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            Real dqc, dqca, dqi, dqia, dqp;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            Real dqpr, dqps, dqpg;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dqc, dqca, dqi, dqia, dqp;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dqpr, dqps, dqpg;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            Real auto_r, autos;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            Real accrcr, accrcs, accris, accrcg, accrig;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> auto_r, autos;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> accrcr, accrcs, accris, accrcg, accrig;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// Work to be done for autoc/accr or evap</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (qn_array(i,j,k)+qp_array(i,j,k) &gt; 0.0) {</div>
@@ -1851,8 +1852,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    <span class="comment">// Rescale sinks to avoid negative cloud fractions</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    dqc  = dqca + dprc + dpsc + dpgc;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    dqi  = dqia + dpsi + dpgi;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    Real scalec = std::min(qcl_array(i,j,k),dqc) / (dqc + eps);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                    Real scalei = std::min(qci_array(i,j,k),dqi) / (dqi + eps);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> scalec = std::min(qcl_array(i,j,k),dqc) / (dqc + eps);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> scalei = std::min(qci_array(i,j,k),dqi) / (dqi + eps);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    dqca *= scalec; dprc *= scalec; dpsc *= scalec; dpgc *= scalec;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    dqia *= scalei; dpsi *= scalei; dpgi *= scalei;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    dqc   = dqca + dprc + dpsc + dpgc;</div>
@@ -2000,19 +2001,19 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span>(sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoPrecip_NoIce) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Real rho_0 = 1.29;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_0 = 1.29;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Real gamr3 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(4.0+<a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Real gams3 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(4.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Real gamg3 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(4.0+<a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamr3 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(4.0+<a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gams3 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(4.0+<a class="code" href="ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc">b_snow</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamg3 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>(4.0+<a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Real vrain = (<a class="code" href="ERF__Constants_8H.html#adf319f31edb7d4f2b4b712096189734b">a_rain</a>*gamr3/6.0)*pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*<a class="code" href="ERF__Constants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8">rhor</a>*<a class="code" href="ERF__Constants_8H.html#aaa2fd2941341ea7699a9acfb434b2ee1">nzeror</a>),-<a class="code" href="ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec">crain</a>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Real vsnow = (<a class="code" href="ERF__Constants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570">a_snow</a>*gams3/6.0)*pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*<a class="code" href="ERF__Constants_8H.html#ac0e05183a58d4400f06346d18371218f">rhos</a>*<a class="code" href="ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e">nzeros</a>),-<a class="code" href="ERF__Constants_8H.html#a00a835048e6d7b67e76cd044f483a0e2">csnow</a>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Real vgrau = (<a class="code" href="ERF__Constants_8H.html#a2fe4f2c6313692ac5073cb9ca72552e2">a_grau</a>*gamg3/6.0)*pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*<a class="code" href="ERF__Constants_8H.html#a00c6555efa1735f66b36929196ff6b98">rhog</a>*<a class="code" href="ERF__Constants_8H.html#a1d5b108314147320a74eaccbfa0d09b0">nzerog</a>),-<a class="code" href="ERF__Constants_8H.html#a22bb5d96152ac76ffe39d98d67b2b07a">cgrau</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vrain = (<a class="code" href="ERF__Constants_8H.html#adf319f31edb7d4f2b4b712096189734b">a_rain</a>*gamr3/6.0)*pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*<a class="code" href="ERF__Constants_8H.html#ad6e28022b74cd595f282e2cc97c2c0d8">rhor</a>*<a class="code" href="ERF__Constants_8H.html#aaa2fd2941341ea7699a9acfb434b2ee1">nzeror</a>),-<a class="code" href="ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec">crain</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vsnow = (<a class="code" href="ERF__Constants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570">a_snow</a>*gams3/6.0)*pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*<a class="code" href="ERF__Constants_8H.html#ac0e05183a58d4400f06346d18371218f">rhos</a>*<a class="code" href="ERF__Constants_8H.html#ae56996ced8497f129d813e2f9c94786e">nzeros</a>),-<a class="code" href="ERF__Constants_8H.html#a00a835048e6d7b67e76cd044f483a0e2">csnow</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vgrau = (<a class="code" href="ERF__Constants_8H.html#a2fe4f2c6313692ac5073cb9ca72552e2">a_grau</a>*gamg3/6.0)*pow((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*<a class="code" href="ERF__Constants_8H.html#a00c6555efa1735f66b36929196ff6b98">rhog</a>*<a class="code" href="ERF__Constants_8H.html#a1d5b108314147320a74eaccbfa0d09b0">nzerog</a>),-<a class="code" href="ERF__Constants_8H.html#a22bb5d96152ac76ffe39d98d67b2b07a">cgrau</a>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> dz   = <a class="code" href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">m_geom</a>.CellSize(2);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Real dtn  = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Real coef = dtn/dz;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dtn  = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coef = dtn/dz;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">auto</span> domain = <a class="code" href="classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8">m_geom</a>.Domain();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> k_lo = domain.smallEnd(2);</div>
@@ -2052,7 +2053,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            Real rho_avg, tab_avg, qp_avg;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, tab_avg, qp_avg;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span> (k==k_lo) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                rho_avg =  rho_array(i,j,k);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                tab_avg = tabs_array(i,j,k);</div>
@@ -2067,9 +2068,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                 qp_avg = 0.5*(  qp_array(i,j,k-1) +   qp_array(i,j,k));</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            Real Pprecip = 0.0;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Pprecip = 0.0;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">if</span>(qp_avg &gt; <a class="code" href="ERF__Constants_8H.html#a956656dbad95153bb8d3f0e42fa3d356">qp_threshold</a>) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                Real omp, omg;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> omp, omg;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span> (SAM_moisture_type == 2) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    omp = 1.0;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    omg = 0.0;</div>
@@ -2077,9 +2078,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    omp = std::max(0.0,std::min(1.0,(tab_avg-<a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>)*<a class="code" href="ERF__Constants_8H.html#afddfdf9f48fef3929914f786ce79022a">a_pr</a>));</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    omg = std::max(0.0,std::min(1.0,(tab_avg-<a class="code" href="ERF__Constants_8H.html#afb7d1700c60728d56ef525934fe6a098">tgrmin</a>)*<a class="code" href="ERF__Constants_8H.html#a16f25ab24f4aca4bb0ff8f3203b0b924">a_gr</a>));</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                Real qrr = omp*qp_avg;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                Real qss = (1.0-omp)*(1.0-omg)*qp_avg;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                Real qgg = (1.0-omp)*(omg)*qp_avg;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qrr = omp*qp_avg;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qss = (1.0-omp)*(1.0-omg)*qp_avg;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qgg = (1.0-omp)*(omg)*qp_avg;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                Pprecip = omp*vrain*std::pow(rho_avg*qrr,1.0+<a class="code" href="ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec">crain</a>)</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        + (1.0-omp)*( (1.0-omg)*vsnow*std::pow(rho_avg*qss,1.0+<a class="code" href="ERF__Constants_8H.html#a00a835048e6d7b67e76cd044f483a0e2">csnow</a>)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                    +      omg *vgrau*std::pow(rho_avg*qgg,1.0+<a class="code" href="ERF__Constants_8H.html#a22bb5d96152ac76ffe39d98d67b2b07a">cgrau</a>) );</div>
@@ -2096,7 +2097,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Compute number of substeps from maximum terminal velocity</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    Real wt_max;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> wt_max;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> n_substep;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ma_fz_arr = fz.const_arrays();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    GpuTuple&lt;Real&gt; max = ParReduce(TypeList&lt;ReduceOpMax&gt;{},</div>
@@ -2110,8 +2111,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    wt_max = get&lt;0&gt;(max) + <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    n_substep = int( std::ceil(wt_max * coef / <a class="code" href="classSAM.html#ab22f37f1f2b5d72ee2d20af56a29fc40">CFL_MAX</a>) );</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    AMREX_ALWAYS_ASSERT(n_substep &gt;= 1);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    coef /= Real(n_substep);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    dtn  /= Real(n_substep);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    coef /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    dtn  /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// Substep the vertical advection</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nsub(0); nsub&lt;n_substep; ++nsub) {</div>
@@ -2136,7 +2137,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="comment">// Update vertical flux every substep</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            ParallelFor(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                Real rho_avg, tab_avg, qp_avg;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, tab_avg, qp_avg;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="keywordflow">if</span> (k==k_lo) {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    rho_avg =  rho_array(i,j,k);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    tab_avg = tabs_array(i,j,k);</div>
@@ -2151,9 +2152,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                     qp_avg = 0.5*(  qp_array(i,j,k-1) +   qp_array(i,j,k));</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                }</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                Real Pprecip = 0.0;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Pprecip = 0.0;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordflow">if</span>(qp_avg &gt; <a class="code" href="ERF__Constants_8H.html#a956656dbad95153bb8d3f0e42fa3d356">qp_threshold</a>) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    Real omp, omg;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> omp, omg;</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    <span class="keywordflow">if</span> (SAM_moisture_type == 2) {</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        omp = 1.0;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                        omg = 0.0;</div>
@@ -2161,9 +2162,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                        omp = std::max(0.0,std::min(1.0,(tab_avg-<a class="code" href="ERF__Constants_8H.html#a9180d622aa39d89312941eba03fa1347">tprmin</a>)*<a class="code" href="ERF__Constants_8H.html#afddfdf9f48fef3929914f786ce79022a">a_pr</a>));</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                        omg = std::max(0.0,std::min(1.0,(tab_avg-<a class="code" href="ERF__Constants_8H.html#afb7d1700c60728d56ef525934fe6a098">tgrmin</a>)*<a class="code" href="ERF__Constants_8H.html#a16f25ab24f4aca4bb0ff8f3203b0b924">a_gr</a>));</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    Real qrr = omp*qp_avg;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    Real qss = (1.0-omp)*(1.0-omg)*qp_avg;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    Real qgg = (1.0-omp)*(omg)*qp_avg;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qrr = omp*qp_avg;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qss = (1.0-omp)*(1.0-omg)*qp_avg;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qgg = (1.0-omp)*(omg)*qp_avg;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    Pprecip = omp*vrain*std::pow(rho_avg*qrr,1.0+<a class="code" href="ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec">crain</a>)</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                            + (1.0-omp)*( (1.0-omg)*vsnow*std::pow(rho_avg*qss,1.0+<a class="code" href="ERF__Constants_8H.html#a00a835048e6d7b67e76cd044f483a0e2">csnow</a>)</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                        +      omg *vgrau*std::pow(rho_avg*qgg,1.0+<a class="code" href="ERF__Constants_8H.html#a22bb5d96152ac76ffe39d98d67b2b07a">cgrau</a>) );</div>
@@ -2178,7 +2179,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                fz_array(i,j,k) = Pprecip * std::sqrt(rho_0/rho_avg);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordflow">if</span>(k==k_lo){</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    Real omp, omg;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> omp, omg;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    <span class="keywordflow">if</span> (SAM_moisture_type == 2) {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                        omp = 1.0;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                        omg = 0.0;</div>
@@ -2196,13 +2197,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            {</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="comment">// Jacobian determinant</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                Real dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <span class="comment">//==================================================</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="comment">// Precipitating sedimentation (A19)</span></div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                Real dqp = dJinv * (1.0/rho_array(i,j,k)) * ( fz_array(i,j,k+1) - fz_array(i,j,k) ) * coef;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                Real omp, omg;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dqp = dJinv * (1.0/rho_array(i,j,k)) * ( fz_array(i,j,k+1) - fz_array(i,j,k) ) * coef;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> omp, omg;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                <span class="keywordflow">if</span> (SAM_moisture_type == 2) {</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    omp = 1.0;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    omg = 0.0;</div>
@@ -2504,7 +2505,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::accrgc</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::accrgc</td>
         </tr>
       </table>
   </td>
@@ -2526,7 +2527,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::accrgi</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::accrgi</td>
         </tr>
       </table>
   </td>
@@ -2548,7 +2549,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::accrrc</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::accrrc</td>
         </tr>
       </table>
   </td>
@@ -2570,7 +2571,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::accrsc</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::accrsc</td>
         </tr>
       </table>
   </td>
@@ -2592,7 +2593,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::accrsi</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::accrsi</td>
         </tr>
       </table>
   </td>
@@ -2614,7 +2615,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr amrex::Real SAM::CFL_MAX = 0.5</td>
+          <td class="memname">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::CFL_MAX = 0.5</td>
         </tr>
       </table>
   </td>
@@ -2636,7 +2637,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::coefice</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::coefice</td>
         </tr>
       </table>
   </td>
@@ -2658,7 +2659,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real SAM::dt</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::dt</td>
         </tr>
       </table>
   </td>
@@ -2682,7 +2683,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::evapg1</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::evapg1</td>
         </tr>
       </table>
   </td>
@@ -2704,7 +2705,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::evapg2</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::evapg2</td>
         </tr>
       </table>
   </td>
@@ -2726,7 +2727,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::evapr1</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::evapr1</td>
         </tr>
       </table>
   </td>
@@ -2748,7 +2749,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::evapr2</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::evapr2</td>
         </tr>
       </table>
   </td>
@@ -2770,7 +2771,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::evaps1</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::evaps1</td>
         </tr>
       </table>
   </td>
@@ -2792,7 +2793,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::evaps2</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::evaps2</td>
         </tr>
       </table>
   </td>
@@ -2814,7 +2815,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::gamaz</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::gamaz</td>
         </tr>
       </table>
   </td>
@@ -2882,7 +2883,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real SAM::m_fac_cond</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::m_fac_cond</td>
         </tr>
       </table>
   </td>
@@ -2906,7 +2907,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real SAM::m_fac_fus</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::m_fac_fus</td>
         </tr>
       </table>
   </td>
@@ -2930,7 +2931,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real SAM::m_fac_sub</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::m_fac_sub</td>
         </tr>
       </table>
   </td>
@@ -2976,7 +2977,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real SAM::m_gOcp</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::m_gOcp</td>
         </tr>
       </table>
   </td>
@@ -3046,7 +3047,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Real SAM::m_rdOcp</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SAM::m_rdOcp</td>
         </tr>
       </table>
   </td>
@@ -3186,7 +3187,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::pres1d</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::pres1d</td>
         </tr>
       </table>
   </td>
@@ -3208,7 +3209,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::qn1d</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::qn1d</td>
         </tr>
       </table>
   </td>
@@ -3230,7 +3231,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::qt1d</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::qt1d</td>
         </tr>
       </table>
   </td>
@@ -3252,7 +3253,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::qv1d</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::qv1d</td>
         </tr>
       </table>
   </td>
@@ -3274,7 +3275,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::rho1d</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::rho1d</td>
         </tr>
       </table>
   </td>
@@ -3296,7 +3297,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::tabs1d</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::tabs1d</td>
         </tr>
       </table>
   </td>
@@ -3362,7 +3363,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::TableData&lt;amrex::Real, 1&gt; SAM::zmid</td>
+          <td class="memname">amrex::TableData&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 1&gt; SAM::zmid</td>
         </tr>
       </table>
   </td>

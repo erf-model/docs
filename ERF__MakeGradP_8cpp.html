@@ -259,13 +259,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = dxInv[0] * (p_arr(i,j,k) - p_arr(i-1,j,k));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = dxInv[0] * (p_arr(i,j,k) - p_arr(i-1,j,k));</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    Real met_h_xi = (z_cc_arr(i,j,k) - z_cc_arr(i-1,j,k)) * dxInv[0];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_xi = (z_cc_arr(i,j,k) - z_cc_arr(i-1,j,k)) * dxInv[0];</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    Real dz_phys_hi, dz_phys_lo;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    Real gpz_lo, gpz_hi;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_phys_hi, dz_phys_lo;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gpz_lo, gpz_hi;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    <span class="keywordflow">if</span> (k==domain_klo) {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                        dz_phys_hi = z_cc_arr(i  ,j,k+1) -   z_cc_arr(i  ,j,k  );</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                        dz_phys_lo = z_cc_arr(i-1,j,k+1) -   z_cc_arr(i-1,j,k  );</div>
@@ -282,7 +282,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        gpz_hi  = (p_arr(i  ,j,k+1) - p_arr(i  ,j,k-1)) / dz_phys_hi;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        gpz_lo  = (p_arr(i-1,j,k+1) - p_arr(i-1,j,k-1)) / dz_phys_lo;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    Real gpx_metric = met_h_xi * 0.5 * (gpz_hi + gpz_lo);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gpx_metric = met_h_xi * 0.5 * (gpz_hi + gpz_lo);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> -= gpx_metric;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                gpx_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a>;</div>
@@ -291,13 +291,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            ParallelFor(tby, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                Real <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = dxInv[1] * (p_arr(i,j,k) - p_arr(i,j-1,k));</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = dxInv[1] * (p_arr(i,j,k) - p_arr(i,j-1,k));</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    Real met_h_eta = (z_cc_arr(i,j,k) - z_cc_arr(i,j-1,k)) * dxInv[1];</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_eta = (z_cc_arr(i,j,k) - z_cc_arr(i,j-1,k)) * dxInv[1];</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    Real dz_phys_hi, dz_phys_lo;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    Real gpz_lo, gpz_hi;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_phys_hi, dz_phys_lo;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gpz_lo, gpz_hi;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <span class="keywordflow">if</span> (k==domain_klo) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                        dz_phys_hi = z_cc_arr(i,j  ,k+1) -   z_cc_arr(i,j  ,k  );</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        dz_phys_lo = z_cc_arr(i,j-1,k+1) -   z_cc_arr(i,j-1,k  );</div>
@@ -314,7 +314,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                        gpz_hi  = (p_arr(i,j  ,k+1) - p_arr(i,j  ,k-1)) / dz_phys_hi;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        gpz_lo  = (p_arr(i,j-1,k+1) - p_arr(i,j-1,k-1)) / dz_phys_lo;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    Real gpy_metric = met_h_eta * 0.5 * (gpz_hi + gpz_lo);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gpy_metric = met_h_eta * 0.5 * (gpz_hi + gpz_lo);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> -= gpy_metric;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                gpy_arr(i,j,k) = <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a>;</div>
@@ -322,7 +322,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            ParallelFor(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                Real met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd_arr) : 1;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> met_h_zeta = (l_use_terrain_fitted_coords) ? <a class="code" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a>(i, j, k, dxInv, z_nd_arr) : 1;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                gpz_arr(i,j,k) = dxInv[2] * ( p_arr(i,j,k)-p_arr(i,j,k-1) )  / met_h_zeta;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            });</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
@@ -333,10 +333,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> l_fitting = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keyword">const</span> Real* dx_arr = geom.CellSize();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keyword">const</span> Real dx = dx_arr[0];</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keyword">const</span> Real dy = dx_arr[1];</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keyword">const</span> Real dz = dx_arr[2];</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* dx_arr = geom.CellSize();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dx = dx_arr[0];</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dy = dx_arr[1];</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz = dx_arr[2];</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="comment">// EB factory</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            Array4&lt;const EBCellFlag&gt; cellflg = (ebfact.<a class="code" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd">get_const_factory</a>())-&gt;getMultiEBCellFlagFab()[mfi].const_array();</div>
@@ -477,6 +477,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
 <div class="ttc" id="aERF__EBSlopes_8H_html_af77db2c09d5b34ca21e60e3918cdf257"><div class="ttname"><a href="ERF__EBSlopes_8H.html#af77db2c09d5b34ca21e60e3918cdf257">erf_calc_slopes_eb_staggered</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; erf_calc_slopes_eb_staggered(int igrid_query, int igrid_data, amrex::Real dx, amrex::Real dy, amrex::Real dz, int i, int j, int k, amrex::Array4&lt; amrex::Real const &gt; const &amp;state, amrex::Array4&lt; amrex::Real const &gt; const &amp;ccent, amrex::Array4&lt; amrex::EBCellFlag const &gt; const &amp;flag)</div><div class="ttdef"><b>Definition:</b> ERF_EBSlopes.H:300</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:182</div></div>
 <div class="ttc" id="aclasseb___html_a3073f9ff05faf3d2351395ef6d293dae"><div class="ttname"><a href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae">eb_::get_w_const_factory</a></div><div class="ttdeci">eb_aux_ const  * get_w_const_factory() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:56</div></div>
 <div class="ttc" id="aclasseb___html_a74b48b1a80f3292f6002592f1d1d2bcd"><div class="ttname"><a href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd">eb_::get_const_factory</a></div><div class="ttdeci">const std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; &amp; get_const_factory() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:46</div></div>
@@ -629,7 +630,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; pptemp_arr = p.array(mfi);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                Real qv_for_p = (l_use_moisture) ? cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : 0.0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_for_p = (l_use_moisture) ? cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : 0.0;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                pptemp_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),qv_for_p) - p0_arr(i,j,k);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            });</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>

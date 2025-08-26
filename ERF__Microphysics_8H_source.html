@@ -117,15 +117,15 @@ $(document).ready(function(){initNavTree('ERF__Microphysics_8H_source.html','');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                       <span class="keyword">const</span> amrex::MultiFab&amp;,</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                       <span class="keyword">const</span> amrex::BoxArray&amp;,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                       <span class="keyword">const</span> amrex::Geometry&amp;,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                       <span class="keyword">const</span> amrex::Real&amp;,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                       <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;,</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                       std::unique_ptr&lt;amrex::MultiFab&gt;&amp;,</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                       std::unique_ptr&lt;amrex::MultiFab&gt;&amp;) = 0;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">    /*! \brief advance microphysics for one time step */</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">   37</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Advance</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                          <span class="keyword">const</span> amrex::Real&amp;,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;,</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">int</span>&amp;,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                          <span class="keyword">const</span> amrex::Real&amp;,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                          <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp;,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                          amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp;,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                          <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp;,</div>
@@ -194,6 +194,7 @@ $(document).ready(function(){initNavTree('ERF__Microphysics_8H_source.html','');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aclassMicrophysics_html"><div class="ttname"><a href="classMicrophysics.html">Microphysics</a></div><div class="ttdoc">Base class for microphysics interface.</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:14</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a069e6013efb78d268394868d0cfc6382"><div class="ttname"><a href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">Microphysics::Get_Qmoist_Size</a></div><div class="ttdeci">virtual int Get_Qmoist_Size(const int &amp;)=0</div><div class="ttdoc">get the number of moisture model variables</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a09486c3bc292538d5a26683fb1e19451"><div class="ttname"><a href="classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451">Microphysics::~Microphysics</a></div><div class="ttdeci">virtual ~Microphysics()=default</div><div class="ttdoc">default destructor</div></div>

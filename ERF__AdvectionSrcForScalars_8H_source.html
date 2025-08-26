@@ -101,8 +101,8 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForScalars_8H_source.
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_xmom,</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_ymom,</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                               <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_zmom,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                               <span class="keyword">const</span> amrex::Real horiz_upw_frac,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                               <span class="keyword">const</span> amrex::Real vert_upw_frac)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                               <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                               <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">// Instantiate structs for vert/horiz interp</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    InterpType_H interp_prim_h(cell_prim, horiz_upw_frac);</div>
@@ -115,14 +115,14 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForScalars_8H_source.
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        amrex::Real interpx(0.);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpx(0.);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        interp_prim_h.InterpolateInX(i,j,k,prim_index,interpx,avg_xmom(i  ,j  ,k  ));</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        (flx_arr[0])(i,j,k) = avg_xmom(i,j,k) * interpx;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    });</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        amrex::Real interpy(0.);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpy(0.);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        interp_prim_h.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i  ,j  ,k  ));</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        (flx_arr[1])(i,j,k) = avg_ymom(i,j,k) * interpy;</div>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForScalars_8H_source.
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        amrex::Real interpz(0.);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpz(0.);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        interp_prim_v.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i  ,j  ,k  ));</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        (flx_arr[2])(i,j,k) = avg_zmom(i,j,k) * interpz;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    });</div>
@@ -148,8 +148,8 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForScalars_8H_source.
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_xmom,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_ymom,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; avg_zmom,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            <span class="keyword">const</span> amrex::Real horiz_upw_frac,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            <span class="keyword">const</span> amrex::Real vert_upw_frac,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> horiz_upw_frac,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vert_upw_frac,</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
@@ -207,6 +207,7 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForScalars_8H_source.
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a></div><div class="ttdeci">@ Centered_6th</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a></div><div class="ttdeci">@ Centered_2nd</div></div>
 <div class="ttc" id="aERF__Interpolation_8H_html"><div class="ttname"><a href="ERF__Interpolation_8H.html">ERF_Interpolation.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -170,8 +170,8 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                       a_p.idata(ERFParticlesIntIdxAoS::k) );</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (a_height_arr) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        amrex::Real lx = (a_p.pos(0)-a_plo[0])*a_dxi[0] - <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(iv[0]);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        amrex::Real ly = (a_p.pos(1)-a_plo[1])*a_dxi[1] - <span class="keyword">static_cast&lt;</span>amrex::Real<span class="keyword">&gt;</span>(iv[1]);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lx = (a_p.pos(0)-a_plo[0])*a_dxi[0] - <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(iv[0]);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ly = (a_p.pos(1)-a_plo[1])*a_dxi[1] - <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(iv[1]);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">auto</span> zlo = a_height_arr(iv[0]  ,iv[1]  ,iv[2]  ) * (1.0-lx) * (1.0-ly) +</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                   a_height_arr(iv[0]+1,iv[1]  ,iv[2]  ) *      lx  * (1.0-ly) +</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                   a_height_arr(iv[0]  ,iv[1]+1,iv[2]  ) * (1.0-lx) * ly +</div>
@@ -231,11 +231,11 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        }</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">        /*! Initialize particles in domain */</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> InitializeParticles (<span class="keyword">const</span> amrex::Real time, <span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; a_ptr = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> InitializeParticles (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> time, <span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; a_ptr = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">        /*! Evolve particles for one time step */</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> EvolveParticles (   <span class="keywordtype">int</span>,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                         amrex::Real,</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>,</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                         amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp;,</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                         <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; );</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"></span> </div>
@@ -256,18 +256,18 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">        /*! Uses midpoint method to advance particles using flow velocity. */</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> AdvectWithFlow (  amrex::MultiFab*,</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                                       <span class="keywordtype">int</span>,</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                       amrex::Real,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                       <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>,</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                                       <span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; );</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">        /*! Uses midpoint method to advance particles falling under gravity. */</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> AdvectWithGravity ( <span class="keywordtype">int</span>,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                         amrex::Real,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>,</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                         <span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; );</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">        /*! Interpolates flow temperature to particles */</span></div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> ComputeTemperature ( <span class="keyword">const</span> amrex::MultiFab&amp;,</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                          <span class="keywordtype">int</span>,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                          amrex::Real,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>,</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                          <span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; );</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">        /*! Compute mass density */</span></div>
@@ -317,7 +317,7 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        std::string m_initialization_type;  <span class="comment">/*!&lt; initial particle distribution type */</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordtype">int</span> m_ppc_init;                     <span class="comment">/*!&lt; initial number of particles per cell */</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        amrex::Real m_inject_start_time;    <span class="comment">/*!&lt; particles will only be initialized/injected if time &gt;= m_inject_start_time */</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> m_inject_start_time;    <span class="comment">/*!&lt; particles will only be initialized/injected if time &gt;= m_inject_start_time */</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordtype">bool</span> m_initialized = <span class="keyword">false</span>;         <span class="comment">/*!&lt; have the particles been initialized */</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
@@ -333,6 +333,7 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

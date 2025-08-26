@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['r_5fd_5735',['r_d',['../namespacemodule__model__constants.html#a4fdb9d2ec61d6894ec20f71687ad84c4',1,'module_model_constants']]],
-  ['r_5fd_5736',['R_d',['../ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870',1,'ERF_Constants.H']]],
+  ['r_5fd_5735',['R_d',['../ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870',1,'ERF_Constants.H']]],
+  ['r_5fd_5736',['r_d',['../namespacemodule__model__constants.html#a4fdb9d2ec61d6894ec20f71687ad84c4',1,'module_model_constants']]],
   ['r_5flay_5737',['r_lay',['../classRadiation.html#a67b0e5abda462cff0b83a479f6ae9fc1',1,'Radiation']]],
-  ['r_5fv_5738',['r_v',['../namespacemodule__model__constants.html#ade6ca3d84b289949b470e6ced83e16a6',1,'module_model_constants']]],
-  ['r_5fv_5739',['R_v',['../ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a',1,'ERF_Constants.H']]],
+  ['r_5fv_5738',['R_v',['../ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a',1,'ERF_Constants.H']]],
+  ['r_5fv_5739',['r_v',['../namespacemodule__model__constants.html#ade6ca3d84b289949b470e6ced83e16a6',1,'module_model_constants']]],
   ['rad_5740',['rad',['../classERF.html#a609b41a1de9c6b28f23dcdc6843f9ef5',1,'ERF']]],
   ['rad_5fdatalog_5fint_5741',['rad_datalog_int',['../classERF.html#a9194db6f65f3cfa366010648eaa4affd',1,'ERF']]],
   ['rad_5ftype_5742',['rad_type',['../structSolverChoice.html#a31c93846e0129221632347d2378e881d',1,'SolverChoice']]],

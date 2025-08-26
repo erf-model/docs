@@ -119,8 +119,8 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_vx_inv,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_uy_inv,</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                            <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_vy_inv,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            <span class="keyword">const</span> amrex::Real upw_frac_h,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            <span class="keyword">const</span> amrex::Real upw_frac_v,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> upw_frac_h,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> upw_frac_v,</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> <span class="comment">/*vert_adv_type*/</span>,</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                  amrex::GpuArray&lt;amrex::Array4&lt;amrex::Real&gt;, AMREX_SPACEDIM&gt;&amp; flx_u_arr,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                  amrex::GpuArray&lt;amrex::Array4&lt;amrex::Real&gt;, AMREX_SPACEDIM&gt;&amp; flx_v_arr,</div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> ( u_afrac_x(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            amrex::Real rho_u_avg = 0.5 * (rho_u(i-1,j,k) * mf_ux_inv(i-1,j,0) + rho_u(i,j,k) * mf_ux_inv(i,j,0));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_u_avg = 0.5 * (rho_u(i-1,j,k) * mf_ux_inv(i-1,j,0) + rho_u(i,j,k) * mf_ux_inv(i,j,0));</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordtype">int</span> icell = 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="comment">// Interpolate u using the highest-order scheme</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            amrex::Real interpx = 0.;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpx = 0.;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> (icell==ncells_u_horz) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                interp_u_horz.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> ( u_afrac_y(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            amrex::Real rho_v_avg = 0.5 * (rho_v(i,j,k) * mf_vx_inv(i,j,0) + rho_v(i-1,j,k) * mf_vx_inv(i-1,j,0));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_v_avg = 0.5 * (rho_v(i,j,k) * mf_vx_inv(i,j,0) + rho_v(i-1,j,k) * mf_vx_inv(i-1,j,0));</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordtype">int</span> jcell = 0;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="comment">// Interpolate u using the highest-order scheme</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            amrex::Real interpy = 0.;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpy = 0.;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">if</span> (jcell==ncells_u_horz) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                interp_u_horz.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -253,7 +253,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> ( u_afrac_z(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            amrex::Real rho_w_avg = 0.5 * (rho_w(i,j,k) + rho_w(i-1,j,k));</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_w_avg = 0.5 * (rho_w(i,j,k) + rho_w(i-1,j,k));</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="keywordtype">int</span> kcell = 0;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
@@ -278,7 +278,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="comment">// Interpolate u using the highest-order scheme</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            amrex::Real interpz = 0.;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpz = 0.;</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">if</span> (kcell==ncells_u_vert) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                interp_u_vert.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -306,7 +306,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">if</span> ( v_afrac_x(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            amrex::Real rho_u_avg = 0.5 * (rho_u(i,j,k) * mf_uy_inv(i,j,0) + rho_u(i,j-1,k) * mf_uy_inv(i,j-1,0));</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_u_avg = 0.5 * (rho_u(i,j,k) * mf_uy_inv(i,j,0) + rho_u(i,j-1,k) * mf_uy_inv(i,j-1,0));</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordtype">int</span> icell = 0;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
@@ -331,7 +331,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="comment">// Interpolate v using the highest-order scheme</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            amrex::Real interpx = 0.;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpx = 0.;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span> (icell==ncells_v_horz) {</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                interp_v_horz.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -353,7 +353,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    {</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">if</span> ( v_afrac_y(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            amrex::Real rho_v_avg = 0.5 * (rho_v(i,j,k) * mf_vy_inv(i,j,0) + rho_v(i,j-1,k) * mf_vy_inv(i,j-1,0));</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_v_avg = 0.5 * (rho_v(i,j,k) * mf_vy_inv(i,j,0) + rho_v(i,j-1,k) * mf_vy_inv(i,j-1,0));</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordtype">int</span> jcell = 0;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
@@ -376,7 +376,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="comment">// Interpolate v using the highest-order scheme</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            amrex::Real interpy = 0.;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpy = 0.;</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keywordflow">if</span> (jcell==ncells_v_horz) {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                interp_v_horz.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -398,7 +398,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    {</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">if</span> ( v_afrac_z(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            amrex::Real rho_w_avg = 0.5 * (rho_w(i,j,k) + rho_w(i,j-1,k));</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_w_avg = 0.5 * (rho_w(i,j,k) + rho_w(i,j-1,k));</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keywordtype">int</span> kcell = 0;</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
@@ -423,7 +423,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="comment">// Interpolate v using the highest-order scheme</span></div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            amrex::Real interpz = 0.;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpz = 0.;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keywordflow">if</span> (kcell==ncells_v_vert) {</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                interp_v_vert.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -451,7 +451,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    {</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span> ( w_afrac_x(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            amrex::Real rho_u_avg = 0.5 * (rho_u(i,j,k) + rho_u(i,j,k-1)) * mf_ux_inv(i,j,0);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_u_avg = 0.5 * (rho_u(i,j,k) + rho_u(i,j,k-1)) * mf_ux_inv(i,j,0);</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keywordtype">int</span> icell = 0;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
@@ -476,7 +476,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">// Interpolate w using the highest-order scheme</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            amrex::Real interpx = 0.;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpx = 0.;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keywordflow">if</span> (icell==ncells_w_horz) {</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                interp_w_horz.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -498,7 +498,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    {</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">if</span> ( w_afrac_y(i,j,k) &gt; 0. )</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        {</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            amrex::Real rho_v_avg = 0.5 * (rho_v(i,j,k) + rho_v(i,j,k-1)) * mf_vy_inv(i,j,0);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_v_avg = 0.5 * (rho_v(i,j,k) + rho_v(i,j,k-1)) * mf_vy_inv(i,j,0);</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordtype">int</span> jcell = 0;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
@@ -523,7 +523,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="comment">// Interpolate w using the highest-order scheme</span></div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            amrex::Real interpy = 0.;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpy = 0.;</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">if</span> (jcell==ncells_w_horz) {</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                interp_w_horz.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -550,7 +550,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                flx_w_arr[2](i,j,k) = rho_w(i,j,k) * w(i,j,k);</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                amrex::Real rho_w_avg = 0.5 * (rho_w(i,j,k) + rho_w(i,j,k-1));</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_w_avg = 0.5 * (rho_w(i,j,k) + rho_w(i,j,k-1));</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                <span class="keywordtype">int</span> kcell = 0;</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
@@ -583,7 +583,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                <span class="comment">// Interpolate w using the highest-order scheme</span></div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                amrex::Real interpz = 0.;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpz = 0.;</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                <span class="keywordflow">if</span> (kcell==ncells_w_vert) {</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                    interp_w_vert.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                } <span class="keywordflow">else</span> {</div>
@@ -634,8 +634,8 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_vx_inv,</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_uy_inv,</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; mf_vy_inv,</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                        <span class="keyword">const</span> amrex::Real upw_frac_h,</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                        <span class="keyword">const</span> amrex::Real upw_frac_v,</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> upw_frac_h,</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> upw_frac_v,</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> vert_adv_type,</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                              amrex::GpuArray&lt;amrex::Array4&lt;amrex::Real&gt;, AMREX_SPACEDIM&gt;&amp; flx_u_arr,</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                              amrex::GpuArray&lt;amrex::Array4&lt;amrex::Real&gt;, AMREX_SPACEDIM&gt;&amp; flx_v_arr,</div>
@@ -716,6 +716,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a></div><div class="ttdeci">@ Centered_6th</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a></div><div class="ttdeci">@ Centered_2nd</div></div>
 <div class="ttc" id="aERF__Interpolation_8H_html"><div class="ttname"><a href="ERF__Interpolation_8H.html">ERF_Interpolation.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="astructCENTERED2_html"><div class="ttname"><a href="structCENTERED2.html">CENTERED2</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:10</div></div>
 <div class="ttc" id="astructCENTERED2_html_a2b0e42ec56f22f97bb65ed044f6f77a0"><div class="ttname"><a href="structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0">CENTERED2::InterpolateInY</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void InterpolateInY(const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_lo, amrex::Real) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:36</div></div>
 <div class="ttc" id="astructCENTERED2_html_a66de83f17cc1fa457cb89af60afb0041"><div class="ttname"><a href="structCENTERED2.html#a66de83f17cc1fa457cb89af60afb0041">CENTERED2::InterpolateInZ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void InterpolateInZ(const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, amrex::Real &amp;val_lo, amrex::Real) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:54</div></div>

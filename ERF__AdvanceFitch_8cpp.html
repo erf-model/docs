@@ -128,9 +128,9 @@ Include dependency graph for ERF_AdvanceFitch.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7b6c67da0ff16af60b10f434632b06ce"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce">compute_A</a> (const Real z, const Real hub_height, const Real rotor_rad)</td></tr>
+<tr class="memitem:a7b6c67da0ff16af60b10f434632b06ce"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE AMREX_GPU_DEVICE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce">compute_A</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hub_height, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rotor_rad)</td></tr>
 <tr class="separator:a7b6c67da0ff16af60b10f434632b06ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e0a40af0744df9f7e79d181225f615"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE AMREX_GPU_DEVICE Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615">compute_Aijk</a> (const Real z_k, const Real z_kp1, const Real hub_height, const Real rotor_rad)</td></tr>
+<tr class="memitem:a68e0a40af0744df9f7e79d181225f615"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE AMREX_GPU_DEVICE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615">compute_Aijk</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_k, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_kp1, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hub_height, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rotor_rad)</td></tr>
 <tr class="separator:a68e0a40af0744df9f7e79d181225f615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -141,21 +141,21 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_FORCE_INLINE AMREX_GPU_DEVICE Real compute_A </td>
+          <td class="memname">AMREX_FORCE_INLINE AMREX_GPU_DEVICE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> compute_A </td>
           <td>(</td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>z</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>hub_height</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>rotor_rad</em>&#160;</td>
         </tr>
         <tr>
@@ -167,14 +167,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Real d  = std::min(std::fabs(z - hub_height), rotor_rad);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Real <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a> = std::acos(d/rotor_rad);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Real A_s = rotor_rad*rotor_rad*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a> - d*std::pow(std::max(rotor_rad*rotor_rad - d*d,0.0), 0.5);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Real A = <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rotor_rad*rotor_rad/2.0 - A_s;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d  = std::min(std::fabs(z - hub_height), rotor_rad);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a> = std::acos(d/rotor_rad);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A_s = rotor_rad*rotor_rad*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a> - d*std::pow(std::max(rotor_rad*rotor_rad - d*d,0.0), 0.5);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A = <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rotor_rad*rotor_rad/2.0 - A_s;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> A;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="anamespaceLsmVar__MM5_html_afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:20</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__AdvanceFitch_8cpp.html#a68e0a40af0744df9f7e79d181225f615">compute_Aijk()</a>.</p>
@@ -198,27 +199,27 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_FORCE_INLINE AMREX_GPU_DEVICE Real compute_Aijk </td>
+          <td class="memname">AMREX_FORCE_INLINE AMREX_GPU_DEVICE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> compute_Aijk </td>
           <td>(</td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>z_k</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>z_kp1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>hub_height</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Real&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
           <td class="paramname"><em>rotor_rad</em>&#160;</td>
         </tr>
         <tr>
@@ -230,11 +231,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Real A_k   = <a class="code" href="ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce">compute_A</a>(z_k, hub_height, rotor_rad);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    Real A_kp1 = <a class="code" href="ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce">compute_A</a>(z_kp1, hub_height, rotor_rad);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A_k   = <a class="code" href="ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce">compute_A</a>(z_k, hub_height, rotor_rad);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A_kp1 = <a class="code" href="ERF__AdvanceFitch_8cpp.html#a7b6c67da0ff16af60b10f434632b06ce">compute_A</a>(z_kp1, hub_height, rotor_rad);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    Real check = (z_k - hub_height)*(z_kp1 - hub_height);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Real A_ijk;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> check = (z_k - hub_height)*(z_kp1 - hub_height);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A_ijk;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(check &gt; 0){</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        A_ijk = std::fabs(A_k -A_kp1);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>

@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                   <span class="keyword">const</span> amrex::Box&amp; domain,</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                   <span class="keyword">const</span> std::string&amp; fname,</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                   std::string&amp; NC_dateTime,</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                   amrex::Real&amp; NC_epochTime,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; NC_epochTime,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                   <span class="keywordtype">int</span>&amp; flag_psfc,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                   <span class="keywordtype">int</span>&amp; flag_msf,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                   <span class="keywordtype">int</span>&amp; flag_sst,</div>
@@ -108,8 +108,8 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                   <span class="keywordtype">int</span>&amp; flag_lmask,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                   <span class="keywordtype">int</span>&amp; NC_nx,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                   <span class="keywordtype">int</span>&amp; NC_ny,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                   amrex::Real&amp; NC_dx,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                   amrex::Real&amp; NC_dy,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; NC_dx,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; NC_dy,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                   amrex::FArrayBox&amp; NC_xvel_fab,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                   amrex::FArrayBox&amp; NC_yvel_fab,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                   amrex::FArrayBox&amp; NC_temp_fab,</div>
@@ -142,10 +142,10 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">bool</span> metgrid_use_below_sfc,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">bool</span> metgrid_use_sfc,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">bool</span> metgrid_retain_sfc,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                         <span class="keyword">const</span> amrex::Real metgrid_proximity,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                         <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> metgrid_proximity,</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">int</span> metgrid_order,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">int</span> metgrid_metgrid_force_sfc_k,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                         <span class="keyword">const</span> amrex::Real l_rdOcp,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                         <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> l_rdOcp,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                         amrex::Box&amp; tbxc,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                         amrex::Box&amp; tbxu,</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                         amrex::Box&amp; tbxv,</div>
@@ -186,7 +186,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="ERF__MetgridUtils_8H.html#acb974936d5d6a851c3dd5147e9666dd6">   99</a></span>&#160;<a class="code" href="ERF__MetgridUtils_8H.html#acb974936d5d6a851c3dd5147e9666dd6">init_base_state_from_metgrid</a> (<span class="keyword">const</span> <span class="keywordtype">bool</span> use_moisture,</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                              <span class="keyword">const</span> <span class="keywordtype">bool</span> metgrid_debug_psfc,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                              <span class="keyword">const</span> amrex::Real l_rdOcp,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                              <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> l_rdOcp,</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                              <span class="keyword">const</span> amrex::Box&amp; valid_bx,</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;int&gt;&amp; flag_psfc,</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                              amrex::FArrayBox&amp; state,</div>
@@ -202,20 +202,20 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;AMREX_GPU_DEVICE</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="ERF__MetgridUtils_8H.html#a4978953bdc5bd682e32d3941a44fb6ce">  116</a></span>&#160;<a class="code" href="ERF__MetgridUtils_8H.html#a4978953bdc5bd682e32d3941a44fb6ce">lagrange_interp</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; order,</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                 amrex::Real* x,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                 amrex::Real* y,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                 amrex::Real&amp; new_x,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                 amrex::Real&amp; new_y)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* x,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* y,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; new_x,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; new_y)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Interpolation using Lagrange polynomials.</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// P(x) = f(x0)Ln0(x) + ... + f(xn)Lnn(x)</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// where Lnk(x) = (x -x0)(x -x1)...(x -xk-1)(x -xk+1)...(x -xn)</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">//                ---------------------------------------------</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">//                (xk-x0)(xk-x1)...(xk-xk-1)(xk-xk+1)...(xk-xn)</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    amrex::Real Px = 0.0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Px = 0.0;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt;= order; i++) {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        amrex::Real n = 1.0;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        amrex::Real d = 1.0;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> n = 1.0;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> d = 1.0;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt;= order; k++) {</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">if</span> (k == i) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            n *= new_x-<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>[k];</div>
@@ -238,17 +238,17 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; order,</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                amrex::Real* orig_x_z,</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                amrex::Real* orig_x_p,</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                amrex::Real* orig_y,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                amrex::Real* new_x_z,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                amrex::Real* new_x_p,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                amrex::Real* new_y)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_z,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_p,</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y,</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* new_x_z,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* new_x_p,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* new_y)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    amrex::Real CRC_const1 = 11880.516; <span class="comment">// m</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    amrex::Real CRC_const2 = 0.1902632;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    amrex::Real CRC_const3 = 0.0065; <span class="comment">// K km-1</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CRC_const1 = 11880.516; <span class="comment">// m</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CRC_const2 = 0.1902632;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> CRC_const3 = 0.0065; <span class="comment">// K km-1</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    amrex::ignore_unused(i,j);</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
@@ -264,8 +264,8 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordtype">bool</span> extrapolating = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordtype">int</span> kl, kr;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ko=0; ko &lt; orig_n-1; ko++) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            amrex::Real a = new_x_z[new_k]-orig_x_z[ko];</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            amrex::Real b = new_x_z[new_k]-orig_x_z[ko+1];</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a = new_x_z[new_k]-orig_x_z[ko];</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> b = new_x_z[new_k]-orig_x_z[ko+1];</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">if</span> (a*b &lt;= 0.0) {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                kl = ko;</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                kr = ko+1;</div>
@@ -278,12 +278,12 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">if</span> (var_type == <span class="charliteral">&#39;T&#39;</span>) {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="comment">// Assume a standard atmosphere -6.5 K km-1 lapse rate.</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="comment">// Comparable to the WRF default, t_extrap_type=2.</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                amrex::Real depth_of_extrap_in_p = new_x_p[new_k]-orig_x_p[0];</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                amrex::Real avg_of_extrap_p = 0.5*(new_x_p[new_k]+orig_x_p[0]);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                amrex::Real temp_extrap_starting_point = orig_y[0]*std::pow(orig_x_p[0]/100000.0, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                amrex::Real dZdP = CRC_const1*CRC_const2*std::pow(avg_of_extrap_p/100.0, CRC_const2-1.0);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                amrex::Real dZ = dZdP*(depth_of_extrap_in_p/100.0);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                amrex::Real dT = dZ*CRC_const3;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> depth_of_extrap_in_p = new_x_p[new_k]-orig_x_p[0];</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> avg_of_extrap_p = 0.5*(new_x_p[new_k]+orig_x_p[0]);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> temp_extrap_starting_point = orig_y[0]*std::pow(orig_x_p[0]/100000.0, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dZdP = CRC_const1*CRC_const2*std::pow(avg_of_extrap_p/100.0, CRC_const2-1.0);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dZ = dZdP*(depth_of_extrap_in_p/100.0);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dT = dZ*CRC_const3;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                new_y[new_k] = (temp_extrap_starting_point+dT)*std::pow(100000.0/new_x_p[new_k], <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="comment">// Use a constant value below ground.</span></div>
@@ -302,9 +302,9 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                <span class="keywordtype">int</span> ksize = kend-ksta;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="keywordflow">if</span> (debug) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;  (1a)  order=&quot;</span> &lt;&lt; order &lt;&lt; <span class="stringliteral">&quot;  new_x_z=&quot;</span> &lt;&lt; new_x_z[new_k] &lt;&lt; <span class="stringliteral">&quot;  new_x_p=&quot;</span> &lt;&lt; new_x_p[new_k] &lt;&lt; <span class="stringliteral">&quot;  kl=&quot;</span> &lt;&lt; kl &lt;&lt; <span class="stringliteral">&quot;  kr=&quot;</span> &lt;&lt; kr &lt;&lt; <span class="stringliteral">&quot;  ksta=&quot;</span> &lt;&lt; ksta &lt;&lt; <span class="stringliteral">&quot;  kend=&quot;</span> &lt;&lt; kend &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                amrex::Real new_x;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_x;</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                amrex::GpuArray&lt;amrex::Real,9&gt; orig_x_sub;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                amrex::Real* orig_x_sub_p = orig_x_sub.data();</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_sub_p = orig_x_sub.data();</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                <span class="keywordflow">if</span> (exp_interp) {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    new_x = new_x_p[new_k];</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_p[k]; }</div>
@@ -313,7 +313,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_z[k]; }</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                }</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                amrex::GpuArray&lt;amrex::Real,9&gt; orig_y_sub;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                amrex::Real* orig_y_sub_p = orig_y_sub.data();</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y_sub_p = orig_y_sub.data();</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_y_sub_p[k-ksta] = orig_y[k]; }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="keywordflow">if</span> (debug) {</div>
@@ -335,11 +335,11 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                <span class="keywordtype">int</span> ksize = kend-ksta+1;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordflow">if</span> (debug) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;  (1b)  order=&quot;</span> &lt;&lt; order &lt;&lt; <span class="stringliteral">&quot;  new_x=&quot;</span> &lt;&lt; new_x_z[new_k] &lt;&lt; <span class="stringliteral">&quot;  new_x_p=&quot;</span> &lt;&lt; new_x_p[new_k] &lt;&lt; <span class="stringliteral">&quot;  kl=&quot;</span> &lt;&lt; kl &lt;&lt; <span class="stringliteral">&quot;  kr=&quot;</span> &lt;&lt; kr &lt;&lt; <span class="stringliteral">&quot;  ksta=&quot;</span> &lt;&lt; ksta &lt;&lt; <span class="stringliteral">&quot;  kend=&quot;</span> &lt;&lt; kend &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                amrex::Real new_x;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_x;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                amrex::GpuArray&lt;amrex::Real,2&gt; orig_x_sub;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                amrex::GpuArray&lt;amrex::Real,2&gt; orig_y_sub;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                amrex::Real* orig_x_sub_p = orig_x_sub.data();</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                amrex::Real* orig_y_sub_p = orig_y_sub.data();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_sub_p = orig_x_sub.data();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y_sub_p = orig_y_sub.data();</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <span class="keywordflow">if</span> (exp_interp) {</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    new_x = new_x_p[new_k];</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_p[k]; }</div>
@@ -364,7 +364,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">if</span> ((kl-(order/2) &gt;= 0) &amp;&amp; (kr+order/2 &lt;= orig_n-1)) {</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="comment">// Even order interpolation.</span></div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <span class="comment">// Interpolate twice. Offset the range by 1 the 2nd time. Average the results.</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                amrex::Real new_y_l, new_y_r;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_y_l, new_y_r;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                {</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    <span class="keywordtype">int</span> ksta = kl-(order/2-1);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                    <span class="keywordtype">int</span> kend = ksta+order;</div>
@@ -372,11 +372,11 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    <span class="keywordtype">int</span> ksize = kend-ksta;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                    <span class="keywordflow">if</span> (debug) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;  (2a)  order=&quot;</span> &lt;&lt; order &lt;&lt; <span class="stringliteral">&quot;  new_x_z=&quot;</span> &lt;&lt; new_x_z[new_k] &lt;&lt; <span class="stringliteral">&quot;  new_x_p=&quot;</span> &lt;&lt; new_x_p[new_k] &lt;&lt; <span class="stringliteral">&quot;  kl=&quot;</span> &lt;&lt; kl &lt;&lt; <span class="stringliteral">&quot;  kr=&quot;</span> &lt;&lt; kr &lt;&lt; <span class="stringliteral">&quot;  ksta=&quot;</span> &lt;&lt; ksta &lt;&lt; <span class="stringliteral">&quot;  kend=&quot;</span> &lt;&lt; kend &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    amrex::Real new_x;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_x;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                    amrex::GpuArray&lt;amrex::Real,10&gt; orig_x_sub;</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    amrex::GpuArray&lt;amrex::Real,10&gt; orig_y_sub;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    amrex::Real* orig_x_sub_p = orig_x_sub.data();</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    amrex::Real* orig_y_sub_p = orig_y_sub.data();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_sub_p = orig_x_sub.data();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y_sub_p = orig_y_sub.data();</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <span class="keywordflow">if</span> (exp_interp) {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                        new_x = new_x_p[new_k];</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_p[k]; }</div>
@@ -404,11 +404,11 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                    <span class="keywordtype">int</span> ksize = kend-ksta;</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    <span class="keywordflow">if</span> (debug) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;new_k=&quot;</span> &lt;&lt; new_k &lt;&lt; <span class="stringliteral">&quot;  (2b)  order=&quot;</span> &lt;&lt; order &lt;&lt; <span class="stringliteral">&quot;  new_x_z=&quot;</span> &lt;&lt; new_x_z[new_k] &lt;&lt; <span class="stringliteral">&quot;  new_x_p=&quot;</span> &lt;&lt; new_x_p[new_k] &lt;&lt; <span class="stringliteral">&quot;  kl=&quot;</span> &lt;&lt; kl &lt;&lt; <span class="stringliteral">&quot;  kr=&quot;</span> &lt;&lt; kr &lt;&lt; <span class="stringliteral">&quot;  ksta=&quot;</span> &lt;&lt; ksta &lt;&lt; <span class="stringliteral">&quot;  kend=&quot;</span> &lt;&lt; kend &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    amrex::Real new_x;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_x;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    amrex::GpuArray&lt;amrex::Real,10&gt; orig_x_sub;</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    amrex::GpuArray&lt;amrex::Real,10&gt; orig_y_sub;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    amrex::Real* orig_x_sub_p = orig_x_sub.data();</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    amrex::Real* orig_y_sub_p = orig_y_sub.data();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_sub_p = orig_x_sub.data();</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y_sub_p = orig_y_sub.data();</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                    <span class="keywordflow">if</span> (exp_interp) {</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                        new_x = new_x_p[new_k];</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_p[k]; }</div>
@@ -437,11 +437,11 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="keywordtype">int</span> ksize = kend-ksta;</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                <span class="keywordflow">if</span> (debug) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;  (3)  order=&quot;</span> &lt;&lt; order &lt;&lt; <span class="stringliteral">&quot;  new_x_z=&quot;</span> &lt;&lt; new_x_z[new_k] &lt;&lt; <span class="stringliteral">&quot;  new_x_p=&quot;</span> &lt;&lt; new_x_p[new_k] &lt;&lt; <span class="stringliteral">&quot;  kl=&quot;</span> &lt;&lt; kl &lt;&lt; <span class="stringliteral">&quot;  kr=&quot;</span> &lt;&lt; kr &lt;&lt; <span class="stringliteral">&quot;  ksta=&quot;</span> &lt;&lt; ksta &lt;&lt; <span class="stringliteral">&quot;  kend=&quot;</span> &lt;&lt; kend &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                amrex::Real new_x;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_x;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                amrex::GpuArray&lt;amrex::Real,10&gt; orig_x_sub;</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                amrex::GpuArray&lt;amrex::Real,10&gt; orig_y_sub;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                amrex::Real* orig_x_sub_p = orig_x_sub.data();</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                amrex::Real* orig_y_sub_p = orig_y_sub.data();</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_sub_p = orig_x_sub.data();</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y_sub_p = orig_y_sub.data();</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <span class="keywordflow">if</span> (exp_interp) {</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    new_x = new_x_p[new_k];</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_p[k]; }</div>
@@ -468,11 +468,11 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                <span class="keywordtype">int</span> ksize = kend-ksta;</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                <span class="keywordflow">if</span> (debug) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;  (4)  order=&quot;</span> &lt;&lt; order &lt;&lt; <span class="stringliteral">&quot;  new_x_z=&quot;</span> &lt;&lt; new_x_z[new_k] &lt;&lt; <span class="stringliteral">&quot;  new_x_p=&quot;</span> &lt;&lt; new_x_p[new_k] &lt;&lt; <span class="stringliteral">&quot;  kl=&quot;</span> &lt;&lt; kl &lt;&lt; <span class="stringliteral">&quot;  kr=&quot;</span> &lt;&lt; kr &lt;&lt; <span class="stringliteral">&quot;  ksta=&quot;</span> &lt;&lt; ksta &lt;&lt; <span class="stringliteral">&quot;  kend=&quot;</span> &lt;&lt; kend &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                amrex::Real new_x;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_x;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                amrex::GpuArray&lt;amrex::Real,10&gt; orig_x_sub;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                amrex::GpuArray&lt;amrex::Real,10&gt; orig_y_sub;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                amrex::Real* orig_x_sub_p = orig_x_sub.data();</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                amrex::Real* orig_y_sub_p = orig_y_sub.data();</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_sub_p = orig_x_sub.data();</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y_sub_p = orig_y_sub.data();</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                <span class="keywordflow">if</span> (exp_interp) {</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                    new_x = new_x_p[new_k];</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_p[k]; }</div>
@@ -500,11 +500,11 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                <span class="keywordtype">int</span> ksize = kend-ksta+1;</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                <span class="keywordflow">if</span> (debug) amrex::Print() &lt;&lt; <span class="stringliteral">&quot;  (5)  order=&quot;</span> &lt;&lt; order &lt;&lt; <span class="stringliteral">&quot;  new_x=&quot;</span> &lt;&lt; new_x_z[new_k] &lt;&lt; <span class="stringliteral">&quot;  new_x_p=&quot;</span> &lt;&lt; new_x_p[new_k] &lt;&lt; <span class="stringliteral">&quot;  kl=&quot;</span> &lt;&lt; kl &lt;&lt; <span class="stringliteral">&quot;  kr=&quot;</span> &lt;&lt; kr &lt;&lt; <span class="stringliteral">&quot;  ksta=&quot;</span> &lt;&lt; ksta &lt;&lt; <span class="stringliteral">&quot;  kend=&quot;</span> &lt;&lt; kend &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                amrex::Real new_x;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> new_x;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                amrex::GpuArray&lt;amrex::Real,2&gt; orig_x_sub;</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                amrex::GpuArray&lt;amrex::Real,2&gt; orig_y_sub;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                amrex::Real* orig_x_sub_p = orig_x_sub.data();</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                amrex::Real* orig_y_sub_p = orig_y_sub.data();</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_x_sub_p = orig_x_sub.data();</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_y_sub_p = orig_y_sub.data();</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <span class="keywordflow">if</span> (exp_interp) {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                    new_x = new_x_p[new_k];</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=ksta; k &lt;= kend; k++) { orig_x_sub_p[k-ksta] = orig_x_p[k]; }</div>
@@ -535,8 +535,8 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;AMREX_GPU_DEVICE</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno"><a class="line" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">  450</a></span>&#160;<a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a> (<span class="keyword">const</span> amrex::Real&amp; z,</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                   amrex::Real&amp; p)</div>
+<div class="line"><a name="l00450"></a><span class="lineno"><a class="line" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">  450</a></span>&#160;<a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a> (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; z,</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; p)</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;{</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    p = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>*exp(-<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>*<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>/(290.0*<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>));</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;}</div>
@@ -548,7 +548,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; metgrid_use_sfc,</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; exp_interp,</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; metgrid_retain_sfc,</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                            <span class="keyword">const</span> amrex::Real&amp; metgrid_proximity,</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; metgrid_proximity,</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; metgrid_order,</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; metgrid_force_sfc_k,</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                            <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
@@ -587,9 +587,9 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; new_z;</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; new_p;</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; new_data;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    amrex::Real* new_z_p = new_z.data();</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    amrex::Real* new_p_p = new_p.data();</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    amrex::Real* new_data_p = new_data.data();</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* new_z_p = new_z.data();</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* new_p_p = new_p.data();</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* new_data_p = new_data.data();</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; kmax_new; k++) {</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;X&#39;</span>) {</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;            new_z_p[k] = 0.25*(new_z_full(i,j,k)+new_z_full(i,j+1,k)+new_z_full(i,j,k+1)+new_z_full(i,j+1,k+1));</div>
@@ -603,7 +603,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    }</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; orig_z;</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    amrex::Real* orig_z_p = orig_z.data();</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* orig_z_p = orig_z.data();</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; kmax_orig; k++) {</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;M&#39;</span>) {</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            orig_z_p[k] = orig_z_full(i,j,k);</div>
@@ -645,8 +645,8 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="keywordtype">int</span> kend_order;</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; ordered_z;</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; ordered_data;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    amrex::Real* ordered_z_p = ordered_z.data();</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    amrex::Real* ordered_data_p = ordered_data.data();</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* ordered_z_p = ordered_z.data();</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* ordered_data_p = ordered_data.data();</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordflow">if</span> (k_above_sfc &gt; 1) {</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="comment">// The levels are not monotonically increasing in height, so</span></div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        <span class="comment">// we sort and then make &quot;artistic&quot; quality control choices.</span></div>
@@ -666,7 +666,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <span class="comment">// the choice of eliminating levels that are &quot;too close&quot; in</span></div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        <span class="comment">// pressure-space. For simplicity, calculate delta P assuming a</span></div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <span class="comment">// baroclinic atmosphere.</span></div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        amrex::Real Pu, Pl;</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Pu, Pl;</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(orig_z_p[0], Pu);</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[count-1], Pl);</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;        <span class="keywordflow">if</span> (Pl-Pu &lt; metgrid_proximity) {</div>
@@ -734,7 +734,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="comment">// Insert the remaining levels, again ignoring levels that are</span></div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        <span class="comment">// &quot;too close&quot; to the prior valid level.</span></div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=knext; k &lt; kmax_orig; k++) {</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            amrex::Real Pu, Pl;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Pu, Pl;</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(orig_z_p[k], Pu);</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[count-1], Pl);</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;            <span class="keywordflow">if</span> (Pl-Pu &lt; metgrid_proximity) {</div>
@@ -797,7 +797,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;<span class="comment">//    }</span></div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; ordered_p;</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    amrex::Real* ordered_p_p = ordered_p.data();</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* ordered_p_p = ordered_p.data();</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k=0; k &lt; kend_order; k++) {</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <a class="code" href="ERF__MetgridUtils_8H.html#a7d9c2d62b5ca74d130ee8042c20cb217">calc_p_isothermal</a>(ordered_z_p[k], ordered_p_p[k]);</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    }</div>
@@ -807,9 +807,9 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; final_z;</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; final_p;</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    amrex::GpuArray&lt;amrex::Real,256&gt; final_data;</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    amrex::Real* final_z_p = final_z.data();</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    amrex::Real* final_p_p = final_p.data();</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    amrex::Real* final_data_p = final_data.data();</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* final_z_p = final_z.data();</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* final_p_p = final_p.data();</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* final_data_p = final_data.data();</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    final_z_p[0] = ordered_z[ksta];</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    final_p_p[0] = ordered_p[ksta];</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    final_data_p[0] = ordered_data[ksta];</div>
@@ -857,7 +857,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;AMREX_GPU_DEVICE</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;amrex::Real</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
 <div class="line"><a name="l00773"></a><span class="lineno"><a class="line" href="ERF__MetgridUtils_8H.html#a4ddd248579795dad2845170d2c73e170">  773</a></span>&#160;<a class="code" href="ERF__MetgridUtils_8H.html#a4ddd248579795dad2845170d2c73e170">interpolate_column_metgrid_linear</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                                   <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; k,</div>
@@ -872,7 +872,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    <span class="keywordtype">int</span> jmax_orig = amrex::ubound(amrex::Box(orig_data)).y;</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="keywordtype">int</span> kmax_orig = amrex::ubound(amrex::Box(orig_data)).z;</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    amrex::Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>;</div>
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;X&#39;</span>) {</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = 0.25*(new_z(i,j,k)+new_z(i,j+1,k)+new_z(i,j,k+1)+new_z(i,j+1,k+1));</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    }</div>
@@ -884,13 +884,13 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                   new_z(i,j,k+1)+new_z(i,j+1,k+1)+new_z(i+1,j,k+1)+new_z(i+1,j+1,k+1));</div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    }</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    amrex::Real z0, z1;</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0, z1;</div>
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordtype">int</span> klow   = -1;</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="keywordtype">int</span> khi0   = -1;</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    amrex::Real dzlow =  1.0e12;</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    amrex::Real dzhi0 = -1.0e12;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dzlow =  1.0e12;</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dzhi0 = -1.0e12;</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; kmax_orig; kk++) {</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        amrex::Real orig_z_stag = 0.0;</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> orig_z_stag = 0.0;</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;M&#39;</span>) {</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            orig_z_stag = orig_z(i,j,kk);</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        }</div>
@@ -917,7 +917,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            }</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;        }</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160; </div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        amrex::Real dz = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        <span class="keywordflow">if</span> ((dz &lt; 0.0) &amp;&amp; (dz &gt; dzhi0)) {</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            dzhi0 = dz;</div>
 <div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            khi0  = kk;</div>
@@ -933,9 +933,9 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;    <span class="comment">// extrapolate below the bottom surface</span></div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    <span class="keywordflow">if</span> (klow == -1) {</div>
 <div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        <span class="keywordtype">int</span> khi1   = -1;</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        amrex::Real dzhi1 = -1.0e12;</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dzhi1 = -1.0e12;</div>
 <div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; kmax_orig; kk++) {</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            amrex::Real orig_z_stag = 0.0;</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> orig_z_stag = 0.0;</div>
 <div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="keywordflow">if</span> (stag == <span class="charliteral">&#39;M&#39;</span>) {</div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                orig_z_stag = orig_z(i,j,kk);</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            }</div>
@@ -961,15 +961,15 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                    orig_z_stag = 0.5*(orig_z(i,j,kk)+orig_z(i,j-1,kk));</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                }</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            }</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            amrex::Real dz = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - orig_z_stag;</div>
 <div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            <span class="keywordflow">if</span> ((dz &lt; 0.0) &amp;&amp; (dz &gt; dzhi1) &amp;&amp; (kk != khi0)) {</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                dzhi1 = dz;</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                khi1  = kk;</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                z1    = orig_z_stag;</div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;            }</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        }</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        amrex::Real y0 = orig_data(i,j,khi0,src_comp);</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        amrex::Real y1 = orig_data(i,j,khi1,src_comp);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0 = orig_data(i,j,khi0,src_comp);</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y1 = orig_data(i,j,khi1,src_comp);</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        <span class="keywordflow">return</span> ( y0-(y1-y0)/(z1-z0)*(z0-<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>) );</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160; </div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;    <span class="comment">// Extrapolate above the top surface</span></div>
@@ -1001,13 +1001,13 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;                z0 = 0.5*(orig_z(i,j,khi0)+orig_z(i,j-1,khi0));</div>
 <div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            }</div>
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;        }</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        amrex::Real y0 = orig_data(i,j,khi0,src_comp);</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        amrex::Real y1 = orig_data(i,j,khi1,src_comp);</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0 = orig_data(i,j,khi0,src_comp);</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y1 = orig_data(i,j,khi1,src_comp);</div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;        <span class="keywordflow">return</span> ( y0+(y1-y0)/(z1-z0)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-z0) );</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;        <span class="comment">// interpolate</span></div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        amrex::Real y0 = orig_data(i,j,klow,src_comp);</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        amrex::Real y1 = orig_data(i,j,khi0,src_comp);</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y0 = orig_data(i,j,klow,src_comp);</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y1 = orig_data(i,j,khi0,src_comp);</div>
 <div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        <span class="keywordflow">return</span> ( y0+(y1-y0)/(z1-z0)*(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>-z0) );</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;    }</div>
@@ -1024,20 +1024,20 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>,</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;             <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; mxrat)</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;{</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    amrex::Real qv_max_p_safe = 10000.0; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    amrex::Real qv_max_flag   = 1.0e-5; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    amrex::Real qv_max_value  = 3.0e-6; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    amrex::Real qv_min_p_safe = 110000.0; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    amrex::Real qv_min_flag   = 1.0e-6; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    amrex::Real qv_min_value  = 1.0e-6; <span class="comment">// WRF default value</span></div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    amrex::Real eps   = 0.622;</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">svp1</a>  = 0.6112;</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8">svp2</a>  = 17.67;</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#ab5f21f26bfa36b240b5afa3a27e958b3">svp3</a>  = 29.65;</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    amrex::Real <a class="code" href="namespacemodule__model__constants.html#aed12b9f809865f0de9bb764d662b734e">svpt0</a> = 273.15;</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_max_p_safe = 10000.0; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_max_flag   = 1.0e-5; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_max_value  = 3.0e-6; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_min_p_safe = 110000.0; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_min_flag   = 1.0e-6; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_min_value  = 1.0e-6; <span class="comment">// WRF default value</span></div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eps   = 0.622;</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">svp1</a>  = 0.6112;</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8">svp2</a>  = 17.67;</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#ab5f21f26bfa36b240b5afa3a27e958b3">svp3</a>  = 29.65;</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#aed12b9f809865f0de9bb764d662b734e">svpt0</a> = 273.15;</div>
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;    <span class="comment">// WRF&#39;s method when model_config_rec%rh2qv_wrt_liquid=.true. (default behavior)</span></div>
 <div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    <span class="keywordflow">if</span> (temp(i,j,k) != 0.0) {</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        amrex::Real es=0.01*rhum(i,j,k)*<a class="code" href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">svp1</a>*10.0*exp(<a class="code" href="namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8">svp2</a>*(temp(i,j,k)-<a class="code" href="namespacemodule__model__constants.html#aed12b9f809865f0de9bb764d662b734e">svpt0</a>)/(temp(i,j,k)-<a class="code" href="namespacemodule__model__constants.html#ab5f21f26bfa36b240b5afa3a27e958b3">svp3</a>));</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> es=0.01*rhum(i,j,k)*<a class="code" href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">svp1</a>*10.0*exp(<a class="code" href="namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8">svp2</a>*(temp(i,j,k)-<a class="code" href="namespacemodule__model__constants.html#aed12b9f809865f0de9bb764d662b734e">svpt0</a>)/(temp(i,j,k)-<a class="code" href="namespacemodule__model__constants.html#ab5f21f26bfa36b240b5afa3a27e958b3">svp3</a>));</div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;        <span class="keywordflow">if</span> (es &gt;= <a class="code" href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a82dd7c202e6cce14520ac01cfaa4f4ad">pres</a>(i,j,k)/100.0) {</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;            <span class="comment">// vapor pressure exceeds total pressure</span></div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;            mxrat(i,j,k) = std::pow(10.0, -6);</div>
@@ -1091,6 +1091,7 @@ $(document).ready(function(){initNavTree('ERF__MetgridUtils_8H_source.html','');
 <div class="ttc" id="aERF__MetgridUtils_8H_html_aece12dbdc051398b904d92440e1b1079"><div class="ttname"><a href="ERF__MetgridUtils_8H.html#aece12dbdc051398b904d92440e1b1079">read_from_metgrid</a></div><div class="ttdeci">void read_from_metgrid(int lev, const amrex::Box &amp;domain, const std::string &amp;fname, std::string &amp;NC_dateTime, amrex::Real &amp;NC_epochTime, int &amp;flag_psfc, int &amp;flag_msf, int &amp;flag_sst, int &amp;flag_tsk, int &amp;flag_lmask, int &amp;NC_nx, int &amp;NC_ny, amrex::Real &amp;NC_dx, amrex::Real &amp;NC_dy, amrex::FArrayBox &amp;NC_xvel_fab, amrex::FArrayBox &amp;NC_yvel_fab, amrex::FArrayBox &amp;NC_temp_fab, amrex::FArrayBox &amp;NC_rhum_fab, amrex::FArrayBox &amp;NC_pres_fab, amrex::FArrayBox &amp;NC_ght_fab, amrex::FArrayBox &amp;NC_hgt_fab, amrex::FArrayBox &amp;NC_psfc_fab, amrex::FArrayBox &amp;NC_msfu_fab, amrex::FArrayBox &amp;NC_msfv_fab, amrex::FArrayBox &amp;NC_msfm_fab, amrex::FArrayBox &amp;NC_sst_fab, amrex::FArrayBox &amp;NC_tsk_fab, amrex::FArrayBox &amp;NC_LAT_fab, amrex::FArrayBox &amp;NC_LON_fab, amrex::IArrayBox &amp;NC_lmask_iab, amrex::Geometry &amp;geom)</div></div>
 <div class="ttc" id="aERF__MetgridUtils_8H_html_af6ab8359bb0f978ab5c5573b54a844e3"><div class="ttname"><a href="ERF__MetgridUtils_8H.html#af6ab8359bb0f978ab5c5573b54a844e3">init_msfs_from_metgrid</a></div><div class="ttdeci">void init_msfs_from_metgrid(const bool metgrid_debug_msf, amrex::FArrayBox &amp;msfu_fab, amrex::FArrayBox &amp;msfv_fab, amrex::FArrayBox &amp;msfm_fab, const int &amp;flag_msf, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_MSFU_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_MSFV_fab, const amrex::Vector&lt; amrex::FArrayBox &gt; &amp;NC_MSFM_fab)</div></div>
 <div class="ttc" id="aERF__ProbCommon_8H_html"><div class="ttname"><a href="ERF__ProbCommon_8H.html">ERF_ProbCommon.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aERF__Utils_8H_html"><div class="ttname"><a href="ERF__Utils_8H.html">ERF_Utils.H</a></div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_ad5e2303f8f4cbf19829306f4a72d61a7a82dd7c202e6cce14520ac01cfaa4f4ad"><div class="ttname"><a href="namespaceMicVar__Kess.html#ad5e2303f8f4cbf19829306f4a72d61a7a82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:25</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a0c790757e0bcf5c5976f371555cd17a3"><div class="ttname"><a href="namespacemodule__model__constants.html#a0c790757e0bcf5c5976f371555cd17a3">module_model_constants::svp1</a></div><div class="ttdeci">real(c_double), parameter svp1</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:78</div></div>

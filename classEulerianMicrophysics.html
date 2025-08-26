@@ -130,10 +130,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a444c916c5bb1167ea1efc9f2b9595436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#a444c916c5bb1167ea1efc9f2b9595436">Define</a> (const int &amp;lev, <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc) override</td></tr>
 <tr class="memdesc:a444c916c5bb1167ea1efc9f2b9595436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the moisture model.  <a href="classEulerianMicrophysics.html#a444c916c5bb1167ea1efc9f2b9595436">More...</a><br /></td></tr>
 <tr class="separator:a444c916c5bb1167ea1efc9f2b9595436"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac68028f2920ccb380c605099adb7d604"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604">Init</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const amrex::Real &amp;dt_advance, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc) override</td></tr>
+<tr class="memitem:ac68028f2920ccb380c605099adb7d604"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604">Init</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc) override</td></tr>
 <tr class="memdesc:ac68028f2920ccb380c605099adb7d604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the moisture model.  <a href="classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604">More...</a><br /></td></tr>
 <tr class="separator:ac68028f2920ccb380c605099adb7d604"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1e3be50e46669690838fb1b82cfe243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243">Advance</a> (const int &amp;lev, const amrex::Real &amp;dt_advance, const int &amp;, const amrex::Real &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;) override</td></tr>
+<tr class="memitem:ab1e3be50e46669690838fb1b82cfe243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243">Advance</a> (const int &amp;lev, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, const int &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;) override</td></tr>
 <tr class="memdesc:ab1e3be50e46669690838fb1b82cfe243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the moisture model for one time step.  <a href="classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243">More...</a><br /></td></tr>
 <tr class="separator:ab1e3be50e46669690838fb1b82cfe243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f8fc766c44f4331bfc86337eb43f6cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#a0f8fc766c44f4331bfc86337eb43f6cc">Update_Micro_Vars_Lev</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in) override</td></tr>
@@ -347,7 +347,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>dt_advance</em>, </td>
         </tr>
         <tr>
@@ -359,7 +359,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -795,7 +795,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname"><em>dt_advance</em>, </td>
         </tr>
         <tr>

@@ -146,7 +146,7 @@ Include dependency graph for ERF_TimeAvgVel.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2241063c19e843eaaa749c3b51b6b0fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TimeAvgVel_8cpp.html#a2241063c19e843eaaa749c3b51b6b0fe">Time_Avg_Vel_atCC</a> (const Real &amp;dt, Real &amp;t_avg_cnt, MultiFab *vel_t_avg, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel)</td></tr>
+<tr class="memitem:a2241063c19e843eaaa749c3b51b6b0fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TimeAvgVel_8cpp.html#a2241063c19e843eaaa749c3b51b6b0fe">Time_Avg_Vel_atCC</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &amp;dt, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &amp;t_avg_cnt, MultiFab *vel_t_avg, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel)</td></tr>
 <tr class="separator:a2241063c19e843eaaa749c3b51b6b0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -159,13 +159,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void Time_Avg_Vel_atCC </td>
           <td>(</td>
-          <td class="paramtype">const Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &amp;&#160;</td>
           <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Real &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &amp;&#160;</td>
           <td class="paramname"><em>t_avg_cnt</em>, </td>
         </tr>
         <tr>
@@ -221,10 +221,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Real u_cc = 0.5 * ( velx(i,j,k) + velx(i+1,j  ,k  ) );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            Real v_cc = 0.5 * ( vely(i,j,k) + vely(i  ,j+1,k  ) );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Real w_cc = 0.5 * ( velz(i,j,k) + velz(i  ,j  ,k+1) );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Real umag_cc = std::sqrt(u_cc*u_cc + v_cc*v_cc + w_cc*w_cc);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u_cc = 0.5 * ( velx(i,j,k) + velx(i+1,j  ,k  ) );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v_cc = 0.5 * ( vely(i,j,k) + vely(i  ,j+1,k  ) );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_cc = 0.5 * ( velz(i,j,k) + velz(i  ,j  ,k+1) );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> umag_cc = std::sqrt(u_cc*u_cc + v_cc*v_cc + w_cc*w_cc);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            vel_t_avg_arr(i,j,k,0) += u_cc;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            vel_t_avg_arr(i,j,k,1) += v_cc;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            vel_t_avg_arr(i,j,k,2) += w_cc;</div>
@@ -232,6 +232,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        });</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:143</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>

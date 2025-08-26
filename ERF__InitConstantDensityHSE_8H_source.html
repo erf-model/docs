@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('ERF__InitConstantDensityHSE_8H_source.
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                   std::unique_ptr&lt;amrex::MultiFab&gt;&amp;,</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                   amrex::Geometry <span class="keyword">const</span>&amp;)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    amrex::Real rho_0 = parms.rho_0;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_0 = parms.rho_0;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">for</span> ( amrex::MFIter mfi(rho_hse, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi )</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;       amrex::Array4&lt;amrex::Real&gt; rho_arr = rho_hse.array(mfi);</div>
@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('ERF__InitConstantDensityHSE_8H_source.
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="ttc" id="aERF__InitConstantDensityHSE_8H_html_aa310c5ff8cdad11f3adfeeff0f5ad046"><div class="ttname"><a href="ERF__InitConstantDensityHSE_8H.html#aa310c5ff8cdad11f3adfeeff0f5ad046">erf_init_dens_hse</a></div><div class="ttdeci">void erf_init_dens_hse(amrex::MultiFab &amp;rho_hse, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, amrex::Geometry const &amp;) override</div><div class="ttdef"><b>Definition:</b> ERF_InitConstantDensityHSE.H:2</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

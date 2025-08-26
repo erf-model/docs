@@ -161,9 +161,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9fb5194b85e904a3f0a0500a05438b5e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e">COARE3_roughness</a> (amrex::Real zref, amrex::Real umm, amrex::Real ustar)</td></tr>
+<tr class="memitem:a9fb5194b85e904a3f0a0500a05438b5e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e">COARE3_roughness</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zref, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> umm, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar)</td></tr>
 <tr class="separator:a9fb5194b85e904a3f0a0500a05438b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b6ef1e185702e95631d5f22ff728860"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860">Donelan_roughness</a> (amrex::Real ustar)</td></tr>
+<tr class="memitem:a5b6ef1e185702e95631d5f22ff728860"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860">Donelan_roughness</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar)</td></tr>
 <tr class="separator:a5b6ef1e185702e95631d5f22ff728860"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -174,21 +174,21 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real COARE3_roughness </td>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> COARE3_roughness </td>
           <td>(</td>
-          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>zref</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>umm</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>ustar</em>&#160;</td>
         </tr>
         <tr>
@@ -200,13 +200,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>COARE3.0, following WRF phys/module_sf_mynn.F </p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    amrex::Real ws10m = umm*std::log(10./1e-4) / std::log(zref/1e-4);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    amrex::Real Czc = 0.011 + 0.007*std::min(std::max((ws10m-10.)/8., 0.), 1.0);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    amrex::Real z0 = (Czc / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>) * ustar * ustar;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ws10m = umm*std::log(10./1e-4) / std::log(zref/1e-4);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Czc = 0.011 + 0.007*std::min(std::max((ws10m-10.)/8., 0.), 1.0);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0 = (Czc / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>) * ustar * ustar;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// From Davis et al 2008 MWR, but their lower limit is 0.125e-6 -- WRF typo?</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(z0, 1.27e-7), 2.85e-3);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structadiabatic__charnock.html#a1eea7d0e2814df6bf31245b76bdf8d97">adiabatic_charnock::iterate_flux()</a>, <a class="el" href="structsurface__flux__charnock.html#ab5e1d36114b4ca594053a1d70a839b5b">surface_flux_charnock::iterate_flux()</a>, and <a class="el" href="structsurface__temp__charnock.html#a764e2303baad734febab5317fbb2f5dd">surface_temp_charnock::iterate_flux()</a>.</p>
 <div class="dynheader">
@@ -230,9 +231,9 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Donelan_roughness </td>
+          <td class="memname">AMREX_GPU_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Donelan_roughness </td>
           <td>(</td>
-          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>ustar</em></td><td>)</td>
           <td></td>
         </tr>
@@ -241,12 +242,12 @@ Here is the caller graph for this function:</div>
 <p>Updated Donelan 2004 as found in AHW</p>
 <p>Matches implementations in WRF phys/physics_mmm/sf_sfclayrev.F90 and phys/module_sf_mynn.F </p>
 <div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    constexpr amrex::Real ozo{1.59e-5};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    amrex::Real zw  = std::min(std::pow(ustar/1.06, 0.3),1.0);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    amrex::Real zn1 = 0.011*ustar*ustar/<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> + ozo;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    amrex::Real zn2 = 10.*std::exp(-9.5*std::pow(ustar, -.3333))</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ozo{1.59e-5};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zw  = std::min(std::pow(ustar/1.06, 0.3),1.0);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zn1 = 0.011*ustar*ustar/<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> + ozo;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> zn2 = 10.*std::exp(-9.5*std::pow(ustar, -.3333))</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    + 0.11*1.5e-5/std::max(ustar,0.01);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    amrex::Real z0 = (1.0-zw) * zn1 + zw * zn2;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0 = (1.0-zw) * zn1 + zw * zn2;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// From Davis et al 2008 MWR, but their lower limit is 0.125e-6 -- WRF typo?</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> std::min(std::max(z0, 1.27e-7), 2.85e-3);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>

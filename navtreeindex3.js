@@ -178,7 +178,8 @@ var NAVTREEINDEX3 =
 "ERF__SatMethods_8H.html":[3,0,1,17,23],
 "ERF__SatMethods_8H_source.html":[3,0,1,17,23],
 "ERF__ShocInterface_8H.html":[3,0,1,12,1,1],
-"ERF__ShocInterface_8H.html#ab2b94ab782c080b74717ae70f40fcf94":[3,0,1,12,1,1,4],
+"ERF__ShocInterface_8H.html#a008e7f6ae8f621fbb1d876061812b9b2":[3,0,1,12,1,1,4],
+"ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57":[3,0,1,12,1,1,5],
 "ERF__ShocInterface_8H_source.html":[3,0,1,12,1,1],
 "ERF__ShocInterface_8cpp.html":[3,0,1,12,1,0],
 "ERF__SimpleAD_8H.html":[3,0,1,18,4,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7":[3,0,1,17,25,11],
 "ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76":[3,0,1,17,25,16],
 "ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b":[3,0,1,17,25,17],
-"ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b":[3,0,1,17,25,26],
-"ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987":[3,0,1,17,25,14]
+"ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b":[3,0,1,17,25,26]
 };

@@ -170,17 +170,17 @@ Functions</h2></td></tr>
 <tr class="separator:a01ef87335441a1bdc758a8f855412e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaebb34471f8a44890224f8f5903bc262"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#aaebb34471f8a44890224f8f5903bc262">compute_gradp</a> (const amrex::MultiFab &amp;p, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::Vector&lt; amrex::MultiFab &gt; &amp;gradp, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice)</td></tr>
 <tr class="separator:aaebb34471f8a44890224f8f5903bc262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaa601eef55af59a03faaa2d0a3c0f50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#afaa601eef55af59a03faaa2d0a3c0f50">make_sources</a> (int level, int nrk, amrex::Real dt, amrex::Real time, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;cc_source, const amrex::MultiFab &amp;base_state, const amrex::MultiFab *z_phys_cc, const amrex::MultiFab *qheating_rates, amrex::MultiFab *terrain_blank, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, <a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;turbPert, bool is_slow_step)</td></tr>
+<tr class="memitem:afaa601eef55af59a03faaa2d0a3c0f50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#afaa601eef55af59a03faaa2d0a3c0f50">make_sources</a> (int level, int nrk, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> time, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;cc_source, const amrex::MultiFab &amp;base_state, const amrex::MultiFab *z_phys_cc, const amrex::MultiFab *qheating_rates, amrex::MultiFab *terrain_blank, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *dptr_rhotheta_src, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *dptr_rhoqt_src, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *dptr_wbar_sub, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt; d_rayleigh_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, <a class="el" href="structTurbulentPerturbation.html">TurbulentPerturbation</a> &amp;turbPert, bool is_slow_step)</td></tr>
 <tr class="separator:afaa601eef55af59a03faaa2d0a3c0f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4cf346cc59372b7242dc6e30770ca91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#ae4cf346cc59372b7242dc6e30770ca91">make_mom_sources</a> (amrex::Real time, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc, amrex::Vector&lt; amrex::Real &gt; &amp;stretched_dz_h, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, amrex::MultiFab &amp;xmom_source, amrex::MultiFab &amp;ymom_source, amrex::MultiFab &amp;zmom_source, const amrex::MultiFab &amp;base_state, amrex::MultiFab *forest_drag, amrex::MultiFab *terrain_blank, amrex::MultiFab *cosPhi_mf, amrex::MultiFab *sinPhi_mf, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, const amrex::Real *dptr_rhotheta_src, const amrex::Real *dptr_rhoqt_src, const amrex::Real *dptr_wbar_sub, const amrex::Vector&lt; amrex::Real * &gt; d_rayleigh_ptrs_at_lev, const amrex::Vector&lt; amrex::Real * &gt; d_sponge_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, bool is_slow_step)</td></tr>
+<tr class="memitem:ae4cf346cc59372b7242dc6e30770ca91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#ae4cf346cc59372b7242dc6e30770ca91">make_mom_sources</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> time, const amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, amrex::MultiFab &amp;z_phys_nd, amrex::MultiFab &amp;z_phys_cc, amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_h, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, amrex::MultiFab &amp;xmom_source, amrex::MultiFab &amp;ymom_source, amrex::MultiFab &amp;zmom_source, const amrex::MultiFab &amp;base_state, amrex::MultiFab *forest_drag, amrex::MultiFab *terrain_blank, amrex::MultiFab *cosPhi_mf, amrex::MultiFab *sinPhi_mf, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *dptr_rhotheta_src, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *dptr_rhoqt_src, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *dptr_wbar_sub, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt; d_rayleigh_ptrs_at_lev, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt; d_sponge_ptrs_at_lev, <a class="el" href="structInputSoundingData.html">InputSoundingData</a> &amp;input_sounding_data, bool is_slow_step)</td></tr>
 <tr class="separator:ae4cf346cc59372b7242dc6e30770ca91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b82614fa1590f73caf25dc65b1c937d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#a5b82614fa1590f73caf25dc65b1c937d">add_thin_body_sources</a> (amrex::MultiFab &amp;xmom_source, amrex::MultiFab &amp;ymom_source, amrex::MultiFab &amp;zmom_source, std::unique_ptr&lt; amrex::iMultiFab &gt; &amp;xflux_imask_lev, std::unique_ptr&lt; amrex::iMultiFab &gt; &amp;yflux_imask_lev, std::unique_ptr&lt; amrex::iMultiFab &gt; &amp;zflux_imask_lev, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;thin_xforce_lev, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;thin_yforce_lev, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;thin_zforce_lev)</td></tr>
 <tr class="separator:a5b82614fa1590f73caf25dc65b1c937d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad490342825cb7b3bd27d0cbe34e93747"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#ad490342825cb7b3bd27d0cbe34e93747">ApplySpongeZoneBCsForCC</a> (const <a class="el" href="structSpongeChoice.html">SpongeChoice</a> &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;bx, const amrex::Array4&lt; amrex::Real &gt; &amp;cell_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_phys_cc)</td></tr>
+<tr class="memitem:ad490342825cb7b3bd27d0cbe34e93747"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#ad490342825cb7b3bd27d0cbe34e93747">ApplySpongeZoneBCsForCC</a> (const <a class="el" href="structSpongeChoice.html">SpongeChoice</a> &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;bx, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;r0, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_phys_cc)</td></tr>
 <tr class="separator:ad490342825cb7b3bd27d0cbe34e93747"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3c752479136ad9502f0bae7f6caaaaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf">ApplySpongeZoneBCsForMom</a> (const <a class="el" href="structSpongeChoice.html">SpongeChoice</a> &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;tbx, const amrex::Box &amp;tby, const amrex::Box &amp;tbz, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_w, const amrex::Array4&lt; const amrex::Real &gt; &amp;r0, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_phys_nd, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_phys_cc)</td></tr>
+<tr class="memitem:af3c752479136ad9502f0bae7f6caaaaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf">ApplySpongeZoneBCsForMom</a> (const <a class="el" href="structSpongeChoice.html">SpongeChoice</a> &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;tbx, const amrex::Box &amp;tby, const amrex::Box &amp;tbz, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_w, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;r0, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_phys_nd, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_phys_cc)</td></tr>
 <tr class="separator:af3c752479136ad9502f0bae7f6caaaaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb54c33a007d2d0e105102983da18eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac">ApplySpongeZoneBCsForMom_ReadFromFile</a> (const <a class="el" href="structSpongeChoice.html">SpongeChoice</a> &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;tbx, const amrex::Box &amp;tby, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_phys_cc, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_u_rhs, const amrex::Array4&lt; amrex::Real &gt; &amp;rho_v_rhs, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;rho_v, const amrex::Vector&lt; amrex::Real * &gt; d_sponge_ptrs_at_lev)</td></tr>
+<tr class="memitem:acb54c33a007d2d0e105102983da18eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac">ApplySpongeZoneBCsForMom_ReadFromFile</a> (const <a class="el" href="structSpongeChoice.html">SpongeChoice</a> &amp;spongeChoice, const amrex::Geometry geom, const amrex::Box &amp;tbx, const amrex::Box &amp;tby, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_phys_cc, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u_rhs, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v_rhs, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rho_v, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt; d_sponge_ptrs_at_lev)</td></tr>
 <tr class="separator:acb54c33a007d2d0e105102983da18eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -281,25 +281,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cell_rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cell_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>r0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>z_phys_cc</em>&#160;</td>
         </tr>
         <tr>
@@ -351,55 +351,55 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_u_rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_v_rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_w_rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_u</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_w</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>r0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>z_phys_nd</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>z_phys_cc</em>&#160;</td>
         </tr>
         <tr>
@@ -445,43 +445,43 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cell_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>z_phys_cc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_u_rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_v_rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_u</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Array4&lt; const amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>rho_v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Vector&lt; amrex::Real * &gt;&#160;</td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt;&#160;</td>
           <td class="paramname"><em>d_sponge_ptrs_at_lev</em>&#160;</td>
         </tr>
         <tr>
@@ -708,7 +708,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void make_mom_sources </td>
           <td>(</td>
-          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
@@ -732,7 +732,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::Real &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>stretched_dz_h</em>, </td>
         </tr>
         <tr>
@@ -822,31 +822,31 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_rhotheta_src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_rhoqt_src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_wbar_sub</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Vector&lt; amrex::Real * &gt;&#160;</td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt;&#160;</td>
           <td class="paramname"><em>d_rayleigh_ptrs_at_lev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Vector&lt; amrex::Real * &gt;&#160;</td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt;&#160;</td>
           <td class="paramname"><em>d_sponge_ptrs_at_lev</em>, </td>
         </tr>
         <tr>
@@ -892,13 +892,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Real&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
@@ -964,25 +964,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_rhotheta_src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_rhoqt_src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real *&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
           <td class="paramname"><em>dptr_wbar_sub</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Vector&lt; amrex::Real * &gt;&#160;</td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> * &gt;&#160;</td>
           <td class="paramname"><em>d_rayleigh_ptrs_at_lev</em>, </td>
         </tr>
         <tr>

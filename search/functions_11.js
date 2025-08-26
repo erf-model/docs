@@ -39,7 +39,7 @@ var searchData=
   ['set_5fturb_5floc_4486',['set_turb_loc',['../classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e',1,'WindFarm::set_turb_loc()'],['../classNullWindFarm.html#aadf3ba54909c2931d089f631889dbd5b',1,'NullWindFarm::set_turb_loc()']]],
   ['set_5fturb_5fspec_4487',['set_turb_spec',['../classWindFarm.html#aabf18956cad4a8546eb60ff8300c94c8',1,'WindFarm::set_turb_spec()'],['../classNullWindFarm.html#a745c730028714c13ff11fefb5440b2e5',1,'NullWindFarm::set_turb_spec()']]],
   ['set_5fturb_5fspec_5fextra_4488',['set_turb_spec_extra',['../classWindFarm.html#a4afb42d44ea84a770d4dbfe8beb33f7e',1,'WindFarm::set_turb_spec_extra()'],['../classNullWindFarm.html#ade1a0b0eacbb79784db4c49cd8b1bae2',1,'NullWindFarm::set_turb_spec_extra()']]],
-  ['set_5fvariables_4489',['set_variables',['../structSHOCInterface_1_1SHOCPreprocess.html#a2099b50f90938f3b90e7df92cf25d3d0',1,'SHOCInterface::SHOCPreprocess::set_variables()'],['../structSHOCInterface_1_1SHOCPostprocess.html#a91b787b447df9c29057af9a3b8e6094d',1,'SHOCInterface::SHOCPostprocess::set_variables()']]],
+  ['set_5fvariables_4489',['set_variables',['../structSHOCInterface_1_1SHOCPreprocess.html#af3b070d21d472756981fc96c8a1737a1',1,'SHOCInterface::SHOCPreprocess::set_variables()'],['../structSHOCInterface_1_1SHOCPostprocess.html#a91b787b447df9c29057af9a3b8e6094d',1,'SHOCInterface::SHOCPostprocess::set_variables()']]],
   ['set_5fverbose_4490',['set_verbose',['../classeb__aux__.html#a6cf718854c86282eefcdd32c3a9e40cd',1,'eb_aux_']]],
   ['set_5fvshape_4491',['set_vshape',['../structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73',1,'NDArray']]],
   ['set_5fz_5fpositions_5ft_4492',['set_z_positions_T',['../classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e',1,'MOSTAverage']]],

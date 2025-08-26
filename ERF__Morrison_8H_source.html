@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classMorrison.html#a9f2177b8af1d7f3f0597a7248343569e">Init</a> (<span class="keyword">const</span> amrex::MultiFab&amp; cons_in,</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          <span class="keyword">const</span> amrex::BoxArray&amp; grids,</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;          <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          <span class="keyword">const</span> amrex::Real&amp; dt_advance,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dt_advance,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;          std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd,</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;          std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
@@ -198,7 +198,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// wrapper to do all the updating</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Advance</a> (<span class="keyword">const</span> amrex::Real&amp; dt_advance,</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Advance</a> (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dt_advance,</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;             <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; sc) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    amrex::MultiFab*</div>
@@ -219,13 +219,13 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    AMREX_GPU_HOST_DEVICE</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    AMREX_FORCE_INLINE</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">static</span> amrex::Real</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">static</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
 <div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704">  135</a></span>&#160;    <a class="code" href="classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704">NewtonIterSat</a> (<span class="keywordtype">int</span>&amp; i, <span class="keywordtype">int</span>&amp; j, <span class="keywordtype">int</span>&amp; k,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                   <span class="keyword">const</span> amrex::Real&amp; fac_cond,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                   <span class="keyword">const</span> amrex::Real&amp; fac_fus,</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                   <span class="keyword">const</span> amrex::Real&amp; fac_sub,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                   <span class="keyword">const</span> amrex::Real&amp; an,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                   <span class="keyword">const</span> amrex::Real&amp; bn,</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                   <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; fac_cond,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                   <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; fac_fus,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                   <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; fac_sub,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                   <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; an,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                   <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; bn,</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                   <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tabs_array,</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                   <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; pres_array,</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                   <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; qv_array,</div>
@@ -235,24 +235,24 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                   <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; qt_array)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// Solution tolerance</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        amrex::Real tol = 1.0e-4;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = 1.0e-4;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        amrex::Real omn, domn;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        amrex::Real qsat, dqsat;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        amrex::Real qsatw, dqsatw;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        amrex::Real qsati, dqsati;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> omn, domn;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsat, dqsat;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsatw, dqsatw;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsati, dqsati;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">// Newton iteration vars</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordtype">int</span>  niter;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        amrex::Real fff, dfff, dtabs;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        amrex::Real lstar, dlstar;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        amrex::Real lstarw, lstari;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        amrex::Real delta_qv, delta_qc, delta_qi;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fff, dfff, dtabs;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lstar, dlstar;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lstarw, lstari;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta_qv, delta_qc, delta_qi;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">// Initial guess for temperature &amp; pressure</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> = tabs_array(i,j,k);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        amrex::Real <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a531c978e174d063e1cf107eae6a84073">pres</a> = pres_array(i,j,k);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> = tabs_array(i,j,k);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a531c978e174d063e1cf107eae6a84073">pres</a> = pres_array(i,j,k);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        niter = 0;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        dtabs = 1;</div>
@@ -357,7 +357,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">  269</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">n_qstate_moist_size</a> = 6;</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// CFL MAX for vertical advection</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">  272</a></span>&#160;    <span class="keyword">static</span> constexpr amrex::Real <a class="code" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">CFL_MAX</a> = 0.5;</div>
+<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">  272</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">CFL_MAX</a> = 0.5;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// MicVar map (Qmoist indices -&gt; MicVar enum)</span></div>
 <div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="classMorrison.html#a6284af8ee4608059214c45bc39425011">  275</a></span>&#160;    amrex::Vector&lt;int&gt; <a class="code" href="classMorrison.html#a6284af8ee4608059214c45bc39425011">MicVarMap</a>;</div>
@@ -375,11 +375,11 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">  287</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">// constants</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="classMorrison.html#a903d92435272b6b12ab6e7bcaf6fa23c">  290</a></span>&#160;    amrex::Real <a class="code" href="classMorrison.html#a903d92435272b6b12ab6e7bcaf6fa23c">m_fac_cond</a>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="classMorrison.html#af97b098dae958c8fc69ec92b6779acf3">  291</a></span>&#160;    amrex::Real <a class="code" href="classMorrison.html#af97b098dae958c8fc69ec92b6779acf3">m_fac_fus</a>;</div>
-<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="classMorrison.html#a94005ac35edcdb59eb0b2f2d18e53425">  292</a></span>&#160;    amrex::Real <a class="code" href="classMorrison.html#a94005ac35edcdb59eb0b2f2d18e53425">m_fac_sub</a>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="classMorrison.html#a4930ab51ce1a492bdddb2aa1cb001b21">  293</a></span>&#160;    amrex::Real <a class="code" href="classMorrison.html#a4930ab51ce1a492bdddb2aa1cb001b21">m_gOcp</a>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">  294</a></span>&#160;    amrex::Real <a class="code" href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">m_rdOcp</a>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno"><a class="line" href="classMorrison.html#a903d92435272b6b12ab6e7bcaf6fa23c">  290</a></span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#a903d92435272b6b12ab6e7bcaf6fa23c">m_fac_cond</a>;</div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="classMorrison.html#af97b098dae958c8fc69ec92b6779acf3">  291</a></span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#af97b098dae958c8fc69ec92b6779acf3">m_fac_fus</a>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="classMorrison.html#a94005ac35edcdb59eb0b2f2d18e53425">  292</a></span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#a94005ac35edcdb59eb0b2f2d18e53425">m_fac_sub</a>;</div>
+<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="classMorrison.html#a4930ab51ce1a492bdddb2aa1cb001b21">  293</a></span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#a4930ab51ce1a492bdddb2aa1cb001b21">m_gOcp</a>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">  294</a></span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">m_rdOcp</a>;</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// Pointer to terrain data</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="classMorrison.html#a71131fbedee0de3f7bc4abfd339921e9">  297</a></span>&#160;    amrex::MultiFab* <a class="code" href="classMorrison.html#a71131fbedee0de3f7bc4abfd339921e9">m_z_phys_nd</a>;</div>
@@ -430,6 +430,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac39ef2a869ef543f708d5ed7da4754d3"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsati(amrex::Real t, amrex::Real p, amrex::Real &amp;qsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:152</div></div>
 <div class="ttc" id="aERF__Morrison__Fortran__Interface_8H_html"><div class="ttname"><a href="ERF__Morrison__Fortran__Interface_8H.html">ERF_Morrison_Fortran_Interface.H</a></div></div>
 <div class="ttc" id="aERF__NullMoist_8H_html"><div class="ttname"><a href="ERF__NullMoist_8H.html">ERF_NullMoist.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aclassMorrison_html"><div class="ttname"><a href="classMorrison.html">Morrison</a></div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:58</div></div>
 <div class="ttc" id="aclassMorrison_html_a0a0f44390b82e965df1a69296676495b"><div class="ttname"><a href="classMorrison.html#a0a0f44390b82e965df1a69296676495b">Morrison::~Morrison</a></div><div class="ttdeci">virtual ~Morrison()=default</div></div>
 <div class="ttc" id="aclassMorrison_html_a104c04cee2e446fcfa520dfb79c6563d"><div class="ttname"><a href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">Morrison::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:278</div></div>

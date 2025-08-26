@@ -154,9 +154,9 @@ Include dependency graph for ERF_TerrainMetrics.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a28a6372799b0be6e2745cae9cb180567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#a28a6372799b0be6e2745cae9cb180567">init_default_zphys</a> (int, const Geometry &amp;geom, MultiFab &amp;z_phys_nd, MultiFab &amp;z_phys_cc)</td></tr>
 <tr class="separator:a28a6372799b0be6e2745cae9cb180567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9addf6b6f85760dd0d43acd9a52fe66c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#a9addf6b6f85760dd0d43acd9a52fe66c">make_terrain_fitted_coords</a> (int lev, const Geometry &amp;geom, MultiFab &amp;z_phys_nd, Vector&lt; Real &gt; const &amp;z_levels_h, GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
+<tr class="memitem:a9addf6b6f85760dd0d43acd9a52fe66c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#a9addf6b6f85760dd0d43acd9a52fe66c">make_terrain_fitted_coords</a> (int lev, const Geometry &amp;geom, MultiFab &amp;z_phys_nd, Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; const &amp;z_levels_h, GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
 <tr class="separator:a9addf6b6f85760dd0d43acd9a52fe66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac59abef116a0b274b84ab3d89771ef22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#ac59abef116a0b274b84ab3d89771ef22">init_which_terrain_grid</a> (int lev, Geometry const &amp;geom, MultiFab &amp;z_phys_nd, Vector&lt; Real &gt; const &amp;z_levels_h)</td></tr>
+<tr class="memitem:ac59abef116a0b274b84ab3d89771ef22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#ac59abef116a0b274b84ab3d89771ef22">init_which_terrain_grid</a> (int lev, Geometry const &amp;geom, MultiFab &amp;z_phys_nd, Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; const &amp;z_levels_h)</td></tr>
 <tr class="separator:ac59abef116a0b274b84ab3d89771ef22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c1ecbedddfe464d9db02960e5422564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TerrainMetrics_8cpp.html#a9c1ecbedddfe464d9db02960e5422564">make_J</a> (const Geometry &amp;geom, MultiFab &amp;z_phys_nd, MultiFab &amp;detJ_cc)</td></tr>
 <tr class="separator:a9c1ecbedddfe464d9db02960e5422564"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,7 +206,7 @@ Functions</h2></td></tr>
 <p>Define a default z_phys so we have it even if a completely regular grid This will be over-written if we use z_levels, or grid stretching, or terrain-fitted grids </p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dx = geom.CellSize();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Real dz = dx[2];</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz = dx[2];</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(z_phys_nd,<span class="keyword">true</span>); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
@@ -228,6 +228,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        });</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aaf237fbe118d80f149295c0579608579">ERF::init_stuff()</a>.</p>
 <div class="dynheader">
@@ -269,7 +270,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Vector&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramtype">Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; const &amp;&#160;</td>
           <td class="paramname"><em>z_levels_h</em>&#160;</td>
         </tr>
         <tr>
@@ -305,7 +306,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">int</span> jmax = domhi_y; <span class="comment">// if (geom.isPeriodic(1)) jmax += z_phys_nd.nGrowVect()[1];</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">int</span> nz = z_levels_h.size();</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    Real z_top = z_levels_h[nz-1];</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_top = z_levels_h[nz-1];</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    Gpu::DeviceVector&lt;Real&gt; z_levels_d;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    z_levels_d.resize(nz);</div>
@@ -360,9 +361,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="comment">// If k0 = 0 then z_arr at k0 has already been filled from the terrain data</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="comment">// If k0 &gt; 0 then z_arr at k0 has already been filled from interpolation</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="comment">//</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>         = z_lev[k];</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                Real z_sfc     = z_arr(ii,jj,k0);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                Real z_lev_sfc = z_lev[k0];</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>         = z_lev[k];</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_sfc     = z_arr(ii,jj,k0);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lev_sfc = z_lev[k0];</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                z_arr(i,j,k) = ( (z_sfc - z_lev_sfc) * z_top +</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                 (z_top - z_sfc    ) * <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>     ) / (z_top - z_lev_sfc);</div>
@@ -400,7 +401,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        MultiFab h_mf_old(z_phys_nd.boxArray(), z_phys_nd.DistributionMap(), 1, ngrow+1);</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// Save max height for smoothing</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        Real h_m;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_m;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="comment">// Create 2D MF without allocation</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        MultiFab mf2d;</div>
@@ -453,32 +454,32 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        MultiFab::Copy(h_mf_old, h_mf,0,0,1,h_mf_old.nGrow());</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="comment">// Minimum allowed fractional grid spacing</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        Real gamma_m = 0.5;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamma_m = 0.5;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;terrain_gamma_m&quot;</span>, gamma_m);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        Real z_H     = 2.44*h_m/(1-gamma_m); <span class="comment">// Klemp2011 Eqn. 11</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_H     = 2.44*h_m/(1-gamma_m); <span class="comment">// Klemp2011 Eqn. 11</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="comment">// Populate h_mf at k&gt;0 with h_s, solving in ordered 2D slices</span></div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = domlo_z+1; k &lt;= domhi_z; k++) <span class="comment">// skip terrain level</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        {</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; z_lev_h = z_levels_h.data();</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            Real zz       = z_lev_h[k];</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            Real zz_minus = z_lev_h[k-1];</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zz       = z_lev_h[k];</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zz_minus = z_lev_h[k-1];</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            <span class="comment">// Hybrid attenuation profile, Klemp2011 Eqn. 9</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            Real A;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            Real foo = cos((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/2)*(zz/z_H));</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> foo = cos((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/2)*(zz/z_H));</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            <span class="keywordflow">if</span>(zz &lt; z_H) { A = foo*foo*foo*foo*foo*foo; } <span class="comment">// A controls rate of return to atm</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">else</span>         { A = 0; }</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            Real foo_minus = cos((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/2)*(zz_minus/z_H));</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            Real A_minus;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> foo_minus = cos((<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/2)*(zz_minus/z_H));</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A_minus;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="keywordflow">if</span>(zz_minus &lt; z_H) { A_minus = foo_minus*foo_minus*foo_minus*foo_minus*foo_minus*foo_minus; } <span class="comment">// A controls rate of return to atm</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">else</span>               { A_minus = 0; }</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="keywordtype">unsigned</span> maxIter = 50; <span class="comment">// M_k in paper</span></div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="keywordtype">unsigned</span> iter    = 0;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            Real threshold   = gamma_m;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            Real diff        = 1.e20;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> threshold   = gamma_m;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> diff        = 1.e20;</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="keywordflow">while</span> (iter &lt; maxIter &amp;&amp; diff &gt; threshold)</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            {</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
@@ -489,7 +490,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> &amp; h_s     = ma_h_s[box_no];</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                    <span class="keyword">const</span> <span class="keyword">auto</span> &amp; h_s_old = ma_h_s_old[box_no];</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                    Real beta_k = 0.2*std::min(zz/(2*h_m),1.0); <span class="comment">//smoothing coefficient (Eqn. 8)</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> beta_k = 0.2*std::min(zz/(2*h_m),1.0); <span class="comment">//smoothing coefficient (Eqn. 8)</span></div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                    <span class="comment">// Clip indices for ghost-cells</span></div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,domlo_x),domhi_x);</div>
@@ -539,7 +540,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                ParallelFor(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    <span class="comment">// Location of nodes</span></div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                    Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = z_lev_d[k];</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = z_lev_d[k];</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                    <span class="comment">// STF model from p2164 of Klemp2011 (Eqn. 4)</span></div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    z_arr(i,j,k) = <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> + A*h_s(i,j,k);</div>
@@ -573,7 +574,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                {</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                    <span class="comment">// Vertical grid stretching</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
@@ -610,7 +611,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                {</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                    <span class="comment">// Vertical grid stretching</span></div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                    Real <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                    <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                    <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
@@ -711,7 +712,7 @@ Here is the caller graph for this function:</div>
 <p>Computation of area fractions on faces </p>
 <div class="fragment"><div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;{</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>* dx = geom.CellSize();</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    Real dzInv = 1.0/dx[2];</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 1.0/dx[2];</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
@@ -814,7 +815,7 @@ Here is the caller graph for this function:</div>
 <p>Computation of detJ at cell-center </p>
 <div class="fragment"><div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;{</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> *dx = geom.CellSize();</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    Real dzInv = 1.0/dx[2];</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 1.0/dx[2];</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="comment">// Domain valid box (z_nd is nodal)</span></div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
@@ -883,7 +884,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Vector&lt; Real &gt; const &amp;&#160;</td>
+          <td class="paramtype">Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt; const &amp;&#160;</td>
           <td class="paramname"><em>z_levels_h</em>, </td>
         </tr>
         <tr>

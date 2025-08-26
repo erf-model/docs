@@ -116,10 +116,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a380240aa9ec93af02a9b27ba1be4172a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a">Define</a> (const int &amp;, <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;)=0</td></tr>
 <tr class="memdesc:a380240aa9ec93af02a9b27ba1be4172a"><td class="mdescLeft">&#160;</td><td class="mdescRight">define the microphysics object  <a href="classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a">More...</a><br /></td></tr>
 <tr class="separator:a380240aa9ec93af02a9b27ba1be4172a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e781e2a953a088477cfc5a1e3691f2e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e">Init</a> (const int &amp;, const amrex::MultiFab &amp;, const amrex::BoxArray &amp;, const amrex::Geometry &amp;, const amrex::Real &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;)=0</td></tr>
+<tr class="memitem:a4e781e2a953a088477cfc5a1e3691f2e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e">Init</a> (const int &amp;, const amrex::MultiFab &amp;, const amrex::BoxArray &amp;, const amrex::Geometry &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;)=0</td></tr>
 <tr class="memdesc:a4e781e2a953a088477cfc5a1e3691f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the microphysics object  <a href="classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e">More...</a><br /></td></tr>
 <tr class="separator:a4e781e2a953a088477cfc5a1e3691f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6f104e6b42a2b0a9c9f3d71985880f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Advance</a> (const int &amp;, const amrex::Real &amp;, const int &amp;, const amrex::Real &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;)=0</td></tr>
+<tr class="memitem:ae6f104e6b42a2b0a9c9f3d71985880f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Advance</a> (const int &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, const int &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;)=0</td></tr>
 <tr class="memdesc:ae6f104e6b42a2b0a9c9f3d71985880f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance microphysics for one time step  <a href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">More...</a><br /></td></tr>
 <tr class="separator:ae6f104e6b42a2b0a9c9f3d71985880f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b8a14f003da6293f7a9ee118bc60149"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">Update_Micro_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;)=0</td></tr>
@@ -236,7 +236,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -248,7 +248,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -690,7 +690,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Real &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>

@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('ERF__InitRayleighDamping_8H_source.htm
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="ERF__InitRayleighDamping_8H.html#aa0988e9ca7c21c75ca232ea0ee850195">    8</a></span>&#160;<a class="code" href="ERF__InitRayleighDamping_8H.html#aa0988e9ca7c21c75ca232ea0ee850195">erf_init_rayleigh</a> (amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt; &gt;&amp; rayleigh_ptrs,</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                   amrex::Geometry <span class="keyword">const</span>&amp; geom,</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                   std::unique_ptr&lt;amrex::MultiFab&gt;&amp; <span class="comment">/*z_phys_nd*/</span>,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                   amrex::Real <span class="comment">/*zdamp*/</span>)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <span class="comment">/*zdamp*/</span>)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> khi = geom.Domain().bigEnd()[2];</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= khi; k++)</div>
@@ -113,6 +113,7 @@ $(document).ready(function(){initNavTree('ERF__InitRayleighDamping_8H_source.htm
 <div class="ttc" id="aERF__DataStruct_8H_html_a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb"><div class="ttname"><a href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239ae41e9f65f26ee3b04db07f2db7f28bdb">thetabar</a></div><div class="ttdeci">@ thetabar</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:91</div></div>
 <div class="ttc" id="aERF__InitRayleighDamping_8H_html_aa0988e9ca7c21c75ca232ea0ee850195"><div class="ttname"><a href="ERF__InitRayleighDamping_8H.html#aa0988e9ca7c21c75ca232ea0ee850195">erf_init_rayleigh</a></div><div class="ttdeci">void erf_init_rayleigh(amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; &amp;rayleigh_ptrs, amrex::Geometry const &amp;geom, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, amrex::Real) override</div><div class="ttdef"><b>Definition:</b> ERF_InitRayleighDamping.H:8</div></div>
 <div class="ttc" id="aERF__ParFunctions_8H_html"><div class="ttname"><a href="ERF__ParFunctions_8H.html">ERF_ParFunctions.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

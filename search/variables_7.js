@@ -16,7 +16,7 @@ var searchData=
   ['has_5flat_5flon_5079',['has_lat_lon',['../structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38',1,'SolverChoice']]],
   ['have_5fgeo_5fwind_5fprofile_5080',['have_geo_wind_profile',['../structSolverChoice.html#a65faffc1ea490b3934a9df768cfa26f1',1,'SolverChoice']]],
   ['have_5fzero_5fflux_5ffaces_5081',['have_zero_flux_faces',['../structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393',1,'AdvChoice']]],
-  ['hdtime_5082',['hdtime',['../classSHOCInterface.html#aaa3d645356265c550ea7482a4daa6873',1,'SHOCInterface']]],
+  ['hdtime_5082',['hdtime',['../classSHOCInterface.html#ae65f9f11a9f0875396336c8c8a68e5cd',1,'SHOCInterface']]],
   ['heat_5fflux_5083',['heat_flux',['../structSHOCInterface_1_1SHOCPostprocess.html#a4809f24ffed8d0ffb558401dc045547c',1,'SHOCInterface::SHOCPostprocess']]],
   ['history_5foutput_5084',['history_output',['../classSHOCInterface.html#af63bac832ad1195b7fd653527d75b07e',1,'SHOCInterface']]],
   ['hub_5fheight_5085',['hub_height',['../classWindFarm.html#a6dfd6451498f50c17cb67c386d13ddfb',1,'WindFarm::hub_height()'],['../classEWP.html#a2ee471b0dcad3057297b809f4c5141ab',1,'EWP::hub_height()'],['../classFitch.html#ae3af34c6c07fd2d8b9b081b5c7ceb443',1,'Fitch::hub_height()'],['../classGeneralAD.html#ac82bba9c2818ca1e77adb01fdcdcaf66',1,'GeneralAD::hub_height()'],['../classSimpleAD.html#a4c17a08ad746b342bf62d7a1ad93781a',1,'SimpleAD::hub_height()']]],
