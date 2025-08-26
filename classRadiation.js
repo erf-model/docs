@@ -16,7 +16,6 @@ var classRadiation =
     [ "Run", "classRadiation.html#aa33b926fe801ccf363e7a34c99d917b6", null ],
     [ "run_impl", "classRadiation.html#a3eab5714d47ed767884a66a8dc1058df", null ],
     [ "set_grids", "classRadiation.html#adf49f9f6f6cbd79bc1ecbf1d5c6f59bb", null ],
-    [ "set_lsm_inputs", "classRadiation.html#a32136a9195a10e2fc0b0405983ee3a45", null ],
     [ "write_rrtmgp_fluxes", "classRadiation.html#aba28af1cb28622e8f8aa674f9a3b9cda", null ],
     [ "WriteDataLog", "classRadiation.html#a8d50b34d1c0b2a55755d483ddfb3d059", null ],
     [ "aero_g_sw", "classRadiation.html#a58539cebcfa8a17a7fb601d67bb67d21", null ],
