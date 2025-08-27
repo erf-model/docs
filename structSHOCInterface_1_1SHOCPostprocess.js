@@ -2,7 +2,7 @@ var structSHOCInterface_1_1SHOCPostprocess =
 [
     [ "SHOCPostprocess", "structSHOCInterface_1_1SHOCPostprocess.html#ae9effd0087aa5a13619a7ea33ca53bce", null ],
     [ "operator()", "structSHOCInterface_1_1SHOCPostprocess.html#a7e12490cefbf0a62f64bcf126de842cc", null ],
-    [ "set_mass_and_energy_fluxes", "structSHOCInterface_1_1SHOCPostprocess.html#a1727f16ad2bbaf724cf7c750c6d9e12d", null ],
+    [ "set_mass_and_energy_fluxes", "structSHOCInterface_1_1SHOCPostprocess.html#ad4798a4eab392d2f77591ac82c935403", null ],
     [ "set_variables", "structSHOCInterface_1_1SHOCPostprocess.html#a91b787b447df9c29057af9a3b8e6094d", null ],
     [ "cldfrac_liq", "structSHOCInterface_1_1SHOCPostprocess.html#a65a0c1852e1edcba87fcfcac125726ff", null ],
     [ "compute_mass_and_energy_fluxes", "structSHOCInterface_1_1SHOCPostprocess.html#aa2abfddaaeb2af23b4b500c882f97931", null ],
