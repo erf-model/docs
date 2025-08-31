@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c":[2,0,34,12],
+"classIRadiation.html#a5c4ea94d80fa153daefc46bcf5df288e":[2,0,34,5],
+"classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4":[2,0,34,10],
 "classIRadiation.html#a75a399c98c8696ffca01b1af72297451":[2,0,34,8],
 "classIRadiation.html#a869627344662a3d31c962dc8bc615868":[2,0,34,6],
 "classIRadiation.html#a93a49facdea9a509245196a463491013":[2,0,34,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX8 =
 "classMorrison.html#a96fb0e34b50bf691859ca0434b594b2e":[2,0,42,22],
 "classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704":[2,0,42,9],
 "classMorrison.html#a9b6b084ace42c7992815942eed92212f":[2,0,42,30],
-"classMorrison.html#a9e5363db069243651289087f05115fcd":[2,0,42,20],
-"classMorrison.html#a9f2177b8af1d7f3f0597a7248343569e":[2,0,42,8],
-"classMorrison.html#a9fc43dc29aa5c3106aa69d1350c793c1":[2,0,42,12],
-"classMorrison.html#aa5df21d7c7adfd10586783871524fac4":[2,0,42,18]
+"classMorrison.html#a9e5363db069243651289087f05115fcd":[2,0,42,20]
 };

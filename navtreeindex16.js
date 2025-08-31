@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"structInputSoundingData.html#acaca35a2682754cb6faa44e1958fba8b":[2,0,32,25],
+"structInputSoundingData.html#adba2e69559670861133145572ed6aa2a":[2,0,32,27],
+"structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3":[2,0,32,0],
 "structInputSoundingData.html#ae5eca764f358b991d1f36b4a679d744b":[2,0,32,7],
 "structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc":[2,0,32,6],
 "structInputSoundingData.html#aecc862db70344fa9232f199fb61b307e":[2,0,32,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095":[2,0,70,29],
 "structSolverChoice.html#a39ced5a090f246f82bdec3f5d288fcbc":[2,0,70,19],
 "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5":[2,0,70,78],
-"structSolverChoice.html#a3b9fef36e4613507eef87379c2c9bf03":[2,0,70,49],
-"structSolverChoice.html#a3f8ae511632557066f6662eec79591e1":[2,0,70,34],
-"structSolverChoice.html#a40de8b74e8c60f617558ef8a2fa72ddb":[2,0,70,91],
-"structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f":[2,0,70,22]
+"structSolverChoice.html#a3b9fef36e4613507eef87379c2c9bf03":[2,0,70,49]
 };
