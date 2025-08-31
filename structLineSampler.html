@@ -267,7 +267,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="comment">// times appended to the same file</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;line_sampling_text_output&quot;</span>,<a class="code" href="structLineSampler.html#ae9a6d776b596cd26b9b11c0a1298f7da">m_write_ascii</a>);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structLineSampler.html#ae9a6d776b596cd26b9b11c0a1298f7da">m_write_ascii</a> &amp;&amp; amrex::ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordtype">int</span> nvar = <a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.size();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordtype">int</span> nvar = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.size());</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <a class="code" href="structLineSampler.html#a56da044954a236b411c1c52e42338883">m_datastream</a>.resize(n_line_lo * nvar);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordtype">int</span> i = 0;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iline(0); iline&lt;n_line_lo; ++iline) {</div>
@@ -332,9 +332,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">int</span> nlev  = vars_new.size();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">int</span> nline = <a class="code" href="structLineSampler.html#acf84e5ae60cbfd1faaf2e8ac6c9ff5eb">m_bnd_bx</a>.size();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">int</span> ncomp  = <a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.size();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordtype">int</span> nlev  = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(vars_new.size());</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">int</span> nline = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLineSampler.html#acf84e5ae60cbfd1faaf2e8ac6c9ff5eb">m_bnd_bx</a>.size());</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">int</span> ncomp = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.size());</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">// Loop over each line</span></div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iline(0); iline&lt;nline; ++iline) {</div>
@@ -522,8 +522,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        constexpr <span class="keywordtype">int</span> datprecision = 6;</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        constexpr <span class="keywordtype">int</span> timeprecision = 13;</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordtype">int</span> nline = <a class="code" href="structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e">m_ls_mf</a>.size();</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordtype">int</span> nvar = <a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.size();</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordtype">int</span> nline = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e">m_ls_mf</a>.size());</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordtype">int</span> nvar  = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.size());</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iline(0); iline&lt;nline; ++iline) {</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076">m_dir</a>[iline];</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordtype">int</span> lev = <a class="code" href="structLineSampler.html#af614a59976e85627d9b5d41222265cde">m_lev</a>[iline];</div>
@@ -677,7 +677,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">int</span> nline = <a class="code" href="structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e">m_ls_mf</a>.size();</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordtype">int</span> nline = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e">m_ls_mf</a>.size());</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iline(0); iline&lt;nline; ++iline) {</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="comment">// Data members that can be used as-is</span></div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076">m_dir</a>[iline];</div>

@@ -1068,27 +1068,27 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;        <span class="keyword">auto</span> abl_pressure_grad    = solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>;</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160; </div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        { <span class="comment">// x-momentum equation</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = gpx_arr(i,j,k) * mf_ux(i,j,0);</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> q = (l_use_moisture) ? 0.5 * (qt_arr(i,j,k) + qt_arr(i-1,j,k)) : 0.0;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160; </div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            rho_u_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> - abl_pressure_grad[0]) / (1.0 + q) + xmom_src_arr(i,j,k);</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, dxInv, z_nd);</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                rho_u_rhs(i, j, k) *= h_zeta;</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;            }</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160; </div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;              rho_u_rhs(i,j,k) *= 0.5;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;              rho_u_rhs(i,j,k) += 0.5 / dt * (rho_u(i,j,k) - rho_u_old(i,j,k));</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;            }</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        });</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        ParallelFor(tby, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        ParallelFor(tbx, tby,</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        { <span class="comment">// x-momentum equation</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> = gpx_arr(i,j,k) * mf_ux(i,j,0);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> q = (l_use_moisture) ? 0.5 * (qt_arr(i,j,k) + qt_arr(i-1,j,k)) : 0.0;</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;            rho_u_rhs(i, j, k) += (-<a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebdaecfb8189072456062c3c29c137ec2323">gpx</a> - abl_pressure_grad[0]) / (1.0 + q) + xmom_src_arr(i,j,k);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                rho_u_rhs(i, j, k) *= h_zeta;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;            }</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;            <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) ) {</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;              rho_u_rhs(i,j,k) *= 0.5;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;              rho_u_rhs(i,j,k) += 0.5 / dt * (rho_u(i,j,k) - rho_u_old(i,j,k));</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;            }</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        },</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        { <span class="comment">// y-momentum equation</span></div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda8b32fb9218fd4f10ccc5736e6a61a72d">gpy</a> = gpy_arr(i,j,k) * mf_vy(i,j,0);</div>

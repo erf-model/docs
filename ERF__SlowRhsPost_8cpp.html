@@ -963,61 +963,62 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;      <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> == TerrainType::EB)</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;      {</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;          <span class="comment">// start_comp and num_comp</span></div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>); ivar&lt;= <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>; ++ivar)</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;          {</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;              <span class="keywordflow">if</span> (is_valid_slow_var[ivar])</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;              {</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                  start_comp = ivar;</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                  num_comp   = 1;</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                  <span class="keywordflow">if</span> (ivar == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) {</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                      num_comp = <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a> - <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ivar == <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>) {</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                      num_comp = <a class="code" href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a>;</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                  }</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;              }</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;          }</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;          <span class="comment">// Redistribute cons states (cell-centered)</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> num_comp_total{S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nComp()};</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;          MultiFab dUdt_tmp(ba, dm, num_comp_total, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nGrow(), MFInfo(), ebfact);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;          dUdt_tmp.setVal(0.);</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;          MultiFab::Copy(dUdt_tmp, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], start_comp, start_comp, num_comp, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nGrow());</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;          dUdt_tmp.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;          dUdt_tmp.setDomainBndry(1.234e10, 0, num_comp_total, geom);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;          S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;          S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].setDomainBndry(1.234e10, 0, num_comp_total, geom);</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;          <span class="comment">// Update S_rhs by Redistribution.</span></div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;          <span class="comment">// To-do: Currently, redistributing all the scalar variables.</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;          <span class="comment">//        This needs to be redistributed only for num_comp variables starting from ivar, for efficiency.</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;          <a class="code" href="ERF__EBRedistribute_8cpp.html#aab7478e0b95ffe5742038c127cd09e8a">redistribute_term</a> ( num_comp_total, geom, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], dUdt_tmp,</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                              S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], ebfact, bc_ptr_d, dt);</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;          <span class="comment">// Update state using the updated S_rhs. (NOTE: redistribute_term returns RHS not state variables.)</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;          <span class="keywordflow">for</span> ( MFIter mfi(S_new[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;          {</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            Box tbx  = mfi.tilebox();</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; snew = S_new[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; sold = S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; srhs = S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            Array4&lt;const Real&gt; detJ_arr = ebfact.getVolFrac().const_array(mfi);</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; </div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            ParallelFor(tbx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn)</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            {</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                <span class="keywordflow">if</span> (detJ_arr(i,j,k) &gt; 0.0) {</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                    snew(i,j,k,n) = sold(i,j,k,n) + dt * srhs(i,j,k,n);</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                }</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            });</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;          }</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;          <span class="comment">// Redistribute momentum states (face-centered) will be added here.</span></div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;      } <span class="comment">// EB</span></div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; </div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    } <span class="comment">// OMP</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;}</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;          BL_PROFILE(<span class="stringliteral">&quot;rhs_post_eb_redistribute&quot;</span>);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;          <span class="comment">// start_comp and num_comp</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>); ivar&lt;= <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>; ++ivar)</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;          {</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;              <span class="keywordflow">if</span> (is_valid_slow_var[ivar])</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;              {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                  start_comp = ivar;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                  num_comp   = 1;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                  <span class="keywordflow">if</span> (ivar == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) {</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                      num_comp = <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a> - <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ivar == <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>) {</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                      num_comp = <a class="code" href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a>;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                  }</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;              }</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;          }</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;          <span class="comment">// Redistribute cons states (cell-centered)</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> num_comp_total{S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nComp()};</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;          MultiFab dUdt_tmp(ba, dm, num_comp_total, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nGrow(), MFInfo(), ebfact);</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;          dUdt_tmp.setVal(0.);</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;          MultiFab::Copy(dUdt_tmp, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], start_comp, start_comp, num_comp, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].nGrow());</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;          dUdt_tmp.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;          dUdt_tmp.setDomainBndry(1.234e10, 0, num_comp_total, geom);</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;          S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;          S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].setDomainBndry(1.234e10, 0, num_comp_total, geom);</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;          <span class="comment">// Update S_rhs by Redistribution.</span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;          <span class="comment">// To-do: Currently, redistributing all the scalar variables.</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;          <span class="comment">//        This needs to be redistributed only for num_comp variables starting from ivar, for efficiency.</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;          <a class="code" href="ERF__EBRedistribute_8cpp.html#aab7478e0b95ffe5742038c127cd09e8a">redistribute_term</a> ( num_comp_total, geom, S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], dUdt_tmp,</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                              S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], ebfact, bc_ptr_d, dt);</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;          <span class="comment">// Update state using the updated S_rhs. (NOTE: redistribute_term returns RHS not state variables.)</span></div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;          <span class="keywordflow">for</span> ( MFIter mfi(S_new[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>],TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;          {</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            Box tbx  = mfi.tilebox();</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; snew = S_new[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; sold = S_old[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; srhs = S_rhs[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            Array4&lt;const Real&gt; detJ_arr = ebfact.getVolFrac().const_array(mfi);</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            ParallelFor(tbx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn)</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            {</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                <span class="keywordflow">if</span> (detJ_arr(i,j,k) &gt; 0.0) {</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                    snew(i,j,k,n) = sold(i,j,k,n) + dt * srhs(i,j,k,n);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                }</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            });</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;          }</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160; </div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;          <span class="comment">// Redistribute momentum states (face-centered) will be added here.</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;      } <span class="comment">// EB</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    } <span class="comment">// OMP</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;}</div>
 <div class="ttc" id="aERF__Advection_8H_html_a66ed183383248930e3dcac9f522e9fc9"><div class="ttname"><a href="ERF__Advection_8H.html#a66ed183383248930e3dcac9f522e9fc9">AdvectionSrcForScalars</a></div><div class="ttdeci">void AdvectionSrcForScalars(const amrex::Box &amp;bx, const int icomp, const int ncomp, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_xmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_ymom, const amrex::Array4&lt; const amrex::Real &gt; &amp;avg_zmom, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_prim, const amrex::Array4&lt; amrex::Real &gt; &amp;src, const amrex::Array4&lt; const amrex::Real &gt; &amp;vf_arr, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_mx, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_my, const AdvType horiz_adv_type, const AdvType vert_adv_type, const amrex::Real horiz_upw_frac, const amrex::Real vert_upw_frac, const amrex::GpuArray&lt; const amrex::Array4&lt; amrex::Real &gt;, AMREX_SPACEDIM &gt; &amp;flx_arr, const amrex::Box &amp;domain, const amrex::BCRec *bc_ptr_h)</div></div>
 <div class="ttc" id="aERF__Advection_8H_html_aff14fe9e4f76b499843517b2c41c0fbb"><div class="ttname"><a href="ERF__Advection_8H.html#aff14fe9e4f76b499843517b2c41c0fbb">EfficientAdvType</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE AdvType EfficientAdvType(int nrk, AdvType adv_type)</div><div class="ttdef"><b>Definition:</b> ERF_Advection.H:281</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39"><div class="ttname"><a href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a></div><div class="ttdeci">@ nvars</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:91</div></div>
