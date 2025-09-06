@@ -2,7 +2,7 @@ var classeb__aux__ =
 [
     [ "eb_aux_", "classeb__aux__.html#a0c2be78525fa79c3a77f1eb7c44ef5e9", null ],
     [ "~eb_aux_", "classeb__aux__.html#a20302bb3e4afc7059d33be58e1c28171", null ],
-    [ "define", "classeb__aux__.html#a700e5aa5bcf0c1e1274e20e399e0db6a", null ],
+    [ "define", "classeb__aux__.html#a35e03212515a83631de9954bde139ed5", null ],
     [ "getAreaFrac", "classeb__aux__.html#a06b985415165114100c0cf6aaa521f9b", null ],
     [ "getBndryArea", "classeb__aux__.html#a9f20069bf00cf1d9816aff114ecd1eef", null ],
     [ "getBndryCent", "classeb__aux__.html#a04982df6fc833f7c7373f67825f95239", null ],
