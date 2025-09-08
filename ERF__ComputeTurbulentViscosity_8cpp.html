@@ -159,12 +159,12 @@ Functions</h2></td></tr>
 <tr class="separator:a3cc999b9f7e4660aab23b4ecf6c9c867"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af179b8be9d9392212d31f38b4a9afb3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#af179b8be9d9392212d31f38b4a9afb3d">ComputeTurbulentViscosityRANS</a> (Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const MultiFab &amp;cons_in, const MultiFab &amp;wdist, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, bool use_terrain, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const <a class="el" href="structTurbChoice.html">TurbChoice</a> &amp;<a class="el" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> const_grav, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const MultiFab *z_0)</td></tr>
 <tr class="separator:af179b8be9d9392212d31f38b4a9afb3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93d0ebe4e2e3e1dbcd3eb48bb97a469c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c">ComputeTurbulentViscosity</a> (const MultiFab &amp;xvel, const MultiFab &amp;yvel, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_lev, const MultiFab &amp;cons_in, const MultiFab &amp;wdist, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const MultiFab *z_0, const bool &amp;use_terrain_fitted_coords, const bool &amp;use_moisture, int level, const BCRec *bc_ptr, bool vert_only)</td></tr>
-<tr class="separator:a93d0ebe4e2e3e1dbcd3eb48bb97a469c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad777b96c0ad38487f5c5f9977a482fc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2">ComputeTurbulentViscosity</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt, const MultiFab &amp;xvel, const MultiFab &amp;yvel, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_lev, MultiFab &amp;cons_in, const MultiFab &amp;wdist, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const MultiFab *z_0, const bool &amp;use_terrain_fitted_coords, const bool &amp;use_moisture, int level, const BCRec *bc_ptr, bool vert_only)</td></tr>
+<tr class="separator:ad777b96c0ad38487f5c5f9977a482fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a93d0ebe4e2e3e1dbcd3eb48bb97a469c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93d0ebe4e2e3e1dbcd3eb48bb97a469c">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
+<a id="ad777b96c0ad38487f5c5f9977a482fc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad777b96c0ad38487f5c5f9977a482fc2">&#9670;&nbsp;</a></span>ComputeTurbulentViscosity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,6 +172,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void ComputeTurbulentViscosity </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const MultiFab &amp;&#160;</td>
           <td class="paramname"><em>xvel</em>, </td>
         </tr>
@@ -190,7 +196,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const MultiFab &amp;&#160;</td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
           <td class="paramname"><em>cons_in</em>, </td>
         </tr>
         <tr>
@@ -322,204 +328,210 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;{</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ComputeTurbulentViscosity()&quot;</span>,<a class="code" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c">ComputeTurbulentViscosity</a>);</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic (unless mix_isotropic is set to false), so</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">// the LES model sets both horizontal and vertical viscosities</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <a class="code" href="structTurbChoice.html">TurbChoice</a> <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a> = solverChoice.<a class="code" href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">turbChoice</a>[level];</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> const_grav = solverChoice.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">if</span> (!SurfLayer) {</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    }</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="keywordtype">bool</span> impose_phys_bcs = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) {</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        impose_phys_bcs = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <a class="code" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES</a>(Tau_lev,</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                                     cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                                     Hfx1, Hfx2, Hfx3, Diss,</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                                     geom, use_terrain_fitted_coords,</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                     mapfac, z_phys_nd, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, const_grav,</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                     SurfLayer, solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    }</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None) {</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        impose_phys_bcs = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        <a class="code" href="ERF__ComputeTurbulentViscosity_8cpp.html#af179b8be9d9392212d31f38b4a9afb3d">ComputeTurbulentViscosityRANS</a>(Tau_lev,</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                                      cons_in, wdist,</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                                      eddyViscosity,</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                      Hfx1, Hfx2, Hfx3, Diss,</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                      geom, use_terrain_fitted_coords,</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                                      mapfac, z_phys_nd, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, const_grav,</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                      SurfLayer, z_0);</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    }</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; </div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25) {</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183">ComputeDiffusivityMYNN25</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                                 geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                                 use_terrain_fitted_coords, use_moisture,</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                                 level, bc_ptr, vert_only, z_phys_nd,</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                                 solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF) {</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2">ComputeDiffusivityMYNNEDMF</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                                   geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                                   use_terrain_fitted_coords, use_moisture,</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                                   level, bc_ptr, vert_only, z_phys_nd,</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                                   solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::YSU) {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a">ComputeDiffusivityYSU</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                              geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                              use_terrain_fitted_coords, use_moisture,</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                              level, bc_ptr, vert_only, z_phys_nd,</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                              solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    }</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MRF) {</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="fragment"><div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;{</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ComputeTurbulentViscosity()&quot;</span>,<a class="code" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2">ComputeTurbulentViscosity</a>);</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">// In LES mode, the turbulent viscosity is isotropic (unless mix_isotropic is set to false), so</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="comment">// the LES model sets both horizontal and vertical viscosities</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="comment">// In PBL mode, the primary purpose of the PBL model is to control vertical transport, so the PBL model sets the vertical viscosity.</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// Optionally, the PBL model can be run in conjunction with an LES model that sets the horizontal viscosity</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="comment">// (this isn’t truly LES, but the model form is the same as Smagorinsky).</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="comment">// ComputeTurbulentViscosityLES populates the LES viscosity for both horizontal and vertical components.</span></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="comment">// ComputeTurbulentViscosityPBL computes the PBL viscosity just for the vertical component.</span></div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="structTurbChoice.html">TurbChoice</a> <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a> = solverChoice.<a class="code" href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">turbChoice</a>[level];</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> const_grav = solverChoice.<a class="code" href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">gravity</a>;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keywordflow">if</span> (!SurfLayer) {</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        AMREX_ALWAYS_ASSERT(!vert_only);</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    }</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordtype">bool</span> impose_phys_bcs = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> != LESType::None) {</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        impose_phys_bcs = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        <a class="code" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES</a>(Tau_lev,</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                                     cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                                     Hfx1, Hfx2, Hfx3, Diss,</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                     geom, use_terrain_fitted_coords,</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                     mapfac, z_phys_nd, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, const_grav,</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                                     SurfLayer, solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    }</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a> != RANSType::None) {</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        impose_phys_bcs = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        <a class="code" href="ERF__ComputeTurbulentViscosity_8cpp.html#af179b8be9d9392212d31f38b4a9afb3d">ComputeTurbulentViscosityRANS</a>(Tau_lev,</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                                      cons_in, wdist,</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                      eddyViscosity,</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                      Hfx1, Hfx2, Hfx3, Diss,</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                                      geom, use_terrain_fitted_coords,</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                      mapfac, z_phys_nd, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, const_grav,</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                                      SurfLayer, z_0);</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    }</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYJ) {</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityMYJ_8cpp.html#ad0946a1eced1e2a2ec154dc578581ee3">ComputeDiffusivityMYJ</a>(dt, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                              geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                              use_terrain_fitted_coords, use_moisture,</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                              level, bc_ptr, vert_only, z_phys_nd,</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                              solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNN25) {</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183">ComputeDiffusivityMYNN25</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                                 geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                                 use_terrain_fitted_coords, use_moisture,</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                                 level, bc_ptr, vert_only, z_phys_nd,</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                                 solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MYNNEDMF) {</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2">ComputeDiffusivityMYNNEDMF</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                                   geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                                   use_terrain_fitted_coords, use_moisture,</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                                   level, bc_ptr, vert_only, z_phys_nd,</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                                   solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::YSU) {</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a">ComputeDiffusivityYSU</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                              geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                              use_terrain_fitted_coords, use_moisture,</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                              level, bc_ptr, vert_only, z_phys_nd,</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                              solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    }</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="comment">// At all levels we need to fill values outside the physical boundary for the LES coeffs.</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="comment">// In addition, for all cases, if at level &gt; 0, we want to fill fine ghost cell values that</span></div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">// overlie coarse grid cells (and that are not in another fine valid region) with</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment">// extrapolated values from the interior, rather than interpolating from the coarser level,</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="comment">// since we may be using a different turbulence model there.</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::MRF) {</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <a class="code" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF</a>(<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>, cons_in, eddyViscosity,</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                              geom, <a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>, SurfLayer,</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                              use_terrain_fitted_coords, use_moisture,</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                              level, bc_ptr, vert_only, z_phys_nd,</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                              solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    }</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// Note: here &quot;covered&quot; refers to &quot;covered by valid region of another grid at this level&quot;</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// Note: here &quot;physbnd&quot; refers to &quot;cells outside the domain if not periodic&quot;</span></div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// Note: here &quot;interior&quot; refers to &quot;valid cells, i.e. inside &#39;my&#39; grid&quot;</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    {</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        <span class="keywordtype">int</span> is_covered    = 0;</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        <span class="keywordtype">int</span> is_notcovered = 1;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <span class="keywordtype">int</span> is_physbnd    = 2;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        <span class="keywordtype">int</span> is_interior   = 3;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        iMultiFab cc_mask(eddyViscosity.boxArray(),eddyViscosity.DistributionMap(),1,1);</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        cc_mask.BuildMask(geom.Domain(), geom.periodicity(), is_covered, is_notcovered, is_physbnd, is_interior);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160; </div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        Box domain = geom.Domain();</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            <span class="keywordflow">if</span> (geom.isPeriodic(i)) {</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                domain.grow(i,1);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            }</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        }</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="keywordtype">int</span> ncomp  = eddyViscosity.nComp();</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(eddyViscosity); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        {</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            Box vbx = mfi.validbox();</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            Box planex_lo = mfi.growntilebox(1); planex_lo.setBig(0, vbx.smallEnd(0)-1);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            Box planey_lo = mfi.growntilebox(1); planey_lo.setBig(1, vbx.smallEnd(1)-1);</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            Box planez_lo = mfi.growntilebox(1); planez_lo.setBig(2, vbx.smallEnd(2)-1);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            Box planex_hi = mfi.growntilebox(1); planex_hi.setSmall(0, vbx.bigEnd(0)+1);</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            Box planey_hi = mfi.growntilebox(1); planey_hi.setSmall(1, vbx.bigEnd(1)+1);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            Box planez_hi = mfi.growntilebox(1); planez_hi.setSmall(2, vbx.bigEnd(2)+1);</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            <span class="keywordtype">int</span> i_lo   = vbx.smallEnd(0); <span class="keywordtype">int</span> i_hi = vbx.bigEnd(0);</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            <span class="keywordtype">int</span> j_lo   = vbx.smallEnd(1); <span class="keywordtype">int</span> j_hi = vbx.bigEnd(1);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            <span class="keywordtype">int</span> k_lo   = vbx.smallEnd(2); <span class="keywordtype">int</span> k_hi = vbx.bigEnd(2);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            <span class="keyword">const</span> Array4&lt;int&gt;&amp; mask_arr = cc_mask.array(mfi);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <span class="keyword">auto</span> domlo = lbound(domain);</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="keyword">auto</span> domhi = ubound(domain);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// At all levels we need to fill values outside the physical boundary for the LES coeffs.</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// In addition, for all cases, if at level &gt; 0, we want to fill fine ghost cell values that</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// overlie coarse grid cells (and that are not in another fine valid region) with</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// extrapolated values from the interior, rather than interpolating from the coarser level,</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// since we may be using a different turbulence model there.</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// Note: here &quot;covered&quot; refers to &quot;covered by valid region of another grid at this level&quot;</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// Note: here &quot;physbnd&quot; refers to &quot;cells outside the domain if not periodic&quot;</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="comment">// Note: here &quot;interior&quot; refers to &quot;valid cells, i.e. inside &#39;my&#39; grid&quot;</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    {</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <span class="keywordtype">int</span> is_covered    = 0;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="keywordtype">int</span> is_notcovered = 1;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keywordtype">int</span> is_physbnd    = 2;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordtype">int</span> is_interior   = 3;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        iMultiFab cc_mask(eddyViscosity.boxArray(),eddyViscosity.DistributionMap(),1,1);</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        cc_mask.BuildMask(geom.Domain(), geom.periodicity(), is_covered, is_notcovered, is_physbnd, is_interior);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        Box domain = geom.Domain();</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            <span class="keywordflow">if</span> (geom.isPeriodic(i)) {</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                domain.grow(i,1);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            }</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        }</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordtype">int</span> ncomp  = eddyViscosity.nComp();</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(eddyViscosity); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        {</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            Box vbx = mfi.validbox();</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            Box planex_lo = mfi.growntilebox(1); planex_lo.setBig(0, vbx.smallEnd(0)-1);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            Box planey_lo = mfi.growntilebox(1); planey_lo.setBig(1, vbx.smallEnd(1)-1);</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            Box planez_lo = mfi.growntilebox(1); planez_lo.setBig(2, vbx.smallEnd(2)-1);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            Box planex_hi = mfi.growntilebox(1); planex_hi.setSmall(0, vbx.bigEnd(0)+1);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            Box planey_hi = mfi.growntilebox(1); planey_hi.setSmall(1, vbx.bigEnd(1)+1);</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            Box planez_hi = mfi.growntilebox(1); planez_hi.setSmall(2, vbx.bigEnd(2)+1);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;            <span class="keywordtype">int</span> i_lo   = vbx.smallEnd(0); <span class="keywordtype">int</span> i_hi = vbx.bigEnd(0);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <span class="keywordtype">int</span> j_lo   = vbx.smallEnd(1); <span class="keywordtype">int</span> j_hi = vbx.bigEnd(1);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="keywordtype">int</span> k_lo   = vbx.smallEnd(2); <span class="keywordtype">int</span> k_hi = vbx.bigEnd(2);</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160; </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            ParallelFor(planex_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            {</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_lo,lj,lk) != is_notcovered) ||</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &lt; domlo.x &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_lo,lj,lk,n);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                    }</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                }</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            });</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            ParallelFor(planex_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;            {</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_hi,lj,lk) != is_notcovered) ||</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &gt; domhi.x &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_hi,lj,lk,n);</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                    }</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                }</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;            });</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            ParallelFor(planey_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            {</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_lo,lk) != is_notcovered) ||</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &lt; domlo.y &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_lo,lk,n);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                    }</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                }</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            });</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            ParallelFor(planey_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;            {</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_hi,lk) != is_notcovered)||</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &gt; domhi.y &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_hi,lk,n);</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                    }</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                }</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            });</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            ParallelFor(planez_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            {</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_lo) != is_notcovered) ||</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &lt; domlo.z &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                    if (mask_arr(i,j,k) == is_physbnd) {</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                    }</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                    for (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_lo,n);</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                    }</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                }</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            });</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            ParallelFor(planez_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            {</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_hi) != is_notcovered) ||</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &gt; domhi.z &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                    for (int n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_hi,n);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                    }</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                }</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            });</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    }</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;}</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            <span class="keyword">const</span> Array4&lt;int&gt;&amp; mask_arr = cc_mask.array(mfi);</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            <span class="keyword">auto</span> domlo = lbound(domain);</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <span class="keyword">auto</span> domhi = ubound(domain);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;            ParallelFor(planex_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            {</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_lo,lj,lk) != is_notcovered) ||</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &lt; domlo.x &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_lo,lj,lk,n);</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                    }</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                }</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;            });</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;            ParallelFor(planex_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_hi,lj,lk) != is_notcovered) ||</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &gt; domhi.x &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_hi,lj,lk,n);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                    }</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                }</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            });</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            ParallelFor(planey_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;            {</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_lo,lk) != is_notcovered) ||</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &lt; domlo.y &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_lo,lk,n);</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                    }</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                }</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            });</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            ParallelFor(planey_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            {</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_hi,lk) != is_notcovered)||</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &gt; domhi.y &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_hi,lk,n);</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                    }</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                }</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            });</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            ParallelFor(planez_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            {</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_lo) != is_notcovered) ||</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &lt; domlo.z &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    if (mask_arr(i,j,k) == is_physbnd) {</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                    }</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    for (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_lo,n);</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                    }</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                }</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            });</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            ParallelFor(planez_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;            {</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_hi) != is_notcovered) ||</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &gt; domhi.z &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                    for (int n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_hi,n);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                    }</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                }</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            });</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    }</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;}</div>
 <div class="ttc" id="aERF__ComputeDiffusivityMRF_8cpp_html_a20e22dc5edcde689fb5ee2c6a3130ea9"><div class="ttname"><a href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF</a></div><div class="ttdeci">void ComputeDiffusivityMRF(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMRF.cpp:12</div></div>
+<div class="ttc" id="aERF__ComputeDiffusivityMYJ_8cpp_html_ad0946a1eced1e2a2ec154dc578581ee3"><div class="ttname"><a href="ERF__ComputeDiffusivityMYJ_8cpp.html#ad0946a1eced1e2a2ec154dc578581ee3">ComputeDiffusivityMYJ</a></div><div class="ttdeci">void ComputeDiffusivityMYJ(Real dt, const MultiFab &amp;xvel, const MultiFab &amp;yvel, MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;, std::unique_ptr&lt; SurfaceLayer &gt; &amp;, bool use_terrain_fitted_coords, bool, int, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMYJ.cpp:13</div></div>
 <div class="ttc" id="aERF__ComputeDiffusivityMYNN25_8cpp_html_a4364b96d8efdd403c94374b4c17f5183"><div class="ttname"><a href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183">ComputeDiffusivityMYNN25</a></div><div class="ttdeci">void ComputeDiffusivityMYNN25(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool use_moisture, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMYNN25.cpp:13</div></div>
 <div class="ttc" id="aERF__ComputeDiffusivityMYNNEDMF_8cpp_html_a0853d826a8a330e6967e3da5e973eed2"><div class="ttname"><a href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2">ComputeDiffusivityMYNNEDMF</a></div><div class="ttdeci">void ComputeDiffusivityMYNNEDMF(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool use_moisture, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMYNNEDMF.cpp:4177</div></div>
 <div class="ttc" id="aERF__ComputeDiffusivityYSU_8cpp_html_a6f0b40cc12f4e48259a5daff2b51285a"><div class="ttname"><a href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a">ComputeDiffusivityYSU</a></div><div class="ttdeci">void ComputeDiffusivityYSU(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityYSU.cpp:11</div></div>
 <div class="ttc" id="aERF__ComputeTurbulentViscosity_8cpp_html_a3cc999b9f7e4660aab23b4ecf6c9c867"><div class="ttname"><a href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867">ComputeTurbulentViscosityLES</a></div><div class="ttdeci">void ComputeTurbulentViscosityLES(Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_lev, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, bool use_terrain, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const TurbChoice &amp;turbChoice, const Real const_grav, std::unique_ptr&lt; SurfaceLayer &gt; &amp;, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeTurbulentViscosity.cpp:27</div></div>
-<div class="ttc" id="aERF__ComputeTurbulentViscosity_8cpp_html_a93d0ebe4e2e3e1dbcd3eb48bb97a469c"><div class="ttname"><a href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(const MultiFab &amp;xvel, const MultiFab &amp;yvel, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_lev, const MultiFab &amp;cons_in, const MultiFab &amp;wdist, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, const MultiFab *z_0, const bool &amp;use_terrain_fitted_coords, const bool &amp;use_moisture, int level, const BCRec *bc_ptr, bool vert_only)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeTurbulentViscosity.cpp:596</div></div>
+<div class="ttc" id="aERF__ComputeTurbulentViscosity_8cpp_html_ad777b96c0ad38487f5c5f9977a482fc2"><div class="ttname"><a href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2">ComputeTurbulentViscosity</a></div><div class="ttdeci">void ComputeTurbulentViscosity(Real dt, const MultiFab &amp;xvel, const MultiFab &amp;yvel, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_lev, MultiFab &amp;cons_in, const MultiFab &amp;wdist, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, const MultiFab *z_0, const bool &amp;use_terrain_fitted_coords, const bool &amp;use_moisture, int level, const BCRec *bc_ptr, bool vert_only)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeTurbulentViscosity.cpp:596</div></div>
 <div class="ttc" id="aERF__ComputeTurbulentViscosity_8cpp_html_af179b8be9d9392212d31f38b4a9afb3d"><div class="ttname"><a href="ERF__ComputeTurbulentViscosity_8cpp.html#af179b8be9d9392212d31f38b4a9afb3d">ComputeTurbulentViscosityRANS</a></div><div class="ttdeci">void ComputeTurbulentViscosityRANS(Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const MultiFab &amp;cons_in, const MultiFab &amp;wdist, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, bool use_terrain, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const TurbChoice &amp;turbChoice, const Real const_grav, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, const MultiFab *z_0)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeTurbulentViscosity.cpp:375</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a4a8c0178282c029acc3d37ed429f9f58"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a></div><div class="ttdeci">TurbChoice turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:2</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
@@ -529,53 +541,54 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructSolverChoice_html_aa53b017d79e0067923180a0aa59367b4"><div class="ttname"><a href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:788</div></div>
 <div class="ttc" id="astructSolverChoice_html_add6809e30f50f9a65a997c4093e6a578"><div class="ttname"><a href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:892</div></div>
 <div class="ttc" id="astructTurbChoice_html"><div class="ttname"><a href="structTurbChoice.html">TurbChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:41</div></div>
-<div class="ttc" id="astructTurbChoice_html_a15b9bb58cde72bab3f5714934125f3f9"><div class="ttname"><a href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">TurbChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:370</div></div>
-<div class="ttc" id="astructTurbChoice_html_a52f7f04548a91715b142c88c2f214bc8"><div class="ttname"><a href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">TurbChoice::rans_type</a></div><div class="ttdeci">RANSType rans_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:367</div></div>
-<div class="ttc" id="astructTurbChoice_html_abbba68e0d699dd97701d31a0e37d5304"><div class="ttname"><a href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">TurbChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:325</div></div>
+<div class="ttc" id="astructTurbChoice_html_a15b9bb58cde72bab3f5714934125f3f9"><div class="ttname"><a href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">TurbChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:375</div></div>
+<div class="ttc" id="astructTurbChoice_html_a52f7f04548a91715b142c88c2f214bc8"><div class="ttname"><a href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">TurbChoice::rans_type</a></div><div class="ttdeci">RANSType rans_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:372</div></div>
+<div class="ttc" id="astructTurbChoice_html_abbba68e0d699dd97701d31a0e37d5304"><div class="ttname"><a href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">TurbChoice::les_type</a></div><div class="ttdeci">LESType les_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:330</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a96a272defae485c5b83fbc123a631f9f">ERF::advance_dycore()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_cgraph.png" border="0" usemap="#aERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_cgraph" alt=""/></div>
-<map name="aERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_cgraph" id="aERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,233,205,260"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9" title=" " alt="" coords="283,107,460,133"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183" title=" " alt="" coords="269,157,473,184"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2" title=" " alt="" coords="258,208,485,235"/>
-<area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a" title=" " alt="" coords="284,259,459,285"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867" title=" " alt="" coords="260,461,483,488"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#af179b8be9d9392212d31f38b4a9afb3d" title=" " alt="" coords="253,335,489,361"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="537,259,757,285"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="546,157,749,184"/>
+<div class="center"><img src="ERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_cgraph.png" border="0" usemap="#aERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_cgraph" alt=""/></div>
+<map name="aERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_cgraph" id="aERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,284,205,311"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9" title=" " alt="" coords="283,132,460,159"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYJ_8cpp.html#ad0946a1eced1e2a2ec154dc578581ee3" title=" " alt="" coords="285,284,457,311"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183" title=" " alt="" coords="269,335,473,361"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2" title=" " alt="" coords="258,183,485,209"/>
+<area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a" title=" " alt="" coords="284,233,459,260"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a3cc999b9f7e4660aab23b4ecf6c9c867" title=" " alt="" coords="260,512,483,539"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#af179b8be9d9392212d31f38b4a9afb3d" title=" " alt="" coords="253,385,489,412"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="537,309,757,336"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="546,208,749,235"/>
 <area shape="rect" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1" title=" " alt="" coords="1044,259,1273,285"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="611,5,684,32"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="1384,364,1475,391"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="1585,364,1849,391"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="1652,516,1783,543"/>
-<area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="578,563,717,589"/>
-<area shape="rect" href="ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1" title=" " alt="" coords="569,613,726,640"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#ab1838e808af7bc4666295e1a76351d49" title=" " alt="" coords="809,513,993,554"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09" title=" " alt="" coords="1115,668,1202,695"/>
-<area shape="rect" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="628,360,667,387"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="1384,407,1475,433"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="1585,407,1849,433"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="1652,457,1783,484"/>
+<area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="578,672,717,699"/>
+<area shape="rect" href="ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1" title=" " alt="" coords="569,723,726,749"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#ab1838e808af7bc4666295e1a76351d49" title=" " alt="" coords="809,555,993,597"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09" title=" " alt="" coords="1115,685,1202,712"/>
+<area shape="rect" href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="628,461,667,488"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="618,411,677,437"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a7b509a4d1fbec2a7967e0a9abb9ad43b" title=" " alt="" coords="1059,516,1259,543"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="1390,465,1469,492"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="1386,567,1473,593"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="1374,415,1485,441"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="1357,617,1501,644"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="1678,465,1757,492"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="1674,567,1761,593"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1897,567,2004,593"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9" title=" " alt="" coords="1321,719,1537,761"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a0922ff80d8ab66f4e128212fbccf64ec" title=" " alt="" coords="805,360,996,387"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a7b509a4d1fbec2a7967e0a9abb9ad43b" title=" " alt="" coords="1059,559,1259,585"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="1390,559,1469,585"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="1386,609,1473,636"/>
+<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="1374,508,1485,535"/>
+<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="1357,660,1501,687"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="1678,559,1757,585"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a16a390366e7e68ca35fdac4cad824428" title=" " alt="" coords="1674,609,1761,636"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="1897,609,2004,636"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9" title=" " alt="" coords="1321,762,1537,803"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a0922ff80d8ab66f4e128212fbccf64ec" title=" " alt="" coords="805,432,996,459"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_icgraph.png" border="0" usemap="#aERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_icgraph" alt=""/></div>
-<map name="aERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_icgraph" id="aERF__ComputeTurbulentViscosity_8cpp_a93d0ebe4e2e3e1dbcd3eb48bb97a469c_icgraph">
+<div class="center"><img src="ERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_icgraph.png" border="0" usemap="#aERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_icgraph" alt=""/></div>
+<map name="aERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_icgraph" id="aERF__ComputeTurbulentViscosity_8cpp_ad777b96c0ad38487f5c5f9977a482fc2_icgraph">
 <area shape="rect" title=" " alt="" coords="213,5,413,32"/>
 <area shape="rect" href="classERF.html#a96a272defae485c5b83fbc123a631f9f" title=" " alt="" coords="5,5,165,32"/>
 </map>
@@ -1037,8 +1050,8 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__DiffQKEAdjustment_8H_html_ad212ca7498a026ec3f73cef6a5f29738"><div class="ttname"><a href="ERF__DiffQKEAdjustment_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if</a></div><div class="ttdeci">if(l_use_mynn &amp;&amp;start_comp&lt;=RhoKE_comp &amp;&amp;end_comp &gt;=RhoKE_comp)</div><div class="ttdef"><b>Definition:</b> ERF_DiffQKEAdjustment.H:2</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a5c210d1bb758efced9a042135e527691"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a5c210d1bb758efced9a042135e527691">l_inv_theta0</a></div><div class="ttdeci">Real l_inv_theta0</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:12</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a96afe14234ec5c4b9fc00811d9d87bfd"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a96afe14234ec5c4b9fc00811d9d87bfd">l_abs_g</a></div><div class="ttdeci">Real l_abs_g</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:13</div></div>
-<div class="ttc" id="aERF__EddyViscosity_8H_html_a1a8e03c9d0a2b9decd215a2b2b2425e1"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1">ComputeSmnSmn2D</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn2D(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12)</div><div class="ttdef"><b>Definition:</b> ERF_EddyViscosity.H:66</div></div>
-<div class="ttc" id="aERF__EddyViscosity_8H_html_ad1e6d314bfc2e508c86ee0e07cfbd8f8"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23)</div><div class="ttdef"><b>Definition:</b> ERF_EddyViscosity.H:39</div></div>
+<div class="ttc" id="aERF__EddyViscosity_8H_html_a1a8e03c9d0a2b9decd215a2b2b2425e1"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1">ComputeSmnSmn2D</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn2D(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12)</div><div class="ttdef"><b>Definition:</b> ERF_EddyViscosity.H:67</div></div>
+<div class="ttc" id="aERF__EddyViscosity_8H_html_ad1e6d314bfc2e508c86ee0e07cfbd8f8"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23)</div><div class="ttdef"><b>Definition:</b> ERF_EddyViscosity.H:40</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
@@ -1056,20 +1069,20 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47afa0c87454b22a819e328491f78bf6767"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a></div><div class="ttdeci">@ KE_h</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:172</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_a6e5a18c589f998753e87ccb458a5374b"><div class="ttname"><a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:100</div></div>
-<div class="ttc" id="astructTurbChoice_html_a09d119ed891b452afb505806baec3af9"><div class="ttname"><a href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">TurbChoice::smag2d</a></div><div class="ttdeci">bool smag2d</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:337</div></div>
-<div class="ttc" id="astructTurbChoice_html_a0bb2b38f64a12b0b50552e05dee629e7"><div class="ttname"><a href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">TurbChoice::sigma_k</a></div><div class="ttdeci">amrex::Real sigma_k</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:353</div></div>
-<div class="ttc" id="astructTurbChoice_html_a2daa4d23f9d89ee777a0d0fbd43196b6"><div class="ttname"><a href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">TurbChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:333</div></div>
-<div class="ttc" id="astructTurbChoice_html_a53bf9b1ef0e50a6e25ffdb48f80de644"><div class="ttname"><a href="structTurbChoice.html#a53bf9b1ef0e50a6e25ffdb48f80de644">TurbChoice::strat_type</a></div><div class="ttdeci">StratType strat_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:358</div></div>
-<div class="ttc" id="astructTurbChoice_html_a61ff7dc6ee4001ae8f2978efd5ff57e4"><div class="ttname"><a href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">TurbChoice::Ck</a></div><div class="ttdeci">amrex::Real Ck</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:342</div></div>
-<div class="ttc" id="astructTurbChoice_html_aa75682bb872d7917ffb8fddb21532f40"><div class="ttname"><a href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">TurbChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:336</div></div>
-<div class="ttc" id="astructTurbChoice_html_aa90aa6c577f632a8c4582a3538d98ad5"><div class="ttname"><a href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">TurbChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:329</div></div>
-<div class="ttc" id="astructTurbChoice_html_ab2d1ecb36171ca19ea851e8e682a1478"><div class="ttname"><a href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">TurbChoice::Ce_wall</a></div><div class="ttdeci">amrex::Real Ce_wall</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:341</div></div>
-<div class="ttc" id="astructTurbChoice_html_ab6d0ae39e92dcbe7362abf53364c1a8e"><div class="ttname"><a href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">TurbChoice::Ce</a></div><div class="ttdeci">amrex::Real Ce</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:340</div></div>
-<div class="ttc" id="astructTurbChoice_html_adfac4edb4b7f7ccc57906424d0fff9f2"><div class="ttname"><a href="structTurbChoice.html#adfac4edb4b7f7ccc57906424d0fff9f2">TurbChoice::use_smag_stratification</a></div><div class="ttdeci">bool use_smag_stratification</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:364</div></div>
-<div class="ttc" id="astructTurbChoice_html_aeb3c184b540858407426a606327fba3a"><div class="ttname"><a href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">TurbChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:356</div></div>
-<div class="ttc" id="astructTurbChoice_html_af6f0fe84d6885a0d776865e04e9f15ba"><div class="ttname"><a href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">TurbChoice::mix_isotropic</a></div><div class="ttdeci">bool mix_isotropic</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:361</div></div>
+<div class="ttc" id="astructTurbChoice_html_a09d119ed891b452afb505806baec3af9"><div class="ttname"><a href="structTurbChoice.html#a09d119ed891b452afb505806baec3af9">TurbChoice::smag2d</a></div><div class="ttdeci">bool smag2d</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:342</div></div>
+<div class="ttc" id="astructTurbChoice_html_a0bb2b38f64a12b0b50552e05dee629e7"><div class="ttname"><a href="structTurbChoice.html#a0bb2b38f64a12b0b50552e05dee629e7">TurbChoice::sigma_k</a></div><div class="ttdeci">amrex::Real sigma_k</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:358</div></div>
+<div class="ttc" id="astructTurbChoice_html_a2daa4d23f9d89ee777a0d0fbd43196b6"><div class="ttname"><a href="structTurbChoice.html#a2daa4d23f9d89ee777a0d0fbd43196b6">TurbChoice::Sc_t_inv</a></div><div class="ttdeci">amrex::Real Sc_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:338</div></div>
+<div class="ttc" id="astructTurbChoice_html_a53bf9b1ef0e50a6e25ffdb48f80de644"><div class="ttname"><a href="structTurbChoice.html#a53bf9b1ef0e50a6e25ffdb48f80de644">TurbChoice::strat_type</a></div><div class="ttdeci">StratType strat_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:363</div></div>
+<div class="ttc" id="astructTurbChoice_html_a61ff7dc6ee4001ae8f2978efd5ff57e4"><div class="ttname"><a href="structTurbChoice.html#a61ff7dc6ee4001ae8f2978efd5ff57e4">TurbChoice::Ck</a></div><div class="ttdeci">amrex::Real Ck</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:347</div></div>
+<div class="ttc" id="astructTurbChoice_html_aa75682bb872d7917ffb8fddb21532f40"><div class="ttname"><a href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">TurbChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:341</div></div>
+<div class="ttc" id="astructTurbChoice_html_aa90aa6c577f632a8c4582a3538d98ad5"><div class="ttname"><a href="structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5">TurbChoice::Pr_t_inv</a></div><div class="ttdeci">amrex::Real Pr_t_inv</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:334</div></div>
+<div class="ttc" id="astructTurbChoice_html_ab2d1ecb36171ca19ea851e8e682a1478"><div class="ttname"><a href="structTurbChoice.html#ab2d1ecb36171ca19ea851e8e682a1478">TurbChoice::Ce_wall</a></div><div class="ttdeci">amrex::Real Ce_wall</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:346</div></div>
+<div class="ttc" id="astructTurbChoice_html_ab6d0ae39e92dcbe7362abf53364c1a8e"><div class="ttname"><a href="structTurbChoice.html#ab6d0ae39e92dcbe7362abf53364c1a8e">TurbChoice::Ce</a></div><div class="ttdeci">amrex::Real Ce</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:345</div></div>
+<div class="ttc" id="astructTurbChoice_html_adfac4edb4b7f7ccc57906424d0fff9f2"><div class="ttname"><a href="structTurbChoice.html#adfac4edb4b7f7ccc57906424d0fff9f2">TurbChoice::use_smag_stratification</a></div><div class="ttdeci">bool use_smag_stratification</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:369</div></div>
+<div class="ttc" id="astructTurbChoice_html_aeb3c184b540858407426a606327fba3a"><div class="ttname"><a href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">TurbChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:361</div></div>
+<div class="ttc" id="astructTurbChoice_html_af6f0fe84d6885a0d776865e04e9f15ba"><div class="ttname"><a href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">TurbChoice::mix_isotropic</a></div><div class="ttdeci">bool mix_isotropic</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:366</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c">ComputeTurbulentViscosity()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2">ComputeTurbulentViscosity()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1105,7 +1118,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__ComputeTurbulentViscosity_8cpp_a3cc999b9f7e4660aab23b4ecf6c9c867_icgraph.png" border="0" usemap="#aERF__ComputeTurbulentViscosity_8cpp_a3cc999b9f7e4660aab23b4ecf6c9c867_icgraph" alt=""/></div>
 <map name="aERF__ComputeTurbulentViscosity_8cpp_a3cc999b9f7e4660aab23b4ecf6c9c867_icgraph" id="aERF__ComputeTurbulentViscosity_8cpp_a3cc999b9f7e4660aab23b4ecf6c9c867_icgraph">
 <area shape="rect" title=" " alt="" coords="461,5,684,32"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c" title=" " alt="" coords="213,5,413,32"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2" title=" " alt="" coords="213,5,413,32"/>
 <area shape="rect" href="classERF.html#a96a272defae485c5b83fbc123a631f9f" title=" " alt="" coords="5,5,165,32"/>
 </map>
 </div>
@@ -1424,13 +1437,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    }</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f51e1ef58cb9a3add46666cc98e6093"><div class="ttname"><a href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a></div><div class="ttdeci">constexpr amrex::Real KAPPA</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
-<div class="ttc" id="astructTurbChoice_html_a31a9795822136f341f086e1504c67c20"><div class="ttname"><a href="structTurbChoice.html#a31a9795822136f341f086e1504c67c20">TurbChoice::Rt_min</a></div><div class="ttdeci">amrex::Real Rt_min</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:348</div></div>
-<div class="ttc" id="astructTurbChoice_html_a691c3fb4cfd3b097ab74174bf9e9a780"><div class="ttname"><a href="structTurbChoice.html#a691c3fb4cfd3b097ab74174bf9e9a780">TurbChoice::Cmu0</a></div><div class="ttdeci">amrex::Real Cmu0</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:345</div></div>
-<div class="ttc" id="astructTurbChoice_html_a83a6313a910638e87513e6aac7149f6a"><div class="ttname"><a href="structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a">TurbChoice::Cb</a></div><div class="ttdeci">amrex::Real Cb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:346</div></div>
-<div class="ttc" id="astructTurbChoice_html_af1a3ee3179cdc41f8306027ce20722ce"><div class="ttname"><a href="structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce">TurbChoice::Rt_crit</a></div><div class="ttdeci">amrex::Real Rt_crit</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:347</div></div>
-<div class="ttc" id="astructTurbChoice_html_af84d7f3d07437f121cc3784898f5be3b"><div class="ttname"><a href="structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b">TurbChoice::l_g_max</a></div><div class="ttdeci">amrex::Real l_g_max</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:349</div></div>
+<div class="ttc" id="astructTurbChoice_html_a31a9795822136f341f086e1504c67c20"><div class="ttname"><a href="structTurbChoice.html#a31a9795822136f341f086e1504c67c20">TurbChoice::Rt_min</a></div><div class="ttdeci">amrex::Real Rt_min</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:353</div></div>
+<div class="ttc" id="astructTurbChoice_html_a691c3fb4cfd3b097ab74174bf9e9a780"><div class="ttname"><a href="structTurbChoice.html#a691c3fb4cfd3b097ab74174bf9e9a780">TurbChoice::Cmu0</a></div><div class="ttdeci">amrex::Real Cmu0</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:350</div></div>
+<div class="ttc" id="astructTurbChoice_html_a83a6313a910638e87513e6aac7149f6a"><div class="ttname"><a href="structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a">TurbChoice::Cb</a></div><div class="ttdeci">amrex::Real Cb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:351</div></div>
+<div class="ttc" id="astructTurbChoice_html_af1a3ee3179cdc41f8306027ce20722ce"><div class="ttname"><a href="structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce">TurbChoice::Rt_crit</a></div><div class="ttdeci">amrex::Real Rt_crit</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:352</div></div>
+<div class="ttc" id="astructTurbChoice_html_af84d7f3d07437f121cc3784898f5be3b"><div class="ttname"><a href="structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b">TurbChoice::l_g_max</a></div><div class="ttdeci">amrex::Real l_g_max</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:354</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c">ComputeTurbulentViscosity()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2">ComputeTurbulentViscosity()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1453,7 +1466,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__ComputeTurbulentViscosity_8cpp_af179b8be9d9392212d31f38b4a9afb3d_icgraph.png" border="0" usemap="#aERF__ComputeTurbulentViscosity_8cpp_af179b8be9d9392212d31f38b4a9afb3d_icgraph" alt=""/></div>
 <map name="aERF__ComputeTurbulentViscosity_8cpp_af179b8be9d9392212d31f38b4a9afb3d_icgraph" id="aERF__ComputeTurbulentViscosity_8cpp_af179b8be9d9392212d31f38b4a9afb3d_icgraph">
 <area shape="rect" title=" " alt="" coords="461,5,697,32"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a93d0ebe4e2e3e1dbcd3eb48bb97a469c" title=" " alt="" coords="213,5,413,32"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2" title=" " alt="" coords="213,5,413,32"/>
 <area shape="rect" href="classERF.html#a96a272defae485c5b83fbc123a631f9f" title=" " alt="" coords="5,5,165,32"/>
 </map>
 </div>

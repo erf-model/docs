@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"ERF__HSEUtils_8H.html#acea3d9d853ef0fbeee3f94b4b62cc224":[3,0,1,17,7,0],
+"ERF__HSEUtils_8H_source.html":[3,0,1,17,7],
 "ERF__IceFall_8cpp.html":[3,0,1,9,3,1],
 "ERF__ImposeBCsOnPhi_8cpp.html":[3,0,1,8,2],
 "ERF__IndexDefines_8H.html":[3,0,1,24],
@@ -172,11 +174,11 @@ var NAVTREEINDEX2 =
 "ERF__MOSTStress_8H_source.html":[3,0,1,1,16],
 "ERF__MRI_8H.html":[3,0,1,15,11],
 "ERF__MRI_8H_source.html":[3,0,1,15,11],
-"ERF__MYNNStruct_8H.html":[3,0,1,11,4],
-"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25":[3,0,1,11,4,2],
-"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25aa2652637c68e16524ab7681e65eea95c":[3,0,1,11,4,2,0],
-"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e":[3,0,1,11,4,2,1],
-"ERF__MYNNStruct_8H_source.html":[3,0,1,11,4],
+"ERF__MYNNStruct_8H.html":[3,0,1,11,5],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25":[3,0,1,11,5,2],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25aa2652637c68e16524ab7681e65eea95c":[3,0,1,11,5,2,0],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e":[3,0,1,11,5,2,1],
+"ERF__MYNNStruct_8H_source.html":[3,0,1,11,5],
 "ERF__MakeBuoyancy_8cpp.html":[3,0,1,14,6],
 "ERF__MakeBuoyancy_8cpp.html#aa0e810b8099c900ea8c347b6d8ce6b4f":[3,0,1,14,6,0],
 "ERF__MakeFastCoeffs_8cpp.html":[3,0,1,15,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__NCInterface_8H.html":[3,0,1,6,4],
 "ERF__NCInterface_8H_source.html":[3,0,1,6,4],
 "ERF__NCInterface_8cpp.html":[3,0,1,6,3],
-"ERF__NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979":[3,0,1,6,3,0],
-"ERF__NCPlotFile_8cpp.html":[3,0,1,6,5],
-"ERF__NCPlotFile_8cpp.html#ad9a51088de1000816aac4e945c877b84":[3,0,1,6,5,0]
+"ERF__NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979":[3,0,1,6,3,0]
 };
