@@ -61,8 +61,9 @@ var namespaces_dup =
       [ "TOL", "namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e", null ]
     ] ],
     [ "IntVars", "namespaceIntVars.html", null ],
+    [ "LsmData_NOAHMP", "namespaceLsmData__NOAHMP.html", null ],
+    [ "LsmFlux_NOAHMP", "namespaceLsmFlux__NOAHMP.html", null ],
     [ "LsmVar_MM5", "namespaceLsmVar__MM5.html", null ],
-    [ "LsmVar_NOAHMP", "namespaceLsmVar__NOAHMP.html", null ],
     [ "LsmVar_SLM", "namespaceLsmVar__SLM.html", null ],
     [ "MetGridBdyVars", "namespaceMetGridBdyVars.html", null ],
     [ "MicVar", "namespaceMicVar.html", null ],

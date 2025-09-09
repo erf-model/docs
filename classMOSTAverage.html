@@ -1011,8 +1011,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;    <span class="keywordflow">else</span> <span class="comment">// copy temperature</span></div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;    {</div>
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;        <span class="keywordtype">int</span> iavg   = <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a> - 2;</div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = averages[iavg]-&gt;nGrowVect();</div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;        MultiFab::Copy(*(averages[iavg]),*(averages[2]),0,0,1,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = averages[iavg]-&gt;nGrowVect();</div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;        MultiFab::Copy(*(averages[iavg]),*(averages[2]),0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;    }</div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160; </div>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;    <span class="comment">//</span></div>
@@ -1112,7 +1112,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;    Box domain     = geom.Domain();</div>
 <div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;    <span class="keywordflow">if</span> (domain.contains(cc_bnd_bx) || (not_per_x || not_per_y)) {</div>
 <div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iavg(0); iavg &lt; <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>; ++iavg) {</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = averages[iavg]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = averages[iavg]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
 <div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160; </div>
 <div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;            <span class="comment">// NOTE:  Level 0 spans the whole domain, but finer</span></div>
 <div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;            <span class="comment">//        levels do not have such a restriction.</span></div>
@@ -1130,7 +1130,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
 <div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(*averages[iavg], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                Box gpbx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>); gpbx.setSmall(2,0); gpbx.setBig(2,0);</div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;                Box gpbx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>); gpbx.setSmall(2,0); gpbx.setBig(2,0);</div>
 <div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
 <div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;                <span class="keywordflow">if</span> (bnd_bx.contains(gpbx)) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160; </div>
@@ -1155,7 +1155,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a32eeeb066c70da970aa6a60918515987"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real Compute_h_zeta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:47</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a2c167351f6655ef3276f8e5b39439e91"><div class="ttname"><a href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">MOSTAverage::m_radius</a></div><div class="ttdeci">int m_radius</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:218</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ab227f9a8e9224820c00fa8b223712b3e"><div class="ttname"><a href="classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e">MOSTAverage::m_ncell_region</a></div><div class="ttdeci">int m_ncell_region</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:219</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0">compute_averages()</a>.</p>
 <div class="dynheader">
@@ -1334,14 +1334,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        BoxArray ba2d(std::move(bl2d));</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> DistributionMapping&amp; dm = mf.DistributionMap();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = 1;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = mf.nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = mf.nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][0] = vars_old[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>];</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][0]-&gt;setVal(1.E34);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][0],mf,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][0],mf,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][0] = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        }</div>
@@ -1355,14 +1355,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        BoxArray ba2d(std::move(bl2d));</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keyword">const</span> DistributionMapping&amp; dm = mf.DistributionMap();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = 1;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = mf.nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = mf.nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][1] = vars_old[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>];</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][1] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][1] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][1]-&gt;setVal(1.E34);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][1] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][1],mf,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][1] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][1],mf,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][1] = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
@@ -1377,7 +1377,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keyword">const</span> DistributionMapping&amp; dm = mf.DistributionMap();</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp  = 1;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> incomp = 1;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = mf.nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = mf.nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// Get field pointers</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="classMOSTAverage.html#ad301df8e1ee46557a4d277c3f87fae69">m_fields</a>[lev][2] = Theta_prim.get();</div>
@@ -1386,7 +1386,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment">// Initialize remaining multifabs</span></div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iavg(2); iavg &lt; <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>; ++iavg) {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][iavg] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][iavg] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][iavg]-&gt;setVal(1.E34);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
@@ -1394,29 +1394,29 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="classMOSTAverage.html#a158b82286f1bed8b02da2c8b2ac7f4c0">m_averages</a>[lev][3]-&gt;setVal(0.0);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][2] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][3] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][2],*Theta_prim,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> (Qv_prim) MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][3],*Qv_prim,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][2] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][3] = std::make_unique&lt;MultiFab&gt;(ba,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][2],*Theta_prim,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> (Qv_prim) MultiFab::Copy(*<a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][3],*Qv_prim,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][2] = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <a class="code" href="classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277">m_rot_fields</a>[lev][3] = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        }</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> (use_terrain_fitted_coords &amp;&amp; <a class="code" href="classMOSTAverage.html#a90d1df8bd48dd2bf45776a01ba1a89f7">m_norm_vec</a> &amp;&amp; <a class="code" href="classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e">m_interp</a>) {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374">m_y_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15">m_z_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374">m_y_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15">m_z_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (use_terrain_fitted_coords &amp;&amp; <a class="code" href="classMOSTAverage.html#aeac5da9c3972fdde64f60720f88efe2e">m_interp</a>) {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <a class="code" href="classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374">m_y_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15">m_z_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <a class="code" href="classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374">m_y_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15">m_z_pos</a>[lev] = std::make_unique&lt;MultiFab&gt;(ba2d,dm,ncomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (use_terrain_fitted_coords &amp;&amp; <a class="code" href="classMOSTAverage.html#a90d1df8bd48dd2bf45776a01ba1a89f7">m_norm_vec</a>) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62">m_i_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2">m_j_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62">m_i_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <a class="code" href="classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2">m_j_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev] = std::make_unique&lt;iMultiFab&gt;(ba2d,dm,incomp,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">// Nodal in z (only used with terrain stress rotations)</span></div>
@@ -1493,7 +1493,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:143</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef">SurfaceLayer::make_SurfaceLayer_at_level()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">SurfaceLayer::make_SurfaceLayer_at_level()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1519,7 +1519,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_icgraph.png" border="0" usemap="#aclassMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_icgraph" alt=""/></div>
 <map name="aclassMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_icgraph" id="aclassMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_icgraph">
 <area shape="rect" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -1661,7 +1661,7 @@ Here is the caller graph for this function:</div>
 <map name="aclassMOSTAverage_acea63f9601c5d2ee2cb21eee27d843fc_icgraph" id="aclassMOSTAverage_acea63f9601c5d2ee2cb21eee27d843fc_icgraph">
 <area shape="rect" title=" " alt="" coords="528,5,683,47"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -1749,7 +1749,7 @@ Here is the caller graph for this function:</div>
 <map name="aclassMOSTAverage_a712f8ad33d8a87d2979330dec0a873d9_icgraph" id="aclassMOSTAverage_a712f8ad33d8a87d2979330dec0a873d9_icgraph">
 <area shape="rect" title=" " alt="" coords="528,5,683,47"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -1781,10 +1781,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keywordtype">int</span> kmax = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().bigEnd(2);</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxInv  = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].InvCellSizeArray();</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        Box npbx  = mfi.tilebox(IntVect(1,1,0),IntVect(1,1,0));</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        Box gpbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        Box gpbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z_phys_arr = <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        <span class="keyword">auto</span> i_arr = <a class="code" href="classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62">m_i_indx</a>[lev]-&gt;array(mfi);</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="keyword">auto</span> j_arr = <a class="code" href="classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2">m_j_indx</a>[lev]-&gt;array(mfi);</div>
@@ -1857,7 +1857,7 @@ Here is the caller graph for this function:</div>
 <map name="aclassMOSTAverage_ab43d75918dd8805b804b2054ec1be1ee_icgraph" id="aclassMOSTAverage_ab43d75918dd8805b804b2054ec1be1ee_icgraph">
 <area shape="rect" title=" " alt="" coords="528,5,709,47"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -1890,10 +1890,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    RealVect base;</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dx = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].CellSizeArray();</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dxInv  = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].InvCellSizeArray();</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        Box npbx  = mfi.tilebox(IntVect(1,1,0),IntVect(1,1,0));</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        Box gpbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        Box gpbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        RealBox grb{gpbx,dx.data(),base.dataPtr()};</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z_phys_arr = <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev]-&gt;const_array(mfi);</div>
@@ -1962,7 +1962,7 @@ Here is the caller graph for this function:</div>
 <map name="aclassMOSTAverage_a5d4563f98ba7112ceb8be723f1799b7a_icgraph" id="aclassMOSTAverage_a5d4563f98ba7112ceb8be723f1799b7a_icgraph">
 <area shape="rect" title=" " alt="" coords="528,5,709,47"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -2043,7 +2043,7 @@ Here is the caller graph for this function:</div>
 <map name="aclassMOSTAverage_a8a1c27722c5b0df803889bfadb9a98e0_icgraph" id="aclassMOSTAverage_a8a1c27722c5b0df803889bfadb9a98e0_icgraph">
 <area shape="rect" title=" " alt="" coords="528,5,711,47"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -2082,7 +2082,7 @@ Here is the caller graph for this function:</div>
 <map name="aclassMOSTAverage_a514120312387f28a1624387b0e3af360_icgraph" id="aclassMOSTAverage_a514120312387f28a1624387b0e3af360_icgraph">
 <area shape="rect" title=" " alt="" coords="528,5,716,47"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
@@ -2209,10 +2209,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    RealVect base;</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dx = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].CellSizeArray();</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        Box npbx  = mfi.tilebox(IntVect(1,1,0),IntVect(1,1,0));</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        Box gpbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#ab0e5eb917f17886806199b72692e2643a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        Box gpbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        RealBox grb{gpbx,dx.data(),base.dataPtr()};</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z_phys_arr = <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev]-&gt;const_array(mfi);</div>
@@ -2255,7 +2255,7 @@ Here is the caller graph for this function:</div>
 <map name="aclassMOSTAverage_a517ea430338f8474d89418cd92886b8e_icgraph" id="aclassMOSTAverage_a517ea430338f8474d89418cd92886b8e_icgraph">
 <area shape="rect" title=" " alt="" coords="528,5,683,47"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,5,480,47"/>
-<area shape="rect" href="classSurfaceLayer.html#a3394d69e77a8909b373ad1f709755cef" title=" " alt="" coords="5,5,179,47"/>
+<area shape="rect" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50" title=" " alt="" coords="5,5,179,47"/>
 </map>
 </div>
 
