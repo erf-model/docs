@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb":[3,0,1,2,1,8],
+"ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239":[3,0,1,2,1,4],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d2cdf8cea6cb933d4ce759c1ff1b948":[3,0,1,2,1,4,0],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd":[3,0,1,2,1,4,2],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39":[3,0,1,2,1,4,4],
@@ -24,13 +26,13 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6":[3,0,1,2,1,2,0],
 "ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7":[3,0,1,2,1,2,2],
 "ERF__DataStruct_8H.html#a6f87a8134a146aad179f011f937a27d7":[3,0,1,2,1,16],
-"ERF__DataStruct_8H.html#a7596cfba18ef8aeb937cfab4f9018550":[3,0,1,2,1,9],
 "ERF__DataStruct_8H.html#a7957c75d5849d43f9e71c8bd89987237":[3,0,1,2,1,13],
 "ERF__DataStruct_8H.html#a7f22a2006f7648aaa55d4abfdb225a46":[3,0,1,2,1,14],
 "ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7":[3,0,1,2,1,17],
 "ERF__DataStruct_8H.html#ad992b8006a5fca7b2276b6d76b0714a0":[3,0,1,2,1,15],
 "ERF__DataStruct_8H.html#afb582070899c7011b2fb9c732a9b1f86":[3,0,1,2,1,18],
 "ERF__DataStruct_8H.html#afe7288053bdb1298d93c3f92d1dcfaa2":[3,0,1,2,1,10],
+"ERF__DataStruct_8H.html#affb978058c0cf30da4e719c1bfcc6feb":[3,0,1,2,1,9],
 "ERF__DataStruct_8H_source.html":[3,0,1,2,1],
 "ERF__Derive_8H.html":[3,0,1,23],
 "ERF__Derive_8H.html#a0a37dd4fa4a044e34891e6222d06654c":[3,0,1,23,11],
@@ -240,14 +242,12 @@ var NAVTREEINDEX1 =
 "ERF__FillPatcher_8cpp.html":[3,0,1,1,11],
 "ERF__Fitch_8H.html":[3,0,1,18,1,1],
 "ERF__Fitch_8H_source.html":[3,0,1,18,1,1],
-"ERF__ForestDrag_8H.html":[3,0,1,14,5],
-"ERF__ForestDrag_8H_source.html":[3,0,1,14,5],
-"ERF__ForestDrag_8cpp.html":[3,0,1,14,4],
+"ERF__ForestDrag_8H.html":[3,0,1,14,6],
+"ERF__ForestDrag_8H_source.html":[3,0,1,14,6],
+"ERF__ForestDrag_8cpp.html":[3,0,1,14,5],
 "ERF__GeneralAD_8H.html":[3,0,1,18,2,1],
 "ERF__GeneralAD_8H_source.html":[3,0,1,18,2,1],
 "ERF__HSEUtils_8H.html":[3,0,1,17,7],
 "ERF__HSEUtils_8H.html#a10de540cb8ad96aea8cd080f4d1e72fa":[3,0,1,17,7,3],
-"ERF__HSEUtils_8H.html#a49a3ecd8dc0be35accd87a453bc1224e":[3,0,1,17,7,2],
-"ERF__HSEUtils_8H.html#aace33d14958f235a111e6cead400a61e":[3,0,1,17,7,4],
-"ERF__HSEUtils_8H.html#ab38b424f8934564898ddc0e0ee852b07":[3,0,1,17,7,1]
+"ERF__HSEUtils_8H.html#a49a3ecd8dc0be35accd87a453bc1224e":[3,0,1,17,7,2]
 };

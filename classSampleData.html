@@ -109,6 +109,8 @@ Collaboration diagram for SampleData:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a758122202ec5c9d4759242f77f40bed5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSampleData.html#a758122202ec5c9d4759242f77f40bed5">SampleData</a> (bool do_line=false, bool do_plane=false)</td></tr>
 <tr class="separator:a758122202ec5c9d4759242f77f40bed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d05d72443685e5c3b9f437b27c3e1da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSampleData.html#a0d05d72443685e5c3b9f437b27c3e1da">write_coords</a> (amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &amp;z_phys_cc)</td></tr>
+<tr class="separator:a0d05d72443685e5c3b9f437b27c3e1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53dbcbfeb5eddba81c85ccf581536a9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSampleData.html#a53dbcbfeb5eddba81c85ccf581536a9b">get_sample_data</a> (amrex::Vector&lt; amrex::Geometry &gt; &amp;geom, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars_new)</td></tr>
 <tr class="separator:a53dbcbfeb5eddba81c85ccf581536a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc3d0e992e130630b7d2ec41ef9b8a67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSampleData.html#acc3d0e992e130630b7d2ec41ef9b8a67">write_sample_data</a> (amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;time, amrex::Vector&lt; int &gt; &amp;level_steps, amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio, amrex::Vector&lt; amrex::Geometry &gt; &amp;geom)</td></tr>
@@ -155,12 +157,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    {</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        <span class="keywordflow">if</span>(do_line)  <a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a> = std::make_unique&lt;LineSampler &gt;();</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="keywordflow">if</span>(do_plane) <a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a> = std::make_unique&lt;PlaneSampler&gt;();</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    }</div>
-<div class="ttc" id="aclassSampleData_html_a12c059d78aea6b9c266a7cf17044a24c"><div class="ttname"><a href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">SampleData::m_ls</a></div><div class="ttdeci">std::unique_ptr&lt; LineSampler &gt; m_ls</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:629</div></div>
-<div class="ttc" id="aclassSampleData_html_ab96a6354333a8e9db8145813b68b1b5b"><div class="ttname"><a href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">SampleData::m_ps</a></div><div class="ttdeci">std::unique_ptr&lt; PlaneSampler &gt; m_ps</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:632</div></div>
+<div class="fragment"><div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    {</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        <span class="keywordflow">if</span>(do_line)  <a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a> = std::make_unique&lt;LineSampler &gt;();</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="keywordflow">if</span>(do_plane) <a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a> = std::make_unique&lt;PlaneSampler&gt;();</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    }</div>
+<div class="ttc" id="aclassSampleData_html_a12c059d78aea6b9c266a7cf17044a24c"><div class="ttname"><a href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">SampleData::m_ls</a></div><div class="ttdeci">std::unique_ptr&lt; LineSampler &gt; m_ls</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:720</div></div>
+<div class="ttc" id="aclassSampleData_html_ab96a6354333a8e9db8145813b68b1b5b"><div class="ttname"><a href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">SampleData::m_ps</a></div><div class="ttdeci">std::unique_ptr&lt; PlaneSampler &gt; m_ps</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:723</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -198,10 +200,39 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    {</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>) <a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>-&gt;get_line_mfs(vars_new);</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>) <a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>-&gt;get_plane_mfs(geom, vars_new);</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    {</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>) <a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>-&gt;get_line_mfs(vars_new);</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>) <a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>-&gt;get_plane_mfs(geom, vars_new);</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0d05d72443685e5c3b9f437b27c3e1da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d05d72443685e5c3b9f437b27c3e1da">&#9670;&nbsp;</a></span>write_coords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SampleData::write_coords </td>
+          <td>(</td>
+          <td class="paramtype">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>z_phys_cc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    {</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>) <a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>-&gt;write_line_coords(z_phys_cc);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -250,10 +281,10 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    {</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>) <a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>-&gt;write_line_mfs(time, level_steps, ref_ratio, geom);</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>) <a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>-&gt;write_plane_mfs(time, level_steps, ref_ratio, geom);</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    {</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>) <a class="code" href="classSampleData.html#a12c059d78aea6b9c266a7cf17044a24c">m_ls</a>-&gt;write_line_mfs(time, level_steps, ref_ratio, geom);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>) <a class="code" href="classSampleData.html#ab96a6354333a8e9db8145813b68b1b5b">m_ps</a>-&gt;write_plane_mfs(time, level_steps, ref_ratio, geom);</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -278,7 +309,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classSampleData.html#a53dbcbfeb5eddba81c85ccf581536a9b">get_sample_data()</a>, <a class="el" href="classSampleData.html#a758122202ec5c9d4759242f77f40bed5">SampleData()</a>, and <a class="el" href="classSampleData.html#acc3d0e992e130630b7d2ec41ef9b8a67">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSampleData.html#a53dbcbfeb5eddba81c85ccf581536a9b">get_sample_data()</a>, <a class="el" href="classSampleData.html#a758122202ec5c9d4759242f77f40bed5">SampleData()</a>, <a class="el" href="classSampleData.html#a0d05d72443685e5c3b9f437b27c3e1da">write_coords()</a>, and <a class="el" href="classSampleData.html#acc3d0e992e130630b7d2ec41ef9b8a67">write_sample_data()</a>.</p>
 
 </div>
 </div>
