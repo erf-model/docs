@@ -1,6 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"namespacemodule__model__constants.html#ac9ec183cb59aa6acf04858874f2a6501":[1,0,19,100],
 "namespacemodule__model__constants.html#ac9f2f11346e57df8a52fbe2722d416c8":[1,0,19,83],
 "namespacemodule__model__constants.html#acb8fd3c26d119e8f647078ed55ae6926":[1,0,19,43],
 "namespacemodule__model__constants.html#acff2a601d63fb2dd9cad33d477cd4a45":[1,0,19,66],
@@ -249,5 +248,6 @@ var NAVTREEINDEX15 =
 "structDiffChoice.html#adbfceae5178b5ad8131b755454fb616a":[2,0,11,1],
 "structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765":[2,0,11,0],
 "structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf":[2,0,11,8],
-"structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817":[2,0,11,4]
+"structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817":[2,0,11,4],
+"structDirectionSelector.html":[2,0,12]
 };

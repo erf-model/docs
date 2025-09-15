@@ -27,7 +27,6 @@ var classRadiation =
     [ "cld_tau_sw_bnd", "classRadiation.html#ad346f6a314d3642f0b22458cf4f7a76f", null ],
     [ "cld_tau_sw_gpt", "classRadiation.html#a46a2fa144d20f53e0481dedb9bcff945", null ],
     [ "cldfrac_tot", "classRadiation.html#a528b6a84a9640b916ea9b67b8b9e58da", null ],
-    [ "cosine_zenith", "classRadiation.html#aee0abbb42c8d9fdc86db75f1c8a0cc14", null ],
     [ "d_tint", "classRadiation.html#a0e97f96c91d80bb28325cd6b9e3a5e21", null ],
     [ "datalog_mf", "classRadiation.html#a230f1c962f8cca773e2d08c4d19778c3", null ],
     [ "eff_radius_qc", "classRadiation.html#aed69647a51560b341008cff71c0325ca", null ],

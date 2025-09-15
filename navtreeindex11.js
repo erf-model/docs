@@ -1,6 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"classSHOCInterface.html#a474ff4258df0af09f8435d4196343675":[2,0,66,86],
 "classSHOCInterface.html#a48b24ba8560c4339e84f04eb0f2abb00":[2,0,66,71],
 "classSHOCInterface.html#a49c00d2b52978310662b75bed983ecd5":[2,0,66,17],
 "classSHOCInterface.html#a4ff1c1cf184c2bc77cb29bf4b267774c":[2,0,66,113],
@@ -249,5 +248,6 @@ var NAVTREEINDEX11 =
 "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7afbf950ece84b8c4c7ebcf6492db726f7":[2,0,82,0,1],
 "classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8e":[2,0,82,1],
 "classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea10548012f42e962e7945ce998b571c5c":[2,0,82,1,0],
-"classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea38e9829fdc4878924805b745f211bf5e":[2,0,82,1,2]
+"classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea38e9829fdc4878924805b745f211bf5e":[2,0,82,1,2],
+"classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea59038f4bd084275104842422a6eec21c":[2,0,82,1,1]
 };
