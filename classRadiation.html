@@ -1359,19 +1359,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            });</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        }</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;lsm_output_ptrs.size(); ivar++) {</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;            <span class="keyword">auto</span> rrtmgp_for_fill = rrtmgp_out_vars[ivar];</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;            <span class="keywordflow">if</span> (lsm_output_ptrs[ivar]) {</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; lsm_out_arr = lsm_output_ptrs[ivar]-&gt;array(mfi);</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                <span class="keywordflow">if</span> (ivar==0) {</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                    ParallelFor(sbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                    {</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                        <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> icol   = (j-jmin)*nx + (i-imin) + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                        <span class="comment">// export the desired variable at surface</span></div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                        lsm_out_arr(i,j,k) = mu0_d(icol);</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                    });</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;            <span class="keywordflow">if</span> (lsm_output_ptrs[ivar]) {</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; lsm_out_arr = lsm_output_ptrs[ivar]-&gt;array(mfi);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                <span class="keywordflow">if</span> (ivar==0) {</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                    ParallelFor(sbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                    {</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                        <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> icol   = (j-jmin)*nx + (i-imin) + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                        <span class="comment">// export the desired variable at surface</span></div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                        lsm_out_arr(i,j,k) = mu0_d(icol);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                    });</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                    <span class="keyword">auto</span> rrtmgp_for_fill = rrtmgp_out_vars[ivar-1];</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                    ParallelFor(sbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                    {</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                        <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
