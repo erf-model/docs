@@ -752,66 +752,75 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    amrex::Array2D&lt;amrex::Real,0,2,0,2&gt; R_mat;</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="comment">// Metric data</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_xi  = <a class="code" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>(i, j, klo, dxInv, zphys_arr);</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_eta = <a class="code" href="ERF__TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669">Compute_h_eta_AtIface</a>(i, j, klo, dxInv, zphys_arr);</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160; </div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="comment">// Populate the normal vector</span></div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inormn = 1./std::sqrt(1.0 + h_xi*h_xi + h_eta*h_eta);</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    n_hat(0) = -Inormn*h_xi; n_hat(1) = -Inormn*h_eta; n_hat(2) = Inormn;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160; </div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="comment">// Populate the tangent vectors</span></div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm1 = 1./std::sqrt(1.0 + h_xi*h_xi);</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm2 = 1./std::sqrt(1.0 + h_eta*h_eta);</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    t_hat_1(0) = Inorm1;      t_hat_2(1) = Inorm2;</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    t_hat_1(2) = Inorm1*h_xi; t_hat_2(2) = Inorm2*h_eta;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment">// Populate the u_t vector</span></div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Norm_u_t = 0.0;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mag1 = (u_arr(i,j,klo) + h_xi *w_arr(i,j,klo))*Inorm1;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mag2 = (v_arr(i,j,klo) + h_eta*w_arr(i,j,klo))*Inorm2;</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        u_t_hat(icol) = mag1*t_hat_1(icol) + mag2*t_hat_2(icol);</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        Norm_u_t  += u_t_hat(icol)*u_t_hat(icol);</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    }</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        u_t_hat(icol) /= std::sqrt(Norm_u_t);</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    }</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// Populate the a_hat vector</span></div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    a_hat(0) =   n_hat(1)*u_t_hat(2) - n_hat(2)*u_t_hat(1);</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    a_hat(1) = -(n_hat(0)*u_t_hat(2) - n_hat(2)*u_t_hat(0));</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    a_hat(2) =   n_hat(1)*u_t_hat(1) - n_hat(1)*u_t_hat(0);</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// Copy column vectors into R_mat</span></div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="keywordtype">int</span> jrow;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    jrow = 0;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        R_mat(icol,jrow) = u_t_hat(icol);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    }</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    jrow = 1;</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        R_mat(icol,jrow) = a_hat(icol);</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    }</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    jrow = 2;</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        R_mat(icol,jrow) = n_hat(icol);</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    }</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="comment">// Assign the stresses</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    tau11_arr(i,j,klo) = 2.0*R_mat(0,0)*R_mat(2,0)*flux;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    tau22_arr(i,j,klo) = 2.0*R_mat(0,1)*R_mat(2,1)*flux;</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    tau33_arr(i,j,klo) = 2.0*R_mat(0,2)*R_mat(2,2)*flux;</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    tau12_arr(i,j,klo) = (R_mat(0,0)*R_mat(2,1) + R_mat(2,0)*R_mat(0,1))*flux;</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    tau21_arr(i,j,klo) = tau12_arr(i,j,klo);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    tau13_arr(i,j,klo) = (R_mat(0,0)*R_mat(2,2) + R_mat(0,2)*R_mat(2,0))*flux;</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    tau31_arr(i,j,klo) = tau13_arr(i,j,klo);</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160; </div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    tau23_arr(i,j,klo) = (R_mat(0,1)*R_mat(2,2) + R_mat(0,2)*R_mat(2,1))*flux;</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    tau32_arr(i,j,klo) = tau23_arr(i,j,klo);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;}</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_xi   = <a class="code" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>(i, j, klo, dxInv, zphys_arr);</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_eta  = <a class="code" href="ERF__TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669">Compute_h_eta_AtIface</a>(i, j, klo, dxInv, zphys_arr);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, klo, dxInv, zphys_arr);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="comment">// Populate the normal vector</span></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inormn = 1./std::sqrt(1.0 + h_xi*h_xi + h_eta*h_eta);</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    n_hat(0) = Inormn*h_xi; n_hat(1) = Inormn*h_eta; n_hat(2) = -Inormn;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="comment">// Populate the tangent vectors</span></div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm1 = 1./std::sqrt(1.0 + h_xi*h_xi);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm2 = 1./std::sqrt(1.0 + h_eta*h_eta);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    t_hat_1(0) = -Inorm1;      t_hat_2(1) = -Inorm2;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    t_hat_1(2) = -Inorm1*h_xi; t_hat_2(2) = -Inorm2*h_eta;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="comment">// Populate the u_t vector</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Norm_u_t = 0.0;</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mag1 = (u_arr(i,j,klo) + h_xi *w_arr(i,j,klo))*Inorm1;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mag2 = (v_arr(i,j,klo) + h_eta*w_arr(i,j,klo))*Inorm2;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        u_t_hat(icol) = mag1*t_hat_1(icol) + mag2*t_hat_2(icol);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        Norm_u_t  += u_t_hat(icol)*u_t_hat(icol);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    }</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        u_t_hat(icol) /= std::sqrt(Norm_u_t);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    }</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// Populate the a_hat vector</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    a_hat(0) =   n_hat(1)*u_t_hat(2) - n_hat(2)*u_t_hat(1);</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    a_hat(1) = -(n_hat(0)*u_t_hat(2) - n_hat(2)*u_t_hat(0));</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    a_hat(2) =   n_hat(0)*u_t_hat(1) - n_hat(1)*u_t_hat(0);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// Copy column vectors into R_mat</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordtype">int</span> jrow;</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    jrow = 0;</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        R_mat(icol,jrow) = u_t_hat(icol);</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    }</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    jrow = 1;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        R_mat(icol,jrow) = a_hat(icol);</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    }</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    jrow = 2;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        R_mat(icol,jrow) = n_hat(icol);</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    }</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">// Body-fixed tau</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T11    = 2.0*R_mat(0,0)*R_mat(2,0)*flux;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T22    = 2.0*R_mat(0,1)*R_mat(2,1)*flux;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T33    = 2.0*R_mat(0,2)*R_mat(2,2)*flux;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T12    = (R_mat(0,0)*R_mat(2,1) + R_mat(2,0)*R_mat(0,1))*flux;</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T13    = (R_mat(0,0)*R_mat(2,2) + R_mat(0,2)*R_mat(2,0))*flux;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T23    = (R_mat(0,1)*R_mat(2,2) + R_mat(0,2)*R_mat(2,1))*flux;</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="comment">// Rotated stress fluxes</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    tau11_arr(i,j,klo) = h_zeta*T11;</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    tau22_arr(i,j,klo) = h_zeta*T22;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    tau33_arr(i,j,klo) = -h_xi*T13 - h_eta*T23 + T33;</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    tau12_arr(i,j,klo) = h_zeta*T12;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    tau21_arr(i,j,klo) = tau21_arr(i,j,klo);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    tau13_arr(i,j,klo) = -h_xi*T11 - h_eta*T12 + T13;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    tau31_arr(i,j,klo) = h_zeta*T13;</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    tau23_arr(i,j,klo) = -h_xi*T12 - h_eta*T22 + T23;</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    tau32_arr(i,j,klo) = h_zeta*T23;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;}</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:16</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a00a82ef863424210898550c6abb4d055"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int &amp;i, int &amp;j, int &amp;k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:415</div></div>
