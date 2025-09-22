@@ -322,7 +322,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                <span class="comment">// We can stop if we got the entire plane</span></div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                <span class="keyword">auto</span> min_bnd_bx   = <a class="code" href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">m_ps_mf</a>[iplane]-&gt;boxArray().minimalBox();</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                amrex::Box bnd_bx = <a class="code" href="structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d">getIndexBox</a>(bnd_rbx, geom[ilev]);</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keywordflow">if</span> (bnd_bx == min_bnd_bx) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keywordflow">if</span> (bnd_bx == min_bnd_bx) { <span class="keywordflow">break</span>; }</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;            } <span class="comment">// ilev</span></div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        }<span class="comment">// iplane</span></div>
