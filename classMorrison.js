@@ -32,6 +32,7 @@ var classMorrison =
     [ "gamaz", "classMorrison.html#a8be05adcddf26645e0afe16f7fd7959b", null ],
     [ "m_axis", "classMorrison.html#a9b6b084ace42c7992815942eed92212f", null ],
     [ "m_detJ_cc", "classMorrison.html#a88d75ccdce5c7a7de7033c7ceb2fed41", null ],
+    [ "m_do_cond", "classMorrison.html#af658c7ed98296b05a6cde28d695b93cc", null ],
     [ "m_fac_cond", "classMorrison.html#a903d92435272b6b12ab6e7bcaf6fa23c", null ],
     [ "m_fac_fus", "classMorrison.html#af97b098dae958c8fc69ec92b6779acf3", null ],
     [ "m_fac_sub", "classMorrison.html#a94005ac35edcdb59eb0b2f2d18e53425", null ],

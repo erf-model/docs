@@ -9,7 +9,7 @@ var ERF__Utils_8H =
     [ "make_areas", "ERF__Utils_8H.html#afd5f5cf174d096726815e6d7dc325c41", null ],
     [ "make_J", "ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea", null ],
     [ "make_zcc", "ERF__Utils_8H.html#ab405f3b5732dda49ad076fab09bfbfc8", null ],
-    [ "MomentumToVelocity", "ERF__Utils_8H.html#a26382a1781acfcd6b4740685db28d6b2", null ],
+    [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#aad824068654c303fcba24a6fc83d0f72", null ],
     [ "realbdy_compute_laplacian_relaxation", "ERF__Utils_8H.html#ab9437adc19558f7c5f1880473bf98535", null ],
@@ -17,6 +17,6 @@ var ERF__Utils_8H =
     [ "realbdy_set_rhs_in_spec_region", "ERF__Utils_8H.html#a0b88232fda28b980089ed84150bcf330", null ],
     [ "thinbody_wall_dist", "ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e", null ],
     [ "Time_Avg_Vel_atCC", "ERF__Utils_8H.html#ac3d734b65fd91857925d381c476e7965", null ],
-    [ "VelocityToMomentum", "ERF__Utils_8H.html#a5e2e36af19c0192915a2ca721c0cded4", null ],
+    [ "VelocityToMomentum", "ERF__Utils_8H.html#a2e5e0e7af417da64f77e0778ed824bf9", null ],
     [ "WeatherDataInterpolation", "ERF__Utils_8H.html#a5e9ed0fa2cb7a711f00c2c8566c71d89", null ]
 ];

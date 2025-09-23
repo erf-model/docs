@@ -37,6 +37,7 @@ var classSAM =
     [ "gamaz", "classSAM.html#af47c1dda6481ee4549b60f2c03bdec18", null ],
     [ "m_axis", "classSAM.html#a37854ec84283a4229cf86b54cfcfc72b", null ],
     [ "m_detJ_cc", "classSAM.html#a1b09febe32fbfebb402091fd31cd9996", null ],
+    [ "m_do_cond", "classSAM.html#a61a5a9e710fb010dd585b3e65e86ab25", null ],
     [ "m_fac_cond", "classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95", null ],
     [ "m_fac_fus", "classSAM.html#a53d38219476c32ba2dd751c02bcae53c", null ],
     [ "m_fac_sub", "classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec", null ],

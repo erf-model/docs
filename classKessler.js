@@ -19,6 +19,7 @@ var classKessler =
     [ "dt", "classKessler.html#a86cf1c45a302d0e4a860860dab3dbe65", null ],
     [ "m_axis", "classKessler.html#afea161a2b985d4c0eb4aa9390a808ab4", null ],
     [ "m_detJ_cc", "classKessler.html#a534c115146bedf2e3f600ac351162252", null ],
+    [ "m_do_cond", "classKessler.html#a9768f16e7d0dc1320927d6169fc4cc39", null ],
     [ "m_fac_cond", "classKessler.html#a74746cef2381fd949a06be46f99a05c7", null ],
     [ "m_fac_fus", "classKessler.html#acaf08727482ff116185a6dbdf2bd54f9", null ],
     [ "m_fac_sub", "classKessler.html#a2feda15429da3d8227d75cc3f6da71ba", null ],
