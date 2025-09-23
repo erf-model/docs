@@ -18,7 +18,7 @@ var searchData=
   ['set_5fcovered_4557',['set_covered',['../classeb__cut__cell__.html#ac6769d8e9c7447d76edec5d4b1c578c1',1,'eb_cut_cell_']]],
   ['set_5fcovered_5fregular_5fcell_5fvertices_4558',['set_covered_regular_cell_vertices',['../classeb__cut__cell__.html#a80fa6b8f94a7d0c4623ce9f0f74b7de2',1,'eb_cut_cell_']]],
   ['set_5ffast_5frhs_4559',['set_fast_rhs',['../classMRISplitIntegrator.html#aafed3f1d61d477bd1f01bdeb71a9ab11',1,'MRISplitIntegrator']]],
-  ['set_5fgrids_4560',['set_grids',['../classRadiation.html#adf49f9f6f6cbd79bc1ecbf1d5c6f59bb',1,'Radiation::set_grids()'],['../classSHOCInterface.html#abdfd21d4ff8cbfb42cec8f9f3efe86ed',1,'SHOCInterface::set_grids()']]],
+  ['set_5fgrids_4560',['set_grids',['../classRadiation.html#adf49f9f6f6cbd79bc1ecbf1d5c6f59bb',1,'Radiation::set_grids()'],['../classSHOCInterface.html#a994a115b3c1ba54b0e99a7a642da99c0',1,'SHOCInterface::set_grids()']]],
   ['set_5fk_5findices_5fn_4561',['set_k_indices_N',['../classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc',1,'MOSTAverage']]],
   ['set_5fk_5findices_5ft_4562',['set_k_indices_T',['../classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9',1,'MOSTAverage']]],
   ['set_5fmass_5fand_5fenergy_5ffluxes_4563',['set_mass_and_energy_fluxes',['../structSHOCInterface_1_1SHOCPostprocess.html#ad4798a4eab392d2f77591ac82c935403',1,'SHOCInterface::SHOCPostprocess']]],
