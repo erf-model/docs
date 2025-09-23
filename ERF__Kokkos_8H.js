@@ -4,6 +4,7 @@ var ERF__Kokkos_8H =
     [ "int2d_k", "ERF__Kokkos_8H.html#a874064ebe1ddec9d5d6ead635f4cd702", null ],
     [ "int3d_k", "ERF__Kokkos_8H.html#aa630517ef7020f7b5e39c6bf3f6d4f93", null ],
     [ "KokkosDefaultDevice", "ERF__Kokkos_8H.html#a1a1468fd1bcfcd7b8b2a701dc290783b", null ],
+    [ "KokkosDefaultMem", "ERF__Kokkos_8H.html#ac835594e63b2eb3240f8ed950b88892c", null ],
     [ "KokkosHostDevice", "ERF__Kokkos_8H.html#a878d2d11bb29ca141a1af1674712aa2b", null ],
     [ "layout_t", "ERF__Kokkos_8H.html#a9f6de9f44ad035816820dbb492be6cde", null ],
     [ "real1d_k", "ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846", null ],

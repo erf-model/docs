@@ -159,6 +159,5 @@ var classRadiation =
     [ "t_lay", "classRadiation.html#adf04aa7d22d65cbee4726021eff179b2", null ],
     [ "t_lev", "classRadiation.html#a4acd631716a74ef6ff1fe5a378b15dec", null ],
     [ "t_sfc", "classRadiation.html#af7e954900c1fe5963d9b497a8617e05f", null ],
-    [ "tmp2d", "classRadiation.html#aa2f50f9d394c9db6c524bf5d5d497ab3", null ],
     [ "z_del", "classRadiation.html#ab12e23f6556e5ac32960f498baf03098", null ]
 ];

@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"classMorrison.html#a4930ab51ce1a492bdddb2aa1cb001b21":[2,0,42,36],
 "classMorrison.html#a540699586b918c354be6e8347fbbd83c":[2,0,42,17],
 "classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37":[2,0,42,21],
 "classMorrison.html#a5e4e4de3f0961b43f5972bc78c964d38":[2,0,42,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "classRadiation.html#a3eab5714d47ed767884a66a8dc1058df":[2,0,59,14],
 "classRadiation.html#a3eb9bfe5e98a3c1c433d98caa681cd0b":[2,0,59,143],
 "classRadiation.html#a40a11a72581bc51941bf4ba12db5affc":[2,0,59,135],
-"classRadiation.html#a42356bd40223375cbdebb2feaffc3632":[2,0,59,105],
-"classRadiation.html#a42503cbcaefec9875058c76fd0806862":[2,0,59,39]
+"classRadiation.html#a42356bd40223375cbdebb2feaffc3632":[2,0,59,105]
 };
