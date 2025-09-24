@@ -222,48 +222,48 @@ template&lt;typename InterpType_H &gt; </div>
       </table>
 </div><div class="memdoc">
 <p>Wrapper function for templating the vertical advective tendency w/ spatial order &gt; 2. </p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED2&gt;(bx, cons_index,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3&gt;(bx, cons_index,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a5b53c212c70ca8def8f3e0f2c5016998">AdvType::Upwind_3rd_SL</a>:</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3SL&gt;(bx, cons_index,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED4&gt;(bx, cons_index,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND5&gt;(bx, cons_index,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                            flx_arr, cell_prim,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED6&gt;(bx, cons_index,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                              flx_arr, cell_prim,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown vertical advection scheme!&quot;</span>);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">switch</span>(vert_adv_type) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED2&gt;(bx, cons_index,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3&gt;(bx, cons_index,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a5b53c212c70ca8def8f3e0f2c5016998">AdvType::Upwind_3rd_SL</a>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND3SL&gt;(bx, cons_index,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED4&gt;(bx, cons_index,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,UPWIND5&gt;(bx, cons_index,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                            flx_arr, cell_prim,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                            avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                            horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        AdvectionSrcForScalarsWrapper&lt;InterpType_H,CENTERED6&gt;(bx, cons_index,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                                              flx_arr, cell_prim,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                                              avg_xmom, avg_ymom, avg_zmom,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                                              horiz_upw_frac, vert_upw_frac);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown vertical advection scheme!&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a5b53c212c70ca8def8f3e0f2c5016998"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a5b53c212c70ca8def8f3e0f2c5016998">AdvType::Upwind_3rd_SL</a></div><div class="ttdeci">@ Upwind_3rd_SL</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a778e0ed47937713eb1c4bedef6b00161">AdvType::Centered_4th</a></div><div class="ttdeci">@ Centered_4th</div></div>
@@ -364,17 +364,16 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpy(0.);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        interp_prim_h.InterpolateInY(i,j,k,prim_index,interpy,avg_ymom(i  ,j  ,k  ));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        (flx_arr[1])(i,j,k) = avg_ymom(i,j,k) * interpy;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    });</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpz(0.);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        interp_prim_v.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i  ,j  ,k  ));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        (flx_arr[2])(i,j,k) = avg_zmom(i,j,k) * interpz;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    });</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        (flx_arr[1])(i,j,k) = avg_ymom(i,j,k) * interpy;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    });</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> prim_index = cons_index - 1;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interpz(0.);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        interp_prim_v.InterpolateInZ(i,j,k,prim_index,interpz,avg_zmom(i  ,j  ,k  ));</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        (flx_arr[2])(i,j,k) = avg_zmom(i,j,k) * interpz;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    });</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:23</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a853a144267414a8a59c87f80ca5c958c"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a></div><div class="ttdeci">const Box xbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:21</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_ae3d636c41f5271630a5816a4b8b668b2"><div class="ttname"><a href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a></div><div class="ttdeci">const Box ybx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:22</div></div>
