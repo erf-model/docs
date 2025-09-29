@@ -11841,7 +11841,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassERF_html_ae27a45d751287a887769df20dea60633"><div class="ttname"><a href="classERF.html#ae27a45d751287a887769df20dea60633">ERF::setSpongeRefFromSounding</a></div><div class="ttdeci">void setSpongeRefFromSounding(bool restarting)</div><div class="ttdoc">Set sponge mean profiles from input sounding.</div><div class="ttdef"><b>Definition:</b> ERF_InitSponge.cpp:65</div></div>
 <div class="ttc" id="aclassERF_html_ae8a57b7fbf5a67c99d04b7d4f43ad100"><div class="ttname"><a href="classERF.html#ae8a57b7fbf5a67c99d04b7d4f43ad100">ERF::samplepoint</a></div><div class="ttdeci">amrex::Vector&lt; amrex::IntVect &gt; samplepoint</div><div class="ttdef"><b>Definition:</b> ERF.H:1534</div></div>
 <div class="ttc" id="aclassERF_html_af8d930dce1b926ecc3bdc6787dd47818"><div class="ttname"><a href="classERF.html#af8d930dce1b926ecc3bdc6787dd47818">ERF::setRecordSamplePointInfo</a></div><div class="ttdeci">void setRecordSamplePointInfo(int i, int lev, amrex::IntVect &amp;cell, const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> ERF.H:1486</div></div>
-<div class="ttc" id="aclassERF_html_afdd04d6a1c2103e654f0cb6eda62436d"><div class="ttname"><a href="classERF.html#afdd04d6a1c2103e654f0cb6eda62436d">ERF::ReadCheckpointFileSurfaceLayer</a></div><div class="ttdeci">void ReadCheckpointFileSurfaceLayer()</div><div class="ttdef"><b>Definition:</b> ERF_Checkpoint.cpp:1011</div></div>
+<div class="ttc" id="aclassERF_html_afdd04d6a1c2103e654f0cb6eda62436d"><div class="ttname"><a href="classERF.html#afdd04d6a1c2103e654f0cb6eda62436d">ERF::ReadCheckpointFileSurfaceLayer</a></div><div class="ttdeci">void ReadCheckpointFileSurfaceLayer()</div><div class="ttdef"><b>Definition:</b> ERF_Checkpoint.cpp:1035</div></div>
 <div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:86</div></div>
 <div class="ttc" id="astructAdvChoice_html_a94de4907b3d6742071d5542b60e8f393"><div class="ttname"><a href="structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393">AdvChoice::have_zero_flux_faces</a></div><div class="ttdeci">bool have_zero_flux_faces</div><div class="ttdef"><b>Definition:</b> ERF_AdvStruct.H:416</div></div>
 <div class="ttc" id="astructDiffChoice_html_a4df179b6e7d84efc89a22ac5900f98c8"><div class="ttname"><a href="structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8">DiffChoice::rho0_trans</a></div><div class="ttdeci">amrex::Real rho0_trans</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:91</div></div>
@@ -16219,345 +16219,371 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;           VisMF::Read(z_height, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Z_Phys_nd&quot;</span>));</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;           MultiFab::Copy(*<a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev],z_height,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;           <a class="code" href="classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692">update_terrain_arrays</a>(lev);</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        }</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        <span class="comment">// Read in the moisture model restart variables</span></div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        std::vector&lt;int&gt; qmoist_indices;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        std::vector&lt;std::string&gt; qmoist_names;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <a class="code" href="classERF.html#a4b7277d54649219f31fe286eee9d415a">micro</a>-&gt;Get_Qmoist_Restart_Vars(lev, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, qmoist_indices, qmoist_names);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        <span class="keywordtype">int</span> qmoist_nvar = qmoist_indices.size();</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var = 0; var &lt; qmoist_nvar; var++) {</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp  = 1;</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            IntVect ng_moist = <a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            MultiFab moist_vars(grids[lev],dmap[lev],ncomp,ng_moist);</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            VisMF::Read(moist_vars, amrex::MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, qmoist_names[var]));</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;            MultiFab::Copy(*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]),moist_vars,0,0,ncomp,ng_moist);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        }</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;<span class="preprocessor">#if defined(ERF_USE_WINDFARM)</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == WindFarmType::Fitch or</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;           <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == WindFarmType::EWP or</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;           <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == WindFarmType::SimpleAD){</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;            IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = Nturb[lev].nGrowVect();</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;            MultiFab mf_Nturb(grids[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            VisMF::Read(mf_Nturb, amrex::MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;NumTurb&quot;</span>));</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;            MultiFab::Copy(Nturb[lev],mf_Nturb,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        }</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160; </div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;           <span class="keywordflow">if</span> (<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a> == MeshType::VariableDz) {</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;               MultiFab z_slab(convert(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],IntVect(1,1,1)),dmap[lev],1,0);</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;               <span class="keywordtype">int</span> klo = geom[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;               <span class="keywordflow">for</span> (MFIter mfi(z_slab); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                   Box nbx = mfi.tilebox();</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                   Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; z_arr      = <a class="code" href="classERF.html#a93e63e5af35efa564fd4195e8703f84c">z_phys_nd</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                   Array4&lt;Real      &gt; <span class="keyword">const</span>&amp; z_slab_arr = z_slab.array(mfi);</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                   ParallelFor(nbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                   {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                       z_slab_arr(i,j,k) = z_arr(i,j,klo);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                   });</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;               }</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;               <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_min = z_slab.min(0);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;               <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_max = z_slab.max(0);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;               <span class="keyword">auto</span> dz = geom[lev].CellSize()[2];</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;               <span class="keywordflow">if</span> (z_max - z_min &lt; 1.e-8 * dz) {</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                   <a class="code" href="structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518">SolverChoice::set_mesh_type</a>(MeshType::StretchedDz);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                   <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a43d0b17f6e155691a1e9474526df3af5">verbose</a> &gt; 0) {</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                       amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Resetting mesh type to StretchedDz since terrain is flat&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                   }</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;               }</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;           }</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        }</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31">lsm_type</a> != LandSurfaceType::None) {</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> mvar(0); mvar&lt;<a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev].size(); ++mvar) {</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                BoxArray ba = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;boxArray();</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                DistributionMapping dm = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;DistributionMap();</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                <span class="keywordtype">int</span> nvar = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;nComp();</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                MultiFab lsm_vars(ba,dm,nvar,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                VisMF::Read(lsm_vars, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;LsmVars&quot;</span>));</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                MultiFab::Copy(*(<a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]),lsm_vars,0,0,nvar,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            }</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        }</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160; </div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="comment">// Read in the moisture model restart variables</span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        std::vector&lt;int&gt; qmoist_indices;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        std::vector&lt;std::string&gt; qmoist_names;</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <a class="code" href="classERF.html#a4b7277d54649219f31fe286eee9d415a">micro</a>-&gt;Get_Qmoist_Restart_Vars(lev, <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>, qmoist_indices, qmoist_names);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="keywordtype">int</span> qmoist_nvar = qmoist_indices.size();</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> var = 0; var &lt; qmoist_nvar; var++) {</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp  = 1;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            IntVect ng_moist = <a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            MultiFab moist_vars(grids[lev],dmap[lev],ncomp,ng_moist);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            VisMF::Read(moist_vars, amrex::MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, qmoist_names[var]));</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            MultiFab::Copy(*(<a class="code" href="classERF.html#ae00126a9c2738bf6a6cbbe77321c9cfc">qmoist</a>[lev][qmoist_indices[var]]),moist_vars,0,0,ncomp,ng_moist);</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        }</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        MultiFab mf_m(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        std::string MapFacMFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/MapFactor_mx_H&quot;</span>);</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(MapFacMFileName)) {</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            VisMF::Read(mf_m, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_mx&quot;</span>));</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            VisMF::Read(mf_m, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_m&quot;</span>));</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="preprocessor">#if defined(ERF_USE_WINDFARM)</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == WindFarmType::Fitch or</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;           <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == WindFarmType::EWP or</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;           <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac0a723e8797cdc0fe06b3fc781fca645">windfarm_type</a> == WindFarmType::SimpleAD){</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = Nturb[lev].nGrowVect();</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            MultiFab mf_Nturb(grids[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            VisMF::Read(mf_Nturb, amrex::MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;NumTurb&quot;</span>));</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            MultiFab::Copy(Nturb[lev],mf_Nturb,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        }</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>],mf_m,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160; </div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a> != <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>) {</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            VisMF::Read(mf_m, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_my&quot;</span>));</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>],mf_m,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        }</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;        MultiFab mf_u(convert(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],IntVect(1,0,0)),dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160; </div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        std::string MapFacUFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/MapFactor_ux_H&quot;</span>);</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(MapFacUFileName)) {</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            VisMF::Read(mf_u, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_ux&quot;</span>));</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            VisMF::Read(mf_u, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_u&quot;</span>));</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        }</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>],mf_u,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a> != <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3">MapFacType::u_y</a>) {</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            VisMF::Read(mf_u, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_uy&quot;</span>));</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3">MapFacType::u_y</a>],mf_u,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        }</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a>]-&gt;nGrowVect();</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        MultiFab mf_v(convert(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],IntVect(0,1,0)),dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160; </div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        std::string MapFacVFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/MapFactor_vx_H&quot;</span>);</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(MapFacVFileName)) {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            VisMF::Read(mf_v, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_vx&quot;</span>));</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;            VisMF::Read(mf_v, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_v&quot;</span>));</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        }</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a>],mf_v,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160; </div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a> != <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>) {</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            VisMF::Read(mf_v, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_vy&quot;</span>));</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>],mf_v,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        }</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160; </div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160; </div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        <span class="comment">// NOTE: We read MOST data in ReadCheckpointFileMOST (see below)!</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160; </div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="comment">// See if we wrote out SST data</span></div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        std::string FirstSSTFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/SST_0_H&quot;</span>);</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(FirstSSTFileName))</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        {</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading SST data&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            <span class="keywordtype">int</span> ntimes = 1;</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            MultiFab sst_at_t(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            <a class="code" href="classERF.html#a5a5395054a212d8f3fc577562c14b66e">sst_lev</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nt(0); nt&lt;ntimes; ++nt) {</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                VisMF::Read(sst_at_t, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>,</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                                                             <span class="stringliteral">&quot;SST_&quot;</span> + std::to_string(nt)));</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#a5a5395054a212d8f3fc577562c14b66e">sst_lev</a>[lev][nt],sst_at_t,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            }</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        }</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160; </div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;        <span class="comment">// See if we wrote out TSK data</span></div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        std::string FirstTSKFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/TSK_0_H&quot;</span>);</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(FirstTSKFileName))</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;        {</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading TSK data&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="keywordtype">int</span> ntimes = 1;</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            MultiFab tsk_at_t(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            <a class="code" href="classERF.html#af89fb8b555dde334c978cdfd3fcd9d07">tsk_lev</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nt(0); nt&lt;ntimes; ++nt) {</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                VisMF::Read(tsk_at_t, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>,</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                                                             <span class="stringliteral">&quot;TSK_&quot;</span> + std::to_string(nt)));</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#af89fb8b555dde334c978cdfd3fcd9d07">tsk_lev</a>[lev][nt],tsk_at_t,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            }</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        }</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        std::string LMaskFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/LMASK_0_H&quot;</span>);</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(LMaskFileName))</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        {</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading LMASK data&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            <span class="keywordtype">int</span> ntimes = 1;</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            MultiFab lmask_at_t(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nt(0); nt&lt;ntimes; ++nt) {</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                VisMF::Read(lmask_at_t, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>,</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                                                              <span class="stringliteral">&quot;LMASK_&quot;</span> + std::to_string(nt)));</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(lmask_at_t); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.growntilebox();</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                    Array4&lt;int&gt;  <span class="keyword">const</span>&amp; dst_arr = <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][nt]-&gt;array(mfi);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                    Array4&lt;Real&gt; <span class="keyword">const</span>&amp; src_arr = lmask_at_t.array(mfi);</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                    ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                    {</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                        dst_arr(i,j,k) = int(src_arr(i,j,k));</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                    });</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                }</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;            }</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            <span class="comment">// Allow idealized cases over water, used to set lmask</span></div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            <span class="keywordtype">int</span> is_land;</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;is_land&quot;</span>, is_land, lev)) {</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                <span class="keywordflow">if</span> (is_land == 1) {</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; is land&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_land == 0) {</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; is water&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                    Error(<span class="stringliteral">&quot;is_land should be 0 or 1&quot;</span>);</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                }</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][0]-&gt;setVal(is_land);</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                <span class="comment">// Default to land everywhere if not specified</span></div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][0]-&gt;setVal(1);</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            }</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][0]-&gt;FillBoundary(geom[lev].periodicity());</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        }</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        IntVect ngv = <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>; ngv[2] = 0;</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;        <span class="comment">// Read lat/lon if it exists</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38">has_lat_lon</a>) {</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading Lat/Lon variables&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            MultiFab lat(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            MultiFab lon(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            VisMF::Read(lat, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;LAT&quot;</span>));</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            VisMF::Read(lon, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;LON&quot;</span>));</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <a class="code" href="classERF.html#aec0145fc1c92b03f63475bbbc67fd241">lat_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            <a class="code" href="classERF.html#aa4eeefdc35abb7e7d3f6472d3f2a454e">lon_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#aec0145fc1c92b03f63475bbbc67fd241">lat_m</a>[lev],lat,0,0,1,ngv);</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#aa4eeefdc35abb7e7d3f6472d3f2a454e">lon_m</a>[lev],lon,0,0,1,ngv);</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        }</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        <span class="comment">// Read sinPhi and cosPhi if it exists</span></div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf">variable_coriolis</a>) {</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading Coriolis factors&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;            MultiFab sphi(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            MultiFab cphi(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            VisMF::Read(sphi, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;SinPhi&quot;</span>));</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;            VisMF::Read(cphi, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;CosPhi&quot;</span>));</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;            <a class="code" href="classERF.html#ab54f3fc49bad059469da4e34c82296a6">sinPhi_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;            <a class="code" href="classERF.html#ad6a92272a5ad07f176892de07353f268">cosPhi_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#ab54f3fc49bad059469da4e34c82296a6">sinPhi_m</a>[lev],sphi,0,0,1,ngv);</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#ad6a92272a5ad07f176892de07353f268">cosPhi_m</a>[lev],cphi,0,0,1,ngv);</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        }</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7">use_real_bcs</a> &amp;&amp; <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1">init_type</a> == InitType::WRFInput) {</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160; </div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            <span class="keywordflow">if</span> (lev == 0) {</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                MultiFab tmp1d(<a class="code" href="classERF.html#a8c051cb96bfa9ff26929441978aa2a96">ba1d</a>[0],dmap[0],1,0);</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                VisMF::Read(tmp1d, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;C1H&quot;</span>));</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#aedcdd9acc90656aa06cfe996899bc89b">mf_C1H</a>,tmp1d,0,0,1,0);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160; </div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;                VisMF::Read(tmp1d, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;C2H&quot;</span>));</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#a5c98f5e6587a943a6924df301309d1d2">mf_C2H</a>,tmp1d,0,0,1,0);</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160; </div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                MultiFab tmp2d(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[0],dmap[0],1,<a class="code" href="classERF.html#a59c304e0eea1e0a38be9a4588b16eebc">mf_MUB</a>-&gt;nGrowVect());</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                VisMF::Read(tmp2d, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MUB&quot;</span>));</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#a59c304e0eea1e0a38be9a4588b16eebc">mf_MUB</a>,tmp2d,0,0,1,<a class="code" href="classERF.html#a59c304e0eea1e0a38be9a4588b16eebc">mf_MUB</a>-&gt;nGrowVect());</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            }</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        }</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    } <span class="comment">// for lev</span></div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160; </div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;<span class="preprocessor">#ifdef ERF_USE_PARTICLES</span></div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;    restartTracers((ParGDBBase*)GetParGDB(),<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>);</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>) == MoistureModelType::Lagrangian) {</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <span class="keyword">dynamic_cast&lt;</span>LagrangianMicrophysics&amp;<span class="keyword">&gt;</span>(*micro).restartParticles((ParGDBBase*)GetParGDB(),<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>);</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;    }</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160; </div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;    <span class="comment">// Read bdy_data files</span></div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;    <span class="keywordflow">if</span> ( ((<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1">init_type</a>==InitType::WRFInput) || (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1">init_type</a>==InitType::Metgrid)) &amp;&amp;</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;         <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7">use_real_bcs</a> )</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;    {</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();  <span class="comment">// I/O rank</span></div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;        <span class="keywordtype">int</span> num_time;</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;        <span class="keywordtype">int</span> num_var;</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;        Vector&lt;Box&gt; bx_v;</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;        <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            <span class="comment">// Open header file and read from it</span></div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            std::ifstream bdy_h_file(MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_H&quot;</span>));</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;            bdy_h_file &gt;&gt; num_time;</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;            bdy_h_file &gt;&gt; num_var;</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            bdy_h_file &gt;&gt; start_bdy_time;</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;            bdy_h_file &gt;&gt; bdy_time_interval;</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;            bdy_h_file &gt;&gt; <a class="code" href="classERF.html#abb15119348ad5399947bc8883084b230">real_width</a>;</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;            bx_v.resize(4*num_var);</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar  ];</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+1];</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+2];</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+3];</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;            }</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160; </div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;            <span class="comment">// IO size the FABs</span></div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            bdy_data_xlo.resize(num_time);</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;            bdy_data_xhi.resize(num_time);</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;            bdy_data_ylo.resize(num_time);</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            bdy_data_yhi.resize(num_time);</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                bdy_data_xlo[itime].resize(num_var);</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                bdy_data_xhi[itime].resize(num_var);</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                bdy_data_ylo[itime].resize(num_var);</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                bdy_data_yhi[itime].resize(num_var);</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;                    bdy_data_xlo[itime][ivar].resize(bx_v[4*ivar  ]);</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;                    bdy_data_xhi[itime][ivar].resize(bx_v[4*ivar+1]);</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;                    bdy_data_ylo[itime][ivar].resize(bx_v[4*ivar+2]);</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;                    bdy_data_yhi[itime][ivar].resize(bx_v[4*ivar+3]);</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;                }</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;            }</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160; </div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;            <span class="comment">// Open data file and read from it</span></div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;            std::ifstream bdy_d_file(MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_D&quot;</span>));</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;                    bdy_data_xlo[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;                    bdy_data_xhi[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;                    bdy_data_ylo[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;                    bdy_data_yhi[itime][ivar].readFrom(bdy_d_file);</div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;                }</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;            }</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;        } <span class="comment">// IO</span></div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160; </div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;        <span class="comment">// Broadcast the data</span></div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;        ParallelDescriptor::Barrier();</div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;        ParallelDescriptor::Bcast(&amp;start_bdy_time,1,ioproc);</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        ParallelDescriptor::Bcast(&amp;bdy_time_interval,1,ioproc);</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        ParallelDescriptor::Bcast(&amp;<a class="code" href="classERF.html#abb15119348ad5399947bc8883084b230">real_width</a>,1,ioproc);</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;        ParallelDescriptor::Bcast(&amp;num_time,1,ioproc);</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        ParallelDescriptor::Bcast(&amp;num_var,1,ioproc);</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160; </div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;        <span class="comment">// Everyone size their boxes</span></div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        bx_v.resize(4*num_var);</div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160; </div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;        ParallelDescriptor::Bcast(bx_v.dataPtr(),bx_v.size(),ioproc);</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160; </div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;        <span class="comment">// Everyone but IO size their FABs</span></div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;          bdy_data_xlo.resize(num_time);</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;          bdy_data_xhi.resize(num_time);</div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;          bdy_data_ylo.resize(num_time);</div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;          bdy_data_yhi.resize(num_time);</div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;            bdy_data_xlo[itime].resize(num_var);</div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;            bdy_data_xhi[itime].resize(num_var);</div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            bdy_data_ylo[itime].resize(num_var);</div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;            bdy_data_yhi[itime].resize(num_var);</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;              bdy_data_xlo[itime][ivar].resize(bx_v[4*ivar  ]);</div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;              bdy_data_xhi[itime][ivar].resize(bx_v[4*ivar+1]);</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;              bdy_data_ylo[itime][ivar].resize(bx_v[4*ivar+2]);</div>
-<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;              bdy_data_yhi[itime][ivar].resize(bx_v[4*ivar+3]);</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;            }</div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;          }</div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;        }</div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160; </div>
-<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
-<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xlo[itime][ivar].dataPtr(),bdy_data_xlo[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xhi[itime][ivar].dataPtr(),bdy_data_xhi[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;                ParallelDescriptor::Bcast(bdy_data_ylo[itime][ivar].dataPtr(),bdy_data_ylo[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;                ParallelDescriptor::Bcast(bdy_data_yhi[itime][ivar].dataPtr(),bdy_data_yhi[itime][ivar].box().numPts(),ioproc);</div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;            }</div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        }</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    } <span class="comment">// init_type == WRFInput or Metgrid</span></div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;}</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31">lsm_type</a> != LandSurfaceType::None) {</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> mvar(0); mvar&lt;<a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev].size(); ++mvar) {</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                BoxArray ba = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;boxArray();</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                DistributionMapping dm = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;DistributionMap();</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                <span class="keywordtype">int</span> nvar = <a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]-&gt;nComp();</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                MultiFab lsm_vars(ba,dm,nvar,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                VisMF::Read(lsm_vars, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;LsmVars&quot;</span>));</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                MultiFab::Copy(*(<a class="code" href="classERF.html#ad03da3399e893728741fac33100ce476">lsm_data</a>[lev][mvar]),lsm_vars,0,0,nvar,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            }</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        }</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        MultiFab mf_m(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        std::string MapFacMFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/MapFactor_mx_H&quot;</span>);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(MapFacMFileName)) {</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            VisMF::Read(mf_m, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_mx&quot;</span>));</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            VisMF::Read(mf_m, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_m&quot;</span>));</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        }</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a>],mf_m,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">MapFacType::m_x</a> != <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>) {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            VisMF::Read(mf_m, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_my&quot;</span>));</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">MapFacType::m_y</a>],mf_m,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        }</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        MultiFab mf_u(convert(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],IntVect(1,0,0)),dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        std::string MapFacUFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/MapFactor_ux_H&quot;</span>);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(MapFacUFileName)) {</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;            VisMF::Read(mf_u, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_ux&quot;</span>));</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            VisMF::Read(mf_u, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_u&quot;</span>));</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;        }</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;        MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>],mf_u,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a> != <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3">MapFacType::u_y</a>) {</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;            VisMF::Read(mf_u, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_uy&quot;</span>));</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba784971ba75d56c0d71c4bc08c5ddc1f3">MapFacType::u_y</a>],mf_u,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        }</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a>]-&gt;nGrowVect();</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        MultiFab mf_v(convert(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],IntVect(0,1,0)),dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        std::string MapFacVFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/MapFactor_vx_H&quot;</span>);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(MapFacVFileName)) {</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            VisMF::Read(mf_v, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_vx&quot;</span>));</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            VisMF::Read(mf_v, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_v&quot;</span>));</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        }</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;        MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a>],mf_v,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba21e22c79b875be81696b36a623690388">MapFacType::v_x</a> != <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>) {</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            VisMF::Read(mf_v, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MapFactor_vy&quot;</span>));</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>],mf_v,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        }</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160; </div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;        <span class="comment">// NOTE: We read MOST data in ReadCheckpointFileMOST (see below)!</span></div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        <span class="comment">// See if we wrote out SST data</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;        std::string FirstSSTFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/SST_0_H&quot;</span>);</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(FirstSSTFileName))</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        {</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading SST data&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            <span class="keywordtype">int</span> ntimes = 1;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            MultiFab sst_at_t(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            <a class="code" href="classERF.html#a5a5395054a212d8f3fc577562c14b66e">sst_lev</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nt(0); nt&lt;ntimes; ++nt) {</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                VisMF::Read(sst_at_t, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>,</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                                                             <span class="stringliteral">&quot;SST_&quot;</span> + std::to_string(nt)));</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#a5a5395054a212d8f3fc577562c14b66e">sst_lev</a>[lev][nt],sst_at_t,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            }</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        }</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        <span class="comment">// See if we wrote out TSK data</span></div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        std::string FirstTSKFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/TSK_0_H&quot;</span>);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(FirstTSKFileName))</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        {</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading TSK data&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            <span class="keywordtype">int</span> ntimes = 1;</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            MultiFab tsk_at_t(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            <a class="code" href="classERF.html#af89fb8b555dde334c978cdfd3fcd9d07">tsk_lev</a>[lev][0] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nt(0); nt&lt;ntimes; ++nt) {</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                VisMF::Read(tsk_at_t, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>,</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                                                             <span class="stringliteral">&quot;TSK_&quot;</span> + std::to_string(nt)));</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#af89fb8b555dde334c978cdfd3fcd9d07">tsk_lev</a>[lev][nt],tsk_at_t,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            }</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        }</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160; </div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;        std::string LMaskFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/LMASK_0_H&quot;</span>);</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(LMaskFileName))</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading LMASK data&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            <span class="keywordtype">int</span> ntimes = 1;</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            MultiFab lmask_at_t(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nt(0); nt&lt;ntimes; ++nt) {</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                VisMF::Read(lmask_at_t, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>,</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                                                              <span class="stringliteral">&quot;LMASK_&quot;</span> + std::to_string(nt)));</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                <span class="keywordflow">for</span> (MFIter mfi(lmask_at_t); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                    <span class="keyword">const</span> Box&amp; bx = mfi.growntilebox();</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                    Array4&lt;int&gt;  <span class="keyword">const</span>&amp; dst_arr = <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][nt]-&gt;array(mfi);</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                    Array4&lt;Real&gt; <span class="keyword">const</span>&amp; src_arr = lmask_at_t.array(mfi);</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                    ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                    {</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                        dst_arr(i,j,k) = int(src_arr(i,j,k));</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                    });</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                }</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;            }</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="comment">// Allow idealized cases over water, used to set lmask</span></div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            <span class="keywordtype">int</span> is_land;</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;is_land&quot;</span>, is_land, lev)) {</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                <span class="keywordflow">if</span> (is_land == 1) {</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; is land&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_land == 0) {</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                    amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; is water&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                    Error(<span class="stringliteral">&quot;is_land should be 0 or 1&quot;</span>);</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                }</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][0]-&gt;setVal(is_land);</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                <span class="comment">// Default to land everywhere if not specified</span></div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][0]-&gt;setVal(1);</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            }</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            <a class="code" href="classERF.html#a3f3e29874221e43e13e2a431e77e0e4e">lmask_lev</a>[lev][0]-&gt;FillBoundary(geom[lev].periodicity());</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        }</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;        IntVect ngv = <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>; ngv[2] = 0;</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;        <span class="comment">// Read lat/lon if it exists</span></div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38">has_lat_lon</a>) {</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading Lat/Lon variables&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            MultiFab lat(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            MultiFab lon(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            VisMF::Read(lat, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;LAT&quot;</span>));</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;            VisMF::Read(lon, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;LON&quot;</span>));</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;            <a class="code" href="classERF.html#aec0145fc1c92b03f63475bbbc67fd241">lat_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;            <a class="code" href="classERF.html#aa4eeefdc35abb7e7d3f6472d3f2a454e">lon_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#aec0145fc1c92b03f63475bbbc67fd241">lat_m</a>[lev],lat,0,0,1,ngv);</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#aa4eeefdc35abb7e7d3f6472d3f2a454e">lon_m</a>[lev],lon,0,0,1,ngv);</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        }</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160; </div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        <span class="comment">// Read sinPhi and cosPhi if it exists</span></div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf">variable_coriolis</a>) {</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading Coriolis factors&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            MultiFab sphi(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            MultiFab cphi(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;            VisMF::Read(sphi, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;SinPhi&quot;</span>));</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;            VisMF::Read(cphi, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;CosPhi&quot;</span>));</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;            <a class="code" href="classERF.html#ab54f3fc49bad059469da4e34c82296a6">sinPhi_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;            <a class="code" href="classERF.html#ad6a92272a5ad07f176892de07353f268">cosPhi_m</a>[lev] = std::make_unique&lt;MultiFab&gt;(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,ngv);</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#ab54f3fc49bad059469da4e34c82296a6">sinPhi_m</a>[lev],sphi,0,0,1,ngv);</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;            MultiFab::Copy(*<a class="code" href="classERF.html#ad6a92272a5ad07f176892de07353f268">cosPhi_m</a>[lev],cphi,0,0,1,ngv);</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        }</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160; </div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7">use_real_bcs</a> &amp;&amp; <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1">init_type</a> == InitType::WRFInput) {</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160; </div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;            <span class="keywordflow">if</span> (lev == 0) {</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;                MultiFab tmp1d(<a class="code" href="classERF.html#a8c051cb96bfa9ff26929441978aa2a96">ba1d</a>[0],dmap[0],1,0);</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160; </div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                VisMF::Read(tmp1d, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;C1H&quot;</span>));</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#aedcdd9acc90656aa06cfe996899bc89b">mf_C1H</a>,tmp1d,0,0,1,0);</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                VisMF::Read(tmp1d, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;C2H&quot;</span>));</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#a5c98f5e6587a943a6924df301309d1d2">mf_C2H</a>,tmp1d,0,0,1,0);</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160; </div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                MultiFab tmp2d(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[0],dmap[0],1,<a class="code" href="classERF.html#a59c304e0eea1e0a38be9a4588b16eebc">mf_MUB</a>-&gt;nGrowVect());</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160; </div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;                VisMF::Read(tmp2d, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;MUB&quot;</span>));</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;                MultiFab::Copy(*<a class="code" href="classERF.html#a59c304e0eea1e0a38be9a4588b16eebc">mf_MUB</a>,tmp2d,0,0,1,<a class="code" href="classERF.html#a59c304e0eea1e0a38be9a4588b16eebc">mf_MUB</a>-&gt;nGrowVect());</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            }</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;        }</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160; </div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;    } <span class="comment">// for lev</span></div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160; </div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;<span class="preprocessor">#ifdef ERF_USE_PARTICLES</span></div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;    restartTracers((ParGDBBase*)GetParGDB(),<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>);</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a>(<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>) == MoistureModelType::Lagrangian) {</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;        <span class="keyword">dynamic_cast&lt;</span>LagrangianMicrophysics&amp;<span class="keyword">&gt;</span>(*micro).restartParticles((ParGDBBase*)GetParGDB(),<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>);</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;    }</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160; </div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;    <span class="comment">// Read bdy_data files</span></div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;    <span class="keywordflow">if</span> ( ((<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1">init_type</a>==InitType::WRFInput) || (<a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1">init_type</a>==InitType::Metgrid)) &amp;&amp;</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;         <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7">use_real_bcs</a> )</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;    {</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();  <span class="comment">// I/O rank</span></div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;        <span class="keywordtype">int</span> num_time;</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;        <span class="keywordtype">int</span> num_var;</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;        Vector&lt;Box&gt; bx_v;</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;            <span class="comment">// Open header file and read from it</span></div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;            std::ifstream bdy_h_file(MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_H&quot;</span>));</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;            bdy_h_file &gt;&gt; num_time;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;            bdy_h_file &gt;&gt; num_var;</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;            bdy_h_file &gt;&gt; start_bdy_time;</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;            bdy_h_file &gt;&gt; bdy_time_interval;</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;            bdy_h_file &gt;&gt; <a class="code" href="classERF.html#abb15119348ad5399947bc8883084b230">real_width</a>;</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;            bx_v.resize(4*num_var);</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar  ];</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+1];</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+2];</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;                bdy_h_file &gt;&gt; bx_v[4*ivar+3];</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;            }</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160; </div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;            <span class="comment">// IO size the FABs</span></div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;            bdy_data_xlo.resize(num_time);</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;            bdy_data_xhi.resize(num_time);</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;            bdy_data_ylo.resize(num_time);</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;            bdy_data_yhi.resize(num_time);</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;                bdy_data_xlo[itime].resize(num_var);</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;                bdy_data_xhi[itime].resize(num_var);</div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                bdy_data_ylo[itime].resize(num_var);</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;                bdy_data_yhi[itime].resize(num_var);</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;                    bdy_data_xlo[itime][ivar].resize(bx_v[4*ivar  ]);</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;                    bdy_data_xhi[itime][ivar].resize(bx_v[4*ivar+1]);</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                    bdy_data_ylo[itime][ivar].resize(bx_v[4*ivar+2]);</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                    bdy_data_yhi[itime][ivar].resize(bx_v[4*ivar+3]);</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;                }</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;            }</div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160; </div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;            <span class="comment">// Open data file and read from it</span></div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;            std::ifstream bdy_d_file(MultiFabFileFullPrefix(0, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;bdy_D&quot;</span>));</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;                    bdy_data_xlo[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;                    bdy_data_xhi[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;                    bdy_data_ylo[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;                    bdy_data_yhi[itime][ivar].readFrom(bdy_d_file);</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;                }</div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;            }</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;        } <span class="comment">// IO</span></div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160; </div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;        <span class="comment">// Broadcast the data</span></div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;        ParallelDescriptor::Barrier();</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;        ParallelDescriptor::Bcast(&amp;start_bdy_time,1,ioproc);</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;        ParallelDescriptor::Bcast(&amp;bdy_time_interval,1,ioproc);</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;        ParallelDescriptor::Bcast(&amp;<a class="code" href="classERF.html#abb15119348ad5399947bc8883084b230">real_width</a>,1,ioproc);</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;        ParallelDescriptor::Bcast(&amp;num_time,1,ioproc);</div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;        ParallelDescriptor::Bcast(&amp;num_var,1,ioproc);</div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160; </div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;        <span class="comment">// Everyone size their boxes</span></div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;        bx_v.resize(4*num_var);</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160; </div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;        ParallelDescriptor::Bcast(bx_v.dataPtr(),bx_v.size(),ioproc);</div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160; </div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;        <span class="comment">// Everyone but IO size their FABs</span></div>
+<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;          bdy_data_xlo.resize(num_time);</div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;          bdy_data_xhi.resize(num_time);</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;          bdy_data_ylo.resize(num_time);</div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;          bdy_data_yhi.resize(num_time);</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;            bdy_data_xlo[itime].resize(num_var);</div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;            bdy_data_xhi[itime].resize(num_var);</div>
+<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;            bdy_data_ylo[itime].resize(num_var);</div>
+<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;            bdy_data_yhi[itime].resize(num_var);</div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;              bdy_data_xlo[itime][ivar].resize(bx_v[4*ivar  ]);</div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;              bdy_data_xhi[itime][ivar].resize(bx_v[4*ivar+1]);</div>
+<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;              bdy_data_ylo[itime][ivar].resize(bx_v[4*ivar+2]);</div>
+<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;              bdy_data_yhi[itime][ivar].resize(bx_v[4*ivar+3]);</div>
+<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;            }</div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;          }</div>
+<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;        }</div>
+<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160; </div>
+<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> itime(0); itime&lt;num_time; ++itime) {</div>
+<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ivar(0); ivar&lt;num_var; ++ivar) {</div>
+<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xlo[itime][ivar].dataPtr(),bdy_data_xlo[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;                ParallelDescriptor::Bcast(bdy_data_xhi[itime][ivar].dataPtr(),bdy_data_xhi[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;                ParallelDescriptor::Bcast(bdy_data_ylo[itime][ivar].dataPtr(),bdy_data_ylo[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;                ParallelDescriptor::Bcast(bdy_data_yhi[itime][ivar].dataPtr(),bdy_data_yhi[itime][ivar].box().numPts(),ioproc);</div>
+<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;            }</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        }</div>
+<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;    } <span class="comment">// init_type == WRFInput or Metgrid</span></div>
+<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;}</div>
 <div class="ttc" id="aclassERF_html_aaee255b031e63bd9b5807f6612739dbd"><div class="ttname"><a href="classERF.html#aaee255b031e63bd9b5807f6612739dbd">ERF::GotoNextLine</a></div><div class="ttdeci">static void GotoNextLine(std::istream &amp;is)</div><div class="ttdef"><b>Definition:</b> ERF_Checkpoint.cpp:16</div></div>
 <div class="ttc" id="aclassERF_html_aaf10bbf8c9a5dbc257a88c4c1b650fee"><div class="ttname"><a href="classERF.html#aaf10bbf8c9a5dbc257a88c4c1b650fee">ERF::MakeNewLevelFromScratch</a></div><div class="ttdeci">void MakeNewLevelFromScratch(int lev, amrex::Real time, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm) override</div><div class="ttdef"><b>Definition:</b> ERF_MakeNewLevel.cpp:25</div></div>
 <div class="ttc" id="astructSolverChoice_html_aa54aafe316efc6cf474326d690fb2fbf"><div class="ttname"><a href="structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf">SolverChoice::variable_coriolis</a></div><div class="ttdeci">bool variable_coriolis</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:924</div></div>
 <div class="ttc" id="astructSolverChoice_html_ae2c963893d0c53465ac84c0bd8998a38"><div class="ttname"><a href="structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38">SolverChoice::has_lat_lon</a></div><div class="ttdeci">bool has_lat_lon</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:923</div></div>
+<div class="ttc" id="astructSolverChoice_html_afb997b932bbc5dfb58145ea90580d518"><div class="ttname"><a href="structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518">SolverChoice::set_mesh_type</a></div><div class="ttdeci">static void set_mesh_type(MeshType new_mesh_type)</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:818</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERF_af285247b24b173cd851fe49799d17f42_cgraph.png" border="0" usemap="#aclassERF_af285247b24b173cd851fe49799d17f42_cgraph" alt=""/></div>
 <map name="aclassERF_af285247b24b173cd851fe49799d17f42_cgraph" id="aclassERF_af285247b24b173cd851fe49799d17f42_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,188,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="255,5,404,32"/>
-<area shape="rect" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366" title="query if a specified moisture model is Eulerian or Lagrangian" alt="" coords="236,56,423,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="310,107,349,133"/>
+<area shape="rect" title=" " alt="" coords="5,81,188,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="269,5,418,32"/>
+<area shape="rect" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366" title="query if a specified moisture model is Eulerian or Lagrangian" alt="" coords="250,56,437,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="324,107,363,133"/>
+<area shape="rect" href="structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518" title=" " alt="" coords="236,157,451,184"/>
 </map>
 </div>
 
@@ -16579,80 +16605,80 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p><a class="el" href="classERF.html">ERF</a> function for reading additional data for MOST from a checkpoint file during restart.</p>
 <p>This is called after the ABLMost object is instantiated. </p>
-<div class="fragment"><div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;{</div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev)</div>
-<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;    {</div>
-<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading MOST variables&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160; </div>
-<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
-<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;        MultiFab  m_var(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;        MultiFab* dst = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160; </div>
-<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;        <span class="comment">// U*</span></div>
-<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;        std::string UstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Ustar_H&quot;</span>);</div>
-<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(UstarFileName)) {</div>
-<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_u_star(lev);</div>
-<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Ustar&quot;</span>));</div>
-<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;        }</div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160; </div>
-<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;        <span class="comment">// W*</span></div>
-<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;        std::string WstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Wstar_H&quot;</span>);</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(WstarFileName)) {</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_w_star(lev);</div>
-<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Wstar&quot;</span>));</div>
-<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;        }</div>
-<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160; </div>
-<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;        <span class="comment">// T*</span></div>
-<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;        std::string TstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Tstar_H&quot;</span>);</div>
-<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(TstarFileName)) {</div>
-<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_t_star(lev);</div>
-<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Tstar&quot;</span>));</div>
-<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;{</div>
+<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; ++lev)</div>
+<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;    {</div>
+<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading MOST variables&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160; </div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classERF.html#a1204ca4dc5d79f5da191ffbe09dfab9b">vars_new</a>[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>
+<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;        MultiFab  m_var(<a class="code" href="classERF.html#a268a79187ae9a115e601957f8b06cd42">ba2d</a>[lev],dmap[lev],1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;        MultiFab* dst = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160; </div>
-<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;        <span class="comment">// Q*</span></div>
-<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;        std::string QstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Qstar_H&quot;</span>);</div>
-<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(QstarFileName)) {</div>
-<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_q_star(lev);</div>
-<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Qstar&quot;</span>));</div>
+<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;        <span class="comment">// U*</span></div>
+<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;        std::string UstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Ustar_H&quot;</span>);</div>
+<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(UstarFileName)) {</div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_u_star(lev);</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Ustar&quot;</span>));</div>
 <div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;        }</div>
 <div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160; </div>
-<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;        <span class="comment">// Olen</span></div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;        std::string OlenFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Olen_H&quot;</span>);</div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(OlenFileName)) {</div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_olen(lev);</div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Olen&quot;</span>));</div>
+<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;        <span class="comment">// W*</span></div>
+<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;        std::string WstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Wstar_H&quot;</span>);</div>
+<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(WstarFileName)) {</div>
+<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_w_star(lev);</div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Wstar&quot;</span>));</div>
 <div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;        }</div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160; </div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;        <span class="comment">// Qsurf</span></div>
-<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;        std::string QsurfFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Qsurf_H&quot;</span>);</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(QsurfFileName)) {</div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_q_surf(lev);</div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Qsurf&quot;</span>));</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;        <span class="comment">// T*</span></div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;        std::string TstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Tstar_H&quot;</span>);</div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(TstarFileName)) {</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_t_star(lev);</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Tstar&quot;</span>));</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;        }</div>
 <div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160; </div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        <span class="comment">// PBLH</span></div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;        std::string PBLHFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/PBLH_H&quot;</span>);</div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(PBLHFileName)) {</div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_pblh(lev);</div>
-<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;PBLH&quot;</span>));</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        <span class="comment">// Q*</span></div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;        std::string QstarFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Qstar_H&quot;</span>);</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(QstarFileName)) {</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_q_star(lev);</div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Qstar&quot;</span>));</div>
 <div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;        }</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160; </div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;        <span class="comment">// Z0</span></div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;        std::string Z0FileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Z0_H&quot;</span>);</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(Z0FileName)) {</div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_z0(lev);</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Z0&quot;</span>));</div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;        <span class="comment">// Olen</span></div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;        std::string OlenFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Olen_H&quot;</span>);</div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(OlenFileName)) {</div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_olen(lev);</div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Olen&quot;</span>));</div>
 <div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;        }</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    }</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;}</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160; </div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;        <span class="comment">// Qsurf</span></div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;        std::string QsurfFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Qsurf_H&quot;</span>);</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(QsurfFileName)) {</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_q_surf(lev);</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Qsurf&quot;</span>));</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        }</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160; </div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;        <span class="comment">// PBLH</span></div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        std::string PBLHFileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/PBLH_H&quot;</span>);</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(PBLHFileName)) {</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_pblh(lev);</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;PBLH&quot;</span>));</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;        }</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160; </div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;        <span class="comment">// Z0</span></div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;        std::string Z0FileName(<a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a> + <span class="stringliteral">&quot;/Level_0/Z0_H&quot;</span>);</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;        <span class="keywordflow">if</span> (amrex::FileExists(Z0FileName)) {</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;            dst = <a class="code" href="classERF.html#ac50bb696daf587e13f9a1e57c687375e">m_SurfaceLayer</a>-&gt;get_z0(lev);</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;            VisMF::Read(m_var, MultiFabFileFullPrefix(lev, <a class="code" href="classERF.html#a8e758060d3dede9694fbfcabddc17169">restart_chkfile</a>, <span class="stringliteral">&quot;Level_&quot;</span>, <span class="stringliteral">&quot;Z0&quot;</span>));</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;            MultiFab::Copy(*dst,m_var,0,0,1,<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;        }</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    }</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
