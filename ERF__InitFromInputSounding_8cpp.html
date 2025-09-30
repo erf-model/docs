@@ -469,7 +469,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">if</span> (anel_assume_dry) qv_k = 0;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        r_hse_arr (i,j,k) = rho_k_base * (1.0 + qv_k);</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        p_hse_arr (i,j,k) = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhoTh_k, qv_k);</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        pi_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a>(rhoTh_k, l_rdOcp);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        pi_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a>(rhoTh_k, l_rdOcp, qv_k);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        th_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a>(p_hse_arr(i,j,k), qv_k) / rho_k_base;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        qv_hse_arr(i,j,k) = qv_k;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">if</span> (l_isentropic) {</div>
