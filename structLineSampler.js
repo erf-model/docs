@@ -1,11 +1,11 @@
 var structLineSampler =
 [
     [ "LineSampler", "structLineSampler.html#ac889ff22f183b545b4360af78068b503", null ],
-    [ "get_line_mfs", "structLineSampler.html#a290c3f1bc30a85e67ca18f2bbd3e2cdf", null ],
+    [ "get_sample_data", "structLineSampler.html#a248c2a32586be9ae9ce308c2e91a0f57", null ],
+    [ "write_coords", "structLineSampler.html#a58086bf3ebf66d141e87d8ce82c45a93", null ],
     [ "write_line_ascii", "structLineSampler.html#ab18910cadac8faadee4c2ee541ea56ed", null ],
-    [ "write_line_coords", "structLineSampler.html#af57304ddbbefa01fc6233c4639184108", null ],
-    [ "write_line_mfs", "structLineSampler.html#af19a023c3d9e68973017453e2ae93c6f", null ],
     [ "write_line_plotfile", "structLineSampler.html#a62712c6e41a0e98a8a7d5841cc52cd09", null ],
+    [ "write_sample_data", "structLineSampler.html#adae40b03d560ec8b1589ec68ba54a0f2", null ],
     [ "m_bnd_bx", "structLineSampler.html#acf84e5ae60cbfd1faaf2e8ac6c9ff5eb", null ],
     [ "m_datastream", "structLineSampler.html#a56da044954a236b411c1c52e42338883", null ],
     [ "m_dir", "structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076", null ],

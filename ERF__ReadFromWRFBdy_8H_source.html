@@ -96,56 +96,76 @@ $(document).ready(function(){initNavTree('ERF__ReadFromWRFBdy_8H_source.html',''
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ERF__Utils_8H.html">ERF_Utils.H</a>&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ERF__ProbCommon_8H.html">ERF_ProbCommon.H</a>&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a>&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;read_times_from_wrfbdy (<span class="keyword">const</span> std::string&amp; nc_bdy_file,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xlo,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xhi,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_ylo,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_yhi,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; start_bdy_time);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;read_from_wrfbdy (<span class="keyword">const</span> <span class="keywordtype">int</span> itime,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                  <span class="keyword">const</span> std::string&amp; nc_bdy_file,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xlo,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xhi,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_ylo,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_yhi,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                  <span class="keywordtype">int</span> real_width);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;read_from_wrflow (<span class="keyword">const</span> std::string&amp; nc_low_file,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                  amrex::Vector&lt;amrex::FArrayBox&gt;&amp; bdy_data_zlo,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; start_bdy_time);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;convert_all_wrfbdy_data (<span class="keyword">const</span> <span class="keywordtype">int</span> itime,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                         <span class="keyword">const</span> amrex::Box&amp; domain,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xlo,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xhi,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_ylo,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_yhi,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; mf_MUB,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; mf_C1H,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; mf_C2H,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">cons</a>,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                         <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; use_moist);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="ERF__SurfaceLayer_8H.html">ERF_SurfaceLayer.H</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;read_times_from_wrfbdy (<span class="keyword">const</span> std::string&amp; nc_bdy_file,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xlo,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xhi,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_ylo,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_yhi,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; start_bdy_time);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;read_from_wrfbdy (<span class="keyword">const</span> <span class="keywordtype">int</span> itime,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                  <span class="keyword">const</span> std::string&amp; nc_bdy_file,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xlo,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xhi,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_ylo,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_yhi,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                  <span class="keywordtype">int</span> real_width);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;convert_all_wrfbdy_data (<span class="keyword">const</span> <span class="keywordtype">int</span> itime,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                         <span class="keyword">const</span> amrex::Box&amp; domain,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xlo,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_xhi,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_ylo,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                         amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_yhi,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; mf_MUB,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; mf_C1H,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; mf_C2H,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                         <span class="keyword">const</span> amrex::MultiFab&amp; <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">cons</a>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                         <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                         <span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; use_moist);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;read_times_from_wrflow (<span class="keyword">const</span> std::string&amp; nc_low_file,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                        amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; low_data_zlo,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; start_low_time);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;read_from_wrflow (<span class="keyword">const</span> <span class="keywordtype">int</span> itime,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                  <span class="keyword">const</span> std::string&amp; nc_low_file,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                  <span class="keyword">const</span> amrex::Box&amp; domain,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; low_data_zlo);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;update_sst_tsk (<span class="keyword">const</span> <span class="keywordtype">int</span> itime,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keyword">const</span> amrex::Geometry&amp; geom,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keyword">const</span> amrex::BoxArray&amp; ba2d_lev,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; sst_lev,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; tsk_lev,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                std::unique_ptr&lt;SurfaceLayer&gt;&amp; SurfLayer,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keyword">const</span> amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; low_data_zlo,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">const</span> amrex::MultiFab&amp; <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">cons</a>,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keyword">const</span> amrex::MultiFab&amp; mf_PSFC_lev,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rdOcp,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> use_moist);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_USE_NETCDF</span></div>
 <div class="ttc" id="aERF_8H_html"><div class="ttname"><a href="ERF_8H.html">ERF.H</a></div></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__EOS_8H_html"><div class="ttname"><a href="ERF__EOS_8H.html">ERF_EOS.H</a></div></div>
 <div class="ttc" id="aERF__ProbCommon_8H_html"><div class="ttname"><a href="ERF__ProbCommon_8H.html">ERF_ProbCommon.H</a></div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="aERF__SurfaceLayer_8H_html"><div class="ttname"><a href="ERF__SurfaceLayer_8H.html">ERF_SurfaceLayer.H</a></div></div>
 <div class="ttc" id="aERF__Utils_8H_html"><div class="ttname"><a href="ERF__Utils_8H.html">ERF_Utils.H</a></div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:140</div></div>

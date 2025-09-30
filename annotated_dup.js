@@ -69,7 +69,6 @@ var annotated_dup =
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],
     [ "rotate_flux", "structrotate__flux.html", "structrotate__flux" ],
     [ "SAM", "classSAM.html", "classSAM" ],
-    [ "SampleData", "classSampleData.html", "classSampleData" ],
     [ "SatAdj", "classSatAdj.html", "classSatAdj" ],
     [ "SatMethods", "classSatMethods.html", "classSatMethods" ],
     [ "SHOCInterface", "classSHOCInterface.html", "classSHOCInterface" ],

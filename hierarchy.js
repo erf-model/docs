@@ -84,7 +84,6 @@ var hierarchy =
     [ "ProbParmDefaults", "structProbParmDefaults.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "rotate_flux", "structrotate__flux.html", null ],
-    [ "SampleData", "classSampleData.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
     [ "SHOCInterface", "classSHOCInterface.html", null ],
     [ "SHOCInterface::SHOCPostprocess", "structSHOCInterface_1_1SHOCPostprocess.html", null ],
