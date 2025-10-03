@@ -1,5 +1,10 @@
 var NAVTREEINDEX16 =
 {
+"structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e":[2,0,13,0],
+"structDirectionSelector_3_011_01_4.html":[2,0,14],
+"structDirectionSelector_3_011_01_4.html#ae5631c2b7917d2bc7cb479a266a61834":[2,0,14,0],
+"structDirectionSelector_3_012_01_4.html":[2,0,15],
+"structDirectionSelector_3_012_01_4.html#a5708ddb92c7d49cc9ba821f978251160":[2,0,15,0],
 "structInputSoundingData.html":[2,0,32],
 "structInputSoundingData.html#a00054ef7905b250d663dd8c9d69a112e":[2,0,32,23],
 "structInputSoundingData.html#a09ac90305ea3a4559d83ca589678a5aa":[2,0,32,15],
@@ -244,10 +249,5 @@ var NAVTREEINDEX16 =
 "structSHOCInterface_1_1SHOCPreprocess.html#ac021ecdec6d7f4b6766a582cb8d3277f":[2,0,65,2,19],
 "structSHOCInterface_1_1SHOCPreprocess.html#ac24e90dd6ec5f0396f3eb82db9ac0bd1":[2,0,65,2,31],
 "structSHOCInterface_1_1SHOCPreprocess.html#ac3d1b2b1359dc6245efab3212ce7f565":[2,0,65,2,35],
-"structSHOCInterface_1_1SHOCPreprocess.html#acc952dc0b6d5bc1d51595d0d70958bbb":[2,0,65,2,37],
-"structSHOCInterface_1_1SHOCPreprocess.html#acf1cc4a6868788aa33b9e9e08729c2f9":[2,0,65,2,12],
-"structSHOCInterface_1_1SHOCPreprocess.html#ad1d3fca98b0928ef149c7da121625f8b":[2,0,65,2,32],
-"structSHOCInterface_1_1SHOCPreprocess.html#ad7b7a5d8445a1cd1f16b8d946dc4ea7e":[2,0,65,2,6],
-"structSHOCInterface_1_1SHOCPreprocess.html#ae09c941cf05d2f52b148586db5de62c6":[2,0,65,2,22],
-"structSHOCInterface_1_1SHOCPreprocess.html#ae6593cbe2ced771a0d88df079324279b":[2,0,65,2,30]
+"structSHOCInterface_1_1SHOCPreprocess.html#acc952dc0b6d5bc1d51595d0d70958bbb":[2,0,65,2,37]
 };
