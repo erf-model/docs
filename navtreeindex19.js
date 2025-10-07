@@ -1,5 +1,14 @@
 var NAVTREEINDEX19 =
 {
+"structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2":[2,0,66,0],
+"structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,66,7],
+"structsimilarity__funs.html#af2d77e837d453feccf9d5de094e1653b":[2,0,66,3],
+"structsurface__flux.html":[2,0,71],
+"structsurface__flux.html#a01e8827b2f7e84c4d72496993822d806":[2,0,71,3],
+"structsurface__flux.html#a6f66a7f868790814d4c30aee5c2502e5":[2,0,71,6],
+"structsurface__flux.html#a874a4d36ca6a88932998f7d877c33f9e":[2,0,71,1],
+"structsurface__flux.html#a960909fe387424192cf802afccdc7bed":[2,0,71,2],
+"structsurface__flux.html#abd16b92a75ae384f9fe490b59f046b6a":[2,0,71,5],
 "structsurface__flux.html#acfc12e25aa94bb1cda85f4ed4cd59bcb":[2,0,71,4],
 "structsurface__flux.html#af045fef62bd79e6baebc8daca348f43e":[2,0,71,0],
 "structsurface__flux__charnock.html":[2,0,72],

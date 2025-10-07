@@ -1,6 +1,6 @@
 var classMOSTAverage =
 [
-    [ "MOSTAverage", "classMOSTAverage.html#a7f93efc44ed61584cada6cdeb7af325f", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#a841b526a8c2a41f30519174699a37dc2", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
     [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
     [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],
@@ -38,6 +38,7 @@ var classMOSTAverage =
     [ "m_k_in", "classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884", null ],
     [ "m_k_indx", "classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda", null ],
     [ "m_maxlev", "classMOSTAverage.html#abc66735142b394193e3b6934ea817015", null ],
+    [ "m_mesh_type", "classMOSTAverage.html#acadf868a2179acfad54aa6808fee5c60", null ],
     [ "m_navg", "classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6", null ],
     [ "m_ncell_plane", "classMOSTAverage.html#a89b9ec10eb8dee9a8be7c9597a3f5008", null ],
     [ "m_ncell_region", "classMOSTAverage.html#ab227f9a8e9224820c00fa8b223712b3e", null ],

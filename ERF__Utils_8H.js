@@ -10,6 +10,7 @@ var ERF__Utils_8H =
     [ "make_J", "ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea", null ],
     [ "make_zcc", "ERF__Utils_8H.html#ab405f3b5732dda49ad076fab09bfbfc8", null ],
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
+    [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#aad824068654c303fcba24a6fc83d0f72", null ],
     [ "realbdy_compute_laplacian_relaxation", "ERF__Utils_8H.html#ab9437adc19558f7c5f1880473bf98535", null ],
