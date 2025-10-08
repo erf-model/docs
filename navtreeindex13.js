@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classeb__cut__cell__.html#ac6769d8e9c7447d76edec5d4b1c578c1":[2,0,19,14],
 "classeb__cut__cell__.html#acb872954fcecfa3dcf7b31bfe5e26df4":[2,0,19,29],
 "classeb__cut__cell__.html#acfe82f17fedb62707aa310e8366c1120":[2,0,19,13],
 "classeb__cut__cell__.html#ad09c0c441996ce98147020cbe6decedc":[2,0,19,32],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "globals_q.html":[3,1,0,15],
 "globals_r.html":[3,1,0,16],
 "globals_s.html":[3,1,0,17],
-"globals_t.html":[3,1,0,18],
-"globals_type.html":[3,1,3]
+"globals_t.html":[3,1,0,18]
 };

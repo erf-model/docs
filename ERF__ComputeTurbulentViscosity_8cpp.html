@@ -402,129 +402,135 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                              use_terrain_fitted_coords, use_moisture,</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                              level, bc_ptr, vert_only, z_phys_nd,</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                              solverChoice.<a class="code" href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">moisture_indices</a>);</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    }</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="comment">// At all levels we need to fill values outside the physical boundary for the LES coeffs.</span></div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">// In addition, for all cases, if at level &gt; 0, we want to fill fine ghost cell values that</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment">// overlie coarse grid cells (and that are not in another fine valid region) with</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="comment">// extrapolated values from the interior, rather than interpolating from the coarser level,</span></div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// since we may be using a different turbulence model there.</span></div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a>.<a class="code" href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">pbl_type</a> == PBLType::SHOC) {</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        IntVect <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a> = eddyViscosity.nGrowVect();</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        eddyViscosity.setVal(0.0, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>  , 1, <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        eddyViscosity.setVal(0.0, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>, 1, <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        eddyViscosity.setVal(0.0, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a>   , 1, <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        eddyViscosity.setVal(0.0, <a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a>    , 1, <a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    }</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// Note: here &quot;covered&quot; refers to &quot;covered by valid region of another grid at this level&quot;</span></div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// Note: here &quot;physbnd&quot; refers to &quot;cells outside the domain if not periodic&quot;</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// Note: here &quot;interior&quot; refers to &quot;valid cells, i.e. inside &#39;my&#39; grid&quot;</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    {</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        <span class="keywordtype">int</span> is_covered    = 0;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <span class="keywordtype">int</span> is_notcovered = 1;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;        <span class="keywordtype">int</span> is_physbnd    = 2;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        <span class="keywordtype">int</span> is_interior   = 3;</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        iMultiFab cc_mask(eddyViscosity.boxArray(),eddyViscosity.DistributionMap(),1,1);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        cc_mask.BuildMask(geom.Domain(), geom.periodicity(), is_covered, is_notcovered, is_physbnd, is_interior);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        Box domain = geom.Domain();</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <span class="keywordflow">if</span> (geom.isPeriodic(i)) {</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                domain.grow(i,1);</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            }</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        }</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="keywordtype">int</span> ncomp  = eddyViscosity.nComp();</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(eddyViscosity); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        {</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;            Box vbx = mfi.validbox();</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            Box planex_lo = mfi.growntilebox(1); planex_lo.setBig(0, vbx.smallEnd(0)-1);</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            Box planey_lo = mfi.growntilebox(1); planey_lo.setBig(1, vbx.smallEnd(1)-1);</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            Box planez_lo = mfi.growntilebox(1); planez_lo.setBig(2, vbx.smallEnd(2)-1);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160; </div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            Box planex_hi = mfi.growntilebox(1); planex_hi.setSmall(0, vbx.bigEnd(0)+1);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            Box planey_hi = mfi.growntilebox(1); planey_hi.setSmall(1, vbx.bigEnd(1)+1);</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            Box planez_hi = mfi.growntilebox(1); planez_hi.setSmall(2, vbx.bigEnd(2)+1);</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            <span class="keywordtype">int</span> i_lo   = vbx.smallEnd(0); <span class="keywordtype">int</span> i_hi = vbx.bigEnd(0);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            <span class="keywordtype">int</span> j_lo   = vbx.smallEnd(1); <span class="keywordtype">int</span> j_hi = vbx.bigEnd(1);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            <span class="keywordtype">int</span> k_lo   = vbx.smallEnd(2); <span class="keywordtype">int</span> k_hi = vbx.bigEnd(2);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;            <span class="keyword">const</span> Array4&lt;int&gt;&amp; mask_arr = cc_mask.array(mfi);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="keyword">auto</span> domlo = lbound(domain);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            <span class="keyword">auto</span> domhi = ubound(domain);</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// At all levels we need to fill values outside the physical boundary for the LES coeffs.</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// In addition, for all cases, if at level &gt; 0, we want to fill fine ghost cell values that</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// overlie coarse grid cells (and that are not in another fine valid region) with</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// extrapolated values from the interior, rather than interpolating from the coarser level,</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">// since we may be using a different turbulence model there.</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// Note: here &quot;covered&quot; refers to &quot;covered by valid region of another grid at this level&quot;</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="comment">// Note: here &quot;physbnd&quot; refers to &quot;cells outside the domain if not periodic&quot;</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">// Note: here &quot;interior&quot; refers to &quot;valid cells, i.e. inside &#39;my&#39; grid&quot;</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    {</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="keywordtype">int</span> is_covered    = 0;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keywordtype">int</span> is_notcovered = 1;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordtype">int</span> is_physbnd    = 2;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        <span class="keywordtype">int</span> is_interior   = 3;</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        iMultiFab cc_mask(eddyViscosity.boxArray(),eddyViscosity.DistributionMap(),1,1);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        cc_mask.BuildMask(geom.Domain(), geom.periodicity(), is_covered, is_notcovered, is_physbnd, is_interior);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        Box domain = geom.Domain();</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; AMREX_SPACEDIM; ++i) {</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            <span class="keywordflow">if</span> (geom.isPeriodic(i)) {</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                domain.grow(i,1);</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            }</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        }</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keywordtype">int</span> ncomp  = eddyViscosity.nComp();</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(eddyViscosity); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        {</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            Box vbx = mfi.validbox();</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160; </div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;            Box planex_lo = mfi.growntilebox(1); planex_lo.setBig(0, vbx.smallEnd(0)-1);</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            Box planey_lo = mfi.growntilebox(1); planey_lo.setBig(1, vbx.smallEnd(1)-1);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            Box planez_lo = mfi.growntilebox(1); planez_lo.setBig(2, vbx.smallEnd(2)-1);</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            Box planex_hi = mfi.growntilebox(1); planex_hi.setSmall(0, vbx.bigEnd(0)+1);</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            Box planey_hi = mfi.growntilebox(1); planey_hi.setSmall(1, vbx.bigEnd(1)+1);</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            Box planez_hi = mfi.growntilebox(1); planez_hi.setSmall(2, vbx.bigEnd(2)+1);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <span class="keywordtype">int</span> i_lo   = vbx.smallEnd(0); <span class="keywordtype">int</span> i_hi = vbx.bigEnd(0);</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="keywordtype">int</span> j_lo   = vbx.smallEnd(1); <span class="keywordtype">int</span> j_hi = vbx.bigEnd(1);</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            <span class="keywordtype">int</span> k_lo   = vbx.smallEnd(2); <span class="keywordtype">int</span> k_hi = vbx.bigEnd(2);</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            ParallelFor(planex_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            {</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_lo,lj,lk) != is_notcovered) ||</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &lt; domlo.x &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_lo,lj,lk,n);</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                    }</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                }</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            });</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;            ParallelFor(planex_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;            {</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_hi,lj,lk) != is_notcovered) ||</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &gt; domhi.x &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_hi,lj,lk,n);</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    }</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                }</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            });</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            ParallelFor(planey_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            {</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_lo,lk) != is_notcovered) ||</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &lt; domlo.y &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_lo,lk,n);</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                    }</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                }</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;            });</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;            ParallelFor(planey_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            {</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_hi,lk) != is_notcovered)||</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &gt; domhi.y &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_hi,lk,n);</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                    }</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                }</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            });</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            ParallelFor(planez_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            {</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_lo) != is_notcovered) ||</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &lt; domlo.z &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                    if (mask_arr(i,j,k) == is_physbnd) {</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                    }</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                    for (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_lo,n);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                    }</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                }</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            });</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            ParallelFor(planez_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            {</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_hi) != is_notcovered) ||</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &gt; domhi.z &amp;&amp; impose_phys_bcs)) {</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                    for (int n = 0; n &lt; ncomp; n++) {</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_hi,n);</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                    }</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                }</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            });</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    }</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;}</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_turb = eddyViscosity.array(mfi);</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;            <span class="keyword">const</span> Array4&lt;int&gt;&amp; mask_arr = cc_mask.array(mfi);</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160; </div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <span class="keyword">auto</span> domlo = lbound(domain);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;            <span class="keyword">auto</span> domhi = ubound(domain);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            ParallelFor(planex_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;            {</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_lo,lj,lk) != is_notcovered) ||</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &lt; domlo.x &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_lo,lj,lk,n);</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    }</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                }</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;            });</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            ParallelFor(planex_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;            {</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i_hi,lj,lk) != is_notcovered) ||</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; i &gt; domhi.x &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i_hi,lj,lk,n);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                    }</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                }</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            });</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;            ParallelFor(planey_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;            {</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_lo,lk) != is_notcovered) ||</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &lt; domlo.y &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_lo,lk,n);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    }</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                }</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            });</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            ParallelFor(planey_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            {</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_hi,lk) != is_notcovered)||</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; j &gt; domhi.y &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j_hi,lk,n);</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                    }</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                }</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            });</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            ParallelFor(planez_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            {</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_lo) != is_notcovered) ||</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &lt; domlo.z &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                    if (mask_arr(i,j,k) == is_physbnd) {</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    }</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                    for (<span class="keywordtype">int</span> n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_lo,n);</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                    }</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                }</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            });</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;            ParallelFor(planez_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            {</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_hi) != is_notcovered) ||</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &gt; domhi.z &amp;&amp; impose_phys_bcs)) {</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                    for (int n = 0; n &lt; ncomp; n++) {</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                        mu_turb(i,j,k,n) = mu_turb(i,j,k_hi,n);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                    }</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                }</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            });</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        eddyViscosity.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    }</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;}</div>
 <div class="ttc" id="aERF__ComputeDiffusivityMRF_8cpp_html_a20e22dc5edcde689fb5ee2c6a3130ea9"><div class="ttname"><a href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF</a></div><div class="ttdeci">void ComputeDiffusivityMRF(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMRF.cpp:12</div></div>
 <div class="ttc" id="aERF__ComputeDiffusivityMYJ_8cpp_html_ad0946a1eced1e2a2ec154dc578581ee3"><div class="ttname"><a href="ERF__ComputeDiffusivityMYJ_8cpp.html#ad0946a1eced1e2a2ec154dc578581ee3">ComputeDiffusivityMYJ</a></div><div class="ttdeci">void ComputeDiffusivityMYJ(Real dt, const MultiFab &amp;xvel, const MultiFab &amp;yvel, MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;, std::unique_ptr&lt; SurfaceLayer &gt; &amp;, bool use_terrain_fitted_coords, bool, int, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMYJ.cpp:13</div></div>
 <div class="ttc" id="aERF__ComputeDiffusivityMYNN25_8cpp_html_a4364b96d8efdd403c94374b4c17f5183"><div class="ttname"><a href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183">ComputeDiffusivityMYNN25</a></div><div class="ttdeci">void ComputeDiffusivityMYNN25(const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, const Geometry &amp;geom, const TurbChoice &amp;turbChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, bool use_terrain_fitted_coords, bool use_moisture, int level, const BCRec *bc_ptr, bool, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeDiffusivityMYNN25.cpp:13</div></div>
@@ -535,6 +541,11 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__ComputeTurbulentViscosity_8cpp_html_af179b8be9d9392212d31f38b4a9afb3d"><div class="ttname"><a href="ERF__ComputeTurbulentViscosity_8cpp.html#af179b8be9d9392212d31f38b4a9afb3d">ComputeTurbulentViscosityRANS</a></div><div class="ttdeci">void ComputeTurbulentViscosityRANS(Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const MultiFab &amp;cons_in, const MultiFab &amp;wdist, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, MultiFab &amp;Diss, const Geometry &amp;geom, bool use_terrain, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;, const std::unique_ptr&lt; MultiFab &gt; &amp;z_phys_nd, const TurbChoice &amp;turbChoice, const Real const_grav, std::unique_ptr&lt; SurfaceLayer &gt; &amp;SurfLayer, const MultiFab *z_0)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeTurbulentViscosity.cpp:370</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a4a8c0178282c029acc3d37ed429f9f58"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a></div><div class="ttdeci">TurbChoice turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:2</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:176</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a4166b9561a2ef0ad6d1b6d2c34cb9580"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a></div><div class="ttdeci">@ Q_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:179</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:175</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a937c191d351b2c26cd7ea07878978b94"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a></div><div class="ttdeci">@ KE_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:177</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
 <div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:899</div></div>
@@ -1055,10 +1066,8 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__MoistUtils_8H_html_ac7f742c2dc11eeb2827422c9c5e32b2c"><div class="ttname"><a href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real GetThetav(int i, int j, int k, const amrex::Array4&lt; amrex::Real const &gt; &amp;cell_data, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_MoistUtils.H:72</div></div>
 <div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:28</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a32eeeb066c70da970aa6a60918515987"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987">Compute_h_zeta_AtCellCenter</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_DEVICE amrex::Real Compute_h_zeta_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:47</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:176</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a1fd996857fe3699ac7f9454e88d6ae76"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a></div><div class="ttdeci">@ Turb_lengthscale</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:180</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a2e96e6d5e84e7d7b9857e73159dfbe2b"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a2e96e6d5e84e7d7b9857e73159dfbe2b">EddyDiff::Mom_h</a></div><div class="ttdeci">@ Mom_h</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:170</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:175</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47aa3900ab375460932d825b615bb532446"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a></div><div class="ttdeci">@ NumDiffs</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:181</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47ad0cfc6c50b43867895cbc2c02eb2b99a"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47ad0cfc6c50b43867895cbc2c02eb2b99a">EddyDiff::Theta_h</a></div><div class="ttdeci">@ Theta_h</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:171</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47afa0c87454b22a819e328491f78bf6767"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a></div><div class="ttdeci">@ KE_h</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:172</div></div>

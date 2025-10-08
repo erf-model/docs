@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf":[2,0,11,8],
 "structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817":[2,0,11,4],
 "structDirectionSelector.html":[2,0,12],
 "structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,12,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "structSHOCInterface_1_1SHOCPreprocess.html#aa1d22767d3dca741d1d2e74c2318e919":[2,0,65,2,5],
 "structSHOCInterface_1_1SHOCPreprocess.html#aa263fb92915f266e1431edab39a867dd":[2,0,65,2,39],
 "structSHOCInterface_1_1SHOCPreprocess.html#aae165a22bd7e184714cab2153c546a77":[2,0,65,2,11],
-"structSHOCInterface_1_1SHOCPreprocess.html#ab611f3ee7f1b5a7640cc122e1b610252":[2,0,65,2,29],
-"structSHOCInterface_1_1SHOCPreprocess.html#abc23351d99e225bd22556ed831102482":[2,0,65,2,34]
+"structSHOCInterface_1_1SHOCPreprocess.html#ab611f3ee7f1b5a7640cc122e1b610252":[2,0,65,2,29]
 };

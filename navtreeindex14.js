@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,19],
 "globals_v.html":[3,1,0,20],
 "globals_vars.html":[3,1,2],
@@ -8,8 +9,8 @@ var NAVTREEINDEX14 =
 "globals_y.html":[3,1,0,23],
 "globals_z.html":[3,1,0,24],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "namespacemodule__model__constants.html#abcfb23fbc1087bf0a148dc4117c9bd49":[1,0,19,59],
 "namespacemodule__model__constants.html#abeb772b8e1e69a6708f7f59706a65301":[1,0,19,23],
 "namespacemodule__model__constants.html#abf1580a0feb21323309b313710f9dc50":[1,0,19,20],
-"namespacemodule__model__constants.html#ac28992c1346d8ab11b854063df21a889":[1,0,19,34],
-"namespacemodule__model__constants.html#ac51833dcc213903c77978c12eb025aad":[1,0,19,64]
+"namespacemodule__model__constants.html#ac28992c1346d8ab11b854063df21a889":[1,0,19,34]
 };
