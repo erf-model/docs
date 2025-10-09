@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"structsimilarity__funs.html#a3658f855e05c54c9cbc27c8dfb3b0355":[2,0,66,5],
+"structsimilarity__funs.html#a38b867a4d10be55d2329ff85040889d3":[2,0,66,1],
+"structsimilarity__funs.html#a5254469dd7ec9856ed6d1e0034306cc4":[2,0,66,4],
 "structsimilarity__funs.html#a6c53efd885ed922115193bc9a36cb0e6":[2,0,66,6],
 "structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2":[2,0,66,0],
 "structsimilarity__funs.html#ae78007489e8da2bf08c6f999381b9512":[2,0,66,7],

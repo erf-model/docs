@@ -224,10 +224,10 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a3d04240065b1001b5ca93f8ede5508d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a3d04240065b1001b5ca93f8ede5508d2">erf_make_tau_terms</a> (int level, int nrk, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, const amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_lev, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::MultiFab &amp;detJ, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac)</td></tr>
 <tr class="separator:a3d04240065b1001b5ca93f8ede5508d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56568a118fd840c346a1d9182a9b4f94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a56568a118fd840c346a1d9182a9b4f94">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, const amrex::MultiFab &amp;qt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t, const amrex::MultiFab &amp;cc_src, const amrex::MultiFab &amp;xmom_src, const amrex::MultiFab &amp;ymom_src, const amrex::MultiFab &amp;zmom_src, const amrex::MultiFab &amp;buoyancy, const amrex::MultiFab *zmom_crse_rhs, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_lev, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab &amp;z_phys_cc, const amrex::MultiFab &amp;ax, const amrex::MultiFab &amp;ay, const amrex::MultiFab &amp;az, const amrex::MultiFab &amp;dJ, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, amrex::Vector&lt; amrex::MultiFab &gt; &amp;gradp, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
-<tr class="separator:a56568a118fd840c346a1d9182a9b4f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d0bd196123ec9328216c6d3a822e1b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#a2d0bd196123ec9328216c6d3a822e1b8">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, int n_qstate, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_new, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_scratch, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab &amp;source, const amrex::MultiFab *SmnSmn, const amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ax, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ay, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;az, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, amrex::MultiFab *dJ_new, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
-<tr class="separator:a2d0bd196123ec9328216c6d3a822e1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd5ab6ae358b39fd6cf893a44fd7780"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#adbd5ab6ae358b39fd6cf893a44fd7780">erf_slow_rhs_pre</a> (int level, int finest_level, int nrk, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, const amrex::MultiFab &amp;qt, amrex::MultiFab &amp;avg_xmom, amrex::MultiFab &amp;avg_ymom, amrex::MultiFab &amp;avg_zmom, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_t, const amrex::MultiFab &amp;cc_src, const amrex::MultiFab &amp;xmom_src, const amrex::MultiFab &amp;ymom_src, const amrex::MultiFab &amp;zmom_src, const amrex::MultiFab &amp;buoyancy, const amrex::MultiFab *zmom_crse_rhs, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_lev, amrex::MultiFab *SmnSmn, amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab &amp;z_phys_cc, const amrex::MultiFab &amp;ax, const amrex::MultiFab &amp;ay, const amrex::MultiFab &amp;az, const amrex::MultiFab &amp;dJ, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, amrex::Vector&lt; amrex::MultiFab &gt; &amp;gradp, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, const <a class="el" href="classeb__.html">eb_</a> &amp;ebfact, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
+<tr class="separator:adbd5ab6ae358b39fd6cf893a44fd7780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac25d0117daeb7dd1bc67b82106a23d04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__slow__headers_8H.html#ac25d0117daeb7dd1bc67b82106a23d04">erf_slow_rhs_post</a> (int level, int finest_level, int nrk, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, int n_qstate, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_old, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_new, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data, const amrex::MultiFab &amp;S_prim, amrex::MultiFab &amp;avg_xmom, amrex::MultiFab &amp;avg_ymom, amrex::MultiFab &amp;avg_zmom, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab &amp;source, const amrex::MultiFab *SmnSmn, const amrex::MultiFab *eddyDiffs, amrex::MultiFab *Hfx1, amrex::MultiFab *Hfx2, amrex::MultiFab *Hfx3, amrex::MultiFab *Q1fx1, amrex::MultiFab *Q1fx2, amrex::MultiFab *Q1fx3, amrex::MultiFab *Q2fx3, amrex::MultiFab *Diss, const amrex::Geometry geom, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, std::unique_ptr&lt; <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> &gt; &amp;SurfLayer, const amrex::Gpu::DeviceVector&lt; amrex::BCRec &gt; &amp;domain_bcs_type_d, const amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ax, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;ay, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;az, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;dJ_old, amrex::MultiFab *dJ_new, amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;mapfac, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::YAFluxRegister *fr_as_crse, amrex::YAFluxRegister *fr_as_fine)</td></tr>
+<tr class="separator:ac25d0117daeb7dd1bc67b82106a23d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a3d04240065b1001b5ca93f8ede5508d2"></a>
@@ -348,8 +348,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2d0bd196123ec9328216c6d3a822e1b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d0bd196123ec9328216c6d3a822e1b8">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
+<a id="ac25d0117daeb7dd1bc67b82106a23d04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac25d0117daeb7dd1bc67b82106a23d04">&#9670;&nbsp;</a></span>erf_slow_rhs_post()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,8 +417,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>S_scratch</em>, </td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>avg_xmom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>avg_ymom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>avg_zmom</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -617,8 +629,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a56568a118fd840c346a1d9182a9b4f94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56568a118fd840c346a1d9182a9b4f94">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
+<a id="adbd5ab6ae358b39fd6cf893a44fd7780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbd5ab6ae358b39fd6cf893a44fd7780">&#9670;&nbsp;</a></span>erf_slow_rhs_pre()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -680,8 +692,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::Vector&lt; amrex::MultiFab &gt; &amp;&#160;</td>
-          <td class="paramname"><em>S_scratch</em>, </td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>avg_xmom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>avg_ymom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>avg_zmom</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
