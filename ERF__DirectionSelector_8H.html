@@ -273,10 +273,10 @@ template&lt;typename IndexSelector &gt; </div>
 <div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::IntVect line_lo, line_hi;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, XDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        line_lo = {bx.smallEnd(0), iv[1], iv[2]};</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        line_hi = {bx.bigEnd(0), iv[1], iv[2]};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, YDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        line_lo = {iv[0], bx.smallEnd(1), iv[2]};</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        line_hi = {iv[0], bx.bigEnd(1), iv[2]};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -288,6 +288,7 @@ template&lt;typename IndexSelector &gt; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> lbx;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -329,10 +330,10 @@ template&lt;typename IndexSelector &gt; </div>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::IntVect plane_lo, plane_hi;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, XDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        plane_lo = {iv[0], bx.smallEnd(1), bx.smallEnd(2)};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        plane_hi = {iv[0], bx.bigEnd(1)  , bx.bigEnd(2)  };</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, YDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        plane_lo = {bx.smallEnd(0), iv[1], bx.smallEnd(2)};</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        plane_hi = {bx.bigEnd(0)  , iv[1], bx.bigEnd(2)  };</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    } <span class="keywordflow">else</span> {</div>

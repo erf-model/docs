@@ -140,10 +140,10 @@ $(document).ready(function(){initNavTree('ERF__DirectionSelector_8H_source.html'
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    amrex::IntVect plane_lo, plane_hi;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, XDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        plane_lo = {iv[0], bx.smallEnd(1), bx.smallEnd(2)};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        plane_hi = {iv[0], bx.bigEnd(1)  , bx.bigEnd(2)  };</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, YDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        plane_lo = {bx.smallEnd(0), iv[1], bx.smallEnd(2)};</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        plane_hi = {bx.bigEnd(0)  , iv[1], bx.bigEnd(2)  };</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -172,10 +172,10 @@ $(document).ready(function(){initNavTree('ERF__DirectionSelector_8H_source.html'
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::IntVect line_lo, line_hi;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, XDir&gt;::value) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, XDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        line_lo = {bx.smallEnd(0), iv[1], iv[2]};</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        line_hi = {bx.bigEnd(0), iv[1], iv[2]};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_same&lt;IndexSelector, YDir&gt;::value) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">std::is_same&lt;IndexSelector, YDir&gt;::value</a>) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        line_lo = {iv[0], bx.smallEnd(1), iv[2]};</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        line_hi = {iv[0], bx.bigEnd(1), iv[2]};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -191,6 +191,7 @@ $(document).ready(function(){initNavTree('ERF__DirectionSelector_8H_source.html'
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ERF_DirectionSelector.H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aERF__DirectionSelector_8H_html_aa828f1c2424107e1a454fee49cd04ad5"><div class="ttname"><a href="ERF__DirectionSelector_8H.html#aa828f1c2424107e1a454fee49cd04ad5">ParallelBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Box ParallelBox(const amrex::Box &amp;bx, const amrex::IntVect &amp;iv)</div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:83</div></div>
 <div class="ttc" id="aERF__DirectionSelector_8H_html_aef11f5662c1574638970c58b8421afa9"><div class="ttname"><a href="ERF__DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9">PerpendicularBox</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE amrex::Box PerpendicularBox(const amrex::Box &amp;bx, const amrex::IntVect &amp;iv)</div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:51</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
 <div class="ttc" id="astructDirectionSelector_3_010_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_010_01_4.html">DirectionSelector&lt; 0 &gt;</a></div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:20</div></div>
 <div class="ttc" id="astructDirectionSelector_3_010_01_4_html_a74c1bd1dca28b374962977ab8e32595e"><div class="ttname"><a href="structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e">DirectionSelector&lt; 0 &gt;::getIndx</a></div><div class="ttdeci">static AMREX_GPU_HOST_DEVICE int getIndx(int i, int, int)</div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:21</div></div>
 <div class="ttc" id="astructDirectionSelector_3_011_01_4_html"><div class="ttname"><a href="structDirectionSelector_3_011_01_4.html">DirectionSelector&lt; 1 &gt;</a></div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:26</div></div>

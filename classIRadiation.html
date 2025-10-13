@@ -485,7 +485,7 @@ Private Member Functions</h2></td></tr>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a> = std::make_unique&lt;std::fstream&gt;();</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor())</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;open(filename.c_str(),std::ios::out|std::ios::app);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;open(filename.c_str(),<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a48548e9e25e7efba2bd06c7b4f70611a">std::ios::out</a>|std::ios::app);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classIRadiation.html#a6046bc1cdbe95458b1d65c624058f1b4">datalog</a>-&gt;good()) {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                amrex::FileOpenFailed(filename);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
@@ -493,6 +493,7 @@ Private Member Functions</h2></td></tr>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        amrex::ParallelDescriptor::Barrier(<span class="stringliteral">&quot;ERF::Radiation::setRecordDataInfo&quot;</span>);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a48548e9e25e7efba2bd06c7b4f70611a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a48548e9e25e7efba2bd06c7b4f70611a">out</a></div><div class="ttdeci">struct @19 out</div></div>
 <div class="ttc" id="aclassIRadiation_html_a2e4010d756cc604aa90ceb71a955584c"><div class="ttname"><a href="classIRadiation.html#a2e4010d756cc604aa90ceb71a955584c">IRadiation::datalogname</a></div><div class="ttdeci">std::string datalogname</div><div class="ttdef"><b>Definition:</b> ERF_RadiationInterface.H:85</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classIRadiation.html#a75a399c98c8696ffca01b1af72297451">setupDataLog()</a>.</p>
