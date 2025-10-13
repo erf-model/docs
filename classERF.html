@@ -10691,8 +10691,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        BoxArray m_ba(std::move(m_bl));</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <a class="code" href="classERF.html#a1a3799aabf8337159aa290946fef8404">sw_lw_fluxes</a>[lev] = std::make_unique&lt;MultiFab&gt;(m_ba, dm, 5, ngrow_state); <span class="comment">// SW direct (2), SW diffuse (2), LW</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <a class="code" href="classERF.html#a69e6a357fd92f2c2ad9f6e0843372b16">solar_zenith</a>[lev] = std::make_unique&lt;MultiFab&gt;(m_ba, dm, 2, ngrow_state);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <a class="code" href="classERF.html#a1a3799aabf8337159aa290946fef8404">sw_lw_fluxes</a>[lev] = std::make_unique&lt;MultiFab&gt;(m_ba, dm, 6, ngrow_state); <span class="comment">// DIR/DIF VIS/NIR (4), NET SW (1), LW (1)</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <a class="code" href="classERF.html#a69e6a357fd92f2c2ad9f6e0843372b16">solar_zenith</a>[lev] = std::make_unique&lt;MultiFab&gt;(m_ba, dm, 1, ngrow_state);</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <a class="code" href="classERF.html#a1a3799aabf8337159aa290946fef8404">sw_lw_fluxes</a>[lev]-&gt;setVal(0.);</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <a class="code" href="classERF.html#a69e6a357fd92f2c2ad9f6e0843372b16">solar_zenith</a>[lev]-&gt;setVal(0.);</div>
