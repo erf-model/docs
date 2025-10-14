@@ -76,6 +76,7 @@ var classSurfaceLayer =
     [ "m_geom", "classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6", null ],
     [ "m_has_lsm_tsurf", "classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656", null ],
     [ "m_Hwave_lev", "classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad", null ],
+    [ "m_ignore_sst", "classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8", null ],
     [ "m_include_wstar", "classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234", null ],
     [ "m_lmask_lev", "classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2", null ],
     [ "m_lsm_data_lev", "classSurfaceLayer.html#a7ae5f72c36d81939bde3acd6e4498a6d", null ],
