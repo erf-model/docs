@@ -10,6 +10,7 @@ var structTurbChoice =
     [ "Cmu0", "structTurbChoice.html#a691c3fb4cfd3b097ab74174bf9e9a780", null ],
     [ "Cs", "structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40", null ],
     [ "diffuse_tke_3D", "structTurbChoice.html#aa208b9a78837d3d533160834a727735f", null ],
+    [ "init_tke_from_ustar", "structTurbChoice.html#a94539ff18d7c583729b42c97d791ea73", null ],
     [ "l_g_max", "structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b", null ],
     [ "les_type", "structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304", null ],
     [ "mix_isotropic", "structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba", null ],

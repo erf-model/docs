@@ -471,59 +471,62 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qe2 = mynn.B1 * Lm*Lm * SM2 * (1.0-Rf) * shearProd;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qe  = (qe2 &lt; 0.0) ? 0.0 : std::sqrt(qe2);</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="comment">// Level 2 limiting (Helfand and Labraga 1988)</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="comment">// Level 2 limiting intrdocued by Helfand and Labraga 1988 (NN09, Eqn. 42)</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> alphac  = (qvel(i,j,k) &gt;= qe) ? 1.0 : qvel(i,j,k) / (qe + eps);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#ifdef EXTRA_MYNN25_CHECKS</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Ri = -GH/(GM+level2.eps);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="keywordflow">if</span> (alphac &lt; 1 &amp;&amp; (Ri &gt; 1 || Ri &lt; -1)) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                Warning(<span class="stringliteral">&quot;Level 2 limiting being applied with Ri out of expected range&quot;</span>);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                <span class="comment">//AllPrint() &lt;&lt; &quot;alphac&quot;&lt;&lt;IntVect(i,j,k)&lt;&lt;&quot;= &quot; &lt;&lt; alphac</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="comment">//    &lt;&lt; &quot; Ri,SM2,SH2= &quot; &lt;&lt; Ri &lt;&lt; &quot; &quot; &lt;&lt; SM2 &lt;&lt; &quot; &quot; &lt;&lt; level2.calc_SH(Rf)</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="comment">//    &lt;&lt; std::endl;</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            }</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="comment">// Level 2.5 stability functions</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> SM, SH, SQ;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            mynn.calc_stability_funcs(SM,SH,SQ,GM,GH,alphac);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="comment">// Clip SM, SH following WRF</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            SM = amrex::min(amrex::max(SM, mynn.SMmin), mynn.SMmax);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            SH = amrex::min(amrex::max(SH, mynn.SHmin), mynn.SHmax);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#ifdef EXTRA_MYNN25_CHECKS</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">if</span> (SM == mynn.SMmin) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                Warning(<span class="stringliteral">&quot;SM clipped at min val&quot;</span>);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SM == mynn.SMmax) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                Warning(<span class="stringliteral">&quot;SM clipped at max val&quot;</span>);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            }</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span> (SH == mynn.SHmin) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                Warning(<span class="stringliteral">&quot;SH clipped at min val&quot;</span>);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SH == mynn.SHmax) {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                Warning(<span class="stringliteral">&quot;SH clipped at max val&quot;</span>);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            <span class="comment">// Finally, compute the eddy viscosity/diffusivities</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)   = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SM;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>) = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SH;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a>)    = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SQ;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="comment">// TODO: implement partial-condensation scheme?</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="comment">// Currently, implementation matches NN09 without rain (i.e.,</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="comment">// the liquid water potential temperature is equal to the</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="comment">// potential temperature.</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="comment">// NN09 gives the total water content flux; this assumes that</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="comment">// all the species have the same eddy diffusivity</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">if</span> (mynn.diffuse_moistvars) {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a>) = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SH;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            }</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>) = Lm;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        });</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">//#if EXTRA_MYNN25_CHECKS</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="comment">// VERY verbose diagnostic</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Ri = -GH/(GM+level2.eps);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">if</span> (alphac &lt; 1) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                AllPrint() &lt;&lt; <span class="stringliteral">&quot;Level 2 limiter at &quot;</span> &lt;&lt; IntVect(i,j,k) &lt;&lt; <span class="stringliteral">&quot; :&quot;</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot; ustar= &quot;</span> &lt;&lt; u_star_arr(i,j,0)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot; alphac= &quot;</span> &lt;&lt; alphac</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                    &lt;&lt; <span class="stringliteral">&quot; Ri,SM2,SH2= &quot;</span> &lt;&lt; Ri &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; SM2 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; level2.calc_SH(Rf)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="comment">// Level 2.5 stability functions</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> SM, SH, SQ;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            mynn.calc_stability_funcs(SM,SH,SQ,GM,GH,alphac);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="comment">// Clip SM, SH following WRF</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            SM = amrex::min(amrex::max(SM, mynn.SMmin), mynn.SMmax);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            SH = amrex::min(amrex::max(SH, mynn.SHmin), mynn.SHmax);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#if EXTRA_MYNN25_CHECKS</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">if</span> (SM == mynn.SMmin) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                Warning(<span class="stringliteral">&quot;SM clipped at min val&quot;</span>);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SM == mynn.SMmax) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                Warning(<span class="stringliteral">&quot;SM clipped at max val&quot;</span>);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">if</span> (SH == mynn.SHmin) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                Warning(<span class="stringliteral">&quot;SH clipped at min val&quot;</span>);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (SH == mynn.SHmax) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                Warning(<span class="stringliteral">&quot;SH clipped at max val&quot;</span>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="comment">// Finally, compute the eddy viscosity/diffusivities</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>)   = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SM;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>) = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SH;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a>)    = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SQ;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="comment">// TODO: implement partial-condensation scheme?</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="comment">// Currently, implementation matches NN09 without rain (i.e.,</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="comment">// the liquid water potential temperature is equal to the</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="comment">// potential temperature.</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="comment">// NN09 gives the total water content flux; this assumes that</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="comment">// all the species have the same eddy diffusivity</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordflow">if</span> (mynn.diffuse_moistvars) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a>) = <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * Lm * qvel(i,j,k) * SH;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>) = Lm;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        });</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f51e1ef58cb9a3add46666cc98e6093"><div class="ttname"><a href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a></div><div class="ttdeci">constexpr amrex::Real KAPPA</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__DiffSetup_8H_html_a4a8c0178282c029acc3d37ed429f9f58"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a></div><div class="ttdeci">TurbChoice turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:2</div></div>
@@ -548,8 +551,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
-<div class="ttc" id="astructTurbChoice_html_a11fd9429567c4dd4afa871170580aed0"><div class="ttname"><a href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">TurbChoice::pbl_mynn</a></div><div class="ttdeci">MYNNLevel25 pbl_mynn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:381</div></div>
-<div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:382</div></div>
+<div class="ttc" id="astructTurbChoice_html_a11fd9429567c4dd4afa871170580aed0"><div class="ttname"><a href="structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0">TurbChoice::pbl_mynn</a></div><div class="ttdeci">MYNNLevel25 pbl_mynn</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:385</div></div>
+<div class="ttc" id="astructTurbChoice_html_a475d862a63ab672577fc2429f535feb9"><div class="ttname"><a href="structTurbChoice.html#a475d862a63ab672577fc2429f535feb9">TurbChoice::pbl_mynn_level2</a></div><div class="ttdeci">MYNNLevel2 pbl_mynn_level2</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:386</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2">ComputeTurbulentViscosity()</a>.</p>
 <div class="dynheader">

@@ -52,6 +52,7 @@ var classSurfaceLayer =
     [ "get_zref", "classSurfaceLayer.html#af30f77d80439df3dbcb34c7dacbdd3d2", null ],
     [ "have_variable_sea_roughness", "classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d", null ],
     [ "impose_SurfaceLayer_bcs", "classSurfaceLayer.html#ad71d5b33900c768b3e3884898d468e01", null ],
+    [ "init_tke_from_ustar", "classSurfaceLayer.html#a1cb463309cb73de8434f0fd1a2db985f", null ],
     [ "lmask_min_reduce", "classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424", null ],
     [ "make_SurfaceLayer_at_level", "classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50", null ],
     [ "read_custom_roughness", "classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b", null ],
