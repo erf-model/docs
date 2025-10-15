@@ -1828,9 +1828,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;{</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_cc = 0.125*(  z_nd(i  ,j  ,k  ) + z_nd(i  ,j  ,k+1) +</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                                    + z_nd(i+1,j  ,k  ) + z_nd(i  ,j  ,k+1)</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                                    + z_nd(i+1,j  ,k  ) + z_nd(i+1,j  ,k+1)</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                                    + z_nd(i  ,j+1,k  ) + z_nd(i  ,j+1,k+1)</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                    + z_nd(i+1,j+1,k  ) + z_nd(i  ,j+1,k+1));</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                                    + z_nd(i+1,j+1,k  ) + z_nd(i+1,j+1,k+1));</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="comment">// Note: we assume the z_nd array spans from the bottom to top of the domain</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="comment">// i.e. no domain decomposition across processors in vertical direction</span></div>
