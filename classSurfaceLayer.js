@@ -4,6 +4,7 @@ var classSurfaceLayer =
       [ "MOENG", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a0525d4394471c332f3c0a497584923d5", null ],
       [ "DONELAN", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7afbf950ece84b8c4c7ebcf6492db726f7", null ],
       [ "CUSTOM", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a72baef04098f035e8a320b03ad197818", null ],
+      [ "BULK_COEFF", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a5c7f33152e3d00ddc3dad805e55f3f71", null ],
       [ "ROTATE", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a9faf4e337734315fde20af1922cc6f9d", null ]
     ] ],
     [ "MoistCalcType", "classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8e", [
@@ -73,6 +74,9 @@ var classSurfaceLayer =
     [ "depth", "classSurfaceLayer.html#a8b6a95c0f5f67a32f6c6dc62cf55ab75", null ],
     [ "flux_type", "classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713", null ],
     [ "m_bdy_time_interval", "classSurfaceLayer.html#a74424e9b55defddd4448fa09f89fcd9b", null ],
+    [ "m_Cd", "classSurfaceLayer.html#ae895bf19520480b90f8171c262f17426", null ],
+    [ "m_Ch", "classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58", null ],
+    [ "m_Cq", "classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3", null ],
     [ "m_eddyDiffs_lev", "classSurfaceLayer.html#ad790829cebbd7ab51e215d89f45b975f", null ],
     [ "m_geom", "classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6", null ],
     [ "m_has_lsm_tsurf", "classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656", null ],

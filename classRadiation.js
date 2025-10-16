@@ -111,7 +111,6 @@ var classRadiation =
     [ "m_z_phys", "classRadiation.html#a53d51c426daadbbcbd18b43898d7d54c", null ],
     [ "mu0", "classRadiation.html#a52825629700b97a63cfd8a8016b94b68", null ],
     [ "o3_lay", "classRadiation.html#a50110db4044e25b0404586fcad0a908d", null ],
-    [ "p_del", "classRadiation.html#ab1d7e84f45bd2806a2fcbe4c9f2d6185", null ],
     [ "p_lay", "classRadiation.html#a676fd02c667c121c0dc6cdbcc8bb73a8", null ],
     [ "p_lev", "classRadiation.html#aeacc92ccc903344adccba8a521ef8914", null ],
     [ "qc_lay", "classRadiation.html#a8ccd323c2998505189950ca541ce170f", null ],

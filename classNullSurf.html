@@ -108,11 +108,15 @@ Collaboration diagram for NullSurf:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNullSurf__coll__graph.png" border="0" usemap="#aNullSurf_coll__map" alt="Collaboration graph"/></div>
 <map name="aNullSurf_coll__map" id="aNullSurf_coll__map">
-<area shape="rect" title=" " alt="" coords="135,200,210,227"/>
-<area shape="rect" title=" " alt="" coords="5,96,92,123"/>
-<area shape="rect" title=" " alt="" coords="153,96,192,123"/>
-<area shape="rect" title=" " alt="" coords="241,96,328,123"/>
-<area shape="rect" title=" " alt="" coords="215,5,354,47"/>
+<area shape="rect" title=" " alt="" coords="186,347,261,373"/>
+<area shape="rect" title=" " alt="" coords="5,243,92,269"/>
+<area shape="rect" title=" " alt="" coords="153,243,192,269"/>
+<area shape="rect" title=" " alt="" coords="369,228,521,284"/>
+<area shape="rect" title=" " alt="" coords="244,117,331,143"/>
+<area shape="rect" title=" " alt="" coords="218,5,357,47"/>
+<area shape="rect" title=" " alt="" coords="369,109,521,151"/>
+<area shape="rect" title=" " alt="" coords="396,13,435,39"/>
+<area shape="rect" title=" " alt="" coords="461,13,500,39"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -156,6 +160,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaf99548b724e6c59bdaf90d20498b529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91309684d30cc464d3e8a02cb42f8228"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a91309684d30cc464d3e8a02cb42f8228">Lsm_FluxIndex</a> (std::string)</td></tr>
 <tr class="separator:a91309684d30cc464d3e8a02cb42f8228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace60f0f63c5d882ba4ea3e91cbe7a59a"><td class="memItemLeft" align="right" valign="top">virtual std::unordered_map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#ace60f0f63c5d882ba4ea3e91cbe7a59a">Lsm_WRFInputNames</a> ()</td></tr>
+<tr class="separator:ace60f0f63c5d882ba4ea3e91cbe7a59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -167,6 +173,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af3849ee01ca4299dc35079c60b91c017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e0f0ff82e70b6126db8ed148b512ea2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">fluxname</a> = &quot; &quot;</td></tr>
 <tr class="separator:a6e0f0ff82e70b6126db8ed148b512ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af72223f3e91bdf350ca767a706d9974d"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">wrfinput_map</a></td></tr>
+<tr class="separator:af72223f3e91bdf350ca767a706d9974d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab6d3582e156056b1b230809fe499a0cf"></a>
@@ -513,7 +521,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">SLM</a>, <a class="el" href="classNOAHMP.html#a55eed6ab58df45bbbc5c47392608e8aa">NOAHMP</a>, and <a class="el" href="classMM5.html#abf2c797ae56fc93043e999db11515a8a">MM5</a>.</p>
 <div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:105</div></div>
+<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:111</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -576,7 +584,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">dataname</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="ttc" id="aclassNullSurf_html_af3849ee01ca4299dc35079c60b91c017"><div class="ttname"><a href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">NullSurf::dataname</a></div><div class="ttdeci">std::string dataname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:107</div></div>
+<div class="ttc" id="aclassNullSurf_html_af3849ee01ca4299dc35079c60b91c017"><div class="ttname"><a href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">NullSurf::dataname</a></div><div class="ttdeci">std::string dataname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:113</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -696,7 +704,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">fluxname</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="ttc" id="aclassNullSurf_html_a6e0f0ff82e70b6126db8ed148b512ea2"><div class="ttname"><a href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">NullSurf::fluxname</a></div><div class="ttdeci">std::string fluxname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:108</div></div>
+<div class="ttc" id="aclassNullSurf_html_a6e0f0ff82e70b6126db8ed148b512ea2"><div class="ttname"><a href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">NullSurf::fluxname</a></div><div class="ttdeci">std::string fluxname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:114</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -725,7 +733,36 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">SLM</a>, <a class="el" href="classNOAHMP.html#a58ac548922dda67e399d270c7eb2e85e">NOAHMP</a>, and <a class="el" href="classMM5.html#abe51eb4823a379cd70d05eef17832f7b">MM5</a>.</p>
 <div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">m_lsm_geom</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:106</div></div>
+<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:112</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ace60f0f63c5d882ba4ea3e91cbe7a59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace60f0f63c5d882ba4ea3e91cbe7a59a">&#9670;&nbsp;</a></span>Lsm_WRFInputNames()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::unordered_map&lt;std::string, std::string&gt;&amp; NullSurf::Lsm_WRFInputNames </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">wrfinput_map</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="ttc" id="aclassNullSurf_html_af72223f3e91bdf350ca767a706d9974d"><div class="ttname"><a href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">NullSurf::wrfinput_map</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; wrfinput_map</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:116</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -877,6 +914,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="classNullSurf.html#adf5c64f43a59af0d6caae7211cdfa480">Lsm_Data_Size()</a>, and <a class="el" href="classNullSurf.html#a254ae8b16a03a3b95c54eeddf0589601">Lsm_Flux_Size()</a>.</p>
+
+</div>
+</div>
+<a id="af72223f3e91bdf350ca767a706d9974d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af72223f3e91bdf350ca767a706d9974d">&#9670;&nbsp;</a></span>wrfinput_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string,std::string&gt; NullSurf::wrfinput_map</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classNullSurf.html#ace60f0f63c5d882ba4ea3e91cbe7a59a">Lsm_WRFInputNames()</a>.</p>
 
 </div>
 </div>

@@ -36,6 +36,7 @@ var structSolverChoice =
     [ "fixed_density", "structSolverChoice.html#aa40fbbbb9a91d853a2d8290dbd728b48", null ],
     [ "force_stage1_single_substep", "structSolverChoice.html#a3f8ae511632557066f6662eec79591e1", null ],
     [ "forest_substep", "structSolverChoice.html#af4e32876ca1a7d566f5cbe7f083f5a58", null ],
+    [ "four_stream_radiation", "structSolverChoice.html#aa1dd15123040cedff27e54a9779761b2", null ],
     [ "gradp_type", "structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf", null ],
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
     [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],

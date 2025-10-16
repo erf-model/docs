@@ -147,7 +147,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l01771"></a><span class="lineno"> 1771</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -239,36 +239,36 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;    {</div>
-<div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>    = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
-<div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = 0.5 * ( velx_arr(i,j,k) + velx_arr(i+1,j  ,k) );</div>
-<div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = 0.5 * ( vely_arr(i,j,k) + vely_arr(i  ,j+1,k) );</div>
-<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160; </div>
-<div class="line"><a name="l01789"></a><span class="lineno"> 1789</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_mean  = qvm_arr(i,j,k);</div>
-<div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar    = u_star_arr(i,j,k);</div>
-<div class="line"><a name="l01791"></a><span class="lineno"> 1791</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qstar    = q_star_arr(i,j,k);</div>
-<div class="line"><a name="l01792"></a><span class="lineno"> 1792</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_surf  = q_surf_arr(i,j,k);</div>
-<div class="line"><a name="l01793"></a><span class="lineno"> 1793</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = umm_arr(i,j,k);</div>
-<div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
-<div class="line"><a name="l01795"></a><span class="lineno"> 1795</span>&#160; </div>
-<div class="line"><a name="l01796"></a><span class="lineno"> 1796</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * (qv_mean-qv_surf);</div>
-<div class="line"><a name="l01798"></a><span class="lineno"> 1798</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>-qv_mean);</div>
+<div class="fragment"><div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;    {</div>
+<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01789"></a><span class="lineno"> 1789</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>    = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = 0.5 * ( velx_arr(i,j,k) + velx_arr(i+1,j  ,k) );</div>
+<div class="line"><a name="l01791"></a><span class="lineno"> 1791</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = 0.5 * ( vely_arr(i,j,k) + vely_arr(i  ,j+1,k) );</div>
+<div class="line"><a name="l01792"></a><span class="lineno"> 1792</span>&#160; </div>
+<div class="line"><a name="l01793"></a><span class="lineno"> 1793</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_mean  = qvm_arr(i,j,k);</div>
+<div class="line"><a name="l01794"></a><span class="lineno"> 1794</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar    = u_star_arr(i,j,k);</div>
+<div class="line"><a name="l01795"></a><span class="lineno"> 1795</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qstar    = q_star_arr(i,j,k);</div>
+<div class="line"><a name="l01796"></a><span class="lineno"> 1796</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_surf  = q_surf_arr(i,j,k);</div>
+<div class="line"><a name="l01797"></a><span class="lineno"> 1797</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = umm_arr(i,j,k);</div>
+<div class="line"><a name="l01798"></a><span class="lineno"> 1798</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
 <div class="line"><a name="l01799"></a><span class="lineno"> 1799</span>&#160; </div>
-<div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;Qv&#39;w&#39;&gt; = -K dQvdz</span></div>
-<div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(qstar) &gt; <a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>) ?</div>
-<div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160;                              -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*qstar*ustar*(num1+num2)/((qv_mean-qv_surf)*wsp_mean) : 0.0;</div>
+<div class="line"><a name="l01800"></a><span class="lineno"> 1800</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01801"></a><span class="lineno"> 1801</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * (qv_mean-qv_surf);</div>
+<div class="line"><a name="l01802"></a><span class="lineno"> 1802</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>-qv_mean);</div>
 <div class="line"><a name="l01803"></a><span class="lineno"> 1803</span>&#160; </div>
-<div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;    }</div>
+<div class="line"><a name="l01804"></a><span class="lineno"> 1804</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;Qv&#39;w&#39;&gt; = -K dQvdz</span></div>
+<div class="line"><a name="l01805"></a><span class="lineno"> 1805</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(qstar) &gt; <a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>) ?</div>
+<div class="line"><a name="l01806"></a><span class="lineno"> 1806</span>&#160;                              -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*qstar*ustar*(num1+num2)/((qv_mean-qv_surf)*wsp_mean) : 0.0;</div>
+<div class="line"><a name="l01807"></a><span class="lineno"> 1807</span>&#160; </div>
+<div class="line"><a name="l01808"></a><span class="lineno"> 1808</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l01809"></a><span class="lineno"> 1809</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35"><div class="ttname"><a href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:28</div></div>
-<div class="ttc" id="astructmoeng__flux_html_a3d06eff1aa7d6c357e1245eb8f5b96f7"><div class="ttname"><a href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">moeng_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1920</div></div>
-<div class="ttc" id="astructmoeng__flux_html_a8fc4fe08604d2d3b15373d19075481f3"><div class="ttname"><a href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">moeng_flux::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1921</div></div>
+<div class="ttc" id="astructmoeng__flux_html_a3d06eff1aa7d6c357e1245eb8f5b96f7"><div class="ttname"><a href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">moeng_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1924</div></div>
+<div class="ttc" id="astructmoeng__flux_html_a8fc4fe08604d2d3b15373d19075481f3"><div class="ttname"><a href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">moeng_flux::WSMIN</a></div><div class="ttdeci">const amrex::Real WSMIN</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1925</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -359,29 +359,29 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01821"></a><span class="lineno"> 1821</span>&#160;    {</div>
-<div class="line"><a name="l01822"></a><span class="lineno"> 1822</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01823"></a><span class="lineno"> 1823</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a> = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
-<div class="line"><a name="l01824"></a><span class="lineno"> 1824</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = 0.5 * ( velx_arr(i,j,k) + velx_arr(i+1,j  ,k) );</div>
-<div class="line"><a name="l01825"></a><span class="lineno"> 1825</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = 0.5 * ( vely_arr(i,j,k) + vely_arr(i  ,j+1,k) );</div>
-<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160; </div>
-<div class="line"><a name="l01827"></a><span class="lineno"> 1827</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_mean  = tm_arr(i,j,k);</div>
-<div class="line"><a name="l01828"></a><span class="lineno"> 1828</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar       = u_star_arr(i,j,k);</div>
-<div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tstar       = t_star_arr(i,j,k);</div>
-<div class="line"><a name="l01830"></a><span class="lineno"> 1830</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_surf  = t_surf_arr(i,j,k);</div>
-<div class="line"><a name="l01831"></a><span class="lineno"> 1831</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean    = umm_arr(i,j,k);</div>
-<div class="line"><a name="l01832"></a><span class="lineno"> 1832</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
-<div class="line"><a name="l01833"></a><span class="lineno"> 1833</span>&#160; </div>
-<div class="line"><a name="l01834"></a><span class="lineno"> 1834</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01835"></a><span class="lineno"> 1835</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * (theta_mean-theta_surf);</div>
-<div class="line"><a name="l01836"></a><span class="lineno"> 1836</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a>-theta_mean);</div>
+<div class="fragment"><div class="line"><a name="l01825"></a><span class="lineno"> 1825</span>&#160;    {</div>
+<div class="line"><a name="l01826"></a><span class="lineno"> 1826</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01827"></a><span class="lineno"> 1827</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a> = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l01828"></a><span class="lineno"> 1828</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = 0.5 * ( velx_arr(i,j,k) + velx_arr(i+1,j  ,k) );</div>
+<div class="line"><a name="l01829"></a><span class="lineno"> 1829</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = 0.5 * ( vely_arr(i,j,k) + vely_arr(i  ,j+1,k) );</div>
+<div class="line"><a name="l01830"></a><span class="lineno"> 1830</span>&#160; </div>
+<div class="line"><a name="l01831"></a><span class="lineno"> 1831</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_mean  = tm_arr(i,j,k);</div>
+<div class="line"><a name="l01832"></a><span class="lineno"> 1832</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar       = u_star_arr(i,j,k);</div>
+<div class="line"><a name="l01833"></a><span class="lineno"> 1833</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tstar       = t_star_arr(i,j,k);</div>
+<div class="line"><a name="l01834"></a><span class="lineno"> 1834</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_surf  = t_surf_arr(i,j,k);</div>
+<div class="line"><a name="l01835"></a><span class="lineno"> 1835</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean    = umm_arr(i,j,k);</div>
+<div class="line"><a name="l01836"></a><span class="lineno"> 1836</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
 <div class="line"><a name="l01837"></a><span class="lineno"> 1837</span>&#160; </div>
-<div class="line"><a name="l01838"></a><span class="lineno"> 1838</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
-<div class="line"><a name="l01839"></a><span class="lineno"> 1839</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(tstar) &gt; <a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>) ?</div>
-<div class="line"><a name="l01840"></a><span class="lineno"> 1840</span>&#160;                              -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*tstar*ustar*(num1+num2)/((theta_mean-theta_surf)*wsp_mean) : 0.0;</div>
+<div class="line"><a name="l01838"></a><span class="lineno"> 1838</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01839"></a><span class="lineno"> 1839</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * (theta_mean-theta_surf);</div>
+<div class="line"><a name="l01840"></a><span class="lineno"> 1840</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a>-theta_mean);</div>
 <div class="line"><a name="l01841"></a><span class="lineno"> 1841</span>&#160; </div>
-<div class="line"><a name="l01842"></a><span class="lineno"> 1842</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01843"></a><span class="lineno"> 1843</span>&#160;    }</div>
+<div class="line"><a name="l01842"></a><span class="lineno"> 1842</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
+<div class="line"><a name="l01843"></a><span class="lineno"> 1843</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(tstar) &gt; <a class="code" href="structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7">eps</a>) ?</div>
+<div class="line"><a name="l01844"></a><span class="lineno"> 1844</span>&#160;                              -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*tstar*ustar*(num1+num2)/((theta_mean-theta_surf)*wsp_mean) : 0.0;</div>
+<div class="line"><a name="l01845"></a><span class="lineno"> 1845</span>&#160; </div>
+<div class="line"><a name="l01846"></a><span class="lineno"> 1846</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l01847"></a><span class="lineno"> 1847</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="anamespaceLsmVar__MM5_html_afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:20</div></div>
 </div><!-- fragment -->
@@ -462,30 +462,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01857"></a><span class="lineno"> 1857</span>&#160;    {</div>
-<div class="line"><a name="l01858"></a><span class="lineno"> 1858</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = velx_arr(i,j,k);</div>
-<div class="line"><a name="l01859"></a><span class="lineno"> 1859</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = 0.25 * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
-<div class="line"><a name="l01860"></a><span class="lineno"> 1860</span>&#160;                                   + vely_arr(i-1,j,k) + vely_arr(i-1,j+1,k) );</div>
-<div class="line"><a name="l01861"></a><span class="lineno"> 1861</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5  * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l01862"></a><span class="lineno"> 1862</span>&#160; </div>
-<div class="line"><a name="l01863"></a><span class="lineno"> 1863</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> umean    = um_arr(i,j,k);</div>
-<div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar    = 0.5 * ( u_star_arr(i-1,j,k) + u_star_arr(i,j,k) );</div>
-<div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = 0.5 * (    umm_arr(i-1,j,k) +    umm_arr(i,j,k) );</div>
-<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
-<div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160; </div>
-<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;        <span class="comment">// Note: The surface mean shear stress is decomposed into tau_xz by</span></div>
-<div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;        <span class="comment">//       multiplying the modeled shear stress (rho*ustar^2) with</span></div>
-<div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160;        <span class="comment">//       a factor of umean/wsp_mean for directionality; this factor</span></div>
-<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160;        <span class="comment">//       modifies the denominator from what is in Moeng 1984.</span></div>
-<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * umean;</div>
-<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (velx-umean);</div>
-<div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160; </div>
-<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
-<div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressx = -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*ustar*ustar * (num1+num2)/(wsp_mean*wsp_mean);</div>
-<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160; </div>
-<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
-<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01861"></a><span class="lineno"> 1861</span>&#160;    {</div>
+<div class="line"><a name="l01862"></a><span class="lineno"> 1862</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = velx_arr(i,j,k);</div>
+<div class="line"><a name="l01863"></a><span class="lineno"> 1863</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = 0.25 * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
+<div class="line"><a name="l01864"></a><span class="lineno"> 1864</span>&#160;                                   + vely_arr(i-1,j,k) + vely_arr(i-1,j+1,k) );</div>
+<div class="line"><a name="l01865"></a><span class="lineno"> 1865</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5  * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l01866"></a><span class="lineno"> 1866</span>&#160; </div>
+<div class="line"><a name="l01867"></a><span class="lineno"> 1867</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> umean    = um_arr(i,j,k);</div>
+<div class="line"><a name="l01868"></a><span class="lineno"> 1868</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar    = 0.5 * ( u_star_arr(i-1,j,k) + u_star_arr(i,j,k) );</div>
+<div class="line"><a name="l01869"></a><span class="lineno"> 1869</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = 0.5 * (    umm_arr(i-1,j,k) +    umm_arr(i,j,k) );</div>
+<div class="line"><a name="l01870"></a><span class="lineno"> 1870</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
+<div class="line"><a name="l01871"></a><span class="lineno"> 1871</span>&#160; </div>
+<div class="line"><a name="l01872"></a><span class="lineno"> 1872</span>&#160;        <span class="comment">// Note: The surface mean shear stress is decomposed into tau_xz by</span></div>
+<div class="line"><a name="l01873"></a><span class="lineno"> 1873</span>&#160;        <span class="comment">//       multiplying the modeled shear stress (rho*ustar^2) with</span></div>
+<div class="line"><a name="l01874"></a><span class="lineno"> 1874</span>&#160;        <span class="comment">//       a factor of umean/wsp_mean for directionality; this factor</span></div>
+<div class="line"><a name="l01875"></a><span class="lineno"> 1875</span>&#160;        <span class="comment">//       modifies the denominator from what is in Moeng 1984.</span></div>
+<div class="line"><a name="l01876"></a><span class="lineno"> 1876</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01877"></a><span class="lineno"> 1877</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * umean;</div>
+<div class="line"><a name="l01878"></a><span class="lineno"> 1878</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (velx-umean);</div>
+<div class="line"><a name="l01879"></a><span class="lineno"> 1879</span>&#160; </div>
+<div class="line"><a name="l01880"></a><span class="lineno"> 1880</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
+<div class="line"><a name="l01881"></a><span class="lineno"> 1881</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressx = -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*ustar*ustar * (num1+num2)/(wsp_mean*wsp_mean);</div>
+<div class="line"><a name="l01882"></a><span class="lineno"> 1882</span>&#160; </div>
+<div class="line"><a name="l01883"></a><span class="lineno"> 1883</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
+<div class="line"><a name="l01884"></a><span class="lineno"> 1884</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -564,30 +564,30 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01894"></a><span class="lineno"> 1894</span>&#160;    {</div>
-<div class="line"><a name="l01895"></a><span class="lineno"> 1895</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = 0.25 * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
-<div class="line"><a name="l01896"></a><span class="lineno"> 1896</span>&#160;                                   + velx_arr(i,j-1,k) + velx_arr(i+1,j-1,k) );</div>
-<div class="line"><a name="l01897"></a><span class="lineno"> 1897</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = vely_arr(i,j,k);</div>
-<div class="line"><a name="l01898"></a><span class="lineno"> 1898</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5  * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l01899"></a><span class="lineno"> 1899</span>&#160; </div>
-<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vmean     = vm_arr(i,j,k);</div>
-<div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar     = 0.5 * ( u_star_arr(i,j-1,k) + u_star_arr(i,j,k) );</div>
-<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean  = 0.5 * (    umm_arr(i,j-1,k) +    umm_arr(i,j,k) );</div>
-<div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
-<div class="line"><a name="l01904"></a><span class="lineno"> 1904</span>&#160; </div>
-<div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160;        <span class="comment">// Note: The surface mean shear stress is decomposed into tau_yz by</span></div>
-<div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;        <span class="comment">//       multiplying the modeled shear stress (rho*ustar^2) with</span></div>
-<div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160;        <span class="comment">//       a factor of vmean/wsp_mean for directionality; this factor</span></div>
-<div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160;        <span class="comment">//       modifies the denominator from what is in Moeng 1984.</span></div>
-<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * vmean;</div>
-<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (vely-vmean);</div>
-<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160; </div>
-<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
-<div class="line"><a name="l01914"></a><span class="lineno"> 1914</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressy = -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*ustar*ustar * (num1+num2)/(wsp_mean*wsp_mean);</div>
-<div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160; </div>
-<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
-<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01898"></a><span class="lineno"> 1898</span>&#160;    {</div>
+<div class="line"><a name="l01899"></a><span class="lineno"> 1899</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = 0.25 * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
+<div class="line"><a name="l01900"></a><span class="lineno"> 1900</span>&#160;                                   + velx_arr(i,j-1,k) + velx_arr(i+1,j-1,k) );</div>
+<div class="line"><a name="l01901"></a><span class="lineno"> 1901</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = vely_arr(i,j,k);</div>
+<div class="line"><a name="l01902"></a><span class="lineno"> 1902</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>   = 0.5  * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l01903"></a><span class="lineno"> 1903</span>&#160; </div>
+<div class="line"><a name="l01904"></a><span class="lineno"> 1904</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vmean     = vm_arr(i,j,k);</div>
+<div class="line"><a name="l01905"></a><span class="lineno"> 1905</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar     = 0.5 * ( u_star_arr(i,j-1,k) + u_star_arr(i,j,k) );</div>
+<div class="line"><a name="l01906"></a><span class="lineno"> 1906</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean  = 0.5 * (    umm_arr(i,j-1,k) +    umm_arr(i,j,k) );</div>
+<div class="line"><a name="l01907"></a><span class="lineno"> 1907</span>&#160;        wsp_mean = std::max(wsp_mean, <a class="code" href="structmoeng__flux.html#a8fc4fe08604d2d3b15373d19075481f3">WSMIN</a>);</div>
+<div class="line"><a name="l01908"></a><span class="lineno"> 1908</span>&#160; </div>
+<div class="line"><a name="l01909"></a><span class="lineno"> 1909</span>&#160;        <span class="comment">// Note: The surface mean shear stress is decomposed into tau_yz by</span></div>
+<div class="line"><a name="l01910"></a><span class="lineno"> 1910</span>&#160;        <span class="comment">//       multiplying the modeled shear stress (rho*ustar^2) with</span></div>
+<div class="line"><a name="l01911"></a><span class="lineno"> 1911</span>&#160;        <span class="comment">//       a factor of vmean/wsp_mean for directionality; this factor</span></div>
+<div class="line"><a name="l01912"></a><span class="lineno"> 1912</span>&#160;        <span class="comment">//       modifies the denominator from what is in Moeng 1984.</span></div>
+<div class="line"><a name="l01913"></a><span class="lineno"> 1913</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l01914"></a><span class="lineno"> 1914</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num1    = wsp * vmean;</div>
+<div class="line"><a name="l01915"></a><span class="lineno"> 1915</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num2    = wsp_mean * (vely-vmean);</div>
+<div class="line"><a name="l01916"></a><span class="lineno"> 1916</span>&#160; </div>
+<div class="line"><a name="l01917"></a><span class="lineno"> 1917</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
+<div class="line"><a name="l01918"></a><span class="lineno"> 1918</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressy = -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>*ustar*ustar * (num1+num2)/(wsp_mean*wsp_mean);</div>
+<div class="line"><a name="l01919"></a><span class="lineno"> 1919</span>&#160; </div>
+<div class="line"><a name="l01920"></a><span class="lineno"> 1920</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
+<div class="line"><a name="l01921"></a><span class="lineno"> 1921</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

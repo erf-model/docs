@@ -17,10 +17,12 @@ var classNullSurf =
     [ "Lsm_FluxIndex", "classNullSurf.html#a91309684d30cc464d3e8a02cb42f8228", null ],
     [ "Lsm_FluxName", "classNullSurf.html#adceee092ff7e0b427c3deedbf70856c1", null ],
     [ "Lsm_Geom", "classNullSurf.html#af634e202eb05675a9bf2ee9b7e927b12", null ],
+    [ "Lsm_WRFInputNames", "classNullSurf.html#ace60f0f63c5d882ba4ea3e91cbe7a59a", null ],
     [ "Update_Micro_Vars", "classNullSurf.html#aad733e954aefc643ed1f2c6a1bb564ac", null ],
     [ "Update_State_Vars", "classNullSurf.html#aec12d8aa3e358ea40f7d4371651eb73a", null ],
     [ "dataname", "classNullSurf.html#af3849ee01ca4299dc35079c60b91c017", null ],
     [ "fluxname", "classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2", null ],
     [ "m_lsm_geom", "classNullSurf.html#ac722d317f14ff1793ce7a38362987513", null ],
-    [ "m_lsm_size", "classNullSurf.html#a00480a80b00d313460c898669225b2ef", null ]
+    [ "m_lsm_size", "classNullSurf.html#a00480a80b00d313460c898669225b2ef", null ],
+    [ "wrfinput_map", "classNullSurf.html#af72223f3e91bdf350ca767a706d9974d", null ]
 ];

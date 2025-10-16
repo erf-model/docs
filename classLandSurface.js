@@ -15,6 +15,7 @@ var classLandSurface =
     [ "Get_FluxName", "classLandSurface.html#a733b31ba358415cae19737ef499a1214", null ],
     [ "Get_Lsm_Geom", "classLandSurface.html#a368a57f198d060805dcd615677366c3c", null ],
     [ "get_model_lev", "classLandSurface.html#a3afba8302e18341bf3ecb62202704817", null ],
+    [ "Get_WRFInputNames", "classLandSurface.html#a09b7ee5d357ed95f7ddf64223ecccaa5", null ],
     [ "Init", "classLandSurface.html#aac1216f5c2758361ddc016442f3c67cd", null ],
     [ "Plot_Lsm_Data", "classLandSurface.html#a61290767bd3f0bc65db7a0a344b10899", null ],
     [ "ReSize", "classLandSurface.html#a58bc8a6e1b1369cd863f8b4f424a6270", null ],

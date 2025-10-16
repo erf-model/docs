@@ -13,6 +13,7 @@ var annotated_dup =
     [ "adiabatic_mod_charnock", "structadiabatic__mod__charnock.html", "structadiabatic__mod__charnock" ],
     [ "adiabatic_wave_coupled", "structadiabatic__wave__coupled.html", "structadiabatic__wave__coupled" ],
     [ "AdvChoice", "structAdvChoice.html", "structAdvChoice" ],
+    [ "bulk_coeff_flux", "structbulk__coeff__flux.html", "structbulk__coeff__flux" ],
     [ "CENTERED2", "structCENTERED2.html", "structCENTERED2" ],
     [ "CENTERED4", "structCENTERED4.html", "structCENTERED4" ],
     [ "CENTERED6", "structCENTERED6.html", "structCENTERED6" ],

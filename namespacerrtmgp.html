@@ -770,11 +770,15 @@ template&lt;class View1 , class View2 , class View3 , class View4 , class View5 
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;2&gt;&gt;({0, 0}, {ncol, nlay}),</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                         KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilay)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        heating_rate(icol,ilay) = ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                  - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                  / ( -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay) * <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> );</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    });</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// NOTE: This calculation defines Fnet = Up - Dn</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">//       H = dT/dt = g/Cp dF/dP</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//       Using dF/dz * dz/dP = dF/dz * (1/(-rho*g)) = dF/dP</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//       We have: dT/dt = dF/dz * (1/(-rho*Cp))</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        heating_rate(icol,ilay) = ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                  - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                  / ( -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay) * <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> );</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    });</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
 </div><!-- fragment -->
@@ -1772,17 +1776,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// If irad == 0, then never do radiation;</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Otherwise, we always call radiation at the first step,</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// and afterwards we do radiation if the timestep is divisible</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// by irad</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (irad == 0) {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> ( (nstep == 0) || (nstep % irad == 0) );</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// If irad == 0, then never do radiation;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Otherwise, we always call radiation at the first step,</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// and afterwards we do radiation if the timestep is divisible</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// by irad</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (irad == 0) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> ( (nstep == 0) || (nstep % irad == 0) );</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

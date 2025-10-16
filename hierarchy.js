@@ -10,6 +10,7 @@ var hierarchy =
       [ "ERF", "classERF.html", null ]
     ] ],
     [ "SHOCInterface::Buffer", "structSHOCInterface_1_1Buffer.html", null ],
+    [ "bulk_coeff_flux", "structbulk__coeff__flux.html", null ],
     [ "CENTERED2", "structCENTERED2.html", null ],
     [ "CENTERED4", "structCENTERED4.html", null ],
     [ "CENTERED6", "structCENTERED6.html", null ],
