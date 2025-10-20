@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"classeb__aux__.html#a15ab8224a2115fcd91bec34e111d0ac6":[2,0,19,8],
+"classeb__aux__.html#a20302bb3e4afc7059d33be58e1c28171":[2,0,19,1],
 "classeb__aux__.html#a35e03212515a83631de9954bde139ed5":[2,0,19,2],
 "classeb__aux__.html#a5c0a48220b066b1aae77df9fd93bd941":[2,0,19,16],
 "classeb__aux__.html#a5c234571a295799813de1ca78d50f9a2":[2,0,19,15],
@@ -215,8 +217,8 @@ var NAVTREEINDEX13 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "functions_y.html":[2,3,0,24],
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
-"globals.html":[3,1,0],
-"globals.html":[3,1,0,0],
-"globals_b.html":[3,1,0,1]
+"globals.html":[3,1,0]
 };

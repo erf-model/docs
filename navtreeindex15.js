@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"namespacemodule__model__constants.html#a6aa37a9a4c7468857a6251daaba1f865":[1,0,19,67],
+"namespacemodule__model__constants.html#a6b0b4a0c04cf08a306ca36944b0edf5c":[1,0,19,17],
 "namespacemodule__model__constants.html#a6b5a32aae4700f089e90073946149252":[1,0,19,77],
 "namespacemodule__model__constants.html#a70702154886ac01a1a691695a2a64d3a":[1,0,19,25],
 "namespacemodule__model__constants.html#a707cb377aa1be77234d64923bf7cf1d5":[1,0,19,96],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "structAdvChoice.html#a81152997920406ea2aa97cbb5af2d9b6":[2,0,6,9],
 "structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393":[2,0,6,13],
 "structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43":[2,0,6,10],
-"structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,6,0],
-"structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78":[2,0,6,7],
-"structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae":[2,0,6,6]
+"structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,6,0]
 };

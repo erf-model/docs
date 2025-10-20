@@ -59,6 +59,7 @@ var classERF =
     [ "init_from_hse", "classERF.html#a857a8f76768ec4451b995cbf4f4ac176", null ],
     [ "init_from_input_sounding", "classERF.html#a2908bcd920ab5e3fef171a37302853ec", null ],
     [ "init_geo_wind_profile", "classERF.html#aab564dd3009ef83466b50db6d997b563", null ],
+    [ "init_immersed_forcing", "classERF.html#ad05e23fd33316aa1a5cb081fbe714bc1", null ],
     [ "init_only", "classERF.html#a80981e20939a6a38ba17478da2253ff1", null ],
     [ "init_stuff", "classERF.html#aaf237fbe118d80f149295c0579608579", null ],
     [ "init_thin_body", "classERF.html#af4f87fb01d61c18d8eb85ac5ac159785", null ],
