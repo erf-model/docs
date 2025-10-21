@@ -43,6 +43,7 @@ var structSolverChoice =
     [ "has_lat_lon", "structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38", null ],
     [ "have_geo_wind_profile", "structSolverChoice.html#a65faffc1ea490b3934a9df768cfa26f1", null ],
     [ "hindcast_boundary_data_dir", "structSolverChoice.html#afed5fdf4ab009a886b0586362b9ca1de", null ],
+    [ "hindcast_data_interval_in_hrs", "structSolverChoice.html#abe08b1fc870ac0ab2ccd0a1122e536e0", null ],
     [ "hindcast_lateral_forcing", "structSolverChoice.html#a55a99c03ba69de86126f37568875944a", null ],
     [ "hindcast_lateral_sponge_length", "structSolverChoice.html#a4f6eabafe2c7a1e859a4a4d504315b53", null ],
     [ "hindcast_lateral_sponge_strength", "structSolverChoice.html#a1f826d6dda5aff2ae48cded794d4d67c", null ],
