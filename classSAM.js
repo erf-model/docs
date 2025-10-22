@@ -18,6 +18,7 @@ var classSAM =
     [ "Qmoist_Restart_Vars", "classSAM.html#acdbfb54576b12ad828cee80ac3ecb2f4", null ],
     [ "Qmoist_Size", "classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46", null ],
     [ "Qstate_Moist_Size", "classSAM.html#a7f12a9932e40496806423afe9cfecc93", null ],
+    [ "Set_dzmin", "classSAM.html#a941072443fd9254c81c1a847f4187a03", null ],
     [ "Update_Micro_Vars", "classSAM.html#a2e6ff95cf827306bbcf3661c954a692e", null ],
     [ "Update_State_Vars", "classSAM.html#aea5fdd520cbb1bc936a0f11d55400029", null ],
     [ "accrgc", "classSAM.html#aa2de795ae7721e5070a8f4844e3897f6", null ],
@@ -34,10 +35,10 @@ var classSAM =
     [ "evapr2", "classSAM.html#a0edeaaddf7573079fdc9af1484ce5582", null ],
     [ "evaps1", "classSAM.html#a56c463cbd313722b567dd88e7ac6fccd", null ],
     [ "evaps2", "classSAM.html#a8f9e9699afd94d393be846cd26933fd0", null ],
-    [ "gamaz", "classSAM.html#af47c1dda6481ee4549b60f2c03bdec18", null ],
     [ "m_axis", "classSAM.html#a37854ec84283a4229cf86b54cfcfc72b", null ],
     [ "m_detJ_cc", "classSAM.html#a1b09febe32fbfebb402091fd31cd9996", null ],
     [ "m_do_cond", "classSAM.html#a61a5a9e710fb010dd585b3e65e86ab25", null ],
+    [ "m_dzmin", "classSAM.html#afa0b487888d626024321f3016c5b8eac", null ],
     [ "m_fac_cond", "classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95", null ],
     [ "m_fac_fus", "classSAM.html#a53d38219476c32ba2dd751c02bcae53c", null ],
     [ "m_fac_sub", "classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec", null ],
@@ -58,6 +59,5 @@ var classSAM =
     [ "rho1d", "classSAM.html#a0853b1a3a4ec94178ca208ea594fc455", null ],
     [ "tabs1d", "classSAM.html#aee5da977a069c0b9cb98d150027f746c", null ],
     [ "zhi", "classSAM.html#aaf2fc082e80f1c5cc9de339ff25ca27b", null ],
-    [ "zlo", "classSAM.html#a0473906305a6eaea0bad212893b9c911", null ],
-    [ "zmid", "classSAM.html#a5a5228929f2e9032152efe0a5cb9476b", null ]
+    [ "zlo", "classSAM.html#a0473906305a6eaea0bad212893b9c911", null ]
 ];

@@ -24,6 +24,7 @@ var ERF__TerrainMetrics_8H =
     [ "Compute_Z_AtCellCenter", "ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739", null ],
     [ "Compute_Z_AtWFace", "ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5", null ],
     [ "Compute_Zrel_AtCellCenter", "ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565", null ],
+    [ "get_dzmin_terrain", "ERF__TerrainMetrics_8H.html#aaec90986b7b54f5e7022a582aee434a9", null ],
     [ "init_default_zphys", "ERF__TerrainMetrics_8H.html#a6fa86eef52ba7908d35320a10e96bd25", null ],
     [ "init_which_terrain_grid", "ERF__TerrainMetrics_8H.html#ac2675c866cd76d03067861a6f79abfc9", null ],
     [ "init_zlevels", "ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b", null ],

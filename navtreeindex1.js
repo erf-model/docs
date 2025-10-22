@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391":[3,0,1,2,1,6,6],
+"ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e":[3,0,1,2,1,6,4],
+"ERF__DataStruct_8H.html#a167e3ccc662c308c584d8722a013a25c":[3,0,1,2,1,11],
 "ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb":[3,0,1,2,1,8],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239":[3,0,1,2,1,4],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d2cdf8cea6cb933d4ce759c1ff1b948":[3,0,1,2,1,4,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__ForestDrag_8H_source.html":[3,0,1,14,6],
 "ERF__ForestDrag_8cpp.html":[3,0,1,14,5],
 "ERF__GeneralAD_8H.html":[3,0,1,18,2,1],
-"ERF__GeneralAD_8H_source.html":[3,0,1,18,2,1],
-"ERF__HSEUtils_8H.html":[3,0,1,17,7],
-"ERF__HSEUtils_8H.html#a10de540cb8ad96aea8cd080f4d1e72fa":[3,0,1,17,7,3],
-"ERF__HSEUtils_8H.html#a49a3ecd8dc0be35accd87a453bc1224e":[3,0,1,17,7,2]
+"ERF__GeneralAD_8H_source.html":[3,0,1,18,2,1]
 };

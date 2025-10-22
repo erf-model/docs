@@ -14,6 +14,7 @@ var classMorrison =
     [ "Qmoist_Restart_Vars", "classMorrison.html#a2269eb1d7ce46e6eba5ffe3ad1489c57", null ],
     [ "Qmoist_Size", "classMorrison.html#a9fc43dc29aa5c3106aa69d1350c793c1", null ],
     [ "Qstate_Moist_Size", "classMorrison.html#a2fb8fc64e2207048b2fcb561bec878af", null ],
+    [ "Set_dzmin", "classMorrison.html#a5e96779015fb5d544dbb45f7b48c9d13", null ],
     [ "Update_Micro_Vars", "classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63", null ],
     [ "Update_State_Vars", "classMorrison.html#af3dba4bdf7e085ec4b872fd28317b521", null ],
     [ "accrgc", "classMorrison.html#a5e4e4de3f0961b43f5972bc78c964d38", null ],
@@ -29,10 +30,10 @@ var classMorrison =
     [ "evapr2", "classMorrison.html#aeeb1fc95ab35c46faf404d62d505108e", null ],
     [ "evaps1", "classMorrison.html#ac9054cb36d2b174d1033972de065b37b", null ],
     [ "evaps2", "classMorrison.html#ad0b73c861dc791272e1ac6d781d72562", null ],
-    [ "gamaz", "classMorrison.html#a8be05adcddf26645e0afe16f7fd7959b", null ],
     [ "m_axis", "classMorrison.html#a9b6b084ace42c7992815942eed92212f", null ],
     [ "m_detJ_cc", "classMorrison.html#a88d75ccdce5c7a7de7033c7ceb2fed41", null ],
     [ "m_do_cond", "classMorrison.html#af658c7ed98296b05a6cde28d695b93cc", null ],
+    [ "m_dzmin", "classMorrison.html#a6162d4cb6ce111348566ff7155374441", null ],
     [ "m_fac_cond", "classMorrison.html#a903d92435272b6b12ab6e7bcaf6fa23c", null ],
     [ "m_fac_fus", "classMorrison.html#af97b098dae958c8fc69ec92b6779acf3", null ],
     [ "m_fac_sub", "classMorrison.html#a94005ac35edcdb59eb0b2f2d18e53425", null ],
@@ -53,6 +54,5 @@ var classMorrison =
     [ "rho1d", "classMorrison.html#ae08598f7fe3990c39c84b9222d3a8cdb", null ],
     [ "tabs1d", "classMorrison.html#a625091bf149aa3bd952e50b9b438681d", null ],
     [ "zhi", "classMorrison.html#aed36f1497440d681a1a10977a0b5f5ae", null ],
-    [ "zlo", "classMorrison.html#ac84562ae1d4a60e286c7566cb1203194", null ],
-    [ "zmid", "classMorrison.html#a47672a46dbf0d5919e8a4575a9bf2b21", null ]
+    [ "zlo", "classMorrison.html#ac84562ae1d4a60e286c7566cb1203194", null ]
 ];

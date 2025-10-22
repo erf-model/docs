@@ -145,18 +145,23 @@ $(document).ready(function(){initNavTree('ERF__NullMoistLagrangian_8H_source.htm
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;             <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp;, <span class="comment">/* terrain */</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;             <span class="keyword">const</span> amrex::GpuArray&lt;ERF_BC, AMREX_SPACEDIM*2&gt;&amp; ) { }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> std::string m_name = <span class="stringliteral">&quot;null&quot;</span>; <span class="comment">/*!&lt; name of the moisture model */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">virtual</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classNullMoist.html#a47199894161e2c6ec167c8032d7181a0">Set_dzmin</a> (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <span class="comment">/*dz_min*/</span>) { }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> std::string m_name = <span class="stringliteral">&quot;null&quot;</span>; <span class="comment">/*!&lt; name of the moisture model */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__NullMoist_8H_html"><div class="ttname"><a href="ERF__NullMoist_8H.html">ERF_NullMoist.H</a></div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassNullMoist_html"><div class="ttname"><a href="classNullMoist.html">NullMoist</a></div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:8</div></div>
+<div class="ttc" id="aclassNullMoist_html_a47199894161e2c6ec167c8032d7181a0"><div class="ttname"><a href="classNullMoist.html#a47199894161e2c6ec167c8032d7181a0">NullMoist::Set_dzmin</a></div><div class="ttdeci">virtual void Set_dzmin(const amrex::Real)</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:89</div></div>
 <div class="ttc" id="aclassNullMoist_html_aa2f97dcd622bc4ef212421d496ee2297"><div class="ttname"><a href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">NullMoist::Advance</a></div><div class="ttdeci">virtual void Advance(const amrex::Real &amp;, const SolverChoice &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
