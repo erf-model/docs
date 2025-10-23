@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">if</span> (icell==ncells_u_horz) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                interp_u_horz.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">if</span> (icell==1) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">if</span> (icell&lt;=1) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    interp_u_CEN2.<a class="code" href="structCENTERED2.html#adb613a538275649aec33db89afd0e822">InterpolateInX</a>(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (icell==2) {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    interp_u_UPW3.<a class="code" href="structUPWIND3.html#afd23b4297df2e3daf4a1b1e40cf40fe2">InterpolateInX</a>(i,j,k,0,interpx,rho_u_avg);</div>
@@ -235,7 +235,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">if</span> (jcell==ncells_u_horz) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                interp_u_horz.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">if</span> (jcell==1) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keywordflow">if</span> (jcell&lt;=1) {</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                    interp_u_CEN2.<a class="code" href="structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0">InterpolateInY</a>(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jcell==2) {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    interp_u_UPW3.<a class="code" href="structUPWIND3.html#a6719e6c075ae163173c16f37b9e9c4b2">InterpolateInY</a>(i,j,k,0,interpy,rho_v_avg);</div>
@@ -282,7 +282,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">if</span> (kcell==ncells_u_vert) {</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                interp_u_vert.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordflow">if</span> (kcell==1) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keywordflow">if</span> (kcell&lt;=1) {</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    interp_u_CEN2.<a class="code" href="structCENTERED2.html#a66de83f17cc1fa457cb89af60afb0041">InterpolateInZ</a>(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kcell==2) {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    interp_u_UPW3.<a class="code" href="structUPWIND3.html#a420b9e841d549ce4f116205928f1743c">InterpolateInZ</a>(i,j,k,0,interpz,rho_w_avg);</div>
@@ -335,7 +335,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span> (icell==ncells_v_horz) {</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                interp_v_horz.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="keywordflow">if</span> (icell==1) {</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <span class="keywordflow">if</span> (icell&lt;=1) {</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    interp_v_CEN2.<a class="code" href="structCENTERED2.html#adb613a538275649aec33db89afd0e822">InterpolateInX</a>(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (icell==2) {</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    interp_v_UPW3.<a class="code" href="structUPWIND3.html#afd23b4297df2e3daf4a1b1e40cf40fe2">InterpolateInX</a>(i,j,k,0,interpx,rho_u_avg);</div>
@@ -380,7 +380,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keywordflow">if</span> (jcell==ncells_v_horz) {</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                interp_v_horz.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="keywordflow">if</span> (jcell==1) {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="keywordflow">if</span> (jcell&lt;=1) {</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                    interp_v_CEN2.<a class="code" href="structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0">InterpolateInY</a>(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jcell==2) {</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    interp_v_UPW3.<a class="code" href="structUPWIND3.html#a6719e6c075ae163173c16f37b9e9c4b2">InterpolateInY</a>(i,j,k,0,interpy,rho_v_avg);</div>
@@ -427,7 +427,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keywordflow">if</span> (kcell==ncells_v_vert) {</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                interp_v_vert.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">if</span> (kcell==1) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">if</span> (kcell&lt;=1) {</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    interp_v_CEN2.<a class="code" href="structCENTERED2.html#a66de83f17cc1fa457cb89af60afb0041">InterpolateInZ</a>(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kcell==2) {</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    interp_v_UPW3.<a class="code" href="structUPWIND3.html#a420b9e841d549ce4f116205928f1743c">InterpolateInZ</a>(i,j,k,0,interpz,rho_w_avg);</div>
@@ -480,7 +480,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="keywordflow">if</span> (icell==ncells_w_horz) {</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                interp_w_horz.InterpolateInX(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <span class="keywordflow">if</span> (icell==1) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <span class="keywordflow">if</span> (icell&lt;=1) {</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                    interp_w_CEN2.<a class="code" href="structCENTERED2.html#adb613a538275649aec33db89afd0e822">InterpolateInX</a>(i,j,k,0,interpx,rho_u_avg);</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (icell==2) {</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    interp_w_UPW3.<a class="code" href="structUPWIND3.html#afd23b4297df2e3daf4a1b1e40cf40fe2">InterpolateInX</a>(i,j,k,0,interpx,rho_u_avg);</div>
@@ -527,7 +527,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            <span class="keywordflow">if</span> (jcell==ncells_w_horz) {</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                interp_w_horz.InterpolateInY(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                <span class="keywordflow">if</span> (jcell==1) {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                <span class="keywordflow">if</span> (jcell&lt;=1) {</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                    interp_w_CEN2.<a class="code" href="structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0">InterpolateInY</a>(i,j,k,0,interpy,rho_v_avg);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (jcell==2) {</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                    interp_w_UPW3.<a class="code" href="structUPWIND3.html#a6719e6c075ae163173c16f37b9e9c4b2">InterpolateInY</a>(i,j,k,0,interpy,rho_v_avg);</div>
@@ -587,7 +587,7 @@ $(document).ready(function(){initNavTree('ERF__EBAdvectionSrcForMom_8H_source.ht
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                <span class="keywordflow">if</span> (kcell==ncells_w_vert) {</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                    interp_w_vert.InterpolateInZ(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                    <span class="keywordflow">if</span> (kcell==1) {</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                    <span class="keywordflow">if</span> (kcell&lt;=1) {</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                        interp_w_CEN2.<a class="code" href="structCENTERED2.html#a66de83f17cc1fa457cb89af60afb0041">InterpolateInZ</a>(i,j,k,0,interpz,rho_w_avg);</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kcell==2) {</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                        interp_w_UPW3.<a class="code" href="structUPWIND3.html#a420b9e841d549ce4f116205928f1743c">InterpolateInZ</a>(i,j,k,0,interpz,rho_w_avg);</div>

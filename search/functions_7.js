@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['has_5fattr_4300',['has_attr',['../structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf',1,'ncutils::NCVar::has_attr()'],['../classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac',1,'ncutils::NCGroup::has_attr(const std::string &amp;) const']]],
-  ['has_5fdim_4301',['has_dim',['../classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042',1,'ncutils::NCGroup']]],
-  ['has_5fgroup_4302',['has_group',['../classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f',1,'ncutils::NCGroup']]],
-  ['has_5fvar_4303',['has_var',['../classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192',1,'ncutils::NCGroup']]],
-  ['hasdatalog_4304',['hasDatalog',['../classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871',1,'IRadiation']]],
-  ['have_5fvariable_5fsea_5froughness_4305',['have_variable_sea_roughness',['../classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d',1,'SurfaceLayer']]],
-  ['host_5fto_5fdevice_4306',['host_to_device',['../structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8',1,'InputSoundingData']]],
-  ['hurricaneeyetracker_4307',['HurricaneEyeTracker',['../ERF__HurricaneDiagnostics_8H.html#ad18b613801e77cb1836930d6baf68674',1,'ERF_HurricaneDiagnostics.H']]],
-  ['hurricaneeyetrackerinitial_4308',['HurricaneEyeTrackerInitial',['../ERF__HurricaneDiagnostics_8H.html#a74541a9035762cdd416464c71d1743f3',1,'ERF_HurricaneDiagnostics.H']]],
-  ['hurricaneeyetrackernotinitial_4309',['HurricaneEyeTrackerNotInitial',['../ERF__HurricaneDiagnostics_8H.html#a39b50710d388b49d75a4b1ce94524042',1,'ERF_HurricaneDiagnostics.H']]],
-  ['hurricanemaxveltracker_4310',['HurricaneMaxVelTracker',['../ERF__HurricaneDiagnostics_8H.html#a41acb60c0cdf93eb65d42fde678deeef',1,'ERF_HurricaneDiagnostics.H']]],
-  ['hurricanetracker_4311',['HurricaneTracker',['../classERF.html#a2710f0ac329fa022dd2df41679998b3b',1,'ERF']]],
-  ['hurricanetrackercircle_4312',['HurricaneTrackerCircle',['../ERF__HurricaneDiagnostics_8H.html#a03e7fab88e40f0d2dd75b30cfd1505b3',1,'ERF_HurricaneDiagnostics.H']]]
+  ['has_5fattr_4302',['has_attr',['../structncutils_1_1NCVar.html#a0a4ddce55f60e3accbaf02441b6484cf',1,'ncutils::NCVar::has_attr()'],['../classncutils_1_1NCGroup.html#a1bfb961e66e7c635ae92cee3f8cdeeac',1,'ncutils::NCGroup::has_attr(const std::string &amp;) const']]],
+  ['has_5fdim_4303',['has_dim',['../classncutils_1_1NCGroup.html#ac233f0c14bd6b340fcd5a14da53b5042',1,'ncutils::NCGroup']]],
+  ['has_5fgroup_4304',['has_group',['../classncutils_1_1NCGroup.html#a00ea1ccd06adafc43396239ec842b23f',1,'ncutils::NCGroup']]],
+  ['has_5fvar_4305',['has_var',['../classncutils_1_1NCGroup.html#aaad218c7ea51b515386d5f1ce8a90192',1,'ncutils::NCGroup']]],
+  ['hasdatalog_4306',['hasDatalog',['../classIRadiation.html#a077cf4e3cdf2e521e4bf856b27c4c871',1,'IRadiation']]],
+  ['have_5fvariable_5fsea_5froughness_4307',['have_variable_sea_roughness',['../classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d',1,'SurfaceLayer']]],
+  ['host_5fto_5fdevice_4308',['host_to_device',['../structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8',1,'InputSoundingData']]],
+  ['hurricaneeyetracker_4309',['HurricaneEyeTracker',['../ERF__HurricaneDiagnostics_8H.html#ad18b613801e77cb1836930d6baf68674',1,'ERF_HurricaneDiagnostics.H']]],
+  ['hurricaneeyetrackerinitial_4310',['HurricaneEyeTrackerInitial',['../ERF__HurricaneDiagnostics_8H.html#a74541a9035762cdd416464c71d1743f3',1,'ERF_HurricaneDiagnostics.H']]],
+  ['hurricaneeyetrackernotinitial_4311',['HurricaneEyeTrackerNotInitial',['../ERF__HurricaneDiagnostics_8H.html#a39b50710d388b49d75a4b1ce94524042',1,'ERF_HurricaneDiagnostics.H']]],
+  ['hurricanemaxveltracker_4312',['HurricaneMaxVelTracker',['../ERF__HurricaneDiagnostics_8H.html#a41acb60c0cdf93eb65d42fde678deeef',1,'ERF_HurricaneDiagnostics.H']]],
+  ['hurricanetracker_4313',['HurricaneTracker',['../classERF.html#a2710f0ac329fa022dd2df41679998b3b',1,'ERF']]],
+  ['hurricanetrackercircle_4314',['HurricaneTrackerCircle',['../ERF__HurricaneDiagnostics_8H.html#a03e7fab88e40f0d2dd75b30cfd1505b3',1,'ERF_HurricaneDiagnostics.H']]]
 ];

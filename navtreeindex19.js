@@ -1,5 +1,7 @@
 var NAVTREEINDEX19 =
 {
+"structdonelan__flux.html#aadfb12bad6b3e26d4758e6a463dcb177":[2,0,17,2],
+"structdonelan__flux.html#abdd350e34f2695535af29269bc95881f":[2,0,17,1],
 "structmoeng__flux.html":[2,0,41],
 "structmoeng__flux.html#a2715de7fe6970ccc4d78d09689690ae1":[2,0,41,0],
 "structmoeng__flux.html#a3d06eff1aa7d6c357e1245eb8f5b96f7":[2,0,41,5],
