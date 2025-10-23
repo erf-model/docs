@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('ERF__FFTUtils_8H_source.html',''); ini
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    Array&lt;std::pair&lt;FFT::Boundary,FFT::Boundary&gt;,AMREX_SPACEDIM&gt; r;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    FFT::Boundary first, secnd;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    FFT::Boundary first, second;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt;= 2; dir++)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
@@ -129,24 +129,24 @@ $(document).ready(function(){initNavTree('ERF__FFTUtils_8H_source.html',''); ini
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> ( lev_geom.isPeriodic(dir) &amp;&amp;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            (lev_geom.Domain().bigEnd(dir) == bounding_box.bigEnd(dir)) )</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            secnd = FFT::Boundary::periodic;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;             <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING SECND OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO PERIODIC &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            second = FFT::Boundary::periodic;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;             <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING SECOND OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO PERIODIC &quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (lev_geom.Domain().bigEnd(dir) == bounding_box.bigEnd(dir)) &amp;&amp;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                  (bc_type_hi == <span class="stringliteral">&quot;Outflow&quot;</span> || bc_type_hi == <span class="stringliteral">&quot;Open&quot;</span>) &amp;&amp; !use_real_bcs)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            secnd = FFT::Boundary::odd;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;             <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING SECND OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO ODD &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            second = FFT::Boundary::odd;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;             <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING SECOND OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO ODD &quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            secnd = FFT::Boundary::even;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING SECND OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO EVEN &quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            second = FFT::Boundary::even;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING SECOND OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO EVEN &quot; &lt;&lt; std::endl;</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        r[dir] = std::make_pair(first,secnd);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        r[dir] = std::make_pair(first,second);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    } <span class="comment">// dir</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>

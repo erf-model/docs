@@ -184,6 +184,7 @@ var namespaces_dup =
       [ "morr_two_moment_micro", "namespacemodule__mp__morr__two__moment.html#a52065bf3dbca1e4cae410c09432a2a55", null ],
       [ "mp_morr_two_moment", "namespacemodule__mp__morr__two__moment.html#acab1be001816c2e3e8a535555147ed3f", null ],
       [ "polysvp", "namespacemodule__mp__morr__two__moment.html#af11f1d093484c24bcfe7ca392ab7f34f", null ],
+      [ "set_morrison_ndcnst", "namespacemodule__mp__morr__two__moment.html#ac1f602991a2bc1a593b4237bc7fa528e", null ],
       [ "ac", "namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227", null ],
       [ "ag", "namespacemodule__mp__morr__two__moment.html#a8bf4d5f539410d7505f2aba99f57aa2b", null ],
       [ "ai", "namespacemodule__mp__morr__two__moment.html#acd7d18ca95c913110371bd0c2298394b", null ],

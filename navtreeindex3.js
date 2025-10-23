@@ -14,8 +14,10 @@ var NAVTREEINDEX3 =
 "ERF__Morrison_8H_source.html":[3,0,1,9,1,5],
 "ERF__Morrison__Fortran__Interface_8H.html":[3,0,1,9,1,6],
 "ERF__Morrison__Fortran__Interface_8H.html#aa1e15a22d6cf65c21c2a28cd25a16946":[3,0,1,9,1,6,1],
+"ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138":[3,0,1,9,1,6,2],
 "ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681":[3,0,1,9,1,6,0],
 "ERF__Morrison__Fortran__Interface_8H_source.html":[3,0,1,9,1,6],
+"ERF__Morrison__Plot_8cpp.html":[3,0,1,9,1,7],
 "ERF__NCColumnFile_8cpp.html":[3,0,1,6,2],
 "ERF__NCInterface_8H.html":[3,0,1,6,4],
 "ERF__NCInterface_8H_source.html":[3,0,1,6,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__TI__fast__headers_8H.html#a713f272ad55607a189cf08b8ad0057d5":[3,0,1,15,14,3],
 "ERF__TI__fast__headers_8H.html#a76ab54119261d5f2bbf6801e62ecaa61":[3,0,1,15,14,1],
 "ERF__TI__fast__headers_8H.html#a8d61c1cc157a3f5019f9cc6b4b79a451":[3,0,1,15,14,2],
-"ERF__TI__fast__headers_8H.html#af6424ae5ddac28064bc80dd8d3fb3903":[3,0,1,15,14,0],
-"ERF__TI__fast__headers_8H_source.html":[3,0,1,15,14],
-"ERF__TI__no__substep__fun_8H.html":[3,0,1,15,15]
+"ERF__TI__fast__headers_8H.html#af6424ae5ddac28064bc80dd8d3fb3903":[3,0,1,15,14,0]
 };
