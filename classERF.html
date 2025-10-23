@@ -19622,47 +19622,48 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    amrex::GMRES&lt;MultiFab, TerrainPoisson&gt; gmsolver;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    TerrainPoisson tp(my_geom, rhs.boxArray(), rhs.DistributionMap(), <a class="code" href="classERF.html#ae5968f1bed602fa87cdd5cb7905b7e5e">domain_bc_type</a>,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                      <a class="code" href="classERF.html#a6600f30f1043a4c5e62b5cdd05f0a99f">stretched_dz_d</a>[lev], ax_sub, ay_sub, &amp;znd_sub);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    gmsolver.define(tp);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    gmsolver.setVerbose(<a class="code" href="classERF.html#a2c4e27d6b7928c7081f17e63d0834200">mg_verbose</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    gmsolver.setRestartLength(50);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    tp.usePrecond(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    gmsolver.solve(phi, rhs, reltol, abstol);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    tp.getFluxes(phi, fluxes);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(phi); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        Box <a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a> = mfi.nodaltilebox(0);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Box <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a> = mfi.nodaltilebox(1);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">const</span> Array4&lt;Real      &gt;&amp; fx_ar = fluxes[0].array(mfi);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">const</span> Array4&lt;Real      &gt;&amp; fy_ar = fluxes[1].array(mfi);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; mf_ux = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; mf_vy = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>,<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            fx_ar(i,j,k) *= mf_ux(i,j,0);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        },</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            fy_ar(i,j,k) *= mf_vy(i,j,0);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        });</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    amrex::ignore_unused(lev, rhs, phi, fluxes, ax_sub, ay_sub, znd_sub);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// ****************************************************************************</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Impose bc&#39;s on pprime</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// ****************************************************************************</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classERF.html#ac3a76da346ff580389d3ab81679d3807">ImposeBCsOnPhi</a>(lev, phi, subdomain);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                      <a class="code" href="classERF.html#a6600f30f1043a4c5e62b5cdd05f0a99f">stretched_dz_d</a>[lev], ax_sub, ay_sub, &amp;znd_sub,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                      <a class="code" href="classERF.html#a32dd48049e8acbe95decdd4b01b782c4">solverChoice</a>.<a class="code" href="structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7">use_real_bcs</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    gmsolver.define(tp);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    gmsolver.setVerbose(<a class="code" href="classERF.html#a2c4e27d6b7928c7081f17e63d0834200">mg_verbose</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    gmsolver.setRestartLength(50);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    tp.usePrecond(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    gmsolver.solve(phi, rhs, reltol, abstol);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    tp.getFluxes(phi, fluxes);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(phi); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Box <a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a> = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        Box <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a> = mfi.nodaltilebox(1);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keyword">const</span> Array4&lt;Real      &gt;&amp; fx_ar = fluxes[0].array(mfi);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> Array4&lt;Real      &gt;&amp; fy_ar = fluxes[1].array(mfi);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; mf_ux = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; mf_vy = <a class="code" href="classERF.html#a07e1772db360d39195824a6237bca9aa">mapfac</a>[lev][<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>,<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            fx_ar(i,j,k) *= mf_ux(i,j,0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        },</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            fy_ar(i,j,k) *= mf_vy(i,j,0);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        });</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    amrex::ignore_unused(lev, rhs, phi, fluxes, ax_sub, ay_sub, znd_sub);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// ****************************************************************************</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Impose bc&#39;s on pprime</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// ****************************************************************************</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classERF.html#ac3a76da346ff580389d3ab81679d3807">ImposeBCsOnPhi</a>(lev, phi, subdomain);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
