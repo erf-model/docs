@@ -43,7 +43,6 @@ var classSAM =
     [ "m_fac_fus", "classSAM.html#a53d38219476c32ba2dd751c02bcae53c", null ],
     [ "m_fac_sub", "classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec", null ],
     [ "m_geom", "classSAM.html#a8242fff43eb2cf417036eb36f5e4a3d8", null ],
-    [ "m_gOcp", "classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c", null ],
     [ "m_gtoe", "classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705", null ],
     [ "m_qmoist_size", "classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf", null ],
     [ "m_rdOcp", "classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7", null ],

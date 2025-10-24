@@ -40,7 +40,6 @@ var classMorrison =
     [ "m_fac_fus", "classMorrison.html#af97b098dae958c8fc69ec92b6779acf3", null ],
     [ "m_fac_sub", "classMorrison.html#a94005ac35edcdb59eb0b2f2d18e53425", null ],
     [ "m_geom", "classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d", null ],
-    [ "m_gOcp", "classMorrison.html#a4930ab51ce1a492bdddb2aa1cb001b21", null ],
     [ "m_gtoe", "classMorrison.html#acb7bda8ea77a4cd5a81e504f5131440e", null ],
     [ "m_qmoist_size", "classMorrison.html#aae728919a37c1eebbf4956d78da9f3cd", null ],
     [ "m_rdOcp", "classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac", null ],

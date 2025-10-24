@@ -1,7 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a":[2,0,55,3],
-"classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc":[2,0,55,30],
 "classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949":[2,0,55,9],
 "classPlaneAverage.html#af2bdf5b94ffc67066949be787ab66be2":[2,0,55,23],
 "classProblemBase.html":[2,0,58],
@@ -226,9 +224,9 @@ var NAVTREEINDEX10 =
 "classSAM.html":[2,0,63],
 "classSAM.html#a007ed40ac7278996d257b4c0ab6c1320":[2,0,63,6],
 "classSAM.html#a012056ae20ded7928adf1be8afa665b9":[2,0,63,3],
-"classSAM.html#a0473906305a6eaea0bad212893b9c911":[2,0,63,59],
+"classSAM.html#a0473906305a6eaea0bad212893b9c911":[2,0,63,58],
 "classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c":[2,0,63,12],
-"classSAM.html#a0853b1a3a4ec94178ca208ea594fc455":[2,0,63,56],
+"classSAM.html#a0853b1a3a4ec94178ca208ea594fc455":[2,0,63,55],
 "classSAM.html#a0edeaaddf7573079fdc9af1484ce5582":[2,0,63,32],
 "classSAM.html#a14fc54f233862c3c339abcc16412078c":[2,0,63,1],
 "classSAM.html#a1b09febe32fbfebb402091fd31cd9996":[2,0,63,36],
@@ -240,14 +238,16 @@ var NAVTREEINDEX10 =
 "classSAM.html#a301ce0c7f6cff77d6388c2d706e73a42":[2,0,63,2],
 "classSAM.html#a3117e23160d027ccb4dacf744a477a40":[2,0,63,30],
 "classSAM.html#a363b3bb27b6e6cdad8693363b3262419":[2,0,63,9],
-"classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e":[2,0,63,48],
+"classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e":[2,0,63,47],
 "classSAM.html#a37854ec84283a4229cf86b54cfcfc72b":[2,0,63,35],
-"classSAM.html#a3a76b3fc76d33c147dcaab81a738f41c":[2,0,63,43],
-"classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7":[2,0,63,46],
+"classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7":[2,0,63,45],
 "classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998":[2,0,63,4],
-"classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf":[2,0,63,45],
-"classSAM.html#a51af1452ad89711f8ddaa554cdc49ee6":[2,0,63,47],
+"classSAM.html#a4bf36ad050daafdcfea1aa83ad75f9cf":[2,0,63,44],
+"classSAM.html#a51af1452ad89711f8ddaa554cdc49ee6":[2,0,63,46],
 "classSAM.html#a53d38219476c32ba2dd751c02bcae53c":[2,0,63,40],
 "classSAM.html#a56c463cbd313722b567dd88e7ac6fccd":[2,0,63,33],
-"classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705":[2,0,63,44]
+"classSAM.html#a579b5a1e16d7b9d8d317e475a6a43705":[2,0,63,43],
+"classSAM.html#a6008487ad12ada77acdcb3ee41371c98":[2,0,63,48],
+"classSAM.html#a61a5a9e710fb010dd585b3e65e86ab25":[2,0,63,37],
+"classSAM.html#a65e2ba7cb72946a8af2e7541b072e3ba":[2,0,63,54]
 };
