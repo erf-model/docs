@@ -138,6 +138,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a51edb33d6a5a84f048e706f5d220ff7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef763ce195ae99d7026cd3157064ef9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAHMP.html#aef763ce195ae99d7026cd3157064ef9d">Advance_With_State</a> (const int &amp;lev, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;xvel_in, amrex::MultiFab &amp;yvel_in, amrex::MultiFab *hfx3_out, amrex::MultiFab *qfx3_out, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt, const int &amp;nstep) override</td></tr>
 <tr class="separator:aef763ce195ae99d7026cd3157064ef9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb70dbfe85a750ea4544a423bf6221a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAHMP.html#a1eb70dbfe85a750ea4544a423bf6221a">Plot_Landfile</a> (const int &amp;nstep) override</td></tr>
+<tr class="separator:a1eb70dbfe85a750ea4544a423bf6221a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac42a2aebccae893030a21d75de5f0f72"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAHMP.html#ac42a2aebccae893030a21d75de5f0f72">Lsm_Data_Ptr</a> (const int &amp;varIdx) override</td></tr>
 <tr class="separator:ac42a2aebccae893030a21d75de5f0f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af532cd1d9c164e48a41197058abce6f9"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAHMP.html#af532cd1d9c164e48a41197058abce6f9">Lsm_Flux_Ptr</a> (const int &amp;varIdx) override</td></tr>
@@ -361,184 +363,180 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a32d8152097460c363440cee9b98353da">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    Box domain = <a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.Domain();</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver started at time step: &quot;</span> &lt;&lt; nstep+1 &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// Loop over blocks to copy forcing data to Noahmp, drive the land model,</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">// and copy data back to ERF Multifabs.</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">int</span> idb = 0;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cons_in, <span class="keyword">false</span>); mfi.isValid(); ++mfi, ++idb) {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">// Check if tile is at the lower boundary in lower z direction</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(2) != domain.smallEnd(2)) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        bx.makeSlab(2,domain.smallEnd(2));</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        NoahmpIO_type* noahmpio = &amp;<a class="code" href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">noahmpio_vect</a>[idb];</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; U_PHY  = xvel_in.const_array(mfi);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; V_PHY  = yvel_in.const_array(mfi);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; QV_TH  = cons_in.const_array(mfi);</div>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    Box domain = <a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.Domain();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver started at time step: &quot;</span> &lt;&lt; nstep+1 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// Loop over blocks to copy forcing data to Noahmp, drive the land model,</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// and copy data back to ERF Multifabs.</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">int</span> idb = 0;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cons_in, <span class="keyword">false</span>); mfi.isValid(); ++mfi, ++idb) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        Box bx = mfi.tilebox();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">// Check if tile is at the lower boundary in lower z direction</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(2) != domain.smallEnd(2)) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">// Into NOAH-MP</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; SWDOWN = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a0c16c2310918fe29c6421e7a201080ef">LsmData_NOAHMP::sw_flux_dn</a>]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; GLW    = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60ac79515507f1093a0726c8f70ad6861a9">LsmData_NOAHMP::lw_flux_dn</a>]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; COSZEN = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60acb373e04fe288626ca1b51c80b45ba4a">LsmData_NOAHMP::cos_zenith_angle</a>]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="comment">// Out of NOAH-MP</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        Array4&lt;Real&gt; TSK           = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60adca47804869ea6881fb47994c656b9e9">LsmData_NOAHMP::t_sfc</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        Array4&lt;Real&gt; EMISS         = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a153d612e1de83f762ac72ae015f0b4a6">LsmData_NOAHMP::sfc_emis</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        Array4&lt;Real&gt; ALBSFCDIR_VIS = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a2cfc21eae7c47a6f88c6f3c23026c1ba">LsmData_NOAHMP::sfc_alb_dir_vis</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        Array4&lt;Real&gt; ALBSFCDIR_NIR = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60afcb431594b5602e1d05550bd06f0fe66">LsmData_NOAHMP::sfc_alb_dir_nir</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        Array4&lt;Real&gt; ALBSFCDIF_VIS = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60aff5000fc3eb27bb70b9aea77f0c1e5e9">LsmData_NOAHMP::sfc_alb_dif_vis</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        Array4&lt;Real&gt; ALBSFCDIF_NIR = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a3896197fdc03640b87e7a1ba42ea7655">LsmData_NOAHMP::sfc_alb_dif_nir</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        bx.makeSlab(2,domain.smallEnd(2));</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        NoahmpIO_type* noahmpio = &amp;<a class="code" href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">noahmpio_vect</a>[idb];</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; U_PHY  = xvel_in.const_array(mfi);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; V_PHY  = yvel_in.const_array(mfi);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; QV_TH  = cons_in.const_array(mfi);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="comment">// Into NOAH-MP</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; SWDOWN = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a0c16c2310918fe29c6421e7a201080ef">LsmData_NOAHMP::sw_flux_dn</a>]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; GLW    = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60ac79515507f1093a0726c8f70ad6861a9">LsmData_NOAHMP::lw_flux_dn</a>]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; COSZEN = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60acb373e04fe288626ca1b51c80b45ba4a">LsmData_NOAHMP::cos_zenith_angle</a>]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment">// NOTE: Need to expose stresses and get stresses from NOAHMP</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        Array4&lt;Real&gt; q_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a8df9d3919c908deeedb39488c2a76c07">LsmFlux_NOAHMP::q_flux</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        Array4&lt;Real&gt; t_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a411e3389836ac6eff20fba74dbe34a4c">LsmFlux_NOAHMP::t_flux</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        Array4&lt;Real&gt; tau13_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a7e953fc0f1b5bcb19653405ec7256e40">LsmFlux_NOAHMP::tau13</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        Array4&lt;Real&gt; tau23_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163ac319adfcf2e45b3be70235f3a2ce8d54">LsmFlux_NOAHMP::tau23</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// Create temporary BaseFabs that will be accessible on host</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">// Use The_Pinned_Arena() for host-accessible memory that can be used with GPU</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        FArrayBox tmp_u_phy(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        FArrayBox tmp_v_phy(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        FArrayBox tmp_t_phy(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        FArrayBox tmp_qv_curr(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        FArrayBox tmp_p8w(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        FArrayBox tmp_swdown(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        FArrayBox tmp_glw(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        FArrayBox tmp_coszen(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        FArrayBox tmp_hfx(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        FArrayBox tmp_lh(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        FArrayBox tmp_tau_ew(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        FArrayBox tmp_tau_ns(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        FArrayBox tmp_tsk(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        FArrayBox tmp_emiss(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        FArrayBox tmp_albsfcdir_vis(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        FArrayBox tmp_albsfcdir_nir(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        FArrayBox tmp_albsfcdif_vis(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        FArrayBox tmp_albsfcdif_nir(bx, 1, The_Pinned_Arena());</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="comment">// Get array views</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_u_phy_arr = tmp_u_phy.array();</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_v_phy_arr = tmp_v_phy.array();</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_t_phy_arr = tmp_t_phy.array();</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_qv_curr_arr = tmp_qv_curr.array();</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_p8w_arr = tmp_p8w.array();</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_swdown_arr = tmp_swdown.array();</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_glw_arr = tmp_glw.array();</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_coszen_arr = tmp_coszen.array();</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="comment">// Copy forcing data from ERF to Noahmp.</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            tmp_u_phy_arr(i,j,0)   = 0.5*(U_PHY(i,j,0)+U_PHY(i+1,j  ,0));</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            tmp_v_phy_arr(i,j,0)   = 0.5*(V_PHY(i,j,0)+V_PHY(i  ,j+1,0));</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            tmp_t_phy_arr(i,j,0)   = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            tmp_qv_curr_arr(i,j,0) = QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            tmp_p8w_arr(i,j,0)     = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            tmp_swdown_arr(i,j,0)    = SWDOWN(i,j,0);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            tmp_glw_arr(i,j,0)       = GLW(i,j,0);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            tmp_coszen_arr(i,j,0)    = COSZEN(i,j,0);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        });</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="comment">// Synchronize to ensure GPU kernel is complete before host access</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="comment">// Now on the host, copy data to NoahmpIO arrays</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="comment">// Use LoopOnCpu for CPU-side parallelization</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_u_arr = tmp_u_phy.const_array();</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_v_arr = tmp_v_phy.const_array();</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_t_arr = tmp_t_phy.const_array();</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_qv_arr = tmp_qv_curr.const_array();</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_p8w_arr = tmp_p8w.const_array();</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_swdown_arr = tmp_swdown.const_array();</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_glw_arr = tmp_glw.const_array();</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_coszen_arr = tmp_coszen.const_array();</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        LoopOnCpu(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            noahmpio-&gt;U_PHY(i,1,j) = h_u_arr(i,j,0);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            noahmpio-&gt;V_PHY(i,1,j) = h_v_arr(i,j,0);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            noahmpio-&gt;T_PHY(i,1,j) = h_t_arr(i,j,0);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            noahmpio-&gt;QV_CURR(i,1,j) = h_qv_arr(i,j,0);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            noahmpio-&gt;P8W(i,1,j) = h_p8w_arr(i,j,0);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            noahmpio-&gt;SWDOWN(i,j) = h_swdown_arr(i,j,0);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            noahmpio-&gt;GLW(i,j) = h_glw_arr(i,j,0);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            noahmpio-&gt;COSZEN(i,j) = h_coszen_arr(i,j,0);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        });</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="comment">// Call the noahmpio driver code. This runs the land model forcing for</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="comment">// each object in noahmpio_vect that represent a block in the domain.</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        noahmpio-&gt;itimestep = nstep+1;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        noahmpio-&gt;DriverMain();</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">// Copy results from NoahmpIO back to temporary arrays</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keyword">auto</span> h_hfx_arr = tmp_hfx.array();</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keyword">auto</span> h_lh_arr = tmp_lh.array();</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keyword">auto</span> h_tau_ew_arr = tmp_tau_ew.array();</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keyword">auto</span> h_tau_ns_arr = tmp_tau_ns.array();</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keyword">auto</span> h_tsk_arr = tmp_tsk.array();</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keyword">auto</span> h_emiss_arr = tmp_emiss.array();</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keyword">auto</span> h_albsfcdir_vis_arr = tmp_albsfcdir_vis.array();</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keyword">auto</span> h_albsfcdir_nir_arr = tmp_albsfcdir_nir.array();</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keyword">auto</span> h_albsfcdif_vis_arr = tmp_albsfcdif_vis.array();</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keyword">auto</span> h_albsfcdif_nir_arr = tmp_albsfcdif_nir.array();</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        LoopOnCpu(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            h_hfx_arr(i,j,0) = noahmpio-&gt;HFX(i,j);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            h_lh_arr(i,j,0) = noahmpio-&gt;LH(i,j);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            h_tau_ew_arr(i,j,0)  = noahmpio-&gt;TAU_EW(i,j);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            h_tau_ns_arr(i,j,0)  = noahmpio-&gt;TAU_NS(i,j);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            h_tsk_arr(i,j,0)        = noahmpio-&gt;TSK(i,j);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            h_emiss_arr(i,j,0)      = noahmpio-&gt;EMISS(i,j);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            h_albsfcdir_vis_arr(i,j,0) = noahmpio-&gt;ALBSFCDIRXY(i,1,j);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            h_albsfcdir_nir_arr(i,j,0) = noahmpio-&gt;ALBSFCDIRXY(i,2,j);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            h_albsfcdif_vis_arr(i,j,0) = noahmpio-&gt;ALBSFCDIFXY(i,1,j);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            h_albsfcdif_nir_arr(i,j,0) = noahmpio-&gt;ALBSFCDIFXY(i,2,j);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        });</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="comment">// Copy results back to output arrays</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_hfx_arr = tmp_hfx.array();</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_lh_arr = tmp_lh.array();</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_tau_ew_arr = tmp_tau_ew.array();</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_tau_ns_arr = tmp_tau_ns.array();</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_tsk_arr = tmp_tsk.array();</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_emiss_arr = tmp_emiss.array();</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdir_vis_arr = tmp_albsfcdir_vis.array();</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdir_nir_arr = tmp_albsfcdir_nir.array();</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdif_vis_arr = tmp_albsfcdif_vis.array();</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdif_nir_arr = tmp_albsfcdif_nir.array();</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="comment">// Copy forcing data from Noahmp to ERF</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            t_flux_arr(i,j,0) = tmp_hfx_arr(i,j,0)/(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)*<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            q_flux_arr(i,j,0) = tmp_lh_arr(i,j,0)/(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            tau13_arr(i,j,0)  = tmp_tau_ew_arr(i,j,0)/QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            tau23_arr(i,j,0)  = tmp_tau_ns_arr(i,j,0)/QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            TSK(i,j,0)        = tmp_tsk_arr(i,j,0);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            EMISS(i,j,0)      = tmp_emiss_arr(i,j,0);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            ALBSFCDIR_VIS(i,j,0) = tmp_albsfcdir_vis_arr(i,j,0);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            ALBSFCDIR_NIR(i,j,0) = tmp_albsfcdir_nir_arr(i,j,0);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            ALBSFCDIF_VIS(i,j,0) = tmp_albsfcdif_vis_arr(i,j,0);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            ALBSFCDIF_NIR(i,j,0) = tmp_albsfcdif_nir_arr(i,j,0);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        });</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">if</span>((nstep+1)%<a class="code" href="classNOAHMP.html#a1be06696c079dcbb31d9d8678cf80846">m_plot_int_1</a> == 0) {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            noahmpio-&gt;WriteLand(nstep+1);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    }</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver completed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;};</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment">// Out of NOAH-MP</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        Array4&lt;Real&gt; TSK           = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60adca47804869ea6881fb47994c656b9e9">LsmData_NOAHMP::t_sfc</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        Array4&lt;Real&gt; EMISS         = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a153d612e1de83f762ac72ae015f0b4a6">LsmData_NOAHMP::sfc_emis</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        Array4&lt;Real&gt; ALBSFCDIR_VIS = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a2cfc21eae7c47a6f88c6f3c23026c1ba">LsmData_NOAHMP::sfc_alb_dir_vis</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        Array4&lt;Real&gt; ALBSFCDIR_NIR = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60afcb431594b5602e1d05550bd06f0fe66">LsmData_NOAHMP::sfc_alb_dir_nir</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        Array4&lt;Real&gt; ALBSFCDIF_VIS = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60aff5000fc3eb27bb70b9aea77f0c1e5e9">LsmData_NOAHMP::sfc_alb_dif_vis</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        Array4&lt;Real&gt; ALBSFCDIF_NIR = <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a3896197fdc03640b87e7a1ba42ea7655">LsmData_NOAHMP::sfc_alb_dif_nir</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">// NOTE: Need to expose stresses and get stresses from NOAHMP</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        Array4&lt;Real&gt; q_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a8df9d3919c908deeedb39488c2a76c07">LsmFlux_NOAHMP::q_flux</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        Array4&lt;Real&gt; t_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a411e3389836ac6eff20fba74dbe34a4c">LsmFlux_NOAHMP::t_flux</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        Array4&lt;Real&gt; tau13_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a7e953fc0f1b5bcb19653405ec7256e40">LsmFlux_NOAHMP::tau13</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        Array4&lt;Real&gt; tau23_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163ac319adfcf2e45b3be70235f3a2ce8d54">LsmFlux_NOAHMP::tau23</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="comment">// Create temporary BaseFabs that will be accessible on host</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="comment">// Use The_Pinned_Arena() for host-accessible memory that can be used with GPU</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        FArrayBox tmp_u_phy(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        FArrayBox tmp_v_phy(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        FArrayBox tmp_t_phy(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        FArrayBox tmp_qv_curr(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        FArrayBox tmp_p8w(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        FArrayBox tmp_swdown(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        FArrayBox tmp_glw(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        FArrayBox tmp_coszen(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        FArrayBox tmp_hfx(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        FArrayBox tmp_lh(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        FArrayBox tmp_tau_ew(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        FArrayBox tmp_tau_ns(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        FArrayBox tmp_tsk(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        FArrayBox tmp_emiss(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        FArrayBox tmp_albsfcdir_vis(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        FArrayBox tmp_albsfcdir_nir(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        FArrayBox tmp_albsfcdif_vis(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        FArrayBox tmp_albsfcdif_nir(bx, 1, The_Pinned_Arena());</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="comment">// Get array views</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_u_phy_arr = tmp_u_phy.array();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_v_phy_arr = tmp_v_phy.array();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_t_phy_arr = tmp_t_phy.array();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_qv_curr_arr = tmp_qv_curr.array();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_p8w_arr = tmp_p8w.array();</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_swdown_arr = tmp_swdown.array();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_glw_arr = tmp_glw.array();</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_coszen_arr = tmp_coszen.array();</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment">// Copy forcing data from ERF to Noahmp.</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            tmp_u_phy_arr(i,j,0)   = 0.5*(U_PHY(i,j,0)+U_PHY(i+1,j  ,0));</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            tmp_v_phy_arr(i,j,0)   = 0.5*(V_PHY(i,j,0)+V_PHY(i  ,j+1,0));</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            tmp_t_phy_arr(i,j,0)   = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            tmp_qv_curr_arr(i,j,0) = QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            tmp_p8w_arr(i,j,0)     = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            tmp_swdown_arr(i,j,0)    = SWDOWN(i,j,0);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            tmp_glw_arr(i,j,0)       = GLW(i,j,0);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            tmp_coszen_arr(i,j,0)    = COSZEN(i,j,0);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        });</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="comment">// Synchronize to ensure GPU kernel is complete before host access</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">// Now on the host, copy data to NoahmpIO arrays</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="comment">// Use LoopOnCpu for CPU-side parallelization</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_u_arr = tmp_u_phy.const_array();</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_v_arr = tmp_v_phy.const_array();</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_t_arr = tmp_t_phy.const_array();</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_qv_arr = tmp_qv_curr.const_array();</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_p8w_arr = tmp_p8w.const_array();</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_swdown_arr = tmp_swdown.const_array();</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_glw_arr = tmp_glw.const_array();</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; h_coszen_arr = tmp_coszen.const_array();</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        LoopOnCpu(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            noahmpio-&gt;U_PHY(i,1,j) = h_u_arr(i,j,0);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            noahmpio-&gt;V_PHY(i,1,j) = h_v_arr(i,j,0);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            noahmpio-&gt;T_PHY(i,1,j) = h_t_arr(i,j,0);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;            noahmpio-&gt;QV_CURR(i,1,j) = h_qv_arr(i,j,0);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            noahmpio-&gt;P8W(i,1,j) = h_p8w_arr(i,j,0);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            noahmpio-&gt;SWDOWN(i,j) = h_swdown_arr(i,j,0);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            noahmpio-&gt;GLW(i,j) = h_glw_arr(i,j,0);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            noahmpio-&gt;COSZEN(i,j) = h_coszen_arr(i,j,0);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        });</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="comment">// Call the noahmpio driver code. This runs the land model forcing for</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="comment">// each object in noahmpio_vect that represent a block in the domain.</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        noahmpio-&gt;itimestep = nstep+1;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        noahmpio-&gt;DriverMain();</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="comment">// Copy results from NoahmpIO back to temporary arrays</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keyword">auto</span> h_hfx_arr = tmp_hfx.array();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keyword">auto</span> h_lh_arr = tmp_lh.array();</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keyword">auto</span> h_tau_ew_arr = tmp_tau_ew.array();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keyword">auto</span> h_tau_ns_arr = tmp_tau_ns.array();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keyword">auto</span> h_tsk_arr = tmp_tsk.array();</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keyword">auto</span> h_emiss_arr = tmp_emiss.array();</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keyword">auto</span> h_albsfcdir_vis_arr = tmp_albsfcdir_vis.array();</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keyword">auto</span> h_albsfcdir_nir_arr = tmp_albsfcdir_nir.array();</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="keyword">auto</span> h_albsfcdif_vis_arr = tmp_albsfcdif_vis.array();</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keyword">auto</span> h_albsfcdif_nir_arr = tmp_albsfcdif_nir.array();</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        LoopOnCpu(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            h_hfx_arr(i,j,0) = noahmpio-&gt;HFX(i,j);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            h_lh_arr(i,j,0) = noahmpio-&gt;LH(i,j);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            h_tau_ew_arr(i,j,0)  = noahmpio-&gt;TAU_EW(i,j);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            h_tau_ns_arr(i,j,0)  = noahmpio-&gt;TAU_NS(i,j);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            h_tsk_arr(i,j,0)        = noahmpio-&gt;TSK(i,j);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            h_emiss_arr(i,j,0)      = noahmpio-&gt;EMISS(i,j);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            h_albsfcdir_vis_arr(i,j,0) = noahmpio-&gt;ALBSFCDIRXY(i,1,j);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            h_albsfcdir_nir_arr(i,j,0) = noahmpio-&gt;ALBSFCDIRXY(i,2,j);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            h_albsfcdif_vis_arr(i,j,0) = noahmpio-&gt;ALBSFCDIFXY(i,1,j);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            h_albsfcdif_nir_arr(i,j,0) = noahmpio-&gt;ALBSFCDIFXY(i,2,j);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        });</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="comment">// Copy results back to output arrays</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_hfx_arr = tmp_hfx.array();</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_lh_arr = tmp_lh.array();</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_tau_ew_arr = tmp_tau_ew.array();</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_tau_ns_arr = tmp_tau_ns.array();</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_tsk_arr = tmp_tsk.array();</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_emiss_arr = tmp_emiss.array();</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdir_vis_arr = tmp_albsfcdir_vis.array();</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdir_nir_arr = tmp_albsfcdir_nir.array();</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdif_vis_arr = tmp_albsfcdif_vis.array();</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_albsfcdif_nir_arr = tmp_albsfcdif_nir.array();</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="comment">// Copy forcing data from Noahmp to ERF</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            t_flux_arr(i,j,0) = tmp_hfx_arr(i,j,0)/(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)*<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            q_flux_arr(i,j,0) = tmp_lh_arr(i,j,0)/(QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            tau13_arr(i,j,0)  = tmp_tau_ew_arr(i,j,0)/QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            tau23_arr(i,j,0)  = tmp_tau_ns_arr(i,j,0)/QV_TH(i,j,0,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            TSK(i,j,0)        = tmp_tsk_arr(i,j,0);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            EMISS(i,j,0)      = tmp_emiss_arr(i,j,0);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            ALBSFCDIR_VIS(i,j,0) = tmp_albsfcdir_vis_arr(i,j,0);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            ALBSFCDIR_NIR(i,j,0) = tmp_albsfcdir_nir_arr(i,j,0);</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            ALBSFCDIF_VIS(i,j,0) = tmp_albsfcdif_vis_arr(i,j,0);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            ALBSFCDIF_NIR(i,j,0) = tmp_albsfcdif_nir_arr(i,j,0);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        });</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver completed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;};</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:16</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
@@ -546,11 +544,10 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a1be06696c079dcbb31d9d8678cf80846"><div class="ttname"><a href="classNOAHMP.html#a1be06696c079dcbb31d9d8678cf80846">NOAHMP::m_plot_int_1</a></div><div class="ttdeci">int m_plot_int_1</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:208</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a312d74035627fd45feba087875ed0ca1"><div class="ttname"><a href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">NOAHMP::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmFlux_NOAHMP::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:202</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a65195247ebb837a0b8749b30fd8dd3a2"><div class="ttname"><a href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">NOAHMP::noahmpio_vect</a></div><div class="ttdeci">NoahmpIO_vector noahmpio_vect</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:205</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a9030822a3b61fa160e50677c226137b2"><div class="ttname"><a href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">NOAHMP::lsm_fab_data</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmData_NOAHMP::NumVars &gt; lsm_fab_data</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:199</div></div>
-<div class="ttc" id="aclassNOAHMP_html_af06273a8838563fd46d42e86032d795f"><div class="ttname"><a href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">NOAHMP::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:181</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a312d74035627fd45feba087875ed0ca1"><div class="ttname"><a href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">NOAHMP::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmFlux_NOAHMP::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:205</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a65195247ebb837a0b8749b30fd8dd3a2"><div class="ttname"><a href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">NOAHMP::noahmpio_vect</a></div><div class="ttdeci">NoahmpIO_vector noahmpio_vect</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:208</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a9030822a3b61fa160e50677c226137b2"><div class="ttname"><a href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">NOAHMP::lsm_fab_data</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmData_NOAHMP::NumVars &gt; lsm_fab_data</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:202</div></div>
+<div class="ttc" id="aclassNOAHMP_html_af06273a8838563fd46d42e86032d795f"><div class="ttname"><a href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">NOAHMP::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:184</div></div>
 <div class="ttc" id="anamespaceLsmData__NOAHMP_html_ac28f9d4a905f77795b0c624f1645dc60a0c16c2310918fe29c6421e7a201080ef"><div class="ttname"><a href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a0c16c2310918fe29c6421e7a201080ef">LsmData_NOAHMP::sw_flux_dn</a></div><div class="ttdeci">@ sw_flux_dn</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:32</div></div>
 <div class="ttc" id="anamespaceLsmData__NOAHMP_html_ac28f9d4a905f77795b0c624f1645dc60a153d612e1de83f762ac72ae015f0b4a6"><div class="ttname"><a href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a153d612e1de83f762ac72ae015f0b4a6">LsmData_NOAHMP::sfc_emis</a></div><div class="ttdeci">@ sfc_emis</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:26</div></div>
 <div class="ttc" id="anamespaceLsmData__NOAHMP_html_ac28f9d4a905f77795b0c624f1645dc60a2cfc21eae7c47a6f88c6f3c23026c1ba"><div class="ttname"><a href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60a2cfc21eae7c47a6f88c6f3c23026c1ba">LsmData_NOAHMP::sfc_alb_dir_vis</a></div><div class="ttdeci">@ sfc_alb_dir_vis</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:27</div></div>
@@ -842,17 +839,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;};</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:233</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a061c5353c8a9b8b1a04b8314d54f78b3"><div class="ttname"><a href="classNOAHMP.html#a061c5353c8a9b8b1a04b8314d54f78b3">NOAHMP::khi_lsm</a></div><div class="ttdeci">int khi_lsm</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:190</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a3645a29ce3c3a86c46263fd2354d2fe6"><div class="ttname"><a href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">NOAHMP::LsmDataName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmDataName</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:175</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a3c436e168c87ea09e2821d5ae0619f50"><div class="ttname"><a href="classNOAHMP.html#a3c436e168c87ea09e2821d5ae0619f50">NOAHMP::LsmDataMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; LsmDataMap</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:169</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a68e1388386dc4c7fc16c0c05ea4cce1c"><div class="ttname"><a href="classNOAHMP.html#a68e1388386dc4c7fc16c0c05ea4cce1c">NOAHMP::m_lsm_data_size</a></div><div class="ttdeci">int m_lsm_data_size</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:163</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a8378fec589eecda6ad9845298947284b"><div class="ttname"><a href="classNOAHMP.html#a8378fec589eecda6ad9845298947284b">NOAHMP::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:184</div></div>
-<div class="ttc" id="aclassNOAHMP_html_aa5746c284c77837ba96abc713f58ff0d"><div class="ttname"><a href="classNOAHMP.html#aa5746c284c77837ba96abc713f58ff0d">NOAHMP::m_nz_lsm</a></div><div class="ttdeci">int m_nz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:193</div></div>
-<div class="ttc" id="aclassNOAHMP_html_aa8a00c02fa999dc2c3b3797e86908148"><div class="ttname"><a href="classNOAHMP.html#aa8a00c02fa999dc2c3b3797e86908148">NOAHMP::m_lsm_flux_size</a></div><div class="ttdeci">int m_lsm_flux_size</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:166</div></div>
-<div class="ttc" id="aclassNOAHMP_html_ab88cbd0404576c3854eeea55b4b4f77d"><div class="ttname"><a href="classNOAHMP.html#ab88cbd0404576c3854eeea55b4b4f77d">NOAHMP::LsmFluxMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; LsmFluxMap</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:172</div></div>
-<div class="ttc" id="aclassNOAHMP_html_ae579973046d02efed494e44b56bf53e3"><div class="ttname"><a href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">NOAHMP::LsmFluxName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmFluxName</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:178</div></div>
-<div class="ttc" id="aclassNOAHMP_html_af46daf1d8460d131d4130fa964f36084"><div class="ttname"><a href="classNOAHMP.html#af46daf1d8460d131d4130fa964f36084">NOAHMP::m_dz_lsm</a></div><div class="ttdeci">amrex::Real m_dz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:196</div></div>
-<div class="ttc" id="aclassNOAHMP_html_afe47e34a6d1544c86e65ce87ccbb32fb"><div class="ttname"><a href="classNOAHMP.html#afe47e34a6d1544c86e65ce87ccbb32fb">NOAHMP::m_dt</a></div><div class="ttdeci">amrex::Real m_dt</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:187</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a061c5353c8a9b8b1a04b8314d54f78b3"><div class="ttname"><a href="classNOAHMP.html#a061c5353c8a9b8b1a04b8314d54f78b3">NOAHMP::khi_lsm</a></div><div class="ttdeci">int khi_lsm</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:193</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a1be06696c079dcbb31d9d8678cf80846"><div class="ttname"><a href="classNOAHMP.html#a1be06696c079dcbb31d9d8678cf80846">NOAHMP::m_plot_int_1</a></div><div class="ttdeci">int m_plot_int_1</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:211</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a3645a29ce3c3a86c46263fd2354d2fe6"><div class="ttname"><a href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">NOAHMP::LsmDataName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmDataName</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:178</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a3c436e168c87ea09e2821d5ae0619f50"><div class="ttname"><a href="classNOAHMP.html#a3c436e168c87ea09e2821d5ae0619f50">NOAHMP::LsmDataMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; LsmDataMap</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:172</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a68e1388386dc4c7fc16c0c05ea4cce1c"><div class="ttname"><a href="classNOAHMP.html#a68e1388386dc4c7fc16c0c05ea4cce1c">NOAHMP::m_lsm_data_size</a></div><div class="ttdeci">int m_lsm_data_size</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:166</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a8378fec589eecda6ad9845298947284b"><div class="ttname"><a href="classNOAHMP.html#a8378fec589eecda6ad9845298947284b">NOAHMP::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:187</div></div>
+<div class="ttc" id="aclassNOAHMP_html_aa5746c284c77837ba96abc713f58ff0d"><div class="ttname"><a href="classNOAHMP.html#aa5746c284c77837ba96abc713f58ff0d">NOAHMP::m_nz_lsm</a></div><div class="ttdeci">int m_nz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:196</div></div>
+<div class="ttc" id="aclassNOAHMP_html_aa8a00c02fa999dc2c3b3797e86908148"><div class="ttname"><a href="classNOAHMP.html#aa8a00c02fa999dc2c3b3797e86908148">NOAHMP::m_lsm_flux_size</a></div><div class="ttdeci">int m_lsm_flux_size</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:169</div></div>
+<div class="ttc" id="aclassNOAHMP_html_ab88cbd0404576c3854eeea55b4b4f77d"><div class="ttname"><a href="classNOAHMP.html#ab88cbd0404576c3854eeea55b4b4f77d">NOAHMP::LsmFluxMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; LsmFluxMap</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:175</div></div>
+<div class="ttc" id="aclassNOAHMP_html_ae579973046d02efed494e44b56bf53e3"><div class="ttname"><a href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">NOAHMP::LsmFluxName</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; LsmFluxName</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:181</div></div>
+<div class="ttc" id="aclassNOAHMP_html_af46daf1d8460d131d4130fa964f36084"><div class="ttname"><a href="classNOAHMP.html#af46daf1d8460d131d4130fa964f36084">NOAHMP::m_dz_lsm</a></div><div class="ttdeci">amrex::Real m_dz_lsm</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:199</div></div>
+<div class="ttc" id="aclassNOAHMP_html_afe47e34a6d1544c86e65ce87ccbb32fb"><div class="ttname"><a href="classNOAHMP.html#afe47e34a6d1544c86e65ce87ccbb32fb">NOAHMP::m_dt</a></div><div class="ttdeci">amrex::Real m_dt</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:190</div></div>
 <div class="ttc" id="anamespaceLsmData__NOAHMP_html_ac28f9d4a905f77795b0c624f1645dc60adcdca071138537342f18d4c1c968f492"><div class="ttname"><a href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60adcdca071138537342f18d4c1c968f492">LsmData_NOAHMP::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:34</div></div>
 <div class="ttc" id="anamespaceLsmFlux__NOAHMP_html_a03c07c2e2f344531ffdc17f444e45163a95d7201295c651f503c14a90d07916f5"><div class="ttname"><a href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:45</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:48</div></div>
@@ -893,11 +891,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a23e0e00071c6220b8d1495cac4073ce3">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#a3c436e168c87ea09e2821d5ae0619f50">LsmDataMap</a>[varIdx];</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_data_size &amp;&amp; lsmIdx&gt;=0);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[lsmIdx].get();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#a3c436e168c87ea09e2821d5ae0619f50">LsmDataMap</a>[varIdx];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_data_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a9030822a3b61fa160e50677c226137b2">lsm_fab_data</a>[lsmIdx].get();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -925,7 +923,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#adf5c64f43a59af0d6caae7211cdfa480">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a68e1388386dc4c7fc16c0c05ea4cce1c">NOAHMP::m_lsm_data_size</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a68e1388386dc4c7fc16c0c05ea4cce1c">NOAHMP::m_lsm_data_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -954,16 +952,16 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#aaf99548b724e6c59bdaf90d20498b529">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">int</span> varIdx = -1;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        std::string lc_varname = amrex::toLower(varname);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx(0); idx&lt;<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60adcdca071138537342f18d4c1c968f492">LsmData_NOAHMP::NumVars</a>; ++idx) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">LsmDataName</a>[idx])) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                varIdx = idx;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">return</span> varIdx;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">int</span> varIdx = -1;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        std::string lc_varname = amrex::toLower(varname);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx(0); idx&lt;<a class="code" href="namespaceLsmData__NOAHMP.html#ac28f9d4a905f77795b0c624f1645dc60adcdca071138537342f18d4c1c968f492">LsmData_NOAHMP::NumVars</a>; ++idx) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">LsmDataName</a>[idx])) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                varIdx = idx;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">return</span> varIdx;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -992,11 +990,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a04d8e3e6f1c9f948e3b295d8bac9fac3">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#a3c436e168c87ea09e2821d5ae0619f50">LsmDataMap</a>[varIdx];</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_data_size &amp;&amp; lsmIdx&gt;=0);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">LsmDataName</a>[lsmIdx];</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#a3c436e168c87ea09e2821d5ae0619f50">LsmDataMap</a>[varIdx];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_data_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">LsmDataName</a>[lsmIdx];</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1025,11 +1023,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a7a9b19e7d784323fd216468b7cca6574">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#ab88cbd0404576c3854eeea55b4b4f77d">LsmFluxMap</a>[varIdx];</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_flux_size &amp;&amp; lsmIdx&gt;=0);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[lsmIdx].get();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#ab88cbd0404576c3854eeea55b4b4f77d">LsmFluxMap</a>[varIdx];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_flux_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[lsmIdx].get();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1057,7 +1055,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a254ae8b16a03a3b95c54eeddf0589601">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#aa8a00c02fa999dc2c3b3797e86908148">NOAHMP::m_lsm_flux_size</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#aa8a00c02fa999dc2c3b3797e86908148">NOAHMP::m_lsm_flux_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1086,16 +1084,16 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a91309684d30cc464d3e8a02cb42f8228">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordtype">int</span> varIdx = -1;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        std::string lc_varname = amrex::toLower(varname);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx(0); idx&lt;<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++idx) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">LsmFluxName</a>[idx])) {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                varIdx = idx;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> varIdx;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordtype">int</span> varIdx = -1;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        std::string lc_varname = amrex::toLower(varname);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx(0); idx&lt;<a class="code" href="namespaceLsmFlux__NOAHMP.html#a03c07c2e2f344531ffdc17f444e45163a95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++idx) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">LsmFluxName</a>[idx])) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                varIdx = idx;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            }</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span> varIdx;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1124,11 +1122,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#adceee092ff7e0b427c3deedbf70856c1">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#ab88cbd0404576c3854eeea55b4b4f77d">LsmFluxMap</a>[varIdx];</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_flux_size &amp;&amp; lsmIdx&gt;=0);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">LsmFluxName</a>[lsmIdx];</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classNOAHMP.html#ab88cbd0404576c3854eeea55b4b4f77d">LsmFluxMap</a>[varIdx];</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        AMREX_ALWAYS_ASSERT(lsmIdx &lt; NOAHMP::m_lsm_flux_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">LsmFluxName</a>[lsmIdx];</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1156,7 +1154,40 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#af634e202eb05675a9bf2ee9b7e927b12">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a8378fec589eecda6ad9845298947284b">m_lsm_geom</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNOAHMP.html#a8378fec589eecda6ad9845298947284b">m_lsm_geom</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1eb70dbfe85a750ea4544a423bf6221a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1eb70dbfe85a750ea4544a423bf6221a">&#9670;&nbsp;</a></span>Plot_Landfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NOAHMP::Plot_Landfile </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>nstep</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classNullSurf.html#a3ee75b63861ce70d6fb5110635d2aa16">NullSurf</a>.</p>
+<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;{</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">for</span> (NoahmpIO_type &amp;noahmpio : <a class="code" href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">noahmpio_vect</a>) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        noahmpio.WriteLand(nstep);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

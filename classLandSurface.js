@@ -17,6 +17,7 @@ var classLandSurface =
     [ "get_model_lev", "classLandSurface.html#a3afba8302e18341bf3ecb62202704817", null ],
     [ "Get_WRFInputNames", "classLandSurface.html#a09b7ee5d357ed95f7ddf64223ecccaa5", null ],
     [ "Init", "classLandSurface.html#aac1216f5c2758361ddc016442f3c67cd", null ],
+    [ "Plot", "classLandSurface.html#a4ee0eb34736ea67b8de898bc3dc045ce", null ],
     [ "Plot_Lsm_Data", "classLandSurface.html#a61290767bd3f0bc65db7a0a344b10899", null ],
     [ "ReSize", "classLandSurface.html#a58bc8a6e1b1369cd863f8b4f424a6270", null ],
     [ "SetModel", "classLandSurface.html#a91df3382b60a6566b78a23c87b46f065", null ],
