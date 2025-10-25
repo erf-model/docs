@@ -188,6 +188,7 @@ var NAVTREEINDEX1 =
 "ERF__EddyViscosity_8H.html":[3,0,1,3,15],
 "ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1":[3,0,1,3,15,1],
 "ERF__EddyViscosity_8H.html#a53302b82aecb6e551fee290c54889550":[3,0,1,3,15,2],
+"ERF__EddyViscosity_8H.html#aa4f50ad860514b5c513c213dbceb1f61":[3,0,1,3,15,3],
 "ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8":[3,0,1,3,15,0],
 "ERF__EddyViscosity_8H_source.html":[3,0,1,3,15],
 "ERF__EpochTime_8H.html":[3,0,1,17,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__Implicit_8H.html":[3,0,1,15,9],
 "ERF__Implicit_8H.html#a345654e9209afca7b73d61d649e8acc0":[3,0,1,15,9,2],
 "ERF__Implicit_8H.html#a67c36e0de27983372e4818a15863c29c":[3,0,1,15,9,0],
-"ERF__Implicit_8H.html#a74186295dc885b213b57782b40f37266":[3,0,1,15,9,3],
-"ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c":[3,0,1,15,9,1]
+"ERF__Implicit_8H.html#a74186295dc885b213b57782b40f37266":[3,0,1,15,9,3]
 };

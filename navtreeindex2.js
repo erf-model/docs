@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c":[3,0,1,15,9,1],
 "ERF__Implicit_8H.html#adcf8906eb24e7e52034a5f9b0c4f4cb2":[3,0,1,15,9,4],
 "ERF__Implicit_8H_source.html":[3,0,1,15,9],
 "ERF__ImposeBCsOnPhi_8cpp.html":[3,0,1,8,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138":[3,0,1,9,1,6,2],
 "ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681":[3,0,1,9,1,6,0],
 "ERF__Morrison__Fortran__Interface_8H_source.html":[3,0,1,9,1,6],
-"ERF__Morrison__Plot_8cpp.html":[3,0,1,9,1,7],
-"ERF__NCColumnFile_8cpp.html":[3,0,1,6,2]
+"ERF__Morrison__Plot_8cpp.html":[3,0,1,9,1,7]
 };

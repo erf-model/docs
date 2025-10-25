@@ -19,6 +19,7 @@ var dir_fc0c15590968603ac439df7b0a572228 =
     [ "ERF_ImplicitDiff_N.cpp", "ERF__ImplicitDiff__N_8cpp.html", "ERF__ImplicitDiff__N_8cpp" ],
     [ "ERF_ImplicitDiff_S.cpp", "ERF__ImplicitDiff__S_8cpp.html", "ERF__ImplicitDiff__S_8cpp" ],
     [ "ERF_ImplicitDiff_T.cpp", "ERF__ImplicitDiff__T_8cpp.html", "ERF__ImplicitDiff__T_8cpp" ],
+    [ "ERF_RichardsonNumber.H", "ERF__RichardsonNumber_8H.html", "ERF__RichardsonNumber_8H" ],
     [ "ERF_SetupDiff.H", "ERF__SetupDiff_8H.html", "ERF__SetupDiff_8H" ],
     [ "ERF_SetupVertDiff.H", "ERF__SetupVertDiff_8H.html", "ERF__SetupVertDiff_8H" ]
 ];
