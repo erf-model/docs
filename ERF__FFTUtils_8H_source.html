@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('ERF__FFTUtils_8H_source.html',''); ini
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (lev_geom.Domain().smallEnd(dir) == bounding_box.smallEnd(dir)) &amp;&amp;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                  (bc_type_lo == <span class="stringliteral">&quot;Outflow&quot;</span> || bc_type_lo == <span class="stringliteral">&quot;Open&quot;</span>) &amp;&amp; !use_real_bcs)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                  (bc_type_lo == <span class="stringliteral">&quot;Outflow&quot;</span> || bc_type_lo == <span class="stringliteral">&quot;Open&quot;</span>) &amp;&amp; (dir == 2 || !use_real_bcs) )</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            first = FFT::Boundary::odd;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;             <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING FIRST OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO ODD &quot; &lt;&lt; std::endl;</span></div>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('ERF__FFTUtils_8H_source.html',''); ini
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (lev_geom.Domain().bigEnd(dir) == bounding_box.bigEnd(dir)) &amp;&amp;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                  (bc_type_hi == <span class="stringliteral">&quot;Outflow&quot;</span> || bc_type_hi == <span class="stringliteral">&quot;Open&quot;</span>) &amp;&amp; !use_real_bcs)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                  (bc_type_hi == <span class="stringliteral">&quot;Outflow&quot;</span> || bc_type_hi == <span class="stringliteral">&quot;Open&quot;</span>) &amp;&amp; (dir == 2 || !use_real_bcs) )</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            second = FFT::Boundary::odd;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;             <span class="comment">// amrex::Print() &lt;&lt; &quot;SETTING SECOND OF &quot; &lt;&lt; dir &lt;&lt; &quot; TO ODD &quot; &lt;&lt; std::endl;</span></div>

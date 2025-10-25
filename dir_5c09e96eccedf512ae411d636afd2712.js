@@ -54,6 +54,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_TimeAvgVel.cpp", "ERF__TimeAvgVel_8cpp.html", "ERF__TimeAvgVel_8cpp" ],
     [ "ERF_Utils.H", "ERF__Utils_8H.html", "ERF__Utils_8H" ],
     [ "ERF_VelocityToMomentum.cpp", "ERF__VelocityToMomentum_8cpp.html", "ERF__VelocityToMomentum_8cpp" ],
+    [ "ERF_VolWgtSum.cpp", "ERF__VolWgtSum_8cpp.html", null ],
     [ "ERF_WaterVaporSaturation.H", "ERF__WaterVaporSaturation_8H.html", [
       [ "WaterVaporSat", "classWaterVaporSat.html", "classWaterVaporSat" ]
     ] ],
