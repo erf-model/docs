@@ -540,8 +540,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            IndexType ixt = averages[imf]-&gt;boxArray().ixType();</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim(0); idim &lt; AMREX_SPACEDIM-1; ++idim) {</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                <span class="keywordflow">if</span> ( ixt.nodeCentered(idim)  &amp;&amp; (pbx.bigEnd(idim) == vbx.bigEnd(idim)) ) {</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                    <span class="keywordtype">int</span> <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> = domain.bigEnd(idim)+1;</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                    <span class="keywordflow">if</span> (pbx.bigEnd(idim) &lt; <a class="code" href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> || is_per[idim]) {</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                    <span class="keywordtype">int</span> <a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> = domain.bigEnd(idim)+1;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                    <span class="keywordflow">if</span> (pbx.bigEnd(idim) &lt; <a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> || is_per[idim]) {</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                        pbx.growHi(idim,-1);</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                    }</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                }</div>
@@ -745,7 +745,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;        averages[iavg]-&gt;setVal(plane_average[iavg]);</div>
 <div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;    }</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;}</div>
-<div class="ttc" id="aERF__DiffSetup_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:10</div></div>
+<div class="ttc" id="aERF__SetupVertDiff_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_SetupVertDiff.H:2</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a0554ee593b5deca61ef0d26ebd26f6d6"><div class="ttname"><a href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">MOSTAverage::m_navg</a></div><div class="ttdeci">int m_navg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:199</div></div>

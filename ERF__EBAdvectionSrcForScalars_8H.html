@@ -417,11 +417,11 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="structCENTERED2.html">CENTERED2</a> interp_prim_CEN2(cell_prim, 0);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structUPWIND3.html">UPWIND3</a>   interp_prim_UPW3(cell_prim, horiz_upw_frac);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> amrex::Box <a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a> = amrex::surroundingNodes(bx,0).grow(amrex::IntVect(0, 1, 1));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> amrex::Box <a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a> = amrex::surroundingNodes(bx,1).grow(amrex::IntVect(1, 0, 1));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> amrex::Box <a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a> = amrex::surroundingNodes(bx,2).grow(amrex::IntVect(1, 1, 0));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> amrex::Box <a class="code" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a> = amrex::surroundingNodes(bx,0).grow(amrex::IntVect(0, 1, 1));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> amrex::Box <a class="code" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a> = amrex::surroundingNodes(bx,1).grow(amrex::IntVect(1, 0, 1));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> amrex::Box <a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a> = amrex::surroundingNodes(bx,2).grow(amrex::IntVect(1, 1, 0));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
@@ -472,7 +472,7 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    });</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
@@ -525,7 +525,7 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    interp_prim_UPW3.SetUpwinding(vert_upw_frac);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    amrex::ParallelFor(<a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, ncomp,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
@@ -576,9 +576,9 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    });</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
-<div class="ttc" id="aERF__DiffSetup_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:23</div></div>
-<div class="ttc" id="aERF__DiffSetup_8H_html_a853a144267414a8a59c87f80ca5c958c"><div class="ttname"><a href="ERF__DiffSetup_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a></div><div class="ttdeci">const Box xbx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:21</div></div>
-<div class="ttc" id="aERF__DiffSetup_8H_html_ae3d636c41f5271630a5816a4b8b668b2"><div class="ttname"><a href="ERF__DiffSetup_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a></div><div class="ttdeci">const Box ybx</div><div class="ttdef"><b>Definition:</b> ERF_DiffSetup.H:22</div></div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:9</div></div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_a853a144267414a8a59c87f80ca5c958c"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a></div><div class="ttdeci">const Box xbx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:7</div></div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_ae3d636c41f5271630a5816a4b8b668b2"><div class="ttname"><a href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a></div><div class="ttdeci">const Box ybx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:8</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructCENTERED2_html"><div class="ttname"><a href="structCENTERED2.html">CENTERED2</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:10</div></div>
 <div class="ttc" id="astructUPWIND3_html"><div class="ttname"><a href="structUPWIND3.html">UPWIND3</a></div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:93</div></div>

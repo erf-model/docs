@@ -108,6 +108,7 @@ var structSolverChoice =
     [ "use_rotate_surface_flux", "structSolverChoice.html#ae6a9fda53f08dbed04adb4c63dc3176e", null ],
     [ "use_shoc", "structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1", null ],
     [ "variable_coriolis", "structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf", null ],
+    [ "vert_implicit_fac", "structSolverChoice.html#a677069e2ee74c2c9f94773a0bfc7b3a3", null ],
     [ "w_damping", "structSolverChoice.html#a5f7aa5c88f240e878f49d2ebeb59b6c4", null ],
     [ "w_damping_cfl", "structSolverChoice.html#a00a2f8f9913fd2642f1a41bee6cd5054", null ],
     [ "w_damping_coeff", "structSolverChoice.html#a8b2cf25c9083b29289177cffcd3de794", null ],

@@ -9,6 +9,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_FastRhs_MT.cpp", "ERF__FastRhs__MT_8cpp.html", "ERF__FastRhs__MT_8cpp" ],
     [ "ERF_FastRhs_N.cpp", "ERF__FastRhs__N_8cpp.html", "ERF__FastRhs__N_8cpp" ],
     [ "ERF_FastRhs_T.cpp", "ERF__FastRhs__T_8cpp.html", "ERF__FastRhs__T_8cpp" ],
+    [ "ERF_Implicit.H", "ERF__Implicit_8H.html", "ERF__Implicit_8H" ],
     [ "ERF_MakeFastCoeffs.cpp", "ERF__MakeFastCoeffs_8cpp.html", "ERF__MakeFastCoeffs_8cpp" ],
     [ "ERF_MakeTauTerms.cpp", "ERF__MakeTauTerms_8cpp.html", "ERF__MakeTauTerms_8cpp" ],
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [
