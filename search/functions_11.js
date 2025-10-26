@@ -73,7 +73,7 @@ var searchData=
   ['size_4749',['size',['../structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc',1,'InputSoundingData::size()'],['../structInputSpongeData.html#aff9684faaf6b3a26494766819e4ba6dd',1,'InputSpongeData::size()']]],
   ['slm_4750',['SLM',['../classSLM.html#a0f889af6d11c1e5fc4afbe7841e1c5c0',1,'SLM']]],
   ['solve_5fwith_5feb_5fmlmg_4751',['solve_with_EB_mlmg',['../classERF.html#aa31ae8bd097ec65d711070aedf11a14a',1,'ERF']]],
-  ['solve_5fwith_5fgmres_4752',['solve_with_gmres',['../classERF.html#a443319e7b870d7b246c8037673e934d1',1,'ERF']]],
+  ['solve_5fwith_5fgmres_4752',['solve_with_gmres',['../classERF.html#a0f29952fe5063d7a655e7e0ba4c5a7da',1,'ERF']]],
   ['solve_5fwith_5fmlmg_4753',['solve_with_mlmg',['../classERF.html#a8a7c7fe95147d8772047aa0772a09564',1,'ERF']]],
   ['source_5fterms_5fcellcentered_4754',['source_terms_cellcentered',['../classEWP.html#a4f28000173748f88919eda5fbed1368e',1,'EWP::source_terms_cellcentered()'],['../classFitch.html#aa56821341be1cf4d01558e297993c0f2',1,'Fitch::source_terms_cellcentered()'],['../classGeneralAD.html#a5be79013be63b8105a01534ca186de32',1,'GeneralAD::source_terms_cellcentered()'],['../classSimpleAD.html#ad5e7e7f089518b2158277c94013e4f01',1,'SimpleAD::source_terms_cellcentered()']]],
   ['stabilityfunction_4755',['StabilityFunction',['../ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2',1,'ERF_RichardsonNumber.H']]],

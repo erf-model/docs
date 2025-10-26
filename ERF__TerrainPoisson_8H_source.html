@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    amrex::Array&lt;std::string,2*AMREX_SPACEDIM&gt;&amp; domain_bcs_type,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    amrex::Gpu::DeviceVector&lt;amrex::Real&gt;&amp; stretched_dz_lev_d,</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    <span class="keyword">const</span> amrex::MultiFab&amp; ax, <span class="keyword">const</span> amrex::MultiFab&amp; ay,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keyword">const</span> amrex::MultiFab&amp; dJ,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    <span class="keyword">const</span> amrex::MultiFab&amp; az, <span class="keyword">const</span> amrex::MultiFab&amp; dJ,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    amrex::MultiFab <span class="keyword">const</span>* z_phys_nd,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    <span class="keywordtype">bool</span> use_real_bcs);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
@@ -151,15 +151,16 @@ $(document).ready(function(){initNavTree('ERF__TerrainPoisson_8H_source.html',''
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    amrex::Gpu::DeviceVector&lt;amrex::Real&gt; m_stretched_dz_d;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> amrex::MultiFab&amp; m_ax;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">const</span> amrex::MultiFab&amp; m_ay;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> amrex::MultiFab&amp; m_dJ;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> amrex::MultiFab* m_zphys;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::unique_ptr&lt;amrex::FFT::PoissonHybrid&lt;amrex::MultiFab&gt;&gt; m_2D_fft_precond;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    amrex::Array&lt;std::pair&lt;amrex::FFT::Boundary,amrex::FFT::Boundary&gt;,AMREX_SPACEDIM&gt; bc_fft;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> amrex::MultiFab&amp; m_az;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> amrex::MultiFab&amp; m_dJ;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">const</span> amrex::MultiFab* m_zphys;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::unique_ptr&lt;amrex::FFT::PoissonHybrid&lt;amrex::MultiFab&gt;&gt; m_2D_fft_precond;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    amrex::Array&lt;std::pair&lt;amrex::FFT::Boundary,amrex::FFT::Boundary&gt;,AMREX_SPACEDIM&gt; bc_fft;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TI__utils_8H_html_a5e7934b18ef63bc8c4c16db42277c52f"><div class="ttname"><a href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></div><div class="ttdeci">auto apply_bcs</div><div class="ttdef"><b>Definition:</b> ERF_TI_utils.H:73</div></div>
 <div class="ttc" id="aERF__TerrainPoisson__3D__K_8H_html"><div class="ttname"><a href="ERF__TerrainPoisson__3D__K_8H.html">ERF_TerrainPoisson_3D_K.H</a></div></div>

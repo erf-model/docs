@@ -145,7 +145,7 @@ var searchData=
   ['soil_5ftype_5flev_2851',['soil_type_lev',['../classERF.html#acd2294c008371e0139fd0c1a4a6e0a3a',1,'ERF']]],
   ['solar_5fzenith_2852',['solar_zenith',['../classERF.html#a69e6a357fd92f2c2ad9f6e0843372b16',1,'ERF']]],
   ['solve_5fwith_5feb_5fmlmg_2853',['solve_with_EB_mlmg',['../classERF.html#aa31ae8bd097ec65d711070aedf11a14a',1,'ERF']]],
-  ['solve_5fwith_5fgmres_2854',['solve_with_gmres',['../classERF.html#a443319e7b870d7b246c8037673e934d1',1,'ERF']]],
+  ['solve_5fwith_5fgmres_2854',['solve_with_gmres',['../classERF.html#a0f29952fe5063d7a655e7e0ba4c5a7da',1,'ERF']]],
   ['solve_5fwith_5fmlmg_2855',['solve_with_mlmg',['../classERF.html#a8a7c7fe95147d8772047aa0772a09564',1,'ERF']]],
   ['solverchoice_2856',['SolverChoice',['../structSolverChoice.html',1,'']]],
   ['solverchoice_2857',['solverChoice',['../classERF.html#a32dd48049e8acbe95decdd4b01b782c4',1,'ERF']]],
