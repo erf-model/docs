@@ -245,9 +245,9 @@ var NAVTREEINDEX1 =
 "ERF__Implicit_8H.html#a67c36e0de27983372e4818a15863c29c":[3,0,1,15,6,0],
 "ERF__Implicit_8H.html#a74186295dc885b213b57782b40f37266":[3,0,1,15,6,3],
 "ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c":[3,0,1,15,6,1],
-"ERF__Implicit_8H.html#adcf8906eb24e7e52034a5f9b0c4f4cb2":[3,0,1,15,6,4],
 "ERF__Implicit_8H_source.html":[3,0,1,15,6],
 "ERF__ImposeBCsOnPhi_8cpp.html":[3,0,1,8,2],
 "ERF__IndexDefines_8H.html":[3,0,1,24],
-"ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f":[3,0,1,24,23]
+"ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f":[3,0,1,24,23],
+"ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29":[3,0,1,24,7]
 };

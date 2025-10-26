@@ -61,6 +61,7 @@ var structSolverChoice =
     [ "if_use_most", "structSolverChoice.html#a2b1552473c77cafa7760c84fcff79650", null ],
     [ "if_z0", "structSolverChoice.html#a3a2b3ea3da7ce2b79df1b4b8f903f035", null ],
     [ "immersed_forcing_substep", "structSolverChoice.html#a6399ecd90040753b8fb3469172910133", null ],
+    [ "implicit_before_substep", "structSolverChoice.html#ad3e5ee4bc34a7322d170fb20020a3d2d", null ],
     [ "init_type", "structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1", null ],
     [ "io_hurricane_eye_tracker", "structSolverChoice.html#a76ca8df4b23607613ce44ad4fcec565e", null ],
     [ "lsm_type", "structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31", null ],
