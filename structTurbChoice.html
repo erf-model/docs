@@ -157,8 +157,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a53bf9b1ef0e50a6e25ffdb48f80de644"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f0fe84d6885a0d776865e04e9f15ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a> = true</td></tr>
 <tr class="separator:af6f0fe84d6885a0d776865e04e9f15ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8ce00a88b367d5b5b2d35f6456f88bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#ae8ce00a88b367d5b5b2d35f6456f88bb">use_moist_Ri_correction</a> = true</td></tr>
-<tr class="separator:ae8ce00a88b367d5b5b2d35f6456f88bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91229136f73ac0c17d16cdc1296c6e7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a91229136f73ac0c17d16cdc1296c6e7a">use_Ri_correction</a> = true</td></tr>
+<tr class="separator:a91229136f73ac0c17d16cdc1296c6e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4918d48a736849821e9901d076d9ab85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a4918d48a736849821e9901d076d9ab85">Ri_crit</a> = 0.25</td></tr>
 <tr class="separator:a4918d48a736849821e9901d076d9ab85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52f7f04548a91715b142c88c2f214bc8"><td class="memItemLeft" align="right" valign="top">RANSType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">rans_type</a></td></tr>
@@ -243,8 +243,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Using Smagorinsky LES model at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#ae8ce00a88b367d5b5b2d35f6456f88bb">use_moist_Ri_correction</a>) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Smagorinsky uses moist Richardson number correction with Ri_crit = &quot;</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#a91229136f73ac0c17d16cdc1296c6e7a">use_Ri_correction</a>) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;    Smagorinsky uses Richardson number correction with Ri_crit = &quot;</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                       &lt;&lt; <a class="code" href="structTurbChoice.html#a4918d48a736849821e9901d076d9ab85">Ri_crit</a> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      }</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a> == LESType::Deardorff) {</div>
@@ -369,6 +369,7 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="astructTurbChoice_html_a727a9673de0517e62e58647a5d939b07"><div class="ttname"><a href="structTurbChoice.html#a727a9673de0517e62e58647a5d939b07">TurbChoice::pbl_ysu_use_consistent_coriolis</a></div><div class="ttdeci">bool pbl_ysu_use_consistent_coriolis</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:414</div></div>
 <div class="ttc" id="astructTurbChoice_html_a83a6313a910638e87513e6aac7149f6a"><div class="ttname"><a href="structTurbChoice.html#a83a6313a910638e87513e6aac7149f6a">TurbChoice::Cb</a></div><div class="ttdeci">amrex::Real Cb</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:366</div></div>
 <div class="ttc" id="astructTurbChoice_html_a878d24adc08454fd536eb887067dbb4b"><div class="ttname"><a href="structTurbChoice.html#a878d24adc08454fd536eb887067dbb4b">TurbChoice::pbl_mrf_sf</a></div><div class="ttdeci">amrex::Real pbl_mrf_sf</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:430</div></div>
+<div class="ttc" id="astructTurbChoice_html_a91229136f73ac0c17d16cdc1296c6e7a"><div class="ttname"><a href="structTurbChoice.html#a91229136f73ac0c17d16cdc1296c6e7a">TurbChoice::use_Ri_correction</a></div><div class="ttdeci">bool use_Ri_correction</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:383</div></div>
 <div class="ttc" id="astructTurbChoice_html_a96c1a42307db82ece270acdac75da9a3"><div class="ttname"><a href="structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3">TurbChoice::pbl_ysu_land_Ribcr</a></div><div class="ttdeci">amrex::Real pbl_ysu_land_Ribcr</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:420</div></div>
 <div class="ttc" id="astructTurbChoice_html_a9898dccda92477a5fff6183b0df47c95"><div class="ttname"><a href="structTurbChoice.html#a9898dccda92477a5fff6183b0df47c95">TurbChoice::mrf_moistvars</a></div><div class="ttdeci">bool mrf_moistvars</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:432</div></div>
 <div class="ttc" id="astructTurbChoice_html_aa75682bb872d7917ffb8fddb21532f40"><div class="ttname"><a href="structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40">TurbChoice::Cs</a></div><div class="ttdeci">amrex::Real Cs</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:356</div></div>
@@ -378,7 +379,6 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="astructTurbChoice_html_ac20bc5ed8f1482a520b623dc9cc1ef52"><div class="ttname"><a href="structTurbChoice.html#ac20bc5ed8f1482a520b623dc9cc1ef52">TurbChoice::pbl_ysu_coriolis_freq</a></div><div class="ttdeci">amrex::Real pbl_ysu_coriolis_freq</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:411</div></div>
 <div class="ttc" id="astructTurbChoice_html_ac49c18b95424fe04c6a7c8eec934ec36"><div class="ttname"><a href="structTurbChoice.html#ac49c18b95424fe04c6a7c8eec934ec36">TurbChoice::pbl_ysu_force_over_water</a></div><div class="ttdeci">bool pbl_ysu_force_over_water</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:417</div></div>
 <div class="ttc" id="astructTurbChoice_html_ae1bec6cf14226b68f692f86daa1c5566"><div class="ttname"><a href="structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566">TurbChoice::Pr_t</a></div><div class="ttdeci">amrex::Real Pr_t</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:348</div></div>
-<div class="ttc" id="astructTurbChoice_html_ae8ce00a88b367d5b5b2d35f6456f88bb"><div class="ttname"><a href="structTurbChoice.html#ae8ce00a88b367d5b5b2d35f6456f88bb">TurbChoice::use_moist_Ri_correction</a></div><div class="ttdeci">bool use_moist_Ri_correction</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:383</div></div>
 <div class="ttc" id="astructTurbChoice_html_aeb3c184b540858407426a606327fba3a"><div class="ttname"><a href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">TurbChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:376</div></div>
 <div class="ttc" id="astructTurbChoice_html_aed763f56a6349187c9c0c0e4c952d05a"><div class="ttname"><a href="structTurbChoice.html#aed763f56a6349187c9c0c0e4c952d05a">TurbChoice::Sc_t</a></div><div class="ttdeci">amrex::Real Sc_t</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:352</div></div>
 <div class="ttc" id="astructTurbChoice_html_af1a3ee3179cdc41f8306027ce20722ce"><div class="ttname"><a href="structTurbChoice.html#af1a3ee3179cdc41f8306027ce20722ce">TurbChoice::Rt_crit</a></div><div class="ttdeci">amrex::Real Rt_crit</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:367</div></div>
@@ -581,7 +581,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;theta_ref&quot;</span>, <a class="code" href="structTurbChoice.html#aeb3c184b540858407426a606327fba3a">theta_ref</a>, lev, max_level);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;mix_isotropic&quot;</span>, <a class="code" href="structTurbChoice.html#af6f0fe84d6885a0d776865e04e9f15ba">mix_isotropic</a>, lev, max_level);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;use_moist_Ri_correction&quot;</span>, <a class="code" href="structTurbChoice.html#ae8ce00a88b367d5b5b2d35f6456f88bb">use_moist_Ri_correction</a>, lev, max_level);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;use_Ri_correction&quot;</span>, <a class="code" href="structTurbChoice.html#a91229136f73ac0c17d16cdc1296c6e7a">use_Ri_correction</a>, lev, max_level);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#af7b9f201e04bee403b3d27170c324861">query_one_or_per_level</a>(<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, <span class="stringliteral">&quot;Ri_crit&quot;</span>, <a class="code" href="structTurbChoice.html#a4918d48a736849821e9901d076d9ab85">Ri_crit</a>, lev, max_level);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// Set common flags</span></div>
@@ -1288,22 +1288,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ae8ce00a88b367d5b5b2d35f6456f88bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8ce00a88b367d5b5b2d35f6456f88bb">&#9670;&nbsp;</a></span>use_moist_Ri_correction</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TurbChoice::use_moist_Ri_correction = true</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
-
-</div>
-</div>
 <a id="a1c0bd3122b5d4d9ee9425d294ec3bf4b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c0bd3122b5d4d9ee9425d294ec3bf4b">&#9670;&nbsp;</a></span>use_pbl_tke</h2>
 
@@ -1319,6 +1303,22 @@ Here is the call graph for this function:</div>
 <div class="line">    <span class="keyword">false</span></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+
+</div>
+</div>
+<a id="a91229136f73ac0c17d16cdc1296c6e7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91229136f73ac0c17d16cdc1296c6e7a">&#9670;&nbsp;</a></span>use_Ri_correction</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TurbChoice::use_Ri_correction = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36">ComputeTurbulentViscosityLES()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>

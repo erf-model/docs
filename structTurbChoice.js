@@ -41,7 +41,7 @@ var structTurbChoice =
     [ "theta_ref", "structTurbChoice.html#aeb3c184b540858407426a606327fba3a", null ],
     [ "use_keqn", "structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343", null ],
     [ "use_kturb", "structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe", null ],
-    [ "use_moist_Ri_correction", "structTurbChoice.html#ae8ce00a88b367d5b5b2d35f6456f88bb", null ],
     [ "use_pbl_tke", "structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b", null ],
+    [ "use_Ri_correction", "structTurbChoice.html#a91229136f73ac0c17d16cdc1296c6e7a", null ],
     [ "use_tke", "structTurbChoice.html#a9af852bc81e32814ae4da218aa946406", null ]
 ];
