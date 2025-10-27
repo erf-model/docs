@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('ERF__Implicit_8H_source.html',''); ini
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_stretched_dz = (solverChoice.mesh_type == MeshType::StretchedDz);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_SurfLayer = (m_SurfaceLayer != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keyword">const</span> BCRec* bc_ptr_d = domain_bcs_type_d.data();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keyword">const</span> BCRec* bc_ptr_h = domain_bcs_type.data();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_turb       = solverChoice.turbChoice[level].use_kturb;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
@@ -128,21 +128,21 @@ $(document).ready(function(){initNavTree('ERF__Implicit_8H_source.html',''); ini
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                               cell_data,</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                               stretched_dz_d[level], hfx_z,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                               mu_turb, solverChoice,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                               bc_ptr_d, l_use_SurfLayer, l_vert_implicit_fac);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                               bc_ptr_h, l_use_SurfLayer, l_vert_implicit_fac);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                        <a class="code" href="ERF__Diffusion_8H.html#abc1ccb1cf6c2784db3ba751530469f57">ImplicitDiffForState_T</a>(bx, fine_geom.Domain(), level, slow_dt,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                               <a class="code" href="ERF__Implicit_8H.html#a74186295dc885b213b57782b40f37266">l_bc_neumann_vals_d</a>,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                               cell_data,</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                               z_nd_arr, detJ_arr, dxInv, hfx_z,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                               mu_turb, solverChoice,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                               bc_ptr_d, l_use_SurfLayer, l_vert_implicit_fac);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                               bc_ptr_h, l_use_SurfLayer, l_vert_implicit_fac);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        <a class="code" href="ERF__Diffusion_8H.html#a68d4b224ab7cbe5c12cf24c5601c4b8c">ImplicitDiffForState_N</a>(bx, fine_geom.Domain(), level, slow_dt,</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                               <a class="code" href="ERF__Implicit_8H.html#a74186295dc885b213b57782b40f37266">l_bc_neumann_vals_d</a>,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                               cell_data,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                               dxInv, hfx_z,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                               mu_turb, solverChoice,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                               bc_ptr_d, l_use_SurfLayer, l_vert_implicit_fac);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                               bc_ptr_h, l_use_SurfLayer, l_vert_implicit_fac);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
