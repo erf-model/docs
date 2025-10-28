@@ -235,10 +235,13 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__headers_8H_source.html'
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                       amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_ylo,</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                       amrex::Vector&lt;amrex::Vector&lt;amrex::FArrayBox&gt;&gt;&amp; bdy_data_yhi,</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;#endif</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                       amrex::YAFluxRegister* fr_as_crse,</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                       amrex::YAFluxRegister* fr_as_fine);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;#ifdef ERF_USE_SHOC</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                      std::unique_ptr&lt;SHOCInterface&gt;&amp; shoc_lev,</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;#endif</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                       amrex::YAFluxRegister* fr_as_crse,</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                       amrex::YAFluxRegister* fr_as_fine);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Advection_8H_html"><div class="ttname"><a href="ERF__Advection_8H.html">ERF_Advection.H</a></div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__Diffusion_8H_html"><div class="ttname"><a href="ERF__Diffusion_8H.html">ERF_Diffusion.H</a></div></div>

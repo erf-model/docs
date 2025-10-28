@@ -247,7 +247,7 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = fine_geom.InvCellSizeArray();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> (solverChoice.vert_implicit_fac[nrk] &amp;&amp; !solverChoice.implicit_before_substep &amp;&amp;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span> ((solverChoice.vert_implicit_fac[nrk] &gt; 0.) &amp;&amp; !solverChoice.implicit_before_substep &amp;&amp;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            fast_step == n_sub-1)</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            MultiFab scratch(S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>], make_alias, 0, 2);</div>
@@ -284,7 +284,7 @@ $(document).ready(function(){initNavTree('ERF__TI__substep__fun_8H_source.html',
 <div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269aaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:161</div></div>
 <div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:159</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a82dcb2bcc4216c918036c4e28127276da9f81c8a38dd25b5ae5821d48e8878b03"><div class="ttname"><a href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da9f81c8a38dd25b5ae5821d48e8878b03">MicVar_Kess::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:27</div></div>
-<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:892</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:894</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
