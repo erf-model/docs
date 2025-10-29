@@ -332,7 +332,7 @@ var namespaces_dup =
       [ "rrtmgp_finalize", "namespacerrtmgp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
       [ "rrtmgp_initialize", "namespacerrtmgp.html#a0753e963249f868a2d6f9e23110965eb", null ],
       [ "rrtmgp_lw", "namespacerrtmgp.html#a981dec0614426817d7f129461a704ee2", null ],
-      [ "rrtmgp_main", "namespacerrtmgp.html#af2da78cdf65c513bab1ed8bb5d6aa0ec", null ],
+      [ "rrtmgp_main", "namespacerrtmgp.html#a32d53f4d26e720d537e8e82ed5cb6482", null ],
       [ "rrtmgp_sw", "namespacerrtmgp.html#a83b2e0892e5b475f2f464b4285edfe47", null ],
       [ "cloud_optics_lw_k", "namespacerrtmgp.html#abdc3f481e2737031e19284d105197d74", null ],
       [ "cloud_optics_sw_k", "namespacerrtmgp.html#aa5ad83af0786838007f2c35361146f8e", null ],

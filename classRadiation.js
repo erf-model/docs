@@ -13,7 +13,7 @@ var classRadiation =
     [ "mf_to_kokkos_buffers", "classRadiation.html#ab7ca3f6533f347aa65fd6405f4d50b8a", null ],
     [ "populateDatalogMF", "classRadiation.html#a470698cb4f2251f1f3fb85f755a9185e", null ],
     [ "rad_run_impl", "classRadiation.html#a85e5c7a8f70d91d8762cc241dfda691a", null ],
-    [ "Run", "classRadiation.html#aa33b926fe801ccf363e7a34c99d917b6", null ],
+    [ "Run", "classRadiation.html#a6ba8b778d3d361fb6a758698c7b3030f", null ],
     [ "run_impl", "classRadiation.html#a3eab5714d47ed767884a66a8dc1058df", null ],
     [ "set_grids", "classRadiation.html#adf49f9f6f6cbd79bc1ecbf1d5c6f59bb", null ],
     [ "write_rrtmgp_fluxes", "classRadiation.html#aba28af1cb28622e8f8aa674f9a3b9cda", null ],
