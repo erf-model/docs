@@ -868,7 +868,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">anelastic</a>[level] == 0)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ngrow = (l_eb_terrain) ? 2 : 1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> ngrow = (l_eb_terrain) ? 3 : 1;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        MultiFab p(S_data[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].boxArray(), S_data[<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].DistributionMap(), 1, ngrow);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// *****************************************************************************</span></div>
