@@ -388,6 +388,7 @@ var classERF =
     [ "Qv_prim", "classERF.html#a521d1faf157e3bccc86c0f26ee923576", null ],
     [ "rad", "classERF.html#a609b41a1de9c6b28f23dcdc6843f9ef5", null ],
     [ "rad_datalog_int", "classERF.html#a9194db6f65f3cfa366010648eaa4affd", null ],
+    [ "rad_fluxes", "classERF.html#afbdb6ebd90d8f8a2af148d66c1f81be9", null ],
     [ "real_extrap_w", "classERF.html#a88773bf8e93e24a7e47206e26c807777", null ],
     [ "real_set_width", "classERF.html#acab120bb9324e7298534d765c447d703", null ],
     [ "real_width", "classERF.html#abb15119348ad5399947bc8883084b230", null ],
