@@ -261,9 +261,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> IntVect vdim(IntVect::TheDimensionVector(a_idim));</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> BoxArray&amp; grids = amrex::convert(a_grids, vdim);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">const</span> BoxArray&amp; my_grids = amrex::convert(a_grids, vdim);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classeb__aux__.html#a5c0a48220b066b1aae77df9fd93bd941">m_cellflags</a> = <span class="keyword">new</span> FabArray&lt;EBCellFlagFab&gt;(grids, a_dmap, 1, a_ngrow[0], MFInfo(),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classeb__aux__.html#a5c0a48220b066b1aae77df9fd93bd941">m_cellflags</a> = <span class="keyword">new</span> FabArray&lt;EBCellFlagFab&gt;(my_grids, a_dmap, 1, a_ngrow[0], MFInfo(),</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                            DefaultFabFactory&lt;EBCellFlagFab&gt;());</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// Set m_cellflags type to singlevalued</span></div>
@@ -273,8 +273,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    fab.setType(FabType::singlevalued);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classeb__aux__.html#a982bec8ebf44ae49614d4246cc396608">m_volfrac</a> = <span class="keyword">new</span> MultiFab(grids, a_dmap, 1, a_ngrow[1], MFInfo(), FArrayBoxFactory());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classeb__aux__.html#ab5db804e82bf4698c7a9166a4934d45a">m_volcent</a> = <span class="keyword">new</span> MultiFab(grids, a_dmap, AMREX_SPACEDIM, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="classeb__aux__.html#a982bec8ebf44ae49614d4246cc396608">m_volfrac</a> = <span class="keyword">new</span> MultiFab(my_grids, a_dmap, 1, a_ngrow[1], MFInfo(), FArrayBoxFactory());</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classeb__aux__.html#ab5db804e82bf4698c7a9166a4934d45a">m_volcent</a> = <span class="keyword">new</span> MultiFab(my_grids, a_dmap, AMREX_SPACEDIM, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keyword">const</span> BoxArray&amp; faceba = amrex::convert(a_grids, IntVect::TheDimensionVector(idim));</div>
@@ -287,9 +287,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classeb__aux__.html#a8ba3736b49d09b7dd64ecaa5f2cfa7f6">m_bndryarea</a> = <span class="keyword">new</span> MultiFab(grids, a_dmap, 1, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="classeb__aux__.html#aa1ed622885a3008aa3ff4b4daa32a180">m_bndrycent</a> = <span class="keyword">new</span> MultiFab(grids, a_dmap, AMREX_SPACEDIM, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classeb__aux__.html#a5c234571a295799813de1ca78d50f9a2">m_bndrynorm</a> = <span class="keyword">new</span> MultiFab(grids, a_dmap, AMREX_SPACEDIM, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classeb__aux__.html#a8ba3736b49d09b7dd64ecaa5f2cfa7f6">m_bndryarea</a> = <span class="keyword">new</span> MultiFab(my_grids, a_dmap, 1, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="classeb__aux__.html#aa1ed622885a3008aa3ff4b4daa32a180">m_bndrycent</a> = <span class="keyword">new</span> MultiFab(my_grids, a_dmap, AMREX_SPACEDIM, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="classeb__aux__.html#a5c234571a295799813de1ca78d50f9a2">m_bndrynorm</a> = <span class="keyword">new</span> MultiFab(my_grids, a_dmap, AMREX_SPACEDIM, a_ngrow[2], MFInfo(), FArrayBoxFactory());</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// Initialize with zeros</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classeb__aux__.html#a982bec8ebf44ae49614d4246cc396608">m_volfrac</a>-&gt;setVal(0.0);</div>
