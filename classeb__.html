@@ -165,6 +165,14 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a37b3fc548dfc8eb2ad7723de8e357b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a113a041eb564cdc3f50b7957b8c030c5"><td class="memItemLeft" align="right" valign="top">amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">getNonConstEBCellFlags</a> (const amrex::EBFArrayBoxFactory &amp;ebfact)</td></tr>
 <tr class="separator:a113a041eb564cdc3f50b7957b8c030c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d2bf2fbda20ea8bc2514c200093fa65"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#a7d2bf2fbda20ea8bc2514c200093fa65">getNonConstVolFrac</a> (const amrex::EBFArrayBoxFactory &amp;ebfact)</td></tr>
+<tr class="separator:a7d2bf2fbda20ea8bc2514c200093fa65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa093b547d5c3157d036fe8513be4ae3d"><td class="memItemLeft" align="right" valign="top">amrex::MultiCutFab &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#aa093b547d5c3157d036fe8513be4ae3d">getNonConstCentroid</a> (const amrex::EBFArrayBoxFactory &amp;ebfact)</td></tr>
+<tr class="separator:aa093b547d5c3157d036fe8513be4ae3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ffe2aa79f290bc7ceee9d29b5abd061"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; amrex::MultiCutFab *, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#a3ffe2aa79f290bc7ceee9d29b5abd061">getNonConstAreaFrac</a> (const amrex::EBFArrayBoxFactory &amp;ebfact)</td></tr>
+<tr class="separator:a3ffe2aa79f290bc7ceee9d29b5abd061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fdb5cd33458c754de1c46e38b2d5dc7"><td class="memItemLeft" align="right" valign="top">amrex::Array&lt; amrex::MultiCutFab *, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeb__.html#a8fdb5cd33458c754de1c46e38b2d5dc7">getNonConstFaceCent</a> (const amrex::EBFArrayBoxFactory &amp;ebfact)</td></tr>
+<tr class="separator:a8fdb5cd33458c754de1c46e38b2d5dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -537,6 +545,70 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3ffe2aa79f290bc7ceee9d29b5abd061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ffe2aa79f290bc7ceee9d29b5abd061">&#9670;&nbsp;</a></span>getNonConstAreaFrac()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; eb_::getNonConstAreaFrac </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::EBFArrayBoxFactory &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="keyword">auto</span> afrac_const = ebfact.getAreaFrac();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; afrac;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          afrac[dir] = <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab*<span class="keyword">&gt;</span>(afrac_const[dir]);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      <span class="keywordflow">return</span> afrac;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa093b547d5c3157d036fe8513be4ae3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa093b547d5c3157d036fe8513be4ae3d">&#9670;&nbsp;</a></span>getNonConstCentroid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::MultiCutFab&amp; eb_::getNonConstCentroid </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::EBFArrayBoxFactory &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="keyword">const</span> amrex::MultiCutFab&amp; vcent_const = ebfact.getCentroid();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab&amp;<span class="keyword">&gt;</span>(vcent_const);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a113a041eb564cdc3f50b7957b8c030c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a113a041eb564cdc3f50b7957b8c030c5">&#9670;&nbsp;</a></span>getNonConstEBCellFlags()</h2>
 
@@ -561,8 +633,8 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keyword">const</span> amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp; flags_const = ebfact.getMultiEBCellFlagFab();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp;<span class="keyword">&gt;</span>(flags_const);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">const</span> amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp; flags_const = ebfact.getMultiEBCellFlagFab();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::FabArray&lt;amrex::EBCellFlagFab&gt;&amp;<span class="keyword">&gt;</span>(flags_const);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#aff03357e8f226d451ed970b6bb4ab773">set_connection_flags()</a>.</p>
@@ -577,6 +649,70 @@ Here is the caller graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a8fdb5cd33458c754de1c46e38b2d5dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fdb5cd33458c754de1c46e38b2d5dc7">&#9670;&nbsp;</a></span>getNonConstFaceCent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; eb_::getNonConstFaceCent </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::EBFArrayBoxFactory &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keyword">auto</span> fcent_const = ebfact.getFaceCent();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      amrex::Array&lt;amrex::MultiCutFab*, AMREX_SPACEDIM&gt; fcent;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;          fcent[dir] = <span class="keyword">const_cast&lt;</span>amrex::MultiCutFab*<span class="keyword">&gt;</span>(fcent_const[dir]);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <span class="keywordflow">return</span> fcent;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7d2bf2fbda20ea8bc2514c200093fa65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d2bf2fbda20ea8bc2514c200093fa65">&#9670;&nbsp;</a></span>getNonConstVolFrac()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::MultiFab&amp; eb_::getNonConstVolFrac </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::EBFArrayBoxFactory &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keyword">const</span> amrex::MultiFab&amp; vfrac_const = ebfact.getVolFrac();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span>amrex::MultiFab&amp;<span class="keyword">&gt;</span>(vfrac_const);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6db8bacd7f6bf7a7c7d040539782d402"></a>
