@@ -383,10 +383,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="comment">// LHS for tri-diagonal system</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> D = dtau * dtau * beta_2 * beta_2 * dzi;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                coeffA_a(i,j,k) = D * ( halfg - coeff_Q * theta_t_lo );</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                coeffC_a(i,j,k) = D * (-halfg + coeff_P * theta_t_hi );</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                coeffA_a(i,j,k) = D * (1./detJ(i,j,k-1)) * ( halfg - coeff_Q * theta_t_lo );</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                coeffC_a(i,j,k) = D * (1./detJ(i,j,k  )) * (-halfg + coeff_P * theta_t_hi );</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                coeffB_a(i,j,k) = detJ_on_kface + D * (coeff_Q - coeff_P) * theta_t_mid;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                coeffB_a(i,j,k) = 1.0 + D * (coeff_Q/detJ(i,j,k-1) - coeff_P/detJ(i,j,k)) * theta_t_mid;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            });</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        } <span class="keywordflow">else</span> {</div>
