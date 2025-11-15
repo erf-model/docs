@@ -383,7 +383,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    AMREX_ALWAYS_ASSERT(bxz.smallEnd(2) &gt; 0);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a> = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">auto</span> dxInv = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Compute mapfactor inverses</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Box box2d_u(bxx);   box2d_u.setRange(2,0);   box2d_u.grow({3,3,0});</div>
@@ -438,7 +438,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_ux(i,j,0) * mf_uy(i,j,0);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * <a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a> * mfsq</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * dxInv * mfsq</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                  + (yflux_hi - yflux_lo) * dyInv * mfsq</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                  + (zflux_hi - zflux_lo) * dzInv;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                rho_u_rhs(i, j, k) = -advectionSrc / (0.5 * (detJ(i,j,k) + detJ(i-1,j,k)));</div>
@@ -467,7 +467,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_vx(i,j,0) * mf_vy(i,j,0);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * <a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a> * mfsq</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * dxInv * mfsq</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                  + (yflux_hi - yflux_lo) * dyInv * mfsq</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                  + (zflux_hi - zflux_lo) * dzInv;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                rho_v_rhs(i, j, k) = -advectionSrc / (0.5 * (detJ(i,j,k) + detJ(i,j-1,k)));</div>
@@ -498,7 +498,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_mx(i,j,0) * mf_my(i,j,0);</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * <a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a> * mfsq</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * dxInv * mfsq</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                  + (yflux_hi - yflux_lo) * dyInv * mfsq</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                  + (zflux_hi - zflux_lo) * dzInv;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                rho_w_rhs(i, j, k) = -advectionSrc / (0.5*(detJ(i,j,k) + detJ(i,j,k-1)));</div>
@@ -620,7 +620,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
 <div class="ttc" id="aERF__AdvectionSrcForMom__TF_8cpp_html_afe14bbf87c2a18301b0caa85ec3186f5"><div class="ttname"><a href="ERF__AdvectionSrcForMom__TF_8cpp.html#afe14bbf87c2a18301b0caa85ec3186f5">AdvectionSrcForMom_TF</a></div><div class="ttdeci">void AdvectionSrcForMom_TF(const Box &amp;bxx, const Box &amp;bxy, const Box &amp;bxz, const Array4&lt; Real &gt; &amp;rho_u_rhs, const Array4&lt; Real &gt; &amp;rho_v_rhs, const Array4&lt; Real &gt; &amp;rho_w_rhs, const Array4&lt; const Real &gt; &amp;u, const Array4&lt; const Real &gt; &amp;v, const Array4&lt; const Real &gt; &amp;w, const Array4&lt; const Real &gt; &amp;rho_u, const Array4&lt; const Real &gt; &amp;rho_v, const Array4&lt; const Real &gt; &amp;Omega, const Array4&lt; const Real &gt; &amp;z_nd, const Array4&lt; const Real &gt; &amp;ax, const Array4&lt; const Real &gt; &amp;ay, const Array4&lt; const Real &gt; &amp;az, const Array4&lt; const Real &gt; &amp;detJ, const GpuArray&lt; Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const Array4&lt; const Real &gt; &amp;mf_mx, const Array4&lt; const Real &gt; &amp;mf_ux, const Array4&lt; const Real &gt; &amp;mf_vx, const Array4&lt; const Real &gt; &amp;mf_my, const Array4&lt; const Real &gt; &amp;mf_uy, const Array4&lt; const Real &gt; &amp;mf_vy, const AdvType horiz_adv_type, const AdvType vert_adv_type, const Real horiz_upw_frac, const Real vert_upw_frac, const int lo_z_face, const int hi_z_face)</div><div class="ttdef"><b>Definition:</b> ERF_AdvectionSrcForMom_TF.cpp:38</div></div>
-<div class="ttc" id="aERF__Implicit_8H_html_a233a13c8d48ed3d4e805cf9abe69263a"><div class="ttname"><a href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a></div><div class="ttdeci">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_Implicit.H:7</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a3095d588151e351b421893f62411d15e"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a3095d588151e351b421893f62411d15e">AdvType::Weno_7</a></div><div class="ttdeci">@ Weno_7</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a40adf6565c1a31b2c72d8072412d0b9f">AdvType::Upwind_3rd</a></div><div class="ttdeci">@ Upwind_3rd</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a6edd20e2cefe2061bec0e1ebbf5c8573"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a6edd20e2cefe2061bec0e1ebbf5c8573">AdvType::Weno_7Z</a></div><div class="ttdeci">@ Weno_7Z</div></div>

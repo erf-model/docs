@@ -368,7 +368,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    BL_PROFILE_REGION(<span class="stringliteral">&quot;erf_make_mom_sources()&quot;</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Box domain(geom.Domain());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a> = geom.InvCellSizeArray();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Initialize sources to zero each time we may use them</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    xmom_src.setVal(0.0);</div>
@@ -784,7 +784,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                ParallelFor(tbx, tby,</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                {</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*<a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a>[2];</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*dxInv[2];</div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                    <span class="keywordflow">if</span> (z_nd_arr) {</div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_xf_lo = 0.25 * ( z_nd_arr(i,j,k  ) + z_nd_arr(i,j+1,k  )</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                                              + z_nd_arr(i,j,k-1) + z_nd_arr(i,j+1,k-1) );</div>
@@ -800,7 +800,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                },</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                {</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*<a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a>[2];</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*dxInv[2];</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                    <span class="keywordflow">if</span> (z_nd_arr) {</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_yf_lo = 0.25 * ( z_nd_arr(i,j,k  ) + z_nd_arr(i+1,j,k  )</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                                              + z_nd_arr(i,j,k-1) + z_nd_arr(i+1,j,k-1) );</div>
@@ -818,7 +818,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                ParallelFor(tbx, tby,</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                {</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*<a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a>[2];</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*dxInv[2];</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    <span class="keywordflow">if</span> (z_nd_arr) {</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_xf_lo = 0.25 * ( z_nd_arr(i,j,k  ) + z_nd_arr(i,j+1,k  )</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                                              + z_nd_arr(i,j,k-1) + z_nd_arr(i,j+1,k-1) );</div>
@@ -833,7 +833,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                },</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                {</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*<a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a>[2];</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 0.5*dxInv[2];</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                    <span class="keywordflow">if</span> (z_nd_arr) {</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_yf_lo = 0.25 * ( z_nd_arr(i,j,k  ) + z_nd_arr(i+1,j,k  )</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                                              + z_nd_arr(i,j,k-1) + z_nd_arr(i+1,j,k-1) );</div>
@@ -1178,7 +1178,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                          + z_nd_arr(i+1,j+1,k+1) - z_nd_arr(i+1,j+1,k-1) );</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                    }</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                    dzInv = <a class="code" href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a>[2];</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                    dzInv = dxInv[2];</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                }</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_on_w_face = 0.5 * ( cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
@@ -1212,7 +1212,6 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__DataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd"><div class="ttname"><a href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd">wbar</a></div><div class="ttdeci">@ wbar</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:91</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a3856c8a2f055327ada182186bfd70239acb08c6a1b8bca5e9e4ef6162aef2cfa4"><div class="ttname"><a href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239acb08c6a1b8bca5e9e4ef6162aef2cfa4">vbar</a></div><div class="ttdeci">@ vbar</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:91</div></div>
 <div class="ttc" id="aERF__DirectionSelector_8H_html_aca321ed7fddfe43ff7549b4632a3c0d1"><div class="ttname"><a href="ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a></div><div class="ttdeci">DirectionSelector&lt; 2 &gt; ZDir</div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:38</div></div>
-<div class="ttc" id="aERF__Implicit_8H_html_a233a13c8d48ed3d4e805cf9abe69263a"><div class="ttname"><a href="ERF__Implicit_8H.html#a233a13c8d48ed3d4e805cf9abe69263a">dxInv</a></div><div class="ttdeci">const GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_Implicit.H:7</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__NumericalDiffusion_8cpp_html_a55bafde70bac8a562579a7ba5c0c53f3"><div class="ttname"><a href="ERF__NumericalDiffusion_8cpp.html#a55bafde70bac8a562579a7ba5c0c53f3">NumericalDiffusion_Ymom</a></div><div class="ttdeci">void NumericalDiffusion_Ymom(const Box &amp;bx, const Real dt, const Real num_diff_coeff, const Array4&lt; const Real &gt; &amp;prim_data, const Array4&lt; const Real &gt; &amp;cell_data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mfx_arr, const Array4&lt; const Real &gt; &amp;mfy_arr)</div><div class="ttdef"><b>Definition:</b> ERF_NumericalDiffusion.cpp:151</div></div>
