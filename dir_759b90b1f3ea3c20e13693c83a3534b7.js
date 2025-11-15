@@ -15,7 +15,7 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_SlowRhsPost.cpp", "ERF__SlowRhsPost_8cpp.html", "ERF__SlowRhsPost_8cpp" ],
     [ "ERF_SlowRhsPre.cpp", "ERF__SlowRhsPre_8cpp.html", "ERF__SlowRhsPre_8cpp" ],
     [ "ERF_Substep_MT.cpp", "ERF__Substep__MT_8cpp.html", "ERF__Substep__MT_8cpp" ],
-    [ "ERF_Substep_N.cpp", "ERF__Substep__N_8cpp.html", "ERF__Substep__N_8cpp" ],
+    [ "ERF_Substep_NS.cpp", "ERF__Substep__NS_8cpp.html", "ERF__Substep__NS_8cpp" ],
     [ "ERF_Substep_T.cpp", "ERF__Substep__T_8cpp.html", "ERF__Substep__T_8cpp" ],
     [ "ERF_TI_fast_headers.H", "ERF__TI__fast__headers_8H.html", "ERF__TI__fast__headers_8H" ],
     [ "ERF_TI_no_substep_fun.H", "ERF__TI__no__substep__fun_8H.html", "ERF__TI__no__substep__fun_8H" ],

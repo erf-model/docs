@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29":[3,0,1,24,7],
 "ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138":[3,0,1,24,3],
 "ERF__IndexDefines_8H.html#a2564ef35937a97a2a6c90ca51ae7cdf3":[3,0,1,24,8],
 "ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49":[3,0,1,24,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__NCInterface_8H_source.html":[3,0,1,6,4],
 "ERF__NCInterface_8cpp.html":[3,0,1,6,3],
 "ERF__NCInterface_8cpp.html#aa67f9bcab4a9da3e92f2e2f3b4ec5979":[3,0,1,6,3,0],
-"ERF__NCPlotFile_8cpp.html":[3,0,1,6,5],
-"ERF__NCPlotFile_8cpp.html#ad9a51088de1000816aac4e945c877b84":[3,0,1,6,5,0]
+"ERF__NCPlotFile_8cpp.html":[3,0,1,6,5]
 };

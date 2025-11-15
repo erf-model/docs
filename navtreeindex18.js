@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"structSpongeChoice.html#a66fd55eceebbe3e97e31325cc55369de":[2,0,71,0],
 "structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e":[2,0,71,7],
 "structSpongeChoice.html#a980e2c4485a0769eb0405a77445e3db1":[2,0,71,8],
 "structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76":[2,0,71,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "structadiabatic__charnock.html#a9928bcb7de921bc371f428b3efe795bd":[2,0,2,0],
 "structadiabatic__charnock.html#ac03e171bb5c7384788aa4f3065a7c593":[2,0,2,4],
 "structadiabatic__charnock.html#ad4c4fe599c1b8692fa8ef8346866c349":[2,0,2,3],
-"structadiabatic__donelan.html":[2,0,3],
-"structadiabatic__donelan.html#a1276d66e7059f31c9ad516ffd258c7f6":[2,0,3,0]
+"structadiabatic__donelan.html":[2,0,3]
 };
