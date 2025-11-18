@@ -46,6 +46,7 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_SatMethods.H", "ERF__SatMethods_8H.html", [
       [ "SatMethods", "classSatMethods.html", "classSatMethods" ]
     ] ],
+    [ "ERF_SolveTridiag.H", "ERF__SolveTridiag_8H.html", "ERF__SolveTridiag_8H" ],
     [ "ERF_StormDiagnostics.H", "ERF__StormDiagnostics_8H.html", "ERF__StormDiagnostics_8H" ],
     [ "ERF_TerrainMetrics.cpp", "ERF__TerrainMetrics_8cpp.html", "ERF__TerrainMetrics_8cpp" ],
     [ "ERF_TerrainMetrics.H", "ERF__TerrainMetrics_8H.html", "ERF__TerrainMetrics_8H" ],

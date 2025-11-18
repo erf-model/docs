@@ -3,6 +3,7 @@ var dir_aba9de7b86b72c00c61e401832cdb2fc =
     [ "ERF_AdvStruct.H", "ERF__AdvStruct_8H.html", [
       [ "AdvChoice", "structAdvChoice.html", "structAdvChoice" ]
     ] ],
+    [ "ERF_DampingStruct.H", "ERF__DampingStruct_8H.html", "ERF__DampingStruct_8H" ],
     [ "ERF_DataStruct.H", "ERF__DataStruct_8H.html", "ERF__DataStruct_8H" ],
     [ "ERF_DiffStruct.H", "ERF__DiffStruct_8H.html", "ERF__DiffStruct_8H" ],
     [ "ERF_InputSoundingData.H", "ERF__InputSoundingData_8H.html", [

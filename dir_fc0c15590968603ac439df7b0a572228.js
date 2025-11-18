@@ -16,6 +16,8 @@ var dir_fc0c15590968603ac439df7b0a572228 =
     [ "ERF_DiffusionSrcForState_S.cpp", "ERF__DiffusionSrcForState__S_8cpp.html", "ERF__DiffusionSrcForState__S_8cpp" ],
     [ "ERF_DiffusionSrcForState_T.cpp", "ERF__DiffusionSrcForState__T_8cpp.html", "ERF__DiffusionSrcForState__T_8cpp" ],
     [ "ERF_EddyViscosity.H", "ERF__EddyViscosity_8H.html", "ERF__EddyViscosity_8H" ],
+    [ "ERF_GetRhoAlpha.H", "ERF__GetRhoAlpha_8H.html", "ERF__GetRhoAlpha_8H" ],
+    [ "ERF_GetRhoAlphaForFaces.H", "ERF__GetRhoAlphaForFaces_8H.html", "ERF__GetRhoAlphaForFaces_8H" ],
     [ "ERF_ImplicitDiff_N.cpp", "ERF__ImplicitDiff__N_8cpp.html", "ERF__ImplicitDiff__N_8cpp" ],
     [ "ERF_ImplicitDiff_S.cpp", "ERF__ImplicitDiff__S_8cpp.html", "ERF__ImplicitDiff__S_8cpp" ],
     [ "ERF_ImplicitDiff_T.cpp", "ERF__ImplicitDiff__T_8cpp.html", "ERF__ImplicitDiff__T_8cpp" ],
