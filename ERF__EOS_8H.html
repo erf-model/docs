@@ -707,13 +707,13 @@ Here is the caller graph for this function:</div>
 <p>Function to return temperature given density and potential temperature</p>
 <p>@params[in ] rho density @params[in ] rhotheta (density times potential temperature) @params[in ] qv water vapor @params[ out] temperature </p>
 <div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// rho and rhotheta are dry values. We should be using moist value of theta when using moisture</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// rho and rhotheta are dry values. We use moist theta when using moisture</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// theta_m = theta * (1 + R_v/R_d*qv)</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p_loc = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a> * std::pow(<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhotheta * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>) * <a class="code" href="ERF__Constants_8H.html#a8e89876f083cff186cc6124a1100e000">ip_0</a>, <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> p_loc / (<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> * (1.0 + <a class="code" href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a>/<a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>*<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>));</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classNOAHMP.html#aef763ce195ae99d7026cd3157064ef9d">NOAHMP::Advance_With_State()</a>, <a class="el" href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">buoyancy_dry_Tpert()</a>, <a class="el" href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">buoyancy_moist_Tpert()</a>, <a class="el" href="ERF__Advance_8cpp.html#a6d404ed332ca8f11f826b078165e54c1">check_for_low_temp()</a>, <a class="el" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76">Morrison::Compute_Coefficients()</a>, <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a7b509a4d1fbec2a7967e0a9abb9ad43b">ComputeMoistStratification()</a>, <a class="el" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2">Kessler::Copy_State_to_Micro()</a>, <a class="el" href="classMorrison.html#a5fe61e6c89f21c46207142a8ef2d67b1">Morrison::Copy_State_to_Micro()</a>, <a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM::Copy_State_to_Micro()</a>, <a class="el" href="classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3">SatAdj::Copy_State_to_Micro()</a>, <a class="el" href="namespacederived.html#add1791d7423c133ba6e7ab55975cf34f">derived::erf_dermoisttemp()</a>, <a class="el" href="namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2">derived::erf_dertemp()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal()</a>, <a class="el" href="classSHOCInterface.html#ad1f2c19ca17e9a39016219c090475857">SHOCInterface::mf_to_kokkos_buffers()</a>, <a class="el" href="classRadiation.html#ab7ca3f6533f347aa65fd6405f4d50b8a">Radiation::mf_to_kokkos_buffers()</a>, <a class="el" href="classERF.html#a3e5b26e9aeb49e5318eb6cb68ed2ee97">ERF::sum_energy_quantities()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classNOAHMP.html#aef763ce195ae99d7026cd3157064ef9d">NOAHMP::Advance_With_State()</a>, <a class="el" href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515">buoyancy_dry_Tpert()</a>, <a class="el" href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215">buoyancy_moist_Tpert()</a>, <a class="el" href="classERF.html#ab3017f06be0feef9e853d4b68158c6a7">ERF::check_for_low_temp()</a>, <a class="el" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76">Morrison::Compute_Coefficients()</a>, <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a7b509a4d1fbec2a7967e0a9abb9ad43b">ComputeMoistStratification()</a>, <a class="el" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2">Kessler::Copy_State_to_Micro()</a>, <a class="el" href="classMorrison.html#a5fe61e6c89f21c46207142a8ef2d67b1">Morrison::Copy_State_to_Micro()</a>, <a class="el" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53">SAM::Copy_State_to_Micro()</a>, <a class="el" href="classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3">SatAdj::Copy_State_to_Micro()</a>, <a class="el" href="namespacederived.html#add1791d7423c133ba6e7ab55975cf34f">derived::erf_dermoisttemp()</a>, <a class="el" href="namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2">derived::erf_dertemp()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal()</a>, <a class="el" href="classSHOCInterface.html#ad1f2c19ca17e9a39016219c090475857">SHOCInterface::mf_to_kokkos_buffers()</a>, <a class="el" href="classRadiation.html#ab7ca3f6533f347aa65fd6405f4d50b8a">Radiation::mf_to_kokkos_buffers()</a>, <a class="el" href="classERF.html#a3e5b26e9aeb49e5318eb6cb68ed2ee97">ERF::sum_energy_quantities()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -723,7 +723,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classNOAHMP.html#aef763ce195ae99d7026cd3157064ef9d" title=" " alt="" coords="1016,5,1199,47"/>
 <area shape="rect" href="ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515" title=" " alt="" coords="1030,71,1185,98"/>
 <area shape="rect" href="ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215" title=" " alt="" coords="1022,122,1193,149"/>
-<area shape="rect" href="ERF__Advance_8cpp.html#a6d404ed332ca8f11f826b078165e54c1" title=" " alt="" coords="1029,173,1185,199"/>
+<area shape="rect" href="classERF.html#ab3017f06be0feef9e853d4b68158c6a7" title=" " alt="" coords="1013,173,1201,199"/>
 <area shape="rect" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76" title=" " alt="" coords="992,223,1223,250"/>
 <area shape="rect" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40" title=" " alt="" coords="1006,341,1209,367"/>
 <area shape="rect" href="ERF__MoistUtils_8H.html#a7b509a4d1fbec2a7967e0a9abb9ad43b" title=" " alt="" coords="1007,458,1207,485"/>
@@ -732,25 +732,24 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53" title=" " alt="" coords="1030,392,1185,433"/>
 <area shape="rect" href="classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3" title=" " alt="" coords="1034,575,1181,616"/>
 <area shape="rect" href="namespacederived.html#add1791d7423c133ba6e7ab55975cf34f" title=" " alt="" coords="1009,691,1205,718"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="761,633,915,659"/>
+<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="761,641,915,667"/>
 <area shape="rect" href="namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2" title=" " alt="" coords="1028,742,1187,769"/>
 <area shape="rect" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09" title=" " alt="" coords="1064,793,1151,819"/>
 <area shape="rect" href="classSHOCInterface.html#ad1f2c19ca17e9a39016219c090475857" title=" " alt="" coords="1026,844,1189,885"/>
 <area shape="rect" href="classRadiation.html#ab7ca3f6533f347aa65fd6405f4d50b8a" title=" " alt="" coords="1016,909,1199,951"/>
 <area shape="rect" href="classERF.html#a3e5b26e9aeb49e5318eb6cb68ed2ee97" title=" " alt="" coords="1004,975,1211,1002"/>
 <area shape="rect" href="ERF__MakeBuoyancy_8cpp.html#aa0e810b8099c900ea8c347b6d8ce6b4f" title=" " alt="" coords="774,97,902,123"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="783,173,893,199"/>
 <area shape="rect" href="classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63" title=" " alt="" coords="732,253,944,279"/>
 <area shape="rect" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e" title=" " alt="" coords="745,370,931,397"/>
 <area shape="rect" href="ERF__MoistUtils_8H.html#ab1838e808af7bc4666295e1a76351d49" title=" " alt="" coords="746,451,930,492"/>
 <area shape="rect" href="classKessler.html#a05b9426e9fd6af90ea40aa77ed0cbe66" title=" " alt="" coords="737,517,939,543"/>
 <area shape="rect" href="classSatAdj.html#a126716cce4ed479136e5f6cd8513149d" title=" " alt="" coords="739,582,937,609"/>
-<area shape="rect" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b" title=" " alt="" coords="749,684,927,725"/>
-<area shape="rect" href="classERF.html#aeedacb23ea2e48f554bbfd8451bbbfb0" title=" " alt="" coords="757,750,919,777"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3" title=" " alt="" coords="789,851,887,878"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36" title=" " alt="" coords="461,826,684,853"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2" title=" " alt="" coords="213,826,413,853"/>
-<area shape="rect" href="classERF.html#a96a272defae485c5b83fbc123a631f9f" title=" " alt="" coords="5,826,165,853"/>
+<area shape="rect" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b" title=" " alt="" coords="749,743,927,784"/>
+<area shape="rect" href="classERF.html#aeedacb23ea2e48f554bbfd8451bbbfb0" title=" " alt="" coords="757,691,919,718"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3" title=" " alt="" coords="789,859,887,886"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36" title=" " alt="" coords="461,834,684,861"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#ad777b96c0ad38487f5c5f9977a482fc2" title=" " alt="" coords="213,834,413,861"/>
+<area shape="rect" href="classERF.html#a96a272defae485c5b83fbc123a631f9f" title=" " alt="" coords="5,834,165,861"/>
 </map>
 </div>
 

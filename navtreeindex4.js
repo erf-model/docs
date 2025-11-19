@@ -1,7 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"ERF__ShocInterface_8H_source.html":[3,0,1,12,1,1],
-"ERF__ShocInterface_8cpp.html":[3,0,1,12,1,0],
 "ERF__SimpleAD_8H.html":[3,0,1,18,4,1],
 "ERF__SimpleAD_8H_source.html":[3,0,1,18,4,1],
 "ERF__SlowRhsPost_8cpp.html":[3,0,1,15,10],
@@ -249,5 +247,7 @@ var NAVTREEINDEX4 =
 "ERF__module__model__constants_8F90.html#a619e3f0d469b8c5cd3c1a904f9583560":[3,0,1,9,1,2,28],
 "ERF__module__model__constants_8F90.html#a63cc2c8eb138c7f8c24b35d88721c4f5":[3,0,1,9,1,2,68],
 "ERF__module__model__constants_8F90.html#a66b4bc8422b57af455fc631a398d566d":[3,0,1,9,1,2,51],
-"ERF__module__model__constants_8F90.html#a67ffe08178e163f5beffa123ec9a5c4c":[3,0,1,9,1,2,105]
+"ERF__module__model__constants_8F90.html#a67ffe08178e163f5beffa123ec9a5c4c":[3,0,1,9,1,2,105],
+"ERF__module__model__constants_8F90.html#a6aa37a9a4c7468857a6251daaba1f865":[3,0,1,9,1,2,67],
+"ERF__module__model__constants_8F90.html#a6b0b4a0c04cf08a306ca36944b0edf5c":[3,0,1,9,1,2,17]
 };

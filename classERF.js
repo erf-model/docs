@@ -13,6 +13,8 @@ var classERF =
     [ "AverageDown", "classERF.html#a8202de1f8f372e3e6fdc483447c6a55f", null ],
     [ "AverageDownTo", "classERF.html#ae17524f168760cf435685a08d97480e7", null ],
     [ "build_fine_mask", "classERF.html#af46289079e053a6d74ddef0bf1a5d8a3", null ],
+    [ "check_for_low_temp", "classERF.html#ab3017f06be0feef9e853d4b68158c6a7", null ],
+    [ "check_for_negative_theta", "classERF.html#ac34d3f6d37f22f6fa9d909969da990b7", null ],
     [ "check_state_for_nans", "classERF.html#a8dff955c86d8e0c2e4ed81c045440f85", null ],
     [ "check_vels_for_nans", "classERF.html#a0b24b45ed078134ee80c1d32fa5e36bc", null ],
     [ "ClearLevel", "classERF.html#ac44e400a7ce68e18fa44e9416cb1344e", null ],
