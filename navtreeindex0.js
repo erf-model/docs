@@ -40,7 +40,8 @@ var NAVTREEINDEX0 =
 "ERF__AdvanceRadiation_8cpp.html":[3,0,1,15,4],
 "ERF__AdvanceSimpleAD_8cpp.html":[3,0,1,18,4,0],
 "ERF__Advance_8cpp.html":[3,0,1,15,0],
-"ERF__Advance_8cpp.html#a9e781a79c3bc849e4b6876e91c7cdf34":[3,0,1,15,0,0],
+"ERF__Advance_8cpp.html#a0ba4a99c3ec03acce9699d9c46088055":[3,0,1,15,0,1],
+"ERF__Advance_8cpp.html#a6d404ed332ca8f11f826b078165e54c1":[3,0,1,15,0,0],
 "ERF__AdvectionSrcForMom_8cpp.html":[3,0,1,0,1],
 "ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa":[3,0,1,0,1,0],
 "ERF__AdvectionSrcForMom__ConstantDz_8cpp.html":[3,0,1,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__ConvertForProjection_8cpp.html#ae7b6af432609f901295686681f7b934b":[3,0,1,17,3,0],
 "ERF__DampingStruct_8H.html":[3,0,1,2,1],
 "ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1":[3,0,1,2,1,1],
-"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a09f7d3b242b6ede7372125e32efaaef1":[3,0,1,2,1,1,2],
-"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a6adf97f83acf6453d4a6a4b1070f3754":[3,0,1,2,1,1,0]
+"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a09f7d3b242b6ede7372125e32efaaef1":[3,0,1,2,1,1,2]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__HurricaneDiagnostics_8H_source.html":[3,0,1,17,8],
 "ERF__IceFall_8cpp.html":[3,0,1,9,3,1],
 "ERF__ImplicitDiff__N_8cpp.html":[3,0,1,3,18],
 "ERF__ImplicitDiff__N_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,18,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__MoistUtils_8H.html":[3,0,1,17,19],
 "ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09":[3,0,1,17,19,5],
 "ERF__MoistUtils_8H.html#a7b509a4d1fbec2a7967e0a9abb9ad43b":[3,0,1,17,19,1],
-"ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6":[3,0,1,17,19,3],
-"ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19":[3,0,1,17,19,4]
+"ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6":[3,0,1,17,19,3]
 };

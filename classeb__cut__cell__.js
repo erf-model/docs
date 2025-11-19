@@ -4,7 +4,7 @@ var classeb__cut__cell__ =
     [ "areaBoun", "classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d", null ],
     [ "areaHi", "classeb__cut__cell__.html#a3f6f3621c5e96f2a99b319eab1110c87", null ],
     [ "areaLo", "classeb__cut__cell__.html#a52124747641fcdaa42763486b82b7369", null ],
-    [ "calc_edge_intersections", "classeb__cut__cell__.html#ab1b3165bf53dae6da4930eacbe60652f", null ],
+    [ "calc_edge_intersections", "classeb__cut__cell__.html#a08e3279998209af1ce7424ec6b24e7f0", null ],
     [ "centBoun", "classeb__cut__cell__.html#a80da66e8132ed7235d083a40375ff37c", null ],
     [ "centHi", "classeb__cut__cell__.html#add7ca50e2745b5e3171015e63e2c11e5", null ],
     [ "centLo", "classeb__cut__cell__.html#ac1374b6a0285967a781eb5834d312bf2", null ],

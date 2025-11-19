@@ -614,8 +614,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">while</span> (std::abs(F)&gt;m_tol &amp;&amp; iter&lt;max_iter);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (iter&gt;=max_iter) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            printf(<span class="stringliteral">&quot;WARNING: HSE Newton iterations did not converge to tolerance!\n&quot;</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            printf(<span class="stringliteral">&quot;HSE Newton tol: %e %e\n&quot;</span>,F,m_tol);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            AMREX_DEVICE_PRINTF(<span class="stringliteral">&quot;WARNING: HSE Newton iterations did not converge to tolerance!\n%s&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            AMREX_DEVICE_PRINTF(<span class="stringliteral">&quot;HSE Newton tol: %e %e\n&quot;</span>,F,m_tol);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
 <div class="ttc" id="aERF__EOS_8H_html_a3ee1ea27d3b9f25afcc603f3e5b17955"><div class="ttname"><a href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955">getRhogivenThetaPress</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhogivenThetaPress(const amrex::Real th, const amrex::Real p, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:96</div></div>
