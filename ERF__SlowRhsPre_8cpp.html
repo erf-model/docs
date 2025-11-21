@@ -806,9 +806,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        GpuArray&lt;Array4&lt;Real&gt;, AMREX_SPACEDIM&gt; flx_w_arr{};</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> == TerrainType::EB) {</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                flux_u[dir].resize(tbx_grown[dir],1);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                flux_v[dir].resize(tby_grown[dir],1);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                flux_w[dir].resize(tbz_grown[dir],1);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                flux_u[dir].resize(tbx_grown[dir],1,The_Async_Arena());</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                flux_v[dir].resize(tby_grown[dir],1,The_Async_Arena());</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                flux_w[dir].resize(tbz_grown[dir],1,The_Async_Arena());</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                flux_u[dir].setVal&lt;RunOn::Device&gt;(0.);</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                flux_v[dir].setVal&lt;RunOn::Device&gt;(0.);</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                flux_w[dir].setVal&lt;RunOn::Device&gt;(0.);</div>
