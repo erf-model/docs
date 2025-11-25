@@ -271,6 +271,7 @@ var classERF =
     [ "h_u_geos", "classERF.html#a911c70f76cf62f205a1ce152ec4cdb54", null ],
     [ "h_v_geos", "classERF.html#a825daede57fae86805edffd85d5d9dab", null ],
     [ "h_w_subsid", "classERF.html#a1a5d0d0b4e8c196f56dfab98f245aff5", null ],
+    [ "have_read_nc_init_file", "classERF.html#ab4069df5f357b7707a2aade9bf914772", null ],
     [ "hurricane_eye_track_latlon", "classERF.html#a9993ba4b5404503408ae0815537cb8b5", null ],
     [ "hurricane_eye_track_xy", "classERF.html#a25483a9e0d04422c18a900edc79c2cb0", null ],
     [ "hurricane_maxvel_vs_time", "classERF.html#a371c13c3bbaa8b008107a5b33a2b5c8b", null ],
