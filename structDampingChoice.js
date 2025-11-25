@@ -12,5 +12,6 @@ var structDampingChoice =
     [ "rayleigh_ztop", "structDampingChoice.html#a0c883c655c289113b4dd0107f01bc21e", null ],
     [ "w_damping", "structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e", null ],
     [ "w_damping_cfl", "structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3", null ],
-    [ "w_damping_coeff", "structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff", null ]
+    [ "w_damping_coeff", "structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff", null ],
+    [ "w_damping_const", "structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7", null ]
 ];

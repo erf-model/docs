@@ -97,7 +97,7 @@ Collaboration diagram for DampingChoice:</div>
 <div class="dyncontent">
 <div class="center"><img src="structDampingChoice__coll__graph.png" border="0" usemap="#aDampingChoice_coll__map" alt="Collaboration graph"/></div>
 <map name="aDampingChoice_coll__map" id="aDampingChoice_coll__map">
-<area shape="rect" title=" " alt="" coords="116,153,241,180"/>
+<area shape="rect" title=" " alt="" coords="116,168,241,195"/>
 <area shape="rect" title=" " alt="" coords="5,5,56,32"/>
 <area shape="rect" title=" " alt="" coords="95,5,263,32"/>
 <area shape="rect" title=" " alt="" coords="341,5,392,32"/>
@@ -131,7 +131,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9bda4d7ea737d254f788af345b24f63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafaf1ff2f8a9873528b1f473f007cfd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3">w_damping_cfl</a> = 1.0</td></tr>
 <tr class="separator:aafaf1ff2f8a9873528b1f473f007cfd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38c0f8bf23e972dd0bf946ada25995ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">w_damping_coeff</a> = 0.3</td></tr>
+<tr class="memitem:ac2dad9068060566f8d04d59894e923e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7">w_damping_const</a> = -1</td></tr>
+<tr class="separator:ac2dad9068060566f8d04d59894e923e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c0f8bf23e972dd0bf946ada25995ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">w_damping_coeff</a> = -1</td></tr>
 <tr class="separator:a38c0f8bf23e972dd0bf946ada25995ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e628d1d8bc5aa5423fc245af38bf38e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1">RayleighDampingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDampingChoice.html#a5e628d1d8bc5aa5423fc245af38bf38e">rayleigh_damping_type</a> = <a class="el" href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1ab6dc20114805fb02e063ac1c465490b9">RayleighDampingType::SlowExplicit</a></td></tr>
 <tr class="separator:a5e628d1d8bc5aa5423fc245af38bf38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,28 +163,36 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Rayleigh damping            :&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a816fcd32a74263a78093b4f590c845ee">rayleigh_damp_U</a> || <a class="code" href="structDampingChoice.html#a02972b3bec5a3b8aa713b50f2324d895">rayleigh_damp_V</a> || <a class="code" href="structDampingChoice.html#a51caa6f9c76bc7a8ae5426fb3a73b00d">rayleigh_damp_W</a> || <a class="code" href="structDampingChoice.html#a4294b85f146a648ca4129cd0c631c2c8">rayleigh_damp_T</a>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a816fcd32a74263a78093b4f590c845ee">rayleigh_damp_U</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; U&quot;</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a02972b3bec5a3b8aa713b50f2324d895">rayleigh_damp_V</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; V&quot;</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a51caa6f9c76bc7a8ae5426fb3a73b00d">rayleigh_damp_W</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; W&quot;</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a4294b85f146a648ca4129cd0c631c2c8">rayleigh_damp_T</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; T&quot;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot; (coef=&quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#a4b77c2ff2209611231f61a4f7be26cab">rayleigh_dampcoef</a> &lt;&lt; <span class="stringliteral">&quot; 1/s,&quot;</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot; depth=&quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#aa8516fdb1b120da8b8622dec44ae2889">rayleigh_zdamp</a> &lt;&lt; <span class="stringliteral">&quot; m)&quot;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                           &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot; None&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;w damping                   : &quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e">w_damping</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="ttc" id="astructDampingChoice_html_a02972b3bec5a3b8aa713b50f2324d895"><div class="ttname"><a href="structDampingChoice.html#a02972b3bec5a3b8aa713b50f2324d895">DampingChoice::rayleigh_damp_V</a></div><div class="ttdeci">bool rayleigh_damp_V</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:74</div></div>
-<div class="ttc" id="astructDampingChoice_html_a4294b85f146a648ca4129cd0c631c2c8"><div class="ttname"><a href="structDampingChoice.html#a4294b85f146a648ca4129cd0c631c2c8">DampingChoice::rayleigh_damp_T</a></div><div class="ttdeci">bool rayleigh_damp_T</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:76</div></div>
-<div class="ttc" id="astructDampingChoice_html_a4b77c2ff2209611231f61a4f7be26cab"><div class="ttname"><a href="structDampingChoice.html#a4b77c2ff2209611231f61a4f7be26cab">DampingChoice::rayleigh_dampcoef</a></div><div class="ttdeci">amrex::Real rayleigh_dampcoef</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:77</div></div>
-<div class="ttc" id="astructDampingChoice_html_a51caa6f9c76bc7a8ae5426fb3a73b00d"><div class="ttname"><a href="structDampingChoice.html#a51caa6f9c76bc7a8ae5426fb3a73b00d">DampingChoice::rayleigh_damp_W</a></div><div class="ttdeci">bool rayleigh_damp_W</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:75</div></div>
-<div class="ttc" id="astructDampingChoice_html_a816fcd32a74263a78093b4f590c845ee"><div class="ttname"><a href="structDampingChoice.html#a816fcd32a74263a78093b4f590c845ee">DampingChoice::rayleigh_damp_U</a></div><div class="ttdeci">bool rayleigh_damp_U</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:73</div></div>
-<div class="ttc" id="astructDampingChoice_html_a9bda4d7ea737d254f788af345b24f63e"><div class="ttname"><a href="structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e">DampingChoice::w_damping</a></div><div class="ttdeci">bool w_damping</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:81</div></div>
-<div class="ttc" id="astructDampingChoice_html_aa8516fdb1b120da8b8622dec44ae2889"><div class="ttname"><a href="structDampingChoice.html#aa8516fdb1b120da8b8622dec44ae2889">DampingChoice::rayleigh_zdamp</a></div><div class="ttdeci">amrex::Real rayleigh_zdamp</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:78</div></div>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Rayleigh damping            :&quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a816fcd32a74263a78093b4f590c845ee">rayleigh_damp_U</a> || <a class="code" href="structDampingChoice.html#a02972b3bec5a3b8aa713b50f2324d895">rayleigh_damp_V</a> || <a class="code" href="structDampingChoice.html#a51caa6f9c76bc7a8ae5426fb3a73b00d">rayleigh_damp_W</a> || <a class="code" href="structDampingChoice.html#a4294b85f146a648ca4129cd0c631c2c8">rayleigh_damp_T</a>) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a816fcd32a74263a78093b4f590c845ee">rayleigh_damp_U</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; U&quot;</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a02972b3bec5a3b8aa713b50f2324d895">rayleigh_damp_V</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; V&quot;</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a51caa6f9c76bc7a8ae5426fb3a73b00d">rayleigh_damp_W</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; W&quot;</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a4294b85f146a648ca4129cd0c631c2c8">rayleigh_damp_T</a>) amrex::Print() &lt;&lt; <span class="stringliteral">&quot; T&quot;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot; (coef=&quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#a4b77c2ff2209611231f61a4f7be26cab">rayleigh_dampcoef</a> &lt;&lt; <span class="stringliteral">&quot; 1/s,&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                           &lt;&lt; <span class="stringliteral">&quot; depth=&quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#aa8516fdb1b120da8b8622dec44ae2889">rayleigh_zdamp</a> &lt;&lt; <span class="stringliteral">&quot; m)&quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                           &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot; None&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;w damping                   : &quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e">w_damping</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7">w_damping_const</a> &gt; 0) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot; (coeff = &quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7">w_damping_const</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot; (coeff = &quot;</span> &lt;&lt; <a class="code" href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">w_damping_coeff</a> &lt;&lt; <span class="stringliteral">&quot; * dz/dt**2)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="ttc" id="astructDampingChoice_html_a02972b3bec5a3b8aa713b50f2324d895"><div class="ttname"><a href="structDampingChoice.html#a02972b3bec5a3b8aa713b50f2324d895">DampingChoice::rayleigh_damp_V</a></div><div class="ttdeci">bool rayleigh_damp_V</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:85</div></div>
+<div class="ttc" id="astructDampingChoice_html_a38c0f8bf23e972dd0bf946ada25995ff"><div class="ttname"><a href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">DampingChoice::w_damping_coeff</a></div><div class="ttdeci">amrex::Real w_damping_coeff</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:98</div></div>
+<div class="ttc" id="astructDampingChoice_html_a4294b85f146a648ca4129cd0c631c2c8"><div class="ttname"><a href="structDampingChoice.html#a4294b85f146a648ca4129cd0c631c2c8">DampingChoice::rayleigh_damp_T</a></div><div class="ttdeci">bool rayleigh_damp_T</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:87</div></div>
+<div class="ttc" id="astructDampingChoice_html_a4b77c2ff2209611231f61a4f7be26cab"><div class="ttname"><a href="structDampingChoice.html#a4b77c2ff2209611231f61a4f7be26cab">DampingChoice::rayleigh_dampcoef</a></div><div class="ttdeci">amrex::Real rayleigh_dampcoef</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:88</div></div>
+<div class="ttc" id="astructDampingChoice_html_a51caa6f9c76bc7a8ae5426fb3a73b00d"><div class="ttname"><a href="structDampingChoice.html#a51caa6f9c76bc7a8ae5426fb3a73b00d">DampingChoice::rayleigh_damp_W</a></div><div class="ttdeci">bool rayleigh_damp_W</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:86</div></div>
+<div class="ttc" id="astructDampingChoice_html_a816fcd32a74263a78093b4f590c845ee"><div class="ttname"><a href="structDampingChoice.html#a816fcd32a74263a78093b4f590c845ee">DampingChoice::rayleigh_damp_U</a></div><div class="ttdeci">bool rayleigh_damp_U</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:84</div></div>
+<div class="ttc" id="astructDampingChoice_html_a9bda4d7ea737d254f788af345b24f63e"><div class="ttname"><a href="structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e">DampingChoice::w_damping</a></div><div class="ttdeci">bool w_damping</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:92</div></div>
+<div class="ttc" id="astructDampingChoice_html_aa8516fdb1b120da8b8622dec44ae2889"><div class="ttname"><a href="structDampingChoice.html#aa8516fdb1b120da8b8622dec44ae2889">DampingChoice::rayleigh_zdamp</a></div><div class="ttdeci">amrex::Real rayleigh_zdamp</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:89</div></div>
+<div class="ttc" id="astructDampingChoice_html_ac2dad9068060566f8d04d59894e923e7"><div class="ttname"><a href="structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7">DampingChoice::w_damping_const</a></div><div class="ttdeci">amrex::Real w_damping_const</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:95</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">SolverChoice::display()</a>.</p>
 <div class="dynheader">
@@ -251,15 +261,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// Include vertical-velocity damping to improve robustness</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;w_damping&quot;</span>, <a class="code" href="structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e">w_damping</a>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;w_damping_cfl&quot;</span>, <a class="code" href="structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3">w_damping_cfl</a>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;w_damping_coeff&quot;</span>, <a class="code" href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">w_damping_coeff</a>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;w_damping_const&quot;</span>, <a class="code" href="structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7">w_damping_const</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;w_damping_coeff&quot;</span>, <a class="code" href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">w_damping_coeff</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e">w_damping</a> &amp;&amp; (<a class="code" href="structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7">w_damping_const</a> &lt; 0 &amp;&amp; <a class="code" href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">w_damping_coeff</a> &lt; 0)) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Need to specify vertical damping coefficient w_damping_const (like WRF) or w_damping_coeff (~ dz/dt**2)&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="ttc" id="aERF__DampingStruct_8H_html_ada1fed43d749500e09ded1d6800449a1a09f7d3b242b6ede7372125e32efaaef1"><div class="ttname"><a href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1a09f7d3b242b6ede7372125e32efaaef1">RayleighDampingType::FastExplicit</a></div><div class="ttdeci">@ FastExplicit</div></div>
 <div class="ttc" id="aERF__DampingStruct_8H_html_ada1fed43d749500e09ded1d6800449a1ab6dc20114805fb02e063ac1c465490b9"><div class="ttname"><a href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1ab6dc20114805fb02e063ac1c465490b9">RayleighDampingType::SlowExplicit</a></div><div class="ttdeci">@ SlowExplicit</div></div>
 <div class="ttc" id="aERF__DampingStruct_8H_html_ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6"><div class="ttname"><a href="ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6">RayleighDampingType::FastImplicit</a></div><div class="ttdeci">@ FastImplicit</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:233</div></div>
-<div class="ttc" id="astructDampingChoice_html_a38c0f8bf23e972dd0bf946ada25995ff"><div class="ttname"><a href="structDampingChoice.html#a38c0f8bf23e972dd0bf946ada25995ff">DampingChoice::w_damping_coeff</a></div><div class="ttdeci">amrex::Real w_damping_coeff</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:83</div></div>
-<div class="ttc" id="astructDampingChoice_html_a5e628d1d8bc5aa5423fc245af38bf38e"><div class="ttname"><a href="structDampingChoice.html#a5e628d1d8bc5aa5423fc245af38bf38e">DampingChoice::rayleigh_damping_type</a></div><div class="ttdeci">RayleighDampingType rayleigh_damping_type</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:86</div></div>
-<div class="ttc" id="astructDampingChoice_html_aafaf1ff2f8a9873528b1f473f007cfd3"><div class="ttname"><a href="structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3">DampingChoice::w_damping_cfl</a></div><div class="ttdeci">amrex::Real w_damping_cfl</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:82</div></div>
+<div class="ttc" id="astructDampingChoice_html_a5e628d1d8bc5aa5423fc245af38bf38e"><div class="ttname"><a href="structDampingChoice.html#a5e628d1d8bc5aa5423fc245af38bf38e">DampingChoice::rayleigh_damping_type</a></div><div class="ttdeci">RayleighDampingType rayleigh_damping_type</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:101</div></div>
+<div class="ttc" id="astructDampingChoice_html_aafaf1ff2f8a9873528b1f473f007cfd3"><div class="ttname"><a href="structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3">DampingChoice::w_damping_cfl</a></div><div class="ttdeci">amrex::Real w_damping_cfl</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:93</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>.</p>
 <div class="dynheader">
@@ -422,7 +436,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structDampingChoice.html#ad7d14bb652aef5e4c5b6487fc26da60e">display()</a>, <a class="el" href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a4cd65257808dd22bb20701e18a9efdcd">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structDampingChoice.html#ad7d14bb652aef5e4c5b6487fc26da60e">display()</a>, and <a class="el" href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">init_params()</a>.</p>
 
 </div>
 </div>
@@ -438,7 +452,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a4cd65257808dd22bb20701e18a9efdcd">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">init_params()</a>.</p>
 
 </div>
 </div>
@@ -449,12 +463,28 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> DampingChoice::w_damping_coeff = 0.3</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> DampingChoice::w_damping_coeff = -1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a4cd65257808dd22bb20701e18a9efdcd">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structDampingChoice.html#ad7d14bb652aef5e4c5b6487fc26da60e">display()</a>, and <a class="el" href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">init_params()</a>.</p>
+
+</div>
+</div>
+<a id="ac2dad9068060566f8d04d59894e923e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2dad9068060566f8d04d59894e923e7">&#9670;&nbsp;</a></span>w_damping_const</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> DampingChoice::w_damping_const = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="structDampingChoice.html#ad7d14bb652aef5e4c5b6487fc26da60e">display()</a>, and <a class="el" href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">init_params()</a>.</p>
 
 </div>
 </div>

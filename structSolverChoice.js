@@ -89,6 +89,7 @@ var structSolverChoice =
     [ "sinphi", "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf", null ],
     [ "sounding_type", "structSolverChoice.html#aa170a5099566043b130086aeb61e9eb3", null ],
     [ "spongeChoice", "structSolverChoice.html#ac066852f06a6409e1638f59868b7c57d", null ],
+    [ "substepping_diag", "structSolverChoice.html#ac2e2a1662eb1215f9f6c926291229119", null ],
     [ "substepping_type", "structSolverChoice.html#a7c414e2fb7c53479a2d21bb3a2d4099e", null ],
     [ "terrain_type", "structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60", null ],
     [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
