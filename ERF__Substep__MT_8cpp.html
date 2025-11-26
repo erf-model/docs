@@ -667,7 +667,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="comment">// Define flux arrays for use in advection</span></div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            flux[dir].resize(surroundingNodes(bx,dir),2);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            flux[dir].resize(surroundingNodes(bx,dir),2,The_Async_Arena());</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            flux[dir].setVal&lt;RunOn::Device&gt;(0.);</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keyword">const</span> GpuArray&lt;const Array4&lt;Real&gt;, AMREX_SPACEDIM&gt;</div>

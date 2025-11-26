@@ -592,9 +592,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="comment">// *************************************************************************</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; ++dir) {</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> != TerrainType::EB) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                flux[dir].resize(surroundingNodes(tbx,dir),<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                flux[dir].resize(surroundingNodes(tbx,dir),<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>,The_Async_Arena());</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                flux[dir].resize(surroundingNodes(tbx,dir).grow(1),<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                flux[dir].resize(surroundingNodes(tbx,dir).grow(1),<a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a>,The_Async_Arena());</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            flux[dir].setVal&lt;RunOn::Device&gt;(0.);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
