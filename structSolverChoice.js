@@ -14,6 +14,7 @@ var structSolverChoice =
     [ "anelastic", "structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec", null ],
     [ "ave_plane", "structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c", null ],
     [ "beta_s", "structSolverChoice.html#a4ddb705ade39e97c2fc2f47a180cf169", null ],
+    [ "buildings_type", "structSolverChoice.html#ab3a8e6a0bf4f228f88772705ca8ee6d6", null ],
     [ "buoyancy_type", "structSolverChoice.html#ad6ee95a1f016f6f236f26144dbf234d0", null ],
     [ "c_p", "structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a", null ],
     [ "const_massflux_layer_hi", "structSolverChoice.html#ac7c666d84cca54459c809aaeab849aa1", null ],

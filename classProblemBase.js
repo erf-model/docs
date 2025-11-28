@@ -5,6 +5,7 @@ var classProblemBase =
     [ "erf_init_dens_hse_moist", "classProblemBase.html#ad1a7277d332001542789e488458096b9", null ],
     [ "erf_init_rayleigh", "classProblemBase.html#aaf5cb14c8033c99df446fd943b1f2216", null ],
     [ "init_base_parms", "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f", null ],
+    [ "init_buildings_surface", "classProblemBase.html#a9448182188904fd7430fbf2c4fe01cd3", null ],
     [ "init_custom_pert", "classProblemBase.html#a1c41568b22a4f37247d816a8d20b0757", null ],
     [ "init_custom_terrain", "classProblemBase.html#ac458b1e9108b54e2dd1621d6fb7e4de6", null ],
     [ "init_terrain_surface", "classProblemBase.html#a6a5f24caf2ce8eaf89097520455c70e4", null ],
