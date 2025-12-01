@@ -39,7 +39,7 @@ var searchData=
   ['set_5fdiff_5fstresses_2783',['set_diff_stresses',['../classSHOCInterface.html#a2397ac38923e80f869ff07b72f3bf0b9',1,'SHOCInterface']]],
   ['set_5fdzmin_2784',['Set_dzmin',['../classEulerianMicrophysics.html#a0eb94df7fc190ef62349dec2d350e697',1,'EulerianMicrophysics::Set_dzmin()'],['../classMicrophysics.html#abe0044f23ab9fb60ca3d3948ad056c12',1,'Microphysics::Set_dzmin()'],['../classKessler.html#a38b2e74c4d5fdce0c6ec170b1e179bce',1,'Kessler::Set_dzmin()'],['../classMorrison.html#a5e96779015fb5d544dbb45f7b48c9d13',1,'Morrison::Set_dzmin()'],['../classNullMoist.html#a47199894161e2c6ec167c8032d7181a0',1,'NullMoist::Set_dzmin()'],['../classSAM.html#a941072443fd9254c81c1a847f4187a03',1,'SAM::Set_dzmin()']]],
   ['set_5feddy_5fdiffs_2785',['set_eddy_diffs',['../classSHOCInterface.html#ac1770942070cea4268124471500c6091',1,'SHOCInterface']]],
-  ['set_5fgrids_2786',['set_grids',['../classRadiation.html#a16a0f0448a0030bf5a74f9081d95441e',1,'Radiation::set_grids()'],['../classSHOCInterface.html#a3acea701fdb9067c22fcd2f02941ed02',1,'SHOCInterface::set_grids()']]],
+  ['set_5fgrids_2786',['set_grids',['../classRadiation.html#a3e2fd8a39958debba44c16497a4cab4d',1,'Radiation::set_grids()'],['../classSHOCInterface.html#a3acea701fdb9067c22fcd2f02941ed02',1,'SHOCInterface::set_grids()']]],
   ['set_5fk_5findices_5fn_2787',['set_k_indices_N',['../classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc',1,'MOSTAverage']]],
   ['set_5fk_5findices_5ft_2788',['set_k_indices_T',['../classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9',1,'MOSTAverage']]],
   ['set_5fmass_5fand_5fenergy_5ffluxes_2789',['set_mass_and_energy_fluxes',['../structSHOCInterface_1_1SHOCPostprocess.html#ad4798a4eab392d2f77591ac82c935403',1,'SHOCInterface::SHOCPostprocess']]],
