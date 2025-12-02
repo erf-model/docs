@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['erf_5fbc_6667',['ERF_BC',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'ERF_IndexDefines.H']]]
+  ['fluxcalctype_6659',['FluxCalcType',['../classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7',1,'SurfaceLayer']]]
 ];
