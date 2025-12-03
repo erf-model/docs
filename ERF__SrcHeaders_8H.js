@@ -7,7 +7,7 @@ var ERF__SrcHeaders_8H =
     [ "ApplySpongeZoneBCsForMom_ReadFromFile", "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac", null ],
     [ "compute_gradp", "ERF__SrcHeaders_8H.html#a43c544fdc0bdd13ca5993185c835880e", null ],
     [ "compute_gradp_interpz", "ERF__SrcHeaders_8H.html#a7b28afc46a4e7ef5307af00f235dd980", null ],
-    [ "make_buoyancy", "ERF__SrcHeaders_8H.html#aa1e39e2a161ed29eb2f6e4df03537e1f", null ],
+    [ "make_buoyancy", "ERF__SrcHeaders_8H.html#a6338f4278c3585195dc868c848a9a90a", null ],
     [ "make_gradp_pert", "ERF__SrcHeaders_8H.html#a11ba280e018e32cdbd796f7960228363", null ],
     [ "make_mom_sources", "ERF__SrcHeaders_8H.html#a7c795c48688d49c59b4f3b26ea690a0f", null ],
     [ "make_sources", "ERF__SrcHeaders_8H.html#ad7a6feae344972c0edbe7b0cf288fb03", null ]

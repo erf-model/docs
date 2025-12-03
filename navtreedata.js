@@ -79,7 +79,7 @@ var NAVTREEINDEX =
 "ERF__ShocInterface_8cpp.html",
 "ERF__module__model__constants_8F90.html#a73f52d22ce1367d65ec1e7538a07312f",
 "classERF.html#a2307b817178b00e5cc38c0e163da0a39",
-"classERF.html#aa8b243c093bd872b6f7592603ff97792",
+"classERF.html#aa87242f053bfae4efb2a7698ef417ab9",
 "classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a",
 "classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4",
 "classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46",
