@@ -1,5 +1,6 @@
 var classeb__cut__cell__ =
 [
+    [ "path_data", "structeb__cut__cell___1_1path__data.html", "structeb__cut__cell___1_1path__data" ],
     [ "eb_cut_cell_", "classeb__cut__cell__.html#ad2a23220e37e28746aa0e3cc17898e79", null ],
     [ "areaBoun", "classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d", null ],
     [ "areaHi", "classeb__cut__cell__.html#a7bda2cb294b96da39af5890224aa75da", null ],

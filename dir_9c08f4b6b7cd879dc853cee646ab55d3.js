@@ -15,7 +15,8 @@ var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
     [ "ERF_EBBox.cpp", "ERF__EBBox_8cpp.html", null ],
     [ "ERF_EBCutCell.cpp", "ERF__EBCutCell_8cpp.html", null ],
     [ "ERF_EBCutCell.H", "ERF__EBCutCell_8H.html", [
-      [ "eb_cut_cell_", "classeb__cut__cell__.html", "classeb__cut__cell__" ]
+      [ "eb_cut_cell_", "classeb__cut__cell__.html", "classeb__cut__cell__" ],
+      [ "path_data", "structeb__cut__cell___1_1path__data.html", "structeb__cut__cell___1_1path__data" ]
     ] ],
     [ "ERF_EBIF.H", "ERF__EBIF_8H.html", [
       [ "UnionListIF", "classUnionListIF.html", "classUnionListIF" ]

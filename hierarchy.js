@@ -79,6 +79,7 @@ var hierarchy =
       [ "SimpleAD", "classSimpleAD.html", null ],
       [ "WindFarm", "classWindFarm.html", null ]
     ] ],
+    [ "eb_cut_cell_::path_data", "structeb__cut__cell___1_1path__data.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "PlaneSampler", "structPlaneSampler.html", null ],
     [ "polygon_", "classpolygon__.html", null ],

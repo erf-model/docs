@@ -3,7 +3,6 @@ var classpolygon__ =
     [ "polygon_", "classpolygon__.html#ad2f931a8223ce05a3ad8cb20e34cf200", null ],
     [ "polygon_", "classpolygon__.html#ad2a32b3fcf9c2c014834472601641be4", null ],
     [ "add_vertex", "classpolygon__.html#a418204875c722510d5b0396ac1639a2b", null ],
-    [ "add_vertex", "classpolygon__.html#a73e492a2197542ac0b36b96c7153d49d", null ],
     [ "area", "classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4", null ],
     [ "debug", "classpolygon__.html#a7a9d2640e1ee2d6868513a1cbab1c0da", null ],
     [ "debug", "classpolygon__.html#a5e7a4057742f0f1e134e5113d39e4a76", null ],
