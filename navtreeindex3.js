@@ -1,16 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9":[3,0,1,17,19,0],
-"ERF__MoistUtils_8H.html#ab1838e808af7bc4666295e1a76351d49":[3,0,1,17,19,2],
-"ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c":[3,0,1,17,19,6],
-"ERF__MoistUtils_8H_source.html":[3,0,1,17,19],
-"ERF__MomentumToVelocity_8cpp.html":[3,0,1,17,20],
-"ERF__MomentumToVelocity_8cpp.html#acb58339e6fba8c5e9ae99573444d3135":[3,0,1,17,20,0],
-"ERF__Morrison_8H.html":[3,0,1,9,1,5],
-"ERF__Morrison_8H_source.html":[3,0,1,9,1,5],
-"ERF__Morrison__Fortran__Interface_8H.html":[3,0,1,9,1,6],
-"ERF__Morrison__Fortran__Interface_8H.html#aa1e15a22d6cf65c21c2a28cd25a16946":[3,0,1,9,1,6,1],
-"ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138":[3,0,1,9,1,6,2],
 "ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681":[3,0,1,9,1,6,0],
 "ERF__Morrison__Fortran__Interface_8H_source.html":[3,0,1,9,1,6],
 "ERF__Morrison__Plot_8cpp.html":[3,0,1,9,1,7],
@@ -249,5 +238,16 @@ var NAVTREEINDEX3 =
 "ERF__ShocInterface_8H.html":[3,0,1,12,1,1],
 "ERF__ShocInterface_8H.html#a008e7f6ae8f621fbb1d876061812b9b2":[3,0,1,12,1,1,4],
 "ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57":[3,0,1,12,1,1,5],
-"ERF__ShocInterface_8H_source.html":[3,0,1,12,1,1]
+"ERF__ShocInterface_8H_source.html":[3,0,1,12,1,1],
+"ERF__ShocInterface_8cpp.html":[3,0,1,12,1,0],
+"ERF__SimpleAD_8H.html":[3,0,1,18,4,1],
+"ERF__SimpleAD_8H_source.html":[3,0,1,18,4,1],
+"ERF__SlowRhsPost_8cpp.html":[3,0,1,15,10],
+"ERF__SlowRhsPost_8cpp.html#a9b7c629ca0922e62c1ea5ca60f66ac24":[3,0,1,15,10,0],
+"ERF__SlowRhsPre_8cpp.html":[3,0,1,15,11],
+"ERF__SlowRhsPre_8cpp.html#a183bc8f162cd19cd09e3362640c54aa7":[3,0,1,15,11,0],
+"ERF__SolveTridiag_8H.html":[3,0,1,17,25],
+"ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,17,25,0],
+"ERF__SolveTridiag_8H_source.html":[3,0,1,17,25],
+"ERF__SolveWithEBMLMG_8cpp.html":[3,0,1,8,6]
 };

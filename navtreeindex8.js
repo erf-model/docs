@@ -1,16 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a":[2,0,27,9],
-"classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb":[2,0,27,8],
-"classERFPhysBCFunct__v.html#a1abc171e8cfcd542f4d9e312e0f586c1":[2,0,27,12],
-"classERFPhysBCFunct__v.html#a22e73a039ee130b072f3a9ad079fc160":[2,0,27,10],
-"classERFPhysBCFunct__v.html#a4105fbf47eb27b4429fd4f36c93ea66e":[2,0,27,2],
-"classERFPhysBCFunct__v.html#a684936c8b176bfd48a383ae1de421777":[2,0,27,1],
-"classERFPhysBCFunct__v.html#a6dce68398d0b2711389dda67d222fedc":[2,0,27,0],
-"classERFPhysBCFunct__v.html#a709b7436e0640f89b5623a25245ccb69":[2,0,27,3],
-"classERFPhysBCFunct__v.html#a7e82182923ff12b9ee242d7aaf8b25d9":[2,0,27,6],
-"classERFPhysBCFunct__v.html#aa17ac5983f98d1b13f952fa7f2c39b54":[2,0,27,11],
-"classERFPhysBCFunct__v.html#ac827e8177214acaf67881ca049f5a3d0":[2,0,27,4],
 "classERFPhysBCFunct__v.html#ae26c0b8c1a5145f1e1f2d44717745cfd":[2,0,27,7],
 "classERFPhysBCFunct__v.html#afac2b29228e83f3693609ae1374d91e2":[2,0,27,5],
 "classERFPhysBCFunct__v.html#afffa0e227916c179928f9a3eb7a07c3c":[2,0,27,13],
@@ -249,5 +238,16 @@ var NAVTREEINDEX8 =
 "classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91":[2,0,46,47],
 "classMOSTAverage.html#a2e0caf3f5752fc5edbe6e0fd877a4821":[2,0,46,22],
 "classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62":[2,0,46,32],
-"classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973":[2,0,46,6]
+"classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973":[2,0,46,6],
+"classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4":[2,0,46,57],
+"classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c":[2,0,46,51],
+"classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0":[2,0,46,4],
+"classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c":[2,0,46,18],
+"classMOSTAverage.html#a514120312387f28a1624387b0e3af360":[2,0,46,17],
+"classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e":[2,0,46,19],
+"classMOSTAverage.html#a56f533937767a348d7c1dff755989531":[2,0,46,10],
+"classMOSTAverage.html#a584b986a317b2c4d799163574c43b3b3":[2,0,46,11],
+"classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea":[2,0,46,55],
+"classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174":[2,0,46,8],
+"classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a":[2,0,46,15]
 };

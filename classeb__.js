@@ -1,6 +1,5 @@
 var classeb__ =
 [
-    [ "EBToPVD", "classeb___1_1EBToPVD.html", "classeb___1_1EBToPVD" ],
     [ "~eb_", "classeb__.html#aaba2e6e2c803801d036e989a9c5799b2", null ],
     [ "eb_", "classeb__.html#abcc4045a128dd42fe09f45af4f602576", null ],
     [ "eb_", "classeb__.html#a25a8f6edf34c06b87bc8cda216de067c", null ],
@@ -16,14 +15,12 @@ var classeb__ =
     [ "getNonConstFaceCent", "classeb__.html#a8fdb5cd33458c754de1c46e38b2d5dc7", null ],
     [ "getNonConstVolFrac", "classeb__.html#a7d2bf2fbda20ea8bc2514c200093fa65", null ],
     [ "make_all_factories", "classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402", null ],
-    [ "make_box", "classeb__.html#aed3a2689a86e5b806d93cab1c94821d6", null ],
     [ "make_cc_factory", "classeb__.html#a939eef3f5cd9a4befe45d389b49c3405", null ],
     [ "make_terrain", "classeb__.html#a2fd2b83d9ff044e353c71fc08e06403a", null ],
     [ "nghost_basic", "classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8", null ],
     [ "nghost_full", "classeb__.html#ad927cf323e89587952b632234487f9f9", null ],
     [ "nghost_volume", "classeb__.html#a8e61525cf6488d04f457068fc40f47df", null ],
     [ "set_connection_flags", "classeb__.html#aff03357e8f226d451ed970b6bb4ab773", null ],
-    [ "WriteEBSurface", "classeb__.html#a42050661a88169e137efa74118fb879a", null ],
     [ "m_cellflags", "classeb__.html#a7280bf4b77fa95e970f101fbbf53c836", null ],
     [ "m_eb_level", "classeb__.html#a69d11eeaf4f696d04884679db6c80d2f", null ],
     [ "m_factory", "classeb__.html#a832e47bbc65d2e895fe295ad43df8556", null ],

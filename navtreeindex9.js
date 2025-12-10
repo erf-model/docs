@@ -1,16 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4":[2,0,46,57],
-"classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c":[2,0,46,51],
-"classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0":[2,0,46,4],
-"classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c":[2,0,46,18],
-"classMOSTAverage.html#a514120312387f28a1624387b0e3af360":[2,0,46,17],
-"classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e":[2,0,46,19],
-"classMOSTAverage.html#a56f533937767a348d7c1dff755989531":[2,0,46,10],
-"classMOSTAverage.html#a584b986a317b2c4d799163574c43b3b3":[2,0,46,11],
-"classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea":[2,0,46,55],
-"classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174":[2,0,46,8],
-"classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a":[2,0,46,15],
 "classMOSTAverage.html#a5dfb4235703aaa2364d49d7fbb8d1512":[2,0,46,54],
 "classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9":[2,0,46,13],
 "classMOSTAverage.html#a733f1b5c94de8ee530f4f257510cb277":[2,0,46,48],
@@ -249,5 +238,16 @@ var NAVTREEINDEX9 =
 "classNullWindFarm.html#a27f046283d051fb0abcf5f6d9080b471":[2,0,55,21],
 "classNullWindFarm.html#a2c312d78fc769a3d081c2df6492b5b35":[2,0,55,23],
 "classNullWindFarm.html#a3b3156bf79da131a833a2a6a96b27421":[2,0,55,32],
-"classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d":[2,0,55,22]
+"classNullWindFarm.html#a453673de82ca8ffbced1c32bfb27555d":[2,0,55,22],
+"classNullWindFarm.html#a4d117768ddbdf31c864c4bc7eac57c46":[2,0,55,3],
+"classNullWindFarm.html#a5a95464f19af9063228d23981f3a75cd":[2,0,55,31],
+"classNullWindFarm.html#a5cb0849867fadd38770da912749adb50":[2,0,55,24],
+"classNullWindFarm.html#a61554384fc601d7ae2fb758a8bc7f4f4":[2,0,55,27],
+"classNullWindFarm.html#a6c0842d97c9d5d68030987bc76b61101":[2,0,55,2],
+"classNullWindFarm.html#a6f6bd907d33ec99543896b82fac6b4e4":[2,0,55,17],
+"classNullWindFarm.html#a745c730028714c13ff11fefb5440b2e5":[2,0,55,14],
+"classNullWindFarm.html#a77d2fbe9dc6053701fa98acf5c5c8b25":[2,0,55,9],
+"classNullWindFarm.html#a7fe11fbaf6a246c60156e40aec3835f7":[2,0,55,30],
+"classNullWindFarm.html#a85b5fcee1d9a35f884255e9dec414bfd":[2,0,55,18],
+"classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580":[2,0,55,7]
 };

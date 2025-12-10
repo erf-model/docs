@@ -94,7 +94,6 @@ var annotated_dup =
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "TurbChoice", "structTurbChoice.html", "structTurbChoice" ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", "structTurbulentPerturbation" ],
-    [ "UnionListIF", "classUnionListIF.html", "classUnionListIF" ],
     [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
     [ "UPWIND3SL", "structUPWIND3SL.html", "structUPWIND3SL" ],
     [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],

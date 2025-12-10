@@ -83,7 +83,8 @@ $(document).ready(function(){initNavTree('ERF__EBCutCell_8H.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_EBCutCell.H File Reference</div>  </div>
 </div><!--header-->
@@ -95,22 +96,20 @@ $(document).ready(function(){initNavTree('ERF__EBCutCell_8H.html',''); initResiz
 <code>#include &lt;AMReX_Algorithm.H&gt;</code><br />
 <code>#include &lt;AMReX_EBCellFlag.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__EBPolygon_8H_source.html">ERF_EBPolygon.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__EBUtils_8H_source.html">ERF_EBUtils.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_EBCutCell.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EBCutCell_8H__incl.png" border="0" usemap="#aSource_2EB_2ERF__EBCutCell_8H" alt=""/></div>
 <map name="aSource_2EB_2ERF__EBCutCell_8H" id="aSource_2EB_2ERF__EBCutCell_8H">
-<area shape="rect" title=" " alt="" coords="308,5,509,32"/>
-<area shape="rect" title=" " alt="" coords="826,229,948,256"/>
+<area shape="rect" title=" " alt="" coords="250,5,452,32"/>
+<area shape="rect" title=" " alt="" coords="655,229,778,256"/>
 <area shape="rect" title=" " alt="" coords="23,80,146,107"/>
 <area shape="rect" title=" " alt="" coords="170,80,314,107"/>
-<area shape="rect" title=" " alt="" coords="703,155,850,181"/>
+<area shape="rect" title=" " alt="" coords="404,155,551,181"/>
 <area shape="rect" title=" " alt="" coords="388,80,543,107"/>
 <area shape="rect" title=" " alt="" coords="567,80,727,107"/>
-<area shape="rect" href="ERF__EBPolygon_8H.html" title=" " alt="" coords="890,80,1028,107"/>
-<area shape="rect" href="ERF__EBUtils_8H.html" title=" " alt="" coords="751,80,866,107"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="924,155,1058,181"/>
+<area shape="rect" href="ERF__EBPolygon_8H.html" title=" " alt="" coords="752,80,889,107"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="754,155,887,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -132,7 +131,103 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structeb__cut__cell___1_1path__data.html">eb_cut_cell_::path_data</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a85f6b9006454bc88f78571ca8741b7e4"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBCutCell_8H.html#a85f6b9006454bc88f78571ca8741b7e4">intersect_plane_edge</a> (amrex::RealVect const &amp;a_plane_point, amrex::RealVect const &amp;a_plane_normal, amrex::RealVect const &amp;a_edge_point0, amrex::RealVect const &amp;a_edge_point1, amrex::RealVect &amp;a_intersection_point, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;a_intersection_dist)</td></tr>
+<tr class="separator:a85f6b9006454bc88f78571ca8741b7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a85f6b9006454bc88f78571ca8741b7e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f6b9006454bc88f78571ca8741b7e4">&#9670;&nbsp;</a></span>intersect_plane_edge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int intersect_plane_edge </td>
+          <td>(</td>
+          <td class="paramtype">amrex::RealVect const &amp;&#160;</td>
+          <td class="paramname"><em>a_plane_point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::RealVect const &amp;&#160;</td>
+          <td class="paramname"><em>a_plane_normal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::RealVect const &amp;&#160;</td>
+          <td class="paramname"><em>a_edge_point0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::RealVect const &amp;&#160;</td>
+          <td class="paramname"><em>a_edge_point1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::RealVect &amp;&#160;</td>
+          <td class="paramname"><em>a_intersection_point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>a_intersection_dist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  amrex::RealVect <span class="keyword">const</span> edge(a_edge_point1 - a_edge_point0);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <span class="keyword">const</span> edge_length = edge.vectorLength();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  AMREX_ALWAYS_ASSERT(edge_length &gt; 0.);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  amrex::RealVect edge_normal = edge / edge_length;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> np_dot_ne = a_plane_normal.dotProduct(edge_normal);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// if ( amrex::Math::abs(np_dot_ne) &lt; std::numeric_limits&lt;amrex::Real&gt;::min() )</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">if</span> ( amrex::Math::abs(np_dot_ne) &lt; 10.0 * <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>() )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  a_intersection_dist = a_plane_normal.dotProduct(a_plane_point)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                      - a_plane_normal.dotProduct(a_edge_point0);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  a_intersection_dist /= np_dot_ne;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  a_intersection_point = a_edge_point0 + a_intersection_dist*edge_normal;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> (0. &lt;= a_intersection_dist &amp;&amp; a_intersection_dist &lt;= edge_length) { <span class="keywordflow">return</span> 1;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a08e3279998209af1ce7424ec6b24e7f0">eb_cut_cell_::calc_edge_intersections()</a>, and <a class="el" href="structeb__cut__cell___1_1path__data.html#a5a280794bcd5852f51edb2d172307d82">eb_cut_cell_::path_data::set()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__EBCutCell_8H_a85f6b9006454bc88f78571ca8741b7e4_icgraph.png" border="0" usemap="#aERF__EBCutCell_8H_a85f6b9006454bc88f78571ca8741b7e4_icgraph" alt=""/></div>
+<map name="aERF__EBCutCell_8H_a85f6b9006454bc88f78571ca8741b7e4_icgraph" id="aERF__EBCutCell_8H_a85f6b9006454bc88f78571ca8741b7e4_icgraph">
+<area shape="rect" title=" " alt="" coords="392,13,553,39"/>
+<area shape="rect" href="classeb__cut__cell__.html#a08e3279998209af1ce7424ec6b24e7f0" title=" " alt="" coords="5,5,157,47"/>
+<area shape="rect" href="structeb__cut__cell___1_1path__data.html#a5a280794bcd5852f51edb2d172307d82" title=" " alt="" coords="205,35,344,76"/>
+</map>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
