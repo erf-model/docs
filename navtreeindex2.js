@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"ERF__ImplicitDiff__S_8cpp.html#a0c22287b890621b61d620ab5130643c2":[3,0,1,3,19,2],
+"ERF__ImplicitDiff__S_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,19,0],
+"ERF__ImplicitDiff__S_8cpp.html#af8e2aaa9a1aa5945724d50234999e216":[3,0,1,3,19,1],
+"ERF__ImplicitDiff__T_8cpp.html":[3,0,1,3,20],
+"ERF__ImplicitDiff__T_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,20,0],
 "ERF__ImplicitDiff__T_8cpp.html#a7b15f849db322464ffa540c61fff6b42":[3,0,1,3,20,2],
 "ERF__ImplicitDiff__T_8cpp.html#adf56c5884ff3e9cd1014702124165427":[3,0,1,3,20,1],
 "ERF__Implicit_8H.html":[3,0,1,15,6],
@@ -108,10 +113,10 @@ var NAVTREEINDEX2 =
 "ERF__InitWindFarm_8cpp.html":[3,0,1,5,14],
 "ERF__InitZLevels_8cpp.html":[3,0,1,17,9],
 "ERF__InitZLevels_8cpp.html#a6a0ddf4ef447c8f0129b403c8fd889fd":[3,0,1,17,9,0],
-"ERF__InputSoundingData_8H.html":[3,0,1,2,4],
-"ERF__InputSoundingData_8H_source.html":[3,0,1,2,4],
-"ERF__InputSpongeData_8H.html":[3,0,1,2,5],
-"ERF__InputSpongeData_8H_source.html":[3,0,1,2,5],
+"ERF__InputSoundingData_8H.html":[3,0,1,2,5],
+"ERF__InputSoundingData_8H_source.html":[3,0,1,2,5],
+"ERF__InputSpongeData_8H.html":[3,0,1,2,6],
+"ERF__InputSpongeData_8H_source.html":[3,0,1,2,6],
 "ERF__InteriorGhostCells_8cpp.html":[3,0,1,17,10],
 "ERF__InteriorGhostCells_8cpp.html#a22d5cae00fbddbbe92ffe248dc212c06":[3,0,1,17,10,3],
 "ERF__InteriorGhostCells_8cpp.html#a83796d497c8eeecf9bb035628ad6fb18":[3,0,1,17,10,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c":[3,0,1,17,19,6],
 "ERF__MoistUtils_8H_source.html":[3,0,1,17,19],
 "ERF__MomentumToVelocity_8cpp.html":[3,0,1,17,20],
-"ERF__MomentumToVelocity_8cpp.html#acb58339e6fba8c5e9ae99573444d3135":[3,0,1,17,20,0],
-"ERF__Morrison_8H.html":[3,0,1,9,1,5],
-"ERF__Morrison_8H_source.html":[3,0,1,9,1,5],
-"ERF__Morrison__Fortran__Interface_8H.html":[3,0,1,9,1,6],
-"ERF__Morrison__Fortran__Interface_8H.html#aa1e15a22d6cf65c21c2a28cd25a16946":[3,0,1,9,1,6,1],
-"ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138":[3,0,1,9,1,6,2]
+"ERF__MomentumToVelocity_8cpp.html#acb58339e6fba8c5e9ae99573444d3135":[3,0,1,17,20,0]
 };

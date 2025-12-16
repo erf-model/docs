@@ -753,39 +753,35 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Correct cell connectivity</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classeb__.html#aff03357e8f226d451ed970b6bb4ab773">eb_::set_connection_flags</a>();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if 1</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    WriteEBSurface(ba, dm, a_geom, <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    { <span class="keywordtype">int</span> <span class="keyword">const</span> idim(0);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;making EB staggered u-factory\n&quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">//m_u_factory.set_verbose();</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classeb__.html#aa2d82b2e424b832a9c0befaa160db5a9">m_u_factory</a>.<a class="code" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define</a>(level, idim, a_geom, ba, dm,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()},</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    { <span class="keywordtype">int</span> <span class="keyword">const</span> idim(1);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;making EB staggered v-factory\n&quot;</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">//m_v_factory.set_verbose();</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classeb__.html#aca3aa793c432fe655b38759a26af6b96">m_v_factory</a>.<a class="code" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define</a>(level, idim, a_geom, ba, dm,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()},</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    { <span class="keywordtype">int</span> <span class="keyword">const</span> idim(2);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;making EB staggered w-factory\n&quot;</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">//m_w_factory.set_verbose();</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classeb__.html#a7fbcd88205291b74fdb6dc595c8f9762">m_w_factory</a>.<a class="code" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define</a>(level, idim, a_geom, ba, dm,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()},</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;\nDone making EB factory at level = &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;.\n\n&quot;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    { <span class="keywordtype">int</span> <span class="keyword">const</span> idim(0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;making EB staggered u-factory\n&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">//m_u_factory.set_verbose();</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classeb__.html#aa2d82b2e424b832a9c0befaa160db5a9">m_u_factory</a>.<a class="code" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define</a>(level, idim, a_geom, ba, dm,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()},</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    { <span class="keywordtype">int</span> <span class="keyword">const</span> idim(1);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;making EB staggered v-factory\n&quot;</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">//m_v_factory.set_verbose();</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classeb__.html#aca3aa793c432fe655b38759a26af6b96">m_v_factory</a>.<a class="code" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define</a>(level, idim, a_geom, ba, dm,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()},</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    { <span class="keywordtype">int</span> <span class="keyword">const</span> idim(2);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;making EB staggered w-factory\n&quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">//m_w_factory.set_verbose();</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classeb__.html#a7fbcd88205291b74fdb6dc595c8f9762">m_w_factory</a>.<a class="code" href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">define</a>(level, idim, a_geom, ba, dm,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()},</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;\nDone making EB factory at level = &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;.\n\n&quot;</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="ttc" id="aclasseb___html_a8e61525cf6488d04f457068fc40f47df"><div class="ttname"><a href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">eb_::nghost_volume</a></div><div class="ttdeci">int nghost_volume() const</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:43</div></div>
 <div class="ttc" id="aclasseb___html_ad927cf323e89587952b632234487f9f9"><div class="ttname"><a href="classeb__.html#ad927cf323e89587952b632234487f9f9">eb_::nghost_full</a></div><div class="ttdeci">int nghost_full() const</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:44</div></div>
 <div class="ttc" id="aclasseb___html_adeeabbed9dbdf2241f513b5b2ef8c9d8"><div class="ttname"><a href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">eb_::nghost_basic</a></div><div class="ttdeci">int nghost_basic() const</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:42</div></div>
-<div class="ttc" id="aclasseb___html_aff03357e8f226d451ed970b6bb4ab773"><div class="ttname"><a href="classeb__.html#aff03357e8f226d451ed970b6bb4ab773">eb_::set_connection_flags</a></div><div class="ttdeci">void set_connection_flags()</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:99</div></div>
+<div class="ttc" id="aclasseb___html_aff03357e8f226d451ed970b6bb4ab773"><div class="ttname"><a href="classeb__.html#aff03357e8f226d451ed970b6bb4ab773">eb_::set_connection_flags</a></div><div class="ttdeci">void set_connection_flags()</div><div class="ttdef"><b>Definition:</b> ERF_EB.cpp:91</div></div>
 <div class="ttc" id="aclasseb__aux___html_a35e03212515a83631de9954bde139ed5"><div class="ttname"><a href="classeb__aux__.html#a35e03212515a83631de9954bde139ed5">eb_aux_::define</a></div><div class="ttdeci">void define(int const &amp;a_level, int const &amp;a_idim, amrex::Geometry const &amp;a_geom, amrex::BoxArray const &amp;a_grids, amrex::DistributionMapping const &amp;a_dmap, amrex::Vector&lt; int &gt; const &amp;a_ngrow, amrex::EBFArrayBoxFactory const *a_factory)</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.cpp:25</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -863,17 +859,13 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;making EB factory\n&quot;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a> = std::make_unique&lt;EBFArrayBoxFactory&gt;(a_eb_level, a_geom, ba, dm,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()}, <a class="code" href="classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35">m_support_level</a>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#if 0</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    WriteEBSurface(ba, dm, a_geom, <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>.get());</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;\nDone making EB factory at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;.\n\n&quot;</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;making EB factory\n&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a> = std::make_unique&lt;EBFArrayBoxFactory&gt;(a_eb_level, a_geom, ba, dm,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        Vector&lt;int&gt;{<a class="code" href="classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8">nghost_basic</a>(), <a class="code" href="classeb__.html#a8e61525cf6488d04f457068fc40f47df">nghost_volume</a>(), <a class="code" href="classeb__.html#ad927cf323e89587952b632234487f9f9">nghost_full</a>()}, <a class="code" href="classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35">m_support_level</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;\nDone making EB factory at level &quot;</span> &lt;&lt; level &lt;&lt; <span class="stringliteral">&quot;.\n\n&quot;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1042,40 +1034,40 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Get non-const reference to EBCellFlagFab FabArray</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    FabArray&lt;EBCellFlagFab&gt;&amp; cellflag = <a class="code" href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">getNonConstEBCellFlags</a>(*<a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> MultiFab&amp; volfrac = <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>-&gt;getVolFrac();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cellflag, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">const</span> Box gbx = amrex::grow(bx, cellflag.nGrow()-1); <span class="comment">// Leave one cell layer</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; flag = cellflag.array(mfi);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; vfrac = volfrac.const_array(mfi);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">if</span> (vfrac(i+ii,j+jj,k+kk) == 0.0) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    flag(i,j,k).setDisconnected(ii,jj,kk);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            }}}</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        });</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">if</span> (vfrac(i,j,k)==0.0) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                flag(i,j,k).setCovered();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        });</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Get non-const reference to EBCellFlagFab FabArray</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    FabArray&lt;EBCellFlagFab&gt;&amp; cellflag = <a class="code" href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">getNonConstEBCellFlags</a>(*<a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> MultiFab&amp; volfrac = <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>-&gt;getVolFrac();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cellflag, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">const</span> Box gbx = amrex::grow(bx, cellflag.nGrow()-1); <span class="comment">// Leave one cell layer</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; flag = cellflag.array(mfi);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; vfrac = volfrac.const_array(mfi);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="keywordflow">if</span> (vfrac(i+ii,j+jj,k+kk) == 0.0) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    flag(i,j,k).setDisconnected(ii,jj,kk);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }}}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        });</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">if</span> (vfrac(i,j,k)==0.0) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                flag(i,j,k).setCovered();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        });</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="ttc" id="aclasseb___html_a113a041eb564cdc3f50b7957b8c030c5"><div class="ttname"><a href="classeb__.html#a113a041eb564cdc3f50b7957b8c030c5">eb_::getNonConstEBCellFlags</a></div><div class="ttdeci">amrex::FabArray&lt; amrex::EBCellFlagFab &gt; &amp; getNonConstEBCellFlags(const amrex::EBFArrayBoxFactory &amp;ebfact)</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:93</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>

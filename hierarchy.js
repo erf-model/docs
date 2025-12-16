@@ -25,6 +25,7 @@ var hierarchy =
     [ "eb_", "classeb__.html", null ],
     [ "eb_aux_", "classeb__aux__.html", null ],
     [ "eb_cut_cell_", "classeb__cut__cell__.html", null ],
+    [ "EBChoice", "structEBChoice.html", null ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", null ],
     [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", null ],
     [ "ERFPhysBCFunct_cons", "classERFPhysBCFunct__cons.html", null ],

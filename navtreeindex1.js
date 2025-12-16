@@ -165,6 +165,11 @@ var NAVTREEINDEX1 =
 "ERF__EBSlopes_8H.html#ab60af3414161d7b02e0c6ddebe842791":[3,0,1,4,14,3],
 "ERF__EBSlopes_8H.html#af77db2c09d5b34ca21e60e3918cdf257":[3,0,1,4,14,2],
 "ERF__EBSlopes_8H_source.html":[3,0,1,4,14],
+"ERF__EBStruct_8H.html":[3,0,1,2,4],
+"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704":[3,0,1,2,4,1],
+"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a4285ac9a293488cf48525a72a50f08c3":[3,0,1,2,4,1,0],
+"ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704a70081f42537ac6a9f00a5ab7cf0c1698":[3,0,1,2,4,1,1],
+"ERF__EBStruct_8H_source.html":[3,0,1,2,4],
 "ERF__EB_8H.html":[3,0,1,4,1],
 "ERF__EB_8H_source.html":[3,0,1,4,1],
 "ERF__EB_8cpp.html":[3,0,1,4,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__ImplicitDiff__N_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,18,0],
 "ERF__ImplicitDiff__N_8cpp.html#aa559b6a037b1c15e66b4637ed5cde524":[3,0,1,3,18,2],
 "ERF__ImplicitDiff__N_8cpp.html#ab0b9888266a4f75703e33e1f39280fb8":[3,0,1,3,18,1],
-"ERF__ImplicitDiff__S_8cpp.html":[3,0,1,3,19],
-"ERF__ImplicitDiff__S_8cpp.html#a0c22287b890621b61d620ab5130643c2":[3,0,1,3,19,2],
-"ERF__ImplicitDiff__S_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,19,0],
-"ERF__ImplicitDiff__S_8cpp.html#af8e2aaa9a1aa5945724d50234999e216":[3,0,1,3,19,1],
-"ERF__ImplicitDiff__T_8cpp.html":[3,0,1,3,20],
-"ERF__ImplicitDiff__T_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,20,0]
+"ERF__ImplicitDiff__S_8cpp.html":[3,0,1,3,19]
 };

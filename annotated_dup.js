@@ -28,6 +28,7 @@ var annotated_dup =
     [ "eb_", "classeb__.html", "classeb__" ],
     [ "eb_aux_", "classeb__aux__.html", "classeb__aux__" ],
     [ "eb_cut_cell_", "classeb__cut__cell__.html", "classeb__cut__cell__" ],
+    [ "EBChoice", "structEBChoice.html", "structEBChoice" ],
     [ "ERF", "classERF.html", "classERF" ],
     [ "ERFFillPatcher", "classERFFillPatcher.html", "classERFFillPatcher" ],
     [ "ERFPhysBCFunct_base", "classERFPhysBCFunct__base.html", "classERFPhysBCFunct__base" ],

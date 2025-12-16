@@ -35,6 +35,7 @@ var structSolverChoice =
     [ "diffChoice", "structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095", null ],
     [ "do_forest_drag", "structSolverChoice.html#aed9118172b234c3a0069a78776d09baa", null ],
     [ "dz0", "structSolverChoice.html#a0a4f1c55ea1e3a7d50f926ee0d20a21c", null ],
+    [ "ebChoice", "structSolverChoice.html#af58e8f88e30f4b86992c4db6177cbb59", null ],
     [ "file_name_digits", "structSolverChoice.html#ae00335ca6e0f146ff75b1b2b405ad5ad", null ],
     [ "fixed_density", "structSolverChoice.html#abf508a6d30b43384e1e208a4b3615a1f", null ],
     [ "force_stage1_single_substep", "structSolverChoice.html#a3f8ae511632557066f6662eec79591e1", null ],
