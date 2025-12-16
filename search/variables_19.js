@@ -36,7 +36,7 @@ var searchData=
   ['zmom_5fcrse_5frhs_6560',['zmom_crse_rhs',['../classERF.html#aaf7e8e28172eebdfe2224e4ee823310d',1,'ERF']]],
   ['zone_5fsfs_6561',['zone_sfs',['../namespacemodule__model__constants.html#a21d2301ae381126785caa0fcea3b2516',1,'module_model_constants']]],
   ['zone_5fsolve_5fem_6562',['zone_solve_em',['../namespacemodule__model__constants.html#a67ffe08178e163f5beffa123ec9a5c4c',1,'module_model_constants']]],
-  ['zref_6563',['zref',['../structmost__data.html#a1acd5276639042ca0834c56656302ea6',1,'most_data']]],
+  ['zref_5fdefault_6563',['zref_default',['../classMOSTAverage.html#addde3db57d53d5d309ba5e0ef4d827a4',1,'MOSTAverage']]],
   ['zsurf_6564',['zsurf',['../structSolverChoice.html#aa4659e9babdc5d7327266f967d9a80ff',1,'SolverChoice']]],
   ['zt_5fgrid_6565',['zt_grid',['../structSHOCInterface_1_1Buffer.html#aa6bc0c4b7a1079047c71e672fea1408f',1,'SHOCInterface::Buffer::zt_grid()'],['../structSHOCInterface_1_1SHOCPreprocess.html#a61eec511d6d6c29e3479ddb6b6a8b2b9',1,'SHOCInterface::SHOCPreprocess::zt_grid()']]],
   ['zvel_5fbc_5fdata_6566',['zvel_bc_data',['../classERF.html#ae08c25dcf643c6ef39f27d7dd0cb7423',1,'ERF']]]

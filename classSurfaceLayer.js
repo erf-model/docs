@@ -50,7 +50,7 @@ var classSurfaceLayer =
     [ "get_u_star", "classSurfaceLayer.html#a6d9a5d774162242d94bc6ee3d4cc8a76", null ],
     [ "get_w_star", "classSurfaceLayer.html#a1e41539f9a2484694bac2674921704f9", null ],
     [ "get_z0", "classSurfaceLayer.html#ab4a02e8a233917356742b1c036637474", null ],
-    [ "get_zref", "classSurfaceLayer.html#af30f77d80439df3dbcb34c7dacbdd3d2", null ],
+    [ "get_zref", "classSurfaceLayer.html#a49b7e6ceee1b14d001ec928c915c73d5", null ],
     [ "have_variable_sea_roughness", "classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d", null ],
     [ "impose_SurfaceLayer_bcs", "classSurfaceLayer.html#ad71d5b33900c768b3e3884898d468e01", null ],
     [ "init_tke_from_ustar", "classSurfaceLayer.html#a1cb463309cb73de8434f0fd1a2db985f", null ],

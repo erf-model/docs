@@ -289,7 +289,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; over_land_arr = (SurfLayer-&gt;get_lmask(level)) ? SurfLayer-&gt;get_lmask(level)-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                                      Array4&lt;int&gt; {};</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt; z_nd_arr = z_phys_nd-&gt;array(mfi);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> most_zref = SurfLayer-&gt;get_zref();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> most_zref = SurfLayer-&gt;get_zref(level);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// Require that MOST zref is 10 m so we get the wind speed at 10 m from most</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordtype">bool</span> invalid_zref = <span class="keyword">false</span>;</div>

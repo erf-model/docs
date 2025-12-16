@@ -1,7 +1,7 @@
 var structsurface__temp__mod__charnock =
 [
-    [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html#a8623647ee6cbbe0576bb040b5424a710", null ],
-    [ "iterate_flux", "structsurface__temp__mod__charnock.html#a4fb820f9da0314b143a016c7bb0b12b2", null ],
+    [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html#a010991ca46fdce8e1f65242527b55615", null ],
+    [ "iterate_flux", "structsurface__temp__mod__charnock.html#ad46a3125a8d9e6c9cfd1c17d7d0a652f", null ],
     [ "alpha", "structsurface__temp__mod__charnock.html#aec5ebd02c9cc040f289080a042ca315c", null ],
     [ "mdata", "structsurface__temp__mod__charnock.html#a98f673e5030f4509a8874466337f50c4", null ],
     [ "sfuns", "structsurface__temp__mod__charnock.html#a1f329567f9dbb2f1f7a09e32603c9964", null ],

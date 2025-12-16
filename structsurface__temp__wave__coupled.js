@@ -1,7 +1,7 @@
 var structsurface__temp__wave__coupled =
 [
-    [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html#af92fa641fdb56903e965455f05fd465d", null ],
-    [ "iterate_flux", "structsurface__temp__wave__coupled.html#a3dc7697fdc53b7db6f63f5fc7db6f797", null ],
+    [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html#a2d826d0a2bd50439f7c08f15ebca8fd5", null ],
+    [ "iterate_flux", "structsurface__temp__wave__coupled.html#a49c7d0eea399a504e94ab76a5ceac01b", null ],
     [ "eps", "structsurface__temp__wave__coupled.html#a2a663fad6d183ced2edb1dc99fe104bf", null ],
     [ "mdata", "structsurface__temp__wave__coupled.html#a44d84ddefc6dc5572f1b1e614996b288", null ],
     [ "sfuns", "structsurface__temp__wave__coupled.html#abf85e6ffabb9974a13bc03e6f7d11e96", null ],

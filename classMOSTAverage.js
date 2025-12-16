@@ -8,7 +8,7 @@ var classMOSTAverage =
     [ "compute_plane_averages", "classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69", null ],
     [ "compute_region_averages", "classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973", null ],
     [ "get_average", "classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d", null ],
-    [ "get_zref", "classMOSTAverage.html#a5b590fcba4d5d99178a0f8de14a1f174", null ],
+    [ "get_zref", "classMOSTAverage.html#a815d3e6377a2356c9859807874066d37", null ],
     [ "make_MOSTAverage_at_level", "classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db", null ],
     [ "operator=", "classMOSTAverage.html#a56f533937767a348d7c1dff755989531", null ],
     [ "operator=", "classMOSTAverage.html#a584b986a317b2c4d799163574c43b3b3", null ],
@@ -59,5 +59,6 @@ var classMOSTAverage =
     [ "m_y_pos", "classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374", null ],
     [ "m_z_phys_nd", "classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4", null ],
     [ "m_z_pos", "classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15", null ],
-    [ "m_zref", "classMOSTAverage.html#af2f1477f6bc5e4b2f2ddee27d17dab9f", null ]
+    [ "m_zref", "classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f", null ],
+    [ "zref_default", "classMOSTAverage.html#addde3db57d53d5d309ba5e0ef4d827a4", null ]
 ];
