@@ -1,6 +1,7 @@
 var ERF__BuoyancyUtils_8H =
 [
     [ "buoyancy_dry_anelastic", "ERF__BuoyancyUtils_8H.html#a5011865b681ba8438cde409a3d072ab7", null ],
+    [ "buoyancy_dry_anelastic_eb", "ERF__BuoyancyUtils_8H.html#ac635afc28b83e8b265a6f9026f69d674", null ],
     [ "buoyancy_dry_anelastic_T", "ERF__BuoyancyUtils_8H.html#abb7188746139971e303834720b94464a", null ],
     [ "buoyancy_dry_Thpert", "ERF__BuoyancyUtils_8H.html#a5d830f8d1f69f421243bb525f1cb3451", null ],
     [ "buoyancy_dry_Tpert", "ERF__BuoyancyUtils_8H.html#a7619875c059558175b6df4771ccc8515", null ],

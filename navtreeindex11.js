@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classReadBndryPlanes.html#a4343c3c0761df0f96c58f8d268a43017":[2,0,63,38],
 "classReadBndryPlanes.html#a4bd406d7cec0850958383e33070a1c10":[2,0,63,14],
 "classReadBndryPlanes.html#a5338493101cfbb8eb27301f83aeca290":[2,0,63,26],
 "classReadBndryPlanes.html#a5468d5d8813dc471dac1335611ec8dc9":[2,0,63,23],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classSatAdj.html#a0db3dd50c312798eeb542682063ba06f":[2,0,66,12],
 "classSatAdj.html#a126716cce4ed479136e5f6cd8513149d":[2,0,66,14],
 "classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44":[2,0,66,19],
-"classSatAdj.html#a1992e08a2b7e9319348b69bf940e972c":[2,0,66,11],
-"classSatAdj.html#a26ca294f334ada4b91534e1e9e105442":[2,0,66,22]
+"classSatAdj.html#a1992e08a2b7e9319348b69bf940e972c":[2,0,66,11]
 };

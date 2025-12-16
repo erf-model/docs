@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['dampingchoice_3458',['DampingChoice',['../structDampingChoice.html',1,'']]],
-  ['diffchoice_3459',['DiffChoice',['../structDiffChoice.html',1,'']]],
-  ['directionselector_3460',['DirectionSelector',['../structDirectionSelector.html',1,'']]],
-  ['directionselector_3c_200_20_3e_3461',['DirectionSelector&lt; 0 &gt;',['../structDirectionSelector_3_010_01_4.html',1,'']]],
-  ['directionselector_3c_201_20_3e_3462',['DirectionSelector&lt; 1 &gt;',['../structDirectionSelector_3_011_01_4.html',1,'']]],
-  ['directionselector_3c_202_20_3e_3463',['DirectionSelector&lt; 2 &gt;',['../structDirectionSelector_3_012_01_4.html',1,'']]],
-  ['donelan_5fflux_3464',['donelan_flux',['../structdonelan__flux.html',1,'']]]
+  ['dampingchoice_3460',['DampingChoice',['../structDampingChoice.html',1,'']]],
+  ['diffchoice_3461',['DiffChoice',['../structDiffChoice.html',1,'']]],
+  ['directionselector_3462',['DirectionSelector',['../structDirectionSelector.html',1,'']]],
+  ['directionselector_3c_200_20_3e_3463',['DirectionSelector&lt; 0 &gt;',['../structDirectionSelector_3_010_01_4.html',1,'']]],
+  ['directionselector_3c_201_20_3e_3464',['DirectionSelector&lt; 1 &gt;',['../structDirectionSelector_3_011_01_4.html',1,'']]],
+  ['directionselector_3c_202_20_3e_3465',['DirectionSelector&lt; 2 &gt;',['../structDirectionSelector_3_012_01_4.html',1,'']]],
+  ['donelan_5fflux_3466',['donelan_flux',['../structdonelan__flux.html',1,'']]]
 ];

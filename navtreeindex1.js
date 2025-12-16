@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1ab6dc20114805fb02e063ac1c465490b9":[3,0,1,2,1,1,1],
 "ERF__DampingStruct_8H.html#ada1fed43d749500e09ded1d6800449a1af4e9679a52e3d536f79543ab20f3d8c6":[3,0,1,2,1,1,3],
 "ERF__DampingStruct_8H_source.html":[3,0,1,2,1],
 "ERF__DataStruct_8H.html":[3,0,1,2,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__ImplicitDiff__N_8cpp.html":[3,0,1,3,18],
 "ERF__ImplicitDiff__N_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,18,0],
 "ERF__ImplicitDiff__N_8cpp.html#aa559b6a037b1c15e66b4637ed5cde524":[3,0,1,3,18,2],
-"ERF__ImplicitDiff__N_8cpp.html#ab0b9888266a4f75703e33e1f39280fb8":[3,0,1,3,18,1],
-"ERF__ImplicitDiff__S_8cpp.html":[3,0,1,3,19]
+"ERF__ImplicitDiff__N_8cpp.html#ab0b9888266a4f75703e33e1f39280fb8":[3,0,1,3,18,1]
 };
