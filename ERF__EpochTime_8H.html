@@ -128,8 +128,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a157e287fcdc7e8161cdfc216501a0676"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE std::time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EpochTime_8H.html#a157e287fcdc7e8161cdfc216501a0676">getEpochTime</a> (const std::string &amp;dateTime, const std::string &amp;dateTimeFormat)</td></tr>
 <tr class="separator:a157e287fcdc7e8161cdfc216501a0676"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacf5892cc74a8dbd2ae4af27af5b4e6e"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EpochTime_8H.html#aacf5892cc74a8dbd2ae4af27af5b4e6e">getTimestamp</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> epoch_real, const std::string &amp;datetime_format)</td></tr>
-<tr class="separator:aacf5892cc74a8dbd2ae4af27af5b4e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7eed25e58d350c03f4b8396554bc6a2"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EpochTime_8H.html#af7eed25e58d350c03f4b8396554bc6a2">getTimestamp</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> epoch_real, const std::string &amp;datetime_format, bool add_long_frac=true)</td></tr>
+<tr class="separator:af7eed25e58d350c03f4b8396554bc6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a157e287fcdc7e8161cdfc216501a0676"></a>
@@ -224,8 +224,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aacf5892cc74a8dbd2ae4af27af5b4e6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacf5892cc74a8dbd2ae4af27af5b4e6e">&#9670;&nbsp;</a></span>getTimestamp()</h2>
+<a id="af7eed25e58d350c03f4b8396554bc6a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7eed25e58d350c03f4b8396554bc6a2">&#9670;&nbsp;</a></span>getTimestamp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +240,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>datetime_format</em>&#160;</td>
+          <td class="paramname"><em>datetime_format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>add_long_frac</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -257,20 +263,23 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::strftime(buffer, <span class="keyword">sizeof</span>(buffer), datetime_format.c_str(), time_info);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::string str_nearest_sec(buffer);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">double</span> frac_sec = epoch_real - epoch_nearest_sec;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    snprintf(buffer, 80, <span class="stringliteral">&quot;%.6f&quot;</span>, frac_sec);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    AMREX_ASSERT(buffer[0] == <span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::string str_frac_sec(buffer);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> str_nearest_sec + str_frac_sec.substr(1);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (add_long_frac) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">double</span> frac_sec = epoch_real - epoch_nearest_sec;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        snprintf(buffer, 80, <span class="stringliteral">&quot;%.6f&quot;</span>, frac_sec);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        AMREX_ASSERT(buffer[0] == <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::string str_frac_sec(buffer);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec + str_frac_sec.substr(1);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">ERF::Evolve()</a>, <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, <a class="el" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">ERF::writeJobInfo()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__EpochTime_8H_aacf5892cc74a8dbd2ae4af27af5b4e6e_icgraph.png" border="0" usemap="#aERF__EpochTime_8H_aacf5892cc74a8dbd2ae4af27af5b4e6e_icgraph" alt=""/></div>
-<map name="aERF__EpochTime_8H_aacf5892cc74a8dbd2ae4af27af5b4e6e_icgraph" id="aERF__EpochTime_8H_aacf5892cc74a8dbd2ae4af27af5b4e6e_icgraph">
+<div class="center"><img src="ERF__EpochTime_8H_af7eed25e58d350c03f4b8396554bc6a2_icgraph.png" border="0" usemap="#aERF__EpochTime_8H_af7eed25e58d350c03f4b8396554bc6a2_icgraph" alt=""/></div>
+<map name="aERF__EpochTime_8H_af7eed25e58d350c03f4b8396554bc6a2_icgraph" id="aERF__EpochTime_8H_af7eed25e58d350c03f4b8396554bc6a2_icgraph">
 <area shape="rect" title=" " alt="" coords="319,81,436,108"/>
 <area shape="rect" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96" title=" " alt="" coords="140,5,239,32"/>
 <area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="112,56,267,83"/>
