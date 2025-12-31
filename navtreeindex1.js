@@ -211,6 +211,7 @@ var NAVTREEINDEX1 =
 "ERF__FillPatcher_8H.html":[3,0,1,1,12],
 "ERF__FillPatcher_8H_source.html":[3,0,1,1,12],
 "ERF__FillPatcher_8cpp.html":[3,0,1,1,11],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html":[3,0,1,8,2],
 "ERF__Fitch_8H.html":[3,0,1,18,1,1],
 "ERF__Fitch_8H_source.html":[3,0,1,18,1,1],
 "ERF__ForestDrag_8H.html":[3,0,1,14,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__IceFall_8cpp.html":[3,0,1,9,3,1],
 "ERF__ImplicitDiff__N_8cpp.html":[3,0,1,3,18],
 "ERF__ImplicitDiff__N_8cpp.html#a33db393fa7edf4005d71593e6c0e965b":[3,0,1,3,18,0],
-"ERF__ImplicitDiff__N_8cpp.html#aa559b6a037b1c15e66b4637ed5cde524":[3,0,1,3,18,2],
-"ERF__ImplicitDiff__N_8cpp.html#ab0b9888266a4f75703e33e1f39280fb8":[3,0,1,3,18,1]
+"ERF__ImplicitDiff__N_8cpp.html#aa559b6a037b1c15e66b4637ed5cde524":[3,0,1,3,18,2]
 };

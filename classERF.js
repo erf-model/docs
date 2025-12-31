@@ -47,6 +47,7 @@ var classERF =
     [ "FillIntermediatePatch", "classERF.html#a6f5c620a402f7b1be46e05c0cbe48743", null ],
     [ "FillPatchCrseLevel", "classERF.html#a2aa2fc95da9d488b8d6ab0d3ac365c90", null ],
     [ "FillPatchFineLevel", "classERF.html#a6837d68f8ec62b1fbcc0badbf45f8d66", null ],
+    [ "FillZeroAreaFaceFluxes", "classERF.html#aeb4f0703b03b8077a86e4ff3a08ec88b", null ],
     [ "get_eb", "classERF.html#a2ae1074c3047ab0eb8286f73f5d4be0e", null ],
     [ "get_projection_bc", "classERF.html#a57580311d47c9fd5e27ba156d287c169", null ],
     [ "getAdvFluxReg", "classERF.html#a4d6d990d8111c170692b1e9cc0e918b8", null ],
