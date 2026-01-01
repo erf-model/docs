@@ -1,12 +1,12 @@
 var dir_9e99115d7ddbb12c0597e51707e61330 =
 [
     [ "ERF_ComputeDivergence.cpp", "ERF__ComputeDivergence_8cpp.html", null ],
-    [ "ERF_FFTUtils.H", "ERF__FFTUtils_8H.html", null ],
-    [ "ERF_FillZeroAreaFaceFluxes.cpp", "ERF__FillZeroAreaFaceFluxes_8cpp.html", null ],
+    [ "ERF_FillZeroAreaFaceFluxes.cpp", "ERF__FillZeroAreaFaceFluxes_8cpp.html", "ERF__FillZeroAreaFaceFluxes_8cpp" ],
     [ "ERF_ImposeBCsOnPhi.cpp", "ERF__ImposeBCsOnPhi_8cpp.html", null ],
-    [ "ERF_PoissonSolve.cpp", "ERF__PoissonSolve_8cpp.html", null ],
-    [ "ERF_PoissonSolve_tb.cpp", "ERF__PoissonSolve__tb_8cpp.html", null ],
+    [ "ERF_PoissonSolve.cpp", "ERF__PoissonSolve_8cpp.html", "ERF__PoissonSolve_8cpp" ],
+    [ "ERF_PoissonSolve_tb.cpp", "ERF__PoissonSolve__tb_8cpp.html", "ERF__PoissonSolve__tb_8cpp" ],
     [ "ERF_PoissonWallDist.cpp", "ERF__PoissonWallDist_8cpp.html", null ],
+    [ "ERF_SolverUtils.H", "ERF__SolverUtils_8H.html", "ERF__SolverUtils_8H" ],
     [ "ERF_SolveWithEBMLMG.cpp", "ERF__SolveWithEBMLMG_8cpp.html", "ERF__SolveWithEBMLMG_8cpp" ],
     [ "ERF_SolveWithFFT.cpp", "ERF__SolveWithFFT_8cpp.html", null ],
     [ "ERF_SolveWithGMRES.cpp", "ERF__SolveWithGMRES_8cpp.html", null ],

@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['gas_5fconcs_5ft_6578',['gas_concs_t',['../ERF__RRTMGP__Interface_8H.html#a8305236ede8d163161af7f34bd11f010',1,'ERF_RRTMGP_Interface.H']]],
-  ['gas_5foptics_5ft_6579',['gas_optics_t',['../ERF__RRTMGP__Interface_8H.html#a9c30fd2f9b0dfe8470755d0601e547fc',1,'ERF_RRTMGP_Interface.H']]]
+  ['int_6580',['Int',['../ERF__ShocInterface_8H.html#a008e7f6ae8f621fbb1d876061812b9b2',1,'ERF_ShocInterface.H']]],
+  ['int1d_5fk_6581',['int1d_k',['../ERF__Kokkos_8H.html#a3a97e4883d2079fb62a43ffbeb613a34',1,'ERF_Kokkos.H']]],
+  ['int2d_5fk_6582',['int2d_k',['../ERF__Kokkos_8H.html#a874064ebe1ddec9d5d6ead635f4cd702',1,'ERF_Kokkos.H']]],
+  ['int3d_5fk_6583',['int3d_k',['../ERF__Kokkos_8H.html#aa630517ef7020f7b5e39c6bf3f6d4f93',1,'ERF_Kokkos.H']]],
+  ['intsmallpack_6584',['IntSmallPack',['../classSHOCInterface.html#aee361818b0838702f3189091f5a828f3',1,'SHOCInterface']]]
 ];

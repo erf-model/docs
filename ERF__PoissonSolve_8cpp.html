@@ -82,6 +82,8 @@ $(document).ready(function(){initNavTree('ERF__PoissonSolve_8cpp.html',''); init
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_PoissonSolve.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -145,7 +147,214 @@ Include dependency graph for ERF_PoissonSolve.cpp:</div>
 <area shape="rect" title=" " alt="" coords="3196,393,3279,420"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a45fcc96a9662a3c4b61ca1dde709c3cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PoissonSolve_8cpp.html#a45fcc96a9662a3c4b61ca1dde709c3cc">solve_with_mlmg</a> (int lev, Vector&lt; amrex::MultiFab &gt; &amp;rhs, Vector&lt; MultiFab &gt; &amp;p, Vector&lt; amrex::Array&lt; MultiFab, AMREX_SPACEDIM &gt;&gt; &amp;fluxes, const Geometry &amp;geom, const amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; l_domain_bc_type, int mg_verbose, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> reltol, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> abstol)</td></tr>
+<tr class="separator:a45fcc96a9662a3c4b61ca1dde709c3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ae28c3032a9f0c28e4a3f1cbe7340c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__PoissonSolve_8cpp.html#a83ae28c3032a9f0c28e4a3f1cbe7340c">solve_with_EB_mlmg</a> (int lev, Vector&lt; amrex::MultiFab &gt; &amp;rhs, Vector&lt; MultiFab &gt; &amp;p, Vector&lt; amrex::Array&lt; MultiFab, AMREX_SPACEDIM &gt;&gt; &amp;fluxes, EBFArrayBoxFactory const &amp;ebfact, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact_u, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact_v, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact_w, const Geometry &amp;geom, const amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio, Array&lt; std::string, 2 *AMREX_SPACEDIM &gt; l_domain_bc_type, int mg_verbose, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> reltol, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> abstol)</td></tr>
+<tr class="separator:a83ae28c3032a9f0c28e4a3f1cbe7340c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a83ae28c3032a9f0c28e4a3f1cbe7340c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ae28c3032a9f0c28e4a3f1cbe7340c">&#9670;&nbsp;</a></span>solve_with_EB_mlmg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void solve_with_EB_mlmg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; amrex::Array&lt; MultiFab, AMREX_SPACEDIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>fluxes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EBFArrayBoxFactory const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact_u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact_v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact_w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::IntVect &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref_ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array&lt; std::string, 2 *AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramname"><em>l_domain_bc_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mg_verbose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>reltol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>abstol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classERF.html#adff3b3740b634d2cda1b148f3f3ce2ae">ERF::project_momenta()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__PoissonSolve_8cpp_a83ae28c3032a9f0c28e4a3f1cbe7340c_icgraph.png" border="0" usemap="#aERF__PoissonSolve_8cpp_a83ae28c3032a9f0c28e4a3f1cbe7340c_icgraph" alt=""/></div>
+<map name="aERF__PoissonSolve_8cpp_a83ae28c3032a9f0c28e4a3f1cbe7340c_icgraph" id="aERF__PoissonSolve_8cpp_a83ae28c3032a9f0c28e4a3f1cbe7340c_icgraph">
+<area shape="rect" title=" " alt="" coords="223,5,384,32"/>
+<area shape="rect" href="classERF.html#adff3b3740b634d2cda1b148f3f3ce2ae" title=" " alt="" coords="5,5,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45fcc96a9662a3c4b61ca1dde709c3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45fcc96a9662a3c4b61ca1dde709c3cc">&#9670;&nbsp;</a></span>solve_with_mlmg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void solve_with_mlmg </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; amrex::MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; MultiFab &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Vector&lt; amrex::Array&lt; MultiFab, AMREX_SPACEDIM &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>fluxes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; amrex::IntVect &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ref_ratio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array&lt; std::string, 2 *AMREX_SPACEDIM &gt;&#160;</td>
+          <td class="paramname"><em>l_domain_bc_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mg_verbose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>reltol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>abstol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classERF.html#adff3b3740b634d2cda1b148f3f3ce2ae">ERF::project_momenta()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__PoissonSolve_8cpp_a45fcc96a9662a3c4b61ca1dde709c3cc_icgraph.png" border="0" usemap="#aERF__PoissonSolve_8cpp_a45fcc96a9662a3c4b61ca1dde709c3cc_icgraph" alt=""/></div>
+<map name="aERF__PoissonSolve_8cpp_a45fcc96a9662a3c4b61ca1dde709c3cc_icgraph" id="aERF__PoissonSolve_8cpp_a45fcc96a9662a3c4b61ca1dde709c3cc_icgraph">
+<area shape="rect" title=" " alt="" coords="223,5,360,32"/>
+<area shape="rect" href="classERF.html#adff3b3740b634d2cda1b148f3f3ce2ae" title=" " alt="" coords="5,5,175,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

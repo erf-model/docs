@@ -1,5 +1,6 @@
 var structTurbChoice =
 [
+    [ "check_params", "structTurbChoice.html#a2ce6b65d4241baadff94fe49eb8f8771", null ],
     [ "display", "structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f", null ],
     [ "init_params", "structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422", null ],
     [ "advect_tke", "structTurbChoice.html#a61228dc0a9f929adf503d630fc926ede", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"ERF__SimpleAD_8H_source.html":[3,0,1,18,4,1],
+"ERF__SlowRhsPost_8cpp.html":[3,0,1,15,10],
 "ERF__SlowRhsPost_8cpp.html#a9b7c629ca0922e62c1ea5ca60f66ac24":[3,0,1,15,10,0],
 "ERF__SlowRhsPre_8cpp.html":[3,0,1,15,11],
 "ERF__SlowRhsPre_8cpp.html#a183bc8f162cd19cd09e3362640c54aa7":[3,0,1,15,11,0],
@@ -7,11 +9,16 @@ var NAVTREEINDEX4 =
 "ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,17,25,0],
 "ERF__SolveTridiag_8H_source.html":[3,0,1,17,25],
 "ERF__SolveWithEBMLMG_8cpp.html":[3,0,1,8,7],
-"ERF__SolveWithEBMLMG_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c":[3,0,1,8,7,0],
+"ERF__SolveWithEBMLMG_8cpp.html#a0573c811b5f308cb96e49b60fd505dd3":[3,0,1,8,7,1],
+"ERF__SolveWithEBMLMG_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861":[3,0,1,8,7,0],
 "ERF__SolveWithFFT_8cpp.html":[3,0,1,8,8],
 "ERF__SolveWithGMRES_8cpp.html":[3,0,1,8,9],
 "ERF__SolveWithMLMG_8cpp.html":[3,0,1,8,10],
-"ERF__SolveWithMLMG_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c":[3,0,1,8,10,0],
+"ERF__SolveWithMLMG_8cpp.html#a9285fc2860db342a9350ae1bf2e43eef":[3,0,1,8,10,0],
+"ERF__SolverUtils_8H.html":[3,0,1,8,6],
+"ERF__SolverUtils_8H.html#a3611957f9ce37c1d538c9a596dc02acf":[3,0,1,8,6,1],
+"ERF__SolverUtils_8H.html#a9071f295efe69b41bdccada862d83682":[3,0,1,8,6,0],
+"ERF__SolverUtils_8H_source.html":[3,0,1,8,6],
 "ERF__SpongeStruct_8H.html":[3,0,1,2,7],
 "ERF__SpongeStruct_8H_source.html":[3,0,1,2,7],
 "ERF__SrcHeaders_8H.html":[3,0,1,14,14],
@@ -242,12 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__module__model__constants_8F90.html#a67ffe08178e163f5beffa123ec9a5c4c":[3,0,1,9,1,2,105],
 "ERF__module__model__constants_8F90.html#a6aa37a9a4c7468857a6251daaba1f865":[3,0,1,9,1,2,67],
 "ERF__module__model__constants_8F90.html#a6b0b4a0c04cf08a306ca36944b0edf5c":[3,0,1,9,1,2,17],
-"ERF__module__model__constants_8F90.html#a6b5a32aae4700f089e90073946149252":[3,0,1,9,1,2,77],
-"ERF__module__model__constants_8F90.html#a70702154886ac01a1a691695a2a64d3a":[3,0,1,9,1,2,25],
-"ERF__module__model__constants_8F90.html#a707cb377aa1be77234d64923bf7cf1d5":[3,0,1,9,1,2,96],
-"ERF__module__model__constants_8F90.html#a7312b4d4913e9eee6bee49cf8228b79b":[3,0,1,9,1,2,6],
-"ERF__module__model__constants_8F90.html#a73f52d22ce1367d65ec1e7538a07312f":[3,0,1,9,1,2,101],
-"ERF__module__model__constants_8F90.html#a7605eabcd6e8e0494310193bd762800c":[3,0,1,9,1,2,46],
-"ERF__module__model__constants_8F90.html#a771da7442ffd61d3eedb28c31a7e16a3":[3,0,1,9,1,2,93],
-"ERF__module__model__constants_8F90.html#a778cbc522967466d62e9c708ada7239c":[3,0,1,9,1,2,53]
+"ERF__module__model__constants_8F90.html#a6b5a32aae4700f089e90073946149252":[3,0,1,9,1,2,77]
 };

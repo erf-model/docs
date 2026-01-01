@@ -1,7 +1,7 @@
 var structSolverChoice =
 [
     [ "build_coriolis_forcings_const_lat", "structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590", null ],
-    [ "check_params", "structSolverChoice.html#a4c875e5fe0f3dd69fbcc145b7066c766", null ],
+    [ "check_params", "structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47", null ],
     [ "display", "structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671", null ],
     [ "init_params", "structSolverChoice.html#a76659aa69edd3370626e3648cbead9be", null ],
     [ "read_int_string", "structSolverChoice.html#a31e016e3da7c175ac02427767286bc42", null ],

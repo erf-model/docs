@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['real_6596',['real',['../ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21',1,'ERF_OrbCosZenith.H']]],
-  ['real_6597',['Real',['../ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57',1,'ERF_ShocInterface.H']]],
-  ['real1d_5fk_6598',['real1d_k',['../ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846',1,'ERF_Kokkos.H']]],
-  ['real2d_5fk_6599',['real2d_k',['../ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658',1,'ERF_Kokkos.H']]],
-  ['real3d_5fk_6600',['real3d_k',['../ERF__Kokkos_8H.html#a5540b69a7c94dc3ece92aef8344d216a',1,'ERF_Kokkos.H']]],
-  ['realhost1d_5fk_6601',['realHost1d_k',['../ERF__Kokkos_8H.html#ad9bc05397fd660f7037450087628cfb8',1,'ERF_Kokkos.H']]],
-  ['realhost2d_5fk_6602',['realHost2d_k',['../ERF__Kokkos_8H.html#a6dbe0e893e0d7f161c19c071193fe766',1,'ERF_Kokkos.H']]],
-  ['realt_6603',['RealT',['../ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b',1,'ERF_Kokkos.H']]],
-  ['rtype_6604',['RType',['../structncutils_1_1NCDType.html#a079bbf4314ad09362b5c8124670c821f',1,'ncutils::NCDType']]]
+  ['sc_6605',['SC',['../classSHOCInterface.html#a08be06966c47dff85f8a51656e1ca2fe',1,'SHOCInterface']]],
+  ['shf_6606',['SHF',['../classSHOCInterface.html#a908fa008b7bf3e603173acc4796a1038',1,'SHOCInterface']]],
+  ['smask_6607',['Smask',['../classSHOCInterface.html#a820aa8dc63e2b69a1e26ecd1eb754627',1,'SHOCInterface']]],
+  ['source_5ffunc_5ft_6608',['source_func_t',['../ERF__RRTMGP__Interface_8H.html#ac0ae196a590dc18fdc4685dc285fb7bf',1,'ERF_RRTMGP_Interface.H']]],
+  ['spack_6609',['Spack',['../classSHOCInterface.html#ad0cb4402b5303a178acac9f79190536f',1,'SHOCInterface']]],
+  ['sview_5f2d_6610',['sview_2d',['../classSHOCInterface.html#a15bbd96e9f07dcd68b03743dbac25b21',1,'SHOCInterface']]],
+  ['sview_5f2d_5fconst_6611',['sview_2d_const',['../classSHOCInterface.html#afc2564324ac6a7b8dcd78f50e47137c2',1,'SHOCInterface']]]
 ];

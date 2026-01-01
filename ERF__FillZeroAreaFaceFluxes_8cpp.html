@@ -82,6 +82,8 @@ $(document).ready(function(){initNavTree('ERF__FillZeroAreaFaceFluxes_8cpp.html'
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_FillZeroAreaFaceFluxes.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -145,7 +147,173 @@ Include dependency graph for ERF_FillZeroAreaFaceFluxes.cpp:</div>
 <area shape="rect" title=" " alt="" coords="3196,393,3279,420"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abe7c3996ab08f0ed8d91fe3849a0a861"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__FillZeroAreaFaceFluxes_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861">FillZeroAreaFaceFluxes</a> (MultiFab &amp;phi, Array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;fluxes, const Geometry &amp;geom, EBFArrayBoxFactory const &amp;ebfact, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact_u, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact_v, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact_w)</td></tr>
+<tr class="separator:abe7c3996ab08f0ed8d91fe3849a0a861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="abe7c3996ab08f0ed8d91fe3849a0a861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7c3996ab08f0ed8d91fe3849a0a861">&#9670;&nbsp;</a></span>FillZeroAreaFaceFluxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FillZeroAreaFaceFluxes </td>
+          <td>(</td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>phi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Array&lt; MultiFab, AMREX_SPACEDIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>fluxes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">EBFArrayBoxFactory const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact_u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact_v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
+          <td class="paramname"><em>ebfact_w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute phi gradients where the area of the face is zero </p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;ERF::FillZeroAreaFaceFluxes()&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(phi,<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">const</span> Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">const</span> Box&amp; <a class="code" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a> = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> Box&amp; <a class="code" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a> = mfi.nodaltilebox(1);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> Box&amp; <a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a> = mfi.nodaltilebox(2);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// EBCellFlagFab const&amp; cflag_fab = (ebfact.get_const_factory())-&gt;getMultiEBCellFlagFab()[mfi];</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        EBCellFlagFab <span class="keyword">const</span>&amp; cflag_fab = (ebfact.getMultiEBCellFlagFab())[mfi];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        Array4&lt;const EBCellFlag&gt; cflag = cflag_fab.const_array();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (cflag_fab.getType(tbx) == FabType::singlevalued)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            Array4&lt;const Real&gt; apx = ebfact.getAreaFrac()[0]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            Array4&lt;const Real&gt; apy = ebfact.getAreaFrac()[1]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            Array4&lt;const Real&gt; apz = ebfact.getAreaFrac()[2]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            Array4&lt;const EBCellFlag&gt; u_cflag = ebfact_u.getMultiEBCellFlagFab()[mfi].const_array();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            Array4&lt;const EBCellFlag&gt; v_cflag = ebfact_v.getMultiEBCellFlagFab()[mfi].const_array();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            Array4&lt;const EBCellFlag&gt; w_cflag = ebfact_w.getMultiEBCellFlagFab()[mfi].const_array();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; p_arr = phi.const_array(mfi);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; fx = fluxes[0].array(mfi);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; fy = fluxes[1].array(mfi);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; fz = fluxes[2].array(mfi);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            ParallelFor(<a class="code" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, <a class="code" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, <a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="comment">// x-face</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">if</span> (apx(i,j,k) == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    <span class="keywordflow">if</span> (!u_cflag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keywordflow">if</span> (cflag(i,j,k).isCovered() &amp;&amp; !cflag(i-1,j,k).isCovered()) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                            fx(i,j,k) = dxInv[0] * (p_arr(i-3,j,k) - 3.*p_arr(i-2,j,k) + 2.*p_arr(i-1,j,k));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cflag(i-1,j,k).isCovered() &amp;&amp; !cflag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                            fx(i,j,k) = dxInv[0] * (3.*p_arr(i+1,j,k) - p_arr(i+2,j,k) - 2.*p_arr(i,j,k));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            },</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// y-face</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span> (apy(i,j,k) == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    <span class="keywordflow">if</span> (!v_cflag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        <span class="keywordflow">if</span> (cflag(i,j,k).isCovered() &amp;&amp; !cflag(i,j-1,k).isCovered()) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            fy(i,j,k) = dxInv[1] * (p_arr(i,j-3,k) - 3.*p_arr(i,j-2,k) + 2.*p_arr(i,j-1,k));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cflag(i,j-1,k).isCovered() &amp;&amp; !cflag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            fy(i,j,k) = dxInv[1] * (3.*p_arr(i,j+1,k) - p_arr(i,j+2,k) - 2.*p_arr(i,j,k));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            },</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="comment">// z-face</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">if</span> (apz(i,j,k) == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="keywordflow">if</span> (!w_cflag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        <span class="keywordflow">if</span> (cflag(i,j,k).isCovered() &amp;&amp; !cflag(i,j,k-1).isCovered()) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                            fz(i,j,k) = dxInv[2] * (p_arr(i,j,k-3) - 3.*p_arr(i,j,k-2) + 2.*p_arr(i,j,k-1));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cflag(i,j,k-1).isCovered() &amp;&amp; !cflag(i,j,k).isCovered()) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                            fz(i,j,k) = dxInv[2] * (3.*p_arr(i,j,k+1) - p_arr(i,j,k+2) - 2.*p_arr(i,j,k));</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            });</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        } <span class="comment">// single-valued</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:9</div></div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_a853a144267414a8a59c87f80ca5c958c"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a></div><div class="ttdeci">const Box xbx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:7</div></div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_ae3d636c41f5271630a5816a4b8b668b2"><div class="ttname"><a href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a></div><div class="ttdeci">const Box ybx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:8</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__SolveWithEBMLMG_8cpp.html#a0573c811b5f308cb96e49b60fd505dd3">solve_with_EB_mlmg()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_cgraph.png" border="0" usemap="#aERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_cgraph" alt=""/></div>
+<map name="aERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_cgraph" id="aERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,177,57"/>
+<area shape="rect" href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29" title=" " alt="" coords="225,5,456,32"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="304,56,377,83"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_icgraph.png" border="0" usemap="#aERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_icgraph" alt=""/></div>
+<map name="aERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_icgraph" id="aERF__FillZeroAreaFaceFluxes_8cpp_abe7c3996ab08f0ed8d91fe3849a0a861_icgraph">
+<area shape="rect" title=" " alt="" coords="215,5,387,32"/>
+<area shape="rect" href="ERF__SolveWithEBMLMG_8cpp.html#a0573c811b5f308cb96e49b60fd505dd3" title=" " alt="" coords="5,5,167,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -280,7 +280,6 @@ var menudata={children:[
 {text:"y",url:"globals_vars.html#index_y"},
 {text:"z",url:"globals_vars.html#index_z"}]},
 {text:"Typedefs",url:"globals_type.html",children:[
-{text:"b",url:"globals_type.html#index_b"},
 {text:"c",url:"globals_type.html#index_c"},
 {text:"f",url:"globals_type.html#index_f"},
 {text:"g",url:"globals_type.html#index_g"},

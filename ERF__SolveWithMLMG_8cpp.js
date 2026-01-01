@@ -1,4 +1,4 @@
 var ERF__SolveWithMLMG_8cpp =
 [
-    [ "BCType", "ERF__SolveWithMLMG_8cpp.html#ad583385d33cdb5a9c28bf474b72cad1c", null ]
+    [ "solve_with_mlmg", "ERF__SolveWithMLMG_8cpp.html#a9285fc2860db342a9350ae1bf2e43eef", null ]
 ];
