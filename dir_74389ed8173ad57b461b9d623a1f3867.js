@@ -29,6 +29,6 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_MakeNewLevel.cpp", "ERF__MakeNewLevel_8cpp.html", null ],
     [ "ERF_ProbCommon.H", "ERF__ProbCommon_8H.html", "ERF__ProbCommon_8H" ],
     [ "ERF_ReadWaves.cpp", "ERF__ReadWaves_8cpp.html", null ],
-    [ "ERF_Tagging.cpp", "ERF__Tagging_8cpp.html", null ],
+    [ "ERF_Tagging.cpp", "ERF__Tagging_8cpp.html", "ERF__Tagging_8cpp" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ]
 ];

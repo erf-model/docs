@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"functions_func_g.html":[2,3,1,6],
+"functions_func_h.html":[2,3,1,7],
 "functions_func_i.html":[2,3,1,8],
 "functions_func_k.html":[2,3,1,9],
 "functions_func_l.html":[2,3,1,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "namespacemembers_q.html":[1,1,0,15],
 "namespacemembers_r.html":[1,1,0,16],
 "namespacemembers_s.html":[1,1,0,17],
-"namespacemembers_t.html":[1,1,0,18],
-"namespacemembers_u.html":[1,1,0,19],
-"namespacemembers_v.html":[1,1,0,20]
+"namespacemembers_t.html":[1,1,0,18]
 };

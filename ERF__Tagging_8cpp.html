@@ -82,6 +82,8 @@ $(document).ready(function(){initNavTree('ERF__Tagging_8cpp.html',''); initResiz
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_Tagging.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -145,7 +147,109 @@ Include dependency graph for ERF_Tagging.cpp:</div>
 <area shape="rect" title=" " alt="" coords="2670,453,2793,480"/>
 </map>
 </div>
-</div></div><!-- contents -->
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a661478614baa822c243e10e73731de2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Tagging_8cpp.html#a661478614baa822c243e10e73731de2a">tag_on_distance_from_eye</a> (const Geometry &amp;cgeom, TagBoxArray *tags, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eye_x, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eye_y, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rad_tag)</td></tr>
+<tr class="separator:a661478614baa822c243e10e73731de2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a661478614baa822c243e10e73731de2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a661478614baa822c243e10e73731de2a">&#9670;&nbsp;</a></span>tag_on_distance_from_eye()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tag_on_distance_from_eye </td>
+          <td>(</td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>cgeom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TagBoxArray *&#160;</td>
+          <td class="paramname"><em>tags</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>eye_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>eye_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramname"><em>rad_tag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function to tag cells for refinement &ndash; this overrides the pure virtual function in AmrCore</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">levc</td><td>level of refinement at which we tag cells (0 is coarsest level) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">tags</td><td>array of tagged cells </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>current time </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;{</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dx      = cgeom.CellSizeArray();</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> prob_lo = cgeom.ProbLoArray();</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*tags); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        TagBox&amp; tag = (*tags)[mfi];</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keyword">auto</span> tag_arr = tag.array();  <span class="comment">// Get device-accessible array</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        <span class="keyword">const</span> Box&amp; tile_box = mfi.tilebox(); <span class="comment">// The box for this tile</span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        ParallelFor(tile_box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;            <span class="comment">// Compute cell center coordinates</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = prob_lo[0] + (i + 0.5) * dx[0];</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = prob_lo[1] + (j + 0.5) * dx[1];</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dist = std::sqrt((x - eye_x)*(x - eye_x) + (y - eye_y)*(y - eye_y));</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="keywordflow">if</span> (dist &lt; rad_tag) {</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                tag_arr(i,j,k) = TagBox::SET;</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                tag_arr(i,j,k) = TagBox::CLEAR;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            }</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        });</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    }</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;}</div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, and <a class="el" href="classERF.html#a73cc1a17627362e70472827b47745d48">ERF::HurricaneTracker()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Tagging_8cpp_a661478614baa822c243e10e73731de2a_icgraph.png" border="0" usemap="#aERF__Tagging_8cpp_a661478614baa822c243e10e73731de2a_icgraph" alt=""/></div>
+<map name="aERF__Tagging_8cpp_a661478614baa822c243e10e73731de2a_icgraph" id="aERF__Tagging_8cpp_a661478614baa822c243e10e73731de2a_icgraph">
+<area shape="rect" title=" " alt="" coords="216,31,413,57"/>
+<area shape="rect" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4" title=" " alt="" coords="34,5,139,32"/>
+<area shape="rect" href="classERF.html#a73cc1a17627362e70472827b47745d48" title=" " alt="" coords="5,56,168,83"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
