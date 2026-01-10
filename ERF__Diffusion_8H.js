@@ -1,8 +1,10 @@
 var ERF__Diffusion_8H =
 [
+    [ "ComputeStrain_EB", "ERF__Diffusion_8H.html#a5c66f922ff54147e8cbea3fb916ffb55", null ],
     [ "ComputeStrain_N", "ERF__Diffusion_8H.html#aa82238e32cce9f203e827f2adbbc63a9", null ],
     [ "ComputeStrain_S", "ERF__Diffusion_8H.html#afe5ea4ee1403bb03e2541b9ecbb6a060", null ],
     [ "ComputeStrain_T", "ERF__Diffusion_8H.html#a5dd0e3aa8c02b9938516d6d4427e4d72", null ],
+    [ "ComputeStressConsVisc_EB", "ERF__Diffusion_8H.html#a624c2a7c555762479c927d1b14103975", null ],
     [ "ComputeStressConsVisc_N", "ERF__Diffusion_8H.html#a282665a4e313a0622153bbf041242aee", null ],
     [ "ComputeStressConsVisc_S", "ERF__Diffusion_8H.html#aa44ea7ed0719270cee1ec12abb010457", null ],
     [ "ComputeStressConsVisc_T", "ERF__Diffusion_8H.html#a5dfb45d9413b73a5a733a3a29ec4fae5", null ],

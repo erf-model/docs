@@ -2,9 +2,11 @@ var dir_fc0c15590968603ac439df7b0a572228 =
 [
     [ "ERF_AddQKESources.H", "ERF__AddQKESources_8H.html", "ERF__AddQKESources_8H" ],
     [ "ERF_AddTKESources.H", "ERF__AddTKESources_8H.html", "ERF__AddTKESources_8H" ],
+    [ "ERF_ComputeStrain_EB.cpp", "ERF__ComputeStrain__EB_8cpp.html", "ERF__ComputeStrain__EB_8cpp" ],
     [ "ERF_ComputeStrain_N.cpp", "ERF__ComputeStrain__N_8cpp.html", "ERF__ComputeStrain__N_8cpp" ],
     [ "ERF_ComputeStrain_S.cpp", "ERF__ComputeStrain__S_8cpp.html", "ERF__ComputeStrain__S_8cpp" ],
     [ "ERF_ComputeStrain_T.cpp", "ERF__ComputeStrain__T_8cpp.html", "ERF__ComputeStrain__T_8cpp" ],
+    [ "ERF_ComputeStress_EB.cpp", "ERF__ComputeStress__EB_8cpp.html", "ERF__ComputeStress__EB_8cpp" ],
     [ "ERF_ComputeStress_N.cpp", "ERF__ComputeStress__N_8cpp.html", "ERF__ComputeStress__N_8cpp" ],
     [ "ERF_ComputeStress_S.cpp", "ERF__ComputeStress__S_8cpp.html", "ERF__ComputeStress__S_8cpp" ],
     [ "ERF_ComputeStress_T.cpp", "ERF__ComputeStress__T_8cpp.html", "ERF__ComputeStress__T_8cpp" ],
