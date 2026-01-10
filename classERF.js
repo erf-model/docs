@@ -80,6 +80,7 @@ var classERF =
     [ "initRayleigh", "classERF.html#a039a764a1d942c484e8aea49e87bc046", null ],
     [ "initSponge", "classERF.html#ab26ec4f9c35a519063af2a938c1012e6", null ],
     [ "input_sponge", "classERF.html#abfdc95a7c3cf7e413c1352bac38c93e8", null ],
+    [ "Interp2DArrays", "classERF.html#ac3b264bdcc7f9251ccbd9b2f8f4080ec", null ],
     [ "is_it_time_for_action", "classERF.html#ad4c61fad53912d1e8d0f774d365bcf0f", null ],
     [ "make_eb_box", "classERF.html#a0cf9cd65604501647629fd69a0d28bb6", null ],
     [ "make_eb_regular", "classERF.html#aeca994ecf1b09d58cdc991920504ec34", null ],
