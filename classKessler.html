@@ -537,138 +537,139 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                                       });</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        wt_max = get&lt;0&gt;(max) + <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        n_substep = int( std::ceil(wt_max * coef / <a class="code" href="classKessler.html#ab65a6b7181e08edaa8de14ea26bb8d62">CFL_MAX</a>) );</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        AMREX_ALWAYS_ASSERT(n_substep &gt;= 1);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        coef /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        dtn  /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// Substep the vertical advection</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nsub(0); nsub&lt;n_substep; ++nsub) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da7cde81843cd190a3122d7c3912a39b74">tabs</a>, TilingIfNotGPU()); mfi.isValid(); ++mfi ){</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keyword">auto</span> rho_array = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keyword">auto</span> qp_array  = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da2edc86e05fd080c928faeb1f6f39c701">MicVar_Kess::qp</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keyword">auto</span> rain_accum_array = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daa364685bc5d7f6f41ff14bbaf6ca3fc1">MicVar_Kess::rain_accum</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keyword">auto</span> fz_array  = fz.array(mfi);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> dJ_array = (<a class="code" href="classKessler.html#a534c115146bedf2e3f600ac351162252">m_detJ_cc</a>) ? <a class="code" href="classKessler.html#a534c115146bedf2e3f600ac351162252">m_detJ_cc</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="keyword">const</span> Box&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="keyword">const</span> Box&amp; tbz = mfi.tilebox(IntVect(0,0,1),IntVect(0));</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="comment">// Update vertical flux every substep</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                ParallelFor(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, qp_avg;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    <span class="keywordflow">if</span> (k==k_lo) {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        rho_avg = rho_array(i,j,k);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        qp_avg  = qp_array(i,j,k);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==k_hi+1) {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        rho_avg = rho_array(i,j,k-1);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        qp_avg  = qp_array(i,j,k-1);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k)); <span class="comment">// Convert to g/cm^3</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        qp_avg = 0.5*(qp_array(i,j,k-1)  + qp_array(i,j,k));</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    qp_avg = std::max(0.0, qp_avg);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_terminal = 36.34*std::pow(rho_avg*0.001*qp_avg, 0.1346)*std::pow(rho_avg/1.16, -0.5); <span class="comment">// in m/s</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <span class="comment">//       the divergence uses the normal velocity (Omega). However,</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="comment">//       there are no u/v components to the sedimentation velocity.</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <span class="comment">//       Therefore, we simply end up with a division by detJ when</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <span class="comment">//       evaluating the source term: dJinv * (flux_hi - flux_lo) * dzinv.</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    fz_array(i,j,k) = rho_avg*V_terminal*qp_avg;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    <span class="keywordflow">if</span>(k==k_lo){</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                        rain_accum_array(i,j,k) = rain_accum_array(i,j,k) + rho_avg*qp_avg*V_terminal*dtn/1000.0*1000.0; <span class="comment">// Divide by rho_water and convert to mm</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    }</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                });</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <span class="comment">// Update precip every substep</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    <span class="comment">// Jacobian determinant</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k+1)) &lt; 1e-14) fz_array(i,j,k+1) = 0.0;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k  )) &lt; 1e-14) fz_array(i,j,k  ) = 0.0;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dq_sed = dJinv * (1.0/rho_array(i,j,k)) * (fz_array(i,j,k+1) - fz_array(i,j,k)) * coef;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(dq_sed) &lt; 1e-14) dq_sed = 0.0;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    qp_array(i,j,k) +=  dq_sed;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    qp_array(i,j,k)  = std::max(0.0, qp_array(i,j,k));</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                });</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        } <span class="comment">// nsub</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(n_substep &gt;= 1,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                         <span class="stringliteral">&quot;Kessler: Number of precipitation substeps must be greater than 0!&quot;</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        coef /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        dtn  /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">// Substep the vertical advection</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nsub(0); nsub&lt;n_substep; ++nsub) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da7cde81843cd190a3122d7c3912a39b74">tabs</a>, TilingIfNotGPU()); mfi.isValid(); ++mfi ){</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keyword">auto</span> rho_array = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keyword">auto</span> qp_array  = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da2edc86e05fd080c928faeb1f6f39c701">MicVar_Kess::qp</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keyword">auto</span> rain_accum_array = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daa364685bc5d7f6f41ff14bbaf6ca3fc1">MicVar_Kess::rain_accum</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <span class="keyword">auto</span> fz_array  = fz.array(mfi);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span> dJ_array = (<a class="code" href="classKessler.html#a534c115146bedf2e3f600ac351162252">m_detJ_cc</a>) ? <a class="code" href="classKessler.html#a534c115146bedf2e3f600ac351162252">m_detJ_cc</a>-&gt;const_array(mfi) : Array4&lt;const Real&gt;{};</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="keyword">const</span> Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keyword">const</span> Box&amp; tbz = mfi.tilebox(IntVect(0,0,1),IntVect(0));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="comment">// Update vertical flux every substep</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                ParallelFor(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, qp_avg;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    <span class="keywordflow">if</span> (k==k_lo) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                        rho_avg = rho_array(i,j,k);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        qp_avg  = qp_array(i,j,k);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k==k_hi+1) {</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        rho_avg = rho_array(i,j,k-1);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        qp_avg  = qp_array(i,j,k-1);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k)); <span class="comment">// Convert to g/cm^3</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        qp_avg = 0.5*(qp_array(i,j,k-1)  + qp_array(i,j,k));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    qp_avg = std::max(0.0, qp_avg);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_terminal = 36.34*std::pow(rho_avg*0.001*qp_avg, 0.1346)*std::pow(rho_avg/1.16, -0.5); <span class="comment">// in m/s</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="comment">//       the divergence uses the normal velocity (Omega). However,</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    <span class="comment">//       there are no u/v components to the sedimentation velocity.</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    <span class="comment">//       Therefore, we simply end up with a division by detJ when</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <span class="comment">//       evaluating the source term: dJinv * (flux_hi - flux_lo) * dzinv.</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    fz_array(i,j,k) = rho_avg*V_terminal*qp_avg;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    <span class="keywordflow">if</span>(k==k_lo){</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        rain_accum_array(i,j,k) = rain_accum_array(i,j,k) + rho_avg*qp_avg*V_terminal*dtn/1000.0*1000.0; <span class="comment">// Divide by rho_water and convert to mm</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                    }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                });</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="comment">// Update precip every substep</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    <span class="comment">// Jacobian determinant</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k+1)) &lt; 1e-14) fz_array(i,j,k+1) = 0.0;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k  )) &lt; 1e-14) fz_array(i,j,k  ) = 0.0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dq_sed = dJinv * (1.0/rho_array(i,j,k)) * (fz_array(i,j,k+1) - fz_array(i,j,k)) * coef;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(dq_sed) &lt; 1e-14) dq_sed = 0.0;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    qp_array(i,j,k) +=  dq_sed;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    qp_array(i,j,k)  = std::max(0.0, qp_array(i,j,k));</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                });</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        } <span class="comment">// nsub</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::Kessler_NoRain) {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">if</span> (!do_cond) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment">// get the temperature, density, theta, qt and qc from input</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da7cde81843cd190a3122d7c3912a39b74">tabs</a>,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keyword">auto</span> qv_array    = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keyword">auto</span> qc_array    = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da6b81d3dc642e339490ef9ab50db41a65">MicVar_Kess::qcl</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keyword">auto</span> qt_array    = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da9f81c8a38dd25b5ae5821d48e8878b03">MicVar_Kess::qt</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keyword">auto</span> tabs_array  = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da7cde81843cd190a3122d7c3912a39b74">MicVar_Kess::tabs</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keyword">auto</span> theta_array = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keyword">auto</span> pres_array  = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="comment">// Expose for GPU</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_fac_cond = <a class="code" href="classKessler.html#a74746cef2381fd949a06be46f99a05c7">m_fac_cond</a>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="comment">//------- Autoconversion/accretion</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsat, dtqsat;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dq_clwater_to_vapor, dq_vapor_to_clwater;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pressure = pres_array(i,j,k);</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pressure, qsat);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(tabs_array(i,j,k), pressure, dtqsat);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="comment">// If there is precipitating water (i.e. rain), and the cell is not saturated</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="comment">// then the rain water can evaporate leading to extraction of latent heat, hence</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="comment">// reducing temperature and creating negative buoyancy</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                dq_vapor_to_clwater = 0.0;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                dq_clwater_to_vapor = 0.0;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="comment">//Real fac = qsat*L_v*L_v/(Cp_d*R_v*tabs_array(i,j,k)*tabs_array(i,j,k));</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat){</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                <span class="comment">// If water vapor is less than the saturated value, then the cloud water can evaporate, leading to evaporative cooling and</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="comment">// reducing temperature</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &lt; qsat &amp;&amp; qc_array(i,j,k) &gt; 0.0){</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(1.0 + fac));</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                qv_array(i,j,k) += -dq_vapor_to_clwater + dq_clwater_to_vapor;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                qc_array(i,j,k) +=  dq_vapor_to_clwater - dq_clwater_to_vapor;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_over_T = theta_array(i,j,k)/tabs_array(i,j,k);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                theta_array(i,j,k) += theta_over_T * d_fac_cond * (dq_vapor_to_clwater - dq_clwater_to_vapor);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                qv_array(i,j,k) = std::max(0.0, qv_array(i,j,k));</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                qt_array(i,j,k) = qv_array(i,j,k) + qc_array(i,j,k);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            });</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::Kessler_NoRain) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordflow">if</span> (!do_cond) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="comment">// get the temperature, density, theta, qt and qc from input</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da7cde81843cd190a3122d7c3912a39b74">tabs</a>,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keyword">auto</span> qv_array    = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keyword">auto</span> qc_array    = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da6b81d3dc642e339490ef9ab50db41a65">MicVar_Kess::qcl</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keyword">auto</span> qt_array    = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da9f81c8a38dd25b5ae5821d48e8878b03">MicVar_Kess::qt</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keyword">auto</span> tabs_array  = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da7cde81843cd190a3122d7c3912a39b74">MicVar_Kess::tabs</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keyword">auto</span> theta_array = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da8e4ed7630edede7500eef0da31218c36">MicVar_Kess::theta</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keyword">auto</span> pres_array  = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; box3d = mfi.tilebox();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="comment">// Expose for GPU</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_fac_cond = <a class="code" href="classKessler.html#a74746cef2381fd949a06be46f99a05c7">m_fac_cond</a>;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            ParallelFor(box3d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="comment">//------- Autoconversion/accretion</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsat, dtqsat;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dq_clwater_to_vapor, dq_vapor_to_clwater;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pressure = pres_array(i,j,k);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pressure, qsat);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(tabs_array(i,j,k), pressure, dtqsat);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="comment">// If there is precipitating water (i.e. rain), and the cell is not saturated</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="comment">// then the rain water can evaporate leading to extraction of latent heat, hence</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="comment">// reducing temperature and creating negative buoyancy</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                dq_vapor_to_clwater = 0.0;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                dq_clwater_to_vapor = 0.0;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="comment">//Real fac = qsat*L_v*L_v/(Cp_d*R_v*tabs_array(i,j,k)*tabs_array(i,j,k));</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat){</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="comment">// If water vapor is less than the saturated value, then the cloud water can evaporate, leading to evaporative cooling and</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="comment">// reducing temperature</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &lt; qsat &amp;&amp; qc_array(i,j,k) &gt; 0.0){</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                    dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(1.0 + fac));</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                qv_array(i,j,k) += -dq_vapor_to_clwater + dq_clwater_to_vapor;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                qc_array(i,j,k) +=  dq_vapor_to_clwater - dq_clwater_to_vapor;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_over_T = theta_array(i,j,k)/tabs_array(i,j,k);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                theta_array(i,j,k) += theta_over_T * d_fac_cond * (dq_vapor_to_clwater - dq_clwater_to_vapor);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                qv_array(i,j,k) = std::max(0.0, qv_array(i,j,k));</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                qt_array(i,j,k) = qv_array(i,j,k) + qc_array(i,j,k);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            });</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a3c70f890015491421d536954a374324d"><div class="ttname"><a href="ERF__Constants_8H.html#a3c70f890015491421d536954a374324d">alphaelq</a></div><div class="ttdeci">constexpr amrex::Real alphaelq</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:48</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a86f34aeefa355fa0d6d0cca8f033a878"><div class="ttname"><a href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a></div><div class="ttdeci">constexpr amrex::Real qcw0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:46</div></div>
