@@ -50,6 +50,8 @@ var structSolverChoice =
     [ "hindcast_lateral_forcing", "structSolverChoice.html#a55a99c03ba69de86126f37568875944a", null ],
     [ "hindcast_lateral_sponge_length", "structSolverChoice.html#a4f6eabafe2c7a1e859a4a4d504315b53", null ],
     [ "hindcast_lateral_sponge_strength", "structSolverChoice.html#a1f826d6dda5aff2ae48cded794d4d67c", null ],
+    [ "hindcast_surface_bcs", "structSolverChoice.html#ade651250bf1156ae5834eec3f80fcf7f", null ],
+    [ "hindcast_surface_data_dir", "structSolverChoice.html#a72a6d6e6c3020420460b05a418369f4c", null ],
     [ "hindcast_zhi_sponge_damping", "structSolverChoice.html#a4019f912eceb0e0658845594c10b674a", null ],
     [ "hindcast_zhi_sponge_length", "structSolverChoice.html#a37ef856ceb8cb8783d3805e9fa70369e", null ],
     [ "hindcast_zhi_sponge_strength", "structSolverChoice.html#a976506910aad20545b9b81ba410d51b2", null ],
