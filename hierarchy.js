@@ -43,6 +43,7 @@ var hierarchy =
     ] ],
     [ "LandSurface", "classLandSurface.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
+    [ "MaterialProperties", "structMaterialProperties.html", null ],
     [ "Microphysics", "classMicrophysics.html", [
       [ "EulerianMicrophysics", "classEulerianMicrophysics.html", null ]
     ] ],
@@ -86,8 +87,13 @@ var hierarchy =
     [ "ProblemBase", "classProblemBase.html", null ],
     [ "ProbParmDefaults", "structProbParmDefaults.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
+    [ "rico_flux", "structrico__flux.html", null ],
     [ "rotate_flux", "structrotate__flux.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
+    [ "SDInitProperties", "classSDInitProperties.html", [
+      [ "SDInitialization", "classSDInitialization.html", null ],
+      [ "SDInjection", "classSDInjection.html", null ]
+    ] ],
     [ "SHOCInterface", "classSHOCInterface.html", null ],
     [ "SHOCInterface::SHOCPostprocess", "structSHOCInterface_1_1SHOCPostprocess.html", null ],
     [ "SHOCInterface::SHOCPreprocess", "structSHOCInterface_1_1SHOCPreprocess.html", null ],
@@ -105,6 +111,7 @@ var hierarchy =
     [ "surface_temp_mod_charnock", "structsurface__temp__mod__charnock.html", null ],
     [ "surface_temp_wave_coupled", "structsurface__temp__wave__coupled.html", null ],
     [ "SurfaceLayer", "classSurfaceLayer.html", null ],
+    [ "TerminalVelocity< RT >", "structTerminalVelocity.html", null ],
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", null ],

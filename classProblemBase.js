@@ -13,8 +13,8 @@ var classProblemBase =
     [ "name", "classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791", null ],
     [ "read_custom_terrain", "classProblemBase.html#a8d354473db4a51e21149d110a41fbccc", null ],
     [ "update_geostrophic_profile", "classProblemBase.html#aef7f72842640b743a8cd2a3c0b2dd142", null ],
-    [ "update_rhoqt_sources", "classProblemBase.html#af3fc8efdd04ab1204fd4fce288ff6095", null ],
-    [ "update_rhotheta_sources", "classProblemBase.html#ac2ccf6c0f00aca85f52eb2dfa11d13e2", null ],
-    [ "update_w_subsidence", "classProblemBase.html#aac7e58085e8b5aa509a74495219fc2a7", null ],
+    [ "update_rhoqt_sources", "classProblemBase.html#a50456fe7e5902239f239a076db4d9777", null ],
+    [ "update_rhotheta_sources", "classProblemBase.html#abc35a529692454d8e38b052b1b5980ac", null ],
+    [ "update_w_subsidence", "classProblemBase.html#a4f72dc97313e7cfd09adb65c9d990911", null ],
     [ "base_parms", "classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda", null ]
 ];

@@ -5,6 +5,7 @@ var classEulerianMicrophysics =
     [ "EulerianMicrophysics", "classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6", null ],
     [ "Advance", "classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243", null ],
     [ "Define", "classEulerianMicrophysics.html#a444c916c5bb1167ea1efc9f2b9595436", null ],
+    [ "FinishInit", "classEulerianMicrophysics.html#ab19a8660393ede275d027c154b04fe27", null ],
     [ "Get_Qmoist_Ptr", "classEulerianMicrophysics.html#a416981f230a126387b9a664a5a241e9c", null ],
     [ "Get_Qmoist_Restart_Vars", "classEulerianMicrophysics.html#a0bf4ba2dccc3aa4f2c462162ad54d1fc", null ],
     [ "Get_Qmoist_Size", "classEulerianMicrophysics.html#ad4983e19f621a55ad7d942c881215c72", null ],

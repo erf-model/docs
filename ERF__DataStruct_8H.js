@@ -46,7 +46,7 @@ var ERF__DataStruct_8H =
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#afe7288053bdb1298d93c3f92d1dcfaa2", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a167e3ccc662c308c584d8722a013a25c", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a527d8c0024ac44ed7d9d58920ba18924", null ],
-    [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a7957c75d5849d43f9e71c8bd89987237", null ],
+    [ "AMREX_ENUM", "ERF__DataStruct_8H.html#ad48d7c033e400ce54ec35c098c24a25f", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a7f22a2006f7648aaa55d4abfdb225a46", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#ad992b8006a5fca7b2276b6d76b0714a0", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#ad4680e1ac992c1e8272b0faaa1bf1d0f", null ],

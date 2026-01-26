@@ -4,6 +4,7 @@ var classMicrophysics =
     [ "~Microphysics", "classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451", null ],
     [ "Advance", "classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0", null ],
     [ "Define", "classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a", null ],
+    [ "FinishInit", "classMicrophysics.html#ad0fcf196828eb25456ee8f3d808ae8a9", null ],
     [ "Get_Qmoist_Ptr", "classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff", null ],
     [ "Get_Qmoist_Restart_Vars", "classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f", null ],
     [ "Get_Qmoist_Size", "classMicrophysics.html#a069e6013efb78d268394868d0cfc6382", null ],

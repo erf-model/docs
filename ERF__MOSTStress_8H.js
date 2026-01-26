@@ -21,6 +21,7 @@ var ERF__MOSTStress_8H =
     [ "donelan_flux", "structdonelan__flux.html", "structdonelan__flux" ],
     [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ],
     [ "bulk_coeff_flux", "structbulk__coeff__flux.html", "structbulk__coeff__flux" ],
+    [ "rico_flux", "structrico__flux.html", "structrico__flux" ],
     [ "rotate_flux", "structrotate__flux.html", "structrotate__flux" ],
     [ "air_viscosity", "ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674", null ]
 ];

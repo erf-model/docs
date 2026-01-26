@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ebboundarytype_6680',['EBBoundaryType',['../ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704',1,'ERF_EBStruct.H']]],
-  ['erf_5fbc_6681',['ERF_BC',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'ERF_IndexDefines.H']]]
+  ['ebboundarytype_6955',['EBBoundaryType',['../ERF__EBStruct_8H.html#a388f98f581c81cd2aa1f85c21c764704',1,'ERF_EBStruct.H']]],
+  ['erf_5fbc_6956',['ERF_BC',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9',1,'ERF_IndexDefines.H']]]
 ];

@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac68028f2920ccb380c605099adb7d604"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604">Init</a> (const int &amp;lev, const amrex::MultiFab &amp;cons_in, const amrex::BoxArray &amp;grids, const amrex::Geometry &amp;geom, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;detJ_cc) override</td></tr>
 <tr class="memdesc:ac68028f2920ccb380c605099adb7d604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the moisture model.  <a href="classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604">More...</a><br /></td></tr>
 <tr class="separator:ac68028f2920ccb380c605099adb7d604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19a8660393ede275d027c154b04fe27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ab19a8660393ede275d027c154b04fe27">FinishInit</a> (const int &amp;, amrex::MultiFab &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;) override</td></tr>
+<tr class="memdesc:ab19a8660393ede275d027c154b04fe27"><td class="mdescLeft">&#160;</td><td class="mdescRight">finish initializations steps that require flow variables  <a href="classEulerianMicrophysics.html#ab19a8660393ede275d027c154b04fe27">More...</a><br /></td></tr>
+<tr class="separator:ab19a8660393ede275d027c154b04fe27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1e3be50e46669690838fb1b82cfe243"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243">Advance</a> (const int &amp;lev, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, const int &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;) override</td></tr>
 <tr class="memdesc:ab1e3be50e46669690838fb1b82cfe243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the moisture model for one time step.  <a href="classEulerianMicrophysics.html#ab1e3be50e46669690838fb1b82cfe243">More...</a><br /></td></tr>
 <tr class="separator:ab1e3be50e46669690838fb1b82cfe243"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -317,8 +320,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;EulerianMicrophysics: Dont know this moisture_type!&quot;</span>) ;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="ttc" id="aclassEulerianMicrophysics_html_a3d8916fc5900c54728d7549c68b21048"><div class="ttname"><a href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">EulerianMicrophysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> ERF_EulerianMicrophysics.H:166</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:90</div></div>
+<div class="ttc" id="aclassEulerianMicrophysics_html_a3d8916fc5900c54728d7549c68b21048"><div class="ttname"><a href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">EulerianMicrophysics::m_moist_model</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; NullMoist &gt; &gt; m_moist_model</div><div class="ttdef"><b>Definition:</b> ERF_EulerianMicrophysics.H:171</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:95</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -413,9 +416,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Advance(dt_advance, solverChoice);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Advance(dt_advance, solverChoice);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -469,6 +472,53 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ab19a8660393ede275d027c154b04fe27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19a8660393ede275d027c154b04fe27">&#9670;&nbsp;</a></span>FinishInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void EulerianMicrophysics::FinishInit </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>finish initializations steps that require flow variables </p>
+
+<p>Implements <a class="el" href="classMicrophysics.html#ad0fcf196828eb25456ee8f3d808ae8a9">Microphysics</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                                                         { }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a416981f230a126387b9a664a5a241e9c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a416981f230a126387b9a664a5a241e9c">&#9670;&nbsp;</a></span>Get_Qmoist_Ptr()</h2>
 
@@ -513,9 +563,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Qmoist_Ptr(varIdx);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Qmoist_Ptr(varIdx);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -577,9 +627,9 @@ Here is the call graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;Qmoist_Restart_Vars(a_sc, a_idx, a_names);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;Qmoist_Restart_Vars(a_sc, a_idx, a_names);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -610,9 +660,9 @@ Here is the call graph for this function:</div>
 <p>get the number of moisture model variables </p>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qmoist_Size();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qmoist_Size();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -642,9 +692,9 @@ Here is the call graph for this function:</div>
 <p>get the number of microphysics conserved moist (water-related) state variables </p>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qstate_Moist_Size();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qstate_Moist_Size();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -674,9 +724,9 @@ Here is the call graph for this function:</div>
 <p>get the number of microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) state variables </p>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qstate_NonMoist_Size();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;Qstate_NonMoist_Size();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -723,9 +773,9 @@ Here is the call graph for this function:</div>
 <p>Fills in a MultiFab for plotting. </p>
 
 <p>Implements <a class="el" href="classMicrophysics.html#ae16d9801d3db01fcc424345e54a47d3b">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;GetPlotVar(a_name, a_mf);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;GetPlotVar(a_name, a_mf);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -756,9 +806,9 @@ Here is the call graph for this function:</div>
 <p>Returns a list of additional plot variable names. </p>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;GetPlotVarNames(a_vec);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[0]-&gt;GetPlotVarNames(a_vec);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -883,9 +933,9 @@ Here is the call graph for this function:</div>
 <p>Populates dz_min in micro model for precipitation. </p>
 
 <p>Implements <a class="el" href="classMicrophysics.html#abe0044f23ab9fb60ca3d3948ad056c12">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;Set_dzmin(dz_min);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[a_lev]-&gt;Set_dzmin(dz_min);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -915,11 +965,11 @@ template&lt;class NewMoistModel &gt; </div>
 </div><div class="memdoc">
 
 <p>Create and set the specified moisture model. </p>
-<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>.size(); ++lev) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev] = std::make_unique&lt;NewMoistModel&gt;();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev(0); lev&lt;<a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>.size(); ++lev) {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev] = std::make_unique&lt;NewMoistModel&gt;();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -966,9 +1016,9 @@ template&lt;class NewMoistModel &gt; </div>
 </dl>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Update_Micro_Vars(cons_in);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Update_Micro_Vars(cons_in);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1016,9 +1066,9 @@ template&lt;class NewMoistModel &gt; </div>
 </dl>
 
 <p>Implements <a class="el" href="classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4">Microphysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Update_State_Vars(cons_in);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classEulerianMicrophysics.html#a3d8916fc5900c54728d7549c68b21048">m_moist_model</a>[lev]-&gt;Update_State_Vars(cons_in);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

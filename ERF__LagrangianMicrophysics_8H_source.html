@@ -99,191 +99,206 @@ $(document).ready(function(){initNavTree('ERF__LagrangianMicrophysics_8H_source.
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__NullMoistLagrangian_8H.html">ERF_NullMoistLagrangian.H</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__Microphysics_8H.html">ERF_Microphysics.H</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/* forward declaration */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">class </span>ERFPC;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/*! \brief Eulerian microphysics interface</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * One key difference from #EulerianMicrophysics is that only the base AMR</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * level has the moisture model. Thus, for higher AMR levels, the microphysics</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * interface need not do anything. The number of conserved state variables for</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * moisture (RhoQ1, RhoQ2, ...) are the same for all AMR levels; however, for</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * levels other than the base, they just contain and evolve zeros. */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class </span>LagrangianMicrophysics : <span class="keyword">public</span> <a class="code" href="classMicrophysics.html">Microphysics</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">    /*! \brief Null constructor */</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    LagrangianMicrophysics () { }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">    /*! \brief default destructor */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ~LagrangianMicrophysics () = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">    /*! \brief Constructor: create the moisture model */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    LagrangianMicrophysics (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <span class="comment">/* nlev */</span>, <span class="comment">/*!&lt; Number of AMR levels */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                            <span class="keyword">const</span> MoistureType&amp; a_model_type <span class="comment">/*!&lt; moisture model */</span> )</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        AMREX_ASSERT( <a class="code" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a>(a_model_type) == MoistureModelType::Lagrangian );</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        amrex::ignore_unused(a_model_type);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;No Lagrangian moisture model implemented yet!&quot;</span>) ;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    /*! \brief Define the moisture model */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a">Define</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                 <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; sc <span class="comment">/*!&lt; Solver choice object */</span>)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m_moist_model-&gt;Define(sc);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    /*! \brief Initialize the moisture model */</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e">Init</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;               <span class="keyword">const</span> amrex::MultiFab&amp; cons_in, <span class="comment">/*!&lt; Conserved state variables */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;               <span class="keyword">const</span> amrex::BoxArray&amp; grids,   <span class="comment">/*!&lt; Grids */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;               <span class="keyword">const</span> amrex::Geometry&amp; geom,    <span class="comment">/*!&lt; Geometry */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;               <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dt_advance,  <span class="comment">/*!&lt; Time step */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;               std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd,<span class="comment">/*&lt; Nodal z heights */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc <span class="comment">/*&lt; CC Jacobian determinants */</span>)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        m_moist_model-&gt;Init(cons_in, grids, geom, dt_advance,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            z_phys_nd, detJ_cc);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">    /*! \brief Advance the moisture model for one time step */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Advance</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dt_advance, <span class="comment">/*!&lt; Time step */</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="comment">/*!&lt; iteration number */</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; time, <span class="comment">/*!&lt; current time */</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; <span class="comment">/*solverChoice*/</span>, <span class="comment">/*!&lt; Solver choice object */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp; a_vars, <span class="comment">/*!&lt; Dycore state variables */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                  <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; a_z<span class="comment">/*!&lt; terrain */</span>,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                  <span class="keyword">const</span> amrex::GpuArray&lt;ERF_BC, AMREX_SPACEDIM*2&gt;&amp; a_phys_bc_types )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__SuperDropletsMoist_8H.html">ERF_SuperDropletsMoist.H</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__Microphysics_8H.html">ERF_Microphysics.H</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/* forward declaration */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>ERFPC;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/*! \brief Eulerian microphysics interface</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * One key difference from #EulerianMicrophysics is that only the base AMR</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * level has the moisture model. Thus, for higher AMR levels, the microphysics</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * interface need not do anything. The number of conserved state variables for</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * moisture (RhoQ1, RhoQ2, ...) are the same for all AMR levels; however, for</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * levels other than the base, they just contain and evolve zeros. */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span>LagrangianMicrophysics : <span class="keyword">public</span> <a class="code" href="classMicrophysics.html">Microphysics</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">    /*! \brief Null constructor */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    LagrangianMicrophysics () { }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">    /*! \brief default destructor */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ~LagrangianMicrophysics () = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">    /*! \brief Constructor: create the moisture model */</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    LagrangianMicrophysics (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <span class="comment">/* nlev */</span>, <span class="comment">/*!&lt; Number of AMR levels */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                            <span class="keyword">const</span> MoistureType&amp; a_model_type <span class="comment">/*!&lt; moisture model */</span> )</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        AMREX_ASSERT( <a class="code" href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a>(a_model_type) == MoistureModelType::Lagrangian );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (a_model_type == MoistureType::SuperDroplets) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            SetModel&lt;SuperDropletsMoist&gt;();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Super-Droplets moisture model!\n&quot;</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Unknown Lagrangian moisture model!&quot;</span>) ;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    /*! \brief Define the moisture model */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a">Define</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                 <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; sc <span class="comment">/*!&lt; Solver choice object */</span>)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        m_moist_model-&gt;Define(sc);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">    /*! \brief Initialize the moisture model */</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e">Init</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               <span class="keyword">const</span> amrex::MultiFab&amp; cons_in, <span class="comment">/*!&lt; Conserved state variables */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;               <span class="keyword">const</span> amrex::BoxArray&amp; grids,   <span class="comment">/*!&lt; Grids */</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;               <span class="keyword">const</span> amrex::Geometry&amp; geom,    <span class="comment">/*!&lt; Geometry */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;               <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dt_advance,  <span class="comment">/*!&lt; Time step */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;               std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd,<span class="comment">/*&lt; Nodal z heights */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;               std::unique_ptr&lt;amrex::MultiFab&gt;&amp; detJ_cc <span class="comment">/*&lt; CC Jacobian determinants */</span>)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        m_moist_model-&gt;Init(cons_in, grids, geom, dt_advance,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                            z_phys_nd, detJ_cc);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">    /*! \brief finish initializations steps that require flow variables */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#ad0fcf196828eb25456ee8f3d808ae8a9">FinishInit</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                     amrex::MultiFab&amp; cons_in, <span class="comment">/*!&lt; Conserved state variable */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                     <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; z_phys_nd <span class="comment">/*!&lt; terrain */</span>)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m_moist_model-&gt;Advance(dt_advance, iter, time, a_vars, a_z, a_phys_bc_types);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m_moist_model-&gt;FinishInit( lev, cons_in, z_phys_nd );</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    /*! \brief update microphysics variables from ERF state variables */</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">Update_Micro_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*! AMR level */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                amrex::MultiFab&amp; cons_in <span class="comment">/*!&lt; Conserved state variables */</span>)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        m_moist_model-&gt;Update_Micro_Vars(cons_in);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">    /*! \brief update ERF state variables from microphysics variables */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4">Update_State_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                amrex::MultiFab&amp; cons_in <span class="comment">/*!&lt; Conserved state variables */</span>)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        m_moist_model-&gt;Update_State_Vars(cons_in);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">    /*! \brief get pointer to a moisture variable */</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    amrex::MultiFab* <a class="code" href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">Get_Qmoist_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx <span class="comment">/*!&lt; moisture variable index */</span>)<span class="keyword"> override</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> (lev &gt; 0 ? <span class="keyword">nullptr</span> : m_moist_model-&gt;Qmoist_Ptr(varIdx));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">    /*! \brief get the number of moisture model variables */</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">Get_Qmoist_Size</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; a_lev <span class="comment">/*!&lt; AMR level */</span>)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">    /*! \brief Advance the moisture model for one time step */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Advance</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dt_advance, <span class="comment">/*!&lt; Time step */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                  <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="comment">/*!&lt; iteration number */</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; time, <span class="comment">/*!&lt; current time */</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                  <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; <span class="comment">/*solverChoice*/</span>, <span class="comment">/*!&lt; Solver choice object */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                  amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp; a_vars, <span class="comment">/*!&lt; Dycore state variables */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                  <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; a_z<span class="comment">/*!&lt; terrain */</span>,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                  <span class="keyword">const</span> amrex::GpuArray&lt;ERF_BC, AMREX_SPACEDIM*2&gt;&amp; a_phys_bc_types )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        m_moist_model-&gt;Advance(dt_advance, iter, time, a_vars, a_z, a_phys_bc_types);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">    /*! \brief update microphysics variables from ERF state variables */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">Update_Micro_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*! AMR level */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                amrex::MultiFab&amp; cons_in <span class="comment">/*!&lt; Conserved state variables */</span>)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        m_moist_model-&gt;Update_Micro_Vars(cons_in);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">    /*! \brief update ERF state variables from microphysics variables */</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4">Update_State_Vars_Lev</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                amrex::MultiFab&amp; cons_in <span class="comment">/*!&lt; Conserved state variables */</span>)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> (a_lev &gt; 0 ? 0 : m_moist_model-&gt;Qmoist_Size());</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">    /*! \brief get the number of  microphysics conserved moist (water-related) state variables */</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Get_Qstate_Moist_Size</a> ()<span class="keyword"> override</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;Qstate_Moist_Size();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">    /*! \brief get the number of  microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) state variables */</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Get_Qstate_NonMoist_Size</a> ()<span class="keyword"> override</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;Qstate_NonMoist_Size();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">    /*! \brief initialize particles in particle container */</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> initParticles ( std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd <span class="comment">/*!&lt; Nodal z heights */</span> )</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        m_moist_model-&gt;InitParticles(z_phys_nd);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">    /*! \brief restart particles in particle container */</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> restartParticles ( amrex::ParGDBBase* a_gdb, <span class="keyword">const</span> std::string&amp; a_fname)</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        m_moist_model-&gt;RestartParticles(a_gdb, a_fname);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">    /*! \brief get the particle container from the moisture model */</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">inline</span> ERFPC* getParticleContainer ()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;getParticleContainer();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">    /*! \brief get the name of the moisture model&#39;s particle container */</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; getName ()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;getName();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">    /*! \brief get the indices and names of moisture model variables for restart</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">               at a given level */</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Get_Qmoist_Restart_Vars</a> ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_lev, <span class="comment">/*!&lt; level */</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                   <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; a_sc, <span class="comment">/*!&lt; Solver choice object */</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                   std::vector&lt;int&gt;&amp; a_idx, <span class="comment">/*!&lt; indices */</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                   std::vector&lt;std::string&gt;&amp; a_names <span class="comment">/*!&lt; names */</span> )<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">if</span> (a_lev == 0) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            m_moist_model-&gt;Qmoist_Restart_Vars( a_sc, a_idx, a_names );</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            a_idx.clear();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            a_names.clear();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">    /*! \brief Returns a list of additional plot variable names */</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7">GetPlotVarNames</a> (amrex::Vector&lt;std::string&gt;&amp; a_vec)<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        m_moist_model-&gt;GetPlotVarNames(a_vec);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">    /*! \brief Fills in a MultiFab for plotting */</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#ae16d9801d3db01fcc424345e54a47d3b">GetPlotVar</a> (<span class="keyword">const</span> std::string&amp; a_name,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                             amrex::MultiFab&amp; a_mf,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/* a_lev */</span>)<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        m_moist_model-&gt;GetPlotVar(a_name, a_mf);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (lev &gt; 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        m_moist_model-&gt;Update_State_Vars(cons_in);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">    /*! \brief get pointer to a moisture variable */</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    amrex::MultiFab* <a class="code" href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">Get_Qmoist_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev, <span class="comment">/*!&lt; AMR level */</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx <span class="comment">/*!&lt; moisture variable index */</span>)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> (lev &gt; 0 ? <span class="keyword">nullptr</span> : m_moist_model-&gt;Qmoist_Ptr(varIdx));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">    /*! \brief get the number of moisture model variables */</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">Get_Qmoist_Size</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; a_lev <span class="comment">/*!&lt; AMR level */</span>)<span class="keyword"> override</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> (a_lev &gt; 0 ? 0 : m_moist_model-&gt;Qmoist_Size());</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">    /*! \brief get the number of  microphysics conserved moist (water-related) state variables */</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Get_Qstate_Moist_Size</a> ()<span class="keyword"> override</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;Qstate_Moist_Size();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">    /*! \brief get the number of  microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) state variables */</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Get_Qstate_NonMoist_Size</a> ()<span class="keyword"> override</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;Qstate_NonMoist_Size();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">    /*! \brief initialize particles in particle container */</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> initParticles ( std::unique_ptr&lt;amrex::MultiFab&gt;&amp; z_phys_nd <span class="comment">/*!&lt; Nodal z heights */</span> )</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        m_moist_model-&gt;InitParticles(z_phys_nd);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">    /*! \brief restart particles in particle container */</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> restartParticles ( amrex::ParGDBBase* a_gdb, <span class="keyword">const</span> std::string&amp; a_fname)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        m_moist_model-&gt;RestartParticles(a_gdb, a_fname);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">    /*! \brief get the particle container from the moisture model */</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keyword">inline</span> ERFPC* getParticleContainer ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;getParticleContainer();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">    /*! \brief get the name of the moisture model&#39;s particle container */</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; getName ()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;getName();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">    /*! \brief get the indices and names of moisture model variables for restart</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">               at a given level */</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Get_Qmoist_Restart_Vars</a> ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_lev, <span class="comment">/*!&lt; level */</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                   <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; a_sc, <span class="comment">/*!&lt; Solver choice object */</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                   std::vector&lt;int&gt;&amp; a_idx, <span class="comment">/*!&lt; indices */</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                   std::vector&lt;std::string&gt;&amp; a_names <span class="comment">/*!&lt; names */</span> )<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> (a_lev == 0) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            m_moist_model-&gt;Qmoist_Restart_Vars( a_sc, a_idx, a_names );</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            a_idx.clear();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            a_names.clear();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">     /*! \brief Populates dz_min in micro model for precipitation */</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#abe0044f23ab9fb60ca3d3948ad056c12">Set_dzmin</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/*a_lev*/</span>,</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_min)<span class="keyword"> const override</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        m_moist_model-&gt;Set_dzmin(dz_min);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">    /*! \brief Create and set the specified moisture model */</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> NewMoistModel&gt;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">void</span> SetModel ()</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        m_moist_model = std::make_unique&lt;NewMoistModel&gt;();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    std::unique_ptr&lt;NullMoistLagrangian&gt; m_moist_model; <span class="comment">/*!&lt; moisture model */</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;};</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">    /*! \brief Returns a list of additional plot variable names */</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7">GetPlotVarNames</a> (amrex::Vector&lt;std::string&gt;&amp; a_vec)<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        m_moist_model-&gt;GetPlotVarNames(a_vec);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">    /*! \brief Fills in a MultiFab for plotting */</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#ae16d9801d3db01fcc424345e54a47d3b">GetPlotVar</a> (<span class="keyword">const</span> std::string&amp; a_name,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                             amrex::MultiFab&amp; a_mf,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                             <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/* a_lev */</span>)<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        m_moist_model-&gt;GetPlotVar(a_name, a_mf);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">     /*! \brief Populates dz_min in micro model for precipitation */</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classMicrophysics.html#abe0044f23ab9fb60ca3d3948ad056c12">Set_dzmin</a> (<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/*a_lev*/</span>,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_min)<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        m_moist_model-&gt;Set_dzmin(dz_min);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">    /*! \brief Create and set the specified moisture model */</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> NewMoistModel&gt;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">void</span> SetModel ()</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        m_moist_model = std::make_unique&lt;NewMoistModel&gt;();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    std::unique_ptr&lt;NullMoistLagrangian&gt; m_moist_model; <span class="comment">/*!&lt; moisture model */</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;};</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Microphysics_8H_html"><div class="ttname"><a href="ERF__Microphysics_8H.html">ERF_Microphysics.H</a></div><div class="ttdoc">Contains the base class for microphysics.</div></div>
 <div class="ttc" id="aERF__NullMoistLagrangian_8H_html"><div class="ttname"><a href="ERF__NullMoistLagrangian_8H.html">ERF_NullMoistLagrangian.H</a></div><div class="ttdoc">Contains the Lagrangian moisture model base class.</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="aERF__SuperDropletsMoist_8H_html"><div class="ttname"><a href="ERF__SuperDropletsMoist_8H.html">ERF_SuperDropletsMoist.H</a></div></div>
 <div class="ttc" id="aclassMicrophysics_html"><div class="ttname"><a href="classMicrophysics.html">Microphysics</a></div><div class="ttdoc">Base class for microphysics interface.</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:14</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a069e6013efb78d268394868d0cfc6382"><div class="ttname"><a href="classMicrophysics.html#a069e6013efb78d268394868d0cfc6382">Microphysics::Get_Qmoist_Size</a></div><div class="ttdeci">virtual int Get_Qmoist_Size(const int &amp;)=0</div><div class="ttdoc">get the number of moisture model variables</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a1bc7275c0c3fe8bcff83a1548ea7199e"><div class="ttname"><a href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Microphysics::Get_Qstate_NonMoist_Size</a></div><div class="ttdeci">virtual int Get_Qstate_NonMoist_Size()=0</div><div class="ttdoc">get the number of microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) s...</div></div>
@@ -296,7 +311,8 @@ $(document).ready(function(){initNavTree('ERF__LagrangianMicrophysics_8H_source.
 <div class="ttc" id="aclassMicrophysics_html_a8ee9010738bdec29e2b5a86e176f66c7"><div class="ttname"><a href="classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7">Microphysics::GetPlotVarNames</a></div><div class="ttdeci">virtual void GetPlotVarNames(amrex::Vector&lt; std::string &gt; &amp;a_vec) const =0</div><div class="ttdoc">Returns a list of additional plot variable names.</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a96e15433c5277151700438dc2f6fba6f"><div class="ttname"><a href="classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f">Microphysics::Get_Qmoist_Restart_Vars</a></div><div class="ttdeci">virtual void Get_Qmoist_Restart_Vars(int, const SolverChoice &amp;, std::vector&lt; int &gt; &amp;, std::vector&lt; std::string &gt; &amp;) const =0</div><div class="ttdoc">get the indices and names of moisture model variables for restart at a given level</div></div>
 <div class="ttc" id="aclassMicrophysics_html_abe0044f23ab9fb60ca3d3948ad056c12"><div class="ttname"><a href="classMicrophysics.html#abe0044f23ab9fb60ca3d3948ad056c12">Microphysics::Set_dzmin</a></div><div class="ttdeci">virtual void Set_dzmin(const int lev, const amrex::Real dz_min) const =0</div><div class="ttdoc">Import minimum dz at this level.</div></div>
-<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:90</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ac10e6fce2e6cb49373d56ca0e1a5b366"><div class="ttname"><a href="classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366">Microphysics::modelType</a></div><div class="ttdeci">static MoistureModelType modelType(const MoistureType a_moisture_type)</div><div class="ttdoc">query if a specified moisture model is Eulerian or Lagrangian</div><div class="ttdef"><b>Definition:</b> ERF_Microphysics.H:95</div></div>
+<div class="ttc" id="aclassMicrophysics_html_ad0fcf196828eb25456ee8f3d808ae8a9"><div class="ttname"><a href="classMicrophysics.html#ad0fcf196828eb25456ee8f3d808ae8a9">Microphysics::FinishInit</a></div><div class="ttdeci">virtual void FinishInit(const int &amp;, amrex::MultiFab &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;)=0</div><div class="ttdoc">finish initializations steps that require flow variables</div></div>
 <div class="ttc" id="aclassMicrophysics_html_ae16d9801d3db01fcc424345e54a47d3b"><div class="ttname"><a href="classMicrophysics.html#ae16d9801d3db01fcc424345e54a47d3b">Microphysics::GetPlotVar</a></div><div class="ttdeci">virtual void GetPlotVar(const std::string &amp;a_name, amrex::MultiFab &amp;a_mf, const int a_lev) const =0</div><div class="ttdoc">Fills in a MultiFab for plotting.</div></div>
 <div class="ttc" id="aclassMicrophysics_html_ae6f104e6b42a2b0a9c9f3d71985880f0"><div class="ttname"><a href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Microphysics::Advance</a></div><div class="ttdeci">virtual void Advance(const int &amp;, const amrex::Real &amp;, const int &amp;, const amrex::Real &amp;, const SolverChoice &amp;, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;)=0</div><div class="ttdoc">advance microphysics for one time step</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:129</div></div>

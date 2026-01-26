@@ -5,7 +5,8 @@ var classSurfaceLayer =
       [ "DONELAN", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7afbf950ece84b8c4c7ebcf6492db726f7", null ],
       [ "CUSTOM", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a72baef04098f035e8a320b03ad197818", null ],
       [ "BULK_COEFF", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a5c7f33152e3d00ddc3dad805e55f3f71", null ],
-      [ "ROTATE", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a9faf4e337734315fde20af1922cc6f9d", null ]
+      [ "ROTATE", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a9faf4e337734315fde20af1922cc6f9d", null ],
+      [ "RICO", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a31b342f23cb16952131736824b9ccdd1", null ]
     ] ],
     [ "MoistCalcType", "classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8e", [
       [ "ADIABATIC", "classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea10548012f42e962e7945ce998b571c5c", null ],
@@ -105,6 +106,8 @@ var classSurfaceLayer =
     [ "pblh_type", "classSurfaceLayer.html#a0c710ff08c54b2538731afa31246b4df", null ],
     [ "q_star", "classSurfaceLayer.html#a373bea15dedd27321c3ba917f28a62d4", null ],
     [ "q_surf", "classSurfaceLayer.html#a7faee03e46d3adf23aaa8a43e7edd539", null ],
+    [ "rico_qsat_z0", "classSurfaceLayer.html#a4009eb7e829d0943f1c06c4424b132f1", null ],
+    [ "rico_theta_z0", "classSurfaceLayer.html#aaae804c5e9298848d4dfe6dde0c6e101", null ],
     [ "rough_type_land", "classSurfaceLayer.html#a250daf2121b839f703f06692d5ed1206", null ],
     [ "rough_type_sea", "classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e", null ],
     [ "specified_rho_surf", "classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4", null ],

@@ -341,6 +341,27 @@ var namespaces_dup =
       [ "k_dist_sw_k", "namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630", null ],
       [ "kokkos_mem_pool", "namespacerrtmgp.html#a6f617b76fca562b13696bc6bb84fcddc", null ]
     ] ],
+    [ "saturation_funcs", "namespacesaturation__funcs.html", [
+      [ "compute_saturation_pressure_H2O", "namespacesaturation__funcs.html#aab3649a423971059794f41d2a34c234a", null ],
+      [ "compute_saturation_pressure_H2O", "namespacesaturation__funcs.html#aa675e7b5c5296bdfa641923e202f3372", null ],
+      [ "compute_saturation_pressure_null", "namespacesaturation__funcs.html#a9bb07940e7d0b53e0f608dc4a5c9921a", null ],
+      [ "compute_saturation_pressure_null", "namespacesaturation__funcs.html#a1068a24a60a53feeaafbf97fb09ee2c1", null ],
+      [ "compute_saturation_vapfrac_H2O", "namespacesaturation__funcs.html#ab60ab340659e270ccf6fff1085eaac64", null ],
+      [ "compute_saturation_vapfrac_H2O", "namespacesaturation__funcs.html#a34214d4be4561f8950fadf2b4fafc5a5", null ],
+      [ "compute_saturation_vapfrac_null", "namespacesaturation__funcs.html#a9bd43c8bbe5f9fe965027489b52e6441", null ],
+      [ "compute_saturation_vapfrac_null", "namespacesaturation__funcs.html#a3c5c37384a2025ffe973352d75b32d7a", null ]
+    ] ],
+    [ "Species", "namespaceSpecies.html", [
+      [ "AMREX_ENUM", "namespaceSpecies.html#af398940141c9daafeeae1dd0a54be259", null ]
+    ] ],
+    [ "SupDropInit", "namespaceSupDropInit.html", [
+      [ "attrib_init_const", "namespaceSupDropInit.html#ab495458bf43b8e3b569fc4e85c258275", null ],
+      [ "attrib_init_exp", "namespaceSupDropInit.html#ac343ff99fff7c9e4899b6773d15f47a4", null ],
+      [ "attrib_init_lnr", "namespaceSupDropInit.html#af519db08abaabdd2803269936bdcf2cc", null ],
+      [ "attrib_init_lnr_auto", "namespaceSupDropInit.html#a13cb3d76ed5240058013ef5c82649760", null ],
+      [ "num_aerosols_max", "namespaceSupDropInit.html#a281fc9f3c461b471e1d64f979f724c49", null ],
+      [ "num_species_max", "namespaceSupDropInit.html#a9aa503a7fa7375e8ee68af017cf9a078", null ]
+    ] ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ]
 ];
