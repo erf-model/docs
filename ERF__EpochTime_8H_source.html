@@ -167,18 +167,20 @@ $(document).ready(function(){initNavTree('ERF__EpochTime_8H_source.html',''); in
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::string str_nearest_sec(buffer);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (add_long_frac) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">double</span> frac_sec = epoch_real - epoch_nearest_sec;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        snprintf(buffer, 80, <span class="stringliteral">&quot;%.6f&quot;</span>, frac_sec);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        AMREX_ASSERT(buffer[0] == <span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::string str_frac_sec(buffer);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec + str_frac_sec.substr(1);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// We use abs here because the diff would come out as negative</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">//    if the times themselves were negative</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">double</span> frac_sec = std::abs(epoch_real - epoch_nearest_sec);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        snprintf(buffer, 80, <span class="stringliteral">&quot;%.6f&quot;</span>, frac_sec);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        AMREX_ASSERT(buffer[0] == <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::string str_frac_sec(buffer);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec + str_frac_sec.substr(1);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__EpochTime_8H_html_a157e287fcdc7e8161cdfc216501a0676"><div class="ttname"><a href="ERF__EpochTime_8H.html#a157e287fcdc7e8161cdfc216501a0676">getEpochTime</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE std::time_t getEpochTime(const std::string &amp;dateTime, const std::string &amp;dateTimeFormat)</div><div class="ttdef"><b>Definition:</b> ERF_EpochTime.H:15</div></div>
 <div class="ttc" id="aERF__EpochTime_8H_html_af7eed25e58d350c03f4b8396554bc6a2"><div class="ttname"><a href="ERF__EpochTime_8H.html#af7eed25e58d350c03f4b8396554bc6a2">getTimestamp</a></div><div class="ttdeci">AMREX_FORCE_INLINE std::string getTimestamp(const amrex::Real epoch_real, const std::string &amp;datetime_format, bool add_long_frac=true)</div><div class="ttdef"><b>Definition:</b> ERF_EpochTime.H:72</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
