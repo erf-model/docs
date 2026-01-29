@@ -14,6 +14,7 @@ var classSatAdj =
     [ "Qmoist_Restart_Vars", "classSatAdj.html#a1992e08a2b7e9319348b69bf940e972c", null ],
     [ "Qmoist_Size", "classSatAdj.html#a0db3dd50c312798eeb542682063ba06f", null ],
     [ "Qstate_Moist_Size", "classSatAdj.html#a85ad6051be8bc789ce6828f02971e2ea", null ],
+    [ "Set_RealWidth", "classSatAdj.html#a56bd4cd0986747e2c64de6928f24777f", null ],
     [ "Update_Micro_Vars", "classSatAdj.html#a126716cce4ed479136e5f6cd8513149d", null ],
     [ "Update_State_Vars", "classSatAdj.html#aa0c09c265479736a584b29722261d238", null ],
     [ "dt", "classSatAdj.html#acac2100a462c3a8e75a6d20c69673001", null ],
@@ -22,6 +23,7 @@ var classSatAdj =
     [ "m_geom", "classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44", null ],
     [ "m_qmoist_size", "classSatAdj.html#ac0fec328145e0aaad664481b9723601f", null ],
     [ "m_rdOcp", "classSatAdj.html#a27114b820d031f82462a0f378294042c", null ],
+    [ "m_real_width", "classSatAdj.html#af1404efc983d1211f51736f0bff69f35", null ],
     [ "mic_fab_vars", "classSatAdj.html#a26ca294f334ada4b91534e1e9e105442", null ],
     [ "n_qstate_moist_size", "classSatAdj.html#a058025729a3606ba316b73b209326d8a", null ]
 ];

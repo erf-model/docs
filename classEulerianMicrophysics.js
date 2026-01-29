@@ -15,6 +15,7 @@ var classEulerianMicrophysics =
     [ "GetPlotVarNames", "classEulerianMicrophysics.html#aad1c90868ba96910a57f4e8025f90723", null ],
     [ "Init", "classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604", null ],
     [ "Set_dzmin", "classEulerianMicrophysics.html#a0eb94df7fc190ef62349dec2d350e697", null ],
+    [ "Set_RealWidth", "classEulerianMicrophysics.html#adbf5960916f56bb7d0b4d3e04a905f74", null ],
     [ "SetModel", "classEulerianMicrophysics.html#aa882ea75f222099b16b43a579d11e2c1", null ],
     [ "Update_Micro_Vars_Lev", "classEulerianMicrophysics.html#a0f8fc766c44f4331bfc86337eb43f6cc", null ],
     [ "Update_State_Vars_Lev", "classEulerianMicrophysics.html#a6f0dc90119a228e56c5616267eba6009", null ],
