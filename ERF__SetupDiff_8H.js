@@ -11,9 +11,10 @@ var ERF__SetupDiff_8H =
     [ "eddy_diff_idy", "ERF__SetupDiff_8H.html#a17bcc9d9ddabb0ae778e0db624ab85d6", null ],
     [ "eddy_diff_idy_d", "ERF__SetupDiff_8H.html#ab8c5545fb0698c8e34037cdddd10a867", null ],
     [ "end_comp", "ERF__SetupDiff_8H.html#a29fc1da4eb54fbf2bb041845ce70d50d", null ],
-    [ "l_inv_theta0", "ERF__SetupDiff_8H.html#a5c210d1bb758efced9a042135e527691", null ],
+    [ "l_inv_theta0", "ERF__SetupDiff_8H.html#af95a27e0d3fb9866f74398b99e1b1bd8", null ],
     [ "l_use_keqn", "ERF__SetupDiff_8H.html#a4b0a122076eb996c681980a57e58bed4", null ],
     [ "l_use_mynn", "ERF__SetupDiff_8H.html#a7b02b17a96d3d80f109a252dbf71ca41", null ],
+    [ "use_ref_theta", "ERF__SetupDiff_8H.html#a5d0e7ac164885f8b767a91f1e26474a5", null ],
     [ "xbx", "ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c", null ],
     [ "ybx", "ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2", null ],
     [ "zbx", "ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8", null ]

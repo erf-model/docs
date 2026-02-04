@@ -1,5 +1,10 @@
 var NAVTREEINDEX19 =
 {
+"structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2":[2,0,78,12],
+"structSpongeChoice.html#adacf43edb29544376743fa98ce7d8cb6":[2,0,78,16],
+"structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d":[2,0,78,2],
+"structSpongeChoice.html#ae2907fb8c5755c951b765b7d835013f6":[2,0,78,10],
+"structSpongeChoice.html#aec7c88a5686affc9c0ff6f9bb53fbd9f":[2,0,78,14],
 "structSpongeChoice.html#afc444169c9f347bb2e3dd4eb99bc4158":[2,0,78,17],
 "structTerminalVelocity.html":[2,0,90],
 "structTerminalVelocity.html#a093f03eb3b9a5d2353a39162249cb1c6":[2,0,90,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX19 =
 "structadiabatic__charnock.html":[2,0,2],
 "structadiabatic__charnock.html#a0e78cee7d7f845969fe2da8b72ef7955":[2,0,2,5],
 "structadiabatic__charnock.html#a5c11064c35d6eefd22558180155d6ede":[2,0,2,2],
-"structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b":[2,0,2,1],
-"structadiabatic__charnock.html#ac03e171bb5c7384788aa4f3065a7c593":[2,0,2,4],
-"structadiabatic__charnock.html#ad4c4fe599c1b8692fa8ef8346866c349":[2,0,2,3],
-"structadiabatic__charnock.html#aece539617ff6f5b473fde6c6bc0f99f7":[2,0,2,0],
-"structadiabatic__donelan.html":[2,0,3],
-"structadiabatic__donelan.html#a190709c5c95b8f0eae6b8b2e89bac0ab":[2,0,3,3]
+"structadiabatic__charnock.html#a934885ca943ddef47931168f22f5ce0b":[2,0,2,1]
 };

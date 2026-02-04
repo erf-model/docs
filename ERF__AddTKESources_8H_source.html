@@ -113,22 +113,28 @@ $(document).ready(function(){initNavTree('ERF__AddTKESources_8H_source.html','')
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="comment">// **should** be a function of the water vapor and total water</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="comment">// mixing ratios, depending on whether conditions are saturated or</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="comment">// not (see the WRF model description, Skamarock et al 2019).</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            cell_rhs(i,j,k,qty_index) += l_abs_g * <a class="code" href="ERF__SetupDiff_8H.html#a5c210d1bb758efced9a042135e527691">l_inv_theta0</a> * hfx_z(i,j,k);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="comment">// TKE shear production</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="comment">//   P = -tau_ij * S_ij = 2 * mu_turb * S_ij * S_ij</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="comment">// Note: This assumes that the horizontal and vertical diffusivities</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="comment">// of momentum are equal</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            cell_rhs(i,j,k,qty_index) += 2.0*mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * SmnSmn_a(i,j,k);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">// TKE dissipation</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            cell_rhs(i,j,k,qty_index) -= diss(i,j,k);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        });</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            cell_rhs(i,j,k,qty_index) += l_abs_g * <a class="code" href="ERF__SetupDiff_8H.html#af95a27e0d3fb9866f74398b99e1b1bd8">l_inv_theta0</a> * hfx_z(i,j,k);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="ERF__SetupDiff_8H.html#a5d0e7ac164885f8b767a91f1e26474a5">use_ref_theta</a>) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="comment">// l_inv_theta0 == 1, divide by actual theta</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                cell_rhs(i,j,k,qty_index) /= cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="comment">// TKE shear production</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="comment">//   P = -tau_ij * S_ij = 2 * mu_turb * S_ij * S_ij</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">// Note: This assumes that the horizontal and vertical diffusivities</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="comment">// of momentum are equal</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            cell_rhs(i,j,k,qty_index) += 2.0*mu_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * SmnSmn_a(i,j,k);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// TKE dissipation</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            cell_rhs(i,j,k,qty_index) -= diss(i,j,k);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        });</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:50</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
 <div class="ttc" id="aERF__SetupDiff_8H_html_a29fc1da4eb54fbf2bb041845ce70d50d"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a29fc1da4eb54fbf2bb041845ce70d50d">end_comp</a></div><div class="ttdeci">const int end_comp</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:11</div></div>
 <div class="ttc" id="aERF__SetupDiff_8H_html_a4b0a122076eb996c681980a57e58bed4"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a4b0a122076eb996c681980a57e58bed4">l_use_keqn</a></div><div class="ttdeci">bool l_use_keqn</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:13</div></div>
-<div class="ttc" id="aERF__SetupDiff_8H_html_a5c210d1bb758efced9a042135e527691"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a5c210d1bb758efced9a042135e527691">l_inv_theta0</a></div><div class="ttdeci">Real l_inv_theta0</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:17</div></div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_a5d0e7ac164885f8b767a91f1e26474a5"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a5d0e7ac164885f8b767a91f1e26474a5">use_ref_theta</a></div><div class="ttdeci">const bool use_ref_theta</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:17</div></div>
+<div class="ttc" id="aERF__SetupDiff_8H_html_af95a27e0d3fb9866f74398b99e1b1bd8"><div class="ttname"><a href="ERF__SetupDiff_8H.html#af95a27e0d3fb9866f74398b99e1b1bd8">l_inv_theta0</a></div><div class="ttdeci">const Real l_inv_theta0</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:18</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#a3f912b3dbcd18dd6f4f0a85815a3ce47a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:175</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
