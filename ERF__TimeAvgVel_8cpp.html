@@ -227,10 +227,10 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v_cc = 0.5 * ( vely(i,j,k) + vely(i  ,j+1,k  ) );</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_cc = 0.5 * ( velz(i,j,k) + velz(i  ,j  ,k+1) );</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> umag_cc = std::sqrt(u_cc*u_cc + v_cc*v_cc + w_cc*w_cc);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            vel_t_avg_arr(i,j,k,0) += u_cc;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            vel_t_avg_arr(i,j,k,1) += v_cc;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            vel_t_avg_arr(i,j,k,2) += w_cc;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            vel_t_avg_arr(i,j,k,3) += umag_cc;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            vel_t_avg_arr(i,j,k,0) += u_cc * dt;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            vel_t_avg_arr(i,j,k,1) += v_cc * dt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            vel_t_avg_arr(i,j,k,2) += w_cc * dt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            vel_t_avg_arr(i,j,k,3) += umag_cc * dt;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        });</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
