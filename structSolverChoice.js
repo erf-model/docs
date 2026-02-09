@@ -103,6 +103,7 @@ var structSolverChoice =
     [ "terrain_type", "structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60", null ],
     [ "test_mapfactor", "structSolverChoice.html#a9c7942f6ef7cf05115f35702097cf107", null ],
     [ "time_avg_vel", "structSolverChoice.html#af3119a4089367206db9fc3a17664e874", null ],
+    [ "transport_scalar", "structSolverChoice.html#afa703f93ec61d31a0c7f200fc4af44ff", null ],
     [ "turb_disk_angle", "structSolverChoice.html#addcff0f25c6925df38673747b4dea91e", null ],
     [ "turbChoice", "structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4", null ],
     [ "upwind_real_bcs", "structSolverChoice.html#aa7d8392d64c4932c4cb138d16a71fbee", null ],
