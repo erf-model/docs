@@ -1,5 +1,6 @@
 var ERF__MaterialProperties_8H =
 [
+    [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", "structMaterialPropertiesCore" ],
     [ "MaterialProperties", "structMaterialProperties.html", "structMaterialProperties" ],
     [ "AMREX_ENUM", "ERF__MaterialProperties_8H.html#af398940141c9daafeeae1dd0a54be259", null ],
     [ "compute_saturation_pressure_H2O", "ERF__MaterialProperties_8H.html#aab3649a423971059794f41d2a34c234a", null ],

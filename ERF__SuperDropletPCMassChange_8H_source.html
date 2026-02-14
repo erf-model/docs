@@ -429,7 +429,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                    cur_time += dt;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    <span class="keywordflow">if</span> (m_verbose) {</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        printf( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                cur_time, dt, dt * std::sqrt(tau*tau), std::sqrt(a_u), snorm);</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    }</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                    <span class="keywordflow">if</span> (snorm &lt; m_stol) {</div>
@@ -525,7 +525,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    cur_time += dt;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                    <span class="keywordflow">if</span> (m_verbose) {</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                        printf( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                                cur_time, dt, dt * std::sqrt(tau*tau), std::sqrt(a_u), snorm);</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                    }</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                    <span class="keywordflow">if</span> (snorm &lt; m_stol) {</div>
@@ -604,9 +604,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                    cur_time += dt;</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                    <span class="keywordflow">if</span> (m_verbose) {</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                        printf( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                                cur_time, dt, dt * std::sqrt(tau*tau), std::sqrt(a_u), snorm);</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                        printf( <span class="stringliteral">&quot;    norms = %1.3e (abs), %1.3e (rel), converged = %s\n&quot;</span>,</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;    norms = %1.3e (abs), %1.3e (rel), converged = %s\n&quot;</span>,</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                                res_norm_a, res_norm_r,</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                                (converged ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>) );</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                    }</div>
@@ -696,9 +696,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                    cur_time += dt;</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                    <span class="keywordflow">if</span> (m_verbose) {</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                        printf( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                                cur_time, dt, dt * std::sqrt(tau*tau), std::sqrt(a_u), snorm);</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                        printf( <span class="stringliteral">&quot;    norms = %1.3e (abs), %1.3e (rel), converged = %s\n&quot;</span>,</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;    norms = %1.3e (abs), %1.3e (rel), converged = %s\n&quot;</span>,</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                                res_norm_a, res_norm_r,</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                                (converged ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>) );</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                    }</div>
@@ -816,9 +816,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                    cur_time += dt;</div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                    <span class="keywordflow">if</span> (m_verbose) {</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                        printf( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;Time %1.2e, dt = %1.2e, cfl = %1.1e, radius = %1.4e, snorm = %1.1e\n&quot;</span>,</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                                cur_time, dt, dt * std::sqrt(tau*tau), std::sqrt(a_u), snorm);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                        printf( <span class="stringliteral">&quot;    norms = %1.3e (abs), %1.3e (rel), converged = %s\n&quot;</span>,</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                        AMREX_DEVICE_PRINTF( <span class="stringliteral">&quot;    norms = %1.3e (abs), %1.3e (rel), converged = %s\n&quot;</span>,</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                                res_norm_a, res_norm_r,</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                                (converged ? <span class="stringliteral">&quot;yes&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>) );</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                    }</div>

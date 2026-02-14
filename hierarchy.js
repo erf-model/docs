@@ -43,7 +43,9 @@ var hierarchy =
     ] ],
     [ "LandSurface", "classLandSurface.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
-    [ "MaterialProperties", "structMaterialProperties.html", null ],
+    [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [
+      [ "MaterialProperties", "structMaterialProperties.html", null ]
+    ] ],
     [ "Microphysics", "classMicrophysics.html", [
       [ "EulerianMicrophysics", "classEulerianMicrophysics.html", null ]
     ] ],

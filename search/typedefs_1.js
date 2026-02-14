@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dtype_6920',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]]
+  ['dtype_6922',['DType',['../structNDArray.html#a96033b69f69ea0ae537a24288715752d',1,'NDArray']]]
 ];

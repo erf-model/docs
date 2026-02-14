@@ -48,6 +48,7 @@ var annotated_dup =
     [ "LandSurface", "classLandSurface.html", "classLandSurface" ],
     [ "LineSampler", "structLineSampler.html", "structLineSampler" ],
     [ "MaterialProperties", "structMaterialProperties.html", "structMaterialProperties" ],
+    [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", "structMaterialPropertiesCore" ],
     [ "Microphysics", "classMicrophysics.html", "classMicrophysics" ],
     [ "MM5", "classMM5.html", "classMM5" ],
     [ "moeng_flux", "structmoeng__flux.html", "structmoeng__flux" ],
