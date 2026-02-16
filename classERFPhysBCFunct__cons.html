@@ -1095,19 +1095,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; velx_arr = <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; vely_arr = <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__cons.html#a0e54453355d6a7c96044113c8827a008">m_use_real_bcs</a>)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <span class="comment">// We send a box with ghost cells in the lateral directions only</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    <a class="code" href="classERFPhysBCFunct__cons.html#a282797d77115e0d3cea474e42ebe89fe">impose_lateral_cons_bcs</a>(cons_arr,velx_arr,vely_arr,cbx1,domain,icomp,ncomp,nghost,time);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="comment">// We send the full FAB box with ghost cells</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="classERFPhysBCFunct__cons.html#a33ba4596d11bd60f2a34b9926f2255a5">impose_vertical_cons_bcs</a>(cons_arr,cbx2,domain,z_nd_arr,dxInv,icomp,ncomp,time,do_terrain_adjustment);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        } <span class="comment">// MFIter</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="comment">// OpenMP</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// operator()</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">// We send a box with ghost cells in the lateral directions only</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="classERFPhysBCFunct__cons.html#a282797d77115e0d3cea474e42ebe89fe">impose_lateral_cons_bcs</a>(cons_arr,velx_arr,vely_arr,cbx1,domain,icomp,ncomp,nghost,time);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// We send the full FAB box with ghost cells</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classERFPhysBCFunct__cons.html#a33ba4596d11bd60f2a34b9926f2255a5">impose_vertical_cons_bcs</a>(cons_arr,cbx2,domain,z_nd_arr,dxInv,icomp,ncomp,time,do_terrain_adjustment);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        } <span class="comment">// MFIter</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    } <span class="comment">// OpenMP</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// operator()</span></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:141</div></div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:142</div></div>
 </div><!-- fragment -->

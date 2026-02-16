@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__post_8H_source.htm
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#if defined(ERF_USE_NETCDF)</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">bool</span> moist_set_rhs = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> ( solverChoice.use_real_bcs &amp;&amp; (level==0) &amp;&amp; (real_set_width &gt; 0) &amp;&amp;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> ( solverChoice.use_real_bcs &amp;&amp; (level==0) &amp;&amp;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;             (solverChoice.moisture_type != MoistureType::None) )</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            moist_set_rhs = <span class="keyword">true</span>;</div>
@@ -143,8 +143,8 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__post_8H_source.htm
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                          z_phys_nd[level], z_phys_cc[level], ax[level], ay[level], az[level],</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                          detJ_cc[level], new_detJ, stretched_dz_d[level], mapfac[level], EBFactory(level),</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;#<span class="keywordflow">if</span> defined(ERF_USE_NETCDF)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                          moist_set_rhs, bdy_time_interval, new_stage_time, stop_time-start_time,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                          real_width, real_set_width,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                          moist_set_rhs, bdy_time_interval,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                          new_stage_time, stop_time-start_time, real_width,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                          bdy_data_xlo, bdy_data_xhi, bdy_data_ylo, bdy_data_yhi,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;#endif</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;#ifdef ERF_USE_SHOC</div>
