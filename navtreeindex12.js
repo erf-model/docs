@@ -234,11 +234,11 @@ var NAVTREEINDEX12 =
 "classSurfaceLayer.html":[2,0,90],
 "classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487":[2,0,90,95],
 "classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424":[2,0,90,29],
-"classSurfaceLayer.html#a07168bc6be4d07fd31d0877a347975b0":[2,0,90,63],
+"classSurfaceLayer.html#a07168bc6be4d07fd31d0877a347975b0":[2,0,90,64],
 "classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234":[2,0,90,60],
 "classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4":[2,0,90,86],
 "classSurfaceLayer.html#a09961f2fcf7cdc577fc29ae446c3d4de":[2,0,90,32],
-"classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40":[2,0,90,69],
+"classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40":[2,0,90,70],
 "classSurfaceLayer.html#a0c710ff08c54b2538731afa31246b4df":[2,0,90,79],
 "classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2":[2,0,90,61],
 "classSurfaceLayer.html#a14804fd1d84bfe303a7b353d231d2d10":[2,0,90,13],
@@ -248,6 +248,6 @@ var NAVTREEINDEX12 =
 "classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656":[2,0,90,57],
 "classSurfaceLayer.html#a1e41539f9a2484694bac2674921704f9":[2,0,90,23],
 "classSurfaceLayer.html#a1ede1b55e3f50c6b98948cf256cb216e":[2,0,90,38],
-"classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3":[2,0,90,54],
+"classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3":[2,0,90,53],
 "classSurfaceLayer.html#a250daf2121b839f703f06692d5ed1206":[2,0,90,84]
 };
