@@ -206,31 +206,31 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;{</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dx      = cgeom.CellSizeArray();</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> prob_lo = cgeom.ProbLoArray();</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160; </div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*tags); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        TagBox&amp; tag = (*tags)[mfi];</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <span class="keyword">auto</span> tag_arr = tag.array();  <span class="comment">// Get device-accessible array</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keyword">const</span> Box&amp; tile_box = mfi.tilebox(); <span class="comment">// The box for this tile</span></div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        ParallelFor(tile_box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;            <span class="comment">// Compute cell center coordinates</span></div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = prob_lo[0] + (i + 0.5) * dx[0];</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = prob_lo[1] + (j + 0.5) * dx[1];</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160; </div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dist = std::sqrt((x - eye_x)*(x - eye_x) + (y - eye_y)*(y - eye_y));</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;            <span class="keywordflow">if</span> (dist &lt; rad_tag) {</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                tag_arr(i,j,k) = TagBox::SET;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                tag_arr(i,j,k) = TagBox::CLEAR;</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;            }</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        });</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    }</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;{</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dx      = cgeom.CellSizeArray();</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> prob_lo = cgeom.ProbLoArray();</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160; </div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*tags); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        TagBox&amp; tag = (*tags)[mfi];</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        <span class="keyword">auto</span> tag_arr = tag.array();  <span class="comment">// Get device-accessible array</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160; </div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        <span class="keyword">const</span> Box&amp; tile_box = mfi.tilebox(); <span class="comment">// The box for this tile</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        ParallelFor(tile_box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <span class="comment">// Compute cell center coordinates</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = prob_lo[0] + (i + 0.5) * dx[0];</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = prob_lo[1] + (j + 0.5) * dx[1];</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dist = std::sqrt((x - eye_x)*(x - eye_x) + (y - eye_y)*(y - eye_y));</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            <span class="keywordflow">if</span> (dist &lt; rad_tag) {</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                tag_arr(i,j,k) = TagBox::SET;</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                tag_arr(i,j,k) = TagBox::CLEAR;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;            }</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        });</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    }</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
