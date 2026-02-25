@@ -181,12 +181,12 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Function to set the refine_grid_layout flags to (1,1,0) by default since the <a class="el" href="classERF.html">ERF</a> default is different from the amrex default (1,1,1) Also set max_grid_size to very large since the only reason for chopping grids is if Nprocs &gt; Ngrids </p>
 <div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;amr&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;   ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;amr&quot;</span>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <span class="comment">// Set the refine_grid_layout flags to (1,1,0) by default</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.add(<span class="stringliteral">&quot;refine_grid_layout_x&quot;</span>,1);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.add(<span class="stringliteral">&quot;refine_grid_layout_y&quot;</span>,1);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.add(<span class="stringliteral">&quot;refine_grid_layout_z&quot;</span>,0);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.add(<span class="stringliteral">&quot;refine_grid_layout_x&quot;</span>,1);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.add(<span class="stringliteral">&quot;refine_grid_layout_y&quot;</span>,1);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.add(<span class="stringliteral">&quot;refine_grid_layout_z&quot;</span>,0);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="comment">// n_proper is the minimum number of coarse cells between coarse-fine boundaries</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   <span class="comment">// between levels (ell and ell+1) and levels (ell-1 and ell).   We want this to be</span></div>
@@ -194,20 +194,20 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="comment">// ref_ratio (which can be 2,3 or 4).  This ensures that fillpatch at level (ell)</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;   <span class="comment">// does not need to reach beyond level (ell-1). Here to be conservative we set this to 2</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <span class="comment">// (rather than the amrex default of 1).</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.add(<span class="stringliteral">&quot;n_proper&quot;</span>,2);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.add(<span class="stringliteral">&quot;n_proper&quot;</span>,2);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;   <span class="keywordtype">int</span> max_grid_size = 2048;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryAdd(<span class="stringliteral">&quot;max_grid_size&quot;</span>,max_grid_size);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;max_grid_size&quot;</span>,max_grid_size);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="comment">// This will set the default value of blocking_factor to be 1, but will allow</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="comment">//     the user to override it in the inputs file or on command line</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;   <span class="keywordtype">int</span> blocking_factor = 1;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryAdd(<span class="stringliteral">&quot;blocking_factor&quot;</span>,blocking_factor);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;blocking_factor&quot;</span>,blocking_factor);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;   <span class="keywordtype">int</span> n_error_buf = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.queryAdd(<span class="stringliteral">&quot;n_error_buf&quot;</span>,n_error_buf);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;n_error_buf&quot;</span>,n_error_buf);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:238</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
 <div class="dynheader">
@@ -216,7 +216,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="main_8cpp_a183e783116d02836167ccbed3b28c1d3_cgraph.png" border="0" usemap="#amain_8cpp_a183e783116d02836167ccbed3b28c1d3_cgraph" alt=""/></div>
 <map name="amain_8cpp_a183e783116d02836167ccbed3b28c1d3_cgraph" id="amain_8cpp_a183e783116d02836167ccbed3b28c1d3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,80,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="128,5,167,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="128,5,167,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -393,7 +393,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classERF.html#addc510dbf758a33cc095d64a9b17076c" title=" " alt="" coords="119,208,242,235"/>
 <area shape="rect" href="classERF.html#aeaeb11001478b0635ef0fe3baa396df1" title=" " alt="" coords="115,259,246,285"/>
 <area shape="rect" href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa" title=" " alt="" coords="108,309,253,336"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="401,5,440,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="401,5,440,32"/>
 <area shape="rect" href="ERF__EpochTime_8H.html#af7eed25e58d350c03f4b8396554bc6a2" title=" " alt="" coords="362,56,479,83"/>
 <area shape="rect" href="ERF__Utils_8H.html#a5e9ed0fa2cb7a711f00c2c8566c71d89" title=" " alt="" coords="325,107,516,133"/>
 <area shape="rect" href="namespaceamrex.html#a8f794ff24efbc4b60058492d1a073c78" title=" " alt="" coords="313,233,529,260"/>

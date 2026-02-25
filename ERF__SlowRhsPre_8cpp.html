@@ -544,8 +544,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (SurfLayer) { t_mean_mf = SurfLayer-&gt;get_mac_avg(level,2); }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> klo = domain.smallEnd(2);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">int</span> khi = domain.bigEnd(2);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = domain.smallEnd(2);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = domain.bigEnd(2);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> l_horiz_adv_type = solverChoice.<a class="code" href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">advChoice</a>.<a class="code" href="structAdvChoice.html#a81152997920406ea2aa97cbb5af2d9b6">dycore_horiz_adv_type</a>;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a> l_vert_adv_type  = solverChoice.<a class="code" href="structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e">advChoice</a>.<a class="code" href="structAdvChoice.html#a2dd44749e2d4f224ae1da4f9e53e257a">dycore_vert_adv_type</a>;</div>
@@ -554,7 +554,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_use_stretched_dz             = (solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> == MeshType::StretchedDz);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_use_terrain_fitted_coords    = (solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> == MeshType::VariableDz);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_moving_terrain               = (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> == TerrainType::MovingFittedMesh);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (l_moving_terrain) AMREX_ALWAYS_ASSERT (l_use_stretched_dz || l_use_terrain_fitted_coords);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">if</span> (l_moving_terrain) <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a> (l_use_stretched_dz || l_use_terrain_fitted_coords);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_diff       = ( (dc.<a class="code" href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">molec_diff_type</a> != <a class="code" href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754">MolecDiffType::None</a>) ||</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                    (tc.<a class="code" href="structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304">les_type</a>        !=       LESType::None) ||</div>
@@ -576,8 +576,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_reflux = ( (solverChoice.<a class="code" href="structSolverChoice.html#af976afa61859c07e6249963edc367c2d">coupling_type</a> == CouplingType::TwoWay) &amp;&amp; (finest_level &gt; 0) &amp;&amp;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                            ( (l_anelastic &amp;&amp; nrk == 1) || (!l_anelastic &amp;&amp; nrk == 2) ) );</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxInv = geom.InvCellSizeArray();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* dx = geom.CellSize();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">const</span> GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = geom.InvCellSizeArray();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geom.CellSize();</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// *****************************************************************************</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Combine external forcing terms</span></div>
@@ -834,7 +834,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="comment">// out of the projection</span></div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            <span class="comment">//</span></div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            <span class="keywordflow">if</span> (!l_use_terrain_fitted_coords) {</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                ParallelFor(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbxo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                    omega_arr(i,j,k) = rho_w(i,j,k);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                });</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
@@ -843,25 +843,25 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                Box gbxo_lo = gbxo; gbxo_lo.setBig(2,domain.smallEnd(2));</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                <span class="keywordtype">int</span> lo_z_face = domain.smallEnd(2);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                <span class="keywordflow">if</span> (gbxo_lo.smallEnd(2) &lt;= lo_z_face) {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                    ParallelFor(gbxo_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbxo_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                        omega_arr(i,j,k) = 0.;</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                    });</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                }</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                Box gbxo_hi = gbxo; gbxo_hi.setSmall(2,gbxo.bigEnd(2));</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                <span class="keywordtype">int</span> hi_z_face = domain.bigEnd(2)+1;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                <span class="keywordflow">if</span> (gbxo_hi.bigEnd(2) &gt;= hi_z_face) {</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                    ParallelFor(gbxo_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbxo_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                        omega_arr(i,j,k) = rho_w(i,j,k);</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                    });</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                }</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                <span class="keywordflow">if</span> (z_t) { <span class="comment">// Note we never do anelastic with moving terrain</span></div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                    Box gbxo_mid = gbxo; gbxo_mid.setSmall(2,1); gbxo_mid.setBig(2,gbxo.bigEnd(2)-1);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    ParallelFor(gbxo_mid, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbxo_mid, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                        <span class="comment">// We define rho on the z-face the same way as in MomentumToVelocity/VelocityToMomentum</span></div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_at_face = 0.5 * (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                        omega_arr(i,j,k) = <a class="code" href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055">OmegaFromW</a>(i,j,k,rho_w(i,j,k),</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                                                      rho_u,rho_v,mf_ux,mf_vy,z_nd,dxInv) -</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                                                      rho_u,rho_v,mf_ux,mf_vy,z_nd,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>) -</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                            rho_at_face * z_t(i,j,k);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                    });</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                } <span class="keywordflow">else</span> {</div>
@@ -872,9 +872,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                    <span class="keywordflow">if</span> (gbxo_mid.bigEnd(2) &gt;= domain.bigEnd(2)+1) {</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                        gbxo_mid.setBig(2,gbxo.bigEnd(2)-1);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                    }</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    ParallelFor(gbxo_mid, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbxo_mid, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                        omega_arr(i,j,k) = <a class="code" href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055">OmegaFromW</a>(i,j,k,rho_w(i,j,k),</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                                                      rho_u,rho_v,mf_ux,mf_vy,z_nd,dxInv);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                                                      rho_u,rho_v,mf_ux,mf_vy,z_nd,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>);</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                    });</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                }</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            }</div>
@@ -960,12 +960,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                                rho_u, rho_v, omega_arr,      <span class="comment">// these are being used to build the fluxes</span></div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                                avg_xmom_arr, avg_ymom_arr, avg_zmom_arr, <span class="comment">// these are being defined from the fluxes</span></div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                                ax_arr, ay_arr, az_arr, detJ_arr,</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                                dxInv, mf_mx, mf_my, mf_uy, mf_vx,</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                                <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, mf_mx, mf_my, mf_uy, mf_vx,</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                                flx_arr, l_fixed_rho);</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            <a class="code" href="ERF__Advection_8H.html#a66ed183383248930e3dcac9f522e9fc9">AdvectionSrcForScalars</a>(bx, icomp, ncomp,</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                                avg_xmom_arr, avg_ymom_arr, avg_zmom_arr,</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                                cell_prim, cell_rhs,</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                                detJ_arr, dxInv, mf_mx, mf_my,</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                                detJ_arr, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, mf_mx, mf_my,</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                                l_horiz_adv_type, l_vert_adv_type,</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                                l_horiz_upw_frac, l_vert_upw_frac,</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                                flx_arr, domain, bc_ptr_h);</div>
@@ -976,7 +976,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                                mask_arr, cfg_arr,</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                                ax_arr, ay_arr, az_arr,</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                                fcx_arr, fcy_arr, fcz_arr, detJ_arr,</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                                dxInv, mf_mx, mf_my, mf_uy, mf_vx,</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                                <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, mf_mx, mf_my, mf_uy, mf_vx,</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                                flx_arr, l_fixed_rho,</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                                already_on_centroids);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            <a class="code" href="ERF__EBAdvection_8H.html#a3443726080c2c3d4d11ad198175300b9">EBAdvectionSrcForScalars</a>(bx, icomp, ncomp,</div>
@@ -984,7 +984,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                                cell_prim, cell_rhs,</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                                mask_arr, cfg_arr, ax_arr, ay_arr, az_arr,</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                                fcx_arr, fcy_arr, fcz_arr,</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                                detJ_arr, dxInv, mf_mx, mf_my,</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                                detJ_arr, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, mf_mx, mf_my,</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                                l_horiz_adv_type, l_vert_adv_type,</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                                l_horiz_upw_frac, l_vert_upw_frac,</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                                flx_arr, domain, bc_ptr_h,</div>
@@ -1020,7 +1020,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#a3e69606ad5fcb2e46d4f46f3a487e88a">DiffusionSrcForState_S</a>(bx, domain, n_start, n_comp, u, v,</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                                       cell_data, cell_prim, cell_rhs,</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                                       diffflux_x, diffflux_y, diffflux_z,</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                                       stretched_dz_d, dxInv, SmnSmn_a,</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                                       stretched_dz_d, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, SmnSmn_a,</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                                       mf_mx, mf_ux, mf_vx,</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                                       mf_my, mf_uy, mf_vy,</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                                       hfx_z, q1fx_z, q2fx_z, diss,</div>
@@ -1031,7 +1031,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                                       cell_data, cell_prim, cell_rhs,</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                                       diffflux_x, diffflux_y, diffflux_z,</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                                       z_nd, z_cc, ax_arr, ay_arr, az_arr, detJ_arr,</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                                       dxInv, SmnSmn_a,</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                                       <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, SmnSmn_a,</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                                       mf_mx, mf_ux, mf_vx,</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                                       mf_my, mf_uy, mf_vy,</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                                       hfx_x, hfx_y, hfx_z, q1fx_x, q1fx_y, q1fx_z, q2fx_z, diss,</div>
@@ -1041,7 +1041,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                <a class="code" href="ERF__Diffusion_8H.html#a778ea5f45912e7134aa98f6e73fa5e0c">DiffusionSrcForState_N</a>(bx, domain, n_start, n_comp, u, v,</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                                       cell_data, cell_prim, cell_rhs,</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                                       diffflux_x, diffflux_y, diffflux_z,</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                                       dxInv, SmnSmn_a,</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                                       <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, SmnSmn_a,</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                                       mf_mx, mf_ux, mf_vx,</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                                       mf_my, mf_uy, mf_vy,</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                                       hfx_z, q1fx_z, q2fx_z, diss,</div>
@@ -1051,7 +1051,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        }</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; source_arr   = cc_src.const_array(mfi);</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        {</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      += source_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += source_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
@@ -1060,7 +1060,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <span class="comment">// If anelastic and in second RK stage, take average of old-time and new-time source</span></div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        <span class="keywordflow">if</span> ( l_anelastic &amp;&amp; (nrk == 1) )</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        {</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            {</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                cell_rhs(i,j,k,     <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) *= 0.5;</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                cell_rhs(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *= 0.5;</div>
@@ -1082,7 +1082,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                           rho_u, rho_v, omega_arr,</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                           z_nd, ax_arr, ay_arr, az_arr,</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                           detJ_arr, stretched_dz_d,</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                           dxInv, mf_mx, mf_ux, mf_vx, mf_my, mf_uy, mf_vy,</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                           <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, mf_mx, mf_ux, mf_vx, mf_my, mf_uy, mf_vy,</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                           l_horiz_adv_type, l_vert_adv_type,</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                           l_horiz_upw_frac, l_vert_upw_frac,</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                           solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a>, solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a>,</div>
@@ -1101,7 +1101,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                    rho_u_rhs, rho_v_rhs, rho_w_rhs,</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>,</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935">tau31</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307">tau32</a>,</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                    detJ_arr, stretched_dz_d, dxInv,</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                    detJ_arr, stretched_dz_d, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>,</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                    mf_mx, mf_ux, mf_vx,</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                    mf_my, mf_uy, mf_vy,</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                    l_use_stretched_dz,</div>
@@ -1112,7 +1112,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                    u, v, w,</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>,</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                    <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>,</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    dx, dxInv,</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                    <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>,</div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                    mf_mx, mf_ux, mf_vx,</div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                    mf_my, mf_uy, mf_vy,</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                    solverChoice, ebfact, bc_ptr_d);</div>
@@ -1121,7 +1121,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        <span class="keyword">auto</span> abl_pressure_grad    = solverChoice.<a class="code" href="structSolverChoice.html#a69e2f0b874cba8faae57987ead4e3ebb">abl_pressure_grad</a>;</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160; </div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        ParallelFor(tbx, tby,</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(tbx, tby,</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        { <span class="comment">// x-momentum equation</span></div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
@@ -1132,7 +1132,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            rho_u_rhs(i, j, k) += (-gpx_arr(i,j,k) - abl_pressure_grad[0]) / (1.0 + q) + xmom_src_arr(i,j,k);</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, k, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_nd);</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                rho_u_rhs(i, j, k) *= h_zeta;</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            }</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
@@ -1151,7 +1151,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            rho_v_rhs(i, j, k) += (-gpy_arr(i,j,k) - abl_pressure_grad[1]) / (1.0 + q) + ymom_src_arr(i,j,k);</div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160; </div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            <span class="keywordflow">if</span> (l_moving_terrain) {</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i, j, k, dxInv, z_nd);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f">Compute_h_zeta_AtJface</a>(i, j, k, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, z_nd);</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                rho_v_rhs(i, j, k) *= h_zeta;</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            }</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
@@ -1169,11 +1169,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(0) == domain.smallEnd(0)) {</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            Box lo_x_dom_face(bx); lo_x_dom_face.setBig(0,bx.smallEnd(0));</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                ParallelFor(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    rho_u_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                });</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                ParallelFor(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(lo_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    <span class="keywordflow">if</span> (u(i,j,k) &gt;= 0.) {</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                        rho_u_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                    }</div>
@@ -1183,11 +1183,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(0) == domain.bigEnd(0)) {</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            Box hi_x_dom_face(bx); hi_x_dom_face.setSmall(0,bx.bigEnd(0)+1); hi_x_dom_face.setBig(0,bx.bigEnd(0)+1);</div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                ParallelFor(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                    rho_u_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                });</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a>].hi(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                ParallelFor(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(hi_x_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                    <span class="keywordflow">if</span> (u(i,j,k) &lt;= 0.) {</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                        rho_u_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                    }</div>
@@ -1197,11 +1197,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(1) == domain.smallEnd(1)) {</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            Box lo_y_dom_face(bx); lo_y_dom_face.setBig(1,bx.smallEnd(1));</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                ParallelFor(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                    rho_v_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                });</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].lo(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                ParallelFor(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(lo_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                    <span class="keywordflow">if</span> (v(i,j,k) &gt;= 0.) {</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                        rho_v_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                    }</div>
@@ -1211,11 +1211,11 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;        <span class="keywordflow">if</span> (bx.bigEnd(1) == domain.bigEnd(1)) {</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            Box hi_y_dom_face(bx); hi_y_dom_face.setSmall(1,bx.bigEnd(1)+1); hi_y_dom_face.setBig(1,bx.bigEnd(1)+1);</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) {</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                ParallelFor(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    rho_v_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                });</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aa98ad22810fdfe9e585bc6481fc12454e">BCVars::yvel_bc</a>].hi(1) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d">ERFBCType::ext_dir_upwind</a>) {</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                ParallelFor(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(hi_y_dom_face, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                    <span class="keywordflow">if</span> (v(i,j,k) &lt;= 0.) {</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                        rho_v_rhs(i,j,k) = 0.;</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                    }</div>
@@ -1223,7 +1223,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            }</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        }</div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        ParallelFor(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;        { <span class="comment">// z-momentum equation</span></div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceGpVars.html#ac972418cf9113d552b162715dae54ebda7490c53ed57352abcd4a219cd12bf517">gpz</a> = gpz_arr(i,j,k);</div>
@@ -1247,15 +1247,15 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160; </div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;            Box b2d = bx; b2d.setRange(2,0);</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            <span class="keywordflow">if</span> (lo.z &gt; klo) {</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// bottom of box but not of domain</span></div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            <span class="keywordflow">if</span> (lo.z &gt; <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) {</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// bottom of box but not of domain</span></div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                {</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                    rho_w_rhs(i,j,lo.z) = rho_w_rhs_crse(i,j,lo.z);</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                });</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;            }</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160; </div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <span class="keywordflow">if</span> (hi.z &lt; khi+1) {</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                ParallelFor(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// top of box but not of domain</span></div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <span class="keywordflow">if</span> (hi.z &lt; <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) {</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) <span class="comment">// top of box but not of domain</span></div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                {</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                    rho_w_rhs(i,j,hi.z+1) = rho_w_rhs_crse(i,j,hi.z+1);</div>
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                });</div>
@@ -1273,12 +1273,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                    <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            }</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                    dx, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                    <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>, dt, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;            }</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160; </div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        } <span class="comment">// two-way coupling</span></div>
@@ -1316,6 +1316,12 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70">AdvType</a></div><div class="ttdeci">AdvType</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:221</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:16</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ParticleTests.H:11</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__MakeTauTerms_8cpp_html_adac69deec7e1a9ddfc2d5d6fb0a1a657"><div class="ttname"><a href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms</a></div><div class="ttdeci">void erf_make_tau_terms(int level, int nrk, const Vector&lt; BCRec &gt; &amp;domain_bcs_type_h, const MultiFab &amp;z_phys_nd, Vector&lt; MultiFab &gt; &amp;S_data, const MultiFab &amp;xvel, const MultiFab &amp;yvel, const MultiFab &amp;zvel, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_lev, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_corr_lev, MultiFab *SmnSmn, MultiFab *eddyDiffs, const Geometry geom, const SolverChoice &amp;solverChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;, Gpu::DeviceVector&lt; Real &gt; &amp;stretched_dz_d, const MultiFab &amp;detJ, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const MultiFab &amp;ax, const MultiFab &amp;ay, const MultiFab &amp;az, const eb_ &amp;ebfact)</div><div class="ttdef"><b>Definition:</b> ERF_MakeTauTerms.cpp:12</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a00a82ef863424210898550c6abb4d055"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int &amp;i, int &amp;j, int &amp;k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:412</div></div>
@@ -1372,50 +1378,53 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SlowRhsPre_8cpp_a183bc8f162cd19cd09e3362640c54aa7_cgraph.png" border="0" usemap="#aERF__SlowRhsPre_8cpp_a183bc8f162cd19cd09e3362640c54aa7_cgraph" alt=""/></div>
 <map name="aERF__SlowRhsPre_8cpp_a183bc8f162cd19cd09e3362640c54aa7_cgraph" id="aERF__SlowRhsPre_8cpp_a183bc8f162cd19cd09e3362640c54aa7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,563,137,589"/>
-<area shape="rect" href="ERF__Advection_8H.html#ab52062c0bae80497906b1c694fd1944a" title=" " alt="" coords="201,183,361,209"/>
-<area shape="rect" href="ERF__Advection_8H.html#a1bbb1b8a1434bf45894d6a908f48cc60" title=" " alt="" coords="205,233,357,260"/>
-<area shape="rect" href="ERF__Advection_8H.html#a66ed183383248930e3dcac9f522e9fc9" title=" " alt="" coords="193,284,368,311"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="434,5,618,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f" title=" " alt="" coords="434,56,618,83"/>
-<area shape="rect" href="ERF__Diffusion_8H.html#a261f5ab5cec018d4266bc1d833150fd4" title=" " alt="" coords="204,639,357,665"/>
-<area shape="rect" href="ERF__Diffusion_8H.html#a2b5c674d6286f0f8e8e65809a82604d1" title=" " alt="" coords="192,689,369,716"/>
-<area shape="rect" href="ERF__Diffusion_8H.html#a778ea5f45912e7134aa98f6e73fa5e0c" title=" " alt="" coords="195,740,366,767"/>
-<area shape="rect" href="ERF__Diffusion_8H.html#a3e69606ad5fcb2e46d4f46f3a487e88a" title=" " alt="" coords="196,791,365,817"/>
-<area shape="rect" href="ERF__Diffusion_8H.html#a5369ca8490233a9bd14e478b7327d2a6" title=" " alt="" coords="196,841,365,868"/>
-<area shape="rect" href="ERF__EBAdvection_8H.html#af6ffc1b1b5ae247c4346c4fdf0b5e95d" title=" " alt="" coords="196,892,365,919"/>
-<area shape="rect" href="ERF__EBAdvection_8H.html#a3443726080c2c3d4d11ad198175300b9" title=" " alt="" coords="185,943,376,969"/>
-<area shape="rect" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657" title=" " alt="" coords="203,436,359,463"/>
-<area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title=" " alt="" coords="441,715,611,741"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055" title=" " alt="" coords="469,765,583,792"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="489,816,563,843"/>
-<area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="457,259,595,285"/>
-<area shape="rect" href="ERF__ComputeStrain__EB_8cpp.html#a416c43cf1410a62066bbdd19ab9c9724" title=" " alt="" coords="455,309,597,336"/>
+<area shape="rect" title=" " alt="" coords="5,487,137,513"/>
+<area shape="rect" href="ERF__Advection_8H.html#ab52062c0bae80497906b1c694fd1944a" title=" " alt="" coords="201,5,361,32"/>
+<area shape="rect" href="ERF__Advection_8H.html#a1bbb1b8a1434bf45894d6a908f48cc60" title=" " alt="" coords="205,56,357,83"/>
+<area shape="rect" href="ERF__Advection_8H.html#a66ed183383248930e3dcac9f522e9fc9" title=" " alt="" coords="193,107,368,133"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="435,5,617,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="434,56,618,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f" title=" " alt="" coords="434,107,618,133"/>
+<area shape="rect" href="ERF__Diffusion_8H.html#a261f5ab5cec018d4266bc1d833150fd4" title=" " alt="" coords="204,613,357,640"/>
+<area shape="rect" href="ERF__Diffusion_8H.html#a2b5c674d6286f0f8e8e65809a82604d1" title=" " alt="" coords="192,664,369,691"/>
+<area shape="rect" href="ERF__Diffusion_8H.html#a778ea5f45912e7134aa98f6e73fa5e0c" title=" " alt="" coords="195,715,366,741"/>
+<area shape="rect" href="ERF__Diffusion_8H.html#a3e69606ad5fcb2e46d4f46f3a487e88a" title=" " alt="" coords="196,765,365,792"/>
+<area shape="rect" href="ERF__Diffusion_8H.html#a5369ca8490233a9bd14e478b7327d2a6" title=" " alt="" coords="196,816,365,843"/>
+<area shape="rect" href="ERF__EBAdvection_8H.html#af6ffc1b1b5ae247c4346c4fdf0b5e95d" title=" " alt="" coords="196,867,365,893"/>
+<area shape="rect" href="ERF__EBAdvection_8H.html#a3443726080c2c3d4d11ad198175300b9" title=" " alt="" coords="185,917,376,944"/>
+<area shape="rect" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657" title=" " alt="" coords="203,411,359,437"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="749,461,839,488"/>
+<area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title=" " alt="" coords="441,867,611,893"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055" title=" " alt="" coords="469,917,583,944"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="489,968,563,995"/>
+<area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="457,157,595,184"/>
+<area shape="rect" href="ERF__ComputeStrain__EB_8cpp.html#a416c43cf1410a62066bbdd19ab9c9724" title=" " alt="" coords="455,208,597,235"/>
 <area shape="rect" href="ERF__ComputeStrain__N_8cpp.html#a402c8ba5bd8bd5536fd81ee564fbafc9" title=" " alt="" coords="458,360,594,387"/>
 <area shape="rect" href="ERF__ComputeStrain__S_8cpp.html#a0c4017fe001a7184afaad223cdcb6439" title=" " alt="" coords="459,411,593,437"/>
-<area shape="rect" href="ERF__ComputeStrain__T_8cpp.html#a9beed13210a161fbba07a3790bdbe86d" title=" " alt="" coords="459,461,593,488"/>
-<area shape="rect" href="ERF__ComputeStress__EB_8cpp.html#a9b500b1d3d40662c23d15ea1d0340182" title=" " alt="" coords="424,613,628,640"/>
-<area shape="rect" href="ERF__ComputeStress__N_8cpp.html#a3fa4db2d1ada660395bbd1ffc31293c5" title=" " alt="" coords="427,664,625,691"/>
-<area shape="rect" href="ERF__ComputeStress__S_8cpp.html#aaabd035d28f925c3cf4edd4e7eab0ba6" title=" " alt="" coords="429,107,623,133"/>
-<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#ad8db4533f005a136486fca08d6e5a407" title=" " alt="" coords="429,563,623,589"/>
-<area shape="rect" href="ERF__ComputeStress__N_8cpp.html#a9e66ce66c8560726fc0764dcea192d73" title=" " alt="" coords="433,157,619,184"/>
-<area shape="rect" href="ERF__ComputeStress__S_8cpp.html#aa33b044758af0015cf0e1f3b75cdc8c9" title=" " alt="" coords="434,208,618,235"/>
-<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#a660dbb610ed8f6e3478698041795fd33" title=" " alt="" coords="434,512,618,539"/>
+<area shape="rect" href="ERF__ComputeStrain__T_8cpp.html#a9beed13210a161fbba07a3790bdbe86d" title=" " alt="" coords="459,715,593,741"/>
+<area shape="rect" href="ERF__ComputeStress__EB_8cpp.html#a9b500b1d3d40662c23d15ea1d0340182" title=" " alt="" coords="424,461,628,488"/>
+<area shape="rect" href="ERF__ComputeStress__N_8cpp.html#a3fa4db2d1ada660395bbd1ffc31293c5" title=" " alt="" coords="427,512,625,539"/>
+<area shape="rect" href="ERF__ComputeStress__S_8cpp.html#aaabd035d28f925c3cf4edd4e7eab0ba6" title=" " alt="" coords="429,563,623,589"/>
+<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#ad8db4533f005a136486fca08d6e5a407" title=" " alt="" coords="429,765,623,792"/>
+<area shape="rect" href="ERF__ComputeStress__N_8cpp.html#a9e66ce66c8560726fc0764dcea192d73" title=" " alt="" coords="433,613,619,640"/>
+<area shape="rect" href="ERF__ComputeStress__S_8cpp.html#aa33b044758af0015cf0e1f3b75cdc8c9" title=" " alt="" coords="434,664,618,691"/>
+<area shape="rect" href="ERF__ComputeStress__T_8cpp.html#a660dbb610ed8f6e3478698041795fd33" title=" " alt="" coords="434,816,618,843"/>
 <area shape="rect" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f" title=" " alt="" coords="702,157,886,184"/>
 <area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="702,208,886,235"/>
-<area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="701,107,887,133"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="687,360,901,387"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9" title=" " alt="" coords="682,411,906,437"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a" title=" " alt="" coords="679,259,909,285"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="692,461,896,488"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a1582797e6ac6cf0c1e0b94a619bc13b8" title=" " alt="" coords="687,512,901,539"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a07e83bf0f142a953679c9edfa42b398d" title=" " alt="" coords="684,309,904,336"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e" title=" " alt="" coords="679,563,909,589"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76" title=" " alt="" coords="679,613,909,640"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463" title=" " alt="" coords="682,664,906,691"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ad56aa9e0cc7428ea33d4ac90d91c1f56" title=" " alt="" coords="687,715,901,741"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b" title=" " alt="" coords="676,765,912,792"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5" title=" " alt="" coords="714,816,874,843"/>
+<area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="701,259,887,285"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="960,461,1109,488"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="687,613,901,640"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9" title=" " alt="" coords="682,664,906,691"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a" title=" " alt="" coords="679,512,909,539"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="692,715,896,741"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a1582797e6ac6cf0c1e0b94a619bc13b8" title=" " alt="" coords="687,765,901,792"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a07e83bf0f142a953679c9edfa42b398d" title=" " alt="" coords="684,563,904,589"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e" title=" " alt="" coords="679,816,909,843"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76" title=" " alt="" coords="679,867,909,893"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a0251c09947155307e047f79fccdbd463" title=" " alt="" coords="682,917,906,944"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ad56aa9e0cc7428ea33d4ac90d91c1f56" title=" " alt="" coords="687,968,901,995"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b" title=" " alt="" coords="676,1019,912,1045"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5" title=" " alt="" coords="714,1069,874,1096"/>
 </map>
 </div>
 

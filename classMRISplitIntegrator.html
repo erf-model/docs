@@ -418,7 +418,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> substep_ratio = <a class="code" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86">get_slow_fast_timestep_ratio</a>();</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f">no_substepping</a>) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            AMREX_ALWAYS_ASSERT(substep_ratio &gt; 1 &amp;&amp; substep_ratio % 2 == 0);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(substep_ratio &gt; 1 &amp;&amp; substep_ratio % 2 == 0);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// Assume before advance() that S_old is valid data at the current time (&quot;time&quot; argument)</span></div>
@@ -559,6 +559,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="comment">// Return timestep</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMRISplitIntegrator.html#a3f21bedf222ce95136d4889012401612">timestep</a>;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_a088e107111ca012e026908b0c0b3cef7"><div class="ttname"><a href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">MRISplitIntegrator::F_slow</a></div><div class="ttdeci">T * F_slow</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:66</div></div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_a109800deca235dcbb69e86968c05e850"><div class="ttname"><a href="classMRISplitIntegrator.html#a109800deca235dcbb69e86968c05e850">MRISplitIntegrator::slow_rhs_post</a></div><div class="ttdeci">std::function&lt; void(T &amp;, T &amp;, T &amp;, T &amp;, const amrex::Real, const amrex::Real, const amrex::Real, const int)&gt; slow_rhs_post</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:23</div></div>
@@ -581,8 +582,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph.png" border="0" usemap="#aclassMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph" alt=""/></div>
 <map name="aclassMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph" id="aclassMRISplitIntegrator_ad78b5d1908a131c3597232a041ca267b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,145,47"/>
-<area shape="rect" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86" title=" " alt="" coords="193,5,416,47"/>
+<area shape="rect" title=" " alt="" coords="5,27,145,69"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="213,5,396,32"/>
+<area shape="rect" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86" title=" " alt="" coords="193,57,416,98"/>
 </map>
 </div>
 <div class="dynheader">

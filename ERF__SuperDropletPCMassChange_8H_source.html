@@ -126,14 +126,14 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            RT R_inv = 1.0/a_R;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            RT R_inv_cubed = R_inv*R_inv*R_inv;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            RT alpha = (a_S-1.0) / (F_k + F_d);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            RT retval = alpha*R_inv;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> = (a_S-1.0) / (F_k + F_d);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            RT retval = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>*R_inv;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            RT beta = -(a_a/a_T) / (F_k + F_d);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            retval += beta*R_inv*R_inv;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a> = -(a_a/a_T) / (F_k + F_d);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            retval += <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>*R_inv*R_inv;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            RT <a class="code" href="namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495">gamma</a> = a_b * a_N_s / (F_k + F_d);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            retval += <a class="code" href="namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495">gamma</a>*R_inv_cubed*R_inv;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a> = a_b * a_N_s / (F_k + F_d);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            retval += <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>*R_inv_cubed*R_inv;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">return</span> retval;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
@@ -171,14 +171,14 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            RT R_inv = std::exp(-0.5*std::log(a_R_sq));</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            RT R_inv_cubed = R_inv*R_inv*R_inv;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            RT alpha = 2.0 * (a_S-1.0) / (F_k + F_d);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            RT retval = alpha;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> = 2.0 * (a_S-1.0) / (F_k + F_d);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            RT retval = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            RT beta = -2.0 * (a_a/a_T) / (F_k + F_d);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            retval += beta*R_inv;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a> = -2.0 * (a_a/a_T) / (F_k + F_d);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            retval += <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>*R_inv;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            RT <a class="code" href="namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495">gamma</a> = 2.0 * a_b * a_N_s / (F_k + F_d);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            retval += <a class="code" href="namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495">gamma</a>*R_inv_cubed;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a> = 2.0 * a_b * a_N_s / (F_k + F_d);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            retval += <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>*R_inv_cubed;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">return</span> retval;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
@@ -206,11 +206,11 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            RT retval = 0.0;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            RT beta = -2.0 * (a_a/a_T) / (F_k + F_d);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            retval -= 0.5 * beta*R_inv_3;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a> = -2.0 * (a_a/a_T) / (F_k + F_d);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            retval -= 0.5 * <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>*R_inv_3;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            RT <a class="code" href="namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495">gamma</a> = 2.0 * a_b * a_N_s / (F_k + F_d);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            retval -= 0.5 * 3.0*<a class="code" href="namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495">gamma</a>*R_inv_5;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a> = 2.0 * a_b * a_N_s / (F_k + F_d);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            retval -= 0.5 * 3.0*<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a>*R_inv_5;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span> retval;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
@@ -845,8 +845,10 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a0b6c95d9cbe21c8a94590c64b1459844"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a></div><div class="ttdeci">amrex::Real gamma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:9</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a8018075a8e3cd8009e0b612e414dbd30"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a></div><div class="ttdeci">amrex::Real alpha</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:8</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_aaa538a485890f44f3ec785846ea09b12"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a></div><div class="ttdeci">amrex::Real beta</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:10</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_aa3ee844b68627ac3e146767571d7508eae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:87</div></div>
-<div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a42d4f49e16f20ecf5712c4dd918ac495"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495">module_mp_morr_two_moment::gamma</a></div><div class="ttdeci">real(c_double) function, private gamma(X)</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:4107</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

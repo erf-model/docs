@@ -943,31 +943,31 @@ template&lt;typename ScalarT &gt; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.extra_diags    = <a class="code" href="classSHOCInterface.html#a2eb5c28903b45ad69e0924d62d102e31">extra_shoc_diags</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Construct parser object for following reads</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf.shoc&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf.shoc&quot;</span>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Parse runtime inputs at start up</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;lambda_low&quot;</span>      , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_low    );</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;lambda_high&quot;</span>     , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_high   );</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;lambda_slope&quot;</span>    , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_slope  );</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;lambda_thresh&quot;</span>   , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_thresh );</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;thl2tune&quot;</span>        , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.thl2tune      );</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;qw2tune&quot;</span>         , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.qw2tune       );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;qwthl2tune&quot;</span>      , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.qwthl2tune    );</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;w2tune&quot;</span>          , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.w2tune        );</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;length_fac&quot;</span>      , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.length_fac    );</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;c_diag_3rd_mom&quot;</span>  , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.c_diag_3rd_mom);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;coeff_kh&quot;</span>        , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.Ckh           );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;coeff_km&quot;</span>        , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.Ckm           );</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;shoc_1p5tke&quot;</span>     , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.shoc_1p5tke   );</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;extra_shoc_diags&quot;</span>, <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.extra_diags   );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;lambda_low&quot;</span>      , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_low    );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;lambda_high&quot;</span>     , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_high   );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;lambda_slope&quot;</span>    , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_slope  );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;lambda_thresh&quot;</span>   , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.lambda_thresh );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;thl2tune&quot;</span>        , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.thl2tune      );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;qw2tune&quot;</span>         , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.qw2tune       );</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;qwthl2tune&quot;</span>      , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.qwthl2tune    );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;w2tune&quot;</span>          , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.w2tune        );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;length_fac&quot;</span>      , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.length_fac    );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;c_diag_3rd_mom&quot;</span>  , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.c_diag_3rd_mom);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;coeff_kh&quot;</span>        , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.Ckh           );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;coeff_km&quot;</span>        , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.Ckm           );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;shoc_1p5tke&quot;</span>     , <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.shoc_1p5tke   );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;extra_shoc_diags&quot;</span>, <a class="code" href="classSHOCInterface.html#a942b431c7824d9067d779966d09ec41d">runtime_options</a>.extra_diags   );</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Set to default but allow us to change it through the inputs file</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;apply_tms&quot;</span>, <a class="code" href="classSHOCInterface.html#a312f79cfc443d19854031a40bba68821">apply_tms</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;check_flux_state&quot;</span>, <a class="code" href="classSHOCInterface.html#a065486dcadc7e1774519328b347d73b7">check_flux_state</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;extra_shoc_diags&quot;</span>, <a class="code" href="classSHOCInterface.html#a2eb5c28903b45ad69e0924d62d102e31">extra_shoc_diags</a>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;column_conservation_check&quot;</span>, <a class="code" href="classSHOCInterface.html#ae0fc8325ef69c59464dfad991a9ec302">column_conservation_check</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;apply_tms&quot;</span>, <a class="code" href="classSHOCInterface.html#a312f79cfc443d19854031a40bba68821">apply_tms</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;check_flux_state&quot;</span>, <a class="code" href="classSHOCInterface.html#a065486dcadc7e1774519328b347d73b7">check_flux_state</a>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;extra_shoc_diags&quot;</span>, <a class="code" href="classSHOCInterface.html#a2eb5c28903b45ad69e0924d62d102e31">extra_shoc_diags</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;column_conservation_check&quot;</span>, <a class="code" href="classSHOCInterface.html#ae0fc8325ef69c59464dfad991a9ec302">column_conservation_check</a>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:238</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a065486dcadc7e1774519328b347d73b7"><div class="ttname"><a href="classSHOCInterface.html#a065486dcadc7e1774519328b347d73b7">SHOCInterface::check_flux_state</a></div><div class="ttdeci">bool check_flux_state</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:648</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a2eb5c28903b45ad69e0924d62d102e31"><div class="ttname"><a href="classSHOCInterface.html#a2eb5c28903b45ad69e0924d62d102e31">SHOCInterface::extra_shoc_diags</a></div><div class="ttdeci">bool extra_shoc_diags</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:649</div></div>
@@ -980,7 +980,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSHOCInterface_a7c2e46ec79e601afc11cf4f042650dc9_cgraph.png" border="0" usemap="#aclassSHOCInterface_a7c2e46ec79e601afc11cf4f042650dc9_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_a7c2e46ec79e601afc11cf4f042650dc9_cgraph" id="aclassSHOCInterface_a7c2e46ec79e601afc11cf4f042650dc9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,225,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="273,5,312,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="273,5,312,32"/>
 </map>
 </div>
 
@@ -1018,7 +1018,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; u_tend_arr = <a class="code" href="classSHOCInterface.html#adb8146c317beeca053c8c419ba84479e">u_tend</a>.const_array(mfi);</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; v_tend_arr = <a class="code" href="classSHOCInterface.html#adbf4ac98d4efee3e978e64c028279b69">v_tend</a>.const_array(mfi);</div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        ParallelFor(vbx_cc, vbx_x, vbx_y,</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(vbx_cc, vbx_x, vbx_y,</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        {</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            cc_rhs_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += c_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * c_tend_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
@@ -1035,6 +1035,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a6875b74a2f13f320d262d03f213dbb15"><div class="ttname"><a href="classSHOCInterface.html#a6875b74a2f13f320d262d03f213dbb15">SHOCInterface::c_tend</a></div><div class="ttdeci">amrex::MultiFab c_tend</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:614</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_aa7ee7a5282cf860b87716068344850d8"><div class="ttname"><a href="classSHOCInterface.html#aa7ee7a5282cf860b87716068344850d8">SHOCInterface::m_cons</a></div><div class="ttdeci">amrex::MultiFab * m_cons</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:591</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_adb8146c317beeca053c8c419ba84479e"><div class="ttname"><a href="classSHOCInterface.html#adb8146c317beeca053c8c419ba84479e">SHOCInterface::u_tend</a></div><div class="ttdeci">amrex::MultiFab u_tend</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:615</div></div>
@@ -1042,7 +1043,17 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269a2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:160</div></div>
 <div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
 <div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:159</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph.png" border="0" usemap="#aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph" alt=""/></div>
+<map name="aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph" id="aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,155,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="203,13,293,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="341,13,491,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ae5e0a78be62a4a50b3b0cbf64cb35d68"></a>
@@ -1083,7 +1094,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; c_tend_arr = <a class="code" href="classSHOCInterface.html#a6875b74a2f13f320d262d03f213dbb15">c_tend</a>.const_array(mfi);</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160; </div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    ParallelFor(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    {</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        cc_rhs_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) += c_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * c_tend_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <span class="keywordflow">if</span> (moist) {</div>
@@ -1095,7 +1106,17 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:43</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph.png" border="0" usemap="#aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph" alt=""/></div>
+<map name="aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph" id="aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,155,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="203,13,293,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="341,13,491,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a0fd7182e5c8942b3c0cf42bed07b29c5"></a>
@@ -1873,7 +1894,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; u_tend_arr     = <a class="code" href="classSHOCInterface.html#adb8146c317beeca053c8c419ba84479e">u_tend</a>.array(mfi);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; v_tend_arr     = <a class="code" href="classSHOCInterface.html#adbf4ac98d4efee3e978e64c028279b69">v_tend</a>.array(mfi);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        ParallelFor(vbx_cc, vbx_x, vbx_y,</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(vbx_cc, vbx_x, vbx_y,</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        {</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <span class="comment">// NOTE: k gets permuted with ilay</span></div>
@@ -1929,8 +1950,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSHOCInterface_a53fba0924338b1c69707f43dd3e6348c_cgraph.png" border="0" usemap="#aclassSHOCInterface_a53fba0924338b1c69707f43dd3e6348c_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_a53fba0924338b1c69707f43dd3e6348c_cgraph" id="aclassSHOCInterface_a53fba0924338b1c69707f43dd3e6348c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,176,47"/>
-<area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="224,13,283,39"/>
+<area shape="rect" title=" " alt="" coords="5,23,176,65"/>
+<area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="240,5,299,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="224,56,315,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="363,56,512,83"/>
 </map>
 </div>
 
@@ -2025,7 +2048,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_arr    = (<a class="code" href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">m_z_phys</a>) ? <a class="code" href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">m_z_phys</a>-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                                                          Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        {</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="comment">// NOTE: k gets permuted with ilay</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
@@ -2132,10 +2155,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph.png" border="0" usemap="#aclassSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph" id="aclassSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph">
-<area shape="rect" title=" " alt="" coords="5,49,168,90"/>
+<area shape="rect" title=" " alt="" coords="5,74,168,115"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="233,5,343,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="216,56,360,83"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="259,107,317,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="243,157,333,184"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="408,157,557,184"/>
 </map>
 </div>
 
@@ -2355,7 +2380,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; t13_arr = <a class="code" href="classSHOCInterface.html#aa4b820d34643df6d00e49c7181400e2a">m_tau13</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; t23_arr = <a class="code" href="classSHOCInterface.html#a6eb36a6805389995f2075bebc9edb8c8">m_tau23</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        ParallelFor(vbx_cc, vbx_xz, vbx_yz,</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(vbx_cc, vbx_xz, vbx_yz,</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        {</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            hfx_arr(i,j,k) = 0.;</div>
@@ -2371,7 +2396,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        });</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    }</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;}</div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph.png" border="0" usemap="#aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph" alt=""/></div>
+<map name="aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph" id="aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,151,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="199,13,289,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="337,13,487,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ac1770942070cea4268124471500c6091"></a>
@@ -2421,7 +2456,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_arr = <a class="code" href="classSHOCInterface.html#a69c82ac3e06fe61dedf29fcdaa39c57a">m_mu</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        ParallelFor(gbx_cc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx_cc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        {</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <span class="comment">// Limiting</span></div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            <span class="keywordtype">int</span> ii = std::min(std::max(i,iminv),imaxv);</div>
@@ -2454,8 +2489,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSHOCInterface_ac1770942070cea4268124471500c6091_cgraph.png" border="0" usemap="#aclassSHOCInterface_ac1770942070cea4268124471500c6091_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_ac1770942070cea4268124471500c6091_cgraph" id="aclassSHOCInterface_ac1770942070cea4268124471500c6091_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,151,47"/>
-<area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="199,13,257,39"/>
+<area shape="rect" title=" " alt="" coords="5,23,151,65"/>
+<area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="215,5,273,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="199,56,289,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="337,56,487,83"/>
 </map>
 </div>
 
@@ -2575,8 +2612,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">m_z_phys</a>  = z_phys;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// Ensure the boxes span klo -&gt; khi</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> klo = geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">int</span> khi = geom.Domain().bigEnd(2);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = geom.Domain().bigEnd(2);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Reset vector of offsets for columnar data</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="classSHOCInterface.html#a1f3a1ff36dfbc70f03a83a413ec87570">m_num_layers</a> = geom.Domain().length(2);</div>
@@ -2587,8 +2624,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classSHOCInterface.html#aa7ee7a5282cf860b87716068344850d8">m_cons</a>); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// NOTE: Get lateral ghost cells for CC &lt;--&gt; FC</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; gbx = mfi.tilebox(IntVect(0,0,0),IntVect(1,1,0));</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE((klo == gbx.smallEnd(2)) &amp;&amp;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                         (khi == gbx.bigEnd(2)),</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE((<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> == gbx.smallEnd(2)) &amp;&amp;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                         (<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> == gbx.bigEnd(2)),</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                         <span class="stringliteral">&quot;Vertical decomposition with shoc is not allowed.&quot;</span>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span> nx = gbx.length(0);</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordtype">int</span> ny = gbx.length(1);</div>
@@ -2621,6 +2658,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a></div><div class="ttdeci">@ tau23</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a></div><div class="ttdeci">@ tau13</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ParticleTests.H:11</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a0fd7182e5c8942b3c0cf42bed07b29c5"><div class="ttname"><a href="classSHOCInterface.html#a0fd7182e5c8942b3c0cf42bed07b29c5">SHOCInterface::alloc_buffers</a></div><div class="ttdeci">void alloc_buffers()</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.cpp:199</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a1bdb1da0e57b13491fc1c08267069995"><div class="ttname"><a href="classSHOCInterface.html#a1bdb1da0e57b13491fc1c08267069995">SHOCInterface::init_buffers</a></div><div class="ttdeci">void init_buffers()</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.cpp:787</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_acb208b261a3900862c1d444d4d8bbcfc"><div class="ttname"><a href="classSHOCInterface.html#acb208b261a3900862c1d444d4d8bbcfc">SHOCInterface::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:579</div></div>

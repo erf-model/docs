@@ -657,8 +657,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a> = (Qv_prim[0].get());</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="comment">// Get roughness</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.z0&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2ac3aa7e042bc2f249101e7c70ce6dd0">z0_const</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      amrex::ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.z0&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2ac3aa7e042bc2f249101e7c70ce6dd0">z0_const</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="comment">// Specify how to compute the flux</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordflow">if</span> (use_rot_surface_flux) {</div>
@@ -666,7 +666,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          std::string flux_string_in;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;          std::string flux_string{<span class="stringliteral">&quot;moeng&quot;</span>};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <span class="keyword">auto</span> read_flux = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;surface_layer.flux_type&quot;</span>, flux_string_in);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          <span class="keyword">auto</span> read_flux = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;surface_layer.flux_type&quot;</span>, flux_string_in);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;          <span class="keywordflow">if</span> (read_flux) {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;              flux_string = amrex::toLower(flux_string_in);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;          }</div>
@@ -686,11 +686,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      }</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="comment">// Include w* to handle free convection (Beljaars 1995, QJRMS)</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.include_wstar&quot;</span>, <a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.include_wstar&quot;</span>, <a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      std::string pblh_string_in;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      std::string pblh_string{<span class="stringliteral">&quot;none&quot;</span>};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keyword">auto</span> read_pblh = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.pblh_calc&quot;</span>, pblh_string_in);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keyword">auto</span> read_pblh = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.pblh_calc&quot;</span>, pblh_string_in);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="keywordflow">if</span> (read_pblh) {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;          pblh_string = amrex::toLower(pblh_string_in);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      }</div>
@@ -709,12 +709,12 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="comment">// Get surface temperature</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keyword">auto</span> erf_st = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.surf_temp&quot;</span>, <a class="code" href="classSurfaceLayer.html#a32494099aa0b1b6885e875d1051687b7">surf_temp</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keyword">auto</span> erf_st = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.surf_temp&quot;</span>, <a class="code" href="classSurfaceLayer.html#a32494099aa0b1b6885e875d1051687b7">surf_temp</a>);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordflow">if</span> (erf_st) { <a class="code" href="classSurfaceLayer.html#af1266da71fa17b289ba856fb79937b83">default_land_surf_temp</a>  = <a class="code" href="classSurfaceLayer.html#a32494099aa0b1b6885e875d1051687b7">surf_temp</a>; }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="comment">// Get surface moisture</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordtype">bool</span> erf_sq = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>) { erf_sq = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.surf_moist&quot;</span>, <a class="code" href="classSurfaceLayer.html#a66d011088a1a5f798a84b3d8da262e39">surf_moist</a>); }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>) { erf_sq = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.surf_moist&quot;</span>, <a class="code" href="classSurfaceLayer.html#a66d011088a1a5f798a84b3d8da262e39">surf_moist</a>); }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      <span class="keywordflow">if</span> (erf_sq) { <a class="code" href="classSurfaceLayer.html#a9003fa201aacccbb349c0455bc221166">default_land_surf_moist</a> = <a class="code" href="classSurfaceLayer.html#a66d011088a1a5f798a84b3d8da262e39">surf_moist</a>; }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="comment">// Custom type user must specify the fluxes</span></div>
@@ -722,10 +722,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          <a class="code" href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">flux_type</a> == <a class="code" href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a31b342f23cb16952131736824b9ccdd1">FluxCalcType::RICO</a>) {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;          <a class="code" href="classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487">theta_type</a> = <a class="code" href="classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04ac03b743c56d9316fbd3d327453b22226">ThetaCalcType::HEAT_FLUX</a>;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;          <a class="code" href="classSurfaceLayer.html#ace92867e82baf1acb7b6a5d3deb30ac1">moist_type</a> = <a class="code" href="classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea59038f4bd084275104842422a6eec21c">MoistCalcType::MOISTURE_FLUX</a>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.ustar&quot;</span>, <a class="code" href="classSurfaceLayer.html#addfd74a8e57a125a502f57675cbd1484">custom_ustar</a>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.tstar&quot;</span>, <a class="code" href="classSurfaceLayer.html#abdfd114c2c1f4d35dd479b3f99c3b6c9">custom_tstar</a>);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.qstar&quot;</span>, <a class="code" href="classSurfaceLayer.html#a7c0d9de6442add19ce264d9cb222ccfc">custom_qstar</a>);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.rhosurf&quot;</span>, <a class="code" href="classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31">custom_rhosurf</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.ustar&quot;</span>, <a class="code" href="classSurfaceLayer.html#addfd74a8e57a125a502f57675cbd1484">custom_ustar</a>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.tstar&quot;</span>, <a class="code" href="classSurfaceLayer.html#abdfd114c2c1f4d35dd479b3f99c3b6c9">custom_tstar</a>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.qstar&quot;</span>, <a class="code" href="classSurfaceLayer.html#a7c0d9de6442add19ce264d9cb222ccfc">custom_qstar</a>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.rhosurf&quot;</span>, <a class="code" href="classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31">custom_rhosurf</a>);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a7c0d9de6442add19ce264d9cb222ccfc">custom_qstar</a> != 0) {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;              AMREX_ASSERT_WITH_MESSAGE(<a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>,</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;              <span class="stringliteral">&quot;Specified custom MOST qv flux without moisture model!&quot;</span>);</div>
@@ -736,11 +736,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="comment">// Bulk transfer coefficient (must specify coeffs and surface values)</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">flux_type</a> == <a class="code" href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a5c7f33152e3d00ddc3dad805e55f3f71">FluxCalcType::BULK_COEFF</a>) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.Cd&quot;</span>, <a class="code" href="classSurfaceLayer.html#ae895bf19520480b90f8171c262f17426">m_Cd</a>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.Ch&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58">m_Ch</a>);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.Cq&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3">m_Cq</a>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.surf_temp&quot;</span>, <a class="code" href="classSurfaceLayer.html#af1266da71fa17b289ba856fb79937b83">default_land_surf_temp</a>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.get(<span class="stringliteral">&quot;most.surf_moist&quot;</span>, <a class="code" href="classSurfaceLayer.html#a9003fa201aacccbb349c0455bc221166">default_land_surf_moist</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.Cd&quot;</span>, <a class="code" href="classSurfaceLayer.html#ae895bf19520480b90f8171c262f17426">m_Cd</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.Ch&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58">m_Ch</a>);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.Cq&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3">m_Cq</a>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.surf_temp&quot;</span>, <a class="code" href="classSurfaceLayer.html#af1266da71fa17b289ba856fb79937b83">default_land_surf_temp</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;most.surf_moist&quot;</span>, <a class="code" href="classSurfaceLayer.html#a9003fa201aacccbb349c0455bc221166">default_land_surf_moist</a>);</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;          amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Using specified Cd, Ch, Cq for MOST = &quot;</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                         &lt;&lt; <a class="code" href="classSurfaceLayer.html#ae895bf19520480b90f8171c262f17426">m_Cd</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58">m_Ch</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                         &lt;&lt; <a class="code" href="classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3">m_Cq</a> &lt;&lt; std::endl;</div>
@@ -749,15 +749,15 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;          <span class="keywordflow">if</span> (erf_st) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;              <a class="code" href="classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487">theta_type</a> = <a class="code" href="classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1">ThetaCalcType::SURFACE_TEMPERATURE</a>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;              <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.surf_heating_rate&quot;</span>, <a class="code" href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">surf_heating_rate</a>); <span class="comment">// [K/h]</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;              <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.surf_heating_rate&quot;</span>, <a class="code" href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">surf_heating_rate</a>); <span class="comment">// [K/h]</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;              <a class="code" href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">surf_heating_rate</a> = <a class="code" href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">surf_heating_rate</a> / 3600.0;        <span class="comment">// [K/s]</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;              <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.surf_temp_flux&quot;</span>, <a class="code" href="classSurfaceLayer.html#aad234585f665d6b2dcd0e827cc7ed45d">surf_temp_flux</a>)) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;              <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.surf_temp_flux&quot;</span>, <a class="code" href="classSurfaceLayer.html#aad234585f665d6b2dcd0e827cc7ed45d">surf_temp_flux</a>)) {</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                  amrex::Abort(<span class="stringliteral">&quot;Can only specify one of surf_temp_flux or surf_heating_rate&quot;</span>);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;              }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;              <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.surf_temp_flux&quot;</span>, <a class="code" href="classSurfaceLayer.html#aad234585f665d6b2dcd0e827cc7ed45d">surf_temp_flux</a>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;              <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.surf_temp_flux&quot;</span>, <a class="code" href="classSurfaceLayer.html#aad234585f665d6b2dcd0e827cc7ed45d">surf_temp_flux</a>);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;              <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.surf_heating_rate&quot;</span>, <a class="code" href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">surf_heating_rate</a>)) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;              <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.surf_heating_rate&quot;</span>, <a class="code" href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">surf_heating_rate</a>)) {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                  amrex::Abort(<span class="stringliteral">&quot;Can only specify one of surf_temp_flux or surf_heating_rate&quot;</span>);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;              }</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;              <span class="keywordflow">if</span> (std::abs(<a class="code" href="classSurfaceLayer.html#aad234585f665d6b2dcd0e827cc7ed45d">surf_temp_flux</a>) &gt;</div>
@@ -771,7 +771,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          <span class="keywordflow">if</span> (erf_sq) {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;              <a class="code" href="classSurfaceLayer.html#ace92867e82baf1acb7b6a5d3deb30ac1">moist_type</a> = <a class="code" href="classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea38e9829fdc4878924805b745f211bf5e">MoistCalcType::SURFACE_MOISTURE</a>;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;              <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.surf_moist_flux&quot;</span>, <a class="code" href="classSurfaceLayer.html#a5240b8723a523daee75ac2ab5d6a8a05">surf_moist_flux</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;              <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.surf_moist_flux&quot;</span>, <a class="code" href="classSurfaceLayer.html#a5240b8723a523daee75ac2ab5d6a8a05">surf_moist_flux</a>);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;              <span class="keywordflow">if</span> (std::abs(<a class="code" href="classSurfaceLayer.html#a5240b8723a523daee75ac2ab5d6a8a05">surf_moist_flux</a>) &gt;</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                  <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>()) {</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                  <a class="code" href="classSurfaceLayer.html#ace92867e82baf1acb7b6a5d3deb30ac1">moist_type</a> = <a class="code" href="classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea59038f4bd084275104842422a6eec21c">MoistCalcType::MOISTURE_FLUX</a>;</div>
@@ -783,13 +783,13 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">flux_type</a> == <a class="code" href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a31b342f23cb16952131736824b9ccdd1">FluxCalcType::RICO</a>)</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.rico.theta_z0&quot;</span>, <a class="code" href="classSurfaceLayer.html#aaae804c5e9298848d4dfe6dde0c6e101">rico_theta_z0</a>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.rico.qsat_z0&quot;</span>, <a class="code" href="classSurfaceLayer.html#a4009eb7e829d0943f1c06c4424b132f1">rico_qsat_z0</a>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.rico.theta_z0&quot;</span>, <a class="code" href="classSurfaceLayer.html#aaae804c5e9298848d4dfe6dde0c6e101">rico_theta_z0</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.rico.qsat_z0&quot;</span>, <a class="code" href="classSurfaceLayer.html#a4009eb7e829d0943f1c06c4424b132f1">rico_qsat_z0</a>);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      }</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      <span class="comment">// Make sure the inputs file doesn&#39;t try to use most.roughness_type</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      std::string bogus_input;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type&quot;</span>, bogus_input) &gt; 0) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type&quot;</span>, bogus_input) &gt; 0) {</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;          amrex::Abort(<span class="stringliteral">&quot;most.roughness_type is deprecated; use &quot;</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                       <span class="stringliteral">&quot;most.roughness_type_land and/or most.roughness_type_sea&quot;</span>);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      }</div>
@@ -798,7 +798,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      std::string rough_land_string_in;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      std::string rough_land_string{<span class="stringliteral">&quot;constant&quot;</span>};</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keyword">auto</span> read_rough_land =</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type_land&quot;</span>, rough_land_string_in);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type_land&quot;</span>, rough_land_string_in);</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      <span class="keywordflow">if</span> (read_rough_land) {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;          rough_land_string = amrex::toLower(rough_land_string_in);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      }</div>
@@ -811,14 +811,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      <span class="comment">// Specify how to compute the surface flux over sea (if there is any)</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;      std::string rough_sea_string_in;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      std::string rough_sea_string{<span class="stringliteral">&quot;charnock&quot;</span>};</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      <span class="keyword">auto</span> read_rough_sea = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type_sea&quot;</span>, rough_sea_string_in);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      <span class="keyword">auto</span> read_rough_sea = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type_sea&quot;</span>, rough_sea_string_in);</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;      <span class="keywordflow">if</span> (read_rough_sea) {</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;          rough_sea_string = amrex::toLower(rough_sea_string_in);</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      }</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">if</span> (rough_sea_string == <span class="stringliteral">&quot;charnock&quot;</span>) {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;          <a class="code" href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">rough_type_sea</a> = <a class="code" href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05addbb8213265f3ad773f7af2cb8147062">RoughCalcType::CHARNOCK</a>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.charnock_constant&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5">cnk_a</a>);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.charnock_viscosity&quot;</span>, <a class="code" href="classSurfaceLayer.html#ac426bda8ee3b5511eb981073e623ed52">cnk_visc</a>);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.charnock_constant&quot;</span>, <a class="code" href="classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5">cnk_a</a>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.charnock_viscosity&quot;</span>, <a class="code" href="classSurfaceLayer.html#ac426bda8ee3b5511eb981073e623ed52">cnk_visc</a>);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5">cnk_a</a> &gt; 0) {</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;              amrex::Print() &lt;&lt; <span class="stringliteral">&quot;If there is water, Charnock relation with C_a=&quot;</span></div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                             &lt;&lt; <a class="code" href="classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5">cnk_a</a> &lt;&lt; (<a class="code" href="classSurfaceLayer.html#ac426bda8ee3b5511eb981073e623ed52">cnk_visc</a> ? <span class="stringliteral">&quot; and viscosity&quot;</span> : <span class="stringliteral">&quot;&quot;</span>)</div>
@@ -840,7 +840,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;          <a class="code" href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">rough_type_sea</a> = <a class="code" href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05afbf950ece84b8c4c7ebcf6492db726f7">RoughCalcType::DONELAN</a>;</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rough_sea_string == <span class="stringliteral">&quot;modified_charnock&quot;</span>) {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;          <a class="code" href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">rough_type_sea</a> = <a class="code" href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a266bf3048d67b1b3187c0189bc232fde">RoughCalcType::MODIFIED_CHARNOCK</a>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.modified_charnock_depth&quot;</span>, <a class="code" href="classSurfaceLayer.html#a8b6a95c0f5f67a32f6c6dc62cf55ab75">depth</a>);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.modified_charnock_depth&quot;</span>, <a class="code" href="classSurfaceLayer.html#a8b6a95c0f5f67a32f6c6dc62cf55ab75">depth</a>);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rough_sea_string == <span class="stringliteral">&quot;wave_coupled&quot;</span>) {</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;          <a class="code" href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">rough_type_sea</a> = <a class="code" href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a3e1545d84d0cc7da6edf47adda8a80f9">RoughCalcType::WAVE_COUPLED</a>;</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rough_sea_string == <span class="stringliteral">&quot;constant&quot;</span>) {</div>
@@ -851,7 +851,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      <span class="comment">// use skin temperature instead of sea-surface temperature</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      <span class="comment">// (wrfinput data may have lower resolution SST data)</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.ignore_sst&quot;</span>, <a class="code" href="classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8">m_ignore_sst</a>);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.ignore_sst&quot;</span>, <a class="code" href="classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8">m_ignore_sst</a>);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;      <span class="comment">// If we&#39;re using the RANS k model, then we need to update the dirichlet</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      <span class="comment">// BC based on the instantaneous u* and θ*; the turbulence modeling</span></div>
@@ -865,7 +865,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      }</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  } <span class="comment">// constructor</span></div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:238</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a04b1da10746efb765fd82ec1f8663487"><div class="ttname"><a href="classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487">SurfaceLayer::theta_type</a></div><div class="ttdeci">ThetaCalcType theta_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:655</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a07f0ee519b7c55db56a3d75c21b00234"><div class="ttname"><a href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">SurfaceLayer::m_include_wstar</a></div><div class="ttdeci">bool m_include_wstar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:669</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a0ad36597cc8f0ed60fa37e185f1e4c40"><div class="ttname"><a href="classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40">SurfaceLayer::m_rotate</a></div><div class="ttdeci">bool m_rotate</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:664</div></div>
@@ -936,7 +936,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceLayer_ab92c93ca5614db39e6bc6d1c5781d45c_cgraph.png" border="0" usemap="#aclassSurfaceLayer_ab92c93ca5614db39e6bc6d1c5781d45c_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_ab92c93ca5614db39e6bc6d1c5781d45c_cgraph" id="aclassSurfaceLayer_ab92c93ca5614db39e6bc6d1c5781d45c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,205,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="253,5,292,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="253,5,292,32"/>
 </map>
 </div>
 
@@ -1019,8 +1019,8 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">// PBL height if we need to calculate wstar for the Beljaars correction</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="comment">// TODO: can/should we apply this in LES mode?</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_star_arr = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3">w_star</a>[lev].get()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> pblh_arr   = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].get()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_star_arr = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3">w_star</a>[lev].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a>()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> pblh_arr   = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a>()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">// Wave properties if they exist</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> Hwave_arr = (<a class="code" href="classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad">m_Hwave_lev</a>[lev]) ? <a class="code" href="classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad">m_Hwave_lev</a>[lev]-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
@@ -1031,7 +1031,7 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keyword">auto</span> lmask_arr    = (<a class="code" href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">m_lmask_lev</a>[lev][0])    ? <a class="code" href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">m_lmask_lev</a>[lev][0]-&gt;array(mfi) :</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                                       Array4&lt;int&gt; {};</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        {</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keywordflow">if</span> (( is_land &amp;&amp; lmask_arr(i,j,k) == 1) ||</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                (!is_land &amp;&amp; lmask_arr(i,j,k) == 0))</div>
@@ -1050,6 +1050,8 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        });</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPertVels__CouettePoiseuille_8H_html_a5df22ed4cde91f78c772cdda77bf4813"><div class="ttname"><a href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a></div><div class="ttdeci">pp get(&quot;prob_type&quot;, prob_type)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a815d3e6377a2356c9859807874066d37"><div class="ttname"><a href="classMOSTAverage.html#a815d3e6377a2356c9859807874066d37">MOSTAverage::get_zref</a></div><div class="ttdeci">amrex::MultiFab * get_zref(const int &amp;lev) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:105</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ac08baeafe98b80401526bfe20562aa5d"><div class="ttname"><a href="classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d">MOSTAverage::get_average</a></div><div class="ttdeci">const amrex::MultiFab * get_average(const int &amp;lev, const int &amp;comp) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:102</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a0f71ec0b683a3a9fa7530b070fa37aa2"><div class="ttname"><a href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">SurfaceLayer::m_lmask_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::iMultiFab * &gt; &gt; m_lmask_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:714</div></div>
@@ -1065,7 +1067,18 @@ template&lt;typename FluxIter &gt; </div>
 <div class="ttc" id="aclassSurfaceLayer_html_ad790829cebbd7ab51e215d89f45b975f"><div class="ttname"><a href="classSurfaceLayer.html#ad790829cebbd7ab51e215d89f45b975f">SurfaceLayer::m_eddyDiffs_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_eddyDiffs_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:721</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ae0ef57726e45173a45b3835904543d54"><div class="ttname"><a href="classSurfaceLayer.html#ae0ef57726e45173a45b3835904543d54">SurfaceLayer::olen</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; olen</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:707</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_aec05c4944fa291578b695cb83456355b"><div class="ttname"><a href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">SurfaceLayer::pblh</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; pblh</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:708</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph" alt=""/></div>
+<map name="aclassSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph" id="aclassSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,177,65"/>
+<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813" title=" " alt="" coords="249,5,292,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="225,56,316,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="364,56,513,83"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a33bed820551a152ab22cf2ebd34c7fb6"></a>
@@ -1162,12 +1175,21 @@ template&lt;typename PBLHeightEstimator &gt; </div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;{</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    est.compute_pblh(<a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],z_phys_cc, <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].get(),</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    est.compute_pblh(<a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],z_phys_cc, <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a>(),</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                     vars[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">m_lmask_lev</a>[lev][0],</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                     moisture_indices);</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;}</div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:140</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph" alt=""/></div>
+<map name="aclassSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph" id="aclassSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,212,32"/>
+<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813" title=" " alt="" coords="260,5,303,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a5bc864f0c26c9488d5f84fc7bd89947f"></a>
@@ -1347,8 +1369,8 @@ template&lt;typename FluxCalc &gt; </div>
 </dl>
 <div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordtype">bool</span> rotate = <a class="code" href="classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40">m_rotate</a>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> klo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dxInv = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].InvCellSizeArray();</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].InvCellSizeArray();</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*mfs[0]); mfi.isValid(); ++mfi)</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    {</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="comment">// Get field arrays</span></div>
@@ -1420,13 +1442,13 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="comment">// Rho*Theta flux</span></div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="comment">//============================================================================</span></div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        Box bx = mfi.tilebox();</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        bx.makeSlab(2,klo);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="keywordflow">if</span> (bx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        bx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        {</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="comment">// Valid theta flux from LSM and over land</span></div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tflux;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,klo) : 1;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <span class="keywordflow">if</span> (lsm_t_flux_arr &amp;&amp; is_land) {</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                Tflux = lsm_t_flux_arr(i,j,k);</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -1439,21 +1461,21 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <span class="comment">// Do scalar flux rotations?</span></div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            <span class="keywordflow">if</span> (rotate) {</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                <a class="code" href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a>(i, j, k, Tflux, dxInv, zphys_arr,</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                <a class="code" href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a>(i, j, k, Tflux, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr,</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                                   hfx1_arr, hfx2_arr, hfx3_arr);</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                hfx3_arr(i,j,klo) = Tflux;</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                hfx3_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = Tflux;</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            }</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        });</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160; </div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="comment">// Rho*Qv flux</span></div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        <span class="comment">//============================================================================</span></div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>) {</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            ParallelFor(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;            {</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                <span class="comment">// Valid qv flux from LSM and over land</span></div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Qflux;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,klo) : 1;</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                <span class="keywordflow">if</span> (lsm_q_flux_arr &amp;&amp; is_land) {</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                    Qflux = lsm_q_flux_arr(i,j,k);</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                } <span class="keywordflow">else</span> {</div>
@@ -1465,7 +1487,7 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                <span class="comment">// Do scalar flux rotations?</span></div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                <span class="keywordflow">if</span> (rotate) {</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                    <a class="code" href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a>(i, j, k, Qflux, dxInv, zphys_arr,</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                    <a class="code" href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a>(i, j, k, Qflux, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr,</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                                       qfx1_arr, qfx2_arr, qfx3_arr);</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                    qfx3_arr(i,j,k) = Qflux;</div>
@@ -1477,12 +1499,12 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            <span class="comment">// Rho*u flux</span></div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            <span class="comment">//============================================================================</span></div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            Box bxx = surroundingNodes(bx,0);</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            ParallelFor(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;            {</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                <span class="comment">// Valid tau13 from LSM and over land</span></div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> stressx;</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i  ,j,klo) : 1;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i-1,j,klo) : 1;</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i  ,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i-1,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <span class="keywordflow">if</span> (lsm_tau13_arr &amp;&amp; (is_land_hi || is_land_lo)) {</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                    stressx = 0.;</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                    <span class="keywordflow">if</span> (!is_land_hi || !is_land_lo) {</div>
@@ -1509,12 +1531,12 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            <span class="comment">// Rho*v flux</span></div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            <span class="comment">//============================================================================</span></div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            Box bxy = surroundingNodes(bx,1);</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            ParallelFor(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;            {</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                <span class="comment">// Valid tau13 from LSM and over land</span></div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> stressy;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i,j  ,klo) : 1;</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i,j-1,klo) : 1;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i,j  ,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i,j-1,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                <span class="keywordflow">if</span> (lsm_tau23_arr &amp;&amp; (is_land_hi || is_land_lo)) {</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                    stressy = 0.;</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                    <span class="keywordflow">if</span> (!is_land_hi || !is_land_lo) {</div>
@@ -1541,12 +1563,12 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            <span class="comment">// All fluxes with rotation</span></div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            <span class="comment">//============================================================================</span></div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            Box bxxy = convert(bx, IntVect(1,1,0));</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            ParallelFor(bxxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bxxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            {</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> stresst = flux_comp.compute_u_flux(i, j, k,</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                                                       cons_arr, velx_arr, vely_arr,</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                                                       umm_arr, um_arr, u_star_arr);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                <a class="code" href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a>(i, j, k, stresst, dxInv, zphys_arr,</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                <a class="code" href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a>(i, j, k, stresst, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr,</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                                     velx_arr, vely_arr, velz_arr,</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                                     t11_arr, t22_arr, t33_arr,</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                                     t12_arr, t21_arr,</div>
@@ -1565,6 +1587,8 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935">tau31</a></div><div class="ttdeci">@ tau31</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a></div><div class="ttdeci">@ tau21</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a></div><div class="ttdeci">@ tau13</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:16</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a648544a94d2694aa6ea7e3e037f3eaae"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_scalar_flux(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi1_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi2_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi3_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:609</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a9b3eb880f98843461a7d64193ee6879b"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_stress_tensor(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;w_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau11_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau22_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau33_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau12_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau21_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau13_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau31_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau23_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau32_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:630</div></div>
@@ -1578,14 +1602,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSurfaceLayer_a4f57753d5aa5893c395ffe3a9aa14a33_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a4f57753d5aa5893c395ffe3a9aa14a33_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_a4f57753d5aa5893c395ffe3a9aa14a33_cgraph" id="aclassSurfaceLayer_a4f57753d5aa5893c395ffe3a9aa14a33_cgraph">
-<area shape="rect" title=" " alt="" coords="5,99,177,141"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae" title=" " alt="" coords="233,56,372,83"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b" title=" " alt="" coords="225,132,380,159"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="428,5,641,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="433,56,637,83"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669" title=" " alt="" coords="446,107,623,133"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="451,157,619,184"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="443,208,627,235"/>
+<area shape="rect" title=" " alt="" coords="5,87,177,129"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="257,25,348,52"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae" title=" " alt="" coords="233,95,372,121"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b" title=" " alt="" coords="225,171,380,197"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="460,5,609,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="428,56,641,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="433,107,637,133"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669" title=" " alt="" coords="446,157,623,184"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="451,208,619,235"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="443,259,627,285"/>
 </map>
 </div>
 
@@ -1639,7 +1665,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z_arr    = (z_phys_nd) ? z_phys_nd-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                                            Array4&lt;const Real&gt; {};</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        {</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            <span class="keywordflow">if</span> (!is_land) {</div>
@@ -1669,12 +1695,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSurfaceLayer_a49a97b3f9132567b9437015b10771fef_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a49a97b3f9132567b9437015b10771fef_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_a49a97b3f9132567b9437015b10771fef_cgraph" id="aclassSurfaceLayer_a49a97b3f9132567b9437015b10771fef_cgraph">
-<area shape="rect" title=" " alt="" coords="5,49,137,90"/>
+<area shape="rect" title=" " alt="" coords="5,74,137,115"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="185,5,388,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="243,56,330,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="231,107,342,133"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="436,56,523,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="571,56,677,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="241,157,332,184"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="467,56,554,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="633,56,740,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="436,157,585,184"/>
 </map>
 </div>
 
@@ -1711,13 +1739,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dT = <a class="code" href="classSurfaceLayer.html#afd99e706e0f83e957ed24e33694167f2">m_low_time_interval</a>;</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="keywordtype">int</span> n_time_lo, n_time_hi;</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> alpha;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="keywordflow">if</span> (n_times_in_sst &gt; 1) {</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        n_time_lo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( elapsed_time_since_start_low /  dT);</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        alpha = (elapsed_time_since_start_low - n_time_lo * dT) / dT;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> = (elapsed_time_since_start_low - n_time_lo * dT) / dT;</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        AMREX_ALWAYS_ASSERT( alpha &gt;= 0. &amp;&amp; alpha &lt;= 1.0);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        n_time_hi = n_time_lo + 1;</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
@@ -1725,18 +1753,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a318f07350232369931d2765dc3044871">m_start_low_time</a> + elapsed_time_since_start_low &gt;= <a class="code" href="classSurfaceLayer.html#ac0571888e1517d3039ca9e60f8d6a278">m_final_low_time</a>) {</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            n_time_lo = <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size()-1;</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            n_time_hi = n_time_lo;</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            alpha     = 0.0;</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>     = 0.0;</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        }</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        AMREX_ALWAYS_ASSERT( (n_time_lo &gt;= 0) &amp;&amp; (n_time_hi &lt; <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size()));</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( (n_time_lo &gt;= 0) &amp;&amp; (n_time_hi &lt; <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size()));</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        n_time_lo = 0;</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        n_time_hi = 0;</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        alpha     = 1.0;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>     = 1.0;</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    }</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    AMREX_ALWAYS_ASSERT( alpha &gt;= 0. &amp;&amp; alpha &lt;= 1.0);</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160; </div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> oma   = 1.0 - alpha;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> oma   = 1.0 - <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">// Define a default land surface temperature if we don&#39;t read in tsk</span></div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lst = <a class="code" href="classSurfaceLayer.html#af1266da71fa17b289ba856fb79937b83">default_land_surf_temp</a>;</div>
@@ -1759,23 +1787,23 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <span class="keywordflow">if</span> (use_tsk) {</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> tsk_arr = <a class="code" href="classSurfaceLayer.html#ab789868247235aeb66757e34685008df">m_tsk_lev</a>[lev][n_time_lo]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            {</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                <span class="keywordflow">if</span> (!is_land &amp;&amp; !ignore_sst) {</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                    t_surf_arr(i,j,k) = oma   * sst_lo_arr(i,j,k)</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                      + alpha * sst_hi_arr(i,j,k);</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                      + <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> * sst_hi_arr(i,j,k);</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                    t_surf_arr(i,j,k) = tsk_arr(i,j,k);</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                }</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            });</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            {</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                <span class="keywordflow">if</span> (!is_land) {</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    t_surf_arr(i,j,k) = oma   * sst_lo_arr(i,j,k)</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                      + alpha * sst_hi_arr(i,j,k);</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                      + <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> * sst_hi_arr(i,j,k);</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                    t_surf_arr(i,j,k) = lst;</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                }</div>
@@ -1784,9 +1812,22 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    }</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <a class="code" href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">t_surf</a>[lev]-&gt;FillBoundary(<a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].periodicity());</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a8018075a8e3cd8009e0b612e414dbd30"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a></div><div class="ttdeci">amrex::Real alpha</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:8</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a7faf9946493893cfdebea2ab7fe4caee"><div class="ttname"><a href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">SurfaceLayer::m_sst_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_sst_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:712</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ab789868247235aeb66757e34685008df"><div class="ttname"><a href="classSurfaceLayer.html#ab789868247235aeb66757e34685008df">SurfaceLayer::m_tsk_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_tsk_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:713</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph.png" border="0" usemap="#aclassSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph" alt=""/></div>
+<map name="aclassSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph" id="aclassSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,184,65"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,5,415,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="278,56,369,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="463,56,612,83"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a14804fd1d84bfe303a7b353d231d2d10"></a>
@@ -1849,7 +1890,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                                                  Array4&lt;int&gt; {};</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> lsm_arr = <a class="code" href="classSurfaceLayer.html#a7ae5f72c36d81939bde3acd6e4498a6d">m_lsm_data_lev</a>[lev][<a class="code" href="classSurfaceLayer.html#a379215a64a8eaa1cd6e7b2a5edce4a75">m_lsm_tsurf_indx</a>]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        {</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,k) : 1;</div>
 <div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            <span class="keywordflow">if</span> (is_land) {</div>
@@ -1862,7 +1903,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;}</div>
 <div class="ttc" id="aclassSurfaceLayer_html_a379215a64a8eaa1cd6e7b2a5edce4a75"><div class="ttname"><a href="classSurfaceLayer.html#a379215a64a8eaa1cd6e7b2a5edce4a75">SurfaceLayer::m_lsm_tsurf_indx</a></div><div class="ttdeci">int m_lsm_tsurf_indx</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:694</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a7ae5f72c36d81939bde3acd6e4498a6d"><div class="ttname"><a href="classSurfaceLayer.html#a7ae5f72c36d81939bde3acd6e4498a6d">SurfaceLayer::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:715</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSurfaceLayer_a48710baca749922263cbc9e3e7a06c75_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a48710baca749922263cbc9e3e7a06c75_cgraph" alt=""/></div>
+<map name="aclassSurfaceLayer_a48710baca749922263cbc9e3e7a06c75_cgraph" id="aclassSurfaceLayer_a48710baca749922263cbc9e3e7a06c75_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,172,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="220,13,311,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="359,13,508,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ada5eabfddd39d2b0176b357429c2dbe3"></a>
@@ -2410,7 +2461,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160; </div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cons_arr   = <a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">cons</a>.array(mfi);</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        {</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> = cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ust = u_star_arr(i, j, 0);</div>
@@ -2432,8 +2483,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph" id="aclassSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,141,47"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="189,13,392,39"/>
+<area shape="rect" title=" " alt="" coords="5,23,141,65"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="189,5,392,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="245,56,336,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="440,56,589,83"/>
 </map>
 </div>
 
@@ -2635,18 +2688,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      <span class="comment">// Get CC vars</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      amrex::MultiFab&amp; mf = *(mfv[0]);</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      amrex::ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      <span class="comment">// Do we have a time-varying surface roughness that needs to be saved?</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      <span class="keywordflow">if</span> (lev == 0) {</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> nghost = 0; <span class="comment">// ghost cells not included</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          <span class="keywordtype">int</span> lmask_min = <a class="code" href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424">lmask_min_reduce</a>(*lmask_lev[0].get(), nghost);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          <span class="keywordtype">int</span> lmask_min = <a class="code" href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424">lmask_min_reduce</a>(*lmask_lev[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a>(), nghost);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          amrex::ParallelDescriptor::ReduceIntMin(lmask_min);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;          <a class="code" href="classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c">m_var_z0</a> = (lmask_min &lt; 1) &amp; (<a class="code" href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">rough_type_sea</a> != <a class="code" href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a8d6b5cada83510220f59e00ce86d4d92">RoughCalcType::CONSTANT</a>);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;          <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c">m_var_z0</a>) {</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;              std::string rough_sea_string{<span class="stringliteral">&quot;charnock&quot;</span>};</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;              <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type_sea&quot;</span>, rough_sea_string);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;              <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.roughness_type_sea&quot;</span>, rough_sea_string);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;              amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Variable sea roughness (type &quot;</span> &lt;&lt; rough_sea_string</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                             &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;          }</div>
@@ -2723,14 +2776,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;      <span class="keywordtype">bool</span> read_z0 = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;      <span class="keywordflow">if</span> ( (<a class="code" href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">flux_type</a> == <a class="code" href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a0525d4394471c332f3c0a497584923d5">FluxCalcType::MOENG</a>) ||</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;           (<a class="code" href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">flux_type</a> == <a class="code" href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a9faf4e337734315fde20af1922cc6f9d">FluxCalcType::ROTATE</a>)) {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;          <span class="keywordtype">int</span> count = <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.countval(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;          <span class="keywordtype">int</span> count = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;          <span class="keywordflow">if</span> (count &gt; 1) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;              AMREX_ALWAYS_ASSERT(count &gt;= lev+1);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;              <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>, fname, lev);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;              <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(count &gt;= lev+1);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;              <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>, fname, lev);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;              read_z0 = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count == 1) {</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;              <span class="keywordflow">if</span> (lev == 0) {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                  <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>, fname);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                  <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>, fname);</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;              } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                  <span class="comment">// we will interpolate from the coarsest level</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                  fname = <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -2812,7 +2865,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;              amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sea: TSK)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;          } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;              amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sea: SST)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;              AMREX_ALWAYS_ASSERT(<a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev][0]);</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;              <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev][0]);</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;          }</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;      }</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;  }</div>
@@ -2827,21 +2880,25 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph.png" border="0" usemap="#aclassSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph" id="aclassSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph">
-<area shape="rect" title=" " alt="" coords="5,361,179,403"/>
-<area shape="rect" href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424" title=" " alt="" coords="276,201,431,243"/>
-<area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,267,480,308"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="851,303,890,330"/>
-<area shape="rect" href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b" title=" " alt="" coords="278,515,429,556"/>
-<area shape="rect" href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc" title=" " alt="" coords="545,397,699,439"/>
-<area shape="rect" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9" title=" " alt="" coords="545,267,699,308"/>
-<area shape="rect" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee" title=" " alt="" coords="531,71,713,112"/>
-<area shape="rect" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a" title=" " alt="" coords="531,5,713,47"/>
-<area shape="rect" href="classMOSTAverage.html#a8a1c27722c5b0df803889bfadb9a98e0" title=" " alt="" coords="531,136,713,177"/>
-<area shape="rect" href="classMOSTAverage.html#a514120312387f28a1624387b0e3af360" title=" " alt="" coords="528,201,716,243"/>
-<area shape="rect" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e" title=" " alt="" coords="545,332,699,373"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="834,246,907,273"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="764,17,977,43"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="769,74,973,101"/>
+<area shape="rect" title=" " alt="" coords="5,218,179,260"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="779,94,962,120"/>
+<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813" title=" " alt="" coords="332,331,375,358"/>
+<area shape="rect" href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424" title=" " alt="" coords="276,382,431,424"/>
+<area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,265,480,306"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="851,224,890,251"/>
+<area shape="rect" href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b" title=" " alt="" coords="547,152,697,193"/>
+<area shape="rect" href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc" title=" " alt="" coords="545,86,699,128"/>
+<area shape="rect" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9" title=" " alt="" coords="545,217,699,258"/>
+<area shape="rect" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee" title=" " alt="" coords="531,348,713,389"/>
+<area shape="rect" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a" title=" " alt="" coords="531,413,713,454"/>
+<area shape="rect" href="classMOSTAverage.html#a8a1c27722c5b0df803889bfadb9a98e0" title=" " alt="" coords="531,478,713,520"/>
+<area shape="rect" href="classMOSTAverage.html#a514120312387f28a1624387b0e3af360" title=" " alt="" coords="528,544,716,585"/>
+<area shape="rect" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e" title=" " alt="" coords="545,282,699,324"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="825,275,916,302"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="834,326,907,352"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="1025,275,1175,302"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="764,376,977,403"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="769,427,973,454"/>
 </map>
 </div>
 
@@ -2888,8 +2945,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            }</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            file.close();</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            AMREX_ALWAYS_ASSERT(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            AMREX_ALWAYS_ASSERT(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        }</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        <span class="comment">// Broadcast the whole domain to every rank</span></div>
@@ -2922,27 +2979,27 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160; </div>
 <div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="comment">// Populate z_phys data</span></div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol = 1.0e-4;</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            <span class="keyword">auto</span> dx = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSizeArray();</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;            <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSizeArray();</div>
 <div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            <span class="keyword">auto</span> ProbLoArr = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].ProbLoArray();</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <span class="keywordtype">int</span> ilo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(0);</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            <span class="keywordtype">int</span> jlo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(1);</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;            <span class="keywordtype">int</span> klo = 0;</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = 0;</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            <span class="keywordtype">int</span> ihi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(0);</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;            <span class="keywordtype">int</span> jhi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(1);</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z0_arr = <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].array(mfi);</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            ParallelFor(gtbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;            {</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
 <div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160; </div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;                <span class="comment">// Location of nodes</span></div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * dx[0];</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * dx[1];</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0];</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1];</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                <span class="keywordtype">int</span> inode = ii + jj * (ihi-ilo+2); <span class="comment">// stride is Nx+1</span></div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                <span class="keywordflow">if</span> (std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[inode],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[inode],2)) &lt; tol) {</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                    z0_arr(i,j,klo) = z0p[inode];</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0p[inode];</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                    <span class="comment">// Unexpected list order, do brute force search</span></div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z0loc = 0.0;</div>
@@ -2957,12 +3014,12 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                    }</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                    AMREX_ASSERT_WITH_MESSAGE(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;                    amrex::ignore_unused(found);</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                    z0_arr(i,j,klo) = z0loc;</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0loc;</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                }</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            });</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        AMREX_ALWAYS_ASSERT(lev &gt; 0);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev &gt; 0);</div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160; </div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;        Print()&lt;&lt;<span class="stringliteral">&quot;Interpolating MOST roughness at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160; </div>
@@ -2991,9 +3048,21 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a></div><div class="ttdeci">@ m_x</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:24</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:208</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">make_SurfaceLayer_at_level()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph.png" border="0" usemap="#aclassSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph" alt=""/></div>
+<map name="aclassSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph" id="aclassSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,156,65"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="204,5,387,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="250,56,341,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="435,56,584,83"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3306,7 +3375,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; t_star_arr = <a class="code" href="classSurfaceLayer.html#aaf823aaf71baf1d39ecf290b266922ba">t_star</a>[lev]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dist_arr = walldist-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            ParallelFor(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            {</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordflow">if</span> (t_star_arr(i,j,k) &lt; -1e-8) {</div>
@@ -3355,7 +3424,17 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructsurface__temp__mod__charnock_html"><div class="ttname"><a href="structsurface__temp__mod__charnock.html">surface_temp_mod_charnock</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1365</div></div>
 <div class="ttc" id="astructsurface__temp__wave__coupled_html"><div class="ttname"><a href="structsurface__temp__wave__coupled.html">surface_temp_wave_coupled</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1641</div></div>
 <div class="ttc" id="astructsurface__temp_html"><div class="ttname"><a href="structsurface__temp.html">surface_temp</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:1065</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSurfaceLayer_a7ad7bb83846f296b1f1f3c5111df1c40_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a7ad7bb83846f296b1f1f3c5111df1c40_cgraph" alt=""/></div>
+<map name="aclassSurfaceLayer_a7ad7bb83846f296b1f1f3c5111df1c40_cgraph" id="aclassSurfaceLayer_a7ad7bb83846f296b1f1f3c5111df1c40_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,165,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="213,13,304,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="352,13,501,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a325a1c27c6de3c673aa25ddf256eab7b"></a>

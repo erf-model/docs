@@ -219,7 +219,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_s  = 100.0;    <span class="comment">// snow</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_g  = 400.0;    <span class="comment">// graupel</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> celkel = 273.15;   <span class="comment">// 0°C in Kelvin</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> alpha  = 0.224;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>  = 0.224;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> gamma_seven = 720.0;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Constant intercepts</span></div>
@@ -240,9 +240,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Precompute factors</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> factor_r = gamma_seven * 1.e18 * std::pow(1.0 / (<a class="code" href="namespacemodule__mp__morr__two__moment.html#a0bb82f163dcece1b2d052202bf56bee3">pi</a> * rho_r), 1.75);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> factor_s = gamma_seven * 1.e18 * std::pow(1.0 / (<a class="code" href="namespacemodule__mp__morr__two__moment.html#a0bb82f163dcece1b2d052202bf56bee3">pi</a> * rho_s), 1.75)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                          * std::pow(rho_s / rhowat, 2.0) * alpha;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                          * std::pow(rho_s / rhowat, 2.0) * <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> factor_g = gamma_seven * 1.e18 * std::pow(1.0 / (<a class="code" href="namespacemodule__mp__morr__two__moment.html#a0bb82f163dcece1b2d052202bf56bee3">pi</a> * rho_g), 1.75)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                          * std::pow(rho_g / rhowat, 2.0) * alpha;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                          * std::pow(rho_g / rhowat, 2.0) * <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// ----------------------------------------------------------------</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Adjust for bright band (liquid skin on frozen particles)</span></div>
@@ -250,8 +250,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> factorb_s = factor_s;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> factorb_g = factor_g;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (iliqskin == 1 &amp;&amp; tmk &gt; celkel) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        factorb_s = factor_s / alpha;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        factorb_g = factor_g / alpha;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        factorb_s = factor_s / <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        factorb_g = factor_g / <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// ----------------------------------------------------------------</span></div>
@@ -294,6 +294,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// ----------------------------------------------------------------</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> 10.0 * std::log10(z_e);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a8018075a8e3cd8009e0b612e414dbd30"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a></div><div class="ttdeci">amrex::Real alpha</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:8</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:12</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a0bb82f163dcece1b2d052202bf56bee3"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a0bb82f163dcece1b2d052202bf56bee3">module_mp_morr_two_moment::pi</a></div><div class="ttdeci">real(c_double), parameter, private pi</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:100</div></div>

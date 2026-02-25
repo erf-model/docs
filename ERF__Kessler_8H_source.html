@@ -199,7 +199,7 @@ $(document).ready(function(){initNavTree('ERF__Kessler_8H_source.html',''); init
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    amrex::MultiFab*</div>
 <div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classKessler.html#a0a84c629a080e71ed93a5f349ad7724a">  112</a></span>&#160;    <a class="code" href="classKessler.html#a0a84c629a080e71ed93a5f349ad7724a">Qmoist_Ptr</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; varIdx)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classKessler.html#ae94091e97ccba54c040030c98e52aa7c">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(varIdx &lt; <a class="code" href="classKessler.html#ae94091e97ccba54c040030c98e52aa7c">m_qmoist_size</a>);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="classKessler.html#a18164f048f846cd122de43803b49c1cb">MicVarMap</a>[varIdx]].get();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
@@ -275,6 +275,7 @@ $(document).ready(function(){initNavTree('ERF__Kessler_8H_source.html',''); init
 <div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:66</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html">ERF_MicrophysicsUtils.H</a></div></div>
 <div class="ttc" id="aERF__NullMoist_8H_html"><div class="ttname"><a href="ERF__NullMoist_8H.html">ERF_NullMoist.H</a></div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>

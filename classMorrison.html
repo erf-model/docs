@@ -423,8 +423,8 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> ihi = box.hiVect()[0];</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> jlo = box.loVect()[1];</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> jhi = box.hiVect()[1];</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> klo = box.loVect()[2];</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> khi = box.hiVect()[2];</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = box.loVect()[2];</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = box.hiVect()[2];</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;          Box grown_box(box); grown_box.grow(3);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MORR_FORT</span></div>
@@ -445,7 +445,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rdcp = <a class="code" href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">m_rdOcp</a>; <span class="comment">// R/cp ratio</span></div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;          <span class="comment">// Calculate Exner function</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;          ParallelFor(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            <span class="comment">// NOTE: the Morrison Fortran version uses Pa not hPa so we didn&#39;t divide p by 100</span></div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            <span class="comment">//       so we don&#39;t need to multiply by 100 here</span></div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            pii_arr(i,j,k) = std::pow((pres_arr(i,j,k)) / <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>, rdcp);</div>
@@ -457,7 +457,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;          <span class="comment">// Calculate height differences</span></div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_val = <a class="code" href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">m_geom</a>.CellSize(<a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>);</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;          ParallelFor(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            dz_arr(i,j,k) = dz_val;</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;          });</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;          amrex::Box grown_boxD(grown_box); grown_boxD.makeSlab(2,0);</div>
@@ -474,7 +474,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;          <span class="keyword">auto</span> <span class="keyword">const</span>&amp; graupelncv_arr = graupelncv_fab.array();</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;          <span class="comment">// Initialize precipitation rate arrays to zero</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;          ParallelFor(grown_boxD, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(grown_boxD, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            rainncv_arr(i,j,k) = 0.0;</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            sr_arr(i,j,k) = 0.0;</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            snowncv_arr(i,j,k) = 0.0;</div>
@@ -484,7 +484,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;          <span class="comment">// Create terrain height array (not actually used by Morrison scheme)</span></div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;          FArrayBox ht_fab(Box(IntVect(ilo, jlo, 0), IntVect(ihi, jhi, 0)), 1);</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;          [[maybe_unused]] <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ht_arr = ht_fab.array();</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;          ParallelFor(Box(IntVect(ilo, jlo, 0), IntVect(ihi, jhi, 0)), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(Box(IntVect(ilo, jlo, 0), IntVect(ihi, jhi, 0)), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;            ht_arr(i,j,k) = 0.0;  <span class="comment">// Not used by Morrison scheme</span></div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;          });</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
@@ -498,7 +498,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;          <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaa317126df536db6aa7b0ad8bdb171fb4">qicuten_arr</a> = qicuten_fab.array();</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;          <span class="comment">// Initialize tendencies to zero (no cumulus parameterization in this example)</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;          ParallelFor(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea40f0f4b53211c28068e0b4e797206276">qrcuten_arr</a>(i,j,k) = 0.0;</div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            <a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea5681f01b0cdc11b73bf49ba37c3da290">qscuten_arr</a>(i,j,k) = 0.0;</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            <a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaa317126df536db6aa7b0ad8bdb171fb4">qicuten_arr</a>(i,j,k) = 0.0;</div>
@@ -525,7 +525,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;          <span class="keyword">auto</span> <span class="keyword">const</span>&amp; precg_arr = precg_fab.array();</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;          <span class="comment">// Initialize WRF-Chem arrays to zero</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;          ParallelFor(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(grown_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;            rainprod_arr(i,j,k) = 0.0;</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;            evapprod_arr(i,j,k) = 0.0;</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;            qlsink_arr(i,j,k) = 0.0;</div>
@@ -895,10 +895,10 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;          m_do_radar_ref = <span class="keyword">false</span>; <span class="comment">// Disable radar reflectivity by default</span></div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;          Box boxD(box); boxD.makeSlab(2,0);</div>
 <div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160; </div>
-<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;          ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;          ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160; </div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;          <span class="comment">// Allow user to override constant droplet concentration from inputs file</span></div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;morrison_ndcnst&quot;</span>, m_ndcnst);</div>
+<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;morrison_ndcnst&quot;</span>, m_ndcnst);</div>
 <div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160; </div>
 <div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MORR_FORT</span></div>
 <div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;          <span class="comment">// If using Fortran version, update the Fortran module variable as well</span></div>
@@ -908,7 +908,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;          <span class="keywordtype">bool</span> run_morr_cpp = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160; </div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;          <span class="keywordtype">bool</span> use_morr_cpp_answer = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;          <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query(<span class="stringliteral">&quot;use_morr_cpp_answer&quot;</span>, use_morr_cpp_answer);</div>
+<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;use_morr_cpp_answer&quot;</span>, use_morr_cpp_answer);</div>
 <div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;          <span class="comment">//Print() &lt;&lt; &quot;use_morr_cpp_answer&quot; &lt;&lt; use_morr_cpp_answer &lt;&lt;std::endl;</span></div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160; </div>
 <div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;          <span class="keywordtype">bool</span> run_morr_fort = !use_morr_cpp_answer;</div>
@@ -927,7 +927,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;          <span class="comment">// NOTE: Currently all Array4 values are copied to locals</span></div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;          <span class="comment">//       This means we&#39;re not updating or outputting anything</span><span class="comment"></span></div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;<span class="comment">          ////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;<span class="comment"></span>          ParallelFor( box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;<span class="comment"></span>          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>( box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;          {</div>
 <div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;            <span class="comment">// Tendencies and mixing ratios</span></div>
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;            morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf9bee5b0803ce8dbd65c68cc21e345e6">MORRInd::qc3d</a>) = qcl_arr(i,j,k);   <span class="comment">// CLOUD WATER MIXING RATIO</span></div>
@@ -950,13 +950,13 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;            morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea3a330c1d5c666dbb7c7cd7106e34f54d">MORRInd::qscu1d</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea5681f01b0cdc11b73bf49ba37c3da290">MORRInd::qscuten_arr</a>);              <span class="comment">// SNOW FROM CUMULUS PARAMETERIZATION</span></div>
 <div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;            morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ead5968938c09c33237bd15e491e51626c">MORRInd::qicu1d</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaa317126df536db6aa7b0ad8bdb171fb4">MORRInd::qicuten_arr</a>);              <span class="comment">// ICE FROM CUMULUS PARAMETERIZATION</span></div>
 <div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;         });</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;          ParallelFor( boxD, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> )</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;          <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>( boxD, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> )</div>
 <div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;         {</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;           <span class="keywordtype">int</span> ltrue=0;                      <span class="comment">// LTRUE: SWITCH = 0: NO HYDROMETEORS IN COLUMN, = 1: HYDROMETEORS IN COLUMN</span></div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;           <span class="keywordtype">int</span> nstep;                        <span class="comment">// NSTEP: Timestep counter</span></div>
 <div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;           <span class="keywordtype">int</span> iinum=m_inum;                      <span class="comment">// iinum: Integer control variable</span></div>
 <div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160; </div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=klo; k&lt;=khi; k++) {</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;           <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k&lt;=<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;            <span class="comment">// Model input parameters</span></div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;            <span class="comment">//amrex::Real dt;                 // DT: MODEL TIME STEP (SEC)</span></div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            <span class="comment">//amrex::Real morr_arr(i,j,k,MORRInd::lami);               // LAMI: Slope parameter for cloud ice (m^-1)</span></div>
@@ -2754,7 +2754,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l02885"></a><span class="lineno"> 2885</span>&#160;            <span class="comment">//            label_200:</span></div>
 <div class="line"><a name="l02886"></a><span class="lineno"> 2886</span>&#160; </div>
 <div class="line"><a name="l02887"></a><span class="lineno"> 2887</span>&#160;           }</div>
-<div class="line"><a name="l02888"></a><span class="lineno"> 2888</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=klo; k&lt;=khi; k++) {</div>
+<div class="line"><a name="l02888"></a><span class="lineno"> 2888</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k&lt;=<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
 <div class="line"><a name="l02889"></a><span class="lineno"> 2889</span>&#160;            <span class="comment">// INITIALIZE PRECIP AND SNOW RATES</span></div>
 <div class="line"><a name="l02890"></a><span class="lineno"> 2890</span>&#160;            morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>) = 0.0;</div>
 <div class="line"><a name="l02891"></a><span class="lineno"> 2891</span>&#160;            morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaff1b1c6327ded954f5fa49f48a923f8a">MORRInd::snowrt</a>) = 0.0;</div>
@@ -2770,7 +2770,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l02901"></a><span class="lineno"> 2901</span>&#160;            <span class="comment">// FALLOUT TERMS ARE CALCULATED ON SPLIT TIME STEPS TO ENSURE NUMERICAL</span></div>
 <div class="line"><a name="l02902"></a><span class="lineno"> 2902</span>&#160;            <span class="comment">// STABILITY, I.E. COURANT# &lt; 1</span></div>
 <div class="line"><a name="l02903"></a><span class="lineno"> 2903</span>&#160;            <span class="comment">// Loop from top to bottom (KTE to KTS)</span></div>
-<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=khi; k&gt;=klo; k--) {</div>
+<div class="line"><a name="l02904"></a><span class="lineno"> 2904</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k&gt;=<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k--) {</div>
 <div class="line"><a name="l02905"></a><span class="lineno"> 2905</span>&#160; </div>
 <div class="line"><a name="l02906"></a><span class="lineno"> 2906</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dum;                <span class="comment">// DUM: General dummy variable</span></div>
 <div class="line"><a name="l02907"></a><span class="lineno"> 2907</span>&#160; </div>
@@ -2982,7 +2982,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03113"></a><span class="lineno"> 3113</span>&#160;            <span class="comment">// Main time stepping loop for sedimentation</span></div>
 <div class="line"><a name="l03114"></a><span class="lineno"> 3114</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 1; n &lt;= nstep; n++) {</div>
 <div class="line"><a name="l03115"></a><span class="lineno"> 3115</span>&#160;              <span class="comment">// Calculate initial fallout for each hydrometeor type for all levels</span></div>
-<div class="line"><a name="l03116"></a><span class="lineno"> 3116</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= khi; k++) {</div>
+<div class="line"><a name="l03116"></a><span class="lineno"> 3116</span>&#160;              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k &lt;= <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
 <div class="line"><a name="l03117"></a><span class="lineno"> 3117</span>&#160;                morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea8ecd196b02edec887879b3a01660d491">MORRInd::faloutr</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eac8ed311ef3c3d505978c3fcbbafa5f54">MORRInd::fr</a>) * morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea8ffea185c84b9e3083daf9c1aa237dd3">MORRInd::dumr</a>);</div>
 <div class="line"><a name="l03118"></a><span class="lineno"> 3118</span>&#160;                morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ead0671d719b5ab63d2acf62bfcdccc5d2">MORRInd::fi</a>) * morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea1adb8de29901f6611615bbd2c35c655a">MORRInd::dumi</a>);</div>
 <div class="line"><a name="l03119"></a><span class="lineno"> 3119</span>&#160;                morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea4c8fb2c748cdc567e069406125577881">MORRInd::faloutni</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eab59bf47c56fe4e64d2f701be8bc090c2">MORRInd::fni</a>) * morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea580d5c03116734af5b17a7652cf121de">MORRInd::dumfni</a>);</div>
@@ -2996,7 +2996,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03127"></a><span class="lineno"> 3127</span>&#160;              }</div>
 <div class="line"><a name="l03128"></a><span class="lineno"> 3128</span>&#160; </div>
 <div class="line"><a name="l03129"></a><span class="lineno"> 3129</span>&#160;              <span class="comment">// Process top of model level</span></div>
-<div class="line"><a name="l03130"></a><span class="lineno"> 3130</span>&#160;              <span class="keywordtype">int</span> k = khi;</div>
+<div class="line"><a name="l03130"></a><span class="lineno"> 3130</span>&#160;              <span class="keywordtype">int</span> k = <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>;</div>
 <div class="line"><a name="l03131"></a><span class="lineno"> 3131</span>&#160; </div>
 <div class="line"><a name="l03132"></a><span class="lineno"> 3132</span>&#160;              <span class="comment">// Calculate tendencies at top level</span></div>
 <div class="line"><a name="l03133"></a><span class="lineno"> 3133</span>&#160;              morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ead1ad37657cac45183c6ce1bf320d6311">MORRInd::faltndr</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea8ecd196b02edec887879b3a01660d491">MORRInd::faloutr</a>) / morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea796da9e2b6e071385bbc42b743cb35cb">MORRInd::dzq</a>);</div>
@@ -3035,7 +3035,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03166"></a><span class="lineno"> 3166</span>&#160;              morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ead0863a848f36d36f53ed1e20857699e3">MORRInd::dumfng</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ead0863a848f36d36f53ed1e20857699e3">MORRInd::dumfng</a>) - morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea7d38e4680da6f06ca7bfcefc2e2454ee">MORRInd::faltndng</a>) * dt / nstep;</div>
 <div class="line"><a name="l03167"></a><span class="lineno"> 3167</span>&#160; </div>
 <div class="line"><a name="l03168"></a><span class="lineno"> 3168</span>&#160;              <span class="comment">// Process remaining levels from top to bottom</span></div>
-<div class="line"><a name="l03169"></a><span class="lineno"> 3169</span>&#160;              <span class="keywordflow">for</span> (k = khi-1; k &gt;= klo; k--) {</div>
+<div class="line"><a name="l03169"></a><span class="lineno"> 3169</span>&#160;              <span class="keywordflow">for</span> (k = <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1; k &gt;= <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k--) {</div>
 <div class="line"><a name="l03170"></a><span class="lineno"> 3170</span>&#160;                <span class="comment">// Calculate tendencies based on difference between levels</span></div>
 <div class="line"><a name="l03171"></a><span class="lineno"> 3171</span>&#160;                morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ead1ad37657cac45183c6ce1bf320d6311">MORRInd::faltndr</a>) = (morr_arr(i,j,k+1,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea8ecd196b02edec887879b3a01660d491">MORRInd::faloutr</a>) - morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea8ecd196b02edec887879b3a01660d491">MORRInd::faloutr</a>)) / morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea796da9e2b6e071385bbc42b743cb35cb">MORRInd::dzq</a>);</div>
 <div class="line"><a name="l03172"></a><span class="lineno"> 3172</span>&#160;                morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf6a9732a2c79013a5bf299efbdb13a91">MORRInd::faltndi</a>) = (morr_arr(i,j,k+1,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>) - morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>)) / morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea796da9e2b6e071385bbc42b743cb35cb">MORRInd::dzq</a>);</div>
@@ -3074,16 +3074,16 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03205"></a><span class="lineno"> 3205</span>&#160;              <span class="comment">// Get precipitation and snowfall accumulation during the time step</span></div>
 <div class="line"><a name="l03206"></a><span class="lineno"> 3206</span>&#160;              <span class="comment">// Factor of 1000 converts from m to mm, but division by density</span></div>
 <div class="line"><a name="l03207"></a><span class="lineno"> 3207</span>&#160;              <span class="comment">// of liquid water cancels this factor of 1000</span></div>
-<div class="line"><a name="l03208"></a><span class="lineno"> 3208</span>&#160;              <span class="keywordtype">int</span> kts=klo;</div>
-<div class="line"><a name="l03209"></a><span class="lineno"> 3209</span>&#160;              morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>) += (morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea8ecd196b02edec887879b3a01660d491">MORRInd::faloutr</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eab91a89040ab0e0e2e6fa1668df88f625">MORRInd::faloutc</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf27206c70669ba8f0064d265ccb8cd11">MORRInd::falouts</a>) +</div>
+<div class="line"><a name="l03208"></a><span class="lineno"> 3208</span>&#160;              <span class="keywordtype">int</span> kts=<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>;</div>
+<div class="line"><a name="l03209"></a><span class="lineno"> 3209</span>&#160;              morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>) += (morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea8ecd196b02edec887879b3a01660d491">MORRInd::faloutr</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eab91a89040ab0e0e2e6fa1668df88f625">MORRInd::faloutc</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf27206c70669ba8f0064d265ccb8cd11">MORRInd::falouts</a>) +</div>
 <div class="line"><a name="l03210"></a><span class="lineno"> 3210</span>&#160;                         morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea82fc386f026f2bfd90552dc78aaf86e9">MORRInd::faloutg</a>)) * dt / nstep;</div>
-<div class="line"><a name="l03211"></a><span class="lineno"> 3211</span>&#160;              morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaff1b1c6327ded954f5fa49f48a923f8a">MORRInd::snowrt</a>) += (morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf27206c70669ba8f0064d265ccb8cd11">MORRInd::falouts</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea82fc386f026f2bfd90552dc78aaf86e9">MORRInd::faloutg</a>)) * dt / nstep;</div>
+<div class="line"><a name="l03211"></a><span class="lineno"> 3211</span>&#160;              morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaff1b1c6327ded954f5fa49f48a923f8a">MORRInd::snowrt</a>) += (morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf27206c70669ba8f0064d265ccb8cd11">MORRInd::falouts</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea82fc386f026f2bfd90552dc78aaf86e9">MORRInd::faloutg</a>)) * dt / nstep;</div>
 <div class="line"><a name="l03212"></a><span class="lineno"> 3212</span>&#160; </div>
 <div class="line"><a name="l03213"></a><span class="lineno"> 3213</span>&#160;              <span class="comment">// Added 7/13/13</span></div>
-<div class="line"><a name="l03214"></a><span class="lineno"> 3214</span>&#160;              morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>) += (morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf27206c70669ba8f0064d265ccb8cd11">MORRInd::falouts</a>)) * dt / nstep;</div>
-<div class="line"><a name="l03215"></a><span class="lineno"> 3215</span>&#160;              morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>) += morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea82fc386f026f2bfd90552dc78aaf86e9">MORRInd::faloutg</a>) * dt / nstep;</div>
+<div class="line"><a name="l03214"></a><span class="lineno"> 3214</span>&#160;              morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>) += (morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea14b9ae1f6685ec31b8fc47be56527d68">MORRInd::falouti</a>) + morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf27206c70669ba8f0064d265ccb8cd11">MORRInd::falouts</a>)) * dt / nstep;</div>
+<div class="line"><a name="l03215"></a><span class="lineno"> 3215</span>&#160;              morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>) += morr_arr(i,j,kts,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea82fc386f026f2bfd90552dc78aaf86e9">MORRInd::faloutg</a>) * dt / nstep;</div>
 <div class="line"><a name="l03216"></a><span class="lineno"> 3216</span>&#160;            }</div>
-<div class="line"><a name="l03217"></a><span class="lineno"> 3217</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=klo; k&lt;=khi; k++) {</div>
+<div class="line"><a name="l03217"></a><span class="lineno"> 3217</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k&lt;=<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
 <div class="line"><a name="l03218"></a><span class="lineno"> 3218</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> evs;                <span class="comment">// EVS: Saturation vapor pressure</span></div>
 <div class="line"><a name="l03219"></a><span class="lineno"> 3219</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eis;                <span class="comment">// EIS: Ice saturation vapor pressure</span></div>
 <div class="line"><a name="l03220"></a><span class="lineno"> 3220</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qvs;                <span class="comment">// QVS: Saturation mixing ratio</span></div>
@@ -3420,7 +3420,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03551"></a><span class="lineno"> 3551</span>&#160;<span class="comment">         label_400:*/</span></div>
 <div class="line"><a name="l03552"></a><span class="lineno"> 3552</span>&#160;            <span class="comment">//End of _micro</span></div>
 <div class="line"><a name="l03553"></a><span class="lineno"> 3553</span>&#160;            <span class="keywordflow">if</span>(use_morr_cpp_answer) {</div>
-<div class="line"><a name="l03554"></a><span class="lineno"> 3554</span>&#160;              <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=klo; k&lt;=khi; k++) {</div>
+<div class="line"><a name="l03554"></a><span class="lineno"> 3554</span>&#160;              <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k&lt;=<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
 <div class="line"><a name="l03555"></a><span class="lineno"> 3555</span>&#160; </div>
 <div class="line"><a name="l03556"></a><span class="lineno"> 3556</span>&#160;            <span class="comment">// Transfer 1D variables back to 3D arrays</span></div>
 <div class="line"><a name="l03557"></a><span class="lineno"> 3557</span>&#160;            qcl_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaf9bee5b0803ce8dbd65c68cc21e345e6">MORRInd::qc3d</a>);</div>
@@ -3443,16 +3443,16 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03574"></a><span class="lineno"> 3574</span>&#160;<span class="comment">            rain_accum_arr(i,j,k) = rain_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::precrt);</span></div>
 <div class="line"><a name="l03575"></a><span class="lineno"> 3575</span>&#160;<span class="comment">            snow_accum_arr(i,j,k) = snow_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::snowprt);</span></div>
 <div class="line"><a name="l03576"></a><span class="lineno"> 3576</span>&#160;<span class="comment">            graup_accum_arr(i,j,k) = graup_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::grplprt);*/</span></div>
-<div class="line"><a name="l03577"></a><span class="lineno"> 3577</span>&#160;            rainncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
-<div class="line"><a name="l03578"></a><span class="lineno"> 3578</span>&#160;            snowncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
-<div class="line"><a name="l03579"></a><span class="lineno"> 3579</span>&#160;            graupelncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
-<div class="line"><a name="l03580"></a><span class="lineno"> 3580</span>&#160;            sr_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaff1b1c6327ded954f5fa49f48a923f8a">MORRInd::snowrt</a>) / (morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>) + 1.e-12);</div>
+<div class="line"><a name="l03577"></a><span class="lineno"> 3577</span>&#160;            rainncv_arr(i,j,0) = morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
+<div class="line"><a name="l03578"></a><span class="lineno"> 3578</span>&#160;            snowncv_arr(i,j,0) = morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
+<div class="line"><a name="l03579"></a><span class="lineno"> 3579</span>&#160;            graupelncv_arr(i,j,0) = morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
+<div class="line"><a name="l03580"></a><span class="lineno"> 3580</span>&#160;            sr_arr(i,j,0) = morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508eaff1b1c6327ded954f5fa49f48a923f8a">MORRInd::snowrt</a>) / (morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>) + 1.e-12);</div>
 <div class="line"><a name="l03581"></a><span class="lineno"> 3581</span>&#160;              }</div>
 <div class="line"><a name="l03582"></a><span class="lineno"> 3582</span>&#160;            <span class="comment">// Update precipitation accumulation variables</span></div>
 <div class="line"><a name="l03583"></a><span class="lineno"> 3583</span>&#160;            <span class="comment">// These are outside the k-loop in the original code</span></div>
-<div class="line"><a name="l03584"></a><span class="lineno"> 3584</span>&#160;            rain_accum_arr(i,j,klo) = rain_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
-<div class="line"><a name="l03585"></a><span class="lineno"> 3585</span>&#160;            snow_accum_arr(i,j,klo) = snow_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
-<div class="line"><a name="l03586"></a><span class="lineno"> 3586</span>&#160;            graup_accum_arr(i,j,klo) = graup_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
+<div class="line"><a name="l03584"></a><span class="lineno"> 3584</span>&#160;            rain_accum_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = rain_accum_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) + morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
+<div class="line"><a name="l03585"></a><span class="lineno"> 3585</span>&#160;            snow_accum_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = snow_accum_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) + morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
+<div class="line"><a name="l03586"></a><span class="lineno"> 3586</span>&#160;            graup_accum_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = graup_accum_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) + morr_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>,<a class="code" href="namespaceMORRInd.html#aa3ee844b68627ac3e146767571d7508ea24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
 <div class="line"><a name="l03587"></a><span class="lineno"> 3587</span>&#160;            }</div>
 <div class="line"><a name="l03588"></a><span class="lineno"> 3588</span>&#160;         });</div>
 <div class="line"><a name="l03589"></a><span class="lineno"> 3589</span>&#160;          <span class="comment">//          amrex::Print()&lt;&lt;FArrayBox(qv_arr)&lt;&lt;std::endl;</span></div>
@@ -3511,9 +3511,9 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03642"></a><span class="lineno"> 3642</span>&#160;              ht_arr.dataPtr(),         <span class="comment">// HT (terrain height - not used)</span></div>
 <div class="line"><a name="l03643"></a><span class="lineno"> 3643</span>&#160; </div>
 <div class="line"><a name="l03644"></a><span class="lineno"> 3644</span>&#160;              <span class="comment">// Domain dimensions</span></div>
-<div class="line"><a name="l03645"></a><span class="lineno"> 3645</span>&#160;              ilo, ihi, jlo, jhi, klo, khi,  <span class="comment">// IDS,IDE,JDS,JDE,KDS,KDE</span></div>
+<div class="line"><a name="l03645"></a><span class="lineno"> 3645</span>&#160;              ilo, ihi, jlo, jhi, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,  <span class="comment">// IDS,IDE,JDS,JDE,KDS,KDE</span></div>
 <div class="line"><a name="l03646"></a><span class="lineno"> 3646</span>&#160;              ilom, ihim, jlom, jhim, klom, khim,  <span class="comment">// IMS,IME,JMS,JME,KMS,KME</span></div>
-<div class="line"><a name="l03647"></a><span class="lineno"> 3647</span>&#160;              ilo, ihi, jlo, jhi, klo, khi,  <span class="comment">// ITS,ITE,JTS,JTE,KTS,KTE</span></div>
+<div class="line"><a name="l03647"></a><span class="lineno"> 3647</span>&#160;              ilo, ihi, jlo, jhi, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>, <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,  <span class="comment">// ITS,ITE,JTS,JTE,KTS,KTE</span></div>
 <div class="line"><a name="l03648"></a><span class="lineno"> 3648</span>&#160; </div>
 <div class="line"><a name="l03649"></a><span class="lineno"> 3649</span>&#160;              <span class="comment">// Optional WRF-Chem outputs</span></div>
 <div class="line"><a name="l03650"></a><span class="lineno"> 3650</span>&#160;              <span class="keyword">false</span>,                    <span class="comment">// wetscav_on</span></div>
@@ -3537,7 +3537,10 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03668"></a><span class="lineno"> 3668</span>&#160;    }</div>
 <div class="ttc" id="aERF__AdvanceMorrison_8cpp_html_a1d61dd254dd6d74236cdd989226eb4d7"><div class="ttname"><a href="ERF__AdvanceMorrison_8cpp.html#a1d61dd254dd6d74236cdd989226eb4d7">calc_saturation_vapor_pressure</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_saturation_vapor_pressure(const amrex::Real T, const int type)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:448</div></div>
 <div class="ttc" id="aERF__AdvanceMorrison_8cpp_html_af8756cf103eb5b43c28400e574f81bd5"><div class="ttname"><a href="ERF__AdvanceMorrison_8cpp.html#af8756cf103eb5b43c28400e574f81bd5">gamma_function</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real gamma_function(Real x)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:435</div></div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac54f1d17d8842acb42b2312cd353e469"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real pp(amrex::Real y)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:238</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ParticleTests.H:11</div></div>
 <div class="ttc" id="aERF__Morrison__Fortran__Interface_8H_html_aa1e15a22d6cf65c21c2a28cd25a16946"><div class="ttname"><a href="ERF__Morrison__Fortran__Interface_8H.html#aa1e15a22d6cf65c21c2a28cd25a16946">mp_morr_two_moment_c</a></div><div class="ttdeci">void mp_morr_two_moment_c(int itimestep, double *th, double *qv, double *qc, double *qr, double *qi, double *qs, double *qg, double *ni, double *ns, double *nr, double *ng, double *rho, double *pii, double *p, double dt_in, double *dz, double *w, double *rainnc, double *rainncv, double *sr, double *snownc, double *snowncv, double *graupelnc, double *graupelncv, double *refl_10cm, bool diagflag, int do_radar_ref, double *qrcuten, double *qscuten, double *qicuten, bool f_qndrop, double *qndrop, double *ht, int ids, int ide, int jds, int jde, int kds, int kde, int ims, int ime, int jms, int jme, int kms, int kme, int its, int ite, int jts, int jte, int kts, int kte, bool wetscav_on, double *rainprod, double *evapprod, double *qlsink, double *precr, double *preci, double *precs, double *precg)</div></div>
 <div class="ttc" id="aERF__Morrison__Fortran__Interface_8H_html_af516bd1e1ed0913cf54a9932f8f40138"><div class="ttname"><a href="ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138">set_morrison_ndcnst_c</a></div><div class="ttdeci">void set_morrison_ndcnst_c(double ndcnst_in)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -3700,15 +3703,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMorrison_a14321f6398d7555cc4bcb02dae4b0be1_cgraph.png" border="0" usemap="#aclassMorrison_a14321f6398d7555cc4bcb02dae4b0be1_cgraph" alt=""/></div>
 <map name="aclassMorrison_a14321f6398d7555cc4bcb02dae4b0be1_cgraph" id="aclassMorrison_a14321f6398d7555cc4bcb02dae4b0be1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,147,148,174"/>
+<area shape="rect" title=" " alt="" coords="5,173,148,199"/>
 <area shape="rect" href="ERF__AdvanceMorrison_8cpp.html#a1d61dd254dd6d74236cdd989226eb4d7" title=" " alt="" coords="207,5,373,47"/>
 <area shape="rect" href="ERF__AdvanceMorrison_8cpp.html#af8756cf103eb5b43c28400e574f81bd5" title=" " alt="" coords="224,71,356,98"/>
 <area shape="rect" href="ERF__Morrison__Fortran__Interface_8H.html#aa1e15a22d6cf65c21c2a28cd25a16946" title=" " alt="" coords="196,122,384,149"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="271,173,309,199"/>
-<area shape="rect" href="ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138" title=" " alt="" coords="205,223,375,250"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="253,274,327,301"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="245,173,335,199"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="271,223,309,250"/>
+<area shape="rect" href="ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138" title=" " alt="" coords="205,274,375,301"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="253,325,327,351"/>
 <area shape="rect" href="namespacemodule__mp__morr__two__moment.html#af11f1d093484c24bcfe7ca392ab7f34f" title=" " alt="" coords="432,5,600,47"/>
 <area shape="rect" href="ERF__AdvanceMorrison_8cpp.html#a79f9c6159f68ac54125bd28fbb157de8" title=" " alt="" coords="466,71,566,98"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="441,173,591,199"/>
 </map>
 </div>
 
@@ -3755,9 +3760,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gamg2 = <a class="code" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a>((5.0+<a class="code" href="ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df">b_grau</a>)/2.0);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// calculate the plane average variables</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> rho_ave(<a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7ab60d6bdceb03bf869685c46558bcbe89">MicVar_Morr::rho</a>].get(), <a class="code" href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">m_geom</a>, <a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> theta_ave(<a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a7f3916bd057e43e125de3cbef18bcad3">MicVar_Morr::theta</a>].get(), <a class="code" href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">m_geom</a>, <a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> qv_ave(<a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a27ed8ba8d37ae85125221394270eceaf">MicVar_Morr::qv</a>].get(), <a class="code" href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">m_geom</a>, <a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> rho_ave(<a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7ab60d6bdceb03bf869685c46558bcbe89">MicVar_Morr::rho</a>].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a>(), <a class="code" href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">m_geom</a>, <a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> theta_ave(<a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a7f3916bd057e43e125de3cbef18bcad3">MicVar_Morr::theta</a>].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a>(), <a class="code" href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">m_geom</a>, <a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classPlaneAverage.html">PlaneAverage</a> qv_ave(<a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a27ed8ba8d37ae85125221394270eceaf">MicVar_Morr::qv</a>].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a>(), <a class="code" href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">m_geom</a>, <a class="code" href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">m_axis</a>);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    rho_ave.compute_averages(<a class="code" href="ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), rho_ave.field());</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    theta_ave.compute_averages(<a class="code" href="ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), theta_ave.field());</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    qv_ave.compute_averages(<a class="code" href="ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a>(), qv_ave.field());</div>
@@ -3781,7 +3786,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* theta_dptr = theta_d.data();</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* qv_dptr    = qv_d.data();</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    ParallelFor(<a class="code" href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(<a class="code" href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> RhoTheta = rho_dptr[k]*theta_dptr[k];</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pressure = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(RhoTheta, qv_dptr[k]);</div>
@@ -3800,7 +3805,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// Populate all the coefficients</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    ParallelFor(<a class="code" href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(<a class="code" href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">nlev</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    {</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Prefactor;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pratio = sqrt(1.29 / rho1d_t(k));</div>
@@ -3879,6 +3884,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__DirectionSelector_8H_html_aca321ed7fddfe43ff7549b4632a3c0d1"><div class="ttname"><a href="ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a></div><div class="ttdeci">DirectionSelector&lt; 2 &gt; ZDir</div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:38</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__CouettePoiseuille_8H_html_a5df22ed4cde91f78c772cdda77bf4813"><div class="ttname"><a href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813">get</a></div><div class="ttdeci">pp get(&quot;prob_type&quot;, prob_type)</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a4ea516e89f4e87b4ffc305504e8f0bf1"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esati(amrex::Real t)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:26</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_abd125e107924437493cbcbac9a97c017"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_gammafff(amrex::Real x)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:15</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_af412f38784e2b8072356234b0474c6f5"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esatw(amrex::Real t, bool use_empirical=false)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:68</div></div>
@@ -3906,17 +3912,21 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMorrison_a7d3bd1b9f29e84bc115d7a9f42595f76_cgraph.png" border="0" usemap="#aclassMorrison_a7d3bd1b9f29e84bc115d7a9f42595f76_cgraph" alt=""/></div>
 <map name="aclassMorrison_a7d3bd1b9f29e84bc115d7a9f42595f76_cgraph" id="aclassMorrison_a7d3bd1b9f29e84bc115d7a9f42595f76_cgraph">
-<area shape="rect" title=" " alt="" coords="5,223,236,250"/>
+<area shape="rect" title=" " alt="" coords="5,274,236,301"/>
 <area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="287,5,463,47"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="335,71,414,98"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="331,122,418,149"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="319,173,430,199"/>
 <area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="301,223,448,250"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="319,274,430,301"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="303,325,447,351"/>
-<area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="303,376,446,417"/>
-<area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="284,442,465,469"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="513,122,620,149"/>
+<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813" title=" " alt="" coords="353,274,396,301"/>
+<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="319,325,430,351"/>
+<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="303,375,447,402"/>
+<area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="303,427,446,468"/>
+<area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="284,493,465,519"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="329,543,420,570"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="513,71,696,98"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="551,122,658,149"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="530,543,679,570"/>
 </map>
 </div>
 <div class="dynheader">
@@ -3983,7 +3993,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">auto</span> qpg_arr     = <a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a434cf2c831802bb076e8bc31d16f0887">MicVar_Morr::qpg</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_arr(i,j,k)*theta_arr(i,j,k);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
@@ -4010,6 +4020,16 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceVars_html_a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:140</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMorrison.html#af3dba4bdf7e085ec4b872fd28317b521">Update_State_Vars()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMorrison_a816f41f9bbd55757684c2f307940b117_cgraph.png" border="0" usemap="#aclassMorrison_a816f41f9bbd55757684c2f307940b117_cgraph" alt=""/></div>
+<map name="aclassMorrison_a816f41f9bbd55757684c2f307940b117_cgraph" id="aclassMorrison_a816f41f9bbd55757684c2f307940b117_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,168,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="216,13,307,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="355,13,504,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -4080,7 +4100,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a531c978e174d063e1cf107eae6a84073">MicVar_Morr::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        ParallelFor( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
@@ -4116,9 +4136,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMorrison_a5fe61e6c89f21c46207142a8ef2d67b1_cgraph.png" border="0" usemap="#aclassMorrison_a5fe61e6c89f21c46207142a8ef2d67b1_cgraph" alt=""/></div>
 <map name="aclassMorrison_a5fe61e6c89f21c46207142a8ef2d67b1_cgraph" id="aclassMorrison_a5fe61e6c89f21c46207142a8ef2d67b1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,23,167,65"/>
+<area shape="rect" title=" " alt="" coords="5,49,167,90"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="231,5,342,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="215,56,359,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="241,107,332,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="407,107,556,133"/>
 </map>
 </div>
 <div class="dynheader">
@@ -4417,9 +4439,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MORR_FORT</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> morr_rimed_ice = 0; <span class="comment">// This is used to set something called &quot;ihail&quot;</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::ParmParse <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    MoistureType moisture_type;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>.query_enum_case_insensitive(<span class="stringliteral">&quot;moisture_model&quot;</span>,moisture_type);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query_enum_case_insensitive(<span class="stringliteral">&quot;moisture_model&quot;</span>,moisture_type);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> morr_noice = (moisture_type == MoistureType::Morrison_NoIce);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    Print()&lt;&lt;<span class="stringliteral">&quot;Setting No Ice flag in fortran to &quot;</span>&lt;&lt;morr_noice&lt;&lt;std::endl;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681">morr_two_moment_init_c</a>(morr_rimed_ice, morr_noice);</div>
@@ -4440,7 +4462,7 @@ Here is the call graph for this function:</div>
 <map name="aclassMorrison_a9f2177b8af1d7f3f0597a7248343569e_cgraph" id="aclassMorrison_a9f2177b8af1d7f3f0597a7248343569e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,113,83"/>
 <area shape="rect" href="ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681" title=" " alt="" coords="161,5,349,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469" title=" " alt="" coords="236,56,275,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="236,56,275,83"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="219,107,292,133"/>
 </map>
 </div>
@@ -4669,10 +4691,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="239,157,326,184"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f" title=" " alt="" coords="383,5,475,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="390,56,469,83"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="527,31,709,57"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8" title=" " alt="" coords="380,107,479,133"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="386,157,473,184"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8" title=" " alt="" coords="527,107,647,133"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="533,157,640,184"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8" title=" " alt="" coords="558,107,678,133"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="565,157,671,184"/>
 </map>
 </div>
 
@@ -4704,10 +4727,20 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        AMREX_ALWAYS_ASSERT(varIdx &lt; <a class="code" href="classMorrison.html#aae728919a37c1eebbf4956d78da9f3cd">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(varIdx &lt; <a class="code" href="classMorrison.html#aae728919a37c1eebbf4956d78da9f3cd">m_qmoist_size</a>);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[<a class="code" href="classMorrison.html#a6284af8ee4608059214c45bc39425011">MicVarMap</a>[varIdx]].get();</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
-</div><!-- fragment -->
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMorrison_a6b77aa8b347b286ffeae1aabc2e4b69a_cgraph.png" border="0" usemap="#aclassMorrison_a6b77aa8b347b286ffeae1aabc2e4b69a_cgraph" alt=""/></div>
+<map name="aclassMorrison_a6b77aa8b347b286ffeae1aabc2e4b69a_cgraph" id="aclassMorrison_a6b77aa8b347b286ffeae1aabc2e4b69a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,164,32"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="212,5,395,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a2269eb1d7ce46e6eba5ffe3ad1489c57"></a>
@@ -4925,19 +4958,23 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMorrison_a3b223b2f67d6de76f1edd249b4a16d63_cgraph.png" border="0" usemap="#aclassMorrison_a3b223b2f67d6de76f1edd249b4a16d63_cgraph" alt=""/></div>
 <map name="aclassMorrison_a3b223b2f67d6de76f1edd249b4a16d63_cgraph" id="aclassMorrison_a3b223b2f67d6de76f1edd249b4a16d63_cgraph">
-<area shape="rect" title=" " alt="" coords="5,333,217,360"/>
-<area shape="rect" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76" title=" " alt="" coords="265,245,496,272"/>
-<area shape="rect" href="classMorrison.html#a5fe61e6c89f21c46207142a8ef2d67b1" title=" " alt="" coords="300,385,461,426"/>
-<area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="547,326,723,367"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="595,5,674,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="591,56,678,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="579,107,690,133"/>
-<area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="561,157,708,184"/>
+<area shape="rect" title=" " alt="" coords="5,409,217,436"/>
+<area shape="rect" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76" title=" " alt="" coords="265,300,496,327"/>
+<area shape="rect" href="classMorrison.html#a5fe61e6c89f21c46207142a8ef2d67b1" title=" " alt="" coords="300,461,461,502"/>
+<area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="547,57,723,98"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="595,123,674,149"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="591,173,678,200"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="579,224,690,251"/>
+<area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="561,275,708,301"/>
+<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a5df22ed4cde91f78c772cdda77bf4813" title=" " alt="" coords="613,325,656,352"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="579,443,690,469"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="563,392,707,419"/>
-<area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="563,209,706,250"/>
-<area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="544,275,725,301"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="773,56,880,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="563,493,707,520"/>
+<area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="563,377,706,418"/>
+<area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="544,5,725,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="589,544,680,571"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="773,123,956,149"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="811,173,918,200"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="790,544,939,571"/>
 </map>
 </div>
 
@@ -4979,6 +5016,8 @@ Here is the call graph for this function:</div>
 <map name="aclassMorrison_af3dba4bdf7e085ec4b872fd28317b521_cgraph" id="aclassMorrison_af3dba4bdf7e085ec4b872fd28317b521_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,216,39"/>
 <area shape="rect" href="classMorrison.html#a816f41f9bbd55757684c2f307940b117" title=" " alt="" coords="264,5,427,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="475,13,565,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="613,13,763,39"/>
 </map>
 </div>
 

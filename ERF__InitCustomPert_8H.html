@@ -97,8 +97,100 @@ Functions</h2></td></tr>
 <tr class="separator:a5c414f99c57967622fc32f7b36e2f53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b957888439afb25538bab915fdf74ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert_8H.html#a9b957888439afb25538bab915fdf74ca">init_custom_pert_vels</a> (const amrex::Box &amp;<a class="el" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, const amrex::Box &amp;<a class="el" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, const amrex::Box &amp;<a class="el" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; const &amp;x_vel_pert, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; const &amp;y_vel_pert, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; const &amp;z_vel_pert, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;z_nd, amrex::GeometryData const &amp;geomdata, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;mf_u, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> const &gt; const &amp;mf_v, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;sc, const int lev) override</td></tr>
 <tr class="separator:a9b957888439afb25538bab915fdf74ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ca7cce2f6a003d8cebeae917c04ebe"><td class="memItemLeft" align="right" valign="top">static AMREX_GPU_DEVICE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> y, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ae478668870b1a908d8b34d2ce5e25129">xc</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a40fd6a063f9a0a3b792ee8d7ab053e6c">yc</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>)</td></tr>
+<tr class="separator:af5ca7cce2f6a003d8cebeae917c04ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="af5ca7cce2f6a003d8cebeae917c04ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ca7cce2f6a003d8cebeae917c04ebe">&#9670;&nbsp;</a></span>erf_vortex_Gaussian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static AMREX_GPU_DEVICE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> erf_vortex_Gaussian </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>xc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>yc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>R</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>beta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>sigma</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// Evaluate Gaussian function</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> r2 = ((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#ae478668870b1a908d8b34d2ce5e25129">xc</a>)*(x-<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#ae478668870b1a908d8b34d2ce5e25129">xc</a>) + (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a40fd6a063f9a0a3b792ee8d7ab053e6c">yc</a>)*(y-<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a40fd6a063f9a0a3b792ee8d7ab053e6c">yc</a>)) / (<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>*<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a> * std::exp(-r2/(2.*<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>*<a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a387fc53e2abd554a195896d1cde264bf"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a></div><div class="ttdeci">amrex::Real R</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:12</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a40fd6a063f9a0a3b792ee8d7ab053e6c"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a40fd6a063f9a0a3b792ee8d7ab053e6c">yc</a></div><div class="ttdeci">amrex::Real yc</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:20</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a5e9caa74b9ef9befb527201d7e904801"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a></div><div class="ttdeci">amrex::Real sigma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:11</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_aaa538a485890f44f3ec785846ea09b12"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a></div><div class="ttdeci">amrex::Real beta</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:10</div></div>
+<div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_ae478668870b1a908d8b34d2ce5e25129"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#ae478668870b1a908d8b34d2ce5e25129">xc</a></div><div class="ttdeci">amrex::Real xc</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:19</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a2a6195edc854b3d2b6e7cd8d93398e07">ParallelFor()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__InitCustomPert_8H_af5ca7cce2f6a003d8cebeae917c04ebe_icgraph.png" border="0" usemap="#aERF__InitCustomPert_8H_af5ca7cce2f6a003d8cebeae917c04ebe_icgraph" alt=""/></div>
+<map name="aERF__InitCustomPert_8H_af5ca7cce2f6a003d8cebeae917c04ebe_icgraph" id="aERF__InitCustomPert_8H_af5ca7cce2f6a003d8cebeae917c04ebe_icgraph">
+<area shape="rect" title=" " alt="" coords="144,5,300,32"/>
+<area shape="rect" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a2a6195edc854b3d2b6e7cd8d93398e07" title=" " alt="" coords="5,5,96,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a5c414f99c57967622fc32f7b36e2f53b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c414f99c57967622fc32f7b36e2f53b">&#9670;&nbsp;</a></span>init_custom_pert()</h2>
 

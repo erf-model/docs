@@ -335,9 +335,10 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                      {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      AMREX_ALWAYS_ASSERT( <a class="code" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f">ok</a>() ); <span class="comment">// &lt;-------------------------------------- TODO remove ALWAYS</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f">ok</a>() ); <span class="comment">// &lt;-------------------------------------- TODO remove ALWAYS</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a>;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aclasspolygon___html_a20ac05a7f6b1ce01fa1789b0d264dd4f"><div class="ttname"><a href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f">polygon_::ok</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int ok() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_EBPolygon.H:150</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__cut__cell__.html#a8f3ed8e0c96b5b6e44292fa0450e130d">eb_cut_cell_::areaBoun()</a>, <a class="el" href="classeb__cut__cell__.html#ac5eff123e3db45b6b7bf7237a0afc2fc">eb_cut_cell_::centVol()</a>, <a class="el" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac">get_centroid()</a>, and <a class="el" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a">eb_cut_cell_::volume()</a>.</p>
@@ -346,8 +347,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a63823b326fd4b97b2622be664dedb6d4_cgraph.png" border="0" usemap="#aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_cgraph" alt=""/></div>
 <map name="aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_cgraph" id="aclasspolygon___a63823b326fd4b97b2622be664dedb6d4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,124,32"/>
-<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="172,5,277,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,124,57"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="172,5,355,32"/>
+<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="211,56,316,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -455,7 +457,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                   {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      AMREX_ALWAYS_ASSERT( <a class="code" href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">m_defined</a> == 0 );  <span class="comment">// TODO ---------------------------- remove ALWAYS</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">m_defined</a> == 0 );  <span class="comment">// TODO ---------------------------- remove ALWAYS</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <a class="code" href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">m_defined</a> = 1;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
@@ -534,7 +536,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        amrex::RealVect vi_cross_vj = vertex_cent[i].crossProduct(vertex_cent[j]);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a> += 0.5*vi_cross_vj.vectorLength();</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      AMREX_ALWAYS_ASSERT( <a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a> &gt; 0. ); <span class="comment">// &lt;------------------------------- TODO remove ALWAYS</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="classpolygon__.html#a156f350b46e9dfd7439e3cbb2c690b4e">m_area</a> &gt; 0. ); <span class="comment">// &lt;------------------------------- TODO remove ALWAYS</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    } <span class="comment">// void define</span></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -546,10 +548,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph.png" border="0" usemap="#aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph" alt=""/></div>
 <map name="aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph" id="aclasspolygon___ac30eafa3d2fcdf357082dda5a53a03a8_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,135,32"/>
-<area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="183,5,353,32"/>
-<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="401,5,520,32"/>
-<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="568,5,673,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,135,57"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="568,5,751,32"/>
+<area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="183,56,353,83"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="401,56,520,83"/>
+<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="607,56,712,83"/>
 </map>
 </div>
 
@@ -579,12 +582,21 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                                                       {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      AMREX_ALWAYS_ASSERT( <a class="code" href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">m_defined</a> == 1 );  <span class="comment">// &lt;--------------------------- TODO remove ALWAYS</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">m_defined</a> == 1 );  <span class="comment">// &lt;--------------------------- TODO remove ALWAYS</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      amrex::RealVect x0 = a_point - <a class="code" href="classpolygon__.html#a1ab69432c8c151b29906a462bbc1d142">m_vertices</a>[0];</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <span class="keywordflow">return</span> amrex::Math::abs(x0.dotProduct(<a class="code" href="classpolygon__.html#af9569a9cee1fabb0f38dfad19fa0b3f8">m_zdir</a>));</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classpolygon__.html#abe76c7126ae5539676381c6c179f80f9">report()</a>, and <a class="el" href="classeb__cut__cell__.html#a0b96c29535764e3ab1f8089af487265a">eb_cut_cell_::volume()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classpolygon___a558e318b4655635bf2a4f9b21bc2674a_cgraph.png" border="0" usemap="#aclasspolygon___a558e318b4655635bf2a4f9b21bc2674a_cgraph" alt=""/></div>
+<map name="aclasspolygon___a558e318b4655635bf2a4f9b21bc2674a_cgraph" id="aclasspolygon___a558e318b4655635bf2a4f9b21bc2674a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,149,32"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="197,5,380,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -651,9 +663,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph.png" border="0" usemap="#aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph" alt=""/></div>
 <map name="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph" id="aclasspolygon___a085dc307c51e6dca9b4bb9d5b0db54ac_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,176,32"/>
-<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="224,5,343,32"/>
-<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="391,5,496,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,176,57"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="224,31,343,57"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="391,5,573,32"/>
+<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="429,56,535,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -836,10 +849,11 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classpolygon___abe76c7126ae5539676381c6c179f80f9_cgraph.png" border="0" usemap="#aclasspolygon___abe76c7126ae5539676381c6c179f80f9_cgraph" alt=""/></div>
 <map name="aclasspolygon___abe76c7126ae5539676381c6c179f80f9_cgraph" id="aclasspolygon___abe76c7126ae5539676381c6c179f80f9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,133,83"/>
-<area shape="rect" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a" title=" " alt="" coords="195,5,339,32"/>
+<area shape="rect" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a" title=" " alt="" coords="400,5,544,32"/>
 <area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="181,56,352,83"/>
-<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="567,81,672,108"/>
-<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="400,56,519,83"/>
+<area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="631,81,736,108"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="592,19,775,45"/>
+<area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="413,56,531,83"/>
 </map>
 </div>
 

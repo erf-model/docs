@@ -351,9 +351,9 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;AdvectionSrcForMom_StretchedDz&quot;</span>, <a class="code" href="ERF__AdvectionSrcForMom__StretchedDz_8cpp.html#acf05911ff64f7c886cc56461343e50f5">AdvectionSrcForMom_StretchedDz</a>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    AMREX_ALWAYS_ASSERT(bxz.smallEnd(2) &gt; 0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(bxz.smallEnd(2) &gt; 0);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">auto</span> dxInv = cellSizeInv[0]; <span class="keyword">auto</span> dyInv = cellSizeInv[1];</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0]; <span class="keyword">auto</span> dyInv = cellSizeInv[1];</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// compute mapfactor inverses</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    Box box2d_u(bxx);   box2d_u.setRange(2,0);   box2d_u.grow({3,3,0});</div>
@@ -369,7 +369,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_vx_inv = mf_vx_invFAB.array();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_vy_inv = mf_vy_invFAB.array();</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ParallelFor(box2d_u, box2d_v,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(box2d_u, box2d_v,</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        mf_ux_inv(i,j,0) = 1. / mf_ux(i,j,0);</div>
@@ -386,7 +386,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Inline with 2nd order for efficiency</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (horiz_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a> &amp;&amp; vert_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>)</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            ParallelFor(bxx, bxy, bxz,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bxx, bxy, bxz,</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            {</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> xflux_hi = 0.25 * (rho_u(i, j  , k) * mf_uy_inv(i,j,0) + rho_u(i+1, j  , k) * mf_uy_inv(i+1,j,0)) * (u(i+1,j,k) + u(i,j,k));</div>
@@ -402,7 +402,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 1.0/dz_ptr[k];</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * dxInv * mfsq</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> * mfsq</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                  + (yflux_hi - yflux_lo) * dyInv * mfsq</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                  + (zflux_hi - zflux_lo) * dzInv;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                rho_u_rhs(i, j, k) = -advectionSrc;</div>
@@ -422,7 +422,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = 1.0/dz_ptr[k];</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * dxInv * mfsq</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> * mfsq</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                  + (yflux_hi - yflux_lo) * dyInv * mfsq</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                  + (zflux_hi - zflux_lo) * dzInv;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                rho_v_rhs(i, j, k) = -advectionSrc;</div>
@@ -444,7 +444,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = (k == 0) ? 1.0 / dz_ptr[k] : 2.0/(dz_ptr[k] + dz_ptr[k-1]);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * dxInv * mfsq</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advectionSrc = (xflux_hi - xflux_lo) * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> * mfsq</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                  + (yflux_hi - yflux_lo) * dyInv * mfsq</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                  + (zflux_hi - zflux_lo) * dzInv;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                rho_w_rhs(i, j, k) = -advectionSrc;</div>
@@ -578,9 +578,23 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70aeb75f5943c7837da80e2048f2b344efc">AdvType::Weno_5Z</a></div><div class="ttdeci">@ Weno_5Z</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af2429e8de544f3ebd7c9668e3dbebaa8">AdvType::Weno_5</a></div><div class="ttdeci">@ Weno_5</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70af8b942d20ed08b25df71ea1c87244210">AdvType::Weno_3MZQ</a></div><div class="ttdeci">@ Weno_3MZQ</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:16</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_aee8eabea0690943ba287c93caab8c1b7a93264ee6dc9b23e994674a68250a2f16"><div class="ttname"><a href="namespaceMicVar__Morr.html#aee8eabea0690943ba287c93caab8c1b7a93264ee6dc9b23e994674a68250a2f16">MicVar_Morr::omega</a></div><div class="ttdeci">@ omega</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:53</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__AdvectionSrcForMom__StretchedDz_8cpp_acf05911ff64f7c886cc56461343e50f5_cgraph.png" border="0" usemap="#aERF__AdvectionSrcForMom__StretchedDz_8cpp_acf05911ff64f7c886cc56461343e50f5_cgraph" alt=""/></div>
+<map name="aERF__AdvectionSrcForMom__StretchedDz_8cpp_acf05911ff64f7c886cc56461343e50f5_cgraph" id="aERF__AdvectionSrcForMom__StretchedDz_8cpp_acf05911ff64f7c886cc56461343e50f5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,23,165,65"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="213,5,396,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="259,56,350,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="444,56,593,83"/>
+</map>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->

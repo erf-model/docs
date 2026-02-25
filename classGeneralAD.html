@@ -397,20 +397,30 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classNullWindFarm.html#a6c0842d97c9d5d68030987bc76b61101">NullWindFarm</a>.</p>
 <div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    AMREX_ALWAYS_ASSERT(W_old.nComp() &gt; 0);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    AMREX_ALWAYS_ASSERT(mf_Nturb.nComp() &gt; 0);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    AMREX_ALWAYS_ASSERT(mf_vars_generalAD.nComp() &gt; 0);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    AMREX_ALWAYS_ASSERT(time &gt; -1.0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(W_old.nComp() &gt; 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(mf_Nturb.nComp() &gt; 0);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(mf_vars_generalAD.nComp() &gt; 0);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(time &gt; -1.0);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classGeneralAD.html#aaa071c6bfd4e647404242328fd1b3643">compute_freestream_velocity</a>(cons_in, U_old, V_old, mf_SMark);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">source_terms_cellcentered</a>(geom, cons_in, mf_SMark, mf_vars_generalAD);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classGeneralAD.html#a2c22ccda2fdf9b29e4325c22b84bea2c">update</a>(dt_advance, cons_in, U_old, V_old, W_old, mf_vars_generalAD);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classGeneralAD.html#af6b71032fe0417e12b9aefff0ba2066b">compute_power_output</a>(time);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aclassGeneralAD_html_a2c22ccda2fdf9b29e4325c22b84bea2c"><div class="ttname"><a href="classGeneralAD.html#a2c22ccda2fdf9b29e4325c22b84bea2c">GeneralAD::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_vars)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:60</div></div>
 <div class="ttc" id="aclassGeneralAD_html_a5be79013be63b8105a01534ca186de32"><div class="ttname"><a href="classGeneralAD.html#a5be79013be63b8105a01534ca186de32">GeneralAD::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;mf_Smark, amrex::MultiFab &amp;mf_vars_generalAD)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:317</div></div>
 <div class="ttc" id="aclassGeneralAD_html_aaa071c6bfd4e647404242328fd1b3643"><div class="ttname"><a href="classGeneralAD.html#aaa071c6bfd4e647404242328fd1b3643">GeneralAD::compute_freestream_velocity</a></div><div class="ttdeci">void compute_freestream_velocity(const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_SMark)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:96</div></div>
 <div class="ttc" id="aclassGeneralAD_html_af6b71032fe0417e12b9aefff0ba2066b"><div class="ttname"><a href="classGeneralAD.html#af6b71032fe0417e12b9aefff0ba2066b">GeneralAD::compute_power_output</a></div><div class="ttdeci">void compute_power_output(const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceGeneralAD.cpp:31</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGeneralAD_aa2727df24bc4d49692be1e4fae865806_cgraph.png" border="0" usemap="#aclassGeneralAD_aa2727df24bc4d49692be1e4fae865806_cgraph" alt=""/></div>
+<map name="aclassGeneralAD_aa2727df24bc4d49692be1e4fae865806_cgraph" id="aclassGeneralAD_aa2727df24bc4d49692be1e4fae865806_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,160,32"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="208,5,391,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="aaa071c6bfd4e647404242328fd1b3643"></a>
@@ -478,7 +488,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keyword">auto</span> v_vel          = V_old.array(mfi);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        ParallelFor(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span>(SMark_array(i,j,k,0) != -1.0) {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordtype">int</span> turb_index = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(SMark_array(i,j,k,0));</div>
@@ -521,6 +531,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">        }</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">    }*/</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassGeneralAD_html_a2232a2f38c6bfd8102e38e383b10ea0b"><div class="ttname"><a href="classGeneralAD.html#a2232a2f38c6bfd8102e38e383b10ea0b">GeneralAD::freestream_velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; freestream_velocity</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:51</div></div>
 <div class="ttc" id="aclassGeneralAD_html_a370786ec406f37da4fb54cc21745c1f3"><div class="ttname"><a href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">GeneralAD::xloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; xloc</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:47</div></div>
@@ -528,7 +539,17 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassGeneralAD_html_acd1962338f30947c30f916121b8ca0e0"><div class="ttname"><a href="classGeneralAD.html#acd1962338f30947c30f916121b8ca0e0">GeneralAD::freestream_phi</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; freestream_phi</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:51</div></div>
 <div class="ttc" id="aclassGeneralAD_html_ad75081940389e9013c4ca501713883e1"><div class="ttname"><a href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">GeneralAD::yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; yloc</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:47</div></div>
 <div class="ttc" id="aclassNullWindFarm_html_a85f4b30a21138dce73af7ea3769d5580"><div class="ttname"><a href="classNullWindFarm.html#a85f4b30a21138dce73af7ea3769d5580">NullWindFarm::get_turb_loc</a></div><div class="ttdeci">void get_turb_loc(amrex::Vector&lt; amrex::Real &gt; &amp;xloc, amrex::Vector&lt; amrex::Real &gt; &amp;yloc)</div><div class="ttdef"><b>Definition:</b> ERF_NullWindFarm.H:96</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGeneralAD_aaa071c6bfd4e647404242328fd1b3643_cgraph.png" border="0" usemap="#aclassGeneralAD_aaa071c6bfd4e647404242328fd1b3643_cgraph" alt=""/></div>
+<map name="aclassGeneralAD_aaa071c6bfd4e647404242328fd1b3643_cgraph" id="aclassGeneralAD_aaa071c6bfd4e647404242328fd1b3643_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,165,47"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="213,13,304,39"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="352,13,501,39"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="af6b71032fe0417e12b9aefff0ba2066b"></a>
@@ -649,7 +670,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.begin(), <a class="code" href="classGeneralAD.html#a370786ec406f37da4fb54cc21745c1f3">xloc</a>.end(), d_xloc.begin());</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    Gpu::copy(Gpu::hostToDevice, <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.begin(), <a class="code" href="classGeneralAD.html#ad75081940389e9013c4ca501713883e1">yloc</a>.end(), d_yloc.begin());</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;      <span class="keyword">auto</span> dx = geom.CellSizeArray();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;      <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geom.CellSizeArray();</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="comment">// Domain valid box</span></div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
@@ -750,14 +771,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        <span class="keyword">auto</span> SMark_array    = mf_SMark.array(mfi);</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keyword">auto</span> generalAD_array = mf_vars_generalAD.array(mfi);</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        ParallelFor(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, domlo_x), domhi_x);</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j, domlo_y), domhi_y);</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, domlo_z), domhi_z);</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>   = ProbLoArr[0] + (ii+0.5)*dx[0];</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>   = ProbLoArr[1] + (jj+0.5)*dx[1];</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>   = ProbLoArr[2] + (kk+0.5)*dx[2];</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>   = ProbLoArr[0] + (ii+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0];</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>   = ProbLoArr[1] + (jj+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1];</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>   = ProbLoArr[2] + (kk+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <span class="comment">// ?? Density needed here</span></div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            <span class="keywordtype">int</span> check_int = 0;</div>
@@ -819,9 +840,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                        <span class="comment">//Real dn = (</span></div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                        source_x = -Fx/(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad*dx[0])*1.0/std::pow(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>,0.5);</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                        source_y = -Fy/(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad*dx[0])*1.0/std::pow(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>,0.5);</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                        source_z = -Fz/(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad*dx[0])*1.0/std::pow(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>,0.5);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                        source_x = -Fx/(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0])*1.0/std::pow(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>,0.5);</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                        source_y = -Fy/(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0])*1.0/std::pow(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>,0.5);</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                        source_z = -Fz/(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rad*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0])*1.0/std::pow(2.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>,0.5);</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                        <span class="comment">//printf(&quot;Val source_x, is %0.15g, %0.15g, %0.15g %0.15g %0.15g %0.15g\n&quot;, rad, Fn, Ft, source_x, source_y, source_z);</span></div>
@@ -846,6 +867,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
 <div class="ttc" id="aclassGeneralAD_html_a0db6baf8703517d3974b08ba7d854fc4"><div class="ttname"><a href="classGeneralAD.html#a0db6baf8703517d3974b08ba7d854fc4">GeneralAD::bld_airfoil_Cl</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; bld_airfoil_Cl</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:53</div></div>
 <div class="ttc" id="aclassGeneralAD_html_a5d98b31e348b25201d92055c16b6b6da"><div class="ttname"><a href="classGeneralAD.html#a5d98b31e348b25201d92055c16b6b6da">GeneralAD::velocity</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; velocity</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:54</div></div>
 <div class="ttc" id="aclassGeneralAD_html_a735e81390aef6a10e396bf4b7f1c7661"><div class="ttname"><a href="classGeneralAD.html#a735e81390aef6a10e396bf4b7f1c7661">GeneralAD::blade_pitch</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; blade_pitch</div><div class="ttdef"><b>Definition:</b> ERF_GeneralAD.H:54</div></div>
@@ -867,10 +889,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph.png" border="0" usemap="#aclassGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph" alt=""/></div>
 <map name="aclassGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph" id="aclassGeneralAD_a5be79013be63b8105a01534ca186de32_cgraph">
-<area shape="rect" title=" " alt="" coords="5,35,193,76"/>
-<area shape="rect" href="ERF__AdvanceGeneralAD_8cpp.html#afffd9801c692fcb424381db8ca2dc8f2" title=" " alt="" coords="241,5,416,47"/>
-<area shape="rect" href="ERF__AdvanceGeneralAD_8cpp.html#aa029813f35aa6d2dd949f67fa313066d" title=" " alt="" coords="257,71,400,98"/>
-<area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="464,13,580,39"/>
+<area shape="rect" title=" " alt="" coords="5,82,193,123"/>
+<area shape="rect" href="ERF__AdvanceGeneralAD_8cpp.html#afffd9801c692fcb424381db8ca2dc8f2" title=" " alt="" coords="241,23,416,65"/>
+<area shape="rect" href="ERF__AdvanceGeneralAD_8cpp.html#aa029813f35aa6d2dd949f67fa313066d" title=" " alt="" coords="257,89,400,116"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="283,140,374,167"/>
+<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="464,5,647,32"/>
+<area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="497,56,613,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="481,140,630,167"/>
 </map>
 </div>
 
@@ -938,7 +963,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">auto</span> v_vel       = V_old.array(mfi);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">auto</span> w_vel       = W_old.array(mfi);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        ParallelFor(tbx, tby, tbz,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(tbx, tby, tbz,</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            u_vel(i,j,k) = u_vel(i,j,k) + (generalAD_array(i-1,j,k,0) + generalAD_array(i,j,k,0))/2.0*dt_advance;</div>
@@ -954,7 +979,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGeneralAD_a2c22ccda2fdf9b29e4325c22b84bea2c_cgraph.png" border="0" usemap="#aclassGeneralAD_a2c22ccda2fdf9b29e4325c22b84bea2c_cgraph" alt=""/></div>
+<map name="aclassGeneralAD_a2c22ccda2fdf9b29e4325c22b84bea2c_cgraph" id="aclassGeneralAD_a2c22ccda2fdf9b29e4325c22b84bea2c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,151,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="199,5,289,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="337,5,487,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
