@@ -35,7 +35,7 @@ var searchData=
   ['init_5fbuffers_4771',['init_buffers',['../classSHOCInterface.html#a1bdb1da0e57b13491fc1c08267069995',1,'SHOCInterface']]],
   ['init_5fbuildings_5fsurface_4772',['init_buildings_surface',['../classProblemBase.html#a9448182188904fd7430fbf2c4fe01cd3',1,'ProblemBase']]],
   ['init_5fbx_5fscalars_5ffrom_5finput_5fsounding_4773',['init_bx_scalars_from_input_sounding',['../ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e',1,'ERF_InitFromInputSounding.cpp']]],
-  ['init_5fbx_5fscalars_5ffrom_5finput_5fsounding_5fhse_4774',['init_bx_scalars_from_input_sounding_hse',['../ERF__InitFromInputSounding_8cpp.html#a3729c83d7636156d81f3ce772fa3377e',1,'ERF_InitFromInputSounding.cpp']]],
+  ['init_5fbx_5fscalars_5ffrom_5finput_5fsounding_5fhse_4774',['init_bx_scalars_from_input_sounding_hse',['../ERF__InitFromInputSounding_8cpp.html#a8addf90ec4622acb2ce1f299742ee2d0',1,'ERF_InitFromInputSounding.cpp']]],
   ['init_5fbx_5fvelocities_5ffrom_5finput_5fsounding_4775',['init_bx_velocities_from_input_sounding',['../ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb',1,'ERF_InitFromInputSounding.cpp']]],
   ['init_5fcoeffs_4776',['init_coeffs',['../structMYNNLevel2.html#aaab2f004c0ddd5b3fce84004d9d450b6',1,'MYNNLevel2']]],
   ['init_5fcustom_4777',['init_custom',['../classERF.html#a604939a8058f7efa36a427adb889739c',1,'ERF']]],
