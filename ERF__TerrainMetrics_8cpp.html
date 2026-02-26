@@ -276,7 +276,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.growntilebox();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> Array4&lt; Real&gt; z_nd_arr = z_phys_nd.array(mfi);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            z_nd_arr(i,j,k) = k * dz;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        });</div>
@@ -286,14 +286,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.growntilebox();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> Array4&lt; Real&gt; z_cc_arr = z_phys_cc.array(mfi);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            z_cc_arr(i,j,k) = (k + 0.5) * dz;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        });</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aaf237fbe118d80f149295c0579608579">ERF::init_stuff()</a>.</p>
 <div class="dynheader">
@@ -302,7 +302,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__TerrainMetrics_8cpp_a28a6372799b0be6e2745cae9cb180567_cgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_a28a6372799b0be6e2745cae9cb180567_cgraph" alt=""/></div>
 <map name="aERF__TerrainMetrics_8cpp_a28a6372799b0be6e2745cae9cb180567_cgraph" id="aERF__TerrainMetrics_8cpp_a28a6372799b0be6e2745cae9cb180567_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,147,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="195,5,285,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="195,5,285,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="333,5,483,32"/>
 </map>
 </div>
@@ -426,7 +426,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="comment">// Vertical grid stretching using BTF model from p2163 of Klemp2011</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="comment">// z_levels are only defined from k = dom_lo to dom_hi (nodal)</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="comment">//</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            {</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordtype">int</span> ii = amrex::max(amrex::min(i,imax),imin);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordtype">int</span> jj = amrex::max(amrex::min(j,jmax),jmin);</div>
@@ -460,7 +460,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="comment">// Fill lateral boundaries below the bottom surface</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(makeSlab(gbx,2,0), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(makeSlab(gbx,2,0), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    z_arr(i,j,-1) = 2.0*z_arr(i,j,0) - z_arr(i,j,1);</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                });</div>
@@ -471,7 +471,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">case</span> 1: <span class="comment">// STF Method</span></div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// Get Multifab spanning domain with 1 level of ghost cells</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// Get MultiFab spanning domain with 1 level of ghost cells</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        MultiFab h_mf(    z_phys_nd.boxArray(), z_phys_nd.DistributionMap(), 1, ngrow+1);</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        MultiFab h_mf_old(z_phys_nd.boxArray(), z_phys_nd.DistributionMap(), 1, ngrow+1);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
@@ -612,7 +612,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                Array4&lt;Real&gt; <span class="keyword">const</span>&amp; h_s   = h_mf_old.array(mfi);</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(xybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                    <span class="comment">// Location of nodes</span></div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = z_lev_d[k];</div>
@@ -646,7 +646,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp;         z_lev = z_levels_d.data();</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                {</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                    <span class="comment">// Vertical grid stretching</span></div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
@@ -683,7 +683,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                <span class="keyword">auto</span> <span class="keyword">const</span>&amp;         z_lev = z_levels_d.data();</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                {</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                    <span class="comment">// Vertical grid stretching</span></div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> =  z_lev[k];</div>
@@ -701,7 +701,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;                    }</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                });</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                gbx.setBig(2,0);</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                {</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;                    z_arr(i,j,k  ) = 0.0;</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;                    z_arr(i,j,k-1) = -z_arr(i,j,k+1);</div>
@@ -723,7 +723,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph" alt=""/></div>
 <map name="aERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph" id="aERF__TerrainMetrics_8cpp_ac59abef116a0b274b84ab3d89771ef22_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,176,57"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="224,5,315,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="224,5,315,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="250,56,289,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="363,5,512,32"/>
 </map>
@@ -812,7 +812,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        Array4&lt;Real      &gt; ax_arr = ax.array(mfi);</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;               ax_arr(i, j, k) = .5 * dzInv * (</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                       z_nd(i,j,k+1) + z_nd(i,j+1,k+1) - z_nd(i,j,k) - z_nd(i,j+1,k));</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        });</div>
@@ -833,7 +833,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        Array4&lt;Real      &gt; ay_arr = ay.array(mfi);</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;               ay_arr(i, j, k) = .5 * dzInv * (</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                       z_nd(i,j,k+1) + z_nd(i+1,j,k+1) - z_nd(i,j,k) - z_nd(i+1,j,k));</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        });</div>
@@ -851,7 +851,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__TerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_cgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_cgraph" alt=""/></div>
 <map name="aERF__TerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_cgraph" id="aERF__TerrainMetrics_8cpp_a920c175414adfaaa26687bfb8e7585bb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,107,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="155,5,245,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="155,5,245,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="293,5,443,32"/>
 </map>
 </div>
@@ -921,7 +921,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;        }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        Array4&lt;Real      &gt; detJ = detJ_cc.array(mfi);</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;           detJ(i, j, k) = .25 * dzInv * (</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                   z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                  -z_nd(i,j,k  ) - z_nd(i+1,j,k  ) - z_nd(i,j+1,k  ) - z_nd(i+1,j+1,k  ) );</div>
@@ -937,7 +937,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__TerrainMetrics_8cpp_a9c1ecbedddfe464d9db02960e5422564_cgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_a9c1ecbedddfe464d9db02960e5422564_cgraph" alt=""/></div>
 <map name="aERF__TerrainMetrics_8cpp_a9c1ecbedddfe464d9db02960e5422564_cgraph" id="aERF__TerrainMetrics_8cpp_a9c1ecbedddfe464d9db02960e5422564_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,75,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="123,5,213,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="123,5,213,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="261,5,411,32"/>
 </map>
 </div>
@@ -1056,25 +1056,25 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keyword">const</span> Box&amp; bx = mfi.growntilebox();</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keyword">const</span> Array4&lt; Real&gt; z_nd_arr = z_phys_nd.array(mfi);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">if</span> (phys_bc_type[Orientation(0,Orientation::low)] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2">ERF_BC::symmetry</a> &amp;&amp; bx.smallEnd(0) == <a class="code" href="ERF__SetupVertDiff_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.x) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(makeSlab(bx,0,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(makeSlab(bx,0,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    z_nd_arr(<a class="code" href="ERF__SetupVertDiff_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.x-1,j,k) = z_nd_arr(<a class="code" href="ERF__SetupVertDiff_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.x+1,j,k);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                });</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            }</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">if</span> (phys_bc_type[Orientation(0,Orientation::high)] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2">ERF_BC::symmetry</a> &amp;&amp; bx.bigEnd(0) == <a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.x) {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(makeSlab(bx,0,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(makeSlab(bx,0,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> , <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    z_nd_arr(<a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.x+1,j,k) = z_nd_arr(<a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.x-1,j,k);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                });</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">if</span> (phys_bc_type[Orientation(1,Orientation::low)] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2">ERF_BC::symmetry</a> &amp;&amp; bx.smallEnd(1) == <a class="code" href="ERF__SetupVertDiff_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(makeSlab(bx,1,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>  , <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(makeSlab(bx,1,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>  , <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                {</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    z_nd_arr(i,<a class="code" href="ERF__SetupVertDiff_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y-1,k) = z_nd_arr(i,<a class="code" href="ERF__SetupVertDiff_8H.html#a2987796b2d40db9890dd3497cc7e20ca">dom_lo</a>.y+1,k);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                });</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">if</span> (phys_bc_type[Orientation(1,Orientation::high)] == <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2">ERF_BC::symmetry</a> &amp;&amp; bx.bigEnd(1) == <a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(makeSlab(bx,1,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>  , <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(makeSlab(bx,1,1), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span>  , <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    z_nd_arr(i,<a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y+1,k) = z_nd_arr(i,<a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a>.y-1,k);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                });</div>
@@ -1100,7 +1100,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z_arr = z_phys_nd.array(mfi);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="comment">// Extrapolate top layer</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(bx_zhi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx_zhi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                z_arr(i,j,k) = z_arr(i,j,domhi_z)</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                             + (k-domhi_z) * (z_arr(i,j,domhi_z) - z_arr(i,j,domhi_z-1));</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            });</div>
@@ -1122,7 +1122,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,49,155,90"/>
 <area shape="rect" href="ERF__ChopGrids_8cpp.html#a6fe49eeaa200ab6ab8ae0a6e048f3ded" title=" " alt="" coords="235,5,341,32"/>
 <area shape="rect" href="ERF__TerrainMetrics_8cpp.html#ac59abef116a0b274b84ab3d89771ef22" title=" " alt="" coords="203,107,373,133"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="421,56,512,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="421,56,512,83"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="447,107,486,133"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="560,56,709,83"/>
 </map>
@@ -1181,7 +1181,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        Box gbx = mfi.growntilebox();</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        Array4&lt;Real const&gt; z_nd = z_phys_nd.const_array(mfi);</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        Array4&lt;Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;           z_cc(i, j, k) = .125 * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;       });</div>
@@ -1196,7 +1196,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__TerrainMetrics_8cpp_acc28d890df44cf0082a848c057042178_cgraph.png" border="0" usemap="#aERF__TerrainMetrics_8cpp_acc28d890df44cf0082a848c057042178_cgraph" alt=""/></div>
 <map name="aERF__TerrainMetrics_8cpp_acc28d890df44cf0082a848c057042178_cgraph" id="aERF__TerrainMetrics_8cpp_acc28d890df44cf0082a848c057042178_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,92,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="140,5,231,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="140,5,231,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="279,5,428,32"/>
 </map>
 </div>

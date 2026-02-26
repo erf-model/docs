@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ERF: Source/Prob/ERF_InitCustomPertVels_Terrain2DCylinder.H Source File</title>
+<title>ERF: Source/Prob/ERF_InitCustomPertVels_ConstantU.H Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('ERF__InitCustomPertVels__Terrain2DCylinder_8H_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ERF__InitCustomPertVels__ConstantU_8H_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -83,22 +83,22 @@ $(document).ready(function(){initNavTree('ERF__InitCustomPertVels__Terrain2DCyli
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ERF_InitCustomPertVels_Terrain2DCylinder.H</div>  </div>
+<div class="title">ERF_InitCustomPertVels_ConstantU.H</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="ERF__InitCustomPertVels__ConstantU_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    amrex::Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">    3</a></span>&#160;    ParmParse <a class="code" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;prob&quot;</span>);</div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#ae4bc78739d4eff04e2f0cdf41c531d3c">    4</a></span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = 10.0; <a class="code" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;U_0&quot;</span>, <a class="code" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a>);</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="ERF__InitCustomPertVels__ConstantU_8H.html#a420d78bf983d6025fd797e5276faa2fb">    3</a></span>&#160;    ParmParse <a class="code" href="ERF__InitCustomPertVels__ConstantU_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a>(<span class="stringliteral">&quot;prob&quot;</span>);</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="ERF__InitCustomPertVels__ConstantU_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64">    4</a></span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__ConstantU_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = 10.0; <a class="code" href="ERF__InitCustomPertVels__ConstantU_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a>.query(<span class="stringliteral">&quot;U_0&quot;</span>, <a class="code" href="ERF__InitCustomPertVels__ConstantU_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a>);</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">// Set the x-velocity</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#afcc136319159fcdf66beaff0b0782f93">    7</a></span>&#160;    <a class="code" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a>(<a class="code" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="ERF__InitCustomPertVels__ConstantU_8H.html#afcc136319159fcdf66beaff0b0782f93">    7</a></span>&#160;    <a class="code" href="ERF__InitCustomPertVels__ConstantU_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a>(<a class="code" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        x_vel_pert(i, j, k) = <a class="code" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        x_vel_pert(i, j, k) = <a class="code" href="ERF__InitCustomPertVels__ConstantU_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    });</div>
-<div class="ttc" id="aERF__InitCustomPertVels__Terrain2DCylinder_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__Terrain2DCylinder_8H_html_a7f74e9554c1ab66998e1319960f1e82c"><div class="ttname"><a href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a></div><div class="ttdeci">Real U_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_Terrain2DCylinder.H:4</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__Terrain2DCylinder_8H_html_afcc136319159fcdf66beaff0b0782f93"><div class="ttname"><a href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a></div><div class="ttdeci">ParallelFor(xbx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { x_vel_pert(i, j, k)=U_0;})</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ConstantU_8H_html_a420d78bf983d6025fd797e5276faa2fb"><div class="ttname"><a href="ERF__InitCustomPertVels__ConstantU_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a></div><div class="ttdeci">ParmParse pp_for_pert_vels(&quot;prob&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ConstantU_8H_html_a7f74e9554c1ab66998e1319960f1e82c"><div class="ttname"><a href="ERF__InitCustomPertVels__ConstantU_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a></div><div class="ttdeci">Real U_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ConstantU.H:4</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ConstantU_8H_html_afcc136319159fcdf66beaff0b0782f93"><div class="ttname"><a href="ERF__InitCustomPertVels__ConstantU_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a></div><div class="ttdeci">ParallelFor(xbx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { x_vel_pert(i, j, k)=U_0;})</div></div>
 <div class="ttc" id="aERF__SetupDiff_8H_html_a853a144267414a8a59c87f80ca5c958c"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a></div><div class="ttdeci">const Box xbx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:7</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('ERF__InitCustomPertVels__Terrain2DCyli
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_451f984cbae2157dc09f494ce6fda815.html">Prob</a></li><li class="navelem"><a class="el" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html">ERF_InitCustomPertVels_Terrain2DCylinder.H</a></li>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_451f984cbae2157dc09f494ce6fda815.html">Prob</a></li><li class="navelem"><a class="el" href="ERF__InitCustomPertVels__ConstantU_8H.html">ERF_InitCustomPertVels_ConstantU.H</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

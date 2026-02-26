@@ -326,7 +326,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>]); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; box = mfi.validbox();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> latlon_arr = (*forecast_state_at_lev)[4].array(mfi);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">if</span> (i == global_i_min &amp;&amp; j == global_j_min &amp;&amp; k == 0) {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    *d_eye_lat_ptr = latlon_arr(i,j,k,0);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    *d_eye_lon_ptr = latlon_arr(i,j,k,1);</div>
@@ -357,7 +357,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a6cfd95afd0afebd625b889fb6e58371c"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a6cfd95afd0afebd625b889fb6e58371c">rank</a></div><div class="ttdeci">int rank</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:21</div></div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a76c1ee0d8aa25272dc474af79d6290ce"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a76c1ee0d8aa25272dc474af79d6290ce">in</a></div><div class="ttdeci">struct @19 in</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a84fe26cac2d4bfa1e5d1823572422b59"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">ParallelFor</a></div><div class="ttdeci">amrex::Print()&lt;&lt;&quot; TPERT &quot;&lt;&lt; T_pert&lt;&lt; std ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a1a21221b2a962ff8657e21b54b71c245"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a></div><div class="ttdeci">const amrex::Real * prob_lo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:16</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceIntVars_html_a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
@@ -369,7 +369,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__HurricaneDiagnostics_8H_a3f58eb43379d7f86d36bf190882552d7_cgraph.png" border="0" usemap="#aERF__HurricaneDiagnostics_8H_a3f58eb43379d7f86d36bf190882552d7_cgraph" alt=""/></div>
 <map name="aERF__HurricaneDiagnostics_8H_a3f58eb43379d7f86d36bf190882552d7_cgraph" id="aERF__HurricaneDiagnostics_8H_a3f58eb43379d7f86d36bf190882552d7_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,208,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="256,5,347,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="256,5,347,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="395,5,544,32"/>
 </map>
 </div>
@@ -485,7 +485,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__HurricaneDiagnostics_8H.html#a9da9ff2f3f557c67be87e763c0115868" title=" " alt="" coords="208,76,423,102"/>
 <area shape="rect" href="ERF__HurricaneDiagnostics_8H.html#aaa00338da2ae456198fc994e41f984f2" title=" " alt="" coords="231,126,399,153"/>
 <area shape="rect" href="ERF__HurricaneDiagnostics_8H.html#a3f58eb43379d7f86d36bf190882552d7" title=" " alt="" coords="471,25,673,52"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="721,25,812,52"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="721,25,812,52"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="860,25,1009,52"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="517,126,627,153"/>
 </map>
@@ -569,7 +569,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; box = mfi.validbox();</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> latlon_arr = (*forecast_state_at_lev)[4].array(mfi);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">if</span> (k==0) {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dlat = latlon_arr(i,j,k,0) - hurricane_eye_latitude;</div>
@@ -606,7 +606,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__HurricaneDiagnostics_8H_a9260c67bea1e01d2c171acd11cc099ea_cgraph" id="aERF__HurricaneDiagnostics_8H_a9260c67bea1e01d2c171acd11cc099ea_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,197,57"/>
 <area shape="rect" href="ERF__HurricaneDiagnostics_8H.html#a3f58eb43379d7f86d36bf190882552d7" title=" " alt="" coords="245,5,448,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="496,31,587,57"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="496,31,587,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="635,31,784,57"/>
 </map>
 </div>
@@ -703,7 +703,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; box = mfi.validbox();</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">const</span> amrex::Array4&lt;amrex::Real const&gt;&amp; S_arr = S_data[<a class="code" href="namespaceIntVars.html#a52282f730c54deb760c414b54a12a269a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a>].const_array(mfi);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">amrex::ParallelFor</a>(box,[=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">amrex::ParallelFor</a>(box,[=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">if</span>(k==0) {</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> =  <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[0] + (i+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0];</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> =  <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[1] + (j+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1];</div>
@@ -748,7 +748,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__HurricaneDiagnostics_8H_a9da9ff2f3f557c67be87e763c0115868_cgraph" id="aERF__HurricaneDiagnostics_8H_a9da9ff2f3f557c67be87e763c0115868_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,220,83"/>
 <area shape="rect" href="ERF__HurricaneDiagnostics_8H.html#a3f58eb43379d7f86d36bf190882552d7" title=" " alt="" coords="268,5,471,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="519,31,609,57"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="519,31,609,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="314,107,425,133"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="657,31,807,57"/>
 </map>
@@ -827,7 +827,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; box = mfi.validbox();</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; vel_arr = mf_cc_vel.const_array(mfi);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[0] + (i+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0];</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[1] + (j+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1];</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dist = std::sqrt((x-x_eye)*(x-x_eye) +</div>
@@ -867,7 +867,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__HurricaneDiagnostics_8H_a4cc87ffd11c1bbc7af34ff330746bd5a_cgraph.png" border="0" usemap="#aERF__HurricaneDiagnostics_8H_a4cc87ffd11c1bbc7af34ff330746bd5a_cgraph" alt=""/></div>
 <map name="aERF__HurricaneDiagnostics_8H_a4cc87ffd11c1bbc7af34ff330746bd5a_cgraph" id="aERF__HurricaneDiagnostics_8H_a4cc87ffd11c1bbc7af34ff330746bd5a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,184,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="232,5,323,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="232,5,323,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="371,5,520,32"/>
 </map>
 </div>
@@ -950,7 +950,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; box = mfi.validbox();</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; S_arr = mf_cons_var.const_array(mfi);</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">amrex::ParallelFor</a>(box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[0] + (i+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0];</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[1] + (j+0.5)*<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1];</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dist2 = (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-x_last)*(x-x_last) +</div>
@@ -988,7 +988,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__HurricaneDiagnostics_8H_af7f7e50c2aa3c0b056f8eb0fd9fd5961_cgraph" id="aERF__HurricaneDiagnostics_8H_af7f7e50c2aa3c0b056f8eb0fd9fd5961_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,216,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="264,5,375,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a84fe26cac2d4bfa1e5d1823572422b59" title=" " alt="" coords="274,56,365,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="274,56,365,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="423,56,572,83"/>
 </map>
 </div>

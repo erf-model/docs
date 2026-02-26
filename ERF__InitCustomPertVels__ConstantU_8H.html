@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ERF: Source/Prob/ERF_InitCustomPertVels_Terrain2DCylinder.H File Reference</title>
+<title>ERF: Source/Prob/ERF_InitCustomPertVels_ConstantU.H File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('ERF__InitCustomPertVels__Terrain2DCylinder_8H.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ERF__InitCustomPertVels__ConstantU_8H.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -86,24 +86,24 @@ $(document).ready(function(){initNavTree('ERF__InitCustomPertVels__Terrain2DCyli
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">ERF_InitCustomPertVels_Terrain2DCylinder.H File Reference</div>  </div>
+<div class="title">ERF_InitCustomPertVels_ConstantU.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><a href="ERF__InitCustomPertVels__Terrain2DCylinder_8H_source.html">Go to the source code of this file.</a></p>
+<p><a href="ERF__InitCustomPertVels__ConstantU_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a560a8df64f1b30c30d0d100ee051a1fb"><td class="memItemLeft" align="right" valign="top">ParmParse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a> (&quot;prob&quot;)</td></tr>
-<tr class="separator:a560a8df64f1b30c30d0d100ee051a1fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4bc78739d4eff04e2f0cdf41c531d3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#ae4bc78739d4eff04e2f0cdf41c531d3c">query</a> (&quot;U_0&quot;, U_0)</td></tr>
-<tr class="separator:ae4bc78739d4eff04e2f0cdf41c531d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcc136319159fcdf66beaff0b0782f93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a>;})</td></tr>
+<tr class="memitem:a420d78bf983d6025fd797e5276faa2fb"><td class="memItemLeft" align="right" valign="top">ParmParse&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ConstantU_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a> (&quot;prob&quot;)</td></tr>
+<tr class="separator:a420d78bf983d6025fd797e5276faa2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8f0b71a56c6dbc77312a07ce0e0f64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ConstantU_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64">query</a> (&quot;U_0&quot;, U_0)</td></tr>
+<tr class="separator:adf8f0b71a56c6dbc77312a07ce0e0f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc136319159fcdf66beaff0b0782f93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ConstantU_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a>;})</td></tr>
 <tr class="separator:afcc136319159fcdf66beaff0b0782f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = 10.0</td></tr>
+<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ConstantU_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = 10.0</td></tr>
 <tr class="separator:a7f74e9554c1ab66998e1319960f1e82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -135,14 +135,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a560a8df64f1b30c30d0d100ee051a1fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a560a8df64f1b30c30d0d100ee051a1fb">&#9670;&nbsp;</a></span>pp()</h2>
+<a id="a420d78bf983d6025fd797e5276faa2fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a420d78bf983d6025fd797e5276faa2fb">&#9670;&nbsp;</a></span>pp_for_pert_vels()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ParmParse pp </td>
+          <td class="memname">ParmParse pp_for_pert_vels </td>
           <td>(</td>
           <td class="paramtype">&quot;prob&quot;&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -153,14 +153,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae4bc78739d4eff04e2f0cdf41c531d3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4bc78739d4eff04e2f0cdf41c531d3c">&#9670;&nbsp;</a></span>query()</h2>
+<a id="adf8f0b71a56c6dbc77312a07ce0e0f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8f0b71a56c6dbc77312a07ce0e0f64">&#9670;&nbsp;</a></span>query()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a> query </td>
+          <td class="memname"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a> query </td>
           <td>(</td>
           <td class="paramtype">&quot;U_0&quot;&#160;</td>
           <td class="paramname">, </td>
@@ -194,7 +194,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__ConstantU_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -203,7 +203,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_451f984cbae2157dc09f494ce6fda815.html">Prob</a></li><li class="navelem"><a class="el" href="ERF__InitCustomPertVels__Terrain2DCylinder_8H.html">ERF_InitCustomPertVels_Terrain2DCylinder.H</a></li>
+    <li class="navelem"><a class="el" href="dir_74389ed8173ad57b461b9d623a1f3867.html">Source</a></li><li class="navelem"><a class="el" href="dir_451f984cbae2157dc09f494ce6fda815.html">Prob</a></li><li class="navelem"><a class="el" href="ERF__InitCustomPertVels__ConstantU_8H.html">ERF_InitCustomPertVels_ConstantU.H</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
