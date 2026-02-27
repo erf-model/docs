@@ -1,10 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"namespacederived.html#a3786c6a8399bc2508bc129337c446af1":[1,0,4,10],
-"namespacederived.html#a37ac1508c4001f9f1e38ca507dd15f31":[1,0,4,15],
-"namespacederived.html#a5186c6ea33e82af321f529242a615dc2":[1,0,4,3],
-"namespacederived.html#a7128ad75cf0f6b317ae8689bd7eb1597":[1,0,4,7],
-"namespacederived.html#a7292c8c78a618eb0f6ca6a5356705362":[1,0,4,5],
 "namespacederived.html#a7fb98e12fceaa6f691dfef83db453757":[1,0,4,8],
 "namespacederived.html#a8bc196f7dfb365c426b0b7e720e479e2":[1,0,4,21],
 "namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2":[1,0,4,16],
@@ -249,5 +244,10 @@ var NAVTREEINDEX17 =
 "namespacemodule__mp__morr__two__moment.html#a5c6ecd1baa46c8537d95fd1bbe773fae":[1,0,20,69],
 "namespacemodule__mp__morr__two__moment.html#a5df471b24aa4ccbff0fce2ba1164d60c":[1,0,20,123],
 "namespacemodule__mp__morr__two__moment.html#a5ea1455c2673689f3e9d64100c9a111a":[1,0,20,76],
-"namespacemodule__mp__morr__two__moment.html#a5f5530f74219133cf5392217526c4e97":[1,0,20,23]
+"namespacemodule__mp__morr__two__moment.html#a5f5530f74219133cf5392217526c4e97":[1,0,20,23],
+"namespacemodule__mp__morr__two__moment.html#a62e887887e1067db1d9fe2dcb7edcae5":[1,0,20,34],
+"namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4":[1,0,20,119],
+"namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c":[1,0,20,99],
+"namespacemodule__mp__morr__two__moment.html#a653424210363bb2e25f48c07c4ac1f52":[1,0,20,100],
+"namespacemodule__mp__morr__two__moment.html#a65fef70ad99ccd78c81b09a9f376759c":[1,0,20,77]
 };

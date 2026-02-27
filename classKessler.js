@@ -24,8 +24,6 @@ var classKessler =
     [ "m_do_cond", "classKessler.html#a9768f16e7d0dc1320927d6169fc4cc39", null ],
     [ "m_dzmin", "classKessler.html#a5f19a4b87eda7b68f4a7f4fe3e7cad3f", null ],
     [ "m_fac_cond", "classKessler.html#a74746cef2381fd949a06be46f99a05c7", null ],
-    [ "m_fac_fus", "classKessler.html#acaf08727482ff116185a6dbdf2bd54f9", null ],
-    [ "m_fac_sub", "classKessler.html#a2feda15429da3d8227d75cc3f6da71ba", null ],
     [ "m_geom", "classKessler.html#a48f29ab8e5d1232ee83851fd904e9354", null ],
     [ "m_qmoist_size", "classKessler.html#ae94091e97ccba54c040030c98e52aa7c", null ],
     [ "m_real_width", "classKessler.html#ac4b67b400368a82d55cf1f8bfbccd4e1", null ],
