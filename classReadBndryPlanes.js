@@ -30,7 +30,7 @@ var classReadBndryPlanes =
     [ "m_extent_rad", "classReadBndryPlanes.html#ae341a8d70430128e78f7cac75e0d4e8a", null ],
     [ "m_filename", "classReadBndryPlanes.html#a3a130c25c6b3c327e58d3e4687a051b9", null ],
     [ "m_geom", "classReadBndryPlanes.html#af4c91eeb64f4e49767e97c1e72de06fc", null ],
-    [ "m_in_rad", "classReadBndryPlanes.html#a8269a127a4db1fd93794dcb8062f5fa9", null ],
+    [ "m_in_rad", "classReadBndryPlanes.html#aecc64f578d77217b811dafc64b053680", null ],
     [ "m_in_times", "classReadBndryPlanes.html#adfe9045e42be78e2a735151d969183d7", null ],
     [ "m_in_timesteps", "classReadBndryPlanes.html#a7bfda76cde9aa1b8290577c40a612795", null ],
     [ "m_out_rad", "classReadBndryPlanes.html#acb820b3ebc4c07d210831e6081c47aa9", null ],
@@ -40,5 +40,6 @@ var classReadBndryPlanes =
     [ "m_tn", "classReadBndryPlanes.html#ade779c58aa5ea62cf1e03cbfaf98bb61", null ],
     [ "m_tnp1", "classReadBndryPlanes.html#a4343c3c0761df0f96c58f8d268a43017", null ],
     [ "m_tnp2", "classReadBndryPlanes.html#aca1dcdc531215bfd5a12fb286d064c8c", null ],
+    [ "m_use_real_bcs", "classReadBndryPlanes.html#a342289636522587ccf748acb31924cd2", null ],
     [ "m_var_names", "classReadBndryPlanes.html#aa5f533fb198d42785bfebe5cd8ae7131", null ]
 ];
