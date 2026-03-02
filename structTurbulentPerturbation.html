@@ -793,7 +793,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="505,183,596,210"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,234,587,261"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="680,183,829,210"/>
-<area shape="rect" href="ERF__InitCustomPert__KE_8H.html#a65596f652b761c54be3dda386ab3322f" title=" " alt="" coords="491,339,610,366"/>
+<area shape="rect" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a" title=" " alt="" coords="491,339,610,366"/>
 </map>
 </div>
 
@@ -1360,7 +1360,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                        pert_cell(i,j,k) = rand_number_const * amp_copy;</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    });</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    <a class="code" href="ERF__InitCustomPert__KE_8H.html#a65596f652b761c54be3dda386ab3322f">ParallelForRNG</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keyword">const</span> amrex::RandomEngine&amp; engine) noexcept {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keyword">const</span> amrex::RandomEngine&amp; engine) noexcept {</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rand_double = amrex::Random(engine);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                        pert_cell(i,j,k) = (rand_double*2.0 - 1.0) * amp_copy;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    });</div>
@@ -1369,7 +1369,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            }</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        }</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
-<div class="ttc" id="aERF__InitCustomPert__KE_8H_html_a65596f652b761c54be3dda386ab3322f"><div class="ttname"><a href="ERF__InitCustomPert__KE_8H.html#a65596f652b761c54be3dda386ab3322f">ParallelForRNG</a></div><div class="ttdeci">ParallelForRNG(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { const Real z=z_cc(i, j, k);if(state_pert.nComp() &gt; RhoKE_comp) { state_pert(i, j, k, RhoKE_comp)=r_hse(i, j, k) *KE_0;if(KE_decay_height &gt; 0) { state_pert(i, j, k, RhoKE_comp) *=max(std::pow(1 - min(z/KE_decay_height, 1.0), KE_decay_order), 1e-12);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a0c8a8a4d8bb5da534f71509fa76e220a"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG</a></div><div class="ttdeci">ParallelForRNG(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { const Real *dx=geomdata.CellSize();const Real x=prob_lo[0]+(i+0.5) *dx[0];const Real y=prob_lo[1]+(j+0.5) *dx[1];const Real z=z_cc(i, j, k);const Real xc=0.5 *(prob_lo[0]+prob_hi[0]);const Real yc=0.5 *(prob_lo[1]+prob_hi[1]);const Real zc=0.5 *(prob_lo[2]+prob_hi[2]);const Real r=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc)+(z-zc) *(z-zc));if((z&lt;=pert_ref_height) &amp;&amp;(T_0_Pert_Mag !=0.0)) { Real rand_double=amrex::Random(engine);state_pert(i, j, k, RhoTheta_comp)=(rand_double *2.0 - 1.0) *T_0_Pert_Mag;if(!pert_rhotheta) { state_pert(i, j, k, RhoTheta_comp) *=r_hse(i, j, k);} } state_pert(i, j, k, RhoScalar_comp)=A_0 *exp(-10.*r *r);if(state_pert.nComp() &gt; RhoKE_comp) { state_pert(i, j, k, RhoKE_comp)=r_hse(i, j, k) *KE_0;if(KE_decay_height &gt; 0) { state_pert(i, j, k, RhoKE_comp) *=max(std::pow(1 - min(z/KE_decay_height, 1.0), KE_decay_order), 1e-12);} } })</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102">calc_tpi_update()</a>.</p>
 <div class="dynheader">
@@ -1379,7 +1379,7 @@ Here is the call graph for this function:</div>
 <map name="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" id="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph">
 <area shape="rect" title=" " alt="" coords="5,78,168,119"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="252,5,343,32"/>
-<area shape="rect" href="ERF__InitCustomPert__KE_8H.html#a65596f652b761c54be3dda386ab3322f" title=" " alt="" coords="238,56,357,83"/>
+<area shape="rect" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a" title=" " alt="" coords="238,56,357,83"/>
 <area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="216,107,379,149"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,173,334,200"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="427,5,576,32"/>

@@ -1,7 +1,7 @@
 var ERF__InitCustomPert__KE_8H =
 [
     [ "if", "ERF__InitCustomPert__KE_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3", null ],
-    [ "ParallelForRNG", "ERF__InitCustomPert__KE_8H.html#a65596f652b761c54be3dda386ab3322f", null ],
+    [ "ParallelFor", "ERF__InitCustomPert__KE_8H.html#a47b5c88e4be2725b90476a9689cf8a37", null ],
     [ "pp", "ERF__InitCustomPert__KE_8H.html#a560a8df64f1b30c30d0d100ee051a1fb", null ],
     [ "query", "ERF__InitCustomPert__KE_8H.html#a8aba4fa4aa728799e8bcd3ff115cd4c2", null ],
     [ "query", "ERF__InitCustomPert__KE_8H.html#a9b86580c4cf800b071d6766463b499cc", null ],
