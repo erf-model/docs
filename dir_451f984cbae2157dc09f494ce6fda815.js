@@ -3,6 +3,7 @@ var dir_451f984cbae2157dc09f494ce6fda815 =
     [ "ERF_InitCustomPert.H", "ERF__InitCustomPert_8H.html", "ERF__InitCustomPert_8H" ],
     [ "ERF_InitCustomPert_DensityCurrent.H", "ERF__InitCustomPert__DensityCurrent_8H.html", "ERF__InitCustomPert__DensityCurrent_8H" ],
     [ "ERF_InitCustomPert_IsentropicVortex.H", "ERF__InitCustomPert__IsentropicVortex_8H.html", "ERF__InitCustomPert__IsentropicVortex_8H" ],
+    [ "ERF_InitCustomPert_KE.H", "ERF__InitCustomPert__KE_8H.html", "ERF__InitCustomPert__KE_8H" ],
     [ "ERF_InitCustomPert_ParticleTests.H", "ERF__InitCustomPert__ParticleTests_8H.html", "ERF__InitCustomPert__ParticleTests_8H" ],
     [ "ERF_InitCustomPert_ScalarAdvDiff.H", "ERF__InitCustomPert__ScalarAdvDiff_8H.html", "ERF__InitCustomPert__ScalarAdvDiff_8H" ],
     [ "ERF_InitCustomPert_StokesSecondProblem.H", "ERF__InitCustomPert__StokesSecondProblem_8H.html", "ERF__InitCustomPert__StokesSecondProblem_8H" ],
