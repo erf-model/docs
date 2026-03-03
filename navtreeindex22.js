@@ -1,5 +1,11 @@
 var NAVTREEINDEX22 =
 {
+"structcustom__flux.html#a536802b8ad933875bd4dc17a1a4ca5e7":[2,0,11,6],
+"structcustom__flux.html#aaeed136e0a74e3aac9eca272128a9333":[2,0,11,2],
+"structcustom__flux.html#ae0e2af01151c51f4c335f053a8bb8f17":[2,0,11,5],
+"structcustom__flux.html#afb1432cda6e9f3232c60de7be4f89a68":[2,0,11,4],
+"structdonelan__flux.html":[2,0,18],
+"structdonelan__flux.html#a096731c0afa509937376769871bcaa63":[2,0,18,3],
 "structdonelan__flux.html#a2b903b51927ff9af8f6ca46ef819086a":[2,0,18,0],
 "structdonelan__flux.html#a5c14dc2bc0eb8d53d11d4d15fcb1b7ad":[2,0,18,4],
 "structdonelan__flux.html#aadfb12bad6b3e26d4758e6a463dcb177":[2,0,18,2],

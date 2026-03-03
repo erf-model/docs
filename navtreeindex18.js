@@ -1,5 +1,11 @@
 var NAVTREEINDEX18 =
 {
+"namespacemodule__model__constants.html#ad4316e3c210e9c4eb4f6886870cf167b":[1,0,19,44],
+"namespacemodule__model__constants.html#ad57f37f5272b698308adb84483a70803":[1,0,19,73],
+"namespacemodule__model__constants.html#ad91cf5134671388384cd1d2b3139b7a4":[1,0,19,13],
+"namespacemodule__model__constants.html#ada1cc765e37394a1d71de909c99ef6bc":[1,0,19,65],
+"namespacemodule__model__constants.html#ade6ca3d84b289949b470e6ced83e16a6":[1,0,19,58],
+"namespacemodule__model__constants.html#ae2fd69151ff38d43f7d25e577d55ee6d":[1,0,19,52],
 "namespacemodule__model__constants.html#ae70c0c499103eb8402b7877cb4497185":[1,0,19,3],
 "namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247":[1,0,19,5],
 "namespacemodule__model__constants.html#ae781b8adc0c255fc7085a1f26cd59e3f":[1,0,19,22],
@@ -243,11 +249,5 @@ var NAVTREEINDEX18 =
 "structDampingChoice.html#a816fcd32a74263a78093b4f590c845ee":[2,0,12,3],
 "structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e":[2,0,12,10],
 "structDampingChoice.html#aa8516fdb1b120da8b8622dec44ae2889":[2,0,12,8],
-"structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3":[2,0,12,11],
-"structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7":[2,0,12,13],
-"structDampingChoice.html#ad7d14bb652aef5e4c5b6487fc26da60e":[2,0,12,0],
-"structDiffChoice.html":[2,0,13],
-"structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8":[2,0,13,9],
-"structDiffChoice.html#a536538ab3b67d379fe0017806d0fabc1":[2,0,13,7],
-"structDiffChoice.html#a553bdd290d667cca9699ed37f86f7e22":[2,0,13,10]
+"structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3":[2,0,12,11]
 };
