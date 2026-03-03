@@ -46,7 +46,6 @@ var structSolverChoice =
     [ "gradp_type", "structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf", null ],
     [ "gravity", "structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b", null ],
     [ "grid_stretching_ratio", "structSolverChoice.html#a63b6fffe930de9eb25f92c2bafb00c00", null ],
-    [ "has_lat_lon", "structSolverChoice.html#ae2c963893d0c53465ac84c0bd8998a38", null ],
     [ "have_geo_wind_profile", "structSolverChoice.html#a65faffc1ea490b3934a9df768cfa26f1", null ],
     [ "hindcast_boundary_data_dir", "structSolverChoice.html#afed5fdf4ab009a886b0586362b9ca1de", null ],
     [ "hindcast_data_interval_in_hrs", "structSolverChoice.html#abe08b1fc870ac0ab2ccd0a1122e536e0", null ],
