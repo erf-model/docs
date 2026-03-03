@@ -367,14 +367,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classNullWindFarm.html#a6c0842d97c9d5d68030987bc76b61101">NullWindFarm</a>.</p>
 <div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(W_old.nComp() &gt; 0);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(mf_SMark.nComp() &gt; 0);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(time &gt; -1.0);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(W_old.nComp() &gt; 0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(mf_SMark.nComp() &gt; 0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(time &gt; -1.0);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classFitch.html#aa56821341be1cf4d01558e297993c0f2">source_terms_cellcentered</a>(geom, cons_in, mf_vars_fitch, U_old, V_old, W_old, mf_Nturb);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classFitch.html#a1a2db68abb0185de73bd870884f0b019">update</a>(dt_advance, cons_in, U_old, V_old, mf_vars_fitch);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classFitch.html#a1edfa2cd3db9e6aa95130f24307ac623">compute_power_output</a>(cons_in, U_old, V_old, mf_SMark, mf_Nturb, time);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aclassFitch_html_a1a2db68abb0185de73bd870884f0b019"><div class="ttname"><a href="classFitch.html#a1a2db68abb0185de73bd870884f0b019">Fitch::update</a></div><div class="ttdeci">void update(const amrex::Real &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_fitch)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceFitch.cpp:68</div></div>
 <div class="ttc" id="aclassFitch_html_a1edfa2cd3db9e6aa95130f24307ac623"><div class="ttname"><a href="classFitch.html#a1edfa2cd3db9e6aa95130f24307ac623">Fitch::compute_power_output</a></div><div class="ttdeci">void compute_power_output(const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_SMark, const amrex::MultiFab &amp;mf_Nturb, const amrex::Real &amp;time)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceFitch.cpp:102</div></div>
 <div class="ttc" id="aclassFitch_html_aa56821341be1cf4d01558e297993c0f2"><div class="ttname"><a href="classFitch.html#aa56821341be1cf4d01558e297993c0f2">Fitch::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars_ewp, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceFitch.cpp:163</div></div>
@@ -384,7 +384,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classFitch_aa0af4287104d385bfcd5dc0c8fb5c68a_cgraph.png" border="0" usemap="#aclassFitch_aa0af4287104d385bfcd5dc0c8fb5c68a_cgraph" alt=""/></div>
 <map name="aclassFitch_aa0af4287104d385bfcd5dc0c8fb5c68a_cgraph" id="aclassFitch_aa0af4287104d385bfcd5dc0c8fb5c68a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,121,32"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="169,5,352,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="169,5,352,32"/>
 </map>
 </div>
 

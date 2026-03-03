@@ -205,8 +205,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
@@ -229,7 +229,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a91c184ac7e5889fe785aa846112ce2e6">ERF::sum_derived_quantities()</a>.</p>
@@ -239,7 +239,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_a9c2ed59aaacbee455c81838aef86035d_cgraph.png" border="0" usemap="#anamespacederived_a9c2ed59aaacbee455c81838aef86035d_cgraph" alt=""/></div>
 <map name="anamespacederived_a9c2ed59aaacbee455c81838aef86035d_cgraph" id="anamespacederived_a9c2ed59aaacbee455c81838aef86035d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,211,57"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="259,5,441,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="259,5,441,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="305,56,395,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="489,56,639,83"/>
 </map>
@@ -494,8 +494,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
@@ -516,7 +516,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_a5186c6ea33e82af321f529242a615dc2_cgraph.png" border="0" usemap="#anamespacederived_a5186c6ea33e82af321f529242a615dc2_cgraph" alt=""/></div>
 <map name="anamespacederived_a5186c6ea33e82af321f529242a615dc2_cgraph" id="anamespacederived_a5186c6ea33e82af321f529242a615dc2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,180,57"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="228,5,411,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="228,5,411,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="274,56,365,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="459,56,608,83"/>
 </map>
@@ -602,8 +602,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;{</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
@@ -624,7 +624,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_a9118d89c9fb844952c2cb55661c15a3e_cgraph.png" border="0" usemap="#anamespacederived_a9118d89c9fb844952c2cb55661c15a3e_cgraph" alt=""/></div>
 <map name="anamespacederived_a9118d89c9fb844952c2cb55661c15a3e_cgraph" id="anamespacederived_a9118d89c9fb844952c2cb55661c15a3e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,195,57"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="243,5,425,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="243,5,425,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="289,56,379,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="473,56,623,83"/>
 </map>
@@ -786,7 +786,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    {</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0.);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0.);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        tfab(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>,rhotheta,<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    });</div>
@@ -805,7 +805,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_add1791d7423c133ba6e7ab55975cf34f_cgraph.png" border="0" usemap="#anamespacederived_add1791d7423c133ba6e7ab55975cf34f_cgraph" alt=""/></div>
 <map name="anamespacederived_add1791d7423c133ba6e7ab55975cf34f_cgraph" id="anamespacederived_add1791d7423c133ba6e7ab55975cf34f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,201,83"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="249,5,432,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="249,5,432,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="269,56,413,83"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="295,107,386,133"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="480,107,629,133"/>
@@ -1420,7 +1420,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>      = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0.);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0.);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        cfab(i,j,k) = std::sqrt(<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(rhotheta,<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daf099273d19f4b8cdca199c5177231e35">qv</a>) / <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    });</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
@@ -1434,7 +1434,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_afe57e0f13e2e24c73d0ed373a9cd0d09_cgraph.png" border="0" usemap="#anamespacederived_afe57e0f13e2e24c73d0ed373a9cd0d09_cgraph" alt=""/></div>
 <map name="anamespacederived_afe57e0f13e2e24c73d0ed373a9cd0d09_cgraph" id="anamespacederived_afe57e0f13e2e24c73d0ed373a9cd0d09_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,208,83"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="256,5,439,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="256,5,439,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="292,56,403,83"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="302,107,393,133"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="487,107,636,133"/>
@@ -1600,7 +1600,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0.);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0.);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        tfab(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>,rhotheta);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    });</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
@@ -1612,7 +1612,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_a8d96f91847cec51636c122ab27a5f8a2_cgraph.png" border="0" usemap="#anamespacederived_a8d96f91847cec51636c122ab27a5f8a2_cgraph" alt=""/></div>
 <map name="anamespacederived_a8d96f91847cec51636c122ab27a5f8a2_cgraph" id="anamespacederived_a8d96f91847cec51636c122ab27a5f8a2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,164,83"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="212,5,395,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="212,5,395,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="231,56,375,83"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="258,107,349,133"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="443,107,592,133"/>
@@ -1869,8 +1869,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
@@ -1892,7 +1892,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_a0a37dd4fa4a044e34891e6222d06654c_cgraph.png" border="0" usemap="#anamespacederived_a0a37dd4fa4a044e34891e6222d06654c_cgraph" alt=""/></div>
 <map name="anamespacederived_a0a37dd4fa4a044e34891e6222d06654c_cgraph" id="anamespacederived_a0a37dd4fa4a044e34891e6222d06654c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,164,57"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="212,5,395,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="212,5,395,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="258,56,349,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="443,56,592,83"/>
 </map>
@@ -1977,8 +1977,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity y-component</span></div>
@@ -2000,7 +2000,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_a2a85aedf7c75ca416dbb931559c4b21e_cgraph.png" border="0" usemap="#anamespacederived_a2a85aedf7c75ca416dbb931559c4b21e_cgraph" alt=""/></div>
 <map name="anamespacederived_a2a85aedf7c75ca416dbb931559c4b21e_cgraph" id="anamespacederived_a2a85aedf7c75ca416dbb931559c4b21e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,164,57"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="212,5,395,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="212,5,395,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="258,56,349,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="443,56,592,83"/>
 </map>
@@ -2085,8 +2085,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity z-component</span></div>
@@ -2108,7 +2108,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="namespacederived_a8bc196f7dfb365c426b0b7e720e479e2_cgraph.png" border="0" usemap="#anamespacederived_a8bc196f7dfb365c426b0b7e720e479e2_cgraph" alt=""/></div>
 <map name="anamespacederived_a8bc196f7dfb365c426b0b7e720e479e2_cgraph" id="anamespacederived_a8bc196f7dfb365c426b0b7e720e479e2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,164,57"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="212,5,395,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="212,5,395,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="258,56,349,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="443,56,592,83"/>
 </map>

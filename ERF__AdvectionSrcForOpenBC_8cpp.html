@@ -453,7 +453,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for x momentum tangential to BC (2nd order) </p>
 <div class="fragment"><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;{</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dir!=2 &amp;&amp; icomp&gt;0);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dir!=2 &amp;&amp; icomp&gt;0);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">bool</span> xopen = (dir==0);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">bool</span> yopen = (dir==1);</div>
@@ -492,7 +492,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    });</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 <div class="ttc" id="aERF__AdvectionSrcForOpenBC_8cpp_html_ac6e7a792c85a42fe5c0679a2b1f763ec"><div class="ttname"><a href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec">AdvectionSrcForOpenBC_Tangent</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE Real AdvectionSrcForOpenBC_Tangent(const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;nprim, const int &amp;dir, const Array4&lt; const Real &gt; &amp;prim_tang_arr, const Array4&lt; const Real &gt; &amp;mom_norm_arr, const Real &amp;dxInv, const bool do_lo)</div><div class="ttdef"><b>Definition:</b> ERF_AdvectionSrcForOpenBC.cpp:236</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -500,7 +500,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__AdvectionSrcForOpenBC_8cpp_af626d3a8c7d93d081c268b6ef3368e20_cgraph" id="aERF__AdvectionSrcForOpenBC_8cpp_af626d3a8c7d93d081c268b6ef3368e20_cgraph">
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="232,71,415,98"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="278,122,369,149"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="463,122,612,149"/>
 </map>
@@ -595,7 +595,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for x momentum tangential to BC (2nd order) </p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dir==1);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dir==1);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
@@ -626,7 +626,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__AdvectionSrcForOpenBC_8cpp_a426d47e0a43e0ba9ec9ea4791165c14e_cgraph" id="aERF__AdvectionSrcForOpenBC_8cpp_a426d47e0a43e0ba9ec9ea4791165c14e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="232,71,415,98"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="278,122,369,149"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="463,122,612,149"/>
 </map>
@@ -721,7 +721,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for x momentum tangential to BC (2nd order) </p>
 <div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dir==0);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dir==0);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
@@ -752,7 +752,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__AdvectionSrcForOpenBC_8cpp_a7962977abbf346525d7b3481c8a6f25e_cgraph" id="aERF__AdvectionSrcForOpenBC_8cpp_a7962977abbf346525d7b3481c8a6f25e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="232,71,415,98"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="278,122,369,149"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="463,122,612,149"/>
 </map>
@@ -859,7 +859,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Compute advection tendencies for x momentum tangential to BC (2nd order) </p>
 <div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dir!=2);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(dir!=2);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">bool</span> xopen = (dir==0);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">bool</span> yopen = (dir==1);</div>
@@ -908,7 +908,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__AdvectionSrcForOpenBC_8cpp_a77ce5c5e497f070833cb915ffee7eea2_cgraph" id="aERF__AdvectionSrcForOpenBC_8cpp_a77ce5c5e497f070833cb915ffee7eea2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="232,71,415,98"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="278,122,369,149"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="463,122,612,149"/>
 </map>

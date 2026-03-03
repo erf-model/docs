@@ -171,7 +171,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">int</span> n_line_lo  = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_lo&quot;</span>) / AMREX_SPACEDIM;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">int</span> n_line_hi  = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_hi&quot;</span>) / AMREX_SPACEDIM;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> n_line_dir = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_dir&quot;</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( (n_line_lo==n_line_hi ) &amp;&amp;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>( (n_line_lo==n_line_hi ) &amp;&amp;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                             (n_line_lo==n_line_dir) );</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="comment">// Parse the data</span></div>
@@ -214,7 +214,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904">m_name</a>.resize(n_line_lo);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">int</span> n_names = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_name&quot;</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (n_names &gt; 0) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( n_names==n_line_lo );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>( n_names==n_line_lo );</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_name&quot;</span>,<a class="code" href="structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904">m_name</a>,0,n_names);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iline(0); iline&lt;n_line_lo; ++iline) {</div>
@@ -297,7 +297,7 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Container_8H_html_a1f8554e7b211b0acfc202e8a600e7d67"><div class="ttname"><a href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a></div><div class="ttdeci">bool containerHasElement(const V &amp;iterable, const T &amp;query)</div><div class="ttdef"><b>Definition:</b> ERF_Container.H:5</div></div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a48548e9e25e7efba2bd06c7b4f70611a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a48548e9e25e7efba2bd06c7b4f70611a">out</a></div><div class="ttdeci">struct @19 out</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="astructLineSampler_html_a14f0333f44b80166b63e09dc1526cb6d"><div class="ttname"><a href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">LineSampler::m_varnames</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_varnames</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:476</div></div>
 <div class="ttc" id="astructLineSampler_html_a1fa54ddedf5258bce17bb029e4aaf50e"><div class="ttname"><a href="structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e">LineSampler::m_ls_mf</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; m_ls_mf</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:472</div></div>
 <div class="ttc" id="astructLineSampler_html_a56da044954a236b411c1c52e42338883"><div class="ttname"><a href="structLineSampler.html#a56da044954a236b411c1c52e42338883">LineSampler::m_datastream</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; m_datastream</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:477</div></div>
@@ -312,7 +312,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structLineSampler_ac889ff22f183b545b4360af78068b503_cgraph.png" border="0" usemap="#astructLineSampler_ac889ff22f183b545b4360af78068b503_cgraph" alt=""/></div>
 <map name="astructLineSampler_ac889ff22f183b545b4360af78068b503_cgraph" id="astructLineSampler_ac889ff22f183b545b4360af78068b503_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,197,83"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="245,5,428,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="245,5,428,32"/>
 <area shape="rect" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67" title=" " alt="" coords="255,56,418,83"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="317,107,356,133"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#abcd18a7a78cd5a9139095b3f811e3bd5" title=" " alt="" coords="476,56,535,83"/>
@@ -443,7 +443,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>, <span class="stringliteral">&quot;qv&quot;</span>)) {</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                    <span class="comment">// if qv is requested, assume that we have moisture</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <span class="keywordflow">if</span> (qv_comp &gt;= 0) <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(qv_comp == mf_comp);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    <span class="keywordflow">if</span> (qv_comp &gt;= 0) <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(qv_comp == mf_comp);</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    qv_comp = mf_comp;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
@@ -539,7 +539,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structLineSampler_a248c2a32586be9ae9ce308c2e91a0f57_cgraph.png" border="0" usemap="#astructLineSampler_a248c2a32586be9ae9ce308c2e91a0f57_cgraph" alt=""/></div>
 <map name="astructLineSampler_a248c2a32586be9ae9ce308c2e91a0f57_cgraph" id="astructLineSampler_a248c2a32586be9ae9ce308c2e91a0f57_cgraph">
 <area shape="rect" title=" " alt="" coords="5,81,228,108"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="276,5,459,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="276,5,459,32"/>
 <area shape="rect" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67" title=" " alt="" coords="286,56,449,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="312,107,423,133"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="322,157,413,184"/>

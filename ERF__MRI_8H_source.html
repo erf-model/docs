@@ -275,7 +275,7 @@ $(document).ready(function(){initNavTree('ERF__MRI_8H_source.html',''); initResi
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> substep_ratio = <a class="code" href="classMRISplitIntegrator.html#aba63019a6ac3ea9135772dcd91f49c86">get_slow_fast_timestep_ratio</a>();</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f">no_substepping</a>) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(substep_ratio &gt; 1 &amp;&amp; substep_ratio % 2 == 0);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(substep_ratio &gt; 1 &amp;&amp; substep_ratio % 2 == 0);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// Assume before advance() that S_old is valid data at the current time (&quot;time&quot; argument)</span></div>
@@ -426,7 +426,7 @@ $(document).ready(function(){initNavTree('ERF__MRI_8H_source.html',''); initResi
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;};</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TI__fast__headers_8H_html"><div class="ttname"><a href="ERF__TI__fast__headers_8H.html">ERF_TI_fast_headers.H</a></div></div>
 <div class="ttc" id="aERF__TI__slow__headers_8H_html"><div class="ttname"><a href="ERF__TI__slow__headers_8H.html">ERF_TI_slow_headers.H</a></div></div>

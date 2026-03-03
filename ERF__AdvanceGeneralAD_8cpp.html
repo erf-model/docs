@@ -283,8 +283,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        ftip = B*(rtip-rad)/(2.0*rad*std::sin(psi)+1e-10);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        fhub = B*(rad-rhub)/(2.0*rad*std::sin(psi)+1e-10);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::fabs(std::exp(-fhub))&lt;=1.0);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::fabs(std::exp(-ftip))&lt;=1.0);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(std::fabs(std::exp(-fhub))&lt;=1.0);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(std::fabs(std::exp(-ftip))&lt;=1.0);</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        F = 2.0/<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*(std::acos(std::exp(-ftip)) + std::acos(std::exp(-fhub)) );</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
@@ -327,7 +327,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">//exit(0);</span></div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:12</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
@@ -339,7 +339,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__AdvanceGeneralAD_8cpp_afffd9801c692fcb424381db8ca2dc8f2_cgraph.png" border="0" usemap="#aERF__AdvanceGeneralAD_8cpp_afffd9801c692fcb424381db8ca2dc8f2_cgraph" alt=""/></div>
 <map name="aERF__AdvanceGeneralAD_8cpp_afffd9801c692fcb424381db8ca2dc8f2_cgraph" id="aERF__AdvanceGeneralAD_8cpp_afffd9801c692fcb424381db8ca2dc8f2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,180,65"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="228,5,411,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="228,5,411,32"/>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="261,56,377,83"/>
 </map>
 </div>

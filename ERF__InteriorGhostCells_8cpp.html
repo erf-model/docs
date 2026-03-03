@@ -568,7 +568,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classERFFillPatcher.html#aa1dd4ccdd7812057d8ee529015e3750d" title=" " alt="" coords="217,224,439,251"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="283,275,373,301"/>
 <area shape="rect" href="classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219" title=" " alt="" coords="491,56,632,83"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="687,5,870,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="687,5,870,32"/>
 <area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="686,56,871,83"/>
 <area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="684,107,873,133"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="487,275,636,301"/>
@@ -743,7 +743,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>     = 0.0;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> oma   = 1.0 - <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">/*</span></div>
@@ -1083,8 +1083,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a8018075a8e3cd8009e0b612e414dbd30"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a></div><div class="ttdeci">amrex::Real alpha</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:8</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__InteriorGhostCells_8cpp_html_a5e472a026f7835dd2b1b5425fe1c8130"><div class="ttname"><a href="ERF__InteriorGhostCells_8cpp.html#a5e472a026f7835dd2b1b5425fe1c8130">realbdy_interior_bxs_xy</a></div><div class="ttdeci">void realbdy_interior_bxs_xy(const Box &amp;bx, const Box &amp;domain, const int &amp;width, Box &amp;bx_xlo, Box &amp;bx_xhi, Box &amp;bx_ylo, Box &amp;bx_yhi, const IntVect &amp;ng_vect, const bool get_int_ng)</div><div class="ttdef"><b>Definition:</b> ERF_InteriorGhostCells.cpp:23</div></div>
 <div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:28</div></div>
 <div class="ttc" id="aERF__SetupVertDiff_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_SetupVertDiff.H:2</div></div>
@@ -1106,7 +1106,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__InteriorGhostCells_8cpp_aa05ac4b68c0d94edbf93ae35d39ed236_cgraph.png" border="0" usemap="#aERF__InteriorGhostCells_8cpp_aa05ac4b68c0d94edbf93ae35d39ed236_cgraph" alt=""/></div>
 <map name="aERF__InteriorGhostCells_8cpp_aa05ac4b68c0d94edbf93ae35d39ed236_cgraph" id="aERF__InteriorGhostCells_8cpp_aa05ac4b68c0d94edbf93ae35d39ed236_cgraph">
 <area shape="rect" title=" " alt="" coords="5,77,195,118"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="499,72,681,99"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="499,72,681,99"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="317,33,376,60"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="545,148,635,175"/>
 <area shape="rect" href="ERF__Utils_8H.html#a819326b9c0fbd5fdb9ebcca753e59ae5" title=" " alt="" coords="243,185,451,212"/>
@@ -1201,7 +1201,7 @@ Here is the call graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(bx.ixType() == domain.ixType());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(bx.ixType() == domain.ixType());</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">//==================================================================</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// NOTE: X-face boxes take ownership of the overlapping region.</span></div>
@@ -1251,7 +1251,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__InteriorGhostCells_8cpp_a5e472a026f7835dd2b1b5425fe1c8130_cgraph.png" border="0" usemap="#aERF__InteriorGhostCells_8cpp_a5e472a026f7835dd2b1b5425fe1c8130_cgraph" alt=""/></div>
 <map name="aERF__InteriorGhostCells_8cpp_a5e472a026f7835dd2b1b5425fe1c8130_cgraph" id="aERF__InteriorGhostCells_8cpp_a5e472a026f7835dd2b1b5425fe1c8130_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,184,32"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,5,415,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="232,5,415,32"/>
 </map>
 </div>
 <div class="dynheader">

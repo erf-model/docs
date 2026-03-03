@@ -1023,8 +1023,8 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// PBL height if we need to calculate wstar for the Beljaars correction</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">// TODO: can/should we apply this in LES mode?</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_star_arr = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3">w_star</a>[lev].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> pblh_arr   = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> w_star_arr = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3">w_star</a>[lev].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> pblh_arr   = (<a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>) ? <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>()-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="comment">// Wave properties if they exist</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> Hwave_arr = (<a class="code" href="classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad">m_Hwave_lev</a>[lev]) ? <a class="code" href="classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad">m_Hwave_lev</a>[lev]-&gt;array(mfi) : Array4&lt;Real&gt; {};</div>
@@ -1054,9 +1054,9 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        });</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPertVels__CouettePoiseuille_8H_html_a15979e857437874d84fd52db041001af"><div class="ttname"><a href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a></div><div class="ttdeci">pp_for_pert_vels get(&quot;prob_type&quot;, prob_type)</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__MovingTerrain_8H_html_aa4e0dee689ddc7dd5e6396443f03e9f4"><div class="ttname"><a href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a></div><div class="ttdeci">pp get(&quot;wavelength&quot;, wavelength)</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a815d3e6377a2356c9859807874066d37"><div class="ttname"><a href="classMOSTAverage.html#a815d3e6377a2356c9859807874066d37">MOSTAverage::get_zref</a></div><div class="ttdeci">amrex::MultiFab * get_zref(const int &amp;lev) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:105</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ac08baeafe98b80401526bfe20562aa5d"><div class="ttname"><a href="classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d">MOSTAverage::get_average</a></div><div class="ttdeci">const amrex::MultiFab * get_average(const int &amp;lev, const int &amp;comp) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:102</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a0f71ec0b683a3a9fa7530b070fa37aa2"><div class="ttname"><a href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">SurfaceLayer::m_lmask_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::iMultiFab * &gt; &gt; m_lmask_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:712</div></div>
@@ -1078,7 +1078,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph" id="aclassSurfaceLayer_a99d0e58548e1de65d32f8a0d14836216_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,177,65"/>
-<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af" title=" " alt="" coords="249,5,292,32"/>
+<area shape="rect" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4" title=" " alt="" coords="249,5,292,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="225,56,316,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="364,56,513,83"/>
 </map>
@@ -1180,7 +1180,7 @@ template&lt;typename PBLHeightEstimator &gt; </div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;{</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    est.compute_pblh(<a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],z_phys_cc, <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(),</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    est.compute_pblh(<a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],z_phys_cc, <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(),</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                     vars[lev][<a class="code" href="namespaceVars.html#a3e5e550795a0b745a4e43177e81f8c57a47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">m_lmask_lev</a>[lev][0],</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                     moisture_indices);</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;}</div>
@@ -1191,7 +1191,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph" id="aclassSurfaceLayer_a708f91183578ca06644573cbcbc3bcc2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,212,32"/>
-<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af" title=" " alt="" coords="260,5,303,32"/>
+<area shape="rect" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4" title=" " alt="" coords="260,5,303,32"/>
 </map>
 </div>
 
@@ -1752,7 +1752,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        n_time_lo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>( elapsed_time_since_start_low /  dT);</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> = (elapsed_time_since_start_low - n_time_lo * dT) / dT;</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        n_time_hi = n_time_lo + 1;</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
@@ -1763,13 +1763,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>     = 0.0;</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        }</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( (n_time_lo &gt;= 0) &amp;&amp; (n_time_hi &lt; <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size()));</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>( (n_time_lo &gt;= 0) &amp;&amp; (n_time_hi &lt; <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size()));</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        n_time_lo = 0;</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;        n_time_hi = 0;</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>     = 1.0;</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    }</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>( <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &gt;= 0. &amp;&amp; <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a> &lt;= 1.0);</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160; </div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> oma   = 1.0 - <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>;</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
@@ -1823,8 +1823,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    }</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <a class="code" href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">t_surf</a>[lev]-&gt;FillBoundary(<a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].periodicity());</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a8018075a8e3cd8009e0b612e414dbd30"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a></div><div class="ttdeci">amrex::Real alpha</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:8</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a7faf9946493893cfdebea2ab7fe4caee"><div class="ttname"><a href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">SurfaceLayer::m_sst_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_sst_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:710</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ab789868247235aeb66757e34685008df"><div class="ttname"><a href="classSurfaceLayer.html#ab789868247235aeb66757e34685008df">SurfaceLayer::m_tsk_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_tsk_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:711</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -1833,7 +1833,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph.png" border="0" usemap="#aclassSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph" id="aclassSurfaceLayer_aabacea8c1fa769ca8f42c3adf448c015_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,184,65"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,5,415,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="232,5,415,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="278,56,369,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="463,56,612,83"/>
 </map>
@@ -2732,7 +2732,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      <span class="comment">// Do we have a time-varying surface roughness that needs to be saved?</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      <span class="keywordflow">if</span> (lev == 0) {</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;          <span class="keyword">const</span> <span class="keywordtype">int</span> nghost = 0; <span class="comment">// ghost cells not included</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          <span class="keywordtype">int</span> lmask_min = <a class="code" href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424">lmask_min_reduce</a>(*lmask_lev[0].<a class="code" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af">get</a>(), nghost);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          <span class="keywordtype">int</span> lmask_min = <a class="code" href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424">lmask_min_reduce</a>(*lmask_lev[0].<a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a>(), nghost);</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          amrex::ParallelDescriptor::ReduceIntMin(lmask_min);</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;          <a class="code" href="classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c">m_var_z0</a> = (lmask_min &lt; 1) &amp; (<a class="code" href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">rough_type_sea</a> != <a class="code" href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a8d6b5cada83510220f59e00ce86d4d92">RoughCalcType::CONSTANT</a>);</div>
@@ -2817,7 +2817,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;           (<a class="code" href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">flux_type</a> == <a class="code" href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a9faf4e337734315fde20af1922cc6f9d">FluxCalcType::ROTATE</a>)) {</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;          <span class="keywordtype">int</span> count = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>);</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;          <span class="keywordflow">if</span> (count &gt; 1) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;              <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(count &gt;= lev+1);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;              <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(count &gt;= lev+1);</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;              <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.roughness_file_name&quot;</span>, fname, lev);</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;              read_z0 = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count == 1) {</div>
@@ -2902,7 +2902,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;              amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sea: TSK)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;          } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;              amrex::Print() &lt;&lt; <span class="stringliteral">&quot;sea: SST)&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;              <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev][0]);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;              <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev][0]);</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;          }</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;      }</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;  }</div>
@@ -2918,8 +2918,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph.png" border="0" usemap="#aclassSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph" id="aclassSurfaceLayer_ac6a4fad547654feecab3a69e37309f50_cgraph">
 <area shape="rect" title=" " alt="" coords="5,218,179,260"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="779,94,962,120"/>
-<area shape="rect" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a15979e857437874d84fd52db041001af" title=" " alt="" coords="332,331,375,358"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="779,94,962,120"/>
+<area shape="rect" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4" title=" " alt="" coords="332,331,375,358"/>
 <area shape="rect" href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424" title=" " alt="" coords="276,382,431,424"/>
 <area shape="rect" href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db" title=" " alt="" coords="227,265,480,306"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="851,224,890,251"/>
@@ -2982,8 +2982,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            }</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;            file.close();</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160; </div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        }</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160; </div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        <span class="comment">// Broadcast the whole domain to every rank</span></div>
@@ -3058,7 +3058,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            });</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;        } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev &gt; 0);</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(lev &gt; 0);</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160; </div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;        Print()&lt;&lt;<span class="stringliteral">&quot;Interpolating MOST roughness at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160; </div>
@@ -3097,7 +3097,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph.png" border="0" usemap="#aclassSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph" id="aclassSurfaceLayer_af866fe6c505ef4e5a551486d9aa3941b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,156,65"/>
-<area shape="rect" href="ERF__InitCustomPert__ParticleTests_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="204,5,387,32"/>
+<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="204,5,387,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="250,56,341,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="435,56,584,83"/>
 </map>
