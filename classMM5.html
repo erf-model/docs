@@ -339,7 +339,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classMM5.html#a109a5f7a252a6ab6c8e5373ca68c32fb" title=" " alt="" coords="172,56,335,83"/>
 <area shape="rect" href="classMM5.html#a9fc8c9cf8b165b28583be7bb7e8ac7c3" title=" " alt="" coords="177,107,329,133"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="383,56,473,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="521,56,671,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="521,31,671,57"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="552,81,640,108"/>
 </map>
 </div>
 
@@ -389,9 +390,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMM5_a44d3fcf82f4f149b6ba3ccfe9b896849_cgraph.png" border="0" usemap="#aclassMM5_a44d3fcf82f4f149b6ba3ccfe9b896849_cgraph" alt=""/></div>
 <map name="aclassMM5_a44d3fcf82f4f149b6ba3ccfe9b896849_cgraph" id="aclassMM5_a44d3fcf82f4f149b6ba3ccfe9b896849_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,156,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="204,5,295,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,156,57"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="204,31,295,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="343,5,492,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="373,56,461,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -422,7 +424,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Expose for GPU copy</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = <a class="code" href="classMM5.html#a5e32c57a0a88abb64a9d2f9ff3c1a19a">khi_lsm</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = <a class="code" href="classMM5.html#a5e32c57a0a88abb64a9d2f9ff3c1a19a">khi_lsm</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Dsoil = <a class="code" href="classMM5.html#a273c04f6eac3e48325dfce1e34e58df4">m_d_soil</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = <a class="code" href="classMM5.html#a5bb965e19ba475c78c8c9c8528fbf871">m_lsm_geom</a>.InvCellSize(2);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
@@ -430,7 +432,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keyword">auto</span> box3d = mfi.tilebox();</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// Do not overwrite the flux at the top (comes from MOST BC)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (box3d.bigEnd(2) == <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) box3d.setBig(2,<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (box3d.bigEnd(2) == <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) box3d.setBig(2,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">auto</span> theta_flux  = <a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
@@ -441,7 +443,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        });</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__ParticleTests_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ParticleTests.H:11</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:19</div></div>
 <div class="ttc" id="aclassMM5_html_a273c04f6eac3e48325dfce1e34e58df4"><div class="ttname"><a href="classMM5.html#a273c04f6eac3e48325dfce1e34e58df4">MM5::m_d_soil</a></div><div class="ttdeci">amrex::Real m_d_soil</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:161</div></div>
 <div class="ttc" id="aclassMM5_html_a5e32c57a0a88abb64a9d2f9ff3c1a19a"><div class="ttname"><a href="classMM5.html#a5e32c57a0a88abb64a9d2f9ff3c1a19a">MM5::khi_lsm</a></div><div class="ttdeci">int khi_lsm</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:130</div></div>
 </div><!-- fragment -->
@@ -451,9 +453,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMM5_a109a5f7a252a6ab6c8e5373ca68c32fb_cgraph.png" border="0" usemap="#aclassMM5_a109a5f7a252a6ab6c8e5373ca68c32fb_cgraph" alt=""/></div>
 <map name="aclassMM5_a109a5f7a252a6ab6c8e5373ca68c32fb_cgraph" id="aclassMM5_a109a5f7a252a6ab6c8e5373ca68c32fb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,168,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="216,5,307,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,168,57"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="216,31,307,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="355,5,504,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="385,56,473,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -484,16 +487,16 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Expose for GPU copy</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = <a class="code" href="classMM5.html#a5e32c57a0a88abb64a9d2f9ff3c1a19a">khi_lsm</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = <a class="code" href="classMM5.html#a5e32c57a0a88abb64a9d2f9ff3c1a19a">khi_lsm</a>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>])); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> box2d = mfi.tilebox(); box2d.makeSlab(2,<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">auto</span> box2d = mfi.tilebox(); box2d.makeSlab(2,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>( box2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> )</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            theta_array(i,j,<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) = 1.5*theta_array(i,j,<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) - 0.5*theta_array(i,j,<a class="code" href="ERF__InitCustomPert__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            theta_array(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) = 1.5*theta_array(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) - 0.5*theta_array(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        });</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
@@ -504,9 +507,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMM5_a9fc8c9cf8b165b28583be7bb7e8ac7c3_cgraph.png" border="0" usemap="#aclassMM5_a9fc8c9cf8b165b28583be7bb7e8ac7c3_cgraph" alt=""/></div>
 <map name="aclassMM5_a9fc8c9cf8b165b28583be7bb7e8ac7c3_cgraph" id="aclassMM5_a9fc8c9cf8b165b28583be7bb7e8ac7c3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,157,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="205,5,296,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,157,57"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="205,31,296,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="344,5,493,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="375,56,463,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -690,17 +694,17 @@ Here is the caller graph for this function:</div>
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a23e0e00071c6220b8d1495cac4073ce3">NullSurf</a>.</p>
 <div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classMM5.html#a44610d042a53d114892687d87c9e7f10">LsmVarMap</a>[varIdx];</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(lsmIdx &lt; MM5::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lsmIdx &lt; MM5::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMM5.html#a1efdd2eea7c6fdc9631dadf56a7da1a2">lsm_fab_vars</a>[lsmIdx].get();</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMM5_a50c02933780293bdb6dfea8d88160947_cgraph.png" border="0" usemap="#aclassMM5_a50c02933780293bdb6dfea8d88160947_cgraph" alt=""/></div>
 <map name="aclassMM5_a50c02933780293bdb6dfea8d88160947_cgraph" id="aclassMM5_a50c02933780293bdb6dfea8d88160947_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,157,32"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="205,5,388,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="205,5,388,32"/>
 </map>
 </div>
 
@@ -761,7 +765,7 @@ Here is the call graph for this function:</div>
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a04d8e3e6f1c9f948e3b295d8bac9fac3">NullSurf</a>.</p>
 <div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classMM5.html#a44610d042a53d114892687d87c9e7f10">LsmVarMap</a>[varIdx];</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(lsmIdx &lt; MM5::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lsmIdx &lt; MM5::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMM5.html#abb2bfd47b01eb3f85f6466a886a00dc9">LsmVarName</a>[lsmIdx];</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
@@ -770,7 +774,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classMM5_a52c204a200a8e02bd9624ced2830ff32_cgraph.png" border="0" usemap="#aclassMM5_a52c204a200a8e02bd9624ced2830ff32_cgraph" alt=""/></div>
 <map name="aclassMM5_a52c204a200a8e02bd9624ced2830ff32_cgraph" id="aclassMM5_a52c204a200a8e02bd9624ced2830ff32_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,172,32"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="220,5,403,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="220,5,403,32"/>
 </map>
 </div>
 
@@ -803,7 +807,7 @@ Here is the call graph for this function:</div>
 <p>Reimplemented from <a class="el" href="classNullSurf.html#a7a9b19e7d784323fd216468b7cca6574">NullSurf</a>.</p>
 <div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">int</span> lsmIdx = <a class="code" href="classMM5.html#a44610d042a53d114892687d87c9e7f10">LsmVarMap</a>[varIdx];</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(lsmIdx &lt; MM5::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lsmIdx &lt; MM5::m_lsm_size &amp;&amp; lsmIdx&gt;=0);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMM5.html#a65622ec442bb57f8a4bdcfd789882661">lsm_fab_flux</a>[lsmIdx].get();</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
@@ -812,7 +816,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classMM5_a78b5c693f06612690dcd98ac38a12702_cgraph.png" border="0" usemap="#aclassMM5_a78b5c693f06612690dcd98ac38a12702_cgraph" alt=""/></div>
 <map name="aclassMM5_a78b5c693f06612690dcd98ac38a12702_cgraph" id="aclassMM5_a78b5c693f06612690dcd98ac38a12702_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,155,32"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="203,5,385,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="203,5,385,32"/>
 </map>
 </div>
 

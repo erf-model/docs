@@ -539,11 +539,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classERFPhysBCFunct__w_a8141308c20ffb5e86005565ae76da4eb_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct__w_a8141308c20ffb5e86005565ae76da4eb_cgraph" alt=""/></div>
 <map name="aclassERFPhysBCFunct__w_a8141308c20ffb5e86005565ae76da4eb_cgraph" id="aclassERFPhysBCFunct__w_a8141308c20ffb5e86005565ae76da4eb_cgraph">
-<area shape="rect" title=" " alt="" coords="5,23,209,65"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="269,5,360,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a" title=" " alt="" coords="257,56,372,83"/>
+<area shape="rect" title=" " alt="" coords="5,74,209,115"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="269,56,360,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a" title=" " alt="" coords="257,107,372,133"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="425,5,575,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5" title=" " alt="" coords="420,56,580,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="456,56,544,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5" title=" " alt="" coords="420,107,580,133"/>
 </map>
 </div>
 
@@ -700,7 +701,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__w.html#a277641c1cc5a27c2a01e49d21a9c88f4">m_lev</a> == 0) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>( (bc_ptr_u_h[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> &amp;&amp; bc_ptr_v_h[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) ||</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( (bc_ptr_u_h[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> &amp;&amp; bc_ptr_v_h[0].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) ||</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                 (bc_ptr_u_h[0].lo(2) != <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> &amp;&amp; bc_ptr_v_h[0].lo(2) != <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) );</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="comment">// If we do not reach to the top or bottom boundary then the z-vel should be</span></div>
@@ -750,7 +751,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    Gpu::streamSynchronize();</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aclassERFPhysBCFunct__w_html_a272b01a2558cfbe1b5810a76620742b4"><div class="ttname"><a href="classERFPhysBCFunct__w.html#a272b01a2558cfbe1b5810a76620742b4">ERFPhysBCFunct_w::impose_vertical_zvel_bcs</a></div><div class="ttdeci">void impose_vertical_zvel_bcs(const amrex::Array4&lt; amrex::Real &gt; &amp;dest_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;xvel_arr, const amrex::Array4&lt; amrex::Real const &gt; &amp;yvel_arr, const amrex::Box &amp;bx, const amrex::Box &amp;domain, const amrex::Array4&lt; amrex::Real const &gt; &amp;mf_u, const amrex::Array4&lt; amrex::Real const &gt; &amp;mf_v, const amrex::Array4&lt; amrex::Real const &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; dxInv, int bccomp_u, int bccomp_v, int bccomp_w, TerrainType terrain_type, const amrex::Real time)</div><div class="ttdef"><b>Definition:</b> ERF_BoundaryConditionsZvel.cpp:182</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9">ERFBCType::neumann_int</a></div><div class="ttdeci">@ neumann_int</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:214</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -759,10 +760,11 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERFPhysBCFunct__w_a272b01a2558cfbe1b5810a76620742b4_cgraph.png" border="0" usemap="#aclassERFPhysBCFunct__w_a272b01a2558cfbe1b5810a76620742b4_cgraph" alt=""/></div>
 <map name="aclassERFPhysBCFunct__w_a272b01a2558cfbe1b5810a76620742b4_cgraph" id="aclassERFPhysBCFunct__w_a272b01a2558cfbe1b5810a76620742b4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,49,209,90"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="257,5,440,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="257,5,440,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="303,56,394,83"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a" title=" " alt="" coords="291,107,406,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="493,56,643,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="493,5,643,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="524,56,612,83"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ab0d4aa15ebfd9b62f71ba54057b2f8f5" title=" " alt="" coords="488,107,648,133"/>
 </map>
 </div>

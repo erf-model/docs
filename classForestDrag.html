@@ -274,7 +274,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            all_boxes_touch_bottom = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(all_boxes_touch_bottom);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(all_boxes_touch_bottom);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Allocate the forest drag MF</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// NOTE: 1 ghost cell for averaging to faces</span></div>
@@ -305,7 +305,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ztree  = 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> expFun = 0;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ratio  = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz = hf / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(nk);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> = hf / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(nk);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            treeZm = laimaxf * hf;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k&lt;nk; ++k) {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                ratio = (hf - treeZm) / (hf - ztree);</div>
@@ -316,9 +316,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    expFun += std::pow(ratio, 0.5) *</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                              std::exp(0.5 * (1 - ratio));</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                ztree += dz;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                ztree += <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            af = laif / (expFun * dz);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            af = laif / (expFun * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">// Set the forest drag data</span></div>
@@ -370,8 +370,9 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_abc695cd190273d99450d0b8f595c5c6b"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a></div><div class="ttdeci">const Real dz</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a1a21221b2a962ff8657e21b54b71c245"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a></div><div class="ttdeci">const amrex::Real * prob_lo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:16</div></div>
 <div class="ttc" id="aclassForestDrag_html_acb32d6e1088af2621a723601500db7b3"><div class="ttname"><a href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">ForestDrag::m_forest_drag</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_forest_drag</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.H:39</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -380,9 +381,10 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classForestDrag_a3fcd26d6f5274c804db6bebceb267c2b_cgraph.png" border="0" usemap="#aclassForestDrag_a3fcd26d6f5274c804db6bebceb267c2b_cgraph" alt=""/></div>
 <map name="aclassForestDrag_a3fcd26d6f5274c804db6bebceb267c2b_cgraph" id="aclassForestDrag_a3fcd26d6f5274c804db6bebceb267c2b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,147,65"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="195,5,377,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="195,5,377,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="241,56,331,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="425,56,575,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="425,31,575,57"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="456,81,544,108"/>
 </map>
 </div>
 

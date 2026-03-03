@@ -98,7 +98,7 @@ Functions</h2></td></tr>
 <tr class="separator:a4ceccadb1d0793b4c2333669f04fc9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaff3abfc836a0511a62d304bc98083f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__InitCustomPertVels__MovingTerrain_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__FlowInABox_8H.html#abaff3abfc836a0511a62d304bc98083f">query</a> (&quot;T_0_Pert_Mag&quot;, T_0_Pert_Mag)</td></tr>
 <tr class="separator:abaff3abfc836a0511a62d304bc98083f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78aa27abe77f72703ce3a259b63555cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__FlowInABox_8H.html#a78aa27abe77f72703ce3a259b63555cc">ParallelForRNG</a> (bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *2.0 - 1.0) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);})</td></tr>
+<tr class="memitem:a78aa27abe77f72703ce3a259b63555cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__FlowInABox_8H.html#a78aa27abe77f72703ce3a259b63555cc">ParallelForRNG</a> (bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *2.0 - 1.0) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);})</td></tr>
 <tr class="separator:a78aa27abe77f72703ce3a259b63555cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -122,7 +122,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *2.0 - 1.0) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;state_pert(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);}&#160;</td>
+          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *2.0 - 1.0) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);}&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -134,6 +134,15 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3327c0ac80f4eb18415b25b307f847b">ERF::create_random_perturbations()</a>, and <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">TurbulentPerturbation::pseudoRandomPert()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__InitCustomPert__FlowInABox_8H_a78aa27abe77f72703ce3a259b63555cc_cgraph.png" border="0" usemap="#aERF__InitCustomPert__FlowInABox_8H_a78aa27abe77f72703ce3a259b63555cc_cgraph" alt=""/></div>
+<map name="aERF__InitCustomPert__FlowInABox_8H_a78aa27abe77f72703ce3a259b63555cc_cgraph" id="aERF__InitCustomPert__FlowInABox_8H_a78aa27abe77f72703ce3a259b63555cc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="172,5,260,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -163,19 +172,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ERF__InitRayleighDamping_8H.html#aa0988e9ca7c21c75ca232ea0ee850195">erf_init_rayleigh()</a>, <a class="el" href="classProblemBase.html#a4610ff72fc2c1defc2e7fff1dd148fb0">ProblemBase::init_custom_terrain()</a>, and <a class="el" href="ERF__InitCustomTerrain_8cpp.html#a0a4d90f6ade5f3f7d4b12b6a191ee0bd">init_my_custom_terrain()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPert__FlowInABox_8H_a4ceccadb1d0793b4c2333669f04fc9fb_icgraph.png" border="0" usemap="#aERF__InitCustomPert__FlowInABox_8H_a4ceccadb1d0793b4c2333669f04fc9fb_icgraph" alt=""/></div>
-<map name="aERF__InitCustomPert__FlowInABox_8H_a4ceccadb1d0793b4c2333669f04fc9fb_icgraph" id="aERF__InitCustomPert__FlowInABox_8H_a4ceccadb1d0793b4c2333669f04fc9fb_icgraph">
-<area shape="rect" title=" " alt="" coords="245,64,320,91"/>
-<area shape="rect" href="ERF__InitRayleighDamping_8H.html#aa0988e9ca7c21c75ca232ea0ee850195" title=" " alt="" coords="37,5,165,32"/>
-<area shape="rect" href="classProblemBase.html#a4610ff72fc2c1defc2e7fff1dd148fb0" title=" " alt="" coords="5,57,197,98"/>
-<area shape="rect" href="ERF__InitCustomTerrain_8cpp.html#a0a4d90f6ade5f3f7d4b12b6a191ee0bd" title=" " alt="" coords="13,123,189,149"/>
-</map>
-</div>
 
 </div>
 </div>

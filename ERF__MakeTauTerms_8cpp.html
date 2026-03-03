@@ -223,10 +223,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__MakeTauTerms_8cpp_a1c8f0f6a58bbb9836144fcfcd448b593_cgraph.png" border="0" usemap="#aERF__MakeTauTerms_8cpp_a1c8f0f6a58bbb9836144fcfcd448b593_cgraph" alt=""/></div>
 <map name="aERF__MakeTauTerms_8cpp_a1c8f0f6a58bbb9836144fcfcd448b593_cgraph" id="aERF__MakeTauTerms_8cpp_a1c8f0f6a58bbb9836144fcfcd448b593_cgraph">
-<area shape="rect" title=" " alt="" coords="5,23,167,65"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="215,5,305,32"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="223,56,297,83"/>
+<area shape="rect" title=" " alt="" coords="5,49,167,90"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="215,31,305,57"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="223,81,297,108"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="353,5,503,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="384,56,472,83"/>
 </map>
 </div>
 
@@ -387,7 +388,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_use_terrain_fitted_coords = (solverChoice.<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> != MeshType::ConstantDz);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span>    l_moving_terrain = (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> == TerrainType::MovingFittedMesh);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (l_moving_terrain) <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a> (l_use_terrain_fitted_coords);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (l_moving_terrain) <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a> (l_use_terrain_fitted_coords);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_diff       = ( (dc.<a class="code" href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">molec_diff_type</a> != <a class="code" href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6adf97f83acf6453d4a6a4b1070f3754">MolecDiffType::None</a>) || tc.<a class="code" href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">use_kturb</a> );</div>
@@ -1040,7 +1041,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__DiffStruct_8H_html_a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288"><div class="ttname"><a href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a></div><div class="ttdeci">@ ConstantAlpha</div></div>
 <div class="ttc" id="aERF__EddyViscosity_8H_html_ad1e6d314bfc2e508c86ee0e07cfbd8f8"><div class="ttname"><a href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8">ComputeSmnSmn</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real ComputeSmnSmn(int &amp;i, int &amp;j, int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau11, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau22, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau33, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau12, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau13, const amrex::Array4&lt; amrex::Real const &gt; &amp;tau23)</div><div class="ttdef"><b>Definition:</b> ERF_EddyViscosity.H:63</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:16</div></div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a00a82ef863424210898550c6abb4d055"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055">OmegaFromW</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real OmegaFromW(int &amp;i, int &amp;j, int &amp;k, amrex::Real w, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:412</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:102</div></div>
@@ -1073,7 +1074,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__MakeTauTerms_8cpp_adac69deec7e1a9ddfc2d5d6fb0a1a657_cgraph.png" border="0" usemap="#aERF__MakeTauTerms_8cpp_adac69deec7e1a9ddfc2d5d6fb0a1a657_cgraph" alt=""/></div>
 <map name="aERF__MakeTauTerms_8cpp_adac69deec7e1a9ddfc2d5d6fb0a1a657_cgraph" id="aERF__MakeTauTerms_8cpp_adac69deec7e1a9ddfc2d5d6fb0a1a657_cgraph">
 <area shape="rect" title=" " alt="" coords="5,461,161,488"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="220,5,403,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="220,5,403,32"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e" title=" " alt="" coords="219,56,403,83"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ada12bcb6beb3fa0d00dbdacb37f3c60f" title=" " alt="" coords="219,107,403,133"/>
 <area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="242,157,381,184"/>
@@ -1095,7 +1096,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f" title=" " alt="" coords="487,157,671,184"/>
 <area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="487,208,671,235"/>
 <area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="486,259,673,285"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="745,411,895,437"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="745,385,895,412"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="776,436,864,463"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="473,563,686,589"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#aed973861215c4eb0697f7a83b37016a9" title=" " alt="" coords="467,613,691,640"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#ac1434a53d9966d992133433473bc629a" title=" " alt="" coords="465,461,694,488"/>

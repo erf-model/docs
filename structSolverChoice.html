@@ -898,7 +898,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">// 0: dp/dx with dp/dz correction (default)</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// 1: gradient of vertically interpolated p, see Klemp 2011</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;gradp_type&quot;</span>, <a class="code" href="structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf">gradp_type</a>);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf">gradp_type</a> == 0 || <a class="code" href="structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf">gradp_type</a> == 1);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf">gradp_type</a> == 0 || <a class="code" href="structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf">gradp_type</a> == 1);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// What type of moisture model to use?</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> = MoistureType::None; <span class="comment">// Default</span></div>
@@ -1155,7 +1155,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        }</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keywordtype">int</span> nvals = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;substepping_type&quot;</span>);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(nvals == 0 || nvals == 1 || nvals &gt;= max_level+1);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(nvals == 0 || nvals == 1 || nvals &gt;= max_level+1);</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">if</span> (nvals == 1) {</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query_enum_case_insensitive(<span class="stringliteral">&quot;substepping_type&quot;</span>,<a class="code" href="structSolverChoice.html#a7c414e2fb7c53479a2d21bb3a2d4099e">substepping_type</a>[0]);</div>
@@ -1367,7 +1367,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;             <span class="comment">// This may be one value for all RK stages or a different value in each stage</span></div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;             <span class="keywordtype">int</span> n_impfac = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;vert_implicit_fac&quot;</span>);</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;             <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(n_impfac == 0 || n_impfac == 1 || n_impfac==3);</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;             <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(n_impfac == 0 || n_impfac == 1 || n_impfac==3);</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;             <span class="keywordflow">if</span> (n_impfac &gt; 0 &amp;&amp; do_vert_implicit) {</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                 amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Overriding defaults with specified implicit factor(s)&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;             }</div>
@@ -1520,7 +1520,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aae057dae5f599b944184a0ecf7801064"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a></div><div class="ttdeci">#define RhoQ6_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:47</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ac46d015fd5b1ee0060bbaf22e79113e7"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a></div><div class="ttdeci">#define RhoQ5_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:46</div></div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="astructAdvChoice_html_a0913a61ad5530639cdbf84579c34041a"><div class="ttname"><a href="structAdvChoice.html#a0913a61ad5530639cdbf84579c34041a">AdvChoice::init_params</a></div><div class="ttdeci">void init_params(std::string pp_prefix)</div><div class="ttdef"><b>Definition:</b> ERF_AdvStruct.H:21</div></div>
 <div class="ttc" id="astructDampingChoice_html_a07fe988166e52e04f0ef04e8262cf82f"><div class="ttname"><a href="structDampingChoice.html#a07fe988166e52e04f0ef04e8262cf82f">DampingChoice::init_params</a></div><div class="ttdeci">void init_params(std::string pp_prefix)</div><div class="ttdef"><b>Definition:</b> ERF_DampingStruct.H:21</div></div>
 <div class="ttc" id="astructDiffChoice_html_adbfceae5178b5ad8131b755454fb616a"><div class="ttname"><a href="structDiffChoice.html#adbfceae5178b5ad8131b755454fb616a">DiffChoice::init_params</a></div><div class="ttdeci">void init_params(std::string pp_prefix)</div><div class="ttdef"><b>Definition:</b> ERF_DiffStruct.H:21</div></div>
@@ -1613,7 +1613,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structSolverChoice_a76659aa69edd3370626e3648cbead9be_cgraph.png" border="0" usemap="#astructSolverChoice_a76659aa69edd3370626e3648cbead9be_cgraph" alt=""/></div>
 <map name="astructSolverChoice_a76659aa69edd3370626e3648cbead9be_cgraph" id="astructSolverChoice_a76659aa69edd3370626e3648cbead9be_cgraph">
 <area shape="rect" title=" " alt="" coords="5,237,141,279"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="467,33,650,59"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="467,33,650,59"/>
 <area shape="rect" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590" title=" " alt="" coords="189,172,391,213"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="539,274,578,301"/>
 <area shape="rect" href="structAdvChoice.html#a0913a61ad5530639cdbf84579c34041a" title=" " alt="" coords="202,471,378,498"/>
@@ -1677,7 +1677,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;    {</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;        <span class="keywordtype">int</span> nvals = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(string_to_read);</div>
-<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(nvals == 0 || nvals == 1 || nvals &gt;= max_level+1);</div>
+<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(nvals == 0 || nvals == 1 || nvals &gt;= max_level+1);</div>
 <div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;        amrex::Vector&lt;int&gt; temp; temp.resize(nvals);</div>
 <div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(string_to_read,temp);</div>
 <div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160; </div>
@@ -1701,7 +1701,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structSolverChoice_a31e016e3da7c175ac02427767286bc42_cgraph.png" border="0" usemap="#astructSolverChoice_a31e016e3da7c175ac02427767286bc42_cgraph" alt=""/></div>
 <map name="astructSolverChoice_a31e016e3da7c175ac02427767286bc42_cgraph" id="astructSolverChoice_a31e016e3da7c175ac02427767286bc42_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,149,65"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="197,5,380,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="197,5,380,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="269,56,308,83"/>
 </map>
 </div>

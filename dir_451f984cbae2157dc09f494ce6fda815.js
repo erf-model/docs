@@ -1,6 +1,7 @@
 var dir_451f984cbae2157dc09f494ce6fda815 =
 [
     [ "ERF_InitCustomPert.H", "ERF__InitCustomPert_8H.html", "ERF__InitCustomPert_8H" ],
+    [ "ERF_InitCustomPert_Bubble.H", "ERF__InitCustomPert__Bubble_8H.html", "ERF__InitCustomPert__Bubble_8H" ],
     [ "ERF_InitCustomPert_DensityCurrent.H", "ERF__InitCustomPert__DensityCurrent_8H.html", "ERF__InitCustomPert__DensityCurrent_8H" ],
     [ "ERF_InitCustomPert_EBPoiseuille.H", "ERF__InitCustomPert__EBPoiseuille_8H.html", "ERF__InitCustomPert__EBPoiseuille_8H" ],
     [ "ERF_InitCustomPert_FlowInABox.H", "ERF__InitCustomPert__FlowInABox_8H.html", "ERF__InitCustomPert__FlowInABox_8H" ],

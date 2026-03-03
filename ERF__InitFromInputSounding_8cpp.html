@@ -230,7 +230,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a> = geomdata.ProbLo();</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize();</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  z_lo = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[2];</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  dz   = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>   = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">// We want to set the lateral BC values, too</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    Box gbx = bx; <span class="comment">// Copy constructor</span></div>
@@ -238,7 +238,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_cc_arr) ? z_cc_arr(i,j,k)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                  : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                  : z_lo + (k + 0.5) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a> = 1.0;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
@@ -266,6 +266,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a6773f201eef9644a5d5b7252f6d95ce9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a></div><div class="ttdeci">#define NSCALARS</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:16</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_abc695cd190273d99450d0b8f595c5c6b"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a></div><div class="ttdeci">const Real dz</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3e766fc466013ff394d51a37dc2c2549"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a></div><div class="ttdeci">Real rho_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_EBPoiseuille.H:5</div></div>
 <div class="ttc" id="aERF__InitCustomPert__IsentropicVortex_8H_html_a1a21221b2a962ff8657e21b54b71c245"><div class="ttname"><a href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a></div><div class="ttdeci">const amrex::Real * prob_lo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_IsentropicVortex.H:16</div></div>
@@ -282,8 +283,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="243,5,359,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="255,56,346,83"/>
 <area shape="rect" href="structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc" title=" " alt="" coords="211,107,391,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="455,56,605,83"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="439,107,621,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="455,5,605,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="486,56,574,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="439,107,621,133"/>
 </map>
 </div>
 <div class="dynheader">
@@ -429,7 +431,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a> = geomdata.ProbLo();</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize();</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  z_lo = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[2];</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  dz   = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>   = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordtype">int</span> kbot = geomdata.Domain().smallEnd(2);</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordtype">int</span> ktop = geomdata.Domain().bigEnd(2);</div>
@@ -440,7 +442,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = (z_cc_arr) ? z_cc_arr(i,j,k)</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                  : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                  : z_lo + (k + 0.5) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_k   = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, rho_inp_sound, z, inp_sound_size);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoTh_k = rho_k * <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, theta_inp_sound, z, inp_sound_size);</div>
@@ -498,7 +500,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="comment">// If everything above is thermodynamically consistent, this should be constant</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(std::abs(th_hse_arr(i,j,k) - theta_inp_sound[0]) &lt; 1e-12);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(std::abs(th_hse_arr(i,j,k) - theta_inp_sound[0]) &lt; 1e-12);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        }</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="comment">// FOEXTRAP hse arrays</span></div>
@@ -527,7 +529,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a24b76fd72f051dc593840f006d79fd1a"><div class="ttname"><a href="ERF__EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:156</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a3cc0ee7727b26e21a97acfc2ad2e6d4d"><div class="ttname"><a href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:172</div></div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>.</p>
 <div class="dynheader">
@@ -536,13 +538,14 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__InitFromInputSounding_8cpp_a8addf90ec4622acb2ce1f299742ee2d0_cgraph.png" border="0" usemap="#aERF__InitFromInputSounding_8cpp_a8addf90ec4622acb2ce1f299742ee2d0_cgraph" alt=""/></div>
 <map name="aERF__InitFromInputSounding_8cpp_a8addf90ec4622acb2ce1f299742ee2d0_cgraph" id="aERF__InitFromInputSounding_8cpp_a8addf90ec4622acb2ce1f299742ee2d0_cgraph">
 <area shape="rect" title=" " alt="" coords="5,150,164,191"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="440,81,623,108"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="440,81,623,108"/>
 <area shape="rect" href="ERF__EOS_8H.html#a24b76fd72f051dc593840f006d79fd1a" title=" " alt="" coords="232,56,372,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="247,107,357,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="457,284,606,311"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="457,259,606,285"/>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="244,208,360,235"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="257,309,347,336"/>
 <area shape="rect" href="structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc" title=" " alt="" coords="212,5,392,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="487,309,575,336"/>
 </map>
 </div>
 <div class="dynheader">
@@ -634,7 +637,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a> = geomdata.ProbLo();</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize();</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  z_lo = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[2];</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  dz   = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>  <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>   = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[2];</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160; </div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="comment">// We want to set the lateral BC values, too</span></div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    Box gbx = bx; <span class="comment">// Copy constructor</span></div>
@@ -655,7 +658,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                                         + z_nd_arr(i,j+1,k  )</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                                         + z_nd_arr(i,j  ,k+1)</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                                         + z_nd_arr(i,j+1,k+1))</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                                  : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                                  : z_lo + (k + 0.5) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="comment">// Set the x-velocity</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        x_vel(i, j, k) = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, U_inp_sound, z, inp_sound_size);</div>
@@ -666,7 +669,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                                         + z_nd_arr(i+1,j,k  )</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                                         + z_nd_arr(i  ,j,k+1)</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                                         + z_nd_arr(i+1,j,k+1))</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                                  : z_lo + (k + 0.5) * dz;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                                  : z_lo + (k + 0.5) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="comment">// Set the y-velocity</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        y_vel(i, j, k) = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(z_inp_sound, V_inp_sound, z, inp_sound_size);</div>
@@ -691,8 +694,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="252,5,368,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="265,56,355,83"/>
 <area shape="rect" href="structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc" title=" " alt="" coords="220,107,400,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="465,56,614,83"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="448,107,631,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="465,5,614,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="495,56,583,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="448,107,631,133"/>
 </map>
 </div>
 <div class="dynheader">

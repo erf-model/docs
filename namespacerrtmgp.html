@@ -127,16 +127,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a49374093beae1d74627741563a8018f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a49374093beae1d74627741563a8018f9">compute_aerocom_cloudtop</a> (int ncol, int nlay, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;tmid, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;pmid, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;p_del, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;z_del, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;qc, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;qi, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;rel, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;rei, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;cldfrac_tot, const <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;nc, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;T_mid_at_cldtop, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;p_mid_at_cldtop, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;cldfrac_ice_at_cldtop, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;cldfrac_liq_at_cldtop, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;cldfrac_tot_at_cldtop, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;cdnc_at_cldtop, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;eff_radius_qc_at_cldtop, <a class="el" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> &amp;eff_radius_qi_at_cldtop)</td></tr>
 <tr class="separator:a49374093beae1d74627741563a8018f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d561ab08b6cffb186a838b5840b274"><td class="memTemplParams" colspan="2">template&lt;class View1 , class View2 , class View3 , class View4 , class View5 &gt; </td></tr>
-<tr class="memitem:a88d561ab08b6cffb186a838b5840b274"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a88d561ab08b6cffb186a838b5840b274">mixing_ratio_to_cloud_mass</a> (View1 const &amp;mixing_ratio, View2 const &amp;cloud_fraction, View3 const &amp;rho, View4 const &amp;dz, View5 const &amp;cloud_mass)</td></tr>
+<tr class="memitem:a88d561ab08b6cffb186a838b5840b274"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a88d561ab08b6cffb186a838b5840b274">mixing_ratio_to_cloud_mass</a> (View1 const &amp;mixing_ratio, View2 const &amp;cloud_fraction, View3 const &amp;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, View4 const &amp;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>, View5 const &amp;cloud_mass)</td></tr>
 <tr class="separator:a88d561ab08b6cffb186a838b5840b274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4b69bff8dd184127a31693738155898"><td class="memTemplParams" colspan="2">template&lt;typename InT , typename OutT , typename T &gt; </td></tr>
-<tr class="memitem:af4b69bff8dd184127a31693738155898"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#af4b69bff8dd184127a31693738155898">limit_to_bounds_1d</a> (InT const &amp;arr_in, T const lower, T const upper, OutT &amp;arr_out)</td></tr>
+<tr class="memitem:af4b69bff8dd184127a31693738155898"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#af4b69bff8dd184127a31693738155898">limit_to_bounds_1d</a> (InT const &amp;arr_in, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const lower, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const upper, OutT &amp;arr_out)</td></tr>
 <tr class="separator:af4b69bff8dd184127a31693738155898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8179e28926650ddbac40ebf2aecbe1a7"><td class="memTemplParams" colspan="2">template&lt;typename InT , typename OutT , typename T &gt; </td></tr>
-<tr class="memitem:a8179e28926650ddbac40ebf2aecbe1a7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a8179e28926650ddbac40ebf2aecbe1a7">limit_to_bounds_2d</a> (InT const &amp;arr_in, T const lower, T const upper, OutT &amp;arr_out)</td></tr>
+<tr class="memitem:a8179e28926650ddbac40ebf2aecbe1a7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a8179e28926650ddbac40ebf2aecbe1a7">limit_to_bounds_2d</a> (InT const &amp;arr_in, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const lower, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const upper, OutT &amp;arr_out)</td></tr>
 <tr class="separator:a8179e28926650ddbac40ebf2aecbe1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7956500d2e4612dfd097a3d3556c051"><td class="memTemplParams" colspan="2">template&lt;class View1 , class View2 , class View3 , class View4 , class View5 &gt; </td></tr>
-<tr class="memitem:aa7956500d2e4612dfd097a3d3556c051"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#aa7956500d2e4612dfd097a3d3556c051">compute_heating_rate</a> (View1 const &amp;flux_up, View2 const &amp;flux_dn, View3 const &amp;rho, View4 const &amp;dz, View5 &amp;heating_rate)</td></tr>
+<tr class="memitem:aa7956500d2e4612dfd097a3d3556c051"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#aa7956500d2e4612dfd097a3d3556c051">compute_heating_rate</a> (View1 const &amp;flux_up, View2 const &amp;flux_dn, View3 const &amp;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, View4 const &amp;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>, View5 &amp;heating_rate)</td></tr>
 <tr class="separator:aa7956500d2e4612dfd097a3d3556c051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a330f3ddc4245c802986216ff51504e50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a330f3ddc4245c802986216ff51504e50">radiation_do</a> (const int irad, const int nstep)</td></tr>
 <tr class="separator:a330f3ddc4245c802986216ff51504e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -776,11 +776,12 @@ template&lt;class View1 , class View2 , class View3 , class View4 , class View5 
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//       We have: dT/dt = dF/dz * (1/(-rho*Cp))</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        heating_rate(icol,ilay) = ( flux_up(icol,ilay+1) - flux_up(icol,ilay)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                  - flux_dn(icol,ilay+1) + flux_dn(icol,ilay) )</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                  / ( -<a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay) * <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                  / ( -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>(icol,ilay) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>(icol,ilay) * <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> );</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    });</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:22</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_abc695cd190273d99450d0b8f595c5c6b"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a></div><div class="ttdeci">const Real dz</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classRadiation.html#aabe9f54354a59aeb80f9f65bb3383298">Radiation::finalize_impl()</a>, and <a class="el" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df">Radiation::run_impl()</a>.</p>
 <div class="dynheader">
@@ -1563,13 +1564,13 @@ template&lt;typename InT , typename OutT , typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T const&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const&#160;</td>
           <td class="paramname"><em>lower</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T const&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const&#160;</td>
           <td class="paramname"><em>upper</em>, </td>
         </tr>
         <tr>
@@ -1611,13 +1612,13 @@ template&lt;typename InT , typename OutT , typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T const&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const&#160;</td>
           <td class="paramname"><em>lower</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T const&#160;</td>
+          <td class="paramtype"><a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> const&#160;</td>
           <td class="paramname"><em>upper</em>, </td>
         </tr>
         <tr>
@@ -1722,7 +1723,7 @@ template&lt;class View1 , class View2 , class View3 , class View4 , class View5 
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">// Compute layer-integrated cloud mass (per unit area)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">auto</span> incloud_mixing_ratio = std::min(mixing_ratio(icol,ilay) /</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                 std::max(0.0001, cloud_fraction(icol,ilay)), 0.005);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            cloud_mass(icol,ilay) = incloud_mixing_ratio * <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276da89de8c3bfc941080efb960e5119fbd61">rho</a>(icol,ilay) * dz(icol,ilay);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            cloud_mass(icol,ilay) = incloud_mixing_ratio * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>(icol,ilay) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>(icol,ilay);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            cloud_mass(icol,ilay) = 0;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>

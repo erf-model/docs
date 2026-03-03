@@ -263,7 +263,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <a class="code" href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">m_fgeom</a>(fgeom),</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <a class="code" href="classERFFillPatcher.html#a5b1190e4ec0fe257d6d3fa886054dc2c">m_cgeom</a>(cgeom)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(fba.ixType() == cba.ixType());</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(fba.ixType() == cba.ixType());</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Vector to hold times for coarse data</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>.resize(2);</div>
@@ -271,7 +271,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Define the coarse and fine MFs</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classERFFillPatcher.html#a3dcdf3322c58c07eec765f6e3413ba68">Define</a>(fba, fdm, fgeom, cba, cdm, cgeom,nghost, nghost_set, ncomp, interp);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a12694a711f281b957f7015a98e5c9b77"><div class="ttname"><a href="classERFFillPatcher.html#a12694a711f281b957f7015a98e5c9b77">ERFFillPatcher::m_fgeom</a></div><div class="ttdeci">amrex::Geometry m_fgeom</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:63</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a297b1d2468ed152850c7bb6c156101b3"><div class="ttname"><a href="classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3">ERFFillPatcher::m_fba</a></div><div class="ttdeci">amrex::BoxArray m_fba</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:59</div></div>
 <div class="ttc" id="aclassERFFillPatcher_html_a35fb56b2946f596728b9ac793eb47c5e"><div class="ttname"><a href="classERFFillPatcher.html#a35fb56b2946f596728b9ac793eb47c5e">ERFFillPatcher::m_cba</a></div><div class="ttdeci">amrex::BoxArray m_cba</div><div class="ttdef"><b>Definition:</b> ERF_FillPatcher.H:60</div></div>
@@ -286,11 +286,12 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERFFillPatcher_a4236a9ab8003847e327495ff170a9a7a_cgraph.png" border="0" usemap="#aclassERFFillPatcher_a4236a9ab8003847e327495ff170a9a7a_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a4236a9ab8003847e327495ff170a9a7a_cgraph" id="aclassERFFillPatcher_a4236a9ab8003847e327495ff170a9a7a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,220,32"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="719,31,901,57"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="719,31,901,57"/>
 <area shape="rect" href="classERFFillPatcher.html#a3dcdf3322c58c07eec765f6e3413ba68" title=" " alt="" coords="268,31,432,57"/>
 <area shape="rect" href="classERFFillPatcher.html#ace667632120f87025e805461dd796599" title=" " alt="" coords="480,81,671,108"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="765,81,855,108"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="949,81,1099,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="949,56,1099,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="980,107,1068,133"/>
 </map>
 </div>
 
@@ -375,7 +376,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    fba_per.complementIn(com_bl,fba_bnd);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// com_bl cannot be null since we grew with halo cells</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(com_bl.size() &gt; 0);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(com_bl.size() &gt; 0);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    IntVect box_grow_vect(-nghost,-nghost,0);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
@@ -430,9 +431,10 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERFFillPatcher_ace667632120f87025e805461dd796599_cgraph.png" border="0" usemap="#aclassERFFillPatcher_ace667632120f87025e805461dd796599_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_ace667632120f87025e805461dd796599_cgraph" id="aclassERFFillPatcher_ace667632120f87025e805461dd796599_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,196,57"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="244,5,427,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="244,5,427,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="290,56,381,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="475,56,624,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="475,31,624,57"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="505,81,593,108"/>
 </map>
 </div>
 <div class="dynheader">
@@ -522,9 +524,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(nghost &lt;= 0);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(nghost_set &lt;= 0);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(nghost &lt;= nghost_set);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(nghost &lt;= 0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(nghost_set &lt;= 0);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(nghost &lt;= nghost_set);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Set data members</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classERFFillPatcher.html#a297b1d2468ed152850c7bb6c156101b3">m_fba</a> = fba; <a class="code" href="classERFFillPatcher.html#a35fb56b2946f596728b9ac793eb47c5e">m_cba</a> = cba;</div>
@@ -594,10 +596,11 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERFFillPatcher_a3dcdf3322c58c07eec765f6e3413ba68_cgraph.png" border="0" usemap="#aclassERFFillPatcher_a3dcdf3322c58c07eec765f6e3413ba68_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a3dcdf3322c58c07eec765f6e3413ba68_cgraph" id="aclassERFFillPatcher_a3dcdf3322c58c07eec765f6e3413ba68_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,169,57"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="456,5,639,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="456,5,639,32"/>
 <area shape="rect" href="classERFFillPatcher.html#ace667632120f87025e805461dd796599" title=" " alt="" coords="217,56,408,83"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="502,56,593,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="687,56,836,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="687,31,836,57"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="717,81,805,108"/>
 </map>
 </div>
 <div class="dynheader">
@@ -660,7 +663,7 @@ template&lt;typename BC &gt; </div>
 <div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;float&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>((time &gt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0]-eps) &amp;&amp; (time &lt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[1]+eps));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>((time &gt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0]-eps) &amp;&amp; (time &lt;= <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[1]+eps));</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Time interpolation factors</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fac_new = (time - <a class="code" href="classERFFillPatcher.html#a562ca1201d642f3a7dd5700a056776d9">m_crse_times</a>[0]) / <a class="code" href="classERFFillPatcher.html#ae89877908970649653ae09c42d3c7b05">m_dt_crse</a>;</div>
@@ -704,7 +707,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERFFillPatcher_a045ae741822ced1684eddf019cd7f219_cgraph.png" border="0" usemap="#aclassERFFillPatcher_a045ae741822ced1684eddf019cd7f219_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a045ae741822ced1684eddf019cd7f219_cgraph" id="aclassERFFillPatcher_a045ae741822ced1684eddf019cd7f219_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,147,83"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="198,5,381,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="198,5,381,32"/>
 <area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="197,56,382,83"/>
 <area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="195,107,384,133"/>
 </map>
@@ -775,7 +778,7 @@ Here is the call graph for this function:</div>
 <map name="aclassERFFillPatcher_a69bc23658f5c545f654c7ddd0cabb105_cgraph" id="aclassERFFillPatcher_a69bc23658f5c545f654c7ddd0cabb105_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,184,83"/>
 <area shape="rect" href="classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219" title=" " alt="" coords="232,56,373,83"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="425,5,607,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="425,5,607,32"/>
 <area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="423,56,609,83"/>
 <area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="421,107,611,133"/>
 </map>
@@ -841,7 +844,7 @@ Here is the call graph for this function:</div>
 <map name="aclassERFFillPatcher_ae6ce0e1d59fc62d812c779d536a95c58_cgraph" id="aclassERFFillPatcher_ae6ce0e1d59fc62d812c779d536a95c58_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,168,83"/>
 <area shape="rect" href="classERFFillPatcher.html#a045ae741822ced1684eddf019cd7f219" title=" " alt="" coords="216,56,357,83"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="409,5,591,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="409,5,591,32"/>
 <area shape="rect" href="classERFFillPatcher.html#ab1e2657e50f7ab6f3255decee073fff8" title=" " alt="" coords="407,56,593,83"/>
 <area shape="rect" href="classERFFillPatcher.html#a713333f0602eb39a96836c5ea8825a67" title=" " alt="" coords="405,107,595,133"/>
 </map>
@@ -1252,8 +1255,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(crse_data.size() == 2); <span class="comment">// old and new</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(crse_time[1] &gt;= crse_time[0]);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(crse_data.size() == 2); <span class="comment">// old and new</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(crse_time[1] &gt;= crse_time[0]);</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// NOTE: CoarseBox with CellConsLinear interpolation grows the</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">//       box by 1 in all directions. This pushes the domain for</span></div>
@@ -1278,7 +1281,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classERFFillPatcher_a58c4f0d21effa697eff8a0b22b2f3bc1_cgraph.png" border="0" usemap="#aclassERFFillPatcher_a58c4f0d21effa697eff8a0b22b2f3bc1_cgraph" alt=""/></div>
 <map name="aclassERFFillPatcher_a58c4f0d21effa697eff8a0b22b2f3bc1_cgraph" id="aclassERFFillPatcher_a58c4f0d21effa697eff8a0b22b2f3bc1_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,181,47"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="229,13,412,39"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="229,13,412,39"/>
 </map>
 </div>
 

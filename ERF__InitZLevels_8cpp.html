@@ -245,14 +245,14 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lev == 0) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// Create stretched grid based on initial dz and stretching ratio</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            zlevels_stag[lev][0] = zsurf;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz = dz0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> = dz0;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Print() &lt;&lt; <span class="stringliteral">&quot;Stretched grid levels at level : &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt;  zsurf;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; nz+1; k++)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                stretched_dz_h[lev][k-1] = dz;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                zlevels_stag[lev][k] = zlevels_stag[lev][k-1] + dz;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                stretched_dz_h[lev][k-1] = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                zlevels_stag[lev][k] = zlevels_stag[lev][k-1] + <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                Print() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; zlevels_stag[lev][k];</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                dz *= grid_stretching_ratio;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> *= grid_stretching_ratio;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            Print() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lev &gt; 0) {</div>
@@ -288,7 +288,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// These levels should range from 0 at the surface to the height of the</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// top of model domain (see the coordinate surface height, zeta, in</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// Klemp 2011)</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a>(zlevels_stag[0][0] == 0);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(zlevels_stag[0][0] == 0);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 1; lev &lt;= max_level; lev++) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordtype">int</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">rr</a> = ref_ratio[lev-1][2];</div>
@@ -310,8 +310,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_aada30199a52709bfe69b46aa5a2b9731"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a></div><div class="ttdeci">const auto dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:15</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_abc695cd190273d99450d0b8f595c5c6b"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a></div><div class="ttdeci">const Real dz</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__EBPoiseuille_8H_html_a3077f300aafa6b9f83d20700fae7816c"><div class="ttname"><a href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(sc.terrain_type==TerrainType::EB)</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_af71b362e58803c8c29aa5127adcf645f"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f">expand_and_interpolate_1d</a></div><div class="ttdeci">AMREX_FORCE_INLINE void expand_and_interpolate_1d(amrex::Vector&lt; amrex::Real &gt; &amp;znew, const amrex::Vector&lt; amrex::Real &gt; &amp;zorig, int refine_fac, bool destag=false)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:85</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a649e184a5c5c6d2eef72a390c18eb4e4"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4">module_mp_morr_two_moment::rr</a></div><div class="ttdeci">real(c_double), private rr</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:224</div></div>
@@ -323,7 +324,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__InitZLevels_8cpp_a6a0ddf4ef447c8f0129b403c8fd889fd_cgraph.png" border="0" usemap="#aERF__InitZLevels_8cpp_a6a0ddf4ef447c8f0129b403c8fd889fd_cgraph" alt=""/></div>
 <map name="aERF__InitZLevels_8cpp_a6a0ddf4ef447c8f0129b403c8fd889fd_cgraph" id="aERF__InitZLevels_8cpp_a6a0ddf4ef447c8f0129b403c8fd889fd_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,101,57"/>
-<area shape="rect" href="ERF__InitCustomPert__EBPoiseuille_8H.html#a3077f300aafa6b9f83d20700fae7816c" title=" " alt="" coords="400,5,583,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="400,5,583,32"/>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f" title=" " alt="" coords="149,31,352,57"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="231,81,270,108"/>
 </map>
