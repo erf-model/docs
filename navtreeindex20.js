@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"structPlaneSampler.html":[2,0,60],
 "structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931":[2,0,60,3],
 "structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6":[2,0,60,5],
 "structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d":[2,0,60,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "structSolverChoice.html#af3f4f0790370a79477da4846312286e0":[2,0,78,96],
 "structSolverChoice.html#af4e32876ca1a7d566f5cbe7f083f5a58":[2,0,78,41],
 "structSolverChoice.html#af58e8f88e30f4b86992c4db6177cbb59":[2,0,78,38],
-"structSolverChoice.html#af976afa61859c07e6249963edc367c2d":[2,0,78,26],
-"structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412":[2,0,78,116]
+"structSolverChoice.html#af976afa61859c07e6249963edc367c2d":[2,0,78,26]
 };

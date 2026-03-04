@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>MicVar_SD {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">enum</span> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = 0,     <span class="comment">/*!&lt; Density */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">theta</a>,       <span class="comment">/*!&lt; Potential temperature */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>,       <span class="comment">/*!&lt; Potential temperature */</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        temperature, <span class="comment">/*!&lt; Temperature */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        pressure,    <span class="comment">/*!&lt; Pressure */</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        q_t,         <span class="comment">/*!&lt; Total (vapour + cloud) */</span></div>
@@ -110,8 +110,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        dqcdt,       <span class="comment">/*!&lt; Condensation rate */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        q_r,         <span class="comment">/*!&lt; Rain */</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        rh,          <span class="comment">/*!&lt; relative humidity */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daa364685bc5d7f6f41ff14bbaf6ca3fc1">rain_accum</a>,  <span class="comment">/*!&lt; rain accumulation (mm) */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">NumVars</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20aa364685bc5d7f6f41ff14bbaf6ca3fc1">rain_accum</a>,  <span class="comment">/*!&lt; rain accumulation (mm) */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">NumVars</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -122,14 +122,14 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        q_c,        <span class="comment">/*!&lt; Condensate density ratio */</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        sr,         <span class="comment">/*!&lt; Saturation ratio */</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        accum,      <span class="comment">/*!&lt; Ground accumulation */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">NumVars</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">NumVars</a></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>MicVar_SD_Aerosols {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">enum</span> {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        accum = 0,  <span class="comment">/*!&lt; Ground accumulation */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">NumVars</a></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">NumVars</a></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
@@ -137,8 +137,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> s_qt_idx (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i <span class="comment">/*!&lt; species index */</span> )</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a_i &gt; 0);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            +   MicVar_SD_Species::q_t;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
@@ -146,8 +146,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> s_qv_idx (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i <span class="comment">/*!&lt; species index */</span> )</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a_i &gt; 0);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            +   MicVar_SD_Species::q_v;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
@@ -155,8 +155,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> s_qc_idx (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i <span class="comment">/*!&lt; species index */</span> )</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a_i &gt; 0);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            +   MicVar_SD_Species::q_c;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
@@ -164,8 +164,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> s_sr_idx (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i <span class="comment">/*!&lt; species index */</span> )</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a_i &gt; 0);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            +   MicVar_SD_Species::sr;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
@@ -173,8 +173,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> s_accum_idx (<span class="keyword">const</span> <span class="keywordtype">int</span> a_i <span class="comment">/*!&lt; species index */</span> )</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a_i &gt; 0);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            +   MicVar_SD_Species::accum;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
@@ -183,9 +183,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> a_i <span class="comment">/*!&lt; aerosol index */</span> )</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a_i &gt;= 0);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            +   (a_ns-1)*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            +   a_i*<a class="code" href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Aerosols::NumVars</a></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            +   (a_ns-1)*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            +   a_i*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Aerosols::NumVars</a></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            +   MicVar_SD_Aerosols::accum;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"></span> </div>
@@ -557,9 +557,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="ttc" id="aERF__NullMoistLagrangian_8H_html"><div class="ttname"><a href="ERF__NullMoistLagrangian_8H.html">ERF_NullMoistLagrangian.H</a></div><div class="ttdoc">Contains the Lagrangian moisture model base class.</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__SuperDropletPC_8H_html"><div class="ttname"><a href="ERF__SuperDropletPC_8H.html">ERF_SuperDropletPC.H</a></div></div>
-<div class="ttc" id="anamespaceLsmVar__MM5_html_afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9"><div class="ttname"><a href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080a9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:21</div></div>
-<div class="ttc" id="anamespaceLsmVar__MM5_html_afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#afa778fa40619fb72857b168906e39080af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:20</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a82dcb2bcc4216c918036c4e28127276daa364685bc5d7f6f41ff14bbaf6ca3fc1"><div class="ttname"><a href="namespaceMicVar__Kess.html#a82dcb2bcc4216c918036c4e28127276daa364685bc5d7f6f41ff14bbaf6ca3fc1">MicVar_Kess::rain_accum</a></div><div class="ttdeci">@ rain_accum</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:33</div></div>
+<div class="ttc" id="anamespaceLsmVar__MM5_html_a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9"><div class="ttname"><a href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">LsmVar_MM5::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:21</div></div>
+<div class="ttc" id="anamespaceLsmVar__MM5_html_a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:20</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a033cdb9ee01e3e254168b389c3ce9b20aa364685bc5d7f6f41ff14bbaf6ca3fc1"><div class="ttname"><a href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20aa364685bc5d7f6f41ff14bbaf6ca3fc1">MicVar_Kess::rain_accum</a></div><div class="ttdeci">@ rain_accum</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:33</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:129</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

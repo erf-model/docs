@@ -1,6 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"annotated.html":[2,0],
 "classERF.html":[2,0,23],
 "classERF.html#a01774abc675906eeb3d6fc5345626678":[2,0,23,153],
 "classERF.html#a01987b2556834788694f2f3741a2afe4":[2,0,23,93],
@@ -249,5 +248,6 @@ var NAVTREEINDEX8 =
 "classERF.html#a87d5810a51d3eee73be510665803e68c":[2,0,23,148],
 "classERF.html#a87dc6c0720462bfd088c909289cdca0b":[2,0,23,357],
 "classERF.html#a87e58f16f44a6cb35d6983ed3fe7d3c1":[2,0,23,192],
-"classERF.html#a88773bf8e93e24a7e47206e26c807777":[2,0,23,400]
+"classERF.html#a88773bf8e93e24a7e47206e26c807777":[2,0,23,400],
+"classERF.html#a89f605d1a1eae06a7c79f9b6b65c637f":[2,0,23,196]
 };

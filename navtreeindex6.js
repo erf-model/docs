@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"ERF__SetupDiff_8H.html#aaacc4923587c96b8c86976ff76ecb020":[3,0,1,3,24,1],
 "ERF__SetupDiff_8H.html#ab8c5545fb0698c8e34037cdddd10a867":[3,0,1,3,24,9],
 "ERF__SetupDiff_8H.html#ad422105f0fbb9a0f58fb8da2d6a7719e":[3,0,1,3,24,7],
 "ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2":[3,0,1,3,24,16],
@@ -249,5 +248,6 @@ var NAVTREEINDEX6 =
 "ERF__WeatherDataInterpolation_8cpp.html#a3c58ea88105508395e38860322da2d0faaa53ca0b650dfd85c4f59fa156f7a2cc":[3,0,1,18,37,1,0],
 "ERF__WeatherDataInterpolation_8cpp.html#aab4f904860c6d2b85d487a3248e4ea2b":[3,0,1,18,37,2],
 "ERF__WindFarm_8H.html":[3,0,1,19,6],
-"ERF__WindFarm_8H_source.html":[3,0,1,19,6]
+"ERF__WindFarm_8H_source.html":[3,0,1,19,6],
+"ERF__WindFarm_8cpp.html":[3,0,1,19,5]
 };
