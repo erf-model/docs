@@ -32,7 +32,8 @@ var classSurfaceLayer =
       [ "SURFACE_TEMPERATURE", "classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1", null ]
     ] ],
     [ "SurfaceLayer", "classSurfaceLayer.html#ab92c93ca5614db39e6bc6d1c5781d45c", null ],
-    [ "compute_fluxes", "classSurfaceLayer.html#a99d0e58548e1de65d32f8a0d14836216", null ],
+    [ "compute_fluxes", "classSurfaceLayer.html#a7a15b491e262a66f6b96d2a432530f9a", null ],
+    [ "compute_fluxes", "classSurfaceLayer.html#a484a70955523aa230ce9aafab79cfe5b", null ],
     [ "compute_pblh", "classSurfaceLayer.html#a33bed820551a152ab22cf2ebd34c7fb6", null ],
     [ "compute_pblh", "classSurfaceLayer.html#a708f91183578ca06644573cbcbc3bcc2", null ],
     [ "compute_SurfaceLayer_bcs", "classSurfaceLayer.html#a5bc864f0c26c9488d5f84fc7bd89947f", null ],
