@@ -165,12 +165,12 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// Count number of lo and hi points define the line</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">int</span> n_line_lo  = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_lo&quot;</span>) / AMREX_SPACEDIM;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">int</span> n_line_hi  = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_hi&quot;</span>) / AMREX_SPACEDIM;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> n_line_dir = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_dir&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">int</span> n_line_lo  = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_lo&quot;</span>) / AMREX_SPACEDIM;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">int</span> n_line_hi  = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_hi&quot;</span>) / AMREX_SPACEDIM;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> n_line_dir = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_dir&quot;</span>);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( (n_line_lo==n_line_hi ) &amp;&amp;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                             (n_line_lo==n_line_dir) );</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -179,7 +179,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="comment">// Parse lo</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            amrex::Vector&lt;int&gt; idx_lo; idx_lo.resize(n_line_lo*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            amrex::Vector&lt;amrex::IntVect&gt; iv_lo; iv_lo.resize(n_line_lo);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_lo&quot;</span>,idx_lo,0,n_line_lo*AMREX_SPACEDIM);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_lo&quot;</span>,idx_lo,0,n_line_lo*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(0); i &lt; n_line_lo; i++) {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                amrex::IntVect iv(idx_lo[AMREX_SPACEDIM*i+0],</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                  idx_lo[AMREX_SPACEDIM*i+1],</div>
@@ -190,7 +190,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// Parse hi</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            amrex::Vector&lt;int&gt; idx_hi; idx_hi.resize(n_line_hi*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            amrex::Vector&lt;amrex::IntVect&gt; iv_hi; iv_hi.resize(n_line_hi);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_hi&quot;</span>,idx_hi,0,n_line_hi*AMREX_SPACEDIM);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_hi&quot;</span>,idx_hi,0,n_line_hi*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(0); i &lt; n_line_hi; i++) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                amrex::IntVect iv(idx_hi[AMREX_SPACEDIM*i+0],</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                  idx_hi[AMREX_SPACEDIM*i+1],</div>
@@ -207,15 +207,15 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="comment">// Parse directionality</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076">m_dir</a>.resize(n_line_dir);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_dir&quot;</span>,<a class="code" href="structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076">m_dir</a>,0,n_line_dir);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_dir&quot;</span>,<a class="code" href="structLineSampler.html#a8fc089e1d316a8d694fd521baae9f076">m_dir</a>,0,n_line_dir);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// Parse names</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            std::string name_base = <span class="stringliteral">&quot;plt_line_&quot;</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904">m_name</a>.resize(n_line_lo);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">int</span> n_names = <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_name&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordtype">int</span> n_names = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_line_name&quot;</span>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (n_names &gt; 0) {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( n_names==n_line_lo );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_name&quot;</span>,<a class="code" href="structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904">m_name</a>,0,n_names);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_line_name&quot;</span>,<a class="code" href="structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904">m_name</a>,0,n_names);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iline(0); iline&lt;n_line_lo; ++iline) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <a class="code" href="structLineSampler.html#ab090838f2c0a95330992b0f95cdf0904">m_name</a>[iline] = amrex::Concatenate(name_base, iline , 5);</div>
@@ -229,10 +229,10 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e">m_ls_mf</a>.resize(n_line_lo);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// Get requested vars</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;line_sampling_vars&quot;</span>) &gt; 0) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;line_sampling_vars&quot;</span>) &gt; 0) {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.clear();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                amrex::Vector&lt;std::string&gt; requested_vars;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;line_sampling_vars&quot;</span>,requested_vars);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;line_sampling_vars&quot;</span>,requested_vars);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Selected line sampling vars :&quot;</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(requested_vars, <span class="stringliteral">&quot;density&quot;</span>)) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.push_back(<span class="stringliteral">&quot;density&quot;</span>);</div>
@@ -275,7 +275,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="comment">// Write outputs to text files, one file per variable, with all</span></div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="comment">// times appended to the same file</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;line_sampling_text_output&quot;</span>,<a class="code" href="structLineSampler.html#ae9a6d776b596cd26b9b11c0a1298f7da">m_write_ascii</a>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;line_sampling_text_output&quot;</span>,<a class="code" href="structLineSampler.html#ae9a6d776b596cd26b9b11c0a1298f7da">m_write_ascii</a>);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structLineSampler.html#ae9a6d776b596cd26b9b11c0a1298f7da">m_write_ascii</a> &amp;&amp; amrex::ParallelDescriptor::IOProcessor()) {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordtype">int</span> nvar = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">m_varnames</a>.size());</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <a class="code" href="structLineSampler.html#a56da044954a236b411c1c52e42338883">m_datastream</a>.resize(n_line_lo * nvar);</div>
@@ -296,8 +296,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
 <div class="ttc" id="aERF__Container_8H_html_a1f8554e7b211b0acfc202e8a600e7d67"><div class="ttname"><a href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a></div><div class="ttdeci">bool containerHasElement(const V &amp;iterable, const T &amp;query)</div><div class="ttdef"><b>Definition:</b> ERF_Container.H:5</div></div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_ab86c3c145fd20613fce0e73de312f3ac"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#ab86c3c145fd20613fce0e73de312f3ac">out</a></div><div class="ttdeci">struct @21 out</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="astructLineSampler_html_a14f0333f44b80166b63e09dc1526cb6d"><div class="ttname"><a href="structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d">LineSampler::m_varnames</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_varnames</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:476</div></div>
 <div class="ttc" id="astructLineSampler_html_a1fa54ddedf5258bce17bb029e4aaf50e"><div class="ttname"><a href="structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e">LineSampler::m_ls_mf</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; m_ls_mf</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:472</div></div>
 <div class="ttc" id="astructLineSampler_html_a56da044954a236b411c1c52e42338883"><div class="ttname"><a href="structLineSampler.html#a56da044954a236b411c1c52e42338883">LineSampler::m_datastream</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; std::fstream &gt; &gt; m_datastream</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:477</div></div>
@@ -314,8 +314,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,56,197,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="245,5,428,32"/>
 <area shape="rect" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67" title=" " alt="" coords="255,56,418,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="317,107,356,133"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a0740159941fc099d345ff867ac062f42" title=" " alt="" coords="476,56,535,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="317,107,356,133"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a42459d127d2d715bf433e47e2f58972a" title=" " alt="" coords="476,56,535,83"/>
 </map>
 </div>
 
@@ -543,7 +543,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67" title=" " alt="" coords="286,56,449,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="312,107,423,133"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="322,157,413,184"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a0740159941fc099d345ff867ac062f42" title=" " alt="" coords="552,56,611,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a42459d127d2d715bf433e47e2f58972a" title=" " alt="" coords="552,56,611,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="507,132,656,159"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="537,183,625,209"/>
 </map>

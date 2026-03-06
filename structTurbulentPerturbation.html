@@ -679,8 +679,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">// Seed the random generator at 1024UL for regression testing</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordtype">int</span> fix_random_seed = 0;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;fix_random_seed&quot;</span>, fix_random_seed);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;fix_random_seed&quot;</span>, fix_random_seed);</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">if</span> (fix_random_seed) {</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="comment">// We need this one for the ParalleForRNG used in calc_tpi</span></div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            amrex::InitRandom(1024UL, amrex::ParallelDescriptor::NProcs(), 1024UL);</div>
@@ -761,7 +761,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        }</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a17f060634e44ba5701cc1febba23c915"><div class="ttname"><a href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">TurbulentPerturbation::tpi_layers</a></div><div class="ttdeci">int tpi_layers</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:645</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a1dfc591297a8af23c941b06ed5fabba1"><div class="ttname"><a href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">TurbulentPerturbation::pseudoRandomPert</a></div><div class="ttdeci">void pseudoRandomPert(const int &amp;boxIdx, const int &amp;lev, const amrex::IndexType &amp;m_ixtype)</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:386</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a2814b45136b92aaab02d789187ad3afe"><div class="ttname"><a href="structTurbulentPerturbation.html#a2814b45136b92aaab02d789187ad3afe">TurbulentPerturbation::pb_local_etime</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt; &gt; pb_local_etime</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:670</div></div>
@@ -788,15 +788,19 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="structTurbulentPerturbation.html#ac2f49dd6a95ab0bb291fa4977d9682e5" title=" " alt="" coords="216,201,421,243"/>
 <area shape="rect" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60" title=" " alt="" coords="237,267,400,308"/>
 <area shape="rect" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527" title=" " alt="" coords="231,71,407,112"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="299,449,338,475"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="299,449,338,475"/>
 <area shape="rect" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1" title=" " alt="" coords="237,332,400,373"/>
-<area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="469,383,632,424"/>
+<area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="469,391,632,432"/>
 <area shape="rect" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9" title=" " alt="" coords="237,136,400,177"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="505,209,596,235"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,259,587,286"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="680,209,829,235"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="711,287,799,314"/>
-<area shape="rect" href="ERF__InitCustomPert__FlowInABox_8H.html#a78aa27abe77f72703ce3a259b63555cc" title=" " alt="" coords="491,317,610,343"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="505,198,596,225"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,249,587,275"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="693,187,843,214"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="724,238,812,265"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#af34117fc2b102ae44e7efac4531cbdf8" title=" " alt="" coords="491,339,610,366"/>
+<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="713,390,823,417"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955" title=" " alt="" coords="680,441,856,467"/>
+<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="696,289,840,315"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="701,339,835,366"/>
 </map>
 </div>
 
@@ -932,18 +936,18 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="structTurbulentPerturbation.html#a2bc17c5bb50a345676f2f5f837734401">ref_ratio</a> = refRatio;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// Reading inputs, and placing assertion for the perturbation inflow to work</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_box_dims&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#ab90f89bf4bf3d497f88c27d1b92f3d39">tpi_boxDim</a>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_direction&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#af2a72d18ce8c0f5bc011d3682ad93e0f">tpi_direction</a>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_layers&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">tpi_layers</a>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_offset&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a7bcb39c84b03deefaa166c89f22c229c">tpi_offset</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_box_dims&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#ab90f89bf4bf3d497f88c27d1b92f3d39">tpi_boxDim</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;perturbation_direction&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#af2a72d18ce8c0f5bc011d3682ad93e0f">tpi_direction</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_layers&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">tpi_layers</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_offset&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a7bcb39c84b03deefaa166c89f22c229c">tpi_offset</a>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_nondimensional&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">tpi_nonDim</a>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_infinity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a20940c88c5c2f6ef1b90d1984867777a">tpi_Tinf</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_intensity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#aa2c2e894fc858d8cdaa9cde0092e896e">tpi_Ti</a>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_Ug&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a35aca357a12e7d4403d2cdec611230dc">input_Ug</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_nondimensional&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#abe0155dd9b530c537b1f639ab4dc8691">tpi_nonDim</a>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_infinity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a20940c88c5c2f6ef1b90d1984867777a">tpi_Tinf</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_T_intensity&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#aa2c2e894fc858d8cdaa9cde0092e896e">tpi_Ti</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;perturbation_Ug&quot;</span>,<a class="code" href="structTurbulentPerturbation.html#a35aca357a12e7d4403d2cdec611230dc">input_Ug</a>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// Check variables message</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structTurbulentPerturbation.html#a17f060634e44ba5701cc1febba23c915">tpi_layers</a> &lt; 0) { amrex::Abort(<span class="stringliteral">&quot;Please provide a valid perturbation layer value (ie. 3-5)&quot;</span>); }</div>
@@ -1096,7 +1100,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_ac7df65e193131bbf6014eb04a6efdf7f_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_ac7df65e193131bbf6014eb04a6efdf7f_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_ac7df65e193131bbf6014eb04a6efdf7f_cgraph" id="astructTurbulentPerturbation_ac7df65e193131bbf6014eb04a6efdf7f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,168,47"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="216,13,255,39"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="216,13,255,39"/>
 </map>
 </div>
 
@@ -1365,7 +1369,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                        pert_cell(i,j,k) = rand_number_const * amp_copy;</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    });</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    <a class="code" href="ERF__InitCustomPert__FlowInABox_8H.html#a78aa27abe77f72703ce3a259b63555cc">ParallelForRNG</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keyword">const</span> amrex::RandomEngine&amp; engine) noexcept {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#af34117fc2b102ae44e7efac4531cbdf8">ParallelForRNG</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keyword">const</span> amrex::RandomEngine&amp; engine) noexcept {</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rand_double = amrex::Random(engine);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                        pert_cell(i,j,k) = (rand_double*2.0 - 1.0) * amp_copy;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                    });</div>
@@ -1374,7 +1378,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            }</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        }</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
-<div class="ttc" id="aERF__InitCustomPert__FlowInABox_8H_html_a78aa27abe77f72703ce3a259b63555cc"><div class="ttname"><a href="ERF__InitCustomPert__FlowInABox_8H.html#a78aa27abe77f72703ce3a259b63555cc">ParallelForRNG</a></div><div class="ttdeci">ParallelForRNG(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { Real rand_double=amrex::Random(engine);state_pert(i, j, k, RhoTheta_comp)=(rand_double *2.0 - 1.0) *T_0_Pert_Mag;state_pert(i, j, k, RhoTheta_comp) *=r_hse(i, j, k);})</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_af34117fc2b102ae44e7efac4531cbdf8"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#af34117fc2b102ae44e7efac4531cbdf8">ParallelForRNG</a></div><div class="ttdeci">ParallelForRNG(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const RandomEngine &amp;engine) noexcept { const Real *prob_lo=geomdata.ProbLo();const Real *prob_hi=geomdata.ProbHi();const Real *dx=geomdata.CellSize();const Real x=prob_lo[0]+(i+0.5) *dx[0];const Real y=prob_lo[1]+(j+0.5) *dx[1];const Real z=prob_lo[2]+(k+0.5) *dx[2];const Real xc=0.5 *(prob_lo[0]+prob_hi[0]);const Real yc=0.5 *(prob_lo[1]+prob_hi[1]);const Real zc=0.5 *(prob_lo[2]+prob_hi[2]);const Real r=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc)+(z-zc) *(z-zc));if((z&lt;=pert_ref_height) &amp;&amp;(T_0_Pert_Mag !=0.0)) { Real rhotheta=state(i, j, k, RhoTheta_comp);Real rho=state(i, j, k, Rho_comp);Real qv=state(i, j, k, RhoQ1_comp)/rho;Real Told=getTgivenRandRTh(rho, rhotheta, qv);Real P=getPgivenRTh(rhotheta, qv);Real rand_double=amrex::Random(engine);Real Tpert=(rand_double *2.0 - 1.0) *T_0_Pert_Mag;Real Tnew=Told+Tpert;Real theta_new=getThgivenTandP(Tnew, P, rdOcp);Real rhonew=getRhogivenThetaPress(theta_new, P, rdOcp, qv);state_pert(i, j, k, Rho_comp)=rhonew - rho;state_pert(i, j, k, RhoTheta_comp)=0.0;} state_pert(i, j, k, RhoScalar_comp)=A_0 *exp(-10.*r *r);if(custom_TKE) { state_pert(i, j, k, RhoKE_comp)=(1.0 - z/prob_hi[2]) *r_hse(i, j, k);} else { state_pert(i, j, k, RhoKE_comp)=KE_0;} if(use_moisture) { state_pert(i, j, k, RhoQ1_comp)=0.0;state_pert(i, j, k, RhoQ2_comp)=0.0;if((z&lt;=pert_ref_height) &amp;&amp;(qv_0_Pert_Mag !=0.0)) { Real rhoold=state(i, j, k, Rho_comp);Real rhonew=rhoold+state_pert(i, j, k, Rho_comp);Real qvold=state(i, j, k, RhoQ1_comp)/rhoold;Real rand_double=amrex::Random(engine);Real qvnew=qvold+(rand_double *2.0 - 1.0) *qv_0_Pert_Mag;state_pert(i, j, k, RhoQ1_comp)=rhonew *qvnew - rhoold *qvold;} } })</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#a5e6200f8b6bea3c4944dccc6c7285102">calc_tpi_update()</a>.</p>
 <div class="dynheader">
@@ -1382,13 +1386,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" id="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,78,168,119"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="252,5,343,32"/>
-<area shape="rect" href="ERF__InitCustomPert__FlowInABox_8H.html#a78aa27abe77f72703ce3a259b63555cc" title=" " alt="" coords="238,56,357,83"/>
-<area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="216,107,379,149"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,173,334,200"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="427,5,576,32"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="457,56,545,83"/>
+<area shape="rect" title=" " alt="" coords="5,154,168,195"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="252,56,343,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#af34117fc2b102ae44e7efac4531cbdf8" title=" " alt="" coords="238,132,357,159"/>
+<area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title=" " alt="" coords="216,183,379,225"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,249,334,276"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="440,5,589,32"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="471,56,559,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="459,107,570,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3ee1ea27d3b9f25afcc603f3e5b17955" title=" " alt="" coords="427,157,603,184"/>
+<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="443,208,587,235"/>
+<area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="448,259,581,285"/>
 </map>
 </div>
 <div class="dynheader">

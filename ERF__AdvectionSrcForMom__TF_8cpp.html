@@ -615,7 +615,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                                horiz_upw_frac, vert_upw_frac,</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                                vert_adv_type, lo_z_face, hi_z_face);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            AMREX_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown advection scheme!&quot;</span>);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown advection scheme!&quot;</span>);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
@@ -639,19 +639,21 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a21aac76e0b284b33e302526e1f292c76"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76">Compute_h_zeta_AtEdgeCenterJ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtEdgeCenterJ(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:273</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a2b9e684355ee8d6dad22950c8c51716b"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b">Compute_h_zeta_AtEdgeCenterK</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtEdgeCenterK(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:228</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a3e3ceccddeb3cca9d9e4573af2311a5e"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e">Compute_h_zeta_AtEdgeCenterI</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtEdgeCenterI(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:317</div></div>
+<div class="ttc" id="aERF__UpdateWSubsidence__Bomex_8H_html_ad901c6409ddad63abb2fb7ddb13cc824"><div class="ttname"><a href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ASSERT_WITH_MESSAGE(wbar_cutoff_min &gt; wbar_cutoff_max, &quot;ERROR: wbar_cutoff_min &lt; wbar_cutoff_max&quot;)</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__AdvectionSrcForMom__TF_8cpp_afe14bbf87c2a18301b0caa85ec3186f5_cgraph.png" border="0" usemap="#aERF__AdvectionSrcForMom__TF_8cpp_afe14bbf87c2a18301b0caa85ec3186f5_cgraph" alt=""/></div>
 <map name="aERF__AdvectionSrcForMom__TF_8cpp_afe14bbf87c2a18301b0caa85ec3186f5_cgraph" id="aERF__AdvectionSrcForMom__TF_8cpp_afe14bbf87c2a18301b0caa85ec3186f5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,107,188,133"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="263,5,445,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e" title=" " alt="" coords="239,56,469,83"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76" title=" " alt="" coords="239,107,469,133"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b" title=" " alt="" coords="236,157,472,184"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="309,208,399,235"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="520,183,669,209"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="551,233,639,260"/>
+<area shape="rect" title=" " alt="" coords="5,132,188,159"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="264,5,447,32"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824" title=" " alt="" coords="236,56,475,83"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e" title=" " alt="" coords="240,107,471,133"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76" title=" " alt="" coords="240,157,471,184"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b" title=" " alt="" coords="237,208,473,235"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="310,259,401,285"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="523,233,672,260"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="553,284,641,311"/>
 </map>
 </div>
 

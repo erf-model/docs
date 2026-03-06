@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>,       <span class="comment">/*!&lt; Potential temperature */</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        temperature, <span class="comment">/*!&lt; Temperature */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        pressure,    <span class="comment">/*!&lt; Pressure */</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        q_t,         <span class="comment">/*!&lt; Total (vapour + cloud) */</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>,         <span class="comment">/*!&lt; Total (vapour + cloud) */</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        q_v,         <span class="comment">/*!&lt; Water vapour */</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        q_c,         <span class="comment">/*!&lt; Cloud condensate */</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        dqcdt,       <span class="comment">/*!&lt; Condensation rate */</span></div>
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>MicVar_SD_Species {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">enum</span> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        q_t = 0,    <span class="comment">/*!&lt; Total density ratio */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a> = 0,    <span class="comment">/*!&lt; Total density ratio */</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        q_v,        <span class="comment">/*!&lt; Vapour density ratio */</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        q_c,        <span class="comment">/*!&lt; Condensate density ratio */</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        sr,         <span class="comment">/*!&lt; Saturation ratio */</span></div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(a_i &gt; 0);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span>      <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD::NumVars</a></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            +   (a_i-1)*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992a9295a4d95dbd36001a7b1beaa15e14b9">MicVar_SD_Species::NumVars</a></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            +   MicVar_SD_Species::q_t;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            +   <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">MicVar_SD_Species::q_t</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE</div>
@@ -554,6 +554,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletsMoist_8H_source.html
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
+<div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_a53f503b12f901c51930a7e802ae58f12"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a></div><div class="ttdeci">Real q_t</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:24</div></div>
 <div class="ttc" id="aERF__NullMoistLagrangian_8H_html"><div class="ttname"><a href="ERF__NullMoistLagrangian_8H.html">ERF_NullMoistLagrangian.H</a></div><div class="ttdoc">Contains the Lagrangian moisture model base class.</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__SuperDropletPC_8H_html"><div class="ttname"><a href="ERF__SuperDropletPC_8H.html">ERF_SuperDropletPC.H</a></div></div>

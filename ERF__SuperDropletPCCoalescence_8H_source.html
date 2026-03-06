@@ -136,8 +136,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCCoalescence_8H_sour
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <span class="keyword">const</span> RT* <span class="keyword">const</span> a_v1,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                        <span class="keyword">const</span> RT* <span class="keyword">const</span> a_v2 ) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">auto</span> p = std::min(a_r1,a_r2) / std::max(a_r1,a_r2);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">auto</span> E = 0.5*p*p / ((1.0+p)*(1.0+p));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a> = std::min(a_r1,a_r2) / std::max(a_r1,a_r2);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">auto</span> E = 0.5*<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>*<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a> / ((1.0+<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>)*(1.0+<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>));</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        RT dv = 0;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d = 0; d &lt; SPACEDIM; d++) {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            dv += (a_v1[d]-a_v2[d])*(a_v1[d]-a_v2[d]);</div>
@@ -333,16 +333,16 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCCoalescence_8H_sour
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((irr &gt;= 1) &amp;&amp; (irr &lt; 15)) {</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            RT p =   ( r1*1.0e6              - Halls_data_r0col(irr-1) )</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a> =   ( r1*1.0e6              - Halls_data_r0col(irr-1) )</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                   / ( Halls_data_r0col(irr) - Halls_data_r0col(irr-1) );</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            RT q =   ( ratio                  - Halls_data_ratcol(iqq-1) )</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                   / ( Halls_data_ratcol(iqq) - Halls_data_ratcol(iqq-1) );</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            c_rate =   (1.0-p) * (1.0-q) * Halls_data_ecoll(iqq-1,irr-1)</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                     + p       * (1.0-q) * Halls_data_ecoll(iqq-1,irr  )</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                     + (1.0-p) * q       * Halls_data_ecoll(iqq  ,irr-1)</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                     + p       * q       * Halls_data_ecoll(iqq  ,irr  );</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            c_rate =   (1.0-<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>) * (1.0-q) * Halls_data_ecoll(iqq-1,irr-1)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                     + <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>       * (1.0-q) * Halls_data_ecoll(iqq-1,irr  )</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                     + (1.0-<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>) * q       * Halls_data_ecoll(iqq  ,irr-1)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                     + <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>       * q       * Halls_data_ecoll(iqq  ,irr  );</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
@@ -448,6 +448,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCCoalescence_8H_sour
 <div class="ttc" id="aERF__Constants_8H_html_a6700ceab4c13f15657c8137f8dd8c039"><div class="ttname"><a href="ERF__Constants_8H.html#a6700ceab4c13f15657c8137f8dd8c039">boltz</a></div><div class="ttdeci">constexpr amrex::Real boltz</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:62</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
+<div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_af83c1918e681461dc4cc7ed4c0828b2c"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a></div><div class="ttdeci">Real * p</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

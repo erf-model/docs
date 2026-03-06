@@ -143,15 +143,15 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> P&gt;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    AMREX_GPU_HOST_DEVICE</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    amrex::IntVect operator() (  <a class="code" href="namespaceMetGridTmpDstVars.html#ac3da1ef0f8563c978ab97fac68dd6d3ba27030d565c2d0967c7560ba20d5db963">P</a> <span class="keyword">const</span>&amp; p,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    amrex::IntVect operator() (  <a class="code" href="namespaceMetGridTmpDstVars.html#ac3da1ef0f8563c978ab97fac68dd6d3ba27030d565c2d0967c7560ba20d5db963">P</a> <span class="keyword">const</span>&amp; <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>,</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                 amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; plo,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                 amrex::GpuArray&lt;amrex::Real,AMREX_SPACEDIM&gt; <span class="keyword">const</span>&amp; dxi,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                 <span class="keyword">const</span> amrex::Box&amp; domain ) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        amrex::IntVect iv(</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            AMREX_D_DECL(   <span class="keywordtype">int</span>(amrex::Math::floor((p.pos(0)-plo[0])*dxi[0])),</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                            <span class="keywordtype">int</span>(amrex::Math::floor((p.pos(1)-plo[1])*dxi[1])),</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            p.idata(ERFParticlesIntIdxAoS::k) ) );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            AMREX_D_DECL(   <span class="keywordtype">int</span>(amrex::Math::floor((<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>.pos(0)-plo[0])*dxi[0])),</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                            <span class="keywordtype">int</span>(amrex::Math::floor((<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>.pos(1)-plo[1])*dxi[1])),</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                            <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>.idata(ERFParticlesIntIdxAoS::k) ) );</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        iv[0] += domain.smallEnd()[0];</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        iv[1] += domain.smallEnd()[1];</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> iv;</div>
@@ -336,6 +336,7 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_af83c1918e681461dc4cc7ed4c0828b2c"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a></div><div class="ttdeci">Real * p</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:61</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMetGridTmpDstVars_html_ac3da1ef0f8563c978ab97fac68dd6d3ba27030d565c2d0967c7560ba20d5db963"><div class="ttname"><a href="namespaceMetGridTmpDstVars.html#ac3da1ef0f8563c978ab97fac68dd6d3ba27030d565c2d0967c7560ba20d5db963">MetGridTmpDstVars::P</a></div><div class="ttdeci">@ P</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:148</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:12</div></div>

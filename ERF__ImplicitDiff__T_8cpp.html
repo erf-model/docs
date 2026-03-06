@@ -388,9 +388,9 @@ template&lt;int stagdir&gt; </div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">bool</span> foextrap_on_zhi = (bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    amrex::ignore_unused(foextrap_on_zhi);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    AMREX_ASSERT_WITH_MESSAGE(ext_dir_on_zlo || ext_dir_on_zhi || use_SurfLayer,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(ext_dir_on_zlo || ext_dir_on_zhi || use_SurfLayer,</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                              <span class="stringliteral">&quot;Unexpected lower BC used with implicit vertical diffusion&quot;</span>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    AMREX_ASSERT_WITH_MESSAGE(foextrap_on_zhi,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(foextrap_on_zhi,</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                              <span class="stringliteral">&quot;Unexpected upper BC used with implicit vertical diffusion&quot;</span>);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span> (stagdir &lt; 2 &amp;&amp; (ext_dir_on_zlo || ext_dir_on_zhi)) {</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        amrex::Warning(<span class="stringliteral">&quot;No-slip walls have not been fully tested&quot;</span>);</div>
@@ -551,6 +551,7 @@ template&lt;int stagdir&gt; </div>
 <div class="ttc" id="aERF__SetupVertDiff_8H_html_a2bb8b4b6219971108e388165a8563647"><div class="ttname"><a href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a></div><div class="ttdeci">bool l_consA</div><div class="ttdef"><b>Definition:</b> ERF_SetupVertDiff.H:7</div></div>
 <div class="ttc" id="aERF__SolveTridiag_8H_html_ac557d69d0b9db025bbb4cb3331853a0a"><div class="ttname"><a href="ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a">SolveTridiag</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void SolveTridiag(int i, int j, int klo, int khi, const amrex::Array4&lt; amrex::Real &gt; &amp;soln_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;coeffA_a, const amrex::Array4&lt; amrex::Real &gt; &amp;coeffB_a, const amrex::Array4&lt; amrex::Real &gt; &amp;inv_coeffB_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;coeffC_a, const amrex::Array4&lt; const amrex::Real &gt; &amp;RHS_a)</div><div class="ttdef"><b>Definition:</b> ERF_SolveTridiag.H:6</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:182</div></div>
+<div class="ttc" id="aERF__UpdateWSubsidence__Bomex_8H_html_ad901c6409ddad63abb2fb7ddb13cc824"><div class="ttname"><a href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ASSERT_WITH_MESSAGE(wbar_cutoff_min &gt; wbar_cutoff_max, &quot;ERROR: wbar_cutoff_min &lt; wbar_cutoff_max&quot;)</div></div>
 <div class="ttc" id="anamespaceBCVars_html_a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4"><div class="ttname"><a href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a></div><div class="ttdeci">@ xvel_bc</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:87</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:224</div></div>
 <div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a></div><div class="ttdeci">@ ext_dir</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:225</div></div>
@@ -568,13 +569,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ImplicitDiff__T_8cpp_adf56c5884ff3e9cd1014702124165427_cgraph.png" border="0" usemap="#aERF__ImplicitDiff__T_8cpp_adf56c5884ff3e9cd1014702124165427_cgraph" alt=""/></div>
 <map name="aERF__ImplicitDiff__T_8cpp_adf56c5884ff3e9cd1014702124165427_cgraph" id="aERF__ImplicitDiff__T_8cpp_adf56c5884ff3e9cd1014702124165427_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,168,108"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="216,5,405,32"/>
-<area shape="rect" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d" title=" " alt="" coords="230,56,391,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="265,107,356,133"/>
-<area shape="rect" href="ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a" title=" " alt="" coords="260,157,361,184"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="453,81,603,108"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="484,132,572,159"/>
+<area shape="rect" title=" " alt="" coords="5,107,168,133"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824" title=" " alt="" coords="216,5,455,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="241,56,430,83"/>
+<area shape="rect" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d" title=" " alt="" coords="255,107,416,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="290,157,381,184"/>
+<area shape="rect" href="ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a" title=" " alt="" coords="285,208,386,235"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="503,132,652,159"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="533,183,621,209"/>
 </map>
 </div>
 
@@ -747,9 +749,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> neumann_on_zhi  = (bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60">ERFBCType::neumann</a>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    amrex::ignore_unused(foextrap_on_zlo, foextrap_on_zhi);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    AMREX_ASSERT_WITH_MESSAGE(foextrap_on_zlo || neumann_on_zlo || use_SurfLayer,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(foextrap_on_zlo || neumann_on_zlo || use_SurfLayer,</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                              <span class="stringliteral">&quot;Unexpected lower BC used with implicit vertical diffusion&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    AMREX_ASSERT_WITH_MESSAGE(foextrap_on_zhi || neumann_on_zhi,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(foextrap_on_zhi || neumann_on_zhi,</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                              <span class="stringliteral">&quot;Unexpected upper BC used with implicit vertical diffusion&quot;</span>);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
@@ -829,13 +831,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ImplicitDiff__T_8cpp_a7b15f849db322464ffa540c61fff6b42_cgraph.png" border="0" usemap="#aERF__ImplicitDiff__T_8cpp_a7b15f849db322464ffa540c61fff6b42_cgraph" alt=""/></div>
 <map name="aERF__ImplicitDiff__T_8cpp_a7b15f849db322464ffa540c61fff6b42_cgraph" id="aERF__ImplicitDiff__T_8cpp_a7b15f849db322464ffa540c61fff6b42_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,168,108"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="216,5,405,32"/>
-<area shape="rect" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a" title=" " alt="" coords="258,56,363,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="265,107,356,133"/>
-<area shape="rect" href="ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a" title=" " alt="" coords="260,157,361,184"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="453,81,603,108"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="484,132,572,159"/>
+<area shape="rect" title=" " alt="" coords="5,107,168,133"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824" title=" " alt="" coords="216,5,455,32"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="241,56,430,83"/>
+<area shape="rect" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a" title=" " alt="" coords="283,107,388,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="290,157,381,184"/>
+<area shape="rect" href="ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a" title=" " alt="" coords="285,208,386,235"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="503,132,652,159"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="533,183,621,209"/>
 </map>
 </div>
 
