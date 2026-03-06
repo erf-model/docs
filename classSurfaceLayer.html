@@ -2532,69 +2532,77 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;{</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    Print() &lt;&lt; <span class="stringliteral">&quot;Initializing TKE from surface layer ustar on level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="comment">// Handle vertical decomposition by copying into boxes not at klo</span></div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi_dst(*<a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]); mfi_dst.isValid(); ++mfi_dst)</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    {</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        Box vbx_dst = mfi_dst.validbox();</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        <span class="keywordflow">if</span> (vbx_dst.smallEnd(2) == <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        Box vbx_tmp = vbx_dst; vbx_tmp.setRange(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        FArrayBox&amp; dst_fab = <a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]-&gt;get(mfi_dst);</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160; </div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi_src(*<a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]); mfi_src.isValid(); ++mfi_src)</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        {</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            Box vbx_src = mfi_src.validbox();</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            <span class="keywordflow">if</span> (vbx_src == vbx_tmp) {</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                FArrayBox&amp; src_fab = <a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]-&gt;get(mfi_src);</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                dst_fab.copy&lt;RunOn::Device&gt;(src_fab, vbx_src, 0, vbx_dst, 0, 1);</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;            }</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        }</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    }</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;    <span class="comment">// Now work on all boxes (ustar has been filled above)</span></div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> small = 0.01;</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    {</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;        Box vbx  = mfi.validbox();</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;        <span class="keywordtype">int</span> kmin = vbx.smallEnd(2);</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="comment">// Handle vertical decomposition by selectively copying into</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="comment">// a FArrayBox section on each rank. Then doing a reduce real sum</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="comment">// and broadcasting to each rank. No mask since all CC data</span></div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    Box bx_lo = <a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]-&gt;boxArray().minimalBox();</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    FArrayBox u_star_lo(bx_lo, 1); u_star_lo.setVal&lt;RunOn::Device&gt;(0.);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    FArrayBox z_surf_lo(bx_lo, 1); z_surf_lo.setVal&lt;RunOn::Device&gt;(0.);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* ustar_ptr = u_star_lo.dataPtr();</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* zsurf_ptr = z_surf_lo.dataPtr();</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    {</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        Box vbx = mfi.validbox();</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        <span class="keywordflow">if</span> (vbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        vbx.makeSlab(2,0);</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u_star_arr = <a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;        <span class="keyword">auto</span>        u_star_all = u_star_lo.array();</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; z_phys_arr = z_phys_nd-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        <span class="keyword">auto</span>        z_surf_all = z_surf_lo.array();</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160; </div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        {</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            u_star_all(i,j,0) = u_star_arr(i,j,0);</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            z_surf_all(i,j,0) = 0.25 * ( z_phys_arr(i  ,j  ,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) + z_phys_arr(i+1,j  ,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>)</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                                       + z_phys_arr(i  ,j+1,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) + z_phys_arr(i+1,j+1,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) );</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;        });</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;    }</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    ParallelDescriptor::ReduceRealSum(ustar_ptr, bx_lo.numPts());</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    ParallelDescriptor::ReduceRealSum(zsurf_ptr, bx_lo.numPts());</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u_star_arr = <a class="code" href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">u_star</a>[lev]-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; z_phys_arr = z_phys_nd-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cons_arr   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>.array(mfi);</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        {</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>  = cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ust  = u_star_arr(i, j, kmin);</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tke0 = tkefac * ust * ust; <span class="comment">// surface value</span></div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zagl = <a class="code" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a>(i, j, k, z_phys_arr);</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;    <span class="comment">// Now work on all boxes (ustar has been filled above)</span></div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> small = 0.01;</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;    {</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;        Box vbx  = mfi.validbox();</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160; </div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; u_star_arr = u_star_lo.const_array();</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; z_surf_arr = z_surf_lo.const_array();</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; z_phys_arr = z_phys_nd-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160; </div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cons_arr   = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>.array(mfi);</div>
 <div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;            <span class="comment">// linearly tapering profile --  following WRF, approximate top of</span></div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            <span class="comment">// PBL as ustar * zscale</span></div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * tke0 * std::max(</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                (ust * zscale - zagl) / (std::max(ust, small) * zscale),</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                small);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        });</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;    }</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;}</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        {</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>  = cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ust  = u_star_arr(i, j, 0);</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tke0 = tkefac * ust * ust; <span class="comment">// surface value</span></div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zagl = <a class="code" href="ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739">Compute_Z_AtCellCenter</a>(i, j, k, z_phys_arr) - z_surf_arr(i,j,0);</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160; </div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;            <span class="comment">// linearly tapering profile --  following WRF, approximate top of</span></div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            <span class="comment">// PBL as ustar * zscale</span></div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;            cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * tke0 * std::max(</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;                (ust * zscale - zagl) / (std::max(ust, small) * zscale),</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;                small);</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        });</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;    }</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a5592160d4fcea8fa203b4028037ad739"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739">Compute_Z_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Z_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:359</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph.png" border="0" usemap="#aclassSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph" alt=""/></div>
 <map name="aclassSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph" id="aclassSurfaceLayer_a1cb463309cb73de8434f0fd1a2db985f_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,141,65"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="189,5,392,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="245,56,336,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="440,31,589,57"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="471,81,559,108"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739" title=" " alt="" coords="189,5,376,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="237,56,328,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="424,31,573,57"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="455,81,543,108"/>
 </map>
 </div>
 
@@ -2979,7 +2987,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassSurfaceLayer_html_a04ccc2ab0ba1ae8e24316fe2f10ad424"><div class="ttname"><a href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424">SurfaceLayer::lmask_min_reduce</a></div><div class="ttdeci">int lmask_min_reduce(amrex::iMultiFab &amp;lmask, const int &amp;nghost)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:594</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a07168bc6be4d07fd31d0877a347975b0"><div class="ttname"><a href="classSurfaceLayer.html#a07168bc6be4d07fd31d0877a347975b0">SurfaceLayer::m_lsm_data_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_lsm_data_name</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:716</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a1dcdb82f4a2c3676732791255cfa9656"><div class="ttname"><a href="classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656">SurfaceLayer::m_has_lsm_tsurf</a></div><div class="ttdeci">bool m_has_lsm_tsurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:692</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_af866fe6c505ef4e5a551486d9aa3941b"><div class="ttname"><a href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b">SurfaceLayer::read_custom_roughness</a></div><div class="ttdeci">void read_custom_roughness(const int &amp;lev, const std::string &amp;fname)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:851</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_af866fe6c505ef4e5a551486d9aa3941b"><div class="ttname"><a href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b">SurfaceLayer::read_custom_roughness</a></div><div class="ttdeci">void read_custom_roughness(const int &amp;lev, const std::string &amp;fname)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:858</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3035,123 +3043,123 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;{</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;    <span class="comment">// Read the file if we have it</span></div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;    <span class="keywordflow">if</span> (!fname.empty()) {</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        <span class="comment">// Only the ioproc reads the file</span></div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;        Gpu::HostVector&lt;Real&gt; <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>,<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>,m_z0;</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;            Print()&lt;&lt;<span class="stringliteral">&quot;Reading MOST roughness file at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; fname &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;            std::ifstream file(fname);</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> value1,value2,value3;</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.push_back(value1);</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.push_back(value2);</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                m_z0.push_back(value3);</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            }</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            file.close();</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160; </div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;        }</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160; </div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        <span class="comment">// Broadcast the whole domain to every rank</span></div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;        <span class="keywordtype">int</span> nnode = <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size();</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        ParallelDescriptor::Bcast(&amp;nnode, 1, ioproc);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.resize(nnode);</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.resize(nnode);</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;            m_z0.resize(nnode);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        }</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.data() , nnode, ioproc);</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.data() , nnode, ioproc);</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        ParallelDescriptor::Bcast(m_z0.data(), nnode, ioproc);</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160; </div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;        <span class="comment">// Copy data to the GPU</span></div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;        Gpu::DeviceVector&lt;Real&gt; d_x(nnode),d_y(nnode),d_z0(nnode);</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.end(), d_x.begin());</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.end(), d_y.begin());</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        Gpu::copy(Gpu::hostToDevice, m_z0.begin(), m_z0.end(), d_z0.begin());</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* xp  = d_x.data();</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* yp  = d_y.data();</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* z0p = d_z0.data();</div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160; </div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        <span class="comment">// Each rank populates it&#39;s z_0[lev] MultiFab</span></div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev]); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        {</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            Box gtbx = mfi.growntilebox();</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160; </div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;            <span class="keywordflow">if</span> (gtbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160; </div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;            <span class="comment">// Populate z_phys data</span></div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol = 1.0e-4;</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;            <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSizeArray();</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;            <span class="keyword">auto</span> ProbLoArr = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].ProbLoArray();</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;            <span class="keywordtype">int</span> ilo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(0);</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <span class="keywordtype">int</span> jlo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(1);</div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;            <span class="keywordtype">int</span> ihi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(0);</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;            <span class="keywordtype">int</span> jhi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(1);</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160; </div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z0_arr = <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].array(mfi);</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            {</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
+<div class="fragment"><div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;{</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    <span class="comment">// Read the file if we have it</span></div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    <span class="keywordflow">if</span> (!fname.empty()) {</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="comment">// Only the ioproc reads the file</span></div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        Gpu::HostVector&lt;Real&gt; <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>,<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>,m_z0;</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;            Print()&lt;&lt;<span class="stringliteral">&quot;Reading MOST roughness file at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; : &quot;</span> &lt;&lt; fname &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            std::ifstream file(fname);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> value1,value2,value3;</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;            <span class="keywordflow">while</span>(file&gt;&gt;value1&gt;&gt;value2&gt;&gt;value3){</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.push_back(value1);</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.push_back(value2);</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                m_z0.push_back(value3);</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;            }</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            file.close();</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160; </div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.size());</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size() == m_z0.size());</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        }</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        <span class="comment">// Broadcast the whole domain to every rank</span></div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        <span class="keywordtype">int</span> nnode = <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size();</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        ParallelDescriptor::Bcast(&amp;nnode, 1, ioproc);</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160; </div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.resize(nnode);</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.resize(nnode);</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;            m_z0.resize(nnode);</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        }</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.data() , nnode, ioproc);</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        ParallelDescriptor::Bcast(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.data() , nnode, ioproc);</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;        ParallelDescriptor::Bcast(m_z0.data(), nnode, ioproc);</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;        <span class="comment">// Copy data to the GPU</span></div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;        Gpu::DeviceVector&lt;Real&gt; d_x(nnode),d_y(nnode),d_z0(nnode);</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.end(), d_x.begin());</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;        Gpu::copy(Gpu::hostToDevice, <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.begin(), <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a>.end(), d_y.begin());</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;        Gpu::copy(Gpu::hostToDevice, m_z0.begin(), m_z0.end(), d_z0.begin());</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* xp  = d_x.data();</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* yp  = d_y.data();</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* z0p = d_z0.data();</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160; </div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;        <span class="comment">// Each rank populates it&#39;s z_0[lev] MultiFab</span></div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev]); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;        {</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;            Box gtbx = mfi.growntilebox();</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160; </div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <span class="keywordflow">if</span> (gtbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160; </div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;            <span class="comment">// Populate z_phys data</span></div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol = 1.0e-4;</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].CellSizeArray();</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            <span class="keyword">auto</span> ProbLoArr = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].ProbLoArray();</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            <span class="keywordtype">int</span> ilo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(0);</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;            <span class="keywordtype">int</span> jlo = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().smallEnd(1);</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;            <span class="keywordtype">int</span> ihi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(0);</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            <span class="keywordtype">int</span> jhi = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().bigEnd(1);</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160; </div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                <span class="comment">// Location of nodes</span></div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0];</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1];</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                <span class="keywordtype">int</span> inode = ii + jj * (ihi-ilo+2); <span class="comment">// stride is Nx+1</span></div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                <span class="keywordflow">if</span> (std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[inode],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[inode],2)) &lt; tol) {</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0p[inode];</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                    <span class="comment">// Unexpected list order, do brute force search</span></div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z0loc = 0.0;</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;nnode; ++n) {</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta=std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[n],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[n],2));</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                        <span class="keywordflow">if</span> (delta &lt; tol) {</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;                            found = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                            z0loc = z0p[n];</div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                        }</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                    }</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                    AMREX_ASSERT_WITH_MESSAGE(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                    amrex::ignore_unused(found);</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0loc;</div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;                }</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;            });</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;        } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev &gt; 0);</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160; </div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        Print()&lt;&lt;<span class="stringliteral">&quot;Interpolating MOST roughness at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160; </div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;        <span class="comment">// Create a BC mapper that uses FOEXTRAP at domain bndry</span></div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        Vector&lt;int&gt; bc_lo(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        Vector&lt;int&gt; bc_hi(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        Vector&lt;BCRec&gt; bcr; bcr.push_back(BCRec(bc_lo.data(),bc_hi.data()));</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;            Array4&lt;Real&gt; <span class="keyword">const</span>&amp; z0_arr = <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].array(mfi);</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;            {</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                <span class="comment">// Clip indices for ghost-cells</span></div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;                <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;                <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j,jlo),jhi);</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160; </div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;                <span class="comment">// Location of nodes</span></div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = ProbLoArr[0]  + ii  * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[0];</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = ProbLoArr[1]  + jj  * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a>[1];</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                <span class="keywordtype">int</span> inode = ii + jj * (ihi-ilo+2); <span class="comment">// stride is Nx+1</span></div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;                <span class="keywordflow">if</span> (std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[inode],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[inode],2)) &lt; tol) {</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0p[inode];</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                    <span class="comment">// Unexpected list order, do brute force search</span></div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z0loc = 0.0;</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n=0; n&lt;nnode; ++n) {</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> delta=std::sqrt(std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a>-xp[n],2)+std::pow(<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>-yp[n],2));</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                        <span class="keywordflow">if</span> (delta &lt; tol) {</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;                            found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;                            z0loc = z0p[n];</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;                            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;                        }</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;                    }</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;                    AMREX_ASSERT_WITH_MESSAGE(found, <span class="stringliteral">&quot;Location read from terrain file does not match the grid!&quot;</span>);</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;                    amrex::ignore_unused(found);</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;                    z0_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) = z0loc;</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;                }</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;            });</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(lev &gt; 0);</div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160; </div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;        <span class="comment">// Create ref ratio</span></div>
-<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;        IntVect ratio;</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;            ratio[idim] = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().length(idim) / <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0].Domain().length(idim);</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        }</div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160; </div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;        <span class="comment">// Create interp object and interpolate from the coarsest grid</span></div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;        MFInterpolater* interp = &amp;mf_cell_cons_interp;</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        interp-&gt;interp(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[0]  , 0,</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                       <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev], 0,</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;                       1, <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].nGrowVect(),</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0], <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],</div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain(),ratio,</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                       bcr, 0);</div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;    }</div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;}</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;        Print()&lt;&lt;<span class="stringliteral">&quot;Interpolating MOST roughness at level &quot;</span> &lt;&lt; lev &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160; </div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;        <span class="comment">// Create a BC mapper that uses FOEXTRAP at domain bndry</span></div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;        Vector&lt;int&gt; bc_lo(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;        Vector&lt;int&gt; bc_hi(3,<a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;        Vector&lt;BCRec&gt; bcr; bcr.push_back(BCRec(bc_lo.data(),bc_hi.data()));</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160; </div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;        <span class="comment">// Create ref ratio</span></div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        IntVect ratio;</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim = 0; idim &lt; AMREX_SPACEDIM; ++idim) {</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;            ratio[idim] = <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain().length(idim) / <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0].Domain().length(idim);</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;        }</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160; </div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;        <span class="comment">// Create interp object and interpolate from the coarsest grid</span></div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;        MFInterpolater* interp = &amp;mf_cell_cons_interp;</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;        interp-&gt;interp(<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[0]  , 0,</div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;                       <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev], 0,</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;                       1, <a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev].nGrowVect(),</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[0], <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev],</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;                       <a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].Domain(),ratio,</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                       bcr, 0);</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    }</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba9612b6816e2fb7dc3ad56d6bc1fb7df8">m_y</a></div><div class="ttdeci">@ m_y</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:25</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b"><div class="ttname"><a href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a></div><div class="ttdeci">@ m_x</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:24</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
