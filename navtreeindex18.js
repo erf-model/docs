@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"namespacemodule__model__constants.html#a56aca7c289d5c4c45a9f0eb25feac1e4":[1,0,21,76],
 "namespacemodule__model__constants.html#a5709cbb2c78a6396b1095157ed980389":[1,0,21,48],
 "namespacemodule__model__constants.html#a5a725ff1c2476339947e55a8378bbec3":[1,0,21,75],
 "namespacemodule__model__constants.html#a5de190345ba81be9c8503cde8101e7af":[1,0,21,63],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "structAdvChoice.html#a0913a61ad5530639cdbf84579c34041a":[2,0,6,3],
 "structAdvChoice.html#a118575fe302e72fcd231e77be6d117a9":[2,0,6,20],
 "structAdvChoice.html#a13ccf0a64999d9da9c29474e7ddff27b":[2,0,6,4],
-"structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528":[2,0,6,1],
-"structAdvChoice.html#a1fc6421356a6c2ecfea0a46b3928d9cf":[2,0,6,8]
+"structAdvChoice.html#a191cb08c4e809d1982ea90e4b4f9a528":[2,0,6,1]
 };

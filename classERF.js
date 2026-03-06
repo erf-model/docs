@@ -127,6 +127,7 @@ var classERF =
     [ "ReadCheckpointFile", "classERF.html#af285247b24b173cd851fe49799d17f42", null ],
     [ "ReadCheckpointFileSurfaceLayer", "classERF.html#afdd04d6a1c2103e654f0cb6eda62436d", null ],
     [ "ReadParameters", "classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a", null ],
+    [ "ReadVelsOnlyFromCheckpointFile", "classERF.html#a6aaad5df62df3a0d99fb279812e6633a", null ],
     [ "refinement_criteria_setup", "classERF.html#aa90c9756f684404f8b69b8a23568b535", null ],
     [ "remake_zphys", "classERF.html#a18610f7aac948db169cf8a4642573027", null ],
     [ "RemakeLevel", "classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d", null ],
