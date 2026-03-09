@@ -1,6 +1,7 @@
 var classProblemBase =
 [
     [ "~ProblemBase", "classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1", null ],
+    [ "erf_init_const_dens_and_linear_th_hse", "classProblemBase.html#a6097d8a1d0b418ebdd158ef000f87d63", null ],
     [ "erf_init_const_dens_and_th_hse", "classProblemBase.html#ad83f058e9bc03a6233944a142e789aed", null ],
     [ "erf_init_const_dens_hse", "classProblemBase.html#a761654dd04f2692667be973f9b1ce530", null ],
     [ "erf_init_dens_hse", "classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56", null ],
