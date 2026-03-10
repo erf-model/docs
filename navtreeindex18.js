@@ -1,5 +1,7 @@
 var NAVTREEINDEX18 =
 {
+"functions_e.html":[2,3,0,4],
+"functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,5],
 "functions_func.html":[2,3,1],
@@ -126,8 +128,8 @@ var NAVTREEINDEX18 =
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,19],
 "globals_v.html":[3,1,0,20],
-"globals_vars.html":[3,1,2,0],
 "globals_vars.html":[3,1,2],
+"globals_vars.html":[3,1,2,0],
 "globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
 "globals_vars_d.html":[3,1,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX18 =
 "namespacederived.html#a7292c8c78a618eb0f6ca6a5356705362":[1,0,4,5],
 "namespacederived.html#a7fb98e12fceaa6f691dfef83db453757":[1,0,4,8],
 "namespacederived.html#a8bc196f7dfb365c426b0b7e720e479e2":[1,0,4,21],
-"namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2":[1,0,4,16],
-"namespacederived.html#a9118d89c9fb844952c2cb55661c15a3e":[1,0,4,4],
-"namespacederived.html#a9935603239fe8510b11179da8e76c39c":[1,0,4,9]
+"namespacederived.html#a8d96f91847cec51636c122ab27a5f8a2":[1,0,4,16]
 };

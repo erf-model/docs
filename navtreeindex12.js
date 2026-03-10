@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"classEulerianMicrophysics.html#adbf5960916f56bb7d0b4d3e04a905f74":[2,0,30,15],
+"classEulerianMicrophysics.html#af2deffc61faaf4197f74dcfe0691a56b":[2,0,30,9],
 "classEulerianMicrophysics.html#af78c2f059431d49deec9f570ada4daaa":[2,0,30,0],
 "classFitch.html":[2,0,32],
 "classFitch.html#a1a2db68abb0185de73bd870884f0b019":[2,0,32,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "classMRISplitIntegrator.html#a42d755c9aea9203dfdcbbe4cb76f83e3":[2,0,50,0],
 "classMRISplitIntegrator.html#a526041af494ee08e31efefc98aaa07ab":[2,0,50,4],
 "classMRISplitIntegrator.html#a5ae771a094162dc22bfdded7b12fd5c4":[2,0,50,19],
-"classMRISplitIntegrator.html#a5b2e5780482fdbeab2ce9c053557cbf8":[2,0,50,25],
-"classMRISplitIntegrator.html#a69e19ac4b8c02d71269e741e71b74c23":[2,0,50,26],
-"classMRISplitIntegrator.html#a6ca4eef257ddfcb793de89d2309ac9a1":[2,0,50,21]
+"classMRISplitIntegrator.html#a5b2e5780482fdbeab2ce9c053557cbf8":[2,0,50,25]
 };

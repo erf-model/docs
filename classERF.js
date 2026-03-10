@@ -79,7 +79,7 @@ var classERF =
     [ "InitializeFromFile", "classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6", null ],
     [ "InitializeLevelFromData", "classERF.html#a914f576acc2d1a54203a220cce10df62", null ],
     [ "initializeMicrophysics", "classERF.html#afc2898daad269536c1a15443abf3fa75", null ],
-    [ "initRayleigh", "classERF.html#a039a764a1d942c484e8aea49e87bc046", null ],
+    [ "initRayleigh_at_level", "classERF.html#a7588352f12a86f303d550b4fe5223db3", null ],
     [ "initSponge", "classERF.html#ab26ec4f9c35a519063af2a938c1012e6", null ],
     [ "input_sponge", "classERF.html#abfdc95a7c3cf7e413c1352bac38c93e8", null ],
     [ "Interp2DArrays", "classERF.html#ac3b264bdcc7f9251ccbd9b2f8f4080ec", null ],

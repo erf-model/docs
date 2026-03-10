@@ -108,7 +108,7 @@ var searchData=
   ['initializefromfile_1631',['InitializeFromFile',['../classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6',1,'ERF']]],
   ['initializelevelfromdata_1632',['InitializeLevelFromData',['../classERF.html#a914f576acc2d1a54203a220cce10df62',1,'ERF']]],
   ['initializemicrophysics_1633',['initializeMicrophysics',['../classERF.html#afc2898daad269536c1a15443abf3fa75',1,'ERF']]],
-  ['initrayleigh_1634',['initRayleigh',['../classERF.html#a039a764a1d942c484e8aea49e87bc046',1,'ERF']]],
+  ['initrayleigh_5fat_5flevel_1634',['initRayleigh_at_level',['../classERF.html#a7588352f12a86f303d550b4fe5223db3',1,'ERF']]],
   ['initsponge_1635',['initSponge',['../classERF.html#ab26ec4f9c35a519063af2a938c1012e6',1,'ERF']]],
   ['input_1636',['input',['../classSHOCInterface.html#a7bae6e8cf8a824c99ddbbf0a35afa086',1,'SHOCInterface']]],
   ['input_5fbndry_5fplanes_1637',['input_bndry_planes',['../classERF.html#a80ad08512968ec45635df68abe66b1fc',1,'ERF']]],

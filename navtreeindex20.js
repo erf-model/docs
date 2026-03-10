@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"namespacemodule__mp__morr__two__moment.html#a6c92b5839436f4d72dd0f7c2871db0ad":[1,0,22,18],
+"namespacemodule__mp__morr__two__moment.html#a728bfa081eb8d78296029ba2cc18ead7":[1,0,22,92],
 "namespacemodule__mp__morr__two__moment.html#a75a4b33dde8f3058e9eef555f321b10a":[1,0,22,94],
 "namespacemodule__mp__morr__two__moment.html#a769e12f2be7e40122eed9f4d6ef16709":[1,0,22,56],
 "namespacemodule__mp__morr__two__moment.html#a79ca736bbd6243474f5b3d3ffe1ec1d3":[1,0,22,49],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "structLineSampler.html":[2,0,40],
 "structLineSampler.html#a14f0333f44b80166b63e09dc1526cb6d":[2,0,40,12],
 "structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,40,10],
-"structLineSampler.html#a248c2a32586be9ae9ce308c2e91a0f57":[2,0,40,1],
-"structLineSampler.html#a56da044954a236b411c1c52e42338883":[2,0,40,7],
-"structLineSampler.html#a58086bf3ebf66d141e87d8ce82c45a93":[2,0,40,2]
+"structLineSampler.html#a248c2a32586be9ae9ce308c2e91a0f57":[2,0,40,1]
 };

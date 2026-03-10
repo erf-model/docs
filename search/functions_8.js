@@ -81,7 +81,7 @@ var searchData=
   ['initializefromfile_4956',['InitializeFromFile',['../classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6',1,'ERF']]],
   ['initializelevelfromdata_4957',['InitializeLevelFromData',['../classERF.html#a914f576acc2d1a54203a220cce10df62',1,'ERF']]],
   ['initializemicrophysics_4958',['initializeMicrophysics',['../classERF.html#afc2898daad269536c1a15443abf3fa75',1,'ERF']]],
-  ['initrayleigh_4959',['initRayleigh',['../classERF.html#a039a764a1d942c484e8aea49e87bc046',1,'ERF']]],
+  ['initrayleigh_5fat_5flevel_4959',['initRayleigh_at_level',['../classERF.html#a7588352f12a86f303d550b4fe5223db3',1,'ERF']]],
   ['initsponge_4960',['initSponge',['../classERF.html#ab26ec4f9c35a519063af2a938c1012e6',1,'ERF']]],
   ['input_5fsponge_4961',['input_sponge',['../classERF.html#abfdc95a7c3cf7e413c1352bac38c93e8',1,'ERF']]],
   ['inputsoundingdata_4962',['InputSoundingData',['../structInputSoundingData.html#ade438454b2da656ce7f98df041f25cc3',1,'InputSoundingData']]],
