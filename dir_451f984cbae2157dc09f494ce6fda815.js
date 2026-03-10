@@ -10,6 +10,7 @@ var dir_451f984cbae2157dc09f494ce6fda815 =
     [ "ERF_InitCustomPert_IsentropicVortex.H", "ERF__InitCustomPert__IsentropicVortex_8H.html", "ERF__InitCustomPert__IsentropicVortex_8H" ],
     [ "ERF_InitCustomPert_KE.H", "ERF__InitCustomPert__KE_8H.html", "ERF__InitCustomPert__KE_8H" ],
     [ "ERF_InitCustomPert_MovingTerrain.H", "ERF__InitCustomPert__MovingTerrain_8H.html", "ERF__InitCustomPert__MovingTerrain_8H" ],
+    [ "ERF_InitCustomPert_MultiSpeciesBubble.H", "ERF__InitCustomPert__MultiSpeciesBubble_8H.html", "ERF__InitCustomPert__MultiSpeciesBubble_8H" ],
     [ "ERF_InitCustomPert_ParticleTests.H", "ERF__InitCustomPert__ParticleTests_8H.html", "ERF__InitCustomPert__ParticleTests_8H" ],
     [ "ERF_InitCustomPert_ScalarAdvDiff.H", "ERF__InitCustomPert__ScalarAdvDiff_8H.html", "ERF__InitCustomPert__ScalarAdvDiff_8H" ],
     [ "ERF_InitCustomPert_SquallLine.H", "ERF__InitCustomPert__SquallLine_8H.html", "ERF__InitCustomPert__SquallLine_8H" ],

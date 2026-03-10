@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['buffer_3811',['Buffer',['../structSHOCInterface_1_1Buffer.html',1,'SHOCInterface']]],
-  ['bulk_5fcoeff_5fflux_3812',['bulk_coeff_flux',['../structbulk__coeff__flux.html',1,'']]]
+  ['buffer_3823',['Buffer',['../structSHOCInterface_1_1Buffer.html',1,'SHOCInterface']]],
+  ['bulk_5fcoeff_5fflux_3824',['bulk_coeff_flux',['../structbulk__coeff__flux.html',1,'']]]
 ];
