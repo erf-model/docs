@@ -1,8 +1,10 @@
 var ERF__RichardsonNumber_8H =
 [
     [ "ComputeN2", "ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3", null ],
+    [ "ComputeN2_EB", "ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664", null ],
     [ "ComputeRichardson", "ERF__RichardsonNumber_8H.html#ac3769bab582cda07302232c46c7c4b5a", null ],
     [ "ComputeVerticalShear2", "ERF__RichardsonNumber_8H.html#a5f60d8390517c92d4ce5434bb44e9ebd", null ],
+    [ "ComputeVerticalShear2_EB", "ERF__RichardsonNumber_8H.html#ab23085b149eb33f8dd148778ec960b69", null ],
     [ "IsSaturated", "ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451", null ],
     [ "StabilityFunction", "ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2", null ]
 ];

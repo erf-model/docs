@@ -1,5 +1,13 @@
 var NAVTREEINDEX6 =
 {
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25":[3,0,1,12,5,2],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25aa2652637c68e16524ab7681e65eea95c":[3,0,1,12,5,2,0],
+"ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25abe8de8e777a612742c642b372ab3dc9e":[3,0,1,12,5,2,1],
+"ERF__MYNNStruct_8H_source.html":[3,0,1,12,5],
+"ERF__MakeBuoyancy_8cpp.html":[3,0,1,15,8],
+"ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba":[3,0,1,15,8,0],
+"ERF__MakeFastCoeffs_8cpp.html":[3,0,1,16,7],
+"ERF__MakeFastCoeffs_8cpp.html#ad6b5b13b67ab3a4c1086f25bac4a7b14":[3,0,1,16,7,0],
 "ERF__MakeGradP_8cpp.html":[3,0,1,15,9],
 "ERF__MakeGradP_8cpp.html#a160f930429f773f474fa8f7f4553371c":[3,0,1,15,9,1],
 "ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55":[3,0,1,15,9,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX6 =
 "ERF__Radiation_8H.html":[3,0,1,13,0,2],
 "ERF__Radiation_8H_source.html":[3,0,1,13,0,2],
 "ERF__Radiation_8cpp.html":[3,0,1,13,0,1],
-"ERF__ReadBndryPlanes_8H.html":[3,0,1,6,9],
-"ERF__ReadBndryPlanes_8H.html#a60014a8d74bed0d5ae984e600c68dc85":[3,0,1,6,9,1],
-"ERF__ReadBndryPlanes_8H_source.html":[3,0,1,6,9],
-"ERF__ReadBndryPlanes_8cpp.html":[3,0,1,6,8],
-"ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817":[3,0,1,6,8,1],
-"ERF__ReadBndryPlanes_8cpp.html#adc5227730afe35653b2dfa88898eb00a":[3,0,1,6,8,0],
-"ERF__ReadCustomBinaryIC_8H.html":[3,0,1,18,23],
-"ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4":[3,0,1,18,23,0],
-"ERF__ReadCustomBinaryIC_8H_source.html":[3,0,1,18,23]
+"ERF__ReadBndryPlanes_8H.html":[3,0,1,6,9]
 };
