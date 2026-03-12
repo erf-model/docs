@@ -197,40 +197,31 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function to tag cells for refinement &ndash; this overrides the pure virtual function in AmrCore</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">levc</td><td>level of refinement at which we tag cells (0 is coarsest level) </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">tags</td><td>array of tagged cells </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>current time </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;{</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>      = cgeom.CellSizeArray();</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a> = cgeom.ProbLoArray();</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160; </div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*tags); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        TagBox&amp; tag = (*tags)[mfi];</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keyword">auto</span> tag_arr = tag.array();  <span class="comment">// Get device-accessible array</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <span class="keyword">const</span> Box&amp; tile_box = mfi.tilebox(); <span class="comment">// The box for this tile</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tile_box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            <span class="comment">// Compute cell center coordinates</span></div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[0] + (i + 0.5) * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0];</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[1] + (j + 0.5) * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1];</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160; </div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dist = std::sqrt((x - eye_x)*(x - eye_x) + (y - eye_y)*(y - eye_y));</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            <span class="keywordflow">if</span> (dist &lt; rad_tag) {</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                tag_arr(i,j,k) = TagBox::SET;</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                tag_arr(i,j,k) = TagBox::CLEAR;</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            }</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        });</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    }</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;{</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>      = cgeom.CellSizeArray();</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a> = cgeom.ProbLoArray();</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*tags); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        TagBox&amp; tag = (*tags)[mfi];</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;        <span class="keyword">auto</span> tag_arr = tag.array();  <span class="comment">// Get device-accessible array</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <span class="keyword">const</span> Box&amp; tile_box = mfi.tilebox(); <span class="comment">// The box for this tile</span></div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tile_box, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            <span class="comment">// Compute cell center coordinates</span></div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[0] + (i + 0.5) * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0];</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = <a class="code" href="ERF__InitCustomPert__IsentropicVortex_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a>[1] + (j + 0.5) * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1];</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dist = std::sqrt((x - eye_x)*(x - eye_x) + (y - eye_y)*(y - eye_y));</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            <span class="keywordflow">if</span> (dist &lt; rad_tag) {</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                tag_arr(i,j,k) = TagBox::SET;</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                tag_arr(i,j,k) = TagBox::CLEAR;</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            }</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;        });</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;    }</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
