@@ -86,32 +86,18 @@ $(document).ready(function(){initNavTree('ERF__UpdateGeostrophicProfile__Bomex_8
 <div class="title">ERF_UpdateGeostrophicProfile_Bomex.H</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ERF__UpdateGeostrophicProfile__Bomex_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;    <span class="comment">// If the z coordinate varies in time and or space, then the the height</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="comment">// needs to be calculated at each time step. Here, we assume that only</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="comment">// grid stretching exists.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#a1c3e250cb1ff99e1509b8afe51008072">    4</a></span>&#160;    Vector&lt;Real&gt; <a class="code" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a>;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#a2e1bf955714f71a3550e97af0c671db0">    5</a></span>&#160;    <a class="code" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a>.resize(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1);</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#ad9299a659acfb3b234b6e22c3a98be86">    6</a></span>&#160;    <a class="code" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#ad9299a659acfb3b234b6e22c3a98be86">reduce_to_max_per_height</a>(<a class="code" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a>, z_phys_cc);</div>
+<a href="ERF__UpdateGeostrophicProfile__Bomex_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;    <span class="comment">// Only apply momentum source below nominal inversion height</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#aac2e5b107bfa4ac340f62bd3584c3c3b">    3</a></span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++)</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = zlevels[k];</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u_geo_wind = -10.0 + z_cc * 0.0018;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// const Real coriolis = 2.0 * 2.0 * PI / 86400.0; // 0.376E-4;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">// Only apply momentum source below nominal inversion height</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#aac2e5b107bfa4ac340f62bd3584c3c3b">   11</a></span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = <a class="code" href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a>[k];</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u_geo_wind = -10.0 + z_cc * 0.0018;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        u_geos[k] =  u_geo_wind; <span class="comment">// 0; // -coriolis_factor * v_geo_wind</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        v_geos[k] =  0 ; <span class="comment">// coriolis *  u_geo_wind;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Copy from host version to device version</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, u_geos.begin(), u_geos.end(), d_u_geos.begin());</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    amrex::Gpu::copy(amrex::Gpu::hostToDevice, v_geos.begin(), v_geos.end(), d_v_geos.begin());</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        u_geos[k] =  u_geo_wind; <span class="comment">// 0; // -coriolis_factor * v_geo_wind</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        v_geos[k] =  0 ; <span class="comment">// coriolis *  u_geo_wind;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aERF__UpdateGeostrophicProfile__Bomex_8H_html_a1c3e250cb1ff99e1509b8afe51008072"><div class="ttname"><a href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a></div><div class="ttdeci">Vector&lt; Real &gt; zlevels</div><div class="ttdef"><b>Definition:</b> ERF_UpdateGeostrophicProfile_Bomex.H:4</div></div>
-<div class="ttc" id="aERF__UpdateGeostrophicProfile__Bomex_8H_html_ad9299a659acfb3b234b6e22c3a98be86"><div class="ttname"><a href="ERF__UpdateGeostrophicProfile__Bomex_8H.html#ad9299a659acfb3b234b6e22c3a98be86">reduce_to_max_per_height</a></div><div class="ttdeci">reduce_to_max_per_height(zlevels, z_phys_cc)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

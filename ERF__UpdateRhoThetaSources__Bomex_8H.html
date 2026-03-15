@@ -102,12 +102,8 @@ Functions</h2></td></tr>
 <tr class="separator:a558c29f4eee2cbf555fae643674b3aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1919e3b581c576a4b81226a9bd41eb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa1919e3b581c576a4b81226a9bd41eb7">query</a> (&quot;advection_heating_rate&quot;, advection_heating_rate)</td></tr>
 <tr class="separator:aa1919e3b581c576a4b81226a9bd41eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6816683c4d4c3f01bc15047f19445129"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a6816683c4d4c3f01bc15047f19445129">resize</a> (<a class="el" href="ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1)</td></tr>
-<tr class="separator:a6816683c4d4c3f01bc15047f19445129"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9299a659acfb3b234b6e22c3a98be86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ad9299a659acfb3b234b6e22c3a98be86">reduce_to_max_per_height</a> (<a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a>, z_phys_cc)</td></tr>
-<tr class="separator:ad9299a659acfb3b234b6e22c3a98be86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae03268e4f689346e184b321ceb2cde33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ae03268e4f689346e184b321ceb2cde33">for</a> (amrex::MFIter mfi(*src, amrex::TilingIfNotGPU());mfi.isValid();++mfi)</td></tr>
-<tr class="separator:ae03268e4f689346e184b321ceb2cde33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad53eb451be33aeb4ef17280d99c15da7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ad53eb451be33aeb4ef17280d99c15da7">for</a> (MFIter mfi(*src, TilingIfNotGPU());mfi.isValid();++mfi)</td></tr>
+<tr class="separator:ad53eb451be33aeb4ef17280d99c15da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -117,16 +113,10 @@ Variables</h2></td></tr>
 <tr class="separator:a074f996b9d4de4a7c5ded5ecde19a4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45f695eec02e78435d0b4bc9226cb9ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a> = 0.0</td></tr>
 <tr class="separator:a45f695eec02e78435d0b4bc9226cb9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c3e250cb1ff99e1509b8afe51008072"><td class="memItemLeft" align="right" valign="top">Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a></td></tr>
-<tr class="separator:a1c3e250cb1ff99e1509b8afe51008072"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5955c1cee6fa030379acb9a28a5b9e85"><td class="memItemLeft" align="right" valign="top">Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a5955c1cee6fa030379acb9a28a5b9e85">d_zlevels</a></td></tr>
-<tr class="separator:a5955c1cee6fa030379acb9a28a5b9e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35bdae7a0f306f58c19c4025c55c53b9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a35bdae7a0f306f58c19c4025c55c53b9">d_zlevels_arr</a> = d_zlevels.dataPtr()</td></tr>
-<tr class="separator:a35bdae7a0f306f58c19c4025c55c53b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae03268e4f689346e184b321ceb2cde33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae03268e4f689346e184b321ceb2cde33">&#9670;&nbsp;</a></span>for()</h2>
+<a id="ad53eb451be33aeb4ef17280d99c15da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad53eb451be33aeb4ef17280d99c15da7">&#9670;&nbsp;</a></span>for()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,43 +124,42 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">for </td>
           <td>(</td>
-          <td class="paramtype">amrex::MFIter mfi(*, ::TilingIfNotGPU&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">MFIter mfi(*,&#160;</td>
+          <td class="paramname"><em>TilingIfNotGPU</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;box = mfi.tilebox();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; src_arr = src-&gt;array(mfi);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (box.length(0) != 1)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            src-&gt;setVal(0.0);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a35bdae7a0f306f58c19c4025c55c53b9">d_zlevels_arr</a>[k];</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordflow">if</span> (z_cc &lt; <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    src_arr(i, j, k) = <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (z_cc &lt; <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>+<a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a>) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> slope = -<a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a> / <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    src_arr(i, j, k) = (z_cc-<a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>) * slope + <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    src_arr(i, j, k) = 0.0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            });</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;box = mfi.tilebox();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; src_arr = src-&gt;array(mfi);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">if</span> (box.length(0) != 1)</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            src-&gt;setVal(0.0);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = d_zlevels_arr[k];</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">if</span> (z_cc &lt; <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                    src_arr(i, j, k) = <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (z_cc &lt; <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>+<a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a>) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> slope = -<a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a> / <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    src_arr(i, j, k) = (z_cc-<a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>) * slope + <a class="code" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    src_arr(i, j, k) = 0.0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            });</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__UpdateRhoThetaSources__Bomex_8H_html_a074f996b9d4de4a7c5ded5ecde19a4b9"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a></div><div class="ttdeci">Real cutoff_transition</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_Bomex.H:4</div></div>
-<div class="ttc" id="aERF__UpdateRhoThetaSources__Bomex_8H_html_a35bdae7a0f306f58c19c4025c55c53b9"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a35bdae7a0f306f58c19c4025c55c53b9">d_zlevels_arr</a></div><div class="ttdeci">const Real * d_zlevels_arr</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_Bomex.H:19</div></div>
 <div class="ttc" id="aERF__UpdateRhoThetaSources__Bomex_8H_html_a45f695eec02e78435d0b4bc9226cb9ca"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a></div><div class="ttdeci">Real advection_heating_rate</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_Bomex.H:5</div></div>
 <div class="ttc" id="aERF__UpdateRhoThetaSources__Bomex_8H_html_aa0c54f97cf5d0886417d0bf1aff97960"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a></div><div class="ttdeci">Real cutoff</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_Bomex.H:3</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__UpdateRhoThetaSources__Bomex_8H_ae03268e4f689346e184b321ceb2cde33_cgraph.png" border="0" usemap="#aERF__UpdateRhoThetaSources__Bomex_8H_ae03268e4f689346e184b321ceb2cde33_cgraph" alt=""/></div>
-<map name="aERF__UpdateRhoThetaSources__Bomex_8H_ae03268e4f689346e184b321ceb2cde33_cgraph" id="aERF__UpdateRhoThetaSources__Bomex_8H_ae03268e4f689346e184b321ceb2cde33_cgraph">
+<div class="center"><img src="ERF__UpdateRhoThetaSources__Bomex_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph.png" border="0" usemap="#aERF__UpdateRhoThetaSources__Bomex_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph" alt=""/></div>
+<map name="aERF__UpdateRhoThetaSources__Bomex_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph" id="aERF__UpdateRhoThetaSources__Bomex_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,45,57"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="93,31,184,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="232,5,381,32"/>
@@ -282,52 +271,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ad9299a659acfb3b234b6e22c3a98be86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9299a659acfb3b234b6e22c3a98be86">&#9670;&nbsp;</a></span>reduce_to_max_per_height()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">reduce_to_max_per_height </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">z_phys_cc&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6816683c4d4c3f01bc15047f19445129"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6816683c4d4c3f01bc15047f19445129">&#9670;&nbsp;</a></span>resize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a1c3e250cb1ff99e1509b8afe51008072">zlevels</a> resize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+&#160;</td>
-          <td class="paramname"><em>1</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a45f695eec02e78435d0b4bc9226cb9ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45f695eec02e78435d0b4bc9226cb9ca">&#9670;&nbsp;</a></span>advection_heating_rate</h2>
@@ -341,7 +284,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ae03268e4f689346e184b321ceb2cde33">for()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ad53eb451be33aeb4ef17280d99c15da7">for()</a>.</p>
 
 </div>
 </div>
@@ -357,7 +300,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ae03268e4f689346e184b321ceb2cde33">for()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ad53eb451be33aeb4ef17280d99c15da7">for()</a>.</p>
 
 </div>
 </div>
@@ -373,51 +316,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ae03268e4f689346e184b321ceb2cde33">for()</a>.</p>
-
-</div>
-</div>
-<a id="a5955c1cee6fa030379acb9a28a5b9e85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5955c1cee6fa030379acb9a28a5b9e85">&#9670;&nbsp;</a></span>d_zlevels</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Gpu::DeviceVector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&gt; d_zlevels</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a35bdae7a0f306f58c19c4025c55c53b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35bdae7a0f306f58c19c4025c55c53b9">&#9670;&nbsp;</a></span>d_zlevels_arr</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* d_zlevels_arr = d_zlevels.dataPtr()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ae03268e4f689346e184b321ceb2cde33">for()</a>.</p>
-
-</div>
-</div>
-<a id="a1c3e250cb1ff99e1509b8afe51008072"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c3e250cb1ff99e1509b8afe51008072">&#9670;&nbsp;</a></span>zlevels</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Vector&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&gt; zlevels</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="reference">Referenced by <a class="el" href="ERF__UpdateRhoThetaSources__Bomex_8H.html#ad53eb451be33aeb4ef17280d99c15da7">for()</a>.</p>
 
 </div>
 </div>
