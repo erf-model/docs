@@ -839,7 +839,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        {</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            <span class="comment">// Moving terrain</span></div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_on_bdy = 0.5 * ( prev_cons(i,j,lo.z) + prev_cons(i,j,lo.z-1) );</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            RHS_a(i,j,lo.z) = rho_on_bdy * zp_t_arr(i,j,0);</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            RHS_a(i,j,lo.z) = rho_on_bdy * zp_t_arr(i,j,lo.z);</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            soln_a(i,j,lo.z) = RHS_a(i,j,lo.z) * inv_coeffB_a(i,j,lo.z);</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
