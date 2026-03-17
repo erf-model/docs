@@ -290,92 +290,92 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;{</div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;    <span class="comment">/* The goal of this routine is to calculate properties at cloud top</span></div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;<span class="comment">     * based on the AeroCom recommendation. See reference for routine</span></div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;<span class="comment">     * get_subcolumn_mask above, where equation 14 is used for the</span></div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;<span class="comment">     * maximum-random overlap assumption for subcolumn generation. We use</span></div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;<span class="comment">     * equation 13, the column counterpart.</span></div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    <span class="comment">// Set outputs to zero</span></div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    Kokkos::deep_copy(T_mid_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    Kokkos::deep_copy(p_mid_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    Kokkos::deep_copy(cldfrac_ice_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    Kokkos::deep_copy(cldfrac_liq_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    Kokkos::deep_copy(cldfrac_tot_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;    Kokkos::deep_copy(cdnc_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    Kokkos::deep_copy(eff_radius_qc_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    Kokkos::deep_copy(eff_radius_qi_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160; </div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    <span class="comment">// Initialize the 1D &quot;clear fraction&quot; as 1 (totally clear)</span></div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> aerocom_clr(<span class="stringliteral">&quot;aerocom_clr&quot;</span>, ncol);</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    Kokkos::deep_copy(aerocom_clr, 1.0);</div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160; </div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;    <span class="comment">// TODO: move tunable constant to namelist</span></div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> q_threshold = 0.0;  <span class="comment">// BAD_CONSTANT!</span></div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160; </div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    <span class="comment">// TODO: move tunable constant to namelist</span></div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> cldfrac_tot_threshold = 0.001;  <span class="comment">// BAD_CONSTANT!</span></div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160; </div>
-<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;    <span class="comment">// Loop over all columns in parallel</span></div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keywordtype">int</span> icol)</div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    {</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;        <span class="comment">// Loop over all layers in serial (due to accumulative</span></div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;        <span class="comment">// product), starting at 2 (second highest) layer because the</span></div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;        <span class="comment">// highest is assumed to have no clouds</span></div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ilay = 1; ilay &lt; nlay; ++ilay) {</div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;            <span class="comment">// Only do the calculation if certain conditions are met</span></div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;            <span class="keywordflow">if</span>((<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay)) &gt; q_threshold &amp;&amp;</div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;               (cldfrac_tot(icol, ilay) &gt; cldfrac_tot_threshold)) {</div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;                <span class="comment">/* PART I: Probabilistically determining cloud top */</span></div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;                <span class="comment">// Populate aerocom_tmp as the clear-sky fraction</span></div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;                <span class="comment">// probability of this level, where aerocom_clr is that of</span></div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;                <span class="comment">// the previous level</span></div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;                <span class="keyword">auto</span> aerocom_tmp = aerocom_clr(icol) *</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;                                   (1.0 - std::max(cldfrac_tot(icol, ilay - 1),</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;                                                   cldfrac_tot(icol, ilay))) /</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;                                   (1.0 - std::min(cldfrac_tot(icol, ilay - 1),</div>
-<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;                                                   1.0 - cldfrac_tot_threshold));</div>
-<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;                <span class="comment">// Temporary variable for probability &quot;weights&quot;</span></div>
-<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;                <span class="keyword">auto</span> aerocom_wts = aerocom_clr(icol) - aerocom_tmp;</div>
-<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;                <span class="comment">// Temporary variable for liquid &quot;phase&quot;</span></div>
-<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;                <span class="keyword">auto</span> aerocom_phi = <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) / (<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay));</div>
-<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;                <span class="comment">/* PART II: The inferred properties */</span></div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;                <span class="comment">/* In general, converting a 3D property X to a 2D cloud-top</span></div>
-<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;<span class="comment">                 * counterpart x follows: x(i) += X(i,k) * weights * Phase</span></div>
-<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;<span class="comment">                 * but X and Phase are not always needed */</span></div>
-<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;                <span class="comment">// T_mid_at_cldtop</span></div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                T_mid_at_cldtop(icol) += tmid(icol, ilay) * aerocom_wts;</div>
-<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;                <span class="comment">// p_mid_at_cldtop</span></div>
-<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;                p_mid_at_cldtop(icol) += pmid(icol, ilay) * aerocom_wts;</div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                <span class="comment">// cldfrac_ice_at_cldtop</span></div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                cldfrac_ice_at_cldtop(icol) += (1.0 - aerocom_phi) * aerocom_wts;</div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                <span class="comment">// cldfrac_liq_at_cldtop</span></div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                cldfrac_liq_at_cldtop(icol) += aerocom_phi * aerocom_wts;</div>
-<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;                <span class="comment">// cdnc_at_cldtop</span></div>
-<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;                <span class="comment">/* We need to convert nc from 1/mass to 1/volume first, and</span></div>
-<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;<span class="comment">                 * from grid-mean to in-cloud, but after that, the</span></div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;<span class="comment">                 * calculation follows the general logic */</span></div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;                <span class="comment">// AML NOTE: p_del/z_del/g should be replaced with RHO for our dycore</span></div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;                <span class="keyword">auto</span> cdnc = <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a32b6a00f33c7394555eff62ce6457bc6">nc</a>(icol, ilay) * p_del(icol, ilay) /</div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;                            z_del(icol, ilay) / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> /</div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;                            cldfrac_tot(icol, ilay);</div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;                cdnc_at_cldtop(icol) += cdnc * aerocom_phi * aerocom_wts;</div>
-<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;                <span class="comment">// eff_radius_qc_at_cldtop</span></div>
-<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;                eff_radius_qc_at_cldtop(icol) += rel(icol, ilay) * aerocom_phi * aerocom_wts;</div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                <span class="comment">// eff_radius_qi_at_cldtop</span></div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;                eff_radius_qi_at_cldtop(icol) += rei(icol, ilay) * (1.0 - aerocom_phi) * aerocom_wts;</div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;                <span class="comment">// Reset aerocom_clr to aerocom_tmp to accumulate</span></div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;                aerocom_clr(icol) = aerocom_tmp;</div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;            }</div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;        }</div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        <span class="comment">// After the serial loop over levels, the cloudy fraction is</span></div>
-<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        <span class="comment">// defined as (1 - aerocom_clr). This is true because</span></div>
-<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        <span class="comment">// aerocom_clr is the result of accumulative probabilities</span></div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        <span class="comment">// (their products)</span></div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;        cldfrac_tot_at_cldtop(icol) = 1.0 - aerocom_clr(icol);</div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;    });</div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;{</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    <span class="comment">/* The goal of this routine is to calculate properties at cloud top</span></div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;<span class="comment">     * based on the AeroCom recommendation. See reference for routine</span></div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;<span class="comment">     * get_subcolumn_mask above, where equation 14 is used for the</span></div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;<span class="comment">     * maximum-random overlap assumption for subcolumn generation. We use</span></div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;<span class="comment">     * equation 13, the column counterpart.</span></div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    <span class="comment">// Set outputs to zero</span></div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    Kokkos::deep_copy(T_mid_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    Kokkos::deep_copy(p_mid_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    Kokkos::deep_copy(cldfrac_ice_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    Kokkos::deep_copy(cldfrac_liq_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    Kokkos::deep_copy(cldfrac_tot_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    Kokkos::deep_copy(cdnc_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;    Kokkos::deep_copy(eff_radius_qc_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    Kokkos::deep_copy(eff_radius_qi_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160; </div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <span class="comment">// Initialize the 1D &quot;clear fraction&quot; as 1 (totally clear)</span></div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> aerocom_clr(<span class="stringliteral">&quot;aerocom_clr&quot;</span>, ncol);</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    Kokkos::deep_copy(aerocom_clr, 1.0);</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160; </div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    <span class="comment">// TODO: move tunable constant to namelist</span></div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> q_threshold = 0.0;  <span class="comment">// BAD_CONSTANT!</span></div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160; </div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <span class="comment">// TODO: move tunable constant to namelist</span></div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> cldfrac_tot_threshold = 0.001;  <span class="comment">// BAD_CONSTANT!</span></div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160; </div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;    <span class="comment">// Loop over all columns in parallel</span></div>
+<div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keywordtype">int</span> icol)</div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;    {</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;        <span class="comment">// Loop over all layers in serial (due to accumulative</span></div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;        <span class="comment">// product), starting at 2 (second highest) layer because the</span></div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;        <span class="comment">// highest is assumed to have no clouds</span></div>
+<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ilay = 1; ilay &lt; nlay; ++ilay) {</div>
+<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;            <span class="comment">// Only do the calculation if certain conditions are met</span></div>
+<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;            <span class="keywordflow">if</span>((<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay)) &gt; q_threshold &amp;&amp;</div>
+<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160;               (cldfrac_tot(icol, ilay) &gt; cldfrac_tot_threshold)) {</div>
+<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;                <span class="comment">/* PART I: Probabilistically determining cloud top */</span></div>
+<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;                <span class="comment">// Populate aerocom_tmp as the clear-sky fraction</span></div>
+<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;                <span class="comment">// probability of this level, where aerocom_clr is that of</span></div>
+<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;                <span class="comment">// the previous level</span></div>
+<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;                <span class="keyword">auto</span> aerocom_tmp = aerocom_clr(icol) *</div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;                                   (1.0 - std::max(cldfrac_tot(icol, ilay - 1),</div>
+<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;                                                   cldfrac_tot(icol, ilay))) /</div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;                                   (1.0 - std::min(cldfrac_tot(icol, ilay - 1),</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;                                                   1.0 - cldfrac_tot_threshold));</div>
+<div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;                <span class="comment">// Temporary variable for probability &quot;weights&quot;</span></div>
+<div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;                <span class="keyword">auto</span> aerocom_wts = aerocom_clr(icol) - aerocom_tmp;</div>
+<div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;                <span class="comment">// Temporary variable for liquid &quot;phase&quot;</span></div>
+<div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;                <span class="keyword">auto</span> aerocom_phi = <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) / (<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a>(icol, ilay) + qi(icol, ilay));</div>
+<div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;                <span class="comment">/* PART II: The inferred properties */</span></div>
+<div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;                <span class="comment">/* In general, converting a 3D property X to a 2D cloud-top</span></div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;<span class="comment">                 * counterpart x follows: x(i) += X(i,k) * weights * Phase</span></div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;<span class="comment">                 * but X and Phase are not always needed */</span></div>
+<div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;                <span class="comment">// T_mid_at_cldtop</span></div>
+<div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;                T_mid_at_cldtop(icol) += tmid(icol, ilay) * aerocom_wts;</div>
+<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                <span class="comment">// p_mid_at_cldtop</span></div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;                p_mid_at_cldtop(icol) += pmid(icol, ilay) * aerocom_wts;</div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;                <span class="comment">// cldfrac_ice_at_cldtop</span></div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                cldfrac_ice_at_cldtop(icol) += (1.0 - aerocom_phi) * aerocom_wts;</div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                <span class="comment">// cldfrac_liq_at_cldtop</span></div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                cldfrac_liq_at_cldtop(icol) += aerocom_phi * aerocom_wts;</div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                <span class="comment">// cdnc_at_cldtop</span></div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;                <span class="comment">/* We need to convert nc from 1/mass to 1/volume first, and</span></div>
+<div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;<span class="comment">                 * from grid-mean to in-cloud, but after that, the</span></div>
+<div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160;<span class="comment">                 * calculation follows the general logic */</span></div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;                <span class="comment">// AML NOTE: p_del/z_del/g should be replaced with RHO for our dycore</span></div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;                <span class="keyword">auto</span> cdnc = <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a32b6a00f33c7394555eff62ce6457bc6">nc</a>(icol, ilay) * p_del(icol, ilay) /</div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;                            z_del(icol, ilay) / <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> /</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;                            cldfrac_tot(icol, ilay);</div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;                cdnc_at_cldtop(icol) += cdnc * aerocom_phi * aerocom_wts;</div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;                <span class="comment">// eff_radius_qc_at_cldtop</span></div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;                eff_radius_qc_at_cldtop(icol) += rel(icol, ilay) * aerocom_phi * aerocom_wts;</div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;                <span class="comment">// eff_radius_qi_at_cldtop</span></div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                eff_radius_qi_at_cldtop(icol) += rei(icol, ilay) * (1.0 - aerocom_phi) * aerocom_wts;</div>
+<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;                <span class="comment">// Reset aerocom_clr to aerocom_tmp to accumulate</span></div>
+<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;                aerocom_clr(icol) = aerocom_tmp;</div>
+<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;            }</div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;        }</div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;        <span class="comment">// After the serial loop over levels, the cloudy fraction is</span></div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        <span class="comment">// defined as (1 - aerocom_clr). This is true because</span></div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        <span class="comment">// aerocom_clr is the result of accumulative probabilities</span></div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        <span class="comment">// (their products)</span></div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        cldfrac_tot_at_cldtop(icol) = 1.0 - aerocom_clr(icol);</div>
+<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    });</div>
+<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__Kokkos_8H_html_a1c1c14451633cb7c1dda9ef23f26d846"><div class="ttname"><a href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a></div><div class="ttdeci">Kokkos::View&lt; RealT *, KokkosDefaultDevice &gt; real1d_k</div><div class="ttdef"><b>Definition:</b> ERF_Kokkos.H:18</div></div>
 <div class="ttc" id="aERF__Kokkos_8H_html_a4a42f7539e74cae7b9b8d396ecd4a72b"><div class="ttname"><a href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a></div><div class="ttdeci">amrex::Real RealT</div><div class="ttdef"><b>Definition:</b> ERF_Kokkos.H:13</div></div>
@@ -693,28 +693,27 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="comment">// Subcolumn binary cld mask; if any layers with pressure between pmin and pmax are cloudy</span></div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="comment">// then 2d subcol mask is 1, otherwise it is 0</span></div>
 <div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> subcol_mask(<span class="stringliteral">&quot;subcol_mask&quot;</span>, ncol, ngpt);</div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;3&gt;&gt;({0, 0, 0}, {ncol, nlay, ngpt}),</div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;                         KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> igpt)</div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;    {</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;        <span class="comment">// NOTE: using plev would need to assume level ordering (top to bottom or bottom to top), but</span></div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;        <span class="comment">// using play/pmid does not</span></div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;        <span class="keywordflow">if</span> (cld_tau_gpt(icol,ilay,igpt) &gt; 0 &amp;&amp; pmid(icol,ilay) &gt;= pmin &amp;&amp; pmid(icol,ilay) &lt; pmax) {</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;            subcol_mask(icol,igpt) = 1.0;</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;            subcol_mask(icol,igpt) = 0.0;</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;        }</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;    });</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;    <span class="comment">// Compute average over subcols to get cloud area</span></div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;    <span class="keyword">auto</span> ngpt_inv = 1.0 / ngpt;</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    Kokkos::deep_copy(cld_area, 0);</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keywordtype">int</span> icol)</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    {</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        <span class="comment">// This loop needs to be serial because of the atomic reduction</span></div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> igpt = 0; igpt &lt; ngpt; ++igpt) {</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            cld_area(icol) += subcol_mask(icol,igpt) * ngpt_inv;</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        }</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;    });</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;}</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    Kokkos::deep_copy(subcol_mask, 0.0);</div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;3&gt;&gt;({0, 0, 0}, {ncol, nlay, ngpt}),</div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;                         KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> igpt)</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    {</div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;        <span class="comment">// NOTE: using plev would need to assume level ordering (top to bottom or bottom to top), but</span></div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;        <span class="comment">// using play/pmid does not</span></div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        <span class="keywordflow">if</span> (cld_tau_gpt(icol,ilay,igpt) &gt; 0 &amp;&amp; pmid(icol,ilay) &gt;= pmin &amp;&amp; pmid(icol,ilay) &lt; pmax) {</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;            subcol_mask(icol,igpt) = 1.0;</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;        }</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    });</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;    <span class="comment">// Compute average over subcols to get cloud area</span></div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;    <span class="keyword">auto</span> ngpt_inv = 1.0 / ngpt;</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;    Kokkos::deep_copy(cld_area, 0);</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keywordtype">int</span> icol)</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    {</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;        <span class="comment">// This loop needs to be serial because of the atomic reduction</span></div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> igpt = 0; igpt &lt; ngpt; ++igpt) {</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;            cld_area(icol) += subcol_mask(icol,igpt) * ngpt_inv;</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;        }</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    });</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;}</div>
 <div class="ttc" id="aERF__Kokkos_8H_html_a61120dfd574103b429360e5712200658"><div class="ttname"><a href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a></div><div class="ttdeci">Kokkos::View&lt; RealT **, layout_t, KokkosDefaultDevice &gt; real2d_k</div><div class="ttdef"><b>Definition:</b> ERF_Kokkos.H:19</div></div>
 </div><!-- fragment -->
 </div>
@@ -1448,31 +1447,31 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;{</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="comment">// Get wavelength bounds for all wavelength bands</span></div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <span class="keyword">auto</span> band_lims_wvn = kdist.get_band_lims_wavenumber();</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> wavelength_bounds(<span class="stringliteral">&quot;wavelength_bounds&quot;</span>,band_lims_wvn.extent(0), band_lims_wvn.extent(1));</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;    wavelength_bounds = kdist.get_band_lims_wavelength();</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160; </div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    <span class="comment">// Find the band index for the specified wavelength</span></div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <span class="comment">// Note that bands are stored in wavenumber space, units of cm-1, so if we are passed wavelength</span></div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    <span class="comment">// in units of meters, we need a conversion factor of 10^2</span></div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="keywordtype">int</span> nbnds = kdist.get_nband();</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    <span class="keywordtype">int</span> band_index = -1;</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    Kokkos::parallel_reduce(nbnds, KOKKOS_LAMBDA(<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span>&amp; band_index_inner)</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    {</div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;        <span class="keywordflow">if</span> (wavelength_bounds(0,ibnd) &lt; wavelength_bounds(1,ibnd)) {</div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;            <span class="keywordflow">if</span> (wavelength_bounds(0,ibnd) &lt;= <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &amp;&amp; <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &lt;= wavelength_bounds(1,ibnd)) {</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;                band_index_inner = ibnd;</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;            }</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;            <span class="keywordflow">if</span> (wavelength_bounds(0,ibnd) &gt;= <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &amp;&amp; <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &gt;= wavelength_bounds(1,ibnd)) {</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;                band_index_inner = ibnd;</div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;            }</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;        }</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    }, Kokkos::Max&lt;int&gt;(band_index));</div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    <span class="keywordflow">return</span> band_index;</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;{</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    <span class="comment">// Get wavelength bounds for all wavelength bands</span></div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="keyword">auto</span> band_lims_wvn = kdist.get_band_lims_wavenumber();</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> wavelength_bounds(<span class="stringliteral">&quot;wavelength_bounds&quot;</span>,band_lims_wvn.extent(0), band_lims_wvn.extent(1));</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    wavelength_bounds = kdist.get_band_lims_wavelength();</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160; </div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;    <span class="comment">// Find the band index for the specified wavelength</span></div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    <span class="comment">// Note that bands are stored in wavenumber space, units of cm-1, so if we are passed wavelength</span></div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <span class="comment">// in units of meters, we need a conversion factor of 10^2</span></div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    <span class="keywordtype">int</span> nbnds = kdist.get_nband();</div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <span class="keywordtype">int</span> band_index = -1;</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    Kokkos::parallel_reduce(nbnds, KOKKOS_LAMBDA(<span class="keywordtype">int</span> ibnd, <span class="keywordtype">int</span>&amp; band_index_inner)</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    {</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;        <span class="keywordflow">if</span> (wavelength_bounds(0,ibnd) &lt; wavelength_bounds(1,ibnd)) {</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;            <span class="keywordflow">if</span> (wavelength_bounds(0,ibnd) &lt;= <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &amp;&amp; <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &lt;= wavelength_bounds(1,ibnd)) {</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;                band_index_inner = ibnd;</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;            }</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;            <span class="keywordflow">if</span> (wavelength_bounds(0,ibnd) &gt;= <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &amp;&amp; <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a> * 1e2 &gt;= wavelength_bounds(1,ibnd)) {</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;                band_index_inner = ibnd;</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;            }</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;        }</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;    }, Kokkos::Max&lt;int&gt;(band_index));</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    <span class="keywordflow">return</span> band_index;</div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__MovingTerrain_8H_html_ab72e20ff6f9870376f894ba266cc5dd5"><div class="ttname"><a href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a></div><div class="ttdeci">Real wavelength</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_MovingTerrain.H:5</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacerrtmgp.html#a36564577866391c3de00afc0f6c3e0fe">get_wavelength_index_lw()</a>, and <a class="el" href="namespacerrtmgp.html#a28e3587b50833fd1f2c5a910b1392c43">get_wavelength_index_sw()</a>.</p>
@@ -1504,8 +1503,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c">get_wavelength_index</a>(*<a class="code" href="namespacerrtmgp.html#a8f137c1917fdc1c4dfd576fcb672e01a">k_dist_lw_k</a>, <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a>); }</div>
-<div class="ttc" id="anamespacerrtmgp_html_a686baa053db8c7c8b88243794e6eff5c"><div class="ttname"><a href="namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c">rrtmgp::get_wavelength_index</a></div><div class="ttdeci">int get_wavelength_index(optical_props_t &amp;kdist, RealT wavelength)</div><div class="ttdef"><b>Definition:</b> ERF_RRTMGP_Interface.cpp:1108</div></div>
+<div class="fragment"><div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c">get_wavelength_index</a>(*<a class="code" href="namespacerrtmgp.html#a8f137c1917fdc1c4dfd576fcb672e01a">k_dist_lw_k</a>, <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a>); }</div>
+<div class="ttc" id="anamespacerrtmgp_html_a686baa053db8c7c8b88243794e6eff5c"><div class="ttname"><a href="namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c">rrtmgp::get_wavelength_index</a></div><div class="ttdeci">int get_wavelength_index(optical_props_t &amp;kdist, RealT wavelength)</div><div class="ttdef"><b>Definition:</b> ERF_RRTMGP_Interface.cpp:1107</div></div>
 <div class="ttc" id="anamespacerrtmgp_html_a8f137c1917fdc1c4dfd576fcb672e01a"><div class="ttname"><a href="namespacerrtmgp.html#a8f137c1917fdc1c4dfd576fcb672e01a">rrtmgp::k_dist_lw_k</a></div><div class="ttdeci">std::unique_ptr&lt; gas_optics_t &gt; k_dist_lw_k</div><div class="ttdef"><b>Definition:</b> ERF_RRTMGP_Interface.cpp:11</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1534,7 +1533,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c">get_wavelength_index</a>(*<a class="code" href="namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630">k_dist_sw_k</a>, <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a>); }</div>
+<div class="fragment"><div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="namespacerrtmgp.html#a686baa053db8c7c8b88243794e6eff5c">get_wavelength_index</a>(*<a class="code" href="namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630">k_dist_sw_k</a>, <a class="code" href="ERF__InitCustomPert__MovingTerrain_8H.html#ab72e20ff6f9870376f894ba266cc5dd5">wavelength</a>); }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1900,7 +1899,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// Initialize kokkos rrtmgp pool allocator</span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> nvar = 300;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> nbnd = std::max(<a class="code" href="namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630">k_dist_sw_k</a>-&gt;get_nband(),<a class="code" href="namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630">k_dist_sw_k</a>-&gt;get_nband());</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> nbnd = std::max(<a class="code" href="namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630">k_dist_sw_k</a>-&gt;get_nband(),<a class="code" href="namespacerrtmgp.html#a8f137c1917fdc1c4dfd576fcb672e01a">k_dist_lw_k</a>-&gt;get_nband());</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> ncol = gas_concs_k.ncol;</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> nlay = gas_concs_k.nlay;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keyword">auto</span> my_size_ref = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(nvar * ncol * nlay * nbnd);</div>
