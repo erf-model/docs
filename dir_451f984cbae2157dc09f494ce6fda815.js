@@ -42,13 +42,17 @@ var dir_451f984cbae2157dc09f494ce6fda815 =
     [ "ERF_InitRayleighDamping.H", "ERF__InitRayleighDamping_8H.html", "ERF__InitRayleighDamping_8H" ],
     [ "ERF_UpdateGeostrophicProfile_Bomex.H", "ERF__UpdateGeostrophicProfile__Bomex_8H.html", "ERF__UpdateGeostrophicProfile__Bomex_8H" ],
     [ "ERF_UpdateGeostrophicProfile_RICO.H", "ERF__UpdateGeostrophicProfile__RICO_8H.html", "ERF__UpdateGeostrophicProfile__RICO_8H" ],
+    [ "ERF_UpdateGeostrophicProfile_SineMassFlux.H", "ERF__UpdateGeostrophicProfile__SineMassFlux_8H.html", "ERF__UpdateGeostrophicProfile__SineMassFlux_8H" ],
     [ "ERF_UpdateRhoQtSources_Bomex.H", "ERF__UpdateRhoQtSources__Bomex_8H.html", "ERF__UpdateRhoQtSources__Bomex_8H" ],
     [ "ERF_UpdateRhoQtSources_RICO.H", "ERF__UpdateRhoQtSources__RICO_8H.html", "ERF__UpdateRhoQtSources__RICO_8H" ],
     [ "ERF_UpdateRhoQtSources_SDMCongestus3D.H", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html", "ERF__UpdateRhoQtSources__SDMCongestus3D_8H" ],
+    [ "ERF_UpdateRhoQtSources_SineMassFlux.H", "ERF__UpdateRhoQtSources__SineMassFlux_8H.html", "ERF__UpdateRhoQtSources__SineMassFlux_8H" ],
     [ "ERF_UpdateRhoThetaSources_Bomex.H", "ERF__UpdateRhoThetaSources__Bomex_8H.html", "ERF__UpdateRhoThetaSources__Bomex_8H" ],
     [ "ERF_UpdateRhoThetaSources_RICO.H", "ERF__UpdateRhoThetaSources__RICO_8H.html", "ERF__UpdateRhoThetaSources__RICO_8H" ],
     [ "ERF_UpdateRhoThetaSources_SDMCongestus3D.H", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html", "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H" ],
+    [ "ERF_UpdateRhoThetaSources_SineMassFlux.H", "ERF__UpdateRhoThetaSources__SineMassFlux_8H.html", "ERF__UpdateRhoThetaSources__SineMassFlux_8H" ],
     [ "ERF_UpdateSources.H", "ERF__UpdateSources_8H.html", "ERF__UpdateSources_8H" ],
     [ "ERF_UpdateWSubsidence_Bomex.H", "ERF__UpdateWSubsidence__Bomex_8H.html", "ERF__UpdateWSubsidence__Bomex_8H" ],
-    [ "ERF_UpdateWSubsidence_RICO.H", "ERF__UpdateWSubsidence__RICO_8H.html", "ERF__UpdateWSubsidence__RICO_8H" ]
+    [ "ERF_UpdateWSubsidence_RICO.H", "ERF__UpdateWSubsidence__RICO_8H.html", "ERF__UpdateWSubsidence__RICO_8H" ],
+    [ "ERF_UpdateWSubsidence_SineMassFlux.H", "ERF__UpdateWSubsidence__SineMassFlux_8H.html", "ERF__UpdateWSubsidence__SineMassFlux_8H" ]
 ];

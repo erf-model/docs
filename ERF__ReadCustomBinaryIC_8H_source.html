@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('ERF__ReadCustomBinaryIC_8H_source.html
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; xvec_h,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; yvec_h,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; zvec_h,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; rho_h,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a>,</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; uvel_h,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; vvel_h,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                   amrex::Vector&lt;amrex::Real&gt;&amp; wvel_h,</div>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('ERF__ReadCustomBinaryIC_8H_source.html
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Read the file</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> idx=0; idx&lt;ndata; idx++){</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(idx == 0){</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            data_h = &amp;rho_h;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            data_h = &amp;<a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idx==1) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            data_h = &amp;uvel_h;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idx==2) {</div>
@@ -188,6 +188,7 @@ $(document).ready(function(){initNavTree('ERF__ReadCustomBinaryIC_8H_source.html
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
 <div class="ttc" id="aERF__ReadCustomBinaryIC_8H_html_a60f8ae2428844a5b2fe598a7a225e6b4"><div class="ttname"><a href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">ReadCustomBinaryIC</a></div><div class="ttdeci">void ReadCustomBinaryIC(const std::string filename, amrex::Vector&lt; amrex::Real &gt; &amp;latvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;lonvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;xvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;yvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;zvec_h, amrex::Vector&lt; amrex::Real &gt; &amp;rho_h, amrex::Vector&lt; amrex::Real &gt; &amp;uvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;vvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;wvel_h, amrex::Vector&lt; amrex::Real &gt; &amp;theta_h, amrex::Vector&lt; amrex::Real &gt; &amp;qv_h, amrex::Vector&lt; amrex::Real &gt; &amp;qc_h, amrex::Vector&lt; amrex::Real &gt; &amp;qr_h)</div><div class="ttdef"><b>Definition:</b> ERF_ReadCustomBinaryIC.H:12</div></div>
+<div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_aadbd8d298455f6f81f51341a9f660d9f"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a></div><div class="ttdeci">Vector&lt; Real &gt; rho_h(khi+1, 0.0)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

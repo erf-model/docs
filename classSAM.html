@@ -725,19 +725,19 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// get host variable rho, and rhotheta</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">int</span> ncell = rho_ave.ncell_line();</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    Gpu::HostVector&lt;Real&gt; rho_h(ncell), theta_h(ncell), qv_h(ncell);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    rho_ave.line_average(0, rho_h);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    Gpu::HostVector&lt;Real&gt; <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a>(ncell), theta_h(ncell), qv_h(ncell);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    rho_ave.line_average(0, <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a>);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    theta_ave.line_average(0, theta_h);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    qv_ave.line_average(0, qv_h);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// copy data to device</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    Gpu::DeviceVector&lt;Real&gt; rho_d(ncell), theta_d(ncell), qv_d(ncell);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, rho_h.begin(), rho_h.end(), rho_d.begin());</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    Gpu::DeviceVector&lt;Real&gt; <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a470ecbf41893cdec1e89b3c48ca98878">rho_d</a>(ncell), theta_d(ncell), qv_d(ncell);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a>.begin(), <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a>.end(), <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a470ecbf41893cdec1e89b3c48ca98878">rho_d</a>.begin());</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, theta_h.begin(), theta_h.end(), theta_d.begin());</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    Gpu::copyAsync(Gpu::hostToDevice, qv_h.begin(), qv_h.end(), qv_d.begin());</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    Gpu::streamSynchronize();</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* rho_dptr   = rho_d.data();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* rho_dptr   = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a470ecbf41893cdec1e89b3c48ca98878">rho_d</a>.data();</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* theta_dptr = theta_d.data();</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* qv_dptr    = qv_d.data();</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
@@ -841,6 +841,8 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a4ea516e89f4e87b4ffc305504e8f0bf1"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1">erf_esati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esati(amrex::Real t)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:26</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_abd125e107924437493cbcbac9a97c017"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017">erf_gammafff</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_gammafff(amrex::Real x)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:15</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_af412f38784e2b8072356234b0474c6f5"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esatw(amrex::Real t, bool use_empirical=false)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:68</div></div>
+<div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a470ecbf41893cdec1e89b3c48ca98878"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a470ecbf41893cdec1e89b3c48ca98878">rho_d</a></div><div class="ttdeci">Gpu::DeviceVector&lt; Real &gt; rho_d(khi+1, 0.0)</div></div>
+<div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_aadbd8d298455f6f81f51341a9f660d9f"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f">rho_h</a></div><div class="ttdeci">Vector&lt; Real &gt; rho_h(khi+1, 0.0)</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> ERF_PlaneAverage.H:14</div></div>
 <div class="ttc" id="aclassSAM_html_a0853b1a3a4ec94178ca208ea594fc455"><div class="ttname"><a href="classSAM.html#a0853b1a3a4ec94178ca208ea594fc455">SAM::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:346</div></div>
 <div class="ttc" id="aclassSAM_html_a0edeaaddf7573079fdc9af1484ce5582"><div class="ttname"><a href="classSAM.html#a0edeaaddf7573079fdc9af1484ce5582">SAM::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:343</div></div>
@@ -866,7 +868,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSAM_a77dd99de0896cf9f9bf8299c2c80bc40_cgraph.png" border="0" usemap="#aclassSAM_a77dd99de0896cf9f9bf8299c2c80bc40_cgraph" alt=""/></div>
 <map name="aclassSAM_a77dd99de0896cf9f9bf8299c2c80bc40_cgraph" id="aclassSAM_a77dd99de0896cf9f9bf8299c2c80bc40_cgraph">
-<area shape="rect" title=" " alt="" coords="5,274,208,301"/>
+<area shape="rect" title=" " alt="" coords="5,325,208,351"/>
 <area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="259,5,435,47"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="307,71,386,98"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="303,122,390,149"/>
@@ -878,6 +880,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="275,427,418,468"/>
 <area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="256,493,437,519"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="301,543,392,570"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a470ecbf41893cdec1e89b3c48ca98878" title=" " alt="" coords="317,594,376,621"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f" title=" " alt="" coords="317,645,376,671"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="485,71,668,98"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="523,122,630,149"/>
 <area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="502,518,651,545"/>
@@ -936,7 +940,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">auto</span> states_arr = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>.array(mfi);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> rho_arr    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a13b136aa5283631b0c3f459521c49529a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>    = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a13b136aa5283631b0c3f459521c49529a2534fc55b1bd99268d18c38ddd112e53">MicVar::rho</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> theta_arr  = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a13b136aa5283631b0c3f459521c49529a96295e93c39d249775ba2498eb3d4fc1">MicVar::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>     = <a class="code" href="classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e">mic_fab_vars</a>[<a class="code" href="namespaceMicVar.html#a13b136aa5283631b0c3f459521c49529a24d3a4784c4c0b3c8ab827a784198261">MicVar::qv</a>]-&gt;array(mfi);</div>
@@ -950,15 +954,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = rho_arr(i,j,k)*theta_arr(i,j,k);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*theta_arr(i,j,k);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = rho_arr(i,j,k)*std::max(0.0,<a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)    = rho_arr(i,j,k)*std::max(0.0,qc_arr(i,j,k));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>)    = rho_arr(i,j,k)*std::max(0.0,qi_arr(i,j,k));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*std::max(0.0,<a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*std::max(0.0,qc_arr(i,j,k));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*std::max(0.0,qi_arr(i,j,k));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>)    = rho_arr(i,j,k)*std::max(0.0,qpr_arr(i,j,k));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>)    = rho_arr(i,j,k)*std::max(0.0,qps_arr(i,j,k));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>)    = rho_arr(i,j,k)*std::max(0.0,qpg_arr(i,j,k));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*std::max(0.0,qpr_arr(i,j,k));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*std::max(0.0,qps_arr(i,j,k));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*std::max(0.0,qpg_arr(i,j,k));</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        });</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
@@ -973,6 +977,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aae057dae5f599b944184a0ecf7801064"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a></div><div class="ttdeci">#define RhoQ6_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:47</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ac46d015fd5b1ee0060bbaf22e79113e7"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a></div><div class="ttdeci">#define RhoQ5_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:46</div></div>
 <div class="ttc" id="aERF__InitCustomPert__MultiSpeciesBubble_8H_html_a7273a950bb1ec56806b23066b09df921"><div class="ttname"><a href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a></div><div class="ttdeci">auto qv_arr</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_MultiSpeciesBubble.H:210</div></div>
+<div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a250b5b8817230db7d56e064212449a23"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a></div><div class="ttdeci">auto rho_arr</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSubsidence_SineMassFlux.H:3</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a13b136aa5283631b0c3f459521c49529a1669c627fc476575ea3c391a275d8cd3"><div class="ttname"><a href="namespaceMicVar.html#a13b136aa5283631b0c3f459521c49529a1669c627fc476575ea3c391a275d8cd3">MicVar::qpr</a></div><div class="ttdeci">@ qpr</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:42</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a13b136aa5283631b0c3f459521c49529a36203351003064cd3dfd2c84f66c0ea1"><div class="ttname"><a href="namespaceMicVar.html#a13b136aa5283631b0c3f459521c49529a36203351003064cd3dfd2c84f66c0ea1">MicVar::qpg</a></div><div class="ttdeci">@ qpg</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:44</div></div>
 <div class="ttc" id="anamespaceMicVar_html_a13b136aa5283631b0c3f459521c49529ae960e0fe1fea5fc017938ab2b92757ed"><div class="ttname"><a href="namespaceMicVar.html#a13b136aa5283631b0c3f459521c49529ae960e0fe1fea5fc017938ab2b92757ed">MicVar::qps</a></div><div class="ttdeci">@ qps</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:43</div></div>
@@ -2543,24 +2548,26 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSAM_a2e6ff95cf827306bbcf3661c954a692e_cgraph.png" border="0" usemap="#aclassSAM_a2e6ff95cf827306bbcf3661c954a692e_cgraph" alt=""/></div>
 <map name="aclassSAM_a2e6ff95cf827306bbcf3661c954a692e_cgraph" id="aclassSAM_a2e6ff95cf827306bbcf3661c954a692e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,409,191,436"/>
-<area shape="rect" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40" title=" " alt="" coords="239,300,441,327"/>
-<area shape="rect" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53" title=" " alt="" coords="263,461,417,502"/>
-<area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="492,57,668,98"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="541,123,619,149"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="537,173,623,200"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="525,224,635,251"/>
-<area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="507,275,653,301"/>
-<area shape="rect" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4" title=" " alt="" coords="559,325,601,352"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="525,443,635,469"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="508,493,652,520"/>
-<area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="509,377,651,418"/>
-<area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="489,5,671,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="535,544,625,571"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="719,123,901,149"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="757,173,863,200"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="735,519,885,545"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="766,569,854,596"/>
+<area shape="rect" title=" " alt="" coords="5,485,191,512"/>
+<area shape="rect" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40" title=" " alt="" coords="239,351,441,377"/>
+<area shape="rect" href="classSAM.html#a1df931f91be89514c09f69f24cfeca53" title=" " alt="" coords="263,562,417,603"/>
+<area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="492,478,668,519"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="541,5,619,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="537,56,623,83"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017" title=" " alt="" coords="525,107,635,133"/>
+<area shape="rect" href="classPlaneAverage.html#a027673d7c6dd35a1b45cd1fa8f2b4cb5" title=" " alt="" coords="507,157,653,184"/>
+<area shape="rect" href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4" title=" " alt="" coords="559,208,601,235"/>
+<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="525,544,635,571"/>
+<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="508,595,652,621"/>
+<area shape="rect" href="classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949" title=" " alt="" coords="509,259,651,301"/>
+<area shape="rect" href="classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1" title=" " alt="" coords="489,325,671,352"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="535,645,625,672"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a470ecbf41893cdec1e89b3c48ca98878" title=" " alt="" coords="551,376,609,403"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#aadbd8d298455f6f81f51341a9f660d9f" title=" " alt="" coords="551,427,609,453"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="719,5,901,32"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="757,56,863,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="735,620,885,647"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="766,671,854,697"/>
 </map>
 </div>
 
