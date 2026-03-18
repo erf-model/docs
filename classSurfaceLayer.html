@@ -1518,9 +1518,9 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        {</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <span class="comment">// Valid theta flux from LSM and over land</span></div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tflux;</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,0) : 1;</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <span class="keywordflow">if</span> (lsm_t_flux_arr &amp;&amp; is_land) {</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                Tflux = lsm_t_flux_arr(i,j,k);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                Tflux = lsm_t_flux_arr(i,j,0);</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                Tflux = flux_comp.compute_t_flux(i, j, k,</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                                                 cons_arr, velx_arr, vely_arr,</div>
@@ -1545,9 +1545,9 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            {</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                <span class="comment">// Valid qv flux from LSM and over land</span></div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Qflux;</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,0) : 1;</div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <span class="keywordflow">if</span> (lsm_q_flux_arr &amp;&amp; is_land) {</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                    Qflux = lsm_q_flux_arr(i,j,k);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                    Qflux = lsm_q_flux_arr(i,j,0);</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                    Qflux = flux_comp.compute_q_flux(i, j, k,</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                                                     cons_arr, velx_arr, vely_arr,</div>
@@ -1573,8 +1573,8 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;            {</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                <span class="comment">// Valid tau13 from LSM and over land</span></div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> stressx;</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i  ,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i-1,j,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i  ,j,0) : 1;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i-1,j,0) : 1;</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                <span class="keywordflow">if</span> (lsm_tau13_arr &amp;&amp; (is_land_hi || is_land_lo)) {</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                    stressx = 0.;</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                    <span class="keywordflow">if</span> (!is_land_hi || !is_land_lo) {</div>
@@ -1583,10 +1583,10 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                                                                  umm_arr, um_arr, u_star_arr);</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                    }</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                    <span class="keywordflow">if</span> (is_land_hi) {</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                        stressx += 0.5 * lsm_tau13_arr(i  ,j,k);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                        stressx += 0.5 * lsm_tau13_arr(i  ,j,0);</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                    }</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                    <span class="keywordflow">if</span> (is_land_lo) {</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                        stressx += 0.5 * lsm_tau13_arr(i-1,j,k);</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                        stressx += 0.5 * lsm_tau13_arr(i-1,j,0);</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                    }</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                    stressx = flux_comp.compute_u_flux(i, j, k,</div>
@@ -1605,8 +1605,8 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            {</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                <span class="comment">// Valid tau13 from LSM and over land</span></div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> stressy;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i,j  ,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i,j-1,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) : 1;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                <span class="keywordtype">int</span> is_land_hi = (lmask_arr) ? lmask_arr(i,j  ,0) : 1;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                <span class="keywordtype">int</span> is_land_lo = (lmask_arr) ? lmask_arr(i,j-1,0) : 1;</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                <span class="keywordflow">if</span> (lsm_tau23_arr &amp;&amp; (is_land_hi || is_land_lo)) {</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                    stressy = 0.;</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                    <span class="keywordflow">if</span> (!is_land_hi || !is_land_lo) {</div>
@@ -1615,10 +1615,10 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                                                                  umm_arr, vm_arr, u_star_arr);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                    }</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                    <span class="keywordflow">if</span> (is_land_hi) {</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                        stressy += 0.5 * lsm_tau23_arr(i,j  ,k);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                        stressy += 0.5 * lsm_tau23_arr(i,j  ,0);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                    }</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                    <span class="keywordflow">if</span> (is_land_lo) {</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                        stressy += 0.5 * lsm_tau23_arr(i,j-1,k);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                        stressy += 0.5 * lsm_tau23_arr(i,j-1,0);</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                    }</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    stressy = flux_comp.compute_v_flux(i, j, k,</div>

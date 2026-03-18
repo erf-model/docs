@@ -1,7 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"classMicrophysics.html#a79bf043906abc7e4d738318ec8e7aa2e":[2,0,43,0],
-"classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff":[2,0,43,5],
 "classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7":[2,0,43,12],
 "classMicrophysics.html#a96e15433c5277151700438dc2f6fba6f":[2,0,43,6],
 "classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4":[2,0,43,10],
@@ -242,12 +240,14 @@ var NAVTREEINDEX14 =
 "classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56":[2,0,62,4],
 "classProblemBase.html#aef7f72842640b743a8cd2a3c0b2dd142":[2,0,62,15],
 "classRadiation.html":[2,0,64],
-"classRadiation.html#a005b0ae6d7456cdf5a6a022c6b6c1e08":[2,0,64,140],
+"classRadiation.html#a005b0ae6d7456cdf5a6a022c6b6c1e08":[2,0,64,138],
 "classRadiation.html#a0069d200496f037a5bffa96e4bf9bce0":[2,0,64,73],
 "classRadiation.html#a038700bfcfb8298228ceb52d263993b0":[2,0,64,46],
 "classRadiation.html#a038bcfac8ac0960f2e065b8869724d38":[2,0,64,6],
 "classRadiation.html#a04c72eaa9bd21328388084de646bc9f4":[2,0,64,21],
-"classRadiation.html#a04e4141569aba776265c5a974ffc76c1":[2,0,64,92],
-"classRadiation.html#a060079c8031efb5daed6cdcba4b34878":[2,0,64,139],
-"classRadiation.html#a08fb496755efd8324cfb28931a4112c9":[2,0,64,13]
+"classRadiation.html#a04e4141569aba776265c5a974ffc76c1":[2,0,64,90],
+"classRadiation.html#a060079c8031efb5daed6cdcba4b34878":[2,0,64,137],
+"classRadiation.html#a0986fdb1ed803add892ae1fe6af5f029":[2,0,64,143],
+"classRadiation.html#a0d96d60235b3710601f6f0e963753423":[2,0,64,121],
+"classRadiation.html#a0dad307c566d6c11559feba839f272a4":[2,0,64,123]
 };

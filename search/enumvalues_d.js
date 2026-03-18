@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['oldgoffgratch_7608',['OldGoffGratch',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db',1,'SatMethods']]],
-  ['omega_7609',['omega',['../namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a93264ee6dc9b23e994674a68250a2f16',1,'MicVar_Morr']]],
-  ['open_7610',['open',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914',1,'ERFBCType::open()'],['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7cef8a734855777c2a9d0caf42666e69',1,'open():&#160;ERF_IndexDefines.H']]],
-  ['outflow_7611',['outflow',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972',1,'ERF_IndexDefines.H']]]
+  ['oldgoffgratch_7600',['OldGoffGratch',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db',1,'SatMethods']]],
+  ['omega_7601',['omega',['../namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a93264ee6dc9b23e994674a68250a2f16',1,'MicVar_Morr']]],
+  ['open_7602',['open',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914',1,'ERFBCType::open()'],['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7cef8a734855777c2a9d0caf42666e69',1,'open():&#160;ERF_IndexDefines.H']]],
+  ['outflow_7603',['outflow',['../ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972',1,'ERF_IndexDefines.H']]]
 ];

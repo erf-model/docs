@@ -1,9 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b":[2,0,68,13],
-"classSAM.html#aea5fdd520cbb1bc936a0f11d55400029":[2,0,68,21],
-"classSAM.html#aee5da977a069c0b9cb98d150027f746c":[2,0,68,57],
-"classSAM.html#af6652cb6f7b93a1e418da98b5a8b57b7":[2,0,68,14],
 "classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9":[2,0,68,29],
 "classSAM.html#afa0b487888d626024321f3016c5b8eac":[2,0,68,39],
 "classSDInitProperties.html":[2,0,72],
@@ -249,5 +245,9 @@ var NAVTREEINDEX16 =
 "classSatAdj.html#ad0fc9773d2d35cf054f14dca53886d02":[2,0,69,7],
 "classSatAdj.html#af1404efc983d1211f51736f0bff69f35":[2,0,69,23],
 "classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3":[2,0,69,6],
-"classSatMethods.html":[2,0,70]
+"classSatMethods.html":[2,0,70],
+"classSatMethods.html#a04e5fc642c88eda0767e507a9183682b":[2,0,70,9],
+"classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6":[2,0,70,1],
+"classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd":[2,0,70,6],
+"classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766":[2,0,70,14]
 };
