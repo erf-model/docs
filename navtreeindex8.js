@@ -1,5 +1,9 @@
 var NAVTREEINDEX8 =
 {
+"ERF__SolveWithEBMLMG_8cpp.html":[3,0,1,8,7],
+"ERF__SolveWithEBMLMG_8cpp.html#a0573c811b5f308cb96e49b60fd505dd3":[3,0,1,8,7,1],
+"ERF__SolveWithEBMLMG_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861":[3,0,1,8,7,0],
+"ERF__SolveWithFFT_8cpp.html":[3,0,1,8,8],
 "ERF__SolveWithGMRES_8cpp.html":[3,0,1,8,9],
 "ERF__SolveWithMLMG_8cpp.html":[3,0,1,8,10],
 "ERF__SolveWithMLMG_8cpp.html#a9285fc2860db342a9350ae1bf2e43eef":[3,0,1,8,10,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a45f695eec02e78435d0b4bc9226cb9ca":[3,0,1,14,49,4],
 "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346":[3,0,1,14,49,10],
 "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,14,49,1],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,14,49,2],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#abb486aef98a749032667aad074f90c6f":[3,0,1,14,49,5],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ad53eb451be33aeb4ef17280d99c15da7":[3,0,1,14,49,0],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830":[3,0,1,14,49,7],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722":[3,0,1,14,49,9]
+"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,14,49,2]
 };

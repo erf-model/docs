@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aa76d4ef5f3f6a672bbfab2865563e530":[3,0,1,6,6,2,5],
+"ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06aaa684fa862f886663c11fcad18416550":[3,0,1,6,6,2,7],
+"ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06ae4337723378d82618dfc0eb01156231a":[3,0,1,6,6,2,0],
+"ERF__NCWpsFile_8H.html#a147911bcb83952a10f7560fd4e9d8f06afb2d94bf1664c0f0fef6991060f93ffa":[3,0,1,6,6,2,4],
 "ERF__NCWpsFile_8H.html#a1862843151633e8a5a112919784bf1b2":[3,0,1,6,6,5],
 "ERF__NCWpsFile_8H.html#a4498010c6623fa41ffa2ac0dd60184e2":[3,0,1,6,6,3],
 "ERF__NCWpsFile_8H.html#a60014a8d74bed0d5ae984e600c68dc85":[3,0,1,6,6,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__SlowRhsPre_8cpp.html#a183bc8f162cd19cd09e3362640c54aa7":[3,0,1,16,11,0],
 "ERF__SolveTridiag_8H.html":[3,0,1,18,25],
 "ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,18,25,0],
-"ERF__SolveTridiag_8H_source.html":[3,0,1,18,25],
-"ERF__SolveWithEBMLMG_8cpp.html":[3,0,1,8,7],
-"ERF__SolveWithEBMLMG_8cpp.html#a0573c811b5f308cb96e49b60fd505dd3":[3,0,1,8,7,1],
-"ERF__SolveWithEBMLMG_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861":[3,0,1,8,7,0],
-"ERF__SolveWithFFT_8cpp.html":[3,0,1,8,8]
+"ERF__SolveTridiag_8H_source.html":[3,0,1,18,25]
 };
