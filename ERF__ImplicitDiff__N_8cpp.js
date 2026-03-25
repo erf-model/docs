@@ -1,6 +1,6 @@
 var ERF__ImplicitDiff__N_8cpp =
 [
-    [ "INSTANTIATE_IMPLICIT_DIFF_FOR_MOM", "ERF__ImplicitDiff__N_8cpp.html#a33db393fa7edf4005d71593e6c0e965b", null ],
-    [ "ImplicitDiffForMom_N", "ERF__ImplicitDiff__N_8cpp.html#ab0b9888266a4f75703e33e1f39280fb8", null ],
-    [ "ImplicitDiffForState_N", "ERF__ImplicitDiff__N_8cpp.html#aa559b6a037b1c15e66b4637ed5cde524", null ]
+    [ "INSTANTIATE_IMPLICIT_DIFF_FOR_MOM_LU", "ERF__ImplicitDiff__N_8cpp.html#a468825b496be0b211c35772b3f9b487d", null ],
+    [ "ImplicitDiffForMomLU_N", "ERF__ImplicitDiff__N_8cpp.html#a43bbadbb650272e16e1fece3481e14ea", null ],
+    [ "ImplicitDiffForStateLU_N", "ERF__ImplicitDiff__N_8cpp.html#a5bc8e079c396ffe9a3fdcbc52be899ad", null ]
 ];
