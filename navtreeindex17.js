@@ -1,5 +1,9 @@
 var NAVTREEINDEX17 =
 {
+"classSatAdj.html#ad0fc9773d2d35cf054f14dca53886d02":[2,0,69,7],
+"classSatAdj.html#af1404efc983d1211f51736f0bff69f35":[2,0,69,23],
+"classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3":[2,0,69,6],
+"classSatMethods.html":[2,0,70],
 "classSatMethods.html#a04e5fc642c88eda0767e507a9183682b":[2,0,70,9],
 "classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6":[2,0,70,1],
 "classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd":[2,0,70,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX17 =
 "classWindFarm.html#aea801fd8c22bf9d4bdcec847f4e7f50a":[2,0,108,38],
 "classWindFarm.html#aecf311136c814318eccea16a2a3c5efd":[2,0,108,29],
 "classWindFarm.html#aed4eeef484f5e77b3c3038a1606f1875":[2,0,108,17],
-"classWindFarm.html#af3953694e6a246585c20f50436a65123":[2,0,108,34],
-"classWriteBndryPlanes.html":[2,0,109],
-"classWriteBndryPlanes.html#a007dc2174ebcc2e2d79e8f31f41255cb":[2,0,109,5],
-"classWriteBndryPlanes.html#a0d287691056f64171d48911071ffea20":[2,0,109,6],
-"classWriteBndryPlanes.html#a0f85ce22ec7a00d38091d2aa2b829fca":[2,0,109,2]
+"classWindFarm.html#af3953694e6a246585c20f50436a65123":[2,0,108,34]
 };
