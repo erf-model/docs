@@ -291,7 +291,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classSDInitProperties.html#acbb6471ebe4f5009062307b672b2c3ce">SDInitProperties</a>.</p>
 <div class="fragment"><div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        {</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par_per_cell = 0.0;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par_per_cell = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a> &gt;= 0) {</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                num_par_per_cell = std::ceil(this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a>*a_dv);</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -299,6 +299,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            }</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            <span class="keywordflow">return</span> num_par_per_cell;</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassSDInitProperties_html_a01078c8e1f8a8867758c83337aaf4075"><div class="ttname"><a href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">SDInitProperties::m_numdens</a></div><div class="ttdeci">amrex::Real m_numdens</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:56</div></div>
 </div><!-- fragment -->

@@ -194,7 +194,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                           <span class="keyword">const</span> SDPCDefn::SDSpeciesMassArr&amp; a_sp_mass, <span class="comment">/*!&lt; species masses */</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                           <span class="keyword">const</span> SDPCDefn::SDAerosolMassArr&amp; a_ae_mass  <span class="comment">/*!&lt; aerosol masses */</span> )</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    amrex::ParticleReal retval = 0.0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    amrex::ParticleReal retval = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; a_num_sp; j++) {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        retval += a_sp_mass[j][a_idx];</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
@@ -219,9 +219,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                 <span class="keyword">const</span> amrex::ParticleReal* <span class="keyword">const</span> a_ae_rho  <span class="comment">/*!&lt; aerosol densities */</span> )</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    amrex::ParticleReal m_w = a_sp_mass[a_idx_w][a_idx];</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    amrex::ParticleReal m_s = 0.0;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    amrex::ParticleReal m_p = 0.0;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    amrex::ParticleReal rho_p = 0.0;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    amrex::ParticleReal m_s = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    amrex::ParticleReal m_p = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    amrex::ParticleReal rho_p = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; a_num_sp; j++) {</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">if</span> (j != a_idx_w) {</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordflow">if</span> (a_sp_sol_arr[j]) {</div>
@@ -240,10 +240,10 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            rho_p += a_ae_rho[j]*a_ae_mass[j][a_idx];</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (m_p &gt; 0.0) { rho_p /= m_p; }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">else</span>           { rho_p = 1.0; }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (m_p &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { rho_p /= m_p; }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">else</span>           { rho_p = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>; }</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keyword">auto</span> m_t = m_w + m_s + (a_rho_w/rho_p)*m_p;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">auto</span> r_eff = std::cbrt(m_t / (4.0/3.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*a_rho_w));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">auto</span> r_eff = std::cbrt(m_t / (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.0)/<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*a_rho_w));</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> r_eff;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment"></span> </div>
@@ -259,8 +259,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                           <span class="keyword">const</span> amrex::ParticleReal* <span class="keyword">const</span> a_sp_rho, <span class="comment">/*!&lt; species densities */</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                           <span class="keyword">const</span> amrex::ParticleReal* <span class="keyword">const</span> a_ae_rho  <span class="comment">/*!&lt; aerosol densities */</span> )</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;{</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    amrex::ParticleReal m_p = 0.0;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    amrex::ParticleReal rho_p = 0.0;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    amrex::ParticleReal m_p = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    amrex::ParticleReal rho_p = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; a_num_sp; j++) {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">if</span> (!a_sp_sol_arr[j]) {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            m_p += a_sp_mass[j][a_idx];</div>
@@ -273,9 +273,9 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            rho_p += a_ae_rho[j]*a_ae_mass[j][a_idx];</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        }</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span> (m_p &gt; 0.0) { rho_p /= m_p; }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">else</span>           { rho_p = 1.0; }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">auto</span> r_dry = std::cbrt(m_p / (4.0/3.0*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rho_p));</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span> (m_p &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { rho_p /= m_p; }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">else</span>           { rho_p = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>; }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">auto</span> r_dry = std::cbrt(m_p / (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.0)/<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>*rho_p));</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> r_dry;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"></span> </div>
@@ -303,9 +303,13 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCDefinitions_8H_sour
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
 <div class="ttc" id="aERFPC_8H_html"><div class="ttname"><a href="ERFPC_8H.html">ERFPC.H</a></div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:16</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__SDInitialization_8H_html"><div class="ttname"><a href="ERF__SDInitialization_8H.html">ERF_SDInitialization.H</a></div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

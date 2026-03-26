@@ -31,7 +31,7 @@ var classSurfaceLayer =
       [ "HEAT_FLUX", "classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04ac03b743c56d9316fbd3d327453b22226", null ],
       [ "SURFACE_TEMPERATURE", "classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1", null ]
     ] ],
-    [ "SurfaceLayer", "classSurfaceLayer.html#ab92c93ca5614db39e6bc6d1c5781d45c", null ],
+    [ "SurfaceLayer", "classSurfaceLayer.html#a3ef29e88dbb67dd7b2b7f8945320296a", null ],
     [ "compute_fluxes", "classSurfaceLayer.html#a7a15b491e262a66f6b96d2a432530f9a", null ],
     [ "compute_fluxes", "classSurfaceLayer.html#a484a70955523aa230ce9aafab79cfe5b", null ],
     [ "compute_pblh", "classSurfaceLayer.html#a33bed820551a152ab22cf2ebd34c7fb6", null ],
@@ -55,7 +55,7 @@ var classSurfaceLayer =
     [ "get_zref", "classSurfaceLayer.html#a49b7e6ceee1b14d001ec928c915c73d5", null ],
     [ "have_variable_sea_roughness", "classSurfaceLayer.html#a99b921f99f7b53fb13c0cddcd269ff2d", null ],
     [ "impose_SurfaceLayer_bcs", "classSurfaceLayer.html#ad71d5b33900c768b3e3884898d468e01", null ],
-    [ "init_tke_from_ustar", "classSurfaceLayer.html#a1cb463309cb73de8434f0fd1a2db985f", null ],
+    [ "init_tke_from_ustar", "classSurfaceLayer.html#a642273c8348f41f7e63f10c1d9b11be2", null ],
     [ "lmask_min_reduce", "classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424", null ],
     [ "make_SurfaceLayer_at_level", "classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50", null ],
     [ "read_custom_roughness", "classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b", null ],

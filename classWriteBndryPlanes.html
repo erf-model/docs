@@ -218,10 +218,10 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// We create the smallest box that contains all of the cell centers</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// in the physical region specified</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> ilo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[0] - xLo[0]) * dxi[0])+.5);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">int</span> jlo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[1] - xLo[1]) * dxi[1])+.5);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">int</span> ihi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[0] - xLo[0]) * dxi[0])+.5)-1;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">int</span> jhi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[1] - xLo[1]) * dxi[1])+.5)-1;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> ilo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[0] - xLo[0]) * dxi[0])+<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">int</span> jlo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_lo[1] - xLo[1]) * dxi[1])+<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">int</span> ihi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[0] - xLo[0]) * dxi[0])+<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5))-1;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">int</span> jhi = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Math::floor((box_hi[1] - xLo[1]) * dxi[1])+<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.5))-1;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// Map this to index space -- for now we do no interpolation</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classWriteBndryPlanes.html#a4d7d2b3b5b1c823b905ae3042bb62379">target_box</a>.setSmall(IntVect(ilo,jlo,0));</div>
@@ -487,11 +487,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespacederived.html#a591cb412598c637cf413d45840c34331" title=" " alt="" coords="232,107,428,133"/>
 <area shape="rect" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1" title=" " alt="" coords="237,56,423,83"/>
 <area shape="rect" href="namespacederived.html#a5ac9bcbf5588a917a22af159e2d498f1" title=" " alt="" coords="251,157,409,184"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="522,56,613,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="707,31,856,57"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="522,56,613,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="707,31,856,57"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="737,81,825,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="476,157,659,184"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="495,107,639,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef" title=" " alt="" coords="495,107,639,133"/>
 </map>
 </div>
 

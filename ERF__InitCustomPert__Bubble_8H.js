@@ -2,7 +2,7 @@ var ERF__InitCustomPert__Bubble_8H =
 [
     [ "AMREX_ALWAYS_ASSERT", "ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768", null ],
     [ "if", "ERF__InitCustomPert__Bubble_8H.html#a85e9b2391fb38acf1a41e3366f3d83f0", null ],
-    [ "if", "ERF__InitCustomPert__Bubble_8H.html#ae9abb24f6d2e07406659fd46230b6eaa", null ],
+    [ "if", "ERF__InitCustomPert__Bubble_8H.html#a4cff517661aa95acb83333ad15bd50ed", null ],
     [ "if", "ERF__InitCustomPert__Bubble_8H.html#a5431adcf46a1db2d7d803566756b2064", null ],
     [ "if", "ERF__InitCustomPert__Bubble_8H.html#a112e98cd5430bc10b19f8da46ce1f9d4", null ],
     [ "pp_prob", "ERF__InitCustomPert__Bubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb", null ],
@@ -21,7 +21,7 @@ var ERF__InitCustomPert__Bubble_8H =
     [ "state_pert", "ERF__InitCustomPert__Bubble_8H.html#ad5a21105eb714f2f7262010bd63f1878", null ],
     [ "state_pert", "ERF__InitCustomPert__Bubble_8H.html#a984e74dab4a15563df0b42cdb5d8d63c", null ],
     [ "state_pert", "ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334", null ],
-    [ "state_pert", "ERF__InitCustomPert__Bubble_8H.html#a29a84371ebde7465b7ae9caae2cf6cfa", null ],
+    [ "state_pert", "ERF__InitCustomPert__Bubble_8H.html#a39744ad3691503fcdec06d7fe79110b8", null ],
     [ "state_pert", "ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc", null ],
     [ "do_moist_bubble", "ERF__InitCustomPert__Bubble_8H.html#a3a24b07c0065a0c1137131154ea4f2b0", null ],
     [ "dz", "ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b", null ],

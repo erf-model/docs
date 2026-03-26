@@ -674,8 +674,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="337,56,375,83"/>
 <area shape="rect" href="classProblemBase.html#a8d354473db4a51e21149d110a41fbccc" title=" " alt="" coords="256,107,456,149"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="504,89,687,116"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="550,140,641,167"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="735,115,884,141"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="550,140,641,167"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="735,115,884,141"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="765,165,853,192"/>
 </map>
 </div>
@@ -990,7 +990,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Initializing flat terrain&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            terrain_fab.template setVal&lt;amrex::RunOn::Device&gt;(0.0);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            terrain_fab.template setVal&lt;amrex::RunOn::Device&gt;(0);</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a> == MeshType::VariableDz) {</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                <a class="code" href="structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518">SolverChoice::set_mesh_type</a>(MeshType::StretchedDz);</div>
@@ -1094,8 +1094,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="321,56,359,83"/>
 <area shape="rect" href="classProblemBase.html#a8d354473db4a51e21149d110a41fbccc" title=" " alt="" coords="240,107,440,149"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="488,89,671,116"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="534,140,625,167"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="719,115,868,141"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="534,140,625,167"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="719,115,868,141"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="749,165,837,192"/>
 </map>
 </div>
@@ -1233,13 +1233,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lat_min, lon_min;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                file &gt;&gt; lon_min &gt;&gt; lat_min;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                 <span class="keywordflow">if</span>(std::fabs(lon_min) &gt; 180.0) {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                 <span class="keywordflow">if</span>(std::fabs(lon_min) &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(180.0)) {</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                    amrex::Error(<span class="stringliteral">&quot;The value of longitude for entry in the first line in &quot;</span> + fname</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                                 + <span class="stringliteral">&quot; should not exceed 180. It is &quot;</span> + std::to_string(lon_min));</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                                 + <span class="stringliteral">&quot; should not exceed amrex::Real(180.) It is &quot;</span> + std::to_string(lon_min));</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                }</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                 <span class="keywordflow">if</span>(std::fabs(lat_min) &gt; 90.0) {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                 <span class="keywordflow">if</span>(std::fabs(lat_min) &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(90.0)) {</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    amrex::Error(<span class="stringliteral">&quot;The value of latitude for entry in the first line in &quot;</span> + fname</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                                 + <span class="stringliteral">&quot; should not exceed 90. It is &quot;</span> + std::to_string(lat_min));</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                                 + <span class="stringliteral">&quot; should not exceed amrex::Real(90.) It is &quot;</span> + std::to_string(lat_min));</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                }</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                file &gt;&gt; nx &gt;&gt; ny;</div>
@@ -1322,7 +1322,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        amrex::Box <a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a> = terrain_fab.box();</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = terrain_fab.array();</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">amrex::ParallelFor</a>(<a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">amrex::ParallelFor</a>(<a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        {</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="comment">// Clip indices for ghost cells</span></div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
@@ -1461,7 +1461,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__SetupDiff_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:9</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
@@ -1473,8 +1473,8 @@ Here is the call graph for this function:</div>
 <map name="aclassProblemBase_a8d354473db4a51e21149d110a41fbccc_cgraph" id="aclassProblemBase_a8d354473db4a51e21149d110a41fbccc_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,205,65"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="253,5,436,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="299,56,390,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="484,31,633,57"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="299,56,390,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="484,31,633,57"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="515,81,603,108"/>
 </map>
 </div>
@@ -1575,16 +1575,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment">// const auto dx              = geom.CellSize();</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++)</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+0.5)* dx[2];</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="comment">// set RHS term of RhoTheta equation based on time, z_cc here</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            u_geos[k] = 0.0;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            v_geos[k] = 0.0;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            u_geos[k] = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            v_geos[k] = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        }</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="comment">// Copy from host version to device version</span></div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, u_geos.begin(), u_geos.end(), d_u_geos.begin());</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        amrex::Gpu::copy(amrex::Gpu::hostToDevice, v_geos.begin(), v_geos.end(), d_v_geos.begin());</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1664,10 +1665,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; qsrc_arr = qsrc-&gt;array(mfi);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <span class="comment">// src is a spatial function if erf.spatial_moisture_forcing = true</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">// otherwise, qsrc_arr is defined only in over Z (box x and y dimensions are 1)</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+0.5)* dx[2];</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <span class="comment">// set RHS term of RhoQ1 equation based on time, z_cc here</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                qsrc_arr(i, j, k) = 0.0;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                qsrc_arr(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            });</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
@@ -1678,9 +1679,9 @@ Here is the call graph for this function:</div>
 <map name="aclassProblemBase_a50456fe7e5902239f239a076db4d9777_cgraph" id="aclassProblemBase_a50456fe7e5902239f239a076db4d9777_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,167,65"/>
 <area shape="rect" href="classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791" title=" " alt="" coords="215,5,368,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="246,56,337,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="246,56,337,83"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="471,5,510,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="416,56,565,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="416,56,565,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="447,107,535,133"/>
 </map>
 </div>
@@ -1752,10 +1753,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; src_arr = src-&gt;array(mfi);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">// src is a spatial function if erf.spatial_rhotheta_forcing = true</span></div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="comment">// otherwise, qsrc_arr is defined only in over Z (box x and y dimensions are 1)</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+0.5)* dx[2];</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                <span class="comment">// set RHS term of RhoTheta equation based on time, z_cc here</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                src_arr(i, j, k) = 0.0;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                src_arr(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            });</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        }</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
@@ -1766,9 +1767,9 @@ Here is the call graph for this function:</div>
 <map name="aclassProblemBase_abc35a529692454d8e38b052b1b5980ac_cgraph" id="aclassProblemBase_abc35a529692454d8e38b052b1b5980ac_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,167,65"/>
 <area shape="rect" href="classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791" title=" " alt="" coords="215,5,368,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="246,56,337,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="246,56,337,83"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="471,5,510,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="416,56,565,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="416,56,565,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="447,107,535,133"/>
 </map>
 </div>
@@ -1853,9 +1854,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// const auto dx              = geom.CellSize();</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++)</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+0.5)* dx[2];</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="comment">// set vertical velocity profile based on time, z_cc here</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd">wbar</a>[k] = 0.0;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <a class="code" href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a3d8bd6001a2421b06c3ec4e9f2dcdffd">wbar</a>[k] = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        }</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="comment">// Copy from host version to device version</span></div>

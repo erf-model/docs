@@ -254,10 +254,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// Box dbox(a_geom.Domain());</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// small_volfrac</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> small_volfrac = 1.e-14;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> small_volfrac = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-14);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  ParmParse <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;eb2&quot;</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;small_volfrac&quot;</span>, small_volfrac);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> small_value = 1.e-15;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> small_value = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-15);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">const</span> IntVect vdim(IntVect::TheDimensionVector(a_idim));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
@@ -318,7 +318,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (FlagFab[mfi].getType(bx) == FabType::covered ) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        aux_flag(i,j,k).setCovered();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        aux_flag(i,j,k).setDisconnected();</div>
@@ -335,28 +335,28 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (FlagFab[mfi].getType(bx) == FabType::regular ) {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        aux_flag(i,j,k).setRegular();</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        aux_flag(i,j,k).setDisconnected();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        aux_vfrac(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        aux_afrac_x(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        aux_afrac_y(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        aux_afrac_z(i,j,k) = 1.0;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        aux_vfrac(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        aux_afrac_x(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        aux_afrac_y(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        aux_afrac_z(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (i==bx.bigEnd(0)) {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          aux_flag(i+1,j,k).setRegular();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          aux_vfrac(i+1,j,k) = 1.0;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;          aux_afrac_x(i+1,j,k) = 1.0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          aux_vfrac(i+1,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;          aux_afrac_x(i+1,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">if</span> (j==bx.bigEnd(1)) {</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          aux_flag(i,j+1,k).setRegular();</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          aux_vfrac(i,j+1,k) = 1.0;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;          aux_afrac_y(i,j+1,k) = 1.0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          aux_vfrac(i,j+1,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;          aux_afrac_y(i,j+1,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">if</span> (k==bx.bigEnd(2)) {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;          aux_flag(i,j,k+1).setRegular();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;          aux_vfrac(i,j,k+1) = 1.0;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          aux_afrac_z(i,j,k+1) = 1.0;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;          aux_vfrac(i,j,k+1) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          aux_afrac_z(i,j,k+1) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      });</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
@@ -392,7 +392,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      BoxList diffList = boxDiff(bx_grown, bx);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> Box&amp; b : diffList) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(b, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        {</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <span class="keywordflow">if</span> ( i &lt; dom_grown_lo[0] || i &gt; dom_grown_hi[0] ||</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;               j &lt; dom_grown_lo[1] || j &gt; dom_grown_hi[1] ||</div>
@@ -407,7 +407,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="keywordtype">int</span> <span class="keyword">const</span> verbose=<a class="code" href="classeb__aux__.html#a8ae8f5c65d8f24092095ba0058293864">m_verbose</a>;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// defaults to covered and disconnected.</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        aux_flag(i,j,k).setCovered();</div>
@@ -449,11 +449,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            lo_isRegular = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            lo_isSingleValued = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (hi_isSingleValued) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),0.0)) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;              lo_isCovered = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;              lo_isRegular = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;              lo_isSingleValued = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),1.0)) {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>)) {</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;              lo_isCovered = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;              lo_isRegular = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;              lo_isSingleValued = <span class="keyword">false</span>;</div>
@@ -478,11 +478,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            hi_isRegular = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            hi_isSingleValued = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (lo_isSingleValued) { <span class="comment">// SingleValued</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),0.0)) { <span class="comment">//Covered</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) { <span class="comment">//Covered</span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;              hi_isCovered = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;              hi_isRegular = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;              hi_isSingleValued = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),1.0)) { <span class="comment">//Regular</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (almostEqual(afrac(i,j,k),<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>)) { <span class="comment">//Regular</span></div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;              hi_isCovered = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;              hi_isRegular = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;              hi_isSingleValued = <span class="keyword">false</span>;</div>
@@ -504,20 +504,20 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;          aux_flag(i,j,k).setRegular();</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;          aux_flag(i,j,k).setConnected();</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;          aux_vfrac(i,j,k) = 1.0;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;          aux_vfrac(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;          aux_afrac_x(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;          aux_afrac_y(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;          aux_afrac_z(i,j,k) = 1.0;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;          aux_afrac_x(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;          aux_afrac_y(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;          aux_afrac_z(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;          <span class="keywordflow">if</span> (i==bx.bigEnd(0)) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            aux_afrac_x(i+1,j,k) = 1.0;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            aux_afrac_x(i+1,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;          }</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;          <span class="keywordflow">if</span> (j==bx.bigEnd(1)) {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            aux_afrac_y(i,j+1,k) = 1.0;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            aux_afrac_y(i,j+1,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;          }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;          <span class="keywordflow">if</span> (k==bx.bigEnd(2)) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            aux_afrac_z(i,j,k+1) = 1.0;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            aux_afrac_z(i,j,k+1) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;          }</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        } <span class="keywordflow">else</span> {</div>
@@ -525,8 +525,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;          <span class="keywordflow">if</span> (verbose) { Print() &lt;&lt; <span class="stringliteral">&quot;\ncell: &quot;</span> &lt;&lt; amrex::IntVect(i,j,k) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>; }</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;          Array&lt;Real,AMREX_SPACEDIM&gt; lo_arr = {-0.5,-0.5,-0.5};</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;          Array&lt;Real,AMREX_SPACEDIM&gt; hi_arr = { 0.5, 0.5, 0.5};</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;          Array&lt;Real,AMREX_SPACEDIM&gt; lo_arr = {-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>,-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>,-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>};</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;          Array&lt;Real,AMREX_SPACEDIM&gt; hi_arr = { <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>};</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;          <span class="comment">//-----------------------</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;          <span class="comment">// Low EB cut cell</span></div>
@@ -539,7 +539,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;          RealVect lo_normal(bnorm(iv_lo,0), bnorm(iv_lo,1), bnorm(iv_lo,2));</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;          <span class="keywordflow">if</span> (at_lo_boundary) { <span class="comment">// At lower boundary</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            lo_point[a_idim] += 1.0; <span class="comment">// Move the boundary centroid upward in the a_idim direction.</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            lo_point[a_idim] += <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>; <span class="comment">// Move the boundary centroid upward in the a_idim direction.</span></div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;          }</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;          <span class="keywordflow">if</span> (lo_isSingleValued ) {</div>
@@ -555,8 +555,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;          }</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;          <span class="comment">// High side of low cell</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;          lo_arr[a_idim] = 0.0;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;          hi_arr[a_idim] = 0.5;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;          lo_arr[a_idim] = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;          hi_arr[a_idim] = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;          RealBox lo_rbx(lo_arr.data(), hi_arr.data());</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;          <a class="code" href="classeb__cut__cell__.html">eb_cut_cell_</a> lo_eb_cc(flag(iv_lo), lo_rbx, lo_point, lo_normal);</div>
@@ -574,7 +574,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;          RealVect hi_normal(bnorm(iv_hi,0), bnorm(iv_hi,1), bnorm(iv_hi,2));</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;          <span class="keywordflow">if</span> (at_hi_boundary) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            hi_point[a_idim] += -1.0; <span class="comment">// Move the boundary centroid downward in the a_idim direction.</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            hi_point[a_idim] += -<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>; <span class="comment">// Move the boundary centroid downward in the a_idim direction.</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          }</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;          <span class="keywordflow">if</span> (hi_isSingleValued ) {</div>
@@ -590,8 +590,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;          }</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;          <span class="comment">// Low side of high cell</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;          lo_arr[a_idim] = -0.5;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;          hi_arr[a_idim] =  0.0;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;          lo_arr[a_idim] = -<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;          hi_arr[a_idim] =  <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;          RealBox hi_rbx(lo_arr.data(), hi_arr.data());</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;          <a class="code" href="classeb__cut__cell__.html">eb_cut_cell_</a> hi_eb_cc(flag(iv_hi), hi_rbx, hi_point, hi_normal);</div>
@@ -655,12 +655,12 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> apnorm = std::sqrt(adx*adx + ady*ady + adz*adz);</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;              <span class="comment">// EB normal</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> apnorminv = 1. / apnorm;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> apnorminv = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / apnorm;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;              RealVect <span class="keyword">const</span> normal(adx*apnorminv, ady*apnorminv, adz*apnorminv);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> dot_normals = normal.dotProduct(hi_normal);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;              <span class="keywordflow">if</span> ( !amrex::almostEqual(dot_normals, 1.0) ) {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;              <span class="keywordflow">if</span> ( !amrex::almostEqual(dot_normals, <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) ) {</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                Print() &lt;&lt; <span class="stringliteral">&quot;\nFail: check-1 dot_normals &quot;</span> &lt;&lt; dot_normals</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                        &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
@@ -668,18 +668,18 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                hi_hi_eb_cc.debug();</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (verbose) {</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                Print() &lt;&lt; <span class="stringliteral">&quot;Pass: dot_normals = 1.0\n&quot;</span>;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                Print() &lt;&lt; <span class="stringliteral">&quot;Pass: dot_normals = one\n&quot;</span>;</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;              }</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;              <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( amrex::almostEqual(dot_normals, 1.0) );</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;              <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( amrex::almostEqual(dot_normals, <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) );</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            }</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            <span class="comment">// The a_idim area of hi_eb_cc.areaHi() should equal hi_hi_eb_cc.areaLo()</span></div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            {</div>
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> abs_err = std::abs( hi_eb_cc.areaHi(a_idim) - hi_hi_eb_cc.areaLo(a_idim) );</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> machine_tol = 10.0*<a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>();</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> machine_tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(10.0)*<a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            <span class="keywordflow">if</span> ( abs_err &gt;= machine_tol ) {</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                Print() &lt;&lt; <span class="stringliteral">&quot;\nFail: check-2 area abs_err: &quot;</span> &lt;&lt; abs_err</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                        &lt;&lt; <span class="stringliteral">&quot;\n  hi_eb_cc.areaHi &quot;</span> &lt;&lt; hi_eb_cc.areaHi(a_idim)</div>
@@ -696,7 +696,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;            <span class="comment">// The low-side area of hi_eb_cc should equal a_idim afrac.</span></div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            { <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> abs_err = amrex::max(std::abs(lo_eb_cc.areaHi(a_idim) - afrac(iv_hi)),</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                                              std::abs(hi_eb_cc.areaLo(a_idim) - afrac(iv_hi)));</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> compare_tol = 5.0e-6;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> compare_tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(5.0e-6);</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;              <span class="keywordflow">if</span> ( abs_err &gt;= compare_tol ) {</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                <span class="comment">//hi_eb_cc.debug();</span></div>
@@ -717,7 +717,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            <span class="comment">// equal vfrac(iv_hi).</span></div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            { <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> vol = hi_eb_cc.volume() + hi_hi_eb_cc.volume();</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <span class="keyword">const</span> abs_err = amrex::Math::abs(vfrac(iv_hi) - vol);</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> compare_tol = 5.0e-6;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> compare_tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(5.0e-6);</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="preprocessor">#ifndef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;              <span class="keywordflow">if</span> ( abs_err &gt;= compare_tol ) {</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                hi_eb_cc.debug();</div>
@@ -753,27 +753,27 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            aux_flag(i,j,k).setRegular();</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            aux_flag(i,j,k).setConnected();</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            aux_vfrac(i,j,k) = 1.0;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;            aux_vfrac(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160; </div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            aux_afrac_x(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            aux_afrac_y(i,j,k) = 1.0;</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            aux_afrac_z(i,j,k) = 1.0;</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            aux_afrac_x(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            aux_afrac_y(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;            aux_afrac_z(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            aux_fcent_x(i,j,k,0) = 0.0; aux_fcent_x(i,j,k,1) = 0.0;</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            aux_fcent_y(i,j,k,0) = 0.0; aux_fcent_y(i,j,k,1) = 0.0;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            aux_fcent_z(i,j,k,0) = 0.0; aux_fcent_z(i,j,k,1) = 0.0;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;            aux_fcent_x(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; aux_fcent_x(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            aux_fcent_y(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; aux_fcent_y(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            aux_fcent_z(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; aux_fcent_z(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            <span class="keywordflow">if</span> (i==bx.bigEnd(0)) {</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;              aux_afrac_x(i+1,j,k) = 1.0;</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;              aux_fcent_x(i+1,j,k,0) = 0.0; aux_fcent_x(i+1,j,k,1) = 0.0;</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;              aux_afrac_x(i+1,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;              aux_fcent_x(i+1,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; aux_fcent_x(i+1,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            }</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            <span class="keywordflow">if</span> (j==bx.bigEnd(1)) {</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;              aux_afrac_y(i,j+1,k) = 1.0;</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;              aux_fcent_y(i,j+1,k,0) = 0.0; aux_fcent_y(i,j+1,k,1) = 0.0;</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;              aux_afrac_y(i,j+1,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;              aux_fcent_y(i,j+1,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; aux_fcent_y(i,j+1,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;            }</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            <span class="keywordflow">if</span> (k==bx.bigEnd(2)) {</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;              aux_afrac_z(i,j,k+1) = 1.0;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;              aux_fcent_z(i,j,k+1,0) = 0.0; aux_fcent_z(i,j,k+1,1) = 0.0;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;              aux_afrac_z(i,j,k+1) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;              aux_fcent_z(i,j,k+1,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; aux_fcent_z(i,j,k+1,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            }</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (lo_eb_cc.isRegular() &amp;&amp; hi_eb_cc.isCovered())</div>
@@ -786,38 +786,38 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;          } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <span class="comment">// 0. Cell Flag</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <span class="comment">// zero Cell Flag</span></div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            aux_flag(i,j,k).setSingleValued();</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="comment">// 1. Volume Fraction</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="comment">// one Volume Fraction</span></div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_vol {lo_eb_cc.volume()}; AMREX_ASSERT(lo_vol &gt;= 0.0 &amp;&amp; lo_vol &lt;= 0.5);</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hi_vol {hi_eb_cc.volume()}; AMREX_ASSERT(hi_vol &gt;= 0.0 &amp;&amp; hi_vol &lt;= 0.5);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_vol {lo_eb_cc.volume()}; AMREX_ASSERT(lo_vol &gt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> &amp;&amp; lo_vol &lt;= <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hi_vol {hi_eb_cc.volume()}; AMREX_ASSERT(hi_vol &gt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> &amp;&amp; hi_vol &lt;= <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            aux_vfrac(i,j,k) = lo_vol + hi_vol;</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <span class="comment">// 2. Volume Centroid</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <span class="comment">// two Volume Centroid</span></div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            <span class="comment">/* centVol() returns the coordinates based on m_rbx.</span></div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="comment">              The coordinates in the a_idim direction are in [0.0,0.5] for the low cell and in [-0.5,0.0] for the hi cell.</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;<span class="comment">              The coordinates in the a_idim direction are in [zero,myhalf] for the low cell and in [-myhalf,zero] for the hi cell.</span></div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;<span class="comment">              Therefore, they need to be mapped to the eb_aux space, by shifting:</span></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="comment">              x&#39; = x - 0.5 (low cell), x + 0.5 (hi cell) if a_idim = 0</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="comment">              y&#39; = y - 0.5 (low cell), y + 0.5 (hi cell) if a_idim = 1</span></div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="comment">              z&#39; = z - 0.5 (low cell), z + 0.5 (hi cell) if a_idim = 2</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;<span class="comment">              x&#39; = x - myhalf (low cell), x + myhalf (hi cell) if a_idim = 0</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;<span class="comment">              y&#39; = y - myhalf (low cell), y + myhalf (hi cell) if a_idim = 1</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="comment">              z&#39; = z - myhalf (low cell), z + myhalf (hi cell) if a_idim = 2</span></div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;<span class="comment">            */</span></div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;            RealVect lo_vcent {lo_eb_cc.centVol()};</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;            RealVect hi_vcent {hi_eb_cc.centVol()};</div>
 <div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            lo_vcent[a_idim] = lo_vcent[a_idim] - 0.5;</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            hi_vcent[a_idim] = hi_vcent[a_idim] + 0.5;</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            lo_vcent[a_idim] = lo_vcent[a_idim] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            hi_vcent[a_idim] = hi_vcent[a_idim] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160; </div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            aux_vcent(i,j,k,0) = ( lo_vol * lo_vcent[0] + hi_vol * hi_vcent[0] ) / aux_vfrac(i,j,k);</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            aux_vcent(i,j,k,1) = ( lo_vol * lo_vcent[1] + hi_vol * hi_vcent[1] ) / aux_vfrac(i,j,k);</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            aux_vcent(i,j,k,2) = ( lo_vol * lo_vcent[2] + hi_vol * hi_vcent[2] ) / aux_vfrac(i,j,k);</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="comment">// 3. Area Fraction</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="comment">// three Area Fraction</span></div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160; </div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_areaLo_x {lo_eb_cc.areaLo(0)};</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_areaLo_y {lo_eb_cc.areaLo(1)};</div>
@@ -847,14 +847,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;              aux_afrac_z(i,j,k+1) = (a_idim == 2) ? hi_areaHi_z : lo_areaHi_z + hi_areaHi_z;</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            }</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            <span class="comment">// 4. Face Centroid</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            <span class="comment">// Real(4.) Face Centroid</span></div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            <span class="comment">/* fcentLo returns the coordinates based on m_rbx.</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="comment">              The coordinates in the a_idim direction are in [0.0,0.5] for the low cell and in [-0.5,0.0] for the hi cell.</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;<span class="comment">              The coordinates in the a_idim direction are in [zero,myhalf] for the low cell and in [-myhalf,zero] for the hi cell.</span></div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;<span class="comment">              Therefore, they need to be mapped to the eb_aux space, by shifting:</span></div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="comment">              x&#39; = x - 0.5 (low cell), x + 0.5 (hi cell) if a_idim = 0</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="comment">              y&#39; = y - 0.5 (low cell), y + 0.5 (hi cell) if a_idim = 1</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="comment">              z&#39; = z - 0.5 (low cell), z + 0.5 (hi cell) if a_idim = 2</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="comment">              x&#39; = x - myhalf (low cell), x + myhalf (hi cell) if a_idim = 0</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="comment">              y&#39; = y - myhalf (low cell), y + myhalf (hi cell) if a_idim = 1</span></div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="comment">              z&#39; = z - myhalf (low cell), z + myhalf (hi cell) if a_idim = 2</span></div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;<span class="comment">            */</span></div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160; </div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            RealVect lo_centLo_x {lo_eb_cc.centLo(0)};</div>
@@ -868,58 +868,58 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="keywordflow">if</span> (a_idim == 0) {</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;              aux_fcent_x(i,j,k,0) = lo_centLo_x[1];      <span class="comment">// y</span></div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;              aux_fcent_x(i,j,k,1) = lo_centLo_x[2];      <span class="comment">// z</span></div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;              aux_fcent_y(i,j,k,0) = (aux_afrac_y(i,j,k) &gt; 0.0)   <span class="comment">// x (mapped)</span></div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                    ? ( lo_areaLo_y * (lo_centLo_y[0] - 0.5)</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                      + hi_areaLo_y * (hi_centLo_y[0] + 0.5) ) / aux_afrac_y(i,j,k)</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;              aux_fcent_y(i,j,k,1) = (aux_afrac_y(i,j,k) &gt; 0.0)   <span class="comment">// z</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;              aux_fcent_y(i,j,k,0) = (aux_afrac_y(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x (mapped)</span></div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                                    ? ( lo_areaLo_y * (lo_centLo_y[0] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                                      + hi_areaLo_y * (hi_centLo_y[0] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_y(i,j,k)</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;              aux_fcent_y(i,j,k,1) = (aux_afrac_y(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z</span></div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                                    ? ( lo_areaLo_y * lo_centLo_y[2]</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                                      + hi_areaLo_y * hi_centLo_y[2] ) / aux_afrac_y(i,j,k)</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;              aux_fcent_z(i,j,k,0) = (aux_afrac_z(i,j,k) &gt; 0.0)   <span class="comment">// x (mapped)</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                                    ? ( lo_areaLo_z * (lo_centLo_z[0] - 0.5)</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                                      + hi_areaLo_z * (hi_centLo_z[0] + 0.5) ) / aux_afrac_z(i,j,k)</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;              aux_fcent_z(i,j,k,1) = (aux_afrac_z(i,j,k) &gt; 0.0)   <span class="comment">// y</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;              aux_fcent_z(i,j,k,0) = (aux_afrac_z(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x (mapped)</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                                    ? ( lo_areaLo_z * (lo_centLo_z[0] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                                      + hi_areaLo_z * (hi_centLo_z[0] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_z(i,j,k)</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;              aux_fcent_z(i,j,k,1) = (aux_afrac_z(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y</span></div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                                    ? ( lo_areaLo_z * lo_centLo_z[1]</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                                      + hi_areaLo_z * hi_centLo_z[1] ) / aux_afrac_z(i,j,k)</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                                    : 0.0;</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 1) {</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;              aux_fcent_x(i,j,k,0) = (aux_afrac_x(i,j,k) &gt; 0.0)   <span class="comment">// y (mapped)</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                                    ? ( lo_areaLo_x * (lo_centLo_x[1] - 0.5)</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                                      + hi_areaLo_x * (hi_centLo_x[1] + 0.5) ) / aux_afrac_x(i,j,k)</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;              aux_fcent_x(i,j,k,1) = (aux_afrac_x(i,j,k) &gt; 0.0)   <span class="comment">// z</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;              aux_fcent_x(i,j,k,0) = (aux_afrac_x(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y (mapped)</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                                    ? ( lo_areaLo_x * (lo_centLo_x[1] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                                      + hi_areaLo_x * (hi_centLo_x[1] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_x(i,j,k)</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;              aux_fcent_x(i,j,k,1) = (aux_afrac_x(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z</span></div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                                    ? ( lo_areaLo_x * lo_centLo_x[2]</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                                      + hi_areaLo_x * hi_centLo_x[2] ) / aux_afrac_x(i,j,k)</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                                    : 0.0;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;              aux_fcent_y(i,j,k,0) = lo_centLo_y[0];      <span class="comment">// x</span></div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;              aux_fcent_y(i,j,k,1) = lo_centLo_y[2];      <span class="comment">// z</span></div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;              aux_fcent_z(i,j,k,0) = (aux_afrac_z(i,j,k) &gt; 0.0)   <span class="comment">// x</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;              aux_fcent_z(i,j,k,0) = (aux_afrac_z(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x</span></div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                                    ? ( lo_areaLo_z * lo_centLo_z[0]</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                                      + hi_areaLo_z * hi_centLo_z[0] ) / aux_afrac_z(i,j,k)</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;              aux_fcent_z(i,j,k,1) = (aux_afrac_z(i,j,k) &gt; 0.0)   <span class="comment">// y (mapped)</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                                    ? ( lo_areaLo_z * (lo_centLo_z[1] - 0.5)</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                                      + hi_areaLo_z * (hi_centLo_z[1] + 0.5) ) / aux_afrac_z(i,j,k)</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                                    : 0.0;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;              aux_fcent_z(i,j,k,1) = (aux_afrac_z(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y (mapped)</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                                    ? ( lo_areaLo_z * (lo_centLo_z[1] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                                      + hi_areaLo_z * (hi_centLo_z[1] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_z(i,j,k)</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 2) {</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;              aux_fcent_x(i,j,k,0) = (aux_afrac_x(i,j,k) &gt; 0.0)   <span class="comment">// y</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;              aux_fcent_x(i,j,k,0) = (aux_afrac_x(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y</span></div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                                    ? ( lo_areaLo_x * lo_centLo_x[1]</div>
 <div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                                      + hi_areaLo_x * hi_centLo_x[1] ) / aux_afrac_x(i,j,k)</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;              aux_fcent_x(i,j,k,1) = (aux_afrac_x(i,j,k) &gt; 0.0)   <span class="comment">// z (mapped)</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                                    ? ( lo_areaLo_x * (lo_centLo_x[2] - 0.5)</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                                      + hi_areaLo_x * (hi_centLo_x[2] + 0.5) ) / aux_afrac_x(i,j,k)</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;              aux_fcent_y(i,j,k,0) = (aux_afrac_y(i,j,k) &gt; 0.0)   <span class="comment">// x</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;              aux_fcent_x(i,j,k,1) = (aux_afrac_x(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z (mapped)</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                                    ? ( lo_areaLo_x * (lo_centLo_x[2] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                                      + hi_areaLo_x * (hi_centLo_x[2] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_x(i,j,k)</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;              aux_fcent_y(i,j,k,0) = (aux_afrac_y(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x</span></div>
 <div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                                    ? ( lo_areaLo_y * lo_centLo_y[0]</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                                      + hi_areaLo_y * hi_centLo_y[0] ) / aux_afrac_y(i,j,k)</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                                    : 0.0;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;              aux_fcent_y(i,j,k,1) = (aux_afrac_y(i,j,k) &gt; 0.0)   <span class="comment">// z (mapped)</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                                    ? ( lo_areaLo_y * (lo_centLo_y[2] - 0.5)</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                                      + hi_areaLo_y * (hi_centLo_y[2] + 0.5) ) / aux_afrac_y(i,j,k)</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                                    : 0.0;</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;              aux_fcent_y(i,j,k,1) = (aux_afrac_y(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z (mapped)</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                                    ? ( lo_areaLo_y * (lo_centLo_y[2] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                                      + hi_areaLo_y * (hi_centLo_y[2] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_y(i,j,k)</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                                    : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;              aux_fcent_z(i,j,k,0) = lo_centLo_z[0];      <span class="comment">// x</span></div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;              aux_fcent_z(i,j,k,1) = lo_centLo_z[1];      <span class="comment">// y</span></div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            }</div>
@@ -933,23 +933,23 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                aux_fcent_x(i+1,j,k,0) = hi_centHi_x[1];      <span class="comment">// y</span></div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                aux_fcent_x(i+1,j,k,1) = hi_centHi_x[2];      <span class="comment">// z</span></div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 1) {</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                aux_fcent_x(i+1,j,k,0) = (aux_afrac_x(i+1,j,k) &gt; 0.0)   <span class="comment">// y (mapped)</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                                      ? ( lo_areaHi_x * (lo_centHi_x[1] - 0.5)</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                                        + hi_areaHi_x * (hi_centHi_x[1] + 0.5) ) / aux_afrac_x(i+1,j,k)</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                                      : 0.0;</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                aux_fcent_x(i+1,j,k,1) = (aux_afrac_x(i+1,j,k) &gt; 0.0)   <span class="comment">// z</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                aux_fcent_x(i+1,j,k,0) = (aux_afrac_x(i+1,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y (mapped)</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                                      ? ( lo_areaHi_x * (lo_centHi_x[1] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                                        + hi_areaHi_x * (hi_centHi_x[1] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_x(i+1,j,k)</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                aux_fcent_x(i+1,j,k,1) = (aux_afrac_x(i+1,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z</span></div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                                      ? ( lo_areaHi_x * lo_centHi_x[2]</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                                        + hi_areaHi_x * hi_centHi_x[2] ) / aux_afrac_x(i+1,j,k)</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                                      : 0.0;</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 2) {</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                aux_fcent_x(i+1,j,k,0) = (aux_afrac_x(i+1,j,k) &gt; 0.0)   <span class="comment">// y</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                aux_fcent_x(i+1,j,k,0) = (aux_afrac_x(i+1,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y</span></div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                                      ? ( lo_areaHi_x * lo_centHi_x[1]</div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                                        + hi_areaHi_x * hi_centHi_x[1] ) / aux_afrac_x(i+1,j,k)</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                                      : 0.0;</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                aux_fcent_x(i+1,j,k,1) = (aux_afrac_x(i+1,j,k) &gt; 0.0)   <span class="comment">// z (mapped)</span></div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                                      ? ( lo_areaHi_x * (lo_centHi_x[2] - 0.5)</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                                        + hi_areaHi_x * (hi_centHi_x[2] + 0.5) ) / aux_afrac_x(i+1,j,k)</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                                      : 0.0;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                aux_fcent_x(i+1,j,k,1) = (aux_afrac_x(i+1,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z (mapped)</span></div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                                      ? ( lo_areaHi_x * (lo_centHi_x[2] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                                        + hi_areaHi_x * (hi_centHi_x[2] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_x(i+1,j,k)</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;              }</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            }</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            <span class="keywordflow">if</span> (j==bx.bigEnd(1)) {</div>
@@ -958,26 +958,26 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;              RealVect lo_centHi_y {lo_eb_cc.centHi(1)};</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;              RealVect hi_centHi_y {hi_eb_cc.centHi(1)};</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;              <span class="keywordflow">if</span> (a_idim == 0) {</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                aux_fcent_y(i,j+1,k,0) = (aux_afrac_y(i,j+1,k) &gt; 0.0)   <span class="comment">// x (mapped)</span></div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                      ? ( lo_areaHi_y * (lo_centHi_y[0] - 0.5)</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                                        + hi_areaHi_y * (hi_centHi_y[0] + 0.5) ) / aux_afrac_y(i,j+1,k)</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                                      : 0.0;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                aux_fcent_y(i,j+1,k,1) = (aux_afrac_y(i,j+1,k) &gt; 0.0)   <span class="comment">// z</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                aux_fcent_y(i,j+1,k,0) = (aux_afrac_y(i,j+1,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x (mapped)</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                      ? ( lo_areaHi_y * (lo_centHi_y[0] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                                        + hi_areaHi_y * (hi_centHi_y[0] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_y(i,j+1,k)</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                aux_fcent_y(i,j+1,k,1) = (aux_afrac_y(i,j+1,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z</span></div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                                      ? ( lo_areaHi_y * lo_centHi_y[2]</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                                        + hi_areaHi_y * hi_centHi_y[2] ) / aux_afrac_y(i,j+1,k)</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                                      : 0.0;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 1) {</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                aux_fcent_y(i,j+1,k,0) = lo_centHi_y[0];      <span class="comment">// x</span></div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                aux_fcent_y(i,j+1,k,1) = lo_centHi_y[2];      <span class="comment">// z</span></div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 2) {</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                aux_fcent_y(i,j+1,k,0) = (aux_afrac_y(i,j+1,k) &gt; 0.0)   <span class="comment">// x</span></div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                aux_fcent_y(i,j+1,k,0) = (aux_afrac_y(i,j+1,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x</span></div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                                      ? ( lo_areaHi_y * lo_centHi_y[0]</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                                        + hi_areaHi_y * hi_centHi_y[0] ) / aux_afrac_y(i,j+1,k)</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                                      : 0.0;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                aux_fcent_y(i,j+1,k,1) = (aux_afrac_y(i,j+1,k) &gt; 0.0)   <span class="comment">// z (mapped)</span></div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                                      ? ( lo_areaHi_y * (lo_centHi_y[2] - 0.5)</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                                        + hi_areaHi_y * (hi_centHi_y[2] + 0.5) ) / aux_afrac_y(i,j+1,k)</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                                      : 0.0;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                aux_fcent_y(i,j+1,k,1) = (aux_afrac_y(i,j+1,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// z (mapped)</span></div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                                      ? ( lo_areaHi_y * (lo_centHi_y[2] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                                        + hi_areaHi_y * (hi_centHi_y[2] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_y(i,j+1,k)</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;              }</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            }</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;            <span class="keywordflow">if</span> (k==bx.bigEnd(2)) {</div>
@@ -986,56 +986,56 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;              RealVect lo_centHi_z {lo_eb_cc.centHi(2)};</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;              RealVect hi_centHi_z {hi_eb_cc.centHi(2)};</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;              <span class="keywordflow">if</span> (a_idim == 0) {</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                aux_fcent_z(i,j,k+1,0) = (aux_afrac_z(i,j,k+1) &gt; 0.0)   <span class="comment">// x (mapped)</span></div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                                      ? ( lo_areaHi_z * (lo_centHi_z[0] - 0.5)</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                                        + hi_areaHi_z * (hi_centHi_z[0] + 0.5) ) / aux_afrac_z(i,j,k+1)</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                                      : 0.0;</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                aux_fcent_z(i,j,k+1,1) = (aux_afrac_z(i,j,k+1) &gt; 0.0)   <span class="comment">// y</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                aux_fcent_z(i,j,k+1,0) = (aux_afrac_z(i,j,k+1) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x (mapped)</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                                      ? ( lo_areaHi_z * (lo_centHi_z[0] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                                        + hi_areaHi_z * (hi_centHi_z[0] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_z(i,j,k+1)</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                aux_fcent_z(i,j,k+1,1) = (aux_afrac_z(i,j,k+1) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y</span></div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                                      ? ( lo_areaHi_z * lo_centHi_z[1]</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                                        + hi_areaHi_z * hi_centHi_z[1] ) / aux_afrac_z(i,j,k+1)</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                                      : 0.0;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 1) {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                aux_fcent_z(i,j,k+1,0) = (aux_afrac_z(i,j,k+1) &gt; 0.0)   <span class="comment">// x</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                aux_fcent_z(i,j,k+1,0) = (aux_afrac_z(i,j,k+1) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// x</span></div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                                      ? ( lo_areaHi_z * lo_centHi_z[0]</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                                        + hi_areaHi_z * hi_centHi_z[0] ) / aux_afrac_z(i,j,k+1)</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                                      : 0.0;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                aux_fcent_z(i,j,k+1,1) = (aux_afrac_z(i,j,k+1) &gt; 0.0)   <span class="comment">// y (mapped)</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                                      ? ( lo_areaHi_z * (lo_centHi_z[1] - 0.5)</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                                        + hi_areaHi_z * (hi_centHi_z[1] + 0.5) ) / aux_afrac_z(i,j,k+1)</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                                      : 0.0;</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                aux_fcent_z(i,j,k+1,1) = (aux_afrac_z(i,j,k+1) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)   <span class="comment">// y (mapped)</span></div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                                      ? ( lo_areaHi_z * (lo_centHi_z[1] - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                                        + hi_areaHi_z * (hi_centHi_z[1] + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_afrac_z(i,j,k+1)</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                                      : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 2) {</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                aux_fcent_z(i,j,k+1,0) = lo_centHi_z[0];      <span class="comment">// x</span></div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                aux_fcent_z(i,j,k+1,1) = lo_centHi_z[1];      <span class="comment">// y</span></div>
 <div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;              }</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            }</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160; </div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <span class="comment">// 5. Boundary Area</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;            <span class="comment">// Real(5.) Boundary Area</span></div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_areaBoun {lo_eb_cc.areaBoun()};</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hi_areaBoun {hi_eb_cc.areaBoun()};</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            aux_barea(i,j,k) = lo_areaBoun + hi_areaBoun;</div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            <span class="comment">// 6. Boundary Centroid</span></div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            <span class="comment">// Real(6.) Boundary Centroid</span></div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            RealVect lo_centBoun {lo_eb_cc.centBoun()};</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            RealVect hi_centBoun {hi_eb_cc.centBoun()};</div>
 <div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;            <span class="keywordflow">if</span> (a_idim == 0) {</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;              aux_bcent(i,j,k,0) = ( lo_areaBoun * (lo_centBoun[0]-0.5) + hi_areaBoun * (hi_centBoun[0]+0.5) ) / aux_barea(i,j,k);  <span class="comment">// x (mapped)</span></div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;              aux_bcent(i,j,k,0) = ( lo_areaBoun * (lo_centBoun[0]-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) + hi_areaBoun * (hi_centBoun[0]+<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_barea(i,j,k);  <span class="comment">// x (mapped)</span></div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;              aux_bcent(i,j,k,1) = ( lo_areaBoun * lo_centBoun[1] + hi_areaBoun * hi_centBoun[1] ) / aux_barea(i,j,k);              <span class="comment">// y</span></div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;              aux_bcent(i,j,k,2) = ( lo_areaBoun * lo_centBoun[2] + hi_areaBoun * hi_centBoun[2] ) / aux_barea(i,j,k);              <span class="comment">// z</span></div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 1) {</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;              aux_bcent(i,j,k,0) = ( lo_areaBoun * lo_centBoun[0] + hi_areaBoun * hi_centBoun[0] ) / aux_barea(i,j,k);              <span class="comment">// x</span></div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;              aux_bcent(i,j,k,1) = ( lo_areaBoun * (lo_centBoun[1]-0.5) + hi_areaBoun * (hi_centBoun[1]+0.5) ) / aux_barea(i,j,k);  <span class="comment">// y (mapped)</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;              aux_bcent(i,j,k,1) = ( lo_areaBoun * (lo_centBoun[1]-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) + hi_areaBoun * (hi_centBoun[1]+<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_barea(i,j,k);  <span class="comment">// y (mapped)</span></div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;              aux_bcent(i,j,k,2) = ( lo_areaBoun * lo_centBoun[2] + hi_areaBoun * hi_centBoun[2] ) / aux_barea(i,j,k);              <span class="comment">// z</span></div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (a_idim == 2) {</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;              aux_bcent(i,j,k,0) = ( lo_areaBoun * lo_centBoun[0] + hi_areaBoun * hi_centBoun[0] ) / aux_barea(i,j,k);              <span class="comment">// x</span></div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;              aux_bcent(i,j,k,1) = ( lo_areaBoun * lo_centBoun[1] + hi_areaBoun * hi_centBoun[1] ) / aux_barea(i,j,k);              <span class="comment">// y</span></div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;              aux_bcent(i,j,k,2) = ( lo_areaBoun * (lo_centBoun[2]-0.5) + hi_areaBoun * (hi_centBoun[2]+0.5) ) / aux_barea(i,j,k);  <span class="comment">// z (mapped)</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;              aux_bcent(i,j,k,2) = ( lo_areaBoun * (lo_centBoun[2]-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) + hi_areaBoun * (hi_centBoun[2]+<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_barea(i,j,k);  <span class="comment">// z (mapped)</span></div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;            }</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            <span class="comment">// 7. Boundary Normal</span></div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;            <span class="comment">// Real(7.) Boundary Normal</span></div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160; </div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            RealVect eb_normal = ( lo_areaBoun * lo_normal + hi_areaBoun * hi_normal )/ aux_barea(i,j,k);</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
@@ -1049,11 +1049,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160; </div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;      });</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;      {</div>
 <div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        <span class="keywordflow">if</span> (aux_vfrac(i,j,k) &lt; small_volfrac)</div>
 <div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;        {</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;          aux_vfrac(i,j,k)   = 0.0;</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;          aux_vfrac(i,j,k)   = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        }</div>
 <div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;      });</div>
 <div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160; </div>
@@ -1089,84 +1089,84 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;      Box my_xbx(bx); my_xbx.growHi(0,1);</div>
 <div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;      <span class="keywordtype">int</span> xbx_lo = my_xbx.smallEnd(0);</div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;      <span class="keywordtype">int</span> xbx_hi = my_xbx.bigEnd(0);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(my_xbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(my_xbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;      {</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        <span class="keywordflow">if</span> ((i == xbx_lo &amp;&amp; aux_vfrac(i,j,k) &lt; small_volfrac) ||</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;            (i == xbx_hi &amp;&amp; aux_vfrac(i-1,j,k) &lt; small_volfrac) ||</div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            (i &gt; xbx_lo &amp;&amp; i &lt; xbx_hi &amp;&amp;</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;            (aux_vfrac(i,j,k) &lt; small_volfrac || aux_vfrac(i-1,j,k) &lt; small_volfrac))) {</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            aux_afrac_x(i,j,k) = 0.0;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;            aux_afrac_x(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;        }</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;      });</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160; </div>
 <div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;      Box my_ybx(bx); my_ybx.growHi(1,1);</div>
 <div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;      <span class="keywordtype">int</span> ybx_lo = my_ybx.smallEnd(1);</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;      <span class="keywordtype">int</span> ybx_hi = my_ybx.bigEnd(1);</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(my_ybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(my_ybx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;      {</div>
 <div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        <span class="keywordflow">if</span> ((j == ybx_lo &amp;&amp; aux_vfrac(i,j,k) &lt; small_volfrac) ||</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;            (j == ybx_hi &amp;&amp; aux_vfrac(i,j-1,k) &lt; small_volfrac) ||</div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;            (j &gt; ybx_lo &amp;&amp; j &lt; ybx_hi &amp;&amp;</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            (aux_vfrac(i,j,k) &lt; small_volfrac || aux_vfrac(i,j-1,k) &lt; small_volfrac))) {</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            aux_afrac_y(i,j,k) = 0.0;</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            aux_afrac_y(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;        }</div>
 <div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;      });</div>
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;      Box my_zbx(bx); my_zbx.growHi(2,1);</div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;      <span class="keywordtype">int</span> zbx_lo = my_zbx.smallEnd(2);</div>
 <div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;      <span class="keywordtype">int</span> zbx_hi = my_zbx.bigEnd(2);</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(my_zbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(my_zbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;      {</div>
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;        <span class="keywordflow">if</span> ((k == zbx_lo &amp;&amp; aux_vfrac(i,j,k) &lt; small_volfrac) ||</div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            (k == zbx_hi &amp;&amp; aux_vfrac(i,j,k-1) &lt; small_volfrac) ||</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;            (k &gt; zbx_lo &amp;&amp; k &lt; zbx_hi &amp;&amp;</div>
 <div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;            (aux_vfrac(i,j,k) &lt; small_volfrac || aux_vfrac(i,j,k-1) &lt; small_volfrac))) {</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;            aux_afrac_z(i,j,k) = 0.0;</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;            aux_afrac_z(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;        }</div>
 <div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;      });</div>
 <div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160; </div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;      {</div>
 <div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;        <span class="keywordflow">if</span> (aux_vfrac(i,j,k) &lt; small_volfrac)</div>
 <div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;        {</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;          aux_vcent(i,j,k,0) = 0.0;</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;          aux_vcent(i,j,k,1) = 0.0;</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;          aux_vcent(i,j,k,2) = 0.0;</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;          aux_vcent(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;          aux_vcent(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;          aux_vcent(i,j,k,2) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;          aux_fcent_x(i  ,j  ,k  ,0) = 0.0;</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;          aux_fcent_x(i  ,j  ,k  ,1) = 0.0;</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;          aux_fcent_x(i+1,j  ,k  ,0) = 0.0;</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;          aux_fcent_x(i+1,j  ,k  ,1) = 0.0;</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;          aux_fcent_x(i  ,j  ,k  ,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;          aux_fcent_x(i  ,j  ,k  ,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;          aux_fcent_x(i+1,j  ,k  ,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;          aux_fcent_x(i+1,j  ,k  ,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160; </div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;          aux_fcent_y(i  ,j  ,k  ,0) = 0.0;</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;          aux_fcent_y(i  ,j  ,k  ,1) = 0.0;</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;          aux_fcent_y(i  ,j+1,k  ,0) = 0.0;</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;          aux_fcent_y(i  ,j+1,k  ,1) = 0.0;</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;          aux_fcent_y(i  ,j  ,k  ,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;          aux_fcent_y(i  ,j  ,k  ,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;          aux_fcent_y(i  ,j+1,k  ,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;          aux_fcent_y(i  ,j+1,k  ,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;          aux_fcent_z(i  ,j  ,k  ,0) = 0.0;</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;          aux_fcent_z(i  ,j  ,k  ,1) = 0.0;</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;          aux_fcent_z(i  ,j  ,k+1,0) = 0.0;</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;          aux_fcent_z(i  ,j  ,k+1,1) = 0.0;</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;          aux_fcent_z(i  ,j  ,k  ,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;          aux_fcent_z(i  ,j  ,k  ,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;          aux_fcent_z(i  ,j  ,k+1,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;          aux_fcent_z(i  ,j  ,k+1,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160; </div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;          aux_barea(i,j,k) = 0.0;</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;          aux_barea(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160; </div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;          aux_bcent(i,j,k,0) = 0.0;</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;          aux_bcent(i,j,k,1) = 0.0;</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;          aux_bcent(i,j,k,2) = 0.0;</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;          aux_bcent(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;          aux_bcent(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;          aux_bcent(i,j,k,2) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160; </div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;          aux_bnorm(i,j,k,0) = 0.0;</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;          aux_bnorm(i,j,k,1) = 0.0;</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;          aux_bnorm(i,j,k,2) = 0.0;</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;          aux_bnorm(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;          aux_bnorm(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;          aux_bnorm(i,j,k,2) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160; </div>
 <div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;          aux_flag(i,j,k).setCovered();</div>
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;        }</div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_vcent(i,j,k,0)) &lt; small_value) aux_vcent(i,j,k,0) = 0.0;</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_vcent(i,j,k,1)) &lt; small_value) aux_vcent(i,j,k,1) = 0.0;</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_vcent(i,j,k,2)) &lt; small_value) aux_vcent(i,j,k,2) = 0.0;</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_bcent(i,j,k,0)) &lt; small_value) aux_bcent(i,j,k,0) = 0.0;</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_bcent(i,j,k,1)) &lt; small_value) aux_bcent(i,j,k,1) = 0.0;</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_bcent(i,j,k,2)) &lt; small_value) aux_bcent(i,j,k,2) = 0.0;</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_vcent(i,j,k,0)) &lt; small_value) aux_vcent(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_vcent(i,j,k,1)) &lt; small_value) aux_vcent(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_vcent(i,j,k,2)) &lt; small_value) aux_vcent(i,j,k,2) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_bcent(i,j,k,0)) &lt; small_value) aux_bcent(i,j,k,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_bcent(i,j,k,1)) &lt; small_value) aux_bcent(i,j,k,1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;        <span class="keywordflow">if</span> (std::abs(aux_bcent(i,j,k,2)) &lt; small_value) aux_bcent(i,j,k,2) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;      });</div>
 <div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160; </div>
 <div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;      <span class="comment">// Area fraction MultiFab has one more slice at bigEnd(idim),</span></div>
@@ -1180,7 +1180,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;      BoxList slab_diffList = boxDiff(upper_slab, bx_grown_1);</div>
 <div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160; </div>
 <div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> Box&amp; b : slab_diffList) {</div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(b, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;        {</div>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;          IntVect iv(AMREX_D_DECL(i,j,k));</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;          IntVect iv_nearest = iv;</div>
@@ -1222,7 +1222,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;      Array4&lt;Real&gt;       <span class="keyword">const</span>&amp; aux_afrac_y = <a class="code" href="classeb__aux__.html#ad279369af38c2aae70bfec5b469c4c7d">m_areafrac</a>[1]-&gt;array(mfi);</div>
 <div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;      Array4&lt;Real&gt;       <span class="keyword">const</span>&amp; aux_afrac_z = <a class="code" href="classeb__aux__.html#ad279369af38c2aae70bfec5b469c4c7d">m_areafrac</a>[2]-&gt;array(mfi);</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160; </div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;      <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;      {</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;        EB2::build_cellflag_from_ap (i, j, k, aux_flag, aux_afrac_x, aux_afrac_y, aux_afrac_z);</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;      });</div>
@@ -1239,14 +1239,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;        <span class="keyword">const</span> Box bx_face_x_lo = bx_grown &amp; makeSlab(dom_grown,0,domain.smallEnd(0));</div>
 <div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;        <span class="keyword">const</span> Box bx_face_x_hi = bx_grown &amp; makeSlab(dom_grown,0,domain.bigEnd(0));</div>
 <div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160; </div>
-<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx_face_x_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx_face_x_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;        {</div>
 <div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
 <div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
 <div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;            aux_flag(i,j,k).setDisconnected(-1,jj,kk);</div>
 <div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;          }}</div>
 <div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160;        });</div>
-<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx_face_x_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx_face_x_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;        {</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
@@ -1261,14 +1261,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        <span class="keyword">const</span> Box bx_face_y_lo = bx_grown &amp; makeSlab(dom_grown,1,domain.smallEnd(1));</div>
 <div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        <span class="keyword">const</span> Box bx_face_y_hi = bx_grown &amp; makeSlab(dom_grown,1,domain.bigEnd(1));</div>
 <div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160; </div>
-<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx_face_y_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx_face_y_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;        {</div>
 <div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
 <div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++) {</div>
 <div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;            aux_flag(i,j,k).setDisconnected(ii,-1,kk);</div>
 <div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;          }}</div>
 <div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;        });</div>
-<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx_face_y_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx_face_y_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;        {</div>
 <div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
 <div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++) {</div>
@@ -1283,14 +1283,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;        <span class="keyword">const</span> Box bx_face_z_lo = bx_grown &amp; makeSlab(dom_grown,2,domain.smallEnd(2));</div>
 <div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;        <span class="keyword">const</span> Box bx_face_z_hi = bx_grown &amp; makeSlab(dom_grown,2,domain.bigEnd(2));</div>
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160; </div>
-<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx_face_z_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx_face_z_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;        {</div>
 <div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
 <div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++) {</div>
 <div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;            aux_flag(i,j,k).setDisconnected(ii,jj,-1);</div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;          }}</div>
 <div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;        });</div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(bx_face_z_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx_face_z_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;        {</div>
 <div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
 <div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++) {</div>
@@ -1314,21 +1314,21 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;    Array4&lt;EBCellFlag&gt; <span class="keyword">const</span>&amp; aux_flag  = <a class="code" href="classeb__aux__.html#a5c0a48220b066b1aae77df9fd93bd941">m_cellflags</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    Array4&lt;Real&gt;       <span class="keyword">const</span>&amp; aux_vfrac = <a class="code" href="classeb__aux__.html#a982bec8ebf44ae49614d4246cc396608">m_volfrac</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160; </div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;    {</div>
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> kk(-1); kk&lt;=1; kk++) {</div>
 <div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
 <div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;      <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++)</div>
 <div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;      {</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;        <span class="keywordflow">if</span> (aux_vfrac(i+ii,j+jj,k+kk) == 0.0) {</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;        <span class="keywordflow">if</span> (aux_vfrac(i+ii,j+jj,k+kk) == <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;            aux_flag(i,j,k).setDisconnected(ii,jj,kk);</div>
 <div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;        }</div>
 <div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;      }}}</div>
 <div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;    });</div>
 <div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160; </div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    {</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        <span class="keywordflow">if</span> (aux_vfrac(i,j,k)==0.0) {</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        <span class="keywordflow">if</span> (aux_vfrac(i,j,k)==<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;            aux_flag(i,j,k).setCovered();</div>
 <div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;        }</div>
 <div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    });</div>
@@ -1360,10 +1360,13 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;  }</div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclasseb__aux___html_a5c0a48220b066b1aae77df9fd93bd941"><div class="ttname"><a href="classeb__aux__.html#a5c0a48220b066b1aae77df9fd93bd941">eb_aux_::m_cellflags</a></div><div class="ttdeci">amrex::FabArray&lt; amrex::EBCellFlagFab &gt; * m_cellflags</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:44</div></div>
 <div class="ttc" id="aclasseb__aux___html_a5c234571a295799813de1ca78d50f9a2"><div class="ttname"><a href="classeb__aux__.html#a5c234571a295799813de1ca78d50f9a2">eb_aux_::m_bndrynorm</a></div><div class="ttdeci">amrex::MultiFab * m_bndrynorm</div><div class="ttdef"><b>Definition:</b> ERF_EBAux.H:49</div></div>
@@ -1395,13 +1398,13 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__cut__cell__.html#adb7a2ca015b47f83012ee1a6efc8ea52" title=" " alt="" coords="189,470,340,496"/>
 <area shape="rect" href="classeb__cut__cell__.html#ad7ab269e2aeb35becf84e7a782f4ad3f" title=" " alt="" coords="177,520,352,547"/>
 <area shape="rect" href="classeb__cut__cell__.html#a264bea343a9a2c8552fb8873e8e7e6c8" title=" " alt="" coords="179,571,350,598"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="219,622,310,648"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="219,622,310,648"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="245,672,284,699"/>
 <area shape="rect" href="classpolygon__.html#a63823b326fd4b97b2622be664dedb6d4" title=" " alt="" coords="633,216,751,243"/>
 <area shape="rect" href="classpolygon__.html#a20ac05a7f6b1ce01fa1789b0d264dd4f" title=" " alt="" coords="851,292,956,319"/>
 <area shape="rect" href="classpolygon__.html#a085dc307c51e6dca9b4bb9d5b0db54ac" title=" " alt="" coords="401,115,571,142"/>
 <area shape="rect" href="classpolygon__.html#a558e318b4655635bf2a4f9b21bc2674a" title=" " alt="" coords="620,267,764,294"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="411,647,561,674"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="411,647,561,674"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="442,596,530,623"/>
 </map>
 </div>

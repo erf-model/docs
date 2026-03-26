@@ -100,27 +100,27 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * KEY EQUATIONS:</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * --------------</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * 1. Moist Brunt-Väisälä frequency:</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * 1) Moist Brunt-Väisälä frequency:</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *    N²_moist = (g/θ_v) * ∂θ_v/∂z  (unsaturated)</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> *    N²_moist = (g/θ_l) * ∂θ_l/∂z  (saturated, in clouds)</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * 2. Moist Richardson number:</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * 2) Moist Richardson number:</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *    Ri_moist = N²_moist / S²_vert</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *    where S²_vert = (∂u/∂z)² + (∂v/∂z)²</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * 3. Mason (1989) stability function:</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * 3) Mason (1989) stability function:</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *    f(Ri) = 0                        if Ri ≥ Ri_crit (complete suppression)</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *          = sqrt(1 - Ri/Ri_crit)     if 0 &lt; Ri &lt; Ri_crit (partial suppression)</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *          = 1                        if Ri ≤ 0 (no suppression, unstable/neutral)</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * 4. Corrected vertical eddy viscosity:</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * 4) Corrected vertical eddy viscosity:</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *    μ_t,v = ρ(C_s·Δ)²|S| · f(Ri_moist)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * PHYSICAL INTERPRETATION:</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * ------------------------</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * - In cloud updrafts: ∂θ_l/∂z &lt; 0 → Ri &lt; 0 → f(Ri) = 1.0 → full mixing (correct!)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * - In stable regions: ∂θ_v/∂z &gt; 0 → Ri &gt; 0 → f(Ri) &lt; 1.0 → reduced mixing</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * - In neutral regions: Ri ≈ 0 → f(Ri) ≈ 1.0 → standard Smagorinsky</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * - In cloud updrafts: ∂θ_l/∂z &lt; 0 → Ri &lt; 0 → f(Ri) = 1 → full mixing (correct!)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * - In stable regions: ∂θ_v/∂z &gt; 0 → Ri &gt; 0 → f(Ri) &lt; 1 → reduced mixing</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * - In neutral regions: Ri ≈ 0 → f(Ri) ≈ 1 → standard Smagorinsky</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * CUDA-CONSERVATIVE DESIGN:</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * --------------------------</span></div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (qc_index &gt;= 0) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = cell_data(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a> = cell_data(i, j, k, qc_index) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a> &gt; 1.0e-8);  <span class="comment">// 0.01 g/kg threshold</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">qc</a> &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-8));  <span class="comment">// 0.01 g/kg threshold</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
@@ -234,24 +234,24 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp1= <a class="code" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal</a>(i, j, k+1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km1= <a class="code" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal</a>(i, j, k-1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        inv_theta = 1.0 / theta_l;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        dtheta_dz = 0.5 * (theta_l_kp1 - theta_l_km1) * dzInv;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        inv_theta = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_l;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        dtheta_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_l_kp1 - theta_l_km1) * dzInv;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (qv_index &gt;= 0) {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v    = <a class="code" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a>(i, j, k  , cell_data, moisture_indices);</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp1= <a class="code" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a>(i, j, k+1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km1= <a class="code" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a>(i, j, k-1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        inv_theta = 1.0 / theta_v;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        dtheta_dz = 0.5 * (theta_v_kp1 - theta_v_km1) * dzInv;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        inv_theta = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_v;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        dtheta_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_v_kp1 - theta_v_km1) * dzInv;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a> = cell_data(i, j, k, rhoTheta_comp) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp1 = cell_data(i, j, k+1, rhoTheta_comp) / cell_data(i, j, k+1, rho_comp);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km1 = cell_data(i, j, k-1, rhoTheta_comp) / cell_data(i, j, k-1, rho_comp);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        inv_theta = 1.0 / <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        dtheta_dz = 0.5 * (theta_kp1 - theta_km1) * dzInv;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        inv_theta = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        dtheta_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_kp1 - theta_km1) * dzInv;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> const_grav * inv_theta * dtheta_dz;</div>
@@ -287,16 +287,16 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp1= <a class="code" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal</a>(i, j, k+1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km1= <a class="code" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal</a>(i, j, k-1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        inv_theta = 1.0 / theta_l;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        inv_theta = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_l;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_km2= <a class="code" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal</a>(i, j, k-2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            dtheta_dz = (3.*theta_l -4.*theta_l_km1 + theta_l_km2) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            dtheta_dz = (<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_l - <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_l_km1 + theta_l_km2) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_l_kp2= <a class="code" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09">GetThetal</a>(i, j, k+2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            dtheta_dz = (-theta_l_kp2 + 4.*theta_l_kp1 - 3.*theta_l) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            dtheta_dz = (-theta_l_kp2 + <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_l_kp1 - <a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_l) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            dtheta_dz = 0.5 * (theta_l_kp1 - theta_l_km1) * dzInv;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            dtheta_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_l_kp1 - theta_l_km1) * dzInv;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (qv_index &gt;= 0) {</div>
@@ -304,16 +304,16 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp1= <a class="code" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a>(i, j, k+1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km1= <a class="code" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a>(i, j, k-1, cell_data, moisture_indices);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        inv_theta = 1.0 / theta_v;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        inv_theta = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / theta_v;</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_km2= <a class="code" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a>(i, j, k-2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            dtheta_dz = (3.*theta_v -4.*theta_v_km1 + theta_v_km2) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            dtheta_dz = (<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_v - <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_v_km1 + theta_v_km2) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_v_kp2= <a class="code" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c">GetThetav</a>(i, j, k+2, cell_data, moisture_indices);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            dtheta_dz = (-theta_v_kp2 + 4.*theta_v_kp1 - 3.*theta_v) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            dtheta_dz = (-theta_v_kp2 + <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_v_kp1 - <a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*theta_v) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            dtheta_dz = 0.5 * (theta_v_kp1 - theta_v_km1) * dzInv;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            dtheta_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_v_kp1 - theta_v_km1) * dzInv;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -321,16 +321,16 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp1 = cell_data(i, j, k+1, rhoTheta_comp) / cell_data(i, j, k+1, rho_comp);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km1 = cell_data(i, j, k-1, rhoTheta_comp) / cell_data(i, j, k-1, rho_comp);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        inv_theta = 1.0 / <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        inv_theta = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>;</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> (is_covered_kp1) {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_km2 = cell_data(i, j, k-2, rhoTheta_comp) / cell_data(i, j, k-2, rho_comp);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            dtheta_dz = (3.*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a> - 4.*theta_km1 + theta_km2) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            dtheta_dz = (<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a> - <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_km1 + theta_km2) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is_covered_km1) {</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_kp2 = cell_data(i, j, k+2, rhoTheta_comp) / cell_data(i, j, k+2, rho_comp);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            dtheta_dz = (-theta_kp2 + 4.*theta_kp1 - 3.*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            dtheta_dz = (-theta_kp2 + <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*theta_kp1 - <a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            dtheta_dz = 0.5 * (theta_kp1 - theta_km1) * dzInv;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            dtheta_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (theta_kp1 - theta_km1) * dzInv;</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        }</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
@@ -356,7 +356,7 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment"> * To get shear at cell center (i,j,k), interpolate velocities to center then difference:</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment"> *   ∂u/∂z|_{i,j,k} ≈ (u_{i,j,k+1} - u_{i,j,k-1}) / (2Δz)</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment"> *   where u_{i,j,k} = 0.5 * (u_{i-1/2,j,k} + u_{i+1/2,j,k})</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment"> *   where u_{i,j,k} = myhalf * (u_{i-1/2,j,k} + u_{i+1/2,j,k})</span></div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"> * UNITS:</span></div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="comment"> * ------</span></div>
@@ -371,14 +371,14 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; u,</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; v)</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;{</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km1 = 0.5 * (u(i, j, k-1) + u(i+1, j, k-1));</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp1 = 0.5 * (u(i, j, k+1) + u(i+1, j, k+1));</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km1 = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u(i, j, k-1) + u(i+1, j, k-1));</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp1 = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u(i, j, k+1) + u(i+1, j, k+1));</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km1 = 0.5 * (v(i, j, k-1) + v(i, j+1, k-1));</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp1 = 0.5 * (v(i, j, k+1) + v(i, j+1, k+1));</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km1 = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v(i, j, k-1) + v(i, j+1, k-1));</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp1 = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v(i, j, k+1) + v(i, j+1, k+1));</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> du_dz = 0.5 * (u_c_kp1 - u_c_km1) * dzInv;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dv_dz = 0.5 * (v_c_kp1 - v_c_km1) * dzInv;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> du_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u_c_kp1 - u_c_km1) * dzInv;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dv_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v_c_kp1 - v_c_km1) * dzInv;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_vert = du_dz * du_dz + dv_dz * dv_dz;</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
@@ -413,8 +413,8 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                            / ( v_vfrac(i,j,k-1) + v_vfrac(i,j+1,k-1) );</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_km2 = ( v_vfrac(i,j,k-2) * v(i, j, k-2) + v_vfrac(i,j+1,k-2) * v(i, j+1, k-2) )</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                            / ( v_vfrac(i,j,k-2) + v_vfrac(i,j+1,k-2) );</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        du_dz = (3.*u_c - 4.*u_c_km1 + u_c_km2) * 0.5 * dzInv;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        dv_dz = (3.*v_c - 4.*v_c_km1 + v_c_km2) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        du_dz = (<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*u_c - <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*u_c_km1 + u_c_km2) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        dv_dz = (<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*v_c - <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*v_c_km1 + v_c_km2) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c_cflag(i,j,k-1).isCovered()) {</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_kp1 = ( u_vfrac(i,j,k+1) * u(i, j, k+1) + u_vfrac(i+1,j,k+1) * u(i+1, j, k+1) )</div>
@@ -425,8 +425,8 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                            / ( v_vfrac(i,j,k+1) + v_vfrac(i,j+1,k+1) );</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp2 = ( v_vfrac(i,j,k+2) * v(i, j, k+2) + v_vfrac(i,j+1,k+2) * v(i, j+1, k+2) )</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                            / ( v_vfrac(i,j,k+2) + v_vfrac(i,j+1,k+2) );</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        du_dz = (-u_c_kp2 + 4.*u_c_kp1 - 3.*u_c) * 0.5 * dzInv;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        dv_dz = (-v_c_kp2 + 4.*v_c_kp1 - 3.*v_c) * 0.5 * dzInv;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        du_dz = (-u_c_kp2 + <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*u_c_kp1 - <a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*u_c) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        dv_dz = (-v_c_kp2 + <a class="code" href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a>*v_c_kp1 - <a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*v_c) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * dzInv;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_c_km1 = ( u_vfrac(i,j,k-1) * u(i, j, k-1) + u_vfrac(i+1,j,k-1) * u(i+1, j, k-1) )</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                            / ( u_vfrac(i,j,k-1) + u_vfrac(i+1,j,k-1) );</div>
@@ -436,8 +436,8 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                            / ( v_vfrac(i,j,k-1) + v_vfrac(i,j+1,k-1) );</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v_c_kp1 = ( v_vfrac(i,j,k+1) * v(i, j, k+1) + v_vfrac(i,j+1,k+1) * v(i, j+1, k+1) )</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                            / ( v_vfrac(i,j,k+1) + v_vfrac(i,j+1,k+1) );</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        du_dz = 0.5 * (u_c_kp1 - u_c_km1) * dzInv;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        dv_dz = 0.5 * (v_c_kp1 - v_c_km1) * dzInv;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        du_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (u_c_kp1 - u_c_km1) * dzInv;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        dv_dz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (v_c_kp1 - v_c_km1) * dzInv;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    }</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_vert = du_dz * du_dz + dv_dz * dv_dz;</div>
@@ -457,7 +457,7 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a></div>
 <div class="line"><a name="l00370"></a><span class="lineno"><a class="line" href="ERF__RichardsonNumber_8H.html#ac3769bab582cda07302232c46c7c4b5a">  370</a></span>&#160;<a class="code" href="ERF__RichardsonNumber_8H.html#ac3769bab582cda07302232c46c7c4b5a">ComputeRichardson</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> N2_moist, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_vert)</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;{</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_safe = amrex::max(S2_vert, 1.0e-10);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> S2_safe = amrex::max(S2_vert, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-10));</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">return</span> N2_moist / S2_safe;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;<span class="comment"></span> </div>
@@ -474,16 +474,21 @@ $(document).ready(function(){initNavTree('ERF__RichardsonNumber_8H_source.html',
 <div class="line"><a name="l00386"></a><span class="lineno"><a class="line" href="ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2">  386</a></span>&#160;<a class="code" href="ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2">StabilityFunction</a>(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Ri, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Ri_crit)</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">if</span> (Ri &gt;= Ri_crit) {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Ri &gt; 0.0) {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">return</span> std::sqrt(1.0 - Ri / Ri_crit);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Ri &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">return</span> std::sqrt(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - Ri / Ri_crit);</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> 1.0;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_RICHARDSON_NUMBER_H_</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a27fee4dc66c221a7e27477953168d232"><div class="ttname"><a href="ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232">four</a></div><div class="ttdeci">constexpr amrex::Real four</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>

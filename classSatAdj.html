@@ -322,10 +322,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classSatAdj.html#ac8aac0161bb9518a1c0909cd99d4c4d6" title=" " alt="" coords="181,56,352,83"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="423,5,510,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="400,56,533,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="421,107,512,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="421,107,512,133"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="613,5,699,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="779,5,885,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="581,81,731,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="581,81,731,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="612,132,700,159"/>
 </map>
 </div>
@@ -378,7 +378,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a0afe2a4054f7555add0acedfdb74cd91">MicVar_SatAdj::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">MicVar_SatAdj::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">//------- Evaporation/condensation</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsat;</div>
@@ -392,7 +392,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="comment">// clip qc but maintain total water</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">if</span> (qc_array(i,j,k) &lt; 0) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    qv_array(i,j,k) += qc_array(i,j,k);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    qc_array(i,j,k)  = 0.0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    qc_array(i,j,k)  = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="comment">// Update temperature</span></div>
@@ -410,7 +410,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-14);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="comment">// Update theta (constant pressure)</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(100.0)*pres_array(i,j,k), <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="comment">//</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="comment">// We cannot blindly relax to qsat, but we can convert qc/qi -&gt; qv.</span></div>
@@ -425,13 +425,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="comment">// Partition the change in non-precipitating q</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                qv_array(i,j,k) += qc_array(i,j,k);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                qc_array(i,j,k)  = 0.0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                qc_array(i,j,k)  = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="comment">// Update temperature (endothermic since we evap/sublime)</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                tabs_array(i,j,k) -= d_fac_cond * delta_qc;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(100.0)*pres_array(i,j,k), <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">// Verify assumption that qv &gt; qsat does not occur</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pres_array(i,j,k), qsat);</div>
@@ -457,16 +457,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    AMREX_ASSERT(std::abs(qv_array(i,j,k)+qc_array(i,j,k)-qvprev-qcprev) &lt; 1e-14);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    <span class="comment">// Update theta</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), 100.0*pres_array(i,j,k), <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    theta_array(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(tabs_array(i,j,k), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(100.0)*pres_array(i,j,k), <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        });</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a8770405e52bfe8feb427eca945370fb2"><div class="ttname"><a href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenTandP(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a46e52004c860b2aef260fce99d025bce"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a></div><div class="ttdeci">const Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bomex.H:16</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:171</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassSatAdj_html_a0ae1171544417b83878bf00916cefb64"><div class="ttname"><a href="classSatAdj.html#a0ae1171544417b83878bf00916cefb64">SatAdj::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:212</div></div>
@@ -492,10 +493,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,56,176,83"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="247,5,334,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="224,56,357,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="245,107,336,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="245,107,336,133"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="437,5,523,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="603,5,709,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="405,81,555,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="405,81,555,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="436,132,524,159"/>
 </map>
 </div>
@@ -557,7 +558,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> qc_arr     = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*theta_arr(i,j,k);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*<a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k);</div>
@@ -583,8 +584,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph.png" border="0" usemap="#aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph" alt=""/></div>
 <map name="aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph" id="aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,153,65"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="201,31,292,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="340,5,489,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="201,31,292,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="340,5,489,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="371,56,459,83"/>
 </map>
 </div>
@@ -648,24 +649,24 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">MicVar_SatAdj::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            qv_array(i,j,k)    = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            qc_array(i,j,k)    = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            tabs_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            tabs_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                  states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                  qv_array(i,j,k));</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">// Pressure in [mbar] for qsat evaluation</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            pres_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k)) * 0.01;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            pres_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k)) * <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        });</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a55cc1ac802a866d84540af2b0308a7ef"><div class="ttname"><a href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_ad2f77bd04cc57d704e814af5257d0ef0"><div class="ttname"><a href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatAdj.html#a126716cce4ed479136e5f6cd8513149d">Update_Micro_Vars()</a>.</p>
@@ -675,10 +676,10 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSatAdj_afb1e467461c3ff020db1c5a9117904d3_cgraph.png" border="0" usemap="#aclassSatAdj_afb1e467461c3ff020db1c5a9117904d3_cgraph" alt=""/></div>
 <map name="aclassSatAdj_afb1e467461c3ff020db1c5a9117904d3_cgraph" id="aclassSatAdj_afb1e467461c3ff020db1c5a9117904d3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,49,152,90"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="217,5,327,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="200,56,344,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="227,107,317,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="392,81,541,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="217,5,327,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef" title=" " alt="" coords="200,56,344,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="227,107,317,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="392,81,541,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="423,132,511,159"/>
 </map>
 </div>
@@ -724,7 +725,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classSatAdj.html#a27114b820d031f82462a0f378294042c">m_rdOcp</a>    = sc.<a class="code" href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">rdOcp</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classSatAdj.html#aa6f53145ce44c14987d2f7aac1d7a2df">m_do_cond</a>  = (!sc.<a class="code" href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">use_shoc</a>);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:66</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:76</div></div>
 <div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1144</div></div>
 <div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1143</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53819b8e72b3431b2c81f6ae2b6433f1"><div class="ttname"><a href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">SolverChoice::use_shoc</a></div><div class="ttdeci">bool use_shoc</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1175</div></div>
@@ -889,7 +890,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// Solution tolerance</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = 1.0e-8;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-8);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsat, dqsat;</div>
@@ -919,7 +920,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            fff   = -<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a> + tabs_array(i,j,k) + fac_cond*(qv_array(i,j,k) - qsat);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="comment">// Derivative of function (T_new iterated on)</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            dfff  = -1.0 - fac_cond*dqsat;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            dfff  = -<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - fac_cond*dqsat;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="comment">// Update the temperature</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            dtabs = -fff/dfff;</div>
@@ -942,6 +943,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// Return to temperature</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a>;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a41126403c4da6ee876e9e391f3f67699"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:186</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1173,10 +1175,10 @@ Here is the call graph for this function:</div>
 <map name="aclassSatAdj_a126716cce4ed479136e5f6cd8513149d_cgraph" id="aclassSatAdj_a126716cce4ed479136e5f6cd8513149d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,203,83"/>
 <area shape="rect" href="classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3" title=" " alt="" coords="251,49,397,90"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="462,5,573,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="445,56,589,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="472,107,563,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="637,81,787,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="462,5,573,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef" title=" " alt="" coords="445,56,589,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="472,107,563,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="637,81,787,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="668,132,756,159"/>
 </map>
 </div>
@@ -1219,8 +1221,8 @@ Here is the call graph for this function:</div>
 <map name="aclassSatAdj_aa0c09c265479736a584b29722261d238_cgraph" id="aclassSatAdj_aa0c09c265479736a584b29722261d238_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,200,57"/>
 <area shape="rect" href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3" title=" " alt="" coords="248,23,396,65"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="444,31,535,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="583,5,732,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="444,31,535,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="583,5,732,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="613,56,701,83"/>
 </map>
 </div>

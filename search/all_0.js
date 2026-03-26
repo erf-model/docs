@@ -105,7 +105,7 @@ var searchData=
   ['alloc_5fbuffers_102',['alloc_buffers',['../classSHOCInterface.html#a0fd7182e5c8942b3c0cf42bed07b29c5',1,'SHOCInterface::alloc_buffers()'],['../classRadiation.html#af93105fafe4abf6f923848e1061e3811',1,'Radiation::alloc_buffers()']]],
   ['alpha_103',['alpha',['../structsurface__temp.html#ae20d122ed92f427754a850d1c07fb079',1,'surface_temp::alpha()'],['../ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30',1,'alpha():&#160;ERF_InitCustomPertVels_IsentropicVortex.H'],['../ERF__InitCustomPert__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30',1,'alpha():&#160;ERF_InitCustomPert_IsentropicVortex.H'],['../structsurface__temp__mod__charnock.html#aec5ebd02c9cc040f289080a042ca315c',1,'surface_temp_mod_charnock::alpha()'],['../structsurface__temp__charnock.html#a8a1619cd04bf8c0c0aa7ac71341821cf',1,'surface_temp_charnock::alpha()']]],
   ['alpha_5fc_104',['alpha_C',['../structDiffChoice.html#a9a4435111bba7cde59e3187e4ea85d6d',1,'DiffChoice']]],
-  ['alpha_5feff_105',['alpha_eff',['../ERF__SetupVertDiff_8H.html#a2afd75147c5c19428c4c3bc45036ef74',1,'ERF_SetupVertDiff.H']]],
+  ['alpha_5feff_105',['alpha_eff',['../ERF__SetupVertDiff_8H.html#a35ea6ddc0fea5743b8f7e8c78776ff1a',1,'ERF_SetupVertDiff.H']]],
   ['alpha_5feff_5fd_106',['alpha_eff_d',['../ERF__SetupVertDiff_8H.html#af7e2dddfc386195ebf29abbcf6dec9c0',1,'ERF_SetupVertDiff.H']]],
   ['alpha_5ft_107',['alpha_T',['../structDiffChoice.html#a7013ac6c12a0fab52b3c212457441517',1,'DiffChoice']]],
   ['alphaelq_108',['alphaelq',['../ERF__Constants_8H.html#a3c70f890015491421d536954a374324d',1,'ERF_Constants.H']]],

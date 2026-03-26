@@ -107,11 +107,11 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a45f695eec02e78435d0b4bc9226cb9ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a> = 0.0</td></tr>
+<tr class="memitem:a45f695eec02e78435d0b4bc9226cb9ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a45f695eec02e78435d0b4bc9226cb9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c54f97cf5d0886417d0bf1aff97960"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a> = 500.0</td></tr>
+<tr class="memitem:aa0c54f97cf5d0886417d0bf1aff97960"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(500.0)</td></tr>
 <tr class="separator:aa0c54f97cf5d0886417d0bf1aff97960"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074f996b9d4de4a7c5ded5ecde19a4b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a> = 50.0</td></tr>
+<tr class="memitem:a074f996b9d4de4a7c5ded5ecde19a4b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(50.0)</td></tr>
 <tr class="separator:a074f996b9d4de4a7c5ded5ecde19a4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -137,7 +137,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            src-&gt;setVal(0.0);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = d_zlevels_arr[k];</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">if</span> (z_cc &lt; <a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>) {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    src_arr(i, j, k) = <a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a>;</div>
@@ -145,12 +145,13 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> slope = -<a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a> / <a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    src_arr(i, j, k) = (z_cc-<a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>) * slope + <a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    src_arr(i, j, k) = 0.0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                    src_arr(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                }</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            });</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__UpdateRhoThetaSources__SineMassFlux_8H_html_a074f996b9d4de4a7c5ded5ecde19a4b9"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a></div><div class="ttdeci">Real cutoff_transition</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_SineMassFlux.H:5</div></div>
 <div class="ttc" id="aERF__UpdateRhoThetaSources__SineMassFlux_8H_html_a45f695eec02e78435d0b4bc9226cb9ca"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a></div><div class="ttdeci">Real advection_heating_rate</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_SineMassFlux.H:3</div></div>
@@ -161,8 +162,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph.png" border="0" usemap="#aERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph" alt=""/></div>
 <map name="aERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph" id="aERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,45,57"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="93,31,184,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="232,5,381,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="93,31,184,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="232,5,381,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="263,56,351,83"/>
 </map>
 </div>
@@ -279,7 +280,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advection_heating_rate = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> advection_heating_rate = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -295,7 +296,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cutoff = 500.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cutoff = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(500.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -311,7 +312,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cutoff_transition = 50.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cutoff_transition = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(50.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">

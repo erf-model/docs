@@ -138,48 +138,48 @@ Functions</h2></td></tr>
 <tr class="separator:aeaf756a3f8a333ac6739ba67f75c15f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa36b585cf4468f615e2d4739bc65905"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#afa36b585cf4468f615e2d4739bc65905">if</a> (<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a> &gt; 0)</td></tr>
 <tr class="separator:afa36b585cf4468f615e2d4739bc65905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c8a8a4d8bb5da534f71509fa76e220a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG</a> (bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+0.5) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(j+0.5) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>=0.5 *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[0]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>=0.5 *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[1]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>=0.5 *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[2]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> r=std::sqrt((x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>) *(x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)+(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>) *(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)+(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) *(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>));<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>((z&lt;=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a>) &amp;&amp;(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> !=0.0)) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *2.0 - 1.0) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>(!<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);} } <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>)=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ad260f9d29239eb005c068b984604d3ee">A_0</a> *exp(-10.*r *r);<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>(state_pert.nComp() &gt; <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)=r_hse(i, j, k) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a370a8c6d8cd16bcab796b27f432af610">KE_0</a>;<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a> &gt; 0) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) *=max(std::pow(1 - min(z/<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a>, 1.0), <a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a>), 1e-12);} } })</td></tr>
-<tr class="separator:a0c8a8a4d8bb5da534f71509fa76e220a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e4ea7a567c749bbd9f6364a1a9c367"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG</a> (bx, [=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(j+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[0]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[1]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[2]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> r=std::sqrt((x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>) *(x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)+(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>) *(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)+(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) *(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>));<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>((z&lt;=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a>) &amp;&amp;(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> !=<a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *<a class="el" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> - <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(!<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);} } <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>)=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ad260f9d29239eb005c068b984604d3ee">A_0</a> *exp(-<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.) *r *r);<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(state_pert.nComp() &gt; <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)=r_hse(i, j, k) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a370a8c6d8cd16bcab796b27f432af610">KE_0</a>;<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a> &gt; 0) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) *=max(std::pow(1 - min(z/<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a>, <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>), <a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a>), <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1e-12));} } })</td></tr>
+<tr class="separator:a63e4ea7a567c749bbd9f6364a1a9c367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3e766fc466013ff394d51a37dc2c2549"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a> = 1.0</td></tr>
+<tr class="memitem:a3e766fc466013ff394d51a37dc2c2549"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a> = <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td></tr>
 <tr class="separator:a3e766fc466013ff394d51a37dc2c2549"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7665ea1952f5b48f7602b61a2888baf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7665ea1952f5b48f7602b61a2888baf2">T_0</a> = 300.0</td></tr>
+<tr class="memitem:a7665ea1952f5b48f7602b61a2888baf2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7665ea1952f5b48f7602b61a2888baf2">T_0</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(300.0)</td></tr>
 <tr class="separator:a7665ea1952f5b48f7602b61a2888baf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad260f9d29239eb005c068b984604d3ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad260f9d29239eb005c068b984604d3ee">A_0</a> = 1.0</td></tr>
+<tr class="memitem:ad260f9d29239eb005c068b984604d3ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad260f9d29239eb005c068b984604d3ee">A_0</a> = <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td></tr>
 <tr class="separator:ad260f9d29239eb005c068b984604d3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a370a8c6d8cd16bcab796b27f432af610"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a370a8c6d8cd16bcab796b27f432af610">KE_0</a> = 0.1</td></tr>
+<tr class="memitem:a370a8c6d8cd16bcab796b27f432af610"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a370a8c6d8cd16bcab796b27f432af610">KE_0</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1)</td></tr>
 <tr class="separator:a370a8c6d8cd16bcab796b27f432af610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7afdcd044716fc11dc4368cf956f419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a> = -1</td></tr>
 <tr class="separator:aa7afdcd044716fc11dc4368cf956f419"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9606931f6c3974abd83909feac7cdad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a> = 1</td></tr>
 <tr class="separator:a9606931f6c3974abd83909feac7cdad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = 0.0</td></tr>
+<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a7f74e9554c1ab66998e1319960f1e82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b20f6fd6c0d91d1cbed0b9ecd17adbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb">V_0</a> = 0.0</td></tr>
+<tr class="memitem:a9b20f6fd6c0d91d1cbed0b9ecd17adbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb">V_0</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a9b20f6fd6c0d91d1cbed0b9ecd17adbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd69dd589ed4831828bc6de35ee45844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#acd69dd589ed4831828bc6de35ee45844">W_0</a> = 0.0</td></tr>
+<tr class="memitem:acd69dd589ed4831828bc6de35ee45844"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#acd69dd589ed4831828bc6de35ee45844">W_0</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:acd69dd589ed4831828bc6de35ee45844"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bf801819283c236eabaa9d973db9f28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a> = 0.0</td></tr>
+<tr class="memitem:a5bf801819283c236eabaa9d973db9f28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a5bf801819283c236eabaa9d973db9f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2836cac7bb2dd93a45a998b431b5b69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad2836cac7bb2dd93a45a998b431b5b69">V_0_Pert_Mag</a> = 0.0</td></tr>
+<tr class="memitem:ad2836cac7bb2dd93a45a998b431b5b69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad2836cac7bb2dd93a45a998b431b5b69">V_0_Pert_Mag</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:ad2836cac7bb2dd93a45a998b431b5b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a256bbf495f2b01332176789e89460b21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a256bbf495f2b01332176789e89460b21">W_0_Pert_Mag</a> = 0.0</td></tr>
+<tr class="memitem:a256bbf495f2b01332176789e89460b21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a256bbf495f2b01332176789e89460b21">W_0_Pert_Mag</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a256bbf495f2b01332176789e89460b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c274a3d7f03bd29ae1bc03cc3a7a769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> = 0.0</td></tr>
+<tr class="memitem:a2c274a3d7f03bd29ae1bc03cc3a7a769"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a2c274a3d7f03bd29ae1bc03cc3a7a769"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab67cd282f73feb6720b6bcecd3119638"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a> = true</td></tr>
 <tr class="separator:ab67cd282f73feb6720b6bcecd3119638"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d009471e1150853fe277cbb7bec9ede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> = 0.0</td></tr>
+<tr class="memitem:a9d009471e1150853fe277cbb7bec9ede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a9d009471e1150853fe277cbb7bec9ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7779eabadf76ed62e14a341c9d4df0a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a> = 0.0</td></tr>
+<tr class="memitem:a7779eabadf76ed62e14a341c9d4df0a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a7779eabadf76ed62e14a341c9d4df0a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa05b7d1441862703a8be2d911afdb9c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aa05b7d1441862703a8be2d911afdb9c5">pert_periods_U</a> = 5.0</td></tr>
+<tr class="memitem:aa05b7d1441862703a8be2d911afdb9c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aa05b7d1441862703a8be2d911afdb9c5">pert_periods_U</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)</td></tr>
 <tr class="separator:aa05b7d1441862703a8be2d911afdb9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fe689ec76b4a80d5762f0ff57ce7826"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a6fe689ec76b4a80d5762f0ff57ce7826">pert_periods_V</a> = 5.0</td></tr>
+<tr class="memitem:a6fe689ec76b4a80d5762f0ff57ce7826"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a6fe689ec76b4a80d5762f0ff57ce7826">pert_periods_V</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)</td></tr>
 <tr class="separator:a6fe689ec76b4a80d5762f0ff57ce7826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f7da2f7752a427b5f8d432ff2ffe53b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a> = 100.0</td></tr>
+<tr class="memitem:a2f7da2f7752a427b5f8d432ff2ffe53b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0)</td></tr>
 <tr class="separator:a2f7da2f7752a427b5f8d432ff2ffe53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3863b7bf2bd0a71f1021a3991f3dede8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a3863b7bf2bd0a71f1021a3991f3dede8">prob_lo</a> = geomdata.ProbLo()</td></tr>
 <tr class="separator:a3863b7bf2bd0a71f1021a3991f3dede8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,18 +248,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                             {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> != 0.0) || (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a> != 0.0)) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> != <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) || (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a> != <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding divergence-free perturbations &quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                           &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a9d009471e1150853fe277cbb7bec9ede">pert_deltaU</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                           &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a> != 0.0) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a> != <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random x-velocity perturbations&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad2836cac7bb2dd93a45a998b431b5b69">V_0_Pert_Mag</a> != 0.0) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ad2836cac7bb2dd93a45a998b431b5b69">V_0_Pert_Mag</a> != <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random y-velocity perturbations&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> != 0.0) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> != <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a>) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Adding random rho*theta perturbations&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -267,6 +267,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a2c274a3d7f03bd29ae1bc03cc3a7a769"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a></div><div class="ttdeci">Real T_0_Pert_Mag</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:21</div></div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a5bf801819283c236eabaa9d973db9f28"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a5bf801819283c236eabaa9d973db9f28">U_0_Pert_Mag</a></div><div class="ttdeci">Real U_0_Pert_Mag</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:18</div></div>
 <div class="ttc" id="aERF__InitCustomPert__TurbulentInflow_8H_html_a7779eabadf76ed62e14a341c9d4df0a7"><div class="ttname"><a href="ERF__InitCustomPert__TurbulentInflow_8H.html#a7779eabadf76ed62e14a341c9d4df0a7">pert_deltaV</a></div><div class="ttdeci">Real pert_deltaV</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_TurbulentInflow.H:26</div></div>
@@ -276,8 +277,8 @@ Variables</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a0c8a8a4d8bb5da534f71509fa76e220a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c8a8a4d8bb5da534f71509fa76e220a">&#9670;&nbsp;</a></span>ParallelForRNG()</h2>
+<a id="a63e4ea7a567c749bbd9f6364a1a9c367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e4ea7a567c749bbd9f6364a1a9c367">&#9670;&nbsp;</a></span>ParallelForRNG()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +292,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+0.5) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(j+0.5) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>=0.5 *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[0]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>=0.5 *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[1]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>=0.5 *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[2]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> r=std::sqrt((x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>) *(x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)+(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>) *(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)+(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) *(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>));<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>((z&lt;=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a>) &amp;&amp;(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> !=0.0)) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *2.0 - 1.0) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>(!<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);} } <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>)=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ad260f9d29239eb005c068b984604d3ee">A_0</a> *exp(-10.*r *r);<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>(state_pert.nComp() &gt; <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)=r_hse(i, j, k) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a370a8c6d8cd16bcab796b27f432af610">KE_0</a>;<a class="el" href="ERF__Implicit_8H.html#a9d19e0f67cade72101339501b62fae6c">if</a>(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a> &gt; 0) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) *=max(std::pow(1 - min(z/<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a>, 1.0), <a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a>), 1e-12);} } }&#160;</td>
+          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k, const amrex::RandomEngine &amp;engine) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+(j+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[0]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[1]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[1]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *(<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[2]+<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[2]);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> r=std::sqrt((x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>) *(x-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)+(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>) *(y-<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)+(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>) *(z-<a class="el" href="ERF__InitCustomPert__ABL_8H.html#a4235fbbc097a41601ddc3d64a491551c">zc</a>));<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>((z&lt;=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2f7da2f7752a427b5f8d432ff2ffe53b">pert_ref_height</a>) &amp;&amp;(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a> !=<a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rand_double=amrex::Random(engine);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)=(rand_double *<a class="el" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> - <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a2c274a3d7f03bd29ae1bc03cc3a7a769">T_0_Pert_Mag</a>;<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(!<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ab67cd282f73feb6720b6bcecd3119638">pert_rhotheta</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) *=r_hse(i, j, k);} } <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>)=<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#ad260f9d29239eb005c068b984604d3ee">A_0</a> *exp(-<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.) *r *r);<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(state_pert.nComp() &gt; <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)=r_hse(i, j, k) *<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a370a8c6d8cd16bcab796b27f432af610">KE_0</a>;<a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a> &gt; 0) { <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) *=max(std::pow(1 - min(z/<a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#aa7afdcd044716fc11dc4368cf956f419">KE_decay_height</a>, <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>), <a class="el" href="ERF__InitCustomPertVels__TurbulentInflow_8H.html#a9606931f6c3974abd83909feac7cdad8">KE_decay_order</a>), <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1e-12));} } }&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -304,8 +305,8 @@ Variables</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPert__TurbulentInflow_8H_a0c8a8a4d8bb5da534f71509fa76e220a_cgraph.png" border="0" usemap="#aERF__InitCustomPert__TurbulentInflow_8H_a0c8a8a4d8bb5da534f71509fa76e220a_cgraph" alt=""/></div>
-<map name="aERF__InitCustomPert__TurbulentInflow_8H_a0c8a8a4d8bb5da534f71509fa76e220a_cgraph" id="aERF__InitCustomPert__TurbulentInflow_8H_a0c8a8a4d8bb5da534f71509fa76e220a_cgraph">
+<div class="center"><img src="ERF__InitCustomPert__TurbulentInflow_8H_a63e4ea7a567c749bbd9f6364a1a9c367_cgraph.png" border="0" usemap="#aERF__InitCustomPert__TurbulentInflow_8H_a63e4ea7a567c749bbd9f6364a1a9c367_cgraph" alt=""/></div>
+<map name="aERF__InitCustomPert__TurbulentInflow_8H_a63e4ea7a567c749bbd9f6364a1a9c367_cgraph" id="aERF__InitCustomPert__TurbulentInflow_8H_a63e4ea7a567c749bbd9f6364a1a9c367_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,124,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="172,5,260,32"/>
 </map>
@@ -871,12 +872,12 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A_0 = 1.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> A_0 = <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -887,12 +888,12 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> KE_0 = 0.1</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> KE_0 = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -908,7 +909,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -924,7 +925,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -935,7 +936,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_deltaU = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_deltaU = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -951,7 +952,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_deltaV = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_deltaV = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -967,7 +968,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_periods_U = 5.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_periods_U = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -981,7 +982,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_periods_V = 5.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_periods_V = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -995,12 +996,12 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_ref_height = 100.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pert_ref_height = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -1016,7 +1017,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#afa36b585cf4468f615e2d4739bc65905">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#afa36b585cf4468f615e2d4739bc65905">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -1032,7 +1033,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -1048,7 +1049,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -1059,7 +1060,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_0 = 1.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_0 = <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1073,7 +1074,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_0 = 300.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_0 = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(300.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1087,12 +1088,12 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_0_Pert_Mag = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_0_Pert_Mag = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#afa36b585cf4468f615e2d4739bc65905">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a0c8a8a4d8bb5da534f71509fa76e220a">ParallelForRNG()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#afa36b585cf4468f615e2d4739bc65905">if()</a>, and <a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a63e4ea7a567c749bbd9f6364a1a9c367">ParallelForRNG()</a>.</p>
 
 </div>
 </div>
@@ -1103,7 +1104,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> U_0 = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> U_0 = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1119,7 +1120,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> U_0_Pert_Mag = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> U_0_Pert_Mag = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1135,7 +1136,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_0 = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_0 = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1149,7 +1150,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_0_Pert_Mag = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_0_Pert_Mag = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1165,7 +1166,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> W_0 = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> W_0 = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1181,7 +1182,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> W_0_Pert_Mag = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> W_0_Pert_Mag = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

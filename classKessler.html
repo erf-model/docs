@@ -208,7 +208,7 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:ab65a6b7181e08edaa8de14ea26bb8d62"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKessler.html#ab65a6b7181e08edaa8de14ea26bb8d62">CFL_MAX</a> = 0.5</td></tr>
+<tr class="memitem:ab65a6b7181e08edaa8de14ea26bb8d62"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKessler.html#ab65a6b7181e08edaa8de14ea26bb8d62">CFL_MAX</a> = <a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></td></tr>
 <tr class="separator:ab65a6b7181e08edaa8de14ea26bb8d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
@@ -338,12 +338,12 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef" title=" " alt="" coords="187,56,367,83"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="415,5,513,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="421,56,507,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="419,107,509,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="419,107,509,133"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8" title=" " alt="" coords="587,5,685,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="593,56,679,83"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8" title=" " alt="" coords="759,5,879,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="765,56,872,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="561,107,711,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="561,107,711,133"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="592,157,680,184"/>
 </map>
 </div>
@@ -406,11 +406,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// Expose for GPU</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_fac_cond = <a class="code" href="classKessler.html#a74746cef2381fd949a06be46f99a05c7">m_fac_cond</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                qv_array(i,j,k) = std::max(0.0, qv_array(i,j,k));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                qp_array(i,j,k) = std::max(0.0, qp_array(i,j,k));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                qv_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qv_array(i,j,k));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                qc_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qc_array(i,j,k));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                qp_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qp_array(i,j,k));</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="comment">//------- Autoconversion/accretion</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qcc, auto_r, accrr;</div>
@@ -421,39 +421,39 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(tabs_array(i,j,k), pressure, qsat);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(tabs_array(i,j,k), pressure, dtqsat);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">if</span> (qsat &lt;= 0.0) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    amrex::Warning(<span class="stringliteral">&quot;qsat computed as non-positive; setting to 0.!&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    qsat = 0.0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">if</span> (qsat &lt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    amrex::Warning(<span class="stringliteral">&quot;qsat computed as non-positive; setting to zero!&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    qsat = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="comment">// If there is precipitating water (i.e. rain), and the cell is not saturated</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">// then the rain water can evaporate leading to extraction of latent heat, hence</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">// reducing temperature and creating negative buoyancy</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                dq_clwater_to_rain  = 0.0;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                dq_rain_to_vapor    = 0.0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                dq_vapor_to_clwater = 0.0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                dq_clwater_to_vapor = 0.0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                dq_clwater_to_rain  = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                dq_rain_to_vapor    = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                dq_vapor_to_clwater = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                dq_clwater_to_vapor = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">//Real fac = qsat*Real(4093.0)*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-Real(36.0),2));</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="comment">//Real fac = qsat*L_v*L_v/(Cp_d*R_v*tabs_array(i,j,k)*tabs_array(i,j,k));</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">if</span> ( (qv_array(i,j,k) &gt; qsat) &amp;&amp; do_cond ) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + fac));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                }</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="comment">// If water vapor is less than the saturated value, then the cloud water can evaporate,</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="comment">// leading to evaporative cooling and reducing temperature</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span> ( (qv_array(i,j,k) &lt; qsat) &amp;&amp; (qc_array(i,j,k) &gt; 0.0) &amp;&amp; do_cond ) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(1.0 + fac));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span> ( (qv_array(i,j,k) &lt; qsat) &amp;&amp; (qc_array(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) &amp;&amp; do_cond ) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + fac));</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">if</span> (( qp_array(i,j,k) &gt; 0.0) &amp;&amp; (qv_array(i,j,k) &lt; qsat) ) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> C = 1.6 + 124.9*std::pow(0.001*rho_array(i,j,k)*qp_array(i,j,k),0.2046);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    dq_rain_to_vapor = 1.0/(0.001*rho_array(i,j,k))*(1.0 - qv_array(i,j,k)/qsat)*C*std::pow(0.001*rho_array(i,j,k)*qp_array(i,j,k),0.525)/</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        (5.4e5 + 2.55e6/(pressure*qsat))*dtn;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">if</span> (( qp_array(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) &amp;&amp; (qv_array(i,j,k) &lt; qsat) ) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> C = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.6) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(124.9)*std::pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.001)*rho_array(i,j,k)*qp_array(i,j,k),<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.2046));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    dq_rain_to_vapor = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.001)*rho_array(i,j,k))*(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - qv_array(i,j,k)/qsat)*C*std::pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.001)*rho_array(i,j,k)*qp_array(i,j,k),<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.525))/</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                        (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(5.4e5) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2.55e6)/(pressure*qsat))*dtn;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    <span class="comment">// The negative sign is to make this variable (vapor formed from evaporation)</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    <span class="comment">// a positive quantity (as qv/qs &lt; 1)</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    dq_rain_to_vapor = std::min({qp_array(i,j,k), dq_rain_to_vapor});</div>
@@ -462,16 +462,16 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="comment">// If there is cloud water present then do accretion and autoconversion to rain</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">if</span> (qc_array(i,j,k) &gt; 0.0) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">if</span> (qc_array(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    qcc = qc_array(i,j,k);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    auto_r = 0.0;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    auto_r = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordflow">if</span> (qcc &gt; <a class="code" href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a>) {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        auto_r = <a class="code" href="ERF__Constants_8H.html#a3c70f890015491421d536954a374324d">alphaelq</a>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    accrr = 0.0;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    accrr = 2.2 * std::pow(qp_array(i,j,k) , 0.875);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                    accrr = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                    accrr = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2.2) * std::pow(qp_array(i,j,k) , <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.875));</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                    dq_clwater_to_rain = dtn *(accrr*qcc + auto_r*(qcc - <a class="code" href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a>));</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    <span class="comment">// If the amount of change is more than the amount of qc present, then dq = qc</span></div>
@@ -485,9 +485,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_over_T = theta_array(i,j,k)/tabs_array(i,j,k);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                theta_array(i,j,k) += theta_over_T * d_fac_cond * (dq_vapor_to_clwater - dq_clwater_to_vapor - dq_rain_to_vapor);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                qv_array(i,j,k) = std::max(0.0, qv_array(i,j,k));</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                qp_array(i,j,k) = std::max(0.0, qp_array(i,j,k));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                qv_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qv_array(i,j,k));</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                qc_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qc_array(i,j,k));</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                qp_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qp_array(i,j,k));</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                qt_array(i,j,k) = qv_array(i,j,k) + qc_array(i,j,k);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            });</div>
@@ -501,7 +501,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keyword">auto</span> fz_array  = fz.array(mfi);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keyword">const</span> Box&amp; tbz = mfi.tilebox();</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, qp_avg;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
@@ -512,13 +512,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                    rho_avg = rho_array(i,j,k-1);</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    qp_avg  = qp_array(i,j,k-1);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k)); <span class="comment">// Convert to g/cm^3</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    qp_avg = 0.5*(qp_array(i,j,k-1)  + qp_array(i,j,k));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    rho_avg = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(rho_array(i,j,k-1) + rho_array(i,j,k)); <span class="comment">// Convert to g/cm^3</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    qp_avg = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(qp_array(i,j,k-1)  + qp_array(i,j,k));</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                qp_avg = std::max(0.0, qp_avg);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                qp_avg = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qp_avg);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_terminal = 36.34*std::pow(rho_avg*0.001*qp_avg, 0.1346)*std::pow(rho_avg/1.16, -0.5); <span class="comment">// in m/s</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_terminal = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(36.34)*std::pow(rho_avg*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.001)*qp_avg, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.1346))*std::pow(rho_avg/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.16), -<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>); <span class="comment">// in m/s</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
@@ -563,7 +563,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keyword">const</span> Box&amp; tbz = mfi.tilebox(IntVect(0,0,1),IntVect(0));</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="comment">// Update vertical flux every substep</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_avg, qp_avg;</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="keywordflow">if</span> (k==k_lo) {</div>
@@ -573,13 +573,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                        rho_avg = rho_array(i,j,k-1);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                        qp_avg  = qp_array(i,j,k-1);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                        rho_avg = 0.5*(rho_array(i,j,k-1) + rho_array(i,j,k)); <span class="comment">// Convert to g/cm^3</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        qp_avg = 0.5*(qp_array(i,j,k-1)  + qp_array(i,j,k));</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                        rho_avg = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(rho_array(i,j,k-1) + rho_array(i,j,k)); <span class="comment">// Convert to g/cm^3</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        qp_avg = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(qp_array(i,j,k-1)  + qp_array(i,j,k));</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    qp_avg = std::max(0.0, qp_avg);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    qp_avg = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qp_avg);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_terminal = 36.34*std::pow(rho_avg*0.001*qp_avg, 0.1346)*std::pow(rho_avg/1.16, -0.5); <span class="comment">// in m/s</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_terminal = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(36.34)*std::pow(rho_avg*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.001)*qp_avg, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.1346))*std::pow(rho_avg/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.16), -<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>); <span class="comment">// in m/s</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    <span class="comment">// NOTE: Fz is the sedimentation flux from the advective operator.</span></div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    <span class="comment">//       In the terrain-following coordinate system, the z-deriv in</span></div>
@@ -590,23 +590,23 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    fz_array(i,j,k) = rho_avg*V_terminal*qp_avg;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                    <span class="keywordflow">if</span>(k==k_lo){</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        rain_accum_array(i,j,k) = rain_accum_array(i,j,k) + rho_avg*qp_avg*V_terminal*dtn/1000.0*1000.0; <span class="comment">// Divide by rho_water and convert to mm</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        rain_accum_array(i,j,k) = rain_accum_array(i,j,k) + rho_avg*qp_avg*V_terminal*dtn/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1000.0)*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1000.0); <span class="comment">// Divide by rho_water and convert to mm</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    }</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                });</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="comment">// Update precip every substep</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                {</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    <span class="comment">// Jacobian determinant</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dJinv = (dJ_array) ? 1.0/dJ_array(i,j,k) : 1.0;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dJinv = (dJ_array) ? <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/dJ_array(i,j,k) : <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k+1)) &lt; 1e-14) fz_array(i,j,k+1) = 0.0;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k  )) &lt; 1e-14) fz_array(i,j,k  ) = 0.0;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dq_sed = dJinv * (1.0/rho_array(i,j,k)) * (fz_array(i,j,k+1) - fz_array(i,j,k)) * coef;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(dq_sed) &lt; 1e-14) dq_sed = 0.0;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k+1)) &lt; 1e-14) fz_array(i,j,k+1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(fz_array(i,j,k  )) &lt; 1e-14) fz_array(i,j,k  ) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dq_sed = dJinv * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/rho_array(i,j,k)) * (fz_array(i,j,k+1) - fz_array(i,j,k)) * coef;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    <span class="keywordflow">if</span>(std::fabs(dq_sed) &lt; 1e-14) dq_sed = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    qp_array(i,j,k) +=  dq_sed;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    qp_array(i,j,k)  = std::max(0.0, qp_array(i,j,k));</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    qp_array(i,j,k)  = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qp_array(i,j,k));</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                });</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        } <span class="comment">// nsub</span></div>
@@ -633,9 +633,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="comment">// Expose for GPU</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_fac_cond = <a class="code" href="classKessler.html#a74746cef2381fd949a06be46f99a05c7">m_fac_cond</a>;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                qc_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qc_array(i,j,k));</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                <span class="comment">//------- Autoconversion/accretion</span></div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qsat, dtqsat;</div>
@@ -649,21 +649,21 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                <span class="comment">// then the rain water can evaporate leading to extraction of latent heat, hence</span></div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="comment">// reducing temperature and creating negative buoyancy</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                dq_vapor_to_clwater = 0.0;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                dq_clwater_to_vapor = 0.0;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                dq_vapor_to_clwater = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                dq_clwater_to_vapor = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <span class="comment">//Real fac = qsat*4093.0*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-36.0,2));</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <span class="comment">//Real fac = qsat*Real(4093.0)*L_v/(Cp_d*std::pow(tabs_array(i,j,k)-Real(36.0),2));</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <span class="comment">//Real fac = qsat*L_v*L_v/(Cp_d*R_v*tabs_array(i,j,k)*tabs_array(i,j,k));</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = (<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>)*dtqsat;</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="comment">// If water vapor content exceeds saturation value, then vapor condenses to water and latent heat is released, increasing temperature</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &gt; qsat){</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(1.0 + fac));</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    dq_vapor_to_clwater = std::min(qv_array(i,j,k), (qv_array(i,j,k)-qsat)/(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + fac));</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                }</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                <span class="comment">// If water vapor is less than the saturated value, then the cloud water can evaporate, leading to evaporative cooling and</span></div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="comment">// reducing temperature</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &lt; qsat &amp;&amp; qc_array(i,j,k) &gt; 0.0){</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(1.0 + fac));</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="keywordflow">if</span> (qv_array(i,j,k) &lt; qsat &amp;&amp; qc_array(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>){</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    dq_clwater_to_vapor = std::min(qc_array(i,j,k), (qsat - qv_array(i,j,k))/(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + fac));</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                qv_array(i,j,k) += -dq_vapor_to_clwater + dq_clwater_to_vapor;</div>
@@ -673,19 +673,22 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                theta_array(i,j,k) += theta_over_T * d_fac_cond * (dq_vapor_to_clwater - dq_clwater_to_vapor);</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                qv_array(i,j,k) = std::max(0.0, qv_array(i,j,k));</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                qc_array(i,j,k) = std::max(0.0, qc_array(i,j,k));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                qv_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qv_array(i,j,k));</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                qc_array(i,j,k) = std::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, qc_array(i,j,k));</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                qt_array(i,j,k) = qv_array(i,j,k) + qc_array(i,j,k);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            });</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
-<div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a3c70f890015491421d536954a374324d"><div class="ttname"><a href="ERF__Constants_8H.html#a3c70f890015491421d536954a374324d">alphaelq</a></div><div class="ttdeci">constexpr amrex::Real alphaelq</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:48</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a86f34aeefa355fa0d6d0cca8f033a878"><div class="ttname"><a href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a></div><div class="ttdeci">constexpr amrex::Real qcw0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:46</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:16</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_ae17e3d65161f833363cb9f2149d732a9"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+0.5) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=1.0) { Real dT=T_pert *(std::cos(PI *L)+1.0)/2.0;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:22</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a3c70f890015491421d536954a374324d"><div class="ttname"><a href="ERF__Constants_8H.html#a3c70f890015491421d536954a374324d">alphaelq</a></div><div class="ttdeci">constexpr amrex::Real alphaelq</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:58</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a86f34aeefa355fa0d6d0cca8f033a878"><div class="ttname"><a href="ERF__Constants_8H.html#a86f34aeefa355fa0d6d0cca8f033a878">qcw0</a></div><div class="ttdeci">constexpr amrex::Real qcw0</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:56</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a41126403c4da6ee876e9e391f3f67699"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:186</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:171</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -718,12 +721,12 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,56,185,83"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="233,5,332,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="239,56,326,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="237,107,328,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="237,107,328,133"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8" title=" " alt="" coords="405,5,504,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="411,56,498,83"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8" title=" " alt="" coords="577,5,697,32"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="584,56,691,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="380,107,529,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="380,107,529,133"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="411,157,499,184"/>
 </map>
 </div>
@@ -786,7 +789,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">auto</span> qp_arr     = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20a2edc86e05fd080c928faeb1f6f39c701">MicVar_Kess::qp</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// get potential total density, temperature, qt, qp</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*theta_arr(i,j,k);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*<a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k);</div>
@@ -813,8 +816,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classKessler_a747a85d4c8004b299ca49dcb1f221c7c_cgraph.png" border="0" usemap="#aclassKessler_a747a85d4c8004b299ca49dcb1f221c7c_cgraph" alt=""/></div>
 <map name="aclassKessler_a747a85d4c8004b299ca49dcb1f221c7c_cgraph" id="aclassKessler_a747a85d4c8004b299ca49dcb1f221c7c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,159,65"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="207,31,297,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="345,5,495,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="207,31,297,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="345,5,495,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="376,56,464,83"/>
 </map>
 </div>
@@ -881,7 +884,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20a82dd7c202e6cce14520ac01cfaa4f4ad">MicVar_Kess::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// Get pressure, theta, temperature, density, and qt, qp</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            rho_array(i,j,k)   = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            theta_array(i,j,k) = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
@@ -890,15 +893,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            qp_array(i,j,k)    = states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>)/states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            qt_array(i,j,k)    = qv_array(i,j,k) + qc_array(i,j,k);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            tabs_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            tabs_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef">getTgivenRandRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                  states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                  qv_array(i,j,k));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            pres_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k)) * 0.01;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            pres_array(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(states_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_array(i,j,k)) * <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        });</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="ttc" id="aERF__EOS_8H_html_a08354ab110fb9e873bce9250b4f4b46e"><div class="ttname"><a href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=0.)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_a65cf1718b7a1fcc56cb16685642543da"><div class="ttname"><a href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=0.0)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a55cc1ac802a866d84540af2b0308a7ef"><div class="ttname"><a href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_ad2f77bd04cc57d704e814af5257d0ef0"><div class="ttname"><a href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classKessler.html#a05b9426e9fd6af90ea40aa77ed0cbe66">Update_Micro_Vars()</a>.</p>
@@ -908,10 +911,10 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classKessler_a18f83fc4dff53c8c29ee9ee974e65ac2_cgraph.png" border="0" usemap="#aclassKessler_a18f83fc4dff53c8c29ee9ee974e65ac2_cgraph" alt=""/></div>
 <map name="aclassKessler_a18f83fc4dff53c8c29ee9ee974e65ac2_cgraph" id="aclassKessler_a18f83fc4dff53c8c29ee9ee974e65ac2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,49,156,90"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="221,5,331,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="204,56,348,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="231,107,321,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="396,81,545,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="221,5,331,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef" title=" " alt="" coords="204,56,348,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="231,107,321,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="396,81,545,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="427,132,515,159"/>
 </map>
 </div>
@@ -957,7 +960,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classKessler.html#afea161a2b985d4c0eb4aa9390a808ab4">m_axis</a>     = sc.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classKessler.html#a9768f16e7d0dc1320927d6169fc4cc39">m_do_cond</a>  = (!sc.<a class="code" href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">use_shoc</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:66</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:76</div></div>
 <div class="ttc" id="aclassKessler_html_afea161a2b985d4c0eb4aa9390a808ab4"><div class="ttname"><a href="classKessler.html#afea161a2b985d4c0eb4aa9390a808ab4">Kessler::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:166</div></div>
 <div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1143</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53819b8e72b3431b2c81f6ae2b6433f1"><div class="ttname"><a href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">SolverChoice::use_shoc</a></div><div class="ttdeci">bool use_shoc</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1175</div></div>
@@ -1332,10 +1335,10 @@ Here is the call graph for this function:</div>
 <map name="aclassKessler_a05b9426e9fd6af90ea40aa77ed0cbe66_cgraph" id="aclassKessler_a05b9426e9fd6af90ea40aa77ed0cbe66_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,208,83"/>
 <area shape="rect" href="classKessler.html#a18f83fc4dff53c8c29ee9ee974e65ac2" title=" " alt="" coords="256,49,407,90"/>
-<area shape="rect" href="ERF__EOS_8H.html#a08354ab110fb9e873bce9250b4f4b46e" title=" " alt="" coords="471,5,582,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a65cf1718b7a1fcc56cb16685642543da" title=" " alt="" coords="455,56,599,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="481,107,572,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="647,81,796,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="471,5,582,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef" title=" " alt="" coords="455,56,599,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="481,107,572,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="647,81,796,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="677,132,765,159"/>
 </map>
 </div>
@@ -1378,8 +1381,8 @@ Here is the call graph for this function:</div>
 <map name="aclassKessler_add7ed88ab0086ee53aa15e87cc8686ef_cgraph" id="aclassKessler_add7ed88ab0086ee53aa15e87cc8686ef_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,205,57"/>
 <area shape="rect" href="classKessler.html#a747a85d4c8004b299ca49dcb1f221c7c" title=" " alt="" coords="253,23,407,65"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#ae17e3d65161f833363cb9f2149d732a9" title=" " alt="" coords="455,31,545,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a3cc0ee7727b26e21a97acfc2ad2e6d4d" title=" " alt="" coords="593,5,743,32"/>
+<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="455,31,545,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="593,5,743,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="624,56,712,83"/>
 </map>
 </div>
@@ -1397,7 +1400,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Kessler::CFL_MAX = 0.5</td>
+          <td class="memname">constexpr <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Kessler::CFL_MAX = <a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></td>
         </tr>
       </table>
   </td>

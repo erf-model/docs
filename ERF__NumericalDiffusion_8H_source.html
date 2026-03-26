@@ -103,8 +103,8 @@ $(document).ready(function(){initNavTree('ERF__NumericalDiffusion_8H_source.html
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dnm2,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; dnm3)</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interp = 10. * (dn   - dnm1)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        - 5. * (dnp1 - dnm2)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> interp = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.) * (dn   - dnm1)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                        - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.) * (dnp1 - dnm2)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                             + (dnp2 - dnm3);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> interp;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>

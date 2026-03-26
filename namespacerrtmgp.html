@@ -298,24 +298,24 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;<span class="comment">     * equation 13, the column counterpart.</span></div>
 <div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    <span class="comment">// Set outputs to zero</span></div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    Kokkos::deep_copy(T_mid_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    Kokkos::deep_copy(p_mid_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    Kokkos::deep_copy(cldfrac_ice_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    Kokkos::deep_copy(cldfrac_liq_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    Kokkos::deep_copy(cldfrac_tot_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    Kokkos::deep_copy(cdnc_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;    Kokkos::deep_copy(eff_radius_qc_at_cldtop, 0.0);</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    Kokkos::deep_copy(eff_radius_qi_at_cldtop, 0.0);</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    Kokkos::deep_copy(T_mid_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    Kokkos::deep_copy(p_mid_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    Kokkos::deep_copy(cldfrac_ice_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    Kokkos::deep_copy(cldfrac_liq_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    Kokkos::deep_copy(cldfrac_tot_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    Kokkos::deep_copy(cdnc_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;    Kokkos::deep_copy(eff_radius_qc_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    Kokkos::deep_copy(eff_radius_qi_at_cldtop, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
 <div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160; </div>
 <div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <span class="comment">// Initialize the 1D &quot;clear fraction&quot; as 1 (totally clear)</span></div>
 <div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a> aerocom_clr(<span class="stringliteral">&quot;aerocom_clr&quot;</span>, ncol);</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    Kokkos::deep_copy(aerocom_clr, 1.0);</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    Kokkos::deep_copy(aerocom_clr, <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>);</div>
 <div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160; </div>
 <div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    <span class="comment">// TODO: move tunable constant to namelist</span></div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> q_threshold = 0.0;  <span class="comment">// BAD_CONSTANT!</span></div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> q_threshold = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;  <span class="comment">// BAD_CONSTANT!</span></div>
 <div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160; </div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <span class="comment">// TODO: move tunable constant to namelist</span></div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> cldfrac_tot_threshold = 0.001;  <span class="comment">// BAD_CONSTANT!</span></div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    constexpr <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> cldfrac_tot_threshold = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);  <span class="comment">// BAD_CONSTANT!</span></div>
 <div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160; </div>
 <div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;    <span class="comment">// Loop over all columns in parallel</span></div>
 <div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keywordtype">int</span> icol)</div>
@@ -332,10 +332,10 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160;                <span class="comment">// probability of this level, where aerocom_clr is that of</span></div>
 <div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;                <span class="comment">// the previous level</span></div>
 <div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;                <span class="keyword">auto</span> aerocom_tmp = aerocom_clr(icol) *</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;                                   (1.0 - std::max(cldfrac_tot(icol, ilay - 1),</div>
+<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;                                   (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - std::max(cldfrac_tot(icol, ilay - 1),</div>
 <div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;                                                   cldfrac_tot(icol, ilay))) /</div>
-<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;                                   (1.0 - std::min(cldfrac_tot(icol, ilay - 1),</div>
-<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;                                                   1.0 - cldfrac_tot_threshold));</div>
+<div class="line"><a name="l01190"></a><span class="lineno"> 1190</span>&#160;                                   (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - std::min(cldfrac_tot(icol, ilay - 1),</div>
+<div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;                                                   <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - cldfrac_tot_threshold));</div>
 <div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;                <span class="comment">// Temporary variable for probability &quot;weights&quot;</span></div>
 <div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;                <span class="keyword">auto</span> aerocom_wts = aerocom_clr(icol) - aerocom_tmp;</div>
 <div class="line"><a name="l01194"></a><span class="lineno"> 1194</span>&#160;                <span class="comment">// Temporary variable for liquid &quot;phase&quot;</span></div>
@@ -349,7 +349,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160;                <span class="comment">// p_mid_at_cldtop</span></div>
 <div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;                p_mid_at_cldtop(icol) += pmid(icol, ilay) * aerocom_wts;</div>
 <div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;                <span class="comment">// cldfrac_ice_at_cldtop</span></div>
-<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                cldfrac_ice_at_cldtop(icol) += (1.0 - aerocom_phi) * aerocom_wts;</div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;                cldfrac_ice_at_cldtop(icol) += (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - aerocom_phi) * aerocom_wts;</div>
 <div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;                <span class="comment">// cldfrac_liq_at_cldtop</span></div>
 <div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;                cldfrac_liq_at_cldtop(icol) += aerocom_phi * aerocom_wts;</div>
 <div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;                <span class="comment">// cdnc_at_cldtop</span></div>
@@ -364,7 +364,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;                <span class="comment">// eff_radius_qc_at_cldtop</span></div>
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;                eff_radius_qc_at_cldtop(icol) += rel(icol, ilay) * aerocom_phi * aerocom_wts;</div>
 <div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;                <span class="comment">// eff_radius_qi_at_cldtop</span></div>
-<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                eff_radius_qi_at_cldtop(icol) += rei(icol, ilay) * (1.0 - aerocom_phi) * aerocom_wts;</div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;                eff_radius_qi_at_cldtop(icol) += rei(icol, ilay) * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - aerocom_phi) * aerocom_wts;</div>
 <div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;                <span class="comment">// Reset aerocom_clr to aerocom_tmp to accumulate</span></div>
 <div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;                aerocom_clr(icol) = aerocom_tmp;</div>
 <div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;            }</div>
@@ -373,12 +373,15 @@ Variables</h2></td></tr>
 <div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;        <span class="comment">// defined as (1 - aerocom_clr). This is true because</span></div>
 <div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;        <span class="comment">// aerocom_clr is the result of accumulative probabilities</span></div>
 <div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160;        <span class="comment">// (their products)</span></div>
-<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        cldfrac_tot_at_cldtop(icol) = 1.0 - aerocom_clr(icol);</div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;        cldfrac_tot_at_cldtop(icol) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - aerocom_clr(icol);</div>
 <div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;    });</div>
 <div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;}</div>
-<div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:31</div></div>
 <div class="ttc" id="aERF__Kokkos_8H_html_a1c1c14451633cb7c1dda9ef23f26d846"><div class="ttname"><a href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a></div><div class="ttdeci">Kokkos::View&lt; RealT *, KokkosDefaultDevice &gt; real1d_k</div><div class="ttdef"><b>Definition:</b> ERF_Kokkos.H:18</div></div>
 <div class="ttc" id="aERF__Kokkos_8H_html_a4a42f7539e74cae7b9b8d396ecd4a72b"><div class="ttname"><a href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a></div><div class="ttdeci">amrex::Real RealT</div><div class="ttdef"><b>Definition:</b> ERF_Kokkos.H:13</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a82937741a5244048a4a9c6176c00e0d5a32b6a00f33c7394555eff62ce6457bc6"><div class="ttname"><a href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a32b6a00f33c7394555eff62ce6457bc6">MicVar_Morr::nc</a></div><div class="ttdeci">@ nc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:44</div></div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87aea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:36</div></div>
 </div><!-- fragment -->
@@ -453,8 +456,8 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;2&gt;&gt;({0, 0}, {ncol, nswbands}),</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                         KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ibnd)</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    {</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment">// Threshold between visible and infrared is 0.7 micron, or 14286 cm^-1.</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> visible_wavenumber_threshold = 14286.0;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="comment">// Threshold between visible and infrared is amrex::Real(0.7) micron, or 14286 cm^-one</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> visible_wavenumber_threshold = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(14286.0);</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment">// Wavenumber is in the visible if it is above the visible wavenumber</span></div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="comment">// threshold, and in the infrared if it is below the threshold</span></div>
@@ -473,11 +476,12 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="comment">// Band straddles the visible to near-infrared transition, so we take</span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="comment">// the albedo to be the average of the visible and near-infrared</span></div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="comment">// broadband albedos</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            sfc_alb_dir(icol,ibnd) = 0.5*(<a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a2cfc21eae7c47a6f88c6f3c23026c1ba">sfc_alb_dir_vis</a>(icol) + <a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346afcb431594b5602e1d05550bd06f0fe66">sfc_alb_dir_nir</a>(icol));</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            sfc_alb_dif(icol,ibnd) = 0.5*(<a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346aff5000fc3eb27bb70b9aea77f0c1e5e9">sfc_alb_dif_vis</a>(icol) + <a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a3896197fdc03640b87e7a1ba42ea7655">sfc_alb_dif_nir</a>(icol));</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            sfc_alb_dir(icol,ibnd) = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(<a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a2cfc21eae7c47a6f88c6f3c23026c1ba">sfc_alb_dir_vis</a>(icol) + <a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346afcb431594b5602e1d05550bd06f0fe66">sfc_alb_dir_nir</a>(icol));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            sfc_alb_dif(icol,ibnd) = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(<a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346aff5000fc3eb27bb70b9aea77f0c1e5e9">sfc_alb_dif_vis</a>(icol) + <a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a3896197fdc03640b87e7a1ba42ea7655">sfc_alb_dif_nir</a>(icol));</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        }</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    });</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="anamespaceLsmData__NOAHMP_html_a5b95582dcc26005b036524933f0ae346a2cfc21eae7c47a6f88c6f3c23026c1ba"><div class="ttname"><a href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a2cfc21eae7c47a6f88c6f3c23026c1ba">LsmData_NOAHMP::sfc_alb_dir_vis</a></div><div class="ttdeci">@ sfc_alb_dir_vis</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:27</div></div>
 <div class="ttc" id="anamespaceLsmData__NOAHMP_html_a5b95582dcc26005b036524933f0ae346a3896197fdc03640b87e7a1ba42ea7655"><div class="ttname"><a href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a3896197fdc03640b87e7a1ba42ea7655">LsmData_NOAHMP::sfc_alb_dif_nir</a></div><div class="ttdeci">@ sfc_alb_dif_nir</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:30</div></div>
 <div class="ttc" id="anamespaceLsmData__NOAHMP_html_a5b95582dcc26005b036524933f0ae346afcb431594b5602e1d05550bd06f0fe66"><div class="ttname"><a href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346afcb431594b5602e1d05550bd06f0fe66">LsmData_NOAHMP::sfc_alb_dir_nir</a></div><div class="ttdeci">@ sfc_alb_dir_nir</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:28</div></div>
@@ -571,10 +575,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">// TODO: Hard-coding these band indices is really bad practice. If the bands ever were to change (like when</span></div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// the RRTMG bands were re-ordered for RRTMGP), we would be using the wrong bands for the IR and UV/VIS. This</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// should be refactored to grab the correct bands by specifying appropriate wavenumber rather than index.</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">//sfc_flux_dir_nir(i) = sum(sw_bnd_flux_dir(i+1,kbot,1:9))   + 0.5 * sw_bnd_flux_dir(i+1,kbot,10);</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">//sfc_flux_dir_vis(i) = sum(sw_bnd_flux_dir(i+1,kbot,11:14)) + 0.5 * sw_bnd_flux_dir(i+1,kbot,10);</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">//sfc_flux_dif_nir(i) = sum(sw_bnd_flux_dif(i+1,kbot,1:9))   + 0.5 * sw_bnd_flux_dif(i+1,kbot,10);</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">//sfc_flux_dif_vis(i) = sum(sw_bnd_flux_dif(i+1,kbot,11:14)) + 0.5 * sw_bnd_flux_dif(i+1,kbot,10);</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">//sfc_flux_dir_nir(i) = sum(sw_bnd_flux_dir(i+1,kbot,1:9))   + myhalf * sw_bnd_flux_dir(i+1,kbot,10);</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">//sfc_flux_dir_vis(i) = sum(sw_bnd_flux_dir(i+1,kbot,11:14)) + myhalf * sw_bnd_flux_dir(i+1,kbot,10);</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">//sfc_flux_dif_nir(i) = sum(sw_bnd_flux_dif(i+1,kbot,1:9))   + myhalf * sw_bnd_flux_dif(i+1,kbot,10);</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">//sfc_flux_dif_vis(i) = sum(sw_bnd_flux_dif(i+1,kbot,11:14)) + myhalf * sw_bnd_flux_dif(i+1,kbot,10);</span></div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// Initialize sums over bands</span></div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    Kokkos::deep_copy(sfc_flux_dir_nir, 0);</div>
@@ -582,8 +586,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    Kokkos::deep_copy(sfc_flux_dif_nir, 0);</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    Kokkos::deep_copy(sfc_flux_dif_vis, 0);</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">// Threshold between visible and infrared is 0.7 micron, or 14286 cm^-1.</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> visible_wavenumber_threshold = 14286.0;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">// Threshold between visible and infrared is amrex::Real(0.7) micron, or 14286 cm^-one</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> visible_wavenumber_threshold = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(14286.0);</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keyword">auto</span> wavenumber_limits = <a class="code" href="namespacerrtmgp.html#a623070abd11c95464bfdbf6eb8dad630">k_dist_sw_k</a>-&gt;get_band_lims_wavenumber();</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keyword">const</span> <span class="keywordtype">int</span> icol)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    {</div>
@@ -602,12 +606,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                sfc_flux_dir_nir(icol) += sw_bnd_flux_dir(icol,kbot,ibnd);</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                sfc_flux_dif_nir(icol) += sw_bnd_flux_dif(icol,kbot,ibnd);</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <span class="comment">// Band straddles the visible to near-infrared transition, so put half</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                <span class="comment">// the flux in visible and half in near-infrared fluxes</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                sfc_flux_dir_vis(icol) += 0.5 * sw_bnd_flux_dir(icol,kbot,ibnd);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                sfc_flux_dif_vis(icol) += 0.5 * sw_bnd_flux_dif(icol,kbot,ibnd);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                sfc_flux_dir_nir(icol) += 0.5 * sw_bnd_flux_dir(icol,kbot,ibnd);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                sfc_flux_dif_nir(icol) += 0.5 * sw_bnd_flux_dif(icol,kbot,ibnd);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                <span class="comment">// Band straddles the visible to near-infrared transition, so put myhalf</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                <span class="comment">// the flux in visible and myhalf in near-infrared fluxes</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                sfc_flux_dir_vis(icol) += <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * sw_bnd_flux_dir(icol,kbot,ibnd);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                sfc_flux_dif_vis(icol) += <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * sw_bnd_flux_dif(icol,kbot,ibnd);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                sfc_flux_dir_nir(icol) += <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * sw_bnd_flux_dir(icol,kbot,ibnd);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                sfc_flux_dif_nir(icol) += <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * sw_bnd_flux_dif(icol,kbot,ibnd);</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            }</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        }</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    });</div>
@@ -693,18 +697,18 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    <span class="comment">// Subcolumn binary cld mask; if any layers with pressure between pmin and pmax are cloudy</span></div>
 <div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="comment">// then 2d subcol mask is 1, otherwise it is 0</span></div>
 <div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> subcol_mask(<span class="stringliteral">&quot;subcol_mask&quot;</span>, ncol, ngpt);</div>
-<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    Kokkos::deep_copy(subcol_mask, 0.0);</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;    Kokkos::deep_copy(subcol_mask, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;3&gt;&gt;({0, 0, 0}, {ncol, nlay, ngpt}),</div>
 <div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;                         KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> igpt)</div>
 <div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    {</div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;        <span class="comment">// NOTE: using plev would need to assume level ordering (top to bottom or bottom to top), but</span></div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;        <span class="comment">// using play/pmid does not</span></div>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        <span class="keywordflow">if</span> (cld_tau_gpt(icol,ilay,igpt) &gt; 0 &amp;&amp; pmid(icol,ilay) &gt;= pmin &amp;&amp; pmid(icol,ilay) &lt; pmax) {</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;            subcol_mask(icol,igpt) = 1.0;</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;            subcol_mask(icol,igpt) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;        }</div>
 <div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    });</div>
 <div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;    <span class="comment">// Compute average over subcols to get cloud area</span></div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;    <span class="keyword">auto</span> ngpt_inv = 1.0 / ngpt;</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;    <span class="keyword">auto</span> ngpt_inv = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / ngpt;</div>
 <div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;    Kokkos::deep_copy(cld_area, 0);</div>
 <div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keywordtype">int</span> icol)</div>
 <div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    {</div>
@@ -778,7 +782,7 @@ template&lt;class View1 , class View2 , class View3 , class View4 , class View5 
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                  / ( -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>(icol,ilay) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>(icol,ilay) * <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> );</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    });</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
-<div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:22</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_abc695cd190273d99450d0b8f595c5c6b"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a></div><div class="ttdeci">const Real dz</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
 </div><!-- fragment -->
@@ -1088,7 +1092,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    } <span class="keywordflow">else</span> {  <span class="comment">// Default case, maximum-random overlap</span></div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <span class="comment">// Maximum-random overlap:</span></div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        <span class="comment">// Uses essentially the algorithm described in eq (14) in Raisanen et al. 2004,</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <span class="comment">// https://rmets.onlinelibrary.wiley.com/doi/epdf/10.1256/qj.03.99. Also the same</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <span class="comment">// https://rmets.onlinelibrary.wiley.com/doi/epdf/amrex::Real(10.1256)/qj.03.99. Also the same</span></div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="comment">// algorithm used in RRTMG implementation of maximum-random overlap (see</span></div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <span class="comment">// https://github.com/AER-RC/RRTMG_SW/blob/master/src/mcica_subcol_gen_sw.f90)</span></div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <span class="comment">//</span></div>
@@ -1106,17 +1110,17 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        {</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilay = 1; ilay &lt; nlay; ilay++) {</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                <span class="comment">// Check cldx in level above and see if it satisfies conditions to create a cloudy subcolumn</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                <span class="keywordflow">if</span> (cldx(icol,ilay-1,igpt) &gt; 1.0 - cldf(icol,ilay-1)) {</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                <span class="keywordflow">if</span> (cldx(icol,ilay-1,igpt) &gt; <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - cldf(icol,ilay-1)) {</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                    <span class="comment">// Cloudy subcolumn above, use same random number here so that clouds in these two adjacent</span></div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                    <span class="comment">// layers are maximimally overlapped</span></div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                    cldx(icol,ilay,igpt) = cldx(icol,ilay-1,igpt);</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                    <span class="comment">// Cloud-less above, use new random number so that clouds are distributed</span></div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                    <span class="comment">// randomly in this layer. Need to scale new random number to range</span></div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                    <span class="comment">// [0, 1.0 - cldf(ilay-1)] because we have artificially changed the distribution</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                    <span class="comment">// [0, one - cldf(ilay-1)] because we have artificially changed the distribution</span></div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                    <span class="comment">// of random numbers in this layer with the above branch of the conditional,</span></div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                    <span class="comment">// which would otherwise inflate cloud fraction in this layer.</span></div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                    cldx(icol,ilay,igpt) = cldx(icol,ilay  ,igpt) * (1.0 - cldf(icol,ilay-1));</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                    cldx(icol,ilay,igpt) = cldx(icol,ilay  ,igpt) * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - cldf(icol,ilay-1));</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                }</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;            }</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        });</div>
@@ -1126,7 +1130,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;3&gt;&gt;({0, 0, 0}, {ncol, nlay, ngpt}),</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                             KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> igpt)</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    {</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <span class="keywordflow">if</span> (cldx(icol,ilay,igpt) &gt; 1.0 - cldf(icol,ilay)) {</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <span class="keywordflow">if</span> (cldx(icol,ilay,igpt) &gt; <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - cldf(icol,ilay)) {</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            subcolumn_mask(icol,ilay,igpt) = 1;</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            subcolumn_mask(icol,ilay,igpt) = 0;</div>
@@ -1229,7 +1233,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// even when separated by layers with no cloud properties, when in fact those layers should be</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// randomly overlapped.</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> cldfrac_rad(<span class="stringliteral">&quot;cldfrac_rad&quot;</span>, ncol, nlay);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    Kokkos::deep_copy(cldfrac_rad, 0.0);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    Kokkos::deep_copy(cldfrac_rad, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;3&gt;&gt;({0, 0, 0}, {ncol, nlay, nbnd}),</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                         KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> ibnd)</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
@@ -1353,7 +1357,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// even when separated by layers with no cloud properties, when in fact those layers should be</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// randomly overlapped.</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> cldfrac_rad(<span class="stringliteral">&quot;cldfrac_rad&quot;</span>, ncol, nlay);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    Kokkos::deep_copy(cldfrac_rad, 0.0);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    Kokkos::deep_copy(cldfrac_rad, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    Kokkos::parallel_for(Kokkos::MDRangePolicy&lt;Kokkos::Rank&lt;3&gt;&gt;({0, 0, 0}, {ncol, nlay, nbnd}),</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                         KOKKOS_LAMBDA (<span class="keywordtype">int</span> icol, <span class="keywordtype">int</span> ilay, <span class="keywordtype">int</span> ibnd)</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
@@ -1374,7 +1378,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a3a97e4883d2079fb62a43ffbeb613a34">int1d_k</a> seeds(<span class="stringliteral">&quot;seeds&quot;</span>, ncol);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    Kokkos::parallel_for(ncol, KOKKOS_LAMBDA(<span class="keywordtype">int</span> icol)</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        seeds(icol) = 1.0e9 * (p_lay(icol,nlay-1) - int(p_lay(icol,nlay-1)));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        seeds(icol) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e9) * (p_lay(icol,nlay-1) - int(p_lay(icol,nlay-1)));</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    });</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keyword">auto</span> cldmask = <a class="code" href="namespacerrtmgp.html#ab333c4574d3068f73b4b248d56588d6d">get_subcolumn_mask</a>(ncol, nlay, ngpt, cldfrac_rad, overlap, seeds);</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
@@ -1716,12 +1720,12 @@ template&lt;class View1 , class View2 , class View3 , class View4 , class View5 
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// Compute in-cloud mixing ratio (mixing ratio of the cloudy part of the layer)</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">// NOTE: these thresholds (from E3SM) seem arbitrary, but included here for consistency</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// This limits in-cloud mixing ratio to 0.005 kg/kg. According to note in cloud_diagnostics</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// This limits in-cloud mixing ratio to amrex::Real(0.005) kg/kg. According to note in cloud_diagnostics</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// in EAM, this is consistent with limits in MG2. Is this true for P3?</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (cloud_fraction(icol,ilay) &gt; 0) {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="comment">// Compute layer-integrated cloud mass (per unit area)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keyword">auto</span> incloud_mixing_ratio = std::min(mixing_ratio(icol,ilay) /</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                 std::max(0.0001, cloud_fraction(icol,ilay)), 0.005);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                 std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0001), cloud_fraction(icol,ilay)), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.005));</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            cloud_mass(icol,ilay) = incloud_mixing_ratio * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>(icol,ilay) * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>(icol,ilay);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            cloud_mass(icol,ilay) = 0;</div>
@@ -2130,23 +2134,23 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;    {</div>
 <div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;        emis_sfc_T(ibnd,icol) = <a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a153d612e1de83f762ac72ae015f0b4a6">sfc_emis</a>(icol);</div>
 <div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;    });</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;    <span class="comment">//Kokkos::deep_copy(emis_sfc_T, 0.98);</span></div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;    <span class="comment">//Kokkos::deep_copy(emis_sfc_T, amrex::Real(0.98));</span></div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160; </div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;    <span class="comment">// Get Gaussian quadrature weights</span></div>
 <div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;    <span class="comment">// Weights and angle secants for first order (k=1) Gaussian quadrature.</span></div>
-<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="comment">//   Values from Table 2, Clough et al, 1992, doi:10.1029/92JD01419</span></div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <span class="comment">//   Values from Table 2, Clough et al, 1992, doi:Real(10.1029)/92JD01419</span></div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    <span class="comment">//   after Abramowitz &amp; Stegun 1972, page 921</span></div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    <span class="keywordtype">int</span> constexpr max_gauss_pts = 4;</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> gauss_Ds_host_raw[max_gauss_pts][max_gauss_pts] = { {1.66, 1.18350343, 1.09719858, 1.06056257},</div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;                                                              {0.  , 2.81649655, 1.69338507, 1.38282560},</div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;                                                              {0.  , 0.        , 4.70941630, 2.40148179},</div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                                                              {0.  , 0.        , 0.        , 7.15513024} };</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> gauss_Ds_host_raw[max_gauss_pts][max_gauss_pts] = { {<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.66), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.18350343), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.09719858), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.06056257)},</div>
+<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;                                                              {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>  , <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.81649655), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.69338507), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.38282560)},</div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;                                                              {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>  , <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>        , <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.70941630), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.40148179)},</div>
+<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                                                              {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>  , <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>        , <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>        , <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7.15513024)} };</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a6dbe0e893e0d7f161c19c071193fe766">realHost2d_k</a> gauss_Ds_host(&amp;gauss_Ds_host_raw[0][0], max_gauss_pts, max_gauss_pts);</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160; </div>
-<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> gauss_wts_host_raw[max_gauss_pts][max_gauss_pts] = { {0.5, 0.3180413817, 0.2009319137, 0.1355069134},</div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;                                                               {0. , 0.1819586183, 0.2292411064, 0.2034645680},</div>
-<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;                                                               {0. , 0.          , 0.0698269799, 0.1298475476},</div>
-<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                                                               {0. , 0.          , 0.          , 0.0311809710} };</div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a4a42f7539e74cae7b9b8d396ecd4a72b">RealT</a> gauss_wts_host_raw[max_gauss_pts][max_gauss_pts] = { {<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.3180413817), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.2009319137), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1355069134)},</div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;                                                               {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> , <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1819586183), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.2292411064), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.2034645680)},</div>
+<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;                                                               {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> , <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>          , <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0698269799), <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.1298475476)},</div>
+<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                                                               {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> , <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>          , <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>          , <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0311809710)} };</div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a6dbe0e893e0d7f161c19c071193fe766">realHost2d_k</a> gauss_wts_host(&amp;gauss_wts_host_raw[0][0],max_gauss_pts,max_gauss_pts);</div>
 <div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160; </div>
 <div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;    <a class="code" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> gauss_Ds (<span class="stringliteral">&quot;gauss_Ds&quot;</span> ,max_gauss_pts,max_gauss_pts);</div>

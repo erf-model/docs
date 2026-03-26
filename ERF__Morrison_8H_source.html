@@ -242,7 +242,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                   <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; qt_array)</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="comment">// Solution tolerance</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = 1.0e-4;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-4);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> omn, domn;</div>
@@ -270,7 +270,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <span class="comment">// Latent heats and their derivatives wrt to T</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            lstarw  = fac_cond;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            lstari  = fac_fus;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            domn    = 0.0;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            domn    = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="comment">// Saturation moisture fractions</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a531c978e174d063e1cf107eae6a84073">pres</a>, qsatw);</div>
@@ -280,11 +280,11 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="comment">// Cloud ice not permitted (condensation &amp; fusion)</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> &gt;= <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                omn   = 1.0;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                omn   = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            }</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="comment">// Cloud water not permitted (sublimation &amp; fusion)</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                omn    = 0.0;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                omn    = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                lstarw = fac_sub;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            }</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment">// Mixed cloud phase (condensation &amp; fusion)</span></div>
@@ -294,10 +294,10 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            }</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="comment">// Linear combination of each component</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            qsat   =  omn * qsatw  + (1.0-omn) * qsati;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            dqsat  =  omn * dqsatw + (1.0-omn) * dqsati</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            qsat   =  omn * qsatw  + (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn) * qsati;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            dqsat  =  omn * dqsatw + (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn) * dqsati</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                   + domn *  qsatw -     domn  *  qsati;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            lstar  =  omn * lstarw + (1.0-omn) * lstari;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            lstar  =  omn * lstarw + (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn) * lstari;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            dlstar = domn * lstarw -     domn  * lstari;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            <span class="comment">// Function for root finding:</span></div>
@@ -305,7 +305,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            fff   = -<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> + tabs_array(i,j,k) +  lstar*(qv_array(i,j,k) - qsat);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            <span class="comment">// Derivative of function (T_new iterated on)</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            dfff  = -1.0 + dlstar*(qv_array(i,j,k) - qsat) - lstar*dqsat;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            dfff  = -<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + dlstar*(qv_array(i,j,k) - qsat) - lstar*dqsat;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="comment">// Update the temperature</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            dtabs = -fff/dfff;</div>
@@ -321,7 +321,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">// Changes in each component</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        delta_qv = qv_array(i,j,k) - qsat;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        delta_qc = std::max(-qc_array(i,j,k), delta_qv * omn);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        delta_qi = std::max(-qi_array(i,j,k), delta_qv * (1.0-omn));</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        delta_qi = std::max(-qi_array(i,j,k), delta_qv * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn));</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        qv_array(i,j,k)  = qsat;</div>
@@ -371,7 +371,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00283"></a><span class="lineno"><a class="line" href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">  283</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">n_qstate_moist_size</a> = 6;</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// CFL MAX for vertical advection</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">  286</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">CFL_MAX</a> = 0.5;</div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">  286</a></span>&#160;    <span class="keyword">static</span> constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="classMorrison.html#a5c8fa0f20176eac476a6a0a3fc95de37">CFL_MAX</a> = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// MicVar map (Qmoist indices -&gt; MicVar enum)</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="classMorrison.html#a6284af8ee4608059214c45bc39425011">  289</a></span>&#160;    amrex::Vector&lt;int&gt; <a class="code" href="classMorrison.html#a6284af8ee4608059214c45bc39425011">MicVarMap</a>;</div>
@@ -426,8 +426,11 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;};</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a2b4ea8a29735038e49703c7f8c1f20c8"><div class="ttname"><a href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a></div><div class="ttdeci">constexpr amrex::Real tbgmax</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:32</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_abf1e890912f1117211516f13b27ed2e8"><div class="ttname"><a href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a></div><div class="ttdeci">constexpr amrex::Real tbgmin</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:31</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a2b4ea8a29735038e49703c7f8c1f20c8"><div class="ttname"><a href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a></div><div class="ttdeci">constexpr amrex::Real tbgmax</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:42</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_abf1e890912f1117211516f13b27ed2e8"><div class="ttname"><a href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a></div><div class="ttdeci">constexpr amrex::Real tbgmin</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:41</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
@@ -443,7 +446,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H_source.html',''); ini
 <div class="ttc" id="aclassMorrison_html_a0a0f44390b82e965df1a69296676495b"><div class="ttname"><a href="classMorrison.html#a0a0f44390b82e965df1a69296676495b">Morrison::~Morrison</a></div><div class="ttdeci">virtual ~Morrison()=default</div></div>
 <div class="ttc" id="aclassMorrison_html_a104c04cee2e446fcfa520dfb79c6563d"><div class="ttname"><a href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">Morrison::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:292</div></div>
 <div class="ttc" id="aclassMorrison_html_a13a8f76ec153a1ac3536a0291b591e08"><div class="ttname"><a href="classMorrison.html#a13a8f76ec153a1ac3536a0291b591e08">Morrison::Morrison</a></div><div class="ttdeci">Morrison()</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:64</div></div>
-<div class="ttc" id="aclassMorrison_html_a14321f6398d7555cc4bcb02dae4b0be1"><div class="ttname"><a href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Morrison::Advance</a></div><div class="ttdeci">void Advance(const amrex::Real &amp;dt_advance, const SolverChoice &amp;sc) override</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:502</div></div>
+<div class="ttc" id="aclassMorrison_html_a14321f6398d7555cc4bcb02dae4b0be1"><div class="ttname"><a href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Morrison::Advance</a></div><div class="ttdeci">void Advance(const amrex::Real &amp;dt_advance, const SolverChoice &amp;sc) override</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:498</div></div>
 <div class="ttc" id="aclassMorrison_html_a186c1ded94acbad74e980303e9867a61"><div class="ttname"><a href="classMorrison.html#a186c1ded94acbad74e980303e9867a61">Morrison::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:327</div></div>
 <div class="ttc" id="aclassMorrison_html_a18f7ad113d44b3d724b8ff1b92700c62"><div class="ttname"><a href="classMorrison.html#a18f7ad113d44b3d724b8ff1b92700c62">Morrison::GetPlotVarNames</a></div><div class="ttdeci">void GetPlotVarNames(amrex::Vector&lt; std::string &gt; &amp;a_vec) const override</div><div class="ttdoc">Populate a vector with names of all available Morrison plot variables.</div><div class="ttdef"><b>Definition:</b> ERF_Morrison_Plot.cpp:101</div></div>
 <div class="ttc" id="aclassMorrison_html_a2269eb1d7ce46e6eba5ffe3ad1489c57"><div class="ttname"><a href="classMorrison.html#a2269eb1d7ce46e6eba5ffe3ad1489c57">Morrison::Qmoist_Restart_Vars</a></div><div class="ttdeci">void Qmoist_Restart_Vars(const SolverChoice &amp;, std::vector&lt; int &gt; &amp;a_idx, std::vector&lt; std::string &gt; &amp;a_names) const override</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:250</div></div>

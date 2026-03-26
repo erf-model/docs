@@ -119,9 +119,9 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ac5f264c9f90e326c3f128098b0cb2376"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376">eps</a> = 1e-15</td></tr>
 <tr class="separator:ac5f264c9f90e326c3f128098b0cb2376"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff003add7a1a7552b0443b4e09c97378"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrico__flux.html#aff003add7a1a7552b0443b4e09c97378">theta_z0</a> = 298.0</td></tr>
+<tr class="memitem:aff003add7a1a7552b0443b4e09c97378"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrico__flux.html#aff003add7a1a7552b0443b4e09c97378">theta_z0</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(298.0)</td></tr>
 <tr class="separator:aff003add7a1a7552b0443b4e09c97378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a475fc69ee0b62e0853d925ba5dee4b1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c">qsat_z0</a> = 0.0010</td></tr>
+<tr class="memitem:a475fc69ee0b62e0853d925ba5dee4b1c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c">qsat_z0</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0010)</td></tr>
 <tr class="separator:a475fc69ee0b62e0853d925ba5dee4b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -259,15 +259,17 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02329"></a><span class="lineno"> 2329</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qstar = q_star_arr(i,j,0);</div>
 <div class="line"><a name="l02330"></a><span class="lineno"> 2330</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> q     = cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
 <div class="line"><a name="l02331"></a><span class="lineno"> 2331</span>&#160; </div>
-<div class="line"><a name="l02332"></a><span class="lineno"> 2332</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx = 0.5 * (velx_arr(i,j,k) + velx_arr(i+1,j,k));</div>
-<div class="line"><a name="l02333"></a><span class="lineno"> 2333</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely = 0.5 * (vely_arr(i,j,k) + vely_arr(i,j+1,k));</div>
+<div class="line"><a name="l02332"></a><span class="lineno"> 2332</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (velx_arr(i,j,k) + velx_arr(i+1,j,k));</div>
+<div class="line"><a name="l02333"></a><span class="lineno"> 2333</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (vely_arr(i,j,k) + vely_arr(i,j+1,k));</div>
 <div class="line"><a name="l02334"></a><span class="lineno"> 2334</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp = sqrt(velx*velx + vely*vely);</div>
 <div class="line"><a name="l02335"></a><span class="lineno"> 2335</span>&#160; </div>
 <div class="line"><a name="l02336"></a><span class="lineno"> 2336</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;q&#39;w&#39;&gt; = -K dqdz</span></div>
-<div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(qstar) &gt; <a class="code" href="structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376">eps</a>) ? - <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * qstar * wsp * (q - <a class="code" href="structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c">qsat_z0</a>) : 0.0;</div>
+<div class="line"><a name="l02337"></a><span class="lineno"> 2337</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(qstar) &gt; <a class="code" href="structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376">eps</a>) ? - <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * qstar * wsp * (q - <a class="code" href="structrico__flux.html#a475fc69ee0b62e0853d925ba5dee4b1c">qsat_z0</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l02338"></a><span class="lineno"> 2338</span>&#160; </div>
 <div class="line"><a name="l02339"></a><span class="lineno"> 2339</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
 <div class="line"><a name="l02340"></a><span class="lineno"> 2340</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
@@ -368,12 +370,12 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02358"></a><span class="lineno"> 2358</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tstar = t_star_arr(i, j, 0);</div>
 <div class="line"><a name="l02359"></a><span class="lineno"> 2359</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a> = cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
 <div class="line"><a name="l02360"></a><span class="lineno"> 2360</span>&#160; </div>
-<div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx = 0.5 * (velx_arr(i,j,k) + velx_arr(i+1,j,k));</div>
-<div class="line"><a name="l02362"></a><span class="lineno"> 2362</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely = 0.5 * (vely_arr(i,j,k) + vely_arr(i,j+1,k));</div>
+<div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (velx_arr(i,j,k) + velx_arr(i+1,j,k));</div>
+<div class="line"><a name="l02362"></a><span class="lineno"> 2362</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (vely_arr(i,j,k) + vely_arr(i,j+1,k));</div>
 <div class="line"><a name="l02363"></a><span class="lineno"> 2363</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp = sqrt(velx*velx + vely*vely);</div>
 <div class="line"><a name="l02364"></a><span class="lineno"> 2364</span>&#160; </div>
 <div class="line"><a name="l02365"></a><span class="lineno"> 2365</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
-<div class="line"><a name="l02366"></a><span class="lineno"> 2366</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(tstar) &gt; <a class="code" href="structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376">eps</a>) ? - <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * tstar * wsp * (<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a> - <a class="code" href="structrico__flux.html#aff003add7a1a7552b0443b4e09c97378">theta_z0</a>) : 0.0;</div>
+<div class="line"><a name="l02366"></a><span class="lineno"> 2366</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(tstar) &gt; <a class="code" href="structrico__flux.html#ac5f264c9f90e326c3f128098b0cb2376">eps</a>) ? - <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * tstar * wsp * (<a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a> - <a class="code" href="structrico__flux.html#aff003add7a1a7552b0443b4e09c97378">theta_z0</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l02367"></a><span class="lineno"> 2367</span>&#160; </div>
 <div class="line"><a name="l02368"></a><span class="lineno"> 2368</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
 <div class="line"><a name="l02369"></a><span class="lineno"> 2369</span>&#160;    }</div>
@@ -459,11 +461,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;    {</div>
 <div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx = velx_arr(i,j,k);</div>
-<div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely = 0.25 * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
+<div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
 <div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;                                  + vely_arr(i-1,j,k) + vely_arr(i-1,j+1,k) );</div>
-<div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>  = 0.5 * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02387"></a><span class="lineno"> 2387</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>  = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
 <div class="line"><a name="l02388"></a><span class="lineno"> 2388</span>&#160; </div>
-<div class="line"><a name="l02389"></a><span class="lineno"> 2389</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar = 0.5 * ( u_star_arr(i-1,j,0) + u_star_arr(i,j,0) );</div>
+<div class="line"><a name="l02389"></a><span class="lineno"> 2389</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( u_star_arr(i-1,j,0) + u_star_arr(i,j,0) );</div>
 <div class="line"><a name="l02390"></a><span class="lineno"> 2390</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp   = sqrt(velx*velx+vely*vely);</div>
 <div class="line"><a name="l02391"></a><span class="lineno"> 2391</span>&#160; </div>
 <div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
@@ -471,6 +473,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02394"></a><span class="lineno"> 2394</span>&#160; </div>
 <div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
 <div class="line"><a name="l02396"></a><span class="lineno"> 2396</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -550,12 +553,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l02410"></a><span class="lineno"> 2410</span>&#160;    {</div>
-<div class="line"><a name="l02411"></a><span class="lineno"> 2411</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = 0.25 * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
+<div class="line"><a name="l02411"></a><span class="lineno"> 2411</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
 <div class="line"><a name="l02412"></a><span class="lineno"> 2412</span>&#160;                                   + velx_arr(i,j-1,k) + velx_arr(i+1,j-1,k) );</div>
 <div class="line"><a name="l02413"></a><span class="lineno"> 2413</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = vely_arr(i,j,k);</div>
-<div class="line"><a name="l02414"></a><span class="lineno"> 2414</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>   = 0.5 * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02414"></a><span class="lineno"> 2414</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
 <div class="line"><a name="l02415"></a><span class="lineno"> 2415</span>&#160; </div>
-<div class="line"><a name="l02416"></a><span class="lineno"> 2416</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar   = 0.5 * ( u_star_arr(i,j-1,0) + u_star_arr(i,j,0) );</div>
+<div class="line"><a name="l02416"></a><span class="lineno"> 2416</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( u_star_arr(i,j-1,0) + u_star_arr(i,j,0) );</div>
 <div class="line"><a name="l02417"></a><span class="lineno"> 2417</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp     = sqrt(velx*velx+vely*vely);</div>
 <div class="line"><a name="l02418"></a><span class="lineno"> 2418</span>&#160; </div>
 <div class="line"><a name="l02419"></a><span class="lineno"> 2419</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
@@ -601,7 +604,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rico_flux::qsat_z0 = 0.0010</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rico_flux::qsat_z0 = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0010)</td>
         </tr>
       </table>
   </td>
@@ -625,7 +628,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rico_flux::theta_z0 = 298.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rico_flux::theta_z0 = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(298.0)</td>
         </tr>
       </table>
   </td>

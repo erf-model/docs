@@ -1,5 +1,14 @@
 var NAVTREEINDEX14 =
 {
+"classMRISplitIntegrator.html#acdfcd0a0bca3c145e2305248f0da36a0":[2,0,50,2],
+"classMRISplitIntegrator.html#ad31fb2cda1fc2dce80820ed7c4a3c052":[2,0,50,15],
+"classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1":[2,0,50,30],
+"classMRISplitIntegrator.html#ad698d348d3e7fa695077134839254738":[2,0,50,12],
+"classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b":[2,0,50,5],
+"classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f":[2,0,50,28],
+"classMicrophysics.html":[2,0,43],
+"classMicrophysics.html#a069e6013efb78d268394868d0cfc6382":[2,0,43,7],
+"classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451":[2,0,43,1],
 "classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e":[2,0,43,9],
 "classMicrophysics.html#a380240aa9ec93af02a9b27ba1be4172a":[2,0,43,3],
 "classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e":[2,0,43,13],
@@ -240,14 +249,5 @@ var NAVTREEINDEX14 =
 "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f":[2,0,62,7],
 "classProblemBase.html#abc35a529692454d8e38b052b1b5980ac":[2,0,62,17],
 "classProblemBase.html#ac7201619fcd9464f851b0cae82dfbcd1":[2,0,62,0],
-"classProblemBase.html#ad1a7277d332001542789e488458096b9":[2,0,62,5],
-"classProblemBase.html#ad43b6ef1bd1f22893ba732673775c534":[2,0,62,9],
-"classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791":[2,0,62,13],
-"classProblemBase.html#ad83f058e9bc03a6233944a142e789aed":[2,0,62,2],
-"classProblemBase.html#ae21bdcbfbf32d1ec423b6a0edd92dbda":[2,0,62,19],
-"classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56":[2,0,62,4],
-"classProblemBase.html#aef7f72842640b743a8cd2a3c0b2dd142":[2,0,62,15],
-"classRadiation.html":[2,0,64],
-"classRadiation.html#a005b0ae6d7456cdf5a6a022c6b6c1e08":[2,0,64,138],
-"classRadiation.html#a0069d200496f037a5bffa96e4bf9bce0":[2,0,64,73]
+"classProblemBase.html#ad1a7277d332001542789e488458096b9":[2,0,62,5]
 };

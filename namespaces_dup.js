@@ -78,7 +78,7 @@ var namespaces_dup =
       [ "compute_temperature", "namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0", null ],
       [ "compute_theta", "namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b", null ],
       [ "init_isentropic_hse", "namespaceHSEutils.html#acea3d9d853ef0fbeee3f94b4b62cc224", null ],
-      [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#a566170093477dd8963fec7f7a755dcee", null ],
+      [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#ac1169faa6e5d2eb9fd731d3290cc314a", null ],
       [ "init_isentropic_hse_terrain", "namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07", null ],
       [ "Newton_Raphson_hse", "namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e", null ],
       [ "vapor_mixing_ratio", "namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983", null ],

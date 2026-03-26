@@ -103,9 +103,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a48b3817c0329c4f7ce8af2ba02365476"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a48b3817c0329c4f7ce8af2ba02365476">wbar_cutoff_max</a> = 1500.0</td></tr>
+<tr class="memitem:a48b3817c0329c4f7ce8af2ba02365476"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a48b3817c0329c4f7ce8af2ba02365476">wbar_cutoff_max</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1500.0)</td></tr>
 <tr class="separator:a48b3817c0329c4f7ce8af2ba02365476"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10051474073f195f0f1a21738ad67576"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a10051474073f195f0f1a21738ad67576">wbar</a> [0] = 0.0</td></tr>
+<tr class="memitem:a10051474073f195f0f1a21738ad67576"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__UpdateWSubsidence__RICO_8H.html#a10051474073f195f0f1a21738ad67576">wbar</a> [0] = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a10051474073f195f0f1a21738ad67576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -127,9 +127,9 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                     {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = zlevels[k];</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">if</span> (z &lt;= <a class="code" href="ERF__UpdateWSubsidence__RICO_8H.html#a48b3817c0329c4f7ce8af2ba02365476">wbar_cutoff_max</a>) {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <a class="code" href="ERF__UpdateWSubsidence__RICO_8H.html#a10051474073f195f0f1a21738ad67576">wbar</a>[k] = -0.0000022*<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <a class="code" href="ERF__UpdateWSubsidence__RICO_8H.html#a10051474073f195f0f1a21738ad67576">wbar</a>[k] = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0000022)*<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="ERF__UpdateWSubsidence__RICO_8H.html#a10051474073f195f0f1a21738ad67576">wbar</a>[k] = -0.0000022*2260.;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="ERF__UpdateWSubsidence__RICO_8H.html#a10051474073f195f0f1a21738ad67576">wbar</a>[k] = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0000022)*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2260.);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        }</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
@@ -193,7 +193,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">wbar[0] = 0.0</td>
+          <td class="memname">wbar[0] = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -209,7 +209,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> wbar_cutoff_max = 1500.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> wbar_cutoff_max = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1500.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -109,13 +109,13 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = 0.0</td></tr>
+<tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a7f74e9554c1ab66998e1319960f1e82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b20f6fd6c0d91d1cbed0b9ecd17adbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb">V_0</a> = 0.0</td></tr>
+<tr class="memitem:a9b20f6fd6c0d91d1cbed0b9ecd17adbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb">V_0</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a9b20f6fd6c0d91d1cbed0b9ecd17adbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada30199a52709bfe69b46aa5a2b9731"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize()</td></tr>
 <tr class="separator:aada30199a52709bfe69b46aa5a2b9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memItemLeft" align="right" valign="top">amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = 1. / <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0]</td></tr>
+<tr class="memitem:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memItemLeft" align="right" valign="top">amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0]</td></tr>
 <tr class="separator:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -137,15 +137,16 @@ Variables</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                        {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a>(<a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            z_vel_pert(i, j, k) = <a class="code" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a>(i, j, k, 0.0,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            z_vel_pert(i, j, k) = <a class="code" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a>(i, j, k, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                             x_vel_pert, y_vel_pert,</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                             mf_u, mf_v, z_nd, <a class="code" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        });</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__WitchOfAgnesi_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_WitchOfAgnesi.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__WitchOfAgnesi_8H_html_afcc136319159fcdf66beaff0b0782f93"><div class="ttname"><a href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a></div><div class="ttdeci">ParallelFor(xbx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { x_vel_pert(i, j, k)=U_0;})</div></div>
 <div class="ttc" id="aERF__SetupDiff_8H_html_a4c74ed1b76138a2f5baa925afe40f9a8"><div class="ttname"><a href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a></div><div class="ttdeci">const Box zbx</div><div class="ttdef"><b>Definition:</b> ERF_SetupDiff.H:9</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_afb56736aeb87667ff92b696d787b432a"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int &amp;i, int &amp;j, int &amp;k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:462</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_afb56736aeb87667ff92b696d787b432a"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real WFromOmega(int &amp;i, int &amp;j, int &amp;k, amrex::Real omega, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_u, const amrex::Array4&lt; const amrex::Real &gt; &amp;mf_v, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:463</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -323,7 +324,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">dxInv[2] = 1. / <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0]</td>
+          <td class="memname">dxInv[2] = <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -339,7 +340,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> U_0 = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> U_0 = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -355,7 +356,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_0 = 0.0</td>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> V_0 = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
