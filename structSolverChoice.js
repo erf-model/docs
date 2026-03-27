@@ -69,6 +69,7 @@ var structSolverChoice =
     [ "if_z0", "structSolverChoice.html#a3a2b3ea3da7ce2b79df1b4b8f903f035", null ],
     [ "immersed_forcing_substep", "structSolverChoice.html#a6399ecd90040753b8fb3469172910133", null ],
     [ "implicit_before_substep", "structSolverChoice.html#ad3e5ee4bc34a7322d170fb20020a3d2d", null ],
+    [ "implicit_moisture_diffusion", "structSolverChoice.html#a6f0617f2531077e8b1df43e02abca9bf", null ],
     [ "implicit_momentum_diffusion", "structSolverChoice.html#ac44612b6911800c13395aa54c7289085", null ],
     [ "implicit_thermal_diffusion", "structSolverChoice.html#a921e0679cbab2d095955b688f83eeb4b", null ],
     [ "init_type", "structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1", null ],

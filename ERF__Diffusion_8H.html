@@ -251,12 +251,12 @@ Functions</h2></td></tr>
 <tr class="separator:afe5ea4ee1403bb03e2541b9ecbb6a060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dd0e3aa8c02b9938516d6d4427e4d72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#a5dd0e3aa8c02b9938516d6d4427e4d72">ComputeStrain_T</a> (amrex::Box bxcc, amrex::Box tbxxy, amrex::Box tbxxz, amrex::Box tbxyz, amrex::Box domain, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;v, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;w, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baab4c45b861caaf89b0842306117db7bc">tau11</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba822e4f59780df9310afede8535eac286">tau22</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba1edaba247488baa9858b879f19ea09b7">tau33</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba0a0d169ca6b3a0da988c65f1c284ba99">tau12</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935">tau31</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307">tau32</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_nd, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_mx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_ux, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vx, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_my, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_uy, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mf_vy, const amrex::BCRec *bc_ptr, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;tau13i, amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;tau23i)</td></tr>
 <tr class="separator:a5dd0e3aa8c02b9938516d6d4427e4d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3a38f6e98873816b71870843f111905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#ae3a38f6e98873816b71870843f111905">ImplicitDiffForStateLU_N</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int level, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt; &amp;bc_neumann_vals, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;hfx_z, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> implicit_fac)</td></tr>
-<tr class="separator:ae3a38f6e98873816b71870843f111905"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ec74223da444dadd425143fd3584707"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#a4ec74223da444dadd425143fd3584707">ImplicitDiffForStateLU_S</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int level, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt; &amp;bc_neumann_vals, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;hfx_z, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> implicit_fac)</td></tr>
-<tr class="separator:a4ec74223da444dadd425143fd3584707"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a220f387ad43672a6a5a42b4ea8c661cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#a220f387ad43672a6a5a42b4ea8c661cc">ImplicitDiffForStateLU_T</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int level, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt; &amp;bc_neumann_vals, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_nd, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;hfx_z, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> implicit_fac)</td></tr>
-<tr class="separator:a220f387ad43672a6a5a42b4ea8c661cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72983bc31ca70d590e43d71711de9f01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#a72983bc31ca70d590e43d71711de9f01">ImplicitDiffForStateLU_N</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int level, const int n, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt; &amp;bc_neumann_vals, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;hfx_z, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> implicit_fac)</td></tr>
+<tr class="separator:a72983bc31ca70d590e43d71711de9f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad175c0a75ad66f3460a9173dda67f59c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#ad175c0a75ad66f3460a9173dda67f59c">ImplicitDiffForStateLU_S</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int level, const int n, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt; &amp;bc_neumann_vals, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;hfx_z, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> implicit_fac)</td></tr>
+<tr class="separator:ad175c0a75ad66f3460a9173dda67f59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6337af61e2c0fb9c7fa67e5012ca1ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#a6337af61e2c0fb9c7fa67e5012ca1ad4">ImplicitDiffForStateLU_T</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int level, const int n, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM *2 &gt; &amp;bc_neumann_vals, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z_nd, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;detJ, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;hfx_z, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> implicit_fac)</td></tr>
+<tr class="separator:a6337af61e2c0fb9c7fa67e5012ca1ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07fa694a5d543c308477c43456cec474"><td class="memTemplParams" colspan="2">template&lt;int stagdir&gt; </td></tr>
 <tr class="memitem:a07fa694a5d543c308477c43456cec474"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__Diffusion_8H.html#a07fa694a5d543c308477c43456cec474">ImplicitDiffForMomLU_N</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int level, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;cell_data, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;face_data, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;tau, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;tau_corr, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;mu_turb, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice, const amrex::BCRec *bc_ptr, const bool use_SurfLayer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> implicit_fac)</td></tr>
 <tr class="separator:a07fa694a5d543c308477c43456cec474"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3733,8 +3733,8 @@ template&lt;int stagdir&gt; </div>
 
 </div>
 </div>
-<a id="ae3a38f6e98873816b71870843f111905"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3a38f6e98873816b71870843f111905">&#9670;&nbsp;</a></span>ImplicitDiffForStateLU_N()</h2>
+<a id="a72983bc31ca70d590e43d71711de9f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72983bc31ca70d590e43d71711de9f01">&#9670;&nbsp;</a></span>ImplicitDiffForStateLU_N()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3756,6 +3756,12 @@ template&lt;int stagdir&gt; </div>
           <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3825,21 +3831,21 @@ template&lt;int stagdir&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ImplicitPost_8H.html#a052a8b2a3344d7874aa01a89b949d5a7">if()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Diffusion_8H_ae3a38f6e98873816b71870843f111905_icgraph.png" border="0" usemap="#aERF__Diffusion_8H_ae3a38f6e98873816b71870843f111905_icgraph" alt=""/></div>
-<map name="aERF__Diffusion_8H_ae3a38f6e98873816b71870843f111905_icgraph" id="aERF__Diffusion_8H_ae3a38f6e98873816b71870843f111905_icgraph">
+<div class="center"><img src="ERF__Diffusion_8H_a72983bc31ca70d590e43d71711de9f01_icgraph.png" border="0" usemap="#aERF__Diffusion_8H_a72983bc31ca70d590e43d71711de9f01_icgraph" alt=""/></div>
+<map name="aERF__Diffusion_8H_a72983bc31ca70d590e43d71711de9f01_icgraph" id="aERF__Diffusion_8H_a72983bc31ca70d590e43d71711de9f01_icgraph">
 <area shape="rect" title=" " alt="" coords="92,5,275,32"/>
-<area shape="rect" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea" title=" " alt="" coords="5,5,44,32"/>
+<area shape="rect" href="ERF__ImplicitPost_8H.html#a052a8b2a3344d7874aa01a89b949d5a7" title=" " alt="" coords="5,5,44,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a4ec74223da444dadd425143fd3584707"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ec74223da444dadd425143fd3584707">&#9670;&nbsp;</a></span>ImplicitDiffForStateLU_S()</h2>
+<a id="ad175c0a75ad66f3460a9173dda67f59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad175c0a75ad66f3460a9173dda67f59c">&#9670;&nbsp;</a></span>ImplicitDiffForStateLU_S()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3861,6 +3867,12 @@ Here is the caller graph for this function:</div>
           <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -3930,21 +3942,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ImplicitPost_8H.html#a052a8b2a3344d7874aa01a89b949d5a7">if()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Diffusion_8H_a4ec74223da444dadd425143fd3584707_icgraph.png" border="0" usemap="#aERF__Diffusion_8H_a4ec74223da444dadd425143fd3584707_icgraph" alt=""/></div>
-<map name="aERF__Diffusion_8H_a4ec74223da444dadd425143fd3584707_icgraph" id="aERF__Diffusion_8H_a4ec74223da444dadd425143fd3584707_icgraph">
+<div class="center"><img src="ERF__Diffusion_8H_ad175c0a75ad66f3460a9173dda67f59c_icgraph.png" border="0" usemap="#aERF__Diffusion_8H_ad175c0a75ad66f3460a9173dda67f59c_icgraph" alt=""/></div>
+<map name="aERF__Diffusion_8H_ad175c0a75ad66f3460a9173dda67f59c_icgraph" id="aERF__Diffusion_8H_ad175c0a75ad66f3460a9173dda67f59c_icgraph">
 <area shape="rect" title=" " alt="" coords="92,5,272,32"/>
-<area shape="rect" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea" title=" " alt="" coords="5,5,44,32"/>
+<area shape="rect" href="ERF__ImplicitPost_8H.html#a052a8b2a3344d7874aa01a89b949d5a7" title=" " alt="" coords="5,5,44,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a220f387ad43672a6a5a42b4ea8c661cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a220f387ad43672a6a5a42b4ea8c661cc">&#9670;&nbsp;</a></span>ImplicitDiffForStateLU_T()</h2>
+<a id="a6337af61e2c0fb9c7fa67e5012ca1ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6337af61e2c0fb9c7fa67e5012ca1ad4">&#9670;&nbsp;</a></span>ImplicitDiffForStateLU_T()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3966,6 +3978,12 @@ Here is the caller graph for this function:</div>
           <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -4047,14 +4065,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea">if()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ImplicitPost_8H.html#a052a8b2a3344d7874aa01a89b949d5a7">if()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Diffusion_8H_a220f387ad43672a6a5a42b4ea8c661cc_icgraph.png" border="0" usemap="#aERF__Diffusion_8H_a220f387ad43672a6a5a42b4ea8c661cc_icgraph" alt=""/></div>
-<map name="aERF__Diffusion_8H_a220f387ad43672a6a5a42b4ea8c661cc_icgraph" id="aERF__Diffusion_8H_a220f387ad43672a6a5a42b4ea8c661cc_icgraph">
+<div class="center"><img src="ERF__Diffusion_8H_a6337af61e2c0fb9c7fa67e5012ca1ad4_icgraph.png" border="0" usemap="#aERF__Diffusion_8H_a6337af61e2c0fb9c7fa67e5012ca1ad4_icgraph" alt=""/></div>
+<map name="aERF__Diffusion_8H_a6337af61e2c0fb9c7fa67e5012ca1ad4_icgraph" id="aERF__Diffusion_8H_a6337af61e2c0fb9c7fa67e5012ca1ad4_icgraph">
 <area shape="rect" title=" " alt="" coords="92,5,272,32"/>
-<area shape="rect" href="ERF__Implicit_8H.html#acf3fb84d95857390f34255bb2ae57eea" title=" " alt="" coords="5,5,44,32"/>
+<area shape="rect" href="ERF__ImplicitPost_8H.html#a052a8b2a3344d7874aa01a89b949d5a7" title=" " alt="" coords="5,5,44,32"/>
 </map>
 </div>
 

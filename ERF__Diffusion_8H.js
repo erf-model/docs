@@ -21,7 +21,7 @@ var ERF__Diffusion_8H =
     [ "ImplicitDiffForMomLU_N", "ERF__Diffusion_8H.html#a07fa694a5d543c308477c43456cec474", null ],
     [ "ImplicitDiffForMomLU_S", "ERF__Diffusion_8H.html#a5fa2b43b99f0c4d8628c5312fdf538e8", null ],
     [ "ImplicitDiffForMomLU_T", "ERF__Diffusion_8H.html#a96dfd9e59a51c8912056b528ef3a5bdf", null ],
-    [ "ImplicitDiffForStateLU_N", "ERF__Diffusion_8H.html#ae3a38f6e98873816b71870843f111905", null ],
-    [ "ImplicitDiffForStateLU_S", "ERF__Diffusion_8H.html#a4ec74223da444dadd425143fd3584707", null ],
-    [ "ImplicitDiffForStateLU_T", "ERF__Diffusion_8H.html#a220f387ad43672a6a5a42b4ea8c661cc", null ]
+    [ "ImplicitDiffForStateLU_N", "ERF__Diffusion_8H.html#a72983bc31ca70d590e43d71711de9f01", null ],
+    [ "ImplicitDiffForStateLU_S", "ERF__Diffusion_8H.html#ad175c0a75ad66f3460a9173dda67f59c", null ],
+    [ "ImplicitDiffForStateLU_T", "ERF__Diffusion_8H.html#a6337af61e2c0fb9c7fa67e5012ca1ad4", null ]
 ];

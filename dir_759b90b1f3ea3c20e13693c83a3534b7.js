@@ -6,7 +6,8 @@ var dir_759b90b1f3ea3c20e13693c83a3534b7 =
     [ "ERF_AdvanceMicrophysics.cpp", "ERF__AdvanceMicrophysics_8cpp.html", null ],
     [ "ERF_AdvanceRadiation.cpp", "ERF__AdvanceRadiation_8cpp.html", null ],
     [ "ERF_ComputeTimestep.cpp", "ERF__ComputeTimestep_8cpp.html", null ],
-    [ "ERF_Implicit.H", "ERF__Implicit_8H.html", "ERF__Implicit_8H" ],
+    [ "ERF_ImplicitPost.H", "ERF__ImplicitPost_8H.html", "ERF__ImplicitPost_8H" ],
+    [ "ERF_ImplicitPre.H", "ERF__ImplicitPre_8H.html", "ERF__ImplicitPre_8H" ],
     [ "ERF_MakeFastCoeffs.cpp", "ERF__MakeFastCoeffs_8cpp.html", "ERF__MakeFastCoeffs_8cpp" ],
     [ "ERF_MakeTauTerms.cpp", "ERF__MakeTauTerms_8cpp.html", "ERF__MakeTauTerms_8cpp" ],
     [ "ERF_MRI.H", "ERF__MRI_8H.html", [

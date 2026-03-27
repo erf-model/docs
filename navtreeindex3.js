@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"ERF__InitCustomPertVels__EkmanSpiral_8H.html#a7f5ec7f52c070d5317a24a9996ab0dff":[3,0,1,14,25,0],
+"ERF__InitCustomPertVels__EkmanSpiral_8H.html#a9fe9be9cdb1b2c38fc4b98d336584439":[3,0,1,14,25,1],
+"ERF__InitCustomPertVels__EkmanSpiral_8H.html#abd408b9367d48eae9afec6c630e149cf":[3,0,1,14,25,2],
+"ERF__InitCustomPertVels__EkmanSpiral_8H.html#adc419a3f80891c95caf27f27f4197c06":[3,0,1,14,25,3],
+"ERF__InitCustomPertVels__EkmanSpiral_8H_source.html":[3,0,1,14,25],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html":[3,0,1,14,26],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a0b6c95d9cbe21c8a94590c64b1459844":[3,0,1,14,26,15],
 "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a101645d1044b0597de1e5bf6a45b26f9":[3,0,1,14,26,10],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__InitCustomPertVels__TurbulentInflow_8H.html#ad657c068e6dd792762ab78e1eb94f6c1":[3,0,1,14,35,14],
 "ERF__InitCustomPertVels__TurbulentInflow_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64":[3,0,1,14,35,17],
 "ERF__InitCustomPertVels__TurbulentInflow_8H_source.html":[3,0,1,14,35],
-"ERF__InitCustomPertVels__UserDefined_8H.html":[3,0,1,14,36],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a43ae77dd0457ed5fefa12e4ff2e72114":[3,0,1,14,36,1],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,14,36,3],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a5db62fb521a31b18ce526b18e18e17b8":[3,0,1,14,36,2],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a6b5813abfd29d3281784d304d31a86b3":[3,0,1,14,36,4],
-"ERF__InitCustomPertVels__UserDefined_8H.html#a7f74e9554c1ab66998e1319960f1e82c":[3,0,1,14,36,7]
+"ERF__InitCustomPertVels__UserDefined_8H.html":[3,0,1,14,36]
 };
