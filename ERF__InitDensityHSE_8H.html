@@ -207,8 +207,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        {</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            th_hse_arr(i,j,k) = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a7665ea1952f5b48f7602b61a2888baf2">T_0</a> + dtheta_dz * (z_arr(i,j,k)- z_arr(i,j,0));</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;             p_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a>*th_hse_arr(i,j,k));</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            pi_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c">getExnergivenRTh</a>(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a>*th_hse_arr(i,j,k), l_rdOcp);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;             p_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a>*th_hse_arr(i,j,k));</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            pi_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a>*th_hse_arr(i,j,k), l_rdOcp);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        });</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    } <span class="comment">// mfi</span></div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
@@ -216,8 +216,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    qv_hse.setVal(0.0);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_ad2f77bd04cc57d704e814af5257d0ef0"><div class="ttname"><a href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_af7a2000b62206335c571f3687e02723c"><div class="ttname"><a href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:156</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a7ca234654aa49d086905b8550878ae7d"><div class="ttname"><a href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:156</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a3e766fc466013ff394d51a37dc2c2549"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a></div><div class="ttdeci">Real rho_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:4</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a7665ea1952f5b48f7602b61a2888baf2"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a7665ea1952f5b48f7602b61a2888baf2">T_0</a></div><div class="ttdeci">Real T_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:5</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a4ceccadb1d0793b4c2333669f04fc9fb"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a></div><div class="ttdeci">ParmParse pp_prob(&quot;prob&quot;)</div></div>
@@ -229,11 +229,11 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__InitDensityHSE_8H_a34ab896915f05a0d580a4b1eb1258d0a_cgraph.png" border="0" usemap="#aERF__InitDensityHSE_8H_a34ab896915f05a0d580a4b1eb1258d0a_cgraph" alt=""/></div>
 <map name="aERF__InitDensityHSE_8H_a34ab896915f05a0d580a4b1eb1258d0a_cgraph" id="aERF__InitDensityHSE_8H_a34ab896915f05a0d580a4b1eb1258d0a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,74,153,115"/>
-<area shape="rect" href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c" title=" " alt="" coords="201,5,341,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="216,56,327,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d" title=" " alt="" coords="201,5,341,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="216,56,327,83"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="226,107,317,133"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb" title=" " alt="" coords="234,157,309,184"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="389,81,539,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="389,81,539,108"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="420,132,508,159"/>
 </map>
 </div>
@@ -309,10 +309,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rt0 = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a> * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a7665ea1952f5b48f7602b61a2888baf2">T_0</a>;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>  = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(rt0);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>  = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt0);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    p_hse.setVal(<a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> pi0 = <a class="code" href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c">getExnergivenRTh</a>(rt0, l_rdOcp);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> pi0 = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(rt0, l_rdOcp);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    pi_hse.setVal(pi0);</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
@@ -326,8 +326,8 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__InitDensityHSE_8H_ab69c03b611b51f3fe4531d97e268b994_cgraph.png" border="0" usemap="#aERF__InitDensityHSE_8H_ab69c03b611b51f3fe4531d97e268b994_cgraph" alt=""/></div>
 <map name="aERF__InitDensityHSE_8H_ab69c03b611b51f3fe4531d97e268b994_cgraph" id="aERF__InitDensityHSE_8H_ab69c03b611b51f3fe4531d97e268b994_cgraph">
 <area shape="rect" title=" " alt="" coords="5,49,153,90"/>
-<area shape="rect" href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c" title=" " alt="" coords="201,5,341,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="216,56,327,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d" title=" " alt="" coords="201,5,341,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="216,56,327,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb" title=" " alt="" coords="234,107,309,133"/>
 </map>
 </div>
@@ -376,7 +376,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__InitDensityHSE_8H_a06963d7ee774ab4b864478b38cee7ead_cgraph" id="aERF__InitDensityHSE_8H_a06963d7ee774ab4b864478b38cee7ead_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,184,57"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="232,31,323,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="371,5,520,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="371,5,520,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="401,56,489,83"/>
 </map>
 </div>
@@ -555,9 +555,9 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07" title=" " alt="" coords="205,259,381,301"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="247,325,338,352"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="256,376,329,403"/>
-<area shape="rect" href="ERF__EOS_8H.html#a849d3cca1394ef77aff66af61b9f36b0" title=" " alt="" coords="444,209,651,236"/>
-<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="492,264,603,291"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="473,323,622,349"/>
+<area shape="rect" href="ERF__EOS_8H.html#a35ba6a562b53e99968fdd3e42b49d966" title=" " alt="" coords="444,209,651,236"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="492,264,603,291"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="473,323,622,349"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="503,373,591,400"/>
 </map>
 </div>
@@ -639,7 +639,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.get(<span class="stringliteral">&quot;T_tr&quot;</span>,<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a156a2f05796f36d50ce05cc423f05c15">T_tr</a>);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="namespaceHSEutils.html#ac1169faa6e5d2eb9fd731d3290cc314a">HSEutils::init_isentropic_hse_no_terrain</a>( <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a09320560d536f3ee9362dd62fc8ae6bc">h_t</a>.data(), <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a>.data(), <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#ac9c916349f160827a18fce33cae6fe94">h_p</a>.data(),</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="namespaceHSEutils.html#a3bec5f0a8d87d7551ed8ff9b25e19273">HSEutils::init_isentropic_hse_no_terrain</a>( <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a09320560d536f3ee9362dd62fc8ae6bc">h_t</a>.data(), <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a>.data(), <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#ac9c916349f160827a18fce33cae6fe94">h_p</a>.data(),</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                              <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a782ef3e40f05835967872c9661539bde">h_q_v</a>.data(), <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a53f503b12f901c51930a7e802ae58f12">q_t</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a90ac495e0a01273196da003523dc5fa3">eq_pot_temp</a>, <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a92b9670f4a05eec7de9776e8c21a8248">use_empirical</a>,</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                              T_from_theta, z_tr_1, z_tr_2,</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                              <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#acdfe0f2210f14b2aa8008de71d4121c8">theta_0</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#abaeaeabd3ca11aaa5ecb8f972342e402">theta_tr</a>, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#a156a2f05796f36d50ce05cc423f05c15">T_tr</a>);</div>
@@ -672,7 +672,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_a782ef3e40f05835967872c9661539bde"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#a782ef3e40f05835967872c9661539bde">h_q_v</a></div><div class="ttdeci">Vector&lt; Real &gt; h_q_v(khi+2)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_abaeaeabd3ca11aaa5ecb8f972342e402"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#abaeaeabd3ca11aaa5ecb8f972342e402">theta_tr</a></div><div class="ttdeci">Real theta_tr</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:47</div></div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_acdfe0f2210f14b2aa8008de71d4121c8"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#acdfe0f2210f14b2aa8008de71d4121c8">theta_0</a></div><div class="ttdeci">Real theta_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:46</div></div>
-<div class="ttc" id="anamespaceHSEutils_html_ac1169faa6e5d2eb9fd731d3290cc314a"><div class="ttname"><a href="namespaceHSEutils.html#ac1169faa6e5d2eb9fd731d3290cc314a">HSEutils::init_isentropic_hse_no_terrain</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE void init_isentropic_hse_no_terrain(Real *theta, Real *r, Real *p, Real *q_v, const Real &amp;dz, const int &amp;khi, const Real q_t, const Real eq_pot_temp, const bool use_empirical, const bool T_from_theta=false, const Real z_tr_1=-one, const Real z_tr_2=-one, const Real theta_0=zero, const Real theta_tr=zero, const Real T_tr=zero)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:504</div></div>
+<div class="ttc" id="anamespaceHSEutils_html_a3bec5f0a8d87d7551ed8ff9b25e19273"><div class="ttname"><a href="namespaceHSEutils.html#a3bec5f0a8d87d7551ed8ff9b25e19273">HSEutils::init_isentropic_hse_no_terrain</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE void init_isentropic_hse_no_terrain(Real *theta, Real *r, Real *p, Real *q_v, const Real &amp;dz, const int &amp;khi, const Real q_t, const Real eq_pot_temp, const bool use_empirical, const bool T_from_theta=false, const Real z_tr_1=-one, const Real z_tr_2=-one, const Real theta_0=amrex::Real(0), const Real theta_tr=amrex::Real(0), const Real T_tr=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:504</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -684,7 +684,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a782ef3e40f05835967872c9661539bde" title=" " alt="" coords="291,107,351,133"/>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb" title=" " alt="" coords="300,157,343,184"/>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a09320560d536f3ee9362dd62fc8ae6bc" title=" " alt="" coords="300,208,343,235"/>
-<area shape="rect" href="namespaceHSEutils.html#ac1169faa6e5d2eb9fd731d3290cc314a" title=" " alt="" coords="233,259,409,301"/>
+<area shape="rect" href="namespaceHSEutils.html#a3bec5f0a8d87d7551ed8ff9b25e19273" title=" " alt="" coords="233,259,409,301"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="276,325,367,352"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="302,376,341,403"/>
 <area shape="rect" href="namespaceHSEutils.html#a0fe5f13f507e87ed31cd4962d51be290" title=" " alt="" coords="457,267,628,293"/>
@@ -695,7 +695,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="1097,187,1327,213"/>
 <area shape="rect" href="namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983" title=" " alt="" coords="1591,259,1765,301"/>
 <area shape="rect" href="namespaceHSEutils.html#af0aef5232439f743e9d149d64ba1018b" title=" " alt="" coords="1121,292,1303,319"/>
-<area shape="rect" href="ERF__EOS_8H.html#ab8a6df0a0282dcbd4cd89652d92543d1" title=" " alt="" coords="1127,343,1297,369"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e" title=" " alt="" coords="1127,343,1297,369"/>
 <area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="1145,393,1279,420"/>
 <area shape="rect" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2" title=" " alt="" coords="1145,444,1279,471"/>
 <area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="1825,150,2040,191"/>
@@ -703,7 +703,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="2223,157,2329,184"/>
 <area shape="rect" href="namespaceHSEutils.html#aa34aa434f281bd552353a59732d8a215" title=" " alt="" coords="1375,175,1531,217"/>
 <area shape="rect" href="ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f" title=" " alt="" coords="1839,241,2026,268"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="468,372,617,399"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="468,372,617,399"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="499,321,587,348"/>
 </map>
 </div>

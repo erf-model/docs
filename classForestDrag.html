@@ -337,7 +337,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="comment">// &quot;z&quot; is measured as distance from cell center to ground</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_sfc = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_nd(i,j  ,0) + z_nd(i+1,j  ,0)</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                           +z_nd(i,j+1,0) + z_nd(i+1,j+1,0));</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = std::max((z_cc(i,j,k)-z_sfc),<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = std::max((z_cc(i,j,k)-z_sfc),<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0));</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="comment">// Proximity to the forest</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> radius = std::sqrt((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) * (<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">x</a> - xf) +</div>
@@ -387,7 +387,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,23,147,65"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="195,5,377,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="241,56,331,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="425,31,575,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="425,31,575,57"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="456,81,544,108"/>
 </map>
 </div>

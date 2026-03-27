@@ -1052,7 +1052,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph" id="aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,155,65"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="203,31,293,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="341,5,491,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="341,5,491,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="372,56,460,83"/>
 </map>
 </div>
@@ -1116,7 +1116,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph" id="aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,155,65"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="203,31,293,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="341,5,491,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="341,5,491,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="372,56,460,83"/>
 </map>
 </div>
@@ -1959,7 +1959,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,23,176,65"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="240,5,299,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="224,56,315,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="363,31,512,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="363,31,512,57"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="393,81,481,108"/>
 </map>
 </div>
@@ -2114,13 +2114,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;                surf_drag_coeff_tms_d(icol) = surf_mom_flux_d(icol,0) /</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;                                              (-r * wsp * horiz_wind_d(icol,0,ilay)[0]);</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;            }</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            T_mid_d(icol,ilay)          = <a class="code" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef">getTgivenRandRTh</a>(r, rt, <a class="code" href="classSHOCInterface.html#ad4e127b394af78f8e7a2c415631079e4">qv</a>);</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            T_mid_d(icol,ilay)          = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(r, rt, <a class="code" href="classSHOCInterface.html#ad4e127b394af78f8e7a2c415631079e4">qv</a>);</div>
 <div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            qv_d(icol,ilay)             = <a class="code" href="classSHOCInterface.html#ad4e127b394af78f8e7a2c415631079e4">qv</a>;</div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            <span class="comment">// Input data structures</span></div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;            <span class="comment">//=======================================================</span></div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            p_mid_d(icol,ilay)       = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(rt, <a class="code" href="classSHOCInterface.html#ad4e127b394af78f8e7a2c415631079e4">qv</a>);</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            p_int_d(icol,ilayi)      = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(rt_avg, qv_avg);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            p_mid_d(icol,ilay)       = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt, <a class="code" href="classSHOCInterface.html#ad4e127b394af78f8e7a2c415631079e4">qv</a>);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            p_int_d(icol,ilayi)      = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt_avg, qv_avg);</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="comment">// eamxx_common_physics_functions_impl.hpp: calculate_density</span></div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            pseudo_dens_d(icol,ilay) = r * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * delz;</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="comment">// Enforce the grid spacing</span></div>
@@ -2141,7 +2141,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_hi = (moist) ? std::max(cons_arr(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/r_hi,<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                rt_avg = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (rt + rt_hi);</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                qv_avg = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (<a class="code" href="classSHOCInterface.html#ad4e127b394af78f8e7a2c415631079e4">qv</a> + qv_hi);</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                p_int_d(icol,0) = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(rt_avg, qv_avg);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                p_int_d(icol,0) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt_avg, qv_avg);</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            }</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        });</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    }</div>
@@ -2149,8 +2149,8 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:31</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_a55cc1ac802a866d84540af2b0308a7ef"><div class="ttname"><a href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_ad2f77bd04cc57d704e814af5257d0ef0"><div class="ttname"><a href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a5e63b66e00cbd68e3b3fdcc6c0770b92"><div class="ttname"><a href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a17f9477ae1ddba45e999125db7ce566e"><div class="ttname"><a href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">SHOCInterface::m_z_phys</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:611</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a188ca1f1770784435dfd3e5ec89d87f1"><div class="ttname"><a href="classSHOCInterface.html#a188ca1f1770784435dfd3e5ec89d87f1">SHOCInterface::m_qfx3</a></div><div class="ttdeci">amrex::MultiFab * m_qfx3</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:605</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a39c7bfdb095596b98284d4c1e0c771b4"><div class="ttname"><a href="classSHOCInterface.html#a39c7bfdb095596b98284d4c1e0c771b4">SHOCInterface::m_zvel</a></div><div class="ttdeci">amrex::MultiFab * m_zvel</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:596</div></div>
@@ -2164,11 +2164,11 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph.png" border="0" usemap="#aclassSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph" id="aclassSHOCInterface_ad1f2c19ca17e9a39016219c090475857_cgraph">
 <area shape="rect" title=" " alt="" coords="5,74,168,115"/>
-<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="233,5,343,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a55cc1ac802a866d84540af2b0308a7ef" title=" " alt="" coords="216,56,360,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="233,5,343,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="216,56,360,83"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="259,107,317,133"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="243,157,333,184"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="408,132,557,159"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="408,132,557,159"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="439,183,527,209"/>
 </map>
 </div>
@@ -2412,7 +2412,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph" id="aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,151,65"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="199,31,289,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="337,5,487,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="337,5,487,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="368,56,456,83"/>
 </map>
 </div>
@@ -2502,7 +2502,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,23,151,65"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="215,5,273,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="199,56,289,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="337,31,487,57"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="337,31,487,57"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="368,81,456,108"/>
 </map>
 </div>

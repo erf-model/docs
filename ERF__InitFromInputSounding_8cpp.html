@@ -285,7 +285,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="243,5,359,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="255,56,346,83"/>
 <area shape="rect" href="structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc" title=" " alt="" coords="211,107,391,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="455,5,605,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="455,5,605,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="486,56,574,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="439,107,621,133"/>
 </map>
@@ -485,9 +485,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="comment">// Update hse quantities with values calculated from InputSoundingData.calc_rho_p()</span></div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">if</span> (anel_assume_dry) qv_k = 0;</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        r_hse_arr (i,j,k) = rho_k_base * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qv_k);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        p_hse_arr (i,j,k) = <a class="code" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a>(rhoTh_k, qv_k);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        pi_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c">getExnergivenRTh</a>(rhoTh_k, l_rdOcp, qv_k);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        th_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea">getRhoThetagivenP</a>(p_hse_arr(i,j,k), qv_k) / rho_k_base;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        p_hse_arr (i,j,k) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rhoTh_k, qv_k);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        pi_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(rhoTh_k, l_rdOcp, qv_k);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        th_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3">getRhoThetagivenP</a>(p_hse_arr(i,j,k), qv_k) / rho_k_base;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        qv_hse_arr(i,j,k) = qv_k;</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <span class="keywordflow">if</span> (l_isentropic) {</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="preprocessor">#if 0</span></div>
@@ -529,9 +529,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    });</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_a49310251155552bd561956c4be64a8ea"><div class="ttname"><a href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:172</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_ad2f77bd04cc57d704e814af5257d0ef0"><div class="ttname"><a href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
-<div class="ttc" id="aERF__EOS_8H_html_af7a2000b62206335c571f3687e02723c"><div class="ttname"><a href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=zero)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:156</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a41f48ff9136ae4cce2507ec72a6575b3"><div class="ttname"><a href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3">getRhoThetagivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getRhoThetagivenP(const amrex::Real p, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:172</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a7ca234654aa49d086905b8550878ae7d"><div class="ttname"><a href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:156</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec">ERF::init_from_input_sounding()</a>.</p>
@@ -542,9 +542,9 @@ Here is the call graph for this function:</div>
 <map name="aERF__InitFromInputSounding_8cpp_a8addf90ec4622acb2ce1f299742ee2d0_cgraph" id="aERF__InitFromInputSounding_8cpp_a8addf90ec4622acb2ce1f299742ee2d0_cgraph">
 <area shape="rect" title=" " alt="" coords="5,150,164,191"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="440,81,623,108"/>
-<area shape="rect" href="ERF__EOS_8H.html#af7a2000b62206335c571f3687e02723c" title=" " alt="" coords="232,56,372,83"/>
-<area shape="rect" href="ERF__EOS_8H.html#ad2f77bd04cc57d704e814af5257d0ef0" title=" " alt="" coords="247,107,357,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="457,259,606,285"/>
+<area shape="rect" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d" title=" " alt="" coords="232,56,372,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="247,107,357,133"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="457,259,606,285"/>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="244,208,360,235"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="257,309,347,336"/>
 <area shape="rect" href="structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc" title=" " alt="" coords="212,5,392,32"/>
@@ -698,7 +698,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb" title=" " alt="" coords="252,5,368,32"/>
 <area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="265,56,355,83"/>
 <area shape="rect" href="structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc" title=" " alt="" coords="220,107,400,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a49310251155552bd561956c4be64a8ea" title=" " alt="" coords="465,5,614,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="465,5,614,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="495,56,583,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="448,107,631,133"/>
 </map>
