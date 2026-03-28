@@ -1,5 +1,9 @@
 var NAVTREEINDEX8 =
 {
+"ERF__SetupVertDiff_8H.html#a52b0dba7eedbc33a23dc98928f5dda0b":[3,0,1,3,26,6],
+"ERF__SetupVertDiff_8H.html#a759d91e3e2100e03124b878bdfa2884a":[3,0,1,3,26,7],
+"ERF__SetupVertDiff_8H.html#a81708eac58914674e629740b8a881b83":[3,0,1,3,26,3],
+"ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18":[3,0,1,3,26,5],
 "ERF__SetupVertDiff_8H.html#af4dbcccc963d5e61149eb1d5ea39a0af":[3,0,1,3,26,2],
 "ERF__SetupVertDiff_8H.html#af7e2dddfc386195ebf29abbcf6dec9c0":[3,0,1,3,26,4],
 "ERF__SetupVertDiff_8H.html#afca5b3ce83f261bd8fd672ede110a213":[3,0,1,3,26,1],
@@ -14,7 +18,7 @@ var NAVTREEINDEX8 =
 "ERF__SlowRhsPost_8cpp.html":[3,0,1,16,11],
 "ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87":[3,0,1,16,11,0],
 "ERF__SlowRhsPre_8cpp.html":[3,0,1,16,12],
-"ERF__SlowRhsPre_8cpp.html#a183bc8f162cd19cd09e3362640c54aa7":[3,0,1,16,12,0],
+"ERF__SlowRhsPre_8cpp.html#ac5384659c1dc3cee6fa4a88ca80569f9":[3,0,1,16,12,0],
 "ERF__SolveTridiag_8H.html":[3,0,1,18,25],
 "ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,18,25,0],
 "ERF__SolveTridiag_8H_source.html":[3,0,1,18,25],
@@ -94,8 +98,8 @@ var NAVTREEINDEX8 =
 "ERF__TI__no__substep__fun_8H_source.html":[3,0,1,16,17],
 "ERF__TI__slow__headers_8H.html":[3,0,1,16,18],
 "ERF__TI__slow__headers_8H.html#a00359d4991bf388cacf3c8fda643ab5f":[3,0,1,16,18,1],
+"ERF__TI__slow__headers_8H.html#a41a2a9775c05d58d612a06203530e120":[3,0,1,16,18,3],
 "ERF__TI__slow__headers_8H.html#a43aa23b86b20bfe7e443f3864799a7e2":[3,0,1,16,18,2],
-"ERF__TI__slow__headers_8H.html#a57f6c7957562978cf3ec9951d2e2dc50":[3,0,1,16,18,3],
 "ERF__TI__slow__headers_8H.html#a62cf4ff04abac2ef6021bca0bfdd45cc":[3,0,1,16,18,0],
 "ERF__TI__slow__headers_8H_source.html":[3,0,1,16,18],
 "ERF__TI__slow__rhs__post_8H.html":[3,0,1,16,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__UpdateRhoQtSources__SineMassFlux_8H.html#acebd35a5a5f45fd405ce7a5430cdf378":[3,0,1,14,46,4],
 "ERF__UpdateRhoQtSources__SineMassFlux_8H.html#adb81c086391f4d7a7b68a470d79437ad":[3,0,1,14,46,2],
 "ERF__UpdateRhoQtSources__SineMassFlux_8H_source.html":[3,0,1,14,46],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html":[3,0,1,14,47],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9":[3,0,1,14,47,7],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#a45f695eec02e78435d0b4bc9226cb9ca":[3,0,1,14,47,5],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,14,47,1],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#a558c29f4eee2cbf555fae643674b3aad":[3,0,1,14,47,4]
+"ERF__UpdateRhoThetaSources__Bomex_8H.html":[3,0,1,14,47]
 };

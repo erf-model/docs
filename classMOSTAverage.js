@@ -8,6 +8,7 @@ var classMOSTAverage =
     [ "compute_plane_averages", "classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69", null ],
     [ "compute_region_averages", "classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973", null ],
     [ "get_average", "classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d", null ],
+    [ "get_k_indices", "classMOSTAverage.html#aa764748ca573c4b1b915638f6b9d9724", null ],
     [ "get_zref", "classMOSTAverage.html#a815d3e6377a2356c9859807874066d37", null ],
     [ "make_MOSTAverage_at_level", "classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db", null ],
     [ "operator=", "classMOSTAverage.html#a56f533937767a348d7c1dff755989531", null ],
