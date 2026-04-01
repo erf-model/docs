@@ -44,7 +44,7 @@ var searchData=
   ['neumann_2437',['neumann',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60',1,'ERFBCType']]],
   ['neumann_5fint_2438',['neumann_int',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9',1,'ERFBCType']]],
   ['newton_5fraphson_5fhse_2439',['Newton_Raphson_hse',['../namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e',1,'HSEutils']]],
-  ['newtonitersat_2440',['NewtonIterSat',['../classSatAdj.html#a76548bd9c2adb222480e5f5725a05048',1,'SatAdj::NewtonIterSat()'],['../classSAM.html#ad5815a7090e447ca821df2b09b1ea0f7',1,'SAM::NewtonIterSat()'],['../classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704',1,'Morrison::NewtonIterSat()']]],
+  ['newtonitersat_2440',['NewtonIterSat',['../classSatAdj.html#a76548bd9c2adb222480e5f5725a05048',1,'SatAdj::NewtonIterSat()'],['../classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6',1,'SAM::NewtonIterSat()'],['../classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704',1,'Morrison::NewtonIterSat()']]],
   ['ng_2441',['ng',['../namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a281c2ff050bdb2a9349d3408926af821',1,'MicVar_Morr']]],
   ['ng3d_2442',['ng3d',['../namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daeaccd3c7291660e3b47b58672ea12b3b',1,'MORRInd']]],
   ['ng3dten_2443',['ng3dten',['../namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da496a32d3bcbe00533a4827e807313a8b',1,'MORRInd']]],

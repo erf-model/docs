@@ -88,7 +88,7 @@ var NAVTREEINDEX =
 "classEulerianMicrophysics.html#af2deffc61faaf4197f74dcfe0691a56b",
 "classMRISplitIntegrator.html#a69e19ac4b8c02d71269e741e71b74c23",
 "classPlaneAverage.html#af2bdf5b94ffc67066949be787ab66be2",
-"classSAM.html#a61a5a9e710fb010dd585b3e65e86ab25",
+"classSAM.html#a6008487ad12ada77acdcb3ee41371c98",
 "classSLM.html#aec067697af550a8122138e57c4e0666d",
 "classWindFarm.html#a74983b05c969cace5b73aeae42830d2c",
 "functions_d.html",
