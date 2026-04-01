@@ -28,6 +28,8 @@ var namespaces_dup =
       [ "erf_dermoisttemp", "namespacederived.html#a591cb412598c637cf413d45840c34331", null ],
       [ "erf_dernull", "namespacederived.html#ac149fb421d49cbdb1804fbbe2472a307", null ],
       [ "erf_dernull", "namespacederived.html#aac38ebccfd26fccd9ed0c3209312046b", null ],
+      [ "erf_derprecipitable", "namespacederived.html#a1d705a95a69d25c44cff59b05cb358e1", null ],
+      [ "erf_derprecipitable", "namespacederived.html#ac2e6f1fd28969aaf6241512e6e8f137d", null ],
       [ "erf_derreflectivity", "namespacederived.html#a1403187af70a286ecec7628b614499ee", null ],
       [ "erf_derreflectivity", "namespacederived.html#ac1f7a8081649073a58ff89c1f542324b", null ],
       [ "erf_derrhodivide", "namespacederived.html#a9935603239fe8510b11179da8e76c39c", null ],

@@ -8,8 +8,8 @@ var searchData=
   ['mom_5fh_7612',['Mom_h',['../namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a2e96e6d5e84e7d7b9857e73159dfbe2b',1,'EddyDiff']]],
   ['mom_5fv_7613',['Mom_v',['../namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82',1,'EddyDiff']]],
   ['mrf_7614',['MRF',['../classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7ab573e0bb23d2f8009358b4d851deb66e',1,'SurfaceLayer']]],
-  ['mu_7615',['mu',['../namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807',1,'MORRInd']]],
-  ['mu_7616',['MU',['../namespaceWRFBdyVars.html#a7823146ef50207dd979b96867b57f880a9d2d300be8f8f15441322fce35c9c92e',1,'WRFBdyVars']]],
+  ['mu_7615',['MU',['../namespaceWRFBdyVars.html#a7823146ef50207dd979b96867b57f880a9d2d300be8f8f15441322fce35c9c92e',1,'WRFBdyVars']]],
+  ['mu_7616',['mu',['../namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807',1,'MORRInd']]],
   ['murphykoop_7617',['MurphyKoop',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a',1,'SatMethods']]],
   ['mynn25_7618',['MYNN25',['../classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7abdeb9a753db1d1f3fe0e944eab1d0601',1,'SurfaceLayer']]]
 ];

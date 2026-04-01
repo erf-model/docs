@@ -9,6 +9,7 @@ var ERF__Derive_8H =
     [ "erf_dermaxreflectivity", "ERF__Derive_8H.html#ad2a98426b3ae7eccfb19578dd593c7aa", null ],
     [ "erf_dermoisttemp", "ERF__Derive_8H.html#ae7aff8d5c152597cc23d8946c1f47766", null ],
     [ "erf_dernull", "ERF__Derive_8H.html#ac149fb421d49cbdb1804fbbe2472a307", null ],
+    [ "erf_derprecipitable", "ERF__Derive_8H.html#a1d705a95a69d25c44cff59b05cb358e1", null ],
     [ "erf_derreflectivity", "ERF__Derive_8H.html#a1403187af70a286ecec7628b614499ee", null ],
     [ "erf_derrhodivide", "ERF__Derive_8H.html#a9935603239fe8510b11179da8e76c39c", null ],
     [ "erf_derscalar", "ERF__Derive_8H.html#af7605ac50148a29eecebcc9233d5c0cf", null ],
