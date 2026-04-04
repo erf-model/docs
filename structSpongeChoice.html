@@ -144,6 +144,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a5e70ccbf1d7de42a4d938416635eee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb74ee3cbc24251272d6ad5fafdb885d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d">sponge_density</a> = -<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td></tr>
 <tr class="separator:adb74ee3cbc24251272d6ad5fafdb885d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc01e63ad42c959722ab3d323e458fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSpongeChoice.html#afcc01e63ad42c959722ab3d323e458fe">sponge_rhotheta</a> = -<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td></tr>
+<tr class="separator:afcc01e63ad42c959722ab3d323e458fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa57175416bc130e759885a58f71dbb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSpongeChoice.html#afa57175416bc130e759885a58f71dbb9">sponge_rhomoist</a> = -<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td></tr>
+<tr class="separator:afa57175416bc130e759885a58f71dbb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad5ca098e341c3f76dc8420daeb8b629"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629">sponge_x_velocity</a></td></tr>
 <tr class="separator:aad5ca098e341c3f76dc8420daeb8b629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13c70085162f73a4b6c36f7161be7260"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSpongeChoice.html#a13c70085162f73a4b6c36f7161be7260">sponge_y_velocity</a></td></tr>
@@ -176,9 +180,9 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Sponge choices: &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Sponge choices: &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">SolverChoice::display()</a>.</p>
 <div class="dynheader">
@@ -238,29 +242,33 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;zhi_sponge_start&quot;</span>, <a class="code" href="structSpongeChoice.html#a5e70ccbf1d7de42a4d938416635eee36">zhi_sponge_start</a>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_density&quot;</span>    , <a class="code" href="structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d">sponge_density</a>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_x_velocity&quot;</span> , <a class="code" href="structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629">sponge_x_velocity</a>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_y_velocity&quot;</span> , <a class="code" href="structSpongeChoice.html#a13c70085162f73a4b6c36f7161be7260">sponge_y_velocity</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_z_velocity&quot;</span> , <a class="code" href="structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e">sponge_z_velocity</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_rhotheta&quot;</span>   , <a class="code" href="structSpongeChoice.html#afcc01e63ad42c959722ab3d323e458fe">sponge_rhotheta</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_rhomoist&quot;</span>   , <a class="code" href="structSpongeChoice.html#afa57175416bc130e759885a58f71dbb9">sponge_rhomoist</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_x_velocity&quot;</span> , <a class="code" href="structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629">sponge_x_velocity</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_y_velocity&quot;</span> , <a class="code" href="structSpongeChoice.html#a13c70085162f73a4b6c36f7161be7260">sponge_y_velocity</a>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;sponge_z_velocity&quot;</span> , <a class="code" href="structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e">sponge_z_velocity</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a0d60faef2ee2597c1df7807fc25204e2"><div class="ttname"><a href="structSpongeChoice.html#a0d60faef2ee2597c1df7807fc25204e2">SpongeChoice::use_xlo_sponge_damping</a></div><div class="ttdeci">bool use_xlo_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:50</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a13c70085162f73a4b6c36f7161be7260"><div class="ttname"><a href="structSpongeChoice.html#a13c70085162f73a4b6c36f7161be7260">SpongeChoice::sponge_y_velocity</a></div><div class="ttdeci">amrex::Real sponge_y_velocity</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:64</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a18f392fd75ac69b62674b70ee67b9c61"><div class="ttname"><a href="structSpongeChoice.html#a18f392fd75ac69b62674b70ee67b9c61">SpongeChoice::xlo_sponge_end</a></div><div class="ttdeci">amrex::Real xlo_sponge_end</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:60</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a1a41f754595d713df32583f0b0fa606e"><div class="ttname"><a href="structSpongeChoice.html#a1a41f754595d713df32583f0b0fa606e">SpongeChoice::sponge_type</a></div><div class="ttdeci">std::string sponge_type</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:58</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a1a79f8e32354ec98857597ddabfe884e"><div class="ttname"><a href="structSpongeChoice.html#a1a79f8e32354ec98857597ddabfe884e">SpongeChoice::zlo_sponge_end</a></div><div class="ttdeci">amrex::Real zlo_sponge_end</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:62</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a2ac1def940f7e6666a1076be69b3cc33"><div class="ttname"><a href="structSpongeChoice.html#a2ac1def940f7e6666a1076be69b3cc33">SpongeChoice::use_zlo_sponge_damping</a></div><div class="ttdeci">bool use_zlo_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:54</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a48f4b8a95b93cf8fa36d00d355757a1e"><div class="ttname"><a href="structSpongeChoice.html#a48f4b8a95b93cf8fa36d00d355757a1e">SpongeChoice::sponge_strength</a></div><div class="ttdeci">amrex::Real sponge_strength</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:57</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a5e3fe59ec39bd6ed95b33bd568dd711b"><div class="ttname"><a href="structSpongeChoice.html#a5e3fe59ec39bd6ed95b33bd568dd711b">SpongeChoice::use_ylo_sponge_damping</a></div><div class="ttdeci">bool use_ylo_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:52</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a5e70ccbf1d7de42a4d938416635eee36"><div class="ttname"><a href="structSpongeChoice.html#a5e70ccbf1d7de42a4d938416635eee36">SpongeChoice::zhi_sponge_start</a></div><div class="ttdeci">amrex::Real zhi_sponge_start</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:62</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a830ff63e204ed6c9dd381fd2baa1b33e"><div class="ttname"><a href="structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e">SpongeChoice::sponge_z_velocity</a></div><div class="ttdeci">amrex::Real sponge_z_velocity</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:64</div></div>
-<div class="ttc" id="astructSpongeChoice_html_a980e2c4485a0769eb0405a77445e3db1"><div class="ttname"><a href="structSpongeChoice.html#a980e2c4485a0769eb0405a77445e3db1">SpongeChoice::use_xhi_sponge_damping</a></div><div class="ttdeci">bool use_xhi_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:51</div></div>
-<div class="ttc" id="astructSpongeChoice_html_aad5ca098e341c3f76dc8420daeb8b629"><div class="ttname"><a href="structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629">SpongeChoice::sponge_x_velocity</a></div><div class="ttdeci">amrex::Real sponge_x_velocity</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:64</div></div>
-<div class="ttc" id="astructSpongeChoice_html_ac335f4f1640ad959aadb8e9054c3fda2"><div class="ttname"><a href="structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2">SpongeChoice::use_zhi_sponge_damping</a></div><div class="ttdeci">bool use_zhi_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:55</div></div>
-<div class="ttc" id="astructSpongeChoice_html_adacf43edb29544376743fa98ce7d8cb6"><div class="ttname"><a href="structSpongeChoice.html#adacf43edb29544376743fa98ce7d8cb6">SpongeChoice::yhi_sponge_start</a></div><div class="ttdeci">amrex::Real yhi_sponge_start</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:61</div></div>
-<div class="ttc" id="astructSpongeChoice_html_adb74ee3cbc24251272d6ad5fafdb885d"><div class="ttname"><a href="structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d">SpongeChoice::sponge_density</a></div><div class="ttdeci">amrex::Real sponge_density</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:63</div></div>
-<div class="ttc" id="astructSpongeChoice_html_ae2907fb8c5755c951b765b7d835013f6"><div class="ttname"><a href="structSpongeChoice.html#ae2907fb8c5755c951b765b7d835013f6">SpongeChoice::use_yhi_sponge_damping</a></div><div class="ttdeci">bool use_yhi_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:53</div></div>
-<div class="ttc" id="astructSpongeChoice_html_aec7c88a5686affc9c0ff6f9bb53fbd9f"><div class="ttname"><a href="structSpongeChoice.html#aec7c88a5686affc9c0ff6f9bb53fbd9f">SpongeChoice::xhi_sponge_start</a></div><div class="ttdeci">amrex::Real xhi_sponge_start</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:60</div></div>
-<div class="ttc" id="astructSpongeChoice_html_afc444169c9f347bb2e3dd4eb99bc4158"><div class="ttname"><a href="structSpongeChoice.html#afc444169c9f347bb2e3dd4eb99bc4158">SpongeChoice::ylo_sponge_end</a></div><div class="ttdeci">amrex::Real ylo_sponge_end</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:61</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a0d60faef2ee2597c1df7807fc25204e2"><div class="ttname"><a href="structSpongeChoice.html#a0d60faef2ee2597c1df7807fc25204e2">SpongeChoice::use_xlo_sponge_damping</a></div><div class="ttdeci">bool use_xlo_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:52</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a13c70085162f73a4b6c36f7161be7260"><div class="ttname"><a href="structSpongeChoice.html#a13c70085162f73a4b6c36f7161be7260">SpongeChoice::sponge_y_velocity</a></div><div class="ttdeci">amrex::Real sponge_y_velocity</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:68</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a18f392fd75ac69b62674b70ee67b9c61"><div class="ttname"><a href="structSpongeChoice.html#a18f392fd75ac69b62674b70ee67b9c61">SpongeChoice::xlo_sponge_end</a></div><div class="ttdeci">amrex::Real xlo_sponge_end</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:62</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a1a41f754595d713df32583f0b0fa606e"><div class="ttname"><a href="structSpongeChoice.html#a1a41f754595d713df32583f0b0fa606e">SpongeChoice::sponge_type</a></div><div class="ttdeci">std::string sponge_type</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:60</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a1a79f8e32354ec98857597ddabfe884e"><div class="ttname"><a href="structSpongeChoice.html#a1a79f8e32354ec98857597ddabfe884e">SpongeChoice::zlo_sponge_end</a></div><div class="ttdeci">amrex::Real zlo_sponge_end</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:64</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a2ac1def940f7e6666a1076be69b3cc33"><div class="ttname"><a href="structSpongeChoice.html#a2ac1def940f7e6666a1076be69b3cc33">SpongeChoice::use_zlo_sponge_damping</a></div><div class="ttdeci">bool use_zlo_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:56</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a48f4b8a95b93cf8fa36d00d355757a1e"><div class="ttname"><a href="structSpongeChoice.html#a48f4b8a95b93cf8fa36d00d355757a1e">SpongeChoice::sponge_strength</a></div><div class="ttdeci">amrex::Real sponge_strength</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:59</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a5e3fe59ec39bd6ed95b33bd568dd711b"><div class="ttname"><a href="structSpongeChoice.html#a5e3fe59ec39bd6ed95b33bd568dd711b">SpongeChoice::use_ylo_sponge_damping</a></div><div class="ttdeci">bool use_ylo_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:54</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a5e70ccbf1d7de42a4d938416635eee36"><div class="ttname"><a href="structSpongeChoice.html#a5e70ccbf1d7de42a4d938416635eee36">SpongeChoice::zhi_sponge_start</a></div><div class="ttdeci">amrex::Real zhi_sponge_start</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:64</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a830ff63e204ed6c9dd381fd2baa1b33e"><div class="ttname"><a href="structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e">SpongeChoice::sponge_z_velocity</a></div><div class="ttdeci">amrex::Real sponge_z_velocity</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:68</div></div>
+<div class="ttc" id="astructSpongeChoice_html_a980e2c4485a0769eb0405a77445e3db1"><div class="ttname"><a href="structSpongeChoice.html#a980e2c4485a0769eb0405a77445e3db1">SpongeChoice::use_xhi_sponge_damping</a></div><div class="ttdeci">bool use_xhi_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:53</div></div>
+<div class="ttc" id="astructSpongeChoice_html_aad5ca098e341c3f76dc8420daeb8b629"><div class="ttname"><a href="structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629">SpongeChoice::sponge_x_velocity</a></div><div class="ttdeci">amrex::Real sponge_x_velocity</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:68</div></div>
+<div class="ttc" id="astructSpongeChoice_html_ac335f4f1640ad959aadb8e9054c3fda2"><div class="ttname"><a href="structSpongeChoice.html#ac335f4f1640ad959aadb8e9054c3fda2">SpongeChoice::use_zhi_sponge_damping</a></div><div class="ttdeci">bool use_zhi_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:57</div></div>
+<div class="ttc" id="astructSpongeChoice_html_adacf43edb29544376743fa98ce7d8cb6"><div class="ttname"><a href="structSpongeChoice.html#adacf43edb29544376743fa98ce7d8cb6">SpongeChoice::yhi_sponge_start</a></div><div class="ttdeci">amrex::Real yhi_sponge_start</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:63</div></div>
+<div class="ttc" id="astructSpongeChoice_html_adb74ee3cbc24251272d6ad5fafdb885d"><div class="ttname"><a href="structSpongeChoice.html#adb74ee3cbc24251272d6ad5fafdb885d">SpongeChoice::sponge_density</a></div><div class="ttdeci">amrex::Real sponge_density</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:65</div></div>
+<div class="ttc" id="astructSpongeChoice_html_ae2907fb8c5755c951b765b7d835013f6"><div class="ttname"><a href="structSpongeChoice.html#ae2907fb8c5755c951b765b7d835013f6">SpongeChoice::use_yhi_sponge_damping</a></div><div class="ttdeci">bool use_yhi_sponge_damping</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:55</div></div>
+<div class="ttc" id="astructSpongeChoice_html_aec7c88a5686affc9c0ff6f9bb53fbd9f"><div class="ttname"><a href="structSpongeChoice.html#aec7c88a5686affc9c0ff6f9bb53fbd9f">SpongeChoice::xhi_sponge_start</a></div><div class="ttdeci">amrex::Real xhi_sponge_start</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:62</div></div>
+<div class="ttc" id="astructSpongeChoice_html_afa57175416bc130e759885a58f71dbb9"><div class="ttname"><a href="structSpongeChoice.html#afa57175416bc130e759885a58f71dbb9">SpongeChoice::sponge_rhomoist</a></div><div class="ttdeci">amrex::Real sponge_rhomoist</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:67</div></div>
+<div class="ttc" id="astructSpongeChoice_html_afc444169c9f347bb2e3dd4eb99bc4158"><div class="ttname"><a href="structSpongeChoice.html#afc444169c9f347bb2e3dd4eb99bc4158">SpongeChoice::ylo_sponge_end</a></div><div class="ttdeci">amrex::Real ylo_sponge_end</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:63</div></div>
+<div class="ttc" id="astructSpongeChoice_html_afcc01e63ad42c959722ab3d323e458fe"><div class="ttname"><a href="structSpongeChoice.html#afcc01e63ad42c959722ab3d323e458fe">SpongeChoice::sponge_rhotheta</a></div><div class="ttdeci">amrex::Real sponge_rhotheta</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:66</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>.</p>
 <div class="dynheader">
@@ -297,7 +305,39 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+
+</div>
+</div>
+<a id="afa57175416bc130e759885a58f71dbb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa57175416bc130e759885a58f71dbb9">&#9670;&nbsp;</a></span>sponge_rhomoist</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SpongeChoice::sponge_rhomoist = -<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+
+</div>
+</div>
+<a id="afcc01e63ad42c959722ab3d323e458fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc01e63ad42c959722ab3d323e458fe">&#9670;&nbsp;</a></span>sponge_rhotheta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SpongeChoice::sponge_rhotheta = -<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -313,7 +353,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -393,7 +433,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -409,7 +449,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -425,7 +465,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -441,7 +481,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -457,7 +497,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +513,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -489,7 +529,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -505,7 +545,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -521,7 +561,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -537,7 +577,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -553,7 +593,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>
@@ -569,7 +609,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#aec9a96745fa92caaff7a248777bf0fab">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a17bcf89f317ba7cd568225f6f12fc125">ApplySpongeZoneBCsForCC()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs_8cpp.html#a0ac83a02df7ee64733226f722e601784">ApplySpongeZoneBCsForMom()</a>, <a class="el" href="ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e">ApplySpongeZoneBCsForMom_ReadFromFile()</a>, and <a class="el" href="structSpongeChoice.html#aa5299d2c39af4acd4fc11148da0e7c76">init_params()</a>.</p>
 
 </div>
 </div>

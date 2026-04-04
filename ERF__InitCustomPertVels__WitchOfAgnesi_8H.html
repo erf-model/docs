@@ -104,8 +104,8 @@ Functions</h2></td></tr>
 <tr class="separator:afcc136319159fcdf66beaff0b0782f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43ae77dd0457ed5fefa12e4ff2e72114"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a43ae77dd0457ed5fefa12e4ff2e72114">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { y_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb">V_0</a>;})</td></tr>
 <tr class="separator:a43ae77dd0457ed5fefa12e4ff2e72114"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e34b72e4a6e4b3183d839d9b69d337c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a2e34b72e4a6e4b3183d839d9b69d337c">if</a> (sc.terrain_type==TerrainType::StaticFittedMesh)</td></tr>
-<tr class="separator:a2e34b72e4a6e4b3183d839d9b69d337c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5890b6713e7019bff61c8c4183ad200"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#af5890b6713e7019bff61c8c4183ad200">if</a> (sc.terrain_type==TerrainType::StaticFittedMesh||sc.terrain_type==TerrainType::MovingFittedMesh)</td></tr>
+<tr class="separator:af5890b6713e7019bff61c8c4183ad200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -119,8 +119,8 @@ Variables</h2></td></tr>
 <tr class="separator:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2e34b72e4a6e4b3183d839d9b69d337c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e34b72e4a6e4b3183d839d9b69d337c">&#9670;&nbsp;</a></span>if()</h2>
+<a id="af5890b6713e7019bff61c8c4183ad200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5890b6713e7019bff61c8c4183ad200">&#9670;&nbsp;</a></span>if()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,19 +129,19 @@ Variables</h2></td></tr>
           <td class="memname">if </td>
           <td>(</td>
           <td class="paramtype">sc.&#160;</td>
-          <td class="paramname"><em>terrain_type</em> = <code>=&#160;TerrainType::StaticFittedMesh</code></td><td>)</td>
+          <td class="paramname"><em>terrain_type</em> = <code>=&#160;TerrainType::StaticFittedMesh&#160;||&#160;sc.terrain_type&#160;==&#160;TerrainType::MovingFittedMesh</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                                                        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a>(<a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            z_vel_pert(i, j, k) = <a class="code" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a>(i, j, k, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                             x_vel_pert, y_vel_pert,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                             mf_u, mf_v, z_nd, <a class="code" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        });</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                           {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a>(<a class="code" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            z_vel_pert(i, j, k) = <a class="code" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a>(i, j, k, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                             x_vel_pert, y_vel_pert,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                             mf_u, mf_v, z_nd, <a class="code" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        });</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__WitchOfAgnesi_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_WitchOfAgnesi.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__WitchOfAgnesi_8H_html_afcc136319159fcdf66beaff0b0782f93"><div class="ttname"><a href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#afcc136319159fcdf66beaff0b0782f93">ParallelFor</a></div><div class="ttdeci">ParallelFor(xbx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { x_vel_pert(i, j, k)=U_0;})</div></div>
@@ -150,8 +150,8 @@ Variables</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPertVels__WitchOfAgnesi_8H_a2e34b72e4a6e4b3183d839d9b69d337c_cgraph.png" border="0" usemap="#aERF__InitCustomPertVels__WitchOfAgnesi_8H_a2e34b72e4a6e4b3183d839d9b69d337c_cgraph" alt=""/></div>
-<map name="aERF__InitCustomPertVels__WitchOfAgnesi_8H_a2e34b72e4a6e4b3183d839d9b69d337c_cgraph" id="aERF__InitCustomPertVels__WitchOfAgnesi_8H_a2e34b72e4a6e4b3183d839d9b69d337c_cgraph">
+<div class="center"><img src="ERF__InitCustomPertVels__WitchOfAgnesi_8H_af5890b6713e7019bff61c8c4183ad200_cgraph.png" border="0" usemap="#aERF__InitCustomPertVels__WitchOfAgnesi_8H_af5890b6713e7019bff61c8c4183ad200_cgraph" alt=""/></div>
+<map name="aERF__InitCustomPertVels__WitchOfAgnesi_8H_af5890b6713e7019bff61c8c4183ad200_cgraph" id="aERF__InitCustomPertVels__WitchOfAgnesi_8H_af5890b6713e7019bff61c8c4183ad200_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,44,57"/>
 <area shape="rect" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#afcc136319159fcdf66beaff0b0782f93" title=" " alt="" coords="104,5,195,32"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a" title=" " alt="" coords="92,56,207,83"/>
@@ -187,14 +187,14 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a2e34b72e4a6e4b3183d839d9b69d337c">if()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#af5890b6713e7019bff61c8c4183ad200">if()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__InitCustomPertVels__WitchOfAgnesi_8H_afcc136319159fcdf66beaff0b0782f93_icgraph.png" border="0" usemap="#aERF__InitCustomPertVels__WitchOfAgnesi_8H_afcc136319159fcdf66beaff0b0782f93_icgraph" alt=""/></div>
 <map name="aERF__InitCustomPertVels__WitchOfAgnesi_8H_afcc136319159fcdf66beaff0b0782f93_icgraph" id="aERF__InitCustomPertVels__WitchOfAgnesi_8H_afcc136319159fcdf66beaff0b0782f93_icgraph">
 <area shape="rect" title=" " alt="" coords="92,5,183,32"/>
-<area shape="rect" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a2e34b72e4a6e4b3183d839d9b69d337c" title=" " alt="" coords="5,5,44,32"/>
+<area shape="rect" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#af5890b6713e7019bff61c8c4183ad200" title=" " alt="" coords="5,5,44,32"/>
 </map>
 </div>
 
@@ -329,7 +329,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a2e34b72e4a6e4b3183d839d9b69d337c">if()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#af5890b6713e7019bff61c8c4183ad200">if()</a>.</p>
 
 </div>
 </div>

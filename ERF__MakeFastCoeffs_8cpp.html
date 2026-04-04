@@ -340,8 +340,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// Note that the notes use &quot;g&quot; to mean the magnitude of gravity, so it is positive</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">// We set grav_gpu[2] to be the vector component which is negative</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// We define myhalfg to match the notes (which is why we take the absolute value)</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> myhalfg = std::abs(<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * grav_gpu[2]);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// We define halfg to match the notes (which is why we take the absolute value)</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> halfg = std::abs(<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * grav_gpu[2]);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="comment">//Note we don&#39;t act on the bottom or top boundaries of the domain</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (mesh_type != MeshType::ConstantDz)</div>
@@ -363,12 +363,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_q = (l_use_moisture) ? prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff_P = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * dzi * inv_detJ_on_kface * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + RvOverRd*qv_p)</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                               +  myhalfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_hi /</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                               +  halfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_hi /</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                               (  c_v * pibar_hi * stage_cons(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) );</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                 coeff_P *= pi_c;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff_Q =  <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * dzi * inv_detJ_on_kface * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + RvOverRd*qv_q)</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                               + myhalfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_lo /</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                               + halfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_lo /</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                               ( c_v  * pibar_lo * stage_cons(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) );</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                 coeff_Q *= pi_c;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
@@ -388,8 +388,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="comment">// LHS for tri-diagonal system</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> D = dtau * dtau * beta_2 * beta_2 * dzi;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                coeffA_a(i,j,k) = D * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/detJ(i,j,k-1)) * ( myhalfg - coeff_Q * theta_t_lo );</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                coeffC_a(i,j,k) = D * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/detJ(i,j,k  )) * (-myhalfg + coeff_P * theta_t_hi );</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                coeffA_a(i,j,k) = D * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/detJ(i,j,k-1)) * ( halfg - coeff_Q * theta_t_lo );</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                coeffC_a(i,j,k) = D * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/detJ(i,j,k  )) * (-halfg + coeff_P * theta_t_hi );</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                coeffB_a(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + D * (coeff_Q/detJ(i,j,k-1) - coeff_P/detJ(i,j,k)) * theta_t_mid;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            });</div>
@@ -410,12 +410,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_q = (l_use_moisture) ? prim(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a046484d86c968f85c3b8e574c1fe3e29">PrimQ1_comp</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff_P = -<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * dzi * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + RvOverRd*qv_p)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                              +  myhalfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_hi /</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                              +  halfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_hi /</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                              (  c_v * pibar_hi * stage_cons(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) );</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                 coeff_P *= pi_c;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                 <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff_Q = <a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * dzi * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + RvOverRd*qv_q)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                              + myhalfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_lo /</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                              + halfg * <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> * rhobar_lo /</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                              ( c_v  * pibar_lo * stage_cons(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) );</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                 coeff_Q *= pi_c;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
@@ -435,8 +435,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="comment">// LHS for tri-diagonal system</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> D = dtau * dtau * beta_2 * beta_2 * dzi;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                coeffA_a(i,j,k) = D * ( myhalfg - coeff_Q * theta_t_lo );</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                coeffC_a(i,j,k) = D * (-myhalfg + coeff_P * theta_t_hi );</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                coeffA_a(i,j,k) = D * ( halfg - coeff_Q * theta_t_lo );</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                coeffC_a(i,j,k) = D * (-halfg + coeff_P * theta_t_hi );</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                coeffB_a(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + D * (coeff_Q - coeff_P) * theta_t_mid;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            });</div>

@@ -851,8 +851,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160; </div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="comment">// Note that the notes use &quot;g&quot; to mean the magnitude of gravity, so it is positive</span></div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <span class="comment">// We set grav_gpu[2] to be the vector component which is negative</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="comment">// We define myhalfg to match the notes (which is why we take the absolute value)</span></div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> myhalfg = std::abs(<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * grav_gpu[2]);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="comment">// We define halfg to match the notes (which is why we take the absolute value)</span></div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> halfg = std::abs(<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * grav_gpu[2]);</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        {</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;fast_loop_on_shrunk_t&quot;</span>);</div>
@@ -869,31 +869,31 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_t_hi  = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( prim(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) + prim(i,j,k+1,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) );</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;            <span class="comment">// line 2 last two terms (order dtau)</span></div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> R0_tmp  =  -myhalfg * old_drho(i,j,k  ) + coeff_P * old_drho_theta(i,j,k  )</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                            -myhalfg * old_drho(i,j,k-1) + coeff_Q * old_drho_theta(i,j,k-1);</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> R0_tmp  =  -halfg * old_drho(i,j,k  ) + coeff_P * old_drho_theta(i,j,k  )</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                            -halfg * old_drho(i,j,k-1) + coeff_Q * old_drho_theta(i,j,k-1);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;            <span class="comment">// line 3 residuals (order dtau^2) one &lt;-&gt; beta_2</span></div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> R1_tmp =  -myhalfg * (  slow_rhs_cons(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + slow_rhs_cons(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) )</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                           + coeff_P * slow_rhs_cons(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                           + coeff_Q * slow_rhs_cons(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omega_kp1 = omega_arr(i,j,k+1);</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omega_k   = omega_arr(i,j,k  );</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omega_km1 = omega_arr(i,j,k-1);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> detJdiff = (detJ(i,j,k) - detJ(i,j,k-1)) / (detJ(i,j,k)*detJ(i,j,k-1));</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <span class="comment">// consolidate lines 4&amp;5 (order dtau^2)</span></div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            R1_tmp += myhalfg * ( beta_1 * dzi * (Omega_kp1/detJ(i,j,k) + detJdiff*Omega_k - Omega_km1/detJ(i,j,k-1))</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                              + temp_rhs_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)/detJ(i,j,k) + temp_rhs_arr(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)/detJ(i,j,k-1) );</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;            <span class="comment">// consolidate lines 6&amp;7 (order dtau^2)</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            R1_tmp += -( coeff_P/detJ(i,j,k  ) * ( beta_1 * dzi * (Omega_kp1*theta_t_hi - Omega_k*theta_t_mid) + temp_rhs_arr(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) )</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                       + coeff_Q/detJ(i,j,k-1) * ( beta_1 * dzi * (Omega_k*theta_t_mid - Omega_km1*theta_t_lo) + temp_rhs_arr(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ) );</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            <span class="comment">// line 1</span></div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            RHS_a(i,j,k) = old_drho_w(i,j,k)</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                         + dtau * (slow_rhs_rho_w(i,j,k) + zmom_src_arr(i,j,k) + R0_tmp + dtau*beta_2*R1_tmp);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> R1_tmp =  -halfg * (  slow_rhs_cons(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + slow_rhs_cons(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                 R1_tmp +=  coeff_P * slow_rhs_cons(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>)</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;                          + coeff_Q * slow_rhs_cons(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160; </div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omega_kp1 = omega_arr(i,j,k+1);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omega_k   = omega_arr(i,j,k  );</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omega_km1 = omega_arr(i,j,k-1);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> detJdiff = (detJ(i,j,k) - detJ(i,j,k-1)) / (detJ(i,j,k)*detJ(i,j,k-1));</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            <span class="comment">// consolidate lines 4&amp;5 (order dtau^2)</span></div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            R1_tmp += halfg * ( beta_1 * dzi * (Omega_kp1/detJ(i,j,k) + detJdiff*Omega_k - Omega_km1/detJ(i,j,k-1))</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                              + temp_rhs_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)/detJ(i,j,k) + temp_rhs_arr(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)/detJ(i,j,k-1) );</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <span class="comment">// consolidate lines 6&amp;7 (order dtau^2)</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            R1_tmp += -( coeff_P/detJ(i,j,k  ) * ( beta_1 * dzi * (Omega_kp1*theta_t_hi - Omega_k*theta_t_mid) + temp_rhs_arr(i,j,k  ,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) )</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                       + coeff_Q/detJ(i,j,k-1) * ( beta_1 * dzi * (Omega_k*theta_t_mid - Omega_km1*theta_t_lo) + temp_rhs_arr(i,j,k-1,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ) );</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <span class="comment">// line 1</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            RHS_a(i,j,k) = old_drho_w(i,j,k) + dtau * (slow_rhs_rho_w(i,j,k) + zmom_src_arr(i,j,k) + R0_tmp + dtau*beta_2*R1_tmp);</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <span class="comment">// We cannot use omega_arr here since that was built with old_rho_u and old_rho_v ...</span></div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            RHS_a(i,j,k) += <a class="code" href="ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055">OmegaFromW</a>(i,j,k,<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,</div>
@@ -1026,49 +1026,50 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;              }</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fast_rhs_rho = -(temp_rhs_arr(i,j,k,0) + ( zflux_hi - zflux_lo ) * dzi) / detJ(i,j,k);</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;              cur_cons(i,j,k,0) += dtau * (slow_rhs_cons(i,j,k,0) + fast_rhs_rho);</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fast_rhs_rhotheta = -( temp_rhs_arr(i,j,k,1) + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                ( zflux_hi * (prim(i,j,k) + prim(i,j,k+1)) -</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                  zflux_lo * (prim(i,j,k) + prim(i,j,k-1)) ) * dzi ) / detJ(i,j,k);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;              cur_cons(i,j,k,1) += dtau * (slow_rhs_cons(i,j,k,1) + fast_rhs_rhotheta);</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;              <span class="keywordflow">if</span> (l_reflux) {</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                  (flx_arr[2])(i,j,k,1) = (flx_arr[2])(i,j,k,0) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (prim(i,j,k) + prim(i,j,k-1));</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;              }</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;              <span class="comment">// add in source terms for cell-centered conserved variables</span></div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;              cur_cons(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      += dtau * cc_src_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;              cur_cons(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += dtau * cc_src_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        });</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        } <span class="comment">// end profile</span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="comment">// We only add to the flux registers in the final RK step</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="keywordflow">if</span> (l_reflux) {</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            <span class="keywordtype">int</span> strt_comp_reflux = 0;</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            <span class="comment">// For now we don&#39;t reflux (rho theta) because it seems to create issues at c/f boundaries</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            <span class="keywordtype">int</span>  num_comp_reflux = 1;</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            }</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            }</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <span class="comment">// This is necessary here so we don&#39;t go on to the next FArrayBox without</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="comment">// having finished copying the fluxes into the FluxRegisters (since the fluxes</span></div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            <span class="comment">// are stored in temporary FArrayBox&#39;s)</span></div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        } <span class="comment">// two-way coupling</span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    } <span class="comment">// OMP</span></div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;}</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160; </div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;              cur_cons(i,j,k,0) += dtau * (slow_rhs_cons(i,j,k,0) + fast_rhs_rho);</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;              <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fast_rhs_rhotheta = -( temp_rhs_arr(i,j,k,1) + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                ( zflux_hi * (prim(i,j,k) + prim(i,j,k+1)) -</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                  zflux_lo * (prim(i,j,k) + prim(i,j,k-1)) ) * dzi ) / detJ(i,j,k);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160; </div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;              cur_cons(i,j,k,1) += dtau * (slow_rhs_cons(i,j,k,1) + fast_rhs_rhotheta);</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;              <span class="keywordflow">if</span> (l_reflux) {</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                  (flx_arr[2])(i,j,k,1) = (flx_arr[2])(i,j,k,0) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (prim(i,j,k) + prim(i,j,k-1));</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;              }</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;              <span class="comment">// add in source terms for cell-centered conserved variables</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;              cur_cons(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)      += dtau * cc_src_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;              cur_cons(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += dtau * cc_src_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        });</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        } <span class="comment">// end profile</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="comment">// We only add to the flux registers in the final RK step</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="keywordflow">if</span> (l_reflux) {</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            <span class="keywordtype">int</span> strt_comp_reflux = 0;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            <span class="comment">// For now we don&#39;t reflux (rho theta) because it seems to create issues at c/f boundaries</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="keywordtype">int</span>  num_comp_reflux = 1;</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            <span class="keywordflow">if</span> (level &lt; finest_level) {</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                fr_as_crse-&gt;CrseAdd(mfi,</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            }</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            <span class="keywordflow">if</span> (level &gt; 0) {</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                fr_as_fine-&gt;FineAdd(mfi,</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                    {{AMREX_D_DECL(&amp;(flux[0]), &amp;(flux[1]), &amp;(flux[2]))}},</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>, dtau, strt_comp_reflux, strt_comp_reflux, num_comp_reflux, RunOn::Device);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;            }</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            <span class="comment">// This is necessary here so we don&#39;t go on to the next FArrayBox without</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;            <span class="comment">// having finished copying the fluxes into the FluxRegisters (since the fluxes</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            <span class="comment">// are stored in temporary FArrayBox&#39;s)</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        } <span class="comment">// two-way coupling</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    } <span class="comment">// OMP</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0ab59ff21ef0b178fde0843394f5674a"><div class="ttname"><a href="ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a">R_v</a></div><div class="ttdeci">constexpr amrex::Real R_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:21</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>

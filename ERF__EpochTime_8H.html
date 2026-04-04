@@ -92,16 +92,18 @@ $(document).ready(function(){initNavTree('ERF__EpochTime_8H.html',''); initResiz
 <code>#include &lt;sstream&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;cctype&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_EpochTime.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EpochTime_8H__incl.png" border="0" usemap="#aSource_2Utils_2ERF__EpochTime_8H" alt=""/></div>
 <map name="aSource_2Utils_2ERF__EpochTime_8H" id="aSource_2Utils_2ERF__EpochTime_8H">
-<area shape="rect" title=" " alt="" coords="63,5,286,32"/>
+<area shape="rect" title=" " alt="" coords="113,5,335,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,64,107"/>
 <area shape="rect" title=" " alt="" coords="88,80,163,107"/>
 <area shape="rect" title=" " alt="" coords="187,80,261,107"/>
 <area shape="rect" title=" " alt="" coords="285,80,344,107"/>
+<area shape="rect" title=" " alt="" coords="369,80,434,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -126,6 +128,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a58d125201639c71a2a778a1b69d5abf3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a> (const char *&amp;dt, int width, int &amp;<a class="el" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>)</td></tr>
+<tr class="separator:a58d125201639c71a2a778a1b69d5abf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a157e287fcdc7e8161cdfc216501a0676"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE std::time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EpochTime_8H.html#a157e287fcdc7e8161cdfc216501a0676">getEpochTime</a> (const std::string &amp;dateTime, const std::string &amp;dateTimeFormat)</td></tr>
 <tr class="separator:a157e287fcdc7e8161cdfc216501a0676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7eed25e58d350c03f4b8396554bc6a2"><td class="memItemLeft" align="right" valign="top">AMREX_FORCE_INLINE std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EpochTime_8H.html#af7eed25e58d350c03f4b8396554bc6a2">getTimestamp</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> epoch_real, const std::string &amp;datetime_format, bool add_long_frac=true)</td></tr>
@@ -157,61 +161,83 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::tm tmTime{};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* dt  = dateTime.c_str();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt = dateTimeFormat.c_str();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Walk both the format string and the date string together</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">while</span> (*fmt &amp;&amp; *dt) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (*fmt == <span class="charliteral">&#39;%&#39;</span>) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            ++fmt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">switch</span> (*fmt) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;Y&#39;</span>: <span class="comment">// 4-digit year</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                tmTime.tm_year = (dt[0]-<span class="charliteral">&#39;0&#39;</span>)*1000 + (dt[1]-<span class="charliteral">&#39;0&#39;</span>)*100</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                               + (dt[2]-<span class="charliteral">&#39;0&#39;</span>)*10   + (dt[3]-<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                tmTime.tm_year -= 1900;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                dt += 4;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>: <span class="comment">// 2-digit month</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                tmTime.tm_mon = (dt[0]-<span class="charliteral">&#39;0&#39;</span>)*10 + (dt[1]-<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                tmTime.tm_mon -= 1; <span class="comment">// struct tm expects 0-11</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                dt += 2;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: <span class="comment">// 2-digit day</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                tmTime.tm_mday = (dt[0]-<span class="charliteral">&#39;0&#39;</span>)*10 + (dt[1]-<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                dt += 2;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;H&#39;</span>: <span class="comment">// 2-digit hour</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                tmTime.tm_hour = (dt[0]-<span class="charliteral">&#39;0&#39;</span>)*10 + (dt[1]-<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                dt += 2;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>: <span class="comment">// 2-digit minute</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                tmTime.tm_min = (dt[0]-<span class="charliteral">&#39;0&#39;</span>)*10 + (dt[1]-<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                dt += 2;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>: <span class="comment">// 2-digit second</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                tmTime.tm_sec = (dt[0]-<span class="charliteral">&#39;0&#39;</span>)*10 + (dt[1]-<span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                dt += 2;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="comment">// Unsupported format specifier</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="comment">// Literal character, must match</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (*fmt != *dt) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">return</span> -1; <span class="comment">// mismatch</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            ++dt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        ++fmt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">return</span> timegm(&amp;tmTime);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::tm tmTime{};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* dt  = dateTime.c_str();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* fmt = dateTimeFormat.c_str();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Walk both the format string and the date string together</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">while</span> (*fmt &amp;&amp; *dt) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (*fmt == <span class="charliteral">&#39;%&#39;</span>) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            ++fmt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordtype">int</span> parsed_value = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">switch</span> (*fmt) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;Y&#39;</span>: <span class="comment">// 4-digit year</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a>(dt, 4, parsed_value)) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                tmTime.tm_year = parsed_value;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                tmTime.tm_year -= 1900;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;m&#39;</span>: <span class="comment">// 2-digit month</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a>(dt, 2, parsed_value)) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                tmTime.tm_mon = parsed_value;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                tmTime.tm_mon -= 1; <span class="comment">// struct tm expects 0-11</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: <span class="comment">// 2-digit day</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a>(dt, 2, parsed_value)) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                tmTime.tm_mday = parsed_value;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;H&#39;</span>: <span class="comment">// 2-digit hour</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a>(dt, 2, parsed_value)) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                tmTime.tm_hour = parsed_value;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;M&#39;</span>: <span class="comment">// 2-digit minute</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a>(dt, 2, parsed_value)) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                tmTime.tm_min = parsed_value;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>: <span class="comment">// 2-digit second</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a>(dt, 2, parsed_value)) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                tmTime.tm_sec = parsed_value;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="comment">// Unsupported format specifier</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="comment">// Literal character, must match</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">if</span> (*fmt != *dt) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">return</span> -1; <span class="comment">// mismatch</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            ++dt;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        ++fmt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (*fmt != <span class="charliteral">&#39;\0&#39;</span> || *dt != <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (tmTime.tm_mon &lt; 0 || tmTime.tm_mon &gt; 11 ||</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        tmTime.tm_mday &lt; 1 || tmTime.tm_mday &gt; 31 ||</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        tmTime.tm_hour &lt; 0 || tmTime.tm_hour &gt; 23 ||</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        tmTime.tm_min &lt; 0 || tmTime.tm_min &gt; 59 ||</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        tmTime.tm_sec &lt; 0 || tmTime.tm_sec &gt; 60) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> timegm(&amp;tmTime);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="ttc" id="aERF__EpochTime_8H_html_a58d125201639c71a2a778a1b69d5abf3"><div class="ttname"><a href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3">parse_fixed_width_int</a></div><div class="ttdeci">AMREX_GPU_HOST AMREX_FORCE_INLINE bool parse_fixed_width_int(const char *&amp;dt, int width, int &amp;value)</div><div class="ttdef"><b>Definition:</b> ERF_EpochTime.H:16</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a">ERF::ReadParameters()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__EpochTime_8H_a157e287fcdc7e8161cdfc216501a0676_cgraph.png" border="0" usemap="#aERF__EpochTime_8H_a157e287fcdc7e8161cdfc216501a0676_cgraph" alt=""/></div>
+<map name="aERF__EpochTime_8H_a157e287fcdc7e8161cdfc216501a0676_cgraph" id="aERF__EpochTime_8H_a157e287fcdc7e8161cdfc216501a0676_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" href="ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3" title=" " alt="" coords="168,5,331,32"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -255,26 +281,26 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">auto</span> epoch_nearest_sec = <span class="keyword">static_cast&lt;</span>std::time_t<span class="keyword">&gt;</span>(epoch_real);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::tm *time_info = std::gmtime(&amp;epoch_nearest_sec);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">char</span> buffer[80];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::strftime(buffer, <span class="keyword">sizeof</span>(buffer), datetime_format.c_str(), time_info);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::string str_nearest_sec(buffer);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (add_long_frac) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// We use abs here because the diff would come out as negative</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">//    if the times themselves were negative</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">double</span> frac_sec = std::abs(epoch_real - epoch_nearest_sec);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        snprintf(buffer, 80, <span class="stringliteral">&quot;%.6f&quot;</span>, frac_sec);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        AMREX_ASSERT(buffer[0] == <span class="charliteral">&#39;0&#39;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::string str_frac_sec(buffer);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec + str_frac_sec.substr(1);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">auto</span> epoch_nearest_sec = <span class="keyword">static_cast&lt;</span>std::time_t<span class="keyword">&gt;</span>(epoch_real);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::tm *time_info = std::gmtime(&amp;epoch_nearest_sec);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">char</span> buffer[80];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    std::strftime(buffer, <span class="keyword">sizeof</span>(buffer), datetime_format.c_str(), time_info);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::string str_nearest_sec(buffer);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (add_long_frac) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="comment">// We use abs here because the diff would come out as negative</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">//    if the times themselves were negative</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">double</span> frac_sec = std::abs(epoch_real - epoch_nearest_sec);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        snprintf(buffer, 80, <span class="stringliteral">&quot;%.6f&quot;</span>, frac_sec);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        AMREX_ASSERT(buffer[0] == <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        std::string str_frac_sec(buffer);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec + str_frac_sec.substr(1);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> str_nearest_sec;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">ERF::Evolve()</a>, <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, <a class="el" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372">ERF::writeJobInfo()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
@@ -288,6 +314,67 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classERF.html#aa2d8099655a8779836e63e3e98ea4372" title=" " alt="" coords="123,107,255,133"/>
 <area shape="rect" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f" title=" " alt="" coords="108,157,271,184"/>
 <area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a58d125201639c71a2a778a1b69d5abf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d125201639c71a2a778a1b69d5abf3">&#9670;&nbsp;</a></span>parse_fixed_width_int()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST AMREX_FORCE_INLINE bool parse_fixed_width_int </td>
+          <td>(</td>
+          <td class="paramtype">const char *&amp;&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx = 0; idx &lt; width; ++idx) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ch = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(dt[idx]);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;\0&#39;</span> || !std::isdigit(ch)) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = 10 * <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> + (dt[idx] - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    dt += width;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="ERF__EpochTime_8H.html#a157e287fcdc7e8161cdfc216501a0676">getEpochTime()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__EpochTime_8H_a58d125201639c71a2a778a1b69d5abf3_icgraph.png" border="0" usemap="#aERF__EpochTime_8H_a58d125201639c71a2a778a1b69d5abf3_icgraph" alt=""/></div>
+<map name="aERF__EpochTime_8H_a58d125201639c71a2a778a1b69d5abf3_icgraph" id="aERF__EpochTime_8H_a58d125201639c71a2a778a1b69d5abf3_icgraph">
+<area shape="rect" title=" " alt="" coords="377,5,540,32"/>
+<area shape="rect" href="ERF__EpochTime_8H.html#a157e287fcdc7e8161cdfc216501a0676" title=" " alt="" coords="215,5,329,32"/>
+<area shape="rect" href="classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a" title=" " alt="" coords="5,5,167,32"/>
 </map>
 </div>
 
