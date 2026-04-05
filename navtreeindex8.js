@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"ERF__SetupVertDiff_8H.html#a0eeef4f9ceae266fe847f97420b38357":[3,0,1,3,26,10],
+"ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28":[3,0,1,3,26,8],
 "ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077":[3,0,1,3,26,13],
 "ERF__SetupVertDiff_8H.html#a2987796b2d40db9890dd3497cc7e20ca":[3,0,1,3,26,9],
 "ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647":[3,0,1,3,26,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__UpdateRhoQtSources__SineMassFlux_8H.html":[3,0,1,14,46],
 "ERF__UpdateRhoQtSources__SineMassFlux_8H.html#a1c9882ac2fce8324eb5689e566a2b365":[3,0,1,14,46,6],
 "ERF__UpdateRhoQtSources__SineMassFlux_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,14,46,1],
-"ERF__UpdateRhoQtSources__SineMassFlux_8H.html#a5b6c6a9f80871e53e377b7aa0645597b":[3,0,1,14,46,7],
-"ERF__UpdateRhoQtSources__SineMassFlux_8H.html#a88889f8e60faed07f3dfbd49135a4a96":[3,0,1,14,46,5],
-"ERF__UpdateRhoQtSources__SineMassFlux_8H.html#a8d4b92750e84a228c281980ac2125717":[3,0,1,14,46,0]
+"ERF__UpdateRhoQtSources__SineMassFlux_8H.html#a5b6c6a9f80871e53e377b7aa0645597b":[3,0,1,14,46,7]
 };

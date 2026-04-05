@@ -26,6 +26,8 @@ var namespaces_dup =
       [ "erf_dermaxreflectivity", "namespacederived.html#ac60badd494eb8b125d85826538d0f8ce", null ],
       [ "erf_dermoisttemp", "namespacederived.html#ae7aff8d5c152597cc23d8946c1f47766", null ],
       [ "erf_dermoisttemp", "namespacederived.html#a591cb412598c637cf413d45840c34331", null ],
+      [ "erf_dermucape", "namespacederived.html#a95e8691e3da0b2cf93da2c92e4b973c5", null ],
+      [ "erf_dermucape", "namespacederived.html#abfe5a3f0570951aa4a160af26a0288d2", null ],
       [ "erf_dernull", "namespacederived.html#ac149fb421d49cbdb1804fbbe2472a307", null ],
       [ "erf_dernull", "namespacederived.html#aac38ebccfd26fccd9ed0c3209312046b", null ],
       [ "erf_derprecipitable", "namespacederived.html#a1d705a95a69d25c44cff59b05cb358e1", null ],
