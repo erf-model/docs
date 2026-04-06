@@ -322,31 +322,31 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;{</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dx = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(0);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dy = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(1);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    {</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dz = z_arr(i,j,k+1) - z_arr(i,j,k-1);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortx = (dat(i,j+1,k,2) - dat(i,j-1,k,2)) / two_dy  <span class="comment">// dw/dy</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    -(dat(i,j,k+1,1) - dat(i,j,k-1,1)) / two_dz; <span class="comment">// dv/dz</span></div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vorty = (dat(i,j,k+1,0) - dat(i,j,k-1,0)) / two_dz  <span class="comment">// du/dz</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                    -(dat(i+1,j,k,2) - dat(i-1,j,k,2)) / two_dx; <span class="comment">// dw/dx</span></div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / two_dx  <span class="comment">// dv/dx</span></div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                    -(dat(i,j+1,k,0) - dat(i,j-1,k,0)) / two_dy; <span class="comment">// du/dy</span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        tfab(i,j,k,dcomp) = vortx*vortx + vorty*vorty + vortz*vortz;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    });</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;{</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dx = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(0);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dy = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(1);</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    {</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dz = z_arr(i,j,k+1) - z_arr(i,j,k-1);</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortx = (dat(i,j+1,k,2) - dat(i,j-1,k,2)) / two_dy  <span class="comment">// dw/dy</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                    -(dat(i,j,k+1,1) - dat(i,j,k-1,1)) / two_dz; <span class="comment">// dv/dz</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vorty = (dat(i,j,k+1,0) - dat(i,j,k-1,0)) / two_dz  <span class="comment">// du/dz</span></div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                    -(dat(i+1,j,k,2) - dat(i-1,j,k,2)) / two_dx; <span class="comment">// dw/dx</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / two_dx  <span class="comment">// dv/dx</span></div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                    -(dat(i,j+1,k,0) - dat(i,j-1,k,0)) / two_dy; <span class="comment">// du/dy</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        tfab(i,j,k,dcomp) = vortx*vortx + vorty*vorty + vortz*vortz;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    });</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
@@ -526,49 +526,49 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;{</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();  <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array();  <span class="comment">// integral of local helicity</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geomdata.CellSize(0);</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = geomdata.CellSize(1);</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="comment">// Collapse to i,j box (ignore vertical for now)</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    Box b2d = bx;</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    b2d.setSmall(2,0);</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    b2d.setBig(2,0);</div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160; </div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    {</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> int_hel = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k)</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        {</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = z_arr(i,j,k);</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; </div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            <span class="comment">// Helicity is defined as integral from 2km to 5km in vertical</span></div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            <span class="keywordflow">if</span> (z &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2000.0) &amp;&amp; z &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(5000.0)) {</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k+1));</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k-1));</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> = z_hi - z_lo;</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / (2.0*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>)  <span class="comment">// dv/dx</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                           - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / (2.0*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>); <span class="comment">// du/dy</span></div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w     = dat(i,j,k,2); <span class="comment">// vertical velocity</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160; </div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                int_hel += vortz * w * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;            }</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        }</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160; </div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        <span class="comment">// Store vertical integral into *all* levels for this (i,j)</span></div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;            dfab(i, j, k, dcomp) = int_hel;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        }</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    });</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;{</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; </div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();  <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array();  <span class="comment">// integral of local helicity</span></div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geomdata.CellSize(0);</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = geomdata.CellSize(1);</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="comment">// Collapse to i,j box (ignore vertical for now)</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    Box b2d = bx;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    b2d.setSmall(2,0);</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    b2d.setBig(2,0);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    {</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> int_hel = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k)</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        {</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = z_arr(i,j,k);</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;            <span class="comment">// Helicity is defined as integral from 2km to 5km in vertical</span></div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;            <span class="keywordflow">if</span> (z &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2000.0) &amp;&amp; z &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(5000.0)) {</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k+1));</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k-1));</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> = z_hi - z_lo;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / (2.0*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>)  <span class="comment">// dv/dx</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                           - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / (2.0*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>); <span class="comment">// du/dy</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w     = dat(i,j,k,2); <span class="comment">// vertical velocity</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160; </div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                int_hel += vortz * w * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;            }</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        }</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;        <span class="comment">// Store vertical integral into *all* levels for this (i,j)</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;            dfab(i, j, k, dcomp) = int_hel;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;        }</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    });</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a3d480c71a8d13543a4a79124b1b694e5"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a></div><div class="ttdeci">const Real dy</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:24</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
@@ -750,11 +750,11 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to define the kinetic energy KE by dividing (rho KE) by rho</p>
 <p>@params[in] bx box on which to divide by density @params[out] derfab array of derived quantity &ndash; here it holds KE @params[in] datfab array of data used to construct derived quantity </p>
-<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;{</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
-<div class="ttc" id="anamespacederived_html_a3786c6a8399bc2508bc129337c446af1"><div class="ttname"><a href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a></div><div class="ttdeci">void erf_derrhodivide(const Box &amp;bx, FArrayBox &amp;derfab, const FArrayBox &amp;datfab, const int scalar_index)</div><div class="ttdef"><b>Definition:</b> ERF_Derive.cpp:139</div></div>
+<div class="ttc" id="anamespacederived_html_a3786c6a8399bc2508bc129337c446af1"><div class="ttname"><a href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">derived::erf_derrhodivide</a></div><div class="ttdeci">void erf_derrhodivide(const Box &amp;bx, FArrayBox &amp;derfab, const FArrayBox &amp;datfab, const int scalar_index)</div><div class="ttdef"><b>Definition:</b> ERF_Derive.cpp:168</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
@@ -931,25 +931,25 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;{</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array(); <span class="comment">// cell-centered local helicity</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dx = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2.0)*geomdata.CellSize(0);</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dy = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2.0)*geomdata.CellSize(1);</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    {</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / two_dx  <span class="comment">// dv/dx</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                   - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / two_dy; <span class="comment">// du/dy</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w     = dat(i,j,k,2);</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="comment">// Helicity</span></div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        dfab(i,j,k,dcomp) = vortz * w;</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    });</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;{</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array(); <span class="comment">// cell-centered local helicity</span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dx = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2.0)*geomdata.CellSize(0);</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dy = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(2.0)*geomdata.CellSize(1);</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    {</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> vortz = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / two_dx  <span class="comment">// dv/dx</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                   - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / two_dy; <span class="comment">// du/dy</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w     = dat(i,j,k,2);</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        <span class="comment">// Helicity</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        dfab(i,j,k,dcomp) = vortz * w;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    });</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -1125,21 +1125,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;{</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    {</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u = dat(i,j,k,0);</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v = dat(i,j,k,1);</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w = dat(i,j,k,2);</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        tfab(i,j,k,dcomp) = std::sqrt(u*u + v*v + w*w);</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    });</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;{</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    {</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u = dat(i,j,k,0);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v = dat(i,j,k,1);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w = dat(i,j,k,2);</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        tfab(i,j,k,dcomp) = std::sqrt(u*u + v*v + w*w);</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    });</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -1316,21 +1316,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;{</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    {</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u = dat(i,j,k,0);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v = dat(i,j,k,1);</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w = dat(i,j,k,2);</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        tfab(i,j,k,dcomp) = u*u + v*v + w*w;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    });</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;{</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered magvel</span></div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    {</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u = dat(i,j,k,0);</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v = dat(i,j,k,1);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w = dat(i,j,k,2);</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        tfab(i,j,k,dcomp) = u*u + v*v + w*w;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    });</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a91c184ac7e5889fe785aa846112ce2e6">ERF::sum_derived_quantities()</a>.</p>
 <div class="dynheader">
@@ -1506,43 +1506,43 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;{</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered state vector</span></div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <span class="keyword">auto</span> rfab      = derfab.array(); <span class="comment">// cell-centered max reflectivity</span></div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="comment">// Collapse to i,j box (ignore vertical for now)</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    Box b2d = bx;</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    b2d.setSmall(2,0);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    b2d.setBig(2,0);</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept {</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> max_dbz = -1.0e30;</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <span class="comment">// find max reflectivity over k</span></div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            Real rho = dat(i,j,k,Rho_comp);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;            Real qv  = std::max(Real(0.0),dat(i,j,k,RhoQ1_comp)/rho);</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;            Real qpr = std::max(Real(0.0),dat(i,j,k,RhoQ4_comp)/rho);</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            Real qps = std::max(Real(0.0),dat(i,j,k,RhoQ5_comp)/rho);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;            Real qpg = std::max(Real(0.0),dat(i,j,k,RhoQ6_comp)/rho);</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            Real temp = getTgivenRandRTh(rho, dat(i,j,k,RhoTheta_comp), qv);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            Real dbz = compute_max_reflectivity_dbz(rho, temp, qpr, qps, qpg,</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                                                    1, 1, 1, 1);</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            max_dbz = amrex::max(max_dbz, dbz);</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        }</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;        <span class="comment">// Store max_dbz into *all* levels for this (i,j)</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;        <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a8dfd5695a0c389f3b92c5b0fe3d8b02a">for</a> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;            rfab(i, j, k, dcomp) = max_dbz;</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        }</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    });</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;{</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered state vector</span></div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="keyword">auto</span> rfab      = derfab.array(); <span class="comment">// cell-centered max reflectivity</span></div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160; </div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="comment">// Collapse to i,j box (ignore vertical for now)</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    Box b2d = bx;</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    b2d.setSmall(2,0);</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    b2d.setBig(2,0);</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept {</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> max_dbz = -1.0e30;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <span class="comment">// find max reflectivity over k</span></div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160; </div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;            Real rho = dat(i,j,k,Rho_comp);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            Real qv  = std::max(Real(0.0),dat(i,j,k,RhoQ1_comp)/rho);</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            Real qpr = std::max(Real(0.0),dat(i,j,k,RhoQ4_comp)/rho);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            Real qps = std::max(Real(0.0),dat(i,j,k,RhoQ5_comp)/rho);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            Real qpg = std::max(Real(0.0),dat(i,j,k,RhoQ6_comp)/rho);</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            Real temp = getTgivenRandRTh(rho, dat(i,j,k,RhoTheta_comp), qv);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            Real dbz = compute_max_reflectivity_dbz(rho, temp, qpr, qps, qpg,</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                                                    1, 1, 1, 1);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;            max_dbz = amrex::max(max_dbz, dbz);</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        }</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <span class="comment">// Store max_dbz into *all* levels for this (i,j)</span></div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a8dfd5695a0c389f3b92c5b0fe3d8b02a">for</a> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            rfab(i, j, k, dcomp) = max_dbz;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        }</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    });</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__MultiSpeciesBubble_8H_html_a8dfd5695a0c389f3b92c5b0fe3d8b02a"><div class="ttname"><a href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a8dfd5695a0c389f3b92c5b0fe3d8b02a">for</a></div><div class="ttdeci">for(int i=0;i&lt; m_num_species;i++)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_MultiSpeciesBubble.H:48</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
@@ -1721,19 +1721,19 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;{</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array();</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0));</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        tfab(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>,rhotheta,<a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    });</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;{</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array();</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0));</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        tfab(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>,rhotheta,<a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    });</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;}</div>
 <div class="ttc" id="aERF__EOS_8H_html_a5e63b66e00cbd68e3b3fdcc6c0770b92"><div class="ttname"><a href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
@@ -1918,119 +1918,118 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;{</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array();</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array();</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncons = datfab.nComp();</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160; </div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    Box b2d = bx;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    b2d.setSmall(2,0);</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    b2d.setBig(2,0);</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    {</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mucape = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = bx.smallEnd(2);</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = bx.bigEnd(2);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        <span class="keywordflow">if</span> (ncons &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) {</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_sfc = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> &lt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a> = amrex::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                p_sfc = amrex::max(p_sfc, <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>));</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;            }</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            <span class="keywordflow">if</span> (p_sfc &gt; mucape_search_depth_pa) {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_search_min = p_sfc - mucape_search_depth_pa;</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ks = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; ks &lt; <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++ks) {</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_src = dat(i,j,ks,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                    <span class="keywordflow">if</span> (rho_src &lt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160; </div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_src = amrex::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, dat(i,j,ks,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / rho_src);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rt_src = dat(i,j,ks,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_src  = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt_src, qv_src);</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160; </div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                    <span class="keywordflow">if</span> (p_src &lt; p_search_min) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_src = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(rho_src, rt_src, qv_src);</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                    <span class="keywordflow">if</span> (T_src &lt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160; </div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Td_src = mucape_dewpoint_temperature(p_src, qv_src, T_src);</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tlcl   = mucape_lcl_temperature(T_src, Td_src);</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> plcl   = p_src * std::pow(Tlcl / T_src, <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> / <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>);</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                    plcl = amrex::min(p_src, amrex::max(plcl, mucape_min_pressure_pa));</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160; </div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_src = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(T_src, p_src, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> candidate_cape = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_prev = z_arr(i,j,ks);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> b_prev = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160; </div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                    <span class="keywordtype">bool</span> saturated = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_sat_prev = Tlcl;</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_sat_prev = plcl;</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = ks + 1; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_env = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                        <span class="keywordflow">if</span> (rho_env &lt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_env = amrex::max(<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / rho_env);</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rt_env = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_env  = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt_env, qv_env);</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_env  = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(rho_env, rt_env, qv_env);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tv_env = mucape_virtual_temperature(T_env, qv_env);</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_env  = z_arr(i,j,k);</div>
+<div class="fragment"><div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;{</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array();</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array();</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncons = datfab.nComp();</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    Box b2d = bx;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    b2d.setSmall(2,0);</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    b2d.setBig(2,0);</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160; </div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    {</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mucape = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0);</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = bx.smallEnd(2);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = bx.bigEnd(2);</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;        <span class="keywordflow">if</span> (ncons &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) {</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_sfc = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0)) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a> = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0), dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                p_sfc = amrex::max(p_sfc, <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>));</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            }</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160; </div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            <span class="keywordflow">if</span> (p_sfc &gt; mucape_search_depth_pa()) {</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_search_min = p_sfc - mucape_search_depth_pa();</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160; </div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ks = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; ks &lt; <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++ks) {</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_src = dat(i,j,ks,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    <span class="keywordflow">if</span> (rho_src &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0)) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_src = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0), dat(i,j,ks,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / rho_src);</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rt_src = dat(i,j,ks,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_src  = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt_src, qv_src);</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                    <span class="keywordflow">if</span> (p_src &lt; p_search_min) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_parcel;</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_parcel;</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_src = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(rho_src, rt_src, qv_src);</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                    <span class="keywordflow">if</span> (T_src &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0)) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                        <span class="keywordflow">if</span> (p_env &gt;= plcl) {</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                            T_parcel  = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p_env, theta_src, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                            qv_parcel = qv_src;</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                            <span class="keywordflow">if</span> (!saturated) {</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                                saturated = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                                T_sat_prev = Tlcl;</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                                p_sat_prev = plcl;</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                            }</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                            <span class="keywordflow">if</span> (p_env &lt; p_sat_prev) {</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                                T_sat_prev = mucape_integrate_saturated_temperature(T_sat_prev, p_sat_prev, p_env);</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                                p_sat_prev = p_env;</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                            }</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Td_src = mucape_dewpoint_temperature(p_src, qv_src, T_src);</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tlcl   = mucape_lcl_temperature(T_src, Td_src);</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> plcl   = p_src * std::pow(Tlcl / T_src, <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> / <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                    plcl = amrex::min(p_src, amrex::max(plcl, mucape_min_pressure_pa()));</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_src = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(T_src, p_src, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> candidate_cape = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_prev = z_arr(i,j,ks);</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> b_prev = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0);</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                    <span class="keywordtype">bool</span> saturated = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_sat_prev = Tlcl;</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_sat_prev = plcl;</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                            T_parcel  = T_sat_prev;</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                            qv_parcel = mucape_qsat(T_parcel, p_env);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                        }</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = ks + 1; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_env = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                        <span class="keywordflow">if</span> (rho_env &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0)) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tv_parcel = mucape_virtual_temperature(T_parcel, qv_parcel);</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> buoyancy = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * (Tv_parcel - Tv_env) /</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                                        amrex::max(Tv_env, mucape_min_temperature);</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160; </div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                        candidate_cape += mucape_positive_area(b_prev, buoyancy, z_env - z_prev);</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                        b_prev = buoyancy;</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                        z_prev = z_env;</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                    }</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160; </div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                    mucape = amrex::max(mucape, candidate_cape);</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                }</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;            }</div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;        }</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160; </div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;            dfab(i,j,k,dcomp) = mucape;</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        }</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;    });</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;}</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_env = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0), dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / rho_env);</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rt_env = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> p_env  = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt_env, qv_env);</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_env  = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(rho_env, rt_env, qv_env);</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tv_env = mucape_virtual_temperature(T_env, qv_env);</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_env  = z_arr(i,j,k);</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_parcel;</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_parcel;</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                        <span class="keywordflow">if</span> (p_env &gt;= plcl) {</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                            T_parcel  = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(p_env, theta_src, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                            qv_parcel = qv_src;</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                            <span class="keywordflow">if</span> (!saturated) {</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                                saturated = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                                T_sat_prev = Tlcl;</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                                p_sat_prev = plcl;</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                            }</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160; </div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                            <span class="keywordflow">if</span> (p_env &lt; p_sat_prev) {</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                                T_sat_prev = mucape_integrate_saturated_temperature(T_sat_prev, p_sat_prev, p_env);</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                                p_sat_prev = p_env;</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                            }</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                            T_parcel  = T_sat_prev;</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                            qv_parcel = mucape_qsat(T_parcel, p_env);</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                        }</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160; </div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tv_parcel = mucape_virtual_temperature(T_parcel, qv_parcel);</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> buoyancy = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * (Tv_parcel - Tv_env) /</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                                        amrex::max(Tv_env, mucape_min_temperature());</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160; </div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                        candidate_cape += mucape_positive_area(b_prev, buoyancy, z_env - z_prev);</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                        b_prev = buoyancy;</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                        z_prev = z_env;</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                    }</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                    mucape = amrex::max(mucape, candidate_cape);</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                }</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;            }</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        }</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;            dfab(i,j,k,dcomp) = mucape;</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        }</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    });</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:22</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:31</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a8770405e52bfe8feb427eca945370fb2"><div class="ttname"><a href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getThgivenTandP(const amrex::Real T, const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:18</div></div>
@@ -2219,7 +2218,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Placeholder function that does nothing </p>
-<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;{ }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
@@ -2384,41 +2383,41 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;{</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered state vector</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array(); <span class="comment">// integral of qv to define precipitable water</span></div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment">// Collapse to i,j box (ignore vertical for now)</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    Box b2d = bx;</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    b2d.setSmall(2,0);</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    b2d.setBig(2,0);</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160; </div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    {</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> int_qv = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k)</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;        {</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k+1));</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k-1));</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> = z_hi - z_lo;</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160; </div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoQ1 = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            int_qv += rhoQ1 * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        }</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        <span class="comment">// Store vertical integral into *all* levels for this (i,j)</span></div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            dfab(i, j, k, dcomp) = int_qv;</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;        }</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    });</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;{</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered state vector</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keyword">auto</span> dfab      = derfab.array(); <span class="comment">// integral of qv to define precipitable water</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="comment">// Collapse to i,j box (ignore vertical for now)</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    Box b2d = bx;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    b2d.setSmall(2,0);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    b2d.setBig(2,0);</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    {</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> int_qv = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k)</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        {</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k+1));</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5) * (z_arr(i,j,k) + z_arr(i,j,k-1));</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> = z_hi - z_lo;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoQ1 = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160; </div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;            int_qv += rhoQ1 * <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        }</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="comment">// Store vertical integral into *all* levels for this (i,j)</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = bx.smallEnd(2); k &lt;= bx.bigEnd(2); ++k) {</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            dfab(i, j, k, dcomp) = int_qv;</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;        }</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    });</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
@@ -2595,26 +2594,26 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;{</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered state vector</span></div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keyword">auto</span> rfab      = derfab.array(); <span class="comment">// cell-centered reflectivity</span></div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    {</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>  = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a> = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5aa1b82f9b40da8ffccead09f9e102ff82">qps</a> = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a434cf2c831802bb076e8bc31d16f0887">qpg</a> = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> temp  = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        rfab(i, j, k, dcomp) = <a class="code" href="ERF__StormDiagnostics_8H.html#a6e341f0ba1bec18d7b56a69f0d45e6fe">compute_max_reflectivity_dbz</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, temp, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5aa1b82f9b40da8ffccead09f9e102ff82">qps</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a434cf2c831802bb076e8bc31d16f0887">qpg</a>,</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                                                            1, 1, 1, 1);</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    });</div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;{</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered state vector</span></div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="keyword">auto</span> rfab      = derfab.array(); <span class="comment">// cell-centered reflectivity</span></div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    {</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>  = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a> = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5aa1b82f9b40da8ffccead09f9e102ff82">qps</a> = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a434cf2c831802bb076e8bc31d16f0887">qpg</a> = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0),dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> temp  = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, dat(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160; </div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        rfab(i, j, k, dcomp) = <a class="code" href="ERF__StormDiagnostics_8H.html#a6e341f0ba1bec18d7b56a69f0d45e6fe">compute_max_reflectivity_dbz</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, temp, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5aa1b82f9b40da8ffccead09f9e102ff82">qps</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a434cf2c831802bb076e8bc31d16f0887">qpg</a>,</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                                                            1, 1, 1, 1);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    });</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28c5deab9008c0999c26affeff2fa6da"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a></div><div class="ttdeci">#define RhoQ4_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:45</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aae057dae5f599b944184a0ecf7801064"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a></div><div class="ttdeci">#define RhoQ6_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:47</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ac46d015fd5b1ee0060bbaf22e79113e7"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a></div><div class="ttdeci">#define RhoQ5_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:46</div></div>
@@ -2729,18 +2728,18 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to define a derived quantity by dividing by density (analogous to cons_to_prim)</p>
 <p>@params[in] bx box on which to divide by density @params[out] derfab array of derived quantity @params[in] datfab array of data used to construct derived quantity @params[in] scalar_index index of quantity to be divided by density </p>
-<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">// This routine divides any cell-centered conserved quantity by density</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">auto</span> primitive  = derfab.array();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>       = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> conserved = dat(i, j, k, scalar_index);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        primitive(i,j,k) = conserved / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    });</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// This routine divides any cell-centered conserved quantity by density</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">auto</span> primitive  = derfab.array();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>       = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> conserved = dat(i, j, k, scalar_index);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        primitive(i,j,k) = conserved / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    });</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacederived.html#a3cc76e67c0f746748aef32a5a5e57609">erf_derKE()</a>, <a class="el" href="namespacederived.html#a74a6e164db26e1c1179ae60f5c986d85">erf_derscalar()</a>, <a class="el" href="namespacederived.html#ab47480b9699e0eae636edf6574563237">erf_dertheta()</a>, and <a class="el" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b">WriteBndryPlanes::write_planes()</a>.</p>
 <div class="dynheader">
@@ -2923,9 +2922,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to define a scalar s by dividing (rho s) by rho</p>
 <p>@params[in] bx box on which to divide by density @params[out] derfab array of derived quantity &ndash; here it holds scalar s @params[in] datfab array of data used to construct derived quantity </p>
-<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;{</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;{</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:40</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
@@ -3106,21 +3105,21 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to define the sound speed by calling an EOS routine</p>
 <p>@params[in] bx box on which to divide by density @params[out] derfab array of derived quantity &ndash; here it holds pressure @params[in] datfab array of data used to construct derived quantity </p>
-<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">auto</span> cfab      = derfab.array();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// NOTE: we compute the soundspeed of dry air -- we do not account for any moisture effects here</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>      = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        cfab(i,j,k) = std::sqrt(<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rhotheta,<a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    });</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keyword">auto</span> cfab      = derfab.array();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">// NOTE: we compute the soundspeed of dry air -- we do not account for any moisture effects here</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>      = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; 0);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        cfab(i,j,k) = std::sqrt(<a class="code" href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a> * <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rhotheta,<a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    });</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_afbb622bf3b404a3e7c77f3103b4d1231"><div class="ttname"><a href="ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231">Gamma</a></div><div class="ttdeci">constexpr amrex::Real Gamma</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:29</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
@@ -3301,18 +3300,18 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to define the temperature by calling an EOS routine</p>
 <p>@params[in] bx box on which to divide by density @params[out] derfab array of derived quantity &ndash; here it holds pressure @params[in] datfab array of data used to construct derived quantity </p>
-<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array();</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0));</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        tfab(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>,rhotheta);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    });</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;{</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array();</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhotheta = dat(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(rhotheta &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0));</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        tfab(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>,rhotheta);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    });</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, <a class="el" href="classWriteBndryPlanes.html#a7159618bddef843704e44e71cebd5d8b">WriteBndryPlanes::write_planes()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
@@ -3493,9 +3492,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Function to define the potential temperature by calling an EOS routine</p>
 <p>@params[in] bx box on which to divide by density @params[out] derfab array of derived quantity &ndash; here it holds pressure @params[in] datfab array of data used to construct derived quantity </p>
-<div class="fragment"><div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="namespacederived.html#a3786c6a8399bc2508bc129337c446af1">erf_derrhodivide</a>(bx, derfab, datfab, <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
 <div class="dynheader">
@@ -3673,23 +3672,23 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;{</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dy = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(1);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dz = z_arr(i,j,k+1) - z_arr(i,j,k-1);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j+1,k,2) - dat(i,j-1,k,2)) / two_dy  <span class="comment">// dw/dy</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                          - (dat(i,j,k+1,1) - dat(i,j,k-1,1)) / two_dz; <span class="comment">// dv/dz</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    });</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;{</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity x-component</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dy = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(1);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dz = z_arr(i,j,k+1) - z_arr(i,j,k-1);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j+1,k,2) - dat(i,j-1,k,2)) / two_dy  <span class="comment">// dw/dy</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                          - (dat(i,j,k+1,1) - dat(i,j,k-1,1)) / two_dz; <span class="comment">// dv/dz</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    });</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -3865,23 +3864,23 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;{</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity y-component</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dx = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(0);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dz = z_arr(i,j,k+1) - z_arr(i,j,k-1);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j,k+1,0) - dat(i,j,k-1,0)) / two_dz  <span class="comment">// du/dz</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                          - (dat(i+1,j,k,2) - dat(i-1,j,k,2)) / two_dx; <span class="comment">// dw/dx</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    });</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;{</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity y-component</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keyword">auto</span> z_arr     = zcc_fab.array(); <span class="comment">// cell-centered height z</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dx = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * geomdata.CellSize(0);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_dz = z_arr(i,j,k+1) - z_arr(i,j,k-1);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        tfab(i,j,k,dcomp) = (dat(i,j,k+1,0) - dat(i,j,k-1,0)) / two_dz  <span class="comment">// du/dz</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                          - (dat(i+1,j,k,2) - dat(i-1,j,k,2)) / two_dx; <span class="comment">// dw/dx</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    });</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -4057,22 +4056,22 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;{</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity z-component</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geomdata.CellSize(0);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = geomdata.CellSize(2);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    {</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        tfab(i,j,k,dcomp) = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>)  <span class="comment">// dv/dx</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                          - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>); <span class="comment">// du/dy</span></div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    });</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;{</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(dcomp == 0);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(ncomp == 1);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span> dat = datfab.array(); <span class="comment">// cell-centered velocity</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keyword">auto</span> tfab      = derfab.array(); <span class="comment">// cell-centered vorticity z-component</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geomdata.CellSize(0);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a> = geomdata.CellSize(2);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    {</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        tfab(i,j,k,dcomp) = (dat(i+1,j,k,1) - dat(i-1,j,k,1)) / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>)  <span class="comment">// dv/dx</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                          - (dat(i,j+1,k,0) - dat(i,j-1,k,0)) / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a>); <span class="comment">// du/dy</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    });</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
