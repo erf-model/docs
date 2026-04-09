@@ -39,6 +39,7 @@ var NAVTREEINDEX0 =
 "ERF__AdvanceMorrison_8cpp.html#af8756cf103eb5b43c28400e574f81bd5":[3,0,1,10,1,0,1],
 "ERF__AdvanceRadiation_8cpp.html":[3,0,1,16,4],
 "ERF__AdvanceSimpleAD_8cpp.html":[3,0,1,19,4,0],
+"ERF__AdvanceWSM6_8cpp.html":[3,0,1,10,6,0],
 "ERF__Advance_8cpp.html":[3,0,1,16,0],
 "ERF__AdvectionSrcForMom_8cpp.html":[3,0,1,0,1],
 "ERF__AdvectionSrcForMom_8cpp.html#a0297c3e45cc9b6465744f5330aa01cfa":[3,0,1,0,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec":[3,0,1,22,18],
 "ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc":[3,0,1,22,10],
 "ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5":[3,0,1,22,36],
-"ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222":[3,0,1,22,49],
-"ERF__Constants_8H.html#af5689377f29be012360a846bd447e278":[3,0,1,22,31]
+"ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222":[3,0,1,22,49]
 };

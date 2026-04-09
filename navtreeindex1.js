@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"ERF__Constants_8H.html#af5689377f29be012360a846bd447e278":[3,0,1,22,31],
 "ERF__Constants_8H.html#af90fa8b6a26f98067ce125597f35d983":[3,0,1,22,25],
 "ERF__Constants_8H.html#afb7d1700c60728d56ef525934fe6a098":[3,0,1,22,72],
 "ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231":[3,0,1,22,30],
@@ -33,6 +34,7 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391":[3,0,1,2,2,6,6],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e":[3,0,1,2,2,6,4],
 "ERF__DataStruct_8H.html#a167e3ccc662c308c584d8722a013a25c":[3,0,1,2,2,12],
+"ERF__DataStruct_8H.html#a2dfec87fbda5d0cb27063b8fbb0438ae":[3,0,1,2,2,14],
 "ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb":[3,0,1,2,2,9],
 "ERF__DataStruct_8H.html#a34a4d2e60f7b54f450d8bc2f5bf9f32e":[3,0,1,2,2,10],
 "ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239":[3,0,1,2,2,4],
@@ -63,7 +65,6 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a7f22a2006f7648aaa55d4abfdb225a46":[3,0,1,2,2,15],
 "ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7":[3,0,1,2,2,18],
 "ERF__DataStruct_8H.html#ad4680e1ac992c1e8272b0faaa1bf1d0f":[3,0,1,2,2,17],
-"ERF__DataStruct_8H.html#ad48d7c033e400ce54ec35c098c24a25f":[3,0,1,2,2,14],
 "ERF__DataStruct_8H.html#ad992b8006a5fca7b2276b6d76b0714a0":[3,0,1,2,2,16],
 "ERF__DataStruct_8H.html#afb582070899c7011b2fb9c732a9b1f86":[3,0,1,2,2,19],
 "ERF__DataStruct_8H.html#afe7288053bdb1298d93c3f92d1dcfaa2":[3,0,1,2,2,11],
@@ -242,12 +243,11 @@ var NAVTREEINDEX1 =
 "ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3":[3,0,1,18,6,2],
 "ERF__EpochTime_8H.html#af7eed25e58d350c03f4b8396554bc6a2":[3,0,1,18,6,1],
 "ERF__EpochTime_8H_source.html":[3,0,1,18,6],
-"ERF__EulerianMicrophysics_8H.html":[3,0,1,10,6],
-"ERF__EulerianMicrophysics_8H_source.html":[3,0,1,10,6],
+"ERF__EulerianMicrophysics_8H.html":[3,0,1,10,7],
+"ERF__EulerianMicrophysics_8H_source.html":[3,0,1,10,7],
 "ERF__FillBdyCCVels_8cpp.html":[3,0,1,1,6],
 "ERF__FillCoarsePatch_8cpp.html":[3,0,1,1,7],
 "ERF__FillIntermediatePatch_8cpp.html":[3,0,1,1,8],
 "ERF__FillPatch_8cpp.html":[3,0,1,1,9],
-"ERF__FillPatcher_8H.html":[3,0,1,1,11],
-"ERF__FillPatcher_8H_source.html":[3,0,1,1,11]
+"ERF__FillPatcher_8H.html":[3,0,1,1,11]
 };

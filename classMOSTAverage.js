@@ -13,6 +13,7 @@ var classMOSTAverage =
     [ "make_MOSTAverage_at_level", "classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db", null ],
     [ "operator=", "classMOSTAverage.html#a56f533937767a348d7c1dff755989531", null ],
     [ "operator=", "classMOSTAverage.html#a584b986a317b2c4d799163574c43b3b3", null ],
+    [ "set_k_indices_EB", "classMOSTAverage.html#aa6a8b45a0deafcde2fd1c8e34b7bc7a5", null ],
     [ "set_k_indices_N", "classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc", null ],
     [ "set_k_indices_T", "classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9", null ],
     [ "set_norm_indices_T", "classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee", null ],

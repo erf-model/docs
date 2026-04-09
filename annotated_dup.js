@@ -115,5 +115,6 @@ var annotated_dup =
     [ "WENO_Z5", "structWENO__Z5.html", "structWENO__Z5" ],
     [ "WENO_Z7", "structWENO__Z7.html", "structWENO__Z7" ],
     [ "WindFarm", "classWindFarm.html", "classWindFarm" ],
-    [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ]
+    [ "WriteBndryPlanes", "classWriteBndryPlanes.html", "classWriteBndryPlanes" ],
+    [ "WSM6", "classWSM6.html", "classWSM6" ]
 ];
