@@ -1210,7 +1210,7 @@ Here is the caller graph for this function:</div>
 <p>Implements <a class="el" href="classIRadiation.html#a93a49facdea9a509245196a463491013">IRadiation</a>.</p>
 <div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// Ensure the boxes span klo -&gt; khi</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> klo = geom.Domain().smallEnd(2);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = geom.Domain().bigEnd(2);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// Reset vector of offsets for columnar data</span></div>
@@ -1221,7 +1221,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classRadiation.html#aefebb8c34aa4462de81826dc6209e73d">m_col_offsets</a>.resize(<span class="keywordtype">int</span>(ba.size()));</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(*cons_in); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; vbx = mfi.validbox();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            AMREX_ALWAYS_ASSERT_WITH_MESSAGE((<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> == vbx.smallEnd(2)) &amp;&amp;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            AMREX_ALWAYS_ASSERT_WITH_MESSAGE((klo == vbx.smallEnd(2)) &amp;&amp;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                             (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> == vbx.bigEnd(2)),</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                             <span class="stringliteral">&quot;Vertical decomposition with radiation is not allowed.&quot;</span>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">int</span> nx = vbx.length(0);</div>
@@ -1230,7 +1230,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classRadiation.html#a6a1f20c6fa1afeaff367f2cf0dac9788">m_ncol</a> += nx * ny;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    };</div>
-<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
 <div class="ttc" id="aclassRadiation_html_aefebb8c34aa4462de81826dc6209e73d"><div class="ttname"><a href="classRadiation.html#aefebb8c34aa4462de81826dc6209e73d">Radiation::m_col_offsets</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_col_offsets</div><div class="ttdef"><b>Definition:</b> ERF_Radiation.H:323</div></div>
 </div><!-- fragment -->

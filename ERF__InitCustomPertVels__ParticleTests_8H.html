@@ -98,8 +98,8 @@ Functions</h2></td></tr>
 <tr class="separator:a420d78bf983d6025fd797e5276faa2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf8f0b71a56c6dbc77312a07ce0e0f64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#adf8f0b71a56c6dbc77312a07ce0e0f64">query</a> (&quot;U_0&quot;, U_0)</td></tr>
 <tr class="separator:adf8f0b71a56c6dbc77312a07ce0e0f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bfda21c50c626d9a9ce191576dda823"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a9bfda21c50c626d9a9ce191576dda823">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ztop=z_nd(i, j, <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1);<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zht=z_nd(i, j, <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *ztop/(ztop - zht);})</td></tr>
-<tr class="separator:a9bfda21c50c626d9a9ce191576dda823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4605dc1679f2d44c31ce64db4aa0654"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ad4605dc1679f2d44c31ce64db4aa0654">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zbot=z_nd(i, j, 0);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a>/(<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> - zbot);})</td></tr>
+<tr class="separator:ad4605dc1679f2d44c31ce64db4aa0654"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2380f6cf0b1ce3875380c9fa45e1f07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aa2380f6cf0b1ce3875380c9fa45e1f07">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#a4c74ed1b76138a2f5baa925afe40f9a8">zbx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { z_vel_pert(i, j, k)=<a class="el" href="ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a">WFromOmega</a>(i, j, k, <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, x_vel_pert, y_vel_pert, mf_u, mf_v, z_nd, <a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>);})</td></tr>
 <tr class="separator:aa2380f6cf0b1ce3875380c9fa45e1f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -107,18 +107,16 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a7f74e9554c1ab66998e1319960f1e82c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
 <tr class="separator:a7f74e9554c1ab66998e1319960f1e82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bf09411f9d81d1b592910222600fb45"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = geomdata.Domain().smallEnd()[2]</td></tr>
-<tr class="separator:a0bf09411f9d81d1b592910222600fb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e309d9162590f5d8287ae33be5c24ff"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = geomdata.Domain().bigEnd()[2]</td></tr>
-<tr class="separator:a0e309d9162590f5d8287ae33be5c24ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39bf0788bda16ae90f09c6eb11cb6106"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> = geomdata.ProbHi()[2]</td></tr>
+<tr class="separator:a39bf0788bda16ae90f09c6eb11cb6106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada30199a52709bfe69b46aa5a2b9731"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize()</td></tr>
 <tr class="separator:aada30199a52709bfe69b46aa5a2b9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memItemLeft" align="right" valign="top">amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = <a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0]</td></tr>
 <tr class="separator:ae44ee844a27ad92e3e12a8cfc523ca15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9bfda21c50c626d9a9ce191576dda823"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bfda21c50c626d9a9ce191576dda823">&#9670;&nbsp;</a></span>ParallelFor() <span class="overload">[1/2]</span></h2>
+<a id="ad4605dc1679f2d44c31ce64db4aa0654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4605dc1679f2d44c31ce64db4aa0654">&#9670;&nbsp;</a></span>ParallelFor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,7 +130,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ztop=z_nd(i, j, <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1);<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zht=z_nd(i, j, <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *ztop/(ztop - zht);}&#160;</td>
+          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zbot=z_nd(i, j, 0);x_vel_pert(i, j, k)=<a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a7f74e9554c1ab66998e1319960f1e82c">U_0</a> *<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a>/(<a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a39bf0788bda16ae90f09c6eb11cb6106">ztop</a> - zbot);}&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -260,38 +258,6 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a0e309d9162590f5d8287ae33be5c24ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e309d9162590f5d8287ae33be5c24ff">&#9670;&nbsp;</a></span>khi</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int khi = geomdata.Domain().bigEnd()[2]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a9bfda21c50c626d9a9ce191576dda823">ParallelFor()</a>.</p>
-
-</div>
-</div>
-<a id="a0bf09411f9d81d1b592910222600fb45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bf09411f9d81d1b592910222600fb45">&#9670;&nbsp;</a></span>klo</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int klo = geomdata.Domain().smallEnd()[2]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Morrison::Advance()</a>, <a class="el" href="classWSM6.html#a9723e1fbac13992e1c9f3659eba048bc">WSM6::Advance()</a>, <a class="el" href="classNOAHMP.html#aef763ce195ae99d7026cd3157064ef9d">NOAHMP::Advance_With_State()</a>, <a class="el" href="classSurfaceLayer.html#a484a70955523aa230ce9aafab79cfe5b">SurfaceLayer::compute_fluxes()</a>, <a class="el" href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69">MOSTAverage::compute_plane_averages()</a>, <a class="el" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">MOSTAverage::compute_region_averages()</a>, <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>, <a class="el" href="classSurfaceLayer.html#aa4d6d3c5b0ecbce07ce52c05d2a4c3d2">SurfaceLayer::compute_SurfaceLayer_bcs_EB()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityMYJ_8cpp.html#ad0946a1eced1e2a2ec154dc578581ee3">ComputeDiffusivityMYJ()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#a1c8f0f6a58bbb9836144fcfcd448b593">copy_surface_tau_for_implicit()</a>, <a class="el" href="ERF__DiffusionSrcForState__S_8cpp.html#a3b1977d503f63623935bfc8b755f1668">DiffusionSrcForState_S()</a>, <a class="el" href="namespacederived.html#abfe5a3f0570951aa4a160af26a0288d2">derived::erf_dermucape()</a>, <a class="el" href="classERF.html#a29929644893f3e44beb5ed9403cbdaac">ERF::erf_enforce_hse()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a2e1d042f9d82e4b78d00e99ab25e9311">erf_init_dens_hse()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#ac5384659c1dc3cee6fa4a88ca80569f9">erf_slow_rhs_pre()</a>, <a class="el" href="ERF__Substep__MT_8cpp.html#aa87f97417797fa07d50ac1d0a04e315e">erf_substep_MT()</a>, <a class="el" href="ERF__Substep__NS_8cpp.html#a74f6c5403cc45b625e0b0018f1cdcc2b">erf_substep_NS()</a>, <a class="el" href="ERF__Substep__T_8cpp.html#ad00aa3fd82a61092bf13a174a23d595c">erf_substep_T()</a>, <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, <a class="el" href="classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef">SurfaceLayer::fill_qsurf_with_qsat()</a>, <a class="el" href="classSurfaceLayer.html#aabacea8c1fa769ca8f42c3adf448c015">SurfaceLayer::fill_tsurf_with_sst_and_tsk()</a>, <a class="el" href="classSurfaceLayer.html#a48710baca749922263cbc9e3e7a06c75">SurfaceLayer::get_lsm_tsurf()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a43bbadbb650272e16e1fece3481e14ea">ImplicitDiffForMomLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#a1ec64941f287bff89ba13df4a91ca1ed">ImplicitDiffForMomLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a98b6a108617a781137a6062fad33522d">ImplicitDiffForMomLU_T()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a30218b4b79ee7fba87b9bf09c7aafcf7">ImplicitDiffForStateLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#ac2344a102d369886ac8c1ca503d05a66">ImplicitDiffForStateLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a5a85e5ddbdee3eeeedb1491d3c6972a0">ImplicitDiffForStateLU_T()</a>, <a class="el" href="classRadiation.html#a62fe26da6c5ccbda9b26521828438256">Radiation::Init()</a>, <a class="el" href="classNOAHMP.html#a51edb33d6a5a84f048e706f5d220ff7a">NOAHMP::Init()</a>, <a class="el" href="classERF.html#a3079a30cce7e1a01d5c9705f393b5a63">ERF::init_Dirichlet_bc_data()</a>, <a class="el" href="classERF.html#aab564dd3009ef83466b50db6d997b563">ERF::init_geo_wind_profile()</a>, <a class="el" href="namespaceHSEutils.html#acea3d9d853ef0fbeee3f94b4b62cc224">HSEutils::init_isentropic_hse()</a>, <a class="el" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07">HSEutils::init_isentropic_hse_terrain()</a>, <a class="el" href="classSurfaceLayer.html#a642273c8348f41f7e63f10c1d9b11be2">SurfaceLayer::init_tke_from_ustar()</a>, <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>, <a class="el" href="ERF__MakeFastCoeffs_8cpp.html#ad6b5b13b67ab3a4c1086f25bac4a7b14">make_fast_coeffs()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>, <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a9bfda21c50c626d9a9ce191576dda823">ParallelFor()</a>, <a class="el" href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b">SurfaceLayer::read_custom_roughness()</a>, <a class="el" href="classProblemBase.html#a8d354473db4a51e21149d110a41fbccc">ProblemBase::read_custom_terrain()</a>, <a class="el" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">InputSpongeData::read_from_file()</a>, <a class="el" href="structInputSoundingData.html#a6742e8e0e37fd817097963bbd965692c">InputSoundingData::read_from_file()</a>, <a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ERF::ReadCheckpointFile()</a>, <a class="el" href="classERF.html#aa90c9756f684404f8b69b8a23568b535">ERF::refinement_criteria_setup()</a>, <a class="el" href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux()</a>, <a class="el" href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor()</a>, <a class="el" href="classERF.html#afb798c72ea4fde6f4da8d01a24c8c165">ERF::sample_lines()</a>, <a class="el" href="classSHOCInterface.html#a3acea701fdb9067c22fcd2f02941ed02">SHOCInterface::set_grids()</a>, <a class="el" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9">MOSTAverage::set_k_indices_T()</a>, <a class="el" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee">MOSTAverage::set_norm_indices_T()</a>, <a class="el" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a">MOSTAverage::set_norm_positions_T()</a>, <a class="el" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e">MOSTAverage::set_z_positions_T()</a>, <a class="el" href="classERF.html#a0877d5a0263641c13b92d2d16f47b689">ERF::setRayleighRefFromSounding()</a>, <a class="el" href="ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a">SolveTridiag()</a>, <a class="el" href="classSurfaceLayer.html#a7ad7bb83846f296b1f1f3c5111df1c40">SurfaceLayer::update_fluxes()</a>, <a class="el" href="classERF.html#a8494cd7a4f6dad7b19f239783f32465f">ERF::Write2DPlotFile()</a>, <a class="el" href="classMOSTAverage.html#a2e0caf3f5752fc5edbe6e0fd877a4821">MOSTAverage::write_averages()</a>, <a class="el" href="classMOSTAverage.html#a8afcba5a6463fa300161c33080dafd36">MOSTAverage::write_k_indices()</a>, <a class="el" href="classMOSTAverage.html#ad100930fbf216f0482922cb62df43432">MOSTAverage::write_norm_indices()</a>, and <a class="el" href="classMOSTAverage.html#a08da948d93e79175ba5bf9b48e402846">MOSTAverage::write_xz_positions()</a>.</p>
-
-</div>
-</div>
 <a id="a7f74e9554c1ab66998e1319960f1e82c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f74e9554c1ab66998e1319960f1e82c">&#9670;&nbsp;</a></span>U_0</h2>
 
@@ -304,7 +270,23 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a9bfda21c50c626d9a9ce191576dda823">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ad4605dc1679f2d44c31ce64db4aa0654">ParallelFor()</a>.</p>
+
+</div>
+</div>
+<a id="a39bf0788bda16ae90f09c6eb11cb6106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39bf0788bda16ae90f09c6eb11cb6106">&#9670;&nbsp;</a></span>ztop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ztop = geomdata.ProbHi()[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classERF.html#a3079a30cce7e1a01d5c9705f393b5a63">ERF::init_Dirichlet_bc_data()</a>, <a class="el" href="classERF.html#aab564dd3009ef83466b50db6d997b563">ERF::init_geo_wind_profile()</a>, <a class="el" href="classERF.html#a7588352f12a86f303d550b4fe5223db3">ERF::initRayleigh_at_level()</a>, <a class="el" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ad4605dc1679f2d44c31ce64db4aa0654">ParallelFor()</a>, <a class="el" href="structInputSpongeData.html#a75a39e770aef38396af5f31cda9879fc">InputSpongeData::read_from_file()</a>, and <a class="el" href="structInputSoundingData.html#a6742e8e0e37fd817097963bbd965692c">InputSoundingData::read_from_file()</a>.</p>
 
 </div>
 </div>

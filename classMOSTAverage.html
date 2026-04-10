@@ -507,7 +507,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;        d_fact_old = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;    }</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
 <div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;    <span class="comment">// GPU array to accumulate averages into</span></div>
 <div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;    Gpu::DeviceVector&lt;Real&gt; pavg(plane_average.size(), <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
@@ -545,10 +545,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;            Box vbx = mfi.validbox(); <span class="comment">// This is the grid (not tile)</span></div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;            Box pbx = mfi.tilebox();  <span class="comment">// This is the tile (not grid)</span></div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160; </div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160; </div>
 <div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;            <span class="comment">// Make planar since mfiter is over fields</span></div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160; </div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            <span class="comment">// Avoid double counting nodal data by changing the high end when we are</span></div>
 <div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;            <span class="comment">//     at the high side of the grid (not just of the tile)</span></div>
@@ -617,9 +617,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        {</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;            Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160; </div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160; </div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;            pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;            pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160; </div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; T_mf_arr  = fields[2]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; qv_mf_arr = fields[3]-&gt;const_array(mfi);</div>
@@ -709,9 +709,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        {</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;            Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160; </div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160; </div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;            pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;            pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160; </div>
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;            <span class="comment">// Last element is Umag and always cell centered</span></div>
 <div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;            <span class="keyword">auto</span> u_mf_arr = (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) ? rot_fields[imf  ]-&gt;const_array(mfi) :</div>
@@ -772,8 +772,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ABL_8H_html_a733275701db9aebe51be2e6c0e5b1816"><div class="ttname"><a href="ERF__InitCustomPertVels__ABL_8H.html#a733275701db9aebe51be2e6c0e5b1816">vfac</a></div><div class="ttdeci">Real vfac</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ABL.H:26</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:16</div></div>
+<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:17</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
 <div class="ttc" id="aERF__SetupVertDiff_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_SetupVertDiff.H:2</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -862,7 +861,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;    <span class="keyword">auto</span>&amp; j_indx   = <a class="code" href="classMOSTAverage.html#acdc75484e6ed5d2fadfb93573b6dded2">m_j_indx</a>[lev];</div>
 <div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    <span class="keyword">auto</span>&amp; k_indx   = <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev];</div>
 <div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160; </div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160; </div>
 <div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;    <span class="comment">// Set factors for time averaging</span></div>
 <div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_fact_new, d_fact_old;</div>
@@ -896,10 +895,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*fields[imf], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01210"></a><span class="lineno"> 1210</span>&#160;            Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01211"></a><span class="lineno"> 1211</span>&#160; </div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160; </div>
 <div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;            <span class="comment">// Make planar since mfiter is over fields</span></div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;            pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;            pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160; </div>
 <div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;            <span class="keyword">auto</span> mf_arr = (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) ? rot_fields[imf]-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160;                                           fields[imf]-&gt;const_array(mfi);</div>
@@ -976,9 +975,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*fields[3], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;            Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160; </div>
-<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160; </div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;            pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;            pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160; </div>
 <div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; T_mf_arr  = fields[2]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; qv_mf_arr = fields[3]-&gt;const_array(mfi);</div>
@@ -1087,9 +1086,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*fields[imf_cc], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;            Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160; </div>
-<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;            <span class="keywordflow">if</span> (pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160; </div>
-<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;            pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;            pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160; </div>
 <div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;            <span class="keyword">auto</span> u_mf_arr = (<a class="code" href="classMOSTAverage.html#a7d43a66f7518f75e694e0582dd40ec44">m_rotate</a>) ? rot_fields[imf  ]-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;                                             fields[imf  ]-&gt;const_array(mfi);</div>
@@ -1191,9 +1190,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;            <span class="keywordflow">for</span> (MFIter mfi(*fields[imf], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;                Box gpbx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160; </div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;                <span class="keywordflow">if</span> (gpbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;                <span class="keywordflow">if</span> (gpbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160; </div>
-<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;                gpbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;                gpbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160; </div>
 <div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;                <span class="keywordflow">if</span> (bnd_bx.contains(gpbx)) <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160; </div>
@@ -1897,7 +1896,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zref_tmp = <a class="code" href="classMOSTAverage.html#addde3db57d53d5d309ba5e0ef4d827a4">zref_default</a>;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="keyword">auto</span> read_z = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;most.zref&quot;</span>,zref_tmp);</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keyword">auto</span> read_k = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;most.k_arr_in&quot;</span>,<a class="code" href="classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884">m_k_in</a>);</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>     = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordtype">int</span> klo     = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="comment">// Allow default zref</span></div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordflow">if</span> (!read_z) {</div>
@@ -1921,21 +1920,21 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(*fields[imf_cc], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            Box npbx = mfi.tilebox(IntVect(1,1,0),IntVect(1,1,0));</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;            <span class="keywordflow">if</span> (npbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;            <span class="keywordflow">if</span> (npbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160; </div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            npbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            npbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160; </div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;            <span class="keyword">const</span> <span class="keyword">auto</span> z_phys_arr = <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;            <span class="keyword">auto</span> k_arr = <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev]-&gt;array(mfi);</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;            <span class="keyword">auto</span> zref_arr = <a class="code" href="classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f">m_zref</a>[lev]-&gt;array(mfi);</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(npbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            {</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                k_arr(i,j,k) = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                k_arr(i,j,k) = klo;</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_bot_face  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i  ,j  ,k) + z_phys_arr(i+1,j  ,k)</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                                          + z_phys_arr(i  ,j+1,k) + z_phys_arr(i+1,j+1,k) );</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_target    = z_bot_face + d_zref;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lk(<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>); lk&lt;=kmax; ++lk) {</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lk(klo); lk&lt;=kmax; ++lk) {</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i,j  ,lk  ) + z_phys_arr(i+1,j  ,lk  )</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                                       + z_phys_arr(i,j+1,lk  ) + z_phys_arr(i+1,j+1,lk  ) );</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i,j  ,lk+1) + z_phys_arr(i+1,j  ,lk+1)</div>
@@ -2016,7 +2015,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keywordflow">if</span> (!read_zref) {</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;most.zref not specified, query distance default is &quot;</span> &lt;&lt; zref_tmp &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    }</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="comment">// Capture for device</span></div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_zref   = zref_tmp;</div>
@@ -2027,11 +2026,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*fields[imf_cc], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;        Box npbx  = mfi.tilebox(IntVect(1,1,0),IntVect(1,1,0));</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        <span class="keywordflow">if</span> (npbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        <span class="keywordflow">if</span> (npbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;        <span class="keywordtype">int</span> kmax = npbx.bigEnd(2);</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        npbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        npbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z_phys_arr = <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        <span class="keyword">auto</span> i_arr = <a class="code" href="classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62">m_i_indx</a>[lev]-&gt;array(mfi);</div>
@@ -2062,11 +2061,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_bot_face  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i  ,j  ,k) + z_phys_arr(i+1,j  ,k)</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                      + z_phys_arr(i  ,j+1,k) + z_phys_arr(i+1,j+1,k) );</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_target    = z_bot_face + delta_z;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;            k_arr(i,j,0)     = <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>;</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;            k_arr(i,j,0)     = klo;</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;            zref_arr(i,j,0)  = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * z_bot_face +</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                               <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.125) * ( z_phys_arr(i  ,j  ,k+1) + z_phys_arr(i+1,j  ,k+1)</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                                       + z_phys_arr(i  ,j+1,k+1) + z_phys_arr(i+1,j+1,k+1) );</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lk(<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>); lk&lt;=kmax; ++lk) {</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lk(klo); lk&lt;=kmax; ++lk) {</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i_new,j_new  ,lk  ) + z_phys_arr(i_new+1,j_new  ,lk  )</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                                   + z_phys_arr(i_new,j_new+1,lk  ) + z_phys_arr(i_new+1,j_new+1,lk  ) );</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i_new,j_new  ,lk+1) + z_phys_arr(i_new+1,j_new  ,lk+1)</div>
@@ -2144,7 +2143,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    <span class="keywordflow">if</span> (!read_zref) {</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        Print() &lt;&lt; <span class="stringliteral">&quot;most.zref not specified, query distance default is &quot;</span> &lt;&lt; zref_tmp &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    }</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="comment">// Capture for device</span></div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_zref = zref_tmp;</div>
@@ -2159,9 +2158,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        Box gtbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        RealBox grb{gtbx,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>.data(),base.dataPtr()};</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="keywordflow">if</span> (npbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="keywordflow">if</span> (npbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160; </div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        npbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        npbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160; </div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> z_phys_arr = <a class="code" href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">m_z_phys_nd</a>[lev]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keyword">auto</span> x_pos_arr   = <a class="code" href="classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea">m_x_pos</a>[lev]-&gt;array(mfi);</div>
@@ -2490,7 +2489,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;        <a class="code" href="classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f">m_zref</a>[lev]-&gt;setVal(zref_tmp);</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    }</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160; </div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="comment">// Capture for device</span></div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_zref = zref_tmp;</div>
@@ -2503,9 +2502,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        Box npbx  = mfi.tilebox(IntVect(1,1,0),IntVect(1,1,0));</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;        Box gtbx  = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160; </div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="keywordflow">if</span> (npbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;        <span class="keywordflow">if</span> (npbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160; </div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        npbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        npbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        RealBox grb{gtbx,<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>.data(),base.dataPtr()};</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160; </div>
@@ -2822,7 +2821,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01691"></a><span class="lineno"> 1691</span>&#160;    <span class="comment">// MFIter on CC</span></div>
 <div class="line"><a name="l01692"></a><span class="lineno"> 1692</span>&#160;    <span class="keywordtype">int</span> imf_cc = 2;</div>
 <div class="line"><a name="l01693"></a><span class="lineno"> 1693</span>&#160; </div>
-<div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l01694"></a><span class="lineno"> 1694</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l01695"></a><span class="lineno"> 1695</span>&#160; </div>
 <div class="line"><a name="l01696"></a><span class="lineno"> 1696</span>&#160;    <span class="keywordtype">int</span> navg = <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a> - 1;</div>
 <div class="line"><a name="l01697"></a><span class="lineno"> 1697</span>&#160; </div>
@@ -2833,9 +2832,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01702"></a><span class="lineno"> 1702</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*fields[imf_cc], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01703"></a><span class="lineno"> 1703</span>&#160;        Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01704"></a><span class="lineno"> 1704</span>&#160; </div>
-<div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01705"></a><span class="lineno"> 1705</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01706"></a><span class="lineno"> 1706</span>&#160; </div>
-<div class="line"><a name="l01707"></a><span class="lineno"> 1707</span>&#160;        pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01707"></a><span class="lineno"> 1707</span>&#160;        pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01708"></a><span class="lineno"> 1708</span>&#160; </div>
 <div class="line"><a name="l01709"></a><span class="lineno"> 1709</span>&#160;        <span class="keywordtype">int</span> il = pbx.smallEnd(0); <span class="keywordtype">int</span> iu = pbx.bigEnd(0);</div>
 <div class="line"><a name="l01710"></a><span class="lineno"> 1710</span>&#160;        <span class="keywordtype">int</span> jl = pbx.smallEnd(1); <span class="keywordtype">int</span> ju = pbx.bigEnd(1);</div>
@@ -2898,7 +2897,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;    <span class="comment">// MFIter on CC</span></div>
 <div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;    <span class="keywordtype">int</span> imf_cc = 2;</div>
 <div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160; </div>
-<div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l01549"></a><span class="lineno"> 1549</span>&#160; </div>
 <div class="line"><a name="l01550"></a><span class="lineno"> 1550</span>&#160;    std::ofstream ofile;</div>
 <div class="line"><a name="l01551"></a><span class="lineno"> 1551</span>&#160;    ofile.open (<span class="stringliteral">&quot;MOST_k_indices.txt&quot;</span>);</div>
@@ -2907,9 +2906,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01554"></a><span class="lineno"> 1554</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*fields[imf_cc], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01555"></a><span class="lineno"> 1555</span>&#160;        Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01556"></a><span class="lineno"> 1556</span>&#160; </div>
-<div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01557"></a><span class="lineno"> 1557</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01558"></a><span class="lineno"> 1558</span>&#160; </div>
-<div class="line"><a name="l01559"></a><span class="lineno"> 1559</span>&#160;        pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01559"></a><span class="lineno"> 1559</span>&#160;        pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01560"></a><span class="lineno"> 1560</span>&#160; </div>
 <div class="line"><a name="l01561"></a><span class="lineno"> 1561</span>&#160;        <span class="keywordtype">int</span> il = pbx.smallEnd(0); <span class="keywordtype">int</span> iu = pbx.bigEnd(0);</div>
 <div class="line"><a name="l01562"></a><span class="lineno"> 1562</span>&#160;        <span class="keywordtype">int</span> jl = pbx.smallEnd(1); <span class="keywordtype">int</span> ju = pbx.bigEnd(1);</div>
@@ -2972,7 +2971,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01594"></a><span class="lineno"> 1594</span>&#160;    <span class="comment">// MFIter on CC</span></div>
 <div class="line"><a name="l01595"></a><span class="lineno"> 1595</span>&#160;    <span class="keywordtype">int</span> imf_cc = 2;</div>
 <div class="line"><a name="l01596"></a><span class="lineno"> 1596</span>&#160; </div>
-<div class="line"><a name="l01597"></a><span class="lineno"> 1597</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l01597"></a><span class="lineno"> 1597</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l01598"></a><span class="lineno"> 1598</span>&#160; </div>
 <div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160;    std::ofstream ofile;</div>
 <div class="line"><a name="l01600"></a><span class="lineno"> 1600</span>&#160;    ofile.open (<span class="stringliteral">&quot;MOST_ijk_indices.txt&quot;</span>);</div>
@@ -2981,9 +2980,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01603"></a><span class="lineno"> 1603</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*fields[imf_cc], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160;        Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160; </div>
-<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01607"></a><span class="lineno"> 1607</span>&#160; </div>
-<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;        pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;        pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160; </div>
 <div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;        <span class="keywordtype">int</span> il = pbx.smallEnd(0); <span class="keywordtype">int</span> iu = pbx.bigEnd(0);</div>
 <div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;        <span class="keywordtype">int</span> jl = pbx.smallEnd(1); <span class="keywordtype">int</span> ju = pbx.bigEnd(1);</div>
@@ -3063,7 +3062,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;    <span class="comment">// MFIter on CC</span></div>
 <div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;    <span class="keywordtype">int</span> imf_cc = 2;</div>
 <div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160; </div>
-<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;    <span class="keywordtype">int</span> klo = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].Domain().smallEnd(2);</div>
 <div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160; </div>
 <div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;    std::ofstream ofile;</div>
 <div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;    ofile.open (<span class="stringliteral">&quot;MOST_xz_positions.txt&quot;</span>);</div>
@@ -3071,9 +3070,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01659"></a><span class="lineno"> 1659</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*fields[imf_cc], <a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l01660"></a><span class="lineno"> 1660</span>&#160;        Box pbx = mfi.tilebox();</div>
 <div class="line"><a name="l01661"></a><span class="lineno"> 1661</span>&#160; </div>
-<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l01662"></a><span class="lineno"> 1662</span>&#160;        <span class="keywordflow">if</span>(pbx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
 <div class="line"><a name="l01663"></a><span class="lineno"> 1663</span>&#160; </div>
-<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;        pbx.makeSlab(2,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a>);</div>
+<div class="line"><a name="l01664"></a><span class="lineno"> 1664</span>&#160;        pbx.makeSlab(2,klo);</div>
 <div class="line"><a name="l01665"></a><span class="lineno"> 1665</span>&#160; </div>
 <div class="line"><a name="l01666"></a><span class="lineno"> 1666</span>&#160;        <span class="keywordtype">int</span> il = pbx.smallEnd(0); <span class="keywordtype">int</span> iu = pbx.bigEnd(0);</div>
 <div class="line"><a name="l01667"></a><span class="lineno"> 1667</span>&#160; </div>

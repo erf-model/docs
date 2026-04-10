@@ -1,8 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19":[3,0,1,18,19,4],
-"ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9":[3,0,1,18,19,0],
-"ERF__MoistUtils_8H.html#ab1838e808af7bc4666295e1a76351d49":[3,0,1,18,19,2],
 "ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c":[3,0,1,18,19,6],
 "ERF__MoistUtils_8H_source.html":[3,0,1,18,19],
 "ERF__MomentumToVelocity_8cpp.html":[3,0,1,18,20],
@@ -249,5 +246,8 @@ var NAVTREEINDEX7 =
 "ERF__SetupDiff_8H.html#ad422105f0fbb9a0f58fb8da2d6a7719e":[3,0,1,3,25,7],
 "ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2":[3,0,1,3,25,16],
 "ERF__SetupDiff_8H.html#af95a27e0d3fb9866f74398b99e1b1bd8":[3,0,1,3,25,11],
-"ERF__SetupDiff_8H_source.html":[3,0,1,3,25]
+"ERF__SetupDiff_8H_source.html":[3,0,1,3,25],
+"ERF__SetupVertDiff_8H.html":[3,0,1,3,26],
+"ERF__SetupVertDiff_8H.html#a0544c3fe466e421738dae463968b70ba":[3,0,1,3,26,11],
+"ERF__SetupVertDiff_8H.html#a0eeef4f9ceae266fe847f97420b38357":[3,0,1,3,26,10]
 };

@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('ERF__Radiation_8H_source.html',''); in
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          amrex::MultiFab* cons_in)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// Ensure the boxes span klo -&gt; khi</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">int</span> klo = geom.Domain().smallEnd(2);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = geom.Domain().bigEnd(2);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// Reset vector of offsets for columnar data</span></div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('ERF__Radiation_8H_source.html',''); in
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classRadiation.html#aefebb8c34aa4462de81826dc6209e73d">m_col_offsets</a>.resize(<span class="keywordtype">int</span>(ba.size()));</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">for</span> (amrex::MFIter mfi(*cons_in); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">const</span> amrex::Box&amp; vbx = mfi.validbox();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            AMREX_ALWAYS_ASSERT_WITH_MESSAGE((<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a> == vbx.smallEnd(2)) &amp;&amp;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            AMREX_ALWAYS_ASSERT_WITH_MESSAGE((klo == vbx.smallEnd(2)) &amp;&amp;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                             (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> == vbx.bigEnd(2)),</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                             <span class="stringliteral">&quot;Vertical decomposition with radiation is not allowed.&quot;</span>);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordtype">int</span> nx = vbx.length(0);</div>
@@ -552,7 +552,6 @@ $(document).ready(function(){initNavTree('ERF__Radiation_8H_source.html',''); in
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__EOS_8H_html"><div class="ttname"><a href="ERF__EOS_8H.html">ERF_EOS.H</a></div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
-<div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_a0bf09411f9d81d1b592910222600fb45"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#a0bf09411f9d81d1b592910222600fb45">klo</a></div><div class="ttdeci">const int klo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:4</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
 <div class="ttc" id="aERF__Kokkos_8H_html"><div class="ttname"><a href="ERF__Kokkos_8H.html">ERF_Kokkos.H</a></div></div>
 <div class="ttc" id="aERF__Kokkos_8H_html_a1c1c14451633cb7c1dda9ef23f26d846"><div class="ttname"><a href="ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846">real1d_k</a></div><div class="ttdeci">Kokkos::View&lt; RealT *, KokkosDefaultDevice &gt; real1d_k</div><div class="ttdef"><b>Definition:</b> ERF_Kokkos.H:18</div></div>
