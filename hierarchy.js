@@ -93,6 +93,7 @@ var hierarchy =
     [ "rico_flux", "structrico__flux.html", null ],
     [ "rotate_flux", "structrotate__flux.html", null ],
     [ "SatMethods", "classSatMethods.html", null ],
+    [ "SDDistributionParams", "structSDDistributionParams.html", null ],
     [ "SDInitProperties", "classSDInitProperties.html", [
       [ "SDInitialization", "classSDInitialization.html", null ],
       [ "SDInjection", "classSDInjection.html", null ]

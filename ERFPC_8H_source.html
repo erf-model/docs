@@ -421,50 +421,61 @@ $(document).ready(function(){initNavTree('ERFPC_8H_source.html',''); initResizab
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="comment">// the following functions should ideally be private or protected, but need to be</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">// public due to CUDA extended lambda capture rules</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">        /*! Default particle initialization */</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <span class="keywordtype">void</span> initializeParticlesUniformDistributionInBox (<span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; a_ptr,</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                                                          <span class="keyword">const</span> amrex::RealBox&amp; particle_box);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">        /*! Fix k-indices for all particles after AMR regrid/removal */</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordtype">void</span> FixKIndexAMR (<span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; a_z_phys_nd);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;<span class="comment">        /*! Extract and route out-of-range particles to proper levels */</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordtype">void</span> ExtractAndRouteOORParticles ( <span class="keywordtype">int</span> a_lev,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                           <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; a_z_phys_nd );</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="comment">        /*! \brief Helper for ParticleToMesh operations with non-uniform z support</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment">         *</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="comment">         * Generic CIC deposition from particles to a MultiFab. The caller provides</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="comment">         * a device lambda `value_func(ptd, i)` that returns the per-particle scalar</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="comment">         * to deposit (e.g. mass, number, flux). Handles both uniform and non-uniform</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">         * vertical grids. Implementation in ERFPCParticleToMesh.H.</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="comment">         */</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueFunc&gt;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordtype">void</span> ERFPCParticleToMesh(amrex::MultiFab&amp; a_mf, <span class="keywordtype">int</span> a_lev, <span class="keywordtype">int</span> a_comp,</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                                  ValueFunc&amp;&amp; value_func) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">        /*! Diagnostic: count particles per level and halo (for AMR) */</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordtype">void</span> CountParticlesPerLevelAndHalo ( <span class="keywordtype">int</span> a_finest_level );</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordtype">bool</span> m_advect_w_flow;               <span class="comment">/*!&lt; advect with flow velocity */</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordtype">bool</span> m_advect_w_gravity;            <span class="comment">/*!&lt; advect under gravitational force */</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        amrex::RealBox m_particle_box;      <span class="comment">/*!&lt; box within which to place particles */</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        std::string m_name;                 <span class="comment">/*!&lt; name of this particle species */</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        std::string m_initialization_type;  <span class="comment">/*!&lt; initial particle distribution type */</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordtype">int</span> m_ppc_init;                     <span class="comment">/*!&lt; initial number of particles per cell */</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> m_inject_start_time;    <span class="comment">/*!&lt; particles will only be initialized/injected if time &gt;= m_inject_start_time */</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordtype">bool</span> m_initialized = <span class="keyword">false</span>;         <span class="comment">/*!&lt; have the particles been initialized */</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;<span class="comment">        /*! Default particle initialization */</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordtype">void</span> initializeParticlesUniformDistributionInBox (<span class="keyword">const</span> std::unique_ptr&lt;amrex::MultiFab&gt;&amp; a_ptr,</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                                                          <span class="keyword">const</span> amrex::RealBox&amp; particle_box);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="comment">        /*! Fix k-indices for all particles after AMR regrid/removal */</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordtype">void</span> FixKIndexAMR (<span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; a_z_phys_nd);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="comment">        /*! Extract and route out-of-range particles to proper levels */</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordtype">void</span> ExtractAndRouteOORParticles ( <span class="keywordtype">int</span> a_lev,</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                           <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; a_z_phys_nd );</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="comment">        /*! Diagnostic: count particles per level and halo (for AMR) */</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordtype">void</span> CountParticlesPerLevelAndHalo ( <span class="keywordtype">int</span> a_finest_level );</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordtype">bool</span> m_advect_w_flow;               <span class="comment">/*!&lt; advect with flow velocity */</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordtype">bool</span> m_advect_w_gravity;            <span class="comment">/*!&lt; advect under gravitational force */</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordtype">bool</span> m_stable_redistribute;         <span class="comment">/*!&lt; use stable redistribute for deterministic simulations */</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        amrex::RealBox m_particle_box;      <span class="comment">/*!&lt; box within which to place particles */</span></div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; m_zlevels_d; <span class="comment">/*!&lt; Level-0 z-coordinate node positions for non-uniform vertical grids */</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="comment">        /*! read inputs from file */</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readInputs ();</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        std::string m_name;                 <span class="comment">/*!&lt; name of this particle species */</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        std::string m_initialization_type;  <span class="comment">/*!&lt; initial particle distribution type */</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordtype">int</span> m_ppc_init;                     <span class="comment">/*!&lt; initial number of particles per cell */</span></div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> m_inject_start_time;    <span class="comment">/*!&lt; particles will only be initialized/injected if time &gt;= m_inject_start_time */</span></div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordtype">bool</span> place_randomly_in_cells; <span class="comment">/*!&lt; place particles at random positions? */</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;};</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordtype">bool</span> m_initialized = <span class="keyword">false</span>;         <span class="comment">/*!&lt; have the particles been initialized */</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordtype">bool</span> m_stable_redistribute;         <span class="comment">/*!&lt; use stable redistribute for deterministic simulations */</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        amrex::Gpu::DeviceVector&lt;amrex::Real&gt; m_zlevels_d; <span class="comment">/*!&lt; Level-0 z-coordinate node positions for non-uniform vertical grids */</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="comment">        /*! read inputs from file */</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readInputs ();</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordtype">bool</span> place_randomly_in_cells; <span class="comment">/*!&lt; place particles at random positions? */</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;};</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>

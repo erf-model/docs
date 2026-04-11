@@ -1,12 +1,15 @@
 var classSDInitProperties =
 [
     [ "MatVec", "classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f", null ],
+    [ "getAerosolDistParams", "classSDInitProperties.html#a9ed6f5a33f1683ffd523d8f7f3871cd5", null ],
     [ "getAerosolDistribution", "classSDInitProperties.html#a3149af66c71dc5f58815e92d33744a67", null ],
     [ "getAerosolDistribution", "classSDInitProperties.html#a0f4e63b8a0b64e0b9644756795ee1785", null ],
-    [ "getDistribution", "classSDInitProperties.html#a22a14d49206398e4eda111047112f108", null ],
-    [ "getDistribution", "classSDInitProperties.html#a45af079e15405c61adc17e801269e501", null ],
+    [ "getDistribution", "classSDInitProperties.html#a279fcf4c47b4faaa0fb86255a8a87870", null ],
+    [ "getDistribution", "classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762", null ],
+    [ "getSpeciesDistParams", "classSDInitProperties.html#a344ba2448602c5c139d54d1b9bddd920", null ],
     [ "getSpeciesDistribution", "classSDInitProperties.html#a8eeff9268fef85409c051a8a97fd3220", null ],
     [ "getSpeciesDistribution", "classSDInitProperties.html#aff68bc531d5bad021fa7d9ebc059101e", null ],
+    [ "makeDistributionParams", "classSDInitProperties.html#a6beff7cc5002753f3081290635e68213", null ],
     [ "numParticlesPerCell", "classSDInitProperties.html#acbb6471ebe4f5009062307b672b2c3ce", null ],
     [ "numSDPerCell", "classSDInitProperties.html#aab2dcb840663760ff9f31b631a448d9b", null ],
     [ "printParameters", "classSDInitProperties.html#a45f49eae210a782ea6e4f2271317028e", null ],
@@ -14,7 +17,7 @@ var classSDInitProperties =
     [ "sampledMultiplicity", "classSDInitProperties.html#a1360bc2697e6ec8be9a185e90a514f4b", null ],
     [ "setDefaults", "classSDInitProperties.html#ac1367f767b14b16934c12ec8b9bc81dd", null ],
     [ "volume", "classSDInitProperties.html#a10d91723eb4fe562fe4e9166d29c0db0", null ],
-    [ "m_aerosol_init_type", "classSDInitProperties.html#a6ee1c24ea15470a55bdfacb56d60ddce", null ],
+    [ "m_aerosol_init_type", "classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347", null ],
     [ "m_init_particle_p1", "classSDInitProperties.html#a4758680e6943f6a3037aa735fbb35ddb", null ],
     [ "m_init_particle_p2", "classSDInitProperties.html#a7f792364bcdddd29fc367294391f5fc0", null ],
     [ "m_mass_aerosol_max", "classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5", null ],
@@ -38,6 +41,6 @@ var classSDInitProperties =
     [ "m_radius_species_max", "classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3", null ],
     [ "m_radius_species_mean", "classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd", null ],
     [ "m_radius_species_min", "classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b", null ],
-    [ "m_species_init_type", "classSDInitProperties.html#a692a8b3bf8231ee819ff3d91019242a8", null ],
+    [ "m_species_init_type", "classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf", null ],
     [ "m_type", "classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85", null ]
 ];

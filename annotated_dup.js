@@ -77,6 +77,7 @@ var annotated_dup =
     [ "SAM", "classSAM.html", "classSAM" ],
     [ "SatAdj", "classSatAdj.html", "classSatAdj" ],
     [ "SatMethods", "classSatMethods.html", "classSatMethods" ],
+    [ "SDDistributionParams", "structSDDistributionParams.html", "structSDDistributionParams" ],
     [ "SDInitialization", "classSDInitialization.html", "classSDInitialization" ],
     [ "SDInitProperties", "classSDInitProperties.html", "classSDInitProperties" ],
     [ "SDInjection", "classSDInjection.html", "classSDInjection" ],

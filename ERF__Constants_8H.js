@@ -29,6 +29,7 @@ var ERF__Constants_8H =
     [ "esccoef", "ERF__Constants_8H.html#ac16a7511bec41b7d5a558b5841e8f3b1", null ],
     [ "esicoef", "ERF__Constants_8H.html#a414035f12e97c86f4e40cb6763c29ddb", null ],
     [ "four", "ERF__Constants_8H.html#a27fee4dc66c221a7e27477953168d232", null ],
+    [ "four_thirds_pi", "ERF__Constants_8H.html#aee9241d04ff505346b552544969d619a", null ],
     [ "fourth", "ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc", null ],
     [ "Gamma", "ERF__Constants_8H.html#afbb622bf3b404a3e7c77f3103b4d1231", null ],
     [ "h2otrip", "ERF__Constants_8H.html#af5689377f29be012360a846bd447e278", null ],

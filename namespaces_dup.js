@@ -52,6 +52,7 @@ var namespaces_dup =
       [ "erf_dervortz", "namespacederived.html#a37db4a7b4f321c818611c83acb0b8b45", null ]
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
+    [ "ERF", "namespaceERF.html", "namespaceERF" ],
     [ "ERFBCType", "namespaceERFBCType.html", [
       [ "mathematicalBndryTypes", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c", [
         [ "bogus", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4", null ],
@@ -495,10 +496,6 @@ var namespaces_dup =
       [ "AMREX_ENUM", "namespaceSpecies.html#af398940141c9daafeeae1dd0a54be259", null ]
     ] ],
     [ "SupDropInit", "namespaceSupDropInit.html", [
-      [ "attrib_init_const", "namespaceSupDropInit.html#ab495458bf43b8e3b569fc4e85c258275", null ],
-      [ "attrib_init_exp", "namespaceSupDropInit.html#ac343ff99fff7c9e4899b6773d15f47a4", null ],
-      [ "attrib_init_lnr", "namespaceSupDropInit.html#af519db08abaabdd2803269936bdcf2cc", null ],
-      [ "attrib_init_lnr_auto", "namespaceSupDropInit.html#a13cb3d76ed5240058013ef5c82649760", null ],
       [ "num_aerosols_max", "namespaceSupDropInit.html#a281fc9f3c461b471e1d64f979f724c49", null ],
       [ "num_species_max", "namespaceSupDropInit.html#a9aa503a7fa7375e8ee68af017cf9a078", null ]
     ] ],

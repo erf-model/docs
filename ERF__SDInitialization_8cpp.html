@@ -96,9 +96,9 @@ Include dependency graph for ERF_SDInitialization.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SDInitialization_8cpp__incl.png" border="0" usemap="#aSource_2Particles_2ERF__SDInitialization_8cpp" alt=""/></div>
 <map name="aSource_2Particles_2ERF__SDInitialization_8cpp" id="aSource_2Particles_2ERF__SDInitialization_8cpp">
-<area shape="rect" title=" " alt="" coords="348,5,503,47"/>
-<area shape="rect" title=" " alt="" coords="325,95,387,121"/>
-<area shape="rect" href="ERF__SDInitialization_8H.html" title=" " alt="" coords="411,95,578,121"/>
+<area shape="rect" title=" " alt="" coords="399,5,553,47"/>
+<area shape="rect" title=" " alt="" coords="375,95,438,121"/>
+<area shape="rect" href="ERF__SDInitialization_8H.html" title=" " alt="" coords="462,95,629,121"/>
 <area shape="rect" title=" " alt="" coords="5,169,64,196"/>
 <area shape="rect" title=" " alt="" coords="89,169,151,196"/>
 <area shape="rect" title=" " alt="" coords="176,169,248,196"/>
@@ -107,6 +107,8 @@ Include dependency graph for ERF_SDInitialization.cpp:</div>
 <area shape="rect" title=" " alt="" coords="641,319,764,345"/>
 <area shape="rect" title=" " alt="" coords="821,169,965,196"/>
 <area shape="rect" title=" " alt="" coords="990,169,1143,196"/>
+<area shape="rect" title=" " alt="" coords="1168,169,1312,196"/>
+<area shape="rect" title=" " alt="" coords="1336,169,1523,196"/>
 <area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="636,244,769,271"/>
 <area shape="rect" href="ERF__MaterialProperties_8H.html" title=" " alt="" coords="609,169,797,196"/>
 <area shape="rect" title=" " alt="" coords="845,244,961,271"/>
@@ -163,27 +165,27 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                              {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.147);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>();</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> term = std::log(1 - x * x + eps);</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p1 = 2 / (<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * a) + term / <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p2 = term / a;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordflow">return</span> std::sqrt(std::sqrt(p1 * p1 - p2) - p1);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                                              {</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.147);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;amrex::Real&gt;::epsilon</a>();</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> term = std::log(1 - x * x + eps);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p1 = 2 / (<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> * a) + term / <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p2 = term / a;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">return</span> std::sqrt(std::sqrt(p1 * p1 - p2) - p1);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:16</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSDInitProperties.html#a22a14d49206398e4eda111047112f108">SDInitProperties::getDistribution()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSDInitProperties.html#a279fcf4c47b4faaa0fb86255a8a87870">SDInitProperties::getDistribution()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__SDInitialization_8cpp_af7e79a7f268cba9d64df575208ab993a_icgraph.png" border="0" usemap="#aERF__SDInitialization_8cpp_af7e79a7f268cba9d64df575208ab993a_icgraph" alt=""/></div>
 <map name="aERF__SDInitialization_8cpp_af7e79a7f268cba9d64df575208ab993a_icgraph" id="aERF__SDInitialization_8cpp_af7e79a7f268cba9d64df575208ab993a_icgraph">
 <area shape="rect" title=" " alt="" coords="285,5,369,32"/>
-<area shape="rect" href="classSDInitProperties.html#a22a14d49206398e4eda111047112f108" title="Get a distribution with sampled multiplicity." alt="" coords="5,5,237,32"/>
+<area shape="rect" href="classSDInitProperties.html#a279fcf4c47b4faaa0fb86255a8a87870" title="Get a distribution with sampled multiplicity." alt="" coords="5,5,237,32"/>
 </map>
 </div>
 
