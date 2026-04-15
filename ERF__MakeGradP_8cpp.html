@@ -267,7 +267,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">terrain_type</a> != TerrainType::EB) {</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, tby, tbz,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(tbx, tby, tbz,</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            {</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="comment">//Note : mx/my == 1, so no map factor needed here</span></div>
@@ -374,7 +374,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">if</span> (l_fitting) {</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, tby, tbz,</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(tbx, tby, tbz,</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    <span class="keywordflow">if</span> (u_volfrac(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
@@ -435,7 +435,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="comment">// Simple calculation: assuming pressures at cell centers</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, tby, tbz,</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(tbx, tby, tbz,</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                {</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    <span class="keywordflow">if</span> (u_volfrac(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
@@ -496,7 +496,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a3d480c71a8d13543a4a79124b1b694e5"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a></div><div class="ttdeci">const Real dy</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:24</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_abc695cd190273d99450d0b8f595c5c6b"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a></div><div class="ttdeci">const Real dz</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:25</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aada27a5057153b6463a47f463ea98742"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+0.5) *dx[0];const Real y=(j+0.5) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - 1.0)/(2.0 *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(1.0+deltaT, inv_gm1);const Real T=(1.0+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=0.25 *(1.0+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_af83c1918e681461dc4cc7ed4c0828b2c"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a></div><div class="ttdeci">Real * p</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:61</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a48f57e72ac183fdf1a984f58f3d24ee0"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0">Compute_h_zeta_AtKface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtKface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:184</div></div>
@@ -511,8 +511,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:161</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:160</div></div>
-<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1074</div></div>
-<div class="ttc" id="astructSolverChoice_html_ab734eb0a5147b93dc6590038b6decc60"><div class="ttname"><a href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">SolverChoice::terrain_type</a></div><div class="ttdeci">static TerrainType terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1062</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1952672901901b0b3a628f2298dc72c2"><div class="ttname"><a href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">SolverChoice::mesh_type</a></div><div class="ttdeci">static MeshType mesh_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1092</div></div>
+<div class="ttc" id="astructSolverChoice_html_ab734eb0a5147b93dc6590038b6decc60"><div class="ttname"><a href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">SolverChoice::terrain_type</a></div><div class="ttdeci">static TerrainType terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1080</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55">make_gradp_pert()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -527,9 +527,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f" title=" " alt="" coords="179,173,363,200"/>
 <area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="179,224,363,251"/>
 <area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="177,275,364,301"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="225,325,316,352"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="413,300,563,327"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="444,351,532,377"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="225,325,316,352"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="413,275,569,301"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="417,325,566,352"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="447,376,535,403"/>
 </map>
 </div>
 <div class="dynheader">
@@ -639,7 +640,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; mf_ux_arr = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85baa4b935f173fee2d487101e302a5cfe18">MapFacType::u_x</a>]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; mf_vy_arr = mapfac[<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85ba90990e92021688dbfd1cec52b03fd182">MapFacType::v_y</a>]-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(tbx, tby, tbz,</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(tbx, tby, tbz,</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        {</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keywordflow">if</span> (l_use_terrain_fitted_coords) {</div>
@@ -768,10 +769,11 @@ Here is the call graph for this function:</div>
 <map name="aERF__MakeGradP_8cpp_a160f930429f773f474fa8f7f4553371c_cgraph" id="aERF__MakeGradP_8cpp_a160f930429f773f474fa8f7f4553371c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,180,83"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="228,5,417,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="277,56,368,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="277,56,368,83"/>
 <area shape="rect" href="ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604" title=" " alt="" coords="261,107,384,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="465,31,615,57"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="496,81,584,108"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="465,5,621,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="469,56,618,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="499,107,587,133"/>
 </map>
 </div>
 <div class="dynheader">
@@ -899,7 +901,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cell_data = S_data[<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; p0_arr = <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>.const_array(mfi);</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; pptemp_arr = <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>.array(mfi);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_for_p = (l_use_moisture) ? cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                pptemp_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),qv_for_p) - p0_arr(i,j,k);</div>
@@ -923,29 +925,30 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__MakeGradP_8cpp_html_a9a52172038f8506a516a5802e5cc5a0f"><div class="ttname"><a href="ERF__MakeGradP_8cpp.html#a9a52172038f8506a516a5802e5cc5a0f">compute_gradp</a></div><div class="ttdeci">void compute_gradp(const MultiFab &amp;p, const Geometry &amp;geom, const MultiFab &amp;z_phys_nd, const MultiFab &amp;z_phys_cc, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const eb_ &amp;ebfact, Vector&lt; MultiFab &gt; &amp;gradp, const SolverChoice &amp;solverChoice)</div><div class="ttdef"><b>Definition:</b> ERF_MakeGradP.cpp:81</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__Bomex_8H_html_ad901c6409ddad63abb2fb7ddb13cc824"><div class="ttname"><a href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ASSERT_WITH_MESSAGE(wbar_cutoff_min &gt; wbar_cutoff_max, &quot;ERROR: wbar_cutoff_min &lt; wbar_cutoff_max&quot;)</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a2dcccd992b668c86eecdd9a825970d4a"><div class="ttname"><a href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">module_model_constants::p0</a></div><div class="ttdeci">real(c_double), parameter p0</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:40</div></div>
-<div class="ttc" id="astructSolverChoice_html_aa7be0d60ce3de3441d44082cc1b725ec"><div class="ttname"><a href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">SolverChoice::anelastic</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; anelastic</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1092</div></div>
-<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1231</div></div>
-<div class="ttc" id="astructSolverChoice_html_afb5f608ceb028e231e106d04d3235fbf"><div class="ttname"><a href="structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf">SolverChoice::gradp_type</a></div><div class="ttdeci">int gradp_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1121</div></div>
+<div class="ttc" id="astructSolverChoice_html_aa7be0d60ce3de3441d44082cc1b725ec"><div class="ttname"><a href="structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec">SolverChoice::anelastic</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; anelastic</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1110</div></div>
+<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1249</div></div>
+<div class="ttc" id="astructSolverChoice_html_afb5f608ceb028e231e106d04d3235fbf"><div class="ttname"><a href="structSolverChoice.html#afb5f608ceb028e231e106d04d3235fbf">SolverChoice::gradp_type</a></div><div class="ttdeci">int gradp_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1139</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__MakeGradP_8cpp_a27ef9d804e42b02bbf43018eef6f1e55_cgraph.png" border="0" usemap="#aERF__MakeGradP_8cpp_a27ef9d804e42b02bbf43018eef6f1e55_cgraph" alt=""/></div>
 <map name="aERF__MakeGradP_8cpp_a27ef9d804e42b02bbf43018eef6f1e55_cgraph" id="aERF__MakeGradP_8cpp_a27ef9d804e42b02bbf43018eef6f1e55_cgraph">
-<area shape="rect" title=" " alt="" coords="5,107,140,133"/>
-<area shape="rect" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824" title=" " alt="" coords="188,5,427,32"/>
-<area shape="rect" href="ERF__MakeGradP_8cpp.html#a9a52172038f8506a516a5802e5cc5a0f" title=" " alt="" coords="246,183,369,209"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="524,31,615,57"/>
-<area shape="rect" href="ERF__MakeGradP_8cpp.html#a160f930429f773f474fa8f7f4553371c" title=" " alt="" coords="220,107,395,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="252,233,363,260"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="475,132,664,159"/>
-<area shape="rect" href="ERF__EBSlopes_8H.html#af77db2c09d5b34ca21e60e3918cdf257" title=" " alt="" coords="497,386,642,427"/>
-<area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title=" " alt="" coords="485,183,654,209"/>
-<area shape="rect" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f" title=" " alt="" coords="477,233,661,260"/>
-<area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="477,284,661,311"/>
-<area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="476,335,663,361"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="712,5,861,32"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="743,56,831,83"/>
-<area shape="rect" href="ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604" title=" " alt="" coords="508,81,631,108"/>
+<area shape="rect" title=" " alt="" coords="5,132,140,159"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824" title=" " alt="" coords="188,31,427,57"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#a9a52172038f8506a516a5802e5cc5a0f" title=" " alt="" coords="246,208,369,235"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="524,56,615,83"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#a160f930429f773f474fa8f7f4553371c" title=" " alt="" coords="220,132,395,159"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="252,259,363,285"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0" title=" " alt="" coords="475,157,664,184"/>
+<area shape="rect" href="ERF__EBSlopes_8H.html#af77db2c09d5b34ca21e60e3918cdf257" title=" " alt="" coords="497,411,642,453"/>
+<area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title=" " alt="" coords="485,208,654,235"/>
+<area shape="rect" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f" title=" " alt="" coords="477,259,661,285"/>
+<area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="477,309,661,336"/>
+<area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="476,360,663,387"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="712,5,868,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="715,56,865,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="746,107,834,133"/>
+<area shape="rect" href="ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604" title=" " alt="" coords="508,107,631,133"/>
 </map>
 </div>
 

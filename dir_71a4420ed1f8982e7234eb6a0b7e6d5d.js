@@ -4,6 +4,7 @@ var dir_71a4420ed1f8982e7234eb6a0b7e6d5d =
     [ "ERF_InitBCs.cpp", "ERF__InitBCs_8cpp.html", null ],
     [ "ERF_InitCustomPertState.cpp", "ERF__InitCustomPertState_8cpp.html", null ],
     [ "ERF_InitCustomTerrain.cpp", "ERF__InitCustomTerrain_8cpp.html", "ERF__InitCustomTerrain_8cpp" ],
+    [ "ERF_InitForEnsemble.cpp", "ERF__InitForEnsemble_8cpp.html", "ERF__InitForEnsemble_8cpp" ],
     [ "ERF_InitFromHSE.cpp", "ERF__InitFromHSE_8cpp.html", null ],
     [ "ERF_InitFromInputSounding.cpp", "ERF__InitFromInputSounding_8cpp.html", "ERF__InitFromInputSounding_8cpp" ],
     [ "ERF_InitFromMetgrid.cpp", "ERF__InitFromMetgrid_8cpp.html", null ],

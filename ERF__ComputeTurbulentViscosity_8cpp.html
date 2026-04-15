@@ -483,7 +483,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;            <span class="keyword">auto</span> domlo = lbound(domain);</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;            <span class="keyword">auto</span> domhi = ubound(domain);</div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160; </div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(planex_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(planex_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;            {</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
@@ -494,7 +494,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;                    }</div>
 <div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;                }</div>
 <div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;            });</div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(planex_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(planex_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;            {</div>
 <div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, domlo.y), domhi.y);</div>
 <div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
@@ -505,7 +505,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;                    }</div>
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;                }</div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;            });</div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(planey_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(planey_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;            {</div>
 <div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
 <div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_lo,lk) != is_notcovered) ||</div>
@@ -515,7 +515,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;                    }</div>
 <div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;                }</div>
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;            });</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(planey_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(planey_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;            {</div>
 <div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;                <span class="keywordtype">int</span> lk = amrex::min(amrex::max(k, domlo.z), domhi.z);</div>
 <div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j_hi,lk) != is_notcovered)||</div>
@@ -525,7 +525,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;                    }</div>
 <div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;                }</div>
 <div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;            });</div>
-<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(planez_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(planez_lo, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;            {</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_lo) != is_notcovered) ||</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &lt; domlo.z &amp;&amp; impose_phys_bcs)) {</div>
@@ -536,7 +536,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;                    }</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;                }</div>
 <div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;            });</div>
-<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(planez_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(planez_hi, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;            {</div>
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                <span class="keywordflow">if</span> ((mask_arr(i,j,k) == is_notcovered &amp;&amp; mask_arr(i,j,k_hi) != is_notcovered) ||</div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;                    (mask_arr(i,j,k) == is_physbnd     &amp;&amp; k &gt; domhi.z &amp;&amp; impose_phys_bcs)) {</div>
@@ -560,17 +560,17 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__ComputeTurbulentViscosity_8cpp_html_a5a472a2f5426ecdf04400063bea8efda"><div class="ttname"><a href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB</a></div><div class="ttdeci">void ComputeTurbulentViscosityLES_EB(Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;Tau_lev, const MultiFab &amp;cons_in, MultiFab &amp;eddyViscosity, MultiFab &amp;Hfx1, MultiFab &amp;Hfx2, MultiFab &amp;Hfx3, const Geometry &amp;geom, Vector&lt; std::unique_ptr&lt; MultiFab &gt;&gt; &amp;mapfac, const TurbChoice &amp;turbChoice, const Real const_grav, [[maybe_unused]] const SolverChoice &amp;solverChoice, std::unique_ptr&lt; SurfaceLayer &gt; &amp;, const MoistureComponentIndices &amp;moisture_indices, const eb_ &amp;ebfact, const MultiFab *xvel, const MultiFab *yvel)</div><div class="ttdef"><b>Definition:</b> ERF_ComputeTurbulentViscosity.cpp:336</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a33262a65bbaa6911bb4b2d4a38f2168a"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a33262a65bbaa6911bb4b2d4a38f2168a">use_moisture</a></div><div class="ttdeci">const bool use_moisture</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bomex.H:14</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aada27a5057153b6463a47f463ea98742"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+0.5) *dx[0];const Real y=(j+0.5) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - 1.0)/(2.0 *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(1.0+deltaT, inv_gm1);const Real T=(1.0+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=0.25 *(1.0+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
 <div class="ttc" id="aERF__InitCustomPert__MultiSpeciesBubble_8H_html_a8dfd5695a0c389f3b92c5b0fe3d8b02a"><div class="ttname"><a href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a8dfd5695a0c389f3b92c5b0fe3d8b02a">for</a></div><div class="ttdeci">for(int i=0;i&lt; m_num_species;i++)</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_MultiSpeciesBubble.H:48</div></div>
 <div class="ttc" id="aERF__SetupVertDiff_8H_html_a4a8c0178282c029acc3d37ed429f9f58"><div class="ttname"><a href="ERF__SetupVertDiff_8H.html#a4a8c0178282c029acc3d37ed429f9f58">turbChoice</a></div><div class="ttdeci">TurbChoice turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_SetupVertDiff.H:6</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__Bomex_8H_html_aa0905bd87f0cf9ae1d563e3804749d1c"><div class="ttname"><a href="ERF__UpdateWSubsidence__Bomex_8H.html#aa0905bd87f0cf9ae1d563e3804749d1c">z_0</a></div><div class="ttdeci">Real z_0</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSubsidence_Bomex.H:10</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:159</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:160</div></div>
-<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1149</div></div>
-<div class="ttc" id="astructSolverChoice_html_aa53b017d79e0067923180a0aa59367b4"><div class="ttname"><a href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1086</div></div>
-<div class="ttc" id="astructSolverChoice_html_ab734eb0a5147b93dc6590038b6decc60"><div class="ttname"><a href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">SolverChoice::terrain_type</a></div><div class="ttdeci">static TerrainType terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1062</div></div>
-<div class="ttc" id="astructSolverChoice_html_add6809e30f50f9a65a997c4093e6a578"><div class="ttname"><a href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1248</div></div>
+<div class="ttc" id="astructSolverChoice_html_a47a54f2e44955202b5b437e4b1b4a61b"><div class="ttname"><a href="structSolverChoice.html#a47a54f2e44955202b5b437e4b1b4a61b">SolverChoice::gravity</a></div><div class="ttdeci">amrex::Real gravity</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1167</div></div>
+<div class="ttc" id="astructSolverChoice_html_aa53b017d79e0067923180a0aa59367b4"><div class="ttname"><a href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">SolverChoice::turbChoice</a></div><div class="ttdeci">amrex::Vector&lt; TurbChoice &gt; turbChoice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1104</div></div>
+<div class="ttc" id="astructSolverChoice_html_ab734eb0a5147b93dc6590038b6decc60"><div class="ttname"><a href="structSolverChoice.html#ab734eb0a5147b93dc6590038b6decc60">SolverChoice::terrain_type</a></div><div class="ttdeci">static TerrainType terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1080</div></div>
+<div class="ttc" id="astructSolverChoice_html_add6809e30f50f9a65a997c4093e6a578"><div class="ttname"><a href="structSolverChoice.html#add6809e30f50f9a65a997c4093e6a578">SolverChoice::moisture_indices</a></div><div class="ttdeci">MoistureComponentIndices moisture_indices</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1266</div></div>
 <div class="ttc" id="astructTurbChoice_html"><div class="ttname"><a href="structTurbChoice.html">TurbChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:66</div></div>
 <div class="ttc" id="astructTurbChoice_html_a15b9bb58cde72bab3f5714934125f3f9"><div class="ttname"><a href="structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9">TurbChoice::pbl_type</a></div><div class="ttdeci">PBLType pbl_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:442</div></div>
 <div class="ttc" id="astructTurbChoice_html_a52f7f04548a91715b142c88c2f214bc8"><div class="ttname"><a href="structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8">TurbChoice::rans_type</a></div><div class="ttdeci">RANSType rans_type</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:437</div></div>
@@ -582,49 +582,50 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ComputeTurbulentViscosity_8cpp_a2a2abfe252d2fcb76d56837c012c8da3_cgraph.png" border="0" usemap="#aERF__ComputeTurbulentViscosity_8cpp_a2a2abfe252d2fcb76d56837c012c8da3_cgraph" alt=""/></div>
 <map name="aERF__ComputeTurbulentViscosity_8cpp_a2a2abfe252d2fcb76d56837c012c8da3_cgraph" id="aERF__ComputeTurbulentViscosity_8cpp_a2a2abfe252d2fcb76d56837c012c8da3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,360,205,387"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="840,208,1023,235"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9" title=" " alt="" coords="562,157,739,184"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="886,512,977,539"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYJ_8cpp.html#ad0946a1eced1e2a2ec154dc578581ee3" title=" " alt="" coords="565,309,737,336"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183" title=" " alt="" coords="549,360,753,387"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2" title=" " alt="" coords="537,208,764,235"/>
-<area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a" title=" " alt="" coords="563,259,738,285"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36" title=" " alt="" coords="260,816,483,843"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="271,1163,471,1205"/>
-<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a071df6c8f36e2dd4b911a10f28fd1917" title=" " alt="" coords="253,563,489,589"/>
-<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a8dfd5695a0c389f3b92c5b0fe3d8b02a" title=" " alt="" coords="351,1403,391,1429"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="821,360,1041,387"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="830,259,1033,285"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1" title=" " alt="" coords="1099,411,1328,437"/>
+<area shape="rect" title=" " alt="" coords="5,411,205,437"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="840,157,1023,184"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html#a20e22dc5edcde689fb5ee2c6a3130ea9" title=" " alt="" coords="562,107,739,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="886,512,977,539"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYJ_8cpp.html#ad0946a1eced1e2a2ec154dc578581ee3" title=" " alt="" coords="565,259,737,285"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a4364b96d8efdd403c94374b4c17f5183" title=" " alt="" coords="549,208,753,235"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2" title=" " alt="" coords="537,411,764,437"/>
+<area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a" title=" " alt="" coords="563,157,738,184"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36" title=" " alt="" coords="260,765,483,792"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="271,1113,471,1154"/>
+<area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a071df6c8f36e2dd4b911a10f28fd1917" title=" " alt="" coords="253,512,489,539"/>
+<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a8dfd5695a0c389f3b92c5b0fe3d8b02a" title=" " alt="" coords="351,1352,391,1379"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="821,309,1041,336"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="830,208,1033,235"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1" title=" " alt="" coords="1099,360,1328,387"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="895,5,968,32"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="1376,1003,1467,1029"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="1515,1003,1779,1029"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="1581,1112,1712,1139"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="1139,537,1288,564"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="1169,487,1257,513"/>
-<area shape="rect" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824" title=" " alt="" coords="812,157,1051,184"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3" title=" " alt="" coords="601,1171,700,1197"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09" title=" " alt="" coords="888,1116,975,1143"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#ac3769bab582cda07302232c46c7c4b5a" title=" " alt="" coords="574,968,727,995"/>
-<area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="581,1019,720,1045"/>
-<area shape="rect" href="ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1" title=" " alt="" coords="572,715,729,741"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#a5f60d8390517c92d4ce5434bb44e9ebd" title=" " alt="" coords="563,1069,738,1096"/>
-<area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="631,613,670,640"/>
-<area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="621,867,680,893"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2" title=" " alt="" coords="585,917,716,944"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451" title=" " alt="" coords="883,1171,979,1197"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9" title=" " alt="" coords="1105,1105,1321,1146"/>
-<area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="1141,1053,1285,1080"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#aa037b629b806251024dce3d3e714de7b" title=" " alt="" coords="836,588,1027,615"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664" title=" " alt="" coords="589,1221,712,1248"/>
-<area shape="rect" href="ERF__EddyViscosity_8H.html#a5b5158866e585e2c36d210ee6763f9de" title=" " alt="" coords="569,1272,732,1299"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#ab23085b149eb33f8dd148778ec960b69" title=" " alt="" coords="551,1323,750,1349"/>
-<area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title=" " alt="" coords="566,1373,735,1400"/>
-<area shape="rect" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f" title=" " alt="" coords="559,1424,743,1451"/>
-<area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="559,1475,743,1501"/>
-<area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="557,1525,744,1552"/>
-<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb" title=" " alt="" coords="613,1576,688,1603"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="1376,952,1467,979"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="1515,952,1779,979"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="1581,1061,1712,1088"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="1135,512,1291,539"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="1139,563,1288,589"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="1169,461,1257,488"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824" title=" " alt="" coords="812,411,1051,437"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3" title=" " alt="" coords="601,1120,700,1147"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09" title=" " alt="" coords="888,1065,975,1092"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#ac3769bab582cda07302232c46c7c4b5a" title=" " alt="" coords="574,917,727,944"/>
+<area shape="rect" href="ERF__EddyViscosity_8H.html#ad1e6d314bfc2e508c86ee0e07cfbd8f8" title=" " alt="" coords="581,968,720,995"/>
+<area shape="rect" href="ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1" title=" " alt="" coords="572,664,729,691"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#a5f60d8390517c92d4ce5434bb44e9ebd" title=" " alt="" coords="563,1019,738,1045"/>
+<area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="631,563,670,589"/>
+<area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="621,816,680,843"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2" title=" " alt="" coords="585,867,716,893"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451" title=" " alt="" coords="883,1120,979,1147"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9" title=" " alt="" coords="1105,1054,1321,1095"/>
+<area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="1141,1003,1285,1029"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#aa037b629b806251024dce3d3e714de7b" title=" " alt="" coords="836,563,1027,589"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664" title=" " alt="" coords="589,1171,712,1197"/>
+<area shape="rect" href="ERF__EddyViscosity_8H.html#a5b5158866e585e2c36d210ee6763f9de" title=" " alt="" coords="569,1221,732,1248"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#ab23085b149eb33f8dd148778ec960b69" title=" " alt="" coords="551,1272,750,1299"/>
+<area shape="rect" href="classeb__.html#a74b48b1a80f3292f6002592f1d1d2bcd" title=" " alt="" coords="566,1323,735,1349"/>
+<area shape="rect" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f" title=" " alt="" coords="559,1373,743,1400"/>
+<area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="559,1424,743,1451"/>
+<area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="557,1475,744,1501"/>
+<area shape="rect" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb" title=" " alt="" coords="613,1525,688,1552"/>
 </map>
 </div>
 <div class="dynheader">
@@ -823,7 +824,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            Array4&lt;Real const&gt; u_arr = (l_has_xvel) ? <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>-&gt;const_array(mfi) : Array4&lt;Real const&gt;{};</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            Array4&lt;Real const&gt; v_arr = (l_has_yvel) ? <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>-&gt;const_array(mfi) : Array4&lt;Real const&gt;{};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="comment">// =====================================================================</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="comment">// one STRAIN RATE MAGNITUDE CALCULATION</span></div>
@@ -923,7 +924,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            Array4&lt;Real const&gt; z_nd_arr = z_phys_nd-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0];</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dyInv = cellSizeInv[1];</div>
@@ -1040,7 +1041,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            {</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;             <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a>:</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                <span class="keywordflow">if</span> (use_KE) {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                   <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                   {</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                       <span class="keywordtype">int</span> indx   = n;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                       <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1050,7 +1051,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                }</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                {</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    <span class="keywordtype">int</span> indx   = n;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1134,7 +1135,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__EddyViscosity_8H.html#a1a8e03c9d0a2b9decd215a2b2b2425e1" title=" " alt="" coords="307,426,465,453"/>
 <area shape="rect" href="ERF__RichardsonNumber_8H.html#a5f60d8390517c92d4ce5434bb44e9ebd" title=" " alt="" coords="299,477,473,503"/>
 <area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="367,527,405,554"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="594,553,685,579"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="594,553,685,579"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="357,629,415,655"/>
 <area shape="rect" href="ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2" title=" " alt="" coords="321,679,451,706"/>
 <area shape="rect" href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451" title=" " alt="" coords="591,223,687,250"/>
@@ -1142,10 +1143,11 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="1265,122,1396,149"/>
 <area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="825,122,969,149"/>
 <area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="1199,223,1463,250"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#aa037b629b806251024dce3d3e714de7b" title=" " alt="" coords="544,451,735,478"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1" title=" " alt="" coords="783,401,1012,427"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="823,527,972,554"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="853,578,941,605"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#aa037b629b806251024dce3d3e714de7b" title=" " alt="" coords="544,445,735,471"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1" title=" " alt="" coords="783,387,1012,414"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="819,502,975,529"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="823,553,972,579"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="853,603,941,630"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1329,7 +1331,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            Array4&lt;const Real      &gt; u_vfrac = (ebfact.<a class="code" href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f">get_u_const_factory</a>())-&gt;getVolFrac().const_array(mfi);</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            Array4&lt;const Real      &gt; v_vfrac = (ebfact.<a class="code" href="classeb__.html#abfdaa6b21118610551e115d123390be9">get_v_const_factory</a>())-&gt;getVolFrac().const_array(mfi);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            {</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                <span class="keywordflow">if</span> (!c_cflag(i,j,k).isCovered()) {</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                    <span class="comment">// =====================================================================</span></div>
@@ -1450,7 +1452,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            {</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;             <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a>:</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                <span class="keywordflow">if</span> (use_KE) {</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                   <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                   {</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                       <span class="keywordtype">int</span> indx   = n;</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                       <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1460,7 +1462,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                }</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;                {</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                    <span class="keywordtype">int</span> indx   = n;</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;                    <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1505,17 +1507,18 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title=" " alt="" coords="261,553,445,579"/>
 <area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title=" " alt="" coords="259,603,446,630"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="323,654,382,681"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="307,705,398,731"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="307,705,398,731"/>
 <area shape="rect" href="ERF__RichardsonNumber_8H.html#a43a0f3eeb5b1f7ffba7be69d61a26dc2" title=" " alt="" coords="287,755,418,782"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09" title=" " alt="" coords="531,71,618,98"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="529,122,620,149"/>
-<area shape="rect" href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451" title=" " alt="" coords="527,173,623,199"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9" title=" " alt="" coords="721,5,937,47"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="764,122,895,149"/>
-<area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="757,71,901,98"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="697,173,961,199"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="500,730,649,757"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="531,679,619,706"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a64894b3b66841d7222009a7f5fc3ae09" title=" " alt="" coords="535,71,621,98"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="533,122,623,149"/>
+<area shape="rect" href="ERF__RichardsonNumber_8H.html#a21090879f1976d676d69d9856e656451" title=" " alt="" coords="530,173,626,199"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#aa18a68bfe1076928bd5eaf3c7cae0ae9" title=" " alt="" coords="728,5,944,47"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="771,122,901,149"/>
+<area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="764,71,908,98"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="704,173,968,199"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="500,654,656,681"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="503,705,653,731"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="534,755,622,782"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1699,7 +1702,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            <span class="keyword">const</span> Array4&lt;Real const&gt;&amp; z_nd_arr = z_phys_nd-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            {</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> eps = <a class="code" href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">std::numeric_limits&lt;Real&gt;::epsilon</a>();</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tke = amrex::max(cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>)/cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>), eps);</div>
@@ -1816,7 +1819,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            {</div>
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;             <span class="keywordflow">case</span> <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205afa0c87454b22a819e328491f78bf6767">EddyDiff::KE_h</a>:</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                <span class="keywordflow">if</span> (use_KE) {</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                   <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                   <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                   {</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                       <span class="keywordtype">int</span> indx   = n;</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                       <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1826,7 +1829,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                }</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                {</div>
 <div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                    <span class="keywordtype">int</span> indx   = n;</div>
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                    <span class="keywordtype">int</span> indx_v = indx + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1859,15 +1862,16 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,81,241,108"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="289,5,509,32"/>
 <area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="380,56,419,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="607,107,698,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="607,107,698,133"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="370,157,429,184"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#aa037b629b806251024dce3d3e714de7b" title=" " alt="" coords="557,56,748,83"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1" title=" " alt="" coords="796,56,1025,83"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="1073,56,1164,83"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="1212,31,1476,57"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="1279,81,1409,108"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="836,107,985,133"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="867,157,955,184"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#aa037b629b806251024dce3d3e714de7b" title=" " alt="" coords="557,44,748,71"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1" title=" " alt="" coords="796,31,1025,57"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#ac7f742c2dc11eeb2827422c9c5e32b2c" title=" " alt="" coords="1073,31,1164,57"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a81174ac45d8af790b5a6310c4d1369f6" title=" " alt="" coords="1212,5,1476,32"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="1279,56,1409,83"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="833,81,989,108"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="836,132,985,159"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="867,183,955,209"/>
 </map>
 </div>
 <div class="dynheader">

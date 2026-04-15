@@ -264,6 +264,7 @@ Here is the call graph for this function:</div>
 <map name="aclassMRISplitIntegrator_a9ea1c36a75e04596ffe0fa29e614b6e2_cgraph" id="aclassMRISplitIntegrator_a9ea1c36a75e04596ffe0fa29e614b6e2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,153,47"/>
 <area shape="rect" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99" title=" " alt="" coords="201,5,341,47"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="389,13,432,39"/>
 </map>
 </div>
 
@@ -712,6 +713,7 @@ Here is the call graph for this function:</div>
 <map name="aclassMRISplitIntegrator_a7b54e96150eb521642b711f8e77b0454_cgraph" id="aclassMRISplitIntegrator_a7b54e96150eb521642b711f8e77b0454_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,145,47"/>
 <area shape="rect" href="classMRISplitIntegrator.html#a8fe3068c562900c56e3174c23af4ab99" title=" " alt="" coords="193,5,333,47"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="381,13,424,39"/>
 </map>
 </div>
 
@@ -751,12 +753,22 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        amrex::IntegratorOps&lt;T&gt;::CreateLike(<a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>, S_data, include_ghost);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a> = <a class="code" href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">T_store</a>[1].get();</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// initializing to zero</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> idx = 0; idx &lt; <a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>-&gt;size(); idx++) { (*S_sum)[idx].setVal(0); }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> idx = 0; idx &lt; <a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>-&gt;size(); idx++) { (*F_slow)[idx].setVal(0); }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; <a class="code" href="classMRISplitIntegrator.html#ad570588876d21506bc7232884841cab1">S_sum</a>-&gt;size(); <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>++) { (*S_sum)[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>].setVal(0); }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">long</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; <a class="code" href="classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7">F_slow</a>-&gt;size(); <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>++) { (*F_slow)[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>].setVal(0); }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:286</div></div>
 <div class="ttc" id="aclassMRISplitIntegrator_html_a10fa09211f3b0a6b7357ab79dbadbb80"><div class="ttname"><a href="classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80">MRISplitIntegrator::T_store</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; T &gt; &gt; T_store</div><div class="ttdef"><b>Definition:</b> ERF_MRI.H:64</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMRISplitIntegrator.html#a7b54e96150eb521642b711f8e77b0454">MRISplitIntegrator&lt; T &gt;::initialize()</a>, and <a class="el" href="classMRISplitIntegrator.html#a9ea1c36a75e04596ffe0fa29e614b6e2">MRISplitIntegrator&lt; T &gt;::MRISplitIntegrator()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMRISplitIntegrator_a8fe3068c562900c56e3174c23af4ab99_cgraph.png" border="0" usemap="#aclassMRISplitIntegrator_a8fe3068c562900c56e3174c23af4ab99_cgraph" alt=""/></div>
+<map name="aclassMRISplitIntegrator_a8fe3068c562900c56e3174c23af4ab99_cgraph" id="aclassMRISplitIntegrator_a8fe3068c562900c56e3174c23af4ab99_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,145,47"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="193,13,236,39"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

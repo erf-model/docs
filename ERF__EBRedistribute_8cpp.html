@@ -299,7 +299,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            {</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a0f9a5689a0a6692b56e01f42ba61ca0f">out</a>(i,j,k,n) = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a8ddd11ace410916291ca46484d2e2d53">in</a>(i,j,k,n);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            });</div>
@@ -308,7 +308,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a0f9a5689a0a6692b56e01f42ba61ca0f"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a0f9a5689a0a6692b56e01f42ba61ca0f">out</a></div><div class="ttdeci">struct @22 out</div></div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a8ddd11ace410916291ca46484d2e2d53"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a8ddd11ace410916291ca46484d2e2d53">in</a></div><div class="ttdeci">struct @22 in</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aada27a5057153b6463a47f463ea98742"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+0.5) *dx[0];const Real y=(j+0.5) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - 1.0)/(2.0 *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(1.0+deltaT, inv_gm1);const Real T=(1.0+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=0.25 *(1.0+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
 <div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:178</div></div>
 <div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169aaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:179</div></div>
 <div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:177</div></div>
@@ -324,9 +324,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__aux__.html#a15ab8224a2115fcd91bec34e111d0ac6" title=" " alt="" coords="221,107,385,133"/>
 <area shape="rect" href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29" title=" " alt="" coords="188,157,419,184"/>
 <area shape="rect" href="classeb__aux__.html#a8fa82793a77e8a7c97a94f58ad617b34" title=" " alt="" coords="227,208,379,235"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="258,259,349,285"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="467,233,616,260"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="497,284,585,311"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="258,259,349,285"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="467,208,623,235"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="470,259,619,285"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="501,309,589,336"/>
 </map>
 </div>
 
@@ -450,7 +451,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a0f9a5689a0a6692b56e01f42ba61ca0f">out</a>(i,j,k,n) = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a8ddd11ace410916291ca46484d2e2d53">in</a>(i,j,k,n);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            });</div>
@@ -462,10 +463,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EBRedistribute_8cpp_aab7478e0b95ffe5742038c127cd09e8a_cgraph.png" border="0" usemap="#aERF__EBRedistribute_8cpp_aab7478e0b95ffe5742038c127cd09e8a_cgraph" alt=""/></div>
 <map name="aERF__EBRedistribute_8cpp_aab7478e0b95ffe5742038c127cd09e8a_cgraph" id="aERF__EBRedistribute_8cpp_aab7478e0b95ffe5742038c127cd09e8a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,140,57"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="188,31,279,57"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="327,5,476,32"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="357,56,445,83"/>
+<area shape="rect" title=" " alt="" coords="5,56,140,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="188,56,279,83"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="327,5,483,32"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="330,56,479,83"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="361,107,449,133"/>
 </map>
 </div>
 

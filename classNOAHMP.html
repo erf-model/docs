@@ -449,7 +449,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; tmp_coszen_arr  = tmp_coszen.array();</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="comment">// Copy forcing data from ERF to Noahmp.</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        {</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20af099273d19f4b8cdca199c5177231e35">qv</a>                = (is_moist) ? CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            tmp_u_phy_arr(i,j,0)   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(U_PHY(i,j,k)+U_PHY(i+1,j  ,k));</div>
@@ -533,7 +533,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="comment">// Copy forcing data from Noahmp to ERF</span></div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <a class="code" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        {</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="comment">// Limit indices to the valid box. FillBoundary will pick these up below.</span></div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keywordtype">int</span> ii = std::min(std::max(i,i_lo),i_hi);</div>
@@ -574,7 +574,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DensityCurrent_8H_html_aa73510fc34fbe6bb9e2610178ba9878f"><div class="ttname"><a href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto prob_lo=geomdata.ProbLo();const auto dx=geomdata.CellSize();const Real x=(prob_lo[0]+(i+myhalf) *dx[0])/mf_m(i, j, 0);const Real z=z_cc(i, j, k);Real L=std::sqrt(std::pow((x - x_c)/x_r, 2)+std::pow((z - z_c)/z_r, 2));if(L&lt;=one) { Real dT=T_pert *(std::cos(PI *L)+one)/two;Real Tbar_hse=p_hse(i, j, k)/(R_d *r_hse(i, j, k));Real theta_perturbed=(Tbar_hse+dT) *std::pow(p_0/p_hse(i, j, k), rdOcp);Real theta_0=(Tbar_hse) *std::pow(p_0/p_hse(i, j, k), rdOcp);if(const_rho) { state_pert(i, j, k, RhoTheta_comp)=r_hse(i, j, k) *(theta_perturbed - theta_0);} else { state_pert(i, j, k, Rho_comp)=getRhoThetagivenP(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} } })</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aada27a5057153b6463a47f463ea98742"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+0.5) *dx[0];const Real y=(j+0.5) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - 1.0)/(2.0 *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(1.0+deltaT, inv_gm1);const Real T=(1.0+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=0.25 *(1.0+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a312d74035627fd45feba087875ed0ca1"><div class="ttname"><a href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">NOAHMP::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmFlux_NOAHMP::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:209</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a65195247ebb837a0b8749b30fd8dd3a2"><div class="ttname"><a href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">NOAHMP::noahmpio_vect</a></div><div class="ttdeci">NoahmpIO_vector noahmpio_vect</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:212</div></div>
@@ -603,9 +603,10 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,49,188,90"/>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="253,5,363,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="236,56,380,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DensityCurrent_8H.html#aa73510fc34fbe6bb9e2610178ba9878f" title=" " alt="" coords="263,107,353,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="428,81,577,108"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="459,132,547,159"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="263,107,353,133"/>
+<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="428,56,584,83"/>
+<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="431,107,581,133"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="462,157,550,184"/>
 </map>
 </div>
 
@@ -1011,14 +1012,24 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">int</span> varIdx = -1;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        std::string lc_varname = amrex::toLower(varname);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx(0); idx&lt;<a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346adcdca071138537342f18d4c1c968f492">LsmData_NOAHMP::NumVars</a>; ++idx) {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">LsmDataName</a>[idx])) {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                varIdx = idx;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>(0); <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>&lt;<a class="code" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346adcdca071138537342f18d4c1c968f492">LsmData_NOAHMP::NumVars</a>; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#a3645a29ce3c3a86c46263fd2354d2fe6">LsmDataName</a>[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>])) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                varIdx = <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            }</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        }</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> varIdx;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-</div><!-- fragment -->
+<div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:286</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classNOAHMP_a03300534d604b37230503f817f2911ca_cgraph.png" border="0" usemap="#aclassNOAHMP_a03300534d604b37230503f817f2911ca_cgraph" alt=""/></div>
+<map name="aclassNOAHMP_a03300534d604b37230503f817f2911ca_cgraph" id="aclassNOAHMP_a03300534d604b37230503f817f2911ca_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,196,32"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="244,5,287,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a05bc395e7bba1c8a19c37b5bfe95160a"></a>
@@ -1161,14 +1172,23 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">int</span> varIdx = -1;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        std::string lc_varname = amrex::toLower(varname);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx(0); idx&lt;<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++idx) {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">LsmFluxName</a>[idx])) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                varIdx = idx;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>(0); <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>&lt;<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">if</span> (lc_varname == amrex::toLower(<a class="code" href="classNOAHMP.html#ae579973046d02efed494e44b56bf53e3">LsmFluxName</a>[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>])) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                varIdx = <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        }</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">return</span> varIdx;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classNOAHMP_a2ac1eee8c8f52b5c0efc02073f62a1ed_cgraph.png" border="0" usemap="#aclassNOAHMP_a2ac1eee8c8f52b5c0efc02073f62a1ed_cgraph" alt=""/></div>
+<map name="aclassNOAHMP_a2ac1eee8c8f52b5c0efc02073f62a1ed_cgraph" id="aclassNOAHMP_a2ac1eee8c8f52b5c0efc02073f62a1ed_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,32"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="240,5,283,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a15624320849a5fffe20fec9afb86b06e"></a>

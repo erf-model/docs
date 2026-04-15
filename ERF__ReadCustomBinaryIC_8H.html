@@ -274,7 +274,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        dest.reserve(dest.size() + count);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx = 0; idx &lt; count; ++idx) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; count; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            read_or_abort(<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>, field_name);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            dest.emplace_back(<a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
@@ -305,12 +305,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    };</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Read the file</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idx = 0; idx &lt; ndata; ++idx) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        read_float_vector(*data_fields[idx], nx * ny * nz,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                          <span class="stringliteral">&quot;data field &quot;</span> + std::to_string(idx));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> = 0; <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a> &lt; ndata; ++<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        read_float_vector(*data_fields[<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>], nx * ny * nz,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                          <span class="stringliteral">&quot;data field &quot;</span> + std::to_string(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>));</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
+<div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:286</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a362f0148b27e7245ef6d68159e7ba843"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a></div><div class="ttdeci">Vector&lt; Real &gt; rho_h(khi+1, zero)</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00">ERF::FillForecastStateMultiFabs()</a>.</p>
@@ -319,8 +320,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ReadCustomBinaryIC_8H_a60f8ae2428844a5b2fe598a7a225e6b4_cgraph.png" border="0" usemap="#aERF__ReadCustomBinaryIC_8H_a60f8ae2428844a5b2fe598a7a225e6b4_cgraph" alt=""/></div>
 <map name="aERF__ReadCustomBinaryIC_8H_a60f8ae2428844a5b2fe598a7a225e6b4_cgraph" id="aERF__ReadCustomBinaryIC_8H_a60f8ae2428844a5b2fe598a7a225e6b4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,165,32"/>
-<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843" title=" " alt="" coords="213,5,272,32"/>
+<area shape="rect" title=" " alt="" coords="5,31,165,57"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="221,5,264,32"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843" title=" " alt="" coords="213,56,272,83"/>
 </map>
 </div>
 <div class="dynheader">
