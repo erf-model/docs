@@ -179,6 +179,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa04592b5e585ba63b39acf1e065191e3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa04592b5e585ba63b39acf1e065191e3"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__TurbStruct_8H.html#aa04592b5e585ba63b39acf1e065191e3">query_one_or_per_level</a> (const amrex::ParmParse &amp;<a class="el" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, const char *query_string, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> &amp;query_var, const int lev, const int maxlev)</td></tr>
 <tr class="separator:aa04592b5e585ba63b39acf1e065191e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eae7b00dc1804725e10ef874ffe9e0b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4eae7b00dc1804725e10ef874ffe9e0b"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__TurbStruct_8H.html#a4eae7b00dc1804725e10ef874ffe9e0b">query_one_or_per_level_enum_case_insensitive</a> (const amrex::ParmParse &amp;<a class="el" href="ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469">pp</a>, const char *query_string, <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> &amp;query_var, const int lev, const int maxlev)</td></tr>
+<tr class="separator:a4eae7b00dc1804725e10ef874ffe9e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a454c17db1a1fb2e88057dc6399effcd8"></a>
@@ -444,6 +447,89 @@ Here is the caller graph for this function:</div>
 <map name="aERF__TurbStruct_8H_aa04592b5e585ba63b39acf1e065191e3_icgraph" id="aERF__TurbStruct_8H_aa04592b5e585ba63b39acf1e065191e3_icgraph">
 <area shape="rect" title=" " alt="" coords="232,5,409,32"/>
 <area shape="rect" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422" title=" " alt="" coords="5,5,184,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4eae7b00dc1804725e10ef874ffe9e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eae7b00dc1804725e10ef874ffe9e0b">&#9670;&nbsp;</a></span>query_one_or_per_level_enum_case_insensitive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int query_one_or_per_level_enum_case_insensitive </td>
+          <td>(</td>
+          <td class="paramtype">const amrex::ParmParse &amp;&#160;</td>
+          <td class="paramname"><em>pp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>query_string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>query_var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>lev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>maxlev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">int</span> count = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(query_string);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">if</span> (count == 0) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> 0; <span class="comment">// nothing to do</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count == 1) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query_enum_case_insensitive(query_string, query_var);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (count &gt;= maxlev + 1) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query_enum_case_insensitive(query_string, query_var, lev);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    amrex::Error(</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="stringliteral">&quot;For parmparse variable &quot;</span> + <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.prefixedName(query_string) +</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="stringliteral">&quot;: if specified, specify once total or at least once for each level&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> 0; <span class="comment">// avoid compiler warning</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_cgraph.png" border="0" usemap="#aERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_cgraph" alt=""/></div>
+<map name="aERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_cgraph" id="aERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,187,47"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="235,13,273,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_icgraph.png" border="0" usemap="#aERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_icgraph" alt=""/></div>
+<map name="aERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_icgraph" id="aERF__TurbStruct_8H_a4eae7b00dc1804725e10ef874ffe9e0b_icgraph">
+<area shape="rect" title=" " alt="" coords="189,5,371,47"/>
+<area shape="rect" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be" title=" " alt="" coords="5,5,141,47"/>
 </map>
 </div>
 
