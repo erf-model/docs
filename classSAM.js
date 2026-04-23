@@ -21,7 +21,7 @@ var classSAM =
     [ "Set_dzmin", "classSAM.html#a941072443fd9254c81c1a847f4187a03", null ],
     [ "Set_RealWidth", "classSAM.html#a9802027112d2f53e9ad3fd081f29e656", null ],
     [ "Update_Micro_Vars", "classSAM.html#a2e6ff95cf827306bbcf3661c954a692e", null ],
-    [ "Update_State_Vars", "classSAM.html#aea5fdd520cbb1bc936a0f11d55400029", null ],
+    [ "Update_State_Vars", "classSAM.html#a2da9a650f48b68d4e192f7ec5670f828", null ],
     [ "accrgc", "classSAM.html#aa2de795ae7721e5070a8f4844e3897f6", null ],
     [ "accrgi", "classSAM.html#a2ec33470030fdfd34b9b9436f0b56cfd", null ],
     [ "accrrc", "classSAM.html#a74856cc0ee48b638ee5263cd51fd1090", null ],

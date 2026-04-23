@@ -136,8 +136,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa509cad79c881773e02fbdc9d78630f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a126716cce4ed479136e5f6cd8513149d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#a126716cce4ed479136e5f6cd8513149d">Update_Micro_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:a126716cce4ed479136e5f6cd8513149d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c09c265479736a584b29722261d238"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#aa0c09c265479736a584b29722261d238">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
-<tr class="separator:aa0c09c265479736a584b29722261d238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423a7a77f71d504cac86a6f9f33b9ca6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#a423a7a77f71d504cac86a6f9f33b9ca6">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;) override</td></tr>
+<tr class="separator:a423a7a77f71d504cac86a6f9f33b9ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabcac053905358d1e1818730eaa64235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#aabcac053905358d1e1818730eaa64235">Advance</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice) override</td></tr>
 <tr class="separator:aabcac053905358d1e1818730eaa64235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ecfd56a3aa5536012700ba1ff843fa2"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatAdj.html#a4ecfd56a3aa5536012700ba1ff843fa2">Qmoist_Ptr</a> (const int &amp;varIdx) override</td></tr>
@@ -306,13 +306,13 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">dt</a> = dt_advance;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this-&gt;<a class="code" href="classSatAdj.html#ac8aac0161bb9518a1c0909cd99d4c4d6">AdvanceSatAdj</a>(solverChoice);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">dt</a> = dt_advance;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;<a class="code" href="classSatAdj.html#ac8aac0161bb9518a1c0909cd99d4c4d6">AdvanceSatAdj</a>(solverChoice);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="ttc" id="aclassSatAdj_html_ac8aac0161bb9518a1c0909cd99d4c4d6"><div class="ttname"><a href="classSatAdj.html#ac8aac0161bb9518a1c0909cd99d4c4d6">SatAdj::AdvanceSatAdj</a></div><div class="ttdeci">void AdvanceSatAdj(const SolverChoice &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.cpp:8</div></div>
-<div class="ttc" id="aclassSatAdj_html_acac2100a462c3a8e75a6d20c69673001"><div class="ttname"><a href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">SatAdj::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:209</div></div>
+<div class="ttc" id="aclassSatAdj_html_acac2100a462c3a8e75a6d20c69673001"><div class="ttname"><a href="classSatAdj.html#acac2100a462c3a8e75a6d20c69673001">SatAdj::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:210</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -471,13 +471,13 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aada27a5057153b6463a47f463ea98742"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+0.5) *dx[0];const Real y=(j+0.5) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - 1.0)/(2.0 *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(1.0+deltaT, inv_gm1);const Real T=(1.0+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=0.25 *(1.0+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:171</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassSatAdj_html_a0ae1171544417b83878bf00916cefb64"><div class="ttname"><a href="classSatAdj.html#a0ae1171544417b83878bf00916cefb64">SatAdj::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:212</div></div>
-<div class="ttc" id="aclassSatAdj_html_a126f7c9b97c2cbb757483e1935470a44"><div class="ttname"><a href="classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44">SatAdj::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:203</div></div>
-<div class="ttc" id="aclassSatAdj_html_a26ca294f334ada4b91534e1e9e105442"><div class="ttname"><a href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">SatAdj::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_SatAdj::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:217</div></div>
-<div class="ttc" id="aclassSatAdj_html_a27114b820d031f82462a0f378294042c"><div class="ttname"><a href="classSatAdj.html#a27114b820d031f82462a0f378294042c">SatAdj::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:213</div></div>
-<div class="ttc" id="aclassSatAdj_html_a76548bd9c2adb222480e5f5725a05048"><div class="ttname"><a href="classSatAdj.html#a76548bd9c2adb222480e5f5725a05048">SatAdj::NewtonIterSat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real NewtonIterSat(int &amp;i, int &amp;j, int &amp;k, const amrex::Real &amp;fac_cond, const amrex::Array4&lt; amrex::Real &gt; &amp;tabs_array, const amrex::Array4&lt; amrex::Real &gt; &amp;pres_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qv_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qc_array)</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:133</div></div>
-<div class="ttc" id="aclassSatAdj_html_aa6f53145ce44c14987d2f7aac1d7a2df"><div class="ttname"><a href="classSatAdj.html#aa6f53145ce44c14987d2f7aac1d7a2df">SatAdj::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:214</div></div>
-<div class="ttc" id="aclassSatAdj_html_af1404efc983d1211f51736f0bff69f35"><div class="ttname"><a href="classSatAdj.html#af1404efc983d1211f51736f0bff69f35">SatAdj::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:206</div></div>
+<div class="ttc" id="aclassSatAdj_html_a0ae1171544417b83878bf00916cefb64"><div class="ttname"><a href="classSatAdj.html#a0ae1171544417b83878bf00916cefb64">SatAdj::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:213</div></div>
+<div class="ttc" id="aclassSatAdj_html_a126f7c9b97c2cbb757483e1935470a44"><div class="ttname"><a href="classSatAdj.html#a126f7c9b97c2cbb757483e1935470a44">SatAdj::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:204</div></div>
+<div class="ttc" id="aclassSatAdj_html_a26ca294f334ada4b91534e1e9e105442"><div class="ttname"><a href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">SatAdj::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_SatAdj::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:218</div></div>
+<div class="ttc" id="aclassSatAdj_html_a27114b820d031f82462a0f378294042c"><div class="ttname"><a href="classSatAdj.html#a27114b820d031f82462a0f378294042c">SatAdj::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:214</div></div>
+<div class="ttc" id="aclassSatAdj_html_a76548bd9c2adb222480e5f5725a05048"><div class="ttname"><a href="classSatAdj.html#a76548bd9c2adb222480e5f5725a05048">SatAdj::NewtonIterSat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real NewtonIterSat(int &amp;i, int &amp;j, int &amp;k, const amrex::Real &amp;fac_cond, const amrex::Array4&lt; amrex::Real &gt; &amp;tabs_array, const amrex::Array4&lt; amrex::Real &gt; &amp;pres_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qv_array, const amrex::Array4&lt; amrex::Real &gt; &amp;qc_array)</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:134</div></div>
+<div class="ttc" id="aclassSatAdj_html_aa6f53145ce44c14987d2f7aac1d7a2df"><div class="ttname"><a href="classSatAdj.html#aa6f53145ce44c14987d2f7aac1d7a2df">SatAdj::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:215</div></div>
+<div class="ttc" id="aclassSatAdj_html_af1404efc983d1211f51736f0bff69f35"><div class="ttname"><a href="classSatAdj.html#af1404efc983d1211f51736f0bff69f35">SatAdj::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:207</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a033cdb9ee01e3e254168b389c3ce9b20a7cde81843cd190a3122d7c3912a39b74"><div class="ttname"><a href="namespaceMicVar__Kess.html#a033cdb9ee01e3e254168b389c3ce9b20a7cde81843cd190a3122d7c3912a39b74">MicVar_Kess::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:24</div></div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_a42ef50b0e3cdf6a8e4247b6d73f69e87a0afe2a4054f7555add0acedfdb74cd91"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a0afe2a4054f7555add0acedfdb74cd91">MicVar_SatAdj::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:31</div></div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">MicVar_SatAdj::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:33</div></div>
@@ -579,7 +579,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_a42ef50b0e3cdf6a8e4247b6d73f69e87a37c8367a4790a51443f48cbc019408c8"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a37c8367a4790a51443f48cbc019408c8">MicVar_SatAdj::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:30</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classSatAdj.html#aa0c09c265479736a584b29722261d238">Update_State_Vars()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSatAdj.html#a423a7a77f71d504cac86a6f9f33b9ca6">Update_State_Vars()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -598,7 +598,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classSatAdj_aa509cad79c881773e02fbdc9d78630f3_icgraph.png" border="0" usemap="#aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_icgraph" alt=""/></div>
 <map name="aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_icgraph" id="aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_icgraph">
 <area shape="rect" title=" " alt="" coords="248,5,396,47"/>
-<area shape="rect" href="classSatAdj.html#aa0c09c265479736a584b29722261d238" title=" " alt="" coords="5,13,200,39"/>
+<area shape="rect" href="classSatAdj.html#a423a7a77f71d504cac86a6f9f33b9ca6" title=" " alt="" coords="5,13,200,39"/>
 </map>
 </div>
 
@@ -892,61 +892,61 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// Solution tolerance</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-8);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsat, dqsat;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="comment">// Newton iteration vars</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">int</span>  niter;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fff, dfff;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dtabs, delta_qv;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// Initial guess for temperature &amp; pressure</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a> = tabs_array(i,j,k);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">pres</a> = pres_array(i,j,k);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        niter = 0;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        dtabs = 1;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">// Newton iteration to qv=qsat (cloud phase only)</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a>, <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">pres</a>, qsat);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a>, <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">pres</a>, dqsat);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="comment">// Function for root finding:</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="comment">// 0 = -T_new + T_old + L_eff/C_p * (qv - qsat)</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            fff   = -<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a> + tabs_array(i,j,k) + fac_cond*(qv_array(i,j,k) - qsat);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="comment">// Derivative of function (T_new iterated on)</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            dfff  = -<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - fac_cond*dqsat;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="comment">// Update the temperature</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            dtabs = -fff/dfff;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a> += dtabs;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="comment">// Update iteration</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            niter = niter+1;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        } <span class="keywordflow">while</span>(std::abs(dtabs) &gt; tol &amp;&amp; niter &lt; 20);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">// Update qsat from last iteration (dq = dq/dt * dt)</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        qsat += dqsat*dtabs;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">// Changes in each component</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        delta_qv = qv_array(i,j,k) - qsat;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        qv_array(i,j,k)  = qsat;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        qc_array(i,j,k) += delta_qv;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">// Return to temperature</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment">// Solution tolerance</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-8);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsat, dqsat;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// Newton iteration vars</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordtype">int</span>  niter;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fff, dfff;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dtabs, delta_qv;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="comment">// Initial guess for temperature &amp; pressure</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a> = tabs_array(i,j,k);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">pres</a> = pres_array(i,j,k);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        niter = 0;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        dtabs = 1;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">//==================================================</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// Newton iteration to qv=qsat (cloud phase only)</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="comment">//==================================================</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="comment">// Saturation moisture fractions</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a>, <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">pres</a>, qsat);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a>, <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87a5a09034692ed5833456ae20e7c8954b0">pres</a>, dqsat);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="comment">// Function for root finding:</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            <span class="comment">// 0 = -T_new + T_old + L_eff/C_p * (qv - qsat)</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            fff   = -<a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a> + tabs_array(i,j,k) + fac_cond*(qv_array(i,j,k) - qsat);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="comment">// Derivative of function (T_new iterated on)</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            dfff  = -<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - fac_cond*dqsat;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// Update the temperature</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            dtabs = -fff/dfff;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a> += dtabs;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="comment">// Update iteration</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            niter = niter+1;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        } <span class="keywordflow">while</span>(std::abs(dtabs) &gt; tol &amp;&amp; niter &lt; 20);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">// Update qsat from last iteration (dq = dq/dt * dt)</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        qsat += dqsat*dtabs;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="comment">// Changes in each component</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        delta_qv = qv_array(i,j,k) - qsat;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        qv_array(i,j,k)  = qsat;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        qc_array(i,j,k) += delta_qv;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">// Return to temperature</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__SatAdj.html#a42ef50b0e3cdf6a8e4247b6d73f69e87ae89a849a90bf6b73e4a4daf59228ac54">tabs</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:7</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a41126403c4da6ee876e9e391f3f67699"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:186</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -991,12 +991,12 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(varIdx &lt; <a class="code" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(varIdx &lt; <a class="code" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aclassSatAdj_html_ac0fec328145e0aaad664481b9723601f"><div class="ttname"><a href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">SatAdj::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:197</div></div>
+<div class="ttc" id="aclassSatAdj_html_ac0fec328145e0aaad664481b9723601f"><div class="ttname"><a href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">SatAdj::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:198</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1050,10 +1050,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a77d6c9875f6a3a7242b090e6fece5c0f">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        a_idx.clear();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        a_names.clear();</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        a_idx.clear();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        a_names.clear();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1081,7 +1081,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">SatAdj::m_qmoist_size</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSatAdj.html#ac0fec328145e0aaad664481b9723601f">SatAdj::m_qmoist_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1109,8 +1109,8 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#af722f0334098a3e75001f799a7894ae1">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSatAdj.html#a058025729a3606ba316b73b209326d8a">SatAdj::n_qstate_moist_size</a>; }</div>
-<div class="ttc" id="aclassSatAdj_html_a058025729a3606ba316b73b209326d8a"><div class="ttname"><a href="classSatAdj.html#a058025729a3606ba316b73b209326d8a">SatAdj::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:200</div></div>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSatAdj.html#a058025729a3606ba316b73b209326d8a">SatAdj::n_qstate_moist_size</a>; }</div>
+<div class="ttc" id="aclassSatAdj_html_a058025729a3606ba316b73b209326d8a"><div class="ttname"><a href="classSatAdj.html#a058025729a3606ba316b73b209326d8a">SatAdj::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:201</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1139,7 +1139,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a88b448069b86e3f1e16b8e28dc38b3bb">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{ <a class="code" href="classSatAdj.html#af1404efc983d1211f51736f0bff69f35">m_real_width</a> = real_width; }</div>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{ <a class="code" href="classSatAdj.html#af1404efc983d1211f51736f0bff69f35">m_real_width</a> = real_width; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1190,8 +1190,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa0c09c265479736a584b29722261d238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0c09c265479736a584b29722261d238">&#9670;&nbsp;</a></span>Update_State_Vars()</h2>
+<a id="a423a7a77f71d504cac86a6f9f33b9ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423a7a77f71d504cac86a6f9f33b9ca6">&#9670;&nbsp;</a></span>Update_State_Vars()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1203,8 +1203,18 @@ Here is the call graph for this function:</div>
           <td class="memname">void SatAdj::Update_State_Vars </td>
           <td>(</td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>cons_in</em></td><td>)</td>
+          <td class="paramname"><em>cons_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1214,16 +1224,16 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classNullMoist.html#a24f0528f7d31b89f36a3c225c7e53010">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        this-&gt;<a class="code" href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3">Copy_Micro_to_State</a>(cons_in);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<p>Reimplemented from <a class="el" href="classNullMoist.html#a85dd5b9865ebdf4dd44e5d13c0ce87bb">NullMoist</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        this-&gt;<a class="code" href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3">Copy_Micro_to_State</a>(cons_in);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
 <div class="ttc" id="aclassSatAdj_html_aa509cad79c881773e02fbdc9d78630f3"><div class="ttname"><a href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3">SatAdj::Copy_Micro_to_State</a></div><div class="ttdeci">void Copy_Micro_to_State(amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> ERF_UpdateSatAdj.cpp:12</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classSatAdj_aa0c09c265479736a584b29722261d238_cgraph.png" border="0" usemap="#aclassSatAdj_aa0c09c265479736a584b29722261d238_cgraph" alt=""/></div>
-<map name="aclassSatAdj_aa0c09c265479736a584b29722261d238_cgraph" id="aclassSatAdj_aa0c09c265479736a584b29722261d238_cgraph">
+<div class="center"><img src="classSatAdj_a423a7a77f71d504cac86a6f9f33b9ca6_cgraph.png" border="0" usemap="#aclassSatAdj_a423a7a77f71d504cac86a6f9f33b9ca6_cgraph" alt=""/></div>
+<map name="aclassSatAdj_a423a7a77f71d504cac86a6f9f33b9ca6_cgraph" id="aclassSatAdj_a423a7a77f71d504cac86a6f9f33b9ca6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,200,83"/>
 <area shape="rect" href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3" title=" " alt="" coords="248,49,396,90"/>
 <area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="444,56,535,83"/>

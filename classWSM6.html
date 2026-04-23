@@ -137,8 +137,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa1ade1b9b9e4effa8525e530e7bd4a5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b1ef5502b7a1b842fbd6d5a653c2f4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWSM6.html#a7b1ef5502b7a1b842fbd6d5a653c2f4b">Update_Micro_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
 <tr class="separator:a7b1ef5502b7a1b842fbd6d5a653c2f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa86121a771b658ddbc26de35ddd346f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWSM6.html#aa86121a771b658ddbc26de35ddd346f2">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in) override</td></tr>
-<tr class="separator:aa86121a771b658ddbc26de35ddd346f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e9fb09f6813d603d7a2064f5bd4d742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWSM6.html#a6e9fb09f6813d603d7a2064f5bd4d742">Update_State_Vars</a> (amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;) override</td></tr>
+<tr class="separator:a6e9fb09f6813d603d7a2064f5bd4d742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9723e1fbac13992e1c9f3659eba048bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWSM6.html#a9723e1fbac13992e1c9f3659eba048bc">Advance</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt_advance, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solverChoice) override</td></tr>
 <tr class="separator:a9723e1fbac13992e1c9f3659eba048bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a946fe365fcc50acdca435d26855ea60f"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWSM6.html#a946fe365fcc50acdca435d26855ea60f">Qmoist_Ptr</a> (const int &amp;varIdx) override</td></tr>
@@ -461,11 +461,11 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
 <div class="ttc" id="aERF__WSM6__Fortran__Interface_8H_html_a5992141c3608ccf1f06dc2392c06c583"><div class="ttname"><a href="ERF__WSM6__Fortran__Interface_8H.html#a5992141c3608ccf1f06dc2392c06c583">mp_wsm6_run_c</a></div><div class="ttdeci">void mp_wsm6_run_c(double *t, double *qv, double *qc, double *qi, double *qr, double *qs, double *qg, double *den, double *p, double *delz, double delt, double g, double cpd, double cpv, double rd, double rv, double t0c, double ep1, double ep2, double qmin, double xls, double xlv0, double xlf0, double den0, double denr, double cliq, double cice, double psat, double *rain, double *rainncv, double *sr, double *snow, double *snowncv, double *graupel, double *graupelncv, int ims, int ime, int jms, int jme, int kms, int kme, int its, int ite, int jts, int jte, int kts, int kte)</div></div>
 <div class="ttc" id="aERF__WSM6__Fortran__Interface_8H_html_a59ea18533a06cbf3f1324b1e50432b59"><div class="ttname"><a href="ERF__WSM6__Fortran__Interface_8H.html#a59ea18533a06cbf3f1324b1e50432b59">mp_wsm6_init_c</a></div><div class="ttdeci">void mp_wsm6_init_c(double den0, double denr, double dens, double cl, double cpv, int hail_opt)</div></div>
-<div class="ttc" id="aclassWSM6_html_a0f08ef066817dfa2eaf2e04debf70f36"><div class="ttname"><a href="classWSM6.html#a0f08ef066817dfa2eaf2e04debf70f36">WSM6::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:108</div></div>
-<div class="ttc" id="aclassWSM6_html_a4baa9ab47a27c28a662c545f3128c1b7"><div class="ttname"><a href="classWSM6.html#a4baa9ab47a27c28a662c545f3128c1b7">WSM6::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:105</div></div>
-<div class="ttc" id="aclassWSM6_html_aa9a2af6e87e51135873f4562ce5eb084"><div class="ttname"><a href="classWSM6.html#aa9a2af6e87e51135873f4562ce5eb084">WSM6::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:100</div></div>
-<div class="ttc" id="aclassWSM6_html_aaa9bc31d9054e371d845fe7122bfc04f"><div class="ttname"><a href="classWSM6.html#aaa9bc31d9054e371d845fe7122bfc04f">WSM6::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:102</div></div>
-<div class="ttc" id="aclassWSM6_html_aceb11cfe226bfa1da9282bdb738810b5"><div class="ttname"><a href="classWSM6.html#aceb11cfe226bfa1da9282bdb738810b5">WSM6::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_WSM6::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:111</div></div>
+<div class="ttc" id="aclassWSM6_html_a0f08ef066817dfa2eaf2e04debf70f36"><div class="ttname"><a href="classWSM6.html#a0f08ef066817dfa2eaf2e04debf70f36">WSM6::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:109</div></div>
+<div class="ttc" id="aclassWSM6_html_a4baa9ab47a27c28a662c545f3128c1b7"><div class="ttname"><a href="classWSM6.html#a4baa9ab47a27c28a662c545f3128c1b7">WSM6::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:106</div></div>
+<div class="ttc" id="aclassWSM6_html_aa9a2af6e87e51135873f4562ce5eb084"><div class="ttname"><a href="classWSM6.html#aa9a2af6e87e51135873f4562ce5eb084">WSM6::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:101</div></div>
+<div class="ttc" id="aclassWSM6_html_aaa9bc31d9054e371d845fe7122bfc04f"><div class="ttname"><a href="classWSM6.html#aaa9bc31d9054e371d845fe7122bfc04f">WSM6::dt</a></div><div class="ttdeci">amrex::Real dt</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:103</div></div>
+<div class="ttc" id="aclassWSM6_html_aceb11cfe226bfa1da9282bdb738810b5"><div class="ttname"><a href="classWSM6.html#aceb11cfe226bfa1da9282bdb738810b5">WSM6::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_WSM6::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:112</div></div>
 <div class="ttc" id="anamespaceMicVar__WSM6_html_a42878801a3832732644a6e6a5d0327b9a20eda1bb3226f1e2375ce13298f7a03a"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a42878801a3832732644a6e6a5d0327b9a20eda1bb3226f1e2375ce13298f7a03a">MicVar_WSM6::qr</a></div><div class="ttdeci">@ qr</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:27</div></div>
 <div class="ttc" id="anamespaceMicVar__WSM6_html_a42878801a3832732644a6e6a5d0327b9a2e4ccbba255f9b0f754305108fa30a05"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a42878801a3832732644a6e6a5d0327b9a2e4ccbba255f9b0f754305108fa30a05">MicVar_WSM6::qi</a></div><div class="ttdeci">@ qi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:26</div></div>
 <div class="ttc" id="anamespaceMicVar__WSM6_html_a42878801a3832732644a6e6a5d0327b9a60749dacb5a22877b6b655d82a082ec5"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a42878801a3832732644a6e6a5d0327b9a60749dacb5a22877b6b655d82a082ec5">MicVar_WSM6::qs</a></div><div class="ttdeci">@ qs</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:28</div></div>
@@ -571,7 +571,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar__WSM6_html_a42878801a3832732644a6e6a5d0327b9a58c44eabbff033d99d214c8b090ea283"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a42878801a3832732644a6e6a5d0327b9a58c44eabbff033d99d214c8b090ea283">MicVar_WSM6::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:21</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classWSM6.html#aa86121a771b658ddbc26de35ddd346f2">Update_State_Vars()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classWSM6.html#a6e9fb09f6813d603d7a2064f5bd4d742">Update_State_Vars()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -590,7 +590,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classWSM6_aa1ade1b9b9e4effa8525e530e7bd4a5b_icgraph.png" border="0" usemap="#aclassWSM6_aa1ade1b9b9e4effa8525e530e7bd4a5b_icgraph" alt=""/></div>
 <map name="aclassWSM6_aa1ade1b9b9e4effa8525e530e7bd4a5b_icgraph" id="aclassWSM6_aa1ade1b9b9e4effa8525e530e7bd4a5b_icgraph">
 <area shape="rect" title=" " alt="" coords="248,5,415,47"/>
-<area shape="rect" href="classWSM6.html#aa86121a771b658ddbc26de35ddd346f2" title=" " alt="" coords="5,13,200,39"/>
+<area shape="rect" href="classWSM6.html#a6e9fb09f6813d603d7a2064f5bd4d742" title=" " alt="" coords="5,13,200,39"/>
 </map>
 </div>
 
@@ -720,7 +720,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classWSM6.html#a4baa9ab47a27c28a662c545f3128c1b7">m_axis</a> = sc.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classWSM6.html#a42e7a9efaf6905e8082af0286c24accb">m_do_cond</a> = (!sc.<a class="code" href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">use_shoc</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="ttc" id="aclassWSM6_html_a42e7a9efaf6905e8082af0286c24accb"><div class="ttname"><a href="classWSM6.html#a42e7a9efaf6905e8082af0286c24accb">WSM6::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:106</div></div>
+<div class="ttc" id="aclassWSM6_html_a42e7a9efaf6905e8082af0286c24accb"><div class="ttname"><a href="classWSM6.html#a42e7a9efaf6905e8082af0286c24accb">WSM6::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:107</div></div>
 <div class="ttc" id="astructSolverChoice_html_a53819b8e72b3431b2c81f6ae2b6433f1"><div class="ttname"><a href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">SolverChoice::use_shoc</a></div><div class="ttdeci">bool use_shoc</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1200</div></div>
 <div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1263</div></div>
 </div><!-- fragment -->
@@ -805,12 +805,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classWSM6.html#a40d42cc9235c353372f6015cece47182">zlo</a> = <a class="code" href="classWSM6.html#aa9a2af6e87e51135873f4562ce5eb084">m_geom</a>.Domain().smallEnd(2);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classWSM6.html#a4590a640fd15d3fc22def099ac7a80cb">zhi</a> = <a class="code" href="classWSM6.html#aa9a2af6e87e51135873f4562ce5eb084">m_geom</a>.Domain().bigEnd(2);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="ttc" id="aclassWSM6_html_a294d9c8c8148a8c4ec10caf5ac39292b"><div class="ttname"><a href="classWSM6.html#a294d9c8c8148a8c4ec10caf5ac39292b">WSM6::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:109</div></div>
-<div class="ttc" id="aclassWSM6_html_a40d42cc9235c353372f6015cece47182"><div class="ttname"><a href="classWSM6.html#a40d42cc9235c353372f6015cece47182">WSM6::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:104</div></div>
-<div class="ttc" id="aclassWSM6_html_a4485efcdfa4a54dd8872b1368f0a198c"><div class="ttname"><a href="classWSM6.html#a4485efcdfa4a54dd8872b1368f0a198c">WSM6::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:104</div></div>
-<div class="ttc" id="aclassWSM6_html_a4590a640fd15d3fc22def099ac7a80cb"><div class="ttname"><a href="classWSM6.html#a4590a640fd15d3fc22def099ac7a80cb">WSM6::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:104</div></div>
-<div class="ttc" id="aclassWSM6_html_a4804b2827b74e07d35bbbf71011996cb"><div class="ttname"><a href="classWSM6.html#a4804b2827b74e07d35bbbf71011996cb">WSM6::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:95</div></div>
-<div class="ttc" id="aclassWSM6_html_accbde3242a83196e5ec5ff687c470c47"><div class="ttname"><a href="classWSM6.html#accbde3242a83196e5ec5ff687c470c47">WSM6::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:98</div></div>
+<div class="ttc" id="aclassWSM6_html_a294d9c8c8148a8c4ec10caf5ac39292b"><div class="ttname"><a href="classWSM6.html#a294d9c8c8148a8c4ec10caf5ac39292b">WSM6::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:110</div></div>
+<div class="ttc" id="aclassWSM6_html_a40d42cc9235c353372f6015cece47182"><div class="ttname"><a href="classWSM6.html#a40d42cc9235c353372f6015cece47182">WSM6::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:105</div></div>
+<div class="ttc" id="aclassWSM6_html_a4485efcdfa4a54dd8872b1368f0a198c"><div class="ttname"><a href="classWSM6.html#a4485efcdfa4a54dd8872b1368f0a198c">WSM6::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:105</div></div>
+<div class="ttc" id="aclassWSM6_html_a4590a640fd15d3fc22def099ac7a80cb"><div class="ttname"><a href="classWSM6.html#a4590a640fd15d3fc22def099ac7a80cb">WSM6::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:105</div></div>
+<div class="ttc" id="aclassWSM6_html_a4804b2827b74e07d35bbbf71011996cb"><div class="ttname"><a href="classWSM6.html#a4804b2827b74e07d35bbbf71011996cb">WSM6::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:96</div></div>
+<div class="ttc" id="aclassWSM6_html_accbde3242a83196e5ec5ff687c470c47"><div class="ttname"><a href="classWSM6.html#accbde3242a83196e5ec5ff687c470c47">WSM6::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:99</div></div>
 <div class="ttc" id="anamespaceMicVar__WSM6_html_a42878801a3832732644a6e6a5d0327b9ad1bb9c52895a9ec6042b369ac5d16552"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a42878801a3832732644a6e6a5d0327b9ad1bb9c52895a9ec6042b369ac5d16552">MicVar_WSM6::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:33</div></div>
 </div><!-- fragment -->
 </div>
@@ -840,10 +840,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a1b6a72d67d9b2642e99a5b768315476c">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(varIdx &lt; <a class="code" href="classWSM6.html#a4804b2827b74e07d35bbbf71011996cb">m_qmoist_size</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classWSM6.html#aceb11cfe226bfa1da9282bdb738810b5">mic_fab_vars</a>[<a class="code" href="classWSM6.html#accbde3242a83196e5ec5ff687c470c47">MicVarMap</a>[varIdx]].get();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(varIdx &lt; <a class="code" href="classWSM6.html#a4804b2827b74e07d35bbbf71011996cb">m_qmoist_size</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classWSM6.html#aceb11cfe226bfa1da9282bdb738810b5">mic_fab_vars</a>[<a class="code" href="classWSM6.html#accbde3242a83196e5ec5ff687c470c47">MicVarMap</a>[varIdx]].get();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -898,10 +898,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a77d6c9875f6a3a7242b090e6fece5c0f">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        a_idx = {0, 1, 2};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        a_names = {<span class="stringliteral">&quot;RainAccum&quot;</span>, <span class="stringliteral">&quot;SnowAccum&quot;</span>, <span class="stringliteral">&quot;GraupAccum&quot;</span>};</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        a_idx = {0, 1, 2};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        a_names = {<span class="stringliteral">&quot;RainAccum&quot;</span>, <span class="stringliteral">&quot;SnowAccum&quot;</span>, <span class="stringliteral">&quot;GraupAccum&quot;</span>};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -929,7 +929,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classWSM6.html#a4804b2827b74e07d35bbbf71011996cb">m_qmoist_size</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classWSM6.html#a4804b2827b74e07d35bbbf71011996cb">m_qmoist_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -957,8 +957,8 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#af722f0334098a3e75001f799a7894ae1">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classWSM6.html#a5056b91d83592a8aaef2a3f7f07c3b58">n_qstate_moist_size</a>; }</div>
-<div class="ttc" id="aclassWSM6_html_a5056b91d83592a8aaef2a3f7f07c3b58"><div class="ttname"><a href="classWSM6.html#a5056b91d83592a8aaef2a3f7f07c3b58">WSM6::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:96</div></div>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classWSM6.html#a5056b91d83592a8aaef2a3f7f07c3b58">n_qstate_moist_size</a>; }</div>
+<div class="ttc" id="aclassWSM6_html_a5056b91d83592a8aaef2a3f7f07c3b58"><div class="ttname"><a href="classWSM6.html#a5056b91d83592a8aaef2a3f7f07c3b58">WSM6::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:97</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -988,7 +988,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a47199894161e2c6ec167c8032d7181a0">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{ <a class="code" href="classWSM6.html#a0a42e7f0e725c1fda09e48921931dda1">m_dzmin</a> = dz_min; }</div>
-<div class="ttc" id="aclassWSM6_html_a0a42e7f0e725c1fda09e48921931dda1"><div class="ttname"><a href="classWSM6.html#a0a42e7f0e725c1fda09e48921931dda1">WSM6::m_dzmin</a></div><div class="ttdeci">amrex::Real m_dzmin</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:103</div></div>
+<div class="ttc" id="aclassWSM6_html_a0a42e7f0e725c1fda09e48921931dda1"><div class="ttname"><a href="classWSM6.html#a0a42e7f0e725c1fda09e48921931dda1">WSM6::m_dzmin</a></div><div class="ttdeci">amrex::Real m_dzmin</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:104</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1017,8 +1017,8 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a88b448069b86e3f1e16b8e28dc38b3bb">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{ <a class="code" href="classWSM6.html#aede72c6d533cb2d69336a1e9b34e50eb">m_real_width</a> = real_width; }</div>
-<div class="ttc" id="aclassWSM6_html_aede72c6d533cb2d69336a1e9b34e50eb"><div class="ttname"><a href="classWSM6.html#aede72c6d533cb2d69336a1e9b34e50eb">WSM6::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:101</div></div>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{ <a class="code" href="classWSM6.html#aede72c6d533cb2d69336a1e9b34e50eb">m_real_width</a> = real_width; }</div>
+<div class="ttc" id="aclassWSM6_html_aede72c6d533cb2d69336a1e9b34e50eb"><div class="ttname"><a href="classWSM6.html#aede72c6d533cb2d69336a1e9b34e50eb">WSM6::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:102</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1069,8 +1069,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa86121a771b658ddbc26de35ddd346f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa86121a771b658ddbc26de35ddd346f2">&#9670;&nbsp;</a></span>Update_State_Vars()</h2>
+<a id="a6e9fb09f6813d603d7a2064f5bd4d742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e9fb09f6813d603d7a2064f5bd4d742">&#9670;&nbsp;</a></span>Update_State_Vars()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1082,8 +1082,18 @@ Here is the call graph for this function:</div>
           <td class="memname">void WSM6::Update_State_Vars </td>
           <td>(</td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>cons_in</em></td><td>)</td>
+          <td class="paramname"><em>cons_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1093,16 +1103,16 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classNullMoist.html#a24f0528f7d31b89f36a3c225c7e53010">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classWSM6.html#aa1ade1b9b9e4effa8525e530e7bd4a5b">Copy_Micro_to_State</a>(cons_in);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<p>Reimplemented from <a class="el" href="classNullMoist.html#a85dd5b9865ebdf4dd44e5d13c0ce87bb">NullMoist</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classWSM6.html#aa1ade1b9b9e4effa8525e530e7bd4a5b">Copy_Micro_to_State</a>(cons_in);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="ttc" id="aclassWSM6_html_aa1ade1b9b9e4effa8525e530e7bd4a5b"><div class="ttname"><a href="classWSM6.html#aa1ade1b9b9e4effa8525e530e7bd4a5b">WSM6::Copy_Micro_to_State</a></div><div class="ttdeci">void Copy_Micro_to_State(amrex::MultiFab &amp;cons_in) override</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSM6.cpp:6</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classWSM6_aa86121a771b658ddbc26de35ddd346f2_cgraph.png" border="0" usemap="#aclassWSM6_aa86121a771b658ddbc26de35ddd346f2_cgraph" alt=""/></div>
-<map name="aclassWSM6_aa86121a771b658ddbc26de35ddd346f2_cgraph" id="aclassWSM6_aa86121a771b658ddbc26de35ddd346f2_cgraph">
+<div class="center"><img src="classWSM6_a6e9fb09f6813d603d7a2064f5bd4d742_cgraph.png" border="0" usemap="#aclassWSM6_a6e9fb09f6813d603d7a2064f5bd4d742_cgraph" alt=""/></div>
+<map name="aclassWSM6_a6e9fb09f6813d603d7a2064f5bd4d742_cgraph" id="aclassWSM6_a6e9fb09f6813d603d7a2064f5bd4d742_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,200,83"/>
 <area shape="rect" href="classWSM6.html#aa1ade1b9b9e4effa8525e530e7bd4a5b" title=" " alt="" coords="248,49,415,90"/>
 <area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="463,56,553,83"/>

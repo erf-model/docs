@@ -128,9 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b8a14f003da6293f7a9ee118bc60149"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">Update_Micro_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;)=0</td></tr>
 <tr class="memdesc:a6b8a14f003da6293f7a9ee118bc60149"><td class="mdescLeft">&#160;</td><td class="mdescRight">update microphysics variables from <a class="el" href="classERF.html">ERF</a> state variables  <a href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">More...</a><br /></td></tr>
 <tr class="separator:a6b8a14f003da6293f7a9ee118bc60149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d7ee0e4867e53e492b8179365e85bb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4">Update_State_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;)=0</td></tr>
-<tr class="memdesc:a5d7ee0e4867e53e492b8179365e85bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">update <a class="el" href="classERF.html">ERF</a> state variables from microphysics variables  <a href="classMicrophysics.html#a5d7ee0e4867e53e492b8179365e85bb4">More...</a><br /></td></tr>
-<tr class="separator:a5d7ee0e4867e53e492b8179365e85bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd2a2c836d10f3d3f8444319dcefa82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a8bd2a2c836d10f3d3f8444319dcefa82">Update_State_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;, const amrex::MultiFab &amp;)=0</td></tr>
+<tr class="memdesc:a8bd2a2c836d10f3d3f8444319dcefa82"><td class="mdescLeft">&#160;</td><td class="mdescRight">update <a class="el" href="classERF.html">ERF</a> state variables from microphysics variables  <a href="classMicrophysics.html#a8bd2a2c836d10f3d3f8444319dcefa82">More...</a><br /></td></tr>
+<tr class="separator:a8bd2a2c836d10f3d3f8444319dcefa82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="memItemLeft" align="right" valign="top">virtual amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">Get_Qmoist_Ptr</a> (const int &amp;, const int &amp;)=0</td></tr>
 <tr class="memdesc:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">get pointer to a moisture variable  <a href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">More...</a><br /></td></tr>
 <tr class="separator:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -960,8 +960,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a5d7ee0e4867e53e492b8179365e85bb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d7ee0e4867e53e492b8179365e85bb4">&#9670;&nbsp;</a></span>Update_State_Vars_Lev()</h2>
+<a id="a8bd2a2c836d10f3d3f8444319dcefa82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd2a2c836d10f3d3f8444319dcefa82">&#9670;&nbsp;</a></span>Update_State_Vars_Lev()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -979,6 +979,12 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -996,7 +1002,7 @@ Here is the caller graph for this function:</div>
 
 <p>update <a class="el" href="classERF.html">ERF</a> state variables from microphysics variables </p>
 
-<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a6f0dc90119a228e56c5616267eba6009">EulerianMicrophysics</a>.</p>
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a1504eb672d6b50465a548de612fcb01d">EulerianMicrophysics</a>.</p>
 
 </div>
 </div>
