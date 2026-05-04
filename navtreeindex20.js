@@ -1,6 +1,5 @@
 var NAVTREEINDEX20 =
 {
-"functions_func_i.html":[2,3,1,8],
 "functions_func_k.html":[2,3,1,9],
 "functions_func_l.html":[2,3,1,10],
 "functions_func_m.html":[2,3,1,11],
@@ -34,8 +33,8 @@ var NAVTREEINDEX20 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_b.html":[2,3,2,1],
 "functions_vars_c.html":[2,3,2,2],
 "functions_vars_d.html":[2,3,2,3],
@@ -76,8 +75,8 @@ var NAVTREEINDEX20 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX20 =
 "namespacederived.html#a924a372e8c2d5d3e0d877d8e6fad2bab":[1,0,4,7],
 "namespacederived.html#a93723d75ca613561cbba09e53e294789":[1,0,4,37],
 "namespacederived.html#a95e8691e3da0b2cf93da2c92e4b973c5":[1,0,4,16],
-"namespacederived.html#a9935603239fe8510b11179da8e76c39c":[1,0,4,24]
+"namespacederived.html#a9935603239fe8510b11179da8e76c39c":[1,0,4,24],
+"namespacederived.html#aac38ebccfd26fccd9ed0c3209312046b":[1,0,4,19]
 };

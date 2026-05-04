@@ -113,6 +113,7 @@ var classERF =
     [ "operator=", "classERF.html#a72fcc41d6f5225e9ca3b8c9111ff37e7", null ],
     [ "operator=", "classERF.html#abbc40e6fe700b80e3666dd3723624f05", null ],
     [ "ParameterSanityChecks", "classERF.html#ad71a033b3fd107465a8621eaf7c77b28", null ],
+    [ "PerformDataAssimilation", "classERF.html#a099bfcf5d0d18b129ca2176dc6391883", null ],
     [ "PlotFileName", "classERF.html#a54f6c5d799e51521ad10bb57d29d0c44", null ],
     [ "PlotFileVarNames", "classERF.html#a2dcd22cb915d923c687f60267f44542b", null ],
     [ "poisson_wall_dist", "classERF.html#a984c145a81739ab4c7f8fd03a334d239", null ],

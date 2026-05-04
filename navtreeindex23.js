@@ -1,6 +1,5 @@
 var NAVTREEINDEX23 =
 {
-"structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0":[2,0,8,4],
 "structCENTERED2.html#a49f65cb094600a7ef7c91423426cff09":[2,0,8,2],
 "structCENTERED2.html#a66de83f17cc1fa457cb89af60afb0041":[2,0,8,5],
 "structCENTERED2.html#aa6f2ad6014936f7548fc1f7abcd8df36":[2,0,8,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX23 =
 "structSDDistributionParams.html#a1fd7f08c85d3be51036ee6e6c8e22bfd":[2,0,71,17],
 "structSDDistributionParams.html#a1ffdc31684ff4d435c9b9211159c7017":[2,0,71,3],
 "structSDDistributionParams.html#a2eb41d8a5cb040ff7bb10c3cd5ebd240":[2,0,71,0],
-"structSDDistributionParams.html#a30f795ff59e60be911a58f7e221b2d8d":[2,0,71,14]
+"structSDDistributionParams.html#a30f795ff59e60be911a58f7e221b2d8d":[2,0,71,14],
+"structSDDistributionParams.html#a74aac0deae03501ce01385b10cf26b76":[2,0,71,8]
 };
