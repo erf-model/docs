@@ -518,16 +518,16 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keyword">using namespace </span>SDPCDefn;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            constexpr <span class="keywordtype">int</span> rtoff_i = SuperDropletsIntIdxSoA::ncomps;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            constexpr <span class="keywordtype">int</span> rtoff_r = SuperDropletsRealIdxSoA::ncomps;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            constexpr <span class="keywordtype">int</span> rtoff_i = SuperDropletsIntIdx::ncomps;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;            constexpr <span class="keywordtype">int</span> rtoff_r = SuperDropletsRealIdx::ncomps;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            ptrs.num_particles = aos.numParticles();</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            ptrs.mass_ptr = soa.GetRealData(SuperDropletsRealIdxSoA::mass).data();</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            ptrs.mass_ptr = soa.GetRealData(SuperDropletsRealIdx::mass).data();</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            ptrs.radius_ptr = soa.GetRealData(rtoff_r + SuperDropletsRealIdxSoA_RT::radius).data();</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;            ptrs.active_ptr = soa.GetIntData(rtoff_i + SuperDropletsIntIdxSoA_RT::active).data();</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            ptrs.v_ptr[0] = soa.GetRealData(SuperDropletsRealIdxSoA::vx).data();</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            ptrs.v_ptr[1] = soa.GetRealData(SuperDropletsRealIdxSoA::vy).data();</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            ptrs.v_ptr[2] = soa.GetRealData(SuperDropletsRealIdxSoA::vz).data();</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;            ptrs.v_ptr[0] = soa.GetRealData(SuperDropletsRealIdx::vx).data();</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;            ptrs.v_ptr[1] = soa.GetRealData(SuperDropletsRealIdx::vy).data();</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            ptrs.v_ptr[2] = soa.GetRealData(SuperDropletsRealIdx::vz).data();</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            ptrs.vterm_ptr = soa.GetRealData(rtoff_r + SuperDropletsRealIdxSoA_RT::term_vel).data();</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            ptrs.mult_ptr = soa.GetRealData(rtoff_r + SuperDropletsRealIdxSoA_RT::multiplicity).data();</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            setupMassPointers(soa, ptrs.sp_mass_ptrs, ptrs.ae_mass_ptrs);</div>

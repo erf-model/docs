@@ -182,16 +182,12 @@ template&lt;typename ParticleType &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Iterate over each field and interpolate its value at the particle position</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_fields; ++i) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (is_periodic_z != 0) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            cic_interpolate(<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            cic_interpolate_mapped_z(<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, plo, dxi, field_arrays[i], *zheight, &amp;result_values[i], 1);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    amrex::ignore_unused(is_periodic_z, zheight);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_fields; ++i) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cic_interpolate(<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_af83c1918e681461dc4cc7ed4c0828b2c"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a></div><div class="ttdeci">Real * p</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:61</div></div>
 </div><!-- fragment -->
 </div>
