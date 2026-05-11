@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"ERF__Radiation_8H.html":[3,0,1,13,0,2],
 "ERF__Radiation_8H_source.html":[3,0,1,13,0,2],
 "ERF__Radiation_8cpp.html":[3,0,1,13,0,1],
 "ERF__ReadBndryPlanes_8H.html":[3,0,1,6,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__TerrainMetrics_8H_source.html":[3,0,1,18,31],
 "ERF__TerrainMetrics_8cpp.html":[3,0,1,18,30],
 "ERF__TerrainMetrics_8cpp.html#a6f3b32ea207dacad3e0525d419d23b99":[3,0,1,18,30,0],
-"ERF__TerrainMetrics_8cpp.html#a920c175414adfaaa26687bfb8e7585bb":[3,0,1,18,30,3],
-"ERF__TerrainMetrics_8cpp.html#a9addf6b6f85760dd0d43acd9a52fe66c":[3,0,1,18,30,5]
+"ERF__TerrainMetrics_8cpp.html#a920c175414adfaaa26687bfb8e7585bb":[3,0,1,18,30,3]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"ERF__MRI_8H_source.html":[3,0,1,16,10],
 "ERF__MYNNStruct_8H.html":[3,0,1,12,5],
 "ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25":[3,0,1,12,5,2],
 "ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25aa2652637c68e16524ab7681e65eea95c":[3,0,1,12,5,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__RadiationInterface_8H.html":[3,0,1,13,0,3],
 "ERF__RadiationInterface_8H_source.html":[3,0,1,13,0,3],
 "ERF__RadiationModels_8H.html":[3,0,1,13,0,4],
-"ERF__RadiationModels_8H_source.html":[3,0,1,13,0,4],
-"ERF__Radiation_8H.html":[3,0,1,13,0,2]
+"ERF__RadiationModels_8H_source.html":[3,0,1,13,0,4]
 };
