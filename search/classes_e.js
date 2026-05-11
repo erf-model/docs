@@ -1,29 +1,7 @@
 var searchData=
 [
-  ['sam_4122',['SAM',['../classSAM.html',1,'']]],
-  ['satadj_4123',['SatAdj',['../classSatAdj.html',1,'']]],
-  ['satmethods_4124',['SatMethods',['../classSatMethods.html',1,'']]],
-  ['sddistributionparams_4125',['SDDistributionParams',['../structSDDistributionParams.html',1,'']]],
-  ['sdinitialization_4126',['SDInitialization',['../classSDInitialization.html',1,'']]],
-  ['sdinitproperties_4127',['SDInitProperties',['../classSDInitProperties.html',1,'']]],
-  ['sdinjection_4128',['SDInjection',['../classSDInjection.html',1,'']]],
-  ['shocinterface_4129',['SHOCInterface',['../classSHOCInterface.html',1,'']]],
-  ['shocpostprocess_4130',['SHOCPostprocess',['../structSHOCInterface_1_1SHOCPostprocess.html',1,'SHOCInterface']]],
-  ['shocpreprocess_4131',['SHOCPreprocess',['../structSHOCInterface_1_1SHOCPreprocess.html',1,'SHOCInterface']]],
-  ['similarity_5ffuns_4132',['similarity_funs',['../structsimilarity__funs.html',1,'']]],
-  ['simplead_4133',['SimpleAD',['../classSimpleAD.html',1,'']]],
-  ['slm_4134',['SLM',['../classSLM.html',1,'']]],
-  ['solverchoice_4135',['SolverChoice',['../structSolverChoice.html',1,'']]],
-  ['spongechoice_4136',['SpongeChoice',['../structSpongeChoice.html',1,'']]],
-  ['surface_5fflux_4137',['surface_flux',['../structsurface__flux.html',1,'']]],
-  ['surface_5fflux_5fcharnock_4138',['surface_flux_charnock',['../structsurface__flux__charnock.html',1,'']]],
-  ['surface_5fflux_5fdonelan_4139',['surface_flux_donelan',['../structsurface__flux__donelan.html',1,'']]],
-  ['surface_5fflux_5fmod_5fcharnock_4140',['surface_flux_mod_charnock',['../structsurface__flux__mod__charnock.html',1,'']]],
-  ['surface_5fflux_5fwave_5fcoupled_4141',['surface_flux_wave_coupled',['../structsurface__flux__wave__coupled.html',1,'']]],
-  ['surface_5ftemp_4142',['surface_temp',['../structsurface__temp.html',1,'']]],
-  ['surface_5ftemp_5fcharnock_4143',['surface_temp_charnock',['../structsurface__temp__charnock.html',1,'']]],
-  ['surface_5ftemp_5fdonelan_4144',['surface_temp_donelan',['../structsurface__temp__donelan.html',1,'']]],
-  ['surface_5ftemp_5fmod_5fcharnock_4145',['surface_temp_mod_charnock',['../structsurface__temp__mod__charnock.html',1,'']]],
-  ['surface_5ftemp_5fwave_5fcoupled_4146',['surface_temp_wave_coupled',['../structsurface__temp__wave__coupled.html',1,'']]],
-  ['surfacelayer_4147',['SurfaceLayer',['../classSurfaceLayer.html',1,'']]]
+  ['radiation_4128',['Radiation',['../classRadiation.html',1,'']]],
+  ['readbndryplanes_4129',['ReadBndryPlanes',['../classReadBndryPlanes.html',1,'']]],
+  ['rico_5fflux_4130',['rico_flux',['../structrico__flux.html',1,'']]],
+  ['rotate_5fflux_4131',['rotate_flux',['../structrotate__flux.html',1,'']]]
 ];

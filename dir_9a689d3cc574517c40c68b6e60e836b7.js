@@ -6,5 +6,8 @@ var dir_9a689d3cc574517c40c68b6e60e836b7 =
     [ "SLM", "dir_b37cd4354bbdb4bcc5da8c8522e8c51e.html", "dir_b37cd4354bbdb4bcc5da8c8522e8c51e" ],
     [ "ERF_LandSurface.H", "ERF__LandSurface_8H.html", [
       [ "LandSurface", "classLandSurface.html", "classLandSurface" ]
+    ] ],
+    [ "ERF_OceanSurf.H", "ERF__OceanSurf_8H.html", [
+      [ "OceanSurf", "classOceanSurf.html", "classOceanSurf" ]
     ] ]
 ];

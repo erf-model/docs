@@ -65,6 +65,7 @@ var annotated_dup =
     [ "NullMoist", "classNullMoist.html", "classNullMoist" ],
     [ "NullSurf", "classNullSurf.html", "classNullSurf" ],
     [ "NullWindFarm", "classNullWindFarm.html", "classNullWindFarm" ],
+    [ "OceanSurf", "classOceanSurf.html", "classOceanSurf" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "PlaneSampler", "structPlaneSampler.html", "structPlaneSampler" ],
     [ "polygon_", "classpolygon__.html", "classpolygon__" ],

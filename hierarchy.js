@@ -74,6 +74,7 @@ var hierarchy =
     [ "NullSurf", "classNullSurf.html", [
       [ "MM5", "classMM5.html", null ],
       [ "NOAHMP", "classNOAHMP.html", null ],
+      [ "OceanSurf", "classOceanSurf.html", null ],
       [ "SLM", "classSLM.html", null ]
     ] ],
     [ "NullWindFarm", "classNullWindFarm.html", [
