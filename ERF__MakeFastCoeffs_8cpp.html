@@ -390,7 +390,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                coeffC_a(i,j,k) = D * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/detJ(i,j,k  )) * (-halfg + coeff_P * theta_t_hi );</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                coeffB_a(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + D * ( (coeff_Q/detJ(i,j,k-1) - coeff_P/detJ(i,j,k)) * theta_t_mid</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                            + halfg * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/detJ(i,j,k-1) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/detJ(i,j,k)) );</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                            + halfg * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/detJ(i,j,k) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0)/detJ(i,j,k-1)) );</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            });</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        } <span class="keywordflow">else</span> {</div>
