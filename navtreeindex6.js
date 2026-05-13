@@ -180,6 +180,9 @@ var NAVTREEINDEX6 =
 "ERF__InputSoundingData_8H_source.html":[3,0,1,2,5],
 "ERF__InputSpongeData_8H.html":[3,0,1,2,6],
 "ERF__InputSpongeData_8H_source.html":[3,0,1,2,6],
+"ERF__InputsName_8H.html":[3,0,1,27],
+"ERF__InputsName_8H.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,27,0],
+"ERF__InputsName_8H_source.html":[3,0,1,27],
 "ERF__InteriorGhostCells_8cpp.html":[3,0,1,18,10],
 "ERF__InteriorGhostCells_8cpp.html#a5e472a026f7835dd2b1b5425fe1c8130":[3,0,1,18,10,2],
 "ERF__InteriorGhostCells_8cpp.html#aa05ac4b68c0d94edbf93ae35d39ed236":[3,0,1,18,10,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860":[3,0,1,1,14,1],
 "ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e":[3,0,1,1,14,0],
 "ERF__MOSTRoughness_8H_source.html":[3,0,1,1,14],
-"ERF__MOSTStress_8H.html":[3,0,1,1,15],
-"ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674":[3,0,1,1,15,23],
-"ERF__MOSTStress_8H_source.html":[3,0,1,1,15],
-"ERF__MRI_8H.html":[3,0,1,16,10]
+"ERF__MOSTStress_8H.html":[3,0,1,1,15]
 };

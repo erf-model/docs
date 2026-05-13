@@ -27,6 +27,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_Derive.cpp", "ERF__Derive_8cpp.html", "ERF__Derive_8cpp" ],
     [ "ERF_Derive.H", "ERF__Derive_8H.html", "ERF__Derive_8H" ],
     [ "ERF_IndexDefines.H", "ERF__IndexDefines_8H.html", "ERF__IndexDefines_8H" ],
+    [ "ERF_InputsName.H", "ERF__InputsName_8H.html", "ERF__InputsName_8H" ],
     [ "ERF_MakeNewArrays.cpp", "ERF__MakeNewArrays_8cpp.html", null ],
     [ "ERF_MakeNewLevel.cpp", "ERF__MakeNewLevel_8cpp.html", null ],
     [ "ERF_ProbCommon.H", "ERF__ProbCommon_8H.html", "ERF__ProbCommon_8H" ],
