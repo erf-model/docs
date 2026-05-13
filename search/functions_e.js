@@ -8,7 +8,7 @@ var searchData=
   ['parametersanitychecks_5440',['ParameterSanityChecks',['../classERF.html#ad71a033b3fd107465a8621eaf7c77b28',1,'ERF']]],
   ['parse_5ffixed_5fwidth_5fint_5441',['parse_fixed_width_int',['../ERF__EpochTime_8H.html#a58d125201639c71a2a778a1b69d5abf3',1,'ERF_EpochTime.H']]],
   ['path_5fdata_5442',['path_data',['../structeb__cut__cell___1_1path__data.html#a2e4e51cfa838dccff640728fe7b60c42',1,'eb_cut_cell_::path_data']]],
-  ['performdataassimilation_5443',['PerformDataAssimilation',['../classERF.html#a099bfcf5d0d18b129ca2176dc6391883',1,'ERF']]],
+  ['performdataassimilation_5443',['PerformDataAssimilation',['../classERF.html#ab0b1c1f98596d2d528394973db65bf9e',1,'ERF']]],
   ['perpendicularbox_5444',['PerpendicularBox',['../ERF__DirectionSelector_8H.html#aef11f5662c1574638970c58b8421afa9',1,'ERF_DirectionSelector.H']]],
   ['planeaverage_5445',['PlaneAverage',['../classPlaneAverage.html#a28920f67533fcba90cee852a7cfeb435',1,'PlaneAverage::PlaneAverage(const amrex::MultiFab *field_in, amrex::Geometry geom_in, int axis_in, amrex::IntVect n_ghost_to_inc=amrex::IntVect{0})'],['../classPlaneAverage.html#ae021681bed8e81747b36dd6bcbd1a257',1,'PlaneAverage::PlaneAverage()=delete']]],
   ['planesampler_5446',['PlaneSampler',['../structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca',1,'PlaneSampler']]],

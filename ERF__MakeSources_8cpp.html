@@ -829,7 +829,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                }</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;                <span class="comment">// SURFACE HEAT FLUX</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                <span class="keywordflow">if</span> (tflux != 1e-8){</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;                <span class="keywordflow">if</span> (tflux != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1e-8)){</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                    <span class="keywordflow">if</span> (t_blank &gt; 0 &amp;&amp; (t_blank_above == <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) { <span class="comment">// force to MOST value</span></div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> psi_m           = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> psi_h           = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
@@ -862,7 +862,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                }</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                <span class="comment">// OBUKHOV LENGTH</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                <span class="keywordflow">if</span> (Olen_in != 1e-8){</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                <span class="keywordflow">if</span> (Olen_in != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1e-8)){</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                    <span class="keywordflow">if</span> (t_blank &gt; 0 &amp;&amp; (t_blank_above == <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>)) { <span class="comment">// force to MOST value</span></div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Olen  = Olen_in;</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zeta          = (<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) * dx_z / Olen;</div>
