@@ -442,7 +442,6 @@ var classERF =
     [ "SmnSmn_lev", "classERF.html#a9faaa96a7c270d2b2b062d9f30f19711", null ],
     [ "soil_type_lev", "classERF.html#acd2294c008371e0139fd0c1a4a6e0a3a", null ],
     [ "solverChoice", "classERF.html#a32dd48049e8acbe95decdd4b01b782c4", null ],
-    [ "sponge_type", "classERF.html#a6c570cbcb63ba3b0b09557537310ea46", null ],
     [ "sst_lev", "classERF.html#a5a5395054a212d8f3fc577562c14b66e", null ],
     [ "start_time", "classERF.html#a03f97b52726f124c88ef79b914154a37", null ],
     [ "startCPUTime", "classERF.html#a6d00e1cb76bfbcbada173e092b6accf3", null ],

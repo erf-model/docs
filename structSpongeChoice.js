@@ -6,7 +6,7 @@ var structSpongeChoice =
     [ "sponge_rhomoist", "structSpongeChoice.html#afa57175416bc130e759885a58f71dbb9", null ],
     [ "sponge_rhotheta", "structSpongeChoice.html#afcc01e63ad42c959722ab3d323e458fe", null ],
     [ "sponge_strength", "structSpongeChoice.html#a48f4b8a95b93cf8fa36d00d355757a1e", null ],
-    [ "sponge_type", "structSpongeChoice.html#a1a41f754595d713df32583f0b0fa606e", null ],
+    [ "sponge_type", "structSpongeChoice.html#a96c744f448f9933e42f0d46c12562642", null ],
     [ "sponge_x_velocity", "structSpongeChoice.html#aad5ca098e341c3f76dc8420daeb8b629", null ],
     [ "sponge_y_velocity", "structSpongeChoice.html#a13c70085162f73a4b6c36f7161be7260", null ],
     [ "sponge_z_velocity", "structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e", null ],

@@ -13,9 +13,7 @@ var dir_aba9de7b86b72c00c61e401832cdb2fc =
     [ "ERF_InputSpongeData.H", "ERF__InputSpongeData_8H.html", [
       [ "InputSpongeData", "structInputSpongeData.html", "structInputSpongeData" ]
     ] ],
-    [ "ERF_SpongeStruct.H", "ERF__SpongeStruct_8H.html", [
-      [ "SpongeChoice", "structSpongeChoice.html", "structSpongeChoice" ]
-    ] ],
+    [ "ERF_SpongeStruct.H", "ERF__SpongeStruct_8H.html", "ERF__SpongeStruct_8H" ],
     [ "ERF_TurbPertStruct.H", "ERF__TurbPertStruct_8H.html", "ERF__TurbPertStruct_8H" ],
     [ "ERF_TurbStruct.H", "ERF__TurbStruct_8H.html", "ERF__TurbStruct_8H" ]
 ];
