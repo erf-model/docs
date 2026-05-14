@@ -61,13 +61,13 @@ var ERF__IndexDefines_8H =
       [ "reflect_even", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01cabc47f82507730e1734a2f3bc58893cf9", null ],
       [ "foextrap", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846", null ],
       [ "ext_dir", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af", null ],
+      [ "hoextrap", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5", null ],
       [ "surface_layer", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca700397885ead767d8b5988fe11ee4847", null ],
       [ "ext_dir_prim", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab", null ],
       [ "ext_dir_ingested", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca138e8c6c2427dcd78959f3e0e84b3462", null ],
       [ "neumann", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60", null ],
       [ "neumann_int", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],
       [ "open", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ],
-      [ "hoextrap", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca42f56b8b6a6f3b72ff598d9df25651c5", null ],
       [ "ext_dir_upwind", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
     ] ]
 ];
