@@ -204,7 +204,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        amrex::Array4&lt;amrex::Real&gt; pi_hse_arr  = pi_hse.array(mfi);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        amrex::Array4&lt;amrex::Real const&gt; z_arr = z_phys_cc-&gt;array(mfi);</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; gbx = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        {</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            th_hse_arr(i,j,k) = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a7665ea1952f5b48f7602b61a2888baf2">T_0</a> + dtheta_dz * (z_arr(i,j,k)- z_arr(i,j,0));</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;             p_hse_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a>*th_hse_arr(i,j,k));</div>
@@ -221,7 +221,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a3e766fc466013ff394d51a37dc2c2549"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a></div><div class="ttdeci">Real rho_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:4</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a7665ea1952f5b48f7602b61a2888baf2"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a7665ea1952f5b48f7602b61a2888baf2">T_0</a></div><div class="ttdeci">Real T_0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:5</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a4ceccadb1d0793b4c2333669f04fc9fb"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb">pp_prob</a></div><div class="ttdeci">ParmParse pp_prob(&quot;prob&quot;)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aada27a5057153b6463a47f463ea98742"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+0.5) *dx[0];const Real y=(j+0.5) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - 1.0)/(2.0 *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(1.0+deltaT, inv_gm1);const Real T=(1.0+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=0.25 *(1.0+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a84e204b057acb38e8a4c184a5c036b77"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+myhalf) *dx[0];const Real y=(j+myhalf) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - one)/(two *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(one+deltaT, inv_gm1);const Real T=(one+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=fourth *(one+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -231,7 +231,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,74,153,115"/>
 <area shape="rect" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d" title=" " alt="" coords="201,5,341,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="216,56,327,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="226,107,317,133"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="226,107,317,133"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb" title=" " alt="" coords="234,157,309,184"/>
 <area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="389,56,545,83"/>
 <area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="393,107,542,133"/>
@@ -364,7 +364,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    {</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;       amrex::Array4&lt;amrex::Real&gt; rho_hse_arr = rho_hse.array(mfi);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;       <span class="keyword">const</span> amrex::Box&amp; gbx = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;       <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;       <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;       {</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;           rho_hse_arr(i,j,k) = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a3e766fc466013ff394d51a37dc2c2549">rho_0</a>;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;       });</div>
@@ -376,7 +376,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__InitDensityHSE_8H_a06963d7ee774ab4b864478b38cee7ead_cgraph.png" border="0" usemap="#aERF__InitDensityHSE_8H_a06963d7ee774ab4b864478b38cee7ead_cgraph" alt=""/></div>
 <map name="aERF__InitDensityHSE_8H_a06963d7ee774ab4b864478b38cee7ead_cgraph" id="aERF__InitDensityHSE_8H_a06963d7ee774ab4b864478b38cee7ead_cgraph">
 <area shape="rect" title=" " alt="" coords="5,56,184,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="232,56,323,83"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="232,56,323,83"/>
 <area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="371,5,527,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="374,56,523,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="405,107,493,133"/>
@@ -471,7 +471,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                rho_local_sfc = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(ilo,jlo,klo-1);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">amrex::ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">amrex::ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                amrex::Array1D&lt;amrex::Real,0,255&gt; r;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                amrex::Array1D&lt;amrex::Real,0,255&gt; <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>;</div>
@@ -520,7 +520,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;              <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(1);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;              <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt; rho_hse_arr = rho_hse[mfi].array();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;              <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;              <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;              {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                  <span class="keywordtype">int</span> kk = std::max(k,0);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                  rho_hse_arr(i,j,k) = r[kk];</div>
@@ -554,7 +554,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb" title=" " alt="" coords="271,157,314,184"/>
 <area shape="rect" href="namespaceHSEutils.html#acea3d9d853ef0fbeee3f94b4b62cc224" title=" " alt="" coords="189,208,396,235"/>
 <area shape="rect" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07" title=" " alt="" coords="205,259,381,301"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="247,325,338,352"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="247,325,338,352"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="256,376,329,403"/>
 <area shape="rect" href="ERF__EOS_8H.html#a35ba6a562b53e99968fdd3e42b49d966" title=" " alt="" coords="444,259,651,285"/>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="492,208,603,235"/>
@@ -657,7 +657,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keyword">const</span> amrex::Box&amp; bx = mfi.growntilebox(1);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt; rho_hse_arr   = rho_hse[mfi].array();</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">amrex::ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        {</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="keywordtype">int</span> kk = std::max(k,0);</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            rho_hse_arr(i,j,k) = r[kk];</div>
@@ -687,7 +687,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb" title=" " alt="" coords="300,157,343,184"/>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a09320560d536f3ee9362dd62fc8ae6bc" title=" " alt="" coords="300,208,343,235"/>
 <area shape="rect" href="namespaceHSEutils.html#a3bec5f0a8d87d7551ed8ff9b25e19273" title=" " alt="" coords="233,259,409,301"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aada27a5057153b6463a47f463ea98742" title=" " alt="" coords="276,325,367,352"/>
+<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="276,325,367,352"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="302,376,341,403"/>
 <area shape="rect" href="namespaceHSEutils.html#a0fe5f13f507e87ed31cd4962d51be290" title=" " alt="" coords="457,245,628,272"/>
 <area shape="rect" href="namespaceHSEutils.html#a9cf272333e0b571135d1f8ccf5307656" title=" " alt="" coords="676,245,832,272"/>
