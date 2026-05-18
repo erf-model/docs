@@ -85,7 +85,7 @@ var namespaces_dup =
       [ "init_isentropic_hse", "namespaceHSEutils.html#acea3d9d853ef0fbeee3f94b4b62cc224", null ],
       [ "init_isentropic_hse_no_terrain", "namespaceHSEutils.html#a3bec5f0a8d87d7551ed8ff9b25e19273", null ],
       [ "init_isentropic_hse_terrain", "namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07", null ],
-      [ "Newton_Raphson_hse", "namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e", null ],
+      [ "Newton_Raphson_hse", "namespaceHSEutils.html#aa19dec498826e05e735836876978a654", null ],
       [ "vapor_mixing_ratio", "namespaceHSEutils.html#a1e8b5caf26be0ab8a97c021bd4f1a983", null ],
       [ "MAX_ITER", "namespaceHSEutils.html#a10de540cb8ad96aea8cd080f4d1e72fa", null ],
       [ "TOL", "namespaceHSEutils.html#aace33d14958f235a111e6cead400a61e", null ]

@@ -10,7 +10,7 @@ var searchData=
   ['ndim_5393',['ndim',['../structncutils_1_1NCVar.html#ae0ab15dc4c1033271878c3bf5102f911',1,'ncutils::NCVar::ndim()'],['../structNDArray.html#a1b3ece1ab109568fcb919d1af8f14eee',1,'NDArray::ndim()']]],
   ['netzerobuoyantadd_5394',['netZeroBuoyantAdd',['../structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60',1,'TurbulentPerturbation']]],
   ['netzerobuoyantadjust_5395',['netZeroBuoyantAdjust',['../structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527',1,'TurbulentPerturbation']]],
-  ['newton_5fraphson_5fhse_5396',['Newton_Raphson_hse',['../namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e',1,'HSEutils']]],
+  ['newton_5fraphson_5fhse_5396',['Newton_Raphson_hse',['../namespaceHSEutils.html#aa19dec498826e05e735836876978a654',1,'HSEutils']]],
   ['newtonitersat_5397',['NewtonIterSat',['../classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6',1,'SAM::NewtonIterSat()'],['../classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704',1,'Morrison::NewtonIterSat()']]],
   ['newtonsolvesattemperature_5398',['NewtonSolveSatTemperature',['../classSatAdj.html#ad7e1876bee10ba930f88c4e8c3591f0d',1,'SatAdj']]],
   ['nghost_5fbasic_5399',['nghost_basic',['../classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8',1,'eb_']]],

@@ -45,7 +45,7 @@ var searchData=
   ['netzerobuoyantadjust_2542',['netZeroBuoyantAdjust',['../structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527',1,'TurbulentPerturbation']]],
   ['neumann_2543',['neumann',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60',1,'ERFBCType']]],
   ['neumann_5fint_2544',['neumann_int',['../namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9',1,'ERFBCType']]],
-  ['newton_5fraphson_5fhse_2545',['Newton_Raphson_hse',['../namespaceHSEutils.html#a49a3ecd8dc0be35accd87a453bc1224e',1,'HSEutils']]],
+  ['newton_5fraphson_5fhse_2545',['Newton_Raphson_hse',['../namespaceHSEutils.html#aa19dec498826e05e735836876978a654',1,'HSEutils']]],
   ['newtonitersat_2546',['NewtonIterSat',['../classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6',1,'SAM::NewtonIterSat()'],['../classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704',1,'Morrison::NewtonIterSat()']]],
   ['newtonsolvesattemperature_2547',['NewtonSolveSatTemperature',['../classSatAdj.html#ad7e1876bee10ba930f88c4e8c3591f0d',1,'SatAdj']]],
   ['ng_2548',['ng',['../namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a281c2ff050bdb2a9349d3408926af821',1,'MicVar_Morr']]],
