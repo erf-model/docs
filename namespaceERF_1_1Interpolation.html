@@ -91,14 +91,14 @@ $(document).ready(function(){initNavTree('namespaceERF_1_1Interpolation.html',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af979b4c1b4134b97ae40e53e73e58851"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType &gt; </td></tr>
-<tr class="memitem:af979b4c1b4134b97ae40e53e73e58851"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceERF_1_1Interpolation.html#af979b4c1b4134b97ae40e53e73e58851">interpolateFields</a> (const ParticleType &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dxi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; *field_arrays, amrex::ParticleReal *result_values, int num_fields, int is_periodic_z=1, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; *zheight=nullptr)</td></tr>
-<tr class="memdesc:af979b4c1b4134b97ae40e53e73e58851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to interpolate multiple field values at a particle position.  <a href="namespaceERF_1_1Interpolation.html#af979b4c1b4134b97ae40e53e73e58851">More...</a><br /></td></tr>
-<tr class="separator:af979b4c1b4134b97ae40e53e73e58851"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b8576c9ac7ae9803bd445af83f2bfe"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType &gt; </td></tr>
+<tr class="memitem:ab1b8576c9ac7ae9803bd445af83f2bfe"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">interpolateFields</a> (const ParticleType &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dxi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; *field_arrays, amrex::ParticleReal *result_values, int num_fields)</td></tr>
+<tr class="memdesc:ab1b8576c9ac7ae9803bd445af83f2bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate multiple field values at a particle position using CIC.  <a href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">More...</a><br /></td></tr>
+<tr class="separator:ab1b8576c9ac7ae9803bd445af83f2bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af979b4c1b4134b97ae40e53e73e58851"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af979b4c1b4134b97ae40e53e73e58851">&#9670;&nbsp;</a></span>interpolateFields()</h2>
+<a id="ab1b8576c9ac7ae9803bd445af83f2bfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b8576c9ac7ae9803bd445af83f2bfe">&#9670;&nbsp;</a></span>interpolateFields()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,19 +139,7 @@ template&lt;typename ParticleType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>num_fields</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>is_periodic_z</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; *&#160;</td>
-          <td class="paramname"><em>zheight</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>num_fields</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -161,33 +149,12 @@ template&lt;typename ParticleType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Helper function to interpolate multiple field values at a particle position. </p>
-<p>This function interpolates values from multiple field arrays at a particle's position using the cloud-in-cell (CIC) interpolation method. It supports both periodic and non-periodic z-boundaries.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">ParticleType</td><td>The type of particle </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>The particle </td></tr>
-    <tr><td class="paramname">plo</td><td>The domain lower bounds </td></tr>
-    <tr><td class="paramname">dxi</td><td>The inverse of cell spacing </td></tr>
-    <tr><td class="paramname">field_arrays</td><td>Array of field arrays to interpolate from </td></tr>
-    <tr><td class="paramname">result_values</td><td>Output array to store interpolated values </td></tr>
-    <tr><td class="paramname">num_fields</td><td>Number of fields to interpolate </td></tr>
-    <tr><td class="paramname">is_periodic_z</td><td>Whether the z-boundary is periodic </td></tr>
-    <tr><td class="paramname">zheight</td><td>Height field array (only used for non-periodic z-boundary) </td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    amrex::ignore_unused(is_periodic_z, zheight);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_fields; ++i) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        cic_interpolate(<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<p>Interpolate multiple field values at a particle position using CIC. </p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_fields; ++i) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cic_interpolate(<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_af83c1918e681461dc4cc7ed4c0828b2c"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a></div><div class="ttdeci">Real * p</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:61</div></div>
 </div><!-- fragment -->
 </div>

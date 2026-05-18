@@ -114,9 +114,9 @@ $(document).ready(function(){initNavTree('ERF__NullMoistLagrangian_8H_source.htm
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">    /*! \brief Default destructor */</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> ~NullMoistLagrangian () = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    /*! \brief Initialize particles */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">    /*! \brief Initialize particles at AMR level */</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> InitParticles ( std::unique_ptr&lt;amrex::MultiFab&gt;&amp; ) { }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> InitParticles ( <span class="keyword">const</span> <span class="keywordtype">int</span>, std::unique_ptr&lt;amrex::MultiFab&gt;&amp; ) { }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">    /*! \brief Restart particles */</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span></div>
@@ -138,33 +138,43 @@ $(document).ready(function(){initNavTree('ERF__NullMoistLagrangian_8H_source.htm
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> FinishInit (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;, <span class="comment">/* AMR level */</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                             amrex::MultiFab&amp;, <span class="comment">/* Conserved state variable */</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                             <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp; <span class="comment">/*terrain*/</span>) {}</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">Advance</a> ( <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;, <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; )<span class="keyword"> override</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Do not use this advance() for Lagrangian microphysics.&quot;</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    /*! \brief advance the moisture model by one time step */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">Advance</a> (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;, <span class="comment">/* dt */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;             <span class="keyword">const</span> <span class="keywordtype">int</span>&amp;, <span class="comment">/* iter */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;             <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;, <span class="comment">/* time */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;             amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp;, <span class="comment">/* state variables */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;             <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp;, <span class="comment">/* terrain */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;             <span class="keyword">const</span> amrex::GpuArray&lt;ERF_BC, AMREX_SPACEDIM*2&gt;&amp; ) { }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> std::string m_name = <span class="stringliteral">&quot;null&quot;</span>; <span class="comment">/*!&lt; name of the moisture model */</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    /*! \brief average down moisture multifabs from finest_level to 0 */</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> AverageDownMicroVars (<span class="keyword">const</span> <span class="keywordtype">int</span> <span class="comment">/*finest_level*/</span>) {}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">Advance</a> ( <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;, <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; )<span class="keyword"> override</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Do not use this advance() for Lagrangian microphysics.&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNullMoist.html#a05c734960e2e63ca00cfeb8e5c4b8936">SetCurrentLevel</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;)<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classNullMoist.html#a7a3408e4deaeb1faf6d87c62cf811140">InitLevel</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>, <span class="keyword">const</span> amrex::MultiFab&amp;)<span class="keyword"> override </span>{}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classNullMoist.html#a6c9bad761a07463fcd5ed87c3a341d47">getDiagnosticsInterval</a> ()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    /*! \brief advance the moisture model by one time step */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">Advance</a> (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;, <span class="comment">/* dt */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;             <span class="keyword">const</span> <span class="keywordtype">int</span>&amp;, <span class="comment">/* iter */</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;             <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp;, <span class="comment">/* time */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;             amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp;, <span class="comment">/* state variables */</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;             <span class="keyword">const</span> amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt;&gt;&amp;, <span class="comment">/* terrain */</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;             <span class="keyword">const</span> amrex::GpuArray&lt;ERF_BC, AMREX_SPACEDIM*2&gt;&amp; ) { }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">const</span> std::string m_name = <span class="stringliteral">&quot;null&quot;</span>; <span class="comment">/*!&lt; name of the moisture model */</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html"><div class="ttname"><a href="ERF__IndexDefines_8H.html">ERF_IndexDefines.H</a></div></div>
 <div class="ttc" id="aERF__NullMoist_8H_html"><div class="ttname"><a href="ERF__NullMoist_8H.html">ERF_NullMoist.H</a></div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassNullMoist_html"><div class="ttname"><a href="classNullMoist.html">NullMoist</a></div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:8</div></div>
+<div class="ttc" id="aclassNullMoist_html_a05c734960e2e63ca00cfeb8e5c4b8936"><div class="ttname"><a href="classNullMoist.html#a05c734960e2e63ca00cfeb8e5c4b8936">NullMoist::SetCurrentLevel</a></div><div class="ttdeci">virtual void SetCurrentLevel(const int &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:99</div></div>
+<div class="ttc" id="aclassNullMoist_html_a6c9bad761a07463fcd5ed87c3a341d47"><div class="ttname"><a href="classNullMoist.html#a6c9bad761a07463fcd5ed87c3a341d47">NullMoist::getDiagnosticsInterval</a></div><div class="ttdeci">virtual int getDiagnosticsInterval() const</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:107</div></div>
+<div class="ttc" id="aclassNullMoist_html_a7a3408e4deaeb1faf6d87c62cf811140"><div class="ttname"><a href="classNullMoist.html#a7a3408e4deaeb1faf6d87c62cf811140">NullMoist::InitLevel</a></div><div class="ttdeci">virtual void InitLevel(const int, const amrex::MultiFab &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:103</div></div>
 <div class="ttc" id="aclassNullMoist_html_aa2f97dcd622bc4ef212421d496ee2297"><div class="ttname"><a href="classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297">NullMoist::Advance</a></div><div class="ttdeci">virtual void Advance(const amrex::Real &amp;, const SolverChoice &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:29</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:130</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -160,8 +160,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a18f7ad113d44b3d724b8ff1b92700c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate a vector with names of all available <a class="el" href="classMorrison.html">Morrison</a> plot variables.  <a href="classMorrison.html#a18f7ad113d44b3d724b8ff1b92700c62">More...</a><br /></td></tr>
 <tr class="separator:a18f7ad113d44b3d724b8ff1b92700c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa835995cc246144c5de532c119c2d8be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">GetPlotVar</a> (const std::string &amp;a_name, amrex::MultiFab &amp;a_mf) const override</td></tr>
-<tr class="memdesc:aa835995cc246144c5de532c119c2d8be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract a <a class="el" href="classMorrison.html">Morrison</a> microphysics variable for plotting.  <a href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">More...</a><br /></td></tr>
 <tr class="separator:aa835995cc246144c5de532c119c2d8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4758477b981620315ed79d08e8acc5dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMorrison.html#a4758477b981620315ed79d08e8acc5dd">GetPlotVar</a> (const std::string &amp;a_name, amrex::MultiFab &amp;a_mf, const int) const override</td></tr>
+<tr class="separator:a4758477b981620315ed79d08e8acc5dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classNullMoist"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classNullMoist')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classNullMoist.html">NullMoist</a></td></tr>
 <tr class="memitem:a987746c147545a1a7d0efd21e5e34a12 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a987746c147545a1a7d0efd21e5e34a12">NullMoist</a> ()</td></tr>
 <tr class="separator:a987746c147545a1a7d0efd21e5e34a12 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +170,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a75e2d77cb28efa62759818d066b53bb9 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2088fbb6bbb51945f5d5c80da2bfff3 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aa2088fbb6bbb51945f5d5c80da2bfff3">Qstate_NonMoist_Size</a> ()</td></tr>
 <tr class="separator:aa2088fbb6bbb51945f5d5c80da2bfff3 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05c734960e2e63ca00cfeb8e5c4b8936 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a05c734960e2e63ca00cfeb8e5c4b8936">SetCurrentLevel</a> (const int &amp;)</td></tr>
+<tr class="separator:a05c734960e2e63ca00cfeb8e5c4b8936 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3408e4deaeb1faf6d87c62cf811140 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a7a3408e4deaeb1faf6d87c62cf811140">InitLevel</a> (const int, const amrex::MultiFab &amp;)</td></tr>
+<tr class="separator:a7a3408e4deaeb1faf6d87c62cf811140 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9bad761a07463fcd5ed87c3a341d47 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a6c9bad761a07463fcd5ed87c3a341d47">getDiagnosticsInterval</a> () const</td></tr>
+<tr class="separator:a6c9bad761a07463fcd5ed87c3a341d47 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -3560,13 +3567,13 @@ Static Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a250b5b8817230db7d56e064212449a23"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a></div><div class="ttdeci">auto rho_arr</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSubsidence_SineMassFlux.H:3</div></div>
-<div class="ttc" id="aclassMorrison_html_a104c04cee2e446fcfa520dfb79c6563d"><div class="ttname"><a href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">Morrison::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:293</div></div>
-<div class="ttc" id="aclassMorrison_html_a71131fbedee0de3f7bc4abfd339921e9"><div class="ttname"><a href="classMorrison.html#a71131fbedee0de3f7bc4abfd339921e9">Morrison::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:312</div></div>
-<div class="ttc" id="aclassMorrison_html_a9b6b084ace42c7992815942eed92212f"><div class="ttname"><a href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">Morrison::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:302</div></div>
-<div class="ttc" id="aclassMorrison_html_aa1ea9704985be2ae1ef0531db778a79b"><div class="ttname"><a href="classMorrison.html#aa1ea9704985be2ae1ef0531db778a79b">Morrison::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:296</div></div>
-<div class="ttc" id="aclassMorrison_html_ad8a4391c39d380a1e77105cfbe3d88ac"><div class="ttname"><a href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">Morrison::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:305</div></div>
-<div class="ttc" id="aclassMorrison_html_ade405c635b58955a140d38af3b06e6aa"><div class="ttname"><a href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">Morrison::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_Morr::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:316</div></div>
-<div class="ttc" id="aclassMorrison_html_af658c7ed98296b05a6cde28d695b93cc"><div class="ttname"><a href="classMorrison.html#af658c7ed98296b05a6cde28d695b93cc">Morrison::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:306</div></div>
+<div class="ttc" id="aclassMorrison_html_a104c04cee2e446fcfa520dfb79c6563d"><div class="ttname"><a href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">Morrison::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:301</div></div>
+<div class="ttc" id="aclassMorrison_html_a71131fbedee0de3f7bc4abfd339921e9"><div class="ttname"><a href="classMorrison.html#a71131fbedee0de3f7bc4abfd339921e9">Morrison::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:320</div></div>
+<div class="ttc" id="aclassMorrison_html_a9b6b084ace42c7992815942eed92212f"><div class="ttname"><a href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">Morrison::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:310</div></div>
+<div class="ttc" id="aclassMorrison_html_aa1ea9704985be2ae1ef0531db778a79b"><div class="ttname"><a href="classMorrison.html#aa1ea9704985be2ae1ef0531db778a79b">Morrison::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:304</div></div>
+<div class="ttc" id="aclassMorrison_html_ad8a4391c39d380a1e77105cfbe3d88ac"><div class="ttname"><a href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">Morrison::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:313</div></div>
+<div class="ttc" id="aclassMorrison_html_ade405c635b58955a140d38af3b06e6aa"><div class="ttname"><a href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">Morrison::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_Morr::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:324</div></div>
+<div class="ttc" id="aclassMorrison_html_af658c7ed98296b05a6cde28d695b93cc"><div class="ttname"><a href="classMorrison.html#af658c7ed98296b05a6cde28d695b93cc">Morrison::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:314</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5fd678f02a6eb22f48985fd81b782d1da02b3c8b0396b81f4c1acf8b9fe79e315"><div class="ttname"><a href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da02b3c8b0396b81f4c1acf8b9fe79e315">MORRInd::qisten</a></div><div class="ttdeci">@ qisten</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:73</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5fd678f02a6eb22f48985fd81b782d1da093c0e64e34c38155428b590c2dbc02b"><div class="ttname"><a href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da093c0e64e34c38155428b590c2dbc02b">MORRInd::dumfnc</a></div><div class="ttdeci">@ dumfnc</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:131</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5fd678f02a6eb22f48985fd81b782d1da0a04ebe9477faf45dfc6839bcc1c7bb9"><div class="ttname"><a href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0a04ebe9477faf45dfc6839bcc1c7bb9">MORRInd::qi3dten</a></div><div class="ttdeci">@ qi3dten</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:45</div></div>
@@ -3906,22 +3913,22 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_af412f38784e2b8072356234b0474c6f5"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esatw(amrex::Real t, bool use_empirical=false)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:68</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a362f0148b27e7245ef6d68159e7ba843"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a></div><div class="ttdeci">Vector&lt; Real &gt; rho_h(khi+1, zero)</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a6be96a64acec1ea5e14b5a6f48eacc89"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a6be96a64acec1ea5e14b5a6f48eacc89">rho_d</a></div><div class="ttdeci">Gpu::DeviceVector&lt; Real &gt; rho_d(khi+1, zero)</div></div>
-<div class="ttc" id="aclassMorrison_html_a186c1ded94acbad74e980303e9867a61"><div class="ttname"><a href="classMorrison.html#a186c1ded94acbad74e980303e9867a61">Morrison::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:328</div></div>
-<div class="ttc" id="aclassMorrison_html_a46d87d763b7db8aa5e9c9e1d8ed40ac2"><div class="ttname"><a href="classMorrison.html#a46d87d763b7db8aa5e9c9e1d8ed40ac2">Morrison::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:334</div></div>
-<div class="ttc" id="aclassMorrison_html_a540699586b918c354be6e8347fbbd83c"><div class="ttname"><a href="classMorrison.html#a540699586b918c354be6e8347fbbd83c">Morrison::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:325</div></div>
-<div class="ttc" id="aclassMorrison_html_a5e4e4de3f0961b43f5972bc78c964d38"><div class="ttname"><a href="classMorrison.html#a5e4e4de3f0961b43f5972bc78c964d38">Morrison::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:326</div></div>
-<div class="ttc" id="aclassMorrison_html_a625091bf149aa3bd952e50b9b438681d"><div class="ttname"><a href="classMorrison.html#a625091bf149aa3bd952e50b9b438681d">Morrison::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:335</div></div>
-<div class="ttc" id="aclassMorrison_html_a7bc485a108780b844d2ecdc70f7a618b"><div class="ttname"><a href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">Morrison::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:299</div></div>
-<div class="ttc" id="aclassMorrison_html_a96fb0e34b50bf691859ca0434b594b2e"><div class="ttname"><a href="classMorrison.html#a96fb0e34b50bf691859ca0434b594b2e">Morrison::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:322</div></div>
-<div class="ttc" id="aclassMorrison_html_a9e5363db069243651289087f05115fcd"><div class="ttname"><a href="classMorrison.html#a9e5363db069243651289087f05115fcd">Morrison::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:320</div></div>
-<div class="ttc" id="aclassMorrison_html_aa5df21d7c7adfd10586783871524fac4"><div class="ttname"><a href="classMorrison.html#aa5df21d7c7adfd10586783871524fac4">Morrison::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:319</div></div>
-<div class="ttc" id="aclassMorrison_html_aae5e0add59ee0f17b03518b5888d0a61"><div class="ttname"><a href="classMorrison.html#aae5e0add59ee0f17b03518b5888d0a61">Morrison::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:327</div></div>
-<div class="ttc" id="aclassMorrison_html_abdd637dd50f94ad624ad86ec6bed76d8"><div class="ttname"><a href="classMorrison.html#abdd637dd50f94ad624ad86ec6bed76d8">Morrison::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:329</div></div>
-<div class="ttc" id="aclassMorrison_html_ac9054cb36d2b174d1033972de065b37b"><div class="ttname"><a href="classMorrison.html#ac9054cb36d2b174d1033972de065b37b">Morrison::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:323</div></div>
-<div class="ttc" id="aclassMorrison_html_ad0b73c861dc791272e1ac6d781d72562"><div class="ttname"><a href="classMorrison.html#ad0b73c861dc791272e1ac6d781d72562">Morrison::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:324</div></div>
-<div class="ttc" id="aclassMorrison_html_ae08598f7fe3990c39c84b9222d3a8cdb"><div class="ttname"><a href="classMorrison.html#ae08598f7fe3990c39c84b9222d3a8cdb">Morrison::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:333</div></div>
-<div class="ttc" id="aclassMorrison_html_aeeb1fc95ab35c46faf404d62d505108e"><div class="ttname"><a href="classMorrison.html#aeeb1fc95ab35c46faf404d62d505108e">Morrison::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:330</div></div>
-<div class="ttc" id="aclassMorrison_html_af3f26a0a44abe58527b22336648d8e56"><div class="ttname"><a href="classMorrison.html#af3f26a0a44abe58527b22336648d8e56">Morrison::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:321</div></div>
+<div class="ttc" id="aclassMorrison_html_a186c1ded94acbad74e980303e9867a61"><div class="ttname"><a href="classMorrison.html#a186c1ded94acbad74e980303e9867a61">Morrison::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:336</div></div>
+<div class="ttc" id="aclassMorrison_html_a46d87d763b7db8aa5e9c9e1d8ed40ac2"><div class="ttname"><a href="classMorrison.html#a46d87d763b7db8aa5e9c9e1d8ed40ac2">Morrison::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:342</div></div>
+<div class="ttc" id="aclassMorrison_html_a540699586b918c354be6e8347fbbd83c"><div class="ttname"><a href="classMorrison.html#a540699586b918c354be6e8347fbbd83c">Morrison::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:333</div></div>
+<div class="ttc" id="aclassMorrison_html_a5e4e4de3f0961b43f5972bc78c964d38"><div class="ttname"><a href="classMorrison.html#a5e4e4de3f0961b43f5972bc78c964d38">Morrison::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:334</div></div>
+<div class="ttc" id="aclassMorrison_html_a625091bf149aa3bd952e50b9b438681d"><div class="ttname"><a href="classMorrison.html#a625091bf149aa3bd952e50b9b438681d">Morrison::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:343</div></div>
+<div class="ttc" id="aclassMorrison_html_a7bc485a108780b844d2ecdc70f7a618b"><div class="ttname"><a href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">Morrison::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:307</div></div>
+<div class="ttc" id="aclassMorrison_html_a96fb0e34b50bf691859ca0434b594b2e"><div class="ttname"><a href="classMorrison.html#a96fb0e34b50bf691859ca0434b594b2e">Morrison::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:330</div></div>
+<div class="ttc" id="aclassMorrison_html_a9e5363db069243651289087f05115fcd"><div class="ttname"><a href="classMorrison.html#a9e5363db069243651289087f05115fcd">Morrison::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:328</div></div>
+<div class="ttc" id="aclassMorrison_html_aa5df21d7c7adfd10586783871524fac4"><div class="ttname"><a href="classMorrison.html#aa5df21d7c7adfd10586783871524fac4">Morrison::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:327</div></div>
+<div class="ttc" id="aclassMorrison_html_aae5e0add59ee0f17b03518b5888d0a61"><div class="ttname"><a href="classMorrison.html#aae5e0add59ee0f17b03518b5888d0a61">Morrison::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:335</div></div>
+<div class="ttc" id="aclassMorrison_html_abdd637dd50f94ad624ad86ec6bed76d8"><div class="ttname"><a href="classMorrison.html#abdd637dd50f94ad624ad86ec6bed76d8">Morrison::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:337</div></div>
+<div class="ttc" id="aclassMorrison_html_ac9054cb36d2b174d1033972de065b37b"><div class="ttname"><a href="classMorrison.html#ac9054cb36d2b174d1033972de065b37b">Morrison::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:331</div></div>
+<div class="ttc" id="aclassMorrison_html_ad0b73c861dc791272e1ac6d781d72562"><div class="ttname"><a href="classMorrison.html#ad0b73c861dc791272e1ac6d781d72562">Morrison::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:332</div></div>
+<div class="ttc" id="aclassMorrison_html_ae08598f7fe3990c39c84b9222d3a8cdb"><div class="ttname"><a href="classMorrison.html#ae08598f7fe3990c39c84b9222d3a8cdb">Morrison::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:341</div></div>
+<div class="ttc" id="aclassMorrison_html_aeeb1fc95ab35c46faf404d62d505108e"><div class="ttname"><a href="classMorrison.html#aeeb1fc95ab35c46faf404d62d505108e">Morrison::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:338</div></div>
+<div class="ttc" id="aclassMorrison_html_af3f26a0a44abe58527b22336648d8e56"><div class="ttname"><a href="classMorrison.html#af3f26a0a44abe58527b22336648d8e56">Morrison::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:329</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> ERF_PlaneAverage.H:14</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63">Update_Micro_Vars()</a>.</p>
@@ -4218,7 +4225,7 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a id="aa835995cc246144c5de532c119c2d8be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa835995cc246144c5de532c119c2d8be">&#9670;&nbsp;</a></span>GetPlotVar()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa835995cc246144c5de532c119c2d8be">&#9670;&nbsp;</a></span>GetPlotVar() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4251,42 +4258,76 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Extract a <a class="el" href="classMorrison.html">Morrison</a> microphysics variable for plotting. </p>
-<p>This function copies data from the <a class="el" href="classMorrison.html">Morrison</a> internal state (mic_fab_vars) to the provided MultiFab for inclusion in a plotfile. The variable to extract is specified by name matching the plot_entries table.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a_name</td><td>Name of the variable to extract (e.g., "micro_qc") </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">a_mf</td><td>MultiFab to receive the variable data</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">amrex::Abort</td><td>if the requested variable name is not found in plot_entries</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>The caller must ensure a_mf has the correct distribution and size matching the <a class="el" href="classMorrison.html">Morrison</a> mic_fab_vars arrays. Only the first component of the source MultiFab is copied.</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>If omega has not been populated from the velocity field, it will contain its initialization value (zero). </dd></dl>
-
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a2f37a246b6a0ffcde7fa9e2ca4c8d63e">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> MultiFab* src = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; entry : plot_entries) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span> (a_name == entry.name) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            src = <a class="code" href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">mic_fab_vars</a>[entry.index].get();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (src == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Morrison::GetPlotVar: unknown plot variable &quot;</span> + a_name);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    MultiFab::Copy(a_mf, *src, 0, 0, 1, 0);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
-</div><!-- fragment -->
+
+<p class="reference">Referenced by <a class="el" href="classMorrison.html#a4758477b981620315ed79d08e8acc5dd">GetPlotVar()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMorrison_aa835995cc246144c5de532c119c2d8be_icgraph.png" border="0" usemap="#aclassMorrison_aa835995cc246144c5de532c119c2d8be_icgraph" alt=""/></div>
+<map name="aclassMorrison_aa835995cc246144c5de532c119c2d8be_icgraph" id="aclassMorrison_aa835995cc246144c5de532c119c2d8be_icgraph">
+<area shape="rect" title=" " alt="" coords="209,5,365,32"/>
+<area shape="rect" href="classMorrison.html#a4758477b981620315ed79d08e8acc5dd" title=" " alt="" coords="5,5,161,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4758477b981620315ed79d08e8acc5dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4758477b981620315ed79d08e8acc5dd">&#9670;&nbsp;</a></span>GetPlotVar() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Morrison::GetPlotVar </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>a_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>a_mf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classNullMoist.html#a56d502e7343315bb1115c2489852acbe">NullMoist</a>.</p>
+<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">GetPlotVar</a>(a_name, a_mf);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
+<div class="ttc" id="aclassMorrison_html_aa835995cc246144c5de532c119c2d8be"><div class="ttname"><a href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">Morrison::GetPlotVar</a></div><div class="ttdeci">void GetPlotVar(const std::string &amp;a_name, amrex::MultiFab &amp;a_mf) const override</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMorrison_a4758477b981620315ed79d08e8acc5dd_cgraph.png" border="0" usemap="#aclassMorrison_a4758477b981620315ed79d08e8acc5dd_cgraph" alt=""/></div>
+<map name="aclassMorrison_a4758477b981620315ed79d08e8acc5dd_cgraph" id="aclassMorrison_a4758477b981620315ed79d08e8acc5dd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" href="classMorrison.html#aa835995cc246144c5de532c119c2d8be" title=" " alt="" coords="209,5,365,32"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a18f7ad113d44b3d724b8ff1b92700c62"></a>
@@ -4461,11 +4502,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="ttc" id="aERF__Morrison__Fortran__Interface_8H_html_aff6bd4d2d4ab8af93b3b93f250364681"><div class="ttname"><a href="ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681">morr_two_moment_init_c</a></div><div class="ttdeci">void morr_two_moment_init_c(int morr_rimed_ice, int morr_noice)</div></div>
-<div class="ttc" id="aclassMorrison_html_a6284af8ee4608059214c45bc39425011"><div class="ttname"><a href="classMorrison.html#a6284af8ee4608059214c45bc39425011">Morrison::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:290</div></div>
-<div class="ttc" id="aclassMorrison_html_a88d75ccdce5c7a7de7033c7ceb2fed41"><div class="ttname"><a href="classMorrison.html#a88d75ccdce5c7a7de7033c7ceb2fed41">Morrison::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:313</div></div>
-<div class="ttc" id="aclassMorrison_html_aae728919a37c1eebbf4956d78da9f3cd"><div class="ttname"><a href="classMorrison.html#aae728919a37c1eebbf4956d78da9f3cd">Morrison::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:281</div></div>
-<div class="ttc" id="aclassMorrison_html_ac84562ae1d4a60e286c7566cb1203194"><div class="ttname"><a href="classMorrison.html#ac84562ae1d4a60e286c7566cb1203194">Morrison::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:299</div></div>
-<div class="ttc" id="aclassMorrison_html_aed36f1497440d681a1a10977a0b5f5ae"><div class="ttname"><a href="classMorrison.html#aed36f1497440d681a1a10977a0b5f5ae">Morrison::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:299</div></div>
+<div class="ttc" id="aclassMorrison_html_a6284af8ee4608059214c45bc39425011"><div class="ttname"><a href="classMorrison.html#a6284af8ee4608059214c45bc39425011">Morrison::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:298</div></div>
+<div class="ttc" id="aclassMorrison_html_a88d75ccdce5c7a7de7033c7ceb2fed41"><div class="ttname"><a href="classMorrison.html#a88d75ccdce5c7a7de7033c7ceb2fed41">Morrison::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:321</div></div>
+<div class="ttc" id="aclassMorrison_html_aae728919a37c1eebbf4956d78da9f3cd"><div class="ttname"><a href="classMorrison.html#aae728919a37c1eebbf4956d78da9f3cd">Morrison::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:289</div></div>
+<div class="ttc" id="aclassMorrison_html_ac84562ae1d4a60e286c7566cb1203194"><div class="ttname"><a href="classMorrison.html#ac84562ae1d4a60e286c7566cb1203194">Morrison::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:307</div></div>
+<div class="ttc" id="aclassMorrison_html_aed36f1497440d681a1a10977a0b5f5ae"><div class="ttname"><a href="classMorrison.html#aed36f1497440d681a1a10977a0b5f5ae">Morrison::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:307</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a82937741a5244048a4a9c6176c00e0d5acf4ab6355daf2584b0bb61fd45c79511"><div class="ttname"><a href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5acf4ab6355daf2584b0bb61fd45c79511">MicVar_Morr::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:54</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -4869,7 +4910,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#af722f0334098a3e75001f799a7894ae1">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">Morrison::n_qstate_moist_size</a>; }</div>
-<div class="ttc" id="aclassMorrison_html_a31ff7d12dd53f6446c14491167b094e9"><div class="ttname"><a href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">Morrison::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:284</div></div>
+<div class="ttc" id="aclassMorrison_html_a31ff7d12dd53f6446c14491167b094e9"><div class="ttname"><a href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">Morrison::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:292</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4901,7 +4942,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classMorrison.html#a6162d4cb6ce111348566ff7155374441">m_dzmin</a> = dz_min;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="ttc" id="aclassMorrison_html_a6162d4cb6ce111348566ff7155374441"><div class="ttname"><a href="classMorrison.html#a6162d4cb6ce111348566ff7155374441">Morrison::m_dzmin</a></div><div class="ttdeci">amrex::Real m_dzmin</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:309</div></div>
+<div class="ttc" id="aclassMorrison_html_a6162d4cb6ce111348566ff7155374441"><div class="ttname"><a href="classMorrison.html#a6162d4cb6ce111348566ff7155374441">Morrison::m_dzmin</a></div><div class="ttdeci">amrex::Real m_dzmin</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:317</div></div>
 </div><!-- fragment -->
 </div>
 </div>

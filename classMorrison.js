@@ -9,6 +9,7 @@ var classMorrison =
     [ "Copy_State_to_Micro", "classMorrison.html#a5fe61e6c89f21c46207142a8ef2d67b1", null ],
     [ "Define", "classMorrison.html#a883ebd47f7f1232c523a87076ccb1ad5", null ],
     [ "GetPlotVar", "classMorrison.html#aa835995cc246144c5de532c119c2d8be", null ],
+    [ "GetPlotVar", "classMorrison.html#a4758477b981620315ed79d08e8acc5dd", null ],
     [ "GetPlotVarNames", "classMorrison.html#a18f7ad113d44b3d724b8ff1b92700c62", null ],
     [ "Init", "classMorrison.html#a9f2177b8af1d7f3f0597a7248343569e", null ],
     [ "NewtonIterSat", "classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704", null ],
