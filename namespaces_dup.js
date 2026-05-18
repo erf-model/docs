@@ -473,7 +473,7 @@ var namespaces_dup =
       [ "rrtmgp_finalize", "namespacerrtmgp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
       [ "rrtmgp_initialize", "namespacerrtmgp.html#a0753e963249f868a2d6f9e23110965eb", null ],
       [ "rrtmgp_lw", "namespacerrtmgp.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
-      [ "rrtmgp_main", "namespacerrtmgp.html#a6be2d84e56163f53a1f2d09b4a574ede", null ],
+      [ "rrtmgp_main", "namespacerrtmgp.html#a38b1a9281557b02960339297bd401ef1", null ],
       [ "rrtmgp_sw", "namespacerrtmgp.html#a83b2e0892e5b475f2f464b4285edfe47", null ],
       [ "cloud_optics_lw_k", "namespacerrtmgp.html#abdc3f481e2737031e19284d105197d74", null ],
       [ "cloud_optics_sw_k", "namespacerrtmgp.html#aa5ad83af0786838007f2c35361146f8e", null ],

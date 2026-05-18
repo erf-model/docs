@@ -247,7 +247,7 @@ var NAVTREEINDEX15 =
 "classProblemBase.html#aef7d3d9788867d83e6ec8b2c9499de56":[2,0,63,4],
 "classProblemBase.html#aef7f72842640b743a8cd2a3c0b2dd142":[2,0,63,15],
 "classRadiation.html":[2,0,65],
-"classRadiation.html#a005b0ae6d7456cdf5a6a022c6b6c1e08":[2,0,65,138],
-"classRadiation.html#a0069d200496f037a5bffa96e4bf9bce0":[2,0,65,73],
-"classRadiation.html#a038700bfcfb8298228ceb52d263993b0":[2,0,65,46]
+"classRadiation.html#a005b0ae6d7456cdf5a6a022c6b6c1e08":[2,0,65,134],
+"classRadiation.html#a0069d200496f037a5bffa96e4bf9bce0":[2,0,65,68],
+"classRadiation.html#a038700bfcfb8298228ceb52d263993b0":[2,0,65,41]
 };

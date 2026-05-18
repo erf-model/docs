@@ -26,6 +26,6 @@ var ERF__RRTMGP__Interface_8H =
     [ "rrtmgp_finalize", "ERF__RRTMGP__Interface_8H.html#a009ddf7de8b3d47a8732243e945e431c", null ],
     [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8H.html#a0753e963249f868a2d6f9e23110965eb", null ],
     [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8H.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
-    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8H.html#a6be2d84e56163f53a1f2d09b4a574ede", null ],
+    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8H.html#a38b1a9281557b02960339297bd401ef1", null ],
     [ "rrtmgp_sw", "ERF__RRTMGP__Interface_8H.html#a83b2e0892e5b475f2f464b4285edfe47", null ]
 ];
