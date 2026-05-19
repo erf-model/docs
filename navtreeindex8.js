@@ -1,9 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"ERF__RadiationInterface_8H_source.html":[3,0,1,13,0,3],
-"ERF__RadiationModels_8H.html":[3,0,1,13,0,4],
-"ERF__RadiationModels_8H_source.html":[3,0,1,13,0,4],
-"ERF__Radiation_8H.html":[3,0,1,13,0,2],
 "ERF__Radiation_8H_source.html":[3,0,1,13,0,2],
 "ERF__Radiation_8cpp.html":[3,0,1,13,0,1],
 "ERF__ReadBndryPlanes_8H.html":[3,0,1,6,9],
@@ -249,5 +245,9 @@ var NAVTREEINDEX8 =
 "ERF__TerrainMetrics_8H.html#af19157241138a9657e0bcb4d6962eafb":[3,0,1,18,31,25],
 "ERF__TerrainMetrics_8H.html#af2b7bda0da3e8024e9b02b6d69c366fe":[3,0,1,18,31,6],
 "ERF__TerrainMetrics_8H.html#af534c6c9916430a728f3fb33d21b19b3":[3,0,1,18,31,28],
-"ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a":[3,0,1,18,31,32]
+"ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a":[3,0,1,18,31,32],
+"ERF__TerrainMetrics_8H_source.html":[3,0,1,18,31],
+"ERF__TerrainMetrics_8cpp.html":[3,0,1,18,30],
+"ERF__TerrainMetrics_8cpp.html#a6f3b32ea207dacad3e0525d419d23b99":[3,0,1,18,30,0],
+"ERF__TerrainMetrics_8cpp.html#a920c175414adfaaa26687bfb8e7585bb":[3,0,1,18,30,3]
 };

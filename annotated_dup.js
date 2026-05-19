@@ -108,7 +108,6 @@ var annotated_dup =
     [ "UPWIND3SL", "structUPWIND3SL.html", "structUPWIND3SL" ],
     [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],
     [ "UPWINDALL", "structUPWINDALL.html", "structUPWINDALL" ],
-    [ "WaterVaporSat", "classWaterVaporSat.html", "classWaterVaporSat" ],
     [ "WENO3", "structWENO3.html", "structWENO3" ],
     [ "WENO5", "structWENO5.html", "structWENO5" ],
     [ "WENO7", "structWENO7.html", "structWENO7" ],

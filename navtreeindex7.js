@@ -57,15 +57,11 @@ var NAVTREEINDEX7 =
 "ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699":[3,0,1,18,19,4],
 "ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f":[3,0,1,18,19,0],
 "ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1":[3,0,1,18,19,5],
-"ERF__MicrophysicsUtils_8H.html#a50486020eb1ed680a1ea0b0e82b81f2d":[3,0,1,18,19,11],
-"ERF__MicrophysicsUtils_8H.html#a5e22e7c025af17b4983d25a5b81bfd4b":[3,0,1,18,19,14],
 "ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8":[3,0,1,18,19,2],
 "ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec":[3,0,1,18,19,3],
-"ERF__MicrophysicsUtils_8H.html#a7cf098884df5812417aa6ca8a52ec713":[3,0,1,18,19,13],
 "ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615":[3,0,1,18,19,10],
 "ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017":[3,0,1,18,19,8],
 "ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3":[3,0,1,18,19,9],
-"ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469":[3,0,1,18,19,12],
 "ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5":[3,0,1,18,19,6],
 "ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8":[3,0,1,18,19,7],
 "ERF__MicrophysicsUtils_8H_source.html":[3,0,1,18,19],
@@ -249,5 +245,9 @@ var NAVTREEINDEX7 =
 "ERF__RRTMGP__Utils_8H.html#aa7956500d2e4612dfd097a3d3556c051":[3,0,1,13,0,7,0],
 "ERF__RRTMGP__Utils_8H.html#af4b69bff8dd184127a31693738155898":[3,0,1,13,0,7,1],
 "ERF__RRTMGP__Utils_8H_source.html":[3,0,1,13,0,7],
-"ERF__RadiationInterface_8H.html":[3,0,1,13,0,3]
+"ERF__RadiationInterface_8H.html":[3,0,1,13,0,3],
+"ERF__RadiationInterface_8H_source.html":[3,0,1,13,0,3],
+"ERF__RadiationModels_8H.html":[3,0,1,13,0,4],
+"ERF__RadiationModels_8H_source.html":[3,0,1,13,0,4],
+"ERF__Radiation_8H.html":[3,0,1,13,0,2]
 };

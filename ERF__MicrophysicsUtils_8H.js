@@ -10,9 +10,5 @@ var ERF__MicrophysicsUtils_8H =
     [ "erf_esatw_cc", "ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8", null ],
     [ "erf_gammafff", "ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017", null ],
     [ "erf_qsati", "ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3", null ],
-    [ "erf_qsatw", "ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615", null ],
-    [ "pn", "ERF__MicrophysicsUtils_8H.html#a50486020eb1ed680a1ea0b0e82b81f2d", null ],
-    [ "pp", "ERF__MicrophysicsUtils_8H.html#ac54f1d17d8842acb42b2312cd353e469", null ],
-    [ "term_vel_qp", "ERF__MicrophysicsUtils_8H.html#a7cf098884df5812417aa6ca8a52ec713", null ],
-    [ "z0_est", "ERF__MicrophysicsUtils_8H.html#a5e22e7c025af17b4983d25a5b81bfd4b", null ]
+    [ "erf_qsatw", "ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615", null ]
 ];

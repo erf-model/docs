@@ -124,7 +124,6 @@ var hierarchy =
     [ "UPWIND3SL", "structUPWIND3SL.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],
     [ "UPWINDALL", "structUPWINDALL.html", null ],
-    [ "WaterVaporSat", "classWaterVaporSat.html", null ],
     [ "WENO3", "structWENO3.html", null ],
     [ "WENO5", "structWENO5.html", null ],
     [ "WENO7", "structWENO7.html", null ],
