@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"namespacemodule__mp__morr__two__moment.html#a5f5530f74219133cf5392217526c4e97":[1,0,24,23],
 "namespacemodule__mp__morr__two__moment.html#a62e887887e1067db1d9fe2dcb7edcae5":[1,0,24,34],
 "namespacemodule__mp__morr__two__moment.html#a649e184a5c5c6d2eef72a390c18eb4e4":[1,0,24,119],
 "namespacemodule__mp__morr__two__moment.html#a64d1dbc60d88744cfc20429a0ed53a7c":[1,0,24,99],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393":[2,0,6,13],
 "structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43":[2,0,6,10],
 "structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,6,0],
-"structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78":[2,0,6,7],
-"structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae":[2,0,6,6]
+"structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78":[2,0,6,7]
 };

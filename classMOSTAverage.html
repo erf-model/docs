@@ -760,7 +760,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160; </div>
 <div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    <span class="comment">// Copy to host and sum across procs</span></div>
 <div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    Gpu::copy(Gpu::deviceToHost, pavg.begin(), pavg.end(), plane_average.begin());</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    ParallelDescriptor::ReduceRealSum(plane_average.data(), plane_average.size());</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    ParallelDescriptor::ReduceRealSum(plane_average.data(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(plane_average.size()));</div>
 <div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160; </div>
 <div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;    <span class="comment">// No spatial variation with plane averages</span></div>
 <div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iavg(0); iavg &lt; <a class="code" href="classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6">m_navg</a>; ++iavg){</div>
@@ -1915,7 +1915,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="comment">// Capture for device</span></div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_zref   = zref_tmp;</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_radius = <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a>;</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_radius = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a>);</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    amrex::ignore_unused(d_radius);</div>
 <div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160; </div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="comment">// Specify z_ref &amp; compute k_indx (z_ref takes precedence)</span></div>
@@ -2024,7 +2024,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="comment">// Capture for device</span></div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_zref   = zref_tmp;</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_radius = <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a>;</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_radius = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a>);</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; </div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>  = <a class="code" href="classMOSTAverage.html#aed9b6c726189d8858abba0a2a66feca1">m_geom</a>[lev].InvCellSizeArray();</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    IntVect <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a281c2ff050bdb2a9349d3408926af821">ng</a> = <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev]-&gt;nGrowVect(); <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a281c2ff050bdb2a9349d3408926af821">ng</a>[2]=0;</div>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd":[2,0,71,6],
 "classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766":[2,0,71,14],
 "classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa":[2,0,71,12],
 "classSatMethods.html#a264a283910d028a29c374900fc03017f":[2,0,71,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "classWindFarm.html#aa96d62f2d3d93c79e318ed0e321973fa":[2,0,109,15],
 "classWindFarm.html#aaa79cb89d8f18f2a059d1ff62c5e5dd3":[2,0,109,8],
 "classWindFarm.html#aaab919aaa049f74aaa240318df77a890":[2,0,109,28],
-"classWindFarm.html#aab3b5df05c4a5f0604ad7c378ba34d1e":[2,0,109,7],
-"classWindFarm.html#aabf18956cad4a8546eb60ff8300c94c8":[2,0,109,19]
+"classWindFarm.html#aab3b5df05c4a5f0604ad7c378ba34d1e":[2,0,109,7]
 };

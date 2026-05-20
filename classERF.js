@@ -45,6 +45,7 @@ var classERF =
     [ "ErrorEst", "classERF.html#a18e6dbbf968b4492e78aa427791620f4", null ],
     [ "estTimeStep", "classERF.html#a6b1d727e63de2e49aa4f8e00b0dda1d5", null ],
     [ "Evolve", "classERF.html#a0be12798b46f52fa4b5a995f147c3f96", null ],
+    [ "EvolveOneStep", "classERF.html#a631ace9456ecbb03336d3d99a29e3785", null ],
     [ "fill_from_bndryregs", "classERF.html#a2135641de33dea5057799569c74cac42", null ],
     [ "fill_rhs", "classERF.html#a76600d7a4a0451c9727d2cc57dae4220", null ],
     [ "FillBdyCCVels", "classERF.html#a14e88231520ff2f263c86db1f8e47bdb", null ],

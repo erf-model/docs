@@ -2095,7 +2095,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;{</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordtype">int</span> n_times_in_sst = <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size();</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordtype">int</span> n_times_in_sst = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size());</div>
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dT = <a class="code" href="classSurfaceLayer.html#afd99e706e0f83e957ed24e33694167f2">m_low_time_interval</a>;</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
@@ -2112,7 +2112,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <span class="comment">// Do not over run the last sst file</span></div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSurfaceLayer.html#a318f07350232369931d2765dc3044871">m_start_low_time</a> + elapsed_time_since_start_low &gt;= <a class="code" href="classSurfaceLayer.html#ac0571888e1517d3039ca9e60f8d6a278">m_final_low_time</a>) {</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            n_time_lo = <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size()-1;</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            n_time_lo = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev].size())-1;</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            n_time_hi = n_time_lo;</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;            <a class="code" href="namespacemp__wsm6.html#a4a88c88896fa77fa7284821ab2e9dfc4">alpha</a>     = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        }</div>
@@ -2947,8 +2947,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;                                       + z_phys_arr(i  ,j+1,klo) + z_phys_arr(i+1,j+1,klo) );</div>
 <div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;        });</div>
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;    }</div>
-<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    ParallelDescriptor::ReduceRealSum(ustar_ptr, bx_lo.numPts());</div>
-<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    ParallelDescriptor::ReduceRealSum(zsurf_ptr, bx_lo.numPts());</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;    ParallelDescriptor::ReduceRealSum(ustar_ptr, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(bx_lo.numPts()));</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    ParallelDescriptor::ReduceRealSum(zsurf_ptr, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(bx_lo.numPts()));</div>
 <div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160; </div>
 <div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    <span class="comment">// Now work on all boxes (ustar has been filled above)</span></div>
 <div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> small = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01);</div>
@@ -3457,7 +3457,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160; </div>
 <div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;        <span class="comment">// Broadcast the whole domain to every rank</span></div>
 <div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;        <span class="keywordtype">int</span> ioproc = ParallelDescriptor::IOProcessorNumber();</div>
-<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        <span class="keywordtype">int</span> nnode = <a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size();</div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;        <span class="keywordtype">int</span> nnode = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="ERF__DataStruct_8H.html#a61bff79effb7ee8f045654684246b85bac2a428daaf1a1b398630fa8cec7f115b">m_x</a>.size());</div>
 <div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;        ParallelDescriptor::Bcast(&amp;nnode, 1, ioproc);</div>
 <div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160; </div>
 <div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;        <span class="keywordflow">if</span> (!ParallelDescriptor::IOProcessor()) {</div>
