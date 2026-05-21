@@ -3,12 +3,17 @@ var ERF__MicrophysicsUtils_8H =
     [ "erf_dtesati", "ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f", null ],
     [ "erf_dtesatw", "ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8", null ],
     [ "erf_dtesatw_cc", "ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8", null ],
+    [ "erf_dtesatw_flatau_poly", "ERF__MicrophysicsUtils_8H.html#a4a77fa91e0b719d43336b4afea42c586", null ],
+    [ "erf_dtqsat_from_esat", "ERF__MicrophysicsUtils_8H.html#ac3237967bf8818774c3b24565d02c5b2", null ],
     [ "erf_dtqsati", "ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec", null ],
     [ "erf_dtqsatw", "ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699", null ],
     [ "erf_esati", "ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1", null ],
     [ "erf_esatw", "ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5", null ],
     [ "erf_esatw_cc", "ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8", null ],
+    [ "erf_esatw_flatau_poly", "ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608", null ],
     [ "erf_gammafff", "ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017", null ],
+    [ "erf_qsat_from_esat", "ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570", null ],
     [ "erf_qsati", "ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3", null ],
-    [ "erf_qsatw", "ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615", null ]
+    [ "erf_qsatw", "ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615", null ],
+    [ "erf_use_positive_esatw_poly", "ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6", null ]
 ];

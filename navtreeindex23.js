@@ -1,5 +1,10 @@
 var NAVTREEINDEX23 =
 {
+"structAdvChoice.html#a81152997920406ea2aa97cbb5af2d9b6":[2,0,6,9],
+"structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393":[2,0,6,13],
+"structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43":[2,0,6,10],
+"structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,6,0],
+"structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78":[2,0,6,7],
 "structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae":[2,0,6,6],
 "structCENTERED2.html":[2,0,8],
 "structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91":[2,0,8,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX23 =
 "structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca":[2,0,61,0],
 "structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76":[2,0,61,1],
 "structProbParmDefaults.html":[2,0,64],
-"structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6":[2,0,64,1],
-"structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f":[2,0,64,0],
-"structSDDistributionParams.html":[2,0,72],
-"structSDDistributionParams.html#a191243a357faba98588f2c023b49b17a":[2,0,72,11],
-"structSDDistributionParams.html#a1f892384bbded9a75cc282c8422861f4":[2,0,72,9],
-"structSDDistributionParams.html#a1fd7f08c85d3be51036ee6e6c8e22bfd":[2,0,72,17]
+"structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6":[2,0,64,1]
 };

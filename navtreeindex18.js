@@ -1,5 +1,10 @@
 var NAVTREEINDEX18 =
 {
+"classSatAdj.html#af1404efc983d1211f51736f0bff69f35":[2,0,70,24],
+"classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3":[2,0,70,7],
+"classSatMethods.html":[2,0,71],
+"classSatMethods.html#a04e5fc642c88eda0767e507a9183682b":[2,0,71,9],
+"classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6":[2,0,71,1],
 "classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd":[2,0,71,6],
 "classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766":[2,0,71,14],
 "classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa":[2,0,71,12],
@@ -244,10 +249,5 @@ var NAVTREEINDEX18 =
 "classWindFarm.html#a9637b0a0c9d7cb1679f579325107459b":[2,0,109,12],
 "classWindFarm.html#a9e263152650471997aa43658904bc563":[2,0,109,36],
 "classWindFarm.html#aa029a9a7efa768d39849b4fb27ab5eeb":[2,0,109,2],
-"classWindFarm.html#aa343945a1afadc5a3f2c56b0dfe54a5d":[2,0,109,9],
-"classWindFarm.html#aa542d50137f25dcb568fafc483a83178":[2,0,109,37],
-"classWindFarm.html#aa96d62f2d3d93c79e318ed0e321973fa":[2,0,109,15],
-"classWindFarm.html#aaa79cb89d8f18f2a059d1ff62c5e5dd3":[2,0,109,8],
-"classWindFarm.html#aaab919aaa049f74aaa240318df77a890":[2,0,109,28],
-"classWindFarm.html#aab3b5df05c4a5f0604ad7c378ba34d1e":[2,0,109,7]
+"classWindFarm.html#aa343945a1afadc5a3f2c56b0dfe54a5d":[2,0,109,9]
 };
