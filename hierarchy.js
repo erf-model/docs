@@ -41,6 +41,9 @@ var hierarchy =
     [ "IRadiation", "classIRadiation.html", [
       [ "Radiation", "classRadiation.html", null ]
     ] ],
+    [ "KesslerFaceState", "structKesslerFaceState.html", null ],
+    [ "KesslerSaturationAdjustment", "structKesslerSaturationAdjustment.html", null ],
+    [ "KesslerSourceTerms", "structKesslerSourceTerms.html", null ],
     [ "LandSurface", "classLandSurface.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [
