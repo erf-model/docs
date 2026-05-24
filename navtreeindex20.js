@@ -1,5 +1,10 @@
 var NAVTREEINDEX20 =
 {
+"dir_fc0c15590968603ac439df7b0a572228.html":[3,0,1,3],
+"files.html":[3,0],
+"functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
+"functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
 "functions_e.html":[2,3,0,4],
@@ -91,8 +96,8 @@ var NAVTREEINDEX20 =
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_f.html":[3,1,0,5],
-"globals_func.html":[3,1,1],
 "globals_func.html":[3,1,1,0],
+"globals_func.html":[3,1,1],
 "globals_func_b.html":[3,1,1,1],
 "globals_func_c.html":[3,1,1,2],
 "globals_func_d.html":[3,1,1,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX20 =
 "namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e":[1,0,0,1],
 "namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8":[1,0,0,2],
 "namespaceamrex.html#afa2dbdd17ead719f97272c9a0a2b0f8a":[1,0,0,3],
-"namespacederived.html":[1,0,4],
-"namespacederived.html#a047b18c7cb8f69e3ffbaa31c1e211382":[1,0,4,11],
-"namespacederived.html#a0a8f9bf56d4625fb374942d2fe5f1b5a":[1,0,4,3],
-"namespacederived.html#a0a98c8c6a7458ac64638255c183096b3":[1,0,4,2],
-"namespacederived.html#a1403187af70a286ecec7628b614499ee":[1,0,4,22],
-"namespacederived.html#a1d705a95a69d25c44cff59b05cb358e1":[1,0,4,20]
+"namespacederived.html":[1,0,4]
 };
