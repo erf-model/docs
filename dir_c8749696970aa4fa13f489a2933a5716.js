@@ -6,5 +6,6 @@ var dir_c8749696970aa4fa13f489a2933a5716 =
     [ "ERF_Precip.cpp", "ERF__Precip_8cpp.html", null ],
     [ "ERF_PrecipFall.cpp", "ERF__PrecipFall_8cpp.html", null ],
     [ "ERF_SAM.H", "ERF__SAM_8H.html", "ERF__SAM_8H" ],
+    [ "ERF_SAMUtils.H", "ERF__SAMUtils_8H.html", "ERF__SAMUtils_8H" ],
     [ "ERF_UpdateSAM.cpp", "ERF__UpdateSAM_8cpp.html", null ]
 ];

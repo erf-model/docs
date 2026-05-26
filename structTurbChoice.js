@@ -41,6 +41,7 @@ var structTurbChoice =
     [ "smag2d", "structTurbChoice.html#a09d119ed891b452afb505806baec3af9", null ],
     [ "strat_type", "structTurbChoice.html#a53bf9b1ef0e50a6e25ffdb48f80de644", null ],
     [ "theta_ref", "structTurbChoice.html#aeb3c184b540858407426a606327fba3a", null ],
+    [ "tke_min", "structTurbChoice.html#a03bb6ebf2a99f11c757f4efceb1163d7", null ],
     [ "use_keqn", "structTurbChoice.html#a38eba3d6626625fcb3d5815ba9efd343", null ],
     [ "use_kturb", "structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe", null ],
     [ "use_pbl_tke", "structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b", null ],
