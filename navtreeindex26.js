@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"structWENO5.html#ae77d5f8032cf91c84551f51170ec9111":[2,0,106,1],
 "structWENO7.html":[2,0,107],
 "structWENO7.html#a42198ea771144460fff2f08857fa52ee":[2,0,107,1],
 "structWENO7.html#a4e973458a5b3cfab8acf5b22b7617194":[2,0,107,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9":[2,0,88,1],
 "structsurface__flux__mod__charnock.html#a45a62f7d959cb8241d71a6efc2947b9c":[2,0,88,0],
 "structsurface__flux__mod__charnock.html#a47b9c65ba7662c9f860179104b67b9d8":[2,0,88,6],
-"structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46":[2,0,88,2],
-"structsurface__flux__mod__charnock.html#aae8cc1659e38005000cf238c3461d0af":[2,0,88,4]
+"structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46":[2,0,88,2]
 };

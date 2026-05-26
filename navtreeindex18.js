@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classSatAdj.html#a2a4ab59d35f099f2440e8a737c671c70":[2,0,73,1],
 "classSatAdj.html#a39d8d2bb2c9e9ace57ed143c01bdaff0":[2,0,73,2],
 "classSatAdj.html#a423a7a77f71d504cac86a6f9f33b9ca6":[2,0,73,17],
 "classSatAdj.html#a4ecfd56a3aa5536012700ba1ff843fa2":[2,0,73,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "classWindFarm.html#a57a72ded446162e2e365dc0ff7c6e06a":[2,0,112,43],
 "classWindFarm.html#a584e7ba8dd495cbedf35150dfce68f26":[2,0,112,11],
 "classWindFarm.html#a5d1dbc2f5df3a2ee2b239f04b82a2c6b":[2,0,112,44],
-"classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e":[2,0,112,18],
-"classWindFarm.html#a6206e875bd0ab78e9b997d115a6c7b33":[2,0,112,16]
+"classWindFarm.html#a5defcbb732ba325db7b6e8a819ab381e":[2,0,112,18]
 };

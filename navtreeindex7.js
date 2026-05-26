@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"ERF__Kokkos_8H_source.html":[3,0,1,13,2],
 "ERF__LagrangianMicrophysics_8H.html":[3,0,1,10,8],
 "ERF__LagrangianMicrophysics_8H_source.html":[3,0,1,10,8],
 "ERF__LandSurface_8H.html":[3,0,1,7,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__RRTMGP__Interface_8cpp.html#a623070abd11c95464bfdbf6eb8dad630":[3,0,1,13,0,5,21],
 "ERF__RRTMGP__Interface_8cpp.html#a686baa053db8c7c8b88243794e6eff5c":[3,0,1,13,0,5,9],
 "ERF__RRTMGP__Interface_8cpp.html#a6f617b76fca562b13696bc6bb84fcddc":[3,0,1,13,0,5,22],
-"ERF__RRTMGP__Interface_8cpp.html#a825e4ec715986e7ce3ccbc7fa0a16959":[3,0,1,13,0,5,5],
-"ERF__RRTMGP__Interface_8cpp.html#a83b2e0892e5b475f2f464b4285edfe47":[3,0,1,13,0,5,16]
+"ERF__RRTMGP__Interface_8cpp.html#a825e4ec715986e7ce3ccbc7fa0a16959":[3,0,1,13,0,5,5]
 };
