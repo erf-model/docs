@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('classMorrison.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -176,11 +175,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7a3408e4deaeb1faf6d87c62cf811140 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c9bad761a07463fcd5ed87c3a341d47 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a6c9bad761a07463fcd5ed87c3a341d47">getDiagnosticsInterval</a> () const</td></tr>
 <tr class="separator:a6c9bad761a07463fcd5ed87c3a341d47 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a9899e6e638c26d33096fd5f40a2f7704"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704">NewtonIterSat</a> (int &amp;i, int &amp;j, int &amp;k, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;fac_cond, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;fac_fus, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;fac_sub, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;an, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;bn, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;tabs_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;pres_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qv_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qc_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qi_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qn_array, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;qt_array)</td></tr>
-<tr class="separator:a9899e6e638c26d33096fd5f40a2f7704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -1373,7 +1367,7 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;                  }</div>
 <div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160; </div>
 <div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;                  <span class="comment">// Calculate intercept parameter</span></div>
-<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;                  morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dada4474a4876600a30c7fe05d072fe2bc">MORRInd::cdist1</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da74aa6569fb1aa9734fbc7d39d20c699b">MORRInd::nc3d</a>) * std::pow(morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae27f88abfd5b1ae8ffd222ef9ff3c058">MORRInd::lamc</a>), morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da42d5e92cf69ddf2a265a184047bf494a">MORRInd::pgam</a>)+1) / gamma_pgam_plus_1;</div>
+<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;                  morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dada4474a4876600a30c7fe05d072fe2bc">MORRInd::cdist1</a>) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da74aa6569fb1aa9734fbc7d39d20c699b">MORRInd::nc3d</a>) / gamma_pgam_plus_1;</div>
 <div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;                }</div>
 <div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160; </div>
 <div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;                <span class="comment">// Snow</span></div>
@@ -3436,122 +3430,123 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l03563"></a><span class="lineno"> 3563</span>&#160;<span class="comment">            }</span></div>
 <div class="line"><a name="l03564"></a><span class="lineno"> 3564</span>&#160;<span class="comment">         label_400:*/</span></div>
 <div class="line"><a name="l03565"></a><span class="lineno"> 3565</span>&#160;            <span class="comment">//End of _micro</span></div>
-<div class="line"><a name="l03566"></a><span class="lineno"> 3566</span>&#160;            <span class="keywordflow">if</span>(use_morr_cpp_answer) {</div>
-<div class="line"><a name="l03567"></a><span class="lineno"> 3567</span>&#160;              <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=klo; k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
-<div class="line"><a name="l03568"></a><span class="lineno"> 3568</span>&#160; </div>
-<div class="line"><a name="l03569"></a><span class="lineno"> 3569</span>&#160;            <span class="comment">// Transfer 1D variables back to 3D arrays</span></div>
-<div class="line"><a name="l03570"></a><span class="lineno"> 3570</span>&#160;            qcl_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daf9bee5b0803ce8dbd65c68cc21e345e6">MORRInd::qc3d</a>);</div>
-<div class="line"><a name="l03571"></a><span class="lineno"> 3571</span>&#160;            qci_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daedc86d7f048fce72e4dfc4d4448bab59">MORRInd::qi3d</a>);</div>
-<div class="line"><a name="l03572"></a><span class="lineno"> 3572</span>&#160;            qps_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da2ae556e17ce1e9244301e5fcacff54f8">MORRInd::qni3d</a>);</div>
-<div class="line"><a name="l03573"></a><span class="lineno"> 3573</span>&#160;            qpr_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da74917377403ab474486886f8ed94f455">MORRInd::qr3d</a>);</div>
-<div class="line"><a name="l03574"></a><span class="lineno"> 3574</span>&#160;            ni_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da165bb4a375acc37084c25412aa52d8ae">MORRInd::ni3d</a>);</div>
-<div class="line"><a name="l03575"></a><span class="lineno"> 3575</span>&#160;            ns_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae4f8d2357cf079c9608de4186cae090e">MORRInd::ns3d</a>);</div>
-<div class="line"><a name="l03576"></a><span class="lineno"> 3576</span>&#160;            nr_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daff6f301b53cc349d03674775047c8544">MORRInd::nr3d</a>);</div>
-<div class="line"><a name="l03577"></a><span class="lineno"> 3577</span>&#160;            qpg_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da6cfe6fe6af32aff392ef197edaafca09">MORRInd::qg3d</a>);</div>
-<div class="line"><a name="l03578"></a><span class="lineno"> 3578</span>&#160;            ng_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daeaccd3c7291660e3b47b58672ea12b3b">MORRInd::ng3d</a>);</div>
-<div class="line"><a name="l03579"></a><span class="lineno"> 3579</span>&#160; </div>
-<div class="line"><a name="l03580"></a><span class="lineno"> 3580</span>&#160;            <span class="comment">// Temperature and potential temperature conversion</span></div>
-<div class="line"><a name="l03581"></a><span class="lineno"> 3581</span>&#160;            theta_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da672d7f388f1150b1abb40be0a4e0e4d7">MORRInd::t3d</a>) / pii_arr(i,j,k); <span class="comment">// Convert temp back to potential temp</span></div>
-<div class="line"><a name="l03582"></a><span class="lineno"> 3582</span>&#160;            <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da86805170113d2a00e6069b0d3d8ff0d2">MORRInd::qv3d</a>);</div>
-<div class="line"><a name="l03583"></a><span class="lineno"> 3583</span>&#160; </div>
-<div class="line"><a name="l03584"></a><span class="lineno"> 3584</span>&#160;            <span class="comment">//Deleted wrf-check, effc, and precr type data as not used by ERF</span></div>
-<div class="line"><a name="l03585"></a><span class="lineno"> 3585</span>&#160;            <span class="comment">/*</span></div>
-<div class="line"><a name="l03586"></a><span class="lineno"> 3586</span>&#160;<span class="comment">            // NEED gpu-compatible summation for rain_accum, check SAM or Kessler for better example</span></div>
-<div class="line"><a name="l03587"></a><span class="lineno"> 3587</span>&#160;<span class="comment">            rain_accum_arr(i,j,k) = rain_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::precrt);</span></div>
-<div class="line"><a name="l03588"></a><span class="lineno"> 3588</span>&#160;<span class="comment">            snow_accum_arr(i,j,k) = snow_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::snowprt);</span></div>
-<div class="line"><a name="l03589"></a><span class="lineno"> 3589</span>&#160;<span class="comment">            graup_accum_arr(i,j,k) = graup_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::grplprt);*/</span></div>
-<div class="line"><a name="l03590"></a><span class="lineno"> 3590</span>&#160;            rainncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
-<div class="line"><a name="l03591"></a><span class="lineno"> 3591</span>&#160;            snowncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
-<div class="line"><a name="l03592"></a><span class="lineno"> 3592</span>&#160;            graupelncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
-<div class="line"><a name="l03593"></a><span class="lineno"> 3593</span>&#160;            sr_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daff1b1c6327ded954f5fa49f48a923f8a">MORRInd::snowrt</a>) / (morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-12));</div>
-<div class="line"><a name="l03594"></a><span class="lineno"> 3594</span>&#160;              }</div>
-<div class="line"><a name="l03595"></a><span class="lineno"> 3595</span>&#160;            <span class="comment">// Update precipitation accumulation variables</span></div>
-<div class="line"><a name="l03596"></a><span class="lineno"> 3596</span>&#160;            <span class="comment">// These are outside the k-loop in the original code</span></div>
-<div class="line"><a name="l03597"></a><span class="lineno"> 3597</span>&#160;            rain_accum_arr(i,j,klo) = rain_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
-<div class="line"><a name="l03598"></a><span class="lineno"> 3598</span>&#160;            snow_accum_arr(i,j,klo) = snow_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
-<div class="line"><a name="l03599"></a><span class="lineno"> 3599</span>&#160;            graup_accum_arr(i,j,klo) = graup_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
-<div class="line"><a name="l03600"></a><span class="lineno"> 3600</span>&#160;            }</div>
-<div class="line"><a name="l03601"></a><span class="lineno"> 3601</span>&#160;         });</div>
-<div class="line"><a name="l03602"></a><span class="lineno"> 3602</span>&#160;          <span class="comment">//          amrex::Print()&lt;&lt;FArrayBox(qv_arr)&lt;&lt;std::endl;</span></div>
-<div class="line"><a name="l03603"></a><span class="lineno"> 3603</span>&#160;          }</div>
-<div class="line"><a name="l03604"></a><span class="lineno"> 3604</span>&#160; </div>
-<div class="line"><a name="l03605"></a><span class="lineno"> 3605</span>&#160;          <span class="comment">// amrex::Print()&lt;&lt;&quot;fortran should run &quot;&lt;&lt;run_morr_fort&lt;&lt;std::endl;</span></div>
-<div class="line"><a name="l03606"></a><span class="lineno"> 3606</span>&#160; </div>
-<div class="line"><a name="l03607"></a><span class="lineno"> 3607</span>&#160;          <span class="keywordflow">if</span> (run_morr_fort) {</div>
-<div class="line"><a name="l03608"></a><span class="lineno"> 3608</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MORR_FORT</span></div>
-<div class="line"><a name="l03609"></a><span class="lineno"> 3609</span>&#160;          <a class="code" href="ERF__Morrison__Fortran__Interface_8H.html#aa1e15a22d6cf65c21c2a28cd25a16946">mp_morr_two_moment_c</a></div>
-<div class="line"><a name="l03610"></a><span class="lineno"> 3610</span>&#160;          (</div>
-<div class="line"><a name="l03611"></a><span class="lineno"> 3611</span>&#160;              1,  <span class="comment">// ITIMESTEP - Use 1 for simplicity</span></div>
-<div class="line"><a name="l03612"></a><span class="lineno"> 3612</span>&#160; </div>
-<div class="line"><a name="l03613"></a><span class="lineno"> 3613</span>&#160;              <span class="comment">// 3D arrays in Fortran expected order (assume column-major for Fortran)</span></div>
-<div class="line"><a name="l03614"></a><span class="lineno"> 3614</span>&#160;              theta_arr.dataPtr(),      <span class="comment">// TH</span></div>
-<div class="line"><a name="l03615"></a><span class="lineno"> 3615</span>&#160;              <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>.dataPtr(),         <span class="comment">// QV</span></div>
-<div class="line"><a name="l03616"></a><span class="lineno"> 3616</span>&#160;              qcl_arr.dataPtr(),        <span class="comment">// QC</span></div>
-<div class="line"><a name="l03617"></a><span class="lineno"> 3617</span>&#160;              qpr_arr.dataPtr(),        <span class="comment">// QR</span></div>
-<div class="line"><a name="l03618"></a><span class="lineno"> 3618</span>&#160;              qci_arr.dataPtr(),        <span class="comment">// QI</span></div>
-<div class="line"><a name="l03619"></a><span class="lineno"> 3619</span>&#160;              qps_arr.dataPtr(),        <span class="comment">// QS</span></div>
-<div class="line"><a name="l03620"></a><span class="lineno"> 3620</span>&#160;              qpg_arr.dataPtr(),        <span class="comment">// QG</span></div>
-<div class="line"><a name="l03621"></a><span class="lineno"> 3621</span>&#160;              ni_arr.dataPtr(),         <span class="comment">// NI</span></div>
-<div class="line"><a name="l03622"></a><span class="lineno"> 3622</span>&#160;              ns_arr.dataPtr(),         <span class="comment">// NS</span></div>
-<div class="line"><a name="l03623"></a><span class="lineno"> 3623</span>&#160;              nr_arr.dataPtr(),         <span class="comment">// NR</span></div>
-<div class="line"><a name="l03624"></a><span class="lineno"> 3624</span>&#160;              ng_arr.dataPtr(),         <span class="comment">// NG</span></div>
-<div class="line"><a name="l03625"></a><span class="lineno"> 3625</span>&#160; </div>
-<div class="line"><a name="l03626"></a><span class="lineno"> 3626</span>&#160;              <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>.dataPtr(),        <span class="comment">// RHO</span></div>
-<div class="line"><a name="l03627"></a><span class="lineno"> 3627</span>&#160;              pii_arr.dataPtr(),        <span class="comment">// PII (Exner function)</span></div>
-<div class="line"><a name="l03628"></a><span class="lineno"> 3628</span>&#160;              pres_arr.dataPtr(),       <span class="comment">// P (in hPa, convert if needed)</span></div>
-<div class="line"><a name="l03629"></a><span class="lineno"> 3629</span>&#160;              dt,                       <span class="comment">// DT_IN</span></div>
-<div class="line"><a name="l03630"></a><span class="lineno"> 3630</span>&#160;              dz_arr.dataPtr(),         <span class="comment">// DZ</span></div>
-<div class="line"><a name="l03631"></a><span class="lineno"> 3631</span>&#160;              w_arr.dataPtr(),          <span class="comment">// W (vertical velocity)</span></div>
-<div class="line"><a name="l03632"></a><span class="lineno"> 3632</span>&#160; </div>
-<div class="line"><a name="l03633"></a><span class="lineno"> 3633</span>&#160;              <span class="comment">// 2D arrays for precipitation accounting</span></div>
-<div class="line"><a name="l03634"></a><span class="lineno"> 3634</span>&#160;              rain_accum_arr.dataPtr(), <span class="comment">// RAINNC</span></div>
-<div class="line"><a name="l03635"></a><span class="lineno"> 3635</span>&#160;              rainncv_arr.dataPtr(),    <span class="comment">// RAINNCV</span></div>
-<div class="line"><a name="l03636"></a><span class="lineno"> 3636</span>&#160;              sr_arr.dataPtr(),         <span class="comment">// SR</span></div>
-<div class="line"><a name="l03637"></a><span class="lineno"> 3637</span>&#160;              snow_accum_arr.dataPtr(), <span class="comment">// SNOWNC</span></div>
-<div class="line"><a name="l03638"></a><span class="lineno"> 3638</span>&#160;              snowncv_arr.dataPtr(),    <span class="comment">// SNOWNCV</span></div>
-<div class="line"><a name="l03639"></a><span class="lineno"> 3639</span>&#160;              graup_accum_arr.dataPtr(),<span class="comment">// GRAUPELNC</span></div>
-<div class="line"><a name="l03640"></a><span class="lineno"> 3640</span>&#160;              graupelncv_arr.dataPtr(), <span class="comment">// GRAUPELNCV</span></div>
-<div class="line"><a name="l03641"></a><span class="lineno"> 3641</span>&#160; </div>
-<div class="line"><a name="l03642"></a><span class="lineno"> 3642</span>&#160;              <span class="comment">// Radar reflectivity</span></div>
-<div class="line"><a name="l03643"></a><span class="lineno"> 3643</span>&#160;              dummy_reflectivity_ptr,  <span class="comment">// refl_10cm</span></div>
-<div class="line"><a name="l03644"></a><span class="lineno"> 3644</span>&#160;              <span class="keyword">true</span>,                     <span class="comment">// diagflag</span></div>
-<div class="line"><a name="l03645"></a><span class="lineno"> 3645</span>&#160;              0,   <span class="comment">// do_radar_ref</span></div>
-<div class="line"><a name="l03646"></a><span class="lineno"> 3646</span>&#160; </div>
-<div class="line"><a name="l03647"></a><span class="lineno"> 3647</span>&#160;              <span class="comment">// Cumulus tendencies</span></div>
-<div class="line"><a name="l03648"></a><span class="lineno"> 3648</span>&#160;              qrcuten_arr.dataPtr(),    <span class="comment">// qrcuten</span></div>
-<div class="line"><a name="l03649"></a><span class="lineno"> 3649</span>&#160;              qscuten_arr.dataPtr(),    <span class="comment">// qscuten</span></div>
-<div class="line"><a name="l03650"></a><span class="lineno"> 3650</span>&#160;              qicuten_arr.dataPtr(),    <span class="comment">// qicuten</span></div>
-<div class="line"><a name="l03651"></a><span class="lineno"> 3651</span>&#160; </div>
-<div class="line"><a name="l03652"></a><span class="lineno"> 3652</span>&#160;              <span class="comment">// WRF-Chem flags</span></div>
-<div class="line"><a name="l03653"></a><span class="lineno"> 3653</span>&#160;              flag_qndrop,              <span class="comment">// F_QNDROP</span></div>
-<div class="line"><a name="l03654"></a><span class="lineno"> 3654</span>&#160;              <span class="keyword">nullptr</span>,                  <span class="comment">// qndrop (not used here)</span></div>
-<div class="line"><a name="l03655"></a><span class="lineno"> 3655</span>&#160;              ht_arr.dataPtr(),         <span class="comment">// HT (terrain height - not used)</span></div>
-<div class="line"><a name="l03656"></a><span class="lineno"> 3656</span>&#160; </div>
-<div class="line"><a name="l03657"></a><span class="lineno"> 3657</span>&#160;              <span class="comment">// Domain dimensions</span></div>
-<div class="line"><a name="l03658"></a><span class="lineno"> 3658</span>&#160;              ilo, ihi, jlo, jhi, klo, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,  <span class="comment">// IDS,IDE,JDS,JDE,KDS,KDE</span></div>
-<div class="line"><a name="l03659"></a><span class="lineno"> 3659</span>&#160;              ilom, ihim, jlom, jhim, klom, khim,  <span class="comment">// IMS,IME,JMS,JME,KMS,KME</span></div>
-<div class="line"><a name="l03660"></a><span class="lineno"> 3660</span>&#160;              ilo, ihi, jlo, jhi, klo, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,  <span class="comment">// ITS,ITE,JTS,JTE,KTS,KTE</span></div>
-<div class="line"><a name="l03661"></a><span class="lineno"> 3661</span>&#160; </div>
-<div class="line"><a name="l03662"></a><span class="lineno"> 3662</span>&#160;              <span class="comment">// Optional WRF-Chem outputs</span></div>
-<div class="line"><a name="l03663"></a><span class="lineno"> 3663</span>&#160;              <span class="keyword">false</span>,                    <span class="comment">// wetscav_on</span></div>
-<div class="line"><a name="l03664"></a><span class="lineno"> 3664</span>&#160;              rainprod_arr.dataPtr(),   <span class="comment">// rainprod</span></div>
-<div class="line"><a name="l03665"></a><span class="lineno"> 3665</span>&#160;              evapprod_arr.dataPtr(),   <span class="comment">// evapprod</span></div>
-<div class="line"><a name="l03666"></a><span class="lineno"> 3666</span>&#160;              qlsink_arr.dataPtr(),     <span class="comment">// QLSINK</span></div>
-<div class="line"><a name="l03667"></a><span class="lineno"> 3667</span>&#160;              precr_arr.dataPtr(),      <span class="comment">// PRECR</span></div>
-<div class="line"><a name="l03668"></a><span class="lineno"> 3668</span>&#160;              preci_arr.dataPtr(),      <span class="comment">// PRECI</span></div>
-<div class="line"><a name="l03669"></a><span class="lineno"> 3669</span>&#160;              precs_arr.dataPtr(),      <span class="comment">// PRECS</span></div>
-<div class="line"><a name="l03670"></a><span class="lineno"> 3670</span>&#160;              precg_arr.dataPtr()       <span class="comment">// PRECG</span></div>
-<div class="line"><a name="l03671"></a><span class="lineno"> 3671</span>&#160;          );</div>
-<div class="line"><a name="l03672"></a><span class="lineno"> 3672</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l03673"></a><span class="lineno"> 3673</span>&#160;          amrex::Abort(<span class="stringliteral">&quot;Trying to run fortran without compiling with USE_MORR_FORT=TRUE&quot;</span>);</div>
-<div class="line"><a name="l03674"></a><span class="lineno"> 3674</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l03675"></a><span class="lineno"> 3675</span>&#160;        }</div>
-<div class="line"><a name="l03676"></a><span class="lineno"> 3676</span>&#160;          <span class="comment">//          amrex::Print()&lt;&lt;FArrayBox(qv_arr)&lt;&lt;std::endl;</span></div>
-<div class="line"><a name="l03677"></a><span class="lineno"> 3677</span>&#160;          <span class="comment">// After the call, all fields are updated</span></div>
-<div class="line"><a name="l03678"></a><span class="lineno"> 3678</span>&#160;          <span class="comment">// We don&#39;t need to copy results back since we passed direct pointers</span></div>
-<div class="line"><a name="l03679"></a><span class="lineno"> 3679</span>&#160;          <span class="comment">// to our class member arrays</span></div>
-<div class="line"><a name="l03680"></a><span class="lineno"> 3680</span>&#160;        }</div>
-<div class="line"><a name="l03681"></a><span class="lineno"> 3681</span>&#160;    }</div>
+<div class="line"><a name="l03566"></a><span class="lineno"> 3566</span>&#160; </div>
+<div class="line"><a name="l03567"></a><span class="lineno"> 3567</span>&#160;            <span class="keywordflow">if</span>(use_morr_cpp_answer) {</div>
+<div class="line"><a name="l03568"></a><span class="lineno"> 3568</span>&#160;              <span class="keywordflow">for</span>(<span class="keywordtype">int</span> k=klo; k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
+<div class="line"><a name="l03569"></a><span class="lineno"> 3569</span>&#160; </div>
+<div class="line"><a name="l03570"></a><span class="lineno"> 3570</span>&#160;            <span class="comment">// Transfer 1D variables back to 3D arrays</span></div>
+<div class="line"><a name="l03571"></a><span class="lineno"> 3571</span>&#160;            qcl_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daf9bee5b0803ce8dbd65c68cc21e345e6">MORRInd::qc3d</a>);</div>
+<div class="line"><a name="l03572"></a><span class="lineno"> 3572</span>&#160;            qci_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daedc86d7f048fce72e4dfc4d4448bab59">MORRInd::qi3d</a>);</div>
+<div class="line"><a name="l03573"></a><span class="lineno"> 3573</span>&#160;            qps_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da2ae556e17ce1e9244301e5fcacff54f8">MORRInd::qni3d</a>);</div>
+<div class="line"><a name="l03574"></a><span class="lineno"> 3574</span>&#160;            qpr_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da74917377403ab474486886f8ed94f455">MORRInd::qr3d</a>);</div>
+<div class="line"><a name="l03575"></a><span class="lineno"> 3575</span>&#160;            ni_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da165bb4a375acc37084c25412aa52d8ae">MORRInd::ni3d</a>);</div>
+<div class="line"><a name="l03576"></a><span class="lineno"> 3576</span>&#160;            ns_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae4f8d2357cf079c9608de4186cae090e">MORRInd::ns3d</a>);</div>
+<div class="line"><a name="l03577"></a><span class="lineno"> 3577</span>&#160;            nr_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daff6f301b53cc349d03674775047c8544">MORRInd::nr3d</a>);</div>
+<div class="line"><a name="l03578"></a><span class="lineno"> 3578</span>&#160;            qpg_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da6cfe6fe6af32aff392ef197edaafca09">MORRInd::qg3d</a>);</div>
+<div class="line"><a name="l03579"></a><span class="lineno"> 3579</span>&#160;            ng_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daeaccd3c7291660e3b47b58672ea12b3b">MORRInd::ng3d</a>);</div>
+<div class="line"><a name="l03580"></a><span class="lineno"> 3580</span>&#160; </div>
+<div class="line"><a name="l03581"></a><span class="lineno"> 3581</span>&#160;            <span class="comment">// Temperature and potential temperature conversion</span></div>
+<div class="line"><a name="l03582"></a><span class="lineno"> 3582</span>&#160;            theta_arr(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da672d7f388f1150b1abb40be0a4e0e4d7">MORRInd::t3d</a>) / pii_arr(i,j,k); <span class="comment">// Convert temp back to potential temp</span></div>
+<div class="line"><a name="l03583"></a><span class="lineno"> 3583</span>&#160;            <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k) = morr_arr(i,j,k,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da86805170113d2a00e6069b0d3d8ff0d2">MORRInd::qv3d</a>);</div>
+<div class="line"><a name="l03584"></a><span class="lineno"> 3584</span>&#160; </div>
+<div class="line"><a name="l03585"></a><span class="lineno"> 3585</span>&#160;            <span class="comment">//Deleted wrf-check, effc, and precr type data as not used by ERF</span></div>
+<div class="line"><a name="l03586"></a><span class="lineno"> 3586</span>&#160;            <span class="comment">/*</span></div>
+<div class="line"><a name="l03587"></a><span class="lineno"> 3587</span>&#160;<span class="comment">            // NEED gpu-compatible summation for rain_accum, check SAM or Kessler for better example</span></div>
+<div class="line"><a name="l03588"></a><span class="lineno"> 3588</span>&#160;<span class="comment">            rain_accum_arr(i,j,k) = rain_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::precrt);</span></div>
+<div class="line"><a name="l03589"></a><span class="lineno"> 3589</span>&#160;<span class="comment">            snow_accum_arr(i,j,k) = snow_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::snowprt);</span></div>
+<div class="line"><a name="l03590"></a><span class="lineno"> 3590</span>&#160;<span class="comment">            graup_accum_arr(i,j,k) = graup_accum_arr(i,j,k) + morr_arr(i,j,k,MORRInd::grplprt);*/</span></div>
+<div class="line"><a name="l03591"></a><span class="lineno"> 3591</span>&#160;            rainncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
+<div class="line"><a name="l03592"></a><span class="lineno"> 3592</span>&#160;            snowncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
+<div class="line"><a name="l03593"></a><span class="lineno"> 3593</span>&#160;            graupelncv_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
+<div class="line"><a name="l03594"></a><span class="lineno"> 3594</span>&#160;            sr_arr(i,j,0) = morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1daff1b1c6327ded954f5fa49f48a923f8a">MORRInd::snowrt</a>) / (morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>) + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-12));</div>
+<div class="line"><a name="l03595"></a><span class="lineno"> 3595</span>&#160;              }</div>
+<div class="line"><a name="l03596"></a><span class="lineno"> 3596</span>&#160;            <span class="comment">// Update precipitation accumulation variables</span></div>
+<div class="line"><a name="l03597"></a><span class="lineno"> 3597</span>&#160;            <span class="comment">// These are outside the k-loop in the original code</span></div>
+<div class="line"><a name="l03598"></a><span class="lineno"> 3598</span>&#160;            rain_accum_arr(i,j,klo) = rain_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0f54e5f81e58f9f0b9551e02ea32214b">MORRInd::precrt</a>);</div>
+<div class="line"><a name="l03599"></a><span class="lineno"> 3599</span>&#160;            snow_accum_arr(i,j,klo) = snow_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da1ea373c5c01dde5fff05719044d3d19d">MORRInd::snowprt</a>);</div>
+<div class="line"><a name="l03600"></a><span class="lineno"> 3600</span>&#160;            graup_accum_arr(i,j,klo) = graup_accum_arr(i,j,klo) + morr_arr(i,j,klo,<a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da24ad940e88d910c90b99f11550ed7ea5">MORRInd::grplprt</a>);</div>
+<div class="line"><a name="l03601"></a><span class="lineno"> 3601</span>&#160;            }</div>
+<div class="line"><a name="l03602"></a><span class="lineno"> 3602</span>&#160;         });</div>
+<div class="line"><a name="l03603"></a><span class="lineno"> 3603</span>&#160;          <span class="comment">//          amrex::Print()&lt;&lt;FArrayBox(qv_arr)&lt;&lt;std::endl;</span></div>
+<div class="line"><a name="l03604"></a><span class="lineno"> 3604</span>&#160;          }</div>
+<div class="line"><a name="l03605"></a><span class="lineno"> 3605</span>&#160; </div>
+<div class="line"><a name="l03606"></a><span class="lineno"> 3606</span>&#160;          <span class="comment">// amrex::Print()&lt;&lt;&quot;fortran should run &quot;&lt;&lt;run_morr_fort&lt;&lt;std::endl;</span></div>
+<div class="line"><a name="l03607"></a><span class="lineno"> 3607</span>&#160; </div>
+<div class="line"><a name="l03608"></a><span class="lineno"> 3608</span>&#160;          <span class="keywordflow">if</span> (run_morr_fort) {</div>
+<div class="line"><a name="l03609"></a><span class="lineno"> 3609</span>&#160;<span class="preprocessor">#ifdef ERF_USE_MORR_FORT</span></div>
+<div class="line"><a name="l03610"></a><span class="lineno"> 3610</span>&#160;          <a class="code" href="ERF__Morrison__Fortran__Interface_8H.html#aa1e15a22d6cf65c21c2a28cd25a16946">mp_morr_two_moment_c</a></div>
+<div class="line"><a name="l03611"></a><span class="lineno"> 3611</span>&#160;          (</div>
+<div class="line"><a name="l03612"></a><span class="lineno"> 3612</span>&#160;              1,  <span class="comment">// ITIMESTEP - Use 1 for simplicity</span></div>
+<div class="line"><a name="l03613"></a><span class="lineno"> 3613</span>&#160; </div>
+<div class="line"><a name="l03614"></a><span class="lineno"> 3614</span>&#160;              <span class="comment">// 3D arrays in Fortran expected order (assume column-major for Fortran)</span></div>
+<div class="line"><a name="l03615"></a><span class="lineno"> 3615</span>&#160;              theta_arr.dataPtr(),      <span class="comment">// TH</span></div>
+<div class="line"><a name="l03616"></a><span class="lineno"> 3616</span>&#160;              <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>.dataPtr(),         <span class="comment">// QV</span></div>
+<div class="line"><a name="l03617"></a><span class="lineno"> 3617</span>&#160;              qcl_arr.dataPtr(),        <span class="comment">// QC</span></div>
+<div class="line"><a name="l03618"></a><span class="lineno"> 3618</span>&#160;              qpr_arr.dataPtr(),        <span class="comment">// QR</span></div>
+<div class="line"><a name="l03619"></a><span class="lineno"> 3619</span>&#160;              qci_arr.dataPtr(),        <span class="comment">// QI</span></div>
+<div class="line"><a name="l03620"></a><span class="lineno"> 3620</span>&#160;              qps_arr.dataPtr(),        <span class="comment">// QS</span></div>
+<div class="line"><a name="l03621"></a><span class="lineno"> 3621</span>&#160;              qpg_arr.dataPtr(),        <span class="comment">// QG</span></div>
+<div class="line"><a name="l03622"></a><span class="lineno"> 3622</span>&#160;              ni_arr.dataPtr(),         <span class="comment">// NI</span></div>
+<div class="line"><a name="l03623"></a><span class="lineno"> 3623</span>&#160;              ns_arr.dataPtr(),         <span class="comment">// NS</span></div>
+<div class="line"><a name="l03624"></a><span class="lineno"> 3624</span>&#160;              nr_arr.dataPtr(),         <span class="comment">// NR</span></div>
+<div class="line"><a name="l03625"></a><span class="lineno"> 3625</span>&#160;              ng_arr.dataPtr(),         <span class="comment">// NG</span></div>
+<div class="line"><a name="l03626"></a><span class="lineno"> 3626</span>&#160; </div>
+<div class="line"><a name="l03627"></a><span class="lineno"> 3627</span>&#160;              <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>.dataPtr(),        <span class="comment">// RHO</span></div>
+<div class="line"><a name="l03628"></a><span class="lineno"> 3628</span>&#160;              pii_arr.dataPtr(),        <span class="comment">// PII (Exner function)</span></div>
+<div class="line"><a name="l03629"></a><span class="lineno"> 3629</span>&#160;              pres_arr.dataPtr(),       <span class="comment">// P (in hPa, convert if needed)</span></div>
+<div class="line"><a name="l03630"></a><span class="lineno"> 3630</span>&#160;              dt,                       <span class="comment">// DT_IN</span></div>
+<div class="line"><a name="l03631"></a><span class="lineno"> 3631</span>&#160;              dz_arr.dataPtr(),         <span class="comment">// DZ</span></div>
+<div class="line"><a name="l03632"></a><span class="lineno"> 3632</span>&#160;              w_arr.dataPtr(),          <span class="comment">// W (vertical velocity)</span></div>
+<div class="line"><a name="l03633"></a><span class="lineno"> 3633</span>&#160; </div>
+<div class="line"><a name="l03634"></a><span class="lineno"> 3634</span>&#160;              <span class="comment">// 2D arrays for precipitation accounting</span></div>
+<div class="line"><a name="l03635"></a><span class="lineno"> 3635</span>&#160;              rain_accum_arr.dataPtr(), <span class="comment">// RAINNC</span></div>
+<div class="line"><a name="l03636"></a><span class="lineno"> 3636</span>&#160;              rainncv_arr.dataPtr(),    <span class="comment">// RAINNCV</span></div>
+<div class="line"><a name="l03637"></a><span class="lineno"> 3637</span>&#160;              sr_arr.dataPtr(),         <span class="comment">// SR</span></div>
+<div class="line"><a name="l03638"></a><span class="lineno"> 3638</span>&#160;              snow_accum_arr.dataPtr(), <span class="comment">// SNOWNC</span></div>
+<div class="line"><a name="l03639"></a><span class="lineno"> 3639</span>&#160;              snowncv_arr.dataPtr(),    <span class="comment">// SNOWNCV</span></div>
+<div class="line"><a name="l03640"></a><span class="lineno"> 3640</span>&#160;              graup_accum_arr.dataPtr(),<span class="comment">// GRAUPELNC</span></div>
+<div class="line"><a name="l03641"></a><span class="lineno"> 3641</span>&#160;              graupelncv_arr.dataPtr(), <span class="comment">// GRAUPELNCV</span></div>
+<div class="line"><a name="l03642"></a><span class="lineno"> 3642</span>&#160; </div>
+<div class="line"><a name="l03643"></a><span class="lineno"> 3643</span>&#160;              <span class="comment">// Radar reflectivity</span></div>
+<div class="line"><a name="l03644"></a><span class="lineno"> 3644</span>&#160;              dummy_reflectivity_ptr,  <span class="comment">// refl_10cm</span></div>
+<div class="line"><a name="l03645"></a><span class="lineno"> 3645</span>&#160;              <span class="keyword">true</span>,                     <span class="comment">// diagflag</span></div>
+<div class="line"><a name="l03646"></a><span class="lineno"> 3646</span>&#160;              0,   <span class="comment">// do_radar_ref</span></div>
+<div class="line"><a name="l03647"></a><span class="lineno"> 3647</span>&#160; </div>
+<div class="line"><a name="l03648"></a><span class="lineno"> 3648</span>&#160;              <span class="comment">// Cumulus tendencies</span></div>
+<div class="line"><a name="l03649"></a><span class="lineno"> 3649</span>&#160;              qrcuten_arr.dataPtr(),    <span class="comment">// qrcuten</span></div>
+<div class="line"><a name="l03650"></a><span class="lineno"> 3650</span>&#160;              qscuten_arr.dataPtr(),    <span class="comment">// qscuten</span></div>
+<div class="line"><a name="l03651"></a><span class="lineno"> 3651</span>&#160;              qicuten_arr.dataPtr(),    <span class="comment">// qicuten</span></div>
+<div class="line"><a name="l03652"></a><span class="lineno"> 3652</span>&#160; </div>
+<div class="line"><a name="l03653"></a><span class="lineno"> 3653</span>&#160;              <span class="comment">// WRF-Chem flags</span></div>
+<div class="line"><a name="l03654"></a><span class="lineno"> 3654</span>&#160;              flag_qndrop,              <span class="comment">// F_QNDROP</span></div>
+<div class="line"><a name="l03655"></a><span class="lineno"> 3655</span>&#160;              <span class="keyword">nullptr</span>,                  <span class="comment">// qndrop (not used here)</span></div>
+<div class="line"><a name="l03656"></a><span class="lineno"> 3656</span>&#160;              ht_arr.dataPtr(),         <span class="comment">// HT (terrain height - not used)</span></div>
+<div class="line"><a name="l03657"></a><span class="lineno"> 3657</span>&#160; </div>
+<div class="line"><a name="l03658"></a><span class="lineno"> 3658</span>&#160;              <span class="comment">// Domain dimensions</span></div>
+<div class="line"><a name="l03659"></a><span class="lineno"> 3659</span>&#160;              ilo, ihi, jlo, jhi, klo, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,  <span class="comment">// IDS,IDE,JDS,JDE,KDS,KDE</span></div>
+<div class="line"><a name="l03660"></a><span class="lineno"> 3660</span>&#160;              ilom, ihim, jlom, jhim, klom, khim,  <span class="comment">// IMS,IME,JMS,JME,KMS,KME</span></div>
+<div class="line"><a name="l03661"></a><span class="lineno"> 3661</span>&#160;              ilo, ihi, jlo, jhi, klo, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,  <span class="comment">// ITS,ITE,JTS,JTE,KTS,KTE</span></div>
+<div class="line"><a name="l03662"></a><span class="lineno"> 3662</span>&#160; </div>
+<div class="line"><a name="l03663"></a><span class="lineno"> 3663</span>&#160;              <span class="comment">// Optional WRF-Chem outputs</span></div>
+<div class="line"><a name="l03664"></a><span class="lineno"> 3664</span>&#160;              <span class="keyword">false</span>,                    <span class="comment">// wetscav_on</span></div>
+<div class="line"><a name="l03665"></a><span class="lineno"> 3665</span>&#160;              rainprod_arr.dataPtr(),   <span class="comment">// rainprod</span></div>
+<div class="line"><a name="l03666"></a><span class="lineno"> 3666</span>&#160;              evapprod_arr.dataPtr(),   <span class="comment">// evapprod</span></div>
+<div class="line"><a name="l03667"></a><span class="lineno"> 3667</span>&#160;              qlsink_arr.dataPtr(),     <span class="comment">// QLSINK</span></div>
+<div class="line"><a name="l03668"></a><span class="lineno"> 3668</span>&#160;              precr_arr.dataPtr(),      <span class="comment">// PRECR</span></div>
+<div class="line"><a name="l03669"></a><span class="lineno"> 3669</span>&#160;              preci_arr.dataPtr(),      <span class="comment">// PRECI</span></div>
+<div class="line"><a name="l03670"></a><span class="lineno"> 3670</span>&#160;              precs_arr.dataPtr(),      <span class="comment">// PRECS</span></div>
+<div class="line"><a name="l03671"></a><span class="lineno"> 3671</span>&#160;              precg_arr.dataPtr()       <span class="comment">// PRECG</span></div>
+<div class="line"><a name="l03672"></a><span class="lineno"> 3672</span>&#160;          );</div>
+<div class="line"><a name="l03673"></a><span class="lineno"> 3673</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l03674"></a><span class="lineno"> 3674</span>&#160;          amrex::Abort(<span class="stringliteral">&quot;Trying to run fortran without compiling with USE_MORR_FORT=TRUE&quot;</span>);</div>
+<div class="line"><a name="l03675"></a><span class="lineno"> 3675</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l03676"></a><span class="lineno"> 3676</span>&#160;        }</div>
+<div class="line"><a name="l03677"></a><span class="lineno"> 3677</span>&#160;          <span class="comment">//          amrex::Print()&lt;&lt;FArrayBox(qv_arr)&lt;&lt;std::endl;</span></div>
+<div class="line"><a name="l03678"></a><span class="lineno"> 3678</span>&#160;          <span class="comment">// After the call, all fields are updated</span></div>
+<div class="line"><a name="l03679"></a><span class="lineno"> 3679</span>&#160;          <span class="comment">// We don&#39;t need to copy results back since we passed direct pointers</span></div>
+<div class="line"><a name="l03680"></a><span class="lineno"> 3680</span>&#160;          <span class="comment">// to our class member arrays</span></div>
+<div class="line"><a name="l03681"></a><span class="lineno"> 3681</span>&#160;        }</div>
+<div class="line"><a name="l03682"></a><span class="lineno"> 3682</span>&#160;    }</div>
 <div class="ttc" id="aERF__AdvanceMorrison_8cpp_html_a1d61dd254dd6d74236cdd989226eb4d7"><div class="ttname"><a href="ERF__AdvanceMorrison_8cpp.html#a1d61dd254dd6d74236cdd989226eb4d7">calc_saturation_vapor_pressure</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real calc_saturation_vapor_pressure(const amrex::Real T, const int type)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:446</div></div>
 <div class="ttc" id="aERF__AdvanceMorrison_8cpp_html_af8756cf103eb5b43c28400e574f81bd5"><div class="ttname"><a href="ERF__AdvanceMorrison_8cpp.html#af8756cf103eb5b43c28400e574f81bd5">gamma_function</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE Real gamma_function(Real x)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:433</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
@@ -3567,13 +3562,13 @@ Static Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a250b5b8817230db7d56e064212449a23"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a></div><div class="ttdeci">auto rho_arr</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSubsidence_SineMassFlux.H:3</div></div>
-<div class="ttc" id="aclassMorrison_html_a104c04cee2e446fcfa520dfb79c6563d"><div class="ttname"><a href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">Morrison::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:301</div></div>
-<div class="ttc" id="aclassMorrison_html_a71131fbedee0de3f7bc4abfd339921e9"><div class="ttname"><a href="classMorrison.html#a71131fbedee0de3f7bc4abfd339921e9">Morrison::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:320</div></div>
-<div class="ttc" id="aclassMorrison_html_a9b6b084ace42c7992815942eed92212f"><div class="ttname"><a href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">Morrison::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:310</div></div>
-<div class="ttc" id="aclassMorrison_html_aa1ea9704985be2ae1ef0531db778a79b"><div class="ttname"><a href="classMorrison.html#aa1ea9704985be2ae1ef0531db778a79b">Morrison::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:304</div></div>
-<div class="ttc" id="aclassMorrison_html_ad8a4391c39d380a1e77105cfbe3d88ac"><div class="ttname"><a href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">Morrison::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:313</div></div>
-<div class="ttc" id="aclassMorrison_html_ade405c635b58955a140d38af3b06e6aa"><div class="ttname"><a href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">Morrison::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_Morr::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:324</div></div>
-<div class="ttc" id="aclassMorrison_html_af658c7ed98296b05a6cde28d695b93cc"><div class="ttname"><a href="classMorrison.html#af658c7ed98296b05a6cde28d695b93cc">Morrison::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:314</div></div>
+<div class="ttc" id="aclassMorrison_html_a104c04cee2e446fcfa520dfb79c6563d"><div class="ttname"><a href="classMorrison.html#a104c04cee2e446fcfa520dfb79c6563d">Morrison::m_geom</a></div><div class="ttdeci">amrex::Geometry m_geom</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:191</div></div>
+<div class="ttc" id="aclassMorrison_html_a71131fbedee0de3f7bc4abfd339921e9"><div class="ttname"><a href="classMorrison.html#a71131fbedee0de3f7bc4abfd339921e9">Morrison::m_z_phys_nd</a></div><div class="ttdeci">amrex::MultiFab * m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:210</div></div>
+<div class="ttc" id="aclassMorrison_html_a9b6b084ace42c7992815942eed92212f"><div class="ttname"><a href="classMorrison.html#a9b6b084ace42c7992815942eed92212f">Morrison::m_axis</a></div><div class="ttdeci">int m_axis</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:200</div></div>
+<div class="ttc" id="aclassMorrison_html_aa1ea9704985be2ae1ef0531db778a79b"><div class="ttname"><a href="classMorrison.html#aa1ea9704985be2ae1ef0531db778a79b">Morrison::m_real_width</a></div><div class="ttdeci">int m_real_width</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:194</div></div>
+<div class="ttc" id="aclassMorrison_html_ad8a4391c39d380a1e77105cfbe3d88ac"><div class="ttname"><a href="classMorrison.html#ad8a4391c39d380a1e77105cfbe3d88ac">Morrison::m_rdOcp</a></div><div class="ttdeci">amrex::Real m_rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:203</div></div>
+<div class="ttc" id="aclassMorrison_html_ade405c635b58955a140d38af3b06e6aa"><div class="ttname"><a href="classMorrison.html#ade405c635b58955a140d38af3b06e6aa">Morrison::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_Morr::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:214</div></div>
+<div class="ttc" id="aclassMorrison_html_af658c7ed98296b05a6cde28d695b93cc"><div class="ttname"><a href="classMorrison.html#af658c7ed98296b05a6cde28d695b93cc">Morrison::m_do_cond</a></div><div class="ttdeci">bool m_do_cond</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:204</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5fd678f02a6eb22f48985fd81b782d1da02b3c8b0396b81f4c1acf8b9fe79e315"><div class="ttname"><a href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da02b3c8b0396b81f4c1acf8b9fe79e315">MORRInd::qisten</a></div><div class="ttdeci">@ qisten</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:73</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5fd678f02a6eb22f48985fd81b782d1da093c0e64e34c38155428b590c2dbc02b"><div class="ttname"><a href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da093c0e64e34c38155428b590c2dbc02b">MORRInd::dumfnc</a></div><div class="ttdeci">@ dumfnc</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:131</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_a5fd678f02a6eb22f48985fd81b782d1da0a04ebe9477faf45dfc6839bcc1c7bb9"><div class="ttname"><a href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1da0a04ebe9477faf45dfc6839bcc1c7bb9">MORRInd::qi3dten</a></div><div class="ttdeci">@ qi3dten</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:45</div></div>
@@ -3913,22 +3908,22 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_af412f38784e2b8072356234b0474c6f5"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5">erf_esatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real erf_esatw(amrex::Real t, bool use_empirical=false)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:123</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a362f0148b27e7245ef6d68159e7ba843"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a362f0148b27e7245ef6d68159e7ba843">rho_h</a></div><div class="ttdeci">Vector&lt; Real &gt; rho_h(khi+1, zero)</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a6be96a64acec1ea5e14b5a6f48eacc89"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a6be96a64acec1ea5e14b5a6f48eacc89">rho_d</a></div><div class="ttdeci">Gpu::DeviceVector&lt; Real &gt; rho_d(khi+1, zero)</div></div>
-<div class="ttc" id="aclassMorrison_html_a186c1ded94acbad74e980303e9867a61"><div class="ttname"><a href="classMorrison.html#a186c1ded94acbad74e980303e9867a61">Morrison::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:336</div></div>
-<div class="ttc" id="aclassMorrison_html_a46d87d763b7db8aa5e9c9e1d8ed40ac2"><div class="ttname"><a href="classMorrison.html#a46d87d763b7db8aa5e9c9e1d8ed40ac2">Morrison::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:342</div></div>
-<div class="ttc" id="aclassMorrison_html_a540699586b918c354be6e8347fbbd83c"><div class="ttname"><a href="classMorrison.html#a540699586b918c354be6e8347fbbd83c">Morrison::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:333</div></div>
-<div class="ttc" id="aclassMorrison_html_a5e4e4de3f0961b43f5972bc78c964d38"><div class="ttname"><a href="classMorrison.html#a5e4e4de3f0961b43f5972bc78c964d38">Morrison::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:334</div></div>
-<div class="ttc" id="aclassMorrison_html_a625091bf149aa3bd952e50b9b438681d"><div class="ttname"><a href="classMorrison.html#a625091bf149aa3bd952e50b9b438681d">Morrison::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:343</div></div>
-<div class="ttc" id="aclassMorrison_html_a7bc485a108780b844d2ecdc70f7a618b"><div class="ttname"><a href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">Morrison::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:307</div></div>
-<div class="ttc" id="aclassMorrison_html_a96fb0e34b50bf691859ca0434b594b2e"><div class="ttname"><a href="classMorrison.html#a96fb0e34b50bf691859ca0434b594b2e">Morrison::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:330</div></div>
-<div class="ttc" id="aclassMorrison_html_a9e5363db069243651289087f05115fcd"><div class="ttname"><a href="classMorrison.html#a9e5363db069243651289087f05115fcd">Morrison::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:328</div></div>
-<div class="ttc" id="aclassMorrison_html_aa5df21d7c7adfd10586783871524fac4"><div class="ttname"><a href="classMorrison.html#aa5df21d7c7adfd10586783871524fac4">Morrison::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:327</div></div>
-<div class="ttc" id="aclassMorrison_html_aae5e0add59ee0f17b03518b5888d0a61"><div class="ttname"><a href="classMorrison.html#aae5e0add59ee0f17b03518b5888d0a61">Morrison::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:335</div></div>
-<div class="ttc" id="aclassMorrison_html_abdd637dd50f94ad624ad86ec6bed76d8"><div class="ttname"><a href="classMorrison.html#abdd637dd50f94ad624ad86ec6bed76d8">Morrison::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:337</div></div>
-<div class="ttc" id="aclassMorrison_html_ac9054cb36d2b174d1033972de065b37b"><div class="ttname"><a href="classMorrison.html#ac9054cb36d2b174d1033972de065b37b">Morrison::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:331</div></div>
-<div class="ttc" id="aclassMorrison_html_ad0b73c861dc791272e1ac6d781d72562"><div class="ttname"><a href="classMorrison.html#ad0b73c861dc791272e1ac6d781d72562">Morrison::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:332</div></div>
-<div class="ttc" id="aclassMorrison_html_ae08598f7fe3990c39c84b9222d3a8cdb"><div class="ttname"><a href="classMorrison.html#ae08598f7fe3990c39c84b9222d3a8cdb">Morrison::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:341</div></div>
-<div class="ttc" id="aclassMorrison_html_aeeb1fc95ab35c46faf404d62d505108e"><div class="ttname"><a href="classMorrison.html#aeeb1fc95ab35c46faf404d62d505108e">Morrison::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:338</div></div>
-<div class="ttc" id="aclassMorrison_html_af3f26a0a44abe58527b22336648d8e56"><div class="ttname"><a href="classMorrison.html#af3f26a0a44abe58527b22336648d8e56">Morrison::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:329</div></div>
+<div class="ttc" id="aclassMorrison_html_a186c1ded94acbad74e980303e9867a61"><div class="ttname"><a href="classMorrison.html#a186c1ded94acbad74e980303e9867a61">Morrison::evapg2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:226</div></div>
+<div class="ttc" id="aclassMorrison_html_a46d87d763b7db8aa5e9c9e1d8ed40ac2"><div class="ttname"><a href="classMorrison.html#a46d87d763b7db8aa5e9c9e1d8ed40ac2">Morrison::pres1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; pres1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:232</div></div>
+<div class="ttc" id="aclassMorrison_html_a540699586b918c354be6e8347fbbd83c"><div class="ttname"><a href="classMorrison.html#a540699586b918c354be6e8347fbbd83c">Morrison::accrgi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:223</div></div>
+<div class="ttc" id="aclassMorrison_html_a5e4e4de3f0961b43f5972bc78c964d38"><div class="ttname"><a href="classMorrison.html#a5e4e4de3f0961b43f5972bc78c964d38">Morrison::accrgc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrgc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:224</div></div>
+<div class="ttc" id="aclassMorrison_html_a625091bf149aa3bd952e50b9b438681d"><div class="ttname"><a href="classMorrison.html#a625091bf149aa3bd952e50b9b438681d">Morrison::tabs1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; tabs1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:233</div></div>
+<div class="ttc" id="aclassMorrison_html_a7bc485a108780b844d2ecdc70f7a618b"><div class="ttname"><a href="classMorrison.html#a7bc485a108780b844d2ecdc70f7a618b">Morrison::nlev</a></div><div class="ttdeci">int nlev</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:197</div></div>
+<div class="ttc" id="aclassMorrison_html_a96fb0e34b50bf691859ca0434b594b2e"><div class="ttname"><a href="classMorrison.html#a96fb0e34b50bf691859ca0434b594b2e">Morrison::coefice</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; coefice</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:220</div></div>
+<div class="ttc" id="aclassMorrison_html_a9e5363db069243651289087f05115fcd"><div class="ttname"><a href="classMorrison.html#a9e5363db069243651289087f05115fcd">Morrison::accrsi</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:218</div></div>
+<div class="ttc" id="aclassMorrison_html_aa5df21d7c7adfd10586783871524fac4"><div class="ttname"><a href="classMorrison.html#aa5df21d7c7adfd10586783871524fac4">Morrison::accrrc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrrc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:217</div></div>
+<div class="ttc" id="aclassMorrison_html_aae5e0add59ee0f17b03518b5888d0a61"><div class="ttname"><a href="classMorrison.html#aae5e0add59ee0f17b03518b5888d0a61">Morrison::evapg1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapg1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:225</div></div>
+<div class="ttc" id="aclassMorrison_html_abdd637dd50f94ad624ad86ec6bed76d8"><div class="ttname"><a href="classMorrison.html#abdd637dd50f94ad624ad86ec6bed76d8">Morrison::evapr1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:227</div></div>
+<div class="ttc" id="aclassMorrison_html_ac9054cb36d2b174d1033972de065b37b"><div class="ttname"><a href="classMorrison.html#ac9054cb36d2b174d1033972de065b37b">Morrison::evaps1</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps1</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:221</div></div>
+<div class="ttc" id="aclassMorrison_html_ad0b73c861dc791272e1ac6d781d72562"><div class="ttname"><a href="classMorrison.html#ad0b73c861dc791272e1ac6d781d72562">Morrison::evaps2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evaps2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:222</div></div>
+<div class="ttc" id="aclassMorrison_html_ae08598f7fe3990c39c84b9222d3a8cdb"><div class="ttname"><a href="classMorrison.html#ae08598f7fe3990c39c84b9222d3a8cdb">Morrison::rho1d</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; rho1d</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:231</div></div>
+<div class="ttc" id="aclassMorrison_html_aeeb1fc95ab35c46faf404d62d505108e"><div class="ttname"><a href="classMorrison.html#aeeb1fc95ab35c46faf404d62d505108e">Morrison::evapr2</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; evapr2</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:228</div></div>
+<div class="ttc" id="aclassMorrison_html_af3f26a0a44abe58527b22336648d8e56"><div class="ttname"><a href="classMorrison.html#af3f26a0a44abe58527b22336648d8e56">Morrison::accrsc</a></div><div class="ttdeci">amrex::TableData&lt; amrex::Real, 1 &gt; accrsc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:219</div></div>
 <div class="ttc" id="aclassPlaneAverage_html"><div class="ttname"><a href="classPlaneAverage.html">PlaneAverage</a></div><div class="ttdef"><b>Definition:</b> ERF_PlaneAverage.H:14</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63">Update_Micro_Vars()</a>.</p>
@@ -4316,9 +4311,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a56d502e7343315bb1115c2489852acbe">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">GetPlotVar</a>(a_name, a_mf);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">GetPlotVar</a>(a_name, a_mf);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
 <div class="ttc" id="aclassMorrison_html_aa835995cc246144c5de532c119c2d8be"><div class="ttname"><a href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">Morrison::GetPlotVar</a></div><div class="ttdeci">void GetPlotVar(const std::string &amp;a_name, amrex::MultiFab &amp;a_mf) const override</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -4504,11 +4499,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="ttc" id="aERF__Morrison__Fortran__Interface_8H_html_aff6bd4d2d4ab8af93b3b93f250364681"><div class="ttname"><a href="ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681">morr_two_moment_init_c</a></div><div class="ttdeci">void morr_two_moment_init_c(int morr_rimed_ice, int morr_noice)</div></div>
-<div class="ttc" id="aclassMorrison_html_a6284af8ee4608059214c45bc39425011"><div class="ttname"><a href="classMorrison.html#a6284af8ee4608059214c45bc39425011">Morrison::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:298</div></div>
-<div class="ttc" id="aclassMorrison_html_a88d75ccdce5c7a7de7033c7ceb2fed41"><div class="ttname"><a href="classMorrison.html#a88d75ccdce5c7a7de7033c7ceb2fed41">Morrison::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:321</div></div>
-<div class="ttc" id="aclassMorrison_html_aae728919a37c1eebbf4956d78da9f3cd"><div class="ttname"><a href="classMorrison.html#aae728919a37c1eebbf4956d78da9f3cd">Morrison::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:289</div></div>
-<div class="ttc" id="aclassMorrison_html_ac84562ae1d4a60e286c7566cb1203194"><div class="ttname"><a href="classMorrison.html#ac84562ae1d4a60e286c7566cb1203194">Morrison::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:307</div></div>
-<div class="ttc" id="aclassMorrison_html_aed36f1497440d681a1a10977a0b5f5ae"><div class="ttname"><a href="classMorrison.html#aed36f1497440d681a1a10977a0b5f5ae">Morrison::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:307</div></div>
+<div class="ttc" id="aclassMorrison_html_a6284af8ee4608059214c45bc39425011"><div class="ttname"><a href="classMorrison.html#a6284af8ee4608059214c45bc39425011">Morrison::MicVarMap</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; MicVarMap</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:188</div></div>
+<div class="ttc" id="aclassMorrison_html_a88d75ccdce5c7a7de7033c7ceb2fed41"><div class="ttname"><a href="classMorrison.html#a88d75ccdce5c7a7de7033c7ceb2fed41">Morrison::m_detJ_cc</a></div><div class="ttdeci">amrex::MultiFab * m_detJ_cc</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:211</div></div>
+<div class="ttc" id="aclassMorrison_html_aae728919a37c1eebbf4956d78da9f3cd"><div class="ttname"><a href="classMorrison.html#aae728919a37c1eebbf4956d78da9f3cd">Morrison::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:179</div></div>
+<div class="ttc" id="aclassMorrison_html_ac84562ae1d4a60e286c7566cb1203194"><div class="ttname"><a href="classMorrison.html#ac84562ae1d4a60e286c7566cb1203194">Morrison::zlo</a></div><div class="ttdeci">int zlo</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:197</div></div>
+<div class="ttc" id="aclassMorrison_html_aed36f1497440d681a1a10977a0b5f5ae"><div class="ttname"><a href="classMorrison.html#aed36f1497440d681a1a10977a0b5f5ae">Morrison::zhi</a></div><div class="ttdeci">int zhi</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:197</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a82937741a5244048a4a9c6176c00e0d5acf4ab6355daf2584b0bb61fd45c79511"><div class="ttname"><a href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5acf4ab6355daf2584b0bb61fd45c79511">MicVar_Morr::NumVars</a></div><div class="ttdeci">@ NumVars</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:54</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -4518,244 +4513,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,31,113,57"/>
 <area shape="rect" href="ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681" title=" " alt="" coords="161,5,349,32"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="236,56,275,83"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a9899e6e638c26d33096fd5f40a2f7704"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9899e6e638c26d33096fd5f40a2f7704">&#9670;&nbsp;</a></span>NewtonIterSat()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Morrison::NewtonIterSat </td>
-          <td>(</td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int &amp;&#160;</td>
-          <td class="paramname"><em>k</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
-          <td class="paramname"><em>fac_cond</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
-          <td class="paramname"><em>fac_fus</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
-          <td class="paramname"><em>fac_sub</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
-          <td class="paramname"><em>an</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
-          <td class="paramname"><em>bn</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tabs_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>pres_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>qv_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>qc_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>qi_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>qn_array</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>qt_array</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="comment">// Solution tolerance</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-4);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> omn, domn;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsat, dqsat;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsatw, dqsatw;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qsati, dqsati;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment">// Newton iteration vars</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span>  niter;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> fff, dfff, dtabs;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lstar, dlstar;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lstarw, lstari;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> delta_qv, delta_qc, delta_qi;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="comment">// Initial guess for temperature &amp; pressure</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> = tabs_array(i,j,k);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a531c978e174d063e1cf107eae6a84073">pres</a> = pres_array(i,j,k);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        niter = 0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        dtabs = 1;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">// Newton iteration to qv=qsat (cloud phase only)</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="comment">//==================================================</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="comment">// Latent heats and their derivatives wrt to T</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            lstarw  = fac_cond;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            lstari  = fac_fus;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            domn    = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="comment">// Saturation moisture fractions</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a531c978e174d063e1cf107eae6a84073">pres</a>, qsatw);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a531c978e174d063e1cf107eae6a84073">pres</a>, qsati);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a531c978e174d063e1cf107eae6a84073">pres</a>, dqsatw);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>, <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a531c978e174d063e1cf107eae6a84073">pres</a>, dqsati);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="comment">// Cloud ice not permitted (condensation &amp; fusion)</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> &gt;= <a class="code" href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a>) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                omn   = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="comment">// Cloud water not permitted (sublimation &amp; fusion)</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> &lt;= <a class="code" href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a>) {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                omn    = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                lstarw = fac_sub;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="comment">// Mixed cloud phase (condensation &amp; fusion)</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                omn   = an*<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>-bn;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                domn  = an;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="comment">// Linear combination of each component</span></div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            qsat   =  omn * qsatw  + (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn) * qsati;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            dqsat  =  omn * dqsatw + (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn) * dqsati</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                   + domn *  qsatw -     domn  *  qsati;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            lstar  =  omn * lstarw + (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn) * lstari;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            dlstar = domn * lstarw -     domn  * lstari;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="comment">// Function for root finding:</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="comment">// 0 = -T_new + T_old + L_eff/C_p * (qv - qsat)</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            fff   = -<a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> + tabs_array(i,j,k) +  lstar*(qv_array(i,j,k) - qsat);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="comment">// Derivative of function (T_new iterated on)</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            dfff  = -<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + dlstar*(qv_array(i,j,k) - qsat) - lstar*dqsat;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="comment">// Update the temperature</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            dtabs = -fff/dfff;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a> += dtabs;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="comment">// Update iteration</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            niter = niter+1;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        } <span class="keywordflow">while</span>(std::abs(dtabs) &gt; tol &amp;&amp; niter &lt; 20);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// Update qsat from last iteration (dq = dq/dt * dt)</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        qsat += dqsat*dtabs;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="comment">// Changes in each component</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        delta_qv = qv_array(i,j,k) - qsat;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        delta_qc = std::max(-qc_array(i,j,k), delta_qv * omn);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        delta_qi = std::max(-qi_array(i,j,k), delta_qv * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>-omn));</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        qv_array(i,j,k)  = qsat;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        qc_array(i,j,k) += delta_qc;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        qi_array(i,j,k) += delta_qi;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        qn_array(i,j,k)  = qc_array(i,j,k) + qi_array(i,j,k);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        qt_array(i,j,k)  = qv_array(i,j,k) + qn_array(i,j,k);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// Return to temperature</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar__Morr.html#a82937741a5244048a4a9c6176c00e0d5a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a2b4ea8a29735038e49703c7f8c1f20c8"><div class="ttname"><a href="ERF__Constants_8H.html#a2b4ea8a29735038e49703c7f8c1f20c8">tbgmax</a></div><div class="ttdeci">constexpr amrex::Real tbgmax</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:43</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_abf1e890912f1117211516f13b27ed2e8"><div class="ttname"><a href="ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8">tbgmin</a></div><div class="ttdeci">constexpr amrex::Real tbgmin</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:42</div></div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a41126403c4da6ee876e9e391f3f67699"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:244</div></div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a7baba5d74922033bf93526933a0d77ec"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsati(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:235</div></div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:228</div></div>
-<div class="ttc" id="aERF__MicrophysicsUtils_8H_html_ac39ef2a869ef543f708d5ed7da4754d3"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3">erf_qsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsati(amrex::Real t, amrex::Real p, amrex::Real &amp;qsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:218</div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classMorrison_a9899e6e638c26d33096fd5f40a2f7704_cgraph.png" border="0" usemap="#aclassMorrison_a9899e6e638c26d33096fd5f40a2f7704_cgraph" alt=""/></div>
-<map name="aclassMorrison_a9899e6e638c26d33096fd5f40a2f7704_cgraph" id="aclassMorrison_a9899e6e638c26d33096fd5f40a2f7704_cgraph">
-<area shape="rect" title=" " alt="" coords="5,132,185,159"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec" title=" " alt="" coords="237,56,329,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="233,208,332,235"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="243,107,322,133"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="239,157,326,184"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f" title=" " alt="" coords="415,5,507,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac3237967bf8818774c3b24565d02c5b2" title=" " alt="" coords="380,157,541,184"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="421,56,500,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="603,31,786,57"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8" title=" " alt="" coords="411,272,510,299"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="417,208,504,235"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8" title=" " alt="" coords="635,335,755,361"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4a77fa91e0b719d43336b4afea42c586" title=" " alt="" coords="605,284,784,311"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="589,233,800,260"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="848,183,1013,209"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="641,183,748,209"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570" title=" " alt="" coords="387,107,535,133"/>
 </map>
 </div>
 
@@ -4844,23 +4601,23 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#a77d6c9875f6a3a7242b090e6fece5c0f">NullMoist</a>.</p>
-<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    {</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        a_idx.clear();</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        a_names.clear();</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">// The ordering here needs to match that in</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// MicVarMap = {MicVar_Morr::nc, MicVar_Morr::nr, MicVar_Morr::ni, MicVar_Morr::ns, MicVar_Morr::ng,</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">//              MicVar_Morr::rain_accum, MicVar_Morr::snow_accum, MicVar_Morr::graup_accum};</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        a_idx.push_back(0); a_names.push_back(<span class="stringliteral">&quot;Nc&quot;</span>);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        a_idx.push_back(1); a_names.push_back(<span class="stringliteral">&quot;Nr&quot;</span>);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        a_idx.push_back(2); a_names.push_back(<span class="stringliteral">&quot;Ni&quot;</span>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        a_idx.push_back(3); a_names.push_back(<span class="stringliteral">&quot;Ns&quot;</span>);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        a_idx.push_back(4); a_names.push_back(<span class="stringliteral">&quot;Ng&quot;</span>);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        a_idx.push_back(5); a_names.push_back(<span class="stringliteral">&quot;RainAccum&quot;</span>);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        a_idx.push_back(6); a_names.push_back(<span class="stringliteral">&quot;SnowAccum&quot;</span>);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        a_idx.push_back(7); a_names.push_back(<span class="stringliteral">&quot;GraupAccum&quot;</span>);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        a_idx.clear();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        a_names.clear();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="comment">// The ordering here needs to match that in</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// MicVarMap = {MicVar_Morr::nc, MicVar_Morr::nr, MicVar_Morr::ni, MicVar_Morr::ns, MicVar_Morr::ng,</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="comment">//              MicVar_Morr::rain_accum, MicVar_Morr::snow_accum, MicVar_Morr::graup_accum};</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        a_idx.push_back(0); a_names.push_back(<span class="stringliteral">&quot;Nc&quot;</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        a_idx.push_back(1); a_names.push_back(<span class="stringliteral">&quot;Nr&quot;</span>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        a_idx.push_back(2); a_names.push_back(<span class="stringliteral">&quot;Ni&quot;</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        a_idx.push_back(3); a_names.push_back(<span class="stringliteral">&quot;Ns&quot;</span>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        a_idx.push_back(4); a_names.push_back(<span class="stringliteral">&quot;Ng&quot;</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        a_idx.push_back(5); a_names.push_back(<span class="stringliteral">&quot;RainAccum&quot;</span>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        a_idx.push_back(6); a_names.push_back(<span class="stringliteral">&quot;SnowAccum&quot;</span>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        a_idx.push_back(7); a_names.push_back(<span class="stringliteral">&quot;GraupAccum&quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4917,7 +4674,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#af722f0334098a3e75001f799a7894ae1">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">Morrison::n_qstate_moist_size</a>; }</div>
-<div class="ttc" id="aclassMorrison_html_a31ff7d12dd53f6446c14491167b094e9"><div class="ttname"><a href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">Morrison::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:292</div></div>
+<div class="ttc" id="aclassMorrison_html_a31ff7d12dd53f6446c14491167b094e9"><div class="ttname"><a href="classMorrison.html#a31ff7d12dd53f6446c14491167b094e9">Morrison::n_qstate_moist_size</a></div><div class="ttdeci">int n_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:182</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4949,7 +4706,7 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classMorrison.html#a6162d4cb6ce111348566ff7155374441">m_dzmin</a> = dz_min;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="ttc" id="aclassMorrison_html_a6162d4cb6ce111348566ff7155374441"><div class="ttname"><a href="classMorrison.html#a6162d4cb6ce111348566ff7155374441">Morrison::m_dzmin</a></div><div class="ttdeci">amrex::Real m_dzmin</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:317</div></div>
+<div class="ttc" id="aclassMorrison_html_a6162d4cb6ce111348566ff7155374441"><div class="ttname"><a href="classMorrison.html#a6162d4cb6ce111348566ff7155374441">Morrison::m_dzmin</a></div><div class="ttdeci">amrex::Real m_dzmin</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:207</div></div>
 </div><!-- fragment -->
 </div>
 </div>

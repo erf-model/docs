@@ -12,7 +12,6 @@ var classMorrison =
     [ "GetPlotVar", "classMorrison.html#a4758477b981620315ed79d08e8acc5dd", null ],
     [ "GetPlotVarNames", "classMorrison.html#a18f7ad113d44b3d724b8ff1b92700c62", null ],
     [ "Init", "classMorrison.html#a9f2177b8af1d7f3f0597a7248343569e", null ],
-    [ "NewtonIterSat", "classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704", null ],
     [ "Qmoist_Ptr", "classMorrison.html#a6b77aa8b347b286ffeae1aabc2e4b69a", null ],
     [ "Qmoist_Restart_Vars", "classMorrison.html#a2269eb1d7ce46e6eba5ffe3ad1489c57", null ],
     [ "Qmoist_Size", "classMorrison.html#a9fc43dc29aa5c3106aa69d1350c793c1", null ],

@@ -11,7 +11,7 @@ var searchData=
   ['netzerobuoyantadd_5498',['netZeroBuoyantAdd',['../structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60',1,'TurbulentPerturbation']]],
   ['netzerobuoyantadjust_5499',['netZeroBuoyantAdjust',['../structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527',1,'TurbulentPerturbation']]],
   ['newton_5fraphson_5fhse_5500',['Newton_Raphson_hse',['../namespaceHSEutils.html#aa19dec498826e05e735836876978a654',1,'HSEutils']]],
-  ['newtonitersat_5501',['NewtonIterSat',['../classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6',1,'SAM::NewtonIterSat()'],['../classMorrison.html#a9899e6e638c26d33096fd5f40a2f7704',1,'Morrison::NewtonIterSat()']]],
+  ['newtonitersat_5501',['NewtonIterSat',['../classSAM.html#a0154097dd0c769a35dcc52c484dd0dc6',1,'SAM']]],
   ['newtonsolvesattemperature_5502',['NewtonSolveSatTemperature',['../classSatAdj.html#ad7e1876bee10ba930f88c4e8c3591f0d',1,'SatAdj']]],
   ['nghost_5fbasic_5503',['nghost_basic',['../classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8',1,'eb_']]],
   ['nghost_5feb_5fbasic_5504',['nghost_eb_basic',['../classERF.html#a4601db3087123d6a13e492f742b30d57',1,'ERF']]],
