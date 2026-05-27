@@ -106,8 +106,8 @@ Collaboration diagram for UPWIND3SL:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad5193a879dbb12320fab98b5581ee234"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWIND3SL.html#ad5193a879dbb12320fab98b5581ee234">UPWIND3SL</a> (const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;phi, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>)</td></tr>
-<tr class="separator:ad5193a879dbb12320fab98b5581ee234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7edeeb4f74e5cc1b3d3a5deec9067e89"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWIND3SL.html#a7edeeb4f74e5cc1b3d3a5deec9067e89">UPWIND3SL</a> (const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;phi, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>)</td></tr>
+<tr class="separator:a7edeeb4f74e5cc1b3d3a5deec9067e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a150c7cd7af1202d5759a31f6f4d6dd25"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWIND3SL.html#a150c7cd7af1202d5759a31f6f4d6dd25">InterpolateInX</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;val_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> upw_lo) const</td></tr>
 <tr class="separator:a150c7cd7af1202d5759a31f6f4d6dd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad47b3e268eb1f5e757a6480e3c3dd992"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUPWIND3SL.html#ad47b3e268eb1f5e757a6480e3c3dd992">InterpolateInY</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;qty_index, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;val_lo, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> upw_lo) const</td></tr>
@@ -136,8 +136,8 @@ Static Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interpolation operators used for 3rd order upwind scheme </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad5193a879dbb12320fab98b5581ee234"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5193a879dbb12320fab98b5581ee234">&#9670;&nbsp;</a></span>UPWIND3SL()</h2>
+<a id="a7edeeb4f74e5cc1b3d3a5deec9067e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7edeeb4f74e5cc1b3d3a5deec9067e89">&#9670;&nbsp;</a></span>UPWIND3SL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +146,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">UPWIND3SL::UPWIND3SL </td>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE UPWIND3SL::UPWIND3SL </td>
           <td>(</td>
           <td class="paramtype">const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>phi</em>, </td>
@@ -169,9 +169,9 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        : <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(phi)</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {}</div>
-<div class="ttc" id="astructUPWIND3SL_html_aec7e189f79eea42321c68fd561e4e1f2"><div class="ttname"><a href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">UPWIND3SL::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:316</div></div>
+<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        : <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(phi)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    {}</div>
+<div class="ttc" id="astructUPWIND3SL_html_aec7e189f79eea42321c68fd561e4e1f2"><div class="ttname"><a href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">UPWIND3SL::m_phi</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; m_phi</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:324</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -215,16 +215,16 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rmh = (s - sm1) / ((sm1 - sm2) + <a class="code" href="structUPWIND3SL.html#a546d86f76773e40aeb1c3aa8ac6e6de5">eps</a>);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> K   = <a class="code" href="structUPWIND3SL.html#aff353a0219c0078876ea5983f363d841">l2</a> + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2)*<a class="code" href="structUPWIND3SL.html#aff353a0219c0078876ea5983f363d841">l2</a>*rmh;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> phi = std::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0),std::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2)*rmh,std::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2),K)));</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">return</span> (sm1 + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * phi * (sm1 - sm2));</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rmh = (s - sm1) / ((sm1 - sm2) + <a class="code" href="structUPWIND3SL.html#a546d86f76773e40aeb1c3aa8ac6e6de5">eps</a>);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> K   = <a class="code" href="structUPWIND3SL.html#aff353a0219c0078876ea5983f363d841">l2</a> + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2)*<a class="code" href="structUPWIND3SL.html#aff353a0219c0078876ea5983f363d841">l2</a>*rmh;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> phi = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0), amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2)*rmh, amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2), K)));</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">return</span> (sm1 + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * phi * (sm1 - sm2));</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="astructUPWIND3SL_html_a546d86f76773e40aeb1c3aa8ac6e6de5"><div class="ttname"><a href="structUPWIND3SL.html#a546d86f76773e40aeb1c3aa8ac6e6de5">UPWIND3SL::eps</a></div><div class="ttdeci">static constexpr amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:317</div></div>
-<div class="ttc" id="astructUPWIND3SL_html_aff353a0219c0078876ea5983f363d841"><div class="ttname"><a href="structUPWIND3SL.html#aff353a0219c0078876ea5983f363d841">UPWIND3SL::l2</a></div><div class="ttdeci">static constexpr amrex::Real l2</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:319</div></div>
+<div class="ttc" id="astructUPWIND3SL_html_a546d86f76773e40aeb1c3aa8ac6e6de5"><div class="ttname"><a href="structUPWIND3SL.html#a546d86f76773e40aeb1c3aa8ac6e6de5">UPWIND3SL::eps</a></div><div class="ttdeci">static constexpr amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:325</div></div>
+<div class="ttc" id="astructUPWIND3SL_html_aff353a0219c0078876ea5983f363d841"><div class="ttname"><a href="structUPWIND3SL.html#aff353a0219c0078876ea5983f363d841">UPWIND3SL::l2</a></div><div class="ttdeci">static constexpr amrex::Real l2</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:327</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structUPWIND3SL.html#a150c7cd7af1202d5759a31f6f4d6dd25">InterpolateInX()</a>, <a class="el" href="structUPWIND3SL.html#ad47b3e268eb1f5e757a6480e3c3dd992">InterpolateInY()</a>, and <a class="el" href="structUPWIND3SL.html#ab1a0c7d35158b86ba5ced284ea55a1aa">InterpolateInZ()</a>.</p>
 <div class="dynheader">
@@ -263,7 +263,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;{<span class="keywordflow">return</span> 2;}</div>
+<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;{<span class="keywordflow">return</span> 2;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -324,24 +324,24 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    {</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">// Upwinding flags</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">if</span> (upw_lo != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0)) upw_lo = (upw_lo &gt; 0) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) : -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sp1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i+1, j  , k  , qty_index);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> s   = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i-1, j  , k  , qty_index);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm2 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i-2, j  , k  , qty_index);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="comment">// Left and right fluxes</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Fhi = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(s  ,sm1,sm2);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Flo = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(sm1,s  ,sp1);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="comment">// Numerical flux</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        val_lo = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) + upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Fhi + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Flo;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
-<div class="ttc" id="astructUPWIND3SL_html_a72afe09e7ec9ddef3dea22138bc203af"><div class="ttname"><a href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">UPWIND3SL::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:303</div></div>
+<div class="fragment"><div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">// Upwinding flags</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> (upw_lo != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0)) upw_lo = (upw_lo &gt; 0) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) : -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sp1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i+1, j  , k  , qty_index);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> s   = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i-1, j  , k  , qty_index);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm2 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i-2, j  , k  , qty_index);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="comment">// Left and right fluxes</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Fhi = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(s  ,sm1,sm2);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Flo = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(sm1,s  ,sp1);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="comment">// Numerical flux</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        val_lo = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) + upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Fhi + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Flo;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
+<div class="ttc" id="astructUPWIND3SL_html_a72afe09e7ec9ddef3dea22138bc203af"><div class="ttname"><a href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">UPWIND3SL::Evaluate</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Evaluate(const amrex::Real &amp;s, const amrex::Real &amp;sm1, const amrex::Real &amp;sm2) const</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_UPW.H:311</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -411,23 +411,23 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="comment">// Upwinding flags</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">if</span> (upw_lo != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0)) upw_lo = (upw_lo &gt; 0) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) : -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sp1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j+1, k  , qty_index);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> s   = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j-1, k  , qty_index);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm2 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j-2, k  , qty_index);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="comment">// Left and right fluxes</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Fhi = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(s  ,sm1,sm2);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Flo = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(sm1,s  ,sp1);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="comment">// Numerical flux</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        val_lo = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) + upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Fhi + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Flo;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="comment">// Upwinding flags</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">if</span> (upw_lo != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0)) upw_lo = (upw_lo &gt; 0) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) : -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sp1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j+1, k  , qty_index);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> s   = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j-1, k  , qty_index);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm2 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j-2, k  , qty_index);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="comment">// Left and right fluxes</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Fhi = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(s  ,sm1,sm2);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Flo = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(sm1,s  ,sp1);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="comment">// Numerical flux</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        val_lo = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) + upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Fhi + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Flo;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -497,23 +497,23 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">// Upwinding flags</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">if</span> (upw_lo != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0)) upw_lo = (upw_lo &gt; 0) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) : -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sp1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k+1, qty_index);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> s   = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k  , qty_index);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k-1, qty_index);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm2 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k-2, qty_index);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="comment">// Left and right fluxes</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Fhi = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(s  ,sm1,sm2);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Flo = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(sm1,s  ,sp1);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <span class="comment">// Numerical flux</span></div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        val_lo = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) + upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Fhi + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Flo;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="comment">// Upwinding flags</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">if</span> (upw_lo != <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0)) upw_lo = (upw_lo &gt; 0) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) : -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="comment">// Data to interpolate on</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sp1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k+1, qty_index);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> s   = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k  , qty_index);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm1 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k-1, qty_index);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> sm2 = <a class="code" href="structUPWIND3SL.html#aec7e189f79eea42321c68fd561e4e1f2">m_phi</a>(i  , j  , k-2, qty_index);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="comment">// Left and right fluxes</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Fhi = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(s  ,sm1,sm2);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Flo = <a class="code" href="structUPWIND3SL.html#a72afe09e7ec9ddef3dea22138bc203af">Evaluate</a>(sm1,s  ,sp1);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="comment">// Numerical flux</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        val_lo = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) + upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Fhi + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - upw_lo)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2) * Flo;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
