@@ -12,6 +12,7 @@ var ERF__Utils_8H =
     [ "make_zcc", "ERF__Utils_8H.html#ab405f3b5732dda49ad076fab09bfbfc8", null ],
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
     [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
+    [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a92a16af32bef43b6ec16ab295c9891ec", null ],
     [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#a819326b9c0fbd5fdb9ebcca753e59ae5", null ],
     [ "realbdy_interior_bxs_xy", "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588", null ],

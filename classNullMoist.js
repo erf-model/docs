@@ -18,7 +18,6 @@ var classNullMoist =
     [ "Qstate_Moist_Size", "classNullMoist.html#af722f0334098a3e75001f799a7894ae1", null ],
     [ "Qstate_NonMoist_Size", "classNullMoist.html#aa2088fbb6bbb51945f5d5c80da2bfff3", null ],
     [ "Set_dzmin", "classNullMoist.html#a47199894161e2c6ec167c8032d7181a0", null ],
-    [ "Set_RealWidth", "classNullMoist.html#a88b448069b86e3f1e16b8e28dc38b3bb", null ],
     [ "SetCurrentLevel", "classNullMoist.html#a05c734960e2e63ca00cfeb8e5c4b8936", null ],
     [ "Update_Micro_Vars", "classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7", null ],
     [ "Update_State_Vars", "classNullMoist.html#a85dd5b9865ebdf4dd44e5d13c0ce87bb", null ],

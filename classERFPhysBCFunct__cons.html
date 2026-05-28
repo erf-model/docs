@@ -1106,19 +1106,19 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            Array4&lt;const Real&gt; z_nd_arr;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> (!gdomain.contains(cbx2))</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                Array4&lt;      Real&gt; <span class="keyword">const</span>&amp; cons_arr = mf.array(mfi);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; velx_arr = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; vely_arr = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">// We send a box with ghost cells in the lateral directions only</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="classERFPhysBCFunct__cons.html#a282797d77115e0d3cea474e42ebe89fe">impose_lateral_cons_bcs</a>(cons_arr,velx_arr,vely_arr,cbx1,domain,icomp,ncomp,nghost,time);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                z_nd_arr = <a class="code" href="classERFPhysBCFunct__cons.html#ad33ab704eb9b5d62a4db9317f40255dd">m_z_phys_nd</a>-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (!gdomain.contains(cbx2)) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                Array4&lt;      Real&gt; <span class="keyword">const</span>&amp; cons_arr = mf.array(mfi);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; velx_arr = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                Array4&lt;const Real&gt; <span class="keyword">const</span>&amp; vely_arr = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.const_array(mfi);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="classERFPhysBCFunct__cons.html#a0e54453355d6a7c96044113c8827a008">m_use_real_bcs</a>) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <span class="comment">// We send a box with ghost cells in the lateral directions only</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <a class="code" href="classERFPhysBCFunct__cons.html#a282797d77115e0d3cea474e42ebe89fe">impose_lateral_cons_bcs</a>(cons_arr,velx_arr,vely_arr,cbx1,domain,icomp,ncomp,nghost,time);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="comment">// We send the full FAB box with ghost cells</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classERFPhysBCFunct__cons.html#a33ba4596d11bd60f2a34b9926f2255a5">impose_vertical_cons_bcs</a>(cons_arr,cbx2,domain,z_nd_arr,<a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>,icomp,ncomp,time,do_terrain_adjustment);</div>

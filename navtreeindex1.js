@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5":[3,0,1,22,37],
 "ERF__Constants_8H.html#aee9241d04ff505346b552544969d619a":[3,0,1,22,29],
 "ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222":[3,0,1,22,50],
 "ERF__Constants_8H.html#af5689377f29be012360a846bd447e278":[3,0,1,22,32],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__EpochTime_8H_source.html":[3,0,1,18,6],
 "ERF__EulerianMicrophysics_8H.html":[3,0,1,10,7],
 "ERF__EulerianMicrophysics_8H_source.html":[3,0,1,10,7],
-"ERF__FillBdyCCVels_8cpp.html":[3,0,1,1,6],
-"ERF__FillCoarsePatch_8cpp.html":[3,0,1,1,7]
+"ERF__FillBdyCCVels_8cpp.html":[3,0,1,1,7]
 };

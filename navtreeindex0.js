@@ -110,9 +110,10 @@ var NAVTREEINDEX0 =
 "ERF__BoundaryConditionsBaseState_8cpp.html":[3,0,1,1,0],
 "ERF__BoundaryConditionsBndryReg_8cpp.html":[3,0,1,1,1],
 "ERF__BoundaryConditionsCons_8cpp.html":[3,0,1,1,2],
-"ERF__BoundaryConditionsXvel_8cpp.html":[3,0,1,1,3],
-"ERF__BoundaryConditionsYvel_8cpp.html":[3,0,1,1,4],
-"ERF__BoundaryConditionsZvel_8cpp.html":[3,0,1,1,5],
+"ERF__BoundaryConditionsRealbdy_8cpp.html":[3,0,1,1,3],
+"ERF__BoundaryConditionsXvel_8cpp.html":[3,0,1,1,4],
+"ERF__BoundaryConditionsYvel_8cpp.html":[3,0,1,1,5],
+"ERF__BoundaryConditionsZvel_8cpp.html":[3,0,1,1,6],
 "ERF__BuoyancyUtils_8H.html":[3,0,1,15,5],
 "ERF__BuoyancyUtils_8H.html#a2f1ede040208afa92456921c0208dfaa":[3,0,1,15,5,5],
 "ERF__BuoyancyUtils_8H.html#a3acc9035bcbdb59fc309645986d25215":[3,0,1,15,5,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870":[3,0,1,22,59],
 "ERF__Constants_8H.html#aeb6d6f09d27c3f646bc4d91b7b88e570":[3,0,1,22,5],
 "ERF__Constants_8H.html#aedc41c83fba50dcbd5e1385007d3edec":[3,0,1,22,18],
-"ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc":[3,0,1,22,10],
-"ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5":[3,0,1,22,37]
+"ERF__Constants_8H.html#aee22c64edc9a6e972b3866ee44c575fc":[3,0,1,22,10]
 };
