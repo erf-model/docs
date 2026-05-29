@@ -216,7 +216,6 @@ var NAVTREEINDEX7 =
 "ERF__RRTMGP__Interface_8H.html#a25c6930032b0aec94f60d91c2eecc5b7":[3,0,1,13,0,6,0],
 "ERF__RRTMGP__Interface_8H.html#a28e3587b50833fd1f2c5a910b1392c43":[3,0,1,13,0,6,22],
 "ERF__RRTMGP__Interface_8H.html#a36564577866391c3de00afc0f6c3e0fe":[3,0,1,13,0,6,21],
-"ERF__RRTMGP__Interface_8H.html#a38b1a9281557b02960339297bd401ef1":[3,0,1,13,0,6,26],
 "ERF__RRTMGP__Interface_8H.html#a49374093beae1d74627741563a8018f9":[3,0,1,13,0,6,11],
 "ERF__RRTMGP__Interface_8H.html#a5880e93afd0b514fdeadc1a74b80001e":[3,0,1,13,0,6,15],
 "ERF__RRTMGP__Interface_8H.html#a59f6ccba18ab45608124b945cdbd585e":[3,0,1,13,0,6,6],
@@ -226,6 +225,7 @@ var NAVTREEINDEX7 =
 "ERF__RRTMGP__Interface_8H.html#a6438f8d9b6e4afaca9963db3d657cab9":[3,0,1,13,0,6,2],
 "ERF__RRTMGP__Interface_8H.html#a686baa053db8c7c8b88243794e6eff5c":[3,0,1,13,0,6,20],
 "ERF__RRTMGP__Interface_8H.html#a699710d3987934ca5306477d2134e6c2":[3,0,1,13,0,6,7],
+"ERF__RRTMGP__Interface_8H.html#a6be2d84e56163f53a1f2d09b4a574ede":[3,0,1,13,0,6,26],
 "ERF__RRTMGP__Interface_8H.html#a825e4ec715986e7ce3ccbc7fa0a16959":[3,0,1,13,0,6,16],
 "ERF__RRTMGP__Interface_8H.html#a8305236ede8d163161af7f34bd11f010":[3,0,1,13,0,6,3],
 "ERF__RRTMGP__Interface_8H.html#a83b2e0892e5b475f2f464b4285edfe47":[3,0,1,13,0,6,27],
@@ -243,11 +243,11 @@ var NAVTREEINDEX7 =
 "ERF__RRTMGP__Interface_8cpp.html#a0753e963249f868a2d6f9e23110965eb":[3,0,1,13,0,5,13],
 "ERF__RRTMGP__Interface_8cpp.html#a28e3587b50833fd1f2c5a910b1392c43":[3,0,1,13,0,5,11],
 "ERF__RRTMGP__Interface_8cpp.html#a36564577866391c3de00afc0f6c3e0fe":[3,0,1,13,0,5,10],
-"ERF__RRTMGP__Interface_8cpp.html#a38b1a9281557b02960339297bd401ef1":[3,0,1,13,0,5,15],
 "ERF__RRTMGP__Interface_8cpp.html#a49374093beae1d74627741563a8018f9":[3,0,1,13,0,5,0],
 "ERF__RRTMGP__Interface_8cpp.html#a5880e93afd0b514fdeadc1a74b80001e":[3,0,1,13,0,5,4],
 "ERF__RRTMGP__Interface_8cpp.html#a5bdcb46d3d0763ebe14aaab19d71f82e":[3,0,1,13,0,5,1],
 "ERF__RRTMGP__Interface_8cpp.html#a5e91d19b115d642a8290a3324aa819e4":[3,0,1,13,0,5,2],
 "ERF__RRTMGP__Interface_8cpp.html#a5ea46949a2a093209cb2f55d8d763a9c":[3,0,1,13,0,5,7],
-"ERF__RRTMGP__Interface_8cpp.html#a623070abd11c95464bfdbf6eb8dad630":[3,0,1,13,0,5,21]
+"ERF__RRTMGP__Interface_8cpp.html#a623070abd11c95464bfdbf6eb8dad630":[3,0,1,13,0,5,21],
+"ERF__RRTMGP__Interface_8cpp.html#a686baa053db8c7c8b88243794e6eff5c":[3,0,1,13,0,5,9]
 };
