@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"structbulk__coeff__flux.html#a8c82b46219b93ff58e52a305530c55c7":[2,0,7,4],
 "structcustom__flux.html":[2,0,11],
 "structcustom__flux.html#a2afa941df86f576b698265d6ed1a7b92":[2,0,11,3],
 "structcustom__flux.html#a44c3eefb401c1feabf77805966ae90c9":[2,0,11,1],

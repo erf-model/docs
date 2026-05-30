@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"classncutils_1_1NCGroup.html#aef6b6e2be36e6179a001d9873e94df82":[2,0,0,3,9],
 "classncutils_1_1NCGroup.html#af7847ff27ccb8499814b7f21559e2e84":[2,0,0,3,23],
 "classncutils_1_1NCGroup.html#affa2e62434110dd4fa47d093162e56cf":[2,0,0,3,4],
 "classpolygon__.html":[2,0,65],
@@ -203,8 +204,8 @@ var NAVTREEINDEX20 =
 "globals_type.html":[3,1,3],
 "globals_u.html":[3,1,0,20],
 "globals_v.html":[3,1,0,21],
-"globals_vars.html":[3,1,2,0],
 "globals_vars.html":[3,1,2],
+"globals_vars.html":[3,1,2,0],
 "globals_vars_b.html":[3,1,2,1],
 "globals_vars_c.html":[3,1,2,2],
 "globals_vars_d.html":[3,1,2,3],
@@ -235,8 +236,8 @@ var NAVTREEINDEX20 =
 "globals_y.html":[3,1,0,24],
 "globals_z.html":[3,1,0,25],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "main_8cpp.html#aabaa127a3a319c1b86090d6c88568965":[3,0,1,33,2],
 "namespaceBCVars.html":[1,0,3],
 "namespaceBaseBCVars.html":[1,0,1],
-"namespaceBaseState.html":[1,0,2],
-"namespaceERF.html":[1,0,6]
+"namespaceBaseState.html":[1,0,2]
 };

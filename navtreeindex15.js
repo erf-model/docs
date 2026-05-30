@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0":[2,0,52,4],
 "classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c":[2,0,52,20],
 "classMOSTAverage.html#a514120312387f28a1624387b0e3af360":[2,0,52,19],
 "classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e":[2,0,52,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "classNullWindFarm.html#a86792dc0d8fb3dfc9b9646c38a2926da":[2,0,61,36],
 "classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef":[2,0,61,34],
 "classNullWindFarm.html#aabb34a6b16b5001624bf06c98aa226a9":[2,0,61,16],
-"classNullWindFarm.html#aac5f552b2717ab7f177541c1bf09828a":[2,0,61,26],
-"classNullWindFarm.html#aadf3ba54909c2931d089f631889dbd5b":[2,0,61,13]
+"classNullWindFarm.html#aac5f552b2717ab7f177541c1bf09828a":[2,0,61,26]
 };

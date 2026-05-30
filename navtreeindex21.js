@@ -1,5 +1,6 @@
 var NAVTREEINDEX21 =
 {
+"namespaceERF.html":[1,0,6],
 "namespaceERFBCType.html":[1,0,7],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c":[1,0,7,0],
 "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca0b217c3380adcde8f3cd9b58d949db60":[1,0,7,0,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX21 =
 "namespacemodule__model__constants.html#a85ccb76e67793d08e20b0a2fe27a1b45":[1,0,23,62],
 "namespacemodule__model__constants.html#a87ed20dd5ad2cdc1061945f9abf77abe":[1,0,23,69],
 "namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721":[1,0,23,29],
-"namespacemodule__model__constants.html#a8fa4176fb4dc3b202ead3420f03950c4":[1,0,23,1],
-"namespacemodule__model__constants.html#a9026a0a79672ebe87799b686c896e3d9":[1,0,23,31]
+"namespacemodule__model__constants.html#a8fa4176fb4dc3b202ead3420f03950c4":[1,0,23,1]
 };

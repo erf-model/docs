@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"structTurbChoice.html#a11fd9429567c4dd4afa871170580aed0":[2,0,107,21],
 "structTurbChoice.html#a15b9bb58cde72bab3f5714934125f3f9":[2,0,107,23],
 "structTurbChoice.html#a1747326b209e7af178dcd29d1623414c":[2,0,107,17],
 "structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b":[2,0,107,44],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "structbulk__coeff__flux.html#a157187c650e01c56ccb40fce7af23017":[2,0,7,0],
 "structbulk__coeff__flux.html#a3fae5f879352f1e3f643e1e644a53274":[2,0,7,1],
 "structbulk__coeff__flux.html#a724d9b2415d8fbddea690c42b1d713a9":[2,0,7,5],
-"structbulk__coeff__flux.html#a7caa620f5a13388eea8ff2ba04674a46":[2,0,7,2],
-"structbulk__coeff__flux.html#a8c82b46219b93ff58e52a305530c55c7":[2,0,7,4]
+"structbulk__coeff__flux.html#a7caa620f5a13388eea8ff2ba04674a46":[2,0,7,2]
 };

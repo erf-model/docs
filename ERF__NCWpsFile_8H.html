@@ -554,12 +554,12 @@ template&lt;class FAB , typename DType &gt; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        my_box.setType(amrex::IndexType(amrex::IntVect(0,0,1)));</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    amrex::Arena* Arena_Used = amrex::The_Arena();</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    amrex::Arena* <a class="code" href="ERF__Morrison__Advance__F_8H.html#a5236f5ee5fee3d7229a6a45d22525600">Arena_Used</a> = amrex::The_Arena();</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="comment">// Make sure temp lives on CPU since nc_arrays lives on CPU only</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    Arena_Used = amrex::The_Pinned_Arena();</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a5236f5ee5fee3d7229a6a45d22525600">Arena_Used</a> = amrex::The_Pinned_Arena();</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    temp.resize(my_box,1, Arena_Used);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    temp.resize(my_box,1, <a class="code" href="ERF__Morrison__Advance__F_8H.html#a5236f5ee5fee3d7229a6a45d22525600">Arena_Used</a>);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    amrex::Array4&lt;DType&gt; fab_arr = temp.array();</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordtype">int</span> ioff = temp.box().smallEnd()[0];</div>
@@ -578,6 +578,7 @@ template&lt;class FAB , typename DType &gt; </div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a5236f5ee5fee3d7229a6a45d22525600"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a5236f5ee5fee3d7229a6a45d22525600">Arena_Used</a></div><div class="ttdeci">Arena * Arena_Used</div><div class="ttdef"><b>Definition:</b> ERF_Morrison_Advance_F.H:17</div></div>
 </div><!-- fragment -->
 </div>
 </div>
