@@ -110,7 +110,7 @@ Collaboration diagram for NullMoist:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNullMoist__coll__graph.png" border="0" usemap="#aNullMoist_coll__map" alt="Collaboration graph"/></div>
 <map name="aNullMoist_coll__map" id="aNullMoist_coll__map">
-<area shape="rect" title=" " alt="" coords="5,124,89,151"/>
+<area shape="rect" title=" " alt="" coords="5,153,89,180"/>
 <area shape="rect" title=" " alt="" coords="28,5,67,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -141,6 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abdf706f193bbb09c62e41734570f3cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af722f0334098a3e75001f799a7894ae1"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#af722f0334098a3e75001f799a7894ae1">Qstate_Moist_Size</a> ()</td></tr>
 <tr class="separator:af722f0334098a3e75001f799a7894ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f95ad7c0c5562d130e6e054d88b69bd"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a7f95ad7c0c5562d130e6e054d88b69bd">Qstate_Moist_NumConc_Size</a> ()</td></tr>
+<tr class="separator:a7f95ad7c0c5562d130e6e054d88b69bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2088fbb6bbb51945f5d5c80da2bfff3"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aa2088fbb6bbb51945f5d5c80da2bfff3">Qstate_NonMoist_Size</a> ()</td></tr>
 <tr class="separator:aa2088fbb6bbb51945f5d5c80da2bfff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77d6c9875f6a3a7242b090e6fece5c0f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a77d6c9875f6a3a7242b090e6fece5c0f">Qmoist_Restart_Vars</a> (const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;, std::vector&lt; int &gt; &amp;a_idx, std::vector&lt; std::string &gt; &amp;a_names) const</td></tr>
@@ -168,6 +170,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a645f66b91b08d84aa7451a9da0c11a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a051a8523335aa2bce3462d612de30a0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a051a8523335aa2bce3462d612de30a0e">m_qstate_moist_size</a> = 0</td></tr>
 <tr class="separator:a051a8523335aa2bce3462d612de30a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a7bd714adf24d5e8cf5adf059a1180"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a97a7bd714adf24d5e8cf5adf059a1180">m_qstate_moist_numconc_size</a> = 0</td></tr>
+<tr class="separator:a97a7bd714adf24d5e8cf5adf059a1180"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab419120b42fba2664d4d937c02209b96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#ab419120b42fba2664d4d937c02209b96">m_qstate_nonmoist_size</a> = 0</td></tr>
 <tr class="separator:ab419120b42fba2664d4d937c02209b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -372,7 +376,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{ <span class="keywordflow">return</span> 0; }</div>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{ <span class="keywordflow">return</span> 0; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -411,9 +415,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classMorrison.html#aa835995cc246144c5de532c119c2d8be">Morrison</a>.</p>
-<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;NullMoist::GetPlotVar() should never be called.&quot;</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;NullMoist::GetPlotVar() should never be called.&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classNullMoist.html#a56d502e7343315bb1115c2489852acbe">GetPlotVar()</a>.</p>
 <div class="dynheader">
@@ -469,10 +473,10 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classMorrison.html#a4758477b981620315ed79d08e8acc5dd">Morrison</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="classNullMoist.html#a2f37a246b6a0ffcde7fa9e2ca4c8d63e">GetPlotVar</a>(a_name, a_mf);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="ttc" id="aclassNullMoist_html_a2f37a246b6a0ffcde7fa9e2ca4c8d63e"><div class="ttname"><a href="classNullMoist.html#a2f37a246b6a0ffcde7fa9e2ca4c8d63e">NullMoist::GetPlotVar</a></div><div class="ttdeci">virtual void GetPlotVar(const std::string &amp;, amrex::MultiFab &amp;) const</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:82</div></div>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classNullMoist.html#a2f37a246b6a0ffcde7fa9e2ca4c8d63e">GetPlotVar</a>(a_name, a_mf);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="ttc" id="aclassNullMoist_html_a2f37a246b6a0ffcde7fa9e2ca4c8d63e"><div class="ttname"><a href="classNullMoist.html#a2f37a246b6a0ffcde7fa9e2ca4c8d63e">NullMoist::GetPlotVar</a></div><div class="ttdeci">virtual void GetPlotVar(const std::string &amp;, amrex::MultiFab &amp;) const</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:86</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -510,9 +514,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classMorrison.html#a18f7ad113d44b3d724b8ff1b92700c62">Morrison</a>.</p>
-<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        a_vec.resize(0);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        a_vec.resize(0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -612,7 +616,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -686,10 +690,10 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWSM6.html#a2f1513cb4be100f9de8a7c447fd35a26">WSM6</a>, <a class="el" href="classSatAdj.html#a1992e08a2b7e9319348b69bf940e972c">SatAdj</a>, <a class="el" href="classSAM.html#acdbfb54576b12ad828cee80ac3ecb2f4">SAM</a>, <a class="el" href="classMorrison.html#a2269eb1d7ce46e6eba5ffe3ad1489c57">Morrison</a>, and <a class="el" href="classKessler.html#a3321a4d20bb535a6afb0a041a45fddfb">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        a_idx.clear();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        a_names.clear();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        a_idx.clear();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        a_names.clear();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -718,7 +722,36 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classWSM6.html#afce5ef05a3f8017eeb8c6c3ca125d75a">WSM6</a>, <a class="el" href="classSatAdj.html#a0db3dd50c312798eeb542682063ba06f">SatAdj</a>, <a class="el" href="classSAM.html#ae27c1d50525a70f838fa9ba73e61ef46">SAM</a>, <a class="el" href="classMorrison.html#a9fc43dc29aa5c3106aa69d1350c793c1">Morrison</a>, and <a class="el" href="classKessler.html#a3925ff722ac968e306dbcc233718030a">Kessler</a>.</p>
 <div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a>; }</div>
-<div class="ttc" id="aclassNullMoist_html_a645f66b91b08d84aa7451a9da0c11a72"><div class="ttname"><a href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:123</div></div>
+<div class="ttc" id="aclassNullMoist_html_a645f66b91b08d84aa7451a9da0c11a72"><div class="ttname"><a href="classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72">NullMoist::m_qmoist_size</a></div><div class="ttdeci">int m_qmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:127</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7f95ad7c0c5562d130e6e054d88b69bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f95ad7c0c5562d130e6e054d88b69bd">&#9670;&nbsp;</a></span>Qstate_Moist_NumConc_Size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int NullMoist::Qstate_Moist_NumConc_Size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classWSM6.html#abea32c62c27936597b328d690207095c">WSM6</a>, <a class="el" href="classSatAdj.html#a64a6e9a74495b9d700cbb93d566865a9">SatAdj</a>, <a class="el" href="classSAM.html#af747e83ce3ead3096de87f7317155fcc">SAM</a>, <a class="el" href="classMorrison.html#a5be8bc25a662280f49a97d8961638263">Morrison</a>, and <a class="el" href="classKessler.html#ae12ea12144f6b8c87d10e5e0bd8d4e7d">Kessler</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a97a7bd714adf24d5e8cf5adf059a1180">NullMoist::m_qstate_moist_numconc_size</a>; }</div>
+<div class="ttc" id="aclassNullMoist_html_a97a7bd714adf24d5e8cf5adf059a1180"><div class="ttname"><a href="classNullMoist.html#a97a7bd714adf24d5e8cf5adf059a1180">NullMoist::m_qstate_moist_numconc_size</a></div><div class="ttdeci">int m_qstate_moist_numconc_size</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:129</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -747,7 +780,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classWSM6.html#ab0d8f4c45206eb492c00c919317e49ca">WSM6</a>, <a class="el" href="classSatAdj.html#a85ad6051be8bc789ce6828f02971e2ea">SatAdj</a>, <a class="el" href="classSAM.html#a7f12a9932e40496806423afe9cfecc93">SAM</a>, <a class="el" href="classMorrison.html#a2fb8fc64e2207048b2fcb561bec878af">Morrison</a>, and <a class="el" href="classKessler.html#a7274dbb67bb2d016bc3398e1e7aac605">Kessler</a>.</p>
 <div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#a051a8523335aa2bce3462d612de30a0e">NullMoist::m_qstate_moist_size</a>; }</div>
-<div class="ttc" id="aclassNullMoist_html_a051a8523335aa2bce3462d612de30a0e"><div class="ttname"><a href="classNullMoist.html#a051a8523335aa2bce3462d612de30a0e">NullMoist::m_qstate_moist_size</a></div><div class="ttdeci">int m_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:124</div></div>
+<div class="ttc" id="aclassNullMoist_html_a051a8523335aa2bce3462d612de30a0e"><div class="ttname"><a href="classNullMoist.html#a051a8523335aa2bce3462d612de30a0e">NullMoist::m_qstate_moist_size</a></div><div class="ttdeci">int m_qstate_moist_size</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:128</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -773,8 +806,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#ab419120b42fba2664d4d937c02209b96">NullMoist::m_qstate_nonmoist_size</a>; }</div>
-<div class="ttc" id="aclassNullMoist_html_ab419120b42fba2664d4d937c02209b96"><div class="ttname"><a href="classNullMoist.html#ab419120b42fba2664d4d937c02209b96">NullMoist::m_qstate_nonmoist_size</a></div><div class="ttdeci">int m_qstate_nonmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:125</div></div>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullMoist.html#ab419120b42fba2664d4d937c02209b96">NullMoist::m_qstate_nonmoist_size</a>; }</div>
+<div class="ttc" id="aclassNullMoist_html_ab419120b42fba2664d4d937c02209b96"><div class="ttname"><a href="classNullMoist.html#ab419120b42fba2664d4d937c02209b96">NullMoist::m_qstate_nonmoist_size</a></div><div class="ttdeci">int m_qstate_nonmoist_size</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:130</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -803,7 +836,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classWSM6.html#afb38af9363dd92b7269d17c450cd333b">WSM6</a>, <a class="el" href="classSAM.html#a941072443fd9254c81c1a847f4187a03">SAM</a>, <a class="el" href="classMorrison.html#a5e96779015fb5d544dbb45f7b48c9d13">Morrison</a>, and <a class="el" href="classKessler.html#a38b2e74c4d5fdce0c6ec170b1e179bce">Kessler</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -830,7 +863,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -857,7 +890,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -951,6 +984,30 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="classNullMoist.html#abdf706f193bbb09c62e41734570f3cd1">Qmoist_Size()</a>.</p>
+
+</div>
+</div>
+<a id="a97a7bd714adf24d5e8cf5adf059a1180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a7bd714adf24d5e8cf5adf059a1180">&#9670;&nbsp;</a></span>m_qstate_moist_numconc_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int NullMoist::m_qstate_moist_numconc_size = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classNullMoist.html#a7f95ad7c0c5562d130e6e054d88b69bd">Qstate_Moist_NumConc_Size()</a>.</p>
 
 </div>
 </div>

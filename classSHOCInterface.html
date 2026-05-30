@@ -1019,7 +1019,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; u_tend_arr = <a class="code" href="classSHOCInterface.html#adb8146c317beeca053c8c419ba84479e">u_tend</a>.const_array(mfi);</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; v_tend_arr = <a class="code" href="classSHOCInterface.html#adbf4ac98d4efee3e978e64c028279b69">v_tend</a>.const_array(mfi);</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(vbx_cc, vbx_x, vbx_y,</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx_cc, vbx_x, vbx_y,</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        {</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            cc_rhs_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) += c_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * c_tend_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
@@ -1036,24 +1036,21 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a84e204b057acb38e8a4c184a5c036b77"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+myhalf) *dx[0];const Real y=(j+myhalf) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - one)/(two *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(one+deltaT, inv_gm1);const Real T=(one+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=fourth *(one+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a6875b74a2f13f320d262d03f213dbb15"><div class="ttname"><a href="classSHOCInterface.html#a6875b74a2f13f320d262d03f213dbb15">SHOCInterface::c_tend</a></div><div class="ttdeci">amrex::MultiFab c_tend</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:614</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_aa7ee7a5282cf860b87716068344850d8"><div class="ttname"><a href="classSHOCInterface.html#aa7ee7a5282cf860b87716068344850d8">SHOCInterface::m_cons</a></div><div class="ttdeci">amrex::MultiFab * m_cons</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:591</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_adb8146c317beeca053c8c419ba84479e"><div class="ttname"><a href="classSHOCInterface.html#adb8146c317beeca053c8c419ba84479e">SHOCInterface::u_tend</a></div><div class="ttdeci">amrex::MultiFab u_tend</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:615</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_adbf4ac98d4efee3e978e64c028279b69"><div class="ttname"><a href="classSHOCInterface.html#adbf4ac98d4efee3e978e64c028279b69">SHOCInterface::v_tend</a></div><div class="ttdeci">amrex::MultiFab v_tend</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:616</div></div>
-<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:178</div></div>
-<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:176</div></div>
-<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:177</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:193</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169a2e7100afbf5e7a39371f1cb29f6f570a"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e7100afbf5e7a39371f1cb29f6f570a">IntVars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:191</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:192</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph.png" border="0" usemap="#aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph" id="aclassSHOCInterface_af166799b9c78bc59cb1db5fd9eb25ddf_cgraph">
-<area shape="rect" title=" " alt="" coords="5,49,155,90"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="203,56,293,83"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="341,5,497,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="345,56,494,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="375,107,463,133"/>
+<area shape="rect" title=" " alt="" coords="5,5,155,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="203,13,293,39"/>
 </map>
 </div>
 
@@ -1097,7 +1094,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; c_tend_arr = <a class="code" href="classSHOCInterface.html#a6875b74a2f13f320d262d03f213dbb15">c_tend</a>.const_array(mfi);</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    {</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        cc_rhs_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) += c_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * c_tend_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>);</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;        <span class="keywordflow">if</span> (moist) {</div>
@@ -1114,11 +1111,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph.png" border="0" usemap="#aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph" id="aclassSHOCInterface_ae5e0a78be62a4a50b3b0cbf64cb35d68_cgraph">
-<area shape="rect" title=" " alt="" coords="5,49,155,90"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="203,56,293,83"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="341,5,497,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="345,56,494,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="375,107,463,133"/>
+<area shape="rect" title=" " alt="" coords="5,5,155,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="203,13,293,39"/>
 </map>
 </div>
 
@@ -1383,7 +1377,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;        }</div>
 <div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;    });</div>
 <div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160;}</div>
-<div class="ttc" id="anamespaceWRFBdyVars_html_a7823146ef50207dd979b96867b57f880a56079d34fee7d4d15412dfffaa370ad9"><div class="ttname"><a href="namespaceWRFBdyVars.html#a7823146ef50207dd979b96867b57f880a56079d34fee7d4d15412dfffaa370ad9">WRFBdyVars::PC</a></div><div class="ttdeci">@ PC</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:123</div></div>
+<div class="ttc" id="anamespaceWRFBdyVars_html_a7823146ef50207dd979b96867b57f880a56079d34fee7d4d15412dfffaa370ad9"><div class="ttname"><a href="namespaceWRFBdyVars.html#a7823146ef50207dd979b96867b57f880a56079d34fee7d4d15412dfffaa370ad9">WRFBdyVars::PC</a></div><div class="ttdeci">@ PC</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:138</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1900,7 +1894,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; u_tend_arr     = <a class="code" href="classSHOCInterface.html#adb8146c317beeca053c8c419ba84479e">u_tend</a>.array(mfi);</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; v_tend_arr     = <a class="code" href="classSHOCInterface.html#adbf4ac98d4efee3e978e64c028279b69">v_tend</a>.array(mfi);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(vbx_cc, vbx_x, vbx_y,</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx_cc, vbx_x, vbx_y,</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        {</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <span class="comment">// NOTE: k gets permuted with ilay</span></div>
@@ -1958,10 +1952,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSHOCInterface_a53fba0924338b1c69707f43dd3e6348c_cgraph" id="aclassSHOCInterface_a53fba0924338b1c69707f43dd3e6348c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,176,65"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="240,5,299,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="224,56,315,83"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="363,5,519,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="366,56,515,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="397,107,485,133"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="224,56,315,83"/>
 </map>
 </div>
 
@@ -2056,7 +2047,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_arr    = (<a class="code" href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">m_z_phys</a>) ? <a class="code" href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">m_z_phys</a>-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                                                          Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        {</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="comment">// NOTE: k gets permuted with ilay</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
@@ -2166,10 +2157,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="233,5,343,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="216,56,360,83"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="259,107,317,133"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="243,157,333,184"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="408,107,564,133"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="411,157,561,184"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="442,208,530,235"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="243,157,333,184"/>
 </map>
 </div>
 
@@ -2389,7 +2377,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; t13_arr = <a class="code" href="classSHOCInterface.html#aa4b820d34643df6d00e49c7181400e2a">m_tau13</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; t23_arr = <a class="code" href="classSHOCInterface.html#a6eb36a6805389995f2075bebc9edb8c8">m_tau23</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(vbx_cc, vbx_xz, vbx_yz,</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx_cc, vbx_xz, vbx_yz,</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        {</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;            hfx_arr(i,j,k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.);</div>
@@ -2410,11 +2398,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph.png" border="0" usemap="#aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph" alt=""/></div>
 <map name="aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph" id="aclassSHOCInterface_a2397ac38923e80f869ff07b72f3bf0b9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,49,151,90"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="199,56,289,83"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="337,5,493,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="341,56,490,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="371,107,459,133"/>
+<area shape="rect" title=" " alt="" coords="5,5,151,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="199,13,289,39"/>
 </map>
 </div>
 
@@ -2467,7 +2452,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; </div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mu_arr = <a class="code" href="classSHOCInterface.html#a69c82ac3e06fe61dedf29fcdaa39c57a">m_mu</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160; </div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(gbx_cc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx_cc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        {</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="comment">// Limiting</span></div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <span class="keywordtype">int</span> ii = std::min(std::max(i,iminv),imaxv);</div>
@@ -2491,10 +2476,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <a class="code" href="classSHOCInterface.html#a69c82ac3e06fe61dedf29fcdaa39c57a">m_mu</a>-&gt;FillBoundary(<a class="code" href="classSHOCInterface.html#a0ea8d5a9b2a394e2160561aff47b61ca">m_geom</a>.periodicity());</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;}</div>
 <div class="ttc" id="aclassSHOCInterface_html_a69c82ac3e06fe61dedf29fcdaa39c57a"><div class="ttname"><a href="classSHOCInterface.html#a69c82ac3e06fe61dedf29fcdaa39c57a">SHOCInterface::m_mu</a></div><div class="ttdeci">amrex::MultiFab * m_mu</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:608</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:194</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a4166b9561a2ef0ad6d1b6d2c34cb9580"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a></div><div class="ttdeci">@ Q_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:197</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:193</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a937c191d351b2c26cd7ea07878978b94"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a></div><div class="ttdeci">@ KE_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:195</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:209</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a4166b9561a2ef0ad6d1b6d2c34cb9580"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a4166b9561a2ef0ad6d1b6d2c34cb9580">EddyDiff::Q_v</a></div><div class="ttdeci">@ Q_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:212</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:208</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a937c191d351b2c26cd7ea07878978b94"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a937c191d351b2c26cd7ea07878978b94">EddyDiff::KE_v</a></div><div class="ttdeci">@ KE_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:210</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2502,10 +2487,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSHOCInterface_ac1770942070cea4268124471500c6091_cgraph" id="aclassSHOCInterface_ac1770942070cea4268124471500c6091_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,151,65"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="215,5,273,32"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="199,56,289,83"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="337,5,493,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="341,56,490,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="371,107,459,133"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="199,56,289,83"/>
 </map>
 </div>
 
@@ -2676,10 +2658,10 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassSHOCInterface_html_a1bdb1da0e57b13491fc1c08267069995"><div class="ttname"><a href="classSHOCInterface.html#a1bdb1da0e57b13491fc1c08267069995">SHOCInterface::init_buffers</a></div><div class="ttdeci">void init_buffers()</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.cpp:786</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_acb208b261a3900862c1d444d4d8bbcfc"><div class="ttname"><a href="classSHOCInterface.html#acb208b261a3900862c1d444d4d8bbcfc">SHOCInterface::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:579</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_ad1f2c19ca17e9a39016219c090475857"><div class="ttname"><a href="classSHOCInterface.html#ad1f2c19ca17e9a39016219c090475857">SHOCInterface::mf_to_kokkos_buffers</a></div><div class="ttdeci">void mf_to_kokkos_buffers()</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.cpp:348</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:159</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:158</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:161</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:160</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:174</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:173</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:176</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:175</div></div>
 </div><!-- fragment -->
 </div>
 </div>

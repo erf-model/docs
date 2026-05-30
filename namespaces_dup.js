@@ -216,7 +216,7 @@ var namespaces_dup =
       [ "gamma", "namespacemodule__mp__morr__two__moment.html#a42d4f49e16f20ecf5712c4dd918ac495", null ],
       [ "morr_two_moment_init", "namespacemodule__mp__morr__two__moment.html#a2a889b6266f208e6ac8cc9826cb8dd38", null ],
       [ "morr_two_moment_micro", "namespacemodule__mp__morr__two__moment.html#a52065bf3dbca1e4cae410c09432a2a55", null ],
-      [ "mp_morr_two_moment", "namespacemodule__mp__morr__two__moment.html#acab1be001816c2e3e8a535555147ed3f", null ],
+      [ "mp_morr_two_moment", "namespacemodule__mp__morr__two__moment.html#a26921370b648e55793fefab00dac7e84", null ],
       [ "polysvp", "namespacemodule__mp__morr__two__moment.html#af11f1d093484c24bcfe7ca392ab7f34f", null ],
       [ "set_morrison_ndcnst", "namespacemodule__mp__morr__two__moment.html#ac1f602991a2bc1a593b4237bc7fa528e", null ],
       [ "ac", "namespacemodule__mp__morr__two__moment.html#af1e477a09e751e2630ec7f333fdae227", null ],
@@ -341,7 +341,7 @@ var namespaces_dup =
     [ "MORRInd", "namespaceMORRInd.html", null ],
     [ "mp_morr_two_moment_isohelper", "namespacemp__morr__two__moment__isohelper.html", [
       [ "morr_two_moment_init_c", "namespacemp__morr__two__moment__isohelper.html#ae19641d8681253b2c10ff7252446f702", null ],
-      [ "mp_morr_two_moment_c", "namespacemp__morr__two__moment__isohelper.html#af867a413578382f914f3f518665333c0", null ]
+      [ "mp_morr_two_moment_c", "namespacemp__morr__two__moment__isohelper.html#a7931a8516152c9f035b298c87b976b96", null ]
     ] ],
     [ "mp_wsm6", "namespacemp__wsm6.html", [
       [ "fpvs", "namespacemp__wsm6.html#a8be6067ccc4a9cc8a6956cc3d0c0c69f", null ],

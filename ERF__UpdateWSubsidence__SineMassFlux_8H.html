@@ -164,23 +164,20 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                                                    {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;box = mfi.tilebox();</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keyword">auto</span> state_arr = state.const_array(mfi);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;            <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>[k] = state_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        });</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a84e204b057acb38e8a4c184a5c036b77"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+myhalf) *dx[0];const Real y=(j+myhalf) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - one)/(two *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(one+deltaT, inv_gm1);const Real T=(one+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=fourth *(one+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a250b5b8817230db7d56e064212449a23"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a></div><div class="ttdeci">auto rho_arr</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSubsidence_SineMassFlux.H:3</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph.png" border="0" usemap="#aERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph" alt=""/></div>
 <map name="aERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph" id="aERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,45,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="93,56,184,83"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="232,5,388,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="235,56,385,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="266,107,354,133"/>
+<area shape="rect" title=" " alt="" coords="5,5,45,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="93,5,184,32"/>
 </map>
 </div>
 
@@ -212,18 +209,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76">Morrison::Compute_Coefficients()</a>, <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, and <a class="el" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00">ERF::FillForecastStateMultiFabs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, and <a class="el" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00">ERF::FillForecastStateMultiFabs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__UpdateWSubsidence__SineMassFlux_8H_a6be96a64acec1ea5e14b5a6f48eacc89_icgraph.png" border="0" usemap="#aERF__UpdateWSubsidence__SineMassFlux_8H_a6be96a64acec1ea5e14b5a6f48eacc89_icgraph" alt=""/></div>
 <map name="aERF__UpdateWSubsidence__SineMassFlux_8H_a6be96a64acec1ea5e14b5a6f48eacc89_icgraph" id="aERF__UpdateWSubsidence__SineMassFlux_8H_a6be96a64acec1ea5e14b5a6f48eacc89_icgraph">
-<area shape="rect" title=" " alt="" coords="544,56,603,83"/>
-<area shape="rect" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76" title=" " alt="" coords="265,5,496,32"/>
-<area shape="rect" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40" title=" " alt="" coords="279,56,482,83"/>
-<area shape="rect" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00" title=" " alt="" coords="269,107,493,133"/>
-<area shape="rect" href="classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63" title=" " alt="" coords="5,5,217,32"/>
-<area shape="rect" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e" title=" " alt="" coords="19,56,204,83"/>
+<area shape="rect" title=" " alt="" coords="511,31,569,57"/>
+<area shape="rect" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40" title=" " alt="" coords="249,5,452,32"/>
+<area shape="rect" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00" title=" " alt="" coords="239,56,463,83"/>
+<area shape="rect" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e" title=" " alt="" coords="5,5,191,32"/>
 </map>
 </div>
 
@@ -255,20 +250,18 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76">Morrison::Compute_Coefficients()</a>, <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, <a class="el" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00">ERF::FillForecastStateMultiFabs()</a>, <a class="el" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a294cd4a95eeb4f542c5f33f524da5d64">for()</a>, and <a class="el" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">ReadCustomBinaryIC()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40">SAM::Compute_Coefficients()</a>, <a class="el" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00">ERF::FillForecastStateMultiFabs()</a>, <a class="el" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a294cd4a95eeb4f542c5f33f524da5d64">for()</a>, and <a class="el" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4">ReadCustomBinaryIC()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__UpdateWSubsidence__SineMassFlux_8H_a362f0148b27e7245ef6d68159e7ba843_icgraph.png" border="0" usemap="#aERF__UpdateWSubsidence__SineMassFlux_8H_a362f0148b27e7245ef6d68159e7ba843_icgraph" alt=""/></div>
 <map name="aERF__UpdateWSubsidence__SineMassFlux_8H_a362f0148b27e7245ef6d68159e7ba843_icgraph" id="aERF__UpdateWSubsidence__SineMassFlux_8H_a362f0148b27e7245ef6d68159e7ba843_icgraph">
-<area shape="rect" title=" " alt="" coords="556,107,615,133"/>
-<area shape="rect" href="classMorrison.html#a7d3bd1b9f29e84bc115d7a9f42595f76" title=" " alt="" coords="277,5,508,32"/>
-<area shape="rect" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40" title=" " alt="" coords="291,56,494,83"/>
-<area shape="rect" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00" title=" " alt="" coords="5,157,229,184"/>
-<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a294cd4a95eeb4f542c5f33f524da5d64" title=" " alt="" coords="373,157,413,184"/>
-<area shape="rect" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4" title=" " alt="" coords="313,208,473,235"/>
-<area shape="rect" href="classMorrison.html#a3b223b2f67d6de76f1edd249b4a16d63" title=" " alt="" coords="11,5,223,32"/>
-<area shape="rect" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e" title=" " alt="" coords="25,56,210,83"/>
+<area shape="rect" title=" " alt="" coords="528,81,587,108"/>
+<area shape="rect" href="classSAM.html#a77dd99de0896cf9f9bf8299c2c80bc40" title=" " alt="" coords="277,5,480,32"/>
+<area shape="rect" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00" title=" " alt="" coords="5,107,229,133"/>
+<area shape="rect" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a294cd4a95eeb4f542c5f33f524da5d64" title=" " alt="" coords="359,107,399,133"/>
+<area shape="rect" href="ERF__ReadCustomBinaryIC_8H.html#a60f8ae2428844a5b2fe598a7a225e6b4" title=" " alt="" coords="299,157,459,184"/>
+<area shape="rect" href="classSAM.html#a2e6ff95cf827306bbcf3661c954a692e" title=" " alt="" coords="25,5,210,32"/>
 </map>
 </div>
 
@@ -315,7 +308,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Morrison::Advance()</a>, <a class="el" href="classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef">Kessler::AdvanceKessler()</a>, <a class="el" href="classKessler.html#a747a85d4c8004b299ca49dcb1f221c7c">Kessler::Copy_Micro_to_State()</a>, <a class="el" href="classMorrison.html#a816f41f9bbd55757684c2f307940b117">Morrison::Copy_Micro_to_State()</a>, <a class="el" href="classSAM.html#a007ed40ac7278996d257b4c0ab6c1320">SAM::Copy_Micro_to_State()</a>, <a class="el" href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3">SatAdj::Copy_Micro_to_State()</a>, <a class="el" href="classERF.html#ad7886dcab90f37a8fcc91ede0c68b6cb">ERF::derive_stress_profiles()</a>, <a class="el" href="classERF.html#ae09680325ba108583147eb2e254a266e">ERF::derive_stress_profiles_stag()</a>, <a class="el" href="classERF.html#a29929644893f3e44beb5ed9403cbdaac">ERF::erf_enforce_hse()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a2d1ecd2b45ad5e561633a7a71c079d64">erf_init_dens_hse_dry()</a>, <a class="el" href="ERF__InteriorGhostCells_8cpp.html#ae5ff4686584e657be0c2b4a10dd39553">fine_compute_interior_ghost_rhs()</a>, and <a class="el" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a6943f40d7a8c7284077d83bc352c0212">for()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef">Kessler::AdvanceKessler()</a>, <a class="el" href="classKessler.html#a747a85d4c8004b299ca49dcb1f221c7c">Kessler::Copy_Micro_to_State()</a>, <a class="el" href="classMorrison.html#a816f41f9bbd55757684c2f307940b117">Morrison::Copy_Micro_to_State()</a>, <a class="el" href="classSAM.html#a007ed40ac7278996d257b4c0ab6c1320">SAM::Copy_Micro_to_State()</a>, <a class="el" href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3">SatAdj::Copy_Micro_to_State()</a>, <a class="el" href="classERF.html#ad7886dcab90f37a8fcc91ede0c68b6cb">ERF::derive_stress_profiles()</a>, <a class="el" href="classERF.html#ae09680325ba108583147eb2e254a266e">ERF::derive_stress_profiles_stag()</a>, <a class="el" href="classERF.html#a29929644893f3e44beb5ed9403cbdaac">ERF::erf_enforce_hse()</a>, <a class="el" href="ERF__InitDensityHSE_8H.html#a2d1ecd2b45ad5e561633a7a71c079d64">erf_init_dens_hse_dry()</a>, <a class="el" href="ERF__InteriorGhostCells_8cpp.html#ae5ff4686584e657be0c2b4a10dd39553">fine_compute_interior_ghost_rhs()</a>, and <a class="el" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a6943f40d7a8c7284077d83bc352c0212">for()</a>.</p>
 
 </div>
 </div>

@@ -137,7 +137,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            src-&gt;setVal(0.0);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_cc = d_zlevels_arr[k];</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">if</span> (z_cc &lt; <a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#aa0c54f97cf5d0886417d0bf1aff97960">cutoff</a>) {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                    src_arr(i, j, k) = <a class="code" href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a>;</div>
@@ -151,7 +151,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
-<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a84e204b057acb38e8a4c184a5c036b77"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77">ParallelFor</a></div><div class="ttdeci">ParallelFor(bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const Real *dx=geomdata.CellSize();const Real x=(i+myhalf) *dx[0];const Real y=(j+myhalf) *dx[1];const Real Omg=erf_vortex_Gaussian(x, y, xc, yc, R, beta, sigma);const Real deltaT=-(gamma - one)/(two *sigma *sigma) *Omg *Omg;const Real rho_norm=std::pow(one+deltaT, inv_gm1);const Real T=(one+deltaT) *T_inf;const Real p=std::pow(rho_norm, Gamma)/Gamma *rho_0 *a_inf *a_inf;const Real rho_theta=rho_0 *rho_norm *(T *std::pow(p_0/p, rdOcp));state_pert(i, j, k, RhoTheta_comp)=rho_theta - getRhoThetagivenP(p_hse(i, j, k));const Real r2d_xy=std::sqrt((x-xc) *(x-xc)+(y-yc) *(y-yc));state_pert(i, j, k, RhoScalar_comp)=fourth *(one+std::cos(PI *std::min(r2d_xy, R)/R));})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__UpdateRhoThetaSources__SineMassFlux_8H_html_a074f996b9d4de4a7c5ded5ecde19a4b9"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a074f996b9d4de4a7c5ded5ecde19a4b9">cutoff_transition</a></div><div class="ttdeci">Real cutoff_transition</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_SineMassFlux.H:5</div></div>
 <div class="ttc" id="aERF__UpdateRhoThetaSources__SineMassFlux_8H_html_a45f695eec02e78435d0b4bc9226cb9ca"><div class="ttname"><a href="ERF__UpdateRhoThetaSources__SineMassFlux_8H.html#a45f695eec02e78435d0b4bc9226cb9ca">advection_heating_rate</a></div><div class="ttdeci">Real advection_heating_rate</div><div class="ttdef"><b>Definition:</b> ERF_UpdateRhoThetaSources_SineMassFlux.H:3</div></div>
@@ -161,11 +161,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph.png" border="0" usemap="#aERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph" alt=""/></div>
 <map name="aERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph" id="aERF__UpdateRhoThetaSources__SineMassFlux_8H_ad53eb451be33aeb4ef17280d99c15da7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,45,83"/>
-<area shape="rect" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a84e204b057acb38e8a4c184a5c036b77" title=" " alt="" coords="93,56,184,83"/>
-<area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="232,5,388,32"/>
-<area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="235,56,385,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="266,107,354,133"/>
+<area shape="rect" title=" " alt="" coords="5,5,45,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="93,5,184,32"/>
 </map>
 </div>
 
