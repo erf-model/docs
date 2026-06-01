@@ -15,7 +15,7 @@ var ERF__RRTMGP__Interface_8cpp =
     [ "rrtmgp_finalize", "ERF__RRTMGP__Interface_8cpp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
     [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8cpp.html#a0753e963249f868a2d6f9e23110965eb", null ],
     [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8cpp.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
-    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8cpp.html#a6be2d84e56163f53a1f2d09b4a574ede", null ],
+    [ "rrtmgp_main", "ERF__RRTMGP__Interface_8cpp.html#a38b1a9281557b02960339297bd401ef1", null ],
     [ "rrtmgp_sw", "ERF__RRTMGP__Interface_8cpp.html#a83b2e0892e5b475f2f464b4285edfe47", null ],
     [ "cloud_optics_lw_k", "ERF__RRTMGP__Interface_8cpp.html#abdc3f481e2737031e19284d105197d74", null ],
     [ "cloud_optics_sw_k", "ERF__RRTMGP__Interface_8cpp.html#aa5ad83af0786838007f2c35361146f8e", null ],

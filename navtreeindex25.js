@@ -1,9 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"structSHOCInterface_1_1Buffer.html#a1da6badc3465191a200375aec36893f7":[2,0,91,0,33],
-"structSHOCInterface_1_1Buffer.html#a2189968630994bea911e1f13a7150387":[2,0,91,0,36],
-"structSHOCInterface_1_1Buffer.html#a221011da215ac2baa7ba63c43769a6a6":[2,0,91,0,20],
-"structSHOCInterface_1_1Buffer.html#a244cac43331f113aecfe78e79d194cbd":[2,0,91,0,25],
 "structSHOCInterface_1_1Buffer.html#a272c56078081bfda1d66f831a8469420":[2,0,91,0,40],
 "structSHOCInterface_1_1Buffer.html#a2bae97b9d366dabc8f5876ed151bae8b":[2,0,91,0,26],
 "structSHOCInterface_1_1Buffer.html#a36a1c47821f00ee3a7775501258a8e23":[2,0,91,0,15],
@@ -249,5 +245,9 @@ var NAVTREEINDEX25 =
 "structSpongeChoice.html#a18f392fd75ac69b62674b70ee67b9c61":[2,0,96,17],
 "structSpongeChoice.html#a1a79f8e32354ec98857597ddabfe884e":[2,0,96,21],
 "structSpongeChoice.html#a2ac1def940f7e6666a1076be69b3cc33":[2,0,96,15],
-"structSpongeChoice.html#a48f4b8a95b93cf8fa36d00d355757a1e":[2,0,96,5]
+"structSpongeChoice.html#a48f4b8a95b93cf8fa36d00d355757a1e":[2,0,96,5],
+"structSpongeChoice.html#a5e3fe59ec39bd6ed95b33bd568dd711b":[2,0,96,13],
+"structSpongeChoice.html#a5e70ccbf1d7de42a4d938416635eee36":[2,0,96,20],
+"structSpongeChoice.html#a66fd55eceebbe3e97e31325cc55369de":[2,0,96,0],
+"structSpongeChoice.html#a830ff63e204ed6c9dd381fd2baa1b33e":[2,0,96,9]
 };
