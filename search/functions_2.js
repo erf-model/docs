@@ -38,7 +38,7 @@ var searchData=
   ['close_4953',['close',['../classncutils_1_1NCFile.html#af2c4a20c38edb3fae69087a80875b8b9',1,'ncutils::NCFile']]],
   ['closest_5findex_4954',['closest_index',['../ERF__ReadBndryPlanes_8cpp.html#adc5227730afe35653b2dfa88898eb00a',1,'ERF_ReadBndryPlanes.cpp']]],
   ['cloud_4955',['Cloud',['../classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998',1,'SAM']]],
-  ['cloud_5ffraction_4956',['cloud_fraction',['../classERF.html#a0f6effb7eeed11385b20e4bbf516b459',1,'ERF']]],
+  ['cloud_5ffraction_4956',['cloud_fraction',['../classERF.html#a81fa277d77ece7c8529574dad842fdb4',1,'ERF']]],
   ['cloudrainshima_4957',['CloudRainShima',['../structTerminalVelocity.html#a99c52f483f0294536106aae37f3c93ac',1,'TerminalVelocity']]],
   ['coare3_5froughness_4958',['COARE3_roughness',['../ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e',1,'ERF_MOSTRoughness.H']]],
   ['coeffcurv_4959',['coeffCurv',['../structMaterialPropertiesCore.html#aa7200632698fbb46dc3d1584e63c7fd5',1,'MaterialPropertiesCore']]],
