@@ -115,8 +115,8 @@ Include dependency graph for ERF_InitDensityHSE.H:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2d1ecd2b45ad5e561633a7a71c079d64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitDensityHSE_8H.html#a2d1ecd2b45ad5e561633a7a71c079d64">erf_init_dens_hse_dry</a> (amrex::MultiFab &amp;rho_hse, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, amrex::Geometry const &amp;geom, const amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_d, bool is_constant_dz, bool is_stretched_dz) override</td></tr>
-<tr class="separator:a2d1ecd2b45ad5e561633a7a71c079d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab73f3a6e798cc452e3c79d93e8a6bd65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitDensityHSE_8H.html#ab73f3a6e798cc452e3c79d93e8a6bd65">erf_init_dens_hse_dry</a> (amrex::MultiFab &amp;rho_hse, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc, amrex::Geometry const &amp;geom, const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;stretched_dz_h, bool is_constant_dz, bool is_stretched_dz) override</td></tr>
+<tr class="separator:ab73f3a6e798cc452e3c79d93e8a6bd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8787512ee3cc1e62a429eeae8ff5eeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitDensityHSE_8H.html#aa8787512ee3cc1e62a429eeae8ff5eeb">erf_init_dens_hse_moist</a> (amrex::MultiFab &amp;rho_hse, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;, amrex::Geometry const &amp;geom) override</td></tr>
 <tr class="separator:aa8787512ee3cc1e62a429eeae8ff5eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06963d7ee774ab4b864478b38cee7ead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitDensityHSE_8H.html#a06963d7ee774ab4b864478b38cee7ead">erf_init_const_dens_hse</a> (amrex::MultiFab &amp;rho_hse) override</td></tr>
@@ -381,8 +381,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2d1ecd2b45ad5e561633a7a71c079d64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d1ecd2b45ad5e561633a7a71c079d64">&#9670;&nbsp;</a></span>erf_init_dens_hse_dry()</h2>
+<a id="ab73f3a6e798cc452e3c79d93e8a6bd65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab73f3a6e798cc452e3c79d93e8a6bd65">&#9670;&nbsp;</a></span>erf_init_dens_hse_dry()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -417,8 +417,8 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const amrex::Gpu::DeviceVector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>stretched_dz_d</em>, </td>
+          <td class="paramtype">const amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>stretched_dz_h</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -483,8 +483,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(b2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                amrex::Array1D&lt;amrex::Real,0,255&gt; r;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                amrex::Array1D&lt;amrex::Real,0,255&gt; <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07">HSEutils::init_isentropic_hse_terrain</a>(i,j,rho_local_sfc,Thetabar,&amp;(r(0)),&amp;(<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>(0)),z_cc_arr,klo,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                amrex::Array1D&lt;amrex::Real,0,255&gt; <a class="code" href="namespaceWSM6Ind.html#a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc">p</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07">HSEutils::init_isentropic_hse_terrain</a>(i,j,rho_local_sfc,Thetabar,&amp;(r(0)),&amp;(<a class="code" href="namespaceWSM6Ind.html#a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc">p</a>(0)),z_cc_arr,klo,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = klo; k &lt;= <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                   <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k) = r(k);</div>
@@ -520,7 +520,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a> = geom.CellSize()[2];</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="namespaceHSEutils.html#a2c3040a913cdfd72304e07ef7546e93a">HSEutils::init_isentropic_hse_constant_dz</a>(rho_sfc,Thetabar,<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a>.data(),<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#ac9c916349f160827a18fce33cae6fe94">h_p</a>.data(),<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#abc695cd190273d99450d0b8f595c5c6b">dz</a>,klo,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">// stretched_dz</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="namespaceHSEutils.html#a94b20900176f0c876202ff3e50d68fbf">HSEutils::init_isentropic_hse_stretched_dz</a>(rho_sfc,Thetabar,<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a>.data(),<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#ac9c916349f160827a18fce33cae6fe94">h_p</a>.data(),stretched_dz_d,klo,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <a class="code" href="namespaceHSEutils.html#a14e725ac72601dc0de8c48ad36fdf809">HSEutils::init_isentropic_hse_stretched_dz</a>(rho_sfc,Thetabar,<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a>.data(),<a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#ac9c916349f160827a18fce33cae6fe94">h_p</a>.data(),stretched_dz_h.data(),klo,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        amrex::Gpu::copyAsync(amrex::Gpu::hostToDevice, <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a>.begin(), <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a>.end(), <a class="code" href="ERF__InitCustomPert__SquallLine_8H.html#aca0b2a87a0ed97d95103809c92a0d3e9">d_r</a>.begin());</div>
@@ -551,24 +551,24 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_aa847d3d611cf9683995798bc941f9bdb"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb">h_r</a></div><div class="ttdeci">Vector&lt; Real &gt; h_r(khi+2)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_ac9c916349f160827a18fce33cae6fe94"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#ac9c916349f160827a18fce33cae6fe94">h_p</a></div><div class="ttdeci">Vector&lt; Real &gt; h_p(khi+2)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_aca0b2a87a0ed97d95103809c92a0d3e9"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#aca0b2a87a0ed97d95103809c92a0d3e9">d_r</a></div><div class="ttdeci">Gpu::DeviceVector&lt; Real &gt; d_r(khi+2)</div></div>
-<div class="ttc" id="aERF__InitCustomPert__SquallLine_8H_html_af83c1918e681461dc4cc7ed4c0828b2c"><div class="ttname"><a href="ERF__InitCustomPert__SquallLine_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a></div><div class="ttdeci">Real * p</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_SquallLine.H:61</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a250b5b8817230db7d56e064212449a23"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a></div><div class="ttdeci">auto rho_arr</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSubsidence_SineMassFlux.H:3</div></div>
+<div class="ttc" id="anamespaceHSEutils_html_a14e725ac72601dc0de8c48ad36fdf809"><div class="ttname"><a href="namespaceHSEutils.html#a14e725ac72601dc0de8c48ad36fdf809">HSEutils::init_isentropic_hse_stretched_dz</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void init_isentropic_hse_stretched_dz(const amrex::Real &amp;r_sfc, const amrex::Real &amp;theta, amrex::Real *r, amrex::Real *p, const amrex::Real *stretched_dz, const int klo, const int khi)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:206</div></div>
 <div class="ttc" id="anamespaceHSEutils_html_a2c3040a913cdfd72304e07ef7546e93a"><div class="ttname"><a href="namespaceHSEutils.html#a2c3040a913cdfd72304e07ef7546e93a">HSEutils::init_isentropic_hse_constant_dz</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void init_isentropic_hse_constant_dz(const amrex::Real &amp;r_sfc, const amrex::Real &amp;theta, amrex::Real *r, amrex::Real *p, const amrex::Real &amp;dz, const int klo, const int khi)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:96</div></div>
-<div class="ttc" id="anamespaceHSEutils_html_a94b20900176f0c876202ff3e50d68fbf"><div class="ttname"><a href="namespaceHSEutils.html#a94b20900176f0c876202ff3e50d68fbf">HSEutils::init_isentropic_hse_stretched_dz</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void init_isentropic_hse_stretched_dz(const amrex::Real &amp;r_sfc, const amrex::Real &amp;theta, amrex::Real *r, amrex::Real *p, const Gpu::DeviceVector&lt; Real &gt; &amp;stretched_dz_d, const int klo, const int khi)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:206</div></div>
 <div class="ttc" id="anamespaceHSEutils_html_ab38b424f8934564898ddc0e0ee852b07"><div class="ttname"><a href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07">HSEutils::init_isentropic_hse_terrain</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void init_isentropic_hse_terrain(int i, int j, const amrex::Real &amp;r_sfc, const amrex::Real &amp;theta, amrex::Real *r, amrex::Real *p, const amrex::Array4&lt; amrex::Real const &gt; z_cc, const int &amp;klo, const int &amp;khi)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:318</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:174</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitDensityHSE_8H_a2d1ecd2b45ad5e561633a7a71c079d64_cgraph.png" border="0" usemap="#aERF__InitDensityHSE_8H_a2d1ecd2b45ad5e561633a7a71c079d64_cgraph" alt=""/></div>
-<map name="aERF__InitDensityHSE_8H_a2d1ecd2b45ad5e561633a7a71c079d64_cgraph" id="aERF__InitDensityHSE_8H_a2d1ecd2b45ad5e561633a7a71c079d64_cgraph">
+<div class="center"><img src="ERF__InitDensityHSE_8H_ab73f3a6e798cc452e3c79d93e8a6bd65_cgraph.png" border="0" usemap="#aERF__InitDensityHSE_8H_ab73f3a6e798cc452e3c79d93e8a6bd65_cgraph" alt=""/></div>
+<map name="aERF__InitDensityHSE_8H_ab73f3a6e798cc452e3c79d93e8a6bd65_cgraph" id="aERF__InitDensityHSE_8H_ab73f3a6e798cc452e3c79d93e8a6bd65_cgraph">
 <area shape="rect" title=" " alt="" coords="5,216,169,243"/>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#a8a368a962d9fb28ad66bfe5e7069c35f" title=" " alt="" coords="283,5,328,32"/>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#aca0b2a87a0ed97d95103809c92a0d3e9" title=" " alt="" coords="284,56,327,83"/>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#ac9c916349f160827a18fce33cae6fe94" title=" " alt="" coords="283,107,328,133"/>
 <area shape="rect" href="ERF__InitCustomPert__SquallLine_8H.html#aa847d3d611cf9683995798bc941f9bdb" title=" " alt="" coords="284,157,327,184"/>
 <area shape="rect" href="namespaceHSEutils.html#a2c3040a913cdfd72304e07ef7546e93a" title=" " alt="" coords="217,209,393,250"/>
-<area shape="rect" href="namespaceHSEutils.html#a94b20900176f0c876202ff3e50d68fbf" title=" " alt="" coords="217,274,393,315"/>
+<area shape="rect" href="namespaceHSEutils.html#a14e725ac72601dc0de8c48ad36fdf809" title=" " alt="" coords="217,274,393,315"/>
 <area shape="rect" href="namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07" title=" " alt="" coords="217,339,393,381"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="260,405,351,432"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="269,456,342,483"/>

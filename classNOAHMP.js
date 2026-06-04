@@ -31,5 +31,7 @@ var classNOAHMP =
     [ "m_lsm_geom", "classNOAHMP.html#a8378fec589eecda6ad9845298947284b", null ],
     [ "m_nz_lsm", "classNOAHMP.html#aa5746c284c77837ba96abc713f58ff0d", null ],
     [ "m_plot_int_1", "classNOAHMP.html#a1be06696c079dcbb31d9d8678cf80846", null ],
+    [ "noahmp_input_tmp", "classNOAHMP.html#a4ec2b1db184a7f933c47dcc0a4d23193", null ],
+    [ "noahmp_output_tmp", "classNOAHMP.html#a48bd23f47b90bccac4e41b449fc3cbe9", null ],
     [ "noahmpio_vect", "classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2", null ]
 ];

@@ -139,6 +139,8 @@ var hierarchy =
     [ "UPWIND3SL", "structUPWIND3SL.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],
     [ "UPWINDALL", "structUPWINDALL.html", null ],
+    [ "module_libmassv::vrec", "interfacemodule__libmassv_1_1vrec.html", null ],
+    [ "module_libmassv::vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", null ],
     [ "WENO3", "structWENO3.html", null ],
     [ "WENO5", "structWENO5.html", null ],
     [ "WENO7", "structWENO7.html", null ],

@@ -104,8 +104,8 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a59ea18533a06cbf3f1324b1e50432b59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__WSM6__Fortran__Interface_8H.html#a59ea18533a06cbf3f1324b1e50432b59">mp_wsm6_init_c</a> (double den0, double denr, double dens, double cl, double cpv, int hail_opt)</td></tr>
 <tr class="separator:a59ea18533a06cbf3f1324b1e50432b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5992141c3608ccf1f06dc2392c06c583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__WSM6__Fortran__Interface_8H.html#a5992141c3608ccf1f06dc2392c06c583">mp_wsm6_run_c</a> (double *<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, double *qv, double *qc, double *qi, double *qr, double *qs, double *qg, double *den, double *<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, double *delz, double delt, double <a class="el" href="ERF__InitCustomPertVels__MovingTerrain_8H.html#a3de20e6c53dab6e405480f55ede7c937">g</a>, double cpd, double cpv, double rd, double rv, double t0c, double ep1, double ep2, double qmin, double xls, double xlv0, double xlf0, double den0, double denr, double cliq, double cice, double psat, double *rain, double *rainncv, double *sr, double *snow, double *snowncv, double *graupel, double *graupelncv, int ims, int ime, int jms, int jme, int kms, int kme, int its, int ite, int jts, int jte, int kts, int kte)</td></tr>
-<tr class="separator:a5992141c3608ccf1f06dc2392c06c583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a695b582fa0aeef918291d4a2b3ee6689"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__WSM6__Fortran__Interface_8H.html#a695b582fa0aeef918291d4a2b3ee6689">mp_wsm6_run_c</a> (double *<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, double *qv, double *qc, double *qi, double *qr, double *qs, double *qg, double *den, double *<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, double *delz, double delt, double <a class="el" href="ERF__InitCustomPertVels__MovingTerrain_8H.html#a3de20e6c53dab6e405480f55ede7c937">g</a>, double cpd, double cpv, double rd, double rv, double t0c, double ep1, double ep2, double qmin, double xls, double xlv0, double xlf0, double den0, double denr, double cliq, double cice, double psat, double *rain, double *rainncv, double *sr, double *snow, double *snowncv, double *graupel, double *graupelncv, int ims, int ime, int jms, int jme, int kms, int kme, int its, int ite, int jts, int jte, int kts, int kte, int microphysics_debug, int diag_i_dbg, int diag_j_dbg)</td></tr>
+<tr class="separator:a695b582fa0aeef918291d4a2b3ee6689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a59ea18533a06cbf3f1324b1e50432b59"></a>
@@ -171,8 +171,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a5992141c3608ccf1f06dc2392c06c583"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5992141c3608ccf1f06dc2392c06c583">&#9670;&nbsp;</a></span>mp_wsm6_run_c()</h2>
+<a id="a695b582fa0aeef918291d4a2b3ee6689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a695b582fa0aeef918291d4a2b3ee6689">&#9670;&nbsp;</a></span>mp_wsm6_run_c()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -457,7 +457,25 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>kte</em>&#160;</td>
+          <td class="paramname"><em>kte</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>microphysics_debug</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>diag_i_dbg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>diag_j_dbg</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -471,8 +489,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__WSM6__Fortran__Interface_8H_a5992141c3608ccf1f06dc2392c06c583_icgraph.png" border="0" usemap="#aERF__WSM6__Fortran__Interface_8H_a5992141c3608ccf1f06dc2392c06c583_icgraph" alt=""/></div>
-<map name="aERF__WSM6__Fortran__Interface_8H_a5992141c3608ccf1f06dc2392c06c583_icgraph" id="aERF__WSM6__Fortran__Interface_8H_a5992141c3608ccf1f06dc2392c06c583_icgraph">
+<div class="center"><img src="ERF__WSM6__Fortran__Interface_8H_a695b582fa0aeef918291d4a2b3ee6689_icgraph.png" border="0" usemap="#aERF__WSM6__Fortran__Interface_8H_a695b582fa0aeef918291d4a2b3ee6689_icgraph" alt=""/></div>
+<map name="aERF__WSM6__Fortran__Interface_8H_a695b582fa0aeef918291d4a2b3ee6689_icgraph" id="aERF__WSM6__Fortran__Interface_8H_a695b582fa0aeef918291d4a2b3ee6689_icgraph">
 <area shape="rect" title=" " alt="" coords="180,5,311,32"/>
 <area shape="rect" href="classWSM6.html#a9723e1fbac13992e1c9f3659eba048bc" title=" " alt="" coords="5,5,132,32"/>
 </map>

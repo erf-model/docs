@@ -4,7 +4,7 @@ var classProblemBase =
     [ "erf_init_const_dens_and_linear_th_hse", "classProblemBase.html#a6097d8a1d0b418ebdd158ef000f87d63", null ],
     [ "erf_init_const_dens_and_th_hse", "classProblemBase.html#ad83f058e9bc03a6233944a142e789aed", null ],
     [ "erf_init_const_dens_hse", "classProblemBase.html#a761654dd04f2692667be973f9b1ce530", null ],
-    [ "erf_init_dens_hse_dry", "classProblemBase.html#a30ec2a25c7a6fb519a800e795d386a73", null ],
+    [ "erf_init_dens_hse_dry", "classProblemBase.html#a7cc78184c3d7cc717f3d0948e560267a", null ],
     [ "erf_init_dens_hse_moist", "classProblemBase.html#ad1a7277d332001542789e488458096b9", null ],
     [ "erf_init_rayleigh", "classProblemBase.html#aaf5cb14c8033c99df446fd943b1f2216", null ],
     [ "init_base_parms", "classProblemBase.html#abac6929cfbd9298447e721dfcbe5163f", null ],

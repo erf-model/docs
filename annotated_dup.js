@@ -1,5 +1,9 @@
 var annotated_dup =
 [
+    [ "module_libmassv", "namespacemodule__libmassv.html", [
+      [ "vrec", "interfacemodule__libmassv_1_1vrec.html", "interfacemodule__libmassv_1_1vrec" ],
+      [ "vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", "interfacemodule__libmassv_1_1vsqrt" ]
+    ] ],
     [ "ncutils", "namespacencutils.html", [
       [ "NCDType", "structncutils_1_1NCDType.html", "structncutils_1_1NCDType" ],
       [ "NCDim", "structncutils_1_1NCDim.html", "structncutils_1_1NCDim" ],

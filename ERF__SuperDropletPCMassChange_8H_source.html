@@ -650,10 +650,10 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                    }</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a> = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dt;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dt;</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                    u_new = a_u;</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    m_newton( u_new, rhs, <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                    m_newton( u_new, rhs, <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                              m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s,</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                              res_norm_a, res_norm_r, converged );</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
@@ -731,14 +731,14 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                         &amp;&amp; (dt &lt; (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-12)*m_t_final)) ) {</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                    }</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a> = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt);</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt);</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                    RT u1 = a_u;</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                    RT f1 = m_ode.rhs_func(u1, m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s);</div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                    RT u2 = u1;</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt*f1);</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    m_newton( u2, rhs, <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt*f1);</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    m_newton( u2, rhs, <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                              m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s,</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                              res_norm_a, res_norm_r, converged );</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                    <span class="keywordflow">if</span> (u2 &lt;= 0) {</div>
@@ -823,7 +823,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                         &amp;&amp; (dt &lt; (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-12)*m_t_final)) ) {</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                    }</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a> = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dt;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dt;</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                    converged = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                    res_norm_a = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
@@ -831,11 +831,11 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160; </div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                    RT u1 = a_u;</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                    {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                        RT res_norm_a_i = DBL_MAX;</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                        RT res_norm_r_i = DBL_MAX;</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                        <span class="keywordtype">bool</span> converged_i = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                        m_newton( u1, rhs, <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                        m_newton( u1, rhs, <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                                  m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s,</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                                  res_norm_a_i, res_norm_r_i, converged_i );</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                        converged = converged &amp;&amp; converged_i;</div>
@@ -850,11 +850,11 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                    RT u2 = u1;</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                    {</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u - dt*f1);</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u - dt*f1);</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                        RT res_norm_a_i = DBL_MAX;</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                        RT res_norm_r_i = DBL_MAX;</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                        <span class="keywordtype">bool</span> converged_i = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                        m_newton( u2, rhs, <a class="code" href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                        m_newton( u2, rhs, <a class="code" href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                                  m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s,</div>
 <div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                                  res_norm_a_i, res_norm_r_i, converged_i );</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                        converged = converged &amp;&amp; converged_i;</div>
@@ -925,7 +925,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a0b6c95d9cbe21c8a94590c64b1459844"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a></div><div class="ttdeci">amrex::Real gamma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:9</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aaa538a485890f44f3ec785846ea09b12"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a></div><div class="ttdeci">amrex::Real beta</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:10</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespaceMORRInd_html_a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#a5fd678f02a6eb22f48985fd81b782d1dae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:92</div></div>
+<div class="ttc" id="anamespaceMORRInd_html_a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#a679f7edf521596b4d88fee9bb08a45d6ae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:92</div></div>
 <div class="ttc" id="anamespacemp__wsm6_html_a4a88c88896fa77fa7284821ab2e9dfc4"><div class="ttname"><a href="namespacemp__wsm6.html#a4a88c88896fa77fa7284821ab2e9dfc4">mp_wsm6::alpha</a></div><div class="ttdeci">real(kind=kind_phys), parameter, public alpha</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_wsm6.F90:44</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
