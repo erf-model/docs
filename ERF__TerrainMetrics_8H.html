@@ -1720,10 +1720,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;{</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_cc = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.125)*(  z_nd(i  ,j  ,k  ) + z_nd(i  ,j  ,k+1)</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                    + z_nd(i+1,j  ,k  ) + z_nd(i+1,j  ,k+1)</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                    + z_nd(i  ,j+1,k  ) + z_nd(i  ,j+1,k+1)</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                    + z_nd(i+1,j+1,k  ) + z_nd(i+1,j+1,k+1));</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_cc = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.125)*(  z_nd(i  ,j  ,k) + z_nd(i  ,j  ,k+1)</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                                 + z_nd(i+1,j  ,k) + z_nd(i+1,j  ,k+1)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                                 + z_nd(i  ,j+1,k) + z_nd(i  ,j+1,k+1)</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                                 + z_nd(i+1,j+1,k) + z_nd(i+1,j+1,k+1));</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">return</span> z_cc;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;}</div>
@@ -1780,8 +1780,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_wf = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a>*( z_nd(i  ,j  ,k  ) + z_nd(i+1,j  ,k  )</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                  + z_nd(i  ,j+1,k  ) + z_nd(i+1,j+1,k  ) );</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_wf = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a>*( z_nd(i  ,j  ,k) + z_nd(i+1,j  ,k)</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                    + z_nd(i  ,j+1,k) + z_nd(i+1,j+1,k) );</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">return</span> z_wf;</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
@@ -1854,15 +1854,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;{</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_cc = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.125)*(  z_nd(i  ,j  ,k  ) + z_nd(i  ,j  ,k+1) +</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                                    + z_nd(i+1,j  ,k  ) + z_nd(i+1,j  ,k+1)</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                                    + z_nd(i  ,j+1,k  ) + z_nd(i  ,j+1,k+1)</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                    + z_nd(i+1,j+1,k  ) + z_nd(i+1,j+1,k+1));</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_cc = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.125)*(  z_nd(i  ,j  ,k) + z_nd(i  ,j  ,k+1) +</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                                                 + z_nd(i+1,j  ,k) + z_nd(i+1,j  ,k+1)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                                                 + z_nd(i  ,j+1,k) + z_nd(i  ,j+1,k+1)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                                                 + z_nd(i+1,j+1,k) + z_nd(i+1,j+1,k+1));</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="comment">// Note: we assume the z_nd array spans from the bottom to top of the domain</span></div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="comment">// i.e. no domain decomposition across processors in vertical direction</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0_cc = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a>*(  z_nd(i  ,j  ,0) + z_nd(i  ,j+1,0)</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                                    + z_nd(i+1,j  ,0) + z_nd(i+1,j+1,0));</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0_cc = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a>*( z_nd(i  ,j  ,0) + z_nd(i  ,j+1,0)</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                                      +z_nd(i+1,j  ,0) + z_nd(i+1,j+1,0));</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">return</span> (z_cc - z0_cc);</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;}</div>
