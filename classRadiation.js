@@ -98,6 +98,7 @@ var classRadiation =
     [ "m_qheating_rates", "classRadiation.html#a8b6687dc65c676f5cf454b6a15ad93c3", null ],
     [ "m_rad_fluxes", "classRadiation.html#a5b9e77332a518e2220de5dd295bbc23a", null ],
     [ "m_rad_freq_in_steps", "classRadiation.html#a0f4275bf4e8c4cea652a57c06d67f7da", null ],
+    [ "m_rad_nvar", "classRadiation.html#aeec2824e1768c3790d993c6fc6dfb064", null ],
     [ "m_rad_t_sfc", "classRadiation.html#a8f6280303e7018e86fb38c8dcde7a8ef", null ],
     [ "m_rad_write_fluxes", "classRadiation.html#a2a5bd8c4c2bcadd588ef1d4792a6345c", null ],
     [ "m_step", "classRadiation.html#a42356bd40223375cbdebb2feaffc3632", null ],

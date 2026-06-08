@@ -24,7 +24,7 @@ var ERF__RRTMGP__Interface_8H =
     [ "get_wavelength_index_lw", "ERF__RRTMGP__Interface_8H.html#a36564577866391c3de00afc0f6c3e0fe", null ],
     [ "get_wavelength_index_sw", "ERF__RRTMGP__Interface_8H.html#a28e3587b50833fd1f2c5a910b1392c43", null ],
     [ "rrtmgp_finalize", "ERF__RRTMGP__Interface_8H.html#a009ddf7de8b3d47a8732243e945e431c", null ],
-    [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8H.html#a0753e963249f868a2d6f9e23110965eb", null ],
+    [ "rrtmgp_initialize", "ERF__RRTMGP__Interface_8H.html#a71b108ea480a6f323cedec4c27ab4944", null ],
     [ "rrtmgp_lw", "ERF__RRTMGP__Interface_8H.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
     [ "rrtmgp_main", "ERF__RRTMGP__Interface_8H.html#a38b1a9281557b02960339297bd401ef1", null ],
     [ "rrtmgp_sw", "ERF__RRTMGP__Interface_8H.html#a83b2e0892e5b475f2f464b4285edfe47", null ]

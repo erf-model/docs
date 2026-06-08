@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"structLineSampler.html#a1fa54ddedf5258bce17bb029e4aaf50e":[2,0,44,12],
 "structLineSampler.html#a37354e74a2e1bf67b38a236a064dbbec":[2,0,44,3],
 "structLineSampler.html#a56da044954a236b411c1c52e42338883":[2,0,44,9],
 "structLineSampler.html#a62712c6e41a0e98a8a7d5841cc52cd09":[2,0,44,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "structSAMSurfaceAccumulation.html#af2ec0845be2a9a7367b0b66761cb2268":[2,0,85,0],
 "structSDDistributionParams.html":[2,0,88],
 "structSDDistributionParams.html#a191243a357faba98588f2c023b49b17a":[2,0,88,11],
-"structSDDistributionParams.html#a1f892384bbded9a75cc282c8422861f4":[2,0,88,9],
-"structSDDistributionParams.html#a1fd7f08c85d3be51036ee6e6c8e22bfd":[2,0,88,17]
+"structSDDistributionParams.html#a1f892384bbded9a75cc282c8422861f4":[2,0,88,9]
 };

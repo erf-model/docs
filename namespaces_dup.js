@@ -546,7 +546,7 @@ var namespaces_dup =
       [ "mixing_ratio_to_cloud_mass", "namespacerrtmgp.html#a88d561ab08b6cffb186a838b5840b274", null ],
       [ "radiation_do", "namespacerrtmgp.html#a330f3ddc4245c802986216ff51504e50", null ],
       [ "rrtmgp_finalize", "namespacerrtmgp.html#a009ddf7de8b3d47a8732243e945e431c", null ],
-      [ "rrtmgp_initialize", "namespacerrtmgp.html#a0753e963249f868a2d6f9e23110965eb", null ],
+      [ "rrtmgp_initialize", "namespacerrtmgp.html#a71b108ea480a6f323cedec4c27ab4944", null ],
       [ "rrtmgp_lw", "namespacerrtmgp.html#aa920f756cc57d6c9fe755483ac1b4582", null ],
       [ "rrtmgp_main", "namespacerrtmgp.html#a38b1a9281557b02960339297bd401ef1", null ],
       [ "rrtmgp_sw", "namespacerrtmgp.html#a83b2e0892e5b475f2f464b4285edfe47", null ],
