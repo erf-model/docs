@@ -2,6 +2,7 @@ var classReadBndryPlanes =
 [
     [ "ReadBndryPlanes", "classReadBndryPlanes.html#a16269dfa161d2fdbe02eeb5ac0cb0e24", null ],
     [ "define_level_data", "classReadBndryPlanes.html#a16ed881bb428b7abb89e4284b356c8d6", null ],
+    [ "get_tendency", "classReadBndryPlanes.html#a9d5ff442af567c78e4c9b8fe5450a34b", null ],
     [ "ingested_density", "classReadBndryPlanes.html#ab54133701e8e086315fa7299257199a2", null ],
     [ "ingested_KE", "classReadBndryPlanes.html#a85a5f25c283db679f67e10167cc6ee5c", null ],
     [ "ingested_q1", "classReadBndryPlanes.html#a02a0fca675471f10ea6ccb1671ce1cb0", null ],
@@ -27,6 +28,7 @@ var classReadBndryPlanes =
     [ "m_data_n", "classReadBndryPlanes.html#acc6e94621293c94d1322a8cafbf61ad4", null ],
     [ "m_data_np1", "classReadBndryPlanes.html#ae34737833f599f3cb5ef945ac3f57f4b", null ],
     [ "m_data_np2", "classReadBndryPlanes.html#a5338493101cfbb8eb27301f83aeca290", null ],
+    [ "m_data_tendency", "classReadBndryPlanes.html#a99e750ee25ad162c21d609f3b5faf7ca", null ],
     [ "m_extent_rad", "classReadBndryPlanes.html#ae341a8d70430128e78f7cac75e0d4e8a", null ],
     [ "m_filename", "classReadBndryPlanes.html#a3a130c25c6b3c327e58d3e4687a051b9", null ],
     [ "m_geom", "classReadBndryPlanes.html#af4c91eeb64f4e49767e97c1e72de06fc", null ],

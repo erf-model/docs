@@ -114,7 +114,6 @@ var structSolverChoice =
     [ "transport_scalar", "structSolverChoice.html#afa703f93ec61d31a0c7f200fc4af44ff", null ],
     [ "turb_disk_angle", "structSolverChoice.html#addcff0f25c6925df38673747b4dea91e", null ],
     [ "turbChoice", "structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4", null ],
-    [ "upwind_real_bcs", "structSolverChoice.html#aa7d8392d64c4932c4cb138d16a71fbee", null ],
     [ "use_coriolis", "structSolverChoice.html#a9e86533aa6df5bf6408d91f0dfd23606", null ],
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],
