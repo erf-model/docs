@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"ERF__SpongeStruct_8H.html#aa2a3ae44368e8c0bfa9a3e7444b7e8a9":[3,0,1,2,7,1],
+"ERF__SpongeStruct_8H_source.html":[3,0,1,2,7],
 "ERF__SrcHeaders_8H.html":[3,0,1,15,15],
 "ERF__SrcHeaders_8H.html#a11ba280e018e32cdbd796f7960228363":[3,0,1,15,15,10],
 "ERF__SrcHeaders_8H.html#a16eedc7495a4d75f55f920829fa69cef":[3,0,1,15,15,6],
@@ -43,12 +45,12 @@ var NAVTREEINDEX9 =
 "ERF__SuperDropletPCUtils_8cpp.html":[3,0,1,11,16],
 "ERF__SuperDropletPC_8H.html":[3,0,1,11,3],
 "ERF__SuperDropletPC_8H_source.html":[3,0,1,11,3],
-"ERF__SuperDropletsMoistAdvance_8cpp.html":[3,0,1,10,5,1],
-"ERF__SuperDropletsMoistInit_8cpp.html":[3,0,1,10,5,2],
-"ERF__SuperDropletsMoistPhaseChange_8cpp.html":[3,0,1,10,5,3],
-"ERF__SuperDropletsMoistUtils_8cpp.html":[3,0,1,10,5,4],
-"ERF__SuperDropletsMoist_8H.html":[3,0,1,10,5,0],
-"ERF__SuperDropletsMoist_8H_source.html":[3,0,1,10,5,0],
+"ERF__SuperDropletsMoistAdvance_8cpp.html":[3,0,1,10,6,1],
+"ERF__SuperDropletsMoistInit_8cpp.html":[3,0,1,10,6,2],
+"ERF__SuperDropletsMoistPhaseChange_8cpp.html":[3,0,1,10,6,3],
+"ERF__SuperDropletsMoistUtils_8cpp.html":[3,0,1,10,6,4],
+"ERF__SuperDropletsMoist_8H.html":[3,0,1,10,6,0],
+"ERF__SuperDropletsMoist_8H_source.html":[3,0,1,10,6,0],
 "ERF__SurfaceDataInterpolation_8cpp.html":[3,0,1,18,28],
 "ERF__SurfaceDataInterpolation_8cpp.html#a20f086438a161a34a8fa999186d71963":[3,0,1,18,28,0],
 "ERF__SurfaceLayer_8H.html":[3,0,1,1,20],
@@ -180,7 +182,7 @@ var NAVTREEINDEX9 =
 "ERF__UpdateGeostrophicProfile__SineMassFlux_8H.html#aac2e5b107bfa4ac340f62bd3584c3c3b":[3,0,1,14,44,0],
 "ERF__UpdateGeostrophicProfile__SineMassFlux_8H_source.html":[3,0,1,14,44],
 "ERF__UpdateKessler_8cpp.html":[3,0,1,10,0,4],
-"ERF__UpdateMorrison_8cpp.html":[3,0,1,10,1,11],
+"ERF__UpdateMorrison_8cpp.html":[3,0,1,10,2,11],
 "ERF__UpdateRhoQtSources__Bomex_8H.html":[3,0,1,14,45],
 "ERF__UpdateRhoQtSources__Bomex_8H.html#a1c9882ac2fce8324eb5689e566a2b365":[3,0,1,14,45,6],
 "ERF__UpdateRhoQtSources__Bomex_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,14,45,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,14,51,2],
 "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#abb486aef98a749032667aad074f90c6f":[3,0,1,14,51,5],
 "ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ad53eb451be33aeb4ef17280d99c15da7":[3,0,1,14,51,0],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830":[3,0,1,14,51,7],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722":[3,0,1,14,51,9],
-"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97":[3,0,1,14,51,6]
+"ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830":[3,0,1,14,51,7]
 };

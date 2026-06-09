@@ -8,8 +8,8 @@ var ERF__HurricaneDiagnostics_8H =
     [ "HurricaneMaxVelTracker", "ERF__HurricaneDiagnostics_8H.html#a4cc87ffd11c1bbc7af34ff330746bd5a", null ],
     [ "HurricaneMinPressureTracker", "ERF__HurricaneDiagnostics_8H.html#af7f7e50c2aa3c0b056f8eb0fd9fd5961", null ],
     [ "HurricaneTrackerCircle", "ERF__HurricaneDiagnostics_8H.html#aaa00338da2ae456198fc994e41f984f2", null ],
-    [ "in", "ERF__HurricaneDiagnostics_8H.html#a01f460003fd7364c1478b0e368ee38d0", null ],
-    [ "out", "ERF__HurricaneDiagnostics_8H.html#a1bf03aaf3b291727cbf956f2d4b093fa", null ],
+    [ "in", "ERF__HurricaneDiagnostics_8H.html#aa60bfd0e9feb385e53ed53a92959b43f", null ],
+    [ "out", "ERF__HurricaneDiagnostics_8H.html#a33712bb724fde6a224ad7152d7fb7f41", null ],
     [ "rank", "ERF__HurricaneDiagnostics_8H.html#a6cfd95afd0afebd625b889fb6e58371c", null ],
     [ "value", "ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923", null ]
 ];

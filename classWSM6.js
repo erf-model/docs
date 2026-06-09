@@ -31,6 +31,7 @@ var classWSM6 =
     [ "lamdarmax", "classWSM6.html#aade35559bd91bec7d7ee428e9eed6393", null ],
     [ "lamdasmax", "classWSM6.html#a5201b78182b8b1294adf3e4ee44e16f8", null ],
     [ "m_avtg", "classWSM6.html#ac2dbba8a0fb743e97c954a4ea1a97b41", null ],
+    [ "m_axis", "classWSM6.html#a4baa9ab47a27c28a662c545f3128c1b7", null ],
     [ "m_bvtg", "classWSM6.html#acf8b3554b0c72d74171d472d16cc1aab", null ],
     [ "m_bvtg1", "classWSM6.html#a378e7addcd7f1997f334466bb3a6e197", null ],
     [ "m_bvtg2", "classWSM6.html#a8610e6f6469f931cb8b82e1907065ddc", null ],

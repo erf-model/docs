@@ -576,5 +576,7 @@ var namespaces_dup =
     ] ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ],
-    [ "WSM6Ind", "namespaceWSM6Ind.html", null ]
+    [ "WSM6Ind", "namespaceWSM6Ind.html", null ],
+    [ "WSM6SedCellScratch", "namespaceWSM6SedCellScratch.html", null ],
+    [ "WSM6SedNodeScratch", "namespaceWSM6SedNodeScratch.html", null ]
 ];

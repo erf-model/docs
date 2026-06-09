@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('ERF__InterpolationUtils_8H_source.html
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType&gt;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">interpolateFields</a>(</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> ParticleType&amp; <a class="code" href="namespaceWSM6Ind.html#a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc">p</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> ParticleType&amp; <a class="code" href="namespaceWSM6Ind.html#ae8554dd983fbb4bc3e87a9fb0cebecf3ad6cb403596ec7a348234a3a3bf0221bc">p</a>,</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; plo,</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxi,</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;* field_arrays,</div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('ERF__InterpolationUtils_8H_source.html
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> num_fields</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_fields; ++i) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cic_interpolate(<a class="code" href="namespaceWSM6Ind.html#a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cic_interpolate(<a class="code" href="namespaceWSM6Ind.html#ae8554dd983fbb4bc3e87a9fb0cebecf3ad6cb403596ec7a348234a3a3bf0221bc">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('ERF__InterpolationUtils_8H_source.html
 <div class="ttc" id="aERF__TerrainConversion_8H_html"><div class="ttname"><a href="ERF__TerrainConversion_8H.html">ERF_TerrainConversion.H</a></div></div>
 <div class="ttc" id="anamespaceERF_1_1Interpolation_html_ab1b8576c9ac7ae9803bd445af83f2bfe"><div class="ttname"><a href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">ERF::Interpolation::interpolateFields</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void interpolateFields(const ParticleType &amp;p, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxi, const amrex::Array4&lt; const amrex::Real &gt; *field_arrays, amrex::ParticleReal *result_values, int num_fields)</div><div class="ttdoc">Interpolate multiple field values at a particle position using CIC.</div><div class="ttdef"><b>Definition:</b> ERF_InterpolationUtils.H:24</div></div>
 <div class="ttc" id="anamespaceERF_html"><div class="ttname"><a href="namespaceERF.html">ERF</a></div><div class="ttdef"><b>Definition:</b> ERF_InterpolationUtils.H:16</div></div>
-<div class="ttc" id="anamespaceWSM6Ind_html_a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#a25f5eb09118225bcdbe61d8a5e8f59dfad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:174</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_ae8554dd983fbb4bc3e87a9fb0cebecf3ad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#ae8554dd983fbb4bc3e87a9fb0cebecf3ad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:176</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
