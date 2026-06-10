@@ -1,5 +1,11 @@
 var NAVTREEINDEX18 =
 {
+"classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762":[2,0,91,5],
+"classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269":[2,0,91,31],
+"classSDInitProperties.html#aff68bc531d5bad021fa7d9ebc059101e":[2,0,91,8],
+"classSDInitialization.html":[2,0,90],
+"classSDInitialization.html#a1a04e7c5cb13736510927d4b5696b385":[2,0,90,5],
+"classSDInitialization.html#a344b65913d546d932f2aeea99bbec591":[2,0,90,6],
 "classSDInitialization.html#a52161d5077d085b2569f4710c5e210b5":[2,0,90,2],
 "classSDInitialization.html#a7992b988ef996b5e2d03bdb86ac469fa":[2,0,90,3],
 "classSDInitialization.html#a9608821a58b998eb82aa65f55334220a":[2,0,90,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX18 =
 "classSimpleAD.html#af9dae2d9db9de431b450e61c55a83ffe":[2,0,95,11],
 "classSimpleAD.html#affe2efa65acb68bd027a69ad1410253a":[2,0,95,1],
 "classSurfaceLayer.html":[2,0,109],
-"classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487":[2,0,109,101],
-"classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424":[2,0,109,34],
-"classSurfaceLayer.html#a07168bc6be4d07fd31d0877a347975b0":[2,0,109,70],
-"classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234":[2,0,109,66],
-"classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4":[2,0,109,92],
-"classSurfaceLayer.html#a09961f2fcf7cdc577fc29ae446c3d4de":[2,0,109,37],
-"classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40":[2,0,109,76]
+"classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487":[2,0,109,101]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"ERF__InitCustomPertVels__Terrain3DHemisphere_8H.html#a863c0eb2f954dadd8b70f3ca76bc41e4":[3,0,1,14,36,8],
+"ERF__InitCustomPertVels__Terrain3DHemisphere_8H.html#a909f374b2bb8aa28889a14e5fcbc2671":[3,0,1,14,36,11],
+"ERF__InitCustomPertVels__Terrain3DHemisphere_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,14,36,27],
+"ERF__InitCustomPertVels__Terrain3DHemisphere_8H.html#a9b9eacf8d09982add9a5162442ed8d2c":[3,0,1,14,36,2],
 "ERF__InitCustomPertVels__Terrain3DHemisphere_8H.html#a9d009471e1150853fe277cbb7bec9ede":[3,0,1,14,36,17],
 "ERF__InitCustomPertVels__Terrain3DHemisphere_8H.html#aa05b7d1441862703a8be2d911afdb9c5":[3,0,1,14,36,19],
 "ERF__InitCustomPertVels__Terrain3DHemisphere_8H.html#aa430b587d06ffd6d94706b3ddf75f3cb":[3,0,1,14,36,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "ERF__InitCustomPert__DensityCurrent_8H.html#a3a1023fe73b5e558f7d6c9f0c159fdd1":[3,0,1,14,5,11],
 "ERF__InitCustomPert__DensityCurrent_8H.html#a46e52004c860b2aef260fce99d025bce":[3,0,1,14,5,8],
 "ERF__InitCustomPert__DensityCurrent_8H.html#a47302f019039afd23af718058e185a14":[3,0,1,14,5,10],
-"ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb":[3,0,1,14,5,1],
-"ERF__InitCustomPert__DensityCurrent_8H.html#a839469c41cb23df7da5ebf123f0f87e4":[3,0,1,14,5,13],
-"ERF__InitCustomPert__DensityCurrent_8H.html#a8e65bc97cbe965426c70db19f6c626b8":[3,0,1,14,5,0],
-"ERF__InitCustomPert__DensityCurrent_8H.html#aa395cc3ca43aaf99f6ae148afe3d5ea4":[3,0,1,14,5,9],
-"ERF__InitCustomPert__DensityCurrent_8H.html#aaca11ea63a2f4fae4d4d996a1785cefb":[3,0,1,14,5,4]
+"ERF__InitCustomPert__DensityCurrent_8H.html#a560a8df64f1b30c30d0d100ee051a1fb":[3,0,1,14,5,1]
 };
