@@ -117,6 +117,7 @@ var structSolverChoice =
     [ "use_gravity", "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5", null ],
     [ "use_lagged_delta_rt", "structSolverChoice.html#a0e2a9a1ec68a94b24dc8f3f6d8bb7af0", null ],
     [ "use_num_diff", "structSolverChoice.html#a8d039800497a1e5084afeef94d367932", null ],
+    [ "use_pert_pres_gradient", "structSolverChoice.html#aab9d9ca36dbd929094f50c2547614708", null ],
     [ "use_real_bcs", "structSolverChoice.html#ad57b63939b19e90b87dd61d3f293b0d7", null ],
     [ "use_rotate_surface_flux", "structSolverChoice.html#ae6a9fda53f08dbed04adb4c63dc3176e", null ],
     [ "use_shoc", "structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1", null ],

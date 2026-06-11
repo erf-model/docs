@@ -9,6 +9,8 @@ var ERF__SrcHeaders_8H =
     [ "ApplySurfaceTreatment_BulkCoeff_Mom", "ERF__SrcHeaders_8H.html#a16eedc7495a4d75f55f920829fa69cef", null ],
     [ "compute_gradp", "ERF__SrcHeaders_8H.html#a43c544fdc0bdd13ca5993185c835880e", null ],
     [ "compute_gradp_interpz", "ERF__SrcHeaders_8H.html#a7b28afc46a4e7ef5307af00f235dd980", null ],
+    [ "compute_gradp_xy", "ERF__SrcHeaders_8H.html#ab99ba4f6e8dc4a8e8850ad2d159cdb6e", null ],
+    [ "compute_gradp_z", "ERF__SrcHeaders_8H.html#a59c38f0cb01f93b72b651193fde35876", null ],
     [ "make_buoyancy", "ERF__SrcHeaders_8H.html#a6338f4278c3585195dc868c848a9a90a", null ],
     [ "make_gradp_pert", "ERF__SrcHeaders_8H.html#a11ba280e018e32cdbd796f7960228363", null ],
     [ "make_mom_sources", "ERF__SrcHeaders_8H.html#a6981f36df4fa905cdbab4fb98e614ca3", null ],

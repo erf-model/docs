@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"ERF__PBLModels_8H.html#aeb04aafa49b30e6b3620f01b06b0e004":[3,0,1,12,7,1],
+"ERF__PBLModels_8H_source.html":[3,0,1,12,7],
 "ERF__ParFunctions_8H.html":[3,0,1,18,23],
 "ERF__ParFunctions_8H.html#ae0f0ec55ed7951e173987f3e511f082e":[3,0,1,18,23,0],
 "ERF__ParFunctions_8H_source.html":[3,0,1,18,23],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__SolveWithEBMLMG_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861":[3,0,1,8,7,0],
 "ERF__SolveWithFFT_8cpp.html":[3,0,1,8,8],
 "ERF__SolveWithGMRES_8cpp.html":[3,0,1,8,9],
-"ERF__SolveWithMLMG_8cpp.html":[3,0,1,8,10],
-"ERF__SolveWithMLMG_8cpp.html#a9285fc2860db342a9350ae1bf2e43eef":[3,0,1,8,10,0],
-"ERF__SolverUtils_8H.html":[3,0,1,8,6]
+"ERF__SolveWithMLMG_8cpp.html":[3,0,1,8,10]
 };
