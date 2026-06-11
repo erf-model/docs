@@ -102,10 +102,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a76b27b6105fe279f9a43296072c843b3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__utils_8H.html#a76b27b6105fe279f9a43296072c843b3">cons_to_prim</a></td></tr>
-<tr class="separator:a76b27b6105fe279f9a43296072c843b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb3c6d5ef4918e183ee8ce06231e1787"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__utils_8H.html#abb3c6d5ef4918e183ee8ce06231e1787">make_qt</a></td></tr>
-<tr class="separator:abb3c6d5ef4918e183ee8ce06231e1787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f073ad707b53389ee641955d5715aa"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__utils_8H.html#a02f073ad707b53389ee641955d5715aa">make_pi_stage</a></td></tr>
+<tr class="separator:a02f073ad707b53389ee641955d5715aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e7934b18ef63bc8c4c16db42277c52f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__utils_8H.html#a5e7934b18ef63bc8c4c16db42277c52f">apply_bcs</a></td></tr>
 <tr class="separator:a5e7934b18ef63bc8c4c16db42277c52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9cef7331b7293f77409c2854d702257"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TI__utils_8H.html#af9cef7331b7293f77409c2854d702257">update_terrain_stage</a></td></tr>
@@ -131,55 +129,54 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a76b27b6105fe279f9a43296072c843b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76b27b6105fe279f9a43296072c843b3">&#9670;&nbsp;</a></span>cons_to_prim</h2>
+<a id="a02f073ad707b53389ee641955d5715aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f073ad707b53389ee641955d5715aa">&#9670;&nbsp;</a></span>make_pi_stage</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">auto cons_to_prim</td>
+          <td class="memname">auto make_pi_stage</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Define the primitive variables by dividing the conserved variables by density </p>
+<b>Initial value:</b><div class="fragment"><div class="line">= [&amp;](<span class="keyword">const</span> MultiFab&amp; cons_state)</div>
+<div class="line">    {</div>
+<div class="line">        BL_PROFILE(<span class="stringliteral">&quot;make_pi_stage()&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">      <span class="keywordflow">for</span> (MFIter mfi(cons_state,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line">      {</div>
+<div class="line">          </div>
+<div class="line">          </div>
+<div class="line">          </div>
+<div class="line">          <span class="keyword">const</span> Box&amp; gbx1 = mfi.growntilebox(1);</div>
+<div class="line"> </div>
+<div class="line">          <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cons_arr = cons_state.const_array(mfi);</div>
+<div class="line">          <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; pi_stage_arr = pi_stage.array(mfi);</div>
+<div class="line">          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> = solverChoice.rdOcp;</div>
+<div class="line">          <span class="keyword">const</span> <span class="keywordtype">bool</span> l_use_moisture  = (solverChoice.moisture_type != MoistureType::None);</div>
+<div class="line"> </div>
+<div class="line">          <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(gbx1, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line">          {</div>
+<div class="line">              <span class="keyword">auto</span> qv_for_p = (l_use_moisture) ? cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line">              pi_stage_arr(i,j,k) = <a class="code" href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a>(cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, qv_for_p);</div>
+<div class="line">          });</div>
+<div class="line">      } </div>
+<div class="line">    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_a7ca234654aa49d086905b8550878ae7d"><div class="ttname"><a href="ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d">getExnergivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenRTh(const amrex::Real rhotheta, const amrex::Real rdOcp, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:156</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a46e52004c860b2aef260fce99d025bce"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a></div><div class="ttdeci">const Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bomex.H:16</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+</div><!-- fragment --><p>Define the Exner pressure at this RK stage </p>
 
 <p class="reference">Referenced by <a class="el" href="classERF.html#a96a272defae485c5b83fbc123a631f9f">ERF::advance_dycore()</a>.</p>
-
-</div>
-</div>
-<a id="abb3c6d5ef4918e183ee8ce06231e1787"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb3c6d5ef4918e183ee8ce06231e1787">&#9670;&nbsp;</a></span>make_qt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto make_qt</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= [&amp;](<span class="keyword">const</span> MultiFab&amp; cons_state, MultiFab&amp; <a class="code" href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">qt</a>)</div>
-<div class="line">    {</div>
-<div class="line">        BL_PROFILE(<span class="stringliteral">&quot;make_qt()&quot;</span>);</div>
-<div class="line"> </div>
-<div class="line">        <span class="keywordtype">int</span> n_qstate_into_total = micro-&gt;Get_Qstate_Moist_Size() - micro-&gt;Get_Qstate_Moist_NumConc_Size();</div>
-<div class="line"> </div>
-<div class="line">        </div>
-<div class="line">        MultiFab::Copy(<a class="code" href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
-<div class="line"> </div>
-<div class="line">        </div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n(1); n&lt;n_qstate_into_total; ++n) {</div>
-<div class="line">            MultiFab::Add(<a class="code" href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>+n, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
-<div class="line">        }</div>
-<div class="line"> </div>
-<div class="line">        </div>
-<div class="line">        MultiFab::Divide(<a class="code" href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
-<div class="line">    }</div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03"><div class="ttname"><a href="namespaceMicVar__Kess.html#aec8dc24e4ed89c572185960659736d7fa9f81c8a38dd25b5ae5821d48e8878b03">MicVar_Kess::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:28</div></div>
-</div><!-- fragment --><p>Define the total water content in each cell </p>
 
 </div>
 </div>

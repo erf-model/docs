@@ -99,6 +99,7 @@ var structSolverChoice =
     [ "project_initial_velocity", "structSolverChoice.html#a33c5abdc0e1acafb77ac1d6fad11decd", null ],
     [ "rad_type", "structSolverChoice.html#a31c93846e0129221632347d2378e881d", null ],
     [ "rdOcp", "structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a", null ],
+    [ "rebalance_wrf_input", "structSolverChoice.html#a0058baae19c21ee78b084c13f8958a72", null ],
     [ "sampling_distance_by_D", "structSolverChoice.html#a9029114db3f1983d2d720210dcf87c69", null ],
     [ "sinphi", "structSolverChoice.html#a6426e150ba9c1ba2e14151228bf6ffaf", null ],
     [ "sounding_type", "structSolverChoice.html#aa170a5099566043b130086aeb61e9eb3", null ],

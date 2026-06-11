@@ -26,6 +26,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "ERF_Coupling.cpp", "ERF__Coupling_8cpp.html", null ],
     [ "ERF_Derive.cpp", "ERF__Derive_8cpp.html", "ERF__Derive_8cpp" ],
     [ "ERF_Derive.H", "ERF__Derive_8H.html", "ERF__Derive_8H" ],
+    [ "ERF_Diagnostics.cpp", "ERF__Diagnostics_8cpp.html", null ],
     [ "ERF_IndexDefines.H", "ERF__IndexDefines_8H.html", "ERF__IndexDefines_8H" ],
     [ "ERF_InputsName.H", "ERF__InputsName_8H.html", "ERF__InputsName_8H" ],
     [ "ERF_MakeNewArrays.cpp", "ERF__MakeNewArrays_8cpp.html", null ],
