@@ -177,6 +177,7 @@ var NAVTREEINDEX25 =
 "structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7":[2,0,68,8],
 "structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24":[2,0,68,4],
 "structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca":[2,0,68,0],
+"structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7":[2,0,68,9],
 "structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76":[2,0,68,1],
 "structProbParmDefaults.html":[2,0,71],
 "structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6":[2,0,71,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "structSAMPrecipFaceState.html":[2,0,84],
 "structSAMPrecipFaceState.html#a10bdfb6f25e682a16d639267b3d8b582":[2,0,84,0],
 "structSAMPrecipFaceState.html#a1c6a7334783f89d08b71a92044556f14":[2,0,84,5],
-"structSAMPrecipFaceState.html#a51baeec56397d453b29383fd834dd3ac":[2,0,84,4],
-"structSAMPrecipFaceState.html#a63a22551cc05b900ed28733fcdd6619c":[2,0,84,3]
+"structSAMPrecipFaceState.html#a51baeec56397d453b29383fd834dd3ac":[2,0,84,4]
 };

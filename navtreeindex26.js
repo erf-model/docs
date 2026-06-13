@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"structSAMPrecipFaceState.html#a63a22551cc05b900ed28733fcdd6619c":[2,0,84,3],
 "structSAMPrecipFaceState.html#a874ebd45d78701e1ace4ad875686a4fa":[2,0,84,6],
 "structSAMPrecipFaceState.html#a899bcc7b8b4eb1c96a80cc06241d52bc":[2,0,84,2],
 "structSAMPrecipFaceState.html#a98961b345d25e32e69a6709f3dde99fc":[2,0,84,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "structSolverChoice.html#a76659aa69edd3370626e3648cbead9be":[2,0,99,4],
 "structSolverChoice.html#a76ca8df4b23607613ce44ad4fcec565e":[2,0,99,80],
 "structSolverChoice.html#a77ac2f26fce7a85fe9a0241e34378cf8":[2,0,99,7],
-"structSolverChoice.html#a7c414e2fb7c53479a2d21bb3a2d4099e":[2,0,99,107],
-"structSolverChoice.html#a7e93900ec3e84826fcf1e02435bdae42":[2,0,99,28]
+"structSolverChoice.html#a7c414e2fb7c53479a2d21bb3a2d4099e":[2,0,99,107]
 };
