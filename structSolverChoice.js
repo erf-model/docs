@@ -82,6 +82,7 @@ var structSolverChoice =
     [ "init_type", "structSolverChoice.html#ac1ddc9c301ac98689bf3b7b7184b24e1", null ],
     [ "io_hurricane_eye_tracker", "structSolverChoice.html#a76ca8df4b23607613ce44ad4fcec565e", null ],
     [ "is_init_for_ensemble", "structSolverChoice.html#afc79f21f2d3a0a15a2fac209eec2792f", null ],
+    [ "is_land", "structSolverChoice.html#a4b6b2e71d6f0141b3abe1b804a872a42", null ],
     [ "lsm_type", "structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31", null ],
     [ "massflux_khi", "structSolverChoice.html#af2ce02ea291687a31fdd716e2732acfa", null ],
     [ "massflux_klo", "structSolverChoice.html#a56b3643c43d3b6f0fa0f24adeee57f33", null ],

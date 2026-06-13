@@ -162,7 +162,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::ifstream file(forestfile, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#aa60bfd0e9feb385e53ed53a92959b43f">std::ios::in</a>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::ifstream file(forestfile, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a762576a785d71bfb6daa45161295df7a">std::ios::in</a>);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (!file.good()) {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        Abort(<span class="stringliteral">&quot;Cannot find forest file: &quot;</span> + forestfile);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
@@ -181,7 +181,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    file.close();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_aa60bfd0e9feb385e53ed53a92959b43f"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#aa60bfd0e9feb385e53ed53a92959b43f">in</a></div><div class="ttdeci">struct @27 in</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a762576a785d71bfb6daa45161295df7a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a762576a785d71bfb6daa45161295df7a">in</a></div><div class="ttdeci">struct @28 in</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassForestDrag_html_a17d88d33ff5abbdd20b28e2e841b09b7"><div class="ttname"><a href="classForestDrag.html#a17d88d33ff5abbdd20b28e2e841b09b7">ForestDrag::m_diameter_forest</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_diameter_forest</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.H:35</div></div>
 <div class="ttc" id="aclassForestDrag_html_a24d15eda91f5abc361c3c5b37fb45efd"><div class="ttname"><a href="classForestDrag.html#a24d15eda91f5abc361c3c5b37fb45efd">ForestDrag::m_laimax_forest</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_laimax_forest</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.H:38</div></div>
@@ -305,7 +305,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ztree  = 0;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> expFun = 0;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ratio  = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a4fa46e2265e807eece0ef8774d38baccab29d385bf2b39091cb8fd1a92247de70">dz</a> = hf / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(nk);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70">dz</a> = hf / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(nk);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            treeZm = laimaxf * hf;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k&lt;nk; ++k) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                ratio = (hf - treeZm) / (hf - ztree);</div>
@@ -316,9 +316,9 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    expFun += std::pow(ratio, <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                              std::exp(<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (1 - ratio));</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                ztree += <a class="code" href="namespaceWSM6SedCellScratch.html#a4fa46e2265e807eece0ef8774d38baccab29d385bf2b39091cb8fd1a92247de70">dz</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                ztree += <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70">dz</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            af = laif / (expFun * <a class="code" href="namespaceWSM6SedCellScratch.html#a4fa46e2265e807eece0ef8774d38baccab29d385bf2b39091cb8fd1a92247de70">dz</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            af = laif / (expFun * <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70">dz</a>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Set the forest drag data</span></div>
@@ -378,7 +378,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a1a21221b2a962ff8657e21b54b71c245"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a1a21221b2a962ff8657e21b54b71c245">prob_lo</a></div><div class="ttdeci">const amrex::Real * prob_lo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:16</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aclassForestDrag_html_acb32d6e1088af2621a723601500db7b3"><div class="ttname"><a href="classForestDrag.html#acb32d6e1088af2621a723601500db7b3">ForestDrag::m_forest_drag</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::MultiFab &gt; m_forest_drag</div><div class="ttdef"><b>Definition:</b> ERF_ForestDrag.H:39</div></div>
-<div class="ttc" id="anamespaceWSM6SedCellScratch_html_a4fa46e2265e807eece0ef8774d38baccab29d385bf2b39091cb8fd1a92247de70"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a4fa46e2265e807eece0ef8774d38baccab29d385bf2b39091cb8fd1a92247de70">WSM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:104</div></div>
+<div class="ttc" id="anamespaceWSM6SedCellScratch_html_a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70">WSM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:104</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

@@ -91,6 +91,7 @@ var classSurfaceLayer =
     [ "m_geom", "classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6", null ],
     [ "m_has_lsm_fluxes", "classSurfaceLayer.html#a4110ab7c1edcce288acc3f626466e6df", null ],
     [ "m_has_lsm_tsurf", "classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656", null ],
+    [ "m_has_ocean_lsm_tsurf", "classSurfaceLayer.html#ac81f8f23d0bde8616e2bb1fcaa35063a", null ],
     [ "m_Hwave_lev", "classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad", null ],
     [ "m_ignore_sst", "classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8", null ],
     [ "m_include_wstar", "classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234", null ],
