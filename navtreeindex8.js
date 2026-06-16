@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"ERF__PBLHeight_8H.html":[3,0,1,12,6],
 "ERF__PBLHeight_8H_source.html":[3,0,1,12,6],
 "ERF__PBLModels_8H.html":[3,0,1,12,7],
 "ERF__PBLModels_8H.html#a1deabe90a1d943d577b1e8ce80a6b4b1":[3,0,1,12,7,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__SlowRhsPost_8cpp.html":[3,0,1,16,11],
 "ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87":[3,0,1,16,11,0],
 "ERF__SlowRhsPre_8cpp.html":[3,0,1,16,12],
-"ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f":[3,0,1,16,12,0],
-"ERF__SolveTridiag_8H.html":[3,0,1,18,27]
+"ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f":[3,0,1,16,12,0]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"ERF__Constants_8H.html#ac16a7511bec41b7d5a558b5841e8f3b1":[3,0,1,22,26],
 "ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43":[3,0,1,22,14],
 "ERF__Constants_8H.html#acecae1da25fb8c8d32d1f175e18df41f":[3,0,1,22,16],
 "ERF__Constants_8H.html#ad51e17db99d11b190b2b57a23a518f7e":[3,0,1,22,56],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__EOS_8H.html#a7668916ec63c2868ff5879714ad2401e":[3,0,1,18,6,5],
 "ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d":[3,0,1,18,6,3],
 "ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2":[3,0,1,18,6,11],
-"ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b":[3,0,1,18,6,2],
-"ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9":[3,0,1,18,6,4]
+"ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b":[3,0,1,18,6,2]
 };
