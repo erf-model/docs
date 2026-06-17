@@ -83,19 +83,28 @@ $(document).ready(function(){initNavTree('ERF__InputsName_8H.html',''); initResi
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_InputsName.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;AMReX.H&gt;</code><br />
+<code>#include &lt;AMReX_Print.H&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_InputsName.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__InputsName_8H__incl.png" border="0" usemap="#aSource_2ERF__InputsName_8H" alt=""/></div>
 <map name="aSource_2ERF__InputsName_8H" id="aSource_2ERF__InputsName_8H">
-<area shape="rect" title=" " alt="" coords="5,5,200,32"/>
-<area shape="rect" title=" " alt="" coords="73,80,132,107"/>
+<area shape="rect" title=" " alt="" coords="196,5,391,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,88,107"/>
+<area shape="rect" title=" " alt="" coords="112,80,232,107"/>
+<area shape="rect" title=" " alt="" coords="257,80,330,107"/>
+<area shape="rect" title=" " alt="" coords="355,80,413,107"/>
+<area shape="rect" title=" " alt="" coords="438,80,562,107"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -111,11 +120,120 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="ERF__InputsName_8H_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa4d3de3855a1e01db2c10e072132d258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InputsName_8H.html#aa4d3de3855a1e01db2c10e072132d258">CheckForDuplicateInputs</a> (const std::string &amp;inputs_file)</td></tr>
+<tr class="separator:aa4d3de3855a1e01db2c10e072132d258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:aabaa127a3a319c1b86090d6c88568965"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InputsName_8H.html#aabaa127a3a319c1b86090d6c88568965">inputs_name</a></td></tr>
 <tr class="separator:aabaa127a3a319c1b86090d6c88568965"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aa4d3de3855a1e01db2c10e072132d258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4d3de3855a1e01db2c10e072132d258">&#9670;&nbsp;</a></span>CheckForDuplicateInputs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CheckForDuplicateInputs </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>inputs_file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::ifstream ifs(inputs_file);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (!ifs.is_open()) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Could not open inputs file: &quot;</span> + inputs_file);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">struct </span>EntryInfo {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">int</span> line_number;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::string <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::unordered_map&lt;std::string, EntryInfo&gt; seen;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string line;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> line_number = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> found_duplicates = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">while</span> (std::getline(ifs, line))</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ++line_number;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// Remove comments</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">auto</span> hash_pos = line.find(<span class="charliteral">&#39;#&#39;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (hash_pos != std::string::npos) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            line = line.substr(0, hash_pos);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        line = trim_copy(line);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// Skip blank lines</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (line.empty()) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// Skip lines that are not assignments</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">auto</span> eq_pos = line.find(<span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (eq_pos == std::string::npos) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::string key   = trim_copy(line.substr(0, eq_pos));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::string <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = trim_copy(line.substr(eq_pos + 1));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">auto</span> it = seen.find(key);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span> (it != seen.end())</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            found_duplicates = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            amrex::Print()</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;\nDuplicate input detected:\n&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;    Key         : &quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;    First line  : &quot;</span> &lt;&lt; it-&gt;second.line_number</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;    Value       : &quot;</span> &lt;&lt; it-&gt;second.value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;    Second line : &quot;</span> &lt;&lt; line_number</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                &lt;&lt; <span class="stringliteral">&quot;    Value       : &quot;</span> &lt;&lt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            seen.emplace(key, EntryInfo{line_number, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>});</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (found_duplicates)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Duplicate inputs detected in inputs file&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__InputsName_8H_aa4d3de3855a1e01db2c10e072132d258_icgraph.png" border="0" usemap="#aERF__InputsName_8H_aa4d3de3855a1e01db2c10e072132d258_icgraph" alt=""/></div>
+<map name="aERF__InputsName_8H_aa4d3de3855a1e01db2c10e072132d258_icgraph" id="aERF__InputsName_8H_aa4d3de3855a1e01db2c10e072132d258_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,292,32"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
+</map>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="aabaa127a3a319c1b86090d6c88568965"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabaa127a3a319c1b86090d6c88568965">&#9670;&nbsp;</a></span>inputs_name</h2>

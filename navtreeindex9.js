@@ -1,5 +1,8 @@
 var NAVTREEINDEX9 =
 {
+"ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87":[3,0,1,16,11,0],
+"ERF__SlowRhsPre_8cpp.html":[3,0,1,16,12],
+"ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f":[3,0,1,16,12,0],
 "ERF__SolveTridiag_8H.html":[3,0,1,18,27],
 "ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,18,27,0],
 "ERF__SolveTridiag_8H_source.html":[3,0,1,18,27],
@@ -246,8 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#a4ceccadb1d0793b4c2333669f04fc9fb":[3,0,1,14,49,1],
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#a558c29f4eee2cbf555fae643674b3aad":[3,0,1,14,49,4],
 "ERF__UpdateRhoThetaSources__Bomex_8H.html#aa0c54f97cf5d0886417d0bf1aff97960":[3,0,1,14,49,6],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,14,49,2],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#ad53eb451be33aeb4ef17280d99c15da7":[3,0,1,14,49,0],
-"ERF__UpdateRhoThetaSources__Bomex_8H.html#ae434c019b8352762564daa3f947bd9de":[3,0,1,14,49,3],
-"ERF__UpdateRhoThetaSources__Bomex_8H_source.html":[3,0,1,14,49]
+"ERF__UpdateRhoThetaSources__Bomex_8H.html#aa1919e3b581c576a4b81226a9bd41eb7":[3,0,1,14,49,2]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"classSatAdj.html#ad7e1876bee10ba930f88c4e8c3591f0d":[2,0,89,10],
+"classSatAdj.html#afb1e467461c3ff020db1c5a9117904d3":[2,0,89,7],
+"classSatMethods.html":[2,0,90],
 "classSatMethods.html#a04e5fc642c88eda0767e507a9183682b":[2,0,90,9],
 "classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6":[2,0,90,1],
 "classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd":[2,0,90,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX19 =
 "classWSM6.html#a70c0e92ba0352b78399694af007a9908":[2,0,132,107],
 "classWSM6.html#a720ee615a412a580b11d33f9ac73bc91":[2,0,132,50],
 "classWSM6.html#a72529508ba80b7ec73023c9f9ea4ec95":[2,0,132,80],
-"classWSM6.html#a7266aab22c3043d600573a8d68a0d171":[2,0,132,7],
-"classWSM6.html#a7342d5349fa0ed0ab5438747f177a65a":[2,0,132,53],
-"classWSM6.html#a742dbbf4fb1706286404c3354f6fb3c9":[2,0,132,66],
-"classWSM6.html#a75316570342200c2918b5dce21c027d4":[2,0,132,106]
+"classWSM6.html#a7266aab22c3043d600573a8d68a0d171":[2,0,132,7]
 };

@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01964"></a><span class="lineno"> 1964</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l01968"></a><span class="lineno"> 1968</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -222,13 +222,13 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01980"></a><span class="lineno"> 1980</span>&#160;    {</div>
-<div class="line"><a name="l01981"></a><span class="lineno"> 1981</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;q&#39;w&#39;&gt; = -K dqdz</span></div>
-<div class="line"><a name="l01982"></a><span class="lineno"> 1982</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l01983"></a><span class="lineno"> 1983</span>&#160; </div>
-<div class="line"><a name="l01984"></a><span class="lineno"> 1984</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l01985"></a><span class="lineno"> 1985</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="fragment"><div class="line"><a name="l01984"></a><span class="lineno"> 1984</span>&#160;    {</div>
+<div class="line"><a name="l01985"></a><span class="lineno"> 1985</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;q&#39;w&#39;&gt; = -K dqdz</span></div>
+<div class="line"><a name="l01986"></a><span class="lineno"> 1986</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l01987"></a><span class="lineno"> 1987</span>&#160; </div>
+<div class="line"><a name="l01988"></a><span class="lineno"> 1988</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l01989"></a><span class="lineno"> 1989</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 </div>
@@ -320,19 +320,19 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02001"></a><span class="lineno"> 2001</span>&#160;    {</div>
-<div class="line"><a name="l02002"></a><span class="lineno"> 2002</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Ch          = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0012);</div>
-<div class="line"><a name="l02003"></a><span class="lineno"> 2003</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>         = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l02004"></a><span class="lineno"> 2004</span>&#160; </div>
-<div class="line"><a name="l02005"></a><span class="lineno"> 2005</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_surf  = t_surf_arr(i,j,0);</div>
-<div class="line"><a name="l02006"></a><span class="lineno"> 2006</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_mean  =     tm_arr(i,j,0);</div>
-<div class="line"><a name="l02007"></a><span class="lineno"> 2007</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean    =    umm_arr(i,j,0);</div>
+<div class="fragment"><div class="line"><a name="l02005"></a><span class="lineno"> 2005</span>&#160;    {</div>
+<div class="line"><a name="l02006"></a><span class="lineno"> 2006</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Ch          = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0012);</div>
+<div class="line"><a name="l02007"></a><span class="lineno"> 2007</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>         = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l02008"></a><span class="lineno"> 2008</span>&#160; </div>
-<div class="line"><a name="l02009"></a><span class="lineno"> 2009</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
-<div class="line"><a name="l02010"></a><span class="lineno"> 2010</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * Ch * wsp_mean * (theta_mean - theta_surf);</div>
-<div class="line"><a name="l02011"></a><span class="lineno"> 2011</span>&#160; </div>
-<div class="line"><a name="l02012"></a><span class="lineno"> 2012</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l02013"></a><span class="lineno"> 2013</span>&#160;    }</div>
+<div class="line"><a name="l02009"></a><span class="lineno"> 2009</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_surf  = t_surf_arr(i,j,0);</div>
+<div class="line"><a name="l02010"></a><span class="lineno"> 2010</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_mean  =     tm_arr(i,j,0);</div>
+<div class="line"><a name="l02011"></a><span class="lineno"> 2011</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean    =    umm_arr(i,j,0);</div>
+<div class="line"><a name="l02012"></a><span class="lineno"> 2012</span>&#160; </div>
+<div class="line"><a name="l02013"></a><span class="lineno"> 2013</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;T&#39;w&#39;&gt; = -K dTdz</span></div>
+<div class="line"><a name="l02014"></a><span class="lineno"> 2014</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * Ch * wsp_mean * (theta_mean - theta_surf);</div>
+<div class="line"><a name="l02015"></a><span class="lineno"> 2015</span>&#160; </div>
+<div class="line"><a name="l02016"></a><span class="lineno"> 2016</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l02017"></a><span class="lineno"> 2017</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
 </div><!-- fragment -->
@@ -413,31 +413,31 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02027"></a><span class="lineno"> 2027</span>&#160;    {</div>
-<div class="line"><a name="l02028"></a><span class="lineno"> 2028</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = velx_arr(i,j,k);</div>
-<div class="line"><a name="l02029"></a><span class="lineno"> 2029</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
-<div class="line"><a name="l02030"></a><span class="lineno"> 2030</span>&#160;                                     + vely_arr(i-1,j,k) + vely_arr(i-1,j+1,k) );</div>
-<div class="line"><a name="l02031"></a><span class="lineno"> 2031</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>  * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l02032"></a><span class="lineno"> 2032</span>&#160; </div>
-<div class="line"><a name="l02033"></a><span class="lineno"> 2033</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Cd       = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
-<div class="line"><a name="l02034"></a><span class="lineno"> 2034</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7e-5);</div>
-<div class="line"><a name="l02035"></a><span class="lineno"> 2035</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp      = std::sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l02036"></a><span class="lineno"> 2036</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( umm_arr(i-1,j,0) + umm_arr(i,j,0) );</div>
-<div class="line"><a name="l02037"></a><span class="lineno"> 2037</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
-<div class="line"><a name="l02038"></a><span class="lineno"> 2038</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
-<div class="line"><a name="l02039"></a><span class="lineno"> 2039</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(25.0) &amp;&amp; wsp_mean &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
-<div class="line"><a name="l02040"></a><span class="lineno"> 2040</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001) + c * (wsp_mean - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0));</div>
-<div class="line"><a name="l02041"></a><span class="lineno"> 2041</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02042"></a><span class="lineno"> 2042</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0024);</div>
-<div class="line"><a name="l02043"></a><span class="lineno"> 2043</span>&#160;        }</div>
-<div class="line"><a name="l02044"></a><span class="lineno"> 2044</span>&#160; </div>
-<div class="line"><a name="l02045"></a><span class="lineno"> 2045</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
-<div class="line"><a name="l02046"></a><span class="lineno"> 2046</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressx = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * Cd * velx * wsp;</div>
-<div class="line"><a name="l02047"></a><span class="lineno"> 2047</span>&#160; </div>
-<div class="line"><a name="l02048"></a><span class="lineno"> 2048</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
-<div class="line"><a name="l02049"></a><span class="lineno"> 2049</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:12</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
+<div class="fragment"><div class="line"><a name="l02031"></a><span class="lineno"> 2031</span>&#160;    {</div>
+<div class="line"><a name="l02032"></a><span class="lineno"> 2032</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = velx_arr(i,j,k);</div>
+<div class="line"><a name="l02033"></a><span class="lineno"> 2033</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( vely_arr(i  ,j,k) + vely_arr(i  ,j+1,k)</div>
+<div class="line"><a name="l02034"></a><span class="lineno"> 2034</span>&#160;                                     + vely_arr(i-1,j,k) + vely_arr(i-1,j+1,k) );</div>
+<div class="line"><a name="l02035"></a><span class="lineno"> 2035</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>  * ( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02036"></a><span class="lineno"> 2036</span>&#160; </div>
+<div class="line"><a name="l02037"></a><span class="lineno"> 2037</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Cd       = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
+<div class="line"><a name="l02038"></a><span class="lineno"> 2038</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7e-5);</div>
+<div class="line"><a name="l02039"></a><span class="lineno"> 2039</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp      = std::sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l02040"></a><span class="lineno"> 2040</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( umm_arr(i-1,j,0) + umm_arr(i,j,0) );</div>
+<div class="line"><a name="l02041"></a><span class="lineno"> 2041</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
+<div class="line"><a name="l02042"></a><span class="lineno"> 2042</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
+<div class="line"><a name="l02043"></a><span class="lineno"> 2043</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(25.0) &amp;&amp; wsp_mean &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
+<div class="line"><a name="l02044"></a><span class="lineno"> 2044</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001) + c * (wsp_mean - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0));</div>
+<div class="line"><a name="l02045"></a><span class="lineno"> 2045</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02046"></a><span class="lineno"> 2046</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0024);</div>
+<div class="line"><a name="l02047"></a><span class="lineno"> 2047</span>&#160;        }</div>
+<div class="line"><a name="l02048"></a><span class="lineno"> 2048</span>&#160; </div>
+<div class="line"><a name="l02049"></a><span class="lineno"> 2049</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;u&#39;w&#39;&gt; = -K dudz</span></div>
+<div class="line"><a name="l02050"></a><span class="lineno"> 2050</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressx = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * Cd * velx * wsp;</div>
+<div class="line"><a name="l02051"></a><span class="lineno"> 2051</span>&#160; </div>
+<div class="line"><a name="l02052"></a><span class="lineno"> 2052</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
+<div class="line"><a name="l02053"></a><span class="lineno"> 2053</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:14</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -516,29 +516,29 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02063"></a><span class="lineno"> 2063</span>&#160;    {</div>
-<div class="line"><a name="l02064"></a><span class="lineno"> 2064</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
-<div class="line"><a name="l02065"></a><span class="lineno"> 2065</span>&#160;                                     + velx_arr(i,j-1,k) + velx_arr(i+1,j-1,k) );</div>
-<div class="line"><a name="l02066"></a><span class="lineno"> 2066</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = vely_arr(i,j,k);</div>
-<div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>  * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l02068"></a><span class="lineno"> 2068</span>&#160; </div>
-<div class="line"><a name="l02069"></a><span class="lineno"> 2069</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Cd       = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
-<div class="line"><a name="l02070"></a><span class="lineno"> 2070</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7e-5);</div>
-<div class="line"><a name="l02071"></a><span class="lineno"> 2071</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp      = std::sqrt(velx*velx+vely*vely);</div>
-<div class="line"><a name="l02072"></a><span class="lineno"> 2072</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( umm_arr(i,j-1,0) + umm_arr(i,j,0) );</div>
-<div class="line"><a name="l02073"></a><span class="lineno"> 2073</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
-<div class="line"><a name="l02074"></a><span class="lineno"> 2074</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
-<div class="line"><a name="l02075"></a><span class="lineno"> 2075</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(25.0) &amp;&amp; wsp_mean &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
-<div class="line"><a name="l02076"></a><span class="lineno"> 2076</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001) + c * (wsp_mean - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0));</div>
-<div class="line"><a name="l02077"></a><span class="lineno"> 2077</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02078"></a><span class="lineno"> 2078</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0024);</div>
-<div class="line"><a name="l02079"></a><span class="lineno"> 2079</span>&#160;        }</div>
-<div class="line"><a name="l02080"></a><span class="lineno"> 2080</span>&#160; </div>
-<div class="line"><a name="l02081"></a><span class="lineno"> 2081</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
-<div class="line"><a name="l02082"></a><span class="lineno"> 2082</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressy = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * Cd * vely * wsp;</div>
-<div class="line"><a name="l02083"></a><span class="lineno"> 2083</span>&#160; </div>
-<div class="line"><a name="l02084"></a><span class="lineno"> 2084</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
-<div class="line"><a name="l02085"></a><span class="lineno"> 2085</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02067"></a><span class="lineno"> 2067</span>&#160;    {</div>
+<div class="line"><a name="l02068"></a><span class="lineno"> 2068</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> velx  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( velx_arr(i,j  ,k) + velx_arr(i+1,j  ,k)</div>
+<div class="line"><a name="l02069"></a><span class="lineno"> 2069</span>&#160;                                     + velx_arr(i,j-1,k) + velx_arr(i+1,j-1,k) );</div>
+<div class="line"><a name="l02070"></a><span class="lineno"> 2070</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vely  = vely_arr(i,j,k);</div>
+<div class="line"><a name="l02071"></a><span class="lineno"> 2071</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>  * ( cons_arr(i,j-1,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02072"></a><span class="lineno"> 2072</span>&#160; </div>
+<div class="line"><a name="l02073"></a><span class="lineno"> 2073</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Cd       = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
+<div class="line"><a name="l02074"></a><span class="lineno"> 2074</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> c  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7e-5);</div>
+<div class="line"><a name="l02075"></a><span class="lineno"> 2075</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp      = std::sqrt(velx*velx+vely*vely);</div>
+<div class="line"><a name="l02076"></a><span class="lineno"> 2076</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> wsp_mean = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( umm_arr(i,j-1,0) + umm_arr(i,j,0) );</div>
+<div class="line"><a name="l02077"></a><span class="lineno"> 2077</span>&#160;        <span class="keywordflow">if</span> (wsp_mean &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
+<div class="line"><a name="l02078"></a><span class="lineno"> 2078</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001);</div>
+<div class="line"><a name="l02079"></a><span class="lineno"> 2079</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wsp_mean &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(25.0) &amp;&amp; wsp_mean &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0)) {</div>
+<div class="line"><a name="l02080"></a><span class="lineno"> 2080</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.001) + c * (wsp_mean - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.0));</div>
+<div class="line"><a name="l02081"></a><span class="lineno"> 2081</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l02082"></a><span class="lineno"> 2082</span>&#160;            Cd = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0024);</div>
+<div class="line"><a name="l02083"></a><span class="lineno"> 2083</span>&#160;        }</div>
+<div class="line"><a name="l02084"></a><span class="lineno"> 2084</span>&#160; </div>
+<div class="line"><a name="l02085"></a><span class="lineno"> 2085</span>&#160;        <span class="comment">// NOTE: this is rho*&lt;v&#39;w&#39;&gt; = -K dvdz</span></div>
+<div class="line"><a name="l02086"></a><span class="lineno"> 2086</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressy = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * Cd * vely * wsp;</div>
+<div class="line"><a name="l02087"></a><span class="lineno"> 2087</span>&#160; </div>
+<div class="line"><a name="l02088"></a><span class="lineno"> 2088</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
+<div class="line"><a name="l02089"></a><span class="lineno"> 2089</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

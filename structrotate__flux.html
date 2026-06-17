@@ -145,7 +145,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02477"></a><span class="lineno"> 2477</span>&#160;{}</div>
+<div class="fragment"><div class="line"><a name="l02481"></a><span class="lineno"> 2481</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,21 +237,21 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02493"></a><span class="lineno"> 2493</span>&#160;    {</div>
-<div class="line"><a name="l02494"></a><span class="lineno"> 2494</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l02495"></a><span class="lineno"> 2495</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_mean = qvm_arr(i,j,0);</div>
-<div class="line"><a name="l02496"></a><span class="lineno"> 2496</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_surf = q_surf_arr(i,j,0);</div>
-<div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>     = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l02498"></a><span class="lineno"> 2498</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qstar   = q_star_arr(i,j,0);</div>
-<div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(qstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * qstar * (qv_mean-qv_surf): <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l02500"></a><span class="lineno"> 2500</span>&#160; </div>
-<div class="line"><a name="l02501"></a><span class="lineno"> 2501</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l02502"></a><span class="lineno"> 2502</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:6</div></div>
+<div class="fragment"><div class="line"><a name="l02497"></a><span class="lineno"> 2497</span>&#160;    {</div>
+<div class="line"><a name="l02498"></a><span class="lineno"> 2498</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02499"></a><span class="lineno"> 2499</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_mean = qvm_arr(i,j,0);</div>
+<div class="line"><a name="l02500"></a><span class="lineno"> 2500</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_surf = q_surf_arr(i,j,0);</div>
+<div class="line"><a name="l02501"></a><span class="lineno"> 2501</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>     = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l02502"></a><span class="lineno"> 2502</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qstar   = q_star_arr(i,j,0);</div>
+<div class="line"><a name="l02503"></a><span class="lineno"> 2503</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux  = (std::abs(qstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * qstar * (qv_mean-qv_surf): <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l02504"></a><span class="lineno"> 2504</span>&#160; </div>
+<div class="line"><a name="l02505"></a><span class="lineno"> 2505</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l02506"></a><span class="lineno"> 2506</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="astructrotate__flux_html_ae2e4dd388a9a609acf27d90fea305e11"><div class="ttname"><a href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">rotate_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2573</div></div>
+<div class="ttc" id="astructrotate__flux_html_ae2e4dd388a9a609acf27d90fea305e11"><div class="ttname"><a href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">rotate_flux::eps</a></div><div class="ttdeci">const amrex::Real eps</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2577</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -342,16 +342,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02518"></a><span class="lineno"> 2518</span>&#160;    {</div>
-<div class="line"><a name="l02519"></a><span class="lineno"> 2519</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l02520"></a><span class="lineno"> 2520</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_mean = tm_arr(i,j,0);</div>
-<div class="line"><a name="l02521"></a><span class="lineno"> 2521</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_surf = t_surf_arr(i,j,0);</div>
-<div class="line"><a name="l02522"></a><span class="lineno"> 2522</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>        = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l02523"></a><span class="lineno"> 2523</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tstar      = t_star_arr(i,j,0);</div>
-<div class="line"><a name="l02524"></a><span class="lineno"> 2524</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux = (std::abs(tstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * tstar * (theta_mean-theta_surf) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l02525"></a><span class="lineno"> 2525</span>&#160; </div>
-<div class="line"><a name="l02526"></a><span class="lineno"> 2526</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
-<div class="line"><a name="l02527"></a><span class="lineno"> 2527</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02522"></a><span class="lineno"> 2522</span>&#160;    {</div>
+<div class="line"><a name="l02523"></a><span class="lineno"> 2523</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02524"></a><span class="lineno"> 2524</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_mean = tm_arr(i,j,0);</div>
+<div class="line"><a name="l02525"></a><span class="lineno"> 2525</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> theta_surf = t_surf_arr(i,j,0);</div>
+<div class="line"><a name="l02526"></a><span class="lineno"> 2526</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>        = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l02527"></a><span class="lineno"> 2527</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> tstar      = t_star_arr(i,j,0);</div>
+<div class="line"><a name="l02528"></a><span class="lineno"> 2528</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> moflux = (std::abs(tstar) &gt; <a class="code" href="structrotate__flux.html#ae2e4dd388a9a609acf27d90fea305e11">eps</a>) ? -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * tstar * (theta_mean-theta_surf) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l02529"></a><span class="lineno"> 2529</span>&#160; </div>
+<div class="line"><a name="l02530"></a><span class="lineno"> 2530</span>&#160;        <span class="keywordflow">return</span> moflux;</div>
+<div class="line"><a name="l02531"></a><span class="lineno"> 2531</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -430,15 +430,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02541"></a><span class="lineno"> 2541</span>&#160;    {</div>
-<div class="line"><a name="l02542"></a><span class="lineno"> 2542</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l02543"></a><span class="lineno"> 2543</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>     = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i  ,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
-<div class="line"><a name="l02544"></a><span class="lineno"> 2544</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( u_star_arr(i-1,j,0) + u_star_arr(i,j,0) );</div>
-<div class="line"><a name="l02545"></a><span class="lineno"> 2545</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressx = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * ustar * ustar;</div>
-<div class="line"><a name="l02546"></a><span class="lineno"> 2546</span>&#160; </div>
-<div class="line"><a name="l02547"></a><span class="lineno"> 2547</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
-<div class="line"><a name="l02548"></a><span class="lineno"> 2548</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
+<div class="fragment"><div class="line"><a name="l02545"></a><span class="lineno"> 2545</span>&#160;    {</div>
+<div class="line"><a name="l02546"></a><span class="lineno"> 2546</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02547"></a><span class="lineno"> 2547</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>     = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> *( cons_arr(i-1,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cons_arr(i  ,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) );</div>
+<div class="line"><a name="l02548"></a><span class="lineno"> 2548</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ustar   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( u_star_arr(i-1,j,0) + u_star_arr(i,j,0) );</div>
+<div class="line"><a name="l02549"></a><span class="lineno"> 2549</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressx = -<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * ustar * ustar;</div>
+<div class="line"><a name="l02550"></a><span class="lineno"> 2550</span>&#160; </div>
+<div class="line"><a name="l02551"></a><span class="lineno"> 2551</span>&#160;        <span class="keywordflow">return</span> stressx;</div>
+<div class="line"><a name="l02552"></a><span class="lineno"> 2552</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -517,12 +517,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l02562"></a><span class="lineno"> 2562</span>&#160;    {</div>
-<div class="line"><a name="l02563"></a><span class="lineno"> 2563</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
-<div class="line"><a name="l02564"></a><span class="lineno"> 2564</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressy = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l02565"></a><span class="lineno"> 2565</span>&#160; </div>
-<div class="line"><a name="l02566"></a><span class="lineno"> 2566</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
-<div class="line"><a name="l02567"></a><span class="lineno"> 2567</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l02566"></a><span class="lineno"> 2566</span>&#160;    {</div>
+<div class="line"><a name="l02567"></a><span class="lineno"> 2567</span>&#160;        <span class="comment">// NOTE: this is the total stress</span></div>
+<div class="line"><a name="l02568"></a><span class="lineno"> 2568</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> stressy = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l02569"></a><span class="lineno"> 2569</span>&#160; </div>
+<div class="line"><a name="l02570"></a><span class="lineno"> 2570</span>&#160;        <span class="keywordflow">return</span> stressy;</div>
+<div class="line"><a name="l02571"></a><span class="lineno"> 2571</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
