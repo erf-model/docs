@@ -306,7 +306,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// We put this value here so beta_interp is initialized but the logic</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">// below is such that it will always be assigned some other value.</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> beta_interp = 0.0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> beta_interp = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// If the interpolation point already exists in the array,</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// just return it</span></div>
@@ -362,6 +362,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> beta_interp;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aaa538a485890f44f3ec785846ea09b12"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a></div><div class="ttdeci">amrex::Real beta</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:10</div></div>
 <div class="ttc" id="anamespacemp__wsm6_html_a4a88c88896fa77fa7284821ab2e9dfc4"><div class="ttname"><a href="namespacemp__wsm6.html#a4a88c88896fa77fa7284821ab2e9dfc4">mp_wsm6::alpha</a></div><div class="ttdeci">real(kind=kind_phys), parameter, public alpha</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_wsm6.F90:44</div></div>

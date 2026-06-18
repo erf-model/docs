@@ -385,7 +385,7 @@ $(document).ready(function(){initNavTree('ERF__HurricaneDiagnostics_8H_source.ht
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = AMREX_SPACEDIM;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* d_val_max_ptr;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_val_max(1, -<a class="code" href="ERF__Constants_8H.html#a9592a8cd8df8c54408ca4eeef0299ad6">bogus_large_value</a>);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_val_max(1, -<a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    d_val_max_ptr = d_val_max.data();</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> [x_last, y_last] = hurricane_eye_track_xy.back();</div>
@@ -418,10 +418,10 @@ $(document).ready(function(){initNavTree('ERF__HurricaneDiagnostics_8H_source.ht
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    amrex::Gpu::synchronize();</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_max_local = -<a class="code" href="ERF__Constants_8H.html#a9592a8cd8df8c54408ca4eeef0299ad6">bogus_large_value</a>;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_max_local = -<a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    amrex::Gpu::copy(amrex::Gpu::deviceToHost, d_val_max.begin(), d_val_max.end(), &amp;h_val_max_local);</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_max_global = -<a class="code" href="ERF__Constants_8H.html#a9592a8cd8df8c54408ca4eeef0299ad6">bogus_large_value</a>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_max_global = -<a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="preprocessor">     #ifdef AMREX_USE_MPI</span></div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        MPI_Allreduce(&amp;h_val_max_local, &amp;h_val_max_global, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">    #else</span></div>
@@ -443,7 +443,7 @@ $(document).ready(function(){initNavTree('ERF__HurricaneDiagnostics_8H_source.ht
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>* d_val_min_ptr;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_val_min(1, <a class="code" href="ERF__Constants_8H.html#a9592a8cd8df8c54408ca4eeef0299ad6">bogus_large_value</a>);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    amrex::Gpu::DeviceVector&lt;amrex::Real&gt; d_val_min(1, <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>);</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    d_val_min_ptr = d_val_min.data();</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> x_last = hurricane_eye_track_xy.back()[0];</div>
@@ -474,10 +474,10 @@ $(document).ready(function(){initNavTree('ERF__HurricaneDiagnostics_8H_source.ht
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    amrex::Gpu::synchronize();</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_min_local = <a class="code" href="ERF__Constants_8H.html#a9592a8cd8df8c54408ca4eeef0299ad6">bogus_large_value</a>;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_min_local = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    amrex::Gpu::copy(amrex::Gpu::deviceToHost, d_val_min.begin(), d_val_min.end(), &amp;h_val_min_local);</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_min_global = <a class="code" href="ERF__Constants_8H.html#a9592a8cd8df8c54408ca4eeef0299ad6">bogus_large_value</a>;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_val_min_global = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="preprocessor">     #ifdef AMREX_USE_MPI</span></div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        MPI_Allreduce(&amp;h_val_min_local, &amp;h_val_min_global, 1, MPI_DOUBLE, MPI_MIN, MPI_COMM_WORLD);</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">    #else</span></div>
@@ -489,9 +489,9 @@ $(document).ready(function(){initNavTree('ERF__HurricaneDiagnostics_8H_source.ht
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
-<div class="ttc" id="aERF__Constants_8H_html_a9592a8cd8df8c54408ca4eeef0299ad6"><div class="ttname"><a href="ERF__Constants_8H.html#a9592a8cd8df8c54408ca4eeef0299ad6">bogus_large_value</a></div><div class="ttdeci">const amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:20</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
