@@ -125,7 +125,7 @@ var structSolverChoice =
     [ "use_rotate_surface_flux", "structSolverChoice.html#ae6a9fda53f08dbed04adb4c63dc3176e", null ],
     [ "use_shoc", "structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1", null ],
     [ "variable_coriolis", "structSolverChoice.html#aa54aafe316efc6cf474326d690fb2fbf", null ],
-    [ "vert_implicit_fac", "structSolverChoice.html#a677069e2ee74c2c9f94773a0bfc7b3a3", null ],
+    [ "vert_implicit_fac", "structSolverChoice.html#ae53b0647e521cee534bf9cdd0a361425", null ],
     [ "windfarm_airfoil_tables", "structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412", null ],
     [ "windfarm_blade_table", "structSolverChoice.html#aa401d2a5d51cb382e0b6e18502d961a9", null ],
     [ "windfarm_loc_table", "structSolverChoice.html#a44bc0227f088664e4e2c1090ebb1381d", null ],
