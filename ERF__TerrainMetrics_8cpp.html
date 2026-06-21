@@ -1189,7 +1189,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        Array4&lt;Real      &gt; z_cc = z_phys_cc.array(mfi);</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;           z_cc(i, j, k) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(.125) * ( z_nd(i,j,k  ) + z_nd(i+1,j,k  ) + z_nd(i,j+1,k  ) + z_nd(i+1,j+1,k  )</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                   +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                                         +z_nd(i,j,k+1) + z_nd(i+1,j,k+1) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1) );</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;       });</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    }</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    z_phys_cc.FillBoundary(geom.periodicity());</div>

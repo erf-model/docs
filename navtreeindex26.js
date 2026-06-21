@@ -1,5 +1,11 @@
 var NAVTREEINDEX26 =
 {
+"structSAMFaceState.html#ad1eecd24465385e3f0681a0ec7493b80":[2,0,79,2],
+"structSAMPhaseFractions.html":[2,0,80],
+"structSAMPhaseFractions.html#a20c9d09227a84d37d871914970c7e65c":[2,0,80,0],
+"structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,80,2],
+"structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,80,1],
+"structSAMPrecipCellDiagnostics.html":[2,0,81],
 "structSAMPrecipCellDiagnostics.html#a00aec052e0cb147b679acee08c7ef2bc":[2,0,81,3],
 "structSAMPrecipCellDiagnostics.html#a2885e87ee78d16caa7fac54d20e57786":[2,0,81,4],
 "structSAMPrecipCellDiagnostics.html#a2d4535851eb17996b6b60c12c711d1a1":[2,0,81,6],
@@ -243,11 +249,5 @@ var NAVTREEINDEX26 =
 "structSolverChoice.html#a3ab48411073a3c1f75435292d7b407e5":[2,0,99,117],
 "structSolverChoice.html#a3b9fef36e4613507eef87379c2c9bf03":[2,0,99,92],
 "structSolverChoice.html#a3e3a9d5a9f2c670b8381457643a25351":[2,0,99,95],
-"structSolverChoice.html#a3f8ae511632557066f6662eec79591e1":[2,0,99,47],
-"structSolverChoice.html#a4019f912eceb0e0658845594c10b674a":[2,0,99,61],
-"structSolverChoice.html#a40de8b74e8c60f617558ef8a2fa72ddb":[2,0,99,131],
-"structSolverChoice.html#a411fbfea721cd40033e113cf54a8047f":[2,0,99,30],
-"structSolverChoice.html#a43c1741535574c7e6f4fe6bf90552f31":[2,0,99,84],
-"structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a":[2,0,99,21],
-"structSolverChoice.html#a448ae60299b3c27ad678d6ef32057ecd":[2,0,99,20]
+"structSolverChoice.html#a3f8ae511632557066f6662eec79591e1":[2,0,99,47]
 };

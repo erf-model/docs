@@ -1,5 +1,11 @@
 var NAVTREEINDEX25 =
 {
+"structDampingChoice.html#a9bda4d7ea737d254f788af345b24f63e":[2,0,14,10],
+"structDampingChoice.html#aa8516fdb1b120da8b8622dec44ae2889":[2,0,14,8],
+"structDampingChoice.html#aafaf1ff2f8a9873528b1f473f007cfd3":[2,0,14,11],
+"structDampingChoice.html#ac2dad9068060566f8d04d59894e923e7":[2,0,14,13],
+"structDampingChoice.html#ad7d14bb652aef5e4c5b6487fc26da60e":[2,0,14,0],
+"structDiffChoice.html":[2,0,15],
 "structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8":[2,0,15,9],
 "structDiffChoice.html#a536538ab3b67d379fe0017806d0fabc1":[2,0,15,7],
 "structDiffChoice.html#a553bdd290d667cca9699ed37f86f7e22":[2,0,15,10],
@@ -243,11 +249,5 @@ var NAVTREEINDEX25 =
 "structSAMFaceState.html":[2,0,79],
 "structSAMFaceState.html#a3e997dd570cb321b330fb445c3838e7d":[2,0,79,1],
 "structSAMFaceState.html#a5fce43d045ea97733c971188ebd1d866":[2,0,79,0],
-"structSAMFaceState.html#a8ec6b3bcb00afc9d8e864761f846f2a3":[2,0,79,3],
-"structSAMFaceState.html#ad1eecd24465385e3f0681a0ec7493b80":[2,0,79,2],
-"structSAMPhaseFractions.html":[2,0,80],
-"structSAMPhaseFractions.html#a20c9d09227a84d37d871914970c7e65c":[2,0,80,0],
-"structSAMPhaseFractions.html#a6369f0c62d9b61c96720a53547ceac72":[2,0,80,2],
-"structSAMPhaseFractions.html#a73f8e00f9b519a6e38b288bb05ddc93f":[2,0,80,1],
-"structSAMPrecipCellDiagnostics.html":[2,0,81]
+"structSAMFaceState.html#a8ec6b3bcb00afc9d8e864761f846f2a3":[2,0,79,3]
 };
