@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['kokkosdefaultdevice_8719',['KokkosDefaultDevice',['../ERF__Kokkos_8H.html#a1a1468fd1bcfcd7b8b2a701dc290783b',1,'ERF_Kokkos.H']]],
-  ['kokkosdefaultmem_8720',['KokkosDefaultMem',['../ERF__Kokkos_8H.html#ac835594e63b2eb3240f8ed950b88892c',1,'ERF_Kokkos.H']]],
-  ['kokkoshostdevice_8721',['KokkosHostDevice',['../ERF__Kokkos_8H.html#a878d2d11bb29ca141a1af1674712aa2b',1,'ERF_Kokkos.H']]],
-  ['kt_8722',['KT',['../classSHOCInterface.html#aab3eae5f8fe3bb3037f7b16af7a69cbb',1,'SHOCInterface']]]
+  ['kokkosdefaultdevice_8721',['KokkosDefaultDevice',['../ERF__Kokkos_8H.html#a1a1468fd1bcfcd7b8b2a701dc290783b',1,'ERF_Kokkos.H']]],
+  ['kokkosdefaultmem_8722',['KokkosDefaultMem',['../ERF__Kokkos_8H.html#ac835594e63b2eb3240f8ed950b88892c',1,'ERF_Kokkos.H']]],
+  ['kokkoshostdevice_8723',['KokkosHostDevice',['../ERF__Kokkos_8H.html#a878d2d11bb29ca141a1af1674712aa2b',1,'ERF_Kokkos.H']]],
+  ['kt_8724',['KT',['../classSHOCInterface.html#aab3eae5f8fe3bb3037f7b16af7a69cbb',1,'SHOCInterface']]]
 ];

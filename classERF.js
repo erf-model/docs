@@ -177,6 +177,7 @@ var classERF =
     [ "Write3DPlotFile", "classERF.html#ad3e288d14d937e5b07433342d5bda919", null ],
     [ "write_1D_profiles", "classERF.html#a720f99548435026acb53e1407594b186", null ],
     [ "write_1D_profiles_stag", "classERF.html#a83687cef8fcc052e2a522226e22e64ab", null ],
+    [ "WriteAtFinalTime", "classERF.html#af47aaeb719fb501ac52b23fa8ddfc766", null ],
     [ "writeBuildInfo", "classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa", null ],
     [ "WriteCheckpointFile", "classERF.html#ad101fd46096db2d6b21544bfede6551f", null ],
     [ "WriteGenericPlotfileHeaderWithTerrain", "classERF.html#a3a918bd26ed0c1dc2efa75c2586ff664", null ],
