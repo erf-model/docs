@@ -165,6 +165,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a91309684d30cc464d3e8a02cb42f8228"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace60f0f63c5d882ba4ea3e91cbe7a59a"><td class="memItemLeft" align="right" valign="top">virtual std::unordered_map&lt; std::string, std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#ace60f0f63c5d882ba4ea3e91cbe7a59a">Lsm_WRFInputNames</a> ()</td></tr>
 <tr class="separator:ace60f0f63c5d882ba4ea3e91cbe7a59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca9fde98703fb1561aabff113732566"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a8ca9fde98703fb1561aabff113732566">Get_LSM_Step</a> () const</td></tr>
+<tr class="separator:a8ca9fde98703fb1561aabff113732566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3943b8ca0bfd25215d05cdc33a5efa5a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a3943b8ca0bfd25215d05cdc33a5efa5a">Set_LSM_Step</a> (int)</td></tr>
+<tr class="separator:a3943b8ca0bfd25215d05cdc33a5efa5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f78d2f7f4868fbefd35b9e4b22c85e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#a3f78d2f7f4868fbefd35b9e4b22c85e0">Write_Lsm_Restart</a> (const std::string &amp;) const</td></tr>
+<tr class="separator:a3f78d2f7f4868fbefd35b9e4b22c85e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad91a324287147f1154d361f023242c34"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullSurf.html#ad91a324287147f1154d361f023242c34">Read_Lsm_Restart</a> (const std::string &amp;)</td></tr>
+<tr class="separator:ad91a324287147f1154d361f023242c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -425,6 +433,34 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a8ca9fde98703fb1561aabff113732566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ca9fde98703fb1561aabff113732566">&#9670;&nbsp;</a></span>Get_LSM_Step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int NullSurf::Get_LSM_Step </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classNOAHMP.html#a348cd5be86064baca3a2ecc09ba1d14b">NOAHMP</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{ <span class="keywordflow">return</span> 0; }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="abc0d9751818330d8f32f0c3c2b81b072"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc0d9751818330d8f32f0c3c2b81b072">&#9670;&nbsp;</a></span>Init()</h2>
 
@@ -530,7 +566,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#accf5369cbeeab014dd8aab4ed28c3516">SLM</a>, <a class="el" href="classOceanSurf.html#a4b02c9b0f7a8e4f7a1a3b00c16597180">OceanSurf</a>, <a class="el" href="classNOAHMP.html#a55eed6ab58df45bbbc5c47392608e8aa">NOAHMP</a>, and <a class="el" href="classMM5.html#abf2c797ae56fc93043e999db11515a8a">MM5</a>.</p>
 <div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:116</div></div>
+<div class="ttc" id="aclassNullSurf_html_a00480a80b00d313460c898669225b2ef"><div class="ttname"><a href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf::m_lsm_size</a></div><div class="ttdeci">int m_lsm_size</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:136</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -593,7 +629,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">dataname</a>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="ttc" id="aclassNullSurf_html_af3849ee01ca4299dc35079c60b91c017"><div class="ttname"><a href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">NullSurf::dataname</a></div><div class="ttdeci">std::string dataname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:118</div></div>
+<div class="ttc" id="aclassNullSurf_html_af3849ee01ca4299dc35079c60b91c017"><div class="ttname"><a href="classNullSurf.html#af3849ee01ca4299dc35079c60b91c017">NullSurf::dataname</a></div><div class="ttdeci">std::string dataname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:138</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -713,7 +749,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">fluxname</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="ttc" id="aclassNullSurf_html_a6e0f0ff82e70b6126db8ed148b512ea2"><div class="ttname"><a href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">NullSurf::fluxname</a></div><div class="ttdeci">std::string fluxname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:119</div></div>
+<div class="ttc" id="aclassNullSurf_html_a6e0f0ff82e70b6126db8ed148b512ea2"><div class="ttname"><a href="classNullSurf.html#a6e0f0ff82e70b6126db8ed148b512ea2">NullSurf::fluxname</a></div><div class="ttdeci">std::string fluxname</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:139</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -742,7 +778,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7">SLM</a>, <a class="el" href="classOceanSurf.html#af7dc3eff5e7cf46d773d333f95e54d6b">OceanSurf</a>, <a class="el" href="classNOAHMP.html#a58ac548922dda67e399d270c7eb2e85e">NOAHMP</a>, and <a class="el" href="classMM5.html#abe51eb4823a379cd70d05eef17832f7b">MM5</a>.</p>
 <div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">m_lsm_geom</a>; }</div>
-<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:117</div></div>
+<div class="ttc" id="aclassNullSurf_html_ac722d317f14ff1793ce7a38362987513"><div class="ttname"><a href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf::m_lsm_geom</a></div><div class="ttdeci">amrex::Geometry m_lsm_geom</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:137</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -771,7 +807,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                        {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">wrfinput_map</a>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="ttc" id="aclassNullSurf_html_af72223f3e91bdf350ca767a706d9974d"><div class="ttname"><a href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">NullSurf::wrfinput_map</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; wrfinput_map</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:121</div></div>
+<div class="ttc" id="aclassNullSurf_html_af72223f3e91bdf350ca767a706d9974d"><div class="ttname"><a href="classNullSurf.html#af72223f3e91bdf350ca767a706d9974d">NullSurf::wrfinput_map</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; wrfinput_map</div><div class="ttdef"><b>Definition:</b> ERF_NullSurf.H:141</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -801,6 +837,64 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classNOAHMP.html#a1eb70dbfe85a750ea4544a423bf6221a">NOAHMP</a>.</p>
 <div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{ }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad91a324287147f1154d361f023242c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad91a324287147f1154d361f023242c34">&#9670;&nbsp;</a></span>Read_Lsm_Restart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NullSurf::Read_Lsm_Restart </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classNOAHMP.html#a60f3cea25a3041d994c36c69ec0685b8">NOAHMP</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{ }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3943b8ca0bfd25215d05cdc33a5efa5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3943b8ca0bfd25215d05cdc33a5efa5a">&#9670;&nbsp;</a></span>Set_LSM_Step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NullSurf::Set_LSM_Step </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classNOAHMP.html#ac2c06f896a91768d2e0ed99216a68268">NOAHMP</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -855,6 +949,35 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3f78d2f7f4868fbefd35b9e4b22c85e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f78d2f7f4868fbefd35b9e4b22c85e0">&#9670;&nbsp;</a></span>Write_Lsm_Restart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void NullSurf::Write_Lsm_Restart </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classNOAHMP.html#a354150974c9660e4196eab7986a8d169">NOAHMP</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
