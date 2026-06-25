@@ -17,6 +17,7 @@ var structSolverChoice =
     [ "advChoice", "structSolverChoice.html#aaadbd092e9e176b7f088c7992c866c6e", null ],
     [ "anelastic", "structSolverChoice.html#aa7be0d60ce3de3441d44082cc1b725ec", null ],
     [ "ave_plane", "structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c", null ],
+    [ "bdy_moist_nudge_type", "structSolverChoice.html#aca39f3df801095f9ea0e2024e64a1796", null ],
     [ "bdy_nudge_factor", "structSolverChoice.html#a4d610084d33f698160829ebe263f9a5e", null ],
     [ "beta_s", "structSolverChoice.html#a4ddb705ade39e97c2fc2f47a180cf169", null ],
     [ "buildings_type", "structSolverChoice.html#ab3a8e6a0bf4f228f88772705ca8ee6d6", null ],
