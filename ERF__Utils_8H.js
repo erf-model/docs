@@ -18,7 +18,7 @@ var ERF__Utils_8H =
     [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
     [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a73738a30ce92bd769de3a232020314c1", null ],
-    [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#a9da383b2e44ed19b0dfe5aa9e488c5f2", null ],
+    [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447", null ],
     [ "realbdy_interior_bxs_xy", "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588", null ],
     [ "thinbody_wall_dist", "ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e", null ],
     [ "Time_Avg_Vel_atCC", "ERF__Utils_8H.html#ac3d734b65fd91857925d381c476e7965", null ],
