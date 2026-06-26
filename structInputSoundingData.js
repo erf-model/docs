@@ -4,7 +4,7 @@ var structInputSoundingData =
     [ "calc_rho_p", "structInputSoundingData.html#a830608de7ca272770d8ddb659d65eb31", null ],
     [ "calc_rho_p_isentropic", "structInputSoundingData.html#a909a9876dabbbe90d4c03efa05d416f2", null ],
     [ "host_to_device", "structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8", null ],
-    [ "read_from_file", "structInputSoundingData.html#a6742e8e0e37fd817097963bbd965692c", null ],
+    [ "read_from_file", "structInputSoundingData.html#aa015e8e9cc3f6ccf45e7327ce13cdce7", null ],
     [ "resize_arrays", "structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef", null ],
     [ "size", "structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc", null ],
     [ "assume_dry", "structInputSoundingData.html#ae5eca764f358b991d1f36b4a679d744b", null ],
