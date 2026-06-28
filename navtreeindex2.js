@@ -81,6 +81,13 @@ var NAVTREEINDEX2 =
 "ERF__HurricaneDiagnostics_8H.html#ae71449b1cc6e6250b91f539153a7a0d3":[3,0,1,19,9,0],
 "ERF__HurricaneDiagnostics_8H.html#af7f7e50c2aa3c0b056f8eb0fd9fd5961":[3,0,1,19,9,6],
 "ERF__HurricaneDiagnostics_8H_source.html":[3,0,1,19,9],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html":[3,0,1,19,10],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a":[3,0,1,19,10,3],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#a6cfd95afd0afebd625b889fb6e58371c":[3,0,1,19,10,4],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#a89278aa72b9ffb1c23f34c0916c28a81":[3,0,1,19,10,0],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b":[3,0,1,19,10,5],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc":[3,0,1,19,10,2],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3":[3,0,1,19,10,1],
 "ERF__IceFall_8cpp.html":[3,0,1,10,4,1],
 "ERF__ImplicitDiff__N_8cpp.html":[3,0,1,3,21],
 "ERF__ImplicitDiff__N_8cpp.html#a30218b4b79ee7fba87b9bf09c7aafcf7":[3,0,1,3,21,2],
@@ -242,12 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__InitCustomPertVels__Bomex_8H.html#a7779eabadf76ed62e14a341c9d4df0a7":[3,0,1,14,23,19],
 "ERF__InitCustomPertVels__Bomex_8H.html#a7f74e9554c1ab66998e1319960f1e82c":[3,0,1,14,23,26],
 "ERF__InitCustomPertVels__Bomex_8H.html#a8095d4877b74f2c27efc6f6a135fba3d":[3,0,1,14,23,7],
-"ERF__InitCustomPertVels__Bomex_8H.html#a828e28a3beeb9e4ee1144073cd614f17":[3,0,1,14,23,8],
-"ERF__InitCustomPertVels__Bomex_8H.html#a83a3b47fca38683e460207a45ca65b46":[3,0,1,14,23,4],
-"ERF__InitCustomPertVels__Bomex_8H.html#a9195f05af45a2e43c22d411448a6effc":[3,0,1,14,23,0],
-"ERF__InitCustomPertVels__Bomex_8H.html#a9551f099ea0453a3f12e71c54e74a4d4":[3,0,1,14,23,28],
-"ERF__InitCustomPertVels__Bomex_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,14,23,29],
-"ERF__InitCustomPertVels__Bomex_8H.html#a9d009471e1150853fe277cbb7bec9ede":[3,0,1,14,23,18],
-"ERF__InitCustomPertVels__Bomex_8H.html#aa05b7d1441862703a8be2d911afdb9c5":[3,0,1,14,23,20],
-"ERF__InitCustomPertVels__Bomex_8H.html#aab0721caeef18467e0169b40bc1f8dd1":[3,0,1,14,23,14]
+"ERF__InitCustomPertVels__Bomex_8H.html#a828e28a3beeb9e4ee1144073cd614f17":[3,0,1,14,23,8]
 };
