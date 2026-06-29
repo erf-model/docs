@@ -133,6 +133,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a9765427b58ed6bbe812823fba411b60e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitProperties.html#a9765427b58ed6bbe812823fba411b60e">~SDInitProperties</a> ()=default</td></tr>
+<tr class="separator:a9765427b58ed6bbe812823fba411b60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1367f767b14b16934c12ec8b9bc81dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitProperties.html#ac1367f767b14b16934c12ec8b9bc81dd">setDefaults</a> (const amrex::Geometry &amp;a_geom, const <a class="el" href="classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f">MatVec</a> &amp;a_species_mat, const <a class="el" href="classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f">MatVec</a> &amp;a_aerosol_mat)</td></tr>
 <tr class="memdesc:ac1367f767b14b16934c12ec8b9bc81dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set default values for initialization parameters.  <a href="classSDInitProperties.html#ac1367f767b14b16934c12ec8b9bc81dd">More...</a><br /></td></tr>
 <tr class="separator:ac1367f767b14b16934c12ec8b9bc81dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -253,6 +255,32 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9765427b58ed6bbe812823fba411b60e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9765427b58ed6bbe812823fba411b60e">&#9670;&nbsp;</a></span>~SDInitProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual SDInitProperties::~SDInitProperties </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9ed6f5a33f1683ffd523d8f7f3871cd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ed6f5a33f1683ffd523d8f7f3871cd5">&#9670;&nbsp;</a></span>getAerosolDistParams()</h2>
@@ -311,29 +339,29 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structSDDistributionParams.html" title="GPU-compatible structure holding distribution parameters.">SDDistributionParams</a> structure for GPU use </dd></dl>
-<div class="fragment"><div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        {</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classSDInitProperties.html#a6beff7cc5002753f3081290635e68213">makeDistributionParams</a>(</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <a class="code" href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">m_aerosol_init_type</a>[a_idx],</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                <a class="code" href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">m_mass_aerosol_min</a>[a_idx],</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                <a class="code" href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">m_mass_aerosol_max</a>[a_idx],</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                <a class="code" href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">m_mass_aerosol_mean</a>[a_idx],</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                <a class="code" href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">m_radius_aerosol_min</a>[a_idx],</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                <a class="code" href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">m_radius_aerosol_max</a>[a_idx],</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                <a class="code" href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">m_radius_aerosol_mean</a>[a_idx],</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <a class="code" href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">m_radius_aerosol_geom_std</a>[a_idx],</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                a_density,</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                a_cell_volume,</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                a_sampled_mult);</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        }</div>
-<div class="ttc" id="aclassSDInitProperties_html_a1944935ef0226c4b3ec247f2d2419b09"><div class="ttname"><a href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">SDInitProperties::m_radius_aerosol_geom_std</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_geom_std</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:196</div></div>
+<div class="fragment"><div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        {</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classSDInitProperties.html#a6beff7cc5002753f3081290635e68213">makeDistributionParams</a>(</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;                <a class="code" href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">m_aerosol_init_type</a>[a_idx],</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;                <a class="code" href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">m_mass_aerosol_min</a>[a_idx],</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;                <a class="code" href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">m_mass_aerosol_max</a>[a_idx],</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                <a class="code" href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">m_mass_aerosol_mean</a>[a_idx],</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                <a class="code" href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">m_radius_aerosol_min</a>[a_idx],</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <a class="code" href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">m_radius_aerosol_max</a>[a_idx],</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                <a class="code" href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">m_radius_aerosol_mean</a>[a_idx],</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                <a class="code" href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">m_radius_aerosol_geom_std</a>[a_idx],</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                a_density,</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                a_cell_volume,</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                a_sampled_mult);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        }</div>
+<div class="ttc" id="aclassSDInitProperties_html_a1944935ef0226c4b3ec247f2d2419b09"><div class="ttname"><a href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">SDInitProperties::m_radius_aerosol_geom_std</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_geom_std</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:198</div></div>
 <div class="ttc" id="aclassSDInitProperties_html_a6beff7cc5002753f3081290635e68213"><div class="ttname"><a href="classSDInitProperties.html#a6beff7cc5002753f3081290635e68213">SDInitProperties::makeDistributionParams</a></div><div class="ttdeci">SDDistributionParams makeDistributionParams(SDDistributionType a_init_type, amrex::Real a_mass_min, amrex::Real a_mass_max, amrex::Real a_mass_mean, amrex::Real a_radius_min, amrex::Real a_radius_max, amrex::Real a_radius_mean, amrex::Real a_radius_gstd, amrex::Real a_density, amrex::Real a_cell_volume, bool a_sampled_mult) const</div><div class="ttdoc">Create GPU-compatible distribution parameters structure.</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.cpp:513</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a82977e9ad34af74118cfa2b342186b43"><div class="ttname"><a href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">SDInitProperties::m_radius_aerosol_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:190</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a9099d54e56e960d974e1896178c21e1b"><div class="ttname"><a href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">SDInitProperties::m_radius_aerosol_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:192</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_aabe9929a3565e86749afcf8c69309347"><div class="ttname"><a href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">SDInitProperties::m_aerosol_init_type</a></div><div class="ttdeci">std::vector&lt; SDDistributionType &gt; m_aerosol_init_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:198</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_ac97427f733e9edf022899f57e57a5f22"><div class="ttname"><a href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">SDInitProperties::m_radius_aerosol_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:194</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_ad4e04b9b08f889ffbae20a271ff9436f"><div class="ttname"><a href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">SDInitProperties::m_mass_aerosol_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_aerosol_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:184</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_ae8a9d466ecdca33db9ffc256c717aa00"><div class="ttname"><a href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">SDInitProperties::m_mass_aerosol_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_aerosol_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:188</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_af55689dda529e72e82495d9cdcc66ba5"><div class="ttname"><a href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">SDInitProperties::m_mass_aerosol_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_aerosol_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:186</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a82977e9ad34af74118cfa2b342186b43"><div class="ttname"><a href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">SDInitProperties::m_radius_aerosol_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:192</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a9099d54e56e960d974e1896178c21e1b"><div class="ttname"><a href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">SDInitProperties::m_radius_aerosol_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:194</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_aabe9929a3565e86749afcf8c69309347"><div class="ttname"><a href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">SDInitProperties::m_aerosol_init_type</a></div><div class="ttdeci">std::vector&lt; SDDistributionType &gt; m_aerosol_init_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:200</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_ac97427f733e9edf022899f57e57a5f22"><div class="ttname"><a href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">SDInitProperties::m_radius_aerosol_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_aerosol_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:196</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_ad4e04b9b08f889ffbae20a271ff9436f"><div class="ttname"><a href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">SDInitProperties::m_mass_aerosol_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_aerosol_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:186</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_ae8a9d466ecdca33db9ffc256c717aa00"><div class="ttname"><a href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">SDInitProperties::m_mass_aerosol_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_aerosol_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:190</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_af55689dda529e72e82495d9cdcc66ba5"><div class="ttname"><a href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">SDInitProperties::m_mass_aerosol_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_aerosol_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:188</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -423,22 +451,22 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        {</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                             a_mult,</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                             a_dV,</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                             a_np,</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                             a_density,</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                             <a class="code" href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">m_aerosol_init_type</a>[a_idx],</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                             <a class="code" href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">m_mass_aerosol_min</a>[a_idx],</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                             <a class="code" href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">m_mass_aerosol_max</a>[a_idx],</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                             <a class="code" href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">m_mass_aerosol_mean</a>[a_idx],</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                             <a class="code" href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">m_radius_aerosol_min</a>[a_idx],</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">m_radius_aerosol_max</a>[a_idx],</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">m_radius_aerosol_mean</a>[a_idx],</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">m_radius_aerosol_geom_std</a>[a_idx],</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                             a_rng);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        {</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                             a_mult,</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                             a_dV,</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                             a_np,</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                             a_density,</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                             <a class="code" href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">m_aerosol_init_type</a>[a_idx],</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                             <a class="code" href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">m_mass_aerosol_min</a>[a_idx],</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                             <a class="code" href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">m_mass_aerosol_max</a>[a_idx],</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                             <a class="code" href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">m_mass_aerosol_mean</a>[a_idx],</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                             <a class="code" href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">m_radius_aerosol_min</a>[a_idx],</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">m_radius_aerosol_max</a>[a_idx],</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">m_radius_aerosol_mean</a>[a_idx],</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">m_radius_aerosol_geom_std</a>[a_idx],</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                             a_rng);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        }</div>
 <div class="ttc" id="aclassSDInitProperties_html_af9cf987233e10105d8798f3a532f6762"><div class="ttname"><a href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">SDInitProperties::getDistribution</a></div><div class="ttdeci">void getDistribution(amrex::Vector&lt; amrex::Real &gt; &amp;a_mass, int a_np, amrex::Real a_density, SDDistributionType a_init_type, amrex::Real a_mass_min, amrex::Real a_mass_max, amrex::Real a_mass_mean, amrex::Real a_radius_min, amrex::Real a_radius_max, amrex::Real a_radius_mean, amrex::Real a_radius_gstd, std::mt19937 &amp;a_rng) const</div><div class="ttdoc">Get a distribution with constant multiplicity.</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.cpp:351</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -515,20 +543,20 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        {</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                             a_np,</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                             a_density,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                             <a class="code" href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">m_aerosol_init_type</a>[a_idx],</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                             <a class="code" href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">m_mass_aerosol_min</a>[a_idx],</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                             <a class="code" href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">m_mass_aerosol_max</a>[a_idx],</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                             <a class="code" href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">m_mass_aerosol_mean</a>[a_idx],</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                             <a class="code" href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">m_radius_aerosol_min</a>[a_idx],</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">m_radius_aerosol_max</a>[a_idx],</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">m_radius_aerosol_mean</a>[a_idx],</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">m_radius_aerosol_geom_std</a>[a_idx],</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                             a_rng);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                             a_np,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                             a_density,</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                             <a class="code" href="classSDInitProperties.html#aabe9929a3565e86749afcf8c69309347">m_aerosol_init_type</a>[a_idx],</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                             <a class="code" href="classSDInitProperties.html#ad4e04b9b08f889ffbae20a271ff9436f">m_mass_aerosol_min</a>[a_idx],</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                             <a class="code" href="classSDInitProperties.html#af55689dda529e72e82495d9cdcc66ba5">m_mass_aerosol_max</a>[a_idx],</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                             <a class="code" href="classSDInitProperties.html#ae8a9d466ecdca33db9ffc256c717aa00">m_mass_aerosol_mean</a>[a_idx],</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                             <a class="code" href="classSDInitProperties.html#a82977e9ad34af74118cfa2b342186b43">m_radius_aerosol_min</a>[a_idx],</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9099d54e56e960d974e1896178c21e1b">m_radius_aerosol_max</a>[a_idx],</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac97427f733e9edf022899f57e57a5f22">m_radius_aerosol_mean</a>[a_idx],</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1944935ef0226c4b3ec247f2d2419b09">m_radius_aerosol_geom_std</a>[a_idx],</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                             a_rng);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -761,7 +789,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a5e9caa74b9ef9befb527201d7e904801"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a></div><div class="ttdeci">amrex::Real sigma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:11</div></div>
 <div class="ttc" id="aERF__SDInitialization_8cpp_html_af7e79a7f268cba9d64df575208ab993a"><div class="ttname"><a href="ERF__SDInitialization_8cpp.html#af7e79a7f268cba9d64df575208ab993a">SD_erfinv</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real SD_erfinv(const amrex::Real x)</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.cpp:396</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a01078c8e1f8a8867758c83337aaf4075"><div class="ttname"><a href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">SDInitProperties::m_numdens</a></div><div class="ttdeci">amrex::Real m_numdens</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:162</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a01078c8e1f8a8867758c83337aaf4075"><div class="ttname"><a href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">SDInitProperties::m_numdens</a></div><div class="ttdeci">amrex::Real m_numdens</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:164</div></div>
 <div class="ttc" id="anamespaceMORRInd_html_ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:92</div></div>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:114</div></div>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a785ada0beecb7ad47e59ae6f522cf903acbc734eba6e44d51bfa3e4d16a9f86c5"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903acbc734eba6e44d51bfa3e4d16a9f86c5">WSM6SedCellScratch::tmp2</a></div><div class="ttdeci">@ tmp2</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:116</div></div>
@@ -985,28 +1013,28 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structSDDistributionParams.html" title="GPU-compatible structure holding distribution parameters.">SDDistributionParams</a> structure for GPU use </dd></dl>
-<div class="fragment"><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        {</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classSDInitProperties.html#a6beff7cc5002753f3081290635e68213">makeDistributionParams</a>(</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                <a class="code" href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">m_species_init_type</a>[a_idx],</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                <a class="code" href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">m_mass_species_min</a>[a_idx],</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                <a class="code" href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">m_mass_species_max</a>[a_idx],</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                <a class="code" href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">m_mass_species_mean</a>[a_idx],</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                <a class="code" href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">m_radius_species_min</a>[a_idx],</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                <a class="code" href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">m_radius_species_max</a>[a_idx],</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                <a class="code" href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">m_radius_species_mean</a>[a_idx],</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                <a class="code" href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">m_radius_species_geom_std</a>[a_idx],</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                a_density,</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                a_cell_volume,</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                a_sampled_mult);</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        }</div>
-<div class="ttc" id="aclassSDInitProperties_html_a1c82e584afc29c97306e6cde931374f3"><div class="ttname"><a href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">SDInitProperties::m_radius_species_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:175</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a5b219c81786058194079aadbf08c7aaf"><div class="ttname"><a href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">SDInitProperties::m_species_init_type</a></div><div class="ttdeci">std::vector&lt; SDDistributionType &gt; m_species_init_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:181</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a5e3224a2bab2a25aca7bae0a0870283c"><div class="ttname"><a href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">SDInitProperties::m_mass_species_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_species_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:169</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a6d8919b66a727a902da885fe7f33efcd"><div class="ttname"><a href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">SDInitProperties::m_radius_species_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:177</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a93418bb264738ac425f3cd9a9c0c043c"><div class="ttname"><a href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">SDInitProperties::m_radius_species_geom_std</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_geom_std</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:179</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a9e54f6602ba3f8425afb0527a50e19c9"><div class="ttname"><a href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">SDInitProperties::m_mass_species_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_species_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:167</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_ac239dc73bd451cc47a79a1675f994428"><div class="ttname"><a href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">SDInitProperties::m_mass_species_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_species_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:171</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_aca1dfdcb0480790b5592a8f6d5f4820b"><div class="ttname"><a href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">SDInitProperties::m_radius_species_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:173</div></div>
+<div class="fragment"><div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classSDInitProperties.html#a6beff7cc5002753f3081290635e68213">makeDistributionParams</a>(</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                <a class="code" href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">m_species_init_type</a>[a_idx],</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                <a class="code" href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">m_mass_species_min</a>[a_idx],</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                <a class="code" href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">m_mass_species_max</a>[a_idx],</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                <a class="code" href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">m_mass_species_mean</a>[a_idx],</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                <a class="code" href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">m_radius_species_min</a>[a_idx],</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                <a class="code" href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">m_radius_species_max</a>[a_idx],</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                <a class="code" href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">m_radius_species_mean</a>[a_idx],</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                <a class="code" href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">m_radius_species_geom_std</a>[a_idx],</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                a_density,</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                a_cell_volume,</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                a_sampled_mult);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        }</div>
+<div class="ttc" id="aclassSDInitProperties_html_a1c82e584afc29c97306e6cde931374f3"><div class="ttname"><a href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">SDInitProperties::m_radius_species_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:177</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a5b219c81786058194079aadbf08c7aaf"><div class="ttname"><a href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">SDInitProperties::m_species_init_type</a></div><div class="ttdeci">std::vector&lt; SDDistributionType &gt; m_species_init_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:183</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a5e3224a2bab2a25aca7bae0a0870283c"><div class="ttname"><a href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">SDInitProperties::m_mass_species_max</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_species_max</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:171</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a6d8919b66a727a902da885fe7f33efcd"><div class="ttname"><a href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">SDInitProperties::m_radius_species_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:179</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a93418bb264738ac425f3cd9a9c0c043c"><div class="ttname"><a href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">SDInitProperties::m_radius_species_geom_std</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_geom_std</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:181</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a9e54f6602ba3f8425afb0527a50e19c9"><div class="ttname"><a href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">SDInitProperties::m_mass_species_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_species_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:169</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_ac239dc73bd451cc47a79a1675f994428"><div class="ttname"><a href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">SDInitProperties::m_mass_species_mean</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_mass_species_mean</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:173</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_aca1dfdcb0480790b5592a8f6d5f4820b"><div class="ttname"><a href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">SDInitProperties::m_radius_species_min</a></div><div class="ttdeci">std::vector&lt; amrex::Real &gt; m_radius_species_min</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:175</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1096,22 +1124,22 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                             a_mult,</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                             a_dV,</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                             a_np,</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                             a_density,</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">m_species_init_type</a>[a_idx],</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">m_mass_species_min</a>[a_idx],</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">m_mass_species_max</a>[a_idx],</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">m_mass_species_mean</a>[a_idx],</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                             <a class="code" href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">m_radius_species_min</a>[a_idx],</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">m_radius_species_max</a>[a_idx],</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                             <a class="code" href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">m_radius_species_mean</a>[a_idx],</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                             <a class="code" href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">m_radius_species_geom_std</a>[a_idx],</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                             a_rng);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        {</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                             a_mult,</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                             a_dV,</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                             a_np,</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                             a_density,</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">m_species_init_type</a>[a_idx],</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">m_mass_species_min</a>[a_idx],</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">m_mass_species_max</a>[a_idx],</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">m_mass_species_mean</a>[a_idx],</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                             <a class="code" href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">m_radius_species_min</a>[a_idx],</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">m_radius_species_max</a>[a_idx],</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                             <a class="code" href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">m_radius_species_mean</a>[a_idx],</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                             <a class="code" href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">m_radius_species_geom_std</a>[a_idx],</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                             a_rng);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1187,20 +1215,20 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                             a_np,</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                             a_density,</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">m_species_init_type</a>[a_idx],</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">m_mass_species_min</a>[a_idx],</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">m_mass_species_max</a>[a_idx],</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">m_mass_species_mean</a>[a_idx],</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                             <a class="code" href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">m_radius_species_min</a>[a_idx],</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">m_radius_species_max</a>[a_idx],</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                             <a class="code" href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">m_radius_species_mean</a>[a_idx],</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                             <a class="code" href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">m_radius_species_geom_std</a>[a_idx],</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                             a_rng);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <a class="code" href="classSDInitProperties.html#af9cf987233e10105d8798f3a532f6762">getDistribution</a>( a_mass,</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                             a_np,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                             a_density,</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5b219c81786058194079aadbf08c7aaf">m_species_init_type</a>[a_idx],</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                             <a class="code" href="classSDInitProperties.html#a9e54f6602ba3f8425afb0527a50e19c9">m_mass_species_min</a>[a_idx],</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                             <a class="code" href="classSDInitProperties.html#a5e3224a2bab2a25aca7bae0a0870283c">m_mass_species_max</a>[a_idx],</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                             <a class="code" href="classSDInitProperties.html#ac239dc73bd451cc47a79a1675f994428">m_mass_species_mean</a>[a_idx],</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                             <a class="code" href="classSDInitProperties.html#aca1dfdcb0480790b5592a8f6d5f4820b">m_radius_species_min</a>[a_idx],</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                             <a class="code" href="classSDInitProperties.html#a1c82e584afc29c97306e6cde931374f3">m_radius_species_max</a>[a_idx],</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                             <a class="code" href="classSDInitProperties.html#a6d8919b66a727a902da885fe7f33efcd">m_radius_species_mean</a>[a_idx],</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                             <a class="code" href="classSDInitProperties.html#a93418bb264738ac425f3cd9a9c0c043c">m_radius_species_geom_std</a>[a_idx],</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                             a_rng);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1592,10 +1620,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
-<div class="ttc" id="aclassSDInitProperties_html_a38df985ce263f9f8dee22c0f1adacb43"><div class="ttname"><a href="classSDInitProperties.html#a38df985ce263f9f8dee22c0f1adacb43">SDInitProperties::m_mult_type</a></div><div class="ttdeci">SDMultiplicityType m_mult_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:214</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a41ac7ba3b9e07866b0cbd8397cf06a85"><div class="ttname"><a href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">SDInitProperties::m_type</a></div><div class="ttdeci">SDInitShape m_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:159</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a7b333a19c43be7e6081207d443d1e35b"><div class="ttname"><a href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">SDInitProperties::m_ppc</a></div><div class="ttdeci">int m_ppc</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:156</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_afbf213440ea3534c3d809bf4bc87c269"><div class="ttname"><a href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">SDInitProperties::m_particle_domain</a></div><div class="ttdeci">amrex::RealBox m_particle_domain</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:206</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a38df985ce263f9f8dee22c0f1adacb43"><div class="ttname"><a href="classSDInitProperties.html#a38df985ce263f9f8dee22c0f1adacb43">SDInitProperties::m_mult_type</a></div><div class="ttdeci">SDMultiplicityType m_mult_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:216</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a41ac7ba3b9e07866b0cbd8397cf06a85"><div class="ttname"><a href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">SDInitProperties::m_type</a></div><div class="ttdeci">SDInitShape m_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:161</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a7b333a19c43be7e6081207d443d1e35b"><div class="ttname"><a href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">SDInitProperties::m_ppc</a></div><div class="ttdeci">int m_ppc</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:158</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_afbf213440ea3534c3d809bf4bc87c269"><div class="ttname"><a href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">SDInitProperties::m_particle_domain</a></div><div class="ttdeci">amrex::RealBox m_particle_domain</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:208</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:12</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSDInjection.html#a897869c06e21f4688b43be60bd1412e3">SDInjection::printParameters()</a>, and <a class="el" href="classSDInitialization.html#a7992b988ef996b5e2d03bdb86ac469fa">SDInitialization::printParameters()</a>.</p>
@@ -1812,11 +1840,11 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a4758680e6943f6a3037aa735fbb35ddb"><div class="ttname"><a href="classSDInitProperties.html#a4758680e6943f6a3037aa735fbb35ddb">SDInitProperties::m_init_particle_p1</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_init_particle_p1</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:210</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a56035b834c681d25d2901d68c0d84c80"><div class="ttname"><a href="classSDInitProperties.html#a56035b834c681d25d2901d68c0d84c80">SDInitProperties::m_num_species</a></div><div class="ttdeci">int m_num_species</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:201</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a7f792364bcdddd29fc367294391f5fc0"><div class="ttname"><a href="classSDInitProperties.html#a7f792364bcdddd29fc367294391f5fc0">SDInitProperties::m_init_particle_p2</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_init_particle_p2</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:211</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a86f39979dcdb17d1bd1bc44ec21867dd"><div class="ttname"><a href="classSDInitProperties.html#a86f39979dcdb17d1bd1bc44ec21867dd">SDInitProperties::m_num_aerosols</a></div><div class="ttdeci">int m_num_aerosols</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:203</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_abfab474d6077e37a0d7c92b6489e3998"><div class="ttname"><a href="classSDInitProperties.html#abfab474d6077e37a0d7c92b6489e3998">SDInitProperties::m_max_multiplicity</a></div><div class="ttdeci">amrex::Real m_max_multiplicity</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:164</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a4758680e6943f6a3037aa735fbb35ddb"><div class="ttname"><a href="classSDInitProperties.html#a4758680e6943f6a3037aa735fbb35ddb">SDInitProperties::m_init_particle_p1</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_init_particle_p1</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:212</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a56035b834c681d25d2901d68c0d84c80"><div class="ttname"><a href="classSDInitProperties.html#a56035b834c681d25d2901d68c0d84c80">SDInitProperties::m_num_species</a></div><div class="ttdeci">int m_num_species</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:203</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a7f792364bcdddd29fc367294391f5fc0"><div class="ttname"><a href="classSDInitProperties.html#a7f792364bcdddd29fc367294391f5fc0">SDInitProperties::m_init_particle_p2</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_init_particle_p2</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:213</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a86f39979dcdb17d1bd1bc44ec21867dd"><div class="ttname"><a href="classSDInitProperties.html#a86f39979dcdb17d1bd1bc44ec21867dd">SDInitProperties::m_num_aerosols</a></div><div class="ttdeci">int m_num_aerosols</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:205</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_abfab474d6077e37a0d7c92b6489e3998"><div class="ttname"><a href="classSDInitProperties.html#abfab474d6077e37a0d7c92b6489e3998">SDInitProperties::m_max_multiplicity</a></div><div class="ttdeci">amrex::Real m_max_multiplicity</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:166</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSDInitialization.html#a1a04e7c5cb13736510927d4b5696b385">SDInitialization::readInputs()</a>, and <a class="el" href="classSDInjection.html#ac670b7c155b0e91454602690fe5012dc">SDInjection::readInputs()</a>.</p>
 <div class="dynheader">
@@ -1866,9 +1894,9 @@ Here is the caller graph for this function:</div>
 
 <p>Determine whether multiplicity is sampled or constant. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if multiplicity is sampled, false if constant </dd></dl>
-<div class="fragment"><div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        {</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classSDInitProperties.html#a38df985ce263f9f8dee22c0f1adacb43">m_mult_type</a> == SDMultiplicityType::sampled);</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        {</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="classSDInitProperties.html#a38df985ce263f9f8dee22c0f1adacb43">m_mult_type</a> == SDMultiplicityType::sampled);</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2016,16 +2044,16 @@ Here is the caller graph for this function:</div>
 <p>Calculate the volume of the particle domain. </p>
 <p>For uniform distribution type, returns the box volume. For bubble distribution type, returns the volume of the bubble.</p>
 <dl class="section return"><dt>Returns</dt><dd>Volume of the particle domain in cubic meters </dd></dl>
-<div class="fragment"><div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        {</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vol = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::uniform) {</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                vol = <a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.volume();</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::bubble) {</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; radius = <a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.hi();</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                vol = <a class="code" href="ERF__Constants_8H.html#aee9241d04ff505346b552544969d619a">four_thirds_pi</a>*radius[0]*radius[1]*radius[2];</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            }</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            <span class="keywordflow">return</span> vol;</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        {</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> vol = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::uniform) {</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                vol = <a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.volume();</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::bubble) {</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                <span class="keyword">const</span> <span class="keyword">auto</span>&amp; radius = <a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.hi();</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                vol = <a class="code" href="ERF__Constants_8H.html#aee9241d04ff505346b552544969d619a">four_thirds_pi</a>*radius[0]*radius[1]*radius[2];</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            }</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            <span class="keywordflow">return</span> vol;</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

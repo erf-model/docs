@@ -35,11 +35,12 @@ var searchData=
   ['_7esam_4580',['~SAM',['../classSAM.html#a301ce0c7f6cff77d6388c2d706e73a42',1,'SAM']]],
   ['_7esatadj_4581',['~SatAdj',['../classSatAdj.html#a39d8d2bb2c9e9ace57ed143c01bdaff0',1,'SatAdj']]],
   ['_7esdinitialization_4582',['~SDInitialization',['../classSDInitialization.html#a9608821a58b998eb82aa65f55334220a',1,'SDInitialization']]],
-  ['_7esdinjection_4583',['~SDInjection',['../classSDInjection.html#ae35272bfbf5519d95d33c6641d40b75c',1,'SDInjection']]],
-  ['_7esimplead_4584',['~SimpleAD',['../classSimpleAD.html#affe2efa65acb68bd027a69ad1410253a',1,'SimpleAD']]],
-  ['_7eslm_4585',['~SLM',['../classSLM.html#a2db94368b4de4bf176393a628fdbd6a3',1,'SLM']]],
-  ['_7etimeinterpolateddata_4586',['~TimeInterpolatedData',['../structTimeInterpolatedData.html#af14b2d5c5d55331a4dbc9cec9288af53',1,'TimeInterpolatedData']]],
-  ['_7eturbulentperturbation_4587',['~TurbulentPerturbation',['../structTurbulentPerturbation.html#ad1464c6ce0bc3a576f9df395f39839ce',1,'TurbulentPerturbation']]],
-  ['_7ewindfarm_4588',['~WindFarm',['../classWindFarm.html#a1be0e27ac213ad5faaf2fb2e114eab48',1,'WindFarm']]],
-  ['_7ewsm6_4589',['~WSM6',['../classWSM6.html#ac9f44ae6a8aa6a8ae9fabebaa35f3523',1,'WSM6']]]
+  ['_7esdinitproperties_4583',['~SDInitProperties',['../classSDInitProperties.html#a9765427b58ed6bbe812823fba411b60e',1,'SDInitProperties']]],
+  ['_7esdinjection_4584',['~SDInjection',['../classSDInjection.html#ae35272bfbf5519d95d33c6641d40b75c',1,'SDInjection']]],
+  ['_7esimplead_4585',['~SimpleAD',['../classSimpleAD.html#affe2efa65acb68bd027a69ad1410253a',1,'SimpleAD']]],
+  ['_7eslm_4586',['~SLM',['../classSLM.html#a2db94368b4de4bf176393a628fdbd6a3',1,'SLM']]],
+  ['_7etimeinterpolateddata_4587',['~TimeInterpolatedData',['../structTimeInterpolatedData.html#af14b2d5c5d55331a4dbc9cec9288af53',1,'TimeInterpolatedData']]],
+  ['_7eturbulentperturbation_4588',['~TurbulentPerturbation',['../structTurbulentPerturbation.html#ad1464c6ce0bc3a576f9df395f39839ce',1,'TurbulentPerturbation']]],
+  ['_7ewindfarm_4589',['~WindFarm',['../classWindFarm.html#a1be0e27ac213ad5faaf2fb2e114eab48',1,'WindFarm']]],
+  ['_7ewsm6_4590',['~WSM6',['../classWSM6.html#ac9f44ae6a8aa6a8ae9fabebaa35f3523',1,'WSM6']]]
 ];

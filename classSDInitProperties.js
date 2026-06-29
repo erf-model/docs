@@ -1,6 +1,7 @@
 var classSDInitProperties =
 [
     [ "MatVec", "classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f", null ],
+    [ "~SDInitProperties", "classSDInitProperties.html#a9765427b58ed6bbe812823fba411b60e", null ],
     [ "getAerosolDistParams", "classSDInitProperties.html#a9ed6f5a33f1683ffd523d8f7f3871cd5", null ],
     [ "getAerosolDistribution", "classSDInitProperties.html#a3149af66c71dc5f58815e92d33744a67", null ],
     [ "getAerosolDistribution", "classSDInitProperties.html#a0f4e63b8a0b64e0b9644756795ee1785", null ],

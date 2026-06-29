@@ -141,6 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2c2f56485d3aa45058b4b14bfade685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitialization.html#ad2c2f56485d3aa45058b4b14bfade685">numParticlesPerCell</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dv) const override</td></tr>
 <tr class="separator:ad2c2f56485d3aa45058b4b14bfade685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSDInitProperties"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSDInitProperties')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSDInitProperties.html">SDInitProperties</a></td></tr>
+<tr class="memitem:a9765427b58ed6bbe812823fba411b60e inherit pub_methods_classSDInitProperties"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitProperties.html#a9765427b58ed6bbe812823fba411b60e">~SDInitProperties</a> ()=default</td></tr>
+<tr class="separator:a9765427b58ed6bbe812823fba411b60e inherit pub_methods_classSDInitProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1367f767b14b16934c12ec8b9bc81dd inherit pub_methods_classSDInitProperties"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitProperties.html#ac1367f767b14b16934c12ec8b9bc81dd">setDefaults</a> (const amrex::Geometry &amp;a_geom, const <a class="el" href="classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f">MatVec</a> &amp;a_species_mat, const <a class="el" href="classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f">MatVec</a> &amp;a_aerosol_mat)</td></tr>
 <tr class="memdesc:ac1367f767b14b16934c12ec8b9bc81dd inherit pub_methods_classSDInitProperties"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set default values for initialization parameters.  <a href="classSDInitProperties.html#ac1367f767b14b16934c12ec8b9bc81dd">More...</a><br /></td></tr>
 <tr class="separator:ac1367f767b14b16934c12ec8b9bc81dd inherit pub_methods_classSDInitProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -298,18 +300,18 @@ Additional Inherited Members</h2></td></tr>
 <p>Compute number of physical particles per grid cell </p>
 
 <p>Implements <a class="el" href="classSDInitProperties.html#acbb6471ebe4f5009062307b672b2c3ce">SDInitProperties</a>.</p>
-<div class="fragment"><div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        {</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par_per_cell = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a> &gt;= 0) {</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                num_par_per_cell = std::ceil(this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a>*a_dv);</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                num_par_per_cell = 1;</div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            }</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            <span class="keywordflow">return</span> num_par_per_cell;</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;        {</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par_per_cell = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a> &gt;= 0) {</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                num_par_per_cell = std::ceil(this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a>*a_dv);</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                num_par_per_cell = 1;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            }</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;            <span class="keywordflow">return</span> num_par_per_cell;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a01078c8e1f8a8867758c83337aaf4075"><div class="ttname"><a href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">SDInitProperties::m_numdens</a></div><div class="ttdeci">amrex::Real m_numdens</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:162</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a01078c8e1f8a8867758c83337aaf4075"><div class="ttname"><a href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">SDInitProperties::m_numdens</a></div><div class="ttdeci">amrex::Real m_numdens</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:164</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,17 +341,17 @@ Additional Inherited Members</h2></td></tr>
 <p>Compute number of super-droplets per grid cell </p>
 
 <p>Implements <a class="el" href="classSDInitProperties.html#aab2dcb840663760ff9f31b631a448d9b">SDInitProperties</a>.</p>
-<div class="fragment"><div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;        {</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;            <span class="keywordtype">int</span> num_sd_per_cell = 0;</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSDInitialization.html#a344b65913d546d932f2aeea99bbec591">m_numdens_sd_init</a> &gt;= 0) {</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                num_sd_per_cell = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::ceil(<a class="code" href="classSDInitialization.html#a344b65913d546d932f2aeea99bbec591">m_numdens_sd_init</a>*a_dv));</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                num_sd_per_cell = this-&gt;<a class="code" href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">m_ppc</a>;</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;            }</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            <span class="keywordflow">return</span> num_sd_per_cell;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        }</div>
-<div class="ttc" id="aclassSDInitProperties_html_a7b333a19c43be7e6081207d443d1e35b"><div class="ttname"><a href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">SDInitProperties::m_ppc</a></div><div class="ttdeci">int m_ppc</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:156</div></div>
-<div class="ttc" id="aclassSDInitialization_html_a344b65913d546d932f2aeea99bbec591"><div class="ttname"><a href="classSDInitialization.html#a344b65913d546d932f2aeea99bbec591">SDInitialization::m_numdens_sd_init</a></div><div class="ttdeci">amrex::Real m_numdens_sd_init</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:663</div></div>
+<div class="fragment"><div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        {</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;            <span class="keywordtype">int</span> num_sd_per_cell = 0;</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSDInitialization.html#a344b65913d546d932f2aeea99bbec591">m_numdens_sd_init</a> &gt;= 0) {</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                num_sd_per_cell = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::ceil(<a class="code" href="classSDInitialization.html#a344b65913d546d932f2aeea99bbec591">m_numdens_sd_init</a>*a_dv));</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                num_sd_per_cell = this-&gt;<a class="code" href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">m_ppc</a>;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;            }</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            <span class="keywordflow">return</span> num_sd_per_cell;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        }</div>
+<div class="ttc" id="aclassSDInitProperties_html_a7b333a19c43be7e6081207d443d1e35b"><div class="ttname"><a href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">SDInitProperties::m_ppc</a></div><div class="ttdeci">int m_ppc</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:158</div></div>
+<div class="ttc" id="aclassSDInitialization_html_a344b65913d546d932f2aeea99bbec591"><div class="ttname"><a href="classSDInitialization.html#a344b65913d546d932f2aeea99bbec591">SDInitialization::m_numdens_sd_init</a></div><div class="ttdeci">amrex::Real m_numdens_sd_init</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:665</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -464,9 +466,9 @@ Here is the call graph for this function:</div>
 <p>read super-droplets initialization parameters </p>
 
 <p>Reimplemented from <a class="el" href="classSDInitProperties.html#a1f13863eeebd790d62c6e57df508e9c3">SDInitProperties</a>.</p>
-<div class="fragment"><div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        {</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;SDInjection::readInputs(): Do not use this interface&quot;</span>);</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        {</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;SDInjection::readInputs(): Do not use this interface&quot;</span>);</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

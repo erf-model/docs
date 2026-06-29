@@ -145,6 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae76a7b3638c5b96b31407ae1fac85651"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInjection.html#ae76a7b3638c5b96b31407ae1fac85651">numParticlesPerCell</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dv) const override</td></tr>
 <tr class="separator:ae76a7b3638c5b96b31407ae1fac85651"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classSDInitProperties"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classSDInitProperties')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classSDInitProperties.html">SDInitProperties</a></td></tr>
+<tr class="memitem:a9765427b58ed6bbe812823fba411b60e inherit pub_methods_classSDInitProperties"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitProperties.html#a9765427b58ed6bbe812823fba411b60e">~SDInitProperties</a> ()=default</td></tr>
+<tr class="separator:a9765427b58ed6bbe812823fba411b60e inherit pub_methods_classSDInitProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1367f767b14b16934c12ec8b9bc81dd inherit pub_methods_classSDInitProperties"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSDInitProperties.html#ac1367f767b14b16934c12ec8b9bc81dd">setDefaults</a> (const amrex::Geometry &amp;a_geom, const <a class="el" href="classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f">MatVec</a> &amp;a_species_mat, const <a class="el" href="classSDInitProperties.html#ae5f125f76d4ff21bd7aa1b534975584f">MatVec</a> &amp;a_aerosol_mat)</td></tr>
 <tr class="memdesc:ac1367f767b14b16934c12ec8b9bc81dd inherit pub_methods_classSDInitProperties"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set default values for initialization parameters.  <a href="classSDInitProperties.html#ac1367f767b14b16934c12ec8b9bc81dd">More...</a><br /></td></tr>
 <tr class="separator:ac1367f767b14b16934c12ec8b9bc81dd inherit pub_methods_classSDInitProperties"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -312,18 +314,18 @@ Additional Inherited Members</h2></td></tr>
 <p>Compute number of physical particles per grid cell </p>
 
 <p>Implements <a class="el" href="classSDInitProperties.html#acbb6471ebe4f5009062307b672b2c3ce">SDInitProperties</a>.</p>
-<div class="fragment"><div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        {</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par_per_cell = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a> &gt;= 0) {</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                num_par_per_cell = std::ceil(this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a>*a_dv);</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                num_par_per_cell = 1;</div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            }</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;            <span class="keywordflow">return</span> num_par_per_cell;</div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        {</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> num_par_per_cell = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a> &gt;= 0) {</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                num_par_per_cell = std::ceil(this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a>*a_dv);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                num_par_per_cell = 1;</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;            }</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;            <span class="keywordflow">return</span> num_par_per_cell;</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;        }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_a01078c8e1f8a8867758c83337aaf4075"><div class="ttname"><a href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">SDInitProperties::m_numdens</a></div><div class="ttdeci">amrex::Real m_numdens</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:162</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_a01078c8e1f8a8867758c83337aaf4075"><div class="ttname"><a href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">SDInitProperties::m_numdens</a></div><div class="ttdeci">amrex::Real m_numdens</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:164</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,17 +367,17 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Number of super-droplets to inject in this cell </dd></dl>
 
 <p>Implements <a class="el" href="classSDInitProperties.html#aab2dcb840663760ff9f31b631a448d9b">SDInitProperties</a>.</p>
-<div class="fragment"><div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;        {</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;            <span class="keywordtype">int</span> num_sd_per_cell = 0;</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">m_numdens_sd</a> &gt;= 0) {</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                num_sd_per_cell = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::ceil(<a class="code" href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">m_numdens_sd</a>*a_dv));</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                num_sd_per_cell = this-&gt;<a class="code" href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">m_ppc</a>;</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            }</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            <span class="keywordflow">return</span> num_sd_per_cell;</div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        }</div>
-<div class="ttc" id="aclassSDInitProperties_html_a7b333a19c43be7e6081207d443d1e35b"><div class="ttname"><a href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">SDInitProperties::m_ppc</a></div><div class="ttdeci">int m_ppc</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:156</div></div>
-<div class="ttc" id="aclassSDInjection_html_a1e0f6d2e706c493bc1798c3b9ac69534"><div class="ttname"><a href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">SDInjection::m_numdens_sd</a></div><div class="ttdeci">amrex::Real m_numdens_sd</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:548</div></div>
+<div class="fragment"><div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        {</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            <span class="keywordtype">int</span> num_sd_per_cell = 0;</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">m_numdens_sd</a> &gt;= 0) {</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                num_sd_per_cell = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::ceil(<a class="code" href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">m_numdens_sd</a>*a_dv));</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                num_sd_per_cell = this-&gt;<a class="code" href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">m_ppc</a>;</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;            }</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            <span class="keywordflow">return</span> num_sd_per_cell;</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        }</div>
+<div class="ttc" id="aclassSDInitProperties_html_a7b333a19c43be7e6081207d443d1e35b"><div class="ttname"><a href="classSDInitProperties.html#a7b333a19c43be7e6081207d443d1e35b">SDInitProperties::m_ppc</a></div><div class="ttdeci">int m_ppc</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:158</div></div>
+<div class="ttc" id="aclassSDInjection_html_a1e0f6d2e706c493bc1798c3b9ac69534"><div class="ttname"><a href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">SDInjection::m_numdens_sd</a></div><div class="ttdeci">amrex::Real m_numdens_sd</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:550</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -427,11 +429,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <a class="code" href="classSDInitProperties.html#a45f49eae210a782ea6e4f2271317028e">SDInitProperties::printParameters</a>(a_species_mat, a_aerosol_mat);</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
 <div class="ttc" id="aclassSDInitProperties_html_a45f49eae210a782ea6e4f2271317028e"><div class="ttname"><a href="classSDInitProperties.html#a45f49eae210a782ea6e4f2271317028e">SDInitProperties::printParameters</a></div><div class="ttdeci">virtual void printParameters(const MatVec &amp;a_species_mat, const MatVec &amp;a_aerosol_mat) const</div><div class="ttdoc">Print super-droplets initialization parameters to screen.</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.cpp:248</div></div>
-<div class="ttc" id="aclassSDInjection_html_a287032098a1d9dbe475397929d79f60b"><div class="ttname"><a href="classSDInjection.html#a287032098a1d9dbe475397929d79f60b">SDInjection::m_tstop</a></div><div class="ttdeci">amrex::Real m_tstop</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:557</div></div>
-<div class="ttc" id="aclassSDInjection_html_a2f0c397ab736c41ff0e5fdee851840da"><div class="ttname"><a href="classSDInjection.html#a2f0c397ab736c41ff0e5fdee851840da">SDInjection::m_sd_inj_rate</a></div><div class="ttdeci">amrex::Real m_sd_inj_rate</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:545</div></div>
-<div class="ttc" id="aclassSDInjection_html_a31f15a00f426cc1a74b275e29b47707a"><div class="ttname"><a href="classSDInjection.html#a31f15a00f426cc1a74b275e29b47707a">SDInjection::m_tstart</a></div><div class="ttdeci">amrex::Real m_tstart</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:554</div></div>
-<div class="ttc" id="aclassSDInjection_html_ab82ee342cc1df63998685955876f08ca"><div class="ttname"><a href="classSDInjection.html#ab82ee342cc1df63998685955876f08ca">SDInjection::m_inj_rate</a></div><div class="ttdeci">amrex::Real m_inj_rate</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:543</div></div>
-<div class="ttc" id="aclassSDInjection_html_ae9f76def6a1d4caa4560727d0c23a07b"><div class="ttname"><a href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">SDInjection::m_domain_vel</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_domain_vel</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:551</div></div>
+<div class="ttc" id="aclassSDInjection_html_a287032098a1d9dbe475397929d79f60b"><div class="ttname"><a href="classSDInjection.html#a287032098a1d9dbe475397929d79f60b">SDInjection::m_tstop</a></div><div class="ttdeci">amrex::Real m_tstop</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:559</div></div>
+<div class="ttc" id="aclassSDInjection_html_a2f0c397ab736c41ff0e5fdee851840da"><div class="ttname"><a href="classSDInjection.html#a2f0c397ab736c41ff0e5fdee851840da">SDInjection::m_sd_inj_rate</a></div><div class="ttdeci">amrex::Real m_sd_inj_rate</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:547</div></div>
+<div class="ttc" id="aclassSDInjection_html_a31f15a00f426cc1a74b275e29b47707a"><div class="ttname"><a href="classSDInjection.html#a31f15a00f426cc1a74b275e29b47707a">SDInjection::m_tstart</a></div><div class="ttdeci">amrex::Real m_tstart</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:556</div></div>
+<div class="ttc" id="aclassSDInjection_html_ab82ee342cc1df63998685955876f08ca"><div class="ttname"><a href="classSDInjection.html#ab82ee342cc1df63998685955876f08ca">SDInjection::m_inj_rate</a></div><div class="ttdeci">amrex::Real m_inj_rate</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:545</div></div>
+<div class="ttc" id="aclassSDInjection_html_ae9f76def6a1d4caa4560727d0c23a07b"><div class="ttname"><a href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">SDInjection::m_domain_vel</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; m_domain_vel</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:553</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:12</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -500,9 +502,9 @@ Here is the call graph for this function:</div>
 <p>read super-droplets injection parameters </p>
 
 <p>Reimplemented from <a class="el" href="classSDInitProperties.html#a1f13863eeebd790d62c6e57df508e9c3">SDInitProperties</a>.</p>
-<div class="fragment"><div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        {</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;SDInjection::readInputs(): Do not use this interface&quot;</span>);</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;        {</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;SDInjection::readInputs(): Do not use this interface&quot;</span>);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -632,29 +634,29 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        {</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a> = <a class="code" href="classSDInjection.html#ab82ee342cc1df63998685955876f08ca">m_inj_rate</a> * a_dt;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;            <a class="code" href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">m_numdens_sd</a> = (<a class="code" href="classSDInjection.html#a2f0c397ab736c41ff0e5fdee851840da">m_sd_inj_rate</a>&gt;0 ? std::max(<a class="code" href="classSDInjection.html#a2f0c397ab736c41ff0e5fdee851840da">m_sd_inj_rate</a>*a_dt, <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) : -1);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::uniform) {</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                amrex::Vector&lt;amrex::Real&gt; lo = {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                amrex::Vector&lt;amrex::Real&gt; hi = {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; dir++) {</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                    lo[dir] = this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.lo(dir) + <a class="code" href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">m_domain_vel</a>[dir] * a_dt;</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                    hi[dir] = this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.hi(dir) + <a class="code" href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">m_domain_vel</a>[dir] * a_dt;</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                }</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.setLo(lo);</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.setHi(hi);</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::bubble) {</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                amrex::Vector&lt;amrex::Real&gt; center = {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; dir++) {</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                    center[dir] = this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.lo(dir) + <a class="code" href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">m_domain_vel</a>[dir] * a_dt;</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                }</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.setLo(center);</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;            }</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        }</div>
-<div class="ttc" id="aclassSDInitProperties_html_a41ac7ba3b9e07866b0cbd8397cf06a85"><div class="ttname"><a href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">SDInitProperties::m_type</a></div><div class="ttdeci">SDInitShape m_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:159</div></div>
-<div class="ttc" id="aclassSDInitProperties_html_afbf213440ea3534c3d809bf4bc87c269"><div class="ttname"><a href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">SDInitProperties::m_particle_domain</a></div><div class="ttdeci">amrex::RealBox m_particle_domain</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:206</div></div>
+<div class="fragment"><div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        {</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            this-&gt;<a class="code" href="classSDInitProperties.html#a01078c8e1f8a8867758c83337aaf4075">m_numdens</a> = <a class="code" href="classSDInjection.html#ab82ee342cc1df63998685955876f08ca">m_inj_rate</a> * a_dt;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <a class="code" href="classSDInjection.html#a1e0f6d2e706c493bc1798c3b9ac69534">m_numdens_sd</a> = (<a class="code" href="classSDInjection.html#a2f0c397ab736c41ff0e5fdee851840da">m_sd_inj_rate</a>&gt;0 ? std::max(<a class="code" href="classSDInjection.html#a2f0c397ab736c41ff0e5fdee851840da">m_sd_inj_rate</a>*a_dt, <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) : -1);</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::uniform) {</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                amrex::Vector&lt;amrex::Real&gt; lo = {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                amrex::Vector&lt;amrex::Real&gt; hi = {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; dir++) {</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                    lo[dir] = this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.lo(dir) + <a class="code" href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">m_domain_vel</a>[dir] * a_dt;</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                    hi[dir] = this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.hi(dir) + <a class="code" href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">m_domain_vel</a>[dir] * a_dt;</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                }</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.setLo(lo);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.setHi(hi);</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">m_type</a> == SDInitShape::bubble) {</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                amrex::Vector&lt;amrex::Real&gt; center = {<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>};</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dir = 0; dir &lt; AMREX_SPACEDIM; dir++) {</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                    center[dir] = this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.lo(dir) + <a class="code" href="classSDInjection.html#ae9f76def6a1d4caa4560727d0c23a07b">m_domain_vel</a>[dir] * a_dt;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                }</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                this-&gt;<a class="code" href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">m_particle_domain</a>.setLo(center);</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;            }</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        }</div>
+<div class="ttc" id="aclassSDInitProperties_html_a41ac7ba3b9e07866b0cbd8397cf06a85"><div class="ttname"><a href="classSDInitProperties.html#a41ac7ba3b9e07866b0cbd8397cf06a85">SDInitProperties::m_type</a></div><div class="ttdeci">SDInitShape m_type</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:161</div></div>
+<div class="ttc" id="aclassSDInitProperties_html_afbf213440ea3534c3d809bf4bc87c269"><div class="ttname"><a href="classSDInitProperties.html#afbf213440ea3534c3d809bf4bc87c269">SDInitProperties::m_particle_domain</a></div><div class="ttdeci">amrex::RealBox m_particle_domain</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:208</div></div>
 </div><!-- fragment -->
 </div>
 </div>
