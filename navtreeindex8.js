@@ -136,6 +136,8 @@ var NAVTREEINDEX8 =
 "ERF__ReadFromWRFInput_8cpp.html":[3,0,1,6,13],
 "ERF__ReadFromWRFLow_8cpp.html":[3,0,1,6,15],
 "ERF__ReadWaves_8cpp.html":[3,0,1,33],
+"ERF__Rebalance_8cpp.html":[3,0,1,19,27],
+"ERF__Rebalance_8cpp.html#a98bb79ec09225370f1f5ef7fae394976":[3,0,1,19,27,0],
 "ERF__RefineBox_8cpp.html":[3,0,1,15,0],
 "ERF__RefineHurricane_8cpp.html":[3,0,1,15,1],
 "ERF__RefineHurricane_8cpp.html#a661478614baa822c243e10e73731de2a":[3,0,1,15,1,0],
@@ -212,8 +214,8 @@ var NAVTREEINDEX8 =
 "ERF__SatAdj_8H.html":[3,0,1,10,5,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,10,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,10,5,1],
-"ERF__SatMethods_8H.html":[3,0,1,19,27],
-"ERF__SatMethods_8H_source.html":[3,0,1,19,27],
+"ERF__SatMethods_8H.html":[3,0,1,19,28],
+"ERF__SatMethods_8H_source.html":[3,0,1,19,28],
 "ERF__SetupDiff_8H.html":[3,0,1,3,25],
 "ERF__SetupDiff_8H.html#a17bcc9d9ddabb0ae778e0db624ab85d6":[3,0,1,3,25,8],
 "ERF__SetupDiff_8H.html#a29fc1da4eb54fbf2bb041845ce70d50d":[3,0,1,3,25,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__SetupVertDiff_8H.html#a759d91e3e2100e03124b878bdfa2884a":[3,0,1,3,26,7],
 "ERF__SetupVertDiff_8H.html#a81708eac58914674e629740b8a881b83":[3,0,1,3,26,3],
 "ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18":[3,0,1,3,26,5],
-"ERF__SetupVertDiff_8H.html#af4dbcccc963d5e61149eb1d5ea39a0af":[3,0,1,3,26,2],
-"ERF__SetupVertDiff_8H.html#af7e2dddfc386195ebf29abbcf6dec9c0":[3,0,1,3,26,4],
-"ERF__SetupVertDiff_8H.html#afca5b3ce83f261bd8fd672ede110a213":[3,0,1,3,26,1]
+"ERF__SetupVertDiff_8H.html#af4dbcccc963d5e61149eb1d5ea39a0af":[3,0,1,3,26,2]
 };

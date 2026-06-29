@@ -1,6 +1,6 @@
 var ERF__InitFromInputSounding_8cpp =
 [
-    [ "init_bx_scalars_from_input_sounding", "ERF__InitFromInputSounding_8cpp.html#a3591f1ded54f05cbacb8d1ad6246572e", null ],
-    [ "init_bx_scalars_from_input_sounding_hse", "ERF__InitFromInputSounding_8cpp.html#a8addf90ec4622acb2ce1f299742ee2d0", null ],
-    [ "init_bx_velocities_from_input_sounding", "ERF__InitFromInputSounding_8cpp.html#a3e2549542024fc00744ba8077f71f1fb", null ]
+    [ "init_state_from_input_sounding", "ERF__InitFromInputSounding_8cpp.html#ac89f178facffdb031a3826a2e63a9f5b", null ],
+    [ "init_state_from_input_sounding_hse", "ERF__InitFromInputSounding_8cpp.html#a07fae553ecd15cf313965e41b364cc54", null ],
+    [ "init_velocities_from_input_sounding", "ERF__InitFromInputSounding_8cpp.html#a224283923036dd178590612b6c40606c", null ]
 ];

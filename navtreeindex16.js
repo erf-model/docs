@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"classMRISplitIntegrator.html#ad698d348d3e7fa695077134839254738":[2,0,57,12],
+"classMRISplitIntegrator.html#ad78b5d1908a131c3597232a041ca267b":[2,0,57,5],
+"classMRISplitIntegrator.html#afa0623b638cd29d3f307d34ef5a98d0f":[2,0,57,28],
 "classMicrophysics.html":[2,0,48],
 "classMicrophysics.html#a069e6013efb78d268394868d0cfc6382":[2,0,48,8],
 "classMicrophysics.html#a09486c3bc292538d5a26683fb1e19451":[2,0,48,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "classPlaneAverage.html#a98ad1b7801e75ac43ddd3d06b0c5d7da":[2,0,67,29],
 "classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d":[2,0,67,26],
 "classPlaneAverage.html#a9ed43e3c2cfd2ef0f3fb23d2097a1b6d":[2,0,67,18],
-"classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2":[2,0,67,16],
-"classPlaneAverage.html#aaf4e5c9b73f65af3eb0ccdc6a82e76f2":[2,0,67,14],
-"classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770":[2,0,67,19],
-"classPlaneAverage.html#ab65036a99da90fb854f7dfd33cd700b1":[2,0,67,13]
+"classPlaneAverage.html#aa58d4a708d46cd0d12120e9bf90d5de2":[2,0,67,16]
 };
