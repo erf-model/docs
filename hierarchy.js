@@ -93,6 +93,7 @@ var hierarchy =
     [ "eb_cut_cell_::path_data", "structeb__cut__cell___1_1path__data.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "PlaneSampler", "structPlaneSampler.html", null ],
+    [ "plotfile2d::PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", null ],
     [ "polygon_", "classpolygon__.html", null ],
     [ "ProblemBase", "classProblemBase.html", null ],
     [ "ProbParmDefaults", "structProbParmDefaults.html", null ],

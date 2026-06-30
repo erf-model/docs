@@ -12,8 +12,12 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
       [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
     ] ],
     [ "ERF_NCPlotFile.cpp", "ERF__NCPlotFile_8cpp.html", "ERF__NCPlotFile_8cpp" ],
+    [ "ERF_NCPlotFile.H", "ERF__NCPlotFile_8H.html", null ],
     [ "ERF_NCWpsFile.H", "ERF__NCWpsFile_8H.html", "ERF__NCWpsFile_8H" ],
     [ "ERF_Plotfile.cpp", "ERF__Plotfile_8cpp.html", "ERF__Plotfile_8cpp" ],
+    [ "ERF_Plotfile2D.cpp", "ERF__Plotfile2D_8cpp.html", null ],
+    [ "ERF_Plotfile2DUtils.cpp", "ERF__Plotfile2DUtils_8cpp.html", "ERF__Plotfile2DUtils_8cpp" ],
+    [ "ERF_Plotfile2DUtils.H", "ERF__Plotfile2DUtils_8H.html", "ERF__Plotfile2DUtils_8H" ],
     [ "ERF_ReadBndryPlanes.cpp", "ERF__ReadBndryPlanes_8cpp.html", "ERF__ReadBndryPlanes_8cpp" ],
     [ "ERF_ReadBndryPlanes.H", "ERF__ReadBndryPlanes_8H.html", "ERF__ReadBndryPlanes_8H" ],
     [ "ERF_ReadFromMetgrid.cpp", "ERF__ReadFromMetgrid_8cpp.html", null ],

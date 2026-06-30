@@ -11,6 +11,9 @@ var annotated_dup =
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
       [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
     ] ],
+    [ "plotfile2d", "namespaceplotfile2d.html", [
+      [ "PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", "structplotfile2d_1_1PlotVariableSelection" ]
+    ] ],
     [ "adiabatic", "structadiabatic.html", "structadiabatic" ],
     [ "adiabatic_charnock", "structadiabatic__charnock.html", "structadiabatic__charnock" ],
     [ "adiabatic_donelan", "structadiabatic__donelan.html", "structadiabatic__donelan" ],
