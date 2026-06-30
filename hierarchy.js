@@ -17,6 +17,7 @@ var hierarchy =
     [ "CENTERED6", "structCENTERED6.html", null ],
     [ "custom_flux", "structcustom__flux.html", null ],
     [ "DampingChoice", "structDampingChoice.html", null ],
+    [ "plotfile2d::DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", null ],
     [ "DiffChoice", "structDiffChoice.html", null ],
     [ "DirectionSelector< Index >", "structDirectionSelector.html", null ],
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", null ],

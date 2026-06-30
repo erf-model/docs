@@ -246,7 +246,6 @@ var classERF =
     [ "der_datalog", "classERF.html#ab33e7fff801543a43961ca6d7cac818f", null ],
     [ "der_datalogname", "classERF.html#a9e7650abd3df579a98be0c750aa61ba8", null ],
     [ "derived_names", "classERF.html#a9fc0f6e6ca35036d2e3a36dd42e66435", null ],
-    [ "derived_names_2d", "classERF.html#a1dded950d40fd0dc4026c2bfd072fdfa", null ],
     [ "derived_subvol_names", "classERF.html#a51ab0ec8075c76b5d1c588168ea10c65", null ],
     [ "destag_profiles", "classERF.html#a65f19c55c8d3669445866a1c3bbb628d", null ],
     [ "detJ_cc", "classERF.html#a30f8b851ed29d38695d44cff257f14e6", null ],
