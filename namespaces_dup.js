@@ -576,6 +576,25 @@ var namespaces_dup =
       [ "num_aerosols_max", "namespaceSupDropInit.html#a281fc9f3c461b471e1d64f979f724c49", null ],
       [ "num_species_max", "namespaceSupDropInit.html#a9aa503a7fa7375e8ee68af017cf9a078", null ]
     ] ],
+    [ "surface_diagnostics", "namespacesurface__diagnostics.html", [
+      [ "SurfaceDiagnosticSource", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf", [
+        [ "Missing", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa2aee0be2678ee90fd327cc186826438e", null ],
+        [ "SurfaceLayerLand", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa725640df145c8aae61b4b454ad7f03f1", null ],
+        [ "LSMLand", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa4f52a5383c582560154ad0ce49e79b1e", null ],
+        [ "SurfaceLayerFallback", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa07c5fab4234d064a77db6f1c4d0903d9", null ],
+        [ "SurfaceLayerSea", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfaf043182a010a3652f6caacf5caf06eb5", null ],
+        [ "Custom", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa90589c47f06eb971d548591f23c285af", null ],
+        [ "RICO", "namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1", null ]
+      ] ],
+      [ "classify_scalar_source", "namespacesurface__diagnostics.html#a9122f8c636e3844b424279a993fa59b3", null ],
+      [ "source_name", "namespacesurface__diagnostics.html#a447abb57813ef4c1ec77365e7a3e0554", null ],
+      [ "to_int", "namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78", null ],
+      [ "to_plot_value", "namespacesurface__diagnostics.html#a8952f0baf16086becb3702d82d00d158", null ]
+    ] ],
+    [ "surface_flux_diagnostics", "namespacesurface__flux__diagnostics.html", [
+      [ "latent_heat_flux_wm2_from_rhoqv_flux", "namespacesurface__flux__diagnostics.html#ab88d6e67865e46b0acde14fdb5411e5f", null ],
+      [ "sensible_heat_flux_wm2_from_rhotheta_flux", "namespacesurface__flux__diagnostics.html#a5c7726fdd46761f6211dd3e2e5cd5e0a", null ]
+    ] ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ],
     [ "WSM6Ind", "namespaceWSM6Ind.html", null ],
