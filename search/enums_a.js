@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['tautype_8920',['TauType',['../ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248b',1,'ERF_DataStruct.H']]],
-  ['thetacalctype_8921',['ThetaCalcType',['../classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04',1,'SurfaceLayer']]],
-  ['type_8922',['Type',['../classSatMethods.html#a62096d95f324cd2a3504554437067ef7',1,'SatMethods']]]
+  ['shocmomentumtransport_9478',['ShocMomentumTransport',['../ERF__ShocTypes_8H.html#a46f049c905e222c86ebb0cf19549ab48',1,'ERF_ShocTypes.H']]],
+  ['shoctransportmode_9479',['ShocTransportMode',['../ERF__ShocTypes_8H.html#afeb44c2565539dcc7b6083629bfda26d',1,'ERF_ShocTypes.H']]],
+  ['sponge_9480',['Sponge',['../ERF__DataStruct_8H.html#a5bebd9ff4e2455172deca3b399214fcb',1,'ERF_DataStruct.H']]],
+  ['surfacediagnosticsource_9481',['SurfaceDiagnosticSource',['../namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccf',1,'surface_diagnostics']]]
 ];

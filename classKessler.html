@@ -670,7 +670,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructKesslerSourceTerms_html_a56c1a6dcb5868f1d3007af8cedb03bae"><div class="ttname"><a href="structKesslerSourceTerms.html#a56c1a6dcb5868f1d3007af8cedb03bae">KesslerSourceTerms::dq_cloud_to_vapor</a></div><div class="ttdeci">amrex::Real dq_cloud_to_vapor</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:16</div></div>
 <div class="ttc" id="astructKesslerSourceTerms_html_a9fd1cd79d1f959f399314e99a9b9351b"><div class="ttname"><a href="structKesslerSourceTerms.html#a9fd1cd79d1f959f399314e99a9b9351b">KesslerSourceTerms::dq_cloud_to_rain</a></div><div class="ttdeci">amrex::Real dq_cloud_to_rain</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:17</div></div>
 <div class="ttc" id="astructKesslerSourceTerms_html_ab4087e5bcf61c7d467e94bcda7b648a5"><div class="ttname"><a href="structKesslerSourceTerms.html#ab4087e5bcf61c7d467e94bcda7b648a5">KesslerSourceTerms::dq_vapor_to_cloud</a></div><div class="ttdeci">amrex::Real dq_vapor_to_cloud</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:15</div></div>
-<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1372</div></div>
+<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1389</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classKessler.html#adbfb72df664abc2f02fede6b91b066b6">Advance()</a>.</p>
 <div class="dynheader">
@@ -928,12 +928,21 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// Use one latent-over-cp factor for both the saturation solve and theta</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="comment">// update. L_v comes from ERF_Constants.H; c_p comes from SolverChoice.</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classKessler.html#a74746cef2381fd949a06be46f99a05c7">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classKessler.html#a9768f16e7d0dc1320927d6169fc4cc39">m_do_cond</a>  = (!sc.<a class="code" href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">use_shoc</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classKessler.html#a9768f16e7d0dc1320927d6169fc4cc39">m_do_cond</a>  = (!sc.<a class="code" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">uses_shoc_family</a>());</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:48</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1294</div></div>
-<div class="ttc" id="astructSolverChoice_html_a53819b8e72b3431b2c81f6ae2b6433f1"><div class="ttname"><a href="structSolverChoice.html#a53819b8e72b3431b2c81f6ae2b6433f1">SolverChoice::use_shoc</a></div><div class="ttdeci">bool use_shoc</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1326</div></div>
-</div><!-- fragment -->
+<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1300</div></div>
+<div class="ttc" id="astructSolverChoice_html_a8a7e37fdfc7a226a7c1428ad7dc1051c"><div class="ttname"><a href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">SolverChoice::uses_shoc_family</a></div><div class="ttdeci">bool uses_shoc_family() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1359</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph.png" border="0" usemap="#aclassKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph" alt=""/></div>
+<map name="aclassKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph" id="aclassKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,124,39"/>
+<area shape="rect" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c" title=" " alt="" coords="172,5,317,47"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="ab1eaffdd038f2eda89f44f150036a405"></a>

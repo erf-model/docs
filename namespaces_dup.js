@@ -569,6 +569,7 @@ var namespaces_dup =
       [ "compute_saturation_vapfrac_null", "namespacesaturation__funcs.html#a9bd43c8bbe5f9fe965027489b52e6441", null ],
       [ "compute_saturation_vapfrac_null", "namespacesaturation__funcs.html#a3c5c37384a2025ffe973352d75b32d7a", null ]
     ] ],
+    [ "shoc", "namespaceshoc.html", "namespaceshoc" ],
     [ "Species", "namespaceSpecies.html", [
       [ "AMREX_ENUM", "namespaceSpecies.html#af398940141c9daafeeae1dd0a54be259", null ]
     ] ],

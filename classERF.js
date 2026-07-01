@@ -141,6 +141,7 @@ var classERF =
     [ "ReadCheckpointFile", "classERF.html#af285247b24b173cd851fe49799d17f42", null ],
     [ "ReadCheckpointFileSurfaceLayer", "classERF.html#afdd04d6a1c2103e654f0cb6eda62436d", null ],
     [ "ReadParameters", "classERF.html#a2d39cd3bdc3d90609ad3b14e266d190a", null ],
+    [ "ReadStormTrackerRestart", "classERF.html#ad2861e372b6df057322ce5b044c872b1", null ],
     [ "ReadVelsOnlyFromCheckpointFile", "classERF.html#a6aaad5df62df3a0d99fb279812e6633a", null ],
     [ "refinement_criteria_setup", "classERF.html#aa90c9756f684404f8b69b8a23568b535", null ],
     [ "remake_zphys", "classERF.html#a18610f7aac948db169cf8a4642573027", null ],
