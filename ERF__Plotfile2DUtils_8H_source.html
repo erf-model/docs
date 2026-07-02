@@ -91,47 +91,62 @@ $(document).ready(function(){initNavTree('ERF__Plotfile2DUtils_8H_source.html','
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;AMReX_Vector.H&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Narrow helper utilities for 2D plotfile request handling and message</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// formatting. Keep this layer small: it should support validation and tests,</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// not become the long-term home for diagnostic science.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplotfile2d.html">plotfile2d</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structplotfile2d_1_1PlotVariableSelection.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structplotfile2d_1_1PlotVariableSelection.html">PlotVariableSelection</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb">   17</a></span>&#160;    amrex::Vector&lt;std::string&gt; <a class="code" href="structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb">accepted</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b">   18</a></span>&#160;    amrex::Vector&lt;std::string&gt; <a class="code" href="structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b">unavailable</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="structplotfile2d_1_1PlotVariableSelection.html">PlotVariableSelection</a> <a class="code" href="namespaceplotfile2d.html#a50f6133c2d0295dfc45ece3acd2273d8">select_requested_plot_variables</a> (<span class="keyword">const</span> amrex::Vector&lt;std::string&gt;&amp; requested,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                       <span class="keyword">const</span> amrex::Vector&lt;std::string&gt;&amp; available);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#aa9b36025404bf1dd71c17f3e0bc4d278">format_unavailable_2d_plot_var_warning</a> (<span class="keyword">const</span> std::string&amp; parameter_name,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                    <span class="keyword">const</span> std::string&amp; unavailable_name,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                    <span class="keyword">const</span> amrex::Vector&lt;std::string&gt;&amp; available_names);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#a36271f5e8ea03252877e78843d8eba25">format_plot2d_parameter_name</a> (<span class="keyword">const</span> std::string&amp; pp_prefix,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                          <span class="keyword">const</span> std::string&amp; parameter_name);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#aa9cd236199a4804b5351cf9c69bac872">format_2d_component_count_error</a> (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> filled, <span class="keywordtype">int</span> expected);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#a4c4c24aee15a8bf42ca679ba0c7a45f2">format_invalid_2d_stream_error</a> (<span class="keywordtype">int</span> which);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;AMReX_GpuQualifiers.H&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;AMReX_Vector.H&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// Narrow helper utilities for 2D plotfile request handling and message</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// formatting. Keep this layer small: it should support validation and tests,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// not become the long-term home for diagnostic science.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplotfile2d.html">plotfile2d</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Native SHOC state_update preserves consumed surface fluxes for diagnostics,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// but each flux component remains available only if the corresponding host SFS</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// field existed before SHOC consumed and cleared it.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#ae14d48ee048d2f29c1aaa3584d03f5ff">   20</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespaceplotfile2d.html#ae14d48ee048d2f29c1aaa3584d03f5ff">use_native_shoc_consumed_flux_source</a> (<span class="keywordtype">bool</span> native_shoc_owns_scalar_fluxes,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                           <span class="keywordtype">bool</span> native_shoc_has_consumed_flux_diagnostics,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                           <span class="keywordtype">bool</span> host_flux_field_available) noexcept</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> native_shoc_owns_scalar_fluxes &amp;&amp;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;           native_shoc_has_consumed_flux_diagnostics &amp;&amp;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;           host_flux_field_available;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structplotfile2d_1_1PlotVariableSelection.html">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structplotfile2d_1_1PlotVariableSelection.html">PlotVariableSelection</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb">   31</a></span>&#160;    amrex::Vector&lt;std::string&gt; <a class="code" href="structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb">accepted</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b">   32</a></span>&#160;    amrex::Vector&lt;std::string&gt; <a class="code" href="structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b">unavailable</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;} <span class="comment">// namespace plotfile2d</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="structplotfile2d_1_1PlotVariableSelection.html">PlotVariableSelection</a> <a class="code" href="namespaceplotfile2d.html#a50f6133c2d0295dfc45ece3acd2273d8">select_requested_plot_variables</a> (<span class="keyword">const</span> amrex::Vector&lt;std::string&gt;&amp; requested,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                                       <span class="keyword">const</span> amrex::Vector&lt;std::string&gt;&amp; available);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#aa9b36025404bf1dd71c17f3e0bc4d278">format_unavailable_2d_plot_var_warning</a> (<span class="keyword">const</span> std::string&amp; parameter_name,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                    <span class="keyword">const</span> std::string&amp; unavailable_name,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                    <span class="keyword">const</span> amrex::Vector&lt;std::string&gt;&amp; available_names);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#a36271f5e8ea03252877e78843d8eba25">format_plot2d_parameter_name</a> (<span class="keyword">const</span> std::string&amp; pp_prefix,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                          <span class="keyword">const</span> std::string&amp; parameter_name);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#aa9cd236199a4804b5351cf9c69bac872">format_2d_component_count_error</a> (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> filled, <span class="keywordtype">int</span> expected);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;std::string <a class="code" href="namespaceplotfile2d.html#a4c4c24aee15a8bf42ca679ba0c7a45f2">format_invalid_2d_stream_error</a> (<span class="keywordtype">int</span> which);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <span class="comment">// namespace plotfile2d</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="anamespaceplotfile2d_html"><div class="ttname"><a href="namespaceplotfile2d.html">plotfile2d</a></div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:4</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_a36271f5e8ea03252877e78843d8eba25"><div class="ttname"><a href="namespaceplotfile2d.html#a36271f5e8ea03252877e78843d8eba25">plotfile2d::format_plot2d_parameter_name</a></div><div class="ttdeci">std::string format_plot2d_parameter_name(const std::string &amp;pp_prefix, const std::string &amp;parameter_name)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.cpp:75</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_a4c4c24aee15a8bf42ca679ba0c7a45f2"><div class="ttname"><a href="namespaceplotfile2d.html#a4c4c24aee15a8bf42ca679ba0c7a45f2">plotfile2d::format_invalid_2d_stream_error</a></div><div class="ttdeci">std::string format_invalid_2d_stream_error(int which)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.cpp:97</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_a50f6133c2d0295dfc45ece3acd2273d8"><div class="ttname"><a href="namespaceplotfile2d.html#a50f6133c2d0295dfc45ece3acd2273d8">plotfile2d::select_requested_plot_variables</a></div><div class="ttdeci">PlotVariableSelection select_requested_plot_variables(const amrex::Vector&lt; std::string &gt; &amp;requested, const amrex::Vector&lt; std::string &gt; &amp;available)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.cpp:31</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_aa9b36025404bf1dd71c17f3e0bc4d278"><div class="ttname"><a href="namespaceplotfile2d.html#aa9b36025404bf1dd71c17f3e0bc4d278">plotfile2d::format_unavailable_2d_plot_var_warning</a></div><div class="ttdeci">std::string format_unavailable_2d_plot_var_warning(const std::string &amp;parameter_name, const std::string &amp;unavailable_name, const amrex::Vector&lt; std::string &gt; &amp;available_names)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.cpp:62</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_aa9cd236199a4804b5351cf9c69bac872"><div class="ttname"><a href="namespaceplotfile2d.html#aa9cd236199a4804b5351cf9c69bac872">plotfile2d::format_2d_component_count_error</a></div><div class="ttdeci">std::string format_2d_component_count_error(int lev, int filled, int expected)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.cpp:86</div></div>
-<div class="ttc" id="astructplotfile2d_1_1PlotVariableSelection_html"><div class="ttname"><a href="structplotfile2d_1_1PlotVariableSelection.html">plotfile2d::PlotVariableSelection</a></div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.H:16</div></div>
-<div class="ttc" id="astructplotfile2d_1_1PlotVariableSelection_html_a0003f85a30ea1d4fb062ca95f8a7d8cb"><div class="ttname"><a href="structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb">plotfile2d::PlotVariableSelection::accepted</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; accepted</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.H:17</div></div>
-<div class="ttc" id="astructplotfile2d_1_1PlotVariableSelection_html_ad47995916c3ba192318be0a6500f237b"><div class="ttname"><a href="structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b">plotfile2d::PlotVariableSelection::unavailable</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; unavailable</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.H:18</div></div>
+<div class="ttc" id="anamespaceplotfile2d_html_ae14d48ee048d2f29c1aaa3584d03f5ff"><div class="ttname"><a href="namespaceplotfile2d.html#ae14d48ee048d2f29c1aaa3584d03f5ff">plotfile2d::use_native_shoc_consumed_flux_source</a></div><div class="ttdeci">AMREX_FORCE_INLINE bool use_native_shoc_consumed_flux_source(bool native_shoc_owns_scalar_fluxes, bool native_shoc_has_consumed_flux_diagnostics, bool host_flux_field_available) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.H:20</div></div>
+<div class="ttc" id="astructplotfile2d_1_1PlotVariableSelection_html"><div class="ttname"><a href="structplotfile2d_1_1PlotVariableSelection.html">plotfile2d::PlotVariableSelection</a></div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.H:30</div></div>
+<div class="ttc" id="astructplotfile2d_1_1PlotVariableSelection_html_a0003f85a30ea1d4fb062ca95f8a7d8cb"><div class="ttname"><a href="structplotfile2d_1_1PlotVariableSelection.html#a0003f85a30ea1d4fb062ca95f8a7d8cb">plotfile2d::PlotVariableSelection::accepted</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; accepted</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.H:31</div></div>
+<div class="ttc" id="astructplotfile2d_1_1PlotVariableSelection_html_ad47995916c3ba192318be0a6500f237b"><div class="ttname"><a href="structplotfile2d_1_1PlotVariableSelection.html#ad47995916c3ba192318be0a6500f237b">plotfile2d::PlotVariableSelection::unavailable</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; unavailable</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DUtils.H:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

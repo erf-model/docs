@@ -7,6 +7,7 @@ var namespaceplotfile2d =
       [ "SurfaceLayer", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a7cb98542596c7e6f323260a3a29df48f", null ],
       [ "Radiation", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441abff9b6f472366cb5d8f8e6ab1010d377", null ],
       [ "SurfaceFlux", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a887090f85c9e1757c6d16c6c2611ce4d", null ],
+      [ "PBL", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a2a79c6fa9bd9885d911d26d2ed8134b0", null ],
       [ "SurfaceState", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441ae4bd66c40d91ac21131e17e018becc53", null ],
       [ "ColumnIntegral", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809", null ]
     ] ],
@@ -32,7 +33,10 @@ var namespaceplotfile2d =
       [ "IntegratedQv", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ada08d2f79c7d30ac8916cde2b61cab11", null ],
       [ "SurfaceDiagnosticSource", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a5c402aeabf404d94ed23d9722f206f72", null ],
       [ "SensibleHeatFlux", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2addabc76b9cbf7bd18cdfae2fb337f31d", null ],
-      [ "LatentHeatFlux", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a32247914b04aaa17d0b4a43207861eca", null ]
+      [ "LatentHeatFlux", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a32247914b04aaa17d0b4a43207861eca", null ],
+      [ "ShocUStar", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a664e872daa697764887f14e1d2ff6e54", null ],
+      [ "ShocOlen", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ae98166083a90cf920d3ae08d8cdc391d", null ],
+      [ "ShocWthvSfc", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2aa55599a777c22e1e1c67ea69d5dc9f9e", null ]
     ] ],
     [ "MissingPolicy", "namespaceplotfile2d.html#aa2c10fc17716a89573a1b7c8d82a1845", [
       [ "AlwaysAvailable", "namespaceplotfile2d.html#aa2c10fc17716a89573a1b7c8d82a1845a10363b13cee27e8e704a9c64bd3b36b0", null ],
@@ -46,5 +50,6 @@ var namespaceplotfile2d =
     [ "format_invalid_2d_stream_error", "namespaceplotfile2d.html#a4c4c24aee15a8bf42ca679ba0c7a45f2", null ],
     [ "format_plot2d_parameter_name", "namespaceplotfile2d.html#a36271f5e8ea03252877e78843d8eba25", null ],
     [ "format_unavailable_2d_plot_var_warning", "namespaceplotfile2d.html#aa9b36025404bf1dd71c17f3e0bc4d278", null ],
-    [ "select_requested_plot_variables", "namespaceplotfile2d.html#a50f6133c2d0295dfc45ece3acd2273d8", null ]
+    [ "select_requested_plot_variables", "namespaceplotfile2d.html#a50f6133c2d0295dfc45ece3acd2273d8", null ],
+    [ "use_native_shoc_consumed_flux_source", "namespaceplotfile2d.html#ae14d48ee048d2f29c1aaa3584d03f5ff", null ]
 ];

@@ -6,6 +6,7 @@ var ERF__Plotfile2DCatalog_8H =
       [ "SurfaceLayer", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a7cb98542596c7e6f323260a3a29df48f", null ],
       [ "Radiation", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441abff9b6f472366cb5d8f8e6ab1010d377", null ],
       [ "SurfaceFlux", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a887090f85c9e1757c6d16c6c2611ce4d", null ],
+      [ "PBL", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a2a79c6fa9bd9885d911d26d2ed8134b0", null ],
       [ "SurfaceState", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441ae4bd66c40d91ac21131e17e018becc53", null ],
       [ "ColumnIntegral", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809", null ]
     ] ],
@@ -31,7 +32,10 @@ var ERF__Plotfile2DCatalog_8H =
       [ "IntegratedQv", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ada08d2f79c7d30ac8916cde2b61cab11", null ],
       [ "SurfaceDiagnosticSource", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a5c402aeabf404d94ed23d9722f206f72", null ],
       [ "SensibleHeatFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2addabc76b9cbf7bd18cdfae2fb337f31d", null ],
-      [ "LatentHeatFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a32247914b04aaa17d0b4a43207861eca", null ]
+      [ "LatentHeatFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a32247914b04aaa17d0b4a43207861eca", null ],
+      [ "ShocUStar", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a664e872daa697764887f14e1d2ff6e54", null ],
+      [ "ShocOlen", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ae98166083a90cf920d3ae08d8cdc391d", null ],
+      [ "ShocWthvSfc", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2aa55599a777c22e1e1c67ea69d5dc9f9e", null ]
     ] ],
     [ "MissingPolicy", "ERF__Plotfile2DCatalog_8H.html#aa2c10fc17716a89573a1b7c8d82a1845", [
       [ "AlwaysAvailable", "ERF__Plotfile2DCatalog_8H.html#aa2c10fc17716a89573a1b7c8d82a1845a10363b13cee27e8e704a9c64bd3b36b0", null ],
