@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb":[3,0,1,20,14,1],
 "ERF__Interpolation__1D_8H.html#af71b362e58803c8c29aa5127adcf645f":[3,0,1,20,14,0],
 "ERF__Interpolation__1D_8H_source.html":[3,0,1,20,14],
 "ERF__Interpolation__Bilinear_8H.html":[3,0,1,20,15],
@@ -85,8 +86,8 @@ var NAVTREEINDEX7 =
 "ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca":[3,0,1,17,10,2],
 "ERF__MakeMomSources_8cpp.html":[3,0,1,17,11],
 "ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c":[3,0,1,17,11,0],
-"ERF__MakeNewArrays_8cpp.html":[3,0,1,31],
-"ERF__MakeNewLevel_8cpp.html":[3,0,1,32],
+"ERF__MakeNewArrays_8cpp.html":[3,0,1,32],
+"ERF__MakeNewLevel_8cpp.html":[3,0,1,33],
 "ERF__MakeSources_8cpp.html":[3,0,1,17,12],
 "ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302":[3,0,1,17,12,0],
 "ERF__MakeSubdomains_8cpp.html":[3,0,1,20,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__NumericalDiffusion_8H.html#a5f5f90b9b6ffaff4828586556e0541d4":[3,0,1,17,14,1],
 "ERF__NumericalDiffusion_8H.html#abdc6942f912fef540d8f6682d107db80":[3,0,1,17,14,2],
 "ERF__NumericalDiffusion_8H_source.html":[3,0,1,17,14],
-"ERF__NumericalDiffusion_8cpp.html":[3,0,1,17,13],
-"ERF__NumericalDiffusion_8cpp.html#a55bafde70bac8a562579a7ba5c0c53f3":[3,0,1,17,13,2]
+"ERF__NumericalDiffusion_8cpp.html":[3,0,1,17,13]
 };
