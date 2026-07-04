@@ -119,6 +119,7 @@ var hierarchy =
       [ "SDInitialization", "classSDInitialization.html", null ],
       [ "SDInjection", "classSDInjection.html", null ]
     ] ],
+    [ "plotfile2d::SelectedWaterPathComponents", "structplotfile2d_1_1SelectedWaterPathComponents.html", null ],
     [ "ShocColumnData", "structShocColumnData.html", null ],
     [ "ShocColumnLayout", "structShocColumnLayout.html", null ],
     [ "ShocColumnWorkspace", "classShocColumnWorkspace.html", null ],
@@ -162,6 +163,7 @@ var hierarchy =
     [ "UPWINDALL", "structUPWINDALL.html", null ],
     [ "module_libmassv::vrec", "interfacemodule__libmassv_1_1vrec.html", null ],
     [ "module_libmassv::vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", null ],
+    [ "plotfile2d::WaterPathDescriptor", "structplotfile2d_1_1WaterPathDescriptor.html", null ],
     [ "WENO3", "structWENO3.html", null ],
     [ "WENO5", "structWENO5.html", null ],
     [ "WENO7", "structWENO7.html", null ],

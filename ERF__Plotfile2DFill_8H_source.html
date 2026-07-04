@@ -105,58 +105,59 @@ $(document).ready(function(){initNavTree('ERF__Plotfile2DFill_8H_source.html',''
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">//   - Do not encode runtime source selection here.</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//   - Do not use this layer as a registry for all future diagnostics.</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Column reductions, such as integrated_qv and future LWP/IWP diagnostics, need</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// separate helpers because they reduce over k rather than copying one k level.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Future pressure-surface diagnostics need interpolation-specific helpers.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplotfile2d.html">plotfile2d</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Fill one destination component with a scalar value. Used for documented</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// missing values and zero fills.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a8eb98af283a6e2bdb6e052ee46454727">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#a7b7045adfab32b10e82a435e8cb63d8d">fill_component_with_value</a> (amrex::MultiFab&amp; dst,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                <span class="keywordtype">int</span> dst_comp,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Copy one source component at one source k level into one 2D destination</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// component. The caller owns source selection and chooses src_k.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a0136063da7f51df73fba2a684760026d">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#a545f995f0b5f5cce47125797a077afe2">fill_component_from_klevel</a> (amrex::MultiFab&amp; dst,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                                 <span class="keywordtype">int</span> dst_comp,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 <span class="keyword">const</span> amrex::MultiFab&amp; src,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                 <span class="keywordtype">int</span> src_k,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                 <span class="keywordtype">int</span> src_comp = 0);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Copy from src when present; otherwise fill the destination component with the</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// documented missing value. This keeps optional diagnostics branch-local in the</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// writer.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#ad3770c3f744469a5c561ffa63032db9f">   44</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#ad90bdb7677d838059d3b1f2b97ac5e14">fill_component_from_klevel_or_value</a> (amrex::MultiFab&amp; dst,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                          <span class="keywordtype">int</span> dst_comp,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                          <span class="keyword">const</span> amrex::MultiFab* src,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                          <span class="keywordtype">int</span> src_k,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> missing_value,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                          <span class="keywordtype">int</span> src_comp = 0);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Convert the selected conservative sensible-flux source to W m^-2 for the</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// public sensible_heat_flux diagnostic. Unit semantics remain in</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// surface_flux_diagnostics.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a8ea2e07c8bab98b6d20818cba15cada0">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#a84481bdd7c59867e8c0232353a2afd36">fill_sensible_heat_flux_from_klevel_or_missing</a> (amrex::MultiFab&amp; dst,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                                     <span class="keywordtype">int</span> dst_comp,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                     <span class="keyword">const</span> amrex::MultiFab* src,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                     <span class="keywordtype">int</span> src_k,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                     <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> missing_value);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// Convert the selected conservative moisture-flux source to W m^-2 for the</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// public latent_heat_flux diagnostic. Unit semantics remain in</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// surface_flux_diagnostics.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a71a2eb0e211b1f731d73fd73bbce1b58">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#aee0c54e52d986ec450e95dc0e6daa1d8">fill_latent_heat_flux_from_klevel_or_missing</a> (amrex::MultiFab&amp; dst,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                   <span class="keywordtype">int</span> dst_comp,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                   <span class="keyword">const</span> amrex::MultiFab* src,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                   <span class="keywordtype">int</span> src_k,</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> missing_value);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <span class="comment">// namespace plotfile2d</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// Column reductions, such as integrated_qv and scheme-aware condensed</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// water-path diagnostics, need separate helpers because they reduce over k</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// rather than copying one k level. Future pressure-surface diagnostics need</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// interpolation-specific helpers.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceplotfile2d.html">plotfile2d</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Fill one destination component with a scalar value. Used for documented</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// missing values and zero fills.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a8eb98af283a6e2bdb6e052ee46454727">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#a7b7045adfab32b10e82a435e8cb63d8d">fill_component_with_value</a> (amrex::MultiFab&amp; dst,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                                <span class="keywordtype">int</span> dst_comp,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// Copy one source component at one source k level into one 2D destination</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// component. The caller owns source selection and chooses src_k.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a0136063da7f51df73fba2a684760026d">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#a545f995f0b5f5cce47125797a077afe2">fill_component_from_klevel</a> (amrex::MultiFab&amp; dst,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                 <span class="keywordtype">int</span> dst_comp,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                 <span class="keyword">const</span> amrex::MultiFab&amp; src,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                 <span class="keywordtype">int</span> src_k,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                 <span class="keywordtype">int</span> src_comp = 0);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Copy from src when present; otherwise fill the destination component with the</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// documented missing value. This keeps optional diagnostics branch-local in the</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// writer.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#ad3770c3f744469a5c561ffa63032db9f">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#ad90bdb7677d838059d3b1f2b97ac5e14">fill_component_from_klevel_or_value</a> (amrex::MultiFab&amp; dst,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                          <span class="keywordtype">int</span> dst_comp,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                          <span class="keyword">const</span> amrex::MultiFab* src,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                          <span class="keywordtype">int</span> src_k,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> missing_value,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                          <span class="keywordtype">int</span> src_comp = 0);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// Convert the selected conservative sensible-flux source to W m^-2 for the</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// public sensible_heat_flux diagnostic. Unit semantics remain in</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// surface_flux_diagnostics.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a8ea2e07c8bab98b6d20818cba15cada0">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#a84481bdd7c59867e8c0232353a2afd36">fill_sensible_heat_flux_from_klevel_or_missing</a> (amrex::MultiFab&amp; dst,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                     <span class="keywordtype">int</span> dst_comp,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                     <span class="keyword">const</span> amrex::MultiFab* src,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                     <span class="keywordtype">int</span> src_k,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                     <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> missing_value);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// Convert the selected conservative moisture-flux source to W m^-2 for the</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// public latent_heat_flux diagnostic. Unit semantics remain in</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// surface_flux_diagnostics.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="namespaceplotfile2d.html#a71a2eb0e211b1f731d73fd73bbce1b58">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceplotfile2d.html#aee0c54e52d986ec450e95dc0e6daa1d8">fill_latent_heat_flux_from_klevel_or_missing</a> (amrex::MultiFab&amp; dst,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                                   <span class="keywordtype">int</span> dst_comp,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                                   <span class="keyword">const</span> amrex::MultiFab* src,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                   <span class="keywordtype">int</span> src_k,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                   <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> missing_value);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} <span class="comment">// namespace plotfile2d</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html"><div class="ttname"><a href="namespaceplotfile2d.html">plotfile2d</a></div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:4</div></div>

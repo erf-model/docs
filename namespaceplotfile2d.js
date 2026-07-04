@@ -2,6 +2,8 @@ var namespaceplotfile2d =
 [
     [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
     [ "PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", "structplotfile2d_1_1PlotVariableSelection" ],
+    [ "WaterPathDescriptor", "structplotfile2d_1_1WaterPathDescriptor.html", "structplotfile2d_1_1WaterPathDescriptor" ],
+    [ "SelectedWaterPathComponents", "structplotfile2d_1_1SelectedWaterPathComponents.html", "structplotfile2d_1_1SelectedWaterPathComponents" ],
     [ "DiagnosticCategory", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441", [
       [ "Geometry", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441ad9c6333623e6357515fcbf17be806273", null ],
       [ "SurfaceLayer", "namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441a7cb98542596c7e6f323260a3a29df48f", null ],
@@ -31,6 +33,11 @@ var namespaceplotfile2d =
       [ "LatenFlux", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ab3956a7240dabc798cd72ed10e0ef218", null ],
       [ "SurfPres", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a5f7e7cf65fbb3ce112b40e636e18f505", null ],
       [ "IntegratedQv", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ada08d2f79c7d30ac8916cde2b61cab11", null ],
+      [ "IntegratedQc", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ad3442124a0febfeb9962b0eeeb9db4ad", null ],
+      [ "IntegratedQi", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a0c814a3691c2acd6cf57c5e62d90a8e7", null ],
+      [ "IntegratedQr", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ac9e502e22b5a2fe58547eaaf3e9c7aab", null ],
+      [ "IntegratedQs", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a68367e35681d914867e9c421356d4b61", null ],
+      [ "IntegratedQg", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a4f9b9cdf9901ea564b079ea86e7c7bb7", null ],
       [ "SurfaceDiagnosticSource", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a5c402aeabf404d94ed23d9722f206f72", null ],
       [ "SensibleHeatFlux", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2addabc76b9cbf7bd18cdfae2fb337f31d", null ],
       [ "LatentHeatFlux", "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a32247914b04aaa17d0b4a43207861eca", null ],
@@ -43,6 +50,8 @@ var namespaceplotfile2d =
       [ "FillZeroWhenUnavailable", "namespaceplotfile2d.html#aa2c10fc17716a89573a1b7c8d82a1845abdedc8b2c8ec27486be7d6a4501af240", null ],
       [ "FillMinus999WhenUnavailable", "namespaceplotfile2d.html#aa2c10fc17716a89573a1b7c8d82a1845a2c477d36e6bd5021fa7a0a345d9f0b17", null ]
     ] ],
+    [ "active_condensed_water_path_descriptors", "namespaceplotfile2d.html#a16831e12f54effa1464aec611c228712", null ],
+    [ "available_diagnostic_names", "namespaceplotfile2d.html#a9c30ab2b82e9a275c74b5e81348e6e05", null ],
     [ "diagnostic_catalog", "namespaceplotfile2d.html#a81399e854523fc42cd44a68d439260b6", null ],
     [ "diagnostic_category_to_string", "namespaceplotfile2d.html#a2356a303d260fa136faf416c864a5d44", null ],
     [ "diagnostic_names", "namespaceplotfile2d.html#a0613dde6ea83d4510e535cab71c0c157", null ],
@@ -53,6 +62,8 @@ var namespaceplotfile2d =
     [ "fill_component_from_klevel_or_value", "namespaceplotfile2d.html#ad90bdb7677d838059d3b1f2b97ac5e14", null ],
     [ "fill_component_with_value", "namespaceplotfile2d.html#a8eb98af283a6e2bdb6e052ee46454727", null ],
     [ "fill_component_with_value", "namespaceplotfile2d.html#a7b7045adfab32b10e82a435e8cb63d8d", null ],
+    [ "fill_condensed_water_paths", "namespaceplotfile2d.html#a5676108476dd133b53d6878136afb147", null ],
+    [ "fill_condensed_water_paths", "namespaceplotfile2d.html#a73b508fe540950bde5d2c9ebb8725f70", null ],
     [ "fill_latent_heat_flux_from_klevel_or_missing", "namespaceplotfile2d.html#a71a2eb0e211b1f731d73fd73bbce1b58", null ],
     [ "fill_latent_heat_flux_from_klevel_or_missing", "namespaceplotfile2d.html#aee0c54e52d986ec450e95dc0e6daa1d8", null ],
     [ "fill_sensible_heat_flux_from_klevel_or_missing", "namespaceplotfile2d.html#a8ea2e07c8bab98b6d20818cba15cada0", null ],
@@ -63,10 +74,14 @@ var namespaceplotfile2d =
     [ "format_invalid_2d_stream_error", "namespaceplotfile2d.html#a4c4c24aee15a8bf42ca679ba0c7a45f2", null ],
     [ "format_plot2d_parameter_name", "namespaceplotfile2d.html#a36271f5e8ea03252877e78843d8eba25", null ],
     [ "format_unavailable_2d_plot_var_warning", "namespaceplotfile2d.html#aa9b36025404bf1dd71c17f3e0bc4d278", null ],
+    [ "is_condensed_water_path", "namespaceplotfile2d.html#a374082b3440b36bee275aead97041c14", null ],
+    [ "is_condensed_water_path_name", "namespaceplotfile2d.html#a7d4bc84f8f5eb9f6e43320751de0c7f4", null ],
     [ "metadata_json_filename", "namespaceplotfile2d.html#ae843a5e31ca7a89d4596351e3b8c2534", null ],
     [ "missing_policy_to_string", "namespaceplotfile2d.html#a74c6cc91587d3554a06a91d0ab4f5684", null ],
     [ "missing_value_json", "namespaceplotfile2d.html#a9f8ef38d188a0bd37d607c7b92510a36", null ],
     [ "select_requested_plot_variables", "namespaceplotfile2d.html#a50f6133c2d0295dfc45ece3acd2273d8", null ],
+    [ "selected_condensed_water_path_components", "namespaceplotfile2d.html#aa82b17461180193f9227396c88f656c6", null ],
     [ "use_native_shoc_consumed_flux_source", "namespaceplotfile2d.html#ae14d48ee048d2f29c1aaa3584d03f5ff", null ],
-    [ "write_2d_metadata_json", "namespaceplotfile2d.html#a3cb713ad6ffd9acc8994764bed842098", null ]
+    [ "write_2d_metadata_json", "namespaceplotfile2d.html#a3cb713ad6ffd9acc8994764bed842098", null ],
+    [ "MaxCondensedWaterPathComponents", "namespaceplotfile2d.html#a6cee070be0abc5876554f50bb6706a95", null ]
 ];

@@ -13,7 +13,9 @@ var annotated_dup =
     ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
-      [ "PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", "structplotfile2d_1_1PlotVariableSelection" ]
+      [ "PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", "structplotfile2d_1_1PlotVariableSelection" ],
+      [ "WaterPathDescriptor", "structplotfile2d_1_1WaterPathDescriptor.html", "structplotfile2d_1_1WaterPathDescriptor" ],
+      [ "SelectedWaterPathComponents", "structplotfile2d_1_1SelectedWaterPathComponents.html", "structplotfile2d_1_1SelectedWaterPathComponents" ]
     ] ],
     [ "shoc", "namespaceshoc.html", [
       [ "ShocEnergyFixerView", "structshoc_1_1ShocEnergyFixerView.html", "structshoc_1_1ShocEnergyFixerView" ]
