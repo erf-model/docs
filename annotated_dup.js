@@ -13,6 +13,14 @@ var annotated_dup =
     ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
+      [ "SampledBracket", "structplotfile2d_1_1SampledBracket.html", "structplotfile2d_1_1SampledBracket" ],
+      [ "SampledWindSources", "structplotfile2d_1_1SampledWindSources.html", "structplotfile2d_1_1SampledWindSources" ],
+      [ "SampledFieldDescriptor", "structplotfile2d_1_1SampledFieldDescriptor.html", "structplotfile2d_1_1SampledFieldDescriptor" ],
+      [ "SampledFieldSelection", "structplotfile2d_1_1SampledFieldSelection.html", "structplotfile2d_1_1SampledFieldSelection" ],
+      [ "SampledVerticalCoordinateMetadata", "structplotfile2d_1_1SampledVerticalCoordinateMetadata.html", "structplotfile2d_1_1SampledVerticalCoordinateMetadata" ],
+      [ "SampledLevelMetadata", "structplotfile2d_1_1SampledLevelMetadata.html", "structplotfile2d_1_1SampledLevelMetadata" ],
+      [ "Plotfile2DOutputDescriptor", "structplotfile2d_1_1Plotfile2DOutputDescriptor.html", "structplotfile2d_1_1Plotfile2DOutputDescriptor" ],
+      [ "SampledLevelDefinition", "structplotfile2d_1_1SampledLevelDefinition.html", "structplotfile2d_1_1SampledLevelDefinition" ],
       [ "PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", "structplotfile2d_1_1PlotVariableSelection" ],
       [ "WaterPathDescriptor", "structplotfile2d_1_1WaterPathDescriptor.html", "structplotfile2d_1_1WaterPathDescriptor" ],
       [ "SelectedWaterPathComponents", "structplotfile2d_1_1SelectedWaterPathComponents.html", "structplotfile2d_1_1SelectedWaterPathComponents" ]

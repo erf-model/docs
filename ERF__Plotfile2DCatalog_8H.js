@@ -8,7 +8,8 @@ var ERF__Plotfile2DCatalog_8H =
       [ "SurfaceFlux", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a887090f85c9e1757c6d16c6c2611ce4d", null ],
       [ "PBL", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a2a79c6fa9bd9885d911d26d2ed8134b0", null ],
       [ "SurfaceState", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441ae4bd66c40d91ac21131e17e018becc53", null ],
-      [ "ColumnIntegral", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809", null ]
+      [ "ColumnIntegral", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809", null ],
+      [ "SampledLevel", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1cab91c232ad3a71f646243223fa6797", null ]
     ] ],
     [ "DiagnosticID", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2", [
       [ "ZSurf", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2aa07799a9fed43cb125fdaa02a854c628", null ],
