@@ -248,12 +248,12 @@ Functions</h2></td></tr>
 <tr class="separator:abc480bd281f755246fa9e6faf149b588"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8d345634b200fdd14e878954e222f4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a">realbdy_bc_bxs_xy</a> (const amrex::Box &amp;bx, const amrex::Box &amp;domain, const int &amp;set_width, amrex::Box &amp;bx_xlo, amrex::Box &amp;bx_xhi, amrex::Box &amp;bx_ylo, amrex::Box &amp;bx_yhi, const amrex::IntVect &amp;ng_vect=amrex::IntVect(0, 0, 0))</td></tr>
 <tr class="separator:ab8d345634b200fdd14e878954e222f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73738a30ce92bd769de3a232020314c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a73738a30ce92bd769de3a232020314c1">realbdy_compute_interior_ghost_rhs</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;total_time, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;delta_t, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;start_bdy_time, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;final_bdy_time, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;bdy_time_interval, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;nudge_factor, int width, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_cur_data, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xlo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xhi, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_ylo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_yhi, std::unique_ptr&lt; <a class="el" href="classReadBndryPlanes.html">ReadBndryPlanes</a> &gt; &amp;m_r2d, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;c_p, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SDMCongestus3D_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>)</td></tr>
-<tr class="separator:a73738a30ce92bd769de3a232020314c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a666ef6030bc3baa94198a32754fc65f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a666ef6030bc3baa94198a32754fc65f2">fine_compute_interior_ghost_rhs</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;time, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;delta_t, const int &amp;width, const int &amp;set_width, const amrex::Geometry &amp;geom, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_c, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_u, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_v, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_w, amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs_f, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data_f)</td></tr>
-<tr class="separator:a666ef6030bc3baa94198a32754fc65f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3d734b65fd91857925d381c476e7965"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ac3d734b65fd91857925d381c476e7965">Time_Avg_Vel_atCC</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;t_avg_cnt, amrex::MultiFab *vel_t_avg, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::MultiFab &amp;zvel)</td></tr>
-<tr class="separator:ac3d734b65fd91857925d381c476e7965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a054e8506d03c1d3224cdb4dc6a3e151f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a054e8506d03c1d3224cdb4dc6a3e151f">realbdy_compute_interior_ghost_rhs</a> (const double &amp;total_time, const double &amp;delta_t, const double &amp;start_bdy_time, const double &amp;final_bdy_time, const double &amp;bdy_time_interval, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;nudge_factor, int width, const amrex::Geometry &amp;geom, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_cur_data, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xlo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_xhi, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_ylo, amrex::Vector&lt; amrex::Vector&lt; amrex::FArrayBox &gt;&gt; &amp;bdy_data_yhi, std::unique_ptr&lt; <a class="el" href="classReadBndryPlanes.html">ReadBndryPlanes</a> &gt; &amp;m_r2d, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;c_p, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SDMCongestus3D_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>)</td></tr>
+<tr class="separator:a054e8506d03c1d3224cdb4dc6a3e151f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a980857d0da78387b8b54ce93246f19fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a980857d0da78387b8b54ce93246f19fe">fine_compute_interior_ghost_rhs</a> (const double &amp;time, const double &amp;delta_t, const int &amp;width, const int &amp;set_width, const amrex::Geometry &amp;geom, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_c, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_u, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_v, <a class="el" href="classERFFillPatcher.html">ERFFillPatcher</a> *FPr_w, amrex::Vector&lt; amrex::BCRec &gt; &amp;domain_bcs_type, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_rhs_f, amrex::Vector&lt; amrex::MultiFab &gt; &amp;S_data_f)</td></tr>
+<tr class="separator:a980857d0da78387b8b54ce93246f19fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc0c2271844c330847fe737ed8ab9a68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#abc0c2271844c330847fe737ed8ab9a68">Time_Avg_Vel_atCC</a> (double dt, double &amp;t_avg_cnt, amrex::MultiFab *vel_t_avg, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::MultiFab &amp;zvel)</td></tr>
+<tr class="separator:abc0c2271844c330847fe737ed8ab9a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2249529c08cee787c0b9b56259d3447"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447">realbdy_compute_relaxation</a> (const int &amp;icomp, const int &amp;num_var, const int &amp;width, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;ProbLo, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;ProbHi, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;F1, const amrex::Box &amp;bx_xlo, const amrex::Box &amp;bx_xhi, const amrex::Box &amp;bx_ylo, const amrex::Box &amp;bx_yhi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_xlo, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_xhi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_ylo, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;arr_yhi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;data_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;rhs_arr, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;c_p, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SDMCongestus3D_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>, const int bdy_moist_nudge_type=0)</td></tr>
 <tr class="separator:ac2249529c08cee787c0b9b56259d3447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acebead6f3a33cb7737a1fea98341c3ae"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae">ApplyMask</a> (amrex::MultiFab &amp;dst, const amrex::iMultiFab &amp;imask, const int nghost=0)</td></tr>
@@ -262,8 +262,8 @@ Functions</h2></td></tr>
 <tr class="separator:acbc6116a3309adf87b7dc24242dc50ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99650b0d59ae9542586a873ea8ac142e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e">thinbody_wall_dist</a> (std::unique_ptr&lt; amrex::MultiFab &gt; &amp;wdist, amrex::Vector&lt; amrex::IntVect &gt; &amp;xfaces, amrex::Vector&lt; amrex::IntVect &gt; &amp;yfaces, amrex::Vector&lt; amrex::IntVect &gt; &amp;zfaces, const amrex::Geometry &amp;geomdata, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_cc)</td></tr>
 <tr class="separator:a99650b0d59ae9542586a873ea8ac142e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e9ed0fa2cb7a711f00c2c8566c71d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a5e9ed0fa2cb7a711f00c2c8566c71d89">WeatherDataInterpolation</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> time)</td></tr>
-<tr class="separator:a5e9ed0fa2cb7a711f00c2c8566c71d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05d64b70fcd8d62e0946cc27a429ab69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a05d64b70fcd8d62e0946cc27a429ab69">WeatherDataInterpolation</a> (const double time)</td></tr>
+<tr class="separator:a05d64b70fcd8d62e0946cc27a429ab69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a7082410a1edc74e8646da2befba604"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604">quad_interp_1d</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z1, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p1, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z2, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> p2)</td></tr>
 <tr class="separator:a8a7082410a1edc74e8646da2befba604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -316,7 +316,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;}</div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__AddThinBodySources_8cpp.html#afe1f106475861ba9ed98d5163c7f4e20">add_thin_body_sources()</a>, and <a class="el" href="classERF.html#a2f36ab3750aa760fb621b40294e0f6c6">ERF::project_velocity_tb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__AddThinBodySources_8cpp.html#afe1f106475861ba9ed98d5163c7f4e20">add_thin_body_sources()</a>, and <a class="el" href="classERF.html#a7c7ca61a56c7fb3475e1bba9f55ae545">ERF::project_velocity_tb()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -333,7 +333,7 @@ Here is the caller graph for this function:</div>
 <map name="aERF__Utils_8H_acbc6116a3309adf87b7dc24242dc50ec_icgraph" id="aERF__Utils_8H_acbc6116a3309adf87b7dc24242dc50ec_icgraph">
 <area shape="rect" title=" " alt="" coords="232,31,380,57"/>
 <area shape="rect" href="ERF__AddThinBodySources_8cpp.html#afe1f106475861ba9ed98d5163c7f4e20" title=" " alt="" coords="7,5,182,32"/>
-<area shape="rect" href="classERF.html#a2f36ab3750aa760fb621b40294e0f6c6" title=" " alt="" coords="5,56,184,83"/>
+<area shape="rect" href="classERF.html#a7c7ca61a56c7fb3475e1bba9f55ae545" title=" " alt="" coords="5,56,184,83"/>
 </map>
 </div>
 
@@ -386,7 +386,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    }</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a6f5c620a402f7b1be46e05c0cbe48743">ERF::FillIntermediatePatch()</a>, and <a class="el" href="classERF.html#a2f36ab3750aa760fb621b40294e0f6c6">ERF::project_velocity_tb()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a7c212ac46f6c3e69093cdf68a6731679">ERF::FillIntermediatePatch()</a>, and <a class="el" href="classERF.html#a7c7ca61a56c7fb3475e1bba9f55ae545">ERF::project_velocity_tb()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -402,8 +402,8 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__Utils_8H_acebead6f3a33cb7737a1fea98341c3ae_icgraph.png" border="0" usemap="#aERF__Utils_8H_acebead6f3a33cb7737a1fea98341c3ae_icgraph" alt=""/></div>
 <map name="aERF__Utils_8H_acebead6f3a33cb7737a1fea98341c3ae_icgraph" id="aERF__Utils_8H_acebead6f3a33cb7737a1fea98341c3ae_icgraph">
 <area shape="rect" title=" " alt="" coords="245,31,340,57"/>
-<area shape="rect" href="classERF.html#a6f5c620a402f7b1be46e05c0cbe48743" title=" " alt="" coords="5,5,197,32"/>
-<area shape="rect" href="classERF.html#a2f36ab3750aa760fb621b40294e0f6c6" title=" " alt="" coords="12,56,191,83"/>
+<area shape="rect" href="classERF.html#a7c212ac46f6c3e69093cdf68a6731679" title=" " alt="" coords="5,5,197,32"/>
+<area shape="rect" href="classERF.html#a7c7ca61a56c7fb3475e1bba9f55ae545" title=" " alt="" coords="12,56,191,83"/>
 </map>
 </div>
 
@@ -737,8 +737,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a666ef6030bc3baa94198a32754fc65f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a666ef6030bc3baa94198a32754fc65f2">&#9670;&nbsp;</a></span>fine_compute_interior_ghost_rhs()</h2>
+<a id="a980857d0da78387b8b54ce93246f19fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a980857d0da78387b8b54ce93246f19fe">&#9670;&nbsp;</a></span>fine_compute_interior_ghost_rhs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -746,13 +746,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void fine_compute_interior_ghost_rhs </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>delta_t</em>, </td>
         </tr>
         <tr>
@@ -1191,8 +1191,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a73738a30ce92bd769de3a232020314c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73738a30ce92bd769de3a232020314c1">&#9670;&nbsp;</a></span>realbdy_compute_interior_ghost_rhs()</h2>
+<a id="a054e8506d03c1d3224cdb4dc6a3e151f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a054e8506d03c1d3224cdb4dc6a3e151f">&#9670;&nbsp;</a></span>realbdy_compute_interior_ghost_rhs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1200,31 +1200,31 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void realbdy_compute_interior_ghost_rhs </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>total_time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>delta_t</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>start_bdy_time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>final_bdy_time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>bdy_time_interval</em>, </td>
         </tr>
         <tr>
@@ -1657,7 +1657,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a46e52004c860b2aef260fce99d025bce"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a></div><div class="ttdeci">const Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bomex.H:16</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__InteriorGhostCells_8cpp.html#a098606360babbafd7d021554f810f84d">realbdy_compute_interior_ghost_rhs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InteriorGhostCells_8cpp.html#aa729702f473958ea21fa707c9427e96e">realbdy_compute_interior_ghost_rhs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1674,7 +1674,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__Utils_8H_ac2249529c08cee787c0b9b56259d3447_icgraph.png" border="0" usemap="#aERF__Utils_8H_ac2249529c08cee787c0b9b56259d3447_icgraph" alt=""/></div>
 <map name="aERF__Utils_8H_ac2249529c08cee787c0b9b56259d3447_icgraph" id="aERF__Utils_8H_ac2249529c08cee787c0b9b56259d3447_icgraph">
 <area shape="rect" title=" " alt="" coords="243,13,451,39"/>
-<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#a098606360babbafd7d021554f810f84d" title=" " alt="" coords="5,5,195,47"/>
+<area shape="rect" href="ERF__InteriorGhostCells_8cpp.html#aa729702f473958ea21fa707c9427e96e" title=" " alt="" coords="5,5,195,47"/>
 </map>
 </div>
 
@@ -1860,8 +1860,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ac3d734b65fd91857925d381c476e7965"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3d734b65fd91857925d381c476e7965">&#9670;&nbsp;</a></span>Time_Avg_Vel_atCC()</h2>
+<a id="abc0c2271844c330847fe737ed8ab9a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc0c2271844c330847fe737ed8ab9a68">&#9670;&nbsp;</a></span>Time_Avg_Vel_atCC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1869,13 +1869,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void Time_Avg_Vel_atCC </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">double &amp;&#160;</td>
           <td class="paramname"><em>t_avg_cnt</em>, </td>
         </tr>
         <tr>
@@ -2004,28 +2004,28 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9">ERF::Advance()</a>, <a class="el" href="classERF.html#a96a272defae485c5b83fbc123a631f9f">ERF::advance_dycore()</a>, <a class="el" href="classERF.html#a92c79576700b79f51fafa9059dd68ac2">ERF::AverageDownTo()</a>, <a class="el" href="classERF.html#ac4497025ab94461899960ee067c2c72a">ERF::FillCoarsePatch()</a>, <a class="el" href="classERF.html#a6f5c620a402f7b1be46e05c0cbe48743">ERF::FillIntermediatePatch()</a>, <a class="el" href="classERF.html#aee979e94d4cca7db854b1ccba73c9b5a">ERF::FillPatchFineLevel()</a>, <a class="el" href="classERF.html#a14698837158d0686f77cb0a056799ecb">ERF::project_initial_velocity()</a>, and <a class="el" href="classERF.html#a51282d7dea7a0f0f68dca99365bb3e48">ERF::project_momenta()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a9b87129b86887ed08dba76ad405bdea9">ERF::Advance()</a>, <a class="el" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc">ERF::advance_dycore()</a>, <a class="el" href="classERF.html#a92c79576700b79f51fafa9059dd68ac2">ERF::AverageDownTo()</a>, <a class="el" href="classERF.html#a1274269dd2ea27159796a52d0531fc1e">ERF::FillCoarsePatch()</a>, <a class="el" href="classERF.html#a7c212ac46f6c3e69093cdf68a6731679">ERF::FillIntermediatePatch()</a>, <a class="el" href="classERF.html#aee979e94d4cca7db854b1ccba73c9b5a">ERF::FillPatchFineLevel()</a>, <a class="el" href="classERF.html#ae4570e331ddeb7511944170698a513c1">ERF::project_initial_velocity()</a>, and <a class="el" href="classERF.html#a69756a1c5f9ec01da7e85e9462f16ed4">ERF::project_momenta()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Utils_8H_a2e5e0e7af417da64f77e0778ed824bf9_icgraph.png" border="0" usemap="#aERF__Utils_8H_a2e5e0e7af417da64f77e0778ed824bf9_icgraph" alt=""/></div>
 <map name="aERF__Utils_8H_a2e5e0e7af417da64f77e0778ed824bf9_icgraph" id="aERF__Utils_8H_a2e5e0e7af417da64f77e0778ed824bf9_icgraph">
 <area shape="rect" title=" " alt="" coords="245,183,408,209"/>
-<area shape="rect" href="classERF.html#a47413fe5588f7dd71a1d5087a9e804f9" title=" " alt="" coords="46,5,157,32"/>
-<area shape="rect" href="classERF.html#a96a272defae485c5b83fbc123a631f9f" title=" " alt="" coords="21,56,181,83"/>
+<area shape="rect" href="classERF.html#a9b87129b86887ed08dba76ad405bdea9" title=" " alt="" coords="46,5,157,32"/>
+<area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="21,56,181,83"/>
 <area shape="rect" href="classERF.html#a92c79576700b79f51fafa9059dd68ac2" title=" " alt="" coords="22,107,181,133"/>
-<area shape="rect" href="classERF.html#ac4497025ab94461899960ee067c2c72a" title=" " alt="" coords="25,157,178,184"/>
-<area shape="rect" href="classERF.html#a6f5c620a402f7b1be46e05c0cbe48743" title=" " alt="" coords="5,208,197,235"/>
+<area shape="rect" href="classERF.html#a1274269dd2ea27159796a52d0531fc1e" title=" " alt="" coords="25,157,178,184"/>
+<area shape="rect" href="classERF.html#a7c212ac46f6c3e69093cdf68a6731679" title=" " alt="" coords="5,208,197,235"/>
 <area shape="rect" href="classERF.html#aee979e94d4cca7db854b1ccba73c9b5a" title=" " alt="" coords="16,259,187,285"/>
-<area shape="rect" href="classERF.html#a14698837158d0686f77cb0a056799ecb" title=" " alt="" coords="30,310,173,351"/>
-<area shape="rect" href="classERF.html#a51282d7dea7a0f0f68dca99365bb3e48" title=" " alt="" coords="17,376,186,403"/>
+<area shape="rect" href="classERF.html#ae4570e331ddeb7511944170698a513c1" title=" " alt="" coords="30,310,173,351"/>
+<area shape="rect" href="classERF.html#a69756a1c5f9ec01da7e85e9462f16ed4" title=" " alt="" coords="17,376,186,403"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a5e9ed0fa2cb7a711f00c2c8566c71d89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e9ed0fa2cb7a711f00c2c8566c71d89">&#9670;&nbsp;</a></span>WeatherDataInterpolation()</h2>
+<a id="a05d64b70fcd8d62e0946cc27a429ab69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05d64b70fcd8d62e0946cc27a429ab69">&#9670;&nbsp;</a></span>WeatherDataInterpolation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2033,7 +2033,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void WeatherDataInterpolation </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>time</em></td><td>)</td>
           <td></td>
         </tr>
@@ -2044,8 +2044,8 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Utils_8H_a5e9ed0fa2cb7a711f00c2c8566c71d89_icgraph.png" border="0" usemap="#aERF__Utils_8H_a5e9ed0fa2cb7a711f00c2c8566c71d89_icgraph" alt=""/></div>
-<map name="aERF__Utils_8H_a5e9ed0fa2cb7a711f00c2c8566c71d89_icgraph" id="aERF__Utils_8H_a5e9ed0fa2cb7a711f00c2c8566c71d89_icgraph">
+<div class="center"><img src="ERF__Utils_8H_a05d64b70fcd8d62e0946cc27a429ab69_icgraph.png" border="0" usemap="#aERF__Utils_8H_a05d64b70fcd8d62e0946cc27a429ab69_icgraph" alt=""/></div>
+<map name="aERF__Utils_8H_a05d64b70fcd8d62e0946cc27a429ab69_icgraph" id="aERF__Utils_8H_a05d64b70fcd8d62e0946cc27a429ab69_icgraph">
 <area shape="rect" title=" " alt="" coords="267,31,457,57"/>
 <area shape="rect" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96" title=" " alt="" coords="114,5,213,32"/>
 <area shape="rect" href="classERF.html#aaf237fbe118d80f149295c0579608579" title=" " alt="" coords="108,56,219,83"/>

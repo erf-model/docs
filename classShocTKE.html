@@ -98,8 +98,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a2355748a23f1680c33838abd8f767c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a879454938d1fcbd540f89e9c8d97164c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocTKE.html#a879454938d1fcbd540f89e9c8d97164c">integrate_column_stability</a> (const <a class="el" href="structShocColumnData.html">ShocColumnData</a> &amp;col, amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;brunt_int)</td></tr>
 <tr class="separator:a879454938d1fcbd540f89e9c8d97164c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa142af5a71ab5c25994e55341eb42c44"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocTKE.html#aa142af5a71ab5c25994e55341eb42c44">diagnose_tke_and_diffusivities</a> (<a class="el" href="structShocColumnData.html">ShocColumnData</a> &amp;col, const <a class="el" href="structShocRuntimeOptions.html">ShocRuntimeOptions</a> &amp;opts, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt)</td></tr>
-<tr class="separator:aa142af5a71ab5c25994e55341eb42c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab74a60609640c835f3460f855f3a0e13"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocTKE.html#ab74a60609640c835f3460f855f3a0e13">diagnose_tke_and_diffusivities</a> (<a class="el" href="structShocColumnData.html">ShocColumnData</a> &amp;col, const <a class="el" href="structShocRuntimeOptions.html">ShocRuntimeOptions</a> &amp;opts, double dt)</td></tr>
+<tr class="separator:ab74a60609640c835f3460f855f3a0e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2355748a23f1680c33838abd8f767c1b"></a>
@@ -182,8 +182,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa142af5a71ab5c25994e55341eb42c44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa142af5a71ab5c25994e55341eb42c44">&#9670;&nbsp;</a></span>diagnose_tke_and_diffusivities()</h2>
+<a id="ab74a60609640c835f3460f855f3a0e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab74a60609640c835f3460f855f3a0e13">&#9670;&nbsp;</a></span>diagnose_tke_and_diffusivities()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +206,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -274,7 +274,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> net_prod = opts.<a class="code" href="structShocRuntimeOptions.html#aadb41c81ff36895ff438a4e821222a7a">signed_tke_production</a></div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                ? (shear_prod + buoy_prod)</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                : amrex::max(0.0_rt, shear_prod + buoy_prod);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> raw_new_tke = <a class="code" href="ERF__ShocTypes_8H.html#ae52cf9346cba60958ce41fbf56586257">shoc_clamp</a>(old_tke + dt * (net_prod - diss),</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> raw_new_tke = <a class="code" href="ERF__ShocTypes_8H.html#ae52cf9346cba60958ce41fbf56586257">shoc_clamp</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(old_tke + dt * (net_prod - diss)),</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                                shoc_min_tke(), shoc_max_tke());</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> top_factor = top_taper_factor(zt, <a class="code" href="namespaceWSM6SedNodeScratch.html#ada68e719871a6f70ea296317804b0b8dac5a1c1e00ce981829474ed88c561baae">zi</a>, layout, opts, ic, k);</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> new_tke = <a class="code" href="ERF__ShocTypes_8H.html#ae52cf9346cba60958ce41fbf56586257">shoc_clamp</a>(shoc_min_tke() +</div>
@@ -350,12 +350,12 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructShocRuntimeOptions_html_aa43466a5db207df1c16b00b8f768367a"><div class="ttname"><a href="structShocRuntimeOptions.html#aa43466a5db207df1c16b00b8f768367a">ShocRuntimeOptions::lambda_low</a></div><div class="ttdeci">amrex::Real lambda_low</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:82</div></div>
 <div class="ttc" id="astructShocRuntimeOptions_html_aadb41c81ff36895ff438a4e821222a7a"><div class="ttname"><a href="structShocRuntimeOptions.html#aadb41c81ff36895ff438a4e821222a7a">ShocRuntimeOptions::signed_tke_production</a></div><div class="ttdeci">bool signed_tke_production</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:106</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDiagnostics.html#aeabc6f36f7fe66d71e45f23130f95aeb">ShocDiagnostics::diagnose_pre_implicit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDiagnostics.html#a3b33b618077f6ae9a7aed776ceacd593">ShocDiagnostics::diagnose_pre_implicit()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocTKE_aa142af5a71ab5c25994e55341eb42c44_cgraph.png" border="0" usemap="#aclassShocTKE_aa142af5a71ab5c25994e55341eb42c44_cgraph" alt=""/></div>
-<map name="aclassShocTKE_aa142af5a71ab5c25994e55341eb42c44_cgraph" id="aclassShocTKE_aa142af5a71ab5c25994e55341eb42c44_cgraph">
+<div class="center"><img src="classShocTKE_ab74a60609640c835f3460f855f3a0e13_cgraph.png" border="0" usemap="#aclassShocTKE_ab74a60609640c835f3460f855f3a0e13_cgraph" alt=""/></div>
+<map name="aclassShocTKE_ab74a60609640c835f3460f855f3a0e13_cgraph" id="aclassShocTKE_ab74a60609640c835f3460f855f3a0e13_cgraph">
 <area shape="rect" title=" " alt="" coords="5,74,177,115"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="225,5,408,32"/>
 <area shape="rect" href="namespaceshoc.html#a1fc6e813cc0c436e72ec66433be27e1e" title=" " alt="" coords="253,56,381,83"/>
@@ -366,11 +366,11 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocTKE_aa142af5a71ab5c25994e55341eb42c44_icgraph.png" border="0" usemap="#aclassShocTKE_aa142af5a71ab5c25994e55341eb42c44_icgraph" alt=""/></div>
-<map name="aclassShocTKE_aa142af5a71ab5c25994e55341eb42c44_icgraph" id="aclassShocTKE_aa142af5a71ab5c25994e55341eb42c44_icgraph">
+<div class="center"><img src="classShocTKE_ab74a60609640c835f3460f855f3a0e13_icgraph.png" border="0" usemap="#aclassShocTKE_ab74a60609640c835f3460f855f3a0e13_icgraph" alt=""/></div>
+<map name="aclassShocTKE_ab74a60609640c835f3460f855f3a0e13_icgraph" id="aclassShocTKE_ab74a60609640c835f3460f855f3a0e13_icgraph">
 <area shape="rect" title=" " alt="" coords="453,5,625,47"/>
-<area shape="rect" href="classShocDiagnostics.html#aeabc6f36f7fe66d71e45f23130f95aeb" title=" " alt="" coords="209,5,405,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDiagnostics.html#a3b33b618077f6ae9a7aed776ceacd593" title=" " alt="" coords="209,5,405,47"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 

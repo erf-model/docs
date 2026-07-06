@@ -142,12 +142,12 @@ Include dependency graph for ERF_MakeFastCoeffs.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad6b5b13b67ab3a4c1086f25bac4a7b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeFastCoeffs_8cpp.html#ad6b5b13b67ab3a4c1086f25bac4a7b14">make_fast_coeffs</a> (int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, MeshType mesh_type, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gravity, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dtau, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> beta_s, amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
-<tr class="separator:ad6b5b13b67ab3a4c1086f25bac4a7b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92fcd2c3165ae37b599351469d012cf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__MakeFastCoeffs_8cpp.html#a92fcd2c3165ae37b599351469d012cf4">make_fast_coeffs</a> (int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, MeshType mesh_type, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gravity, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, const double dtau, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> beta_s, amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</td></tr>
+<tr class="separator:a92fcd2c3165ae37b599351469d012cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad6b5b13b67ab3a4c1086f25bac4a7b14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6b5b13b67ab3a4c1086f25bac4a7b14">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
+<a id="a92fcd2c3165ae37b599351469d012cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92fcd2c3165ae37b599351469d012cf4">&#9670;&nbsp;</a></span>make_fast_coeffs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,7 +233,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>dtau</em>, </td>
         </tr>
         <tr>
@@ -275,7 +275,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;make_fast_coeffs()&quot;</span>,<a class="code" href="ERF__MakeFastCoeffs_8cpp.html#ad6b5b13b67ab3a4c1086f25bac4a7b14">make_fast_coeffs</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;make_fast_coeffs()&quot;</span>,<a class="code" href="ERF__MakeFastCoeffs_8cpp.html#a92fcd2c3165ae37b599351469d012cf4">make_fast_coeffs</a>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> beta_2 = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + beta_s);  <span class="comment">// multiplies implicit terms</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -536,7 +536,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972"><div class="ttname"><a href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9acac0c32caf84a889ec9b2b4cb2d56972">ERF_BC::outflow</a></div><div class="ttdeci">@ outflow</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:17</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
-<div class="ttc" id="aERF__MakeFastCoeffs_8cpp_html_ad6b5b13b67ab3a4c1086f25bac4a7b14"><div class="ttname"><a href="ERF__MakeFastCoeffs_8cpp.html#ad6b5b13b67ab3a4c1086f25bac4a7b14">make_fast_coeffs</a></div><div class="ttdeci">void make_fast_coeffs(int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, MeshType mesh_type, Real gravity, Real c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, Real dtau, Real beta_s, amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_MakeFastCoeffs.cpp:26</div></div>
+<div class="ttc" id="aERF__MakeFastCoeffs_8cpp_html_a92fcd2c3165ae37b599351469d012cf4"><div class="ttname"><a href="ERF__MakeFastCoeffs_8cpp.html#a92fcd2c3165ae37b599351469d012cf4">make_fast_coeffs</a></div><div class="ttdeci">void make_fast_coeffs(int, MultiFab &amp;fast_coeffs, Vector&lt; MultiFab &gt; &amp;S_stage_data, const MultiFab &amp;S_stage_prim, const MultiFab &amp;pi_stage, const amrex::Geometry geom, bool l_use_moisture, MeshType mesh_type, Real gravity, Real c_p, std::unique_ptr&lt; MultiFab &gt; &amp;detJ_cc, const MultiFab *r0, const MultiFab *pi0, const double dtau, Real beta_s, amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type)</div><div class="ttdef"><b>Definition:</b> ERF_MakeFastCoeffs.cpp:26</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__TileNoZ_8H_html_a8da113f1d5603f7297fe1d03e5013f00"><div class="ttname"><a href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a></div><div class="ttdeci">AMREX_FORCE_INLINE amrex::IntVect TileNoZ()</div><div class="ttdef"><b>Definition:</b> ERF_TileNoZ.H:11</div></div>
@@ -546,8 +546,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__MakeFastCoeffs_8cpp_ad6b5b13b67ab3a4c1086f25bac4a7b14_cgraph.png" border="0" usemap="#aERF__MakeFastCoeffs_8cpp_ad6b5b13b67ab3a4c1086f25bac4a7b14_cgraph" alt=""/></div>
-<map name="aERF__MakeFastCoeffs_8cpp_ad6b5b13b67ab3a4c1086f25bac4a7b14_cgraph" id="aERF__MakeFastCoeffs_8cpp_ad6b5b13b67ab3a4c1086f25bac4a7b14_cgraph">
+<div class="center"><img src="ERF__MakeFastCoeffs_8cpp_a92fcd2c3165ae37b599351469d012cf4_cgraph.png" border="0" usemap="#aERF__MakeFastCoeffs_8cpp_a92fcd2c3165ae37b599351469d012cf4_cgraph" alt=""/></div>
+<map name="aERF__MakeFastCoeffs_8cpp_a92fcd2c3165ae37b599351469d012cf4_cgraph" id="aERF__MakeFastCoeffs_8cpp_a92fcd2c3165ae37b599351469d012cf4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,141,57"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="189,5,280,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="198,56,271,83"/>

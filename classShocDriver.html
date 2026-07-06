@@ -117,8 +117,8 @@ Collaboration diagram for ShocDriver:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7b7d221e198d43e8bf93ece6a0bd0739"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a7b7d221e198d43e8bf93ece6a0bd0739">ShocDriver</a> (int lev, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;solver_choice)</td></tr>
 <tr class="separator:a7b7d221e198d43e8bf93ece6a0bd0739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c60eb16c2fe1ad7dd8d81e77c32bce2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance</a> (amrex::MultiFab &amp;cons, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::MultiFab &amp;zvel, amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, amrex::MultiFab *hfx3, amrex::MultiFab *qfx3, amrex::MultiFab *eddy_diffs, amrex::MultiFab &amp;z_phys_nd, const amrex::Geometry &amp;geom, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt)</td></tr>
-<tr class="separator:a2c60eb16c2fe1ad7dd8d81e77c32bce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bbc9f3b39ce3017cb625de5ab0a9d9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance</a> (amrex::MultiFab &amp;cons, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::MultiFab &amp;zvel, amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, amrex::MultiFab *hfx3, amrex::MultiFab *qfx3, amrex::MultiFab *eddy_diffs, amrex::MultiFab &amp;z_phys_nd, const amrex::Geometry &amp;geom, double dt)</td></tr>
+<tr class="separator:a1bbc9f3b39ce3017cb625de5ab0a9d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acce53243fa5190d1b8e9945d196b6c58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#acce53243fa5190d1b8e9945d196b6c58">set_eddy_diffs</a> () const</td></tr>
 <tr class="separator:acce53243fa5190d1b8e9945d196b6c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a2c64c2df61f3e6bfa6d1113a36479a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses</a> () const</td></tr>
@@ -212,12 +212,12 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a610df4cde5ad767033330b6b373ada6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa31ad8df4ac4af1a6deb7e3f79f4f807"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#aa31ad8df4ac4af1a6deb7e3f79f4f807">store_carried_buoyancy_flux</a> (const <a class="el" href="structShocColumnData.html">ShocColumnData</a> &amp;col, const amrex::MFIter &amp;mfi)</td></tr>
 <tr class="separator:aa31ad8df4ac4af1a6deb7e3f79f4f807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0098dfc44f7e2d5f763d507daf0225e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update</a> (amrex::MultiFab &amp;cons, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt) const</td></tr>
-<tr class="separator:a0098dfc44f7e2d5f763d507daf0225e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1415febb2aca6df77d5964d1bea5d715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715">debug_check_bad_column</a> (const <a class="el" href="structShocColumnData.html">ShocColumnData</a> &amp;col, const amrex::MFIter &amp;mfi, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab *hfx3, const amrex::MultiFab *qfx3, const amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, const amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, const amrex::Geometry &amp;geom, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt) const</td></tr>
-<tr class="separator:a1415febb2aca6df77d5964d1bea5d715"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6973cf8a058ae69b185bc8a796811315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dt) const</td></tr>
-<tr class="separator:a6973cf8a058ae69b185bc8a796811315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44c2037c2626642d9c1a402ddc2b2608"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update</a> (amrex::MultiFab &amp;cons, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, double dt) const</td></tr>
+<tr class="separator:a44c2037c2626642d9c1a402ddc2b2608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cabdbcf0b1f25d95df188952c4d032a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">debug_check_bad_column</a> (const <a class="el" href="structShocColumnData.html">ShocColumnData</a> &amp;col, const amrex::MFIter &amp;mfi, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab *hfx3, const amrex::MultiFab *qfx3, const amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, const amrex::MultiFab *<a class="el" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, const amrex::Geometry &amp;geom, double dt) const</td></tr>
+<tr class="separator:a1cabdbcf0b1f25d95df188952c4d032a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae1a8fc360fe29681b02212af909613"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary</a> (double dt) const</td></tr>
+<tr class="separator:a0ae1a8fc360fe29681b02212af909613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -479,8 +479,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a2c60eb16c2fe1ad7dd8d81e77c32bce2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c60eb16c2fe1ad7dd8d81e77c32bce2">&#9670;&nbsp;</a></span>advance()</h2>
+<a id="a1bbc9f3b39ce3017cb625de5ab0a9d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bbc9f3b39ce3017cb625de5ab0a9d9b">&#9670;&nbsp;</a></span>advance()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,7 +554,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -643,17 +643,17 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::cache_baseline_state&quot;</span>);</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;            <a class="code" href="classShocImplicit.html#a9cffc97d42a48b5b8ac1ac52d8a5c39f">ShocImplicit::cache_baseline_state</a>(col);</div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        }</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <a class="code" href="classShocDiagnostics.html#aeabc6f36f7fe66d71e45f23130f95aeb">ShocDiagnostics::diagnose_pre_implicit</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0], <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1], dt);</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <a class="code" href="classShocDiagnostics.html#a3b33b618077f6ae9a7aed776ceacd593">ShocDiagnostics::diagnose_pre_implicit</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0], <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1], dt);</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classShocDriver.html#ab94ae24746149c3c0997c629926749c5">uses_state_update</a>()) {</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::implicit&quot;</span>);</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <a class="code" href="classShocImplicit.html#a8851814a0c820e9933fef411db10f277">ShocImplicit::advance_implicit_state</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, dt);</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <a class="code" href="classShocImplicit.html#a882877f70e2fa830b43bc03ce113a509">ShocImplicit::advance_implicit_state</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, dt);</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        }</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        <a class="code" href="classShocDiagnostics.html#ac1c9a2c0f60006027a17c2cc462463b4">ShocDiagnostics::diagnose_post_implicit</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, dt);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        <a class="code" href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067">ShocDiagnostics::diagnose_post_implicit</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, dt);</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classShocDriver.html#ab94ae24746149c3c0997c629926749c5">uses_state_update</a>()) {</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::finalize&quot;</span>);</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            <a class="code" href="classShocImplicit.html#ad9dfe9b0bb1f458920a73d74a31f21fa">ShocImplicit::finalize_from_pdf</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, dt);</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;            <a class="code" href="classShocImplicit.html#af3d4721e5aa4070b2cc48f1e7bf73c16">ShocImplicit::finalize_from_pdf</a>(col, <a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>, dt);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::debug_bad_column&quot;</span>);</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            <a class="code" href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715">debug_check_bad_column</a>(col, mfi, z_phys_nd, hfx3, qfx3, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, geom, dt);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;            <a class="code" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">debug_check_bad_column</a>(col, mfi, z_phys_nd, hfx3, qfx3, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a>, <a class="code" href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a>, geom, dt);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        }</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        {</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::store_carried_buoyancy_flux&quot;</span>);</div>
@@ -854,7 +854,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160; </div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classShocDriver.html#ab94ae24746149c3c0997c629926749c5">uses_state_update</a>()) {</div>
 <div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::state_update&quot;</span>);</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <a class="code" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update</a>(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>, dt);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;        <a class="code" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update</a>(<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">cons</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>, <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>, dt);</div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    }</div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classShocDriver.html#abcc110d3d9090843985fa31c368b9ddc">uses_momentum_state_update</a>()) {</div>
@@ -866,7 +866,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    ++<a class="code" href="classShocDriver.html#a4368605a9a6d14ec5223b079ed07af5c">m_advance_calls</a>;</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">m_opts</a>.<a class="code" href="structShocRuntimeOptions.html#aefe1694f5ba2b1463bcc5e2e2c657f59">debug_summary</a>) {</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::debug_summary&quot;</span>);</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        <a class="code" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary</a>(dt);</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;        <a class="code" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary</a>(dt);</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    }</div>
 <div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a></div><div class="ttdeci">@ tau23</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
@@ -881,17 +881,18 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassShocColumnWorkspace_html"><div class="ttname"><a href="classShocColumnWorkspace.html">ShocColumnWorkspace</a></div><div class="ttdef"><b>Definition:</b> ERF_ShocColumnData.H:103</div></div>
 <div class="ttc" id="aclassShocColumnWorkspace_html_a3102a6cc49bf69eea69dcfd4fd634f2b"><div class="ttname"><a href="classShocColumnWorkspace.html#a3102a6cc49bf69eea69dcfd4fd634f2b">ShocColumnWorkspace::col</a></div><div class="ttdeci">ShocColumnData col</div><div class="ttdef"><b>Definition:</b> ERF_ShocColumnData.H:105</div></div>
 <div class="ttc" id="aclassShocColumnWorkspace_html_a877f99b858b2f2ebf529993d1e5c3d31"><div class="ttname"><a href="classShocColumnWorkspace.html#a877f99b858b2f2ebf529993d1e5c3d31">ShocColumnWorkspace::ensure_capacity</a></div><div class="ttdeci">void ensure_capacity(const ShocColumnLayout &amp;layout, amrex::Arena *arena=amrex::The_Async_Arena(), shoc::InitRunOn init_run_on=shoc::default_init_run_on())</div><div class="ttdef"><b>Definition:</b> ERF_ShocColumnData.H:107</div></div>
-<div class="ttc" id="aclassShocDiagnostics_html_ac1c9a2c0f60006027a17c2cc462463b4"><div class="ttname"><a href="classShocDiagnostics.html#ac1c9a2c0f60006027a17c2cc462463b4">ShocDiagnostics::diagnose_post_implicit</a></div><div class="ttdeci">static void diagnose_post_implicit(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, amrex::Real dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocDiagnostics.cpp:25</div></div>
-<div class="ttc" id="aclassShocDiagnostics_html_aeabc6f36f7fe66d71e45f23130f95aeb"><div class="ttname"><a href="classShocDiagnostics.html#aeabc6f36f7fe66d71e45f23130f95aeb">ShocDiagnostics::diagnose_pre_implicit</a></div><div class="ttdeci">static void diagnose_pre_implicit(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, amrex::Real dx, amrex::Real dy, amrex::Real dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocDiagnostics.cpp:6</div></div>
-<div class="ttc" id="aclassShocDriver_html_a0098dfc44f7e2d5f763d507daf0225e4"><div class="ttname"><a href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">ShocDriver::apply_state_update</a></div><div class="ttdeci">void apply_state_update(amrex::MultiFab &amp;cons, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, amrex::Real dt) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:913</div></div>
+<div class="ttc" id="aclassShocDiagnostics_html_a3b33b618077f6ae9a7aed776ceacd593"><div class="ttname"><a href="classShocDiagnostics.html#a3b33b618077f6ae9a7aed776ceacd593">ShocDiagnostics::diagnose_pre_implicit</a></div><div class="ttdeci">static void diagnose_pre_implicit(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, amrex::Real dx, amrex::Real dy, double dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocDiagnostics.cpp:6</div></div>
+<div class="ttc" id="aclassShocDiagnostics_html_a66b05ec19cd5ed4e2ef2d1022ba40067"><div class="ttname"><a href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067">ShocDiagnostics::diagnose_post_implicit</a></div><div class="ttdeci">static void diagnose_post_implicit(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, double dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocDiagnostics.cpp:25</div></div>
 <div class="ttc" id="aclassShocDriver_html_a06350a26d761bc39292f755c23350592"><div class="ttname"><a href="classShocDriver.html#a06350a26d761bc39292f755c23350592">ShocDriver::m_shoc_ql_cc</a></div><div class="ttdeci">amrex::MultiFab m_shoc_ql_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:150</div></div>
+<div class="ttc" id="aclassShocDriver_html_a0ae1a8fc360fe29681b02212af909613"><div class="ttname"><a href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">ShocDriver::print_debug_summary</a></div><div class="ttdeci">void print_debug_summary(double dt) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:1470</div></div>
 <div class="ttc" id="aclassShocDriver_html_a12987ee1013891d98fa8bcf5291de332"><div class="ttname"><a href="classShocDriver.html#a12987ee1013891d98fa8bcf5291de332">ShocDriver::m_prev_turb_valid</a></div><div class="ttdeci">bool m_prev_turb_valid</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:175</div></div>
-<div class="ttc" id="aclassShocDriver_html_a1415febb2aca6df77d5964d1bea5d715"><div class="ttname"><a href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715">ShocDriver::debug_check_bad_column</a></div><div class="ttdeci">void debug_check_bad_column(const ShocColumnData &amp;col, const amrex::MFIter &amp;mfi, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab *hfx3, const amrex::MultiFab *qfx3, const amrex::MultiFab *tau13, const amrex::MultiFab *tau23, const amrex::Geometry &amp;geom, amrex::Real dt) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:939</div></div>
+<div class="ttc" id="aclassShocDriver_html_a1cabdbcf0b1f25d95df188952c4d032a"><div class="ttname"><a href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">ShocDriver::debug_check_bad_column</a></div><div class="ttdeci">void debug_check_bad_column(const ShocColumnData &amp;col, const amrex::MFIter &amp;mfi, const amrex::MultiFab &amp;z_phys_nd, const amrex::MultiFab *hfx3, const amrex::MultiFab *qfx3, const amrex::MultiFab *tau13, const amrex::MultiFab *tau23, const amrex::Geometry &amp;geom, double dt) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:939</div></div>
 <div class="ttc" id="aclassShocDriver_html_a1d3f4c5bb3703725a3355528bc979984"><div class="ttname"><a href="classShocDriver.html#a1d3f4c5bb3703725a3355528bc979984">ShocDriver::m_qw_sec_cc</a></div><div class="ttdeci">amrex::MultiFab m_qw_sec_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:157</div></div>
 <div class="ttc" id="aclassShocDriver_html_a1e5ab1be67ab5c8f4c8eebc50f263883"><div class="ttname"><a href="classShocDriver.html#a1e5ab1be67ab5c8f4c8eebc50f263883">ShocDriver::m_diss_tke_cc</a></div><div class="ttdeci">amrex::MultiFab m_diss_tke_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:166</div></div>
 <div class="ttc" id="aclassShocDriver_html_a21a45bb7efebfc7c4964650d45e85396"><div class="ttname"><a href="classShocDriver.html#a21a45bb7efebfc7c4964650d45e85396">ShocDriver::m_qwthl_sec_cc</a></div><div class="ttdeci">amrex::MultiFab m_qwthl_sec_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:158</div></div>
 <div class="ttc" id="aclassShocDriver_html_a3dc5d3a627923a4f353120b1da687a2e"><div class="ttname"><a href="classShocDriver.html#a3dc5d3a627923a4f353120b1da687a2e">ShocDriver::m_qfx3_ptr</a></div><div class="ttdeci">amrex::MultiFab * m_qfx3_ptr</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:169</div></div>
 <div class="ttc" id="aclassShocDriver_html_a4368605a9a6d14ec5223b079ed07af5c"><div class="ttname"><a href="classShocDriver.html#a4368605a9a6d14ec5223b079ed07af5c">ShocDriver::m_advance_calls</a></div><div class="ttdeci">int m_advance_calls</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:174</div></div>
+<div class="ttc" id="aclassShocDriver_html_a44c2037c2626642d9c1a402ddc2b2608"><div class="ttname"><a href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">ShocDriver::apply_state_update</a></div><div class="ttdeci">void apply_state_update(amrex::MultiFab &amp;cons, amrex::MultiFab &amp;xvel, amrex::MultiFab &amp;yvel, double dt) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:913</div></div>
 <div class="ttc" id="aclassShocDriver_html_a473918136c5ec9ca6c3c41197ca97fbf"><div class="ttname"><a href="classShocDriver.html#a473918136c5ec9ca6c3c41197ca97fbf">ShocDriver::m_pblh_cc</a></div><div class="ttdeci">amrex::MultiFab m_pblh_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:146</div></div>
 <div class="ttc" id="aclassShocDriver_html_a48251ba90dcf87b47853b2713f23d9b3"><div class="ttname"><a href="classShocDriver.html#a48251ba90dcf87b47853b2713f23d9b3">ShocDriver::m_eddy_coeffs_cc</a></div><div class="ttdeci">amrex::MultiFab m_eddy_coeffs_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:141</div></div>
 <div class="ttc" id="aclassShocDriver_html_a4cf993bb1106dcf099f3c028bb325d12"><div class="ttname"><a href="classShocDriver.html#a4cf993bb1106dcf099f3c028bb325d12">ShocDriver::m_buoy_prod_cc</a></div><div class="ttdeci">amrex::MultiFab m_buoy_prod_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:165</div></div>
@@ -902,7 +903,6 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassShocDriver_html_a60898e980de93b6e7104e08d118a1d0e"><div class="ttname"><a href="classShocDriver.html#a60898e980de93b6e7104e08d118a1d0e">ShocDriver::m_v_tend_fc</a></div><div class="ttdeci">amrex::MultiFab m_v_tend_fc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:140</div></div>
 <div class="ttc" id="aclassShocDriver_html_a610df4cde5ad767033330b6b373ada6d"><div class="ttname"><a href="classShocDriver.html#a610df4cde5ad767033330b6b373ada6d">ShocDriver::seed_carried_buoyancy_flux</a></div><div class="ttdeci">void seed_carried_buoyancy_flux(ShocColumnData &amp;col, const amrex::MFIter &amp;mfi) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:433</div></div>
 <div class="ttc" id="aclassShocDriver_html_a6197d8e30f021357a7ff54cda64e4c28"><div class="ttname"><a href="classShocDriver.html#a6197d8e30f021357a7ff54cda64e4c28">ShocDriver::m_w3_cc</a></div><div class="ttdeci">amrex::MultiFab m_w3_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:161</div></div>
-<div class="ttc" id="aclassShocDriver_html_a6973cf8a058ae69b185bc8a796811315"><div class="ttname"><a href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">ShocDriver::print_debug_summary</a></div><div class="ttdeci">void print_debug_summary(amrex::Real dt) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:1470</div></div>
 <div class="ttc" id="aclassShocDriver_html_a727b8bad85e38e890e4b5539e40862ec"><div class="ttname"><a href="classShocDriver.html#a727b8bad85e38e890e4b5539e40862ec">ShocDriver::m_shoc_ustar_cc</a></div><div class="ttdeci">amrex::MultiFab m_shoc_ustar_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:147</div></div>
 <div class="ttc" id="aclassShocDriver_html_a74fe0251121dc22c52236c08f68d92d4"><div class="ttname"><a href="classShocDriver.html#a74fe0251121dc22c52236c08f68d92d4">ShocDriver::seed_carried_turbulence</a></div><div class="ttdeci">void seed_carried_turbulence(ShocColumnData &amp;col, const amrex::MFIter &amp;mfi, const amrex::MultiFab &amp;cons, const amrex::MultiFab &amp;eddy_diffs) const</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.cpp:401</div></div>
 <div class="ttc" id="aclassShocDriver_html_a7591e88182042e57870945cfdc7e5b30"><div class="ttname"><a href="classShocDriver.html#a7591e88182042e57870945cfdc7e5b30">ShocDriver::m_theta_tend_cc</a></div><div class="ttdeci">amrex::MultiFab m_theta_tend_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:132</div></div>
@@ -934,9 +934,9 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassShocDriver_html_af86f8ae5209950323fd19494c9a551f8"><div class="ttname"><a href="classShocDriver.html#af86f8ae5209950323fd19494c9a551f8">ShocDriver::m_qv_tend_cc</a></div><div class="ttdeci">amrex::MultiFab m_qv_tend_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:133</div></div>
 <div class="ttc" id="aclassShocDriver_html_af8eb6846f52419492f3770577361ff97"><div class="ttname"><a href="classShocDriver.html#af8eb6846f52419492f3770577361ff97">ShocDriver::m_hfx3_ptr</a></div><div class="ttdeci">amrex::MultiFab * m_hfx3_ptr</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:168</div></div>
 <div class="ttc" id="aclassShocDriver_html_afe7634742dd6d12a0ec8f50d6d79e829"><div class="ttname"><a href="classShocDriver.html#afe7634742dd6d12a0ec8f50d6d79e829">ShocDriver::m_column_workspaces</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; ShocColumnWorkspace &gt; &gt; m_column_workspaces</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:173</div></div>
-<div class="ttc" id="aclassShocImplicit_html_a8851814a0c820e9933fef411db10f277"><div class="ttname"><a href="classShocImplicit.html#a8851814a0c820e9933fef411db10f277">ShocImplicit::advance_implicit_state</a></div><div class="ttdeci">static void advance_implicit_state(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, amrex::Real dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocImplicit.cpp:166</div></div>
+<div class="ttc" id="aclassShocImplicit_html_a882877f70e2fa830b43bc03ce113a509"><div class="ttname"><a href="classShocImplicit.html#a882877f70e2fa830b43bc03ce113a509">ShocImplicit::advance_implicit_state</a></div><div class="ttdeci">static void advance_implicit_state(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, double dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocImplicit.cpp:166</div></div>
 <div class="ttc" id="aclassShocImplicit_html_a9cffc97d42a48b5b8ac1ac52d8a5c39f"><div class="ttname"><a href="classShocImplicit.html#a9cffc97d42a48b5b8ac1ac52d8a5c39f">ShocImplicit::cache_baseline_state</a></div><div class="ttdeci">static void cache_baseline_state(ShocColumnData &amp;col)</div><div class="ttdef"><b>Definition:</b> ERF_ShocImplicit.cpp:84</div></div>
-<div class="ttc" id="aclassShocImplicit_html_ad9dfe9b0bb1f458920a73d74a31f21fa"><div class="ttname"><a href="classShocImplicit.html#ad9dfe9b0bb1f458920a73d74a31f21fa">ShocImplicit::finalize_from_pdf</a></div><div class="ttdeci">static void finalize_from_pdf(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, amrex::Real dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocImplicit.cpp:319</div></div>
+<div class="ttc" id="aclassShocImplicit_html_af3d4721e5aa4070b2cc48f1e7bf73c16"><div class="ttname"><a href="classShocImplicit.html#af3d4721e5aa4070b2cc48f1e7bf73c16">ShocImplicit::finalize_from_pdf</a></div><div class="ttdeci">static void finalize_from_pdf(ShocColumnData &amp;col, const ShocRuntimeOptions &amp;opts, double dt)</div><div class="ttdef"><b>Definition:</b> ERF_ShocImplicit.cpp:319</div></div>
 <div class="ttc" id="aclassShocPreprocess_html_af1020985491ed9af9e79d9ae46c12a71"><div class="ttname"><a href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns</a></div><div class="ttdeci">static void fill_columns(ShocColumnData &amp;col, const amrex::MFIter &amp;mfi, const amrex::MultiFab &amp;cons, const amrex::MultiFab &amp;xvel, const amrex::MultiFab &amp;yvel, const amrex::MultiFab &amp;zvel, const amrex::MultiFab *hfx3, const amrex::MultiFab *qfx3, const amrex::MultiFab *tau13, const amrex::MultiFab *tau23, const amrex::MultiFab &amp;z_phys_nd, const amrex::Geometry &amp;geom, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_ShocPreprocess.cpp:31</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:210</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a></div><div class="ttdeci">@ Turb_lengthscale</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:214</div></div>
@@ -994,26 +994,26 @@ Here is the call graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocDriver_a2c60eb16c2fe1ad7dd8d81e77c32bce2_cgraph.png" border="0" usemap="#aclassShocDriver_a2c60eb16c2fe1ad7dd8d81e77c32bce2_cgraph" alt=""/></div>
-<map name="aclassShocDriver_a2c60eb16c2fe1ad7dd8d81e77c32bce2_cgraph" id="aclassShocDriver_a2c60eb16c2fe1ad7dd8d81e77c32bce2_cgraph">
+<div class="center"><img src="classShocDriver_a1bbc9f3b39ce3017cb625de5ab0a9d9b_cgraph.png" border="0" usemap="#aclassShocDriver_a1bbc9f3b39ce3017cb625de5ab0a9d9b_cgraph" alt=""/></div>
+<map name="aclassShocDriver_a1bbc9f3b39ce3017cb625de5ab0a9d9b_cgraph" id="aclassShocDriver_a1bbc9f3b39ce3017cb625de5ab0a9d9b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,913,161,940"/>
-<area shape="rect" href="classShocImplicit.html#a8851814a0c820e9933fef411db10f277" title=" " alt="" coords="493,158,659,199"/>
+<area shape="rect" href="classShocImplicit.html#a882877f70e2fa830b43bc03ce113a509" title=" " alt="" coords="493,158,659,199"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="770,325,953,352"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="816,939,907,965"/>
-<area shape="rect" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4" title=" " alt="" coords="219,430,396,471"/>
+<area shape="rect" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608" title=" " alt="" coords="219,430,396,471"/>
 <area shape="rect" href="classShocDriver.html#abcc110d3d9090843985fa31c368b9ddc" title=" " alt="" coords="469,427,683,469"/>
 <area shape="rect" href="classShocImplicit.html#a9cffc97d42a48b5b8ac1ac52d8a5c39f" title=" " alt="" coords="233,847,381,889"/>
-<area shape="rect" href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715" title=" " alt="" coords="214,313,401,354"/>
+<area shape="rect" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a" title=" " alt="" coords="214,313,401,354"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#a190cc95fd46fc4184594d6f6617dc015" title=" " alt="" coords="501,325,651,352"/>
 <area shape="rect" href="namespaceshoc.html#aefd267cac0eb62ad46ec5190278a19bb" title=" " alt="" coords="240,638,375,679"/>
-<area shape="rect" href="classShocDiagnostics.html#ac1c9a2c0f60006027a17c2cc462463b4" title=" " alt="" coords="209,551,405,593"/>
-<area shape="rect" href="classShocDiagnostics.html#aeabc6f36f7fe66d71e45f23130f95aeb" title=" " alt="" coords="209,1051,405,1093"/>
+<area shape="rect" href="classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067" title=" " alt="" coords="209,551,405,593"/>
+<area shape="rect" href="classShocDiagnostics.html#a3b33b618077f6ae9a7aed776ceacd593" title=" " alt="" coords="209,1051,405,1093"/>
 <area shape="rect" href="classShocColumnWorkspace.html#a877f99b858b2f2ebf529993d1e5c3d31" title=" " alt="" coords="220,98,395,139"/>
 <area shape="rect" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e" title=" " alt="" coords="235,965,380,1006"/>
 <area shape="rect" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71" title=" " alt="" coords="233,703,381,745"/>
-<area shape="rect" href="classShocImplicit.html#ad9dfe9b0bb1f458920a73d74a31f21fa" title=" " alt="" coords="229,1117,386,1158"/>
+<area shape="rect" href="classShocImplicit.html#af3d4721e5aa4070b2cc48f1e7bf73c16" title=" " alt="" coords="229,1117,386,1158"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#a3491aa98eaa7ac3abe00423fd9b33c52" title=" " alt="" coords="236,1183,379,1209"/>
-<area shape="rect" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315" title=" " alt="" coords="218,1234,397,1275"/>
+<area shape="rect" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613" title=" " alt="" coords="218,1234,397,1275"/>
 <area shape="rect" href="classShocDriver.html#ab94ae24746149c3c0997c629926749c5" title=" " alt="" coords="491,1585,661,1626"/>
 <area shape="rect" href="classShocDriver.html#a610df4cde5ad767033330b6b373ada6d" title=" " alt="" coords="215,1351,399,1393"/>
 <area shape="rect" href="classShocDriver.html#a74fe0251121dc22c52236c08f68d92d4" title=" " alt="" coords="215,1417,399,1458"/>
@@ -1024,12 +1024,12 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a" title=" " alt="" coords="811,165,912,192"/>
 <area shape="rect" href="ERF__ShocTypes_8H.html#a7a59bbf902f65e252821f30e455ed3c9" title=" " alt="" coords="775,427,947,469"/>
 <area shape="rect" href="classShocMoments.html#a610d8bcf7ff86d494bd1939a2dab3d65" title=" " alt="" coords="485,493,667,534"/>
-<area shape="rect" href="classShocPDF.html#a1af84c4ff3a28df7717d5d4552ab2a8e" title=" " alt="" coords="489,559,663,585"/>
+<area shape="rect" href="classShocPDF.html#a4f06d230cd1f338a9fe4d21f9a7ff17c" title=" " alt="" coords="489,559,663,585"/>
 <area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="747,559,976,585"/>
 <area shape="rect" href="classShocStructure.html#a4ccb8e60a12a324bd1d5b20e227f1d7f" title=" " alt="" coords="487,1198,665,1239"/>
 <area shape="rect" href="classShocStructure.html#a454f7464558c16da055d1a2521ae2b2b" title=" " alt="" coords="469,1081,683,1108"/>
 <area shape="rect" href="classShocStructure.html#a6f7bf7494f7320953e76f7210e98a340" title=" " alt="" coords="487,1133,665,1174"/>
-<area shape="rect" href="classShocTKE.html#aa142af5a71ab5c25994e55341eb42c44" title=" " alt="" coords="490,1015,662,1057"/>
+<area shape="rect" href="classShocTKE.html#ab74a60609640c835f3460f855f3a0e13" title=" " alt="" coords="490,1015,662,1057"/>
 <area shape="rect" href="namespaceshoc.html#a1fc6e813cc0c436e72ec66433be27e1e" title=" " alt="" coords="797,1111,925,1137"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#a9ffc0b7122de44dc3954d0d476beed6b" title=" " alt="" coords="481,5,671,32"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#aeb60a3371d3ba05df905697847990b9c" title=" " alt="" coords="770,56,953,83"/>
@@ -1039,7 +1039,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="521,609,631,636"/>
 <area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="504,660,648,687"/>
 <area shape="rect" href="namespaceshoc.html#ad15cadfc5ee5c8f9fe59ebf7a1634300" title=" " alt="" coords="487,711,665,737"/>
-<area shape="rect" href="namespaceshoc.html#a2a22f13b7612dc66b621b94059d3fd7f" title=" " alt="" coords="502,1315,650,1357"/>
+<area shape="rect" href="namespaceshoc.html#a9ec4609772a1c7b71c8eeb44fd84ac47" title=" " alt="" coords="502,1315,650,1357"/>
 <area shape="rect" href="namespaceshoc.html#a776af5a298fc673858c55f2b1311b2ad" title=" " alt="" coords="781,1315,942,1357"/>
 <area shape="rect" href="namespaceshoc.html#acc20b19240ba5158554680570b07ecb8" title=" " alt="" coords="465,1432,687,1459"/>
 <area shape="rect" href="ERF__ShocTypes_8H.html#ab74ad802f6140554af11f465e8d913e9" title=" " alt="" coords="453,1483,699,1509"/>
@@ -1051,8 +1051,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a0098dfc44f7e2d5f763d507daf0225e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0098dfc44f7e2d5f763d507daf0225e4">&#9670;&nbsp;</a></span>apply_state_update()</h2>
+<a id="a44c2037c2626642d9c1a402ddc2b2608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c2037c2626642d9c1a402ddc2b2608">&#9670;&nbsp;</a></span>apply_state_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1081,7 +1081,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -1120,12 +1120,12 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructMoistureComponentIndices_html_a6e5a18c589f998753e87ccb458a5374b"><div class="ttname"><a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:107</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_ab99846e54aa46d95389fd611836723e3"><div class="ttname"><a href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">MoistureComponentIndices::qc</a></div><div class="ttdeci">int qc</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:108</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_cgraph.png" border="0" usemap="#aclassShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_cgraph" alt=""/></div>
-<map name="aclassShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_cgraph" id="aclassShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_cgraph">
+<div class="center"><img src="classShocDriver_a44c2037c2626642d9c1a402ddc2b2608_cgraph.png" border="0" usemap="#aclassShocDriver_a44c2037c2626642d9c1a402ddc2b2608_cgraph" alt=""/></div>
+<map name="aclassShocDriver_a44c2037c2626642d9c1a402ddc2b2608_cgraph" id="aclassShocDriver_a44c2037c2626642d9c1a402ddc2b2608_cgraph">
 <area shape="rect" title=" " alt="" coords="5,27,183,69"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="247,5,429,32"/>
 <area shape="rect" href="classShocDriver.html#abcc110d3d9090843985fa31c368b9ddc" title=" " alt="" coords="231,57,445,98"/>
@@ -1135,10 +1135,10 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_icgraph.png" border="0" usemap="#aclassShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_icgraph" alt=""/></div>
-<map name="aclassShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_icgraph" id="aclassShocDriver_a0098dfc44f7e2d5f763d507daf0225e4_icgraph">
+<div class="center"><img src="classShocDriver_a44c2037c2626642d9c1a402ddc2b2608_icgraph.png" border="0" usemap="#aclassShocDriver_a44c2037c2626642d9c1a402ddc2b2608_icgraph" alt=""/></div>
+<map name="aclassShocDriver_a44c2037c2626642d9c1a402ddc2b2608_icgraph" id="aclassShocDriver_a44c2037c2626642d9c1a402ddc2b2608_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,387,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -1274,8 +1274,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a1415febb2aca6df77d5964d1bea5d715"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1415febb2aca6df77d5964d1bea5d715">&#9670;&nbsp;</a></span>debug_check_bad_column()</h2>
+<a id="a1cabdbcf0b1f25d95df188952c4d032a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cabdbcf0b1f25d95df188952c4d032a">&#9670;&nbsp;</a></span>debug_check_bad_column()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1334,7 +1334,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dt</em>&#160;</td>
         </tr>
         <tr>
@@ -1917,12 +1917,12 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructShocRuntimeOptions_html_ac2d87d0be5ab63922d84cd57bc17d361"><div class="ttname"><a href="structShocRuntimeOptions.html#ac2d87d0be5ab63922d84cd57bc17d361">ShocRuntimeOptions::debug_bad_column_brunt_threshold</a></div><div class="ttdeci">amrex::Real debug_bad_column_brunt_threshold</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:114</div></div>
 <div class="ttc" id="astructShocRuntimeOptions_html_acef509981f4ee990eeb60482c4f70e1f"><div class="ttname"><a href="structShocRuntimeOptions.html#acef509981f4ee990eeb60482c4f70e1f">ShocRuntimeOptions::debug_bad_column_abort</a></div><div class="ttdeci">bool debug_bad_column_abort</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:110</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocDriver_a1415febb2aca6df77d5964d1bea5d715_cgraph.png" border="0" usemap="#aclassShocDriver_a1415febb2aca6df77d5964d1bea5d715_cgraph" alt=""/></div>
-<map name="aclassShocDriver_a1415febb2aca6df77d5964d1bea5d715_cgraph" id="aclassShocDriver_a1415febb2aca6df77d5964d1bea5d715_cgraph">
+<div class="center"><img src="classShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_cgraph.png" border="0" usemap="#aclassShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_cgraph" alt=""/></div>
+<map name="aclassShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_cgraph" id="aclassShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,192,65"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="240,5,423,32"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#a190cc95fd46fc4184594d6f6617dc015" title=" " alt="" coords="256,56,407,83"/>
@@ -1931,10 +1931,10 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocDriver_a1415febb2aca6df77d5964d1bea5d715_icgraph.png" border="0" usemap="#aclassShocDriver_a1415febb2aca6df77d5964d1bea5d715_icgraph" alt=""/></div>
-<map name="aclassShocDriver_a1415febb2aca6df77d5964d1bea5d715_icgraph" id="aclassShocDriver_a1415febb2aca6df77d5964d1bea5d715_icgraph">
+<div class="center"><img src="classShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_icgraph.png" border="0" usemap="#aclassShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_icgraph" alt=""/></div>
+<map name="aclassShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_icgraph" id="aclassShocDriver_a1cabdbcf0b1f25d95df188952c4d032a_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,396,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -2158,14 +2158,14 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassShocDriver_html_a8d48a09c6abe1fd5ae2ba0e43d1bd538"><div class="ttname"><a href="classShocDriver.html#a8d48a09c6abe1fd5ae2ba0e43d1bd538">ShocDriver::m_prev_turb_cc</a></div><div class="ttdeci">amrex::MultiFab m_prev_turb_cc</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:142</div></div>
 <div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205aa3900ab375460932d825b615bb532446"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205aa3900ab375460932d825b615bb532446">EddyDiff::NumDiffs</a></div><div class="ttdeci">@ NumDiffs</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:215</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShocDriver_abb81fef90c98d02cc49dff2b965ae87e_icgraph.png" border="0" usemap="#aclassShocDriver_abb81fef90c98d02cc49dff2b965ae87e_icgraph" alt=""/></div>
 <map name="aclassShocDriver_abb81fef90c98d02cc49dff2b965ae87e_icgraph" id="aclassShocDriver_abb81fef90c98d02cc49dff2b965ae87e_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,355,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -2482,8 +2482,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6973cf8a058ae69b185bc8a796811315"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6973cf8a058ae69b185bc8a796811315">&#9670;&nbsp;</a></span>print_debug_summary()</h2>
+<a id="a0ae1a8fc360fe29681b02212af909613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae1a8fc360fe29681b02212af909613">&#9670;&nbsp;</a></span>print_debug_summary()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2494,7 +2494,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void ShocDriver::print_debug_summary </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>dt</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -2566,12 +2566,12 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__ShocTypes_8H_html_ab74ad802f6140554af11f465e8d913e9"><div class="ttname"><a href="ERF__ShocTypes_8H.html#ab74ad802f6140554af11f465e8d913e9">shoc_momentum_transport_name</a></div><div class="ttdeci">const char * shoc_momentum_transport_name(ShocMomentumTransport mode)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:40</div></div>
 <div class="ttc" id="astructShocRuntimeOptions_html_a16f1a8d4a0e8ad7857c1d50843ad4b28"><div class="ttname"><a href="structShocRuntimeOptions.html#a16f1a8d4a0e8ad7857c1d50843ad4b28">ShocRuntimeOptions::transport_mode</a></div><div class="ttdeci">ShocTransportMode transport_mode</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:107</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocDriver_a6973cf8a058ae69b185bc8a796811315_cgraph.png" border="0" usemap="#aclassShocDriver_a6973cf8a058ae69b185bc8a796811315_cgraph" alt=""/></div>
-<map name="aclassShocDriver_a6973cf8a058ae69b185bc8a796811315_cgraph" id="aclassShocDriver_a6973cf8a058ae69b185bc8a796811315_cgraph">
+<div class="center"><img src="classShocDriver_a0ae1a8fc360fe29681b02212af909613_cgraph.png" border="0" usemap="#aclassShocDriver_a0ae1a8fc360fe29681b02212af909613_cgraph" alt=""/></div>
+<map name="aclassShocDriver_a0ae1a8fc360fe29681b02212af909613_cgraph" id="aclassShocDriver_a0ae1a8fc360fe29681b02212af909613_cgraph">
 <area shape="rect" title=" " alt="" coords="5,49,184,90"/>
 <area shape="rect" href="ERF__ShocTypes_8H.html#ab74ad802f6140554af11f465e8d913e9" title=" " alt="" coords="232,5,477,32"/>
 <area shape="rect" href="ERF__ShocTypes_8H.html#a2ec5ae80ba2126c4325d7cc4f446ff65" title=" " alt="" coords="251,56,458,83"/>
@@ -2582,10 +2582,10 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classShocDriver_a6973cf8a058ae69b185bc8a796811315_icgraph.png" border="0" usemap="#aclassShocDriver_a6973cf8a058ae69b185bc8a796811315_icgraph" alt=""/></div>
-<map name="aclassShocDriver_a6973cf8a058ae69b185bc8a796811315_icgraph" id="aclassShocDriver_a6973cf8a058ae69b185bc8a796811315_icgraph">
+<div class="center"><img src="classShocDriver_a0ae1a8fc360fe29681b02212af909613_icgraph.png" border="0" usemap="#aclassShocDriver_a0ae1a8fc360fe29681b02212af909613_icgraph" alt=""/></div>
+<map name="aclassShocDriver_a0ae1a8fc360fe29681b02212af909613_icgraph" id="aclassShocDriver_a0ae1a8fc360fe29681b02212af909613_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,388,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -2689,14 +2689,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    seed_carried_buoyancy_flux_impl(xy_box, layout, carried, wthv_sec);</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShocDriver_a610df4cde5ad767033330b6b373ada6d_icgraph.png" border="0" usemap="#aclassShocDriver_a610df4cde5ad767033330b6b373ada6d_icgraph" alt=""/></div>
 <map name="aclassShocDriver_a610df4cde5ad767033330b6b373ada6d_icgraph" id="aclassShocDriver_a610df4cde5ad767033330b6b373ada6d_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,393,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -2761,14 +2761,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                 <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ac6bac94ee95d455d23c208b6f71c478d">tk</a>, tkh, prev_turb_valid);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShocDriver_a74fe0251121dc22c52236c08f68d92d4_icgraph.png" border="0" usemap="#aclassShocDriver_a74fe0251121dc22c52236c08f68d92d4_icgraph" alt=""/></div>
 <map name="aclassShocDriver_a74fe0251121dc22c52236c08f68d92d4_icgraph" id="aclassShocDriver_a74fe0251121dc22c52236c08f68d92d4_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,393,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -3143,14 +3143,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    store_carried_buoyancy_flux_impl(xy_box, layout, carried, wthv_sec);</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShocDriver_aa31ad8df4ac4af1a6deb7e3f79f4f807_icgraph.png" border="0" usemap="#aclassShocDriver_aa31ad8df4ac4af1a6deb7e3f79f4f807_icgraph" alt=""/></div>
 <map name="aclassShocDriver_aa31ad8df4ac4af1a6deb7e3f79f4f807_icgraph" id="aclassShocDriver_aa31ad8df4ac4af1a6deb7e3f79f4f807_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,396,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -3199,14 +3199,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    store_carried_turbulence_impl(xy_box, layout, carried, <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ac6bac94ee95d455d23c208b6f71c478d">tk</a>, tkh);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShocDriver_ab8a86151bd8d620d2c2d4e60ff167692_icgraph.png" border="0" usemap="#aclassShocDriver_ab8a86151bd8d620d2c2d4e60ff167692_icgraph" alt=""/></div>
 <map name="aclassShocDriver_ab8a86151bd8d620d2c2d4e60ff167692_icgraph" id="aclassShocDriver_ab8a86151bd8d620d2c2d4e60ff167692_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,396,47"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,13,161,39"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
 
@@ -3341,7 +3341,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocTypes_8H_html_a7a59bbf902f65e252821f30e455ed3c9"><div class="ttname"><a href="ERF__ShocTypes_8H.html#a7a59bbf902f65e252821f30e455ed3c9">shoc_uses_momentum_state_update</a></div><div class="ttdeci">bool shoc_uses_momentum_state_update(ShocMomentumTransport mode)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:63</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, and <a class="el" href="classShocDriver.html#acf4c85f0e8b6da9af3151d0edc8974dc">owns_momentum_surface_stresses()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, and <a class="el" href="classShocDriver.html#acf4c85f0e8b6da9af3151d0edc8974dc">owns_momentum_surface_stresses()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3357,8 +3357,8 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classShocDriver_abcc110d3d9090843985fa31c368b9ddc_icgraph.png" border="0" usemap="#aclassShocDriver_abcc110d3d9090843985fa31c368b9ddc_icgraph" alt=""/></div>
 <map name="aclassShocDriver_abcc110d3d9090843985fa31c368b9ddc_icgraph" id="aclassShocDriver_abcc110d3d9090843985fa31c368b9ddc_icgraph">
 <area shape="rect" title=" " alt="" coords="476,27,691,69"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="5,5,161,32"/>
-<area shape="rect" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4" title=" " alt="" coords="230,27,407,69"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608" title=" " alt="" coords="230,27,407,69"/>
 <area shape="rect" href="classShocDriver.html#acf4c85f0e8b6da9af3151d0edc8974dc" title=" " alt="" coords="209,93,428,134"/>
 <area shape="rect" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a" title=" " alt="" coords="9,93,158,134"/>
 </map>
@@ -3385,7 +3385,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocTypes_8H_html_ad39bfd4bf9d30a5fc706bafe46ab6908"><div class="ttname"><a href="ERF__ShocTypes_8H.html#ad39bfd4bf9d30a5fc706bafe46ab6908">shoc_uses_state_update</a></div><div class="ttdeci">bool shoc_uses_state_update(ShocTransportMode mode)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:51</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a55187088bba8c31a737f805ce089a250">owns_scalar_surface_fluxes()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a55187088bba8c31a737f805ce089a250">owns_scalar_surface_fluxes()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3401,9 +3401,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="classShocDriver_ab94ae24746149c3c0997c629926749c5_icgraph.png" border="0" usemap="#aclassShocDriver_ab94ae24746149c3c0997c629926749c5_icgraph" alt=""/></div>
 <map name="aclassShocDriver_ab94ae24746149c3c0997c629926749c5_icgraph" id="aclassShocDriver_ab94ae24746149c3c0997c629926749c5_icgraph">
 <area shape="rect" title=" " alt="" coords="473,41,644,82"/>
-<area shape="rect" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2" title=" " alt="" coords="23,5,179,32"/>
+<area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="23,5,179,32"/>
 <area shape="rect" href="classShocDriver.html#a55187088bba8c31a737f805ce089a250" title=" " alt="" coords="244,106,425,147"/>
-<area shape="rect" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315" title=" " alt="" coords="245,41,424,82"/>
+<area shape="rect" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613" title=" " alt="" coords="245,41,424,82"/>
 <area shape="rect" href="classShocDriver.html#a683b45c8bc98777dd07175414273922b" title=" " alt="" coords="5,73,196,114"/>
 <area shape="rect" href="classERF.html#a8494cd7a4f6dad7b19f239783f32465f" title=" " alt="" coords="23,139,178,165"/>
 </map>
@@ -3599,7 +3599,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715">debug_check_bad_column()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">debug_check_bad_column()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -3623,7 +3623,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a4b56dad43db8e457ddf8e8e68506524e">brunt_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a4b56dad43db8e457ddf8e8e68506524e">brunt_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -3647,7 +3647,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#af3ec51bc73480e7c94248556464e6df5">buoy_prod_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#af3ec51bc73480e7c94248556464e6df5">buoy_prod_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -3671,7 +3671,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>.</p>
 
 </div>
 </div>
@@ -3695,7 +3695,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a5f4aba13879e67a3a76aba7275601dcd">add_fast_tend()</a>, <a class="el" href="classShocDriver.html#af3f5f0009e1281a9a8c05b4633f2a8bd">add_slow_tend()</a>, <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, and <a class="el" href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715">debug_check_bad_column()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a5f4aba13879e67a3a76aba7275601dcd">add_fast_tend()</a>, <a class="el" href="classShocDriver.html#af3f5f0009e1281a9a8c05b4633f2a8bd">add_slow_tend()</a>, <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, and <a class="el" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">debug_check_bad_column()</a>.</p>
 
 </div>
 </div>
@@ -3719,7 +3719,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a2e7b2e08ff5c5228b03ab8df8d62ae98">consumed_laten_flux_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0c2e60782f8f1d8a99e0bd29006725a5">has_consumed_surface_flux_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a2e7b2e08ff5c5228b03ab8df8d62ae98">consumed_laten_flux_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0c2e60782f8f1d8a99e0bd29006725a5">has_consumed_surface_flux_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -3743,7 +3743,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a7b933689e7ffc28fa8557fd4619d7918">consumed_sens_flux_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0c2e60782f8f1d8a99e0bd29006725a5">has_consumed_surface_flux_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a7b933689e7ffc28fa8557fd4619d7918">consumed_sens_flux_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0c2e60782f8f1d8a99e0bd29006725a5">has_consumed_surface_flux_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -3767,7 +3767,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a4a870bf5dec943800807eb46c308ba37">diss_tke_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a4a870bf5dec943800807eb46c308ba37">diss_tke_diagnostics()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -3791,7 +3791,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a55c54acd277a1dd69fc005c9968881a1">has_native_diagnostics()</a>, <a class="el" href="classShocDriver.html#ad65e1d80646c942abab4a72eff325099">native_diagnostics()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#acce53243fa5190d1b8e9945d196b6c58">set_eddy_diffs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a55c54acd277a1dd69fc005c9968881a1">has_native_diagnostics()</a>, <a class="el" href="classShocDriver.html#ad65e1d80646c942abab4a72eff325099">native_diagnostics()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#acce53243fa5190d1b8e9945d196b6c58">set_eddy_diffs()</a>.</p>
 
 </div>
 </div>
@@ -3815,7 +3815,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, and <a class="el" href="classShocDriver.html#acce53243fa5190d1b8e9945d196b6c58">set_eddy_diffs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, and <a class="el" href="classShocDriver.html#acce53243fa5190d1b8e9945d196b6c58">set_eddy_diffs()</a>.</p>
 
 </div>
 </div>
@@ -3839,7 +3839,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
 
 </div>
 </div>
@@ -3863,7 +3863,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6f26089622580a8a8a4255a6dd169093">isotropy_diagnostics()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6f26089622580a8a8a4255a6dd169093">isotropy_diagnostics()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -3887,7 +3887,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715">debug_check_bad_column()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">debug_check_bad_column()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -3911,7 +3911,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, and <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, and <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>.</p>
 
 </div>
 </div>
@@ -3959,7 +3959,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#a1415febb2aca6df77d5964d1bea5d715">debug_check_bad_column()</a>, <a class="el" href="classShocDriver.html#a8db8d7bbb38c230c15e6a5f26917842f">debug_summary_enabled()</a>, <a class="el" href="classShocDriver.html#a8b9637c519d64e6aa98ab02c79ad89b0">disables_momentum_transport()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, <a class="el" href="classShocDriver.html#a7b7d221e198d43e8bf93ece6a0bd0739">ShocDriver()</a>, <a class="el" href="classShocDriver.html#a27a3cc3b15682c7cd83f2255553f61b3">uses_host_diffusion()</a>, <a class="el" href="classShocDriver.html#a1cad7a2439385e0425f8e6abba93fdb5">uses_momentum_host_diffusion()</a>, <a class="el" href="classShocDriver.html#abcc110d3d9090843985fa31c368b9ddc">uses_momentum_state_update()</a>, and <a class="el" href="classShocDriver.html#ab94ae24746149c3c0997c629926749c5">uses_state_update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">debug_check_bad_column()</a>, <a class="el" href="classShocDriver.html#a8db8d7bbb38c230c15e6a5f26917842f">debug_summary_enabled()</a>, <a class="el" href="classShocDriver.html#a8b9637c519d64e6aa98ab02c79ad89b0">disables_momentum_transport()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, <a class="el" href="classShocDriver.html#a7b7d221e198d43e8bf93ece6a0bd0739">ShocDriver()</a>, <a class="el" href="classShocDriver.html#a27a3cc3b15682c7cd83f2255553f61b3">uses_host_diffusion()</a>, <a class="el" href="classShocDriver.html#a1cad7a2439385e0425f8e6abba93fdb5">uses_momentum_host_diffusion()</a>, <a class="el" href="classShocDriver.html#abcc110d3d9090843985fa31c368b9ddc">uses_momentum_state_update()</a>, and <a class="el" href="classShocDriver.html#ab94ae24746149c3c0997c629926749c5">uses_state_update()</a>.</p>
 
 </div>
 </div>
@@ -3983,7 +3983,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#adff1e47a2ff561f025beb5b0d4cf596b">pblh_diagnostics()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#adff1e47a2ff561f025beb5b0d4cf596b">pblh_diagnostics()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4031,7 +4031,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a610df4cde5ad767033330b6b373ada6d">seed_carried_buoyancy_flux()</a>, and <a class="el" href="classShocDriver.html#a74fe0251121dc22c52236c08f68d92d4">seed_carried_turbulence()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a610df4cde5ad767033330b6b373ada6d">seed_carried_buoyancy_flux()</a>, and <a class="el" href="classShocDriver.html#a74fe0251121dc22c52236c08f68d92d4">seed_carried_turbulence()</a>.</p>
 
 </div>
 </div>
@@ -4079,7 +4079,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4103,7 +4103,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
 
 </div>
 </div>
@@ -4127,7 +4127,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4151,7 +4151,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4175,7 +4175,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a46e16a26ec39093c7faff6a4ab4255b3">qw_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a46e16a26ec39093c7faff6a4ab4255b3">qw_sec_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4199,7 +4199,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#ab0292328d4f38b4c2f7a3a6b112b088a">qwthl_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#ab0292328d4f38b4c2f7a3a6b112b088a">qwthl_sec_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4223,7 +4223,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a53fb5abc7e5dd010cd045d2ee37741ac">shear_prod_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a53fb5abc7e5dd010cd045d2ee37741ac">shear_prod_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4247,7 +4247,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a50fb7079ce5aaf025d5e02c8eaa29cb9">shoc_cldfrac_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a50fb7079ce5aaf025d5e02c8eaa29cb9">shoc_cldfrac_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4271,7 +4271,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a366c524e7140bf3d55c081d0be9452e0">shoc_cond_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a366c524e7140bf3d55c081d0be9452e0">shoc_cond_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4295,7 +4295,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a64272bb2f469a4c98ddaf1d1319bf32a">shoc_olen_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a64272bb2f469a4c98ddaf1d1319bf32a">shoc_olen_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4319,7 +4319,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a09e97e362beabd3f9b72d6ed08278576">shoc_ql2_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a09e97e362beabd3f9b72d6ed08278576">shoc_ql2_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4343,7 +4343,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a35111563ab629e095113419521072d9a">shoc_ql_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a35111563ab629e095113419521072d9a">shoc_ql_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4367,7 +4367,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a788328e2de937552394c13613e3a07c7">shoc_ustar_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a788328e2de937552394c13613e3a07c7">shoc_ustar_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4391,7 +4391,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
 
 </div>
 </div>
@@ -4415,7 +4415,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a2a2c64c2df61f3e6bfa6d1113a36479a">set_diff_stresses()</a>.</p>
 
 </div>
 </div>
@@ -4439,7 +4439,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4463,7 +4463,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#ada58e8ae3d925ff3a36c68af8673568c">thl_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#ada58e8ae3d925ff3a36c68af8673568c">thl_sec_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4487,7 +4487,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4511,7 +4511,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, and <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, and <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>.</p>
 
 </div>
 </div>
@@ -4535,7 +4535,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4559,7 +4559,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, and <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, and <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>.</p>
 
 </div>
 </div>
@@ -4583,7 +4583,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#a0098dfc44f7e2d5f763d507daf0225e4">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">apply_state_update()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, and <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>.</p>
 
 </div>
 </div>
@@ -4607,7 +4607,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a13f6f77536767d3f4eaeb9685d6a665c">w3_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a13f6f77536767d3f4eaeb9685d6a665c">w3_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4631,7 +4631,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a8322a26afce8c98c99048d84ea1a8a9c">w_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a8322a26afce8c98c99048d84ea1a8a9c">w_sec_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4655,7 +4655,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#acf9babaff9b90dcb1e8a6c393b60cf62">wqls_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#acf9babaff9b90dcb1e8a6c393b60cf62">wqls_sec_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4679,7 +4679,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a870f3ec13e74268e99590ffc5f7243ae">wqw_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a870f3ec13e74268e99590ffc5f7243ae">wqw_sec_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4703,7 +4703,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a5ef589169d03a78eebf5349d3e92f2de">wthl_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#a5ef589169d03a78eebf5349d3e92f2de">wthl_sec_diagnostics()</a>.</p>
 
 </div>
 </div>
@@ -4727,7 +4727,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a2c60eb16c2fe1ad7dd8d81e77c32bce2">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a6973cf8a058ae69b185bc8a796811315">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#aeaba24766d737c211adb449a37ab8bd4">wthv_sec_diagnostics()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">advance()</a>, <a class="el" href="classShocDriver.html#abb81fef90c98d02cc49dff2b965ae87e">ensure_storage()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">print_debug_summary()</a>, and <a class="el" href="classShocDriver.html#aeaba24766d737c211adb449a37ab8bd4">wthv_sec_diagnostics()</a>.</p>
 
 </div>
 </div>

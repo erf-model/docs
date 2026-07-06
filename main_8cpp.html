@@ -351,7 +351,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;main()&quot;</span>, pmain);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> strt_total = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(amrex::second());</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> strt_total = amrex::second();</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="comment">// constructor - reads in parameters from inputs file</span></div>
@@ -365,7 +365,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        erf.<a class="code" href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">Evolve</a>();</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="comment">// wallclock time</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> end_total = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(amrex::second()) - strt_total;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">double</span> end_total = amrex::second() - strt_total;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="comment">// print wallclock time</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        ParallelDescriptor::ReduceRealMax(end_total ,ParallelDescriptor::IOProcessorNumber());</div>
@@ -394,10 +394,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}</div>
 <div class="ttc" id="aERF__InputsName_8H_html_aa4d3de3855a1e01db2c10e072132d258"><div class="ttname"><a href="ERF__InputsName_8H.html#aa4d3de3855a1e01db2c10e072132d258">CheckForDuplicateInputs</a></div><div class="ttdeci">void CheckForDuplicateInputs(const std::string &amp;inputs_file)</div><div class="ttdef"><b>Definition:</b> ERF_InputsName.H:26</div></div>
-<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassERF_html_a0be12798b46f52fa4b5a995f147c3f96"><div class="ttname"><a href="classERF.html#a0be12798b46f52fa4b5a995f147c3f96">ERF::Evolve</a></div><div class="ttdeci">void Evolve()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:137</div></div>
 <div class="ttc" id="aclassERF_html_a1a8eb6bc00080cdbd8df28f6a321ac72"><div class="ttname"><a href="classERF.html#a1a8eb6bc00080cdbd8df28f6a321ac72">ERF::print_banner</a></div><div class="ttdeci">static void print_banner(MPI_Comm, std::ostream &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:60</div></div>
-<div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:566</div></div>
+<div class="ttc" id="aclassERF_html_ad5d585e110291969767013a515719224"><div class="ttname"><a href="classERF.html#ad5d585e110291969767013a515719224">ERF::InitData</a></div><div class="ttdeci">void InitData()</div><div class="ttdef"><b>Definition:</b> ERF.cpp:565</div></div>
 <div class="ttc" id="aclassERF_html_addc510dbf758a33cc095d64a9b17076c"><div class="ttname"><a href="classERF.html#addc510dbf758a33cc095d64a9b17076c">ERF::print_error</a></div><div class="ttdeci">static void print_error(MPI_Comm, const std::string &amp;msg)</div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:43</div></div>
 <div class="ttc" id="aclassERF_html_ae6afed5b3a72ca80ccf0d791b08516aa"><div class="ttname"><a href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa">ERF::writeBuildInfo</a></div><div class="ttdeci">static void writeBuildInfo(std::ostream &amp;os)</div><div class="ttdef"><b>Definition:</b> ERF_WriteJobInfo.cpp:143</div></div>
 <div class="ttc" id="aclassERF_html_aeaeb11001478b0635ef0fe3baa396df1"><div class="ttname"><a href="classERF.html#aeaeb11001478b0635ef0fe3baa396df1">ERF::print_usage</a></div><div class="ttdeci">static void print_usage(MPI_Comm, std::ostream &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:26</div></div>
@@ -420,7 +419,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classERF.html#ae6afed5b3a72ca80ccf0d791b08516aa" title=" " alt="" coords="127,360,273,387"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="440,5,479,32"/>
 <area shape="rect" href="ERF__EpochTime_8H.html#af7eed25e58d350c03f4b8396554bc6a2" title=" " alt="" coords="401,81,518,108"/>
-<area shape="rect" href="ERF__Utils_8H.html#a5e9ed0fa2cb7a711f00c2c8566c71d89" title=" " alt="" coords="364,132,555,159"/>
+<area shape="rect" href="ERF__Utils_8H.html#a05d64b70fcd8d62e0946cc27a429ab69" title=" " alt="" coords="364,132,555,159"/>
 <area shape="rect" href="namespaceamrex.html#a8f794ff24efbc4b60058492d1a073c78" title=" " alt="" coords="351,284,567,311"/>
 <area shape="rect" href="namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e" title=" " alt="" coords="364,335,555,361"/>
 <area shape="rect" href="namespaceamrex.html#aab3ca155f0d0a6d198817df9c35352f8" title=" " alt="" coords="340,385,579,412"/>

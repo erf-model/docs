@@ -2,10 +2,10 @@ var classFitch =
 [
     [ "Fitch", "classFitch.html#a3682b755760d9e2543182ffbc0f3a618", null ],
     [ "~Fitch", "classFitch.html#af9bc97ca62d0611ab2a300992ca8304d", null ],
-    [ "advance", "classFitch.html#aa0af4287104d385bfcd5dc0c8fb5c68a", null ],
-    [ "compute_power_output", "classFitch.html#a1edfa2cd3db9e6aa95130f24307ac623", null ],
+    [ "advance", "classFitch.html#aa3dec62ca3ee073bd770b33f7101898e", null ],
+    [ "compute_power_output", "classFitch.html#a9631ef921feb14ab4ef79161fceefc94", null ],
     [ "source_terms_cellcentered", "classFitch.html#aa56821341be1cf4d01558e297993c0f2", null ],
-    [ "update", "classFitch.html#a1a2db68abb0185de73bd870884f0b019", null ],
+    [ "update", "classFitch.html#af36e4b33de3b34a2dbf8fd5452ca49d5", null ],
     [ "hub_height", "classFitch.html#ae3af34c6c07fd2d8b9b081b5c7ceb443", null ],
     [ "hub_height_velocity", "classFitch.html#af01d3f69b4f952f91970964d2f498e61", null ],
     [ "nominal_power", "classFitch.html#afeb1ae13c307eeb71af9dfa8d97a3f7e", null ],

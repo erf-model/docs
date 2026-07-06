@@ -1,5 +1,5 @@
 var classShocDiagnostics =
 [
-    [ "diagnose_post_implicit", "classShocDiagnostics.html#ac1c9a2c0f60006027a17c2cc462463b4", null ],
-    [ "diagnose_pre_implicit", "classShocDiagnostics.html#aeabc6f36f7fe66d71e45f23130f95aeb", null ]
+    [ "diagnose_post_implicit", "classShocDiagnostics.html#a66b05ec19cd5ed4e2ef2d1022ba40067", null ],
+    [ "diagnose_pre_implicit", "classShocDiagnostics.html#a3b33b618077f6ae9a7aed776ceacd593", null ]
 ];

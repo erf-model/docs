@@ -58,7 +58,7 @@ var classMOSTAverage =
     [ "m_t_avg", "classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47", null ],
     [ "m_t_init", "classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c", null ],
     [ "m_terrain_type", "classMOSTAverage.html#a8b2f4bb5cbc870ec5dee6644c1eed174", null ],
-    [ "m_time_window", "classMOSTAverage.html#ac95147c0d7961323ca8b079f63cd4be9", null ],
+    [ "m_time_window", "classMOSTAverage.html#a247925f30f45ee01c65fbcef9f677acc", null ],
     [ "m_total_bndry_area", "classMOSTAverage.html#a4f8b85f2557e3363d84fe6b0a71037bc", null ],
     [ "m_Vsg", "classMOSTAverage.html#a5dfb4235703aaa2364d49d7fbb8d1512", null ],
     [ "m_x_pos", "classMOSTAverage.html#a58c320eb48f9b8a1b0983d2770e9f3ea", null ],

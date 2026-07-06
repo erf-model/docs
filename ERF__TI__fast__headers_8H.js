@@ -1,7 +1,7 @@
 var ERF__TI__fast__headers_8H =
 [
-    [ "erf_substep_MT", "ERF__TI__fast__headers_8H.html#a5e693ffb603d1f685648b4c4d9324c28", null ],
-    [ "erf_substep_NS", "ERF__TI__fast__headers_8H.html#af5ae3fa170b9caf727394b6f00fcbfe3", null ],
-    [ "erf_substep_T", "ERF__TI__fast__headers_8H.html#af4d948e4b2ff343920b314e37a1cb5f9", null ],
-    [ "make_fast_coeffs", "ERF__TI__fast__headers_8H.html#a713f272ad55607a189cf08b8ad0057d5", null ]
+    [ "erf_substep_MT", "ERF__TI__fast__headers_8H.html#a768d7e4562b15d4a7cbaa1d1f2e270a4", null ],
+    [ "erf_substep_NS", "ERF__TI__fast__headers_8H.html#ab037ecfed272439282721191aded26b1", null ],
+    [ "erf_substep_T", "ERF__TI__fast__headers_8H.html#a12fa6d06dab89bbc8bd751b70cd12ca2", null ],
+    [ "make_fast_coeffs", "ERF__TI__fast__headers_8H.html#acb2819be94403d50b5db02163c14606c", null ]
 ];

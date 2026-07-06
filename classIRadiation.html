@@ -123,10 +123,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab95cafeff7c2b9960532aa5025daedfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a49facdea9a509245196a463491013"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#a93a49facdea9a509245196a463491013">Init</a> (const amrex::Geometry &amp;geom, const amrex::BoxArray &amp;ba, amrex::MultiFab *cons_in)=0</td></tr>
 <tr class="separator:a93a49facdea9a509245196a463491013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6ffebe574b521d31bac269046767c94"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#ac6ffebe574b521d31bac269046767c94">Run</a> (int &amp;level, int &amp;step, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;time, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_input_ptrs, amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon)=0</td></tr>
-<tr class="separator:ac6ffebe574b521d31bac269046767c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af105337c7d00bc0dfed8a5827bb52dc7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#af105337c7d00bc0dfed8a5827bb52dc7">WriteDataLog</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;time)=0</td></tr>
-<tr class="separator:af105337c7d00bc0dfed8a5827bb52dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef028059f26c1f347d707e873a5c9dd5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#aef028059f26c1f347d707e873a5c9dd5">Run</a> (int &amp;level, int &amp;step, double &amp;time, const double &amp;dt, const amrex::BoxArray &amp;ba, amrex::Geometry &amp;geom, amrex::MultiFab *cons_in, amrex::iMultiFab *lmask, amrex::MultiFab *t_surf, amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_input_ptrs, amrex::Vector&lt; amrex::MultiFab * &gt; &amp;lsm_output_ptrs, amrex::MultiFab *qheating_rates, amrex::MultiFab *rad_fluxes, amrex::MultiFab *z_phys, amrex::MultiFab *lat, amrex::MultiFab *lon)=0</td></tr>
+<tr class="separator:aef028059f26c1f347d707e873a5c9dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e629edd84a192f87d2251099a9a5de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#ae2e629edd84a192f87d2251099a9a5de">WriteDataLog</a> (const double &amp;time)=0</td></tr>
+<tr class="separator:ae2e629edd84a192f87d2251099a9a5de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af34487f3ca47848919204d61c75c410f"><td class="memItemLeft" align="right" valign="top">virtual amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#af34487f3ca47848919204d61c75c410f">get_lsm_input_varnames</a> ()</td></tr>
 <tr class="separator:af34487f3ca47848919204d61c75c410f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afebf8a822642ddf2a5285b6f60157319"><td class="memItemLeft" align="right" valign="top">virtual amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIRadiation.html#afebf8a822642ddf2a5285b6f60157319">get_lsm_output_varnames</a> ()</td></tr>
@@ -312,8 +312,8 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac6ffebe574b521d31bac269046767c94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6ffebe574b521d31bac269046767c94">&#9670;&nbsp;</a></span>Run()</h2>
+<a id="aef028059f26c1f347d707e873a5c9dd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef028059f26c1f347d707e873a5c9dd5">&#9670;&nbsp;</a></span>Run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,13 +336,13 @@ Private Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">double &amp;&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
@@ -430,7 +430,7 @@ Private Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRadiation.html#a5d92f902a2e3dc97cf5ce0aca12892fd">Radiation</a>.</p>
+<p>Implemented in <a class="el" href="classRadiation.html#ab95f9ee8cba275631ee2cf5de6a63795">Radiation</a>.</p>
 
 </div>
 </div>
@@ -560,8 +560,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="af105337c7d00bc0dfed8a5827bb52dc7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af105337c7d00bc0dfed8a5827bb52dc7">&#9670;&nbsp;</a></span>WriteDataLog()</h2>
+<a id="ae2e629edd84a192f87d2251099a9a5de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e629edd84a192f87d2251099a9a5de">&#9670;&nbsp;</a></span>WriteDataLog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -572,7 +572,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">virtual void IRadiation::WriteDataLog </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>time</em></td><td>)</td>
           <td></td>
         </tr>
@@ -584,7 +584,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classRadiation.html#a8d50b34d1c0b2a55755d483ddfb3d059">Radiation</a>.</p>
+<p>Implemented in <a class="el" href="classRadiation.html#ad434f3103b92b044bf69fd380b2f34b9">Radiation</a>.</p>
 
 </div>
 </div>

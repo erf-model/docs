@@ -9,7 +9,7 @@ var ERF__Utils_8H =
     [ "enforceInOutSolvability", "ERF__Utils_8H.html#af201d25507c085bccb92d2dc74c3cb90", null ],
     [ "enforceInOutSolvability_bdy", "ERF__Utils_8H.html#a8a4cb18ee065a40fbb1a1ee1d6985315", null ],
     [ "ERFPostProcessBaseGrids", "ERF__Utils_8H.html#aa333d30d88adfbad5d860b704845f857", null ],
-    [ "fine_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a666ef6030bc3baa94198a32754fc65f2", null ],
+    [ "fine_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a980857d0da78387b8b54ce93246f19fe", null ],
     [ "make_areas", "ERF__Utils_8H.html#afd5f5cf174d096726815e6d7dc325c41", null ],
     [ "make_J", "ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea", null ],
     [ "make_qt", "ERF__Utils_8H.html#afe3f26a0804dbe21b32ba33a0a219d6e", null ],
@@ -17,12 +17,12 @@ var ERF__Utils_8H =
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
     [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
-    [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a73738a30ce92bd769de3a232020314c1", null ],
+    [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a054e8506d03c1d3224cdb4dc6a3e151f", null ],
     [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447", null ],
     [ "realbdy_interior_bxs_xy", "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588", null ],
     [ "rebalance_columns", "ERF__Utils_8H.html#ae225e4f52add30497d0d93371f045e3d", null ],
     [ "thinbody_wall_dist", "ERF__Utils_8H.html#a99650b0d59ae9542586a873ea8ac142e", null ],
-    [ "Time_Avg_Vel_atCC", "ERF__Utils_8H.html#ac3d734b65fd91857925d381c476e7965", null ],
+    [ "Time_Avg_Vel_atCC", "ERF__Utils_8H.html#abc0c2271844c330847fe737ed8ab9a68", null ],
     [ "VelocityToMomentum", "ERF__Utils_8H.html#a2e5e0e7af417da64f77e0778ed824bf9", null ],
-    [ "WeatherDataInterpolation", "ERF__Utils_8H.html#a5e9ed0fa2cb7a711f00c2c8566c71d89", null ]
+    [ "WeatherDataInterpolation", "ERF__Utils_8H.html#a05d64b70fcd8d62e0946cc27a429ab69", null ]
 ];

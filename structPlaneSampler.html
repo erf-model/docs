@@ -113,8 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1f71b67544dbc9c4cba7d11bc5e5b45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9a09812ff412cf39a9b999f688c1d76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data</a> (amrex::Vector&lt; amrex::Geometry &gt; &amp;geom, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars_new)</td></tr>
 <tr class="separator:ae9a09812ff412cf39a9b999f688c1d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15a2f73a0f2c792eea9cd6725aeb5931"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data</a> (amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;time, amrex::Vector&lt; int &gt; &amp;level_steps, amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio, amrex::Vector&lt; amrex::Geometry &gt; &amp;geom)</td></tr>
-<tr class="separator:a15a2f73a0f2c792eea9cd6725aeb5931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47d485269a664d190e81d64babf0bbfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data</a> (amrex::Vector&lt; double &gt; &amp;time, amrex::Vector&lt; int &gt; &amp;level_steps, amrex::Vector&lt; amrex::IntVect &gt; &amp;ref_ratio, amrex::Vector&lt; amrex::Geometry &gt; &amp;geom)</td></tr>
+<tr class="separator:a47d485269a664d190e81d64babf0bbfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -573,7 +573,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;        <span class="keywordflow">return</span> amrex::Box(slice_lo, slice_hi) &amp; geom.Domain();</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, and <a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -581,14 +581,14 @@ Here is the caller graph for this function:</div>
 <map name="astructPlaneSampler_a1f71b67544dbc9c4cba7d11bc5e5b45d_icgraph" id="astructPlaneSampler_a1f71b67544dbc9c4cba7d11bc5e5b45d_icgraph">
 <area shape="rect" title=" " alt="" coords="285,35,488,61"/>
 <area shape="rect" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76" title=" " alt="" coords="5,5,237,32"/>
-<area shape="rect" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931" title=" " alt="" coords="45,57,198,98"/>
+<area shape="rect" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb" title=" " alt="" coords="45,57,198,98"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a15a2f73a0f2c792eea9cd6725aeb5931"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15a2f73a0f2c792eea9cd6725aeb5931">&#9670;&nbsp;</a></span>write_sample_data()</h2>
+<a id="a47d485269a664d190e81d64babf0bbfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47d485269a664d190e81d64babf0bbfb">&#9670;&nbsp;</a></span>write_sample_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,7 +599,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void PlaneSampler::write_sample_data </td>
           <td>(</td>
-          <td class="paramtype">amrex::Vector&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">amrex::Vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>time</em>, </td>
         </tr>
         <tr>
@@ -638,7 +638,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;            <span class="comment">// Data members that can be used as-is</span></div>
 <div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>[iplane];</div>
 <div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            <span class="keywordtype">int</span> lev = <a class="code" href="structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4">m_lev</a>[iplane];</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> m_time = time[lev];</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            <span class="keywordtype">double</span> m_time = time[lev];</div>
 <div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;            amrex::Vector&lt;int&gt; m_level_steps = {level_steps[lev]};</div>
 <div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;            amrex::Vector&lt;amrex::IntVect&gt; m_ref_ratio  = {ref_ratio[lev]};</div>
 <div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
@@ -667,7 +667,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160; </div>
 <div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;            <span class="comment">// Write each plane</span></div>
 <div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            WriteMultiLevelPlotfile(plotfilename, 1, mf,</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                                    <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, m_geom, m_time,</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                                    <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, m_geom, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(m_time),</div>
 <div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                                    m_level_steps, m_ref_ratio);</div>
 <div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        } <span class="comment">// iplane</span></div>
 <div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    }</div>
@@ -676,8 +676,8 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structPlaneSampler_a15a2f73a0f2c792eea9cd6725aeb5931_cgraph.png" border="0" usemap="#astructPlaneSampler_a15a2f73a0f2c792eea9cd6725aeb5931_cgraph" alt=""/></div>
-<map name="astructPlaneSampler_a15a2f73a0f2c792eea9cd6725aeb5931_cgraph" id="astructPlaneSampler_a15a2f73a0f2c792eea9cd6725aeb5931_cgraph">
+<div class="center"><img src="structPlaneSampler_a47d485269a664d190e81d64babf0bbfb_cgraph.png" border="0" usemap="#astructPlaneSampler_a47d485269a664d190e81d64babf0bbfb_cgraph" alt=""/></div>
+<map name="astructPlaneSampler_a47d485269a664d190e81d64babf0bbfb_cgraph" id="astructPlaneSampler_a47d485269a664d190e81d64babf0bbfb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,159,47"/>
 <area shape="rect" href="structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d" title=" " alt="" coords="207,13,409,39"/>
 </map>
@@ -698,7 +698,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
 
 </div>
 </div>
@@ -714,7 +714,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
 
 </div>
 </div>
@@ -730,7 +730,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
 
 </div>
 </div>
@@ -746,7 +746,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
 
 </div>
 </div>
@@ -762,7 +762,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
 
 </div>
 </div>
@@ -778,7 +778,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a15a2f73a0f2c792eea9cd6725aeb5931">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
 
 </div>
 </div>

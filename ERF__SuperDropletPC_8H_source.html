@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        SuperDropletPC (  amrex::ParGDBBase* a_gdb,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Species::Name&gt;&amp; a_species_mat,</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Species::Name&gt;&amp; a_aerosol_mat,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dt,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">double</span> a_dt,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                          <span class="keyword">const</span> std::string&amp; a_name = <span class="stringliteral">&quot;super_droplets&quot;</span> )</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                      : ERFPC (a_gdb, a_name)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                          <span class="keyword">const</span> amrex::BoxArray&amp; a_ba,</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Species::Name&gt;&amp; a_species_mat,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Species::Name&gt;&amp; a_aerosol_mat,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                          <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dt,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">double</span> a_dt,</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                          <span class="keyword">const</span> std::string&amp; a_name = <span class="stringliteral">&quot;super_droplets&quot;</span> )</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                      : ERFPC (a_geom, a_dmap, a_ba, a_name)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
@@ -242,12 +242,12 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                     <span class="keyword">const</span> <span class="keywordtype">int</span> ) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">        /*! \brief Initialize super-droplets in domain at AMR level a_lev */</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">void</span> InitializeParticles (<span class="keyword">const</span> <span class="keywordtype">int</span> a_lev, <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_t, <span class="keyword">const</span> MFPtr&amp; a_ptr);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">void</span> InitializeParticles (<span class="keyword">const</span> <span class="keywordtype">int</span> a_lev, <span class="keyword">const</span> <span class="keywordtype">double</span> a_t, <span class="keyword">const</span> MFPtr&amp; a_ptr);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keyword">using</span> ERFPC::InitializeParticles;</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">        /*! \brief Inject super-droplets in domain */</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> InjectParticles (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, <span class="keyword">const</span> MFPtr&amp; a_ptr, <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> InjectParticles (<span class="keyword">const</span> <span class="keywordtype">double</span>, <span class="keyword">const</span> MFPtr&amp; a_ptr, <span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">        /*! \brief add particles for a given set of initialization parameters */</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordtype">void</span> addParticles ( <span class="keywordtype">int</span> a_lev, <span class="keyword">const</span> MFPtr&amp;, <span class="keyword">const</span> <a class="code" href="classSDInitProperties.html">SDInitProperties</a>&amp; );</div>
@@ -280,7 +280,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">        /*! \brief Evolve particles for one time step */</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> EvolveParticles ( <span class="keywordtype">int</span>,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                       <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                                       <span class="keywordtype">double</span>,</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                                       amrex::Vector&lt;amrex::Vector&lt;amrex::MultiFab&gt;&gt;&amp;,</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                       <span class="keyword">const</span> amrex::Vector&lt;MFPtr&gt;&amp; )<span class="keyword"> override</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keyword">        </span>{</div>
@@ -289,8 +289,8 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">        /*! \brief Advect particles for one time step */</span></div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> AdvectParticles (   <span class="keywordtype">int</span> a_lev,</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_time,</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dt,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                         <span class="keywordtype">double</span> a_time,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                         <span class="keywordtype">double</span> a_dt,</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                                         <span class="keyword">const</span> amrex::MultiFab* <span class="keyword">const</span> a_flow_vel,</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                         <span class="keyword">const</span> amrex::MultiFab&amp; a_density,</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                                         <span class="keyword">const</span> amrex::MultiFab&amp; a_pressure,</div>
@@ -301,7 +301,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">        /*! \brief Grow/shrink particles for one time step */</span></div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> MassChange (   <span class="keywordtype">int</span> a_lev,</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dt,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                    <span class="keywordtype">double</span> a_dt,</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                    <span class="keyword">const</span> Species::Name&amp; a_vap_name,</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                    <span class="keyword">const</span> amrex::MultiFab&amp; a_temperature,</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                    <span class="keyword">const</span> amrex::MultiFab&amp; a_pressure,</div>
@@ -312,7 +312,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">        /*! \brief Coalescence of super-droplets */</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> Coalescence (  <span class="keywordtype">int</span> a_lev,</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dt,</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                    <span class="keywordtype">double</span> a_dt,</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                                    <span class="keyword">const</span> amrex::MultiFab&amp; a_pressure,</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                    <span class="keyword">const</span> amrex::MultiFab&amp; a_temperature);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"></span> </div>
@@ -320,7 +320,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> Recycle ( <span class="keyword">const</span> <span class="keywordtype">int</span> a_lev,</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                               <span class="keyword">const</span> amrex::Vector&lt;MFPtr&gt;&amp; a_z_phys_nd,</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">int</span> a_iter,</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                               <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> a_dt,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">double</span> a_dt,</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                               <span class="keyword">const</span> <span class="keywordtype">bool</span> a_recycle);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">        /*! \brief Return the number of super-droplets</span></div>
@@ -337,7 +337,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        [[nodiscard]] <span class="keyword">virtual</span> amrex::Long NumSDDeactivated ();</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment">        /*! \brief Compute and print diagnostics */</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> Diagnostics (<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, <span class="keywordtype">bool</span>);<span class="comment"></span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> Diagnostics (<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">double</span>, <span class="keywordtype">bool</span>);<span class="comment"></span></div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">        /*! \brief Compute mass density distribution */</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> ComputeDistributions (  <span class="keywordtype">int</span>, <span class="keywordtype">int</span>,</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                                             amrex::ParticleReal,</div>
@@ -622,7 +622,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        }</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;<span class="comment">        /*! \brief read inputs from file */</span></div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readInputs (<span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>);</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readInputs (<span class="keyword">const</span> <span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;<span class="comment">        /*! \brief Particle initialization - null (no particles are initialized) */</span></div>
 <div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        <span class="keywordtype">void</span> initializeParticlesNull (<span class="keyword">const</span> MFPtr&amp;) { }</div>
@@ -634,7 +634,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPC_8H_source.html',''
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                      <span class="keyword">const</span> std::vector&lt;Species::Name&gt;&amp;,</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                      <span class="keyword">const</span> amrex::BoxArray&amp;,</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                      <span class="keyword">const</span> amrex::DistributionMapping&amp;,</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                      <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> );</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">double</span> );</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="comment">        /*! \brief add super-droplet method-specific particle attributes */</span></div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <span class="keywordtype">void</span> add_superdroplet_attributes();</div>

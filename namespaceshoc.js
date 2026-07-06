@@ -11,7 +11,7 @@ var namespaceshoc =
       [ "Host", "namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419dbac2ca16d048ec66e04bca283eab048ec2", null ],
       [ "Device", "namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419dbae0ac20adce6ffee48c7151b070aa5737", null ]
     ] ],
-    [ "apply_energy_fix_column", "namespaceshoc.html#a2a22f13b7612dc66b621b94059d3fd7f", null ],
+    [ "apply_energy_fix_column", "namespaceshoc.html#a9ec4609772a1c7b71c8eeb44fd84ac47", null ],
     [ "condensate_latent_heat", "namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e", null ],
     [ "default_init_run_on", "namespaceshoc.html#aefd267cac0eb62ad46ec5190278a19bb", null ],
     [ "diagnose_active_top", "namespaceshoc.html#a54869a642372eb758c54218d9250998e", null ],

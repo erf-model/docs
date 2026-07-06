@@ -496,10 +496,10 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
 <div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160; </div>
 <div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;        <span class="comment">// Read the rotational time period (in seconds)</span></div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rot_time_period = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(86400.0);</div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;        <span class="keywordtype">double</span> rot_time_period = 86400.0;</div>
 <div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;rotational_time_period&quot;</span>, rot_time_period);</div>
 <div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160; </div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;        <a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> / rot_time_period;</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;        <a class="code" href="structSolverChoice.html#a1163778ed56af6977001ef4ec55a3da3">coriolis_factor</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(4.0 * <a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> / rot_time_period);</div>
 <div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160; </div>
 <div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;        <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;coriolis_3d&quot;</span>, <a class="code" href="structSolverChoice.html#a7e93900ec3e84826fcf1e02435bdae42">coriolis_3d</a>);</div>
 <div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160; </div>
@@ -533,7 +533,6 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;            }</div>
 <div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;        }</div>
 <div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:37</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -1716,6 +1715,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;            }</div>
 <div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;        }</div>
 <div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:53</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:42</div></div>
@@ -2002,7 +2002,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;        <a class="code" href="structSolverChoice.html#a1952672901901b0b3a628f2298dc72c2">mesh_type</a> = new_mesh_type;</div>
 <div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a87029aa760a2a5ca3031ad3aca7b6845">ERF::check_mesh_type()</a>, and <a class="el" href="classProblemBase.html#a4610ff72fc2c1defc2e7fff1dd148fb0">ProblemBase::init_custom_terrain()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a87029aa760a2a5ca3031ad3aca7b6845">ERF::check_mesh_type()</a>, and <a class="el" href="classProblemBase.html#a76741b171f25de7cfdff5ba60962a81b">ProblemBase::init_custom_terrain()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2010,7 +2010,7 @@ Here is the caller graph for this function:</div>
 <map name="astructSolverChoice_afb997b932bbc5dfb58145ea90580d518_icgraph" id="astructSolverChoice_afb997b932bbc5dfb58145ea90580d518_icgraph">
 <area shape="rect" title=" " alt="" coords="245,35,460,61"/>
 <area shape="rect" href="classERF.html#a87029aa760a2a5ca3031ad3aca7b6845" title=" " alt="" coords="16,5,187,32"/>
-<area shape="rect" href="classProblemBase.html#a4610ff72fc2c1defc2e7fff1dd148fb0" title=" " alt="" coords="5,57,197,98"/>
+<area shape="rect" href="classProblemBase.html#a76741b171f25de7cfdff5ba60962a81b" title=" " alt="" coords="5,57,197,98"/>
 </map>
 </div>
 
@@ -2104,14 +2104,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structSolverChoice.html#a3e3a9d5a9f2c670b8381457643a25351">pert_type</a>[lev] == PerturbationType::Source;</div>
 <div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structSolverChoice_acf4c5dd32f370ff1b4a34be383362ac6_icgraph.png" border="0" usemap="#astructSolverChoice_acf4c5dd32f370ff1b4a34be383362ac6_icgraph" alt=""/></div>
 <map name="astructSolverChoice_acf4c5dd32f370ff1b4a34be383362ac6_icgraph" id="astructSolverChoice_acf4c5dd32f370ff1b4a34be383362ac6_icgraph">
 <area shape="rect" title=" " alt="" coords="168,5,356,47"/>
-<area shape="rect" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302" title=" " alt="" coords="5,13,120,39"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1" title=" " alt="" coords="5,13,120,39"/>
 </map>
 </div>
 
@@ -2191,7 +2191,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2223,7 +2223,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2239,7 +2239,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aaad87d9eb7e20af21deb83d72f94801c">ERF::ComputeGhostCells()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#aaad87d9eb7e20af21deb83d72f94801c">ERF::ComputeGhostCells()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2255,7 +2255,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55">make_gradp_pert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55">make_gradp_pert()</a>.</p>
 
 </div>
 </div>
@@ -2271,7 +2271,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classSAM.html#aba6460f2d34882d6b512574106e44531">SAM::Define()</a>, <a class="el" href="classWSM6.html#a7e92c6df4e36079c14f923013bcf5897">WSM6::Define()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classSAM.html#aba6460f2d34882d6b512574106e44531">SAM::Define()</a>, <a class="el" href="classWSM6.html#a7e92c6df4e36079c14f923013bcf5897">WSM6::Define()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2343,7 +2343,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2439,7 +2439,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2455,7 +2455,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2471,7 +2471,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2503,7 +2503,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2519,7 +2519,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2535,7 +2535,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2551,7 +2551,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2583,7 +2583,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2599,7 +2599,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2615,7 +2615,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2631,7 +2631,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2647,7 +2647,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a43bbadbb650272e16e1fece3481e14ea">ImplicitDiffForMomLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#a1ec64941f287bff89ba13df4a91ca1ed">ImplicitDiffForMomLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a98b6a108617a781137a6062fad33522d">ImplicitDiffForMomLU_T()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a34be6d2f34055a373d8cf1973ee29cd3">ImplicitDiffForMomLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#a65edc6729b12b3ebca672b600f1e7925">ImplicitDiffForMomLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a6619699bef86ca6199497c32f4cbd763">ImplicitDiffForMomLU_T()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2663,7 +2663,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2679,7 +2679,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2695,7 +2695,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2727,7 +2727,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>, <a class="el" href="ERF__DiffusionSrcForState__EB_8cpp.html#adca17a55401059db793d18cd33fd0300">DiffusionSrcForState_EB()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555">DiffusionSrcForMom_EB()</a>, <a class="el" href="ERF__DiffusionSrcForState__EB_8cpp.html#adca17a55401059db793d18cd33fd0300">DiffusionSrcForState_EB()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2775,7 +2775,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2807,7 +2807,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2823,7 +2823,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -2855,7 +2855,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a2a2abfe252d2fcb76d56837c012c8da3">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a17ea433e5ac4a06634f4ececd7851fe2">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>.</p>
 
 </div>
 </div>
@@ -2887,7 +2887,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2935,7 +2935,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -2983,7 +2983,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3095,7 +3095,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -3111,7 +3111,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3127,7 +3127,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3143,7 +3143,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3159,7 +3159,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3175,7 +3175,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3191,7 +3191,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -3207,7 +3207,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3223,7 +3223,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3255,7 +3255,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -3271,7 +3271,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -3303,7 +3303,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -3327,7 +3327,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#a326abba6c87419436708a8438363aa83">ERF::ComputeGlobalMinLocation_WRF()</a>, <a class="el" href="classERF.html#a1558cbc105c21cd791446cfd67280c55">ERF::HurricaneEyeTrackerInitial_WRF()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a326abba6c87419436708a8438363aa83">ERF::ComputeGlobalMinLocation_WRF()</a>, <a class="el" href="classERF.html#a1558cbc105c21cd791446cfd67280c55">ERF::HurricaneEyeTrackerInitial_WRF()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3391,7 +3391,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aa6cf977ffd6c44796696c0b72f7a0e73">ERF::ApplyOceanSurfaceState()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="classRadiation.html#a24e38c9089cbbec5e990a86b52196b41">Radiation::Radiation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a840e710c6e41d3a75ea49260556b9f6c">ERF::ApplyOceanSurfaceState()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="classRadiation.html#a24e38c9089cbbec5e990a86b52196b41">Radiation::Radiation()</a>.</p>
 
 </div>
 </div>
@@ -3407,7 +3407,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -3423,7 +3423,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -3447,7 +3447,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#a92c79576700b79f51fafa9059dd68ac2">ERF::AverageDownTo()</a>, <a class="el" href="classERF.html#a87029aa760a2a5ca3031ad3aca7b6845">ERF::check_mesh_type()</a>, <a class="el" href="classERF.html#a757e8303ce8ed936c05f559349f10aa5">ERF::compute_divergence()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a160f930429f773f474fa8f7f4553371c">compute_gradp_interpz()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, <a class="el" href="namespaceplotfile2d.html#a73b508fe540950bde5d2c9ebb8725f70">plotfile2d::fill_condensed_water_paths()</a>, <a class="el" href="classProblemBase.html#a4610ff72fc2c1defc2e7fff1dd148fb0">ProblemBase::init_custom_terrain()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="classERF.html#a90705b531d560f1d3e314b6c61288942">ERF::init_zphys()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, <a class="el" href="classERF.html#ac81ec7f74a1be1c4a1e6e15e08385ed5">ERF::make_physbcs()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>, <a class="el" href="classERF.html#abb6175c28b36d23f5dda2994ca4a85e7">ERF::MakeNewLevelFromCoarse()</a>, <a class="el" href="classERF.html#a92bdd1e6da8e1a976b8500d94eafce27">ERF::post_timestep()</a>, <a class="el" href="classERF.html#a77cd5f4e646dcd425408fe6b72f209b0">ERF::read_box_for_refinement()</a>, <a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ERF::ReadCheckpointFile()</a>, <a class="el" href="classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d">ERF::RemakeLevel()</a>, <a class="el" href="structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518">set_mesh_type()</a>, <a class="el" href="classERF.html#a378a97217db96ad544b8b8026ce01cae">ERF::sum_derived_quantities()</a>, <a class="el" href="classERF.html#aacd3d437c7c10da5023c1ddb2a4381d4">ERF::sum_energy_quantities()</a>, <a class="el" href="classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692">ERF::update_terrain_arrays()</a>, <a class="el" href="classERF.html#a1b601757b2d24225cf9e7980e9a16c51">ERF::volWgtColumnSum()</a>, <a class="el" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">ERF::volWgtSumMF()</a>, <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, <a class="el" href="classERF.html#ad101fd46096db2d6b21544bfede6551f">ERF::WriteCheckpointFile()</a>, and <a class="el" href="ERF__NCPlotFile_8cpp.html#ab16311a8f1a47b98690989b21e3e4704">writeNCPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a92c79576700b79f51fafa9059dd68ac2">ERF::AverageDownTo()</a>, <a class="el" href="classERF.html#a87029aa760a2a5ca3031ad3aca7b6845">ERF::check_mesh_type()</a>, <a class="el" href="classERF.html#a757e8303ce8ed936c05f559349f10aa5">ERF::compute_divergence()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a160f930429f773f474fa8f7f4553371c">compute_gradp_interpz()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, <a class="el" href="namespaceplotfile2d.html#a73b508fe540950bde5d2c9ebb8725f70">plotfile2d::fill_condensed_water_paths()</a>, <a class="el" href="classProblemBase.html#a76741b171f25de7cfdff5ba60962a81b">ProblemBase::init_custom_terrain()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="classERF.html#ad7690316d75e4c2af0d94d9149e93c96">ERF::init_zphys()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, <a class="el" href="classERF.html#ac81ec7f74a1be1c4a1e6e15e08385ed5">ERF::make_physbcs()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>, <a class="el" href="classERF.html#abb6175c28b36d23f5dda2994ca4a85e7">ERF::MakeNewLevelFromCoarse()</a>, <a class="el" href="classERF.html#a204b0231cdffb83c772ac8f0d140e664">ERF::post_timestep()</a>, <a class="el" href="classERF.html#a77cd5f4e646dcd425408fe6b72f209b0">ERF::read_box_for_refinement()</a>, <a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ERF::ReadCheckpointFile()</a>, <a class="el" href="classERF.html#aae7a3a76e08e54c618cf79b30ed2d73d">ERF::RemakeLevel()</a>, <a class="el" href="structSolverChoice.html#afb997b932bbc5dfb58145ea90580d518">set_mesh_type()</a>, <a class="el" href="classERF.html#a378a97217db96ad544b8b8026ce01cae">ERF::sum_derived_quantities()</a>, <a class="el" href="classERF.html#aacd3d437c7c10da5023c1ddb2a4381d4">ERF::sum_energy_quantities()</a>, <a class="el" href="classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692">ERF::update_terrain_arrays()</a>, <a class="el" href="classERF.html#a1b601757b2d24225cf9e7980e9a16c51">ERF::volWgtColumnSum()</a>, <a class="el" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">ERF::volWgtSumMF()</a>, <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>, <a class="el" href="classERF.html#ad101fd46096db2d6b21544bfede6551f">ERF::WriteCheckpointFile()</a>, and <a class="el" href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile()</a>.</p>
 
 </div>
 </div>
@@ -3463,7 +3463,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="namespaceplotfile2d.html#a16831e12f54effa1464aec611c228712">plotfile2d::active_condensed_water_path_descriptors()</a>, <a class="el" href="namespaceplotfile2d.html#a9c30ab2b82e9a275c74b5e81348e6e05">plotfile2d::available_diagnostic_names()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a2a2abfe252d2fcb76d56837c012c8da3">ComputeTurbulentViscosity()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="classERF.html#a9ad2598ce05cb9da16f93d0b4620e1a4">ERF::PackAtmosphericStates()</a>, and <a class="el" href="namespaceplotfile2d.html#aa82b17461180193f9227396c88f656c6">plotfile2d::selected_condensed_water_path_components()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceplotfile2d.html#a16831e12f54effa1464aec611c228712">plotfile2d::active_condensed_water_path_descriptors()</a>, <a class="el" href="namespaceplotfile2d.html#a9c30ab2b82e9a275c74b5e81348e6e05">plotfile2d::available_diagnostic_names()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a17ea433e5ac4a06634f4ececd7851fe2">ComputeTurbulentViscosity()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="classERF.html#af82d4444df8cea53f3bbb627b884e265">ERF::PackAtmosphericStates()</a>, and <a class="el" href="namespaceplotfile2d.html#aa82b17461180193f9227396c88f656c6">plotfile2d::selected_condensed_water_path_components()</a>.</p>
 
 </div>
 </div>
@@ -3495,7 +3495,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Morrison::Advance()</a>, <a class="el" href="classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef">Kessler::AdvanceKessler()</a>, <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998">SAM::Cloud()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#ab2e1939a94cfb005f622b9ed30c8548f">ERF::HurricaneEyeTracker_WRF()</a>, <a class="el" href="classSAM.html#a363b3bb27b6e6cdad8693363b3262419">SAM::IceFall()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55">make_gradp_pert()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>, <a class="el" href="classERF.html#a9ad2598ce05cb9da16f93d0b4620e1a4">ERF::PackAtmosphericStates()</a>, <a class="el" href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c">SAM::Precip()</a>, <a class="el" href="classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b">SAM::PrecipFall()</a>, and <a class="el" href="classRadiation.html#a24e38c9089cbbec5e990a86b52196b41">Radiation::Radiation()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classMorrison.html#a14321f6398d7555cc4bcb02dae4b0be1">Morrison::Advance()</a>, <a class="el" href="classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef">Kessler::AdvanceKessler()</a>, <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="classSAM.html#a48d25f57da2ba1d7ddb503ede0b8d998">SAM::Cloud()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#ab2e1939a94cfb005f622b9ed30c8548f">ERF::HurricaneEyeTracker_WRF()</a>, <a class="el" href="classSAM.html#a363b3bb27b6e6cdad8693363b3262419">SAM::IceFall()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55">make_gradp_pert()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>, <a class="el" href="classERF.html#af82d4444df8cea53f3bbb627b884e265">ERF::PackAtmosphericStates()</a>, <a class="el" href="classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c">SAM::Precip()</a>, <a class="el" href="classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b">SAM::PrecipFall()</a>, and <a class="el" href="classRadiation.html#a24e38c9089cbbec5e990a86b52196b41">Radiation::Radiation()</a>.</p>
 
 </div>
 </div>
@@ -3543,7 +3543,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3559,7 +3559,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3639,7 +3639,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3703,7 +3703,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a261513d94d9fb4fdfe03b9778d53c590">build_coriolis_forcings_const_lat()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -3743,7 +3743,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3759,7 +3759,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3775,7 +3775,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3831,7 +3831,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#a92c79576700b79f51fafa9059dd68ac2">ERF::AverageDownTo()</a>, <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="classERF.html#aaad87d9eb7e20af21deb83d72f94801c">ERF::ComputeGhostCells()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a2a2abfe252d2fcb76d56837c012c8da3">ComputeTurbulentViscosity()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55">make_gradp_pert()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>, <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>, <a class="el" href="classERF.html#a87d5810a51d3eee73be510665803e68c">ERF::setSubVolVariables()</a>, <a class="el" href="classERF.html#a419510fced05e9afc05c466beeeb66f7">ERF::update_diffusive_arrays()</a>, <a class="el" href="classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692">ERF::update_terrain_arrays()</a>, and <a class="el" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">ERF::volWgtSumMF()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a92c79576700b79f51fafa9059dd68ac2">ERF::AverageDownTo()</a>, <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="classERF.html#aaad87d9eb7e20af21deb83d72f94801c">ERF::ComputeGhostCells()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a17ea433e5ac4a06634f4ececd7851fe2">ComputeTurbulentViscosity()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55">make_gradp_pert()</a>, <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>, <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>, <a class="el" href="classERF.html#a87d5810a51d3eee73be510665803e68c">ERF::setSubVolVariables()</a>, <a class="el" href="classERF.html#a419510fced05e9afc05c466beeeb66f7">ERF::update_diffusive_arrays()</a>, <a class="el" href="classERF.html#a7dba7f9e6bd3f6898fac9ac2efcec692">ERF::update_terrain_arrays()</a>, and <a class="el" href="classERF.html#a95d6b706cdf0192a149b5f1aa3239800">ERF::volWgtSumMF()</a>.</p>
 
 </div>
 </div>
@@ -3879,7 +3879,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -3911,7 +3911,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a2a2abfe252d2fcb76d56837c012c8da3">ComputeTurbulentViscosity()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a43bbadbb650272e16e1fece3481e14ea">ImplicitDiffForMomLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#a1ec64941f287bff89ba13df4a91ca1ed">ImplicitDiffForMomLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a98b6a108617a781137a6062fad33522d">ImplicitDiffForMomLU_T()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a17ea433e5ac4a06634f4ececd7851fe2">ComputeTurbulentViscosity()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a34be6d2f34055a373d8cf1973ee29cd3">ImplicitDiffForMomLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#a65edc6729b12b3ebca672b600f1e7925">ImplicitDiffForMomLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a6619699bef86ca6199497c32f4cbd763">ImplicitDiffForMomLU_T()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -3927,7 +3927,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -4007,7 +4007,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aaad87d9eb7e20af21deb83d72f94801c">ERF::ComputeGhostCells()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a9910f023406f71502d824607a01b1302">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#aaad87d9eb7e20af21deb83d72f94801c">ERF::ComputeGhostCells()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
 
 </div>
 </div>
@@ -4063,7 +4063,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>
@@ -4079,7 +4079,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#a6dcaff0d964c0de4086fee9aefcfa22c">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>, and <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
 
 </div>
 </div>
@@ -4095,7 +4095,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a8a2e25ce3b557babe33b56e0bf1f3a87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a2e5883e1031453671b8183d74885b38f">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a1b4945bc6faec2f160d3f7175a685f47">check_params()</a>, <a class="el" href="structSolverChoice.html#a1f02eb4a7e9ce2f0c675e8cbcc2de671">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a6378945d11fa630e1d2f1f2e9a86bc87">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#a005fd76f83b3ff409e3afcfbcae38ca9">erf_slow_rhs_pre()</a>, and <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">init_params()</a>.</p>
 
 </div>
 </div>

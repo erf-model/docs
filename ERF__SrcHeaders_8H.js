@@ -13,6 +13,6 @@ var ERF__SrcHeaders_8H =
     [ "compute_gradp_z", "ERF__SrcHeaders_8H.html#a59c38f0cb01f93b72b651193fde35876", null ],
     [ "make_buoyancy", "ERF__SrcHeaders_8H.html#a6338f4278c3585195dc868c848a9a90a", null ],
     [ "make_gradp_pert", "ERF__SrcHeaders_8H.html#a11ba280e018e32cdbd796f7960228363", null ],
-    [ "make_mom_sources", "ERF__SrcHeaders_8H.html#a6981f36df4fa905cdbab4fb98e614ca3", null ],
-    [ "make_sources", "ERF__SrcHeaders_8H.html#a19762814de609d90e4460899ef5258b3", null ]
+    [ "make_mom_sources", "ERF__SrcHeaders_8H.html#af24d5a727cdc22d30c3651d8251343a2", null ],
+    [ "make_sources", "ERF__SrcHeaders_8H.html#a6560ac3ed8842145ccfd4934a7336308", null ]
 ];
