@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"ERF__PoissonSolve_8cpp.html":[3,0,1,9,3],
+"ERF__PoissonSolve_8cpp.html#a45fcc96a9662a3c4b61ca1dde709c3cc":[3,0,1,9,3,1],
 "ERF__PoissonSolve_8cpp.html#a83ae28c3032a9f0c28e4a3f1cbe7340c":[3,0,1,9,3,0],
 "ERF__PoissonSolve__tb_8cpp.html":[3,0,1,9,4],
 "ERF__PoissonSolve__tb_8cpp.html#a943a93ec0af2857a30eff9346a3b1ad1":[3,0,1,9,4,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__ShocDriver_8H_source.html":[3,0,1,13,0,6],
 "ERF__ShocDriver_8cpp.html":[3,0,1,13,0,5],
 "ERF__ShocDriver_8cpp.html#a8d23b09e1c6bb55804efe36247ca4c96":[3,0,1,13,0,5,0],
-"ERF__ShocEnergyFixer_8H.html":[3,0,1,13,0,8],
-"ERF__ShocEnergyFixer_8H.html#a54869a642372eb758c54218d9250998e":[3,0,1,13,0,8,3],
-"ERF__ShocEnergyFixer_8H.html#a9ec4609772a1c7b71c8eeb44fd84ac47":[3,0,1,13,0,8,2]
+"ERF__ShocEnergyFixer_8H.html":[3,0,1,13,0,8]
 };

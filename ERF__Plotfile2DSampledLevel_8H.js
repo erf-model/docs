@@ -28,5 +28,6 @@ var ERF__Plotfile2DSampledLevel_8H =
     [ "sampled_level_error_prefix", "ERF__Plotfile2DSampledLevel_8H.html#afd832a5dc34b5f5d00610d7e87bb57bd", null ],
     [ "sampled_level_value_tag", "ERF__Plotfile2DSampledLevel_8H.html#aee93e5a77a0e1179387f786a491abaa1", null ],
     [ "sampled_output_name", "ERF__Plotfile2DSampledLevel_8H.html#afa858869cefcae6c300753f8e5e00abb", null ],
+    [ "validate_sampled_coordinate_string", "ERF__Plotfile2DSampledLevel_8H.html#a0870c996ba6fe9f5a6316dfe0ae8902c", null ],
     [ "validate_sampled_level_definition", "ERF__Plotfile2DSampledLevel_8H.html#a4f85e0a2ba93292c0044808aa4397e57", null ]
 ];

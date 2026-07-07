@@ -1,5 +1,7 @@
 var NAVTREEINDEX10 =
 {
+"ERF__ShocEnergyFixer_8H.html#a54869a642372eb758c54218d9250998e":[3,0,1,13,0,8,3],
+"ERF__ShocEnergyFixer_8H.html#a9ec4609772a1c7b71c8eeb44fd84ac47":[3,0,1,13,0,8,2],
 "ERF__ShocEnergyFixer_8H.html#acc20b19240ba5158554680570b07ecb8":[3,0,1,13,0,8,4],
 "ERF__ShocEnergyFixer_8H_source.html":[3,0,1,13,0,8],
 "ERF__ShocEnergyFixer_8cpp.html":[3,0,1,13,0,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX10 =
 "ERF__TerrainMetrics_8cpp.html#abdaf987793d80168d401a1c0c99d5f32":[3,0,1,20,33,1],
 "ERF__TerrainMetrics_8cpp.html#ac59abef116a0b274b84ab3d89771ef22":[3,0,1,20,33,2],
 "ERF__TerrainMetrics_8cpp.html#acc28d890df44cf0082a848c057042178":[3,0,1,20,33,6],
-"ERF__TerrainPoisson_8H.html":[3,0,1,9,12],
-"ERF__TerrainPoisson_8H_source.html":[3,0,1,9,12],
-"ERF__TerrainPoisson_8cpp.html":[3,0,1,9,11]
+"ERF__TerrainPoisson_8H.html":[3,0,1,9,12]
 };

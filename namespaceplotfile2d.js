@@ -148,6 +148,7 @@ var namespaceplotfile2d =
     [ "select_requested_sampled_fields", "namespaceplotfile2d.html#a33e87e37e46571ae03b5e734fa67e542", null ],
     [ "selected_condensed_water_path_components", "namespaceplotfile2d.html#aa82b17461180193f9227396c88f656c6", null ],
     [ "use_native_shoc_consumed_flux_source", "namespaceplotfile2d.html#ae14d48ee048d2f29c1aaa3584d03f5ff", null ],
+    [ "validate_sampled_coordinate_string", "namespaceplotfile2d.html#a0870c996ba6fe9f5a6316dfe0ae8902c", null ],
     [ "validate_sampled_level_definition", "namespaceplotfile2d.html#a4f85e0a2ba93292c0044808aa4397e57", null ],
     [ "write_2d_metadata_json", "namespaceplotfile2d.html#ab49bbfc634d4902729c81f47c151ea9e", null ],
     [ "write_2d_metadata_json", "namespaceplotfile2d.html#a3cb713ad6ffd9acc8994764bed842098", null ],

@@ -43,7 +43,7 @@ var ERF__Constants_8H =
     [ "lat_vap", "ERF__Constants_8H.html#a1a4a1b5aaf1d37a8a175a7b7177e9e2c", null ],
     [ "lcond", "ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518", null ],
     [ "lfus", "ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd", null ],
-    [ "lsm_flux_undefined", "ERF__Constants_8H.html#a994e1de1a0375ce3676f9c6ffaee2a06", null ],
+    [ "lsm_undefined", "ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017", null ],
     [ "lsub", "ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d", null ],
     [ "muelq", "ERF__Constants_8H.html#a0e5683feac33352111ce4445dbedbf45", null ],
     [ "mwdair", "ERF__Constants_8H.html#a650da208ce885c0f6c9c742d26dc4b0e", null ],

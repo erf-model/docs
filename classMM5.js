@@ -8,7 +8,7 @@ var classMM5 =
     [ "ComputeFluxes", "classMM5.html#a109a5f7a252a6ab6c8e5373ca68c32fb", null ],
     [ "ComputeTsurf", "classMM5.html#a9fc8c9cf8b165b28583be7bb7e8ac7c3", null ],
     [ "Define", "classMM5.html#aca75345d5bf1a5ef4ce434047cc70437", null ],
-    [ "Init", "classMM5.html#a86b1b6da2d6ec06d486b3e581f5d370b", null ],
+    [ "Init", "classMM5.html#a881d0e87841b76b0aa23304983bcbfc1", null ],
     [ "Lsm_Data_Ptr", "classMM5.html#a50c02933780293bdb6dfea8d88160947", null ],
     [ "Lsm_Data_Size", "classMM5.html#abf2c797ae56fc93043e999db11515a8a", null ],
     [ "Lsm_DataName", "classMM5.html#a52c204a200a8e02bd9624ced2830ff32", null ],

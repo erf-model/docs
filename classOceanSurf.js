@@ -5,7 +5,7 @@ var classOceanSurf =
     [ "~OceanSurf", "classOceanSurf.html#ad3d891cc432c734c0bc1430d0bf672c4", null ],
     [ "Advance", "classOceanSurf.html#a91157fd03cd1787bc3b618c5f75a3487", null ],
     [ "Define", "classOceanSurf.html#ae161d0d38de682b90a591da21030e6db", null ],
-    [ "Init", "classOceanSurf.html#aa708f2bd1070365dc69b6f5bee1ba527", null ],
+    [ "Init", "classOceanSurf.html#add0d3bf94affeaddad1bf2ea049a847f", null ],
     [ "Lsm_Data_Ptr", "classOceanSurf.html#a58124431809a02f5e915a2dcb88e9476", null ],
     [ "Lsm_Data_Size", "classOceanSurf.html#a4b02c9b0f7a8e4f7a1a3b00c16597180", null ],
     [ "Lsm_DataIndex", "classOceanSurf.html#aca703bb9b47c1c7bff336657eee08bb7", null ],
