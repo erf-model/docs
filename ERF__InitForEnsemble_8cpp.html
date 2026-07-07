@@ -166,12 +166,12 @@ Functions</h2></td></tr>
 <tr class="separator:a02d59c85d7c59d95bc4f3b8788f4de1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf6556afcdd8d4ac5579e32c72fa4c27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitForEnsemble_8cpp.html#abf6556afcdd8d4ac5579e32c72fa4c27">MakeFinalMultiFabs</a> (const MultiFab &amp;mf_cc_fine, MultiFab &amp;cons_pert, MultiFab &amp;xvel_pert, MultiFab &amp;yvel_pert, MultiFab &amp;zvel_pert)</td></tr>
 <tr class="separator:abf6556afcdd8d4ac5579e32c72fa4c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6d2d0ba77fe7b3e42cb8339606b0c9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitForEnsemble_8cpp.html#aa6d2d0ba77fe7b3e42cb8339606b0c9b">AddPertToBckgnd</a> (MultiFab &amp;mf_cc_fine, const MultiFab &amp;mf_cc_pert)</td></tr>
-<tr class="separator:aa6d2d0ba77fe7b3e42cb8339606b0c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2042fe63732a9e3b81dc3683f3338aae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitForEnsemble_8cpp.html#a2042fe63732a9e3b81dc3683f3338aae">AddPertToBckgnd</a> (MultiFab &amp;mf_cc_fine, const MultiFab &amp;mf_cc_pert, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &amp;ens_pert_amplitude)</td></tr>
+<tr class="separator:a2042fe63732a9e3b81dc3683f3338aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aa6d2d0ba77fe7b3e42cb8339606b0c9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6d2d0ba77fe7b3e42cb8339606b0c9b">&#9670;&nbsp;</a></span>AddPertToBckgnd()</h2>
+<a id="a2042fe63732a9e3b81dc3683f3338aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2042fe63732a9e3b81dc3683f3338aae">&#9670;&nbsp;</a></span>AddPertToBckgnd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -186,7 +186,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>mf_cc_pert</em>&#160;</td>
+          <td class="paramname"><em>mf_cc_pert</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>ens_pert_amplitude</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -195,27 +201,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;{</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf_cc_fine.nComp();</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="comment">// Optional safety check (recommended)</span></div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(mf_cc_pert.nComp() == ncomp);</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_cc_fine, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    {</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#acfb43d970ec485cfaa29f6803667a0cd">bg</a>   = mf_cc_fine.array(mfi);</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; pert = mf_cc_pert.const_array(mfi);</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(bx, ncomp,</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        {</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ens_amp = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.02)*std::abs(<a class="code" href="namespacemodule__mp__morr__two__moment.html#acfb43d970ec485cfaa29f6803667a0cd">bg</a>(i,j,k,n));</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            <a class="code" href="namespacemodule__mp__morr__two__moment.html#acfb43d970ec485cfaa29f6803667a0cd">bg</a>(i,j,k,n) += ens_amp*pert(i,j,k,n);</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        });</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    }</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;{</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf_cc_fine.nComp();</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="comment">// Optional safety check (recommended)</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(mf_cc_pert.nComp() == ncomp);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf_cc_fine, TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    {</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.tilebox();</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; <a class="code" href="namespacemodule__mp__morr__two__moment.html#acfb43d970ec485cfaa29f6803667a0cd">bg</a>   = mf_cc_fine.array(mfi);</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; pert = mf_cc_pert.const_array(mfi);</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(bx, ncomp,</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        {</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ens_amp = ens_pert_amplitude*std::abs(<a class="code" href="namespacemodule__mp__morr__two__moment.html#acfb43d970ec485cfaa29f6803667a0cd">bg</a>(i,j,k,n));</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;            <a class="code" href="namespacemodule__mp__morr__two__moment.html#acfb43d970ec485cfaa29f6803667a0cd">bg</a>(i,j,k,n) += ens_amp*pert(i,j,k,n);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        });</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    }</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -225,8 +231,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_cgraph.png" border="0" usemap="#aERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_cgraph" alt=""/></div>
-<map name="aERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_cgraph" id="aERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_cgraph">
+<div class="center"><img src="ERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_cgraph.png" border="0" usemap="#aERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_cgraph" alt=""/></div>
+<map name="aERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_cgraph" id="aERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,140,57"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="188,5,371,32"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="234,56,325,83"/>
@@ -235,8 +241,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_icgraph.png" border="0" usemap="#aERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_icgraph" alt=""/></div>
-<map name="aERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_icgraph" id="aERF__InitForEnsemble_8cpp_aa6d2d0ba77fe7b3e42cb8339606b0c9b_icgraph">
+<div class="center"><img src="ERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_icgraph.png" border="0" usemap="#aERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_icgraph" alt=""/></div>
+<map name="aERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_icgraph" id="aERF__InitForEnsemble_8cpp_a2042fe63732a9e3b81dc3683f3338aae_icgraph">
 <area shape="rect" title=" " alt="" coords="232,13,367,39"/>
 <area shape="rect" href="classERF.html#a504a6a2a4d68c9a82ae3f1a3436393f4" title=" " alt="" coords="5,5,184,47"/>
 </map>
