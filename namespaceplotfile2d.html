@@ -862,19 +862,19 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;{</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    amrex::Vector&lt;SampledLevelDefinition&gt; level_sets;</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; level_set_name : <a class="code" href="namespaceplotfile2d.html#a7c122b7b7d4a3a2a6c9ea5205614a10f">parse_requested_sampled_level_sets</a>(pp_prefix, which)) {</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        level_sets.push_back(<a class="code" href="namespaceplotfile2d.html#a315b9398730442d504fc848a492cc792">parse_sampled_level_definition</a>(level_set_name, pp_prefix));</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    }</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceplotfile2d.html#af9195a5eb19b3a9581aa7dca46a2d3cd">build_sampled_level_output_descriptors_from_definitions</a>(level_sets,</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                                                                   static_plot_vars,</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;                                                                   solver_choice);</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;}</div>
-<div class="ttc" id="anamespaceplotfile2d_html_a315b9398730442d504fc848a492cc792"><div class="ttname"><a href="namespaceplotfile2d.html#a315b9398730442d504fc848a492cc792">plotfile2d::parse_sampled_level_definition</a></div><div class="ttdeci">SampledLevelDefinition parse_sampled_level_definition(const std::string &amp;level_set_name, const std::string &amp;pp_prefix)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:290</div></div>
-<div class="ttc" id="anamespaceplotfile2d_html_a7c122b7b7d4a3a2a6c9ea5205614a10f"><div class="ttname"><a href="namespaceplotfile2d.html#a7c122b7b7d4a3a2a6c9ea5205614a10f">plotfile2d::parse_requested_sampled_level_sets</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; parse_requested_sampled_level_sets(const std::string &amp;pp_prefix, int which)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:348</div></div>
-<div class="ttc" id="anamespaceplotfile2d_html_af9195a5eb19b3a9581aa7dca46a2d3cd"><div class="ttname"><a href="namespaceplotfile2d.html#af9195a5eb19b3a9581aa7dca46a2d3cd">plotfile2d::build_sampled_level_output_descriptors_from_definitions</a></div><div class="ttdeci">amrex::Vector&lt; Plotfile2DOutputDescriptor &gt; build_sampled_level_output_descriptors_from_definitions(const amrex::Vector&lt; SampledLevelDefinition &gt; &amp;level_sets, const amrex::Vector&lt; std::string &gt; &amp;static_plot_vars, const SolverChoice &amp;solver_choice)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:366</div></div>
+<div class="fragment"><div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;{</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    amrex::Vector&lt;SampledLevelDefinition&gt; level_sets;</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; level_set_name : <a class="code" href="namespaceplotfile2d.html#a7c122b7b7d4a3a2a6c9ea5205614a10f">parse_requested_sampled_level_sets</a>(pp_prefix, which)) {</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        level_sets.push_back(<a class="code" href="namespaceplotfile2d.html#a315b9398730442d504fc848a492cc792">parse_sampled_level_definition</a>(level_set_name, pp_prefix));</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    }</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceplotfile2d.html#af9195a5eb19b3a9581aa7dca46a2d3cd">build_sampled_level_output_descriptors_from_definitions</a>(level_sets,</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;                                                                   static_plot_vars,</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;                                                                   solver_choice);</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;}</div>
+<div class="ttc" id="anamespaceplotfile2d_html_a315b9398730442d504fc848a492cc792"><div class="ttname"><a href="namespaceplotfile2d.html#a315b9398730442d504fc848a492cc792">plotfile2d::parse_sampled_level_definition</a></div><div class="ttdeci">SampledLevelDefinition parse_sampled_level_definition(const std::string &amp;level_set_name, const std::string &amp;pp_prefix)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:289</div></div>
+<div class="ttc" id="anamespaceplotfile2d_html_a7c122b7b7d4a3a2a6c9ea5205614a10f"><div class="ttname"><a href="namespaceplotfile2d.html#a7c122b7b7d4a3a2a6c9ea5205614a10f">plotfile2d::parse_requested_sampled_level_sets</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; parse_requested_sampled_level_sets(const std::string &amp;pp_prefix, int which)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:347</div></div>
+<div class="ttc" id="anamespaceplotfile2d_html_af9195a5eb19b3a9581aa7dca46a2d3cd"><div class="ttname"><a href="namespaceplotfile2d.html#af9195a5eb19b3a9581aa7dca46a2d3cd">plotfile2d::build_sampled_level_output_descriptors_from_definitions</a></div><div class="ttdeci">amrex::Vector&lt; Plotfile2DOutputDescriptor &gt; build_sampled_level_output_descriptors_from_definitions(const amrex::Vector&lt; SampledLevelDefinition &gt; &amp;level_sets, const amrex::Vector&lt; std::string &gt; &amp;static_plot_vars, const SolverChoice &amp;solver_choice)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:365</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a8494cd7a4f6dad7b19f239783f32465f">ERF::Write2DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -948,100 +948,100 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    amrex::Vector&lt;Plotfile2DOutputDescriptor&gt; descriptors;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    descriptors.reserve(static_plot_vars.size());</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    std::unordered_set&lt;std::string&gt; output_names;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> : static_plot_vars) {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>* static_descriptor = <a class="code" href="namespaceplotfile2d.html#afc7fd98d7b5fa82967c7f2cc60c3ca73">find_diagnostic</a>(<a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">if</span> (static_descriptor == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Unknown built-in 2D plotfile diagnostic &#39;&quot;</span> + <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        }</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        Plotfile2DOutputDescriptor descriptor;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        descriptor.name = static_descriptor-&gt;name;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        descriptor.long_name = static_descriptor-&gt;long_name;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        descriptor.units = static_descriptor-&gt;units;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        descriptor.category = static_descriptor-&gt;category;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        descriptor.missing_policy = static_descriptor-&gt;missing_policy;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        descriptor.missing_value =</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            (descriptor.missing_policy == MissingPolicy::FillZeroWhenUnavailable) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                                                                                  : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-999.0);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        descriptor.static_diagnostic = static_descriptor;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">if</span> (!output_names.insert(descriptor.name).second) {</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            amrex::Abort(build_duplicate_output_error(descriptor.name));</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        descriptors.push_back(std::move(descriptor));</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; level_set : level_sets) {</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> field_selection = <a class="code" href="namespaceplotfile2d.html#a33e87e37e46571ae03b5e734fa67e542">select_requested_sampled_fields</a>(level_set.fields, solver_choice);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keywordflow">if</span> (!field_selection.unavailable.empty()) {</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; field_name : field_selection.unavailable) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                    amrex::Warning(<a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set.name, <span class="stringliteral">&quot;fields&quot;</span>) +</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                                   <span class="stringliteral">&quot;skipping unavailable field &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                }</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        }</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">if</span> (field_selection.accepted.empty()) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            amrex::Abort(<a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set.name, <span class="stringliteral">&quot;fields&quot;</span>) +</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                         <span class="stringliteral">&quot;all requested fields unavailable&quot;</span>);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        }</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keyword">const</span> std::string coordinate_units = level_set.units.empty()</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            ? <a class="code" href="namespaceplotfile2d.html#ad3fbf099636efbf0fcfcbf974d411751">sampled_coordinate_default_units</a>(level_set.coordinate)</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            : level_set.units;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keyword">const</span> std::string interpolation_name = <a class="code" href="namespaceplotfile2d.html#abc50f24376a7c2031d065b0082a87d01">sampled_interpolation_to_string</a>(level_set.interpolation);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keyword">const</span> std::string canonical_units =</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            (level_set.coordinate == SampledCoordinate::Pressure &amp;&amp; coordinate_units == <span class="stringliteral">&quot;hPa&quot;</span>) ? <span class="stringliteral">&quot;Pa&quot;</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;                                                                                               : coordinate_units;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> : level_set.values) {</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> canonical_value = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordflow">if</span> (level_set.coordinate == SampledCoordinate::Pressure &amp;&amp;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                coordinate_units == <span class="stringliteral">&quot;hPa&quot;</span>) {</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                canonical_value = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> * <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            }</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; field : field_selection.accepted) {</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                Plotfile2DOutputDescriptor descriptor;</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                descriptor.name = <a class="code" href="namespaceplotfile2d.html#afa858869cefcae6c300753f8e5e00abb">sampled_output_name</a>(field.name, level_set.coordinate, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>, coordinate_units);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                descriptor.long_name = std::string(field.long_name) + <span class="stringliteral">&quot; sampled on &quot;</span> +</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                                       <a class="code" href="namespaceplotfile2d.html#a868e50c432e8fd1f36bff8724b918a41">sampled_coordinate_to_string</a>(level_set.coordinate) + <span class="stringliteral">&quot; levels&quot;</span>;</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                descriptor.units = field.units;</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                descriptor.category = DiagnosticCategory::SampledLevel;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                descriptor.missing_policy = MissingPolicy::FillMinus999WhenUnavailable;</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                descriptor.missing_value = level_set.missing_value;</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                descriptor.sampled_level = SampledLevelMetadata{</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                    level_set.name,</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                    field.name,</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                    SampledVerticalCoordinateMetadata{</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                        <a class="code" href="namespaceplotfile2d.html#a868e50c432e8fd1f36bff8724b918a41">sampled_coordinate_to_string</a>(level_set.coordinate),</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                        <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>,</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                        coordinate_units,</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                        canonical_value,</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                        canonical_units,</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                        interpolation_name</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                    }</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                };</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                <span class="keywordflow">if</span> (!output_names.insert(descriptor.name).second) {</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                    amrex::Abort(build_duplicate_output_error(descriptor.name));</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                }</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                descriptors.push_back(std::move(descriptor));</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            }</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        }</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    }</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="keywordflow">return</span> descriptors;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;{</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    amrex::Vector&lt;Plotfile2DOutputDescriptor&gt; descriptors;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    descriptors.reserve(static_plot_vars.size());</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    std::unordered_set&lt;std::string&gt; output_names;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> : static_plot_vars) {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>* static_descriptor = <a class="code" href="namespaceplotfile2d.html#afc7fd98d7b5fa82967c7f2cc60c3ca73">find_diagnostic</a>(<a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordflow">if</span> (static_descriptor == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Unknown built-in 2D plotfile diagnostic &#39;&quot;</span> + <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        }</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        Plotfile2DOutputDescriptor descriptor;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        descriptor.name = static_descriptor-&gt;name;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        descriptor.long_name = static_descriptor-&gt;long_name;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        descriptor.units = static_descriptor-&gt;units;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        descriptor.category = static_descriptor-&gt;category;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        descriptor.missing_policy = static_descriptor-&gt;missing_policy;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        descriptor.missing_value =</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            (descriptor.missing_policy == MissingPolicy::FillZeroWhenUnavailable) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0)</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                                                                                  : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-999.0);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        descriptor.static_diagnostic = static_descriptor;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (!output_names.insert(descriptor.name).second) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            amrex::Abort(build_duplicate_output_error(descriptor.name));</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        descriptors.push_back(std::move(descriptor));</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; level_set : level_sets) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> field_selection = <a class="code" href="namespaceplotfile2d.html#a33e87e37e46571ae03b5e734fa67e542">select_requested_sampled_fields</a>(level_set.fields, solver_choice);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">if</span> (!field_selection.unavailable.empty()) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordflow">if</span> (amrex::ParallelDescriptor::IOProcessor()) {</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; field_name : field_selection.unavailable) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                    amrex::Warning(<a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set.name, <span class="stringliteral">&quot;fields&quot;</span>) +</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                                   <span class="stringliteral">&quot;skipping unavailable field &#39;&quot;</span> + field_name + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            }</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">if</span> (field_selection.accepted.empty()) {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            amrex::Abort(<a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set.name, <span class="stringliteral">&quot;fields&quot;</span>) +</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                         <span class="stringliteral">&quot;all requested fields unavailable&quot;</span>);</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keyword">const</span> std::string coordinate_units = level_set.units.empty()</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            ? <a class="code" href="namespaceplotfile2d.html#ad3fbf099636efbf0fcfcbf974d411751">sampled_coordinate_default_units</a>(level_set.coordinate)</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            : level_set.units;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keyword">const</span> std::string interpolation_name = <a class="code" href="namespaceplotfile2d.html#abc50f24376a7c2031d065b0082a87d01">sampled_interpolation_to_string</a>(level_set.interpolation);</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keyword">const</span> std::string canonical_units =</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            (level_set.coordinate == SampledCoordinate::Pressure &amp;&amp; coordinate_units == <span class="stringliteral">&quot;hPa&quot;</span>) ? <span class="stringliteral">&quot;Pa&quot;</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                                                                                               : coordinate_units;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> : level_set.values) {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> canonical_value = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            <span class="keywordflow">if</span> (level_set.coordinate == SampledCoordinate::Pressure &amp;&amp;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                coordinate_units == <span class="stringliteral">&quot;hPa&quot;</span>) {</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                canonical_value = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> * <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            }</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; field : field_selection.accepted) {</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                Plotfile2DOutputDescriptor descriptor;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;                descriptor.name = <a class="code" href="namespaceplotfile2d.html#afa858869cefcae6c300753f8e5e00abb">sampled_output_name</a>(field.name, level_set.coordinate, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>, coordinate_units);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                descriptor.long_name = std::string(field.long_name) + <span class="stringliteral">&quot; sampled on &quot;</span> +</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                                       <a class="code" href="namespaceplotfile2d.html#a868e50c432e8fd1f36bff8724b918a41">sampled_coordinate_to_string</a>(level_set.coordinate) + <span class="stringliteral">&quot; levels&quot;</span>;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                descriptor.units = field.units;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                descriptor.category = DiagnosticCategory::SampledLevel;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                descriptor.missing_policy = MissingPolicy::FillMinus999WhenUnavailable;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                descriptor.missing_value = level_set.missing_value;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                descriptor.sampled_level = SampledLevelMetadata{</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                    level_set.name,</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                    field.name,</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                    SampledVerticalCoordinateMetadata{</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                        <a class="code" href="namespaceplotfile2d.html#a868e50c432e8fd1f36bff8724b918a41">sampled_coordinate_to_string</a>(level_set.coordinate),</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                        <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>,</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                        coordinate_units,</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                        canonical_value,</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                        canonical_units,</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                        interpolation_name</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                    }</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                };</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                <span class="keywordflow">if</span> (!output_names.insert(descriptor.name).second) {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                    amrex::Abort(build_duplicate_output_error(descriptor.name));</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                }</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                descriptors.push_back(std::move(descriptor));</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            }</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        }</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordflow">return</span> descriptors;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;}</div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
 <div class="ttc" id="aERF__Plotfile2DWaterPath_8cpp_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DWaterPath.cpp:20</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -3034,20 +3034,20 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;{</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    amrex::Vector&lt;std::string&gt; names;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    amrex::ParmParse <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keyword">const</span> std::string param_name = <span class="stringliteral">&quot;plot2d_level_sets_&quot;</span> + std::to_string(which);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.contains(param_name.c_str())) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">return</span> names;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> n_sets = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(param_name.c_str());</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    names.resize(n_sets);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr(param_name.c_str(), names, 0, n_sets);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">return</span> names;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;{</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    amrex::Vector&lt;std::string&gt; names;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    amrex::ParmParse <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keyword">const</span> std::string param_name = <span class="stringliteral">&quot;plot2d_level_sets_&quot;</span> + std::to_string(which);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.contains(param_name.c_str())) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> names;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> n_sets = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(param_name.c_str());</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    names.resize(n_sets);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr(param_name.c_str(), names, 0, n_sets);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="keywordflow">return</span> names;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceplotfile2d.html#a8d1641ac0b69e3d489193fc23c52f5b4">build_sampled_level_output_descriptors()</a>.</p>
@@ -3098,60 +3098,60 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    SampledLevelDefinition level_set;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    level_set.name = level_set_name;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    amrex::ParmParse <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keyword">const</span> std::string base = <span class="stringliteral">&quot;plot2d.level_set.&quot;</span> + level_set_name + <span class="stringliteral">&quot;.&quot;</span>;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    std::string coordinate_value;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;coordinate&quot;</span>).c_str(), coordinate_value)) {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        amrex::Abort(build_missing_field_error(level_set_name, <span class="stringliteral">&quot;coordinate&quot;</span>));</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">if</span> (string_iequals(coordinate_value, <span class="stringliteral">&quot;isentropic&quot;</span>)) {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        amrex::Abort(<a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set_name, <span class="stringliteral">&quot;coordinate&quot;</span>) +</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                     <span class="stringliteral">&quot;isentropic output needs a crossing policy&quot;</span>);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    }</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    level_set.coordinate = <a class="code" href="namespaceplotfile2d.html#a195b056fbbcdd9053c00fbaadec88568">sampled_coordinate_from_string</a>(coordinate_value);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;units&quot;</span>).c_str(), level_set.units) == 0) {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        level_set.units = <a class="code" href="namespaceplotfile2d.html#ad3fbf099636efbf0fcfcbf974d411751">sampled_coordinate_default_units</a>(level_set.coordinate);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    std::string interpolation_value;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;interpolation&quot;</span>).c_str(), interpolation_value) == 0) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        level_set.interpolation =</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <a class="code" href="namespaceplotfile2d.html#a7e3d76ba60f00c9fd91fcae0bba181e1">sampled_interpolation_from_string</a>(<a class="code" href="namespaceplotfile2d.html#af9c43bbc9289bc52a16c0c83e76b2b9b">sampled_coordinate_default_interpolation</a>(level_set.coordinate));</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        level_set.interpolation = <a class="code" href="namespaceplotfile2d.html#a7e3d76ba60f00c9fd91fcae0bba181e1">sampled_interpolation_from_string</a>(interpolation_value);</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;missing_value&quot;</span>).c_str(), level_set.missing_value) == 0) {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        level_set.missing_value = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-999.0);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordtype">int</span> n_values = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval((base + <span class="stringliteral">&quot;values&quot;</span>).c_str());</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (n_values &lt;= 0) {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        amrex::Abort(build_missing_field_error(level_set_name, <span class="stringliteral">&quot;values&quot;</span>));</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    level_set.values.resize(n_values);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr((base + <span class="stringliteral">&quot;values&quot;</span>).c_str(), level_set.values, 0, n_values);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordtype">int</span> n_fields = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval((base + <span class="stringliteral">&quot;fields&quot;</span>).c_str());</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">if</span> (n_fields &lt;= 0) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        amrex::Abort(build_missing_field_error(level_set_name, <span class="stringliteral">&quot;fields&quot;</span>));</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    level_set.fields.resize(n_fields);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr((base + <span class="stringliteral">&quot;fields&quot;</span>).c_str(), level_set.fields, 0, n_fields);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keyword">const</span> std::string error = <a class="code" href="namespaceplotfile2d.html#a4f85e0a2ba93292c0044808aa4397e57">validate_sampled_level_definition</a>(level_set);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">if</span> (!error.empty()) {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        amrex::Abort(error);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">return</span> level_set;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;{</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    SampledLevelDefinition level_set;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    level_set.name = level_set_name;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    amrex::ParmParse <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(pp_prefix);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">const</span> std::string base = <span class="stringliteral">&quot;plot2d.level_set.&quot;</span> + level_set_name + <span class="stringliteral">&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    std::string coordinate_value;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;coordinate&quot;</span>).c_str(), coordinate_value)) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        amrex::Abort(build_missing_field_error(level_set_name, <span class="stringliteral">&quot;coordinate&quot;</span>));</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (string_iequals(coordinate_value, <span class="stringliteral">&quot;isentropic&quot;</span>)) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        amrex::Abort(<a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set_name, <span class="stringliteral">&quot;coordinate&quot;</span>) +</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                     <span class="stringliteral">&quot;isentropic output needs a crossing policy&quot;</span>);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    level_set.coordinate = <a class="code" href="namespaceplotfile2d.html#a195b056fbbcdd9053c00fbaadec88568">sampled_coordinate_from_string</a>(coordinate_value);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;units&quot;</span>).c_str(), level_set.units) == 0) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        level_set.units = <a class="code" href="namespaceplotfile2d.html#ad3fbf099636efbf0fcfcbf974d411751">sampled_coordinate_default_units</a>(level_set.coordinate);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    std::string interpolation_value;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;interpolation&quot;</span>).c_str(), interpolation_value) == 0) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        level_set.interpolation =</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <a class="code" href="namespaceplotfile2d.html#a7e3d76ba60f00c9fd91fcae0bba181e1">sampled_interpolation_from_string</a>(<a class="code" href="namespaceplotfile2d.html#af9c43bbc9289bc52a16c0c83e76b2b9b">sampled_coordinate_default_interpolation</a>(level_set.coordinate));</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        level_set.interpolation = <a class="code" href="namespaceplotfile2d.html#a7e3d76ba60f00c9fd91fcae0bba181e1">sampled_interpolation_from_string</a>(interpolation_value);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query((base + <span class="stringliteral">&quot;missing_value&quot;</span>).c_str(), level_set.missing_value) == 0) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        level_set.missing_value = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(-999.0);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordtype">int</span> n_values = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval((base + <span class="stringliteral">&quot;values&quot;</span>).c_str());</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">if</span> (n_values &lt;= 0) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        amrex::Abort(build_missing_field_error(level_set_name, <span class="stringliteral">&quot;values&quot;</span>));</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    level_set.values.resize(n_values);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr((base + <span class="stringliteral">&quot;values&quot;</span>).c_str(), level_set.values, 0, n_values);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordtype">int</span> n_fields = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval((base + <span class="stringliteral">&quot;fields&quot;</span>).c_str());</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span> (n_fields &lt;= 0) {</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        amrex::Abort(build_missing_field_error(level_set_name, <span class="stringliteral">&quot;fields&quot;</span>));</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    level_set.fields.resize(n_fields);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.getarr((base + <span class="stringliteral">&quot;fields&quot;</span>).c_str(), level_set.fields, 0, n_fields);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keyword">const</span> std::string error = <a class="code" href="namespaceplotfile2d.html#a4f85e0a2ba93292c0044808aa4397e57">validate_sampled_level_definition</a>(level_set);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span> (!error.empty()) {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        amrex::Abort(error);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">return</span> level_set;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
 <div class="ttc" id="anamespaceplotfile2d_html_a4f85e0a2ba93292c0044808aa4397e57"><div class="ttname"><a href="namespaceplotfile2d.html#a4f85e0a2ba93292c0044808aa4397e57">plotfile2d::validate_sampled_level_definition</a></div><div class="ttdeci">std::string validate_sampled_level_definition(const SampledLevelDefinition &amp;level_set)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:228</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_a7e3d76ba60f00c9fd91fcae0bba181e1"><div class="ttname"><a href="namespaceplotfile2d.html#a7e3d76ba60f00c9fd91fcae0bba181e1">plotfile2d::sampled_interpolation_from_string</a></div><div class="ttdeci">SampledInterpolation sampled_interpolation_from_string(const std::string &amp;value)</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:182</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_af9c43bbc9289bc52a16c0c83e76b2b9b"><div class="ttname"><a href="namespaceplotfile2d.html#af9c43bbc9289bc52a16c0c83e76b2b9b">plotfile2d::sampled_coordinate_default_interpolation</a></div><div class="ttdeci">const char * sampled_coordinate_default_interpolation(SampledCoordinate coordinate) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DSampledLevel.cpp:146</div></div>
@@ -4439,16 +4439,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    }</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    std::unordered_set&lt;std::string&gt; unique_fields(level_set.fields.begin(), level_set.fields.end());</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> n_unique_fields = unique_fields.size();</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> n_requested_fields =</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keyword">static_cast&lt;</span>decltype(n_unique_fields)<span class="keyword">&gt;</span>(level_set.fields.size());</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">if</span> (n_unique_fields != n_requested_fields) {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set.name, <span class="stringliteral">&quot;fields&quot;</span>) +</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;               build_duplicate_output_error(level_set.name);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> n_unique_fields    = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(unique_fields.size());</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> n_requested_fields = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(level_set.fields.size());</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">if</span> (n_unique_fields != n_requested_fields) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceplotfile2d.html#afd832a5dc34b5f5d00610d7e87bb57bd">sampled_level_error_prefix</a>(level_set.name, <span class="stringliteral">&quot;fields&quot;</span>) +</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;               build_duplicate_output_error(level_set.name);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceplotfile2d.html#a315b9398730442d504fc848a492cc792">parse_sampled_level_definition()</a>.</p>
 <div class="dynheader">
