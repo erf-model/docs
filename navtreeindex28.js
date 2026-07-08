@@ -1,5 +1,7 @@
 var NAVTREEINDEX28 =
 {
+"structDirectionSelector.html":[2,0,18],
+"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,18,0],
 "structDirectionSelector_3_010_01_4.html":[2,0,19],
 "structDirectionSelector_3_010_01_4.html#a74c1bd1dca28b374962977ab8e32595e":[2,0,19,0],
 "structDirectionSelector_3_011_01_4.html":[2,0,20],
@@ -247,7 +249,5 @@ var NAVTREEINDEX28 =
 "structSAMPrecipCellDiagnostics.html#abc6879ce736ce1633cac7777aa0c4e5c":[2,0,83,0],
 "structSAMPrecipComponentFaceState.html":[2,0,84],
 "structSAMPrecipComponentFaceState.html#a1428184e6031db1793bbd5b6cdd3f248":[2,0,84,1],
-"structSAMPrecipComponentFaceState.html#a75d2ae5d6204966b2ae879cc77661465":[2,0,84,0],
-"structSAMPrecipComponentFaceState.html#a94bb6b3950adfa8431c9b23f8eee3cd8":[2,0,84,2],
-"structSAMPrecipComponentFaceState.html#aa438e9f7a9c2fe6844b2459df27f1f9d":[2,0,84,4]
+"structSAMPrecipComponentFaceState.html#a75d2ae5d6204966b2ae879cc77661465":[2,0,84,0]
 };

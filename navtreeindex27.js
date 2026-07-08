@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2aee6b4a46f93e71b28c1f8735887bec47":[1,0,35,13,2],
+"namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2af819d486b9c4d099dfb57b13342085f8":[1,0,35,13,11],
 "namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2afb7ff5a9273c2c909b63dd6a8457bf8e":[1,0,35,13,10],
 "namespaceplotfile2d.html#a2fc7f324e08c5e3ea81dd4e80719c1ee":[1,0,35,65],
 "namespaceplotfile2d.html#a315b9398730442d504fc848a492cc792":[1,0,35,56],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "structDiffChoice.html#adbfceae5178b5ad8131b755454fb616a":[2,0,17,1],
 "structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765":[2,0,17,0],
 "structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf":[2,0,17,8],
-"structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817":[2,0,17,4],
-"structDirectionSelector.html":[2,0,18],
-"structDirectionSelector.html#a3950b636303028f398441fdc43d66dba":[2,0,18,0]
+"structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817":[2,0,17,4]
 };

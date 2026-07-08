@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"structadiabatic__wave__coupled.html":[2,0,9],
+"structadiabatic__wave__coupled.html#a3f907fc7025d3d3f7e44c222e12b4df1":[2,0,9,2],
 "structadiabatic__wave__coupled.html#a766bc38f50feb33973e029a5c9a004e2":[2,0,9,1],
 "structadiabatic__wave__coupled.html#a7cbf5ad24a59a72131bae5b57038ff72":[2,0,9,7],
 "structadiabatic__wave__coupled.html#a812ea5ea7d6223e5512c372b3260d1bc":[2,0,9,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "structsurface__flux__donelan.html":[2,0,118],
 "structsurface__flux__donelan.html#a17a6b026b192d269676a78c3ee9a849f":[2,0,118,4],
 "structsurface__flux__donelan.html#a5c30fb789d7f02cb9533948d32011947":[2,0,118,5],
-"structsurface__flux__donelan.html#a90219815a814635eeeec86a492631cba":[2,0,118,0],
-"structsurface__flux__donelan.html#aa0c92783f88aeb52db12fd0b1b40bca7":[2,0,118,6],
-"structsurface__flux__donelan.html#ab3b7307051954c791dcf73bb13213e9f":[2,0,118,2]
+"structsurface__flux__donelan.html#a90219815a814635eeeec86a492631cba":[2,0,118,0]
 };
