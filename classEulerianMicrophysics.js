@@ -12,6 +12,7 @@ var classEulerianMicrophysics =
     [ "Get_Qstate_Moist_NumConc_Size", "classEulerianMicrophysics.html#a9f8ecbc3b9cda5b5fa77393d10b64c40", null ],
     [ "Get_Qstate_Moist_Size", "classEulerianMicrophysics.html#af2deffc61faaf4197f74dcfe0691a56b", null ],
     [ "Get_Qstate_NonMoist_Size", "classEulerianMicrophysics.html#a6497e305681af49fcec336f3c68eff46", null ],
+    [ "Get_Surface_Precip_Accumulation_Ptrs", "classEulerianMicrophysics.html#a2e27d543f805d1ac0df5eda8daa526b0", null ],
     [ "GetPlotVar", "classEulerianMicrophysics.html#aa1c4f2bee3a05609e796da336854ca89", null ],
     [ "GetPlotVarNames", "classEulerianMicrophysics.html#aad1c90868ba96910a57f4e8025f90723", null ],
     [ "Init", "classEulerianMicrophysics.html#ac68028f2920ccb380c605099adb7d604", null ],

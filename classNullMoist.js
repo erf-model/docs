@@ -6,6 +6,7 @@ var classNullMoist =
     [ "Copy_Micro_to_State", "classNullMoist.html#a11a25944d4ddb955f74e355838b9d8b0", null ],
     [ "Copy_State_to_Micro", "classNullMoist.html#aacb06ee696c6870e899d1bc26aa9933e", null ],
     [ "Define", "classNullMoist.html#aab112947c592c330b45a2d7e5529ec07", null ],
+    [ "Get_Surface_Precip_Accumulation_Ptrs", "classNullMoist.html#a95f3f93c75821bdedbb67b9eafe77749", null ],
     [ "getDiagnosticsInterval", "classNullMoist.html#a6c9bad761a07463fcd5ed87c3a341d47", null ],
     [ "GetPlotVar", "classNullMoist.html#a2f37a246b6a0ffcde7fa9e2ca4c8d63e", null ],
     [ "GetPlotVar", "classNullMoist.html#a56d502e7343315bb1115c2489852acbe", null ],

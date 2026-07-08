@@ -14,5 +14,6 @@ var dir_988434024952cd186327a8c7555a3c66 =
     [ "ERF_LagrangianMicrophysics.H", "ERF__LagrangianMicrophysics_8H.html", null ],
     [ "ERF_Microphysics.H", "ERF__Microphysics_8H.html", [
       [ "Microphysics", "classMicrophysics.html", "classMicrophysics" ]
-    ] ]
+    ] ],
+    [ "ERF_SurfacePrecipitation.H", "ERF__SurfacePrecipitation_8H.html", "ERF__SurfacePrecipitation_8H" ]
 ];

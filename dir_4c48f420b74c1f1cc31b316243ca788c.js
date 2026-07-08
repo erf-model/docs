@@ -24,6 +24,8 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "ERF_Plotfile2DInterpolator.H", "ERF__Plotfile2DInterpolator_8H.html", "ERF__Plotfile2DInterpolator_8H" ],
     [ "ERF_Plotfile2DMetadata.cpp", "ERF__Plotfile2DMetadata_8cpp.html", "ERF__Plotfile2DMetadata_8cpp" ],
     [ "ERF_Plotfile2DMetadata.H", "ERF__Plotfile2DMetadata_8H.html", "ERF__Plotfile2DMetadata_8H" ],
+    [ "ERF_Plotfile2DPrecip.cpp", "ERF__Plotfile2DPrecip_8cpp.html", "ERF__Plotfile2DPrecip_8cpp" ],
+    [ "ERF_Plotfile2DPrecip.H", "ERF__Plotfile2DPrecip_8H.html", "ERF__Plotfile2DPrecip_8H" ],
     [ "ERF_Plotfile2DSampledField.cpp", "ERF__Plotfile2DSampledField_8cpp.html", "ERF__Plotfile2DSampledField_8cpp" ],
     [ "ERF_Plotfile2DSampledField.H", "ERF__Plotfile2DSampledField_8H.html", "ERF__Plotfile2DSampledField_8H" ],
     [ "ERF_Plotfile2DSampledLevel.cpp", "ERF__Plotfile2DSampledLevel_8cpp.html", "ERF__Plotfile2DSampledLevel_8cpp" ],

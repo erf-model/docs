@@ -134,6 +134,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49700256caeff6ec46ae5e2e746a865a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a49700256caeff6ec46ae5e2e746a865a">AverageDownMicroVars</a> (const int)</td></tr>
 <tr class="memdesc:a49700256caeff6ec46ae5e2e746a865a"><td class="mdescLeft">&#160;</td><td class="mdescRight">average down moisture multifabs from finest_level to 0 (AMR coverage); no-op for non-Lagrangian models  <a href="classMicrophysics.html#a49700256caeff6ec46ae5e2e746a865a">More...</a><br /></td></tr>
 <tr class="separator:a49700256caeff6ec46ae5e2e746a865a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83cbd89a2fa72446a5ba053f103e53b7"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structSurfacePrecipAccumulationSources.html">SurfacePrecipAccumulationSources</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a83cbd89a2fa72446a5ba053f103e53b7">Get_Surface_Precip_Accumulation_Ptrs</a> (const int &amp;) const</td></tr>
+<tr class="memdesc:a83cbd89a2fa72446a5ba053f103e53b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get scheme-native surface precipitation accumulators and their kg/m^2 conversion factors  <a href="classMicrophysics.html#a83cbd89a2fa72446a5ba053f103e53b7">More...</a><br /></td></tr>
+<tr class="separator:a83cbd89a2fa72446a5ba053f103e53b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="memItemLeft" align="right" valign="top">virtual amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">Get_Qmoist_Ptr</a> (const int &amp;, const int &amp;)=0</td></tr>
 <tr class="memdesc:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">get pointer to a moisture variable  <a href="classMicrophysics.html#a8edecc53bfdfd0d916d37e3584ebb9ff">More...</a><br /></td></tr>
 <tr class="separator:a8edecc53bfdfd0d916d37e3584ebb9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,7 +201,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Null constructor. </p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -331,7 +334,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>average down moisture multifabs from finest_level to 0 (AMR coverage); no-op for non-Lagrangian models </p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -676,9 +679,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>get total number of conserved state variables </p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Get_Qstate_Moist_Size</a>() + <a class="code" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Get_Qstate_NonMoist_Size</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Get_Qstate_Moist_Size</a>() + <a class="code" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Get_Qstate_NonMoist_Size</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
 <div class="ttc" id="aclassMicrophysics_html_a1bc7275c0c3fe8bcff83a1548ea7199e"><div class="ttname"><a href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Microphysics::Get_Qstate_NonMoist_Size</a></div><div class="ttdeci">virtual int Get_Qstate_NonMoist_Size()=0</div><div class="ttdoc">get the number of microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) s...</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a61069a1549c51d922e27c8af78c1e692"><div class="ttname"><a href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Microphysics::Get_Qstate_Moist_Size</a></div><div class="ttdeci">virtual int Get_Qstate_Moist_Size()=0</div><div class="ttdoc">get the number of microphysics conserved moist (water-related) state variables</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -692,6 +695,39 @@ Here is the call graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="a83cbd89a2fa72446a5ba053f103e53b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83cbd89a2fa72446a5ba053f103e53b7">&#9670;&nbsp;</a></span>Get_Surface_Precip_Accumulation_Ptrs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structSurfacePrecipAccumulationSources.html">SurfacePrecipAccumulationSources</a> Microphysics::Get_Surface_Precip_Accumulation_Ptrs </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get scheme-native surface precipitation accumulators and their kg/m^2 conversion factors </p>
+
+<p>Reimplemented in <a class="el" href="classEulerianMicrophysics.html#a2e27d543f805d1ac0df5eda8daa526b0">EulerianMicrophysics</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ae16d9801d3db01fcc424345e54a47d3b"></a>
@@ -865,26 +901,26 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>query if a specified moisture model is Eulerian or Lagrangian </p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == MoistureType::SAM)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoIce)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoPrecip_NoIce)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;             || (a_moisture_type == MoistureType::Morrison)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;             || (a_moisture_type == MoistureType::Morrison_NoIce)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;             || (a_moisture_type == MoistureType::WSM6)</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;             || (a_moisture_type == MoistureType::Kessler)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;             || (a_moisture_type == MoistureType::Kessler_NoRain)</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;             || (a_moisture_type == MoistureType::SatAdj)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;             || (a_moisture_type == MoistureType::MoistNoCondensation)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;             || (a_moisture_type == MoistureType::None) ) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Eulerian;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (a_moisture_type == MoistureType::SuperDroplets) ) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Lagrangian;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Undefined;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == MoistureType::SAM)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoIce)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoPrecip_NoIce)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;             || (a_moisture_type == MoistureType::Morrison)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;             || (a_moisture_type == MoistureType::Morrison_NoIce)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;             || (a_moisture_type == MoistureType::WSM6)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;             || (a_moisture_type == MoistureType::Kessler)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;             || (a_moisture_type == MoistureType::Kessler_NoRain)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;             || (a_moisture_type == MoistureType::SatAdj)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;             || (a_moisture_type == MoistureType::MoistNoCondensation)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;             || (a_moisture_type == MoistureType::None) ) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Eulerian;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (a_moisture_type == MoistureType::SuperDroplets) ) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Lagrangian;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Undefined;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a8355d14a7672f4d863064300ee42d6f7">ERF::advance_microphysics()</a>, <a class="el" href="classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6">EulerianMicrophysics::EulerianMicrophysics()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="classERF.html#afc2898daad269536c1a15443abf3fa75">ERF::initializeMicrophysics()</a>, <a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ERF::ReadCheckpointFile()</a>, <a class="el" href="classERF.html#aec117226dacf933f7ba47907102413c6">ERF::timeStep()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">

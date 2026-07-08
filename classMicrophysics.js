@@ -13,6 +13,7 @@ var classMicrophysics =
     [ "Get_Qstate_Moist_Size", "classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692", null ],
     [ "Get_Qstate_NonMoist_Size", "classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e", null ],
     [ "Get_Qstate_Size", "classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4", null ],
+    [ "Get_Surface_Precip_Accumulation_Ptrs", "classMicrophysics.html#a83cbd89a2fa72446a5ba053f103e53b7", null ],
     [ "GetPlotVar", "classMicrophysics.html#ae16d9801d3db01fcc424345e54a47d3b", null ],
     [ "GetPlotVarNames", "classMicrophysics.html#a8ee9010738bdec29e2b5a86e176f66c7", null ],
     [ "Init", "classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e", null ],
