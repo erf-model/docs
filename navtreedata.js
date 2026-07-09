@@ -104,8 +104,8 @@ var NAVTREEINDEX =
 "structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24",
 "structSHOCInterface_1_1SHOCPreprocess.html#af3b070d21d472756981fc96c8a1737a1",
 "structSolverChoice.html#af9c11d4a044eea88bad0b2e32318b412",
-"structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489",
-"structrico__flux.html"
+"structWENO__MZQ3.html#aedec59f75efddc702de61260a205a368",
+"structplotfile2d_1_1WaterPathDescriptor.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

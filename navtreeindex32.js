@@ -1,5 +1,9 @@
 var NAVTREEINDEX32 =
 {
+"structWENO__MZQ3.html#aedec59f75efddc702de61260a205a368":[2,0,143,3],
+"structWENO__Z3.html":[2,0,144],
+"structWENO__Z3.html#a04370c4cf4d845f967ec610ff66f5d2b":[2,0,144,5],
+"structWENO__Z3.html#a0e6b9f771e85c61b99ced253ded6f86e":[2,0,144,4],
 "structWENO__Z3.html#a8269a48070f989c0183112ccd8e57489":[2,0,144,8],
 "structWENO__Z3.html#a9f414f40f90362551c3729aec5cfd160":[2,0,144,0],
 "structWENO__Z3.html#aa6c2eefc18b5f0365c0357ee4f066080":[2,0,144,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "structplotfile2d_1_1SelectedWaterPathComponents.html":[2,0,2,12],
 "structplotfile2d_1_1SelectedWaterPathComponents.html#a2b0a9df46031b46f5d7d80f0c37d343a":[2,0,2,12,0],
 "structplotfile2d_1_1SelectedWaterPathComponents.html#a5ad7ae94132de9a36e7ecfbe7ef19c9b":[2,0,2,12,1],
-"structplotfile2d_1_1SelectedWaterPathComponents.html#a7d9967551f6fecfb49b42f9314927d56":[2,0,2,12,2],
-"structplotfile2d_1_1WaterPathDescriptor.html":[2,0,2,11],
-"structplotfile2d_1_1WaterPathDescriptor.html#a428e413376e7e580ebe2a1c5c49c41cc":[2,0,2,11,0],
-"structplotfile2d_1_1WaterPathDescriptor.html#a430cc11ee9c944948145ecba0ea90f15":[2,0,2,11,2],
-"structplotfile2d_1_1WaterPathDescriptor.html#a84095135b3bc8cf2a491d35a4140139d":[2,0,2,11,1]
+"structplotfile2d_1_1SelectedWaterPathComponents.html#a7d9967551f6fecfb49b42f9314927d56":[2,0,2,12,2]
 };
