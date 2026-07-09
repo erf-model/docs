@@ -226,7 +226,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;NumericalDiffusion_Scal()&quot;</span>,<a class="code" href="ERF__NumericalDiffusion_8cpp.html#a039b51c9e14293909a5c23499e347c35">NumericalDiffusion_Scal</a>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// Capture diffusion coeff</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff6 = num_diff_coeff / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * dt);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff6 = num_diff_coeff / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt));</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Compute 5th order derivative and augment RHS</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> m) noexcept</div>
@@ -275,7 +275,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__NumericalDiffusion_8cpp_html_a039b51c9e14293909a5c23499e347c35"><div class="ttname"><a href="ERF__NumericalDiffusion_8cpp.html#a039b51c9e14293909a5c23499e347c35">NumericalDiffusion_Scal</a></div><div class="ttdeci">void NumericalDiffusion_Scal(const Box &amp;bx, const int start_comp, const int num_comp, const double dt, const Real num_diff_coeff, const Array4&lt; const Real &gt; &amp;prim_data, const Array4&lt; const Real &gt; &amp;cell_data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mfx_arr, const Array4&lt; const Real &gt; &amp;mfy_arr)</div><div class="ttdef"><b>Definition:</b> ERF_NumericalDiffusion.cpp:18</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a95b85824b82de89fbea4513eaa1ec0cd">make_sources()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -292,7 +292,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__NumericalDiffusion_8cpp_a039b51c9e14293909a5c23499e347c35_icgraph.png" border="0" usemap="#aERF__NumericalDiffusion_8cpp_a039b51c9e14293909a5c23499e347c35_icgraph" alt=""/></div>
 <map name="aERF__NumericalDiffusion_8cpp_a039b51c9e14293909a5c23499e347c35_icgraph" id="aERF__NumericalDiffusion_8cpp_a039b51c9e14293909a5c23499e347c35_icgraph">
 <area shape="rect" title=" " alt="" coords="168,5,349,32"/>
-<area shape="rect" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html#a95b85824b82de89fbea4513eaa1ec0cd" title=" " alt="" coords="5,5,120,32"/>
 </map>
 </div>
 
@@ -377,7 +377,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;NumericalDiffusion_Xmom()&quot;</span>,<a class="code" href="ERF__NumericalDiffusion_8cpp.html#af4bbc69f4c73b18f197564d9cece73e7">NumericalDiffusion_Xmom</a>);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Capture diffusion coeff</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff6 = num_diff_coeff / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * dt);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff6 = num_diff_coeff / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt));</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Compute 5th order derivative and augment RHS</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
@@ -419,7 +419,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:14</div></div>
 <div class="ttc" id="aERF__NumericalDiffusion_8cpp_html_af4bbc69f4c73b18f197564d9cece73e7"><div class="ttname"><a href="ERF__NumericalDiffusion_8cpp.html#af4bbc69f4c73b18f197564d9cece73e7">NumericalDiffusion_Xmom</a></div><div class="ttdeci">void NumericalDiffusion_Xmom(const Box &amp;bx, const double dt, const Real num_diff_coeff, const Array4&lt; const Real &gt; &amp;prim_data, const Array4&lt; const Real &gt; &amp;cell_data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mfx_arr, const Array4&lt; const Real &gt; &amp;mfy_arr)</div><div class="ttdef"><b>Definition:</b> ERF_NumericalDiffusion.cpp:85</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeMomSources_8cpp.html#a5f1b7d3ffa0b6b5cbfe6301906247cda">make_mom_sources()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -436,7 +436,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__NumericalDiffusion_8cpp_af4bbc69f4c73b18f197564d9cece73e7_icgraph.png" border="0" usemap="#aERF__NumericalDiffusion_8cpp_af4bbc69f4c73b18f197564d9cece73e7_icgraph" alt=""/></div>
 <map name="aERF__NumericalDiffusion_8cpp_af4bbc69f4c73b18f197564d9cece73e7_icgraph" id="aERF__NumericalDiffusion_8cpp_af4bbc69f4c73b18f197564d9cece73e7_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,407,32"/>
-<area shape="rect" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" href="ERF__MakeMomSources_8cpp.html#a5f1b7d3ffa0b6b5cbfe6301906247cda" title=" " alt="" coords="5,5,161,32"/>
 </map>
 </div>
 
@@ -521,7 +521,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;NumericalDiffusion_Ymom()&quot;</span>,<a class="code" href="ERF__NumericalDiffusion_8cpp.html#a9d69c534be99326262fcb0fca90c27a7">NumericalDiffusion_Ymom</a>);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// Capture diffusion coeff</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff6 = num_diff_coeff / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * dt);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> coeff6 = num_diff_coeff / (<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt));</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Compute 5th order derivative and augment RHS</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
@@ -562,7 +562,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 <div class="ttc" id="aERF__NumericalDiffusion_8cpp_html_a9d69c534be99326262fcb0fca90c27a7"><div class="ttname"><a href="ERF__NumericalDiffusion_8cpp.html#a9d69c534be99326262fcb0fca90c27a7">NumericalDiffusion_Ymom</a></div><div class="ttdeci">void NumericalDiffusion_Ymom(const Box &amp;bx, const double dt, const Real num_diff_coeff, const Array4&lt; const Real &gt; &amp;prim_data, const Array4&lt; const Real &gt; &amp;cell_data, const Array4&lt; Real &gt; &amp;rhs, const Array4&lt; const Real &gt; &amp;mfx_arr, const Array4&lt; const Real &gt; &amp;mfy_arr)</div><div class="ttdef"><b>Definition:</b> ERF_NumericalDiffusion.cpp:151</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3">make_mom_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeMomSources_8cpp.html#a5f1b7d3ffa0b6b5cbfe6301906247cda">make_mom_sources()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -579,7 +579,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__NumericalDiffusion_8cpp_a9d69c534be99326262fcb0fca90c27a7_icgraph.png" border="0" usemap="#aERF__NumericalDiffusion_8cpp_a9d69c534be99326262fcb0fca90c27a7_icgraph" alt=""/></div>
 <map name="aERF__NumericalDiffusion_8cpp_a9d69c534be99326262fcb0fca90c27a7_icgraph" id="aERF__NumericalDiffusion_8cpp_a9d69c534be99326262fcb0fca90c27a7_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,405,32"/>
-<area shape="rect" href="ERF__MakeMomSources_8cpp.html#aebaa4c8eb99851edb4a3b4eb4c410ea3" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" href="ERF__MakeMomSources_8cpp.html#a5f1b7d3ffa0b6b5cbfe6301906247cda" title=" " alt="" coords="5,5,161,32"/>
 </map>
 </div>
 

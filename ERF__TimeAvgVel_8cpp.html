@@ -149,12 +149,12 @@ Include dependency graph for ERF_TimeAvgVel.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a07cd42d49d72b931bb277808dd303028"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TimeAvgVel_8cpp.html#a07cd42d49d72b931bb277808dd303028">Time_Avg_Vel_atCC</a> (double dt, double &amp;t_avg_cnt, MultiFab *vel_t_avg, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel)</td></tr>
-<tr class="separator:a07cd42d49d72b931bb277808dd303028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c3a3c157f394732a11761623bc61ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__TimeAvgVel_8cpp.html#af2c3a3c157f394732a11761623bc61ea">Time_Avg_Vel_atCC</a> (double dt_d, double &amp;t_avg_cnt, MultiFab *vel_t_avg, MultiFab &amp;xvel, MultiFab &amp;yvel, MultiFab &amp;zvel)</td></tr>
+<tr class="separator:af2c3a3c157f394732a11761623bc61ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a07cd42d49d72b931bb277808dd303028"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07cd42d49d72b931bb277808dd303028">&#9670;&nbsp;</a></span>Time_Avg_Vel_atCC()</h2>
+<a id="af2c3a3c157f394732a11761623bc61ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2c3a3c157f394732a11761623bc61ea">&#9670;&nbsp;</a></span>Time_Avg_Vel_atCC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +163,7 @@ Functions</h2></td></tr>
           <td class="memname">void Time_Avg_Vel_atCC </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
+          <td class="paramname"><em>dt_d</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -204,37 +204,39 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="comment">// Augment the counter</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    t_avg_cnt += dt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    t_avg_cnt += dt_d;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(vel_t_avg),TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">// CC tilebox</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        Box tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// Velocity on faces</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velx = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vely = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velz = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">// Time average at CC</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        Array4&lt;Real&gt; vel_t_avg_arr = vel_t_avg-&gt;array(mfi);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u_cc = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( velx(i,j,k) + velx(i+1,j  ,k  ) );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v_cc = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( vely(i,j,k) + vely(i  ,j+1,k  ) );</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_cc = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( velz(i,j,k) + velz(i  ,j  ,k+1) );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> umag_cc = std::sqrt(u_cc*u_cc + v_cc*v_cc + w_cc*w_cc);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            vel_t_avg_arr(i,j,k,0) += u_cc * dt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            vel_t_avg_arr(i,j,k,1) += v_cc * dt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            vel_t_avg_arr(i,j,k,2) += w_cc * dt;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            vel_t_avg_arr(i,j,k,3) += umag_cc * dt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        });</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt_d);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#pragma omp parallel if (Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(vel_t_avg),TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// CC tilebox</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        Box tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// Velocity on faces</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velx = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">xvel</a>.array(mfi);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; vely = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">yvel</a>.array(mfi);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; velz = <a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">zvel</a>.array(mfi);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// Time average at CC</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Array4&lt;Real&gt; vel_t_avg_arr = vel_t_avg-&gt;array(mfi);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> u_cc = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( velx(i,j,k) + velx(i+1,j  ,k  ) );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> v_cc = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( vely(i,j,k) + vely(i  ,j+1,k  ) );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_cc = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( velz(i,j,k) + velz(i  ,j  ,k+1) );</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> umag_cc = std::sqrt(u_cc*u_cc + v_cc*v_cc + w_cc*w_cc);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            vel_t_avg_arr(i,j,k,0) += u_cc * dt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            vel_t_avg_arr(i,j,k,1) += v_cc * dt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            vel_t_avg_arr(i,j,k,2) += w_cc * dt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            vel_t_avg_arr(i,j,k,3) += umag_cc * dt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        });</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -246,8 +248,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_cgraph.png" border="0" usemap="#aERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_cgraph" alt=""/></div>
-<map name="aERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_cgraph" id="aERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_cgraph">
+<div class="center"><img src="ERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_cgraph.png" border="0" usemap="#aERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_cgraph" alt=""/></div>
+<map name="aERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_cgraph" id="aERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,156,32"/>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="204,5,295,32"/>
 </map>
@@ -255,8 +257,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_icgraph.png" border="0" usemap="#aERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_icgraph" alt=""/></div>
-<map name="aERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_icgraph" id="aERF__TimeAvgVel_8cpp_a07cd42d49d72b931bb277808dd303028_icgraph">
+<div class="center"><img src="ERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_icgraph.png" border="0" usemap="#aERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_icgraph" alt=""/></div>
+<map name="aERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_icgraph" id="aERF__TimeAvgVel_8cpp_af2c3a3c157f394732a11761623bc61ea_icgraph">
 <area shape="rect" title=" " alt="" coords="195,31,345,57"/>
 <area shape="rect" href="classERF.html#a9b87129b86887ed08dba76ad405bdea9" title=" " alt="" coords="21,5,131,32"/>
 <area shape="rect" href="classERF.html#aa8b243c093bd872b6f7592603ff97792" title=" " alt="" coords="5,56,147,83"/>

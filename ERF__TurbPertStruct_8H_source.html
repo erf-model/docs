@@ -491,7 +491,7 @@ $(document).ready(function(){initNavTree('ERF__TurbPertStruct_8H_source.html',''
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="comment">// Performing this step converts the perturbation proportionality into</span></div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="comment">// the forcing term</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="comment">// Ma &amp; Senocak (2023) Eq. 7</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <a class="code" href="structTurbulentPerturbation.html#afb4555887c198130cbb708257519db5f">pb_amp</a>[lev][boxIdx] /= interval;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <a class="code" href="structTurbulentPerturbation.html#afb4555887c198130cbb708257519db5f">pb_amp</a>[lev][boxIdx] /= <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(interval);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            }</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>

@@ -303,7 +303,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_a37cd2d582d2102a94d25a3fa6631e8dc"><div class="ttname"><a href="structTurbulentPerturbation.html#a37cd2d582d2102a94d25a3fa6631e8dc">TurbulentPerturbation::pb_ba</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BoxArray &gt; pb_ba</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:662</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a95b85824b82de89fbea4513eaa1ec0cd">make_sources()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -319,7 +319,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph.png" border="0" usemap="#astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph" id="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph">
 <area shape="rect" title=" " alt="" coords="168,5,331,47"/>
-<area shape="rect" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1" title=" " alt="" coords="5,13,120,39"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html#a95b85824b82de89fbea4513eaa1ec0cd" title=" " alt="" coords="5,13,120,39"/>
 </map>
 </div>
 
@@ -391,7 +391,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="comment">// Performing this step converts the perturbation proportionality into</span></div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                <span class="comment">// the forcing term</span></div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                <span class="comment">// Ma &amp; Senocak (2023) Eq. 7</span></div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <a class="code" href="structTurbulentPerturbation.html#afb4555887c198130cbb708257519db5f">pb_amp</a>[lev][boxIdx] /= interval;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <a class="code" href="structTurbulentPerturbation.html#afb4555887c198130cbb708257519db5f">pb_amp</a>[lev][boxIdx] /= <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(interval);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            }</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
@@ -1632,7 +1632,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#aa3b92b2f04862419a5d17f20f7918be5">init_tpi()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a23fe79b9553aad80a73757356e117cf1">make_sources()</a>, <a class="el" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60">netZeroBuoyantAdd()</a>, <a class="el" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527">netZeroBuoyantAdjust()</a>, <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">pseudoRandomPert()</a>, and <a class="el" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9">zero_amp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#aa3b92b2f04862419a5d17f20f7918be5">init_tpi()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a95b85824b82de89fbea4513eaa1ec0cd">make_sources()</a>, <a class="el" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60">netZeroBuoyantAdd()</a>, <a class="el" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527">netZeroBuoyantAdjust()</a>, <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">pseudoRandomPert()</a>, and <a class="el" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9">zero_amp()</a>.</p>
 
 </div>
 </div>

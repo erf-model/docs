@@ -279,7 +279,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    surf_sens_flux(ic,0,0) = surf_sens_flux_in(ic,0,0);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    surf_lat_flux(ic,0,0) = surf_lat_flux_in(ic,0,0);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="namespaceshoc.html#a9ec4609772a1c7b71c8eeb44fd84ac47">shoc::apply_energy_fix_column</a>(<a class="code" href="namespaceshoc.html#acc20b19240ba5158554680570b07ecb8">shoc::make_energy_fixer_view</a>(<a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">tmp</a>), ic, dt);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="namespaceshoc.html#af7236b4e3fee03a433b238fc1770702b">shoc::apply_energy_fix_column</a>(<a class="code" href="namespaceshoc.html#acc20b19240ba5158554680570b07ecb8">shoc::make_energy_fixer_view</a>(<a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">tmp</a>), ic, dt);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> thetal_out = <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">tmp</a>.thetal.const_array();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; col.<a class="code" href="structShocColumnData.html#abb95aacab1568120c49cf176a5a35990">layout</a>.<a class="code" href="structShocColumnLayout.html#a613bf2a5a474f7cccfb20c031368a056">nlev</a>; ++k) {</div>
@@ -291,8 +291,8 @@ Static Public Member Functions</h2></td></tr>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:114</div></div>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70">WSM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:104</div></div>
 <div class="ttc" id="anamespaceshoc_html_a0fd3544e2e21f10cd9d621c81fd419dbac2ca16d048ec66e04bca283eab048ec2"><div class="ttname"><a href="namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419dbac2ca16d048ec66e04bca283eab048ec2">shoc::InitRunOn::Host</a></div><div class="ttdeci">@ Host</div></div>
-<div class="ttc" id="anamespaceshoc_html_a9ec4609772a1c7b71c8eeb44fd84ac47"><div class="ttname"><a href="namespaceshoc.html#a9ec4609772a1c7b71c8eeb44fd84ac47">shoc::apply_energy_fix_column</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void apply_energy_fix_column(const ShocEnergyFixerView &amp;v, int ic, double dt) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocEnergyFixer.H:84</div></div>
 <div class="ttc" id="anamespaceshoc_html_acc20b19240ba5158554680570b07ecb8"><div class="ttname"><a href="namespaceshoc.html#acc20b19240ba5158554680570b07ecb8">shoc::make_energy_fixer_view</a></div><div class="ttdeci">ShocEnergyFixerView make_energy_fixer_view(ShocColumnData &amp;col)</div><div class="ttdef"><b>Definition:</b> ERF_ShocEnergyFixer.H:40</div></div>
+<div class="ttc" id="anamespaceshoc_html_af7236b4e3fee03a433b238fc1770702b"><div class="ttname"><a href="namespaceshoc.html#af7236b4e3fee03a433b238fc1770702b">shoc::apply_energy_fix_column</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void apply_energy_fix_column(const ShocEnergyFixerView &amp;v, int ic, double dt_d) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocEnergyFixer.H:84</div></div>
 <div class="ttc" id="astructShocColumnData_html"><div class="ttname"><a href="structShocColumnData.html">ShocColumnData</a></div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:204</div></div>
 <div class="ttc" id="astructShocColumnData_html_a280f51cad942d39eef1ff2a7cbdefd6b"><div class="ttname"><a href="structShocColumnData.html#a280f51cad942d39eef1ff2a7cbdefd6b">ShocColumnData::dz</a></div><div class="ttdeci">amrex::FArrayBox dz</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:210</div></div>
 <div class="ttc" id="astructShocColumnData_html_a3c410d0cefc4b0028cd93d316845d12f"><div class="ttname"><a href="structShocColumnData.html#a3c410d0cefc4b0028cd93d316845d12f">ShocColumnData::surf_lat_flux</a></div><div class="ttdeci">amrex::FArrayBox surf_lat_flux</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:277</div></div>
@@ -308,7 +308,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classShocEnergyFixer_a9d8cdee59bf835a5cec3ab7a9b958d30_cgraph.png" border="0" usemap="#aclassShocEnergyFixer_a9d8cdee59bf835a5cec3ab7a9b958d30_cgraph" alt=""/></div>
 <map name="aclassShocEnergyFixer_a9d8cdee59bf835a5cec3ab7a9b958d30_cgraph" id="aclassShocEnergyFixer_a9d8cdee59bf835a5cec3ab7a9b958d30_cgraph">
 <area shape="rect" title=" " alt="" coords="5,242,179,283"/>
-<area shape="rect" href="namespaceshoc.html#a9ec4609772a1c7b71c8eeb44fd84ac47" title=" " alt="" coords="263,129,411,170"/>
+<area shape="rect" href="namespaceshoc.html#af7236b4e3fee03a433b238fc1770702b" title=" " alt="" coords="263,129,411,170"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#a9ffc0b7122de44dc3954d0d476beed6b" title=" " alt="" coords="242,249,433,276"/>
 <area shape="rect" href="namespaceshoc.html#acc20b19240ba5158554680570b07ecb8" title=" " alt="" coords="227,300,448,327"/>
 <area shape="rect" href="namespaceshoc.html#a54869a642372eb758c54218d9250998e" title=" " alt="" coords="496,5,691,32"/>
@@ -368,9 +368,9 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceshoc.html#a54869a642372eb758c54218d9250998e">shoc::diagnose_active_top</a>(tke, ic, nlev);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceshoc.html#a54869a642372eb758c54218d9250998e">shoc::diagnose_active_top</a>(tke, ic, nlev);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
 <div class="ttc" id="anamespaceshoc_html_a54869a642372eb758c54218d9250998e"><div class="ttname"><a href="namespaceshoc.html#a54869a642372eb758c54218d9250998e">shoc::diagnose_active_top</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int diagnose_active_top(const amrex::Array4&lt; const amrex::Real &gt; &amp;tke, int ic, int nlev) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocEnergyFixer.H:68</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>

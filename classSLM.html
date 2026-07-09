@@ -375,7 +375,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// Expose for GPU copy</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">double</span> dt = <a class="code" href="classSLM.html#a56233eb0e4bb9794bc54304692168af4">m_dt</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(<a class="code" href="classSLM.html#a56233eb0e4bb9794bc54304692168af4">m_dt</a>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dzInv = <a class="code" href="classSLM.html#ac41680d479e44b54678787b662c55fef">m_lsm_geom</a>.InvCellSize(2);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(*(<a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__SLM.html#aa5e13b3eb28daf2dc656cfcff9bddfd2a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a>])); mfi.isValid(); ++mfi) {</div>
