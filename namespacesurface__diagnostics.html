@@ -217,7 +217,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; lsm_flux_is_valid) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; <a class="code" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">lsm_flux_is_valid</a>) {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::LSMLand;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (is_custom) {</div>
@@ -226,7 +226,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (is_rico) {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::RICO;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; !lsm_flux_is_valid) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; !<a class="code" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">lsm_flux_is_valid</a>) {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerFallback;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (is_land) {</div>
@@ -234,8 +234,18 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerSea;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="ttc" id="anamespacesurface__layer__stress_html_a5d425fafa54ebef732ceefe39db61f3c"><div class="ttname"><a href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">surface_layer_stress::lsm_flux_is_valid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool lsm_flux_is_valid(bool has_flux, bool is_land, amrex::Real flux, amrex::Real undefined)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayerStress.H:24</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacesurface__diagnostics_a9122f8c636e3844b424279a993fa59b3_cgraph.png" border="0" usemap="#anamespacesurface__diagnostics_a9122f8c636e3844b424279a993fa59b3_cgraph" alt=""/></div>
+<map name="anamespacesurface__diagnostics_a9122f8c636e3844b424279a993fa59b3_cgraph" id="anamespacesurface__diagnostics_a9122f8c636e3844b424279a993fa59b3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c" title=" " alt="" coords="228,5,384,47"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

@@ -34,6 +34,7 @@ var hierarchy =
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", null ],
     [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", null ],
     [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", null ],
+    [ "surface_layer_stress::FaceStressResult", "structsurface__layer__stress_1_1FaceStressResult.html", null ],
     [ "ForestDrag", "classForestDrag.html", null ],
     [ "amrex::GPUable", null, [
       [ "TerrainIF", "classTerrainIF.html", null ]

@@ -29,6 +29,9 @@ var annotated_dup =
     [ "shoc", "namespaceshoc.html", [
       [ "ShocEnergyFixerView", "structshoc_1_1ShocEnergyFixerView.html", "structshoc_1_1ShocEnergyFixerView" ]
     ] ],
+    [ "surface_layer_stress", "namespacesurface__layer__stress.html", [
+      [ "FaceStressResult", "structsurface__layer__stress_1_1FaceStressResult.html", "structsurface__layer__stress_1_1FaceStressResult" ]
+    ] ],
     [ "adiabatic", "structadiabatic.html", "structadiabatic" ],
     [ "adiabatic_charnock", "structadiabatic__charnock.html", "structadiabatic__charnock" ],
     [ "adiabatic_donelan", "structadiabatic__donelan.html", "structadiabatic__donelan" ],

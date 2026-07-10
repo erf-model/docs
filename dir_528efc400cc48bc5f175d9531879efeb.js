@@ -34,6 +34,7 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_SurfaceLayer.H", "ERF__SurfaceLayer_8H.html", [
       [ "SurfaceLayer", "classSurfaceLayer.html", "classSurfaceLayer" ]
     ] ],
+    [ "ERF_SurfaceLayerStress.H", "ERF__SurfaceLayerStress_8H.html", "ERF__SurfaceLayerStress_8H" ],
     [ "ERF_TimeInterpolatedData.H", "ERF__TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
     ] ]

@@ -186,6 +186,11 @@ var NAVTREEINDEX10 =
 "ERF__SurfaceFluxDiagnostics_8H.html#a5c7726fdd46761f6211dd3e2e5cd5e0a":[3,0,1,3,0,1],
 "ERF__SurfaceFluxDiagnostics_8H.html#ab88d6e67865e46b0acde14fdb5411e5f":[3,0,1,3,0,0],
 "ERF__SurfaceFluxDiagnostics_8H_source.html":[3,0,1,3,0],
+"ERF__SurfaceLayerStress_8H.html":[3,0,1,1,22],
+"ERF__SurfaceLayerStress_8H.html#a5a26fea3011e6a5d2d9bbe1c770c98dd":[3,0,1,1,22,2],
+"ERF__SurfaceLayerStress_8H.html#a5d425fafa54ebef732ceefe39db61f3c":[3,0,1,1,22,3],
+"ERF__SurfaceLayerStress_8H.html#a9a45b74e34f33537f0c28bb17da95cdd":[3,0,1,1,22,1],
+"ERF__SurfaceLayerStress_8H_source.html":[3,0,1,1,22],
 "ERF__SurfaceLayer_8H.html":[3,0,1,1,21],
 "ERF__SurfaceLayer_8H_source.html":[3,0,1,1,21],
 "ERF__SurfaceLayer_8cpp.html":[3,0,1,1,20],
@@ -244,10 +249,5 @@ var NAVTREEINDEX10 =
 "ERF__TerrainMetrics_8H.html#a21aac76e0b284b33e302526e1f292c76":[3,0,1,20,34,16],
 "ERF__TerrainMetrics_8H.html#a2b9e684355ee8d6dad22950c8c51716b":[3,0,1,20,34,17],
 "ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b":[3,0,1,20,34,27],
-"ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987":[3,0,1,20,34,14],
-"ERF__TerrainMetrics_8H.html#a3e3ceccddeb3cca9d9e4573af2311a5e":[3,0,1,20,34,15],
-"ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565":[3,0,1,20,34,23],
-"ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2":[3,0,1,20,34,0],
-"ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0":[3,0,1,20,34,20],
-"ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739":[3,0,1,20,34,21]
+"ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987":[3,0,1,20,34,14]
 };

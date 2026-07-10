@@ -597,6 +597,7 @@ var namespaces_dup =
       [ "latent_heat_flux_wm2_from_rhoqv_flux", "namespacesurface__flux__diagnostics.html#ab88d6e67865e46b0acde14fdb5411e5f", null ],
       [ "sensible_heat_flux_wm2_from_rhotheta_flux", "namespacesurface__flux__diagnostics.html#a5c7726fdd46761f6211dd3e2e5cd5e0a", null ]
     ] ],
+    [ "surface_layer_stress", "namespacesurface__layer__stress.html", "namespacesurface__layer__stress" ],
     [ "Vars", "namespaceVars.html", null ],
     [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ],
     [ "WSM6Ind", "namespaceWSM6Ind.html", null ],
