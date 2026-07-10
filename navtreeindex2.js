@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__EOS_8H.html#a7ca234654aa49d086905b8550878ae7d":[3,0,1,20,6,3],
 "ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2":[3,0,1,20,6,11],
 "ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b":[3,0,1,20,6,2],
 "ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9":[3,0,1,20,6,4],
@@ -69,10 +70,9 @@ var NAVTREEINDEX2 =
 "ERF__HSEUtils_8H.html#af0aef5232439f743e9d149d64ba1018b":[3,0,1,20,8,8],
 "ERF__HSEUtils_8H_source.html":[3,0,1,20,8],
 "ERF__HurricaneDiagnostics_8H.html":[3,0,1,20,9],
-"ERF__HurricaneDiagnostics_8H.html#a02fb3c099352a4983d95e12ee17db1bd":[3,0,1,20,9,9],
 "ERF__HurricaneDiagnostics_8H.html#a3f58eb43379d7f86d36bf190882552d7":[3,0,1,20,9,1],
+"ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a":[3,0,1,20,9,9],
 "ERF__HurricaneDiagnostics_8H.html#a6cfd95afd0afebd625b889fb6e58371c":[3,0,1,20,9,10],
-"ERF__HurricaneDiagnostics_8H.html#a762576a785d71bfb6daa45161295df7a":[3,0,1,20,9,8],
 "ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923":[3,0,1,20,9,11],
 "ERF__HurricaneDiagnostics_8H.html#a7a07058a5090d8c94235b8aa9ecc1ef0":[3,0,1,20,9,5],
 "ERF__HurricaneDiagnostics_8H.html#a9260c67bea1e01d2c171acd11cc099ea":[3,0,1,20,9,3],
@@ -80,14 +80,15 @@ var NAVTREEINDEX2 =
 "ERF__HurricaneDiagnostics_8H.html#aa41e79a6092552206a17d3f4a797f564":[3,0,1,20,9,6],
 "ERF__HurricaneDiagnostics_8H.html#aaa00338da2ae456198fc994e41f984f2":[3,0,1,20,9,7],
 "ERF__HurricaneDiagnostics_8H.html#ad5c9988e5c4863d417d54aa7092e9a85":[3,0,1,20,9,2],
+"ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc":[3,0,1,20,9,8],
 "ERF__HurricaneDiagnostics_8H.html#ae71449b1cc6e6250b91f539153a7a0d3":[3,0,1,20,9,0],
 "ERF__HurricaneDiagnostics_8H_source.html":[3,0,1,20,9],
 "ERF__HurricaneDiagnostics__WRF_8cpp.html":[3,0,1,20,10],
-"ERF__HurricaneDiagnostics__WRF_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a":[3,0,1,20,10,3],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b":[3,0,1,20,10,3],
 "ERF__HurricaneDiagnostics__WRF_8cpp.html#a6cfd95afd0afebd625b889fb6e58371c":[3,0,1,20,10,4],
 "ERF__HurricaneDiagnostics__WRF_8cpp.html#a89278aa72b9ffb1c23f34c0916c28a81":[3,0,1,20,10,0],
+"ERF__HurricaneDiagnostics__WRF_8cpp.html#ab24227b4c9a18621206de318e786f252":[3,0,1,20,10,2],
 "ERF__HurricaneDiagnostics__WRF_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b":[3,0,1,20,10,5],
-"ERF__HurricaneDiagnostics__WRF_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc":[3,0,1,20,10,2],
 "ERF__HurricaneDiagnostics__WRF_8cpp.html#ae71449b1cc6e6250b91f539153a7a0d3":[3,0,1,20,10,1],
 "ERF__IceFall_8cpp.html":[3,0,1,11,4,1],
 "ERF__ImplicitDiff__N_8cpp.html":[3,0,1,4,21],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__InitCustomPertVels__Bomex_8H.html#a733275701db9aebe51be2e6c0e5b1816":[3,0,1,15,23,31],
 "ERF__InitCustomPertVels__Bomex_8H.html#a759b6c676dd964199817dd32e81d4a63":[3,0,1,15,23,5],
 "ERF__InitCustomPertVels__Bomex_8H.html#a7779eabadf76ed62e14a341c9d4df0a7":[3,0,1,15,23,19],
-"ERF__InitCustomPertVels__Bomex_8H.html#a7f74e9554c1ab66998e1319960f1e82c":[3,0,1,15,23,26],
-"ERF__InitCustomPertVels__Bomex_8H.html#a8095d4877b74f2c27efc6f6a135fba3d":[3,0,1,15,23,7]
+"ERF__InitCustomPertVels__Bomex_8H.html#a7f74e9554c1ab66998e1319960f1e82c":[3,0,1,15,23,26]
 };

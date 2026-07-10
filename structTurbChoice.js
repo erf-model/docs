@@ -17,6 +17,7 @@ var structTurbChoice =
     [ "Cs", "structTurbChoice.html#aa75682bb872d7917ffb8fddb21532f40", null ],
     [ "diffuse_tke_3D", "structTurbChoice.html#aa208b9a78837d3d533160834a727735f", null ],
     [ "dirichlet_k", "structTurbChoice.html#a5850f536ace8e2595be28784a9754c4f", null ],
+    [ "enable_mrf_cloud_adjustment", "structTurbChoice.html#ab75c09755fb183abc31c3c6aaa1cca65", null ],
     [ "enable_mrf_countergradient", "structTurbChoice.html#a90626998872a2b54cc506f2a94a92542", null ],
     [ "enable_mrf_unbounded_vpert", "structTurbChoice.html#a567151e6b702985677ef0f3d4da640de", null ],
     [ "init_tke_from_ustar", "structTurbChoice.html#a94539ff18d7c583729b42c97d791ea73", null ],

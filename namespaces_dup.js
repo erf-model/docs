@@ -527,6 +527,7 @@ var namespaces_dup =
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
     [ "NoahmpInputComp", "namespaceNoahmpInputComp.html", null ],
     [ "NoahmpOutputComp", "namespaceNoahmpOutputComp.html", null ],
+    [ "NoahmpPrecipSlot", "namespaceNoahmpPrecipSlot.html", null ],
     [ "plotfile2d", "namespaceplotfile2d.html", "namespaceplotfile2d" ],
     [ "RealBdyVars", "namespaceRealBdyVars.html", null ],
     [ "rrtmgp", "namespacerrtmgp.html", [

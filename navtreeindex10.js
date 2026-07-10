@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"ERF__ShocColumnData_8H.html#a9ffc0b7122de44dc3954d0d476beed6b":[3,0,1,13,0,0,1],
 "ERF__ShocColumnData_8H.html#aeb60a3371d3ba05df905697847990b9c":[3,0,1,13,0,0,4],
 "ERF__ShocColumnData_8H_source.html":[3,0,1,13,0,0],
 "ERF__ShocConstants_8H.html":[3,0,1,13,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565":[3,0,1,20,34,23],
 "ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2":[3,0,1,20,34,0],
 "ERF__TerrainMetrics_8H.html#a48f57e72ac183fdf1a984f58f3d24ee0":[3,0,1,20,34,20],
-"ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739":[3,0,1,20,34,21],
-"ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae":[3,0,1,20,34,30]
+"ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739":[3,0,1,20,34,21]
 };

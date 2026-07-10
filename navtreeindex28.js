@@ -1,5 +1,15 @@
 var NAVTREEINDEX28 =
 {
+"structAdvChoice.html#a94de4907b3d6742071d5542b60e8f393":[2,0,10,13],
+"structAdvChoice.html#abde30f55d66f1716d7459a09001d3f43":[2,0,10,10],
+"structAdvChoice.html#abea240033571adc8f3993bd56bf28fa2":[2,0,10,0],
+"structAdvChoice.html#add9ddd5d61fc695bd2df0e3818767b78":[2,0,10,7],
+"structAdvChoice.html#afb0ff64219a9e79d077b1a06da7817ae":[2,0,10,6],
+"structCENTERED2.html":[2,0,12],
+"structCENTERED2.html#a1f9232868e37a452630ccfa8ec34be91":[2,0,12,1],
+"structCENTERED2.html#a2b0e42ec56f22f97bb65ed044f6f77a0":[2,0,12,4],
+"structCENTERED2.html#a49f65cb094600a7ef7c91423426cff09":[2,0,12,2],
+"structCENTERED2.html#a66de83f17cc1fa457cb89af60afb0041":[2,0,12,5],
 "structCENTERED2.html#ac162099524c29536f1d08dcbb7c6c67a":[2,0,12,7],
 "structCENTERED2.html#ac8bd01fa97a379612f9457f992ea0782":[2,0,12,6],
 "structCENTERED2.html#adb613a538275649aec33db89afd0e822":[2,0,12,3],
@@ -239,15 +249,5 @@ var NAVTREEINDEX28 =
 "structNDArray.html#a4d7550e3c00d13d8397f1cfbdfd2ab48":[2,0,63,4],
 "structNDArray.html#a6a0a485b6da8ce09dda81fc51607da73":[2,0,63,7],
 "structNDArray.html#a7bd19397e539424afc06e9fe12760434":[2,0,63,1],
-"structNDArray.html#a96033b69f69ea0ae537a24288715752d":[2,0,63,0],
-"structNDArray.html#a99d704051dda7b5635b12cbe785d7bb5":[2,0,63,10],
-"structNDArray.html#aa1c5762c2de2f4286d4f341b618df1e5":[2,0,63,3],
-"structNDArray.html#ad839c3c65bd755311afb6f0dad08f336":[2,0,63,5],
-"structPlaneSampler.html":[2,0,70],
-"structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6":[2,0,70,5],
-"structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d":[2,0,70,2],
-"structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4":[2,0,70,6],
-"structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb":[2,0,70,3],
-"structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc":[2,0,70,7],
-"structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7":[2,0,70,8]
+"structNDArray.html#a96033b69f69ea0ae537a24288715752d":[2,0,63,0]
 };
