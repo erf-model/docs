@@ -15,6 +15,7 @@ var hierarchy =
     [ "CENTERED2", "structCENTERED2.html", null ],
     [ "CENTERED4", "structCENTERED4.html", null ],
     [ "CENTERED6", "structCENTERED6.html", null ],
+    [ "noahmp_detail::ClampedPrecipCell", "structnoahmp__detail_1_1ClampedPrecipCell.html", null ],
     [ "custom_flux", "structcustom__flux.html", null ],
     [ "DampingChoice", "structDampingChoice.html", null ],
     [ "plotfile2d::DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", null ],
@@ -41,6 +42,7 @@ var hierarchy =
     ] ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],
+    [ "noahmp_detail::InvariantPrecipCell", "structnoahmp__detail_1_1InvariantPrecipCell.html", null ],
     [ "IRadiation", "classIRadiation.html", [
       [ "Radiation", "classRadiation.html", null ]
     ] ],
@@ -98,6 +100,7 @@ var hierarchy =
     [ "plotfile2d::Plotfile2DOutputDescriptor", "structplotfile2d_1_1Plotfile2DOutputDescriptor.html", null ],
     [ "plotfile2d::PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", null ],
     [ "polygon_", "classpolygon__.html", null ],
+    [ "noahmp_detail::PrecipSlots", "structnoahmp__detail_1_1PrecipSlots.html", null ],
     [ "ProblemBase", "classProblemBase.html", null ],
     [ "ProbParmDefaults", "structProbParmDefaults.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],

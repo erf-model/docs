@@ -11,6 +11,11 @@ var annotated_dup =
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
       [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
     ] ],
+    [ "noahmp_detail", "namespacenoahmp__detail.html", [
+      [ "PrecipSlots", "structnoahmp__detail_1_1PrecipSlots.html", "structnoahmp__detail_1_1PrecipSlots" ],
+      [ "ClampedPrecipCell", "structnoahmp__detail_1_1ClampedPrecipCell.html", "structnoahmp__detail_1_1ClampedPrecipCell" ],
+      [ "InvariantPrecipCell", "structnoahmp__detail_1_1InvariantPrecipCell.html", "structnoahmp__detail_1_1InvariantPrecipCell" ]
+    ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
       [ "SampledBracket", "structplotfile2d_1_1SampledBracket.html", "structplotfile2d_1_1SampledBracket" ],

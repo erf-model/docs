@@ -525,6 +525,7 @@ var namespaces_dup =
       [ "wsm6_diag_schema_v1", "namespacemp__wsm6__isohelper.html#a98a97f510ea5e8e5d75762f6ce08b607", null ]
     ] ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
+    [ "noahmp_detail", "namespacenoahmp__detail.html", "namespacenoahmp__detail" ],
     [ "NoahmpInputComp", "namespaceNoahmpInputComp.html", null ],
     [ "NoahmpOutputComp", "namespaceNoahmpOutputComp.html", null ],
     [ "NoahmpPrecipSlot", "namespaceNoahmpPrecipSlot.html", null ],

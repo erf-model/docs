@@ -84,8 +84,7 @@ $(document).ready(function(){initNavTree('ERF__NOAHMP_8H.html',''); initResizabl
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">ERF_NOAHMP.H File Reference</div>  </div>
 </div><!--header-->
@@ -110,12 +109,13 @@ $(document).ready(function(){initNavTree('ERF__NOAHMP_8H.html',''); initResizabl
 <code>#include &lt;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__SurfacePrecipitation_8H_source.html">ERF_SurfacePrecipitation.H</a>&gt;</code><br />
 <code>#include &lt;NoahmpIO.H&gt;</code><br />
+<code>#include &lt;<a class="el" href="ERF__NOAHMP__Fields_8H_source.html">ERF_NOAHMP_Fields.H</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_NOAHMP.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__NOAHMP_8H__incl.png" border="0" usemap="#aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP_8H" alt=""/></div>
 <map name="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP_8H" id="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP_8H">
-<area shape="rect" title=" " alt="" coords="2364,5,2556,47"/>
+<area shape="rect" title=" " alt="" coords="2399,5,2591,47"/>
 <area shape="rect" title=" " alt="" coords="847,319,905,345"/>
 <area shape="rect" title=" " alt="" coords="2463,95,2526,121"/>
 <area shape="rect" title=" " alt="" coords="2551,95,2628,121"/>
@@ -136,6 +136,7 @@ Include dependency graph for ERF_NOAHMP.H:</div>
 <area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1909,319,2062,345"/>
 <area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="2161,169,2359,196"/>
 <area shape="rect" title=" " alt="" coords="3827,95,3933,121"/>
+<area shape="rect" href="ERF__NOAHMP__Fields_8H.html" title=" " alt="" coords="3957,95,4129,121"/>
 <area shape="rect" title=" " alt="" coords="1701,169,1833,196"/>
 <area shape="rect" title=" " alt="" coords="1260,319,1340,345"/>
 <area shape="rect" title=" " alt="" coords="1364,319,1484,345"/>
@@ -163,8 +164,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__NOAHMP_8H__dep__incl.png" border="0" usemap="#aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP_8Hdep" alt=""/></div>
 <map name="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP_8Hdep" id="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP_8Hdep">
-<area shape="rect" title=" " alt="" coords="12,5,204,47"/>
-<area shape="rect" href="ERF__NOAHMP_8cpp.html" title=" " alt="" coords="5,95,211,136"/>
+<area shape="rect" title=" " alt="" coords="449,5,641,47"/>
+<area shape="rect" href="ERF__NOAHMP__Advance_8cpp.html" title=" " alt="" coords="5,95,276,136"/>
+<area shape="rect" href="ERF__NOAHMP__Init_8cpp.html" title=" " alt="" coords="299,95,534,136"/>
+<area shape="rect" href="ERF__NOAHMP__IO_8cpp.html" title=" " alt="" coords="559,95,787,136"/>
+<area shape="rect" href="ERF__NOAHMP__Precip_8cpp.html" title=" " alt="" coords="811,95,1065,136"/>
 </map>
 </div>
 </div>
@@ -172,126 +176,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnoahmp__detail_1_1PrecipSlots.html">noahmp_detail::PrecipSlots</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnoahmp__detail_1_1ClampedPrecipCell.html">noahmp_detail::ClampedPrecipCell</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnoahmp__detail_1_1InvariantPrecipCell.html">noahmp_detail::InvariantPrecipCell</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNOAHMP.html">NOAHMP</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespaceLsmData__NOAHMP"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLsmData__NOAHMP.html">LsmData_NOAHMP</a></td></tr>
+<tr class="memitem:namespacenoahmp__detail"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacenoahmp__detail.html">noahmp_detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceLsmFlux__NOAHMP"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLsmFlux__NOAHMP.html">LsmFlux_NOAHMP</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceNoahmpPrecipSlot"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNoahmpPrecipSlot.html">NoahmpPrecipSlot</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceNoahmpInputComp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNoahmpInputComp.html">NoahmpInputComp</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceNoahmpOutputComp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNoahmpOutputComp.html">NoahmpOutputComp</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a5b95582dcc26005b036524933f0ae346"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346adca47804869ea6881fb47994c656b9e9">LsmData_NOAHMP::t_sfc</a> = 0
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a153d612e1de83f762ac72ae015f0b4a6">LsmData_NOAHMP::sfc_emis</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a2cfc21eae7c47a6f88c6f3c23026c1ba">LsmData_NOAHMP::sfc_alb_dir_vis</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346afcb431594b5602e1d05550bd06f0fe66">LsmData_NOAHMP::sfc_alb_dir_nir</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346aff5000fc3eb27bb70b9aea77f0c1e5e9">LsmData_NOAHMP::sfc_alb_dif_vis</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a3896197fdc03640b87e7a1ba42ea7655">LsmData_NOAHMP::sfc_alb_dif_nir</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346acb373e04fe288626ca1b51c80b45ba4a">LsmData_NOAHMP::cos_zenith_angle</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a0c16c2310918fe29c6421e7a201080ef">LsmData_NOAHMP::sw_flux_dn</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a81af4eea6b9510b220f19aecad84213e">LsmData_NOAHMP::sw_flux_dn_dir_vis</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a98a4b3a86920f44060904c093eae2456">LsmData_NOAHMP::sw_flux_dn_dir_nir</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346aebde7e21daaa9583eb4fc03bbb81f0ca">LsmData_NOAHMP::sw_flux_dn_dif_vis</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a327cdf68cf25cc51a5f444275a394c21">LsmData_NOAHMP::sw_flux_dn_dif_nir</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346ac79515507f1093a0726c8f70ad6861a9">LsmData_NOAHMP::lw_flux_dn</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a6ec8c8c847ad4782bcdd84a724084532">LsmData_NOAHMP::grdflx</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a4209d246f393457b7efb9600711fe00c">LsmData_NOAHMP::fira</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a8fefc031da04d065bf63ffff0b6df176">LsmData_NOAHMP::sav</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a740a211e83cf6d80e0756c7133edd4e9">LsmData_NOAHMP::sag</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a131b976950880b16f554a5a7a953ca50">LsmData_NOAHMP::albedo</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a97b167bc3c0d80158112064014344cc7">LsmData_NOAHMP::sfcrunoff</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a84084fad6e07fc2cf2d93343d2524df7">LsmData_NOAHMP::udrunoff</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346aa067c76c8f04d09a4330c6be8dad290e">LsmData_NOAHMP::smstav</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346a0be869ef000ff5d9a0bdd54e3d4c8c93">LsmData_NOAHMP::smstot</a>
-, <a class="el" href="namespaceLsmData__NOAHMP.html#a5b95582dcc26005b036524933f0ae346adcdca071138537342f18d4c1c968f492">LsmData_NOAHMP::NumVars</a>
-<br />
- }</td></tr>
-<tr class="separator:a5b95582dcc26005b036524933f0ae346"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a8a69be8ab6f45d7b49448422bfe40f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<a class="el" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa411e3389836ac6eff20fba74dbe34a4c">LsmFlux_NOAHMP::t_flux</a> = 0
-, <a class="el" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa8df9d3919c908deeedb39488c2a76c07">LsmFlux_NOAHMP::q_flux</a>
-, <a class="el" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa7e953fc0f1b5bcb19653405ec7256e40">LsmFlux_NOAHMP::tau13</a>
-, <a class="el" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fac319adfcf2e45b3be70235f3a2ce8d54">LsmFlux_NOAHMP::tau23</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>
-<br />
- }</td></tr>
-<tr class="separator:a3a8a69be8ab6f45d7b49448422bfe40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3055dd6ddf101a54971e55f30d53f7cd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cda638e63e2eaf3841c6a21e182c8a90d43">NoahmpPrecipSlot::total</a> = 0
-, <a class="el" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cda49ac5310f60d7e7853d8fac381276bc2">NoahmpPrecipSlot::rain</a>
-, <a class="el" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cdab3438f3a2ced991061222507b3d18607">NoahmpPrecipSlot::snow</a>
-, <a class="el" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cda31bea52e8be2467e5aae66f216cbbe9f">NoahmpPrecipSlot::graupel</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cda6661da6f314b943068d2c379b79f2d32">NoahmpPrecipSlot::hail</a>
-, <a class="el" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cdae9a0babf8cd25b7e04074a26a358988a">NoahmpPrecipSlot::NumSlots</a>
-<br />
- }</td></tr>
-<tr class="separator:a3055dd6ddf101a54971e55f30d53f7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a552f82c7864bfaf76d16d791b04d5db4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a923451cf5d6c7df82ec6c968a5793a55">NoahmpInputComp::u_phy</a> = 0
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a18328cc689272da38e701e47483c3dcb">NoahmpInputComp::v_phy</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4aa57ebd9b6fcc02b6b0cf2a65e1d577ed">NoahmpInputComp::t_phy</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a82c9889603fd82a415befd329b25a041">NoahmpInputComp::qv_curr</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4abc464592d58fef0df804acced1df4fb0">NoahmpInputComp::p8w</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4aaa0b106131b71659515e2c2200f780d1">NoahmpInputComp::swdown</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a7c3645b5c6e7290de80eb2a4f11929af">NoahmpInputComp::glw</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a9b106ba2365fb42fa6af365c89a17ab6">NoahmpInputComp::coszen</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a4c5c60cd9293b307198d10efc59e61bd">NoahmpInputComp::rainbl</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a20d9b113ed2bc30a955d846f7ee0f5db">NoahmpInputComp::sr_in</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a71d024bd17636270084c9e0b51f098bd">NoahmpInputComp::mp_rainnc</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4ad86e3e0ecab01bbed5bd8c2c818919a7">NoahmpInputComp::mp_snow</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a5cebdb5f9af2a84b04d228f480d8f902">NoahmpInputComp::mp_graup</a>
-, <a class="el" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4ad0eacf45103bc847747c150bb6ceee63">NoahmpInputComp::NumComps</a>
-<br />
- }</td></tr>
-<tr class="separator:a552f82c7864bfaf76d16d791b04d5db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a395e1370b98419c2fdd440f50397d976"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a00f3f19f93dea2871814abb7f29b9742">NoahmpOutputComp::hfx</a> = 0
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976af6e856920e3a77f93c3a1961fe531d41">NoahmpOutputComp::lh</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a923b2062dff6784baf4b01fcb264bed1">NoahmpOutputComp::tau_ew</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a8066672600ac370eafee4c094d3dcf80">NoahmpOutputComp::tau_ns</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aa18f521c955255a66350dc114c3e0e40">NoahmpOutputComp::tsk</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ae257ba58fece36e3d655952f83be90d1">NoahmpOutputComp::emiss</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aa305c803d3506b98717e5c92343dfaa7">NoahmpOutputComp::albsfcdir_vis</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976af447d633e704725fd9d7c3ec54d273cb">NoahmpOutputComp::albsfcdir_nir</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ae4b5c9d4068fd918c912ae1082d38a26">NoahmpOutputComp::albsfcdif_vis</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ad111c27a866156bbe702c55610a16578">NoahmpOutputComp::albsfcdif_nir</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a134ee8995a51d5ca53393c21f8246049">NoahmpOutputComp::o_grdflx</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a8ba8f778fb5565f2139bc08b8e2a3f82">NoahmpOutputComp::o_fira</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ad0da7984caac41bf9e9cb780b87595bd">NoahmpOutputComp::o_sav</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aeb8fa7a45bca9176147a1472c6d13067">NoahmpOutputComp::o_sag</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a499e5c3eedad189db3ac09ec84407697">NoahmpOutputComp::o_albedo</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a1f6c1a37158ab72808a00a7c216fd365">NoahmpOutputComp::o_sfcrunoff</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aa6acb5fb00b59a5bfd13a66e9fab8c67">NoahmpOutputComp::o_udrunoff</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a70f980f9028b6700744766b4a4025f4e">NoahmpOutputComp::o_smstav</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976a37efe2b96b1d759d4aa83e38c55a3a3d">NoahmpOutputComp::o_smstot</a>
-, <a class="el" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976abd3333165a817fed59608a2163f2ca76">NoahmpOutputComp::NumComps</a>
-<br />
- }</td></tr>
-<tr class="separator:a395e1370b98419c2fdd440f50397d976"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
