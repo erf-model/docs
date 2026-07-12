@@ -149,81 +149,99 @@ Include dependency graph for ERF_NOAHMP_Advance.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ae80fc401f141e536c17d1a7cb30b5417"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#ae80fc401f141e536c17d1a7cb30b5417">NOAHMP_X</a>(<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  member)&#160;&#160;&#160;noahmpio-&gt;member(i,1,j) = noah_input_arr(i,j,0,<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">NoahmpInputComp::name</a>);</td></tr>
-<tr class="separator:ae80fc401f141e536c17d1a7cb30b5417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae80fc401f141e536c17d1a7cb30b5417"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#ae80fc401f141e536c17d1a7cb30b5417">NOAHMP_X</a>(<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  member)&#160;&#160;&#160;noahmpio-&gt;member(i,j)   = noah_input_arr(i,j,0,<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">NoahmpInputComp::name</a>);</td></tr>
-<tr class="separator:ae80fc401f141e536c17d1a7cb30b5417"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae80fc401f141e536c17d1a7cb30b5417"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#ae80fc401f141e536c17d1a7cb30b5417">NOAHMP_X</a>(<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  member)&#160;&#160;&#160;noah_output_arr(i,j,0,<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">NoahmpOutputComp::name</a>) = noahmpio-&gt;member(i,j);</td></tr>
-<tr class="separator:ae80fc401f141e536c17d1a7cb30b5417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe553caa599c8835bd7de5d172ef789"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#a5fe553caa599c8835bd7de5d172ef789">NOAHMP_STAGE_IN_3D</a>(comp,  member)&#160;&#160;&#160;noahmpio-&gt;member(i,1,j) = noah_input_arr(i,j,0,NoahmpInputComp::comp);</td></tr>
+<tr class="separator:a5fe553caa599c8835bd7de5d172ef789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c8a4ac4e17fb116520165e2dfb5a84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#a07c8a4ac4e17fb116520165e2dfb5a84">NOAHMP_STAGE_IN_2D</a>(comp,  member)&#160;&#160;&#160;noahmpio-&gt;member(i,j)   = noah_input_arr(i,j,0,NoahmpInputComp::comp);</td></tr>
+<tr class="separator:a07c8a4ac4e17fb116520165e2dfb5a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e6293893b87e04f649f96987f84e25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#ad8e6293893b87e04f649f96987f84e25">NOAHMP_BIND_RESULT</a>(alias,  lsm,  <a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">out</a>)&#160;&#160;&#160;Array4&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&gt; alias = lsm_fab_data[LsmData_NOAHMP::lsm]-&gt;array(mfi);</td></tr>
+<tr class="separator:ad8e6293893b87e04f649f96987f84e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a933956e85a2a04e595a0eec649120a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#a0a933956e85a2a04e595a0eec649120a">NOAHMP_READ_OUT_2D</a>(comp,  member)&#160;&#160;&#160;noah_output_arr(i,j,0,NoahmpOutputComp::comp) = noahmpio-&gt;member(i,j);</td></tr>
+<tr class="separator:a0a933956e85a2a04e595a0eec649120a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cd5afa30dc082041eb2d255bdbfc6d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#a2cd5afa30dc082041eb2d255bdbfc6d4">NOAHMP_COPY_RESULT</a>(alias,  lsm,  <a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">out</a>)&#160;&#160;&#160;alias(i,j,0) = noah_output_arr(ii,jj,0,<a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">NoahmpOutputComp::out</a>);</td></tr>
+<tr class="separator:a2cd5afa30dc082041eb2d255bdbfc6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab701e4f8b5f1cf4c9764d4c6c5d340ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#ab701e4f8b5f1cf4c9764d4c6c5d340ed">NOAHMP_UNDEF_RESULT</a>(alias,  lsm,  <a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">out</a>)&#160;&#160;&#160;alias(i,j,0) = <a class="el" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</td></tr>
+<tr class="separator:ab701e4f8b5f1cf4c9764d4c6c5d340ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ae80fc401f141e536c17d1a7cb30b5417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae80fc401f141e536c17d1a7cb30b5417">&#9670;&nbsp;</a></span>NOAHMP_X <span class="overload">[1/3]</span></h2>
+<a id="ad8e6293893b87e04f649f96987f84e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e6293893b87e04f649f96987f84e25">&#9670;&nbsp;</a></span>NOAHMP_BIND_RESULT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NOAHMP_X</td>
+          <td class="memname">#define NOAHMP_BIND_RESULT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
+          <td class="paramname">alias, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">member&#160;</td>
+          <td class="paramname">lsm, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">out</a>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;noahmpio-&gt;member(i,1,j) = noah_input_arr(i,j,0,<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">NoahmpInputComp::name</a>);</td>
+          <td></td><td>&#160;&#160;&#160;Array4&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&gt; alias = lsm_fab_data[LsmData_NOAHMP::lsm]-&gt;array(mfi);</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae80fc401f141e536c17d1a7cb30b5417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae80fc401f141e536c17d1a7cb30b5417">&#9670;&nbsp;</a></span>NOAHMP_X <span class="overload">[2/3]</span></h2>
+<a id="a2cd5afa30dc082041eb2d255bdbfc6d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cd5afa30dc082041eb2d255bdbfc6d4">&#9670;&nbsp;</a></span>NOAHMP_COPY_RESULT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NOAHMP_X</td>
+          <td class="memname">#define NOAHMP_COPY_RESULT</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
+          <td class="paramname">alias, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">member&#160;</td>
+          <td class="paramname">lsm, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">out</a>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;noahmpio-&gt;member(i,j)   = noah_input_arr(i,j,0,<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">NoahmpInputComp::name</a>);</td>
+          <td></td><td>&#160;&#160;&#160;alias(i,j,0) = noah_output_arr(ii,jj,0,<a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">NoahmpOutputComp::out</a>);</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae80fc401f141e536c17d1a7cb30b5417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae80fc401f141e536c17d1a7cb30b5417">&#9670;&nbsp;</a></span>NOAHMP_X <span class="overload">[3/3]</span></h2>
+<a id="a0a933956e85a2a04e595a0eec649120a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a933956e85a2a04e595a0eec649120a">&#9670;&nbsp;</a></span>NOAHMP_READ_OUT_2D</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NOAHMP_X</td>
+          <td class="memname">#define NOAHMP_READ_OUT_2D</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
+          <td class="paramname">comp, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -234,7 +252,97 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;noah_output_arr(i,j,0,<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">NoahmpOutputComp::name</a>) = noahmpio-&gt;member(i,j);</td>
+          <td></td><td>&#160;&#160;&#160;noah_output_arr(i,j,0,NoahmpOutputComp::comp) = noahmpio-&gt;member(i,j);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07c8a4ac4e17fb116520165e2dfb5a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07c8a4ac4e17fb116520165e2dfb5a84">&#9670;&nbsp;</a></span>NOAHMP_STAGE_IN_2D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOAHMP_STAGE_IN_2D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">comp, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;noahmpio-&gt;member(i,j)   = noah_input_arr(i,j,0,NoahmpInputComp::comp);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fe553caa599c8835bd7de5d172ef789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe553caa599c8835bd7de5d172ef789">&#9670;&nbsp;</a></span>NOAHMP_STAGE_IN_3D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOAHMP_STAGE_IN_3D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">comp, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;noahmpio-&gt;member(i,1,j) = noah_input_arr(i,j,0,NoahmpInputComp::comp);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab701e4f8b5f1cf4c9764d4c6c5d340ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab701e4f8b5f1cf4c9764d4c6c5d340ed">&#9670;&nbsp;</a></span>NOAHMP_UNDEF_RESULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOAHMP_UNDEF_RESULT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alias, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">lsm, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="ERF__HurricaneDiagnostics__WRF_8cpp.html#a2cb195441ed59a76bdc43b1cb95bf37b">out</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;alias(i,j,0) = <a class="el" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</td>
         </tr>
       </table>
 </div><div class="memdoc">

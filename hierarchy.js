@@ -10,12 +10,13 @@ var hierarchy =
     [ "amrex::AmrCore", null, [
       [ "ERF", "classERF.html", null ]
     ] ],
+    [ "erf_provenance::ArtifactProvenance", "structerf__provenance_1_1ArtifactProvenance.html", null ],
     [ "SHOCInterface::Buffer", "structSHOCInterface_1_1Buffer.html", null ],
     [ "bulk_coeff_flux", "structbulk__coeff__flux.html", null ],
     [ "CENTERED2", "structCENTERED2.html", null ],
     [ "CENTERED4", "structCENTERED4.html", null ],
     [ "CENTERED6", "structCENTERED6.html", null ],
-    [ "noahmp_detail::ClampedPrecipCell", "structnoahmp__detail_1_1ClampedPrecipCell.html", null ],
+    [ "erf_noahmp::ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", null ],
     [ "custom_flux", "structcustom__flux.html", null ],
     [ "DampingChoice", "structDampingChoice.html", null ],
     [ "plotfile2d::DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", null ],
@@ -35,6 +36,7 @@ var hierarchy =
     [ "ERFPhysBCFunct_u", "classERFPhysBCFunct__u.html", null ],
     [ "ERFPhysBCFunct_v", "classERFPhysBCFunct__v.html", null ],
     [ "ERFPhysBCFunct_w", "classERFPhysBCFunct__w.html", null ],
+    [ "erf_provenance::ExecutionProvenance", "structerf__provenance_1_1ExecutionProvenance.html", null ],
     [ "surface_layer_stress::FaceStressResult", "structsurface__layer__stress_1_1FaceStressResult.html", null ],
     [ "ForestDrag", "classForestDrag.html", null ],
     [ "amrex::GPUable", null, [
@@ -42,7 +44,7 @@ var hierarchy =
     ] ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],
-    [ "noahmp_detail::InvariantPrecipCell", "structnoahmp__detail_1_1InvariantPrecipCell.html", null ],
+    [ "erf_noahmp::InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", null ],
     [ "IRadiation", "classIRadiation.html", [
       [ "Radiation", "classRadiation.html", null ]
     ] ],
@@ -73,6 +75,7 @@ var hierarchy =
     ] ],
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NDArray< DataType >", "structNDArray.html", null ],
+    [ "erf_noahmp::NoahmpBlockViews", "structerf__noahmp_1_1NoahmpBlockViews.html", null ],
     [ "NullMoist", "classNullMoist.html", [
       [ "Kessler", "classKessler.html", null ],
       [ "MoistNoCondensation", "classMoistNoCondensation.html", null ],
@@ -100,9 +103,11 @@ var hierarchy =
     [ "plotfile2d::Plotfile2DOutputDescriptor", "structplotfile2d_1_1Plotfile2DOutputDescriptor.html", null ],
     [ "plotfile2d::PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", null ],
     [ "polygon_", "classpolygon__.html", null ],
-    [ "noahmp_detail::PrecipSlots", "structnoahmp__detail_1_1PrecipSlots.html", null ],
+    [ "erf_noahmp::PrecipSlots", "structerf__noahmp_1_1PrecipSlots.html", null ],
     [ "ProblemBase", "classProblemBase.html", null ],
     [ "ProbParmDefaults", "structProbParmDefaults.html", null ],
+    [ "erf_provenance::ProvenanceParseResult", "structerf__provenance_1_1ProvenanceParseResult.html", null ],
+    [ "erf_provenance::ProvenanceRecord", "structerf__provenance_1_1ProvenanceRecord.html", null ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", null ],
     [ "rico_flux", "structrico__flux.html", null ],
     [ "rotate_flux", "structrotate__flux.html", null ],

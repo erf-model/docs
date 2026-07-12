@@ -53,6 +53,8 @@ var namespaces_dup =
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
+    [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
+    [ "erf_provenance", "namespaceerf__provenance.html", "namespaceerf__provenance" ],
     [ "ERFBCType", "namespaceERFBCType.html", [
       [ "mathematicalBndryTypes", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c", [
         [ "bogus", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4", null ],
@@ -525,7 +527,6 @@ var namespaces_dup =
       [ "wsm6_diag_schema_v1", "namespacemp__wsm6__isohelper.html#a98a97f510ea5e8e5d75762f6ce08b607", null ]
     ] ],
     [ "ncutils", "namespacencutils.html", "namespacencutils" ],
-    [ "noahmp_detail", "namespacenoahmp__detail.html", "namespacenoahmp__detail" ],
     [ "NoahmpInputComp", "namespaceNoahmpInputComp.html", null ],
     [ "NoahmpOutputComp", "namespaceNoahmpOutputComp.html", null ],
     [ "NoahmpPrecipSlot", "namespaceNoahmpPrecipSlot.html", null ],

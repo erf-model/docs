@@ -1,5 +1,17 @@
 var annotated_dup =
 [
+    [ "erf_noahmp", "namespaceerf__noahmp.html", [
+      [ "PrecipSlots", "structerf__noahmp_1_1PrecipSlots.html", "structerf__noahmp_1_1PrecipSlots" ],
+      [ "ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", "structerf__noahmp_1_1ClampedPrecipCell" ],
+      [ "InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", "structerf__noahmp_1_1InvariantPrecipCell" ],
+      [ "NoahmpBlockViews", "structerf__noahmp_1_1NoahmpBlockViews.html", "structerf__noahmp_1_1NoahmpBlockViews" ]
+    ] ],
+    [ "erf_provenance", "namespaceerf__provenance.html", [
+      [ "ExecutionProvenance", "structerf__provenance_1_1ExecutionProvenance.html", "structerf__provenance_1_1ExecutionProvenance" ],
+      [ "ArtifactProvenance", "structerf__provenance_1_1ArtifactProvenance.html", "structerf__provenance_1_1ArtifactProvenance" ],
+      [ "ProvenanceRecord", "structerf__provenance_1_1ProvenanceRecord.html", "structerf__provenance_1_1ProvenanceRecord" ],
+      [ "ProvenanceParseResult", "structerf__provenance_1_1ProvenanceParseResult.html", "structerf__provenance_1_1ProvenanceParseResult" ]
+    ] ],
     [ "module_libmassv", "namespacemodule__libmassv.html", [
       [ "vrec", "interfacemodule__libmassv_1_1vrec.html", "interfacemodule__libmassv_1_1vrec" ],
       [ "vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", "interfacemodule__libmassv_1_1vsqrt" ]
@@ -10,11 +22,6 @@ var annotated_dup =
       [ "NCVar", "structncutils_1_1NCVar.html", "structncutils_1_1NCVar" ],
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
       [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
-    ] ],
-    [ "noahmp_detail", "namespacenoahmp__detail.html", [
-      [ "PrecipSlots", "structnoahmp__detail_1_1PrecipSlots.html", "structnoahmp__detail_1_1PrecipSlots" ],
-      [ "ClampedPrecipCell", "structnoahmp__detail_1_1ClampedPrecipCell.html", "structnoahmp__detail_1_1ClampedPrecipCell" ],
-      [ "InvariantPrecipCell", "structnoahmp__detail_1_1InvariantPrecipCell.html", "structnoahmp__detail_1_1InvariantPrecipCell" ]
     ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
