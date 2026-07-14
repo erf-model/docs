@@ -150,12 +150,12 @@ Include dependency graph for ERF_Rebalance.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6d68b655a125c27c84fb266cd93a09f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Rebalance_8cpp.html#a6d68b655a125c27c84fb266cd93a09f5">rebalance_columns</a> (MultiFab &amp;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, MultiFab &amp;theta, const MultiFab &amp;qv, const MultiFab &amp;qt, const MultiFab *z_phys, const Geometry &amp;geom, const bool &amp;maintain_Th)</td></tr>
-<tr class="separator:a6d68b655a125c27c84fb266cd93a09f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b6af67958aba63003b3d54af404379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Rebalance_8cpp.html#a06b6af67958aba63003b3d54af404379">rebalance_columns</a> (MultiFab &amp;<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>, MultiFab &amp;theta, const MultiFab &amp;qv, const MultiFab &amp;qt, const MultiFab *z_phys, const Geometry &amp;geom, const bool &amp;maintain_Th, bool use_sfc)</td></tr>
+<tr class="separator:a06b6af67958aba63003b3d54af404379"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6d68b655a125c27c84fb266cd93a09f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d68b655a125c27c84fb266cd93a09f5">&#9670;&nbsp;</a></span>rebalance_columns()</h2>
+<a id="a06b6af67958aba63003b3d54af404379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b6af67958aba63003b3d54af404379">&#9670;&nbsp;</a></span>rebalance_columns()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +200,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>maintain_Th</em>&#160;</td>
+          <td class="paramname"><em>maintain_Th</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_sfc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -209,130 +215,130 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_FLOAT</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-6);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-10);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> grav = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// int ncomp    = cons.nComp();</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> k_dom_lo = geom.Domain().smallEnd(2);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> k_dom_hi = geom.Domain().bigEnd(2);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>,<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        Box bx  = mfi.tilebox();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">int</span> klo = bx.smallEnd(2);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = bx.bigEnd(2);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>((klo == k_dom_lo) &amp;&amp; (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> == k_dom_hi));</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        bx.makeSlab(2,klo);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a> = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>.array(mfi);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp;  th_arr = <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>.array(mfi);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp;  <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a> =    <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a>.const_array(mfi);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp;  qt_arr =    <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.const_array(mfi);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp;   z_arr = z_phys-&gt;const_array(mfi);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>) noexcept</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="comment">// integrate from surface to domain top</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>, F, C;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_tot_hi, rho_tot_lo;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo, z_hi;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> R_lo, R_hi;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_lo, qv_hi;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qt_lo, qt_hi;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Th_lo, Th_hi;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_hi;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> P_lo, P_hi;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="comment">// Integrate from z=0</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                z_lo = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; <span class="comment">// corresponding to p_0</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.125) * (z_arr(i,j,klo  ) + z_arr(i+1,j,klo  ) + z_arr(i,j+1,klo  ) + z_arr(i+1,j+1,klo  )</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                     +z_arr(i,j,klo+1) + z_arr(i+1,j,klo+1) + z_arr(i,j+1,klo+1) + z_arr(i+1,j+1,klo+1));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a> = z_hi - z_lo;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="comment">// Establish known constant</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                qt_lo = qt_arr(i,j,klo);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                qv_lo = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,klo);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                Th_lo = th_arr(i,j,klo);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                P_lo  = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                R_lo  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_lo, P_lo, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_lo);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                rho_tot_lo = R_lo * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_lo);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                C  = -P_lo + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_lo*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="comment">// Initial guess and residual</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                qt_hi = qt_arr(i,j,klo);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                qv_hi = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,klo);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                Th_hi = th_arr(i,j,klo);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                P_hi  = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                T_hi  = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(P_hi, Th_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                R_hi  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_hi);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                rho_tot_hi = R_hi * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_hi);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                F = P_hi + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_hi*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a> + C;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="comment">// Do iterations</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <a class="code" href="namespaceHSEutils.html#a42fec25f99c74bb8cf3e5cc8999803cd">HSEutils::Newton_Raphson_hse</a>(tol, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                             grav, C, Th_hi, T_hi,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                             qt_hi, qv_hi,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                             P_hi, R_hi, F, maintain_Th);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="comment">// Assign data</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,klo) = R_hi;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">if</span> (!maintain_Th) { th_arr(i,j,klo)  = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(T_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>); }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                P_lo = P_hi;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                z_lo = z_hi;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="comment">// Use SFC state at first CC</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                z_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.125) * (z_arr(i,j,klo  ) + z_arr(i+1,j,klo  ) + z_arr(i,j+1,klo  ) + z_arr(i+1,j+1,klo  )</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                      +z_arr(i,j,klo+1) + z_arr(i+1,j,klo+1) + z_arr(i,j+1,klo+1) + z_arr(i+1,j+1,klo+1));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                P_lo = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(<a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,klo)*th_arr(i,j,klo),<a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,klo));</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                P_hi = P_lo;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo+1); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;              z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.125) * (z_arr(i,j,k  ) + z_arr(i+1,j,k  ) + z_arr(i,j+1,k  ) + z_arr(i+1,j+1,k  )</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                   +z_arr(i,j,k+1) + z_arr(i+1,j,k+1) + z_arr(i,j+1,k+1) + z_arr(i+1,j+1,k+1));</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;              <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>   = z_hi - z_lo;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;              <span class="comment">// Establish known constant</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;              qt_lo = qt_arr(i,j,k-1);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;              qv_lo = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k-1);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;              Th_lo = th_arr(i,j,k-1);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;              R_lo  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_lo, P_lo, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_lo);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;              rho_tot_lo = R_lo * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_lo);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;              C  = -P_lo + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_lo*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;              <span class="comment">// Initial guess and residual</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              qt_hi = qt_arr(i,j,k);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;              qv_hi = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;              Th_hi = th_arr(i,j,k);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;              T_hi  = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(P_hi, Th_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;              R_hi  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_hi);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;              rho_tot_hi = R_hi * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_hi);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;              F = P_hi + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_hi*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a> + C;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;              <span class="comment">// Do iterations</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;              <a class="code" href="namespaceHSEutils.html#a42fec25f99c74bb8cf3e5cc8999803cd">HSEutils::Newton_Raphson_hse</a>(tol, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                                           grav, C, Th_hi, T_hi,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                           qt_hi, qv_hi,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                           P_hi, R_hi, F, maintain_Th);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;              <span class="comment">// Assign data</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;              <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k) = R_hi;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;              <span class="keywordflow">if</span> (!maintain_Th) { th_arr(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(T_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>); }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;              P_lo = P_hi;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;              z_lo = z_hi;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        });</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;} <span class="comment">// rebalance_columns</span></div>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_FLOAT</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-6);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tol  = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-10);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> grav = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// int ncomp    = cons.nComp();</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> k_dom_lo = geom.Domain().smallEnd(2);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> k_dom_hi = geom.Domain().bigEnd(2);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>,<a class="code" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00">TileNoZ</a>()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        Box bx  = mfi.tilebox();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">int</span> klo = bx.smallEnd(2);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = bx.bigEnd(2);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>((klo == k_dom_lo) &amp;&amp; (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> == k_dom_hi));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        bx.makeSlab(2,klo);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a> = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>.array(mfi);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp;  th_arr = <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a>.array(mfi);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp;  <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a> =    <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a>.const_array(mfi);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp;  qt_arr =    <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.const_array(mfi);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp;   z_arr = z_phys-&gt;const_array(mfi);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>) noexcept</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="comment">// integrate from surface to domain top</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>, F, C;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_tot_hi, rho_tot_lo;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_lo, z_hi;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> R_lo, R_hi;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qv_lo, qv_hi;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qt_lo, qt_hi;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Th_lo, Th_hi;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> T_hi;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> P_lo, P_hi;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="comment">// Integrate from z=0</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (use_sfc) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                z_lo = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>; <span class="comment">// corresponding to p_0</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.125) * (z_arr(i,j,klo  ) + z_arr(i+1,j,klo  ) + z_arr(i,j+1,klo  ) + z_arr(i+1,j+1,klo  )</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                     +z_arr(i,j,klo+1) + z_arr(i+1,j,klo+1) + z_arr(i,j+1,klo+1) + z_arr(i+1,j+1,klo+1));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a> = z_hi - z_lo;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="comment">// Establish known constant</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                qt_lo = qt_arr(i,j,klo);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                qv_lo = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,klo);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                Th_lo = th_arr(i,j,klo);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                P_lo  = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                R_lo  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_lo, P_lo, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_lo);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                rho_tot_lo = R_lo * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_lo);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                C  = -P_lo + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_lo*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment">// Initial guess and residual</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                qt_hi = qt_arr(i,j,klo);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                qv_hi = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,klo);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                Th_hi = th_arr(i,j,klo);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                P_hi  = <a class="code" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                T_hi  = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(P_hi, Th_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                R_hi  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_hi);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                rho_tot_hi = R_hi * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_hi);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                F = P_hi + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_hi*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a> + C;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="comment">// Do iterations</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="namespaceHSEutils.html#a42fec25f99c74bb8cf3e5cc8999803cd">HSEutils::Newton_Raphson_hse</a>(tol, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                             grav, C, Th_hi, T_hi,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                             qt_hi, qv_hi,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                             P_hi, R_hi, F, maintain_Th);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="comment">// Assign data</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,klo) = R_hi;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (!maintain_Th) { th_arr(i,j,klo)  = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(T_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>); }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                P_lo = P_hi;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                z_lo = z_hi;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="comment">// Use SFC state at first CC</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                z_lo = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.125) * (z_arr(i,j,klo  ) + z_arr(i+1,j,klo  ) + z_arr(i,j+1,klo  ) + z_arr(i+1,j+1,klo  )</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                      +z_arr(i,j,klo+1) + z_arr(i+1,j,klo+1) + z_arr(i,j+1,klo+1) + z_arr(i+1,j+1,klo+1));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                P_lo = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(<a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,klo)*th_arr(i,j,klo),<a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,klo));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                P_hi = P_lo;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo+1); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;              z_hi = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.125) * (z_arr(i,j,k  ) + z_arr(i+1,j,k  ) + z_arr(i,j+1,k  ) + z_arr(i+1,j+1,k  )</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                   +z_arr(i,j,k+1) + z_arr(i+1,j,k+1) + z_arr(i,j+1,k+1) + z_arr(i+1,j+1,k+1));</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;              <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>   = z_hi - z_lo;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;              <span class="comment">// Establish known constant</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;              qt_lo = qt_arr(i,j,k-1);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;              qv_lo = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k-1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;              Th_lo = th_arr(i,j,k-1);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;              R_lo  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_lo, P_lo, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_lo);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;              rho_tot_lo = R_lo * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_lo);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;              C  = -P_lo + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_lo*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              <span class="comment">// Initial guess and residual</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;              qt_hi = qt_arr(i,j,k);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;              qv_hi = <a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;              Th_hi = th_arr(i,j,k);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;              T_hi  = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(P_hi, Th_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;              R_hi  = <a class="code" href="ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8">getRhogivenThetaPress</a>(Th_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, qv_hi);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;              rho_tot_hi = R_hi * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + qt_hi);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;              F = P_hi + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*rho_tot_hi*grav*<a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a> + C;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;              <span class="comment">// Do iterations</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;              <a class="code" href="namespaceHSEutils.html#a42fec25f99c74bb8cf3e5cc8999803cd">HSEutils::Newton_Raphson_hse</a>(tol, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>, <a class="code" href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ab29d385bf2b39091cb8fd1a92247de70">dz</a>,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                                           grav, C, Th_hi, T_hi,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                           qt_hi, qv_hi,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                           P_hi, R_hi, F, maintain_Th);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;              <span class="comment">// Assign data</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;              <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k) = R_hi;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;              <span class="keywordflow">if</span> (!maintain_Th) { th_arr(i,j,k)  = <a class="code" href="ERF__EOS_8H.html#a8770405e52bfe8feb427eca945370fb2">getThgivenTandP</a>(T_hi, P_hi, <a class="code" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>); }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;              P_lo = P_hi;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;              z_lo = z_hi;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        });</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;} <span class="comment">// rebalance_columns</span></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:49</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
@@ -362,8 +368,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_cgraph.png" border="0" usemap="#aERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_cgraph" alt=""/></div>
-<map name="aERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_cgraph" id="aERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_cgraph">
+<div class="center"><img src="ERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_cgraph.png" border="0" usemap="#aERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_cgraph" alt=""/></div>
+<map name="aERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_cgraph" id="aERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_cgraph">
 <area shape="rect" title=" " alt="" coords="5,186,153,212"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="476,8,659,35"/>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="259,160,370,187"/>
@@ -379,8 +385,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_icgraph.png" border="0" usemap="#aERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_icgraph" alt=""/></div>
-<map name="aERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_icgraph" id="aERF__Rebalance_8cpp_a6d68b655a125c27c84fb266cd93a09f5_icgraph">
+<div class="center"><img src="ERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_icgraph.png" border="0" usemap="#aERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_icgraph" alt=""/></div>
+<map name="aERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_icgraph" id="aERF__Rebalance_8cpp_a06b6af67958aba63003b3d54af404379_icgraph">
 <area shape="rect" title=" " alt="" coords="207,13,355,39"/>
 <area shape="rect" href="classERF.html#a2908bcd920ab5e3fef171a37302853ec" title=" " alt="" coords="5,5,159,47"/>
 </map>
