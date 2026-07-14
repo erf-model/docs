@@ -179,7 +179,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">// Write Header file.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::string HeaderFileName = bdy_file_name + <span class="stringliteral">&quot;/Header&quot;</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        std::ofstream HeaderFile;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        HeaderFile.open(HeaderFileName.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ofstream::out</a> | std::ofstream::trunc);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        HeaderFile.open(HeaderFileName.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ofstream::out</a> | std::ofstream::trunc);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span> (!HeaderFile.good()) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            amrex::FileOpenFailed(HeaderFileName);</div>
@@ -215,7 +215,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ParallelDescriptor::Barrier();</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39"><div class="ttname"><a href="ERF__DataStruct_8H.html#a3856c8a2f055327ada182186bfd70239a7c3c83d6fcec1f134956c3160adf6e39">nvars</a></div><div class="ttdeci">@ nvars</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:98</div></div>
-<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a6b6091cd65dcf2a537c3fca1cc65594a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a></div><div class="ttdeci">struct @29 out</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_a6b6091cd65dcf2a537c3fca1cc65594a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a></div><div class="ttdeci">struct @29 out</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,7 +296,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="comment">// X-low boundary.</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> (bdy_data_xlo.size() &gt; 0 &amp;&amp; ivar &lt; bdy_data_xlo.size()) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                std::string filename = time_dir + <span class="stringliteral">&quot;/BdyData_xlo_var&quot;</span> + std::to_string(ivar);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                bdy_data_xlo[ivar].writeOn(ofs);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                ofs.close();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
@@ -304,7 +304,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="comment">// X-high boundary.</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">if</span> (bdy_data_xhi.size() &gt; 0 &amp;&amp; ivar &lt; bdy_data_xhi.size()) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                std::string filename = time_dir + <span class="stringliteral">&quot;/BdyData_xhi_var&quot;</span> + std::to_string(ivar);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                bdy_data_xhi[ivar].writeOn(ofs);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                ofs.close();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
@@ -312,7 +312,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="comment">// Y-low boundary.</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> (bdy_data_ylo.size() &gt; 0 &amp;&amp; ivar &lt; bdy_data_ylo.size()) {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                std::string filename = time_dir + <span class="stringliteral">&quot;/BdyData_ylo_var&quot;</span> + std::to_string(ivar);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                bdy_data_ylo[ivar].writeOn(ofs);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                ofs.close();</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
@@ -320,7 +320,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="comment">// Y-high boundary.</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">if</span> (bdy_data_yhi.size() &gt; 0 &amp;&amp; ivar &lt; bdy_data_yhi.size()) {</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                std::string filename = time_dir + <span class="stringliteral">&quot;/BdyData_yhi_var&quot;</span> + std::to_string(ivar);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                std::ofstream ofs(filename.c_str(), <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">std::ios::out</a> | std::ios::binary);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                bdy_data_yhi[ivar].writeOn(ofs);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                ofs.close();</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>

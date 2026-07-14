@@ -69,7 +69,6 @@ var hierarchy =
     [ "MYNNLevel25", "structMYNNLevel25.html", null ],
     [ "MYNNPBLH", "structMYNNPBLH.html", null ],
     [ "ncutils::NCDim", "structncutils_1_1NCDim.html", null ],
-    [ "ncutils::NCDType", "structncutils_1_1NCDType.html", null ],
     [ "ncutils::NCGroup", "classncutils_1_1NCGroup.html", [
       [ "ncutils::NCFile", "classncutils_1_1NCFile.html", null ]
     ] ],

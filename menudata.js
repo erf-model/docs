@@ -220,7 +220,6 @@ var menudata={children:[
 {text:"k",url:"functions_type.html#index_k"},
 {text:"m",url:"functions_type.html#index_m"},
 {text:"p",url:"functions_type.html#index_p"},
-{text:"r",url:"functions_type.html#index_r"},
 {text:"s",url:"functions_type.html#index_s"},
 {text:"u",url:"functions_type.html#index_u"},
 {text:"v",url:"functions_type.html#index_v"},

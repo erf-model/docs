@@ -251,8 +251,8 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordtype">bool</span> regular = (flagfab.getType(amrex::grow(bx,4)) == FabType::regular);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">bool</span> covered = (flagfab.getType(bx) == FabType::covered);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = result.array(mfi);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>  = result_tmp.array(mfi);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = result.array(mfi);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>  = result_tmp.array(mfi);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (!regular &amp;&amp; !covered)</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
@@ -292,7 +292,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="comment">// State redist acts on the state.</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            Array4&lt;Real const&gt; state_arr = state.const_array(mfi);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            ApplyRedistribution( bx_cc, ncomp, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>, state_arr,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            ApplyRedistribution( bx_cc, ncomp, <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>, <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>, state_arr,</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                                 scratch, flag,</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                 apx, apy, apz, vfrac,</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                 fcx, fcy, fcz, ccc,</div>
@@ -303,18 +303,18 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(i,j,k,n) = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>(i,j,k,n);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(i,j,k,n) = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>(i,j,k,n);</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            });</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    } <span class="comment">// MFIter</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
-<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a6b6091cd65dcf2a537c3fca1cc65594a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a></div><div class="ttdeci">struct @29 out</div></div>
-<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_ae0fd5a6302362b4b89747ebfec2a50fc"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a></div><div class="ttdeci">struct @29 in</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_a6b6091cd65dcf2a537c3fca1cc65594a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a></div><div class="ttdeci">struct @29 out</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_ae0fd5a6302362b4b89747ebfec2a50fc"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a></div><div class="ttdeci">struct @29 in</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:194</div></div>
-<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169aaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:195</div></div>
-<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:193</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169a2e60798bc45154a8f905b1aa228a24e5">IntVars::ymom</a></div><div class="ttdeci">@ ymom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:195</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169aaab25f707cae69bfadac2abcd17a2188"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169aaab25f707cae69bfadac2abcd17a2188">IntVars::zmom</a></div><div class="ttdeci">@ zmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:196</div></div>
+<div class="ttc" id="anamespaceIntVars_html_a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad"><div class="ttname"><a href="namespaceIntVars.html#a76b342b547789648d6320c90e482a169af661293a5a71ca532c214929b98c0bad">IntVars::xmom</a></div><div class="ttdeci">@ xmom</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:194</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_ae58541d74d21c2bf2d281dd74c3fb5f6"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#ae58541d74d21c2bf2d281dd74c3fb5f6">module_mp_morr_two_moment::bc</a></div><div class="ttdeci">real(c_double), private bc</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:182</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_a58e5081c6d213eec172b5c439bed0441ad9c6333623e6357515fcbf17be806273"><div class="ttname"><a href="namespaceplotfile2d.html#a58e5081c6d213eec172b5c439bed0441ad9c6333623e6357515fcbf17be806273">plotfile2d::DiagnosticCategory::Geometry</a></div><div class="ttdeci">@ Geometry</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -419,8 +419,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">bool</span> regular = (flagfab.getType(amrex::grow(bx,4)) == FabType::regular);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> covered = (flagfab.getType(bx) == FabType::covered);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = result.array(mfi);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>  = result_tmp.array(mfi);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = result.array(mfi);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        Array4&lt;Real&gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>  = result_tmp.array(mfi);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (!regular &amp;&amp; !covered)</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
@@ -445,7 +445,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="comment">// State redist acts on the state.</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Array4&lt;Real const&gt; state_arr = state.const_array(mfi);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            ApplyRedistribution( bx, ncomp, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>, <a class="code" href="ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>, state_arr,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            ApplyRedistribution( bx, ncomp, <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>, <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>, state_arr,</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                 scratch, flag,</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                 apx, apy, apz, vfrac,</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                 fcx, fcy, fcz, ccc,</div>
@@ -456,7 +456,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(i,j,k,n) = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>(i,j,k,n);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(i,j,k,n) = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#ae0fd5a6302362b4b89747ebfec2a50fc">in</a>(i,j,k,n);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            });</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    } <span class="comment">// MFIter</span></div>

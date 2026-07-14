@@ -1902,25 +1902,25 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02226"></a><span class="lineno"> 2226</span>&#160;                    (qr_arr(i,j,k) &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-4)) ? <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
 <div class="line"><a name="l02227"></a><span class="lineno"> 2227</span>&#160; </div>
 <div class="line"><a name="l02228"></a><span class="lineno"> 2228</span>&#160;                <span class="keywordflow">if</span> (t_arr(i,j,k) &lt;= t0c_l) {</div>
-<div class="line"><a name="l02229"></a><span class="lineno"> 2229</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>, source, factor, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ac789221474886a6e17e68eaded671f7d">xlf</a>, xlwork2;</div>
+<div class="line"><a name="l02229"></a><span class="lineno"> 2229</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>, source, factor, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ac789221474886a6e17e68eaded671f7d">xlf</a>, xlwork2;</div>
 <div class="line"><a name="l02230"></a><span class="lineno"> 2230</span>&#160; </div>
-<div class="line"><a name="l02231"></a><span class="lineno"> 2231</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qmin_l, qc_arr(i,j,k));</div>
+<div class="line"><a name="l02231"></a><span class="lineno"> 2231</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qmin_l, qc_arr(i,j,k));</div>
 <div class="line"><a name="l02232"></a><span class="lineno"> 2232</span>&#160;                    source = (praut_arr(i,j,k) + pracw_arr(i,j,k)</div>
 <div class="line"><a name="l02233"></a><span class="lineno"> 2233</span>&#160;                            + paacw_arr(i,j,k) + paacw_arr(i,j,k)) * dtcld;</div>
 <div class="line"><a name="l02234"></a><span class="lineno"> 2234</span>&#160;<span class="comment">//                            + paacw_arr(i,j,k)) * dtcld;</span></div>
-<div class="line"><a name="l02235"></a><span class="lineno"> 2235</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02236"></a><span class="lineno"> 2236</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02235"></a><span class="lineno"> 2235</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02236"></a><span class="lineno"> 2236</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02237"></a><span class="lineno"> 2237</span>&#160;                        praut_arr(i,j,k) = praut_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02238"></a><span class="lineno"> 2238</span>&#160;                        pracw_arr(i,j,k) = pracw_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02239"></a><span class="lineno"> 2239</span>&#160;                        paacw_arr(i,j,k) = paacw_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02240"></a><span class="lineno"> 2240</span>&#160;                    }</div>
 <div class="line"><a name="l02241"></a><span class="lineno"> 2241</span>&#160; </div>
-<div class="line"><a name="l02242"></a><span class="lineno"> 2242</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qmin_l, qi_arr(i,j,k));</div>
+<div class="line"><a name="l02242"></a><span class="lineno"> 2242</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qmin_l, qi_arr(i,j,k));</div>
 <div class="line"><a name="l02243"></a><span class="lineno"> 2243</span>&#160;                    source = (psaut_arr(i,j,k) - pigen_arr(i,j,k)</div>
 <div class="line"><a name="l02244"></a><span class="lineno"> 2244</span>&#160;                            - pidep_arr(i,j,k) + praci_arr(i,j,k)</div>
 <div class="line"><a name="l02245"></a><span class="lineno"> 2245</span>&#160;                            + psaci_arr(i,j,k) + pgaci_arr(i,j,k)) * dtcld;</div>
-<div class="line"><a name="l02246"></a><span class="lineno"> 2246</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02247"></a><span class="lineno"> 2247</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02246"></a><span class="lineno"> 2246</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02247"></a><span class="lineno"> 2247</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02248"></a><span class="lineno"> 2248</span>&#160;                        psaut_arr(i,j,k) = psaut_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02249"></a><span class="lineno"> 2249</span>&#160;                        pigen_arr(i,j,k) = pigen_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02250"></a><span class="lineno"> 2250</span>&#160;                        pidep_arr(i,j,k) = pidep_arr(i,j,k) * factor;</div>
@@ -1929,12 +1929,12 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02253"></a><span class="lineno"> 2253</span>&#160;                        pgaci_arr(i,j,k) = pgaci_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02254"></a><span class="lineno"> 2254</span>&#160;                    }</div>
 <div class="line"><a name="l02255"></a><span class="lineno"> 2255</span>&#160; </div>
-<div class="line"><a name="l02256"></a><span class="lineno"> 2256</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qmin_l, qr_arr(i,j,k));</div>
+<div class="line"><a name="l02256"></a><span class="lineno"> 2256</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qmin_l, qr_arr(i,j,k));</div>
 <div class="line"><a name="l02257"></a><span class="lineno"> 2257</span>&#160;                    source = (-praut_arr(i,j,k) - prevp_arr(i,j,k)</div>
 <div class="line"><a name="l02258"></a><span class="lineno"> 2258</span>&#160;                            - pracw_arr(i,j,k) + piacr_arr(i,j,k)</div>
 <div class="line"><a name="l02259"></a><span class="lineno"> 2259</span>&#160;                            + psacr_arr(i,j,k) + pgacr_arr(i,j,k)) * dtcld;</div>
-<div class="line"><a name="l02260"></a><span class="lineno"> 2260</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02261"></a><span class="lineno"> 2261</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02260"></a><span class="lineno"> 2260</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02261"></a><span class="lineno"> 2261</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02262"></a><span class="lineno"> 2262</span>&#160;                        praut_arr(i,j,k) = praut_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02263"></a><span class="lineno"> 2263</span>&#160;                        prevp_arr(i,j,k) = prevp_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02264"></a><span class="lineno"> 2264</span>&#160;                        pracw_arr(i,j,k) = pracw_arr(i,j,k) * factor;</div>
@@ -1943,7 +1943,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02267"></a><span class="lineno"> 2267</span>&#160;                        pgacr_arr(i,j,k) = pgacr_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02268"></a><span class="lineno"> 2268</span>&#160;                    }</div>
 <div class="line"><a name="l02269"></a><span class="lineno"> 2269</span>&#160; </div>
-<div class="line"><a name="l02270"></a><span class="lineno"> 2270</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qmin_l, qs_arr(i,j,k));</div>
+<div class="line"><a name="l02270"></a><span class="lineno"> 2270</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qmin_l, qs_arr(i,j,k));</div>
 <div class="line"><a name="l02271"></a><span class="lineno"> 2271</span>&#160;                    source = -(psdep_arr(i,j,k) + psaut_arr(i,j,k)</div>
 <div class="line"><a name="l02272"></a><span class="lineno"> 2272</span>&#160;                             - pgaut_arr(i,j,k) + paacw_arr(i,j,k)</div>
 <div class="line"><a name="l02273"></a><span class="lineno"> 2273</span>&#160;                             + piacr_arr(i,j,k) * delta3</div>
@@ -1951,8 +1951,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02275"></a><span class="lineno"> 2275</span>&#160;                             - pracs_arr(i,j,k) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - delta2)</div>
 <div class="line"><a name="l02276"></a><span class="lineno"> 2276</span>&#160;                             + psacr_arr(i,j,k) * delta2</div>
 <div class="line"><a name="l02277"></a><span class="lineno"> 2277</span>&#160;                             + psaci_arr(i,j,k) - pgacs_arr(i,j,k)) * dtcld;</div>
-<div class="line"><a name="l02278"></a><span class="lineno"> 2278</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02279"></a><span class="lineno"> 2279</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02278"></a><span class="lineno"> 2278</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02279"></a><span class="lineno"> 2279</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02280"></a><span class="lineno"> 2280</span>&#160;                        psdep_arr(i,j,k) = psdep_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02281"></a><span class="lineno"> 2281</span>&#160;                        psaut_arr(i,j,k) = psaut_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02282"></a><span class="lineno"> 2282</span>&#160;                        pgaut_arr(i,j,k) = pgaut_arr(i,j,k) * factor;</div>
@@ -1965,7 +1965,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02289"></a><span class="lineno"> 2289</span>&#160;                        pgacs_arr(i,j,k) = pgacs_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02290"></a><span class="lineno"> 2290</span>&#160;                    }</div>
 <div class="line"><a name="l02291"></a><span class="lineno"> 2291</span>&#160; </div>
-<div class="line"><a name="l02292"></a><span class="lineno"> 2292</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qmin_l, qg_arr(i,j,k));</div>
+<div class="line"><a name="l02292"></a><span class="lineno"> 2292</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qmin_l, qg_arr(i,j,k));</div>
 <div class="line"><a name="l02293"></a><span class="lineno"> 2293</span>&#160;                    source = -(pgdep_arr(i,j,k) + pgaut_arr(i,j,k)</div>
 <div class="line"><a name="l02294"></a><span class="lineno"> 2294</span>&#160;                             + piacr_arr(i,j,k) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - delta3)</div>
 <div class="line"><a name="l02295"></a><span class="lineno"> 2295</span>&#160;                             + praci_arr(i,j,k) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - delta3)</div>
@@ -1973,8 +1973,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02297"></a><span class="lineno"> 2297</span>&#160;                             + pracs_arr(i,j,k) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) - delta2)</div>
 <div class="line"><a name="l02298"></a><span class="lineno"> 2298</span>&#160;                             + pgaci_arr(i,j,k) + paacw_arr(i,j,k)</div>
 <div class="line"><a name="l02299"></a><span class="lineno"> 2299</span>&#160;                             + pgacr_arr(i,j,k) + pgacs_arr(i,j,k)) * dtcld;</div>
-<div class="line"><a name="l02300"></a><span class="lineno"> 2300</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02301"></a><span class="lineno"> 2301</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02300"></a><span class="lineno"> 2300</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02301"></a><span class="lineno"> 2301</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02302"></a><span class="lineno"> 2302</span>&#160;                        pgdep_arr(i,j,k) = pgdep_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02303"></a><span class="lineno"> 2303</span>&#160;                        pgaut_arr(i,j,k) = pgaut_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02304"></a><span class="lineno"> 2304</span>&#160;                        piacr_arr(i,j,k) = piacr_arr(i,j,k) * factor;</div>
@@ -2037,26 +2037,26 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02361"></a><span class="lineno"> 2361</span>&#160;                                   + psacr_arr(i,j,k));</div>
 <div class="line"><a name="l02362"></a><span class="lineno"> 2362</span>&#160;                    t_arr(i,j,k) = t_arr(i,j,k) - xlwork2 / cpm_arr(i,j,k) * dtcld;</div>
 <div class="line"><a name="l02363"></a><span class="lineno"> 2363</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l02364"></a><span class="lineno"> 2364</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>, source, factor, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ac789221474886a6e17e68eaded671f7d">xlf</a>, xlwork2;</div>
+<div class="line"><a name="l02364"></a><span class="lineno"> 2364</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>, source, factor, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ac789221474886a6e17e68eaded671f7d">xlf</a>, xlwork2;</div>
 <div class="line"><a name="l02365"></a><span class="lineno"> 2365</span>&#160; </div>
-<div class="line"><a name="l02366"></a><span class="lineno"> 2366</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qmin_l, qc_arr(i,j,k));</div>
+<div class="line"><a name="l02366"></a><span class="lineno"> 2366</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qmin_l, qc_arr(i,j,k));</div>
 <div class="line"><a name="l02367"></a><span class="lineno"> 2367</span>&#160;                    source = (praut_arr(i,j,k) + pracw_arr(i,j,k)</div>
 <div class="line"><a name="l02368"></a><span class="lineno"> 2368</span>&#160;                            + paacw_arr(i,j,k) + paacw_arr(i,j,k)) * dtcld;</div>
 <div class="line"><a name="l02369"></a><span class="lineno"> 2369</span>&#160;<span class="comment">//                            + paacw_arr(i,j,k)) * dtcld;</span></div>
-<div class="line"><a name="l02370"></a><span class="lineno"> 2370</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02371"></a><span class="lineno"> 2371</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02370"></a><span class="lineno"> 2370</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02371"></a><span class="lineno"> 2371</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02372"></a><span class="lineno"> 2372</span>&#160;                        praut_arr(i,j,k) = praut_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02373"></a><span class="lineno"> 2373</span>&#160;                        pracw_arr(i,j,k) = pracw_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02374"></a><span class="lineno"> 2374</span>&#160;                        paacw_arr(i,j,k) = paacw_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02375"></a><span class="lineno"> 2375</span>&#160;                    }</div>
 <div class="line"><a name="l02376"></a><span class="lineno"> 2376</span>&#160; </div>
-<div class="line"><a name="l02377"></a><span class="lineno"> 2377</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qmin_l, qr_arr(i,j,k));</div>
+<div class="line"><a name="l02377"></a><span class="lineno"> 2377</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qmin_l, qr_arr(i,j,k));</div>
 <div class="line"><a name="l02378"></a><span class="lineno"> 2378</span>&#160;                    source = (-paacw_arr(i,j,k) - praut_arr(i,j,k)</div>
 <div class="line"><a name="l02379"></a><span class="lineno"> 2379</span>&#160;                            + pseml_arr(i,j,k) + pgeml_arr(i,j,k)</div>
 <div class="line"><a name="l02380"></a><span class="lineno"> 2380</span>&#160;                            - pracw_arr(i,j,k) - paacw_arr(i,j,k)</div>
 <div class="line"><a name="l02381"></a><span class="lineno"> 2381</span>&#160;                            - prevp_arr(i,j,k)) * dtcld;</div>
-<div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02383"></a><span class="lineno"> 2383</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02384"></a><span class="lineno"> 2384</span>&#160;                        praut_arr(i,j,k) = praut_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02385"></a><span class="lineno"> 2385</span>&#160;                        prevp_arr(i,j,k) = prevp_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02386"></a><span class="lineno"> 2386</span>&#160;                        pracw_arr(i,j,k) = pracw_arr(i,j,k) * factor;</div>
@@ -2065,21 +2065,21 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l02389"></a><span class="lineno"> 2389</span>&#160;                        pgeml_arr(i,j,k) = pgeml_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02390"></a><span class="lineno"> 2390</span>&#160;                    }</div>
 <div class="line"><a name="l02391"></a><span class="lineno"> 2391</span>&#160; </div>
-<div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qcrmin_l, qs_arr(i,j,k));</div>
+<div class="line"><a name="l02392"></a><span class="lineno"> 2392</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qcrmin_l, qs_arr(i,j,k));</div>
 <div class="line"><a name="l02393"></a><span class="lineno"> 2393</span>&#160;                    source = (pgacs_arr(i,j,k) - pseml_arr(i,j,k)</div>
 <div class="line"><a name="l02394"></a><span class="lineno"> 2394</span>&#160;                            - psevp_arr(i,j,k)) * dtcld;</div>
-<div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02396"></a><span class="lineno"> 2396</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02395"></a><span class="lineno"> 2395</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02396"></a><span class="lineno"> 2396</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02397"></a><span class="lineno"> 2397</span>&#160;                        pgacs_arr(i,j,k) = pgacs_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02398"></a><span class="lineno"> 2398</span>&#160;                        psevp_arr(i,j,k) = psevp_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02399"></a><span class="lineno"> 2399</span>&#160;                        pseml_arr(i,j,k) = pseml_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02400"></a><span class="lineno"> 2400</span>&#160;                    }</div>
 <div class="line"><a name="l02401"></a><span class="lineno"> 2401</span>&#160; </div>
-<div class="line"><a name="l02402"></a><span class="lineno"> 2402</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> = amrex::max(qcrmin_l, qg_arr(i,j,k));</div>
+<div class="line"><a name="l02402"></a><span class="lineno"> 2402</span>&#160;                    <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = amrex::max(qcrmin_l, qg_arr(i,j,k));</div>
 <div class="line"><a name="l02403"></a><span class="lineno"> 2403</span>&#160;                    source = -(pgacs_arr(i,j,k) + pgevp_arr(i,j,k)</div>
 <div class="line"><a name="l02404"></a><span class="lineno"> 2404</span>&#160;                             + pgeml_arr(i,j,k)) * dtcld;</div>
-<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a>) {</div>
-<div class="line"><a name="l02406"></a><span class="lineno"> 2406</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a> / source;</div>
+<div class="line"><a name="l02405"></a><span class="lineno"> 2405</span>&#160;                    <span class="keywordflow">if</span> (source &gt; <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>) {</div>
+<div class="line"><a name="l02406"></a><span class="lineno"> 2406</span>&#160;                        factor = <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> / source;</div>
 <div class="line"><a name="l02407"></a><span class="lineno"> 2407</span>&#160;                        pgacs_arr(i,j,k) = pgacs_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02408"></a><span class="lineno"> 2408</span>&#160;                        pgevp_arr(i,j,k) = pgevp_arr(i,j,k) * factor;</div>
 <div class="line"><a name="l02409"></a><span class="lineno"> 2409</span>&#160;                        pgeml_arr(i,j,k) = pgeml_arr(i,j,k) * factor;</div>
@@ -2205,7 +2205,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_acecae1da25fb8c8d32d1f175e18df41f"><div class="ttname"><a href="ERF__Constants_8H.html#acecae1da25fb8c8d32d1f175e18df41f">Cp_l</a></div><div class="ttdeci">constexpr amrex::Real Cp_l</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:51</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aea1cea8d633adb36e2ea5018925b68ee"><div class="ttname"><a href="ERF__Constants_8H.html#aea1cea8d633adb36e2ea5018925b68ee">Cp_v</a></div><div class="ttdeci">constexpr amrex::Real Cp_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:50</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aeb133d0ac46d639050313ce36187e870"><div class="ttname"><a href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a></div><div class="ttdeci">constexpr amrex::Real R_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:47</div></div>
-<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a7646212c32956c6c26e00dd5b4c80923"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a7646212c32956c6c26e00dd5b4c80923">value</a></div><div class="ttdeci">amrex::Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.H:20</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_abd5746c9a8c4bf217e5294c6c702559b"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a></div><div class="ttdeci">Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.cpp:30</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
 <div class="ttc" id="aERF__InitCustomPert__MultiSpeciesBubble_8H_html_a7273a950bb1ec56806b23066b09df921"><div class="ttname"><a href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a></div><div class="ttdeci">auto qv_arr</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_MultiSpeciesBubble.H:210</div></div>
@@ -2428,7 +2428,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35"><div class="ttname"><a href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
 <div class="ttc" id="anamespaceMicVar__SatAdj_html_a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:40</div></div>
 <div class="ttc" id="anamespaceMicVar__WSM6_html_a84e3720d8c061814986cc6a1ffa902f3a58c44eabbff033d99d214c8b090ea283"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a58c44eabbff033d99d214c8b090ea283">MicVar_WSM6::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:22</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:174</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:175</div></div>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a42154713da839635b12b12b71f5fb2b2ad6880320522949893f9fd687f2cdc159"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2ad6880320522949893f9fd687f2cdc159">WSM6SedCellScratch::qr</a></div><div class="ttdeci">@ qr</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:112</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classWSM6.html#a6e9fb09f6813d603d7a2064f5bd4d742">Update_State_Vars()</a>.</p>

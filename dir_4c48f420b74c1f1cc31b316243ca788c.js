@@ -5,11 +5,10 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
     [ "ERF_NCColumnFile.cpp", "ERF__NCColumnFile_8cpp.html", null ],
     [ "ERF_NCInterface.cpp", "ERF__NCInterface_8cpp.html", "ERF__NCInterface_8cpp" ],
     [ "ERF_NCInterface.H", "ERF__NCInterface_8H.html", [
-      [ "NCDType", "structncutils_1_1NCDType.html", "structncutils_1_1NCDType" ],
       [ "NCDim", "structncutils_1_1NCDim.html", "structncutils_1_1NCDim" ],
       [ "NCVar", "structncutils_1_1NCVar.html", "structncutils_1_1NCVar" ],
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
-      [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
+      [ "NCFile", "classncutils_1_1NCFile.html", null ]
     ] ],
     [ "ERF_NCPlotFile.cpp", "ERF__NCPlotFile_8cpp.html", "ERF__NCPlotFile_8cpp" ],
     [ "ERF_NCPlotFile.H", "ERF__NCPlotFile_8H.html", null ],

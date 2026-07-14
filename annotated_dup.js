@@ -17,11 +17,10 @@ var annotated_dup =
       [ "vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", "interfacemodule__libmassv_1_1vsqrt" ]
     ] ],
     [ "ncutils", "namespacencutils.html", [
-      [ "NCDType", "structncutils_1_1NCDType.html", "structncutils_1_1NCDType" ],
       [ "NCDim", "structncutils_1_1NCDim.html", "structncutils_1_1NCDim" ],
       [ "NCVar", "structncutils_1_1NCVar.html", "structncutils_1_1NCVar" ],
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
-      [ "NCFile", "classncutils_1_1NCFile.html", "classncutils_1_1NCFile" ]
+      [ "NCFile", "classncutils_1_1NCFile.html", null ]
     ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],

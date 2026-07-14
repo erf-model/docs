@@ -172,7 +172,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = outvar.array();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = outvar.array();</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> iso = isotropy_zi.const_array();</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> tkh = tkh_zi.const_array();</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> v1 = invar1.const_array();</div>
@@ -186,12 +186,12 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 1; k &lt; layout.nlev; ++k) {</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_zi = cell_spacing_at_iface(zt, <a class="code" href="namespaceWSM6SedNodeScratch.html#a5586a4705f4e473d848c0bc5a210140fac5a1c1e00ce981829474ed88c561baae">zi</a>, layout, ic, k);</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> grid_dz2 = 1.0_rt / (dz_zi * dz_zi);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(ic,k,0) = tunefac * (iso(ic,k,0) * tkh(ic,k,0)) * grid_dz2 *</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(ic,k,0) = tunefac * (iso(ic,k,0) * tkh(ic,k,0)) * grid_dz2 *</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                          (v1(ic,k-1,0) - v1(ic,k,0)) * (v2(ic,k-1,0) - v2(ic,k,0));</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    });</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
-<div class="ttc" id="aERF__HurricaneDiagnostics_8H_html_a6b6091cd65dcf2a537c3fca1cc65594a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a></div><div class="ttdeci">struct @29 out</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_a6b6091cd65dcf2a537c3fca1cc65594a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a></div><div class="ttdeci">struct @29 out</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceWSM6SedNodeScratch_html_a5586a4705f4e473d848c0bc5a210140fac5a1c1e00ce981829474ed88c561baae"><div class="ttname"><a href="namespaceWSM6SedNodeScratch.html#a5586a4705f4e473d848c0bc5a210140fac5a1c1e00ce981829474ed88c561baae">WSM6SedNodeScratch::zi</a></div><div class="ttdeci">@ zi</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:133</div></div>
@@ -256,7 +256,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = vertflux.array();</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a> = vertflux.array();</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> tkh = tkh_zi.const_array();</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> v = invar.const_array();</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> zt = col.<a class="code" href="structShocColumnData.html#ad41443dd494122c0dbf44b7d5e4777f6">zt</a>.const_array();</div>
@@ -270,7 +270,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="comment">// E3SM uses top-down vertical indexing. ERF columns are bottom-up,</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="comment">// so the interface gradient must use upper-minus-lower to preserve</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="comment">// the same physical downgradient flux sign.</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <a class="code" href="ERF__HurricaneDiagnostics_8H.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(ic,k,0) = -(tkh(ic,k,0) / dz_zi) * (v(ic,k,0) - v(ic,k-1,0));</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>(ic,k,0) = -(tkh(ic,k,0) / dz_zi) * (v(ic,k,0) - v(ic,k-1,0));</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    });</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
