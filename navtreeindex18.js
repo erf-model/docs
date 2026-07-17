@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classMorrison.html#a5be8bc25a662280f49a97d8961638263":[2,0,59,15],
 "classMorrison.html#a5e96779015fb5d544dbb45f7b48c9d13":[2,0,59,17],
 "classMorrison.html#a5fe61e6c89f21c46207142a8ef2d67b1":[2,0,59,5],
 "classMorrison.html#a6162d4cb6ce111348566ff7155374441":[2,0,59,22],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a":[2,0,72,3],
 "classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc":[2,0,72,30],
 "classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949":[2,0,72,9],
-"classPlaneAverage.html#af2bdf5b94ffc67066949be787ab66be2":[2,0,72,23],
-"classProblemBase.html":[2,0,75]
+"classPlaneAverage.html#af2bdf5b94ffc67066949be787ab66be2":[2,0,72,23]
 };

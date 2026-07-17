@@ -11,6 +11,7 @@ var structSolverChoice =
     [ "use_direct_perturbation", "structSolverChoice.html#a77ac2f26fce7a85fe9a0241e34378cf8", null ],
     [ "use_perturbation", "structSolverChoice.html#a682dd4d6e4728888ae29d40c58293797", null ],
     [ "use_source_perturbation", "structSolverChoice.html#acf4c5dd32f370ff1b4a34be383362ac6", null ],
+    [ "use_wvel_perturbation", "structSolverChoice.html#a59bb6ad24daba2f97bb6dba5c3ec4834", null ],
     [ "uses_shoc_family", "structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c", null ],
     [ "abl_driver_type", "structSolverChoice.html#abe7f2d933204e7a6127469a006240f8f", null ],
     [ "abl_geo_forcing", "structSolverChoice.html#a5147634b7c1414a7694c59c1b4a88d69", null ],

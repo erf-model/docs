@@ -179,6 +179,7 @@ var classERF =
     [ "SurfaceDataInterpolation", "classERF.html#a25668248019890075dbdce242df5d547", null ],
     [ "timeStep", "classERF.html#aec117226dacf933f7ba47907102413c6", null ],
     [ "turbPert_amplitude", "classERF.html#afb76c0633e2ba944c543e7a03a5e9424", null ],
+    [ "turbPert_amplitude_w", "classERF.html#a09adbff87788192786d7615305ee2958", null ],
     [ "turbPert_update", "classERF.html#a371df253c49625b088342ff7d87fa8cc", null ],
     [ "update_box_for_refinement", "classERF.html#a349b9c3fb955c7091b4821307fc347e8", null ],
     [ "update_diffusive_arrays", "classERF.html#a419510fced05e9afc05c466beeeb66f7", null ],
