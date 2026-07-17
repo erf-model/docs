@@ -1895,7 +1895,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; v_tend_arr     = <a class="code" href="classSHOCInterface.html#adbf4ac98d4efee3e978e64c028279b69">v_tend</a>.array(mfi);</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx_cc, vbx_x, vbx_y,</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        [=,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        {</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;            <span class="comment">// NOTE: k gets permuted with ilay</span></div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
@@ -1906,7 +1906,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> r  = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;            <span class="comment">// Theta at CC (eamxx_common_physics_functions_impl.hpp L123)</span></div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Th = thlm_d(icol,ilay)[0] / ( <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> - (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / T_mid_d(icol,ilay)[0])</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Th = thlm_d(icol,ilay)[0] / ( one_d - (one_d / T_mid_d(icol,ilay)[0])</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                                             * (C::LatVap/C::Cpair) * qc_d(icol,ilay)[0] );</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            <span class="comment">// Populate the tendencies</span></div>
@@ -2047,7 +2047,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_arr    = (<a class="code" href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">m_z_phys</a>) ? <a class="code" href="classSHOCInterface.html#a17f9477ae1ddba45e999125db7ce566e">m_z_phys</a>-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                                                          Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=,CONST_GRAV_d=<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        {</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="comment">// NOTE: k gets permuted with ilay</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
@@ -2090,7 +2090,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;            <span class="comment">// Interface data structures</span></div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            <span class="comment">//=======================================================</span></div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            <span class="comment">// eamxx_common_physics_functions_impl.hpp: calculate_vertical_velocity</span></div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            omega_d(icol,ilay)         = -w_limited * r * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            omega_d(icol,ilay)         = -w_limited * r * CONST_GRAV_d;</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            <span class="keywordflow">if</span> (k==0) {</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                <span class="keywordtype">int</span> ii  = std::min(std::max(i,ilo),ihi);</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                <span class="keywordtype">int</span> jj  = std::min(std::max(j,jlo),jhi);</div>
@@ -2114,7 +2114,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            p_mid_d(icol,ilay)       = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt, <a class="code" href="classSHOCInterface.html#ad4e127b394af78f8e7a2c415631079e4">qv</a>);</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            p_int_d(icol,ilayi)      = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(rt_avg, qv_avg);</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;            <span class="comment">// eamxx_common_physics_functions_impl.hpp: calculate_density</span></div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            pseudo_dens_d(icol,ilay) = r * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * <a class="code" href="namespaceWSM6Ind.html#ac09947730b2c2472a094e5ea2d76a0e3a08330cf8af03b93525ea64350818623f">delz</a>;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            pseudo_dens_d(icol,ilay) = r * CONST_GRAV_d * <a class="code" href="namespaceWSM6Ind.html#ac09947730b2c2472a094e5ea2d76a0e3a08330cf8af03b93525ea64350818623f">delz</a>;</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <span class="comment">// Enforce the grid spacing</span></div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            dz_d(icol,ilay) = <a class="code" href="namespaceWSM6Ind.html#ac09947730b2c2472a094e5ea2d76a0e3a08330cf8af03b93525ea64350818623f">delz</a>;</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            <span class="comment">// Surface geopotential</span></div>
@@ -2123,7 +2123,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                                                 + (z_arr(i+1,j  ,k+1) + z_arr(i+1,j  ,k))</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                                                 + (z_arr(i  ,j+1,k+1) + z_arr(i  ,j+1,k))</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                                                 + (z_arr(i+1,j+1,k+1) + z_arr(i+1,j+1,k)) ) : ProbLoArr[2];</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                phis_d(icol) = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;                phis_d(icol) = CONST_GRAV_d * <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a>;</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            }</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;            <span class="keywordflow">if</span> (ilay==0) {</div>

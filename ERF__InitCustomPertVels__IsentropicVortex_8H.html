@@ -114,10 +114,10 @@ Functions</h2></td></tr>
 <tr class="separator:a101645d1044b0597de1e5bf6a45b26f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a396dfff886b27f97c04ce4578b8e9184"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__InitCustomPertVels__WitchOfAgnesi_8H.html#a420d78bf983d6025fd797e5276faa2fb">pp_for_pert_vels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a396dfff886b27f97c04ce4578b8e9184">query</a> (&quot;yc&quot;, yc_frac)</td></tr>
 <tr class="separator:a396dfff886b27f97c04ce4578b8e9184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ead2536925d1d432b8786250822ff3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=i *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=(j+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);x_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::cos(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>) -(y - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;})</td></tr>
-<tr class="separator:a42ead2536925d1d432b8786250822ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bfcbac61864ac586a487dbd01121849"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a7bfcbac61864ac586a487dbd01121849">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=(i+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=j *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);y_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::sin(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>)+(x - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;})</td></tr>
-<tr class="separator:a7bfcbac61864ac586a487dbd01121849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47feb944f1b18a5fe2bfd3725f5a858"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#a853a144267414a8a59c87f80ca5c958c">xbx</a>, [=, myhalf_d=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=i *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=(j+myhalf_d) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);x_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::cos(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>) -(y - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;})</td></tr>
+<tr class="separator:ad47feb944f1b18a5fe2bfd3725f5a858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c1cd5798503be28f25f7d6d9943c7e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ab5c1cd5798503be28f25f7d6d9943c7e">ParallelFor</a> (<a class="el" href="ERF__SetupDiff_8H.html#ae3d636c41f5271630a5816a4b8b668b2">ybx</a>, [=, myhalf_d=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=(i+myhalf_d) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=j *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);y_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::sin(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>)+(x - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;})</td></tr>
+<tr class="separator:ab5c1cd5798503be28f25f7d6d9943c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -151,8 +151,8 @@ Variables</h2></td></tr>
 <tr class="separator:a452cb7fe74e616d1c42256bea70249f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a42ead2536925d1d432b8786250822ff3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42ead2536925d1d432b8786250822ff3">&#9670;&nbsp;</a></span>ParallelFor() <span class="overload">[1/2]</span></h2>
+<a id="ad47feb944f1b18a5fe2bfd3725f5a858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47feb944f1b18a5fe2bfd3725f5a858">&#9670;&nbsp;</a></span>ParallelFor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +166,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=i *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=(j+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);x_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::cos(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>) -(y - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;}&#160;</td>
+          <td class="paramtype">[=, myhalf_d=myhalf] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=i *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=(j+myhalf_d) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);x_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::cos(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>) -(y - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;}&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -179,8 +179,8 @@ Variables</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPertVels__IsentropicVortex_8H_a42ead2536925d1d432b8786250822ff3_cgraph.png" border="0" usemap="#aERF__InitCustomPertVels__IsentropicVortex_8H_a42ead2536925d1d432b8786250822ff3_cgraph" alt=""/></div>
-<map name="aERF__InitCustomPertVels__IsentropicVortex_8H_a42ead2536925d1d432b8786250822ff3_cgraph" id="aERF__InitCustomPertVels__IsentropicVortex_8H_a42ead2536925d1d432b8786250822ff3_cgraph">
+<div class="center"><img src="ERF__InitCustomPertVels__IsentropicVortex_8H_ad47feb944f1b18a5fe2bfd3725f5a858_cgraph.png" border="0" usemap="#aERF__InitCustomPertVels__IsentropicVortex_8H_ad47feb944f1b18a5fe2bfd3725f5a858_cgraph" alt=""/></div>
+<map name="aERF__InitCustomPertVels__IsentropicVortex_8H_ad47feb944f1b18a5fe2bfd3725f5a858_cgraph" id="aERF__InitCustomPertVels__IsentropicVortex_8H_ad47feb944f1b18a5fe2bfd3725f5a858_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,96,32"/>
 <area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="144,5,300,32"/>
 </map>
@@ -188,8 +188,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a7bfcbac61864ac586a487dbd01121849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bfcbac61864ac586a487dbd01121849">&#9670;&nbsp;</a></span>ParallelFor() <span class="overload">[2/2]</span></h2>
+<a id="ab5c1cd5798503be28f25f7d6d9943c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5c1cd5798503be28f25f7d6d9943c7e">&#9670;&nbsp;</a></span>ParallelFor() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +203,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=(i+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=j *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);y_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::sin(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>)+(x - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;}&#160;</td>
+          <td class="paramtype">[=, myhalf_d=myhalf] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=(i+myhalf_d) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> y=j *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[1];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Omg=<a class="el" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe">erf_vortex_Gaussian</a>(x, y, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>, <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a4c151aeab700260c0ef118ec07764346">yc</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>, <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);y_vel_pert(i, j, k)=(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#abacc952d5e5647ae139adc36747da411">M_inf</a> *std::sin(<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a8018075a8e3cd8009e0b612e414dbd30">alpha</a>)+(x - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#ae5450596e2e56e7d0353b95763c4a722">xc</a>)/<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a387fc53e2abd554a195896d1cde264bf">R</a> *Omg) *<a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a452cb7fe74e616d1c42256bea70249f0">a_inf</a>;}&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -216,8 +216,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPertVels__IsentropicVortex_8H_a7bfcbac61864ac586a487dbd01121849_cgraph.png" border="0" usemap="#aERF__InitCustomPertVels__IsentropicVortex_8H_a7bfcbac61864ac586a487dbd01121849_cgraph" alt=""/></div>
-<map name="aERF__InitCustomPertVels__IsentropicVortex_8H_a7bfcbac61864ac586a487dbd01121849_cgraph" id="aERF__InitCustomPertVels__IsentropicVortex_8H_a7bfcbac61864ac586a487dbd01121849_cgraph">
+<div class="center"><img src="ERF__InitCustomPertVels__IsentropicVortex_8H_ab5c1cd5798503be28f25f7d6d9943c7e_cgraph.png" border="0" usemap="#aERF__InitCustomPertVels__IsentropicVortex_8H_ab5c1cd5798503be28f25f7d6d9943c7e_cgraph" alt=""/></div>
+<map name="aERF__InitCustomPertVels__IsentropicVortex_8H_ab5c1cd5798503be28f25f7d6d9943c7e_cgraph" id="aERF__InitCustomPertVels__IsentropicVortex_8H_ab5c1cd5798503be28f25f7d6d9943c7e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,96,32"/>
 <area shape="rect" href="ERF__InitCustomPert_8H.html#af5ca7cce2f6a003d8cebeae917c04ebe" title=" " alt="" coords="144,5,300,32"/>
 </map>
@@ -508,7 +508,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -524,7 +524,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -540,7 +540,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -570,7 +570,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -614,7 +614,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -630,7 +630,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -660,7 +660,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -690,7 +690,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858">ParallelFor()</a>.</p>
 
 </div>
 </div>

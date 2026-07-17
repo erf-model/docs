@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__post_8H_source.htm
 <div class="contents">
 <a href="ERF__TI__slow__rhs__post_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__SrcHeaders_8H.html">ERF_SrcHeaders.H</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="ERF__TI__slow__rhs__post_8H.html#af460c930508105e92f60fd868d23ebcf">    3</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__TI__slow__rhs__post_8H.html#af460c930508105e92f60fd868d23ebcf">slow_rhs_fun_post</a> = [&amp;](Vector&lt;MultiFab&gt;&amp; S_rhs,</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="ERF__TI__slow__rhs__post_8H.html#af460c930508105e92f60fd868d23ebcf">    3</a></span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__TI__slow__rhs__post_8H.html#af460c930508105e92f60fd868d23ebcf">slow_rhs_fun_post</a> = [&amp;,bogus_large_value_d=<a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>](Vector&lt;MultiFab&gt;&amp; S_rhs,</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                 Vector&lt;MultiFab&gt;&amp; S_old,</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                                 Vector&lt;MultiFab&gt;&amp; S_new,</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                                 Vector&lt;MultiFab&gt;&amp; S_data,</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__post_8H_source.htm
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            dUdt_tmp.FillBoundary(fine_geom.periodicity());</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            dUdt_tmp.setDomainBndry(<a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>, 0, num_comp_total, fine_geom);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            dUdt_tmp.setDomainBndry(bogus_large_value_d, 0, num_comp_total, fine_geom);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keyword">const</span> BCRec* bc_ptr_d = domain_bcs_type_d.data();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
@@ -211,9 +211,9 @@ $(document).ready(function(){initNavTree('ERF__TI__slow__rhs__post_8H_source.htm
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                            num_comp = <a class="code" href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a>;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                        }</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sdt = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(slow_dt);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, num_comp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, num_comp, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn)</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                        {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                            <span class="keywordflow">if</span> (detJ_arr(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                            <span class="keywordflow">if</span> (detJ_arr(i,j,k) &gt; zero_d) {</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                snew(i,j,k,n) = sold(i,j,k,n) + sdt * srhs(i,j,k,n);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                            }</div>

@@ -283,10 +283,10 @@ $(document).ready(function(){initNavTree('ERF__ProbCommon_8H_source.html',''); i
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; src_arr = src-&gt;array(mfi);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">// src is a spatial function if erf.spatial_rhotheta_forcing = true</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="comment">// otherwise, qsrc_arr is defined only in over Z (box x and y dimensions are 1)</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="comment">// set RHS term of RhoTheta equation based on time, z_cc here</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                src_arr(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                src_arr(i, j, k) = zero_d;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            });</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
@@ -315,10 +315,10 @@ $(document).ready(function(){initNavTree('ERF__ProbCommon_8H_source.html',''); i
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; qsrc_arr = qsrc-&gt;array(mfi);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="comment">// src is a spatial function if erf.spatial_moisture_forcing = true</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="comment">// otherwise, qsrc_arr is defined only in over Z (box x and y dimensions are 1)</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <span class="comment">// set RHS term of RhoQ1 equation based on time, z_cc here</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                qsrc_arr(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                qsrc_arr(i, j, k) = zero_d;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            });</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        }</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>

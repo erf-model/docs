@@ -918,7 +918,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_anelastic &amp;&amp; (nrk == 1)) { <span class="comment">// not moving and ( (anelastic) and second RK stage) )</span></div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, num_comp,</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                    [=,myhalf_d=<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> nn) noexcept {</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">int</span> n = start_comp + nn;</div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                        cell_rhs(i,j,k,n) += src_arr(i,j,k,n);</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
@@ -926,7 +926,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt_times_old_cell_rhs = cur_cons(i,j,k,n) - old_cons(i,j,k,n);</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;                        <span class="comment">// Add the time-averaged RHS to the old state</span></div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                        cur_cons(i,j,k,n) = old_cons(i,j,k,n) + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (dt_times_old_cell_rhs + dt * cell_rhs(i,j,k,n));</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                        cur_cons(i,j,k,n) = old_cons(i,j,k,n) + myhalf_d * (dt_times_old_cell_rhs + dt * cell_rhs(i,j,k,n));</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                        <span class="keywordflow">if</span> (ivar == <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) {</div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                            cur_cons(i,j,k,n) = amrex::max(cur_cons(i,j,k,n), eps);</div>

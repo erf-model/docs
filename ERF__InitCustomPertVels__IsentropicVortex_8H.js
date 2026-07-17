@@ -1,7 +1,7 @@
 var ERF__InitCustomPertVels__IsentropicVortex_8H =
 [
-    [ "ParallelFor", "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a42ead2536925d1d432b8786250822ff3", null ],
-    [ "ParallelFor", "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a7bfcbac61864ac586a487dbd01121849", null ],
+    [ "ParallelFor", "ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad47feb944f1b18a5fe2bfd3725f5a858", null ],
+    [ "ParallelFor", "ERF__InitCustomPertVels__IsentropicVortex_8H.html#ab5c1cd5798503be28f25f7d6d9943c7e", null ],
     [ "pp_for_pert_vels", "ERF__InitCustomPertVels__IsentropicVortex_8H.html#a420d78bf983d6025fd797e5276faa2fb", null ],
     [ "query", "ERF__InitCustomPertVels__IsentropicVortex_8H.html#ad0665f7cbddf3a7f15d78b72a92c5e80", null ],
     [ "query", "ERF__InitCustomPertVels__IsentropicVortex_8H.html#ae40e267a3c278551001f3792a076b9ca", null ],

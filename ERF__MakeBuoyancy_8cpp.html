@@ -416,9 +416,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">if</span> ( anelastic &amp;&amp; (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::None) ) {</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keywordflow">if</span> (grav_gpu[2]==0) {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbz, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        buoyancy_fab(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        buoyancy_fab(i, j, k) = zero_d;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    });</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
@@ -434,9 +434,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            {</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordflow">if</span> (grav_gpu[2]==0) {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbz, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        buoyancy_fab(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        buoyancy_fab(i, j, k) = zero_d;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                    });</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    <span class="comment">// Currently, only dry compressible is supported</span></div>

@@ -394,9 +394,9 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForMom__N_8H_source.h
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keyword">auto</span> dz_ptr = stretched_dz_d.data();</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(bxx,</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    [=,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keyword">auto</span> dzInv = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/dz_ptr[k];</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keyword">auto</span> dzInv = one_d/dz_ptr[k];</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        rho_u_rhs(i, j, k) = -<a class="code" href="ERF__AdvectionSrcForMom__N_8H.html#ad18982c58d2c10522c5a02bf5f868fea">AdvectionSrcForXMom_N</a>(i, j, k, rho_u, rho_v, rho_w,</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                                                    interp_u_h, interp_u_v,</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                                    mf_ux_inv, mf_uy_inv, mf_vx_inv,</div>
@@ -404,9 +404,9 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForMom__N_8H_source.h
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    });</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(bxy,</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    [=,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keyword">auto</span> dzInv = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/dz_ptr[k];</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keyword">auto</span> dzInv = one_d/dz_ptr[k];</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        rho_v_rhs(i, j, k) = -<a class="code" href="ERF__AdvectionSrcForMom__N_8H.html#a15d497b97865c842585f9bde4e6d4b00">AdvectionSrcForYMom_N</a>(i, j, k, rho_u, rho_v, rho_w,</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                    interp_v_h, interp_v_v,</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                                    mf_uy_inv, mf_vx_inv, mf_vy_inv,</div>
@@ -414,9 +414,9 @@ $(document).ready(function(){initNavTree('ERF__AdvectionSrcForMom__N_8H_source.h
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    });</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(bxz,</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    [=,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>,two_d=<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    {</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keyword">auto</span> dzInv = (k == 0) ? <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dz_ptr[k] : <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>/(dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keyword">auto</span> dzInv = (k == 0) ? one_d / dz_ptr[k] : two_d/(dz_ptr[k] + dz_ptr[k-1]);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        rho_w_rhs(i, j, k) = -<a class="code" href="ERF__AdvectionSrcForMom__N_8H.html#ab46125b75684c43cdc95e95f22aff5a2">AdvectionSrcForZMom_N</a>(i, j, k, rho_u, rho_v, rho_w, <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>,</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                    interp_w_h, interp_w_v, interp_w_wall,</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                                                    mf_mx, mf_my, mf_uy_inv, mf_vx_inv,</div>

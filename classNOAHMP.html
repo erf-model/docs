@@ -506,88 +506,88 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classNullSurf.html#ab0d29b63312cfce1512068c8447d2aaf">NullSurf</a>.</p>
-<div class="fragment"><div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    amrex::ignore_unused(dt);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classNOAHMP.html#a97c8731a92c969175b90552f82bd3abc">m_has_nc_file</a>) {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="comment">// Skip interpolation if lev 0 was just updated: Noah runs post-step, so</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="comment">// the fluxes &amp; data still hold lsm_undefined values.</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">if</span> (!updated_lev0) {</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <a class="code" href="classNOAHMP.html#ab5371a22f98e970fa5d75b0fc9db8dc7">interp_from_lev0</a>(lev, cons_in, nstep);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <a class="code" href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">m_updated</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        }</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment">// Gate on the subcycling schedule (identical on every rank).</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classNOAHMP.html#af193deb567d9d67dc1e9cfcec31a13e0">time_to_fire</a>(elapsed_time)) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        Box domain = <a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.Domain();</div>
+<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;{</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    amrex::ignore_unused(dt);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classNOAHMP.html#a97c8731a92c969175b90552f82bd3abc">m_has_nc_file</a>) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="comment">// Skip interpolation if lev 0 was just updated: Noah runs post-step, so</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        <span class="comment">// the fluxes &amp; data still hold lsm_undefined values.</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">if</span> (!updated_lev0) {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <a class="code" href="classNOAHMP.html#ab5371a22f98e970fa5d75b0fc9db8dc7">interp_from_lev0</a>(lev, cons_in, nstep);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <a class="code" href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">m_updated</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="comment">// Gate on the subcycling schedule (identical on every rank).</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="classNOAHMP.html#af193deb567d9d67dc1e9cfcec31a13e0">time_to_fire</a>(elapsed_time)) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; started at time step: &quot;</span> &lt;&lt; nstep+1 &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        Box domain = <a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.Domain();</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordtype">bool</span> is_moist = (cons_in.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; started at time step: &quot;</span> &lt;&lt; nstep+1 &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordtype">int</span> klo = domain.smallEnd(2);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordtype">bool</span> is_moist = (cons_in.nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>);</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="comment">// Collect the typed precip slots, then seed the per-level previous-accumulation</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="comment">// snapshots the delta kernel differences against (ERF_NOAHMP_Precip.cpp).</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keyword">const</span> <a class="code" href="structerf__noahmp_1_1PrecipSlots.html">erf_noahmp::PrecipSlots</a> precip = <a class="code" href="classNOAHMP.html#a6ce549aa0619413a8773c7555281d318">collect_precip_sources</a>(precip_sources);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <a class="code" href="classNOAHMP.html#a966590a090ed15af91d568e02c8fff02">prepare_precip_snapshots</a>(lev, precip);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="comment">// Cells the guards touched this call; reported after the box loop.</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        Vector&lt;erf_noahmp::ClampedPrecipCell&gt;   clamped_cells;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        Vector&lt;erf_noahmp::InvariantPrecipCell&gt; invariant_cells;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="comment">// Loop over blocks: ERF -&gt; Noahmp, drive the land model, Noahmp -&gt; ERF.</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        <span class="keywordtype">int</span> idb = 0;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(cons_in); mfi.isValid(); ++mfi, ++idb) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            Box bx  = mfi.tilebox();</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            Box gbx = mfi.tilebox(IntVect(0,0,0),IntVect(1,1,0));</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <span class="comment">// Only tiles at the lower z boundary</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordflow">if</span> (bx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            bx.makeSlab(2,klo);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            gbx.makeSlab(2,klo);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">// The NoahmpIO block and its pinned staging buffers for this box,</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="comment">// all co-indexed by idb, bundled into one handle.</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="keyword">const</span> <a class="code" href="structerf__noahmp_1_1NoahmpBlockViews.html">erf_noahmp::NoahmpBlockViews</a> blk {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                &amp;<a class="code" href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">noahmpio_vect</a>[idb],</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                <a class="code" href="classNOAHMP.html#a4ec2b1db184a7f933c47dcc0a4d23193">noahmp_input_tmp</a>[idb]-&gt;array(),</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                <a class="code" href="classNOAHMP.html#a48bd23f47b90bccac4e41b449fc3cbe9">noahmp_output_tmp</a>[idb]-&gt;array()</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            };</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="comment">// (1-3) ERF forcing -&gt; pinned input -&gt; NoahmpIO arrays.</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            <a class="code" href="classNOAHMP.html#a8ef03df39b9105a9850c824b01c3e25c">stage_forcing</a>(mfi, blk, bx, klo, lev, is_moist,</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                          cons_in, xvel_in, yvel_in,</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                          precip, clamped_cells, invariant_cells);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="comment">// (4) Drive Noah-MP. Mirror the authoritative counter into the block first.</span></div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            blk.io-&gt;itimestep = <a class="code" href="classNOAHMP.html#a859bc0849345b3752b2bc94a7f858333">m_itimestep</a>;</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            blk.io-&gt;DriverMain();</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="comment">// (5-6) NoahmpIO results -&gt; pinned output -&gt; ERF coupling fields.</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <a class="code" href="classNOAHMP.html#a3c66d1a1ea05dc92935b09dabb34837c">read_results</a>(mfi, blk, bx, gbx, cons_in);</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="comment">// Advance the snapshots now that this call&#39;s RAINBL/SR have been consumed.</span></div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <a class="code" href="classNOAHMP.html#aecc70baf8cee5acdcda4c957d3894719">advance_precip_snapshots</a>(lev, precip);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="comment">// Report any cells the guards clamped / rescaled (never silent).</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <a class="code" href="classNOAHMP.html#a760c1a92eca943f5896533f04e37a76a">report_precip_diagnostics</a>(lev, clamped_cells, invariant_cells);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++ivar) {</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[ivar]-&gt;FillBoundary(<a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.periodicity());</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        }</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; completed&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;}</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordtype">int</span> klo = domain.smallEnd(2);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="comment">// Collect the typed precip slots, then seed the per-level previous-accumulation</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="comment">// snapshots the delta kernel differences against (ERF_NOAHMP_Precip.cpp).</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keyword">const</span> <a class="code" href="structerf__noahmp_1_1PrecipSlots.html">erf_noahmp::PrecipSlots</a> precip = <a class="code" href="classNOAHMP.html#a6ce549aa0619413a8773c7555281d318">collect_precip_sources</a>(precip_sources);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <a class="code" href="classNOAHMP.html#a966590a090ed15af91d568e02c8fff02">prepare_precip_snapshots</a>(lev, precip);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="comment">// Cells the guards touched this call; reported after the box loop.</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        Vector&lt;erf_noahmp::ClampedPrecipCell&gt;   clamped_cells;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        Vector&lt;erf_noahmp::InvariantPrecipCell&gt; invariant_cells;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="comment">// Loop over blocks: ERF -&gt; Noahmp, drive the land model, Noahmp -&gt; ERF.</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordtype">int</span> idb = 0;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <span class="keywordflow">for</span> (MFIter mfi(cons_in); mfi.isValid(); ++mfi, ++idb) {</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            Box bx  = mfi.tilebox();</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            Box gbx = mfi.tilebox(IntVect(0,0,0),IntVect(1,1,0));</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="comment">// Only tiles at the lower z boundary</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            <span class="keywordflow">if</span> (bx.smallEnd(2) != klo) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            bx.makeSlab(2,klo);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            gbx.makeSlab(2,klo);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="comment">// The NoahmpIO block and its pinned staging buffers for this box,</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            <span class="comment">// all co-indexed by idb, bundled into one handle.</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keyword">const</span> <a class="code" href="structerf__noahmp_1_1NoahmpBlockViews.html">erf_noahmp::NoahmpBlockViews</a> blk {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                &amp;<a class="code" href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">noahmpio_vect</a>[idb],</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;                <a class="code" href="classNOAHMP.html#a4ec2b1db184a7f933c47dcc0a4d23193">noahmp_input_tmp</a>[idb]-&gt;array(),</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                <a class="code" href="classNOAHMP.html#a48bd23f47b90bccac4e41b449fc3cbe9">noahmp_output_tmp</a>[idb]-&gt;array()</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            };</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="comment">// (1-3) ERF forcing -&gt; pinned input -&gt; NoahmpIO arrays.</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <a class="code" href="classNOAHMP.html#a8ef03df39b9105a9850c824b01c3e25c">stage_forcing</a>(mfi, blk, bx, klo, lev, is_moist,</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;                          cons_in, xvel_in, yvel_in,</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                          precip, clamped_cells, invariant_cells);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="comment">// (4) Drive Noah-MP. Mirror the authoritative counter into the block first.</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            blk.io-&gt;itimestep = <a class="code" href="classNOAHMP.html#a859bc0849345b3752b2bc94a7f858333">m_itimestep</a>;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            blk.io-&gt;DriverMain();</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="comment">// (5-6) NoahmpIO results -&gt; pinned output -&gt; ERF coupling fields.</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <a class="code" href="classNOAHMP.html#a3c66d1a1ea05dc92935b09dabb34837c">read_results</a>(mfi, blk, bx, gbx, cons_in);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        }</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <span class="comment">// Advance the snapshots now that this call&#39;s RAINBL/SR have been consumed.</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <a class="code" href="classNOAHMP.html#aecc70baf8cee5acdcda4c957d3894719">advance_precip_snapshots</a>(lev, precip);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="comment">// Report any cells the guards clamped / rescaled (never silent).</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <a class="code" href="classNOAHMP.html#a760c1a92eca943f5896533f04e37a76a">report_precip_diagnostics</a>(lev, clamped_cells, invariant_cells);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> ivar = 0; ivar &lt; <a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa95d7201295c651f503c14a90d07916f5">LsmFlux_NOAHMP::NumVars</a>; ++ivar) {</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[ivar]-&gt;FillBoundary(<a class="code" href="classNOAHMP.html#af06273a8838563fd46d42e86032d795f">m_geom</a>.periodicity());</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        }</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        Print () &lt;&lt; <span class="stringliteral">&quot;Noah-MP driver at level &quot;</span> &lt;&lt; lev &lt;&lt; <span class="stringliteral">&quot; completed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a312d74035627fd45feba087875ed0ca1"><div class="ttname"><a href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">NOAHMP::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmFlux_NOAHMP::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:369</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a324693abeb0fd2acfabaac1048481c81"><div class="ttname"><a href="classNOAHMP.html#a324693abeb0fd2acfabaac1048481c81">NOAHMP::m_updated</a></div><div class="ttdeci">bool m_updated</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:404</div></div>
-<div class="ttc" id="aclassNOAHMP_html_a3c66d1a1ea05dc92935b09dabb34837c"><div class="ttname"><a href="classNOAHMP.html#a3c66d1a1ea05dc92935b09dabb34837c">NOAHMP::read_results</a></div><div class="ttdeci">void read_results(const amrex::MFIter &amp;mfi, const erf_noahmp::NoahmpBlockViews &amp;blk, const amrex::Box &amp;bx, const amrex::Box &amp;gbx, amrex::MultiFab &amp;cons_in)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Advance.cpp:204</div></div>
+<div class="ttc" id="aclassNOAHMP_html_a3c66d1a1ea05dc92935b09dabb34837c"><div class="ttname"><a href="classNOAHMP.html#a3c66d1a1ea05dc92935b09dabb34837c">NOAHMP::read_results</a></div><div class="ttdeci">void read_results(const amrex::MFIter &amp;mfi, const erf_noahmp::NoahmpBlockViews &amp;blk, const amrex::Box &amp;bx, const amrex::Box &amp;gbx, amrex::MultiFab &amp;cons_in)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Advance.cpp:205</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a48bd23f47b90bccac4e41b449fc3cbe9"><div class="ttname"><a href="classNOAHMP.html#a48bd23f47b90bccac4e41b449fc3cbe9">NOAHMP::noahmp_output_tmp</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::FArrayBox &gt; &gt; noahmp_output_tmp</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:386</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a4ec2b1db184a7f933c47dcc0a4d23193"><div class="ttname"><a href="classNOAHMP.html#a4ec2b1db184a7f933c47dcc0a4d23193">NOAHMP::noahmp_input_tmp</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::FArrayBox &gt; &gt; noahmp_input_tmp</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:385</div></div>
 <div class="ttc" id="aclassNOAHMP_html_a65195247ebb837a0b8749b30fd8dd3a2"><div class="ttname"><a href="classNOAHMP.html#a65195247ebb837a0b8749b30fd8dd3a2">NOAHMP::noahmpio_vect</a></div><div class="ttdeci">NoahmpIO_vector noahmpio_vect</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP.H:382</div></div>
@@ -1845,125 +1845,126 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;{</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    NoahmpIO_type* noahmpio = blk.<a class="code" href="structerf__noahmp_1_1NoahmpBlockViews.html#a197e3aeeca6c7189eda8e32232c45edb">io</a>;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">// For limiting when populating ghost cells</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">int</span> i_lo = bx.smallEnd(0); <span class="keywordtype">int</span> i_hi = bx.bigEnd(0);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">int</span> j_lo = bx.smallEnd(1); <span class="keywordtype">int</span> j_hi = bx.bigEnd(1);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; CONS = cons_in.const_array(mfi);</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">// Mechanical result destinations (RRTMGP coupling + return-term diagnostics),</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// bound from NOAHMP_RESULT_FIELDS to stay in sync with the scatter below.</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#define NOAHMP_BIND_RESULT(alias,lsm,out) Array4&lt;Real&gt; alias = lsm_fab_data[LsmData_NOAHMP::lsm]-&gt;array(mfi);</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <a class="code" href="ERF__NOAHMP__Fields_8H.html#a258047e5f364ea5f50a9c79f54a3f403">NOAHMP_RESULT_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#ad8e6293893b87e04f649f96987f84e25">NOAHMP_BIND_RESULT</a>)</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#undef NOAHMP_BIND_RESULT</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">// Sentinels (this core does not compute them; always lsm_undefined below).</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    Array4&lt;Real&gt; SMSTAV_o    = <a class="code" href="classNOAHMP.html#a6407b4f399b7539f3226b7eb4f216451">lsm_fab_data</a>[LsmData_NOAHMP::smstav]-&gt;array(mfi);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    Array4&lt;Real&gt; SMSTOT_o    = <a class="code" href="classNOAHMP.html#a6407b4f399b7539f3226b7eb4f216451">lsm_fab_data</a>[LsmData_NOAHMP::smstot]-&gt;array(mfi);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// Per-layer soil output fabs (3 groups x m_nsoil) in a device-visible vector so</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// the scatter loops over any NSOIL. Layout: g in {0:smois,1:sh2o,2:tslb}, k in [0,nsoil).</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nsoil = <a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a>;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> n_soil_fld = 3*nsoil;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    Gpu::DeviceVector&lt;Array4&lt;Real&gt;&gt; soil_arr_d(n_soil_fld);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    {</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        Vector&lt;Array4&lt;Real&gt;&gt; soil_arr_h(n_soil_fld);</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>(0); <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a> &lt; 3; ++<a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; nsoil; ++k) {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                soil_arr_h[<a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>*nsoil+k] = <a class="code" href="classNOAHMP.html#a6407b4f399b7539f3226b7eb4f216451">lsm_fab_data</a>[<a class="code" href="classNOAHMP.html#a4939c72c56a2a09caebc7ea592a3f253">soil_data_idx</a>(<a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>,k)]-&gt;array(mfi);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        Gpu::copyAsync(Gpu::hostToDevice, soil_arr_h.begin(), soil_arr_h.end(), soil_arr_d.begin());</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    Array4&lt;Real&gt;* soil_arr = soil_arr_d.data();</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> soil_out_base = <a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976abd3333165a817fed59608a2163f2ca76">NoahmpOutputComp::NumComps</a>; <span class="comment">// soil outputs start here</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// SurfaceLayer flux destinations</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    Array4&lt;Real&gt; q_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa8df9d3919c908deeedb39488c2a76c07">LsmFlux_NOAHMP::q_flux</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    Array4&lt;Real&gt; t_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa411e3389836ac6eff20fba74dbe34a4c">LsmFlux_NOAHMP::t_flux</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    Array4&lt;Real&gt; tau13_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa7e953fc0f1b5bcb19653405ec7256e40">LsmFlux_NOAHMP::tau13</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    Array4&lt;Real&gt; tau23_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fac319adfcf2e45b3be70235f3a2ce8d54">LsmFlux_NOAHMP::tau23</a>]-&gt;array(mfi);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    Array4&lt;Real&gt; noah_output_arr = blk.<a class="code" href="structerf__noahmp_1_1NoahmpBlockViews.html#a1a68cdd76f379b058b180c84d1d779b2">output</a>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">// (5) Copy NoahmpIO results into the pinned output buffer; banded albedos and</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">// the soil profile are read explicitly. SMSTAV/SMSTOT are emitted lsm_undefined.</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    LoopOnCpu(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    {</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#define NOAHMP_READ_OUT_2D(comp,member) noah_output_arr(i,j,0,NoahmpOutputComp::comp) = noahmpio-&gt;member(i,j);</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="ERF__NOAHMP__Fields_8H.html#a9746d0e93b6c795068dcccf1d9782aab">NOAHMP_OUTPUT_2D_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a0a933956e85a2a04e595a0eec649120a">NOAHMP_READ_OUT_2D</a>)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#undef NOAHMP_READ_OUT_2D</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="comment">// Banded radiation reads (VIS=1, NIR=2)</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aa305c803d3506b98717e5c92343dfaa7">NoahmpOutputComp::albsfcdir_vis</a>) = noahmpio-&gt;ALBSFCDIRXY(i,1,j);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976af447d633e704725fd9d7c3ec54d273cb">NoahmpOutputComp::albsfcdir_nir</a>) = noahmpio-&gt;ALBSFCDIRXY(i,2,j);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ae4b5c9d4068fd918c912ae1082d38a26">NoahmpOutputComp::albsfcdif_vis</a>) = noahmpio-&gt;ALBSFCDIFXY(i,1,j);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ad111c27a866156bbe702c55610a16578">NoahmpOutputComp::albsfcdif_nir</a>) = noahmpio-&gt;ALBSFCDIFXY(i,2,j);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="comment">// Soil profile, one 2D component per layer (Fortran layer index is 1-based).</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; nsoil; ++k) {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            noah_output_arr(i,j,0,soil_out_base + 0*nsoil + k) = noahmpio-&gt;SMOIS(i,k+1,j);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            noah_output_arr(i,j,0,soil_out_base + 1*nsoil + k) = noahmpio-&gt;SH2O (i,k+1,j);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            noah_output_arr(i,j,0,soil_out_base + 2*nsoil + k) = noahmpio-&gt;TSLB (i,k+1,j);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    });</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">// (6) Copy Noahmp results to ERF (device; from pinned buffer): per-field math</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// (flux ÷rho, -9999 fill guard, sentinels, soil loop), deliberately not table-driven.</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="comment">// Limit indices to the valid box. FillBoundary will pick these up below.</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordtype">int</span> ii = std::min(std::max(i,i_lo),i_hi);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordtype">int</span> jj = std::min(std::max(j,j_lo),j_hi);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="comment">// Noah-MP returns -9999 for cells it does not process (sea-ice/open-water);</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="comment">// detect it and write lsm_undefined so the surface layer falls back to MOST.</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">// tau13/tau23 are nodal in xz/yz; the 2D MFs carry 1 ghost cell for averaging.</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hfx_lsm = noah_output_arr(ii,jj,0,NoahmpOutputComp::hfx);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">if</span> (hfx_lsm &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-9990.0)) {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            <span class="comment">// Noah-MP returns HFX,LH [W/m2] and TAU [N/m2] (rho included); divide by</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="comment">// rho for the kinematic MOST form ERF stores. Exner factor on t_flux is</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="comment">// omitted to match WRF (&lt;~1% error near surface, ~6-7% at p~800 hPa).</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_l  = CONS(ii,jj,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            t_flux_arr(i,j,k) = hfx_lsm/(rho_l*<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            q_flux_arr(i,j,k) = noah_output_arr(ii,jj,0,NoahmpOutputComp::lh)/(rho_l*<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            tau13_arr(i,j,k)  = noah_output_arr(ii,jj,0,NoahmpOutputComp::tau_ew)/rho_l;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            tau23_arr(i,j,k)  = noah_output_arr(ii,jj,0,NoahmpOutputComp::tau_ns)/rho_l;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            t_flux_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            q_flux_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            tau13_arr(i,j,k)  = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            tau23_arr(i,j,k)  = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="comment">// RRTMGP + return-term results: mechanical 1:1 copy from the buffer,</span></div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="comment">// generated from NOAHMP_RESULT_FIELDS.</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">if</span> (hfx_lsm &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-9990.0)) {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#define NOAHMP_COPY_RESULT(alias,lsm,out) alias(i,j,0) = noah_output_arr(ii,jj,0,NoahmpOutputComp::out);</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <a class="code" href="ERF__NOAHMP__Fields_8H.html#a258047e5f364ea5f50a9c79f54a3f403">NOAHMP_RESULT_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a2cd5afa30dc082041eb2d255bdbfc6d4">NOAHMP_COPY_RESULT</a>)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#undef NOAHMP_COPY_RESULT</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <span class="comment">// Not computed by this core -&gt; sentinel, not a misleading 0.</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            SMSTAV_o(i,j,0)      = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            SMSTOT_o(i,j,0)      = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> s(0); s &lt; n_soil_fld; ++s) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                soil_arr[s](i,j,0) = noah_output_arr(ii,jj,0,soil_out_base + s);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            <span class="comment">// Fill-value cell (sea-ice / open-water): every result is the sentinel.</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#define NOAHMP_UNDEF_RESULT(alias,lsm,out) alias(i,j,0) = lsm_undefined;</span></div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <a class="code" href="ERF__NOAHMP__Fields_8H.html#a258047e5f364ea5f50a9c79f54a3f403">NOAHMP_RESULT_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#ab701e4f8b5f1cf4c9764d4c6c5d340ed">NOAHMP_UNDEF_RESULT</a>)</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#undef NOAHMP_UNDEF_RESULT</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            SMSTAV_o(i,j,0)      = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            SMSTOT_o(i,j,0)      = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> s(0); s &lt; n_soil_fld; ++s) {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                soil_arr[s](i,j,0) = <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    });</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="comment">// The scatter kernel reads soil_arr_d; sync before it is destroyed.</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    NoahmpIO_type* noahmpio = blk.<a class="code" href="structerf__noahmp_1_1NoahmpBlockViews.html#a197e3aeeca6c7189eda8e32232c45edb">io</a>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// For limiting when populating ghost cells</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">int</span> i_lo = bx.smallEnd(0); <span class="keywordtype">int</span> i_hi = bx.bigEnd(0);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">int</span> j_lo = bx.smallEnd(1); <span class="keywordtype">int</span> j_hi = bx.bigEnd(1);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; CONS = cons_in.const_array(mfi);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// Mechanical result destinations (RRTMGP coupling + return-term diagnostics),</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">// bound from NOAHMP_RESULT_FIELDS to stay in sync with the scatter below.</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#define NOAHMP_BIND_RESULT(alias,lsm,out) Array4&lt;Real&gt; alias = lsm_fab_data[LsmData_NOAHMP::lsm]-&gt;array(mfi);</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="ERF__NOAHMP__Fields_8H.html#a258047e5f364ea5f50a9c79f54a3f403">NOAHMP_RESULT_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#ad8e6293893b87e04f649f96987f84e25">NOAHMP_BIND_RESULT</a>)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#undef NOAHMP_BIND_RESULT</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// Sentinels (this core does not compute them; always lsm_undefined below).</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    Array4&lt;Real&gt; SMSTAV_o    = <a class="code" href="classNOAHMP.html#a6407b4f399b7539f3226b7eb4f216451">lsm_fab_data</a>[LsmData_NOAHMP::smstav]-&gt;array(mfi);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    Array4&lt;Real&gt; SMSTOT_o    = <a class="code" href="classNOAHMP.html#a6407b4f399b7539f3226b7eb4f216451">lsm_fab_data</a>[LsmData_NOAHMP::smstot]-&gt;array(mfi);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// Per-layer soil output fabs (3 groups x m_nsoil) in a device-visible vector so</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// the scatter loops over any NSOIL. Layout: g in {0:smois,1:sh2o,2:tslb}, k in [0,nsoil).</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nsoil = <a class="code" href="classNOAHMP.html#a50b550a9bcf8ad13a8e55d2731c187f3">m_nsoil</a>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> n_soil_fld = 3*nsoil;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    Gpu::DeviceVector&lt;Array4&lt;Real&gt;&gt; soil_arr_d(n_soil_fld);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        Vector&lt;Array4&lt;Real&gt;&gt; soil_arr_h(n_soil_fld);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>(0); <a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a> &lt; 3; ++<a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>) {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; nsoil; ++k) {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                soil_arr_h[<a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>*nsoil+k] = <a class="code" href="classNOAHMP.html#a6407b4f399b7539f3226b7eb4f216451">lsm_fab_data</a>[<a class="code" href="classNOAHMP.html#a4939c72c56a2a09caebc7ea592a3f253">soil_data_idx</a>(<a class="code" href="namespacemodule__model__constants.html#a1f0c74f0fd17b1b38de53299cadb3fdf">g</a>,k)]-&gt;array(mfi);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        Gpu::copyAsync(Gpu::hostToDevice, soil_arr_h.begin(), soil_arr_h.end(), soil_arr_d.begin());</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    Array4&lt;Real&gt;* soil_arr = soil_arr_d.data();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> soil_out_base = <a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976abd3333165a817fed59608a2163f2ca76">NoahmpOutputComp::NumComps</a>; <span class="comment">// soil outputs start here</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// SurfaceLayer flux destinations</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    Array4&lt;Real&gt; q_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa8df9d3919c908deeedb39488c2a76c07">LsmFlux_NOAHMP::q_flux</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    Array4&lt;Real&gt; t_flux_arr    = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa411e3389836ac6eff20fba74dbe34a4c">LsmFlux_NOAHMP::t_flux</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    Array4&lt;Real&gt; tau13_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fa7e953fc0f1b5bcb19653405ec7256e40">LsmFlux_NOAHMP::tau13</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    Array4&lt;Real&gt; tau23_arr     = <a class="code" href="classNOAHMP.html#a312d74035627fd45feba087875ed0ca1">lsm_fab_flux</a>[<a class="code" href="namespaceLsmFlux__NOAHMP.html#a3a8a69be8ab6f45d7b49448422bfe40fac319adfcf2e45b3be70235f3a2ce8d54">LsmFlux_NOAHMP::tau23</a>]-&gt;array(mfi);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    Array4&lt;Real&gt; noah_output_arr = blk.<a class="code" href="structerf__noahmp_1_1NoahmpBlockViews.html#a1a68cdd76f379b058b180c84d1d779b2">output</a>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">// (5) Copy NoahmpIO results into the pinned output buffer; banded albedos and</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">// the soil profile are read explicitly. SMSTAV/SMSTOT are emitted lsm_undefined.</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    LoopOnCpu(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">#define NOAHMP_READ_OUT_2D(comp,member) noah_output_arr(i,j,0,NoahmpOutputComp::comp) = noahmpio-&gt;member(i,j);</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="ERF__NOAHMP__Fields_8H.html#a9746d0e93b6c795068dcccf1d9782aab">NOAHMP_OUTPUT_2D_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a0a933956e85a2a04e595a0eec649120a">NOAHMP_READ_OUT_2D</a>)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">#undef NOAHMP_READ_OUT_2D</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="comment">// Banded radiation reads (VIS=1, NIR=2)</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aa305c803d3506b98717e5c92343dfaa7">NoahmpOutputComp::albsfcdir_vis</a>) = noahmpio-&gt;ALBSFCDIRXY(i,1,j);</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976af447d633e704725fd9d7c3ec54d273cb">NoahmpOutputComp::albsfcdir_nir</a>) = noahmpio-&gt;ALBSFCDIRXY(i,2,j);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ae4b5c9d4068fd918c912ae1082d38a26">NoahmpOutputComp::albsfcdif_vis</a>) = noahmpio-&gt;ALBSFCDIFXY(i,1,j);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        noah_output_arr(i,j,0,<a class="code" href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ad111c27a866156bbe702c55610a16578">NoahmpOutputComp::albsfcdif_nir</a>) = noahmpio-&gt;ALBSFCDIFXY(i,2,j);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">// Soil profile, one 2D component per layer (Fortran layer index is 1-based).</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(0); k &lt; nsoil; ++k) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            noah_output_arr(i,j,0,soil_out_base + 0*nsoil + k) = noahmpio-&gt;SMOIS(i,k+1,j);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            noah_output_arr(i,j,0,soil_out_base + 1*nsoil + k) = noahmpio-&gt;SH2O (i,k+1,j);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            noah_output_arr(i,j,0,soil_out_base + 2*nsoil + k) = noahmpio-&gt;TSLB (i,k+1,j);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    });</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// (6) Copy Noahmp results to ERF (device; from pinned buffer): per-field math</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// (flux ÷rho, -9999 fill guard, sentinels, soil loop), deliberately not table-driven.</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=,Cp_d_d=<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>,L_v_d=<a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a>,lsm_undefined_d=<a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>]</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                         AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="comment">// Limit indices to the valid box. FillBoundary will pick these up below.</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordtype">int</span> ii = std::min(std::max(i,i_lo),i_hi);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordtype">int</span> jj = std::min(std::max(j,j_lo),j_hi);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="comment">// Noah-MP returns -9999 for cells it does not process (sea-ice/open-water);</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="comment">// detect it and write lsm_undefined so the surface layer falls back to MOST.</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="comment">// tau13/tau23 are nodal in xz/yz; the 2D MFs carry 1 ghost cell for averaging.</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hfx_lsm = noah_output_arr(ii,jj,0,NoahmpOutputComp::hfx);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">if</span> (hfx_lsm &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-9990.0)) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="comment">// Noah-MP returns HFX,LH [W/m2] and TAU [N/m2] (rho included); divide by</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            <span class="comment">// rho for the kinematic MOST form ERF stores. Exner factor on t_flux is</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="comment">// omitted to match WRF (&lt;~1% error near surface, ~6-7% at p~800 hPa).</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_l  = CONS(ii,jj,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            t_flux_arr(i,j,k) = hfx_lsm/(rho_l*Cp_d_d);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            q_flux_arr(i,j,k) = noah_output_arr(ii,jj,0,NoahmpOutputComp::lh)/(rho_l*L_v_d);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            tau13_arr(i,j,k)  = noah_output_arr(ii,jj,0,NoahmpOutputComp::tau_ew)/rho_l;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            tau23_arr(i,j,k)  = noah_output_arr(ii,jj,0,NoahmpOutputComp::tau_ns)/rho_l;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            t_flux_arr(i,j,k) = lsm_undefined_d;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            q_flux_arr(i,j,k) = lsm_undefined_d;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            tau13_arr(i,j,k)  = lsm_undefined_d;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            tau23_arr(i,j,k)  = lsm_undefined_d;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="comment">// RRTMGP + return-term results: mechanical 1:1 copy from the buffer,</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="comment">// generated from NOAHMP_RESULT_FIELDS.</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">if</span> (hfx_lsm &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(-9990.0)) {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">#define NOAHMP_COPY_RESULT(alias,lsm,out) alias(i,j,0) = noah_output_arr(ii,jj,0,NoahmpOutputComp::out);</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <a class="code" href="ERF__NOAHMP__Fields_8H.html#a258047e5f364ea5f50a9c79f54a3f403">NOAHMP_RESULT_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a2cd5afa30dc082041eb2d255bdbfc6d4">NOAHMP_COPY_RESULT</a>)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">#undef NOAHMP_COPY_RESULT</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="comment">// Not computed by this core -&gt; sentinel, not a misleading 0.</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            SMSTAV_o(i,j,0)      = lsm_undefined_d;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            SMSTOT_o(i,j,0)      = lsm_undefined_d;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> s(0); s &lt; n_soil_fld; ++s) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                soil_arr[s](i,j,0) = noah_output_arr(ii,jj,0,soil_out_base + s);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="comment">// Fill-value cell (sea-ice / open-water): every result is the sentinel.</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#define NOAHMP_UNDEF_RESULT(alias,lsm,out) alias(i,j,0) = lsm_undefined_d;</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <a class="code" href="ERF__NOAHMP__Fields_8H.html#a258047e5f364ea5f50a9c79f54a3f403">NOAHMP_RESULT_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#ab701e4f8b5f1cf4c9764d4c6c5d340ed">NOAHMP_UNDEF_RESULT</a>)</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#undef NOAHMP_UNDEF_RESULT</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            SMSTAV_o(i,j,0)      = lsm_undefined_d;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            SMSTOT_o(i,j,0)      = lsm_undefined_d;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> s(0); s &lt; n_soil_fld; ++s) {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                soil_arr[s](i,j,0) = lsm_undefined_d;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    });</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="comment">// The scatter kernel reads soil_arr_d; sync before it is destroyed.</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:49</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:53</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
@@ -2249,11 +2250,11 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> kklo = klo;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// (1) Stage ERF forcing into the pinned buffer (device).</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,myhalf_d=<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a> = (is_moist) ? CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        noah_input_arr(i,j,0,NoahmpInputComp::u_phy)   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(U_PHY(i,j,k)+U_PHY(i+1,j,k));</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        noah_input_arr(i,j,0,NoahmpInputComp::v_phy)   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*(V_PHY(i,j,k)+V_PHY(i  ,j+1,k));</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a> = (is_moist) ? CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)/CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) : zero_d;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        noah_input_arr(i,j,0,NoahmpInputComp::u_phy)   = myhalf_d*(U_PHY(i,j,k)+U_PHY(i+1,j,k));</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        noah_input_arr(i,j,0,NoahmpInputComp::v_phy)   = myhalf_d*(V_PHY(i,j,k)+V_PHY(i  ,j+1,k));</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        noah_input_arr(i,j,0,NoahmpInputComp::t_phy)   = <a class="code" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a>(CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>),CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        noah_input_arr(i,j,0,NoahmpInputComp::qv_curr) = <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a>;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        noah_input_arr(i,j,0,NoahmpInputComp::p8w)     = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(CONS(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>),<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
@@ -2263,13 +2264,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// RAW water-equivalent interval precip [mm]: per slot d = max(0, (now-prev)</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="comment">// * native_to_kg_m2). Host applies the guard and derives SR / MP_RAINNC.</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> drain = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.), dsnow = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.), dgraup = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> drain = zero_d, dsnow = zero_d, dgraup = zero_d;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span> (hp) {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dd[<a class="code" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cdae9a0babf8cd25b7e04074a26a358988a">NoahmpPrecipSlot::NumSlots</a>];</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> s(0); s &lt; <a class="code" href="namespaceNoahmpPrecipSlot.html#a3055dd6ddf101a54971e55f30d53f7cdae9a0babf8cd25b7e04074a26a358988a">NoahmpPrecipSlot::NumSlots</a>; ++s) {</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                dd[s] = slot_present[s]</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    ? amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.), (accum_now[s](i,j,kklo) - accum_prv[s](i,j,kklo)) * accum_fac[s])</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                    ? amrex::max(zero_d, (accum_now[s](i,j,kklo) - accum_prv[s](i,j,kklo)) * accum_fac[s])</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    : zero_d;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment">// Hail is folded into MP_GRAUP (no ERF scheme fills the hail slot</span></div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="comment">// today); to feed it separately, stage dd[hail] into MP_HAIL instead.</span></div>
@@ -2291,45 +2292,48 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// (3) Copy pinned staged data to NoahmpIO on the host (3D members take the k/j</span></div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// transpose (i,1,j), 2D take (i,j)); precip is derived below.</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    LoopOnCpu(bx, [&amp;] (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#define NOAHMP_STAGE_IN_3D(comp,member) noahmpio-&gt;member(i,1,j) = noah_input_arr(i,j,0,NoahmpInputComp::comp);</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#define NOAHMP_STAGE_IN_2D(comp,member) noahmpio-&gt;member(i,j)   = noah_input_arr(i,j,0,NoahmpInputComp::comp);</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="ERF__NOAHMP__Fields_8H.html#abef90c58440613963b25b5b11bcb8d26">NOAHMP_INPUT_3D_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a5fe553caa599c8835bd7de5d172ef789">NOAHMP_STAGE_IN_3D</a>)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="ERF__NOAHMP__Fields_8H.html#a6360f8acbd3dd10cb4b63616f9babdf1">NOAHMP_INPUT_2D_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a07c8a4ac4e17fb116520165e2dfb5a84">NOAHMP_STAGE_IN_2D</a>)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#undef NOAHMP_STAGE_IN_3D</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#undef NOAHMP_STAGE_IN_2D</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">// Guard the RAW total, then derive SR / MP_RAINNC. Clamped cells are</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">// reported after the box loop (never silent).</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dsnow_h  = noah_input_arr(i,j,0,<a class="code" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4ad86e3e0ecab01bbed5bd8c2c818919a7">NoahmpInputComp::mp_snow</a>);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dgraup_h = noah_input_arr(i,j,0,<a class="code" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a5cebdb5f9af2a84b04d228f480d8f902">NoahmpInputComp::mp_graup</a>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> drain_h  = noah_input_arr(i,j,0,<a class="code" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a4c5c60cd9293b307198d10efc59e61bd">NoahmpInputComp::rainbl</a>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span> (drain_h &gt; <a class="code" href="ERF__Constants_8H.html#aad2af24f052a56f100de3d2196e5bcf8">lsm_max_precip_interval</a>) {</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            clamped_cells.push_back(<a class="code" href="structerf__noahmp_1_1ClampedPrecipCell.html">erf_noahmp::ClampedPrecipCell</a>{i, j, drain_h});</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            drain_h = <a class="code" href="ERF__Constants_8H.html#aad2af24f052a56f100de3d2196e5bcf8">lsm_max_precip_interval</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// Frozen/total invariant: MP_SNOW+MP_GRAUP are subsets of MP_RAINNC; if</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// their sum exceeds it, rescale the frozen components down and record the cell.</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dfroz_h = dsnow_h + dgraup_h;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> inv_tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-6) * (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0) + drain_h);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (dfroz_h &gt; drain_h + inv_tol) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            invariant_cells.push_back(<a class="code" href="structerf__noahmp_1_1InvariantPrecipCell.html">erf_noahmp::InvariantPrecipCell</a>{i, j, dfroz_h, drain_h});</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">if</span> (dfroz_h &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.)) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> scale = drain_h / dfroz_h;   <span class="comment">// &lt;= 1</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                dsnow_h  *= scale;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                dgraup_h *= scale;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                dfroz_h   = dsnow_h + dgraup_h;         <span class="comment">// == drain_h (to round-off)</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        noahmpio-&gt;RAINBL(i,j)    = drain_h;                                       <span class="comment">// [mm]</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        noahmpio-&gt;SR(i,j)        = (drain_h &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.)) ? amrex::min(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0), dfroz_h/drain_h) : <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.); <span class="comment">// [-]</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        noahmpio-&gt;MP_RAINNC(i,j) = drain_h;                                       <span class="comment">// [mm]</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        noahmpio-&gt;MP_SNOW(i,j)   = dsnow_h;                                       <span class="comment">// [mm]</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        noahmpio-&gt;MP_GRAUP(i,j)  = dgraup_h;                                      <span class="comment">// [mm] (includes folded hail)</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="comment">// 0 = &quot;no hail&quot; (a real value, not a sentinel; lsm_undefined would corrupt opt_snf=4)</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        noahmpio-&gt;MP_HAIL(i,j)   = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.);                                      <span class="comment">// [mm]</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    });</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    LoopOnCpu(bx, [&amp;,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>,lsm_max_precip_interval_d=<a class="code" href="ERF__Constants_8H.html#aad2af24f052a56f100de3d2196e5bcf8">lsm_max_precip_interval</a>]</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                      (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> ) noexcept</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#define NOAHMP_STAGE_IN_3D(comp,member) noahmpio-&gt;member(i,1,j) = noah_input_arr(i,j,0,NoahmpInputComp::comp);</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#define NOAHMP_STAGE_IN_2D(comp,member) noahmpio-&gt;member(i,j)   = noah_input_arr(i,j,0,NoahmpInputComp::comp);</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="ERF__NOAHMP__Fields_8H.html#abef90c58440613963b25b5b11bcb8d26">NOAHMP_INPUT_3D_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a5fe553caa599c8835bd7de5d172ef789">NOAHMP_STAGE_IN_3D</a>)</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="ERF__NOAHMP__Fields_8H.html#a6360f8acbd3dd10cb4b63616f9babdf1">NOAHMP_INPUT_2D_FIELDS</a>(<a class="code" href="ERF__NOAHMP__Advance_8cpp.html#a07c8a4ac4e17fb116520165e2dfb5a84">NOAHMP_STAGE_IN_2D</a>)</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#undef NOAHMP_STAGE_IN_3D</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#undef NOAHMP_STAGE_IN_2D</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">// Guard the RAW total, then derive SR / MP_RAINNC. Clamped cells are</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="comment">// reported after the box loop (never silent).</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dsnow_h  = noah_input_arr(i,j,0,<a class="code" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4ad86e3e0ecab01bbed5bd8c2c818919a7">NoahmpInputComp::mp_snow</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dgraup_h = noah_input_arr(i,j,0,<a class="code" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a5cebdb5f9af2a84b04d228f480d8f902">NoahmpInputComp::mp_graup</a>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> drain_h  = noah_input_arr(i,j,0,<a class="code" href="namespaceNoahmpInputComp.html#a552f82c7864bfaf76d16d791b04d5db4a4c5c60cd9293b307198d10efc59e61bd">NoahmpInputComp::rainbl</a>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span> (drain_h &gt; lsm_max_precip_interval_d) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            clamped_cells.push_back(<a class="code" href="structerf__noahmp_1_1ClampedPrecipCell.html">erf_noahmp::ClampedPrecipCell</a>{i, j, drain_h});</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            drain_h = lsm_max_precip_interval_d;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// Frozen/total invariant: MP_SNOW+MP_GRAUP are subsets of MP_RAINNC; if</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="comment">// their sum exceeds it, rescale the frozen components down and record the cell.</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dfroz_h = dsnow_h + dgraup_h;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> inv_tol = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.0e-6) * (one_d + drain_h);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">if</span> (dfroz_h &gt; drain_h + inv_tol) {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            invariant_cells.push_back(<a class="code" href="structerf__noahmp_1_1InvariantPrecipCell.html">erf_noahmp::InvariantPrecipCell</a>{i, j, dfroz_h, drain_h});</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span> (dfroz_h &gt; zero_d) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> scale = drain_h / dfroz_h;   <span class="comment">// &lt;= 1</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                dsnow_h  *= scale;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                dgraup_h *= scale;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                dfroz_h   = dsnow_h + dgraup_h;         <span class="comment">// == drain_h (to round-off)</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        noahmpio-&gt;RAINBL(i,j)    = drain_h;                                       <span class="comment">// [mm]</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        noahmpio-&gt;SR(i,j)        = (drain_h &gt; zero_d) ? amrex::min(one_d, dfroz_h/drain_h) : zero_d; <span class="comment">// [-]</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        noahmpio-&gt;MP_RAINNC(i,j) = drain_h;                                       <span class="comment">// [mm]</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        noahmpio-&gt;MP_SNOW(i,j)   = dsnow_h;                                       <span class="comment">// [mm]</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        noahmpio-&gt;MP_GRAUP(i,j)  = dgraup_h;                                      <span class="comment">// [mm] (includes folded hail)</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="comment">// 0 = &quot;no hail&quot; (a real value, not a sentinel; lsm_undefined would corrupt opt_snf=4)</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        noahmpio-&gt;MP_HAIL(i,j)   = zero_d;                                        <span class="comment">// [mm]</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    });</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
+<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_a5e63b66e00cbd68e3b3fdcc6c0770b92"><div class="ttname"><a href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92">getTgivenRandRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenRandRTh(const amrex::Real rho, const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:46</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
