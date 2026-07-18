@@ -106,8 +106,8 @@ Functions</h2></td></tr>
 <tr class="separator:a30fd4bcea646c88d7fefc6b97901c441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1dbd6625416ea8cf02b3973f2b50288"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__InitCustomPert__TurbulentInflow_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ac1dbd6625416ea8cf02b3973f2b50288">query</a> (&quot;T_pert&quot;, T_pert)</td></tr>
 <tr class="separator:ac1dbd6625416ea8cf02b3973f2b50288"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4041b94b753dcbe48842083b279ef7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ab4041b94b753dcbe48842083b279ef7a">ParallelFor</a> (bx, [=, myhalf_d=<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, R_d_d=<a class="el" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>, one_d=<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>, PI_d=<a class="el" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>, two_d=<a class="el" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>, p_0_d=<a class="el" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>=geomdata.ProbLo();const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+myhalf_d) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tbar_hse=p_hse(i, j, k)/(R_d_d *r_hse(i, j, k));<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> L=std::sqrt(amrex::Math::powi&lt; 2 &gt;((x - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a47302f019039afd23af718058e185a14">x_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a3a1023fe73b5e558f7d6c9f0c159fdd1">x_r</a>)+amrex::Math::powi&lt; 2 &gt;((z - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a260ac6cbdf6885bf3d3baee82de6b4b3">z_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a839469c41cb23df7da5ebf123f0f87e4">z_r</a>));<a class="el" href="ERF__ImplicitPre_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(L&lt;=one_d) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dT=<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#aa395cc3ca43aaf99f6ae148afe3d5ea4">T_pert</a> *(std::cos(PI_d *L)+one_d)/two_d;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_perturbed=(Tbar_hse+dT) *std::pow(p_0_d/p_hse(i, j, k), R_d_d/<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ae04fb3e472781d40a59f1b43ab17e9a2">C_p</a>);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)=<a class="el" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3">getRhoThetagivenP</a>(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} })</td></tr>
-<tr class="separator:ab4041b94b753dcbe48842083b279ef7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9110a97d2a35040eac8080b6da1ba2c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#a9110a97d2a35040eac8080b6da1ba2c3">ParallelFor</a> (bx, [=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>=geomdata.ProbLo();const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tbar_hse=p_hse(i, j, k)/(<a class="el" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> *r_hse(i, j, k));<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> L=std::sqrt(amrex::Math::powi&lt; 2 &gt;((x - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a47302f019039afd23af718058e185a14">x_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a3a1023fe73b5e558f7d6c9f0c159fdd1">x_r</a>)+amrex::Math::powi&lt; 2 &gt;((z - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a260ac6cbdf6885bf3d3baee82de6b4b3">z_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a839469c41cb23df7da5ebf123f0f87e4">z_r</a>));<a class="el" href="ERF__ImplicitPre_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(L&lt;=<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dT=<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#aa395cc3ca43aaf99f6ae148afe3d5ea4">T_pert</a> *(std::cos(<a class="el" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> *L)+<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>)/<a class="el" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_perturbed=(Tbar_hse+dT) *std::pow(<a class="el" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_hse(i, j, k), <a class="el" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ae04fb3e472781d40a59f1b43ab17e9a2">C_p</a>);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)=<a class="el" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3">getRhoThetagivenP</a>(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} })</td></tr>
+<tr class="separator:a9110a97d2a35040eac8080b6da1ba2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -125,8 +125,8 @@ Variables</h2></td></tr>
 <tr class="separator:ae04fb3e472781d40a59f1b43ab17e9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab4041b94b753dcbe48842083b279ef7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4041b94b753dcbe48842083b279ef7a">&#9670;&nbsp;</a></span>ParallelFor()</h2>
+<a id="a9110a97d2a35040eac8080b6da1ba2c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9110a97d2a35040eac8080b6da1ba2c3">&#9670;&nbsp;</a></span>ParallelFor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +140,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">[=, myhalf_d=myhalf, R_d_d=R_d, one_d=one, PI_d=PI, two_d=two, p_0_d=p_0] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>=geomdata.ProbLo();const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+myhalf_d) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tbar_hse=p_hse(i, j, k)/(R_d_d *r_hse(i, j, k));<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> L=std::sqrt(amrex::Math::powi&lt; 2 &gt;((x - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a47302f019039afd23af718058e185a14">x_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a3a1023fe73b5e558f7d6c9f0c159fdd1">x_r</a>)+amrex::Math::powi&lt; 2 &gt;((z - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a260ac6cbdf6885bf3d3baee82de6b4b3">z_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a839469c41cb23df7da5ebf123f0f87e4">z_r</a>));<a class="el" href="ERF__ImplicitPre_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(L&lt;=one_d) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dT=<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#aa395cc3ca43aaf99f6ae148afe3d5ea4">T_pert</a> *(std::cos(PI_d *L)+one_d)/two_d;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_perturbed=(Tbar_hse+dT) *std::pow(p_0_d/p_hse(i, j, k), R_d_d/<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ae04fb3e472781d40a59f1b43ab17e9a2">C_p</a>);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)=<a class="el" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3">getRhoThetagivenP</a>(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} }&#160;</td>
+          <td class="paramtype">[=] AMREX_GPU_DEVICE(int i, int j, int k) noexcept { const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>=geomdata.ProbLo();const auto <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>=geomdata.CellSize();const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> x=<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[0]+(i+<a class="el" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) *<a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>[0];const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z=z_cc(i, j, k);const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Tbar_hse=p_hse(i, j, k)/(<a class="el" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a> *r_hse(i, j, k));<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> L=std::sqrt(amrex::Math::powi&lt; 2 &gt;((x - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a47302f019039afd23af718058e185a14">x_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a3a1023fe73b5e558f7d6c9f0c159fdd1">x_r</a>)+amrex::Math::powi&lt; 2 &gt;((z - <a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a260ac6cbdf6885bf3d3baee82de6b4b3">z_c</a>)/<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a839469c41cb23df7da5ebf123f0f87e4">z_r</a>));<a class="el" href="ERF__ImplicitPre_8H.html#acf3fb84d95857390f34255bb2ae57eea">if</a>(L&lt;=<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) { <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dT=<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#aa395cc3ca43aaf99f6ae148afe3d5ea4">T_pert</a> *(std::cos(<a class="el" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a> *L)+<a class="el" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>)/<a class="el" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> theta_perturbed=(Tbar_hse+dT) *std::pow(<a class="el" href="ERF__Constants_8H.html#a994fea25f28c33c2e8f1e9c63d5b8b56">p_0</a>/p_hse(i, j, k), <a class="el" href="ERF__Constants_8H.html#aeb133d0ac46d639050313ce36187e870">R_d</a>/<a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ae04fb3e472781d40a59f1b43ab17e9a2">C_p</a>);<a class="el" href="ERF__InitCustomPert__Bubble_8H.html#a5c960e1b4f7b3a9dacd238ac56384334">state_pert</a>(i, j, k, <a class="el" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>)=<a class="el" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3">getRhoThetagivenP</a>(p_hse(i, j, k))/theta_perturbed - r_hse(i, j, k);} }&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -153,8 +153,8 @@ Variables</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__InitCustomPert__ParticleTests_8H_ab4041b94b753dcbe48842083b279ef7a_cgraph.png" border="0" usemap="#aERF__InitCustomPert__ParticleTests_8H_ab4041b94b753dcbe48842083b279ef7a_cgraph" alt=""/></div>
-<map name="aERF__InitCustomPert__ParticleTests_8H_ab4041b94b753dcbe48842083b279ef7a_cgraph" id="aERF__InitCustomPert__ParticleTests_8H_ab4041b94b753dcbe48842083b279ef7a_cgraph">
+<div class="center"><img src="ERF__InitCustomPert__ParticleTests_8H_a9110a97d2a35040eac8080b6da1ba2c3_cgraph.png" border="0" usemap="#aERF__InitCustomPert__ParticleTests_8H_a9110a97d2a35040eac8080b6da1ba2c3_cgraph" alt=""/></div>
+<map name="aERF__InitCustomPert__ParticleTests_8H_a9110a97d2a35040eac8080b6da1ba2c3_cgraph" id="aERF__InitCustomPert__ParticleTests_8H_a9110a97d2a35040eac8080b6da1ba2c3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,96,57"/>
 <area shape="rect" href="ERF__EOS_8H.html#a41f48ff9136ae4cce2507ec72a6575b3" title=" " alt="" coords="144,5,293,32"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="175,56,263,83"/>
@@ -334,7 +334,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ab4041b94b753dcbe48842083b279ef7a">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#a9110a97d2a35040eac8080b6da1ba2c3">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -350,7 +350,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ab4041b94b753dcbe48842083b279ef7a">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#a9110a97d2a35040eac8080b6da1ba2c3">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -366,7 +366,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ab4041b94b753dcbe48842083b279ef7a">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#a9110a97d2a35040eac8080b6da1ba2c3">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -382,7 +382,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ab4041b94b753dcbe48842083b279ef7a">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#a9110a97d2a35040eac8080b6da1ba2c3">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -398,7 +398,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ab4041b94b753dcbe48842083b279ef7a">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#a9110a97d2a35040eac8080b6da1ba2c3">ParallelFor()</a>.</p>
 
 </div>
 </div>
@@ -414,7 +414,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#ab4041b94b753dcbe48842083b279ef7a">ParallelFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__ParticleTests_8H.html#a9110a97d2a35040eac8080b6da1ba2c3">ParallelFor()</a>.</p>
 
 </div>
 </div>

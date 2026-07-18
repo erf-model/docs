@@ -321,238 +321,234 @@ template&lt;int stagdir&gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;{</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ImplicitDiffForMom_S()&quot;</span>,ImplicitDiffForMom_S);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt_d);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// setup quantities for getRhoAlphaAtFaces()</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="structDiffChoice.html">DiffChoice</a> dc = solverChoice.<a class="code" href="structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095">diffChoice</a>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="structTurbChoice.html">TurbChoice</a> tc = solverChoice.<a class="code" href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">turbChoice</a>[level];</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>  = (dc.<a class="code" href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">molec_diff_type</a> == <a class="code" href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a>);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>   = tc.<a class="code" href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">use_kturb</a>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mu_eff = (<a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>) ? <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * dc.<a class="code" href="structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817">dynamic_viscosity</a> / dc.<a class="code" href="structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8">rho0_trans</a></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                            : <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * dc.<a class="code" href="structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817">dynamic_viscosity</a>;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// g(S*) coefficient</span></div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">// stagdir==0: tau_corr = myhalf * du/dz * mu_tot</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// stagdir==1: tau_corr = myhalf * dv/dz * mu_tot</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// stagdir==2: tau_corr =       dw/dz * mu_tot</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gfac = (stagdir == 2) ? <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>/<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a> : <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="fragment"><div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;{</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    BL_PROFILE_VAR(<span class="stringliteral">&quot;ImplicitDiffForMom_S()&quot;</span>,ImplicitDiffForMom_S);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dt = <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a><span class="keyword">&gt;</span>(dt_d);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// setup quantities for getRhoAlphaAtFaces()</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <a class="code" href="structDiffChoice.html">DiffChoice</a> dc = solverChoice.<a class="code" href="structSolverChoice.html#a396122e87a3d15c4ec8666d7dd18c095">diffChoice</a>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <a class="code" href="structTurbChoice.html">TurbChoice</a> tc = solverChoice.<a class="code" href="structSolverChoice.html#aa53b017d79e0067923180a0aa59367b4">turbChoice</a>[level];</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>  = (dc.<a class="code" href="structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf">molec_diff_type</a> == <a class="code" href="ERF__DiffStruct_8H.html#a84e6bfbbb8e490790c506939b364f735a6f0229db491c3b01860363456dc57288">MolecDiffType::ConstantAlpha</a>);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>   = tc.<a class="code" href="structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe">use_kturb</a>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mu_eff = (<a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>) ? <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * dc.<a class="code" href="structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817">dynamic_viscosity</a> / dc.<a class="code" href="structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8">rho0_trans</a></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                            : <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * dc.<a class="code" href="structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817">dynamic_viscosity</a>;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// g(S*) coefficient</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">// stagdir==0: tau_corr = myhalf * du/dz * mu_tot</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">// stagdir==1: tau_corr = myhalf * dv/dz * mu_tot</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// stagdir==2: tau_corr =       dw/dz * mu_tot</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    constexpr <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gfac = (stagdir == 2) ? <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>/<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a> : <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// offsets used to average to faces</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    constexpr <span class="keywordtype">int</span> ioff = (stagdir == 0) ? 1 : 0;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    constexpr <span class="keywordtype">int</span> joff = (stagdir == 1) ? 1 : 0;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// offsets used to average to faces</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    constexpr <span class="keywordtype">int</span> ioff = (stagdir == 0) ? 1 : 0;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    constexpr <span class="keywordtype">int</span> joff = (stagdir == 1) ? 1 : 0;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// Box bounds</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">int</span> ilo = bx.smallEnd(0);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">int</span> ihi = bx.bigEnd(0);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">int</span> jlo = bx.smallEnd(1);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">int</span> jhi = bx.bigEnd(1);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">int</span> klo = bx.smallEnd(2);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = bx.bigEnd(2);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    amrex::ignore_unused(ilo, ihi, jlo, jhi);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// Temporary FABs for tridiagonal solve (allocated on column)</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">//   A[k] * x[k-1] + B[k] * x[k] + C[k+1] = RHS[k]</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    amrex::FArrayBox RHS_fab, soln_fab, coeffG_fab;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;           RHS_fab.resize(bx,1, amrex::The_Async_Arena());</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;          soln_fab.resize(bx,1, amrex::The_Async_Arena());</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        coeffG_fab.resize(bx,1, amrex::The_Async_Arena());</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; RHS_a        =        RHS_fab.array();</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; soln_a       =       soln_fab.array();</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; coeffG_a     =     coeffG_fab.array();</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">auto</span> dz_ptr = stretched_dz_d.data();</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">int</span> bc_comp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a> + stagdir;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">bool</span> ext_dir_on_zlo  = (bc_ptr[bc_comp].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                            bc_ptr[bc_comp].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab">ERFBCType::ext_dir_prim</a>);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordtype">bool</span> ext_dir_on_zhi  = (bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                            bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab">ERFBCType::ext_dir_prim</a>);</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keywordtype">bool</span> foextrap_on_zlo = (bc_ptr[bc_comp].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordtype">bool</span> foextrap_on_zhi = (bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    amrex::ignore_unused(foextrap_on_zlo,foextrap_on_zhi);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(foextrap_on_zlo || ext_dir_on_zlo || use_SurfLayer,</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                              <span class="stringliteral">&quot;Unexpected lower BC for momentum used with implicit vertical diffusion&quot;</span>);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(foextrap_on_zhi || ext_dir_on_zhi,</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                              <span class="stringliteral">&quot;Unexpected upper BC for momentum used with implicit vertical diffusion&quot;</span>);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Fact = implicit_fac * dt;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(makeSlab(bx,2,0), [=,myhalf_d=<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>,two_d=<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zero_d   = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> one_d    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_d    = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> myhalf_d = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j(jlo); j&lt;=jhi; ++j) {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(ilo); i&lt;=ihi; ++i) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;          <span class="comment">// Notes:</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;          <span class="comment">// - In DiffusionSrcForMom (e.g., for x-mom)</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;          <span class="comment">//     Real diffContrib = ...</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;          <span class="comment">//                      + (tau13(i,j,k+1) - tau13(i,j,k)) / dzinv</span></div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;          <span class="comment">//     rho_u_rhs(i,j,k) -= diffContrib;  // note the negative sign</span></div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;          <span class="comment">// - We need to scale the explicit _part_ of `tau13` (for x-mom) by (1 - implicit_fac)</span></div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;          <span class="comment">//   The part that needs to be scaled is stored in `tau_corr`.</span></div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;          <span class="comment">//   E.g., tau13 = myhalf * (du/dz + dw/dx)</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;          <span class="comment">//         tau13_corr = myhalf * du/dz</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;          <span class="comment">// - The momentum (`face_data`) was set to `S_old + S_rhs * dt`</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;          <span class="comment">//   prior to including &quot;ERF_Implicit.H&quot;. Recall that S_rhs includes</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;          <span class="comment">//   sources from advection and other forcings, not just diffusion.</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;          <span class="comment">// - To correct momentum, we need to subtract `implicit_fac * diffContrib_corr`</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;          <span class="comment">//   from S_rhs to recover `(1 - implicit_fac) * diffContrib_corr`,</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;          <span class="comment">//   where `diffContrib_corr = -d(tau_corr)/dz`. The negative sign</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;          <span class="comment">//   comes from our convention for the RHS diffusion source.</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;          <span class="comment">//   Subtracting a negative gives the += below; multiply by dt to</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;          <span class="comment">//   get the intermediate momentum on the RHS of the tridiagonal</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;          <span class="comment">//   system.</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;          <span class="comment">// - With a surface_layer BC, tau13/23 holds the vertical flux -d_z(k*u_i)</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;          <span class="comment">//   directly. We must use tau at klo (not tau_corr) with SL BCs.</span></div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;          <span class="comment">//</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;          <span class="comment">// - Finally, the terms ~ RHS += (tau_corr_hi - tau_corr_lo) / dz (below)</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          <span class="comment">//   essentially undo the explicit diffusion update that will be</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;          <span class="comment">//   handled here implicitly.</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;          <span class="comment">// Bottom boundary coefficients and RHS for L decomp</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;          <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoface, rhoAlpha_lo, rhoAlpha_hi;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_inv, dz_inv_lo, dz_inv_hi;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> a_tmp, b_tmp, c_tmp, inv_b2_tmp;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;          {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;              rhoface = myhalf_d * (cell_data(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;              <a class="code" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d">getRhoAlphaForFaces</a>(i, j, klo, ioff, joff, rhoAlpha_lo, rhoAlpha_hi,</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                                  cell_data, mu_turb, mu_eff,</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                                  <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;              dz_inv    = one_d / dz_ptr[klo];</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;              dz_inv_lo = dz_inv;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;              dz_inv_hi = two_d / (dz_ptr[klo] + dz_ptr[klo+1]);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;              a_tmp = zero_d;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;              c_tmp = -Fact * gfac * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;              RHS_a(i,j,klo) = face_data(i,j,klo); <span class="comment">// NOTE: this is momenta; solution is velocity</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;              <span class="comment">// BCs: Dirichlet (u_i = val), slip wall (w = 0), or surface layer (w = 0)</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;              <span class="keywordflow">if</span> (ext_dir_on_zlo) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                  RHS_a(i,j,klo) += Fact * gfac * (tau_corr(i,j,klo+1) - tau_corr(i,j,klo)) * dz_inv;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                  <span class="keywordflow">if</span> (stagdir==2) {</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                      c_tmp = 0.;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                      RHS_a(i,j,klo) = 0.;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                      <span class="comment">// NOTE: wall is 1/2 dz away (2 dz_inv)</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                      a_tmp = -two_d * Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                      RHS_a(i,j,klo) += two_d * rhoAlpha_lo * face_data(i,j,klo-1) * dz_inv_lo * dz_inv;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                  }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (use_SurfLayer) {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                  <span class="comment">// NOTE: tau = -mu*d_z(u_i) w/ SL</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                  RHS_a(i,j,klo) += Fact * gfac * (tau_corr(i,j,klo+1) - tau(i,j,klo)) * dz_inv;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;                  RHS_a(i,j,klo) += Fact * dz_inv * tau(i,j,klo);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;              } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;                  <span class="comment">// NOTE: FOEXTRAP has zero lower flux (nothing to add to RHS)</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                  RHS_a(i,j,klo) += Fact * gfac * (tau_corr(i,j,klo+1) - tau_corr(i,j,klo)) * dz_inv;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;              }</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;              b_tmp      = rhoface - a_tmp - c_tmp;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;              inv_b2_tmp = one_d;</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;              RHS_a(i,j,klo)    /= b_tmp;         <span class="comment">// NOTE: this is now &quot;rho&quot;</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;              coeffG_a(i,j,klo)  = c_tmp / b_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;          }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// Box bounds</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordtype">int</span> ilo = bx.smallEnd(0);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">int</span> ihi = bx.bigEnd(0);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">int</span> jlo = bx.smallEnd(1);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordtype">int</span> jhi = bx.bigEnd(1);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">int</span> klo = bx.smallEnd(2);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> = bx.bigEnd(2);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    amrex::ignore_unused(ilo, ihi, jlo, jhi);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="comment">// Temporary FABs for tridiagonal solve (allocated on column)</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">//   A[k] * x[k-1] + B[k] * x[k] + C[k+1] = RHS[k]</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    amrex::FArrayBox RHS_fab, soln_fab, coeffG_fab;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;           RHS_fab.resize(bx,1, amrex::The_Async_Arena());</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;          soln_fab.resize(bx,1, amrex::The_Async_Arena());</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        coeffG_fab.resize(bx,1, amrex::The_Async_Arena());</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; RHS_a        =        RHS_fab.array();</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; soln_a       =       soln_fab.array();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; coeffG_a     =     coeffG_fab.array();</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keyword">auto</span> dz_ptr = stretched_dz_d.data();</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordtype">int</span> bc_comp = <a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aab1782753c68aaad8632b0a7d575e57f4">BCVars::xvel_bc</a> + stagdir;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">bool</span> ext_dir_on_zlo  = (bc_ptr[bc_comp].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                            bc_ptr[bc_comp].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab">ERFBCType::ext_dir_prim</a>);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordtype">bool</span> ext_dir_on_zhi  = (bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a> ||</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                            bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca52a76d5c6aeb74655f726be3ae8a1eab">ERFBCType::ext_dir_prim</a>);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">bool</span> foextrap_on_zlo = (bc_ptr[bc_comp].lo(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordtype">bool</span> foextrap_on_zhi = (bc_ptr[bc_comp].hi(2) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a>);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    amrex::ignore_unused(foextrap_on_zlo,foextrap_on_zhi);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(foextrap_on_zlo || ext_dir_on_zlo || use_SurfLayer,</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                              <span class="stringliteral">&quot;Unexpected lower BC for momentum used with implicit vertical diffusion&quot;</span>);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a>(foextrap_on_zhi || ext_dir_on_zhi,</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                              <span class="stringliteral">&quot;Unexpected upper BC for momentum used with implicit vertical diffusion&quot;</span>);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Fact = implicit_fac * dt;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(makeSlab(bx,2,0), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j(jlo); j&lt;=jhi; ++j) {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(ilo); i&lt;=ihi; ++i) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;          <span class="comment">// Notes:</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;          <span class="comment">// - In DiffusionSrcForMom (e.g., for x-mom)</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;          <span class="comment">//     Real diffContrib = ...</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;          <span class="comment">//                      + (tau13(i,j,k+1) - tau13(i,j,k)) / dzinv</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;          <span class="comment">//     rho_u_rhs(i,j,k) -= diffContrib;  // note the negative sign</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;          <span class="comment">// - We need to scale the explicit _part_ of `tau13` (for x-mom) by (1 - implicit_fac)</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;          <span class="comment">//   The part that needs to be scaled is stored in `tau_corr`.</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;          <span class="comment">//   E.g., tau13 = myhalf * (du/dz + dw/dx)</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;          <span class="comment">//         tau13_corr = myhalf * du/dz</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;          <span class="comment">// - The momentum (`face_data`) was set to `S_old + S_rhs * dt`</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;          <span class="comment">//   prior to including &quot;ERF_Implicit.H&quot;. Recall that S_rhs includes</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;          <span class="comment">//   sources from advection and other forcings, not just diffusion.</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;          <span class="comment">// - To correct momentum, we need to subtract `implicit_fac * diffContrib_corr`</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;          <span class="comment">//   from S_rhs to recover `(1 - implicit_fac) * diffContrib_corr`,</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;          <span class="comment">//   where `diffContrib_corr = -d(tau_corr)/dz`. The negative sign</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;          <span class="comment">//   comes from our convention for the RHS diffusion source.</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;          <span class="comment">//   Subtracting a negative gives the += below; multiply by dt to</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;          <span class="comment">//   get the intermediate momentum on the RHS of the tridiagonal</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;          <span class="comment">//   system.</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;          <span class="comment">// - With a surface_layer BC, tau13/23 holds the vertical flux -d_z(k*u_i)</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;          <span class="comment">//   directly. We must use tau at klo (not tau_corr) with SL BCs.</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;          <span class="comment">//</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;          <span class="comment">// - Finally, the terms ~ RHS += (tau_corr_hi - tau_corr_lo) / dz (below)</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;          <span class="comment">//   essentially undo the explicit diffusion update that will be</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;          <span class="comment">//   handled here implicitly.</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;          <span class="comment">// Bottom boundary coefficients and RHS for L decomp</span></div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;          <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoface, rhoAlpha_lo, rhoAlpha_hi;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_inv, dz_inv_lo, dz_inv_hi;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;          <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> a_tmp, b_tmp, c_tmp, inv_b2_tmp;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;          {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;              rhoface = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (cell_data(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;              <a class="code" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d">getRhoAlphaForFaces</a>(i, j, klo, ioff, joff, rhoAlpha_lo, rhoAlpha_hi,</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                                  cell_data, mu_turb, mu_eff,</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                                  <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;              dz_inv    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dz_ptr[klo];</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;              dz_inv_lo = dz_inv;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;              dz_inv_hi = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[klo] + dz_ptr[klo+1]);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;              a_tmp = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;              c_tmp = -Fact * gfac * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;              RHS_a(i,j,klo) = face_data(i,j,klo); <span class="comment">// NOTE: this is momenta; solution is velocity</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;              <span class="comment">// BCs: Dirichlet (u_i = val), slip wall (w = 0), or surface layer (w = 0)</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;              <span class="keywordflow">if</span> (ext_dir_on_zlo) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                  RHS_a(i,j,klo) += Fact * gfac * (tau_corr(i,j,klo+1) - tau_corr(i,j,klo)) * dz_inv;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                  <span class="keywordflow">if</span> (stagdir==2) {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                      c_tmp = 0.;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                      RHS_a(i,j,klo) = 0.;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                      <span class="comment">// NOTE: wall is 1/2 dz away (2 dz_inv)</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                      a_tmp = -<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                      RHS_a(i,j,klo) += <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * rhoAlpha_lo * face_data(i,j,klo-1) * dz_inv_lo * dz_inv;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                  }</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;              } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (use_SurfLayer) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                  <span class="comment">// NOTE: tau = -mu*d_z(u_i) w/ SL</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                  RHS_a(i,j,klo) += Fact * gfac * (tau_corr(i,j,klo+1) - tau(i,j,klo)) * dz_inv;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                  RHS_a(i,j,klo) += Fact * dz_inv * tau(i,j,klo);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;              } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;                  <span class="comment">// NOTE: FOEXTRAP has zero lower flux (nothing to add to RHS)</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;                  RHS_a(i,j,klo) += Fact * gfac * (tau_corr(i,j,klo+1) - tau_corr(i,j,klo)) * dz_inv;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;              }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;              b_tmp      = rhoface - a_tmp - c_tmp;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;              inv_b2_tmp = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;              RHS_a(i,j,klo)    /= b_tmp;         <span class="comment">// NOTE: this is now &quot;rho&quot;</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;              coeffG_a(i,j,klo)  = c_tmp / b_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;          }</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;          <span class="comment">// Build the coefficients and RHS for L decomp</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;          <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo+1); k &lt; <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;              rhoface = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;              <a class="code" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d">getRhoAlphaForFaces</a>(i, j, k, ioff, joff, rhoAlpha_lo, rhoAlpha_hi,</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                                  cell_data, mu_turb, mu_eff,</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                                  <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;          <span class="comment">// Build the coefficients and RHS for L decomp</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;          <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo+1); k &lt; <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;              rhoface = myhalf_d * (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;              <a class="code" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d">getRhoAlphaForFaces</a>(i, j, k, ioff, joff, rhoAlpha_lo, rhoAlpha_hi,</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                                  cell_data, mu_turb, mu_eff,</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                                  <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;              dz_inv    = one_d / dz_ptr[k];</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;              dz_inv_lo = two_d / (dz_ptr[k] + dz_ptr[k-1]);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;              dz_inv_hi = two_d / (dz_ptr[k] + dz_ptr[k+1]);</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;              dz_inv    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dz_ptr[k];</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;              dz_inv_lo = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;              dz_inv_hi = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[k] + dz_ptr[k+1]);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;              a_tmp      = -Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;              c_tmp      = -Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;              b_tmp      = rhoface - a_tmp - c_tmp;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;              inv_b2_tmp = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (b_tmp - a_tmp * coeffG_a(i,j,k-1));</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;              RHS_a(i,j,k)    = face_data(i,j,k); <span class="comment">// NOTE: this is momenta; solution is velocity</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;              RHS_a(i,j,k)   += Fact * gfac * (tau_corr(i,j,k+1) - tau_corr(i,j,k)) * dz_inv;</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;              a_tmp      = -Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;              c_tmp      = -Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;              b_tmp      = rhoface - a_tmp - c_tmp;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;              inv_b2_tmp = one_d / (b_tmp - a_tmp * coeffG_a(i,j,k-1));</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;              RHS_a(i,j,k)    = face_data(i,j,k); <span class="comment">// NOTE: this is momenta; solution is velocity</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;              RHS_a(i,j,k)   += Fact * gfac * (tau_corr(i,j,k+1) - tau_corr(i,j,k)) * dz_inv;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;              RHS_a(i,j,k)    = (RHS_a(i,j,k) - a_tmp * RHS_a(i,j,k-1)) * inv_b2_tmp; <span class="comment">// NOTE: This is now &quot;rho&quot;</span></div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;              coeffG_a(i,j,k) = c_tmp * inv_b2_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;          } <span class="comment">// k</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;              RHS_a(i,j,k)    = (RHS_a(i,j,k) - a_tmp * RHS_a(i,j,k-1)) * inv_b2_tmp; <span class="comment">// NOTE: This is now &quot;rho&quot;</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;              coeffG_a(i,j,k) = c_tmp * inv_b2_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;          } <span class="comment">// k</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;          <span class="comment">// Top boundary coefficients and RHS for L decomp</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;          <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;          {</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;              rhoface = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (cell_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;              <a class="code" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d">getRhoAlphaForFaces</a>(i, j, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>, ioff, joff, rhoAlpha_lo, rhoAlpha_hi,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                                  cell_data, mu_turb, mu_eff,</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                                  <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;          <span class="comment">// Top boundary coefficients and RHS for L decomp</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;          <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;          {</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;              rhoface = myhalf_d * (cell_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;              <a class="code" href="ERF__GetRhoAlphaForFaces_8H.html#a9dce5bf3ab32269a59fc04e7524c2b7d">getRhoAlphaForFaces</a>(i, j, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>, ioff, joff, rhoAlpha_lo, rhoAlpha_hi,</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                                  cell_data, mu_turb, mu_eff,</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                                  <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;              dz_inv    = one_d / dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>];</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;              dz_inv_lo = two_d / (dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>] + dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1]);</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;              dz_inv_hi = dz_inv;</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;              a_tmp = -Fact * gfac * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;              c_tmp = zero_d;</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;              RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>)  = face_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>); <span class="comment">// NOTE: this is momenta; solution is velocity</span></div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;              RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) += Fact * gfac * (tau_corr(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) - tau_corr(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>)) * dz_inv;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;              <span class="comment">// BCs: Dirichlet (u_i = val), slip wall (w = 0)</span></div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;              <span class="keywordflow">if</span> (ext_dir_on_zhi) {</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;                  <span class="keywordflow">if</span> (stagdir==2) {</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                      a_tmp = zero_d;</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                      RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = zero_d;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                      <span class="comment">// NOTE: wall is 1/2 dz away (2 dz_inv)</span></div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                      c_tmp = -two_d * Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                      RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) += two_d * rhoAlpha_hi * face_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) * dz_inv_hi * dz_inv;</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                  }</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;              }</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;              b_tmp      = rhoface - a_tmp - c_tmp;</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;              inv_b2_tmp = one_d / (b_tmp - a_tmp * coeffG_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1));</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;              <span class="comment">// First solve</span></div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;              soln_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = (RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) - a_tmp * RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1)) * inv_b2_tmp;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;          }</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160; </div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;          <span class="comment">// Back sweep the U decomp solution</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;          <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1); k&gt;=klo; --k) {</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;              soln_a(i,j,k) = RHS_a(i,j,k) - coeffG_a(i,j,k) * soln_a(i,j,k+1);</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;          }</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;          <span class="comment">// Convert back to momenta</span></div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;          <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;              rhoface = myhalf_d * (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;              face_data(i,j,k) = rhoface * soln_a(i,j,k);</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;          }</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    });</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;      } <span class="comment">// i</span></div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    } <span class="comment">// j</span></div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;}</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;              dz_inv    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>];</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;              dz_inv_lo = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>] + dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1]);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;              dz_inv_hi = dz_inv;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;              a_tmp = -Fact * gfac * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;              c_tmp = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;              RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>)  = face_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>); <span class="comment">// NOTE: this is momenta; solution is velocity</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;              RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) += Fact * gfac * (tau_corr(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) - tau_corr(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>)) * dz_inv;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;              <span class="comment">// BCs: Dirichlet (u_i = val), slip wall (w = 0)</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;              <span class="keywordflow">if</span> (ext_dir_on_zhi) {</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                  <span class="keywordflow">if</span> (stagdir==2) {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                      a_tmp = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                      RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                      <span class="comment">// NOTE: wall is 1/2 dz away (2 dz_inv)</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                      c_tmp = -<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                      RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) += <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * rhoAlpha_hi * face_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) * dz_inv_hi * dz_inv;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                  }</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;              }</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;              b_tmp      = rhoface - a_tmp - c_tmp;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;              inv_b2_tmp = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (b_tmp - a_tmp * coeffG_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1));</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;              <span class="comment">// First solve</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;              soln_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = (RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) - a_tmp * RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1)) * inv_b2_tmp;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;          }</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;          <span class="comment">// Back sweep the U decomp solution</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;          <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1); k&gt;=klo; --k) {</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;              soln_a(i,j,k) = RHS_a(i,j,k) - coeffG_a(i,j,k) * soln_a(i,j,k+1);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;          }</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;          <span class="comment">// Convert back to momenta</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;          <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;              rhoface = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) + cell_data(i-ioff,j-joff,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>));</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;              face_data(i,j,k) = rhoface * soln_a(i,j,k);</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;          }</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    });</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;      } <span class="comment">// i</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    } <span class="comment">// j</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
@@ -764,132 +760,128 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Fact = implicit_fac * dt;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(makeSlab(bx,2,0), [=,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>,two_d=<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>,myhalf_d=<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(makeSlab(bx,2,0), [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zero_d   = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> one_d    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> two_d    = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> myhalf_d = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j(jlo); j&lt;=jhi; ++j) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(ilo); i&lt;=ihi; ++i) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="comment">// Bottom boundary coefficients and RHS for L decomp</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoAlpha_lo, rhoAlpha_hi;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_inv, dz_inv_lo, dz_inv_hi;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> a_tmp, b_tmp, c_tmp, inv_b2_tmp;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a>(i, j, klo, rhoAlpha_lo, rhoAlpha_hi,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                            cell_data, mu_turb, <a class="code" href="ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18">d_alpha_eff</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a52b0dba7eedbc33a23dc98928f5dda0b">d_eddy_diff_idz</a>,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                            prim_index, prim_scal_index, <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j(jlo); j&lt;=jhi; ++j) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(ilo); i&lt;=ihi; ++i) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="comment">// Bottom boundary coefficients and RHS for L decomp</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rhoAlpha_lo, rhoAlpha_hi;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dz_inv, dz_inv_lo, dz_inv_hi;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> a_tmp, b_tmp, c_tmp, inv_b2_tmp;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <a class="code" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a>(i, j, klo, rhoAlpha_lo, rhoAlpha_hi,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                            cell_data, mu_turb, <a class="code" href="ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18">d_alpha_eff</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a52b0dba7eedbc33a23dc98928f5dda0b">d_eddy_diff_idz</a>,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                            prim_index, prim_scal_index, <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                dz_inv    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dz_ptr[klo];</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                dz_inv_lo = dz_inv;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                dz_inv_hi = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[klo] + dz_ptr[klo+1]);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                dz_inv    = one_d / dz_ptr[klo];</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                dz_inv_lo = dz_inv;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                dz_inv_hi = two_d / (dz_ptr[klo] + dz_ptr[klo+1]);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                a_tmp      = zero_d;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                c_tmp      = -Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                b_tmp      = cell_data(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - a_tmp - c_tmp;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                inv_b2_tmp = one_d;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                RHS_a(i,j,klo) = cell_data(i,j,klo,n); <span class="comment">// NOTE: this is rho*phi; solution is phi</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keywordflow">if</span> (use_SurfLayer &amp;&amp; scalar_zflux) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                    RHS_a(i,j,klo) +=  Fact * dz_inv * scalar_zflux(i,j,klo); <span class="comment">// NOTE: scalar_zflux = -K*d_z(\phi)</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (neumann_on_zlo) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    RHS_a(i,j,klo) += -Fact * dz_inv * rhoAlpha_lo * bc_neumann_vals[2]; <span class="comment">// NOTE: N_val = d_z(\phi)</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                <span class="comment">// Add countergradient correction to RHS at bottom boundary</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordflow">if</span> (use_mrf_countergradient &amp;&amp; (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a> || n == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)) {</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> gam_comp = (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ? <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a703abe34f2dc6f5d5cff78107f31a666">EddyDiff::HGAMT_v</a> : <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a6ca09680a498938a0f22079ff0b61943">EddyDiff::HGAMQ_v</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_hi = myhalf_d * (mu_turb(i, j, klo, gam_comp) + mu_turb(i, j, klo+1, gam_comp));</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    RHS_a(i,j,klo) -= Fact * rhoAlpha_hi * gam_hi * dz_inv_hi;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                a_tmp      = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                c_tmp      = -Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                b_tmp      = cell_data(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - a_tmp - c_tmp;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                inv_b2_tmp = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                RHS_a(i,j,klo) = cell_data(i,j,klo,n); <span class="comment">// NOTE: this is rho*phi; solution is phi</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <span class="keywordflow">if</span> (use_SurfLayer &amp;&amp; scalar_zflux) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    RHS_a(i,j,klo) +=  Fact * dz_inv * scalar_zflux(i,j,klo); <span class="comment">// NOTE: scalar_zflux = -K*d_z(\phi)</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (neumann_on_zlo) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    RHS_a(i,j,klo) += -Fact * dz_inv * rhoAlpha_lo * bc_neumann_vals[2]; <span class="comment">// NOTE: N_val = d_z(\phi)</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="comment">// Add countergradient correction to RHS at bottom boundary</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordflow">if</span> (use_mrf_countergradient &amp;&amp; (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a> || n == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> gam_comp = (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ? <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a703abe34f2dc6f5d5cff78107f31a666">EddyDiff::HGAMT_v</a> : <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a6ca09680a498938a0f22079ff0b61943">EddyDiff::HGAMQ_v</a>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_hi = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (mu_turb(i, j, klo, gam_comp) + mu_turb(i, j, klo+1, gam_comp));</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    RHS_a(i,j,klo) -= Fact * rhoAlpha_hi * gam_hi * dz_inv_hi;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                RHS_a(i,j,klo)    /= b_tmp;         <span class="comment">// NOTE: this is now &quot;rho&quot;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                coeffG_a(i,j,klo)  = c_tmp / b_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                RHS_a(i,j,klo)    /= b_tmp;         <span class="comment">// NOTE: this is now &quot;rho&quot;</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                coeffG_a(i,j,klo)  = c_tmp / b_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment">// Build the coefficients and RHS for L decomp</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo+1); k &lt; <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <a class="code" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a>(i, j, k, rhoAlpha_lo, rhoAlpha_hi,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                            cell_data, mu_turb, <a class="code" href="ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18">d_alpha_eff</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a52b0dba7eedbc33a23dc98928f5dda0b">d_eddy_diff_idz</a>,</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                            prim_index, prim_scal_index, <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="comment">// Build the coefficients and RHS for L decomp</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo+1); k &lt; <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; k++) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <a class="code" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a>(i, j, k, rhoAlpha_lo, rhoAlpha_hi,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                            cell_data, mu_turb, <a class="code" href="ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18">d_alpha_eff</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a52b0dba7eedbc33a23dc98928f5dda0b">d_eddy_diff_idz</a>,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                            prim_index, prim_scal_index, <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                dz_inv    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dz_ptr[k];</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                dz_inv_lo = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[k] + dz_ptr[k-1]);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                dz_inv_hi = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[k] + dz_ptr[k+1]);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                dz_inv    = one_d / dz_ptr[k];</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                dz_inv_lo = two_d / (dz_ptr[k] + dz_ptr[k-1]);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                dz_inv_hi = two_d / (dz_ptr[k] + dz_ptr[k+1]);</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                a_tmp      = -Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                c_tmp      = -Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                b_tmp      = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - a_tmp - c_tmp;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                inv_b2_tmp = one_d / (b_tmp - a_tmp * coeffG_a(i,j,k-1));</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                RHS_a(i,j,k)    = cell_data(i,j,k,n); <span class="comment">// NOTE: this is rho*phi; solution is phi</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="comment">// Add countergradient correction to RHS in interior</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">if</span> (use_mrf_countergradient &amp;&amp; (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a> || n == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)) {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> gam_comp = (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ? <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a703abe34f2dc6f5d5cff78107f31a666">EddyDiff::HGAMT_v</a> : <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a6ca09680a498938a0f22079ff0b61943">EddyDiff::HGAMQ_v</a>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_k   = mu_turb(i, j, k,   gam_comp);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_km1 = mu_turb(i, j, k-1, gam_comp);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_kp1 = mu_turb(i, j, k+1, gam_comp);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_hi  = myhalf_d * (gam_k + gam_kp1); <span class="comment">// at k+½</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_lo  = myhalf_d * (gam_k + gam_km1); <span class="comment">// at k-½</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    <span class="comment">// Countergradient flux divergence (implicit contribution to RHS):</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    <span class="comment">//   -Fact * [ρα_{k+½}·γ_{k+½}·dz_inv_hi - ρα_{k-½}·γ_{k-½}·dz_inv_lo]</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    RHS_a(i,j,k) -= Fact * (rhoAlpha_hi * gam_hi * dz_inv_hi - rhoAlpha_lo * gam_lo * dz_inv_lo);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                a_tmp      = -Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                c_tmp      = -Fact * rhoAlpha_hi * dz_inv_hi * dz_inv;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                b_tmp      = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - a_tmp - c_tmp;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                inv_b2_tmp = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (b_tmp - a_tmp * coeffG_a(i,j,k-1));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                RHS_a(i,j,k)    = cell_data(i,j,k,n); <span class="comment">// NOTE: this is rho*phi; solution is phi</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="comment">// Add countergradient correction to RHS in interior</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">if</span> (use_mrf_countergradient &amp;&amp; (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a> || n == <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> gam_comp = (n == <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) ? <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a703abe34f2dc6f5d5cff78107f31a666">EddyDiff::HGAMT_v</a> : <a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a6ca09680a498938a0f22079ff0b61943">EddyDiff::HGAMQ_v</a>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_k   = mu_turb(i, j, k,   gam_comp);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_km1 = mu_turb(i, j, k-1, gam_comp);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_kp1 = mu_turb(i, j, k+1, gam_comp);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_hi  = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (gam_k + gam_kp1); <span class="comment">// at k+½</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> gam_lo  = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (gam_k + gam_km1); <span class="comment">// at k-½</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    <span class="comment">// Countergradient flux divergence (implicit contribution to RHS):</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <span class="comment">//   -Fact * [ρα_{k+½}·γ_{k+½}·dz_inv_hi - ρα_{k-½}·γ_{k-½}·dz_inv_lo]</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    RHS_a(i,j,k) -= Fact * (rhoAlpha_hi * gam_hi * dz_inv_hi - rhoAlpha_lo * gam_lo * dz_inv_lo);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                RHS_a(i,j,k)    = (RHS_a(i,j,k) - a_tmp * RHS_a(i,j,k-1)) * inv_b2_tmp; <span class="comment">// NOTE: This is now &quot;rho&quot;</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                coeffG_a(i,j,k) = c_tmp * inv_b2_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            } <span class="comment">// k</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                RHS_a(i,j,k)    = (RHS_a(i,j,k) - a_tmp * RHS_a(i,j,k-1)) * inv_b2_tmp; <span class="comment">// NOTE: This is now &quot;rho&quot;</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                coeffG_a(i,j,k) = c_tmp * inv_b2_tmp; <span class="comment">// NOTE: this is now &quot;gamma&quot;</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            } <span class="comment">// k</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="comment">// Top boundary coefficients and RHS for L decomp</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <a class="code" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a>(i, j, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>, rhoAlpha_lo, rhoAlpha_hi,</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                            cell_data, mu_turb, <a class="code" href="ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18">d_alpha_eff</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a52b0dba7eedbc33a23dc98928f5dda0b">d_eddy_diff_idz</a>,</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                            prim_index, prim_scal_index, <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="comment">// Top boundary coefficients and RHS for L decomp</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <a class="code" href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a>(i, j, <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>, rhoAlpha_lo, rhoAlpha_hi,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                            cell_data, mu_turb, <a class="code" href="ERF__SetupVertDiff_8H.html#ad5f4f32d6eaced89b4c7e5aa0a41ac18">d_alpha_eff</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a52b0dba7eedbc33a23dc98928f5dda0b">d_eddy_diff_idz</a>,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                            prim_index, prim_scal_index, <a class="code" href="ERF__SetupVertDiff_8H.html#a2bb8b4b6219971108e388165a8563647">l_consA</a>, <a class="code" href="ERF__SetupVertDiff_8H.html#a123e5698121b37bfd898f101e0d51077">l_turb</a>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                dz_inv    = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>];</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                dz_inv_lo = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>] + dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1]);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                dz_inv_hi = dz_inv;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                dz_inv    = one_d / dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>];</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                dz_inv_lo = two_d / (dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>] + dz_ptr[<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1]);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                dz_inv_hi = dz_inv;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                a_tmp      = -Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                c_tmp      = zero_d;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                b_tmp      = cell_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - a_tmp - c_tmp;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                inv_b2_tmp = one_d / (b_tmp - a_tmp * coeffG_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1));</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = cell_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,n); <span class="comment">// NOTE: this is rho*phi; solution is phi</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">if</span> (neumann_on_zhi) {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) -= -Fact * dz_inv * rhoAlpha_hi * bc_neumann_vals[5]; <span class="comment">// NOTE: N_val = d_z(\phi)</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                a_tmp      = -Fact * rhoAlpha_lo * dz_inv_lo * dz_inv;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                c_tmp      = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                b_tmp      = cell_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) - a_tmp - c_tmp;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                inv_b2_tmp = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (b_tmp - a_tmp * coeffG_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1));</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = cell_data(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>,n); <span class="comment">// NOTE: this is rho*phi; solution is phi</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                <span class="keywordflow">if</span> (neumann_on_zhi) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) -= -Fact * dz_inv * rhoAlpha_hi * bc_neumann_vals[5]; <span class="comment">// NOTE: N_val = d_z(\phi)</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="comment">// First solve</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                soln_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = (RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) - a_tmp * RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1)) * inv_b2_tmp;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            }</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="comment">// First solve</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                soln_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) = (RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) - a_tmp * RHS_a(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1)) * inv_b2_tmp;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            <span class="comment">// Back sweep the U decomp solution</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1); k&gt;=klo; --k) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                soln_a(i,j,k) = RHS_a(i,j,k) - coeffG_a(i,j,k) * soln_a(i,j,k+1);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="comment">// Convert back to rho*theta</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="comment">//===================================================</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                cell_data(i,j,k,n) = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * soln_a(i,j,k);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    });</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      } <span class="comment">// i</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    } <span class="comment">// j</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">// Back sweep the U decomp solution</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1); k&gt;=klo; --k) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                soln_a(i,j,k) = RHS_a(i,j,k) - coeffG_a(i,j,k) * soln_a(i,j,k+1);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="comment">// Convert back to rho*theta</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="comment">//===================================================</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                cell_data(i,j,k,n) = cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * soln_a(i,j,k);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    });</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      } <span class="comment">// i</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    } <span class="comment">// j</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
 <div class="ttc" id="aERF__GetRhoAlpha_8H_html_ada7887ec8368edfaf1f17ba9700faa2a"><div class="ttname"><a href="ERF__GetRhoAlpha_8H.html#ada7887ec8368edfaf1f17ba9700faa2a">getRhoAlpha</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void getRhoAlpha(int i, int j, int k, amrex::Real &amp;rhoAlpha_lo, amrex::Real &amp;rhoAlpha_hi, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const amrex::Array4&lt; const amrex::Real &gt; &amp;mu_turb, const amrex::Real *d_alpha_eff, const int *d_eddy_diff_idz, int prim_index, int prim_scal_index, bool l_consA, bool l_turb)</div><div class="ttdef"><b>Definition:</b> ERF_GetRhoAlpha.H:5</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:40</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>

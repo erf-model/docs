@@ -510,13 +510,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                             terrain_type == TerrainType::MovingFittedMesh);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box2d_u, box2d_v,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    [=,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        mf_u_inv(i,j,0) = one_d / mf_ux(i,j,0);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        mf_u_inv(i,j,0) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / mf_ux(i,j,0);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    },</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    [=,one_d=<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        mf_v_inv(i,j,0) = one_d / mf_vy(i,j,0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        mf_v_inv(i,j,0) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / mf_vy(i,j,0);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    });</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (mesh_type == MeshType::ConstantDz &amp;&amp; terrain_type != TerrainType::EB)</div>

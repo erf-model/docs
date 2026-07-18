@@ -1,5 +1,9 @@
 var NAVTREEINDEX9 =
 {
+"ERF__Plotfile2DUtils_8H_source.html":[3,0,1,7,25],
+"ERF__Plotfile2DUtils_8cpp.html":[3,0,1,7,24],
+"ERF__Plotfile2DUtils_8cpp.html#a36271f5e8ea03252877e78843d8eba25":[3,0,1,7,24,2],
+"ERF__Plotfile2DUtils_8cpp.html#a4c4c24aee15a8bf42ca679ba0c7a45f2":[3,0,1,7,24,1],
 "ERF__Plotfile2DUtils_8cpp.html#a50f6133c2d0295dfc45ece3acd2273d8":[3,0,1,7,24,4],
 "ERF__Plotfile2DUtils_8cpp.html#aa9b36025404bf1dd71c17f3e0bc4d278":[3,0,1,7,24,3],
 "ERF__Plotfile2DUtils_8cpp.html#aa9cd236199a4804b5351cf9c69bac872":[3,0,1,7,24,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__SAMUtils_8H.html#afd2dd2267d34e991d2f170d7bf35d684":[3,0,1,11,4,6,21],
 "ERF__SAMUtils_8H.html#affd5d78287392e9f31ecb2ce814e3fe9":[3,0,1,11,4,6,49],
 "ERF__SAMUtils_8H_source.html":[3,0,1,11,4,6],
-"ERF__SAM_8H.html":[3,0,1,11,4,5],
-"ERF__SAM_8H_source.html":[3,0,1,11,4,5],
-"ERF__SDInitialization_8H.html":[3,0,1,12,2],
-"ERF__SDInitialization_8H.html#a281fc9f3c461b471e1d64f979f724c49":[3,0,1,12,2,9],
-"ERF__SDInitialization_8H.html#a3ab451af22b42b871bfabb36d1ebdfbe":[3,0,1,12,2,4]
+"ERF__SAM_8H.html":[3,0,1,11,4,5]
 };
