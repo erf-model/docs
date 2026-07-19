@@ -152,10 +152,10 @@ $(document).ready(function(){initNavTree('ERF__ParticleData_8H_source.html','');
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;ParticleData::writePlotFile&quot;</span>);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (!m_disable_particle_op) {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">for</span> (ParticlesNamesVector::size_type i = 0; i &lt; m_namelist.size(); i++) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keyword">auto</span> <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>( m_namelist[i] );</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="keyword">auto</span> particles( m_particle_species.at(<a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keyword">auto</span> <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>( m_namelist[i] );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <span class="keyword">auto</span> particles( m_particle_species.at(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) );</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    particles-&gt;ConvertZetaToZ(a_z_phys_nd);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    particles-&gt;WritePlotFile(a_fname, <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, particles-&gt;varNames());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    particles-&gt;WritePlotFile(a_fname, <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, particles-&gt;varNames());</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    particles-&gt;ConvertZToZeta(a_z_phys_nd);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
@@ -166,9 +166,9 @@ $(document).ready(function(){initNavTree('ERF__ParticleData_8H_source.html','');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">        </span>{</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;ParticleData::Checkpoint()&quot;</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">for</span> (ParticlesNamesVector::size_type i = 0; i &lt; m_namelist.size(); i++) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keyword">auto</span> <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>( m_namelist[i] );</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">auto</span> particles( m_particle_species.at(<a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) );</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                particles-&gt;Checkpoint( a_fname, <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <span class="keyword">true</span>, particles-&gt;varNames() );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keyword">auto</span> <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>( m_namelist[i] );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">auto</span> particles( m_particle_species.at(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                particles-&gt;Checkpoint( a_fname, <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>, <span class="keyword">true</span>, particles-&gt;varNames() );</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"></span> </div>
@@ -178,12 +178,12 @@ $(document).ready(function(){initNavTree('ERF__ParticleData_8H_source.html','');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            BL_PROFILE(<span class="stringliteral">&quot;ParticleData::GetMeshPlotVarNames()&quot;</span>);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            a_names.clear();</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">for</span> (ParticlesNamesVector::size_type i = 0; i &lt; m_namelist.size(); i++) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keyword">auto</span> <a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>( m_namelist[i] );</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keyword">auto</span> particles( m_particle_species.at(<a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keyword">auto</span> <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>( m_namelist[i] );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keyword">auto</span> particles( m_particle_species.at(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) );</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keyword">auto</span> var_names = particles-&gt;meshPlotVarNames();</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; var_names.size(); n++) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    a_names.push_back( std::string(<a class="code" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>+<span class="stringliteral">&quot;_&quot;</span>+var_names[n]) );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    a_names.push_back( std::string(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>+<span class="stringliteral">&quot;_&quot;</span>+var_names[n]) );</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
@@ -363,7 +363,7 @@ $(document).ready(function(){initNavTree('ERF__ParticleData_8H_source.html','');
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERFPC_8H_html"><div class="ttname"><a href="ERFPC_8H.html">ERFPC.H</a></div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
-<div class="ttc" id="aERF__Plotfile2DWaterPath_8cpp_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DWaterPath.cpp:21</div></div>
+<div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:97</div></div>
 <div class="ttc" id="anamespaceerf__provenance_html_af940da8918ee091cd1a564fd2ebf4fadaef41311079c448d0beb06ec07db0bf8c"><div class="ttname"><a href="namespaceerf__provenance.html#af940da8918ee091cd1a564fd2ebf4fadaef41311079c448d0beb06ec07db0bf8c">erf_provenance::ArtifactType::Checkpoint</a></div><div class="ttdeci">@ Checkpoint</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

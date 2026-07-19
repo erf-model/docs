@@ -22,6 +22,17 @@ var annotated_dup =
       [ "NCGroup", "classncutils_1_1NCGroup.html", "classncutils_1_1NCGroup" ],
       [ "NCFile", "classncutils_1_1NCFile.html", null ]
     ] ],
+    [ "near_surface_diagnostics", "namespacenear__surface__diagnostics.html", [
+      [ "NativeBundle", "structnear__surface__diagnostics_1_1NativeBundle.html", "structnear__surface__diagnostics_1_1NativeBundle" ],
+      [ "NativeAggregate", "structnear__surface__diagnostics_1_1NativeAggregate.html", "structnear__surface__diagnostics_1_1NativeAggregate" ],
+      [ "MostState", "structnear__surface__diagnostics_1_1MostState.html", "structnear__surface__diagnostics_1_1MostState" ],
+      [ "MostProfile", "structnear__surface__diagnostics_1_1MostProfile.html", "structnear__surface__diagnostics_1_1MostProfile" ],
+      [ "Sources", "structnear__surface__diagnostics_1_1Sources.html", "structnear__surface__diagnostics_1_1Sources" ]
+    ] ],
+    [ "noahmp_result_policy", "namespacenoahmp__result__policy.html", [
+      [ "FluxSelection", "structnoahmp__result__policy_1_1FluxSelection.html", "structnoahmp__result__policy_1_1FluxSelection" ],
+      [ "CellPolicy", "structnoahmp__result__policy_1_1CellPolicy.html", "structnoahmp__result__policy_1_1CellPolicy" ]
+    ] ],
     [ "plotfile2d", "namespaceplotfile2d.html", [
       [ "DiagnosticDescriptor", "structplotfile2d_1_1DiagnosticDescriptor.html", "structplotfile2d_1_1DiagnosticDescriptor" ],
       [ "SampledBracket", "structplotfile2d_1_1SampledBracket.html", "structplotfile2d_1_1SampledBracket" ],

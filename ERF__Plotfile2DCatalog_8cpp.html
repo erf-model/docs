@@ -90,15 +90,18 @@ $(document).ready(function(){initNavTree('ERF__Plotfile2DCatalog_8cpp.html','');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="ERF__Plotfile2DCatalog_8H_source.html">ERF_Plotfile2DCatalog.H</a>&quot;</code><br />
+<code>#include &lt;deque&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_Plotfile2DCatalog.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Plotfile2DCatalog_8cpp__incl.png" border="0" usemap="#aSource_2IO_2ERF__Plotfile2DCatalog_8cpp" alt=""/></div>
 <map name="aSource_2IO_2ERF__Plotfile2DCatalog_8cpp" id="aSource_2IO_2ERF__Plotfile2DCatalog_8cpp">
-<area shape="rect" title=" " alt="" coords="5,5,265,32"/>
-<area shape="rect" href="ERF__Plotfile2DCatalog_8H.html" title=" " alt="" coords="45,80,226,107"/>
-<area shape="rect" title=" " alt="" coords="47,155,106,181"/>
-<area shape="rect" title=" " alt="" coords="130,155,261,181"/>
+<area shape="rect" title=" " alt="" coords="27,5,287,32"/>
+<area shape="rect" href="ERF__Plotfile2DCatalog_8H.html" title=" " alt="" coords="67,80,248,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,64,181"/>
+<area shape="rect" title=" " alt="" coords="273,80,335,107"/>
+<area shape="rect" title=" " alt="" coords="92,155,223,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -115,7 +118,78 @@ Functions</h2></td></tr>
 <tr class="separator:a0613dde6ea83d4510e535cab71c0c157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc7fd98d7b5fa82967c7f2cc60c3ca73"><td class="memItemLeft" align="right" valign="top">const DiagnosticDescriptor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplotfile2d.html#afc7fd98d7b5fa82967c7f2cc60c3ca73">plotfile2d::find_diagnostic</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
 <tr class="separator:afc7fd98d7b5fa82967c7f2cc60c3ca73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed70bc8256f5893480c5539f085dcc8"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplotfile2d.html#a0ed70bc8256f5893480c5539f085dcc8">plotfile2d::dynamic_soil_diagnostic_names</a> (int nsoil)</td></tr>
+<tr class="separator:a0ed70bc8256f5893480c5539f085dcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4b8b29c57c9932f64698789cb1f797"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplotfile2d.html#a3c4b8b29c57c9932f64698789cb1f797">plotfile2d::dynamic_soil_diagnostic_names</a> (const amrex::Vector&lt; std::string &gt; &amp;active_lsm_names)</td></tr>
+<tr class="separator:a3c4b8b29c57c9932f64698789cb1f797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa480dd302cefed3b1c9f21db8e4223b"><td class="memItemLeft" align="right" valign="top">const DiagnosticDescriptor *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplotfile2d.html#aaa480dd302cefed3b1c9f21db8e4223b">plotfile2d::find_dynamic_soil_diagnostic</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr class="separator:aaa480dd302cefed3b1c9f21db8e4223b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a176affa62ade3b3a46ee6594a4a10f54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplotfile2d.html#a176affa62ade3b3a46ee6594a4a10f54">plotfile2d::is_dynamic_soil_diagnostic_name</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr class="separator:a176affa62ade3b3a46ee6594a4a10f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a7c0a4f8c0ebedcf22aafbf1d26efe933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c0a4f8c0ebedcf22aafbf1d26efe933">&#9670;&nbsp;</a></span>descriptor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DiagnosticDescriptor descriptor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="namespaceplotfile2d.html#aeb39831ce22b67e3631a8d20e60a3be9">plotfile2d::available_diagnostic_names()</a>, <a class="el" href="namespaceplotfile2d.html#a6a32f70864ff45338d6c67b5f2c2bfcb">plotfile2d::available_sampled_field_names()</a>, <a class="el" href="namespaceplotfile2d.html#af9195a5eb19b3a9581aa7dca46a2d3cd">plotfile2d::build_sampled_level_output_descriptors_from_definitions()</a>, <a class="el" href="namespaceplotfile2d.html#a0613dde6ea83d4510e535cab71c0c157">plotfile2d::diagnostic_names()</a>, <a class="el" href="namespaceplotfile2d.html#a0ae3c93130ce1e87ec1183b044e8c9ac">plotfile2d::fill_sampled_level_component()</a>, <a class="el" href="namespaceplotfile2d.html#afc7fd98d7b5fa82967c7f2cc60c3ca73">plotfile2d::find_diagnostic()</a>, <a class="el" href="namespaceplotfile2d.html#a4961a58a98803bc16ae07059254b2531">plotfile2d::find_sampled_field()</a>, <a class="el" href="namespaceplotfile2d.html#aaeccc2844594229682d7d671c93d3121">plotfile2d::format_2d_metadata_json()</a>, <a class="el" href="namespaceplotfile2d.html#a7d4bc84f8f5eb9f6e43320751de0c7f4">plotfile2d::is_condensed_water_path_name()</a>, <a class="el" href="namespaceplotfile2d.html#a43224d382183f8ebb9bcd15b884bdef5">plotfile2d::is_precipitation_accumulation_name()</a>, <a class="el" href="namespaceplotfile2d.html#a33e87e37e46571ae03b5e734fa67e542">plotfile2d::select_requested_sampled_fields()</a>, <a class="el" href="namespaceplotfile2d.html#aa82b17461180193f9227396c88f656c6">plotfile2d::selected_condensed_water_path_components()</a>, <a class="el" href="namespaceplotfile2d.html#ae72ee267a9b1c6935c08527ddc3ab279">plotfile2d::selected_precipitation_accumulation_components()</a>, and <a class="el" href="classERF.html#a8494cd7a4f6dad7b19f239783f32465f">ERF::Write2DPlotFile()</a>.</p>
+
+</div>
+</div>
+<a id="a5ba6865d273f6790f23bd0f222a919d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ba6865d273f6790f23bd0f222a919d1">&#9670;&nbsp;</a></span>long_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string long_name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b45b3e13bd9167aab02e17e08916231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b45b3e13bd9167aab02e17e08916231">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="namespaceplotfile2d.html#af9195a5eb19b3a9581aa7dca46a2d3cd">plotfile2d::build_sampled_level_output_descriptors_from_definitions()</a>, <a class="el" href="classShocDriver.html#a1cabdbcf0b1f25d95df188952c4d032a">ShocDriver::debug_check_bad_column()</a>, <a class="el" href="namespaceplotfile2d.html#a0ed70bc8256f5893480c5539f085dcc8">plotfile2d::dynamic_soil_diagnostic_names()</a>, <a class="el" href="namespaceplotfile2d.html#afc7fd98d7b5fa82967c7f2cc60c3ca73">plotfile2d::find_diagnostic()</a>, <a class="el" href="namespaceplotfile2d.html#aaa480dd302cefed3b1c9f21db8e4223b">plotfile2d::find_dynamic_soil_diagnostic()</a>, <a class="el" href="namespaceplotfile2d.html#a4961a58a98803bc16ae07059254b2531">plotfile2d::find_sampled_field()</a>, <a class="el" href="namespaceplotfile2d.html#aaeccc2844594229682d7d671c93d3121">plotfile2d::format_2d_metadata_json()</a>, <a class="el" href="classLandSurface.html#a1902e596e29b70879e34c680bb5187d6">LandSurface::Get_Data_Ptr()</a>, <a class="el" href="namespaceplotfile2d.html#a176affa62ade3b3a46ee6594a4a10f54">plotfile2d::is_dynamic_soil_diagnostic_name()</a>, <a class="el" href="namespaceplotfile2d.html#a43224d382183f8ebb9bcd15b884bdef5">plotfile2d::is_precipitation_accumulation_name()</a>, <a class="el" href="classShocDriver.html#a0ae1a8fc360fe29681b02212af909613">ShocDriver::print_debug_summary()</a>, <a class="el" href="classNOAHMP.html#a60f3cea25a3041d994c36c69ec0685b8">NOAHMP::Read_Lsm_Restart()</a>, <a class="el" href="classERF.html#afdd04d6a1c2103e654f0cb6eda62436d">ERF::ReadCheckpointFileSurfaceLayer()</a>, <a class="el" href="classRadiation.html#a3eab5714d47ed767884a66a8dc1058df">Radiation::run_impl()</a>, <a class="el" href="namespaceplotfile2d.html#a50f6133c2d0295dfc45ece3acd2273d8">plotfile2d::select_requested_plot_variables()</a>, <a class="el" href="namespaceplotfile2d.html#a33e87e37e46571ae03b5e734fa67e542">plotfile2d::select_requested_sampled_fields()</a>, and <a class="el" href="classERF.html#a8494cd7a4f6dad7b19f239783f32465f">ERF::Write2DPlotFile()</a>.</p>
+
+</div>
+</div>
+<a id="a9d8a43adf9fd3fd5efa57e1f9140ca72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d8a43adf9fd3fd5efa57e1f9140ca72">&#9670;&nbsp;</a></span>units</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string units</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="namespaceplotfile2d.html#aee93e5a77a0e1179387f786a491abaa1">plotfile2d::sampled_level_value_tag()</a>, and <a class="el" href="namespaceplotfile2d.html#afa858869cefcae6c300753f8e5e00abb">plotfile2d::sampled_output_name()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

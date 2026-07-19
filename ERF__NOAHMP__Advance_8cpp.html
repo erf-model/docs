@@ -89,61 +89,64 @@ $(document).ready(function(){initNavTree('ERF__NOAHMP__Advance_8cpp.html',''); i
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;AMReX_Print.H&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__NOAHMP_8H_source.html">ERF_NOAHMP.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ERF__EOS_8H_source.html">ERF_EOS.H</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="ERF__NOAHMP__ResultPolicy_8H_source.html">ERF_NOAHMP_ResultPolicy.H</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ERF_NOAHMP_Advance.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__NOAHMP__Advance_8cpp__incl.png" border="0" usemap="#aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP__Advance_8cpp" alt=""/></div>
 <map name="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP__Advance_8cpp" id="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP__Advance_8cpp">
-<area shape="rect" title=" " alt="" coords="2466,5,2737,47"/>
-<area shape="rect" title=" " alt="" coords="363,393,443,420"/>
-<area shape="rect" title=" " alt="" coords="3260,543,3319,569"/>
-<area shape="rect" title=" " alt="" coords="467,393,587,420"/>
-<area shape="rect" href="ERF__NOAHMP_8H.html" title=" " alt="" coords="1927,95,2052,121"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="2380,468,2513,495"/>
-<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="3030,393,3125,420"/>
-<area shape="rect" title=" " alt="" coords="935,393,993,420"/>
-<area shape="rect" title=" " alt="" coords="1762,169,1825,196"/>
-<area shape="rect" title=" " alt="" coords="1849,169,1927,196"/>
-<area shape="rect" title=" " alt="" coords="611,393,770,420"/>
-<area shape="rect" title=" " alt="" coords="2052,169,2217,196"/>
-<area shape="rect" title=" " alt="" coords="2242,169,2409,196"/>
-<area shape="rect" title=" " alt="" coords="2485,169,2641,196"/>
-<area shape="rect" title=" " alt="" coords="1545,393,1698,420"/>
-<area shape="rect" title=" " alt="" coords="1893,393,2061,420"/>
-<area shape="rect" title=" " alt="" coords="2665,169,2796,196"/>
-<area shape="rect" title=" " alt="" coords="3097,468,3228,495"/>
-<area shape="rect" title=" " alt="" coords="2820,169,2948,196"/>
-<area shape="rect" title=" " alt="" coords="2972,169,3100,196"/>
-<area shape="rect" href="ERF__NullSurf_8H.html" title=" " alt="" coords="1242,169,1361,196"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1042,244,1179,271"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="70,393,223,420"/>
-<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="2001,244,2199,271"/>
-<area shape="rect" title=" " alt="" coords="1385,169,1490,196"/>
-<area shape="rect" href="ERF__NOAHMP__Fields_8H.html" title=" " alt="" coords="1514,169,1686,196"/>
-<area shape="rect" title=" " alt="" coords="1554,244,1686,271"/>
-<area shape="rect" title=" " alt="" coords="794,393,910,420"/>
-<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="1016,319,1147,345"/>
-<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="296,319,461,345"/>
-<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="486,319,615,345"/>
-<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="691,319,813,345"/>
-<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="837,319,992,345"/>
-<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="1743,319,1876,345"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="1374,319,1533,345"/>
-<area shape="rect" title=" " alt="" coords="2609,543,2671,569"/>
-<area shape="rect" title=" " alt="" coords="2037,543,2160,569"/>
-<area shape="rect" title=" " alt="" coords="83,468,211,495"/>
-<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="1723,393,1869,420"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="1402,393,1521,420"/>
-<area shape="rect" title=" " alt="" coords="1313,393,1377,420"/>
-<area shape="rect" title=" " alt="" coords="2580,468,2663,495"/>
-<area shape="rect" title=" " alt="" coords="2231,319,2409,345"/>
-<area shape="rect" title=" " alt="" coords="2061,319,2206,345"/>
-<area shape="rect" title=" " alt="" coords="2938,468,3073,495"/>
+<area shape="rect" title=" " alt="" coords="908,5,1178,47"/>
+<area shape="rect" title=" " alt="" coords="788,393,868,420"/>
+<area shape="rect" title=" " alt="" coords="1593,543,1656,569"/>
+<area shape="rect" title=" " alt="" coords="3159,543,3218,569"/>
+<area shape="rect" title=" " alt="" coords="444,393,564,420"/>
+<area shape="rect" href="ERF__NOAHMP_8H.html" title=" " alt="" coords="1886,95,2011,121"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="2050,468,2183,495"/>
+<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="65,393,160,420"/>
+<area shape="rect" href="ERF__NOAHMP__ResultPolicy_8H.html" title=" " alt="" coords="2854,244,3066,271"/>
+<area shape="rect" title=" " alt="" coords="1034,393,1092,420"/>
+<area shape="rect" title=" " alt="" coords="1338,169,1401,196"/>
+<area shape="rect" title=" " alt="" coords="1670,169,1747,196"/>
+<area shape="rect" title=" " alt="" coords="589,393,748,420"/>
+<area shape="rect" title=" " alt="" coords="1771,169,1936,196"/>
+<area shape="rect" title=" " alt="" coords="1961,169,2128,196"/>
+<area shape="rect" title=" " alt="" coords="2152,169,2308,196"/>
+<area shape="rect" title=" " alt="" coords="1946,393,2100,420"/>
+<area shape="rect" title=" " alt="" coords="2124,393,2292,420"/>
+<area shape="rect" title=" " alt="" coords="2332,169,2463,196"/>
+<area shape="rect" title=" " alt="" coords="255,468,386,495"/>
+<area shape="rect" title=" " alt="" coords="2639,169,2767,196"/>
+<area shape="rect" title=" " alt="" coords="2791,169,2919,196"/>
+<area shape="rect" href="ERF__NullSurf_8H.html" title=" " alt="" coords="1528,169,1646,196"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1189,244,1326,271"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="1264,393,1417,420"/>
+<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="2334,244,2533,271"/>
+<area shape="rect" title=" " alt="" coords="2944,169,3049,196"/>
+<area shape="rect" href="ERF__NOAHMP__Fields_8H.html" title=" " alt="" coords="2725,319,2897,345"/>
+<area shape="rect" title=" " alt="" coords="1528,244,1660,271"/>
+<area shape="rect" title=" " alt="" coords="893,393,1009,420"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="1196,319,1327,345"/>
+<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="751,319,916,345"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="992,319,1121,345"/>
+<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="426,319,548,345"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="572,319,727,345"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="1738,319,1871,345"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="1554,319,1713,345"/>
+<area shape="rect" title=" " alt="" coords="2467,543,2590,569"/>
+<area shape="rect" title=" " alt="" coords="1276,468,1404,495"/>
+<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="1724,393,1871,420"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="1493,393,1612,420"/>
+<area shape="rect" title=" " alt="" coords="1636,393,1700,420"/>
+<area shape="rect" title=" " alt="" coords="790,468,872,495"/>
+<area shape="rect" title=" " alt="" coords="2471,319,2650,345"/>
+<area shape="rect" title=" " alt="" coords="2250,319,2396,345"/>
+<area shape="rect" title=" " alt="" coords="45,468,180,495"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -157,9 +160,9 @@ Macros</h2></td></tr>
 <tr class="separator:ad8e6293893b87e04f649f96987f84e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a933956e85a2a04e595a0eec649120a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#a0a933956e85a2a04e595a0eec649120a">NOAHMP_READ_OUT_2D</a>(comp,  member)&#160;&#160;&#160;noah_output_arr(i,j,0,NoahmpOutputComp::comp) = noahmpio-&gt;member(i,j);</td></tr>
 <tr class="separator:a0a933956e85a2a04e595a0eec649120a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cd5afa30dc082041eb2d255bdbfc6d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#a2cd5afa30dc082041eb2d255bdbfc6d4">NOAHMP_COPY_RESULT</a>(alias,  lsm,  <a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>)&#160;&#160;&#160;alias(i,j,0) = noah_output_arr(ii,jj,0,<a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">NoahmpOutputComp::out</a>);</td></tr>
+<tr class="memitem:a2cd5afa30dc082041eb2d255bdbfc6d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#a2cd5afa30dc082041eb2d255bdbfc6d4">NOAHMP_COPY_RESULT</a>(alias,  lsm,  <a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>)</td></tr>
 <tr class="separator:a2cd5afa30dc082041eb2d255bdbfc6d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab701e4f8b5f1cf4c9764d4c6c5d340ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#ab701e4f8b5f1cf4c9764d4c6c5d340ed">NOAHMP_UNDEF_RESULT</a>(alias,  lsm,  <a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>)&#160;&#160;&#160;alias(i,j,0) = <a class="el" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</td></tr>
+<tr class="memitem:ab701e4f8b5f1cf4c9764d4c6c5d340ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__NOAHMP__Advance_8cpp.html#ab701e4f8b5f1cf4c9764d4c6c5d340ed">NOAHMP_UNDEF_RESULT</a>(alias,  lsm,  <a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a>)&#160;&#160;&#160;alias(i,j,0) = lsm_undefined_d;</td></tr>
 <tr class="separator:ab701e4f8b5f1cf4c9764d4c6c5d340ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -224,11 +227,19 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;alias(i,j,0) = noah_output_arr(ii,jj,0,<a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">NoahmpOutputComp::out</a>);</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Value:</b><div class="fragment"><div class="line">        {                                                                       \</div>
+<div class="line">            const <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a> = noah_output_arr(ii,jj,0,<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">NoahmpOutputComp::out</a>);  \</div>
+<div class="line">            alias(i,j,0) = cell_policy.select(                                  \</div>
+<div class="line">                <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>, lsm_undefined_d, <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">NoahmpOutputComp::out</a>);                \</div>
+<div class="line">        }</div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_a6b6091cd65dcf2a537c3fca1cc65594a"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#a6b6091cd65dcf2a537c3fca1cc65594a">out</a></div><div class="ttdeci">struct @29 out</div></div>
+<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_abd5746c9a8c4bf217e5294c6c702559b"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a></div><div class="ttdeci">Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.cpp:30</div></div>
+<div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0a933956e85a2a04e595a0eec649120a"></a>
@@ -342,7 +353,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;alias(i,j,0) = <a class="el" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>;</td>
+          <td></td><td>&#160;&#160;&#160;alias(i,j,0) = lsm_undefined_d;</td>
         </tr>
       </table>
 </div><div class="memdoc">

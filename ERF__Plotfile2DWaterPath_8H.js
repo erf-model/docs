@@ -4,6 +4,8 @@ var ERF__Plotfile2DWaterPath_8H =
     [ "SelectedWaterPathComponents", "structplotfile2d_1_1SelectedWaterPathComponents.html", "structplotfile2d_1_1SelectedWaterPathComponents" ],
     [ "active_condensed_water_path_descriptors", "ERF__Plotfile2DWaterPath_8H.html#a16831e12f54effa1464aec611c228712", null ],
     [ "available_diagnostic_names", "ERF__Plotfile2DWaterPath_8H.html#a9c30ab2b82e9a275c74b5e81348e6e05", null ],
+    [ "available_diagnostic_names", "ERF__Plotfile2DWaterPath_8H.html#a97844a229993c2b5f224f87b7624d875", null ],
+    [ "available_diagnostic_names", "ERF__Plotfile2DWaterPath_8H.html#aeb39831ce22b67e3631a8d20e60a3be9", null ],
     [ "fill_condensed_water_paths", "ERF__Plotfile2DWaterPath_8H.html#a5676108476dd133b53d6878136afb147", null ],
     [ "is_condensed_water_path", "ERF__Plotfile2DWaterPath_8H.html#a374082b3440b36bee275aead97041c14", null ],
     [ "is_condensed_water_path_name", "ERF__Plotfile2DWaterPath_8H.html#a7d4bc84f8f5eb9f6e43320751de0c7f4", null ],

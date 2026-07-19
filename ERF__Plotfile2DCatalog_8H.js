@@ -10,6 +10,7 @@ var ERF__Plotfile2DCatalog_8H =
       [ "SurfaceState", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441ae4bd66c40d91ac21131e17e018becc53", null ],
       [ "Precipitation", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a3b30abed195c163bd2676a42be6e9383", null ],
       [ "ColumnIntegral", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a22f99bba08a23cb9b10286b119dee809", null ],
+      [ "LandSurface", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441ab8789e5e42a8520aaeef9eeca507f38a", null ],
       [ "SampledLevel", "ERF__Plotfile2DCatalog_8H.html#a58e5081c6d213eec172b5c439bed0441a1cab91c232ad3a71f646243223fa6797", null ]
     ] ],
     [ "DiagnosticID", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2", [
@@ -48,7 +49,36 @@ var ERF__Plotfile2DCatalog_8H =
       [ "LatentHeatFlux", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a32247914b04aaa17d0b4a43207861eca", null ],
       [ "ShocUStar", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a664e872daa697764887f14e1d2ff6e54", null ],
       [ "ShocOlen", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ae98166083a90cf920d3ae08d8cdc391d", null ],
-      [ "ShocWthvSfc", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2aa55599a777c22e1e1c67ea69d5dc9f9e", null ]
+      [ "ShocWthvSfc", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2aa55599a777c22e1e1c67ea69d5dc9f9e", null ],
+      [ "LandSurfaceTsfC", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a81d32c5c8f4fada75ed99f5d55015a68", null ],
+      [ "LandSurfaceEmissivity", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2af868eec03cea7edd09a56547c706b5a7", null ],
+      [ "LandSurfaceAlbDirVis", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ace2df011485206a2b09cd3007ab0d9d9", null ],
+      [ "LandSurfaceAlbDirNir", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ae79edf968d04077d3d5a7a7fe2a1ca39", null ],
+      [ "LandSurfaceAlbDifVis", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a644e36e65aea1f3814bfadf175c361e6", null ],
+      [ "LandSurfaceAlbDifNir", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2afb3960f181f607d6bd7c8238b8f4d938", null ],
+      [ "LandSurfaceCosZenith", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a653eab437d18e19385db70a858feb074", null ],
+      [ "LandSurfaceSwFluxDn", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ad9eb64cd8f110ae277b30a1e879e3d40", null ],
+      [ "LandSurfaceSwFluxDnDirVis", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a53e1d91980aa2dc76f9db53e2848a7a9", null ],
+      [ "LandSurfaceSwFluxDnDirNir", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a07b06a381d234d7f19a2f94e4d339e7a", null ],
+      [ "LandSurfaceSwFluxDnDifVis", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ae0d9b2905cf663c512c17854821f51ee", null ],
+      [ "LandSurfaceSwFluxDnDifNir", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab3be42c568dc9a6a619e79858f813850", null ],
+      [ "LandSurfaceLwFluxDn", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a477e79cd815947fb10e27bb466b3d56f", null ],
+      [ "LandSurfaceGrdflx", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a3153700be91b0d1c9094eda56c980970", null ],
+      [ "LandSurfaceFira", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a1458238083a5c17d9cbb7787861a4558", null ],
+      [ "LandSurfaceSav", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2aca2e00f6849427c602b7e17270135cc4", null ],
+      [ "LandSurfaceSag", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ad2488dca96d35339c14c24e8008f2812", null ],
+      [ "LandSurfaceAlbedo", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a4851ff19655b70f35e924e50e0475f47", null ],
+      [ "LandSurfaceSfcrunoff", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a98621c687565c59f055c135277ee959c", null ],
+      [ "LandSurfaceUdrunoff", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a36ad3992a4b05401f0b4768e0ac35ae8", null ],
+      [ "NoahmpTemperature2mVegetated", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a4874d730df98e05fbcda1fd5d165560c", null ],
+      [ "NoahmpTemperature2mBare", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a6864e43c29115df340791971ce703514", null ],
+      [ "NoahmpWaterVaporMixingRatio2mVegetated", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab7c949091bc6cc51dc36b42cdab8a789", null ],
+      [ "NoahmpWaterVaporMixingRatio2mBare", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a2fc33ef1fc3a1b661182d90db0ca922e", null ],
+      [ "NoahmpVegetationFraction", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ae38672f0d504ea24f3e1f5f381cc54ab", null ],
+      [ "Temperature2m", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a1dabe6eec558e95832d8ba95f9d361a8", null ],
+      [ "WaterVaporMixingRatio2m", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a3225ac10da9be9e277c8c816280527d7", null ],
+      [ "NearSurfaceDiagnosticSource", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a8fd3ddc4494d98caa7ce1f5584707dd1", null ],
+      [ "DynamicSoilBase", "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a699f4db98109c9e162f2648788e866d7", null ]
     ] ],
     [ "MissingPolicy", "ERF__Plotfile2DCatalog_8H.html#aa2c10fc17716a89573a1b7c8d82a1845", [
       [ "AlwaysAvailable", "ERF__Plotfile2DCatalog_8H.html#aa2c10fc17716a89573a1b7c8d82a1845a10363b13cee27e8e704a9c64bd3b36b0", null ],
@@ -57,5 +87,9 @@ var ERF__Plotfile2DCatalog_8H =
     ] ],
     [ "diagnostic_catalog", "ERF__Plotfile2DCatalog_8H.html#a81399e854523fc42cd44a68d439260b6", null ],
     [ "diagnostic_names", "ERF__Plotfile2DCatalog_8H.html#a0613dde6ea83d4510e535cab71c0c157", null ],
-    [ "find_diagnostic", "ERF__Plotfile2DCatalog_8H.html#afc7fd98d7b5fa82967c7f2cc60c3ca73", null ]
+    [ "dynamic_soil_diagnostic_names", "ERF__Plotfile2DCatalog_8H.html#a3c4b8b29c57c9932f64698789cb1f797", null ],
+    [ "dynamic_soil_diagnostic_names", "ERF__Plotfile2DCatalog_8H.html#a0ed70bc8256f5893480c5539f085dcc8", null ],
+    [ "find_diagnostic", "ERF__Plotfile2DCatalog_8H.html#afc7fd98d7b5fa82967c7f2cc60c3ca73", null ],
+    [ "find_dynamic_soil_diagnostic", "ERF__Plotfile2DCatalog_8H.html#aaa480dd302cefed3b1c9f21db8e4223b", null ],
+    [ "is_dynamic_soil_diagnostic_name", "ERF__Plotfile2DCatalog_8H.html#a176affa62ade3b3a46ee6594a4a10f54", null ]
 ];

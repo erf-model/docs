@@ -914,7 +914,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    std::fill(<a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.begin(), <a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.end(), <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">std::fill</a>(<a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.begin(), <a class="code" href="classPlaneAverage.html#a998ec98b248ea4bd71284a2bd919fb0d">m_line_average</a>.end(), <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">switch</span> (<a class="code" href="classPlaneAverage.html#ab1c325b8a1241cb446bad96fa558e770">m_axis</a>) {</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">case</span> 0:</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <a class="code" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e">compute_averages</a>(<a class="code" href="ERF__DirectionSelector_8H.html#a68edfbe7326d0d1476e796beb668072f">XDir</a>(), *<a class="code" href="classPlaneAverage.html#a6c29e3eafbbb7028e801c513b29a1c09">m_field</a>);</div>
@@ -934,13 +934,28 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__DirectionSelector_8H_html_a92990a19f43dc3cbbbd630362d1ece71"><div class="ttname"><a href="ERF__DirectionSelector_8H.html#a92990a19f43dc3cbbbd630362d1ece71">YDir</a></div><div class="ttdeci">DirectionSelector&lt; 1 &gt; YDir</div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:37</div></div>
 <div class="ttc" id="aERF__DirectionSelector_8H_html_aca321ed7fddfe43ff7549b4632a3c0d1"><div class="ttname"><a href="ERF__DirectionSelector_8H.html#aca321ed7fddfe43ff7549b4632a3c0d1">ZDir</a></div><div class="ttdeci">DirectionSelector&lt; 2 &gt; ZDir</div><div class="ttdef"><b>Definition:</b> ERF_DirectionSelector.H:38</div></div>
 <div class="ttc" id="aclassPlaneAverage_html_a603aee4caf3a370d06bee77fddb0e33e"><div class="ttname"><a href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e">PlaneAverage::compute_averages</a></div><div class="ttdeci">AMREX_FORCE_INLINE void compute_averages(const IndexSelector &amp;idxOp, const amrex::MultiFab &amp;mfab)</div></div>
+<div class="ttc" id="anamespacenear__surface__diagnostics_html_a7cee41b11fa30d00d43bb88458aad002"><div class="ttname"><a href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill</a></div><div class="ttdeci">void fill(MultiFab &amp;dst, int temperature_comp, int mixing_ratio_comp, int source_comp, const Sources &amp;sources, Real missing_value)</div><div class="ttdef"><b>Definition:</b> ERF_NearSurfaceDiagnostics.cpp:41</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPlaneAverage_aa58d4a708d46cd0d12120e9bf90d5de2_cgraph.png" border="0" usemap="#aclassPlaneAverage_aa58d4a708d46cd0d12120e9bf90d5de2_cgraph" alt=""/></div>
 <map name="aclassPlaneAverage_aa58d4a708d46cd0d12120e9bf90d5de2_cgraph" id="aclassPlaneAverage_aa58d4a708d46cd0d12120e9bf90d5de2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,189,39"/>
-<area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="237,5,413,47"/>
+<area shape="rect" title=" " alt="" coords="5,258,189,285"/>
+<area shape="rect" href="classPlaneAverage.html#a603aee4caf3a370d06bee77fddb0e33e" title=" " alt="" coords="243,217,419,259"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002" title=" " alt="" coords="237,283,424,324"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#a56452f933116539b5fbc5b1d5239514c" title=" " alt="" coords="480,5,675,47"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="476,71,679,98"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#aefd15279e38c367ea696b8efd8849b9f" title=" " alt="" coords="484,123,671,164"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#ad93e2f41ebf1c56556ad2ce7161e4a82" title=" " alt="" coords="981,181,1168,223"/>
+<area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="522,239,633,266"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="510,290,645,317"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#a9784ae177957e75bd05e070383cdebe9" title=" " alt="" coords="484,341,671,397"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#a519c3ee962c0831dd4eec9148f3c9d6d" title=" " alt="" coords="472,421,683,477"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="532,501,623,527"/>
+<area shape="rect" href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78" title=" " alt="" coords="757,573,907,615"/>
+<area shape="rect" href="namespacesurface__diagnostics.html#a8952f0baf16086becb3702d82d00d158" title=" " alt="" coords="502,603,653,644"/>
+<area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="755,72,909,113"/>
+<area shape="rect" href="namespacenear__surface__diagnostics.html#ac22e985a9ccbc51fd5ea9f3362998b9a" title=" " alt="" coords="731,348,933,389"/>
 </map>
 </div>
 

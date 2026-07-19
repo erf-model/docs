@@ -95,8 +95,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__NOAHMP__Fields_8H__dep__incl.png" border="0" usemap="#aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP__Fields_8Hdep" alt=""/></div>
 <map name="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP__Fields_8Hdep" id="aSource_2LandSurfaceModel_2Noah-MP_2ERF__NOAHMP__Fields_8Hdep">
-<area shape="rect" title=" " alt="" coords="425,5,664,47"/>
-<area shape="rect" href="ERF__NOAHMP_8H.html" title=" " alt="" coords="449,95,641,136"/>
+<area shape="rect" title=" " alt="" coords="159,5,397,47"/>
+<area shape="rect" href="ERF__NOAHMP_8H.html" title=" " alt="" coords="321,95,513,136"/>
+<area shape="rect" href="ERF__NOAHMP__ResultPolicy_8H.html" title=" " alt="" coords="9,95,288,136"/>
 <area shape="rect" href="ERF__NOAHMP__Advance_8cpp.html" title=" " alt="" coords="5,184,276,225"/>
 <area shape="rect" href="ERF__NOAHMP__Init_8cpp.html" title=" " alt="" coords="299,184,534,225"/>
 <area shape="rect" href="ERF__NOAHMP__IO_8cpp.html" title=" " alt="" coords="559,184,787,225"/>
@@ -310,7 +311,13 @@ Enumerations</h2></td></tr>
 <div class="line">    X(lw_flux_dn)                                                             \</div>
 <div class="line">    <span class="comment">/* land return-term diagnostics */</span>                                       \</div>
 <div class="line">    X(grdflx) X(fira) X(sav) X(sag) X(albedo)                                 \</div>
-<div class="line">    X(sfcrunoff) X(udrunoff) X(smstav) X(smstot)</div>
+<div class="line">    X(sfcrunoff) X(udrunoff) X(smstav) X(smstot)                              \</div>
+<div class="line">    <span class="comment">/* native Noah-MP 2-m bundle */</span>                                           \</div>
+<div class="line">    X(noahmp_temperature_2m_vegetated)                                       \</div>
+<div class="line">    X(noahmp_temperature_2m_bare)                                            \</div>
+<div class="line">    X(noahmp_water_vapor_mixing_ratio_2m_vegetated)                           \</div>
+<div class="line">    X(noahmp_water_vapor_mixing_ratio_2m_bare)                                \</div>
+<div class="line">    X(noahmp_vegetation_fraction)</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -331,7 +338,7 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">                                   <a class="code" href="ERF__NOAHMP__Fields_8H.html#a6441305f9f8d46ad56d3b498b13de4e4">NOAHMP_OUTPUT_2D_FIELDS_HEAD</a>(X)            \</div>
 <div class="line">                                   NOAHMP_OUTPUT_2D_FIELDS_TAIL(X)</div>
-<div class="ttc" id="aERF__NOAHMP__Fields_8H_html_a6441305f9f8d46ad56d3b498b13de4e4"><div class="ttname"><a href="ERF__NOAHMP__Fields_8H.html#a6441305f9f8d46ad56d3b498b13de4e4">NOAHMP_OUTPUT_2D_FIELDS_HEAD</a></div><div class="ttdeci">#define NOAHMP_OUTPUT_2D_FIELDS_HEAD(X)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:50</div></div>
+<div class="ttc" id="aERF__NOAHMP__Fields_8H_html_a6441305f9f8d46ad56d3b498b13de4e4"><div class="ttname"><a href="ERF__NOAHMP__Fields_8H.html#a6441305f9f8d46ad56d3b498b13de4e4">NOAHMP_OUTPUT_2D_FIELDS_HEAD</a></div><div class="ttdeci">#define NOAHMP_OUTPUT_2D_FIELDS_HEAD(X)</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:56</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -382,7 +389,12 @@ Enumerations</h2></td></tr>
 <div class="line">    X(    o_sag,        SAGXY     )                                           \</div>
 <div class="line">    X(    o_albedo,     ALBEDO    )                                           \</div>
 <div class="line">    X(    o_sfcrunoff,  SFCRUNOFF )                                           \</div>
-<div class="line">    X(    o_udrunoff,   UDRUNOFF  )</div>
+<div class="line">    X(    o_udrunoff,   UDRUNOFF  )                                           \</div>
+<div class="line">    X(    o_noahmp_t2m_veg,  T2MVXY )                                         \</div>
+<div class="line">    X(    o_noahmp_t2m_bare, T2MBXY )                                         \</div>
+<div class="line">    X(    o_noahmp_q2m_veg,  Q2MVXY )                                         \</div>
+<div class="line">    X(    o_noahmp_q2m_bare, Q2MBXY )                                         \</div>
+<div class="line">    X(    o_noahmp_fveg,     FVEGXY )</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -432,11 +444,16 @@ Enumerations</h2></td></tr>
 <div class="line">    X(   SAG_o,            sag,               o_sag         )                  \</div>
 <div class="line">    X(   ALBEDO_o,         albedo,            o_albedo      )                  \</div>
 <div class="line">    X(   SFCRUNOFF_o,      sfcrunoff,         o_sfcrunoff   )                  \</div>
-<div class="line">    X(   UDRUNOFF_o,       udrunoff,          o_udrunoff    )</div>
-<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976aa305c803d3506b98717e5c92343dfaa7"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aa305c803d3506b98717e5c92343dfaa7">NoahmpOutputComp::albsfcdir_vis</a></div><div class="ttdeci">@ albsfcdir_vis</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:152</div></div>
-<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976ad111c27a866156bbe702c55610a16578"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ad111c27a866156bbe702c55610a16578">NoahmpOutputComp::albsfcdif_nir</a></div><div class="ttdeci">@ albsfcdif_nir</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:155</div></div>
-<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976ae4b5c9d4068fd918c912ae1082d38a26"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ae4b5c9d4068fd918c912ae1082d38a26">NoahmpOutputComp::albsfcdif_vis</a></div><div class="ttdeci">@ albsfcdif_vis</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:154</div></div>
-<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976af447d633e704725fd9d7c3ec54d273cb"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976af447d633e704725fd9d7c3ec54d273cb">NoahmpOutputComp::albsfcdir_nir</a></div><div class="ttdeci">@ albsfcdir_nir</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:153</div></div>
+<div class="line">    X(   UDRUNOFF_o,       udrunoff,          o_udrunoff    )                  \</div>
+<div class="line">    X(   T2MVXY_o,         noahmp_temperature_2m_vegetated, o_noahmp_t2m_veg ) \</div>
+<div class="line">    X(   T2MBXY_o,         noahmp_temperature_2m_bare,      o_noahmp_t2m_bare) \</div>
+<div class="line">    X(   Q2MVXY_o,         noahmp_water_vapor_mixing_ratio_2m_vegetated, o_noahmp_q2m_veg ) \</div>
+<div class="line">    X(   Q2MBXY_o,         noahmp_water_vapor_mixing_ratio_2m_bare,      o_noahmp_q2m_bare) \</div>
+<div class="line">    X(   FVEGXY_o,         noahmp_vegetation_fraction, o_noahmp_fveg       )</div>
+<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976aa305c803d3506b98717e5c92343dfaa7"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976aa305c803d3506b98717e5c92343dfaa7">NoahmpOutputComp::albsfcdir_vis</a></div><div class="ttdeci">@ albsfcdir_vis</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:168</div></div>
+<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976ad111c27a866156bbe702c55610a16578"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ad111c27a866156bbe702c55610a16578">NoahmpOutputComp::albsfcdif_nir</a></div><div class="ttdeci">@ albsfcdif_nir</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:171</div></div>
+<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976ae4b5c9d4068fd918c912ae1082d38a26"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976ae4b5c9d4068fd918c912ae1082d38a26">NoahmpOutputComp::albsfcdif_vis</a></div><div class="ttdeci">@ albsfcdif_vis</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:170</div></div>
+<div class="ttc" id="anamespaceNoahmpOutputComp_html_a395e1370b98419c2fdd440f50397d976af447d633e704725fd9d7c3ec54d273cb"><div class="ttname"><a href="namespaceNoahmpOutputComp.html#a395e1370b98419c2fdd440f50397d976af447d633e704725fd9d7c3ec54d273cb">NoahmpOutputComp::albsfcdir_nir</a></div><div class="ttdeci">@ albsfcdir_nir</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:169</div></div>
 </div><!-- fragment -->
 </div>
 </div>
