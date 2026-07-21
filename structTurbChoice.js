@@ -20,6 +20,13 @@ var structTurbChoice =
     [ "enable_mrf_cloud_adjustment", "structTurbChoice.html#ab75c09755fb183abc31c3c6aaa1cca65", null ],
     [ "enable_mrf_countergradient", "structTurbChoice.html#a90626998872a2b54cc506f2a94a92542", null ],
     [ "enable_mrf_unbounded_vpert", "structTurbChoice.html#a567151e6b702985677ef0f3d4da640de", null ],
+    [ "enable_ysu_cloud_pblh", "structTurbChoice.html#ab88f5a5758e6f29635b78ddfd9f6580d", null ],
+    [ "enable_ysu_countergradient", "structTurbChoice.html#a02792acac9985bc764a59f0bcc95d621", null ],
+    [ "enable_ysu_entrainment", "structTurbChoice.html#aa6ca8711acba92a1be02a20202292dfb", null ],
+    [ "enable_ysu_liquid_theta", "structTurbChoice.html#ac7b488c98619be6b14b1435b473fd7b8", null ],
+    [ "enable_ysu_sat_limiter", "structTurbChoice.html#a9194455a4c7d8604ed6011004c06a747", null ],
+    [ "enable_ysu_terrain_pblh_floor", "structTurbChoice.html#abbd28cfbb04dc6510035f0f2c0707bd0", null ],
+    [ "enable_ysu_topdown", "structTurbChoice.html#a4185035c35c4af71a2e3ae4f1239e4d5", null ],
     [ "init_tke_from_ustar", "structTurbChoice.html#a94539ff18d7c583729b42c97d791ea73", null ],
     [ "l_g_max", "structTurbChoice.html#af84d7f3d07437f121cc3784898f5be3b", null ],
     [ "les_type", "structTurbChoice.html#abbba68e0d699dd97701d31a0e37d5304", null ],
@@ -39,6 +46,7 @@ var structTurbChoice =
     [ "pbl_ysu_land_Ribcr", "structTurbChoice.html#a96c1a42307db82ece270acdac75da9a3", null ],
     [ "pbl_ysu_unst_Ribcr", "structTurbChoice.html#af274e04335b259bb7b35f7c836f8310f", null ],
     [ "pbl_ysu_use_consistent_coriolis", "structTurbChoice.html#a727a9673de0517e62e58647a5d939b07", null ],
+    [ "pbl_ysunew_highres_bounds", "structTurbChoice.html#a40327fa3c97075127595eb8a13c672f1", null ],
     [ "Pr_t", "structTurbChoice.html#ae1bec6cf14226b68f692f86daa1c5566", null ],
     [ "Pr_t_inv", "structTurbChoice.html#aa90aa6c577f632a8c4582a3538d98ad5", null ],
     [ "rans_type", "structTurbChoice.html#a52f7f04548a91715b142c88c2f214bc8", null ],
@@ -56,5 +64,7 @@ var structTurbChoice =
     [ "use_kturb", "structTurbChoice.html#ae413138f8a3097389177d3fd96ec43fe", null ],
     [ "use_pbl_tke", "structTurbChoice.html#a1c0bd3122b5d4d9ee9425d294ec3bf4b", null ],
     [ "use_Ri_correction", "structTurbChoice.html#a91229136f73ac0c17d16cdc1296c6e7a", null ],
-    [ "use_tke", "structTurbChoice.html#a9af852bc81e32814ae4da218aa946406", null ]
+    [ "use_tke", "structTurbChoice.html#a9af852bc81e32814ae4da218aa946406", null ],
+    [ "ysu_moistvars", "structTurbChoice.html#af1bfd1a2a36ba1b18608f48af10e328c", null ],
+    [ "ysu_qcloud_threshold", "structTurbChoice.html#a216b542b98ef2b7728ba918d477440ef", null ]
 ];

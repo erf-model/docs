@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"ERF__Constants_8H.html#ab24d300166813654b7d8adb31bc71938":[3,0,1,24,79],
+"ERF__Constants_8H.html#ab72d099dc3b642a653bed3a3e277c232":[3,0,1,24,19],
 "ERF__Constants_8H.html#ab9605510ecc8468f94a0ba1842a0bf13":[3,0,1,24,41],
 "ERF__Constants_8H.html#abf1e890912f1117211516f13b27ed2e8":[3,0,1,24,77],
 "ERF__Constants_8H.html#ac0e05183a58d4400f06346d18371218f":[3,0,1,24,74],
@@ -161,13 +163,13 @@ var NAVTREEINDEX1 =
 "ERF__Diffusion_8H.html#a0c240a4eeba1426a9c65edf05f77bc9f":[3,0,1,4,11,11],
 "ERF__Diffusion_8H.html#a261f5ab5cec018d4266bc1d833150fd4":[3,0,1,4,11,12],
 "ERF__Diffusion_8H.html#a282665a4e313a0622153bbf041242aee":[3,0,1,4,11,5],
+"ERF__Diffusion_8H.html#a33102b4cae90cdd0ef8a8d8055509412":[3,0,1,4,11,19],
 "ERF__Diffusion_8H.html#a3e69606ad5fcb2e46d4f46f3a487e88a":[3,0,1,4,11,16],
-"ERF__Diffusion_8H.html#a423950ee02c2001195cb4ffb3327e925":[3,0,1,4,11,20],
+"ERF__Diffusion_8H.html#a3ed5dc0afb518caea6114be2e7e71d90":[3,0,1,4,11,18],
 "ERF__Diffusion_8H.html#a5369ca8490233a9bd14e478b7327d2a6":[3,0,1,4,11,17],
 "ERF__Diffusion_8H.html#a5c66f922ff54147e8cbea3fb916ffb55":[3,0,1,4,11,0],
 "ERF__Diffusion_8H.html#a5dd0e3aa8c02b9938516d6d4427e4d72":[3,0,1,4,11,3],
 "ERF__Diffusion_8H.html#a5dfb45d9413b73a5a733a3a29ec4fae5":[3,0,1,4,11,7],
-"ERF__Diffusion_8H.html#a5eb29c948e4931ab34fe354528f0c80b":[3,0,1,4,11,19],
 "ERF__Diffusion_8H.html#a624c2a7c555762479c927d1b14103975":[3,0,1,4,11,4],
 "ERF__Diffusion_8H.html#a778ea5f45912e7134aa98f6e73fa5e0c":[3,0,1,4,11,15],
 "ERF__Diffusion_8H.html#a7b8122f6036a8160bd4cc955be5b3182":[3,0,1,4,11,8],
@@ -177,10 +179,10 @@ var NAVTREEINDEX1 =
 "ERF__Diffusion_8H.html#aa82238e32cce9f203e827f2adbbc63a9":[3,0,1,4,11,1],
 "ERF__Diffusion_8H.html#ac227af51a65e37e9c38843ab9e4ecd39":[3,0,1,4,11,10],
 "ERF__Diffusion_8H.html#ac499b1951c84b7f5d9bd01cb0463cad8":[3,0,1,4,11,13],
-"ERF__Diffusion_8H.html#ac9aa1303e426ca4c7177245ae1e3e3ae":[3,0,1,4,11,18],
 "ERF__Diffusion_8H.html#acaaf7184c510cde34b1295285156d922":[3,0,1,4,11,23],
 "ERF__Diffusion_8H.html#ae4a6f0818fd0a4e2d3ed575fe30c49b9":[3,0,1,4,11,22],
 "ERF__Diffusion_8H.html#aecc63c3705ad6dfeec18ca35c7215505":[3,0,1,4,11,9],
+"ERF__Diffusion_8H.html#afd6ba8101b56dfe9e9f5aaa7082cf851":[3,0,1,4,11,20],
 "ERF__Diffusion_8H.html#afe5ea4ee1403bb03e2541b9ecbb6a060":[3,0,1,4,11,2],
 "ERF__Diffusion_8H_source.html":[3,0,1,4,11],
 "ERF__DirectionSelector_8H.html":[3,0,1,20,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__EB_8H.html":[3,0,1,5,1],
 "ERF__EB_8H_source.html":[3,0,1,5,1],
 "ERF__EB_8cpp.html":[3,0,1,5,0],
-"ERF__EOS_8H.html":[3,0,1,20,6],
-"ERF__EOS_8H.html#a35ba6a562b53e99968fdd3e42b49d966":[3,0,1,20,6,1],
-"ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8":[3,0,1,20,6,6]
+"ERF__EOS_8H.html":[3,0,1,20,6]
 };

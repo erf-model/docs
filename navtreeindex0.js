@@ -153,6 +153,8 @@ var NAVTREEINDEX0 =
 "ERF__ComputeDiffusivityMYNN25_8cpp.html#affcac1eae4418e1180b41a501492cdaf":[3,0,1,13,3,0],
 "ERF__ComputeDiffusivityMYNNEDMF_8cpp.html":[3,0,1,13,4],
 "ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a0853d826a8a330e6967e3da5e973eed2":[3,0,1,13,4,0],
+"ERF__ComputeDiffusivityYSUNew_8cpp.html":[3,0,1,13,6],
+"ERF__ComputeDiffusivityYSUNew_8cpp.html#aab4b5410db7b9bc568af4e44e2bee1ce":[3,0,1,13,6,0],
 "ERF__ComputeDiffusivityYSU_8cpp.html":[3,0,1,13,5],
 "ERF__ComputeDiffusivityYSU_8cpp.html#a6f0b40cc12f4e48259a5daff2b51285a":[3,0,1,13,5,0],
 "ERF__ComputeDivergence_8cpp.html":[3,0,1,9,0],
@@ -179,9 +181,9 @@ var NAVTREEINDEX0 =
 "ERF__ComputeTimestep_8cpp.html":[3,0,1,18,5],
 "ERF__ComputeTurbulentViscosity_8cpp.html":[3,0,1,4,10],
 "ERF__ComputeTurbulentViscosity_8cpp.html#a071df6c8f36e2dd4b911a10f28fd1917":[3,0,1,4,10,3],
-"ERF__ComputeTurbulentViscosity_8cpp.html#a17ea433e5ac4a06634f4ececd7851fe2":[3,0,1,4,10,0],
 "ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36":[3,0,1,4,10,1],
 "ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda":[3,0,1,4,10,2],
+"ERF__ComputeTurbulentViscosity_8cpp.html#ae4b1bea9d763d8df66222941c50c84a6":[3,0,1,4,10,0],
 "ERF__ConsoleIO_8cpp.html":[3,0,1,7,1],
 "ERF__ConsoleIO_8cpp.html#a8f794ff24efbc4b60058492d1a073c78":[3,0,1,7,1,0],
 "ERF__ConsoleIO_8cpp.html#a9d270ec83f99e836cca454cac4e0af5e":[3,0,1,7,1,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#aaa2fd2941341ea7699a9acfb434b2ee1":[3,0,1,24,53],
 "ERF__Constants_8H.html#aad2af24f052a56f100de3d2196e5bcf8":[3,0,1,24,45],
 "ERF__Constants_8H.html#aae71ea8828e8a55eec132d24564842d7":[3,0,1,24,75],
-"ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7":[3,0,1,24,36],
-"ERF__Constants_8H.html#ab24d300166813654b7d8adb31bc71938":[3,0,1,24,79],
-"ERF__Constants_8H.html#ab72d099dc3b642a653bed3a3e277c232":[3,0,1,24,19]
+"ERF__Constants_8H.html#ab24194b3b11ee04368e1087acda6bde7":[3,0,1,24,36]
 };

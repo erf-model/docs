@@ -6,5 +6,6 @@ var ERF__MoistUtils_8H =
     [ "ComputeVirtualPotentialTemperature", "ERF__MoistUtils_8H.html#a7aeb5dcc6b510a14357233c04b16a8c1", null ],
     [ "GetMoistureVars", "ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19", null ],
     [ "GetThetal", "ERF__MoistUtils_8H.html#aac240ae9b9b33e8d8e61174bcbfd61f0", null ],
-    [ "GetThetav", "ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d", null ]
+    [ "GetThetav", "ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d", null ],
+    [ "GetThetavl", "ERF__MoistUtils_8H.html#a63302205e5dbb645117a410534095def", null ]
 ];

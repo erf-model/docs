@@ -13,7 +13,7 @@ var classSAM =
     [ "Get_Surface_Precip_Accumulation_Ptrs", "classSAM.html#a2e58f9a66f1d7fef179a40cc366ab974", null ],
     [ "IceFall", "classSAM.html#a363b3bb27b6e6cdad8693363b3262419", null ],
     [ "Init", "classSAM.html#a927f4531f9c2452e5b7fc7ab965c5b78", null ],
-    [ "NewtonIterSat", "classSAM.html#ad5815a7090e447ca821df2b09b1ea0f7", null ],
+    [ "NewtonIterSat", "classSAM.html#a6a026e55301974c43aaf48ebb424b9f4", null ],
     [ "Precip", "classSAM.html#a05218bdc2187b79e456ade5b6f5bdb3c", null ],
     [ "PrecipFall", "classSAM.html#ae870dc821f7cd01ffc3bfd7925b1d18b", null ],
     [ "Qmoist_Ptr", "classSAM.html#a6a9085eeef1cea2e61308cc556c6d104", null ],

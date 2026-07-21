@@ -727,7 +727,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;        <span class="keyword">const</span> Box&amp; gbx      = mfi.growntilebox(1);</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <span class="keyword">auto</span>  SMark_array = mf_SMark.array(mfi);</div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr = z_phys_cc-&gt;const_array(mfi)</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr = z_phys_cc-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160; </div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, i_lo), i_hi);</div>
@@ -854,8 +854,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keywordtype">int</span> j_lo = geom.Domain().smallEnd(1); <span class="keywordtype">int</span> j_hi = geom.Domain().bigEnd(1);</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordtype">int</span> k_lo = geom.Domain().smallEnd(2); <span class="keywordtype">int</span> k_hi = geom.Domain().bigEnd(2);</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160; </div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom.CellSizeArray();</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="comment">//auto dx = geom.CellSizeArray();</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">//auto ProbLoArr = geom.ProbLoArray();</span></div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160; </div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;     <span class="comment">// Initialize wind farm</span></div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(mf_SMark,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
