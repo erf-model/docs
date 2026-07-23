@@ -11,5 +11,6 @@ var dir_ae0b7467bb3c74d292c83ac9fdeb56bf =
     [ "ERF_PBLHeight.H", "ERF__PBLHeight_8H.html", [
       [ "MYNNPBLH", "structMYNNPBLH.html", "structMYNNPBLH" ]
     ] ],
-    [ "ERF_PBLModels.H", "ERF__PBLModels_8H.html", "ERF__PBLModels_8H" ]
+    [ "ERF_PBLModels.H", "ERF__PBLModels_8H.html", "ERF__PBLModels_8H" ],
+    [ "ERF_PBLScaleAwareBlending.H", "ERF__PBLScaleAwareBlending_8H.html", "ERF__PBLScaleAwareBlending_8H" ]
 ];

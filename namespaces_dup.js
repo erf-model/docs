@@ -54,6 +54,7 @@ var namespaces_dup =
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
+    [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],
     [ "erf_provenance", "namespaceerf__provenance.html", "namespaceerf__provenance" ],
     [ "ERFBCType", "namespaceERFBCType.html", [
       [ "mathematicalBndryTypes", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c", [

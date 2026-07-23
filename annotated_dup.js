@@ -6,6 +6,11 @@ var annotated_dup =
       [ "InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", "structerf__noahmp_1_1InvariantPrecipCell" ],
       [ "NoahmpBlockViews", "structerf__noahmp_1_1NoahmpBlockViews.html", "structerf__noahmp_1_1NoahmpBlockViews" ]
     ] ],
+    [ "erf_plotfile", "namespaceerf__plotfile.html", [
+      [ "Plot3DMoistureCapabilities", "structerf__plotfile_1_1Plot3DMoistureCapabilities.html", "structerf__plotfile_1_1Plot3DMoistureCapabilities" ],
+      [ "Plot3DSelectionCapabilities", "structerf__plotfile_1_1Plot3DSelectionCapabilities.html", "structerf__plotfile_1_1Plot3DSelectionCapabilities" ],
+      [ "Plot3DQRange", "structerf__plotfile_1_1Plot3DQRange.html", "structerf__plotfile_1_1Plot3DQRange" ]
+    ] ],
     [ "erf_provenance", "namespaceerf__provenance.html", [
       [ "ExecutionProvenance", "structerf__provenance_1_1ExecutionProvenance.html", "structerf__provenance_1_1ExecutionProvenance" ],
       [ "ArtifactProvenance", "structerf__provenance_1_1ArtifactProvenance.html", "structerf__provenance_1_1ArtifactProvenance" ],
