@@ -103,6 +103,10 @@ var hierarchy =
       [ "WindFarm", "classWindFarm.html", null ]
     ] ],
     [ "eb_cut_cell_::path_data", "structeb__cut__cell___1_1path__data.html", null ],
+    [ "PBLDerivativeDzInv", "structPBLDerivativeDzInv.html", null ],
+    [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", null ],
+    [ "PBLDerivativeDzInv_S", "structPBLDerivativeDzInv__S.html", null ],
+    [ "PBLDerivativeDzInv_T", "structPBLDerivativeDzInv__T.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "PlaneSampler", "structPlaneSampler.html", null ],
     [ "plotfile2d::Plotfile2DOutputDescriptor", "structplotfile2d_1_1Plotfile2DOutputDescriptor.html", null ],
