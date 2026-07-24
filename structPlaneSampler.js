@@ -6,8 +6,8 @@ var structPlaneSampler =
     [ "write_sample_data", "structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb", null ],
     [ "m_bnd_rbx", "structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24", null ],
     [ "m_dir", "structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6", null ],
-    [ "m_lev", "structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4", null ],
+    [ "m_max_level", "structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477", null ],
     [ "m_name", "structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc", null ],
-    [ "m_ps_mf", "structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7", null ],
+    [ "m_ps_mf", "structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c", null ],
     [ "m_varnames", "structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7", null ]
 ];

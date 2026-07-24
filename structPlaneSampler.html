@@ -97,11 +97,12 @@ Collaboration diagram for PlaneSampler:</div>
 <div class="dyncontent">
 <div class="center"><img src="structPlaneSampler__coll__graph.png" border="0" usemap="#aPlaneSampler_coll__map" alt="Collaboration graph"/></div>
 <map name="aPlaneSampler_coll__map" id="aPlaneSampler_coll__map">
-<area shape="rect" title=" " alt="" coords="336,87,448,113"/>
+<area shape="rect" title=" " alt="" coords="344,136,456,163"/>
 <area shape="rect" title=" " alt="" coords="25,5,183,32"/>
-<area shape="rect" title=" " alt="" coords="5,56,203,83"/>
-<area shape="rect" title=" " alt="" coords="49,116,159,143"/>
-<area shape="rect" title=" " alt="" coords="5,167,203,209"/>
+<area shape="rect" title=" " alt="" coords="9,56,199,112"/>
+<area shape="rect" title=" " alt="" coords="5,136,203,163"/>
+<area shape="rect" title=" " alt="" coords="85,187,123,213"/>
+<area shape="rect" title=" " alt="" coords="49,237,159,264"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -118,14 +119,14 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a49f23621afee936443caa77e2cd0d477"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> = -1</td></tr>
+<tr class="separator:a49f23621afee936443caa77e2cd0d477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a166b20f0a2cc42f436e82f327b974cb6"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a></td></tr>
 <tr class="separator:a166b20f0a2cc42f436e82f327b974cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31b77c80e1831ceb775ed63819016fd4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4">m_lev</a></td></tr>
-<tr class="separator:a31b77c80e1831ceb775ed63819016fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85e5bf3ef37f89b54d88bba6e2334a24"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::RealBox &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a></td></tr>
 <tr class="separator:a85e5bf3ef37f89b54d88bba6e2334a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a697a9d0158c0c14f796a7a016759d2f7"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">m_ps_mf</a></td></tr>
-<tr class="separator:a697a9d0158c0c14f796a7a016759d2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817771a435a9c0f798dd4455aa83ef5c"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a></td></tr>
+<tr class="separator:a817771a435a9c0f798dd4455aa83ef5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a609fd49ffe44b73cc1f8aa13eb48ccdc"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">m_name</a></td></tr>
 <tr class="separator:a609fd49ffe44b73cc1f8aa13eb48ccdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba5c1bc221aa7f01fa2c38c659aba9f7"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a> {&quot;magvel&quot;,&quot;theta&quot;}</td></tr>
@@ -212,11 +213,11 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                }</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;            }</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            <span class="comment">// Allocate space for level indicator</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            <a class="code" href="structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4">m_lev</a>.resize(n_plane_dir,0);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            <span class="comment">// Optional cap on the finest level written (-1 =&gt; all intersecting levels)</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;plane_sampling_max_level&quot;</span>, <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a>);</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <span class="comment">// Allocate space for MF pointers</span></div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            <a class="code" href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">m_ps_mf</a>.resize(n_plane_lo);</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <span class="comment">// Allocate per-plane vectors of per-level MF pointers</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;            <a class="code" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a>.resize(n_plane_lo);</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;            <span class="comment">// Get requested vars</span></div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;plane_sampling_vars&quot;</span>) &gt; 0) {</div>
@@ -267,12 +268,12 @@ Public Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Container_8H_html_a1f8554e7b211b0acfc202e8a600e7d67"><div class="ttname"><a href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a></div><div class="ttdeci">bool containerHasElement(const V &amp;iterable, const T &amp;query)</div><div class="ttdef"><b>Definition:</b> ERF_Container.H:5</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="astructPlaneSampler_html_a166b20f0a2cc42f436e82f327b974cb6"><div class="ttname"><a href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">PlaneSampler::m_dir</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_dir</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:924</div></div>
-<div class="ttc" id="astructPlaneSampler_html_a31b77c80e1831ceb775ed63819016fd4"><div class="ttname"><a href="structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4">PlaneSampler::m_lev</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_lev</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:925</div></div>
-<div class="ttc" id="astructPlaneSampler_html_a609fd49ffe44b73cc1f8aa13eb48ccdc"><div class="ttname"><a href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">PlaneSampler::m_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_name</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:928</div></div>
-<div class="ttc" id="astructPlaneSampler_html_a697a9d0158c0c14f796a7a016759d2f7"><div class="ttname"><a href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">PlaneSampler::m_ps_mf</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_ps_mf</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:927</div></div>
-<div class="ttc" id="astructPlaneSampler_html_a85e5bf3ef37f89b54d88bba6e2334a24"><div class="ttname"><a href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">PlaneSampler::m_bnd_rbx</a></div><div class="ttdeci">amrex::Vector&lt; amrex::RealBox &gt; m_bnd_rbx</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:926</div></div>
-<div class="ttc" id="astructPlaneSampler_html_aba5c1bc221aa7f01fa2c38c659aba9f7"><div class="ttname"><a href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">PlaneSampler::m_varnames</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_varnames</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:930</div></div>
+<div class="ttc" id="astructPlaneSampler_html_a166b20f0a2cc42f436e82f327b974cb6"><div class="ttname"><a href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">PlaneSampler::m_dir</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_dir</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:996</div></div>
+<div class="ttc" id="astructPlaneSampler_html_a49f23621afee936443caa77e2cd0d477"><div class="ttname"><a href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">PlaneSampler::m_max_level</a></div><div class="ttdeci">int m_max_level</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:995</div></div>
+<div class="ttc" id="astructPlaneSampler_html_a609fd49ffe44b73cc1f8aa13eb48ccdc"><div class="ttname"><a href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">PlaneSampler::m_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_name</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:999</div></div>
+<div class="ttc" id="astructPlaneSampler_html_a817771a435a9c0f798dd4455aa83ef5c"><div class="ttname"><a href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">PlaneSampler::m_ps_mf</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; &gt; m_ps_mf</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:998</div></div>
+<div class="ttc" id="astructPlaneSampler_html_a85e5bf3ef37f89b54d88bba6e2334a24"><div class="ttname"><a href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">PlaneSampler::m_bnd_rbx</a></div><div class="ttdeci">amrex::Vector&lt; amrex::RealBox &gt; m_bnd_rbx</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:997</div></div>
+<div class="ttc" id="astructPlaneSampler_html_aba5c1bc221aa7f01fa2c38c659aba9f7"><div class="ttname"><a href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">PlaneSampler::m_varnames</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_varnames</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:1001</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -336,167 +337,212 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;            amrex::RealBox bnd_rbx  = <a class="code" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a>[iplane];</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> point = bnd_rbx.lo(dir);</div>
 <div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;            <span class="comment">// Search each level to get the finest data possible</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev(nlev-1); ilev&gt;=0; --ilev) {</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                <span class="comment">// Construct CC velocities</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                amrex::MultiFab mf_cc_vel;</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                <span class="keyword">auto</span> ba = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].boxArray();</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                <span class="keyword">auto</span> dm = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].DistributionMap();</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                mf_cc_vel.define(ba, dm, AMREX_SPACEDIM, amrex::IntVect(1,1,1));</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                average_face_to_cellcenter(mf_cc_vel,0,</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                                           amrex::Array&lt;const amrex::MultiFab*,3&gt;{&amp;vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                                                                                  &amp;vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                                                                                  &amp;vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>]});</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160; </div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                <span class="comment">// Construct MultiFab holding requested variables</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                amrex::MultiFab mf_cc_data;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                mf_cc_data.define(ba, dm, ncomp, 1);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                <span class="keywordtype">int</span> mf_comp = 0;</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;density&quot;</span>)) {</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, mf_comp, 1, 0);</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                }</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;x_velocity&quot;</span>)) {</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, mf_cc_vel, 0, mf_comp, 1, 0);</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                }</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;y_velocity&quot;</span>)) {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, mf_cc_vel, 1, mf_comp, 1, 0);</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                }</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;z_velocity&quot;</span>)) {</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, mf_cc_vel, 2, mf_comp, 1, 0);</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                }</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;magvel&quot;</span>)) {</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; vfab = mf_cc_vel.array(mfi);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                        {</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                            dfab(i,j,k,mf_comp) = std::sqrt(vfab(i,j,k,0)*vfab(i,j,k,0)</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                                                           + vfab(i,j,k,1)*vfab(i,j,k,1)</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                                                           + vfab(i,j,k,2)*vfab(i,j,k,2));</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                        });</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                    }</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                }</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160; </div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;theta&quot;</span>)) {</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                        {</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                            dfab(i,j,k,mf_comp) = cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                        });</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                    }</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                }</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160; </div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;qv&quot;</span>)) {</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>,</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                        <span class="stringliteral">&quot;qv sampling requested but moisture components not present in state&quot;</span>);</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                    <span class="keywordflow">if</span> (qv_comp &gt;= 0) <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(qv_comp == mf_comp);</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                    qv_comp = mf_comp;</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                        {</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                            dfab(i,j,k,mf_comp) = cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                        });</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                    }</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                }</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;qc&quot;</span>)) {</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>,</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                        <span class="stringliteral">&quot;qc sampling requested but moisture components not present in state&quot;</span>);</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                        {</div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                            dfab(i,j,k,mf_comp) = cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                        });</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                    }</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                }</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160; </div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;pressure&quot;</span>)) {</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                    <span class="keywordflow">if</span> (vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) {</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                        <span class="comment">// moist pressure: use qv from dfab if already sampled, else compute inline</span></div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                        <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                            <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160; </div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                            {</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_val = (qv_comp &gt;= 0) ? dfab(i,j,k,qv_comp)</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                                                                     : cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                                dfab(i,j,k,mf_comp) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_val);</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                            });</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                        }</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                        <span class="comment">// dry pressure</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                        <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                            <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160; </div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                            {</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                                dfab(i,j,k,mf_comp) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                            });</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;                        }</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;                    }</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;                    mf_comp += 1;</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                }</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160; </div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                  <a class="code" href="structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4">m_lev</a>[iplane] = ilev;</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                <a class="code" href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">m_ps_mf</a>[iplane] = get_slice_data(dir, point, mf_cc_data, geom[ilev],</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;                                                 0, ncomp, interpolate, bnd_rbx);</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                <span class="comment">// We can stop if we got the entire plane</span></div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                <span class="keyword">auto</span> min_bnd_bx   = <a class="code" href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">m_ps_mf</a>[iplane]-&gt;boxArray().minimalBox();</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                amrex::Box bnd_bx = <a class="code" href="structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d">getIndexBox</a>(bnd_rbx, geom[ilev]);</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                <span class="keywordflow">if</span> (bnd_bx == min_bnd_bx) { <span class="keywordflow">break</span>; }</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;            } <span class="comment">// ilev</span></div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;        }<span class="comment">// iplane</span></div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    }</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;            <span class="comment">// Collect every level 0..lev_cap whose grids intersect the plane.</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;            <span class="keywordtype">int</span> lev_cap = (<a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> &gt;= 0 &amp;&amp; <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> &lt; nlev-1) ? <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a> : nlev-1;</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;            <a class="code" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a>[iplane].clear();</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160; </div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ilev(0); ilev&lt;=lev_cap; ++ilev) {</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160; </div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                <span class="comment">// Stop ascending once a level&#39;s grids no longer touch the flattened plane</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                {</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;                    amrex::Box plane_bx = <a class="code" href="structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d">getIndexBox</a>(bnd_rbx, geom[ilev]);</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                    <span class="keywordtype">int</span> k_l = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor((point - geom[ilev].ProbLo(dir))</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;                                                          / geom[ilev].CellSize(dir)));</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                    plane_bx.setSmall(dir, k_l); plane_bx.setBig(dir, k_l);</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                    <span class="keywordflow">if</span> (!vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].boxArray().intersects(plane_bx)) { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                }</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160; </div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                <span class="comment">// Construct CC velocities</span></div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                amrex::MultiFab mf_cc_vel;</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                <span class="keyword">auto</span> ba = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].boxArray();</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                <span class="keyword">auto</span> dm = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].DistributionMap();</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                mf_cc_vel.define(ba, dm, AMREX_SPACEDIM, amrex::IntVect(1,1,1));</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                average_face_to_cellcenter(mf_cc_vel,0,</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                                           amrex::Array&lt;const amrex::MultiFab*,3&gt;{&amp;vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a>],</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                                                                                  &amp;vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a>],</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                                                                                  &amp;vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a>]});</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                <span class="comment">// Construct MultiFab holding requested variables</span></div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                amrex::MultiFab mf_cc_data;</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                mf_cc_data.define(ba, dm, ncomp, 1);</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                <span class="keywordtype">int</span> mf_comp = 0;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;density&quot;</span>)) {</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>], <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, mf_comp, 1, 0);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                }</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;x_velocity&quot;</span>)) {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, mf_cc_vel, 0, mf_comp, 1, 0);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                }</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;y_velocity&quot;</span>)) {</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, mf_cc_vel, 1, mf_comp, 1, 0);</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                }</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;z_velocity&quot;</span>)) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                    amrex::MultiFab::Copy(mf_cc_data, mf_cc_vel, 2, mf_comp, 1, 0);</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                }</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;magvel&quot;</span>)) {</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; vfab = mf_cc_vel.array(mfi);</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                        {</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                            dfab(i,j,k,mf_comp) = std::sqrt(vfab(i,j,k,0)*vfab(i,j,k,0)</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                                                           + vfab(i,j,k,1)*vfab(i,j,k,1)</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                                                           + vfab(i,j,k,2)*vfab(i,j,k,2));</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                        });</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                    }</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                }</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;theta&quot;</span>)) {</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                        {</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                            dfab(i,j,k,mf_comp) = cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                        });</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                    }</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                }</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;qv&quot;</span>)) {</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>,</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                        <span class="stringliteral">&quot;qv sampling requested but moisture components not present in state&quot;</span>);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                    <span class="keywordflow">if</span> (qv_comp &gt;= 0) <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(qv_comp == mf_comp);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                    qv_comp = mf_comp;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160; </div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                        {</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                            dfab(i,j,k,mf_comp) = cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                        });</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                    }</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                }</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;qc&quot;</span>)) {</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>,</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                        <span class="stringliteral">&quot;qc sampling requested but moisture components not present in state&quot;</span>);</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                    <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                        <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                        <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;                        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;                        {</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;                            dfab(i,j,k,mf_comp) = cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                        });</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                    }</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                }</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160; </div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(<a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, <span class="stringliteral">&quot;pressure&quot;</span>)) {</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                    <span class="keywordflow">if</span> (vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].nComp() &gt; <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) {</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                        <span class="comment">// moist pressure: use qv from dfab if already sampled, else compute inline</span></div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                        <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                            <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160; </div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;                            {</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;                                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qv_val = (qv_comp &gt;= 0) ? dfab(i,j,k,qv_comp)</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;                                                                     : cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;                                dfab(i,j,k,mf_comp) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>), qv_val);</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;                            });</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;                        }</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;                        <span class="comment">// dry pressure</span></div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;                        <span class="keywordflow">for</span> (amrex::MFIter mfi(mf_cc_data, amrex::TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;                            <span class="keyword">const</span> amrex::Box&amp; tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; dfab = mf_cc_data.array(mfi);</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                            <span class="keyword">auto</span> <span class="keyword">const</span>&amp; cfab = vars_new[ilev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>].array(mfi);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160; </div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                            {</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                                dfab(i,j,k,mf_comp) = <a class="code" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a>(cfab(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>));</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                            });</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;                        }</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                    }</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                    mf_comp += 1;</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                }</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160; </div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                <span class="keyword">auto</span> slice = get_slice_data(dir, point, mf_cc_data, geom[ilev],</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                                            0, ncomp, interpolate, bnd_rbx);</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160; </div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                <span class="comment">// Defensive: an empty return means nothing was actually sampled.</span></div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;                <span class="keywordflow">if</span> (!slice || slice-&gt;boxArray().size() == 0) { <span class="keywordflow">break</span>; }</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;                <span class="comment">// Broadcast the single sampled plane across 2^ilev cells in dir so</span></div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;                <span class="comment">// every level shares an isotropic refinement ratio. The dir extent</span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;                <span class="comment">// becomes [0, 2^ilev-1]; each cell holds the interpolated plane value</span></div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;                <span class="comment">// replicated across the shared level-0 slab thickness.</span></div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> rr_l    = 1 &lt;&lt; ilev;</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> k_slice = slice-&gt;boxArray().minimalBox().smallEnd(dir);</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> l_dir   = dir;</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;                amrex::BoxList bl;</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                <span class="keyword">const</span> amrex::BoxArray&amp; slice_ba = slice-&gt;boxArray();</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ib(0); ib&lt;static_cast&lt;int&gt;(slice_ba.size()); ++ib) {</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;                    amrex::Box b = slice_ba[ib];</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;                    b.setSmall(dir, 0);</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                    b.setBig(dir, rr_l - 1);</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                    bl.push_back(b);</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;                }</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;                amrex::BoxArray out_ba(std::move(bl));</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                <span class="keyword">auto</span> out_mf = std::make_unique&lt;amrex::MultiFab&gt;(out_ba, slice-&gt;DistributionMap(),</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;                                                                ncomp, 0);</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160; </div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                <span class="keywordflow">for</span> (amrex::MFIter mfi(*out_mf); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;                    <span class="keyword">const</span> amrex::Box&amp; obx = mfi.validbox();</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; ofab = out_mf-&gt;array(mfi);</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                    <span class="keyword">auto</span> <span class="keyword">const</span>&amp; sfab = slice-&gt;array(mfi);</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(obx, ncomp, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;                    {</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;                        <span class="keywordtype">int</span> si = i, sj = j, sk = k;</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;                        <span class="keywordflow">if</span>      (l_dir == 0) { si = k_slice; }</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;                        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (l_dir == 1) { sj = k_slice; }</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;                        <span class="keywordflow">else</span>                 { sk = k_slice; }</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;                        ofab(i,j,k,n) = sfab(si,sj,sk,n);</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;                    });</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;                }</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160; </div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;                <a class="code" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a>[iplane].push_back(std::move(out_mf));</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160; </div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;            } <span class="comment">// ilev</span></div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        }<span class="comment">// iplane</span></div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    }</div>
 <div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
@@ -632,45 +678,71 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    {</div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        <span class="keywordtype">int</span> nplane = <a class="code" href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">m_ps_mf</a>.size();</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iplane(0); iplane&lt;nplane; ++iplane) {</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;            <span class="comment">// Data members that can be used as-is</span></div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>[iplane];</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            <span class="keywordtype">int</span> lev = <a class="code" href="structPlaneSampler.html#a31b77c80e1831ceb775ed63819016fd4">m_lev</a>[iplane];</div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            <span class="keywordtype">double</span> m_time = time[lev];</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;            amrex::Vector&lt;int&gt; m_level_steps = {level_steps[lev]};</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;            amrex::Vector&lt;amrex::IntVect&gt; m_ref_ratio  = {ref_ratio[lev]};</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;            <span class="comment">// Create modified geometry object corresponding to the plane</span></div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;            amrex::RealBox m_rb = <a class="code" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a>[iplane];</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;            amrex::Box m_dom    = <a class="code" href="structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d">getIndexBox</a>(m_rb, geom[lev]);</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> point   = m_rb.hi(dir);</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;            amrex::Vector&lt;int&gt; is_per(AMREX_SPACEDIM,0);</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d(0); d&lt;AMREX_SPACEDIM; ++d) {</div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;                <span class="keywordflow">if</span> (d==dir) {</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;                    m_rb.setLo(d,point-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*geom[lev].CellSize(d));</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;                    m_rb.setHi(d,point+<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*geom[lev].CellSize(d));</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;                }</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                is_per[d] = geom[lev].isPeriodic(d);</div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;            }</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;            amrex::Vector&lt;amrex::Geometry&gt; m_geom; m_geom.resize(1);</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;            m_geom[0].define(m_dom, &amp;m_rb, geom[lev].<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a>(), is_per.data());</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160; </div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <span class="comment">// Create plotfile name</span></div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;            std::string name_plane = <a class="code" href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">m_name</a>[iplane];</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;            name_plane += <span class="stringliteral">&quot;_step_&quot;</span>;</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            std::string plotfilename = amrex::Concatenate(name_plane, m_level_steps[0], 5);</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            <span class="comment">// Get the data</span></div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            amrex::Vector&lt;const amrex::MultiFab*&gt; mf = {<a class="code" href="structPlaneSampler.html#a697a9d0158c0c14f796a7a016759d2f7">m_ps_mf</a>[iplane].get()};</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160; </div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;            <span class="comment">// Write each plane</span></div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            WriteMultiLevelPlotfile(plotfilename, 1, mf,</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;                                    <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, m_geom, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(m_time),</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;                                    m_level_steps, m_ref_ratio);</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;        } <span class="comment">// iplane</span></div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;    {</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;        amrex::ignore_unused(ref_ratio);</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;        <span class="keywordtype">int</span> nplane = <a class="code" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a>.size();</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iplane(0); iplane&lt;nplane; ++iplane) {</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;            <span class="keywordtype">int</span> nlev_c = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a>[iplane].size());</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            <span class="keywordflow">if</span> (nlev_c == 0) { <span class="keywordflow">continue</span>; }</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160; </div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;            <span class="keywordtype">int</span> dir = <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>[iplane];</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;            amrex::RealBox bnd_rbx = <a class="code" href="structPlaneSampler.html#a85e5bf3ef37f89b54d88bba6e2334a24">m_bnd_rbx</a>[iplane];</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> point = bnd_rbx.lo(dir);</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160; </div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;            <span class="comment">// One shared physical RealBox for every level: full in-plane extent of the</span></div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;            <span class="comment">// requested plane, and a dir-slab of level-0 thickness centered on the plane.</span></div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;            <span class="comment">// Level 0 supplies prob_lo/hi to the writer, so this object must be shared.</span></div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dx0 = geom[0].CellSize(dir);</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;            amrex::RealBox shared_rbx = bnd_rbx;</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;            shared_rbx.setLo(dir, point - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;            shared_rbx.setHi(dir, point + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160; </div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;            amrex::Vector&lt;int&gt; is_per(AMREX_SPACEDIM,0);</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d(0); d&lt;AMREX_SPACEDIM; ++d) { is_per[d] = geom[0].isPeriodic(d); }</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160; </div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;            <span class="comment">// Build the index chain by refining the level-0 plane box so that</span></div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;            <span class="comment">// Domain_l == refine(Domain_{l-1},2) holds exactly in every axis.</span></div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;            amrex::Box B0 = <a class="code" href="structPlaneSampler.html#a1f71b67544dbc9c4cba7d11bc5e5b45d">getIndexBox</a>(bnd_rbx, geom[0]);</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160; </div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;            amrex::Vector&lt;const amrex::MultiFab*&gt; mf(nlev_c);</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;            amrex::Vector&lt;amrex::Geometry&gt;        m_geom(nlev_c);</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;            amrex::Vector&lt;int&gt;                    m_level_steps(nlev_c);</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;            amrex::Vector&lt;amrex::IntVect&gt;         m_ref_ratio(nlev_c-1, amrex::IntVect(2));</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160; </div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l(0); l&lt;nlev_c; ++l) {</div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> rr_l = 1 &lt;&lt; l;</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160; </div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                <span class="comment">// The nested plane plotfile stores a single scalar refinement</span></div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;                <span class="comment">// ratio per level, so multi-level output requires factor-2</span></div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;                <span class="comment">// isotropic refinement.</span></div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d(0); d&lt;AMREX_SPACEDIM; ++d) {</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ratio = geom[0].CellSize(d) / geom[l].CellSize(d);</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;                        std::abs(ratio - <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(rr_l)) &lt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.e-6) * rr_l,</div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;                        <span class="stringliteral">&quot;PlaneSampler multi-level output requires factor-2 isotropic refinement (amr.ref_ratio = 2 2 2)&quot;</span>);</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;                }</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160; </div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;                amrex::Box domain_l = amrex::refine(B0, rr_l);</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                domain_l.setSmall(dir, 0);</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;                domain_l.setBig(dir, rr_l - 1);</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160; </div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;                mf[l] = <a class="code" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a>[iplane][l].get();</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;                m_geom[l].define(domain_l, &amp;shared_rbx, geom[l].<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a>(), is_per.data());</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;                m_level_steps[l] = level_steps[l];</div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;                AMREX_ASSERT(domain_l.contains(mf[l]-&gt;boxArray().minimalBox()));</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            }</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160; </div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;            <span class="comment">// Create plotfile name</span></div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;            std::string name_plane = <a class="code" href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">m_name</a>[iplane];</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;            name_plane += <span class="stringliteral">&quot;_step_&quot;</span>;</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;            std::string plotfilename = amrex::Concatenate(name_plane, m_level_steps[0], 5);</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160; </div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;            <span class="comment">// Write the nested multi-level plane plotfile</span></div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;            WriteMultiLevelPlotfile(plotfilename, nlev_c, mf,</div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;                                    <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>, m_geom, <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(time[0]),</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;                                    m_level_steps, m_ref_ratio);</div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;        } <span class="comment">// iplane</span></div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a></div><div class="ttdeci">Coord</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:92</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -718,19 +790,19 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a31b77c80e1831ceb775ed63819016fd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31b77c80e1831ceb775ed63819016fd4">&#9670;&nbsp;</a></span>m_lev</h2>
+<a id="a49f23621afee936443caa77e2cd0d477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f23621afee936443caa77e2cd0d477">&#9670;&nbsp;</a></span>m_max_level</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;int&gt; PlaneSampler::m_lev</td>
+          <td class="memname">int PlaneSampler::m_max_level = -1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>, and <a class="el" href="structPlaneSampler.html#a47d485269a664d190e81d64babf0bbfb">write_sample_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76">get_sample_data()</a>, and <a class="el" href="structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca">PlaneSampler()</a>.</p>
 
 </div>
 </div>
@@ -750,14 +822,14 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a697a9d0158c0c14f796a7a016759d2f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a697a9d0158c0c14f796a7a016759d2f7">&#9670;&nbsp;</a></span>m_ps_mf</h2>
+<a id="a817771a435a9c0f798dd4455aa83ef5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a817771a435a9c0f798dd4455aa83ef5c">&#9670;&nbsp;</a></span>m_ps_mf</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt; &gt; PlaneSampler::m_ps_mf</td>
+          <td class="memname">amrex::Vector&lt;amrex::Vector&lt;std::unique_ptr&lt;amrex::MultiFab&gt; &gt; &gt; PlaneSampler::m_ps_mf</td>
         </tr>
       </table>
 </div><div class="memdoc">
