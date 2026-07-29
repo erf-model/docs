@@ -129,17 +129,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ada9b6f4c741ff79907329ced61d0508d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#ada9b6f4c741ff79907329ced61d0508d">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, amrex::EBFArrayBoxFactory const &amp;ebfact, amrex::BCRec const *bc, double dt)</td></tr>
-<tr class="separator:ada9b6f4c741ff79907329ced61d0508d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfd34e7f9cf53e872c065f0d43d83334"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#abfd34e7f9cf53e872c065f0d43d83334">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, <a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;ebfact, amrex::BCRec const *bc, double dt, int const igrid)</td></tr>
-<tr class="separator:abfd34e7f9cf53e872c065f0d43d83334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6cdd0bd3eb10a5d89fe53b2c590666"><td class="memTemplParams" colspan="2">template&lt;typename EBFactType &gt; </td></tr>
+<tr class="memitem:a0c6cdd0bd3eb10a5d89fe53b2c590666"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#a0c6cdd0bd3eb10a5d89fe53b2c590666">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, EBFactType const &amp;ebfact, amrex::BCRec const *bc, double dt, int const igrid=-1)</td></tr>
+<tr class="separator:a0c6cdd0bd3eb10a5d89fe53b2c590666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ada9b6f4c741ff79907329ced61d0508d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada9b6f4c741ff79907329ced61d0508d">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[1/2]</span></h2>
+<a id="a0c6cdd0bd3eb10a5d89fe53b2c590666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6cdd0bd3eb10a5d89fe53b2c590666">&#9670;&nbsp;</a></span>redistribute_term()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename EBFactType &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void redistribute_term </td>
@@ -174,71 +175,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">amrex::EBFArrayBoxFactory const &amp;&#160;</td>
-          <td class="paramname"><em>ebfact</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::BCRec const *&#160;</td>
-          <td class="paramname"><em>bc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>dt</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abfd34e7f9cf53e872c065f0d43d83334"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfd34e7f9cf53e872c065f0d43d83334">&#9670;&nbsp;</a></span>redistribute_term() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void redistribute_term </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ncomp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>result</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>result_tmp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">amrex::MultiFab const &amp;&#160;</td>
-          <td class="paramname"><em>state</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classeb__aux__.html">eb_aux_</a> const &amp;&#160;</td>
+          <td class="paramtype">EBFactType const &amp;&#160;</td>
           <td class="paramname"><em>ebfact</em>, </td>
         </tr>
         <tr>
@@ -257,7 +194,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int const&#160;</td>
-          <td class="paramname"><em>igrid</em>&#160;</td>
+          <td class="paramname"><em>igrid</em> = <code>-1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

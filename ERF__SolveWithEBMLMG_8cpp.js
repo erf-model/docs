@@ -1,5 +1,7 @@
 var ERF__SolveWithEBMLMG_8cpp =
 [
-    [ "FillZeroAreaFaceFluxes", "ERF__SolveWithEBMLMG_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861", null ],
-    [ "solve_with_EB_mlmg", "ERF__SolveWithEBMLMG_8cpp.html#a0573c811b5f308cb96e49b60fd505dd3", null ]
+    [ "FillZeroAreaFaceFluxes", "ERF__SolveWithEBMLMG_8cpp.html#a107da7bd2e6038750f7763c95925ec7d", null ],
+    [ "solve_with_EB_mlmg", "ERF__SolveWithEBMLMG_8cpp.html#a408b85b0e876adc4ba51d2784213233e", null ],
+    [ "solve_with_EB_mlmg", "ERF__SolveWithEBMLMG_8cpp.html#a6ceb251d16e610bb16a4c63cf6467b86", null ],
+    [ "solve_with_EB_mlmg", "ERF__SolveWithEBMLMG_8cpp.html#a53f3bd5d9d9a46a802aa62f47ceb2119", null ]
 ];

@@ -1,9 +1,7 @@
 var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
 [
     [ "ERF_EB.cpp", "ERF__EB_8cpp.html", null ],
-    [ "ERF_EB.H", "ERF__EB_8H.html", [
-      [ "eb_", "classeb__.html", "classeb__" ]
-    ] ],
+    [ "ERF_EB.H", "ERF__EB_8H.html", "ERF__EB_8H" ],
     [ "ERF_EBAdvection.H", "ERF__EBAdvection_8H.html", "ERF__EBAdvection_8H" ],
     [ "ERF_EBAdvectionSrcForMom.H", "ERF__EBAdvectionSrcForMom_8H.html", "ERF__EBAdvectionSrcForMom_8H" ],
     [ "ERF_EBAdvectionSrcForScalars.H", "ERF__EBAdvectionSrcForScalars_8H.html", "ERF__EBAdvectionSrcForScalars_8H" ],

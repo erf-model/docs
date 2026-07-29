@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"ERF__ShocTypes_8H.html":[3,0,1,13,0,23],
+"ERF__ShocTypes_8H.html#a0971039b04f579d1595b6ba5918453d8":[3,0,1,13,0,23,5],
+"ERF__ShocTypes_8H.html#a0d65a43da82e94b4b15506000a7698cf":[3,0,1,13,0,23,18],
 "ERF__ShocTypes_8H.html#a20166796421685d169be0dd50e56acfc":[3,0,1,13,0,23,6],
 "ERF__ShocTypes_8H.html#a2ec5ae80ba2126c4325d7cc4f446ff65":[3,0,1,13,0,23,12],
 "ERF__ShocTypes_8H.html#a46f049c905e222c86ebb0cf19549ab48":[3,0,1,13,0,23,3],
@@ -31,8 +34,10 @@ var NAVTREEINDEX11 =
 "ERF__SolveTridiag_8H.html#ac557d69d0b9db025bbb4cb3331853a0a":[3,0,1,20,28,0],
 "ERF__SolveTridiag_8H_source.html":[3,0,1,20,28],
 "ERF__SolveWithEBMLMG_8cpp.html":[3,0,1,9,7],
-"ERF__SolveWithEBMLMG_8cpp.html#a0573c811b5f308cb96e49b60fd505dd3":[3,0,1,9,7,1],
-"ERF__SolveWithEBMLMG_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861":[3,0,1,9,7,0],
+"ERF__SolveWithEBMLMG_8cpp.html#a107da7bd2e6038750f7763c95925ec7d":[3,0,1,9,7,0],
+"ERF__SolveWithEBMLMG_8cpp.html#a408b85b0e876adc4ba51d2784213233e":[3,0,1,9,7,1],
+"ERF__SolveWithEBMLMG_8cpp.html#a53f3bd5d9d9a46a802aa62f47ceb2119":[3,0,1,9,7,3],
+"ERF__SolveWithEBMLMG_8cpp.html#a6ceb251d16e610bb16a4c63cf6467b86":[3,0,1,9,7,2],
 "ERF__SolveWithFFT_8cpp.html":[3,0,1,9,8],
 "ERF__SolveWithGMRES_8cpp.html":[3,0,1,9,9],
 "ERF__SolveWithMLMG_8cpp.html":[3,0,1,9,10],
@@ -244,10 +249,5 @@ var NAVTREEINDEX11 =
 "ERF__TurbStruct_8H.html#aa04592b5e585ba63b39acf1e065191e3":[3,0,1,2,9,5],
 "ERF__TurbStruct_8H.html#aae63bb540db934adb5f1eae4aad5f5e1":[3,0,1,2,9,2],
 "ERF__TurbStruct_8H.html#abf8846591b6ec65580e80d118f08a4b1":[3,0,1,2,9,4],
-"ERF__TurbStruct_8H_source.html":[3,0,1,2,9],
-"ERF__UpdateGeostrophicProfile__Bomex_8H.html":[3,0,1,15,42],
-"ERF__UpdateGeostrophicProfile__Bomex_8H.html#aac2e5b107bfa4ac340f62bd3584c3c3b":[3,0,1,15,42,0],
-"ERF__UpdateGeostrophicProfile__Bomex_8H_source.html":[3,0,1,15,42],
-"ERF__UpdateGeostrophicProfile__RICO_8H.html":[3,0,1,15,43],
-"ERF__UpdateGeostrophicProfile__RICO_8H.html#aac2e5b107bfa4ac340f62bd3584c3c3b":[3,0,1,15,43,0]
+"ERF__TurbStruct_8H_source.html":[3,0,1,2,9]
 };

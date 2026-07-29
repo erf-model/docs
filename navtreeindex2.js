@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__EOS_8H.html":[3,0,1,20,6],
 "ERF__EOS_8H.html#a35ba6a562b53e99968fdd3e42b49d966":[3,0,1,20,6,1],
 "ERF__EOS_8H.html#a379090cc33ef1f049644b05e94fd35c8":[3,0,1,20,6,6],
 "ERF__EOS_8H.html#a380a4683a461f710517afc27bc29d46f":[3,0,1,20,6,0],
@@ -41,7 +42,9 @@ var NAVTREEINDEX2 =
 "ERF__FillPatcher_8H_source.html":[3,0,1,1,12],
 "ERF__FillPatcher_8cpp.html":[3,0,1,1,11],
 "ERF__FillZeroAreaFaceFluxes_8cpp.html":[3,0,1,9,1],
-"ERF__FillZeroAreaFaceFluxes_8cpp.html#abe7c3996ab08f0ed8d91fe3849a0a861":[3,0,1,9,1,0],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html#a06d3570cc5ce4847ca0b73f84ed619b6":[3,0,1,9,1,0],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html#a107da7bd2e6038750f7763c95925ec7d":[3,0,1,9,1,2],
+"ERF__FillZeroAreaFaceFluxes_8cpp.html#acf2334cd4108103837e372be3ef0188c":[3,0,1,9,1,1],
 "ERF__Fitch_8H.html":[3,0,1,21,1,1],
 "ERF__Fitch_8H_source.html":[3,0,1,21,1,1],
 "ERF__ForestDrag_8H.html":[3,0,1,17,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__InitCustomPertVels__Bomex_8H.html#a828e28a3beeb9e4ee1144073cd614f17":[3,0,1,15,23,8],
 "ERF__InitCustomPertVels__Bomex_8H.html#a83a3b47fca38683e460207a45ca65b46":[3,0,1,15,23,4],
 "ERF__InitCustomPertVels__Bomex_8H.html#a9195f05af45a2e43c22d411448a6effc":[3,0,1,15,23,0],
-"ERF__InitCustomPertVels__Bomex_8H.html#a9551f099ea0453a3f12e71c54e74a4d4":[3,0,1,15,23,28],
-"ERF__InitCustomPertVels__Bomex_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,15,23,29],
-"ERF__InitCustomPertVels__Bomex_8H.html#a9d009471e1150853fe277cbb7bec9ede":[3,0,1,15,23,18],
-"ERF__InitCustomPertVels__Bomex_8H.html#aa05b7d1441862703a8be2d911afdb9c5":[3,0,1,15,23,20]
+"ERF__InitCustomPertVels__Bomex_8H.html#a9551f099ea0453a3f12e71c54e74a4d4":[3,0,1,15,23,28]
 };

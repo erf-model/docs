@@ -20,7 +20,7 @@ var classeb__ =
     [ "nghost_basic", "classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8", null ],
     [ "nghost_full", "classeb__.html#ad927cf323e89587952b632234487f9f9", null ],
     [ "nghost_volume", "classeb__.html#a8e61525cf6488d04f457068fc40f47df", null ],
-    [ "set_connection_flags", "classeb__.html#aff03357e8f226d451ed970b6bb4ab773", null ],
+    [ "set_connection_flags", "classeb__.html#af941b42e82fc7f48aeb9e9c7c559eeb7", null ],
     [ "m_cellflags", "classeb__.html#a7280bf4b77fa95e970f101fbbf53c836", null ],
     [ "m_eb_level", "classeb__.html#a69d11eeaf4f696d04884679db6c80d2f", null ],
     [ "m_factory", "classeb__.html#a832e47bbc65d2e895fe295ad43df8556", null ],
@@ -28,7 +28,10 @@ var classeb__ =
     [ "m_support_level", "classeb__.html#a84f505f18fa5fd8e792fcdc6b7ccca35", null ],
     [ "m_type", "classeb__.html#af5283f2e5aabd1f57e89ca2d9fe10be6", null ],
     [ "m_u_factory", "classeb__.html#aa2d82b2e424b832a9c0befaa160db5a9", null ],
+    [ "m_u_factory_fc", "classeb__.html#aebac4d225e4dcb5a8396d218d3b7899a", null ],
     [ "m_v_factory", "classeb__.html#aca3aa793c432fe655b38759a26af6b96", null ],
+    [ "m_v_factory_fc", "classeb__.html#ad6c7ca398f2f01d891cca8d9ddf8cb3b", null ],
     [ "m_w_factory", "classeb__.html#a7fbcd88205291b74fdb6dc595c8f9762", null ],
+    [ "m_w_factory_fc", "classeb__.html#aba5ba7ddaa87f5aea2ed2bed98e34e45", null ],
     [ "m_write_eb_surface", "classeb__.html#ae9d076d7698e29d18364f20d4100f615", null ]
 ];

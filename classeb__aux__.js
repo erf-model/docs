@@ -6,7 +6,7 @@ var classeb__aux__ =
     [ "getAreaFrac", "classeb__aux__.html#a06b985415165114100c0cf6aaa521f9b", null ],
     [ "getBndryArea", "classeb__aux__.html#a9f20069bf00cf1d9816aff114ecd1eef", null ],
     [ "getBndryCent", "classeb__aux__.html#a04982df6fc833f7c7373f67825f95239", null ],
-    [ "getBndryNorm", "classeb__aux__.html#aa3736037b1db157157f3908a0be7ca60", null ],
+    [ "getBndryNormal", "classeb__aux__.html#a2012a592d224040a53e5be782a791ab8", null ],
     [ "getCentroid", "classeb__aux__.html#ae5daef3b6879433575a5aa0c24cd4e01", null ],
     [ "getFaceCent", "classeb__aux__.html#a15ab8224a2115fcd91bec34e111d0ac6", null ],
     [ "getMultiEBCellFlagFab", "classeb__aux__.html#aa782343e2bd11203f360485eb4395a29", null ],
