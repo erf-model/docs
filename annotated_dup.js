@@ -17,6 +17,11 @@ var annotated_dup =
       [ "ProvenanceRecord", "structerf__provenance_1_1ProvenanceRecord.html", "structerf__provenance_1_1ProvenanceRecord" ],
       [ "ProvenanceParseResult", "structerf__provenance_1_1ProvenanceParseResult.html", "structerf__provenance_1_1ProvenanceParseResult" ]
     ] ],
+    [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", [
+      [ "ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC" ],
+      [ "ParsedWallFaceScalars", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars" ],
+      [ "WallFaceParseResult", "structerf__wall__scalar__bc_1_1WallFaceParseResult.html", "structerf__wall__scalar__bc_1_1WallFaceParseResult" ]
+    ] ],
     [ "module_libmassv", "namespacemodule__libmassv.html", [
       [ "vrec", "interfacemodule__libmassv_1_1vrec.html", "interfacemodule__libmassv_1_1vrec" ],
       [ "vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", "interfacemodule__libmassv_1_1vsqrt" ]

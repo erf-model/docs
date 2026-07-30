@@ -102,6 +102,8 @@ var hierarchy =
       [ "SimpleAD", "classSimpleAD.html", null ],
       [ "WindFarm", "classWindFarm.html", null ]
     ] ],
+    [ "erf_wall_scalar_bc::ParsedWallFaceScalars", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html", null ],
+    [ "erf_wall_scalar_bc::ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", null ],
     [ "eb_cut_cell_::path_data", "structeb__cut__cell___1_1path__data.html", null ],
     [ "PBLDerivativeDzInv", "structPBLDerivativeDzInv.html", null ],
     [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", null ],
@@ -196,6 +198,7 @@ var hierarchy =
     [ "UPWINDALL", "structUPWINDALL.html", null ],
     [ "module_libmassv::vrec", "interfacemodule__libmassv_1_1vrec.html", null ],
     [ "module_libmassv::vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", null ],
+    [ "erf_wall_scalar_bc::WallFaceParseResult", "structerf__wall__scalar__bc_1_1WallFaceParseResult.html", null ],
     [ "plotfile2d::WaterPathDescriptor", "structplotfile2d_1_1WaterPathDescriptor.html", null ],
     [ "WENO3", "structWENO3.html", null ],
     [ "WENO5", "structWENO5.html", null ],
