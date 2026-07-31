@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"globals_func_s.html":[3,1,1,17],
 "globals_func_t.html":[3,1,1,18],
 "globals_func_u.html":[3,1,1,19],
 "globals_func_v.html":[3,1,1,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "namespaceerf__wall__scalar__bc.html":[1,0,10],
 "namespaceerf__wall__scalar__bc.html#a1f1163d39a8a7203c4f60b38f2984eb4":[1,0,10,4],
 "namespaceerf__wall__scalar__bc.html#a1f1163d39a8a7203c4f60b38f2984eb4a3861083c281e55611347c9b2d31c533b":[1,0,10,4,1],
-"namespaceerf__wall__scalar__bc.html#a1f1163d39a8a7203c4f60b38f2984eb4a6fcdc090caeade09d0efd6253932b6f5":[1,0,10,4,0],
-"namespaceerf__wall__scalar__bc.html#a1f1163d39a8a7203c4f60b38f2984eb4a91c4946415b6aff661e2fc9a3c96874e":[1,0,10,4,2]
+"namespaceerf__wall__scalar__bc.html#a1f1163d39a8a7203c4f60b38f2984eb4a6fcdc090caeade09d0efd6253932b6f5":[1,0,10,4,0]
 };

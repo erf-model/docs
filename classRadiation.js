@@ -96,6 +96,7 @@ var classRadiation =
     [ "m_orbital_sec", "classRadiation.html#ab08f834846ab8b6d847a474d8ae14394", null ],
     [ "m_orbital_year", "classRadiation.html#af9a60d292ea5c8b36a53ee22b2ece96d", null ],
     [ "m_qheating_rates", "classRadiation.html#a8b6687dc65c676f5cf454b6a15ad93c3", null ],
+    [ "m_qi_comp", "classRadiation.html#a3adcbcb4844030a027a81944c80a1b81", null ],
     [ "m_rad_fluxes", "classRadiation.html#a5b9e77332a518e2220de5dd295bbc23a", null ],
     [ "m_rad_freq_in_steps", "classRadiation.html#a0f4275bf4e8c4cea652a57c06d67f7da", null ],
     [ "m_rad_nvar", "classRadiation.html#aeec2824e1768c3790d993c6fc6dfb064", null ],
