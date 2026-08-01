@@ -1,5 +1,6 @@
 var NAVTREEINDEX34 =
 {
+"structeb__cut__cell___1_1path__data.html#a2e4e51cfa838dccff640728fe7b60c42":[2,0,32,0,0],
 "structeb__cut__cell___1_1path__data.html#a436b875ad93b4ffa3d7737dd5a84e3cc":[2,0,32,0,2],
 "structeb__cut__cell___1_1path__data.html#a5a280794bcd5852f51edb2d172307d82":[2,0,32,0,1],
 "structeb__cut__cell___1_1path__data.html#a5f49651b508aac684c4b5d5b260dedd1":[2,0,32,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX34 =
 "structplotfile2d_1_1SelectedWaterPathComponents.html#a7d9967551f6fecfb49b42f9314927d56":[2,0,8,12,2],
 "structplotfile2d_1_1WaterPathDescriptor.html":[2,0,8,11],
 "structplotfile2d_1_1WaterPathDescriptor.html#a428e413376e7e580ebe2a1c5c49c41cc":[2,0,8,11,0],
-"structplotfile2d_1_1WaterPathDescriptor.html#a430cc11ee9c944948145ecba0ea90f15":[2,0,8,11,2],
-"structplotfile2d_1_1WaterPathDescriptor.html#a84095135b3bc8cf2a491d35a4140139d":[2,0,8,11,1]
+"structplotfile2d_1_1WaterPathDescriptor.html#a430cc11ee9c944948145ecba0ea90f15":[2,0,8,11,2]
 };

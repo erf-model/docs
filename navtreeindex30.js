@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"structMYNNLevel2.html#a195f36a73787dea436d798f20d28ebb3":[2,0,67,8],
 "structMYNNLevel2.html#a296d16ed3e332da46763edb04a2ba326":[2,0,67,12],
 "structMYNNLevel2.html#a2970f316de64a2a1c605baaea1f34aec":[2,0,67,0],
 "structMYNNLevel2.html#a2c96a00a9adfdf0247139127ec62e75a":[2,0,67,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "structSDDistributionParams.html#a191243a357faba98588f2c023b49b17a":[2,0,104,11],
 "structSDDistributionParams.html#a1f892384bbded9a75cc282c8422861f4":[2,0,104,9],
 "structSDDistributionParams.html#a1fd7f08c85d3be51036ee6e6c8e22bfd":[2,0,104,17],
-"structSDDistributionParams.html#a1ffdc31684ff4d435c9b9211159c7017":[2,0,104,3],
-"structSDDistributionParams.html#a2eb41d8a5cb040ff7bb10c3cd5ebd240":[2,0,104,0]
+"structSDDistributionParams.html#a1ffdc31684ff4d435c9b9211159c7017":[2,0,104,3]
 };
