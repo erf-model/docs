@@ -165,6 +165,7 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Construct empty time-interpolated data storage. </p>
 
 </div>
 </div>
@@ -191,8 +192,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;: <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a>(time) {}</div>
-<div class="ttc" id="astructTimeInterpolatedData_html_ab573a919dfc55294e0f78003ca5f09ba"><div class="ttname"><a href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">TimeInterpolatedData::m_time</a></div><div class="ttdeci">double m_time</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:69</div></div>
+<p>Construct storage associated with a time.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>time associated with the data </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;: <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a>(time) {}</div>
+<div class="ttc" id="astructTimeInterpolatedData_html_ab573a919dfc55294e0f78003ca5f09ba"><div class="ttname"><a href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">TimeInterpolatedData::m_time</a></div><div class="ttdeci">double m_time</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:114</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -218,10 +226,11 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                            {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a68d1abba77684ee584ba484a185a44e2">clear</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
-<div class="ttc" id="astructTimeInterpolatedData_html_a68d1abba77684ee584ba484a185a44e2"><div class="ttname"><a href="structTimeInterpolatedData.html#a68d1abba77684ee584ba484a185a44e2">TimeInterpolatedData::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:51</div></div>
+<p>Destroy owned data and clear internal storage. </p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                            {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a68d1abba77684ee584ba484a185a44e2">clear</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="ttc" id="astructTimeInterpolatedData_html_a68d1abba77684ee584ba484a185a44e2"><div class="ttname"><a href="structTimeInterpolatedData.html#a68d1abba77684ee584ba484a185a44e2">TimeInterpolatedData::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:96</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -258,6 +267,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Default move constructor. </p>
 
 </div>
 </div>
@@ -284,6 +294,13 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Deleted copy constructor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>source object </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -321,12 +338,20 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                                        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>.push_back(var_data);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">m_owns_data</a>.push_back(own_data);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="ttc" id="astructTimeInterpolatedData_html_a6eeb9167e2d8051c16fdbb1e7fee54ed"><div class="ttname"><a href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">TimeInterpolatedData::m_owns_data</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_owns_data</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:68</div></div>
-<div class="ttc" id="astructTimeInterpolatedData_html_a7021ade0b30697e6eef3df932447d4fc"><div class="ttname"><a href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">TimeInterpolatedData::m_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_data</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:67</div></div>
+<p>Add a MultiFab pointer to the managed list.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">var_data</td><td>MultiFab pointer to store </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">own_data</td><td>whether this object owns and deletes var_data </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                        {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>.push_back(var_data);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">m_owns_data</a>.push_back(own_data);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="ttc" id="astructTimeInterpolatedData_html_a6eeb9167e2d8051c16fdbb1e7fee54ed"><div class="ttname"><a href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">TimeInterpolatedData::m_owns_data</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_owns_data</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:113</div></div>
+<div class="ttc" id="astructTimeInterpolatedData_html_a7021ade0b30697e6eef3df932447d4fc"><div class="ttname"><a href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">TimeInterpolatedData::m_data</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_data</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:112</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -352,21 +377,22 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                 {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// clear all data owned by this object</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="structTimeInterpolatedData.html#a69fdc01eabf8ded65ff6cac13e59c0c0">num_vars</a>(); ++i) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">m_owns_data</a>[i] == 1) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>[i]-&gt;clear();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keyword">delete</span> <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>[i];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// clear internal memory</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>.clear();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">m_owns_data</a>.clear();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a> = 0.0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="ttc" id="astructTimeInterpolatedData_html_a69fdc01eabf8ded65ff6cac13e59c0c0"><div class="ttname"><a href="structTimeInterpolatedData.html#a69fdc01eabf8ded65ff6cac13e59c0c0">TimeInterpolatedData::num_vars</a></div><div class="ttdeci">int num_vars()</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:49</div></div>
+<p>Clear stored data, deleting entries owned by this object. </p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                 {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// clear all data owned by this object</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="structTimeInterpolatedData.html#a69fdc01eabf8ded65ff6cac13e59c0c0">num_vars</a>(); ++i) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">m_owns_data</a>[i] == 1) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>[i]-&gt;clear();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keyword">delete</span> <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>[i];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="comment">// clear internal memory</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>.clear();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#a6eeb9167e2d8051c16fdbb1e7fee54ed">m_owns_data</a>.clear();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a> = 0.0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="ttc" id="astructTimeInterpolatedData_html_a69fdc01eabf8ded65ff6cac13e59c0c0"><div class="ttname"><a href="structTimeInterpolatedData.html#a69fdc01eabf8ded65ff6cac13e59c0c0">TimeInterpolatedData::num_vars</a></div><div class="ttdeci">int num_vars()</div><div class="ttdef"><b>Definition:</b> ERF_TimeInterpolatedData.H:91</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTimeInterpolatedData.html#af14b2d5c5d55331a4dbc9cec9288af53">~TimeInterpolatedData()</a>.</p>
 <div class="dynheader">
@@ -412,7 +438,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a>; }</div>
+<p>Return the time associated with the data. </p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -439,9 +466,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>[var_idx];</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<p>Return one stored MultiFab.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">var_idx</td><td>index of the stored MultiFab </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> *<a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>[var_idx];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -467,7 +501,8 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>.size(); }</div>
+<p>Return the number of stored MultiFabs. </p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structTimeInterpolatedData.html#a7021ade0b30697e6eef3df932447d4fc">m_data</a>.size(); }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTimeInterpolatedData.html#a68d1abba77684ee584ba484a185a44e2">clear()</a>.</p>
 <div class="dynheader">
@@ -506,6 +541,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Deleted copy-assignment operator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>source object </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -532,6 +574,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Default move-assignment operator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>source object </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -558,9 +607,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                               {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a> = time;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<p>Set the time associated with the data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">time</td><td>time associated with the data </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                               {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="structTimeInterpolatedData.html#ab573a919dfc55294e0f78003ca5f09ba">m_time</a> = time;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

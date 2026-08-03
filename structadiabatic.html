@@ -155,11 +155,19 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>  = Tflux;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> = Qvflux;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
-<div class="ttc" id="astructadiabatic_html_afdc69c66b9c49f67d4f2409bc1f3ce29"><div class="ttname"><a href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">adiabatic::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:180</div></div>
+<p>Construct adiabatic constant-roughness MOST data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Tflux</td><td>prescribed heat flux </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Qvflux</td><td>prescribed moisture flux </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>  = Tflux;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> = Qvflux;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="ttc" id="astructadiabatic_html_afdc69c66b9c49f67d4f2409bc1f3ce29"><div class="ttname"><a href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">adiabatic::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:217</div></div>
 <div class="ttc" id="astructmost__data_html_a0171f1cdf5ab8c1685475e5212246888"><div class="ttname"><a href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">most_data::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdoc">Moisture flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:19</div></div>
 <div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux TODO: decide whether this is &lt;θ'w'&gt; or &lt;θv'w'&gt; under moist conditions.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:18</div></div>
 </div><!-- fragment -->
@@ -313,12 +321,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        olen_arr(i,j,k)   = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / std::log(zref_arr(i,j,k) / z0_arr(i,j,k));</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        q_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<p>Iterate MOST state for one surface point.</p>
+<dl class="section user"><dt>Calling sequence</dt><dd>i, j, k, max_iters, zref_arr, z0_arr, umm_arr, tm_arr, tvm_arr, qvm_arr, u_star_arr, w_star_arr, t_star_arr, q_star_arr, t_surf_arr, q_surf_arr, olen_arr, pblh_arr, Hwave_arr, Lwave_arr, eta_arr. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        olen_arr(i,j,k)   = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic.html#afdc69c66b9c49f67d4f2409bc1f3ce29">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,k) / std::log(zref_arr(i,j,k) / z0_arr(i,j,k));</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        q_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:16</div></div>

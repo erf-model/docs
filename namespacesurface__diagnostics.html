@@ -216,25 +216,36 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; <a class="code" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">lsm_flux_is_valid</a>) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::LSMLand;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (is_custom) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::Custom;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (is_rico) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::RICO;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; !<a class="code" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">lsm_flux_is_valid</a>) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerFallback;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (is_land) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerLand;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerSea;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="ttc" id="anamespacesurface__layer__stress_html_a5d425fafa54ebef732ceefe39db61f3c"><div class="ttname"><a href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">surface_layer_stress::lsm_flux_is_valid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool lsm_flux_is_valid(bool has_flux, bool is_land, amrex::Real flux, amrex::Real undefined)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayerStress.H:24</div></div>
+<p>Classify the provenance of a scalar surface flux.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_custom</td><td>whether the custom flux mode is active </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_rico</td><td>whether the RICO flux mode is active </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_land</td><td>whether the cell is classified as land </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">has_lsm_flux</td><td>whether an LSM flux array is available </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lsm_flux_is_valid</td><td>whether the LSM flux value is valid </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; <a class="code" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">lsm_flux_is_valid</a>) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::LSMLand;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (is_custom) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::Custom;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (is_rico) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::RICO;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (is_land &amp;&amp; has_lsm_flux &amp;&amp; !<a class="code" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">lsm_flux_is_valid</a>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerFallback;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (is_land) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerLand;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> SurfaceDiagnosticSource::SurfaceLayerSea;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="ttc" id="anamespacesurface__layer__stress_html_a5d425fafa54ebef732ceefe39db61f3c"><div class="ttname"><a href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">surface_layer_stress::lsm_flux_is_valid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool lsm_flux_is_valid(bool has_flux, bool is_land, amrex::Real flux, amrex::Real undefined)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayerStress.H:35</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>.</p>
 <div class="dynheader">
@@ -281,18 +292,25 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">switch</span> (source) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::Missing:              <span class="keywordflow">return</span> <span class="stringliteral">&quot;missing&quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::SurfaceLayerLand:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;surface_layer_land&quot;</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::LSMLand:              <span class="keywordflow">return</span> <span class="stringliteral">&quot;lsm_land&quot;</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::SurfaceLayerFallback: <span class="keywordflow">return</span> <span class="stringliteral">&quot;surface_layer_fallback&quot;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::SurfaceLayerSea:      <span class="keywordflow">return</span> <span class="stringliteral">&quot;surface_layer_sea&quot;</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::Custom:               <span class="keywordflow">return</span> <span class="stringliteral">&quot;custom&quot;</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::RICO:                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;rico&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;unknown&quot;</span>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<p>Return the string name for a diagnostic source enum value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>diagnostic source enum value </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">switch</span> (source) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::Missing:              <span class="keywordflow">return</span> <span class="stringliteral">&quot;missing&quot;</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::SurfaceLayerLand:     <span class="keywordflow">return</span> <span class="stringliteral">&quot;surface_layer_land&quot;</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::LSMLand:              <span class="keywordflow">return</span> <span class="stringliteral">&quot;lsm_land&quot;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::SurfaceLayerFallback: <span class="keywordflow">return</span> <span class="stringliteral">&quot;surface_layer_fallback&quot;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::SurfaceLayerSea:      <span class="keywordflow">return</span> <span class="stringliteral">&quot;surface_layer_sea&quot;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::Custom:               <span class="keywordflow">return</span> <span class="stringliteral">&quot;custom&quot;</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">case</span> SurfaceDiagnosticSource::RICO:                 <span class="keywordflow">return</span> <span class="stringliteral">&quot;rico&quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;unknown&quot;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,9 +337,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(source);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<p>Convert a diagnostic source enum to its integer code.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>diagnostic source enum value </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(source);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill()</a>, and <a class="el" href="namespacesurface__diagnostics.html#a8952f0baf16086becb3702d82d00d158">to_plot_value()</a>.</p>
 <div class="dynheader">
@@ -365,11 +390,18 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(<a class="code" href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">to_int</a>(source));</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<p>Convert a diagnostic source enum to the Real value written to plotfiles.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>diagnostic source enum value </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(<a class="code" href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">to_int</a>(source));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespacesurface__diagnostics_html_a9ae90a5f756a64856f03db4f80fe1f78"><div class="ttname"><a href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">surface_diagnostics::to_int</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int to_int(SurfaceDiagnosticSource source) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceDiagnosticSource.H:28</div></div>
+<div class="ttc" id="anamespacesurface__diagnostics_html_a9ae90a5f756a64856f03db4f80fe1f78"><div class="ttname"><a href="namespacesurface__diagnostics.html#a9ae90a5f756a64856f03db4f80fe1f78">surface_diagnostics::to_int</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int to_int(SurfaceDiagnosticSource source) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceDiagnosticSource.H:33</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>, <a class="el" href="classSurfaceLayer.html#afacb49749e5898238b7d71b7638ce209">SurfaceLayer::compute_SurfaceLayer_bcs_EB()</a>, <a class="el" href="namespacenear__surface__diagnostics.html#a7cee41b11fa30d00d43bb88458aad002">near_surface_diagnostics::fill()</a>, and <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">SurfaceLayer::make_SurfaceLayer_at_level()</a>.</p>
 <div class="dynheader">

@@ -160,33 +160,45 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Combine cell-centered kinematic LSM stresses with a conservative MOST fallback stress at one face. The returned cache values are always kinematic, while face_stress is always conservative. </p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> half = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  FaceStressResult result{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0),</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    low_valid ? kinematic_low</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;              : <a class="code" href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">conservative_to_kinematic_stress</a>(most_face_stress, rho_low),</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    high_valid ? kinematic_high</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;               : <a class="code" href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">conservative_to_kinematic_stress</a>(most_face_stress, rho_high)};</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (low_valid &amp;&amp; high_valid) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    result.face_stress =</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      half * rho_low * kinematic_low + half * rho_high * kinematic_high;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (low_valid) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    result.face_stress =</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      half * rho_low * kinematic_low + half * most_face_stress;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (high_valid) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    result.face_stress =</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      half * rho_high * kinematic_high + half * most_face_stress;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    result.face_stress = most_face_stress;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<p>Combine cell-centered kinematic LSM stresses with a conservative MOST fallback stress at one face. The returned cache values are always kinematic, while face_stress is always conservative.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rho_low</td><td>density on the low-side cell </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rho_high</td><td>density on the high-side cell </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kinematic_low</td><td>low-side LSM kinematic stress </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kinematic_high</td><td>high-side LSM kinematic stress </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">low_valid</td><td>whether the low-side LSM stress is valid </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">high_valid</td><td>whether the high-side LSM stress is valid </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">most_face_stress</td><td>conservative MOST fallback stress at the face </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> half = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  FaceStressResult result{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0),</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    low_valid ? kinematic_low</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;              : <a class="code" href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">conservative_to_kinematic_stress</a>(most_face_stress, rho_low),</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    high_valid ? kinematic_high</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;               : <a class="code" href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">conservative_to_kinematic_stress</a>(most_face_stress, rho_high)};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (low_valid &amp;&amp; high_valid) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    result.face_stress =</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      half * rho_low * kinematic_low + half * rho_high * kinematic_high;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (low_valid) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    result.face_stress =</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      half * rho_low * kinematic_low + half * most_face_stress;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (high_valid) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    result.face_stress =</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      half * rho_high * kinematic_high + half * most_face_stress;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    result.face_stress = most_face_stress;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespacesurface__layer__stress_html_a5a26fea3011e6a5d2d9bbe1c770c98dd"><div class="ttname"><a href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">surface_layer_stress::conservative_to_kinematic_stress</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real conservative_to_kinematic_stress(amrex::Real conservative_stress, amrex::Real rho)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayerStress.H:13</div></div>
+<div class="ttc" id="anamespacesurface__layer__stress_html_a5a26fea3011e6a5d2d9bbe1c770c98dd"><div class="ttname"><a href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">surface_layer_stress::conservative_to_kinematic_stress</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real conservative_to_kinematic_stress(amrex::Real conservative_stress, amrex::Real rho)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayerStress.H:18</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>.</p>
 <div class="dynheader">
@@ -235,10 +247,17 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>LSM cache value from a conservative face stress. </p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">return</span> conservative_stress / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<p>LSM cache value from a conservative face stress.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">conservative_stress</td><td>conservative face stress </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rho</td><td>density used to convert to kinematic stress </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">return</span> conservative_stress / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:107</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacesurface__layer__stress.html#a9a45b74e34f33537f0c28bb17da95cdd">combine_lsm_and_most_stress()</a>.</p>
@@ -292,10 +311,19 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Test one LSM side without coupling validity to another component's handle. </p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">return</span> has_flux &amp;&amp; is_land &amp;&amp; flux &lt; <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a5e543256c480ac577d30f76f9120eb74">undefined</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<p>Test one LSM side without coupling validity to another component's handle.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">has_flux</td><td>whether the LSM flux array exists </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_land</td><td>whether the side is classified as land </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flux</td><td>flux value to test against the undefined sentinel </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">undefined</td><td>sentinel value marking undefined LSM fluxes </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">return</span> has_flux &amp;&amp; is_land &amp;&amp; flux &lt; <a class="code" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a5e543256c480ac577d30f76f9120eb74">undefined</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_adf340bf1893bad34b2bf452d987d86c9a5e543256c480ac577d30f76f9120eb74"><div class="ttname"><a href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a5e543256c480ac577d30f76f9120eb74">ERF_BC::undefined</a></div><div class="ttdeci">@ undefined</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacesurface__diagnostics.html#a9122f8c636e3844b424279a993fa59b3">surface_diagnostics::classify_scalar_source()</a>, and <a class="el" href="classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33">SurfaceLayer::compute_SurfaceLayer_bcs()</a>.</p>
