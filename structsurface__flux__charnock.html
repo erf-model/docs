@@ -405,7 +405,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__charnock.html#a60030c5104987d6287efd5d9b996014c">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / (std::log(zref / <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>) - psi_m);</div>
 <div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            ++iter;</div>
 <div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__charnock.html#a08529386a7d5012684c818249a7d76ba">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(iter &lt; max_iters,</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(iter &lt; max_iters,</div>
 <div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                                         <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
 <div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
 <div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;        <span class="comment">// Populate the stored MOST arrays</span></div>
@@ -428,6 +428,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ScalarAdvDiff_8H_html_a3686b9abefe6dda622283bf7109e68fe"><div class="ttname"><a href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a></div><div class="ttdeci">Real z0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ScalarAdvDiff.H:8</div></div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aERF__MOSTRoughness_8H_html_a9fb5194b85e904a3f0a0500a05438b5e"><div class="ttname"><a href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e">COARE3_roughness</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real COARE3_roughness(amrex::Real zref, amrex::Real umm, amrex::Real ustar)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTRoughness.H:13</div></div>
 <div class="ttc" id="aERF__MOSTStress_8H_html_a83577688af6d1136ab7a0be1b16f4674"><div class="ttname"><a href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674">air_viscosity</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real air_viscosity(amrex::Real T_degK)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:151</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -446,12 +447,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsurface__flux__charnock_a8e6ddb9e2eac678c1e7bbf95aee6e710_cgraph.png" border="0" usemap="#astructsurface__flux__charnock_a8e6ddb9e2eac678c1e7bbf95aee6e710_cgraph" alt=""/></div>
 <map name="astructsurface__flux__charnock_a8e6ddb9e2eac678c1e7bbf95aee6e710_cgraph" id="astructsurface__flux__charnock_a8e6ddb9e2eac678c1e7bbf95aee6e710_cgraph">
-<area shape="rect" title=" " alt="" coords="5,122,172,163"/>
-<area shape="rect" href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674" title=" " alt="" coords="245,5,349,32"/>
-<area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="220,57,373,98"/>
-<area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="220,122,373,163"/>
-<area shape="rect" href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547" title=" " alt="" coords="251,188,342,215"/>
-<area shape="rect" href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e" title=" " alt="" coords="222,239,371,265"/>
+<area shape="rect" title=" " alt="" coords="5,155,172,197"/>
+<area shape="rect" href="ERF__MOSTStress_8H.html#a83577688af6d1136ab7a0be1b16f4674" title=" " alt="" coords="259,5,363,32"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="220,57,403,98"/>
+<area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="235,122,388,163"/>
+<area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="235,187,388,229"/>
+<area shape="rect" href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547" title=" " alt="" coords="266,253,357,280"/>
+<area shape="rect" href="ERF__MOSTRoughness_8H.html#a9fb5194b85e904a3f0a0500a05438b5e" title=" " alt="" coords="237,304,386,331"/>
 </map>
 </div>
 

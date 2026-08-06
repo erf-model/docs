@@ -86,44 +86,47 @@ $(document).ready(function(){initNavTree('ERF__NCPlotFile_8H_source.html',''); i
 <div class="title">ERF_NCPlotFile.H</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ERF__NCPlotFile_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ERF_NCPLOTFILE_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ERF_NCPLOTFILE_H_</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;AMReX_Array.H&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;AMReX_Box.H&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;AMReX_MultiFab.H&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;AMReX_Vector.H&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Narrow declaration home for the ERF NetCDF plotfile writer used by the 2D</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// plotfile assembly path. Keep this header small so the IO split remains easy</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// to understand when NetCDF support is enabled or disabled.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile</a> (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> which_subdomain, <span class="keyword">const</span> std::string&amp; dir,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;const amrex::MultiFab*&gt; &amp;plotMF,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;std::string&gt; &amp;plot_var_names,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;int&gt;&amp; level_steps,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                 amrex::Array&lt;amrex::Real,AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a831edc3141288c83d302cfba10ef7f31">prob_lo</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                 amrex::Array&lt;amrex::Real,AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#ae130889f2d9b097b11dacc77d5f1db69">prob_hi</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                 amrex::Array&lt;amrex::Real,AMREX_SPACEDIM&gt; dx_in,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                 <span class="keyword">const</span> amrex::Box&amp; subdomain,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; time,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; start_bdy_time,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                 <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; solverChoice,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; zlevels_stag);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<a href="ERF__NCPlotFile_8H.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * \file ERF_NCPlotFile.H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef ERF_NCPLOTFILE_H_</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define ERF_NCPLOTFILE_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;AMReX_Array.H&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;AMReX_Box.H&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;AMReX_MultiFab.H&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;AMReX_Vector.H&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Narrow declaration home for the ERF NetCDF plotfile writer used by the 2D</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// plotfile assembly path. Keep this header small so the IO split remains easy</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// to understand when NetCDF support is enabled or disabled.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef ERF_USE_NETCDF</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<a class="code" href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile</a> (<span class="keywordtype">int</span> lev, <span class="keywordtype">int</span> which_subdomain, <span class="keyword">const</span> std::string&amp; dir,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;const amrex::MultiFab*&gt; &amp;plotMF,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;std::string&gt; &amp;plot_var_names,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;int&gt;&amp; level_steps,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                 amrex::Array&lt;amrex::Real,AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a831edc3141288c83d302cfba10ef7f31">prob_lo</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                 amrex::Array&lt;amrex::Real,AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#ae130889f2d9b097b11dacc77d5f1db69">prob_hi</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                 amrex::Array&lt;amrex::Real,AMREX_SPACEDIM&gt; dx_in,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                 <span class="keyword">const</span> amrex::Box&amp; subdomain,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; time,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                 <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; start_bdy_time,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                 <span class="keyword">const</span> <a class="code" href="structSolverChoice.html">SolverChoice</a>&amp; solverChoice,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                 <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; zlevels_stag);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__DataStruct_8H_html"><div class="ttname"><a href="ERF__DataStruct_8H.html">ERF_DataStruct.H</a></div></div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_a831edc3141288c83d302cfba10ef7f31"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a831edc3141288c83d302cfba10ef7f31">prob_lo</a></div><div class="ttdeci">const auto prob_lo</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_AnelasticWallDiffusion.H:12</div></div>
 <div class="ttc" id="aERF__InitCustomPert__AnelasticWallDiffusion_8H_html_ae130889f2d9b097b11dacc77d5f1db69"><div class="ttname"><a href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#ae130889f2d9b097b11dacc77d5f1db69">prob_hi</a></div><div class="ttdeci">const auto prob_hi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_AnelasticWallDiffusion.H:13</div></div>
-<div class="ttc" id="aERF__NCPlotFile_8cpp_html_a551323f9a8390bd5fcf558c050e4480a"><div class="ttname"><a href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile</a></div><div class="ttdeci">void writeNCPlotFile(int lev, int which_subdomain, const std::string &amp;dir, const Vector&lt; const MultiFab * &gt; &amp;plotMF, const Vector&lt; std::string &gt; &amp;plot_var_names, const Vector&lt; int &gt; &amp;, Array&lt; Real, AMREX_SPACEDIM &gt; prob_lo, Array&lt; Real, AMREX_SPACEDIM &gt; prob_hi, Array&lt; Real, AMREX_SPACEDIM &gt; dx_in, const Box &amp;subdomain, const double &amp;time, const double &amp;start_bdy_time, const SolverChoice &amp;solverChoice, const Vector&lt; Real &gt; &amp;zlevels_stag)</div><div class="ttdef"><b>Definition:</b> ERF_NCPlotFile.cpp:17</div></div>
-<div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:141</div></div>
+<div class="ttc" id="aERF__NCPlotFile_8cpp_html_a551323f9a8390bd5fcf558c050e4480a"><div class="ttname"><a href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile</a></div><div class="ttdeci">void writeNCPlotFile(int lev, int which_subdomain, const std::string &amp;dir, const Vector&lt; const MultiFab * &gt; &amp;plotMF, const Vector&lt; std::string &gt; &amp;plot_var_names, const Vector&lt; int &gt; &amp;, Array&lt; Real, AMREX_SPACEDIM &gt; prob_lo, Array&lt; Real, AMREX_SPACEDIM &gt; prob_hi, Array&lt; Real, AMREX_SPACEDIM &gt; dx_in, const Box &amp;subdomain, const double &amp;time, const double &amp;start_bdy_time, const SolverChoice &amp;solverChoice, const Vector&lt; Real &gt; &amp;zlevels_stag)</div><div class="ttdef"><b>Definition:</b> ERF_NCPlotFile.cpp:20</div></div>
+<div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:241</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

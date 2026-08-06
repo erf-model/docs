@@ -1941,7 +1941,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        });</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    }</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;}</div>
-<div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:28</div></div>
+<div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:31</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a21daa5f5f0f5df1d3f6cfddc0f024ced"><div class="ttname"><a href="classSHOCInterface.html#a21daa5f5f0f5df1d3f6cfddc0f024ced">SHOCInterface::m_yvel</a></div><div class="ttdeci">amrex::MultiFab * m_yvel</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:595</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_af0c4264ed4eda9928d343628ee90fe09"><div class="ttname"><a href="classSHOCInterface.html#af0c4264ed4eda9928d343628ee90fe09">SHOCInterface::m_xvel</a></div><div class="ttdeci">amrex::MultiFab * m_xvel</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:594</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_af52f3bc116e6a3fe9f570191d07892c6"><div class="ttname"><a href="classSHOCInterface.html#af52f3bc116e6a3fe9f570191d07892c6">SHOCInterface::m_col_offsets</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_col_offsets</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:566</div></div>
@@ -2620,7 +2620,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(*<a class="code" href="classSHOCInterface.html#aa7ee7a5282cf860b87716068344850d8">m_cons</a>); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="comment">// NOTE: Get lateral ghost cells for CC &lt;--&gt; FC</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; gbx = mfi.tilebox(IntVect(0,0,0),IntVect(1,1,0));</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE((klo == gbx.smallEnd(2)) &amp;&amp;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>((klo == gbx.smallEnd(2)) &amp;&amp;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                         (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a> == gbx.bigEnd(2)),</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                                         <span class="stringliteral">&quot;Vertical decomposition with shoc is not allowed.&quot;</span>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span> nx = gbx.length(0);</div>
@@ -2652,9 +2652,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// Fill the KOKKOS Views from AMReX MFs</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="classSHOCInterface.html#ad1f2c19ca17e9a39016219c090475857">mf_to_kokkos_buffers</a>();</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
-<div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a></div><div class="ttdeci">@ tau23</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
-<div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a></div><div class="ttdeci">@ tau13</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:32</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248ba181b302bd0f99081c3c22fa38e1f8b73">tau23</a></div><div class="ttdeci">@ tau23</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:38</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a></div><div class="ttdeci">@ tau13</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:38</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a0fd7182e5c8942b3c0cf42bed07b29c5"><div class="ttname"><a href="classSHOCInterface.html#a0fd7182e5c8942b3c0cf42bed07b29c5">SHOCInterface::alloc_buffers</a></div><div class="ttdeci">void alloc_buffers()</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.cpp:199</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_a1bdb1da0e57b13491fc1c08267069995"><div class="ttname"><a href="classSHOCInterface.html#a1bdb1da0e57b13491fc1c08267069995">SHOCInterface::init_buffers</a></div><div class="ttdeci">void init_buffers()</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.cpp:786</div></div>
 <div class="ttc" id="aclassSHOCInterface_html_acb208b261a3900862c1d444d4d8bbcfc"><div class="ttname"><a href="classSHOCInterface.html#acb208b261a3900862c1d444d4d8bbcfc">SHOCInterface::m_lev</a></div><div class="ttdeci">int m_lev</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:579</div></div>
@@ -2663,7 +2664,16 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:175</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:178</div></div>
 <div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:177</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classSHOCInterface_a3acea701fdb9067c22fcd2f02941ed02_cgraph.png" border="0" usemap="#aclassSHOCInterface_a3acea701fdb9067c22fcd2f02941ed02_cgraph" alt=""/></div>
+<map name="aclassSHOCInterface_a3acea701fdb9067c22fcd2f02941ed02_cgraph" id="aclassSHOCInterface_a3acea701fdb9067c22fcd2f02941ed02_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,151,47"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="199,5,381,47"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>

@@ -228,6 +228,8 @@ var classERF =
     [ "change_max", "classERF.html#ae16d413b172bb3b3400af6d5cb236fd4", null ],
     [ "check_file", "classERF.html#ae701564fbe3da5bbd88587e5a08eca4e", null ],
     [ "check_for_nans", "classERF.html#a742f76b239dae314f0f46a59ee91e288", null ],
+    [ "cloud_chamber_budget", "classERF.html#adb8125ef7de018eb2b951c843d0ea5a5", null ],
+    [ "cloud_chamber_config", "classERF.html#a63bb83cbc186b0c3cc8852f6914dc4c4", null ],
     [ "column_file_name", "classERF.html#a48bba6b1c1b39940b09aefbe56311e2f", null ],
     [ "column_interval", "classERF.html#afa0bef6d3146788302b81c0d4f4802d1", null ],
     [ "column_loc_x", "classERF.html#a930b7d48218b3fc41d8719b50b3f6086", null ],

@@ -1,10 +1,15 @@
 var dir_451f984cbae2157dc09f494ce6fda815 =
 [
+    [ "ERF_CloudChamber.H", "ERF__CloudChamber_8H.html", "ERF__CloudChamber_8H" ],
+    [ "ERF_CloudChamberBudget.H", "ERF__CloudChamberBudget_8H.html", [
+      [ "CloudChamberBudget", "classCloudChamberBudget.html", "classCloudChamberBudget" ]
+    ] ],
     [ "ERF_InitCustomPert.H", "ERF__InitCustomPert_8H.html", "ERF__InitCustomPert_8H" ],
     [ "ERF_InitCustomPert_ABL.H", "ERF__InitCustomPert__ABL_8H.html", "ERF__InitCustomPert__ABL_8H" ],
     [ "ERF_InitCustomPert_AnelasticWallDiffusion.H", "ERF__InitCustomPert__AnelasticWallDiffusion_8H.html", "ERF__InitCustomPert__AnelasticWallDiffusion_8H" ],
     [ "ERF_InitCustomPert_Bomex.H", "ERF__InitCustomPert__Bomex_8H.html", "ERF__InitCustomPert__Bomex_8H" ],
     [ "ERF_InitCustomPert_Bubble.H", "ERF__InitCustomPert__Bubble_8H.html", "ERF__InitCustomPert__Bubble_8H" ],
+    [ "ERF_InitCustomPert_CloudChamber.H", "ERF__InitCustomPert__CloudChamber_8H.html", "ERF__InitCustomPert__CloudChamber_8H" ],
     [ "ERF_InitCustomPert_DataAssimilation_ISV.H", "ERF__InitCustomPert__DataAssimilation__ISV_8H.html", "ERF__InitCustomPert__DataAssimilation__ISV_8H" ],
     [ "ERF_InitCustomPert_DensityCurrent.H", "ERF__InitCustomPert__DensityCurrent_8H.html", "ERF__InitCustomPert__DensityCurrent_8H" ],
     [ "ERF_InitCustomPert_EBPoiseuille.H", "ERF__InitCustomPert__EBPoiseuille_8H.html", "ERF__InitCustomPert__EBPoiseuille_8H" ],

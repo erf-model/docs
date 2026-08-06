@@ -468,12 +468,13 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;        <a class="code" href="classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e">compute_eb_averages</a>(lev);</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown policy for MOSTAverage!&quot;</span>);</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown policy for MOSTAverage!&quot;</span>);</div>
 <div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    }</div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    <span class="comment">// We have initialized the averages</span></div>
 <div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">m_t_avg</a>) <a class="code" href="classMOSTAverage.html#a3fe20fc4a4eb0b283f1d658b6237004c">m_t_init</a>[lev] = 1;</div>
 <div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a05905a4754c7eb39b766b96889b1bd47"><div class="ttname"><a href="classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47">MOSTAverage::m_t_avg</a></div><div class="ttdeci">bool m_t_avg</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:381</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a094b17b7929c7b3dd680e400049d9e69"><div class="ttname"><a href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69">MOSTAverage::compute_plane_averages</a></div><div class="ttdeci">void compute_plane_averages(const int &amp;lev)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:954</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a0e87c91bf31d0e60a31b906081d24eea"><div class="ttname"><a href="classMOSTAverage.html#a0e87c91bf31d0e60a31b906081d24eea">MOSTAverage::m_policy</a></div><div class="ttdeci">int m_policy</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:346</div></div>
@@ -487,18 +488,19 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMOSTAverage_a41ef10e076e2099d0fd845e318fd00a0_cgraph.png" border="0" usemap="#aclassMOSTAverage_a41ef10e076e2099d0fd845e318fd00a0_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_a41ef10e076e2099d0fd845e318fd00a0_cgraph" id="aclassMOSTAverage_a41ef10e076e2099d0fd845e318fd00a0_cgraph">
-<area shape="rect" title=" " alt="" coords="5,130,183,171"/>
-<area shape="rect" href="classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e" title=" " alt="" coords="239,31,417,73"/>
-<area shape="rect" href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69" title=" " alt="" coords="239,97,417,138"/>
-<area shape="rect" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973" title=" " alt="" coords="239,162,417,203"/>
-<area shape="rect" href="classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c" title=" " alt="" coords="231,227,425,269"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="492,5,675,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="538,56,629,83"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="547,107,620,133"/>
-<area shape="rect" href="classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7" title=" " alt="" coords="498,158,669,199"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="473,224,693,251"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="495,325,672,352"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="499,275,667,301"/>
+<area shape="rect" title=" " alt="" coords="5,145,183,186"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="741,32,924,73"/>
+<area shape="rect" href="classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e" title=" " alt="" coords="239,210,417,252"/>
+<area shape="rect" href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69" title=" " alt="" coords="239,145,417,186"/>
+<area shape="rect" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973" title=" " alt="" coords="239,80,417,121"/>
+<area shape="rect" href="classMOSTAverage.html#a4b14ba1b568a0106ffd883d8c1c8f53c" title=" " alt="" coords="231,276,425,317"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="492,254,675,280"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="538,152,629,179"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="547,203,620,230"/>
+<area shape="rect" href="classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7" title=" " alt="" coords="498,86,669,128"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="473,35,693,62"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ae609a5c1f84347b66e9a8b712271c4ce" title=" " alt="" coords="495,304,672,331"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7" title=" " alt="" coords="499,355,667,382"/>
 </map>
 </div>
 
@@ -965,8 +967,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;            IndexType ixt = averages[imf]-&gt;boxArray().ixType();</div>
 <div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> idim(0); idim &lt; AMREX_SPACEDIM-1; ++idim) {</div>
 <div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;                <span class="keywordflow">if</span> ( ixt.nodeCentered(idim)  &amp;&amp; (pbx.bigEnd(idim) == vbx.bigEnd(idim)) ) {</div>
-<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;                    <span class="keywordtype">int</span> <a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> = domain.bigEnd(idim)+1;</div>
-<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;                    <span class="keywordflow">if</span> (pbx.bigEnd(idim) &lt; <a class="code" href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a> || is_per[idim]) {</div>
+<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;                    <span class="keywordtype">int</span> dom_hi = domain.bigEnd(idim)+1;</div>
+<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;                    <span class="keywordflow">if</span> (pbx.bigEnd(idim) &lt; dom_hi || is_per[idim]) {</div>
 <div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;                        pbx.growHi(idim,-1);</div>
 <div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;                    }</div>
 <div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;                }</div>
@@ -1180,7 +1182,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:17</div></div>
-<div class="ttc" id="aERF__SetupVertDiff_8H_html_a0f2c81fa9e8171e1116919f8b1ae0b28"><div class="ttname"><a href="ERF__SetupVertDiff_8H.html#a0f2c81fa9e8171e1116919f8b1ae0b28">dom_hi</a></div><div class="ttdeci">const auto &amp; dom_hi</div><div class="ttdef"><b>Definition:</b> ERF_SetupVertDiff.H:2</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a1beb0dad926be2f2d9cb1de69a1a3374"><div class="ttname"><a href="classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374">MOSTAverage::m_y_pos</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; m_y_pos</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:350</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a2f5fb25e7c5196338ee5a051708d8f62"><div class="ttname"><a href="classMOSTAverage.html#a2f5fb25e7c5196338ee5a051708d8f62">MOSTAverage::m_i_indx</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::iMultiFab &gt; &gt; m_i_indx</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:352</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a3a49018467b69573ef84df9cdfd86da4"><div class="ttname"><a href="classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4">MOSTAverage::m_z_phys_nd</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_z_phys_nd</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:336</div></div>
@@ -1203,6 +1204,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="271,5,361,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="279,56,353,83"/>
 <area shape="rect" href="classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7" title=" " alt="" coords="231,107,401,149"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="449,107,632,149"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1631,6 +1633,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="295,56,386,83"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="304,107,377,133"/>
 <area shape="rect" href="classMOSTAverage.html#aefb42b9f2a5c3347e7ab87abdfcab3d7" title=" " alt="" coords="255,158,426,199"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="499,158,681,199"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1997,7 +2000,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="classMOSTAverage.html#ac32eedeed872c97981047c81f9157297">set_eb_normalization</a>(lev);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown policy for MOSTAverage!&quot;</span>);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Unknown policy for MOSTAverage!&quot;</span>);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// Set up the exponential time filtering</span></div>
@@ -2052,22 +2055,23 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_cgraph.png" border="0" usemap="#aclassMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_cgraph" id="aclassMOSTAverage_aceb8c4ce27021d371b85abb7350a36db_cgraph">
-<area shape="rect" title=" " alt="" coords="5,267,259,308"/>
-<area shape="rect" href="classMOSTAverage.html#ac32eedeed872c97981047c81f9157297" title=" " alt="" coords="319,136,482,177"/>
-<area shape="rect" href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc" title=" " alt="" coords="323,5,478,47"/>
-<area shape="rect" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9" title=" " alt="" coords="323,201,478,243"/>
-<area shape="rect" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee" title=" " alt="" coords="310,397,491,439"/>
-<area shape="rect" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a" title=" " alt="" coords="310,332,491,373"/>
-<area shape="rect" href="classMOSTAverage.html#a8a1c27722c5b0df803889bfadb9a98e0" title=" " alt="" coords="309,463,492,504"/>
-<area shape="rect" href="classMOSTAverage.html#a514120312387f28a1624387b0e3af360" title=" " alt="" coords="307,528,495,569"/>
-<area shape="rect" href="classMOSTAverage.html#a2d95e963377f9e2089740d3b3ad24f30" title=" " alt="" coords="323,71,478,112"/>
-<area shape="rect" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e" title=" " alt="" coords="323,267,478,308"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="558,78,741,105"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="604,255,695,282"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="613,306,686,333"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="630,205,669,231"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="543,357,756,383"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="547,407,751,434"/>
+<area shape="rect" title=" " alt="" coords="5,277,259,318"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="558,142,741,184"/>
+<area shape="rect" href="classMOSTAverage.html#ac32eedeed872c97981047c81f9157297" title=" " alt="" coords="319,48,482,89"/>
+<area shape="rect" href="classMOSTAverage.html#acea63f9601c5d2ee2cb21eee27d843fc" title=" " alt="" coords="323,113,478,154"/>
+<area shape="rect" href="classMOSTAverage.html#a712f8ad33d8a87d2979330dec0a873d9" title=" " alt="" coords="323,178,478,220"/>
+<area shape="rect" href="classMOSTAverage.html#ab43d75918dd8805b804b2054ec1be1ee" title=" " alt="" coords="310,309,491,350"/>
+<area shape="rect" href="classMOSTAverage.html#a5d4563f98ba7112ceb8be723f1799b7a" title=" " alt="" coords="310,374,491,416"/>
+<area shape="rect" href="classMOSTAverage.html#a8a1c27722c5b0df803889bfadb9a98e0" title=" " alt="" coords="309,505,492,546"/>
+<area shape="rect" href="classMOSTAverage.html#a514120312387f28a1624387b0e3af360" title=" " alt="" coords="307,570,495,612"/>
+<area shape="rect" href="classMOSTAverage.html#a2d95e963377f9e2089740d3b3ad24f30" title=" " alt="" coords="323,440,478,481"/>
+<area shape="rect" href="classMOSTAverage.html#a517ea430338f8474d89418cd92886b8e" title=" " alt="" coords="323,244,478,285"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="558,70,741,96"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="604,259,695,286"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="613,208,686,235"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="630,310,669,336"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="543,411,756,438"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="547,360,751,387"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2337,10 +2341,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160; </div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        amrex::ignore_unused(m_zhi);</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(zref_tmp &gt;= m_zlo + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * m_dz,</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(zref_tmp &gt;= m_zlo + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * m_dz,</div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;                                         <span class="stringliteral">&quot;Query point must be past first z-cell!&quot;</span>);</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(zref_tmp &lt;= m_zhi - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * m_dz,</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(zref_tmp &lt;= m_zhi - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * m_dz,</div>
 <div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                                         <span class="stringliteral">&quot;Query point must be below the last z-cell!&quot;</span>);</div>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="keywordtype">int</span> lk = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((zref_tmp - m_zlo) / m_dz - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>));</div>
@@ -2352,7 +2356,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev]-&gt;setVal(lk);</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="comment">// Specified k_indx &amp; compute z_ref</span></div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (read_k) {</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(<a class="code" href="classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884">m_k_in</a>[lev] &gt;= <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a>,</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884">m_k_in</a>[lev] &gt;= <a class="code" href="classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91">m_radius</a>,</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                                  <span class="stringliteral">&quot;K index must be larger than averaging radius!&quot;</span>);</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <a class="code" href="classMOSTAverage.html#afbe752293b7c2790b1994a2349261fda">m_k_indx</a>[lev]-&gt;setVal(<a class="code" href="classMOSTAverage.html#ad570edb25d41640aa2d52122ae303884">m_k_in</a>[lev]);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160; </div>
@@ -2372,9 +2376,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMOSTAverage_acea63f9601c5d2ee2cb21eee27d843fc_cgraph.png" border="0" usemap="#aclassMOSTAverage_acea63f9601c5d2ee2cb21eee27d843fc_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_acea63f9601c5d2ee2cb21eee27d843fc_cgraph" id="aclassMOSTAverage_acea63f9601c5d2ee2cb21eee27d843fc_cgraph">
-<area shape="rect" title=" " alt="" coords="5,23,160,65"/>
+<area shape="rect" title=" " alt="" coords="5,57,160,98"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="208,5,391,32"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="280,56,319,83"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="208,57,391,98"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="280,123,319,149"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2440,7 +2445,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160; </div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="comment">// No default behavior with terrain (we can&#39;t tell the difference between</span></div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// vertical grid stretching and true terrain)</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(read_z != read_k,</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(read_z != read_k,</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;                                     <span class="stringliteral">&quot;Need to specify zref or k_arr_in for MOST&quot;</span>);</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="comment">// Capture for device</span></div>
@@ -2474,7 +2479,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i,j  ,lk+1) + z_phys_arr(i+1,j  ,lk+1)</div>
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                                       + z_phys_arr(i,j+1,lk+1) + z_phys_arr(i+1,j+1,lk+1) );</div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                    <span class="keywordflow">if</span> (z_target &gt; z_lo &amp;&amp; z_target &lt; z_hi){</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(lk &gt;= d_radius,</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(lk &gt;= d_radius,</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                                                         <span class="stringliteral">&quot;K index must be larger than averaging radius!&quot;</span>);</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                        k_arr(i,j,0) = lk;</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                        zref_arr(i,j,0) = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (z_hi + z_lo) - z_bot_face;</div>
@@ -2482,13 +2487,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                    }</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                }</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                AMREX_ALWAYS_ASSERT_WITH_MESSAGE(found,</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(found,</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                                                 <span class="stringliteral">&quot;zref not found with terrain!&quot;</span>);</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;            });</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        }</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="comment">// Specified k_indx &amp; compute z_ref</span></div>
 <div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (read_k) {</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(<span class="keyword">false</span>, <span class="stringliteral">&quot;Specified k-indx with terrain not implemented!&quot;</span>);</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">false</span>, <span class="stringliteral">&quot;Specified k-indx with terrain not implemented!&quot;</span>);</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    }</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:14</div></div>
@@ -2499,10 +2504,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMOSTAverage_a712f8ad33d8a87d2979330dec0a873d9_cgraph.png" border="0" usemap="#aclassMOSTAverage_a712f8ad33d8a87d2979330dec0a873d9_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_a712f8ad33d8a87d2979330dec0a873d9_cgraph" id="aclassMOSTAverage_a712f8ad33d8a87d2979330dec0a873d9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,49,160,90"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="208,5,299,32"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="234,56,273,83"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="217,107,290,133"/>
+<area shape="rect" title=" " alt="" coords="5,89,160,131"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="208,5,391,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="254,71,345,98"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="280,122,319,149"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="263,173,336,199"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2616,7 +2622,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_hi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( z_phys_arr(i_new,j_new  ,lk+1) + z_phys_arr(i_new+1,j_new  ,lk+1)</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                                       + z_phys_arr(i_new,j_new+1,lk+1) + z_phys_arr(i_new+1,j_new+1,lk+1) );</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                <span class="keywordflow">if</span> (z_target &gt; z_lo &amp;&amp; z_target &lt; z_hi){</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(lk &gt;= d_radius,</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(lk &gt;= d_radius,</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                                                     <span class="stringliteral">&quot;K index must be larger than averaging radius!&quot;</span>);</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                    amrex::ignore_unused(d_radius);</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    k_arr(i,j,0) = lk;</div>
@@ -2636,12 +2642,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMOSTAverage_ab43d75918dd8805b804b2054ec1be1ee_cgraph.png" border="0" usemap="#aclassMOSTAverage_ab43d75918dd8805b804b2054ec1be1ee_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_ab43d75918dd8805b804b2054ec1be1ee_cgraph" id="aclassMOSTAverage_ab43d75918dd8805b804b2054ec1be1ee_cgraph">
-<area shape="rect" title=" " alt="" coords="5,99,187,141"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="235,5,448,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="239,56,443,83"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="296,107,387,133"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="322,157,361,184"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="305,208,378,235"/>
+<area shape="rect" title=" " alt="" coords="5,140,187,181"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="250,5,433,47"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="235,71,448,98"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="239,122,443,149"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="296,173,387,199"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="322,223,361,250"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="305,274,378,301"/>
 </map>
 </div>
 <div class="dynheader">
@@ -2762,7 +2769,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            <span class="comment">// Destination position must be contained on the current process!</span></div>
 <div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pos[] = {x_pos_arr(i,j,0)-plo[0],y_pos_arr(i,j,0)-plo[1],<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2]};</div>
 <div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;            amrex::ignore_unused(pos);</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            AMREX_ALWAYS_ASSERT_WITH_MESSAGE(grb.contains(&amp;pos[0]),</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(grb.contains(&amp;pos[0]),</div>
 <div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;                                              <span class="stringliteral">&quot;Query point outside of proc domain!&quot;</span>);</div>
 <div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;        });</div>
 <div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;    }</div>
@@ -2774,12 +2781,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMOSTAverage_a5d4563f98ba7112ceb8be723f1799b7a_cgraph.png" border="0" usemap="#aclassMOSTAverage_a5d4563f98ba7112ceb8be723f1799b7a_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_a5d4563f98ba7112ceb8be723f1799b7a_cgraph" id="aclassMOSTAverage_a5d4563f98ba7112ceb8be723f1799b7a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,99,187,141"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="235,5,448,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="239,56,443,83"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="296,107,387,133"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="322,157,361,184"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="305,208,378,235"/>
+<area shape="rect" title=" " alt="" coords="5,140,187,181"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="250,5,433,47"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a43b431cbd97421014ff80245883e06d2" title=" " alt="" coords="235,71,448,98"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#ada44020dc4ec27c5bebf8fd82d336cee" title=" " alt="" coords="239,122,443,149"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="296,173,387,199"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="322,223,361,250"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="305,274,378,301"/>
 </map>
 </div>
 <div class="dynheader">
@@ -3192,7 +3200,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            <span class="comment">// Destination position must be contained on the current process!</span></div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> pos[] = {x_pos_arr(i,j,0)-plo[0],y_pos_arr(i,j,0)-plo[1],<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2]};</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            amrex::ignore_unused(pos);</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            AMREX_ALWAYS_ASSERT_WITH_MESSAGE(grb.contains(&amp;pos[0]),</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;            <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(grb.contains(&amp;pos[0]),</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                                             <span class="stringliteral">&quot;Query point outside of proc domain!&quot;</span>);</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        });</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;    }</div>
@@ -3204,10 +3212,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classMOSTAverage_a517ea430338f8474d89418cd92886b8e_cgraph.png" border="0" usemap="#aclassMOSTAverage_a517ea430338f8474d89418cd92886b8e_cgraph" alt=""/></div>
 <map name="aclassMOSTAverage_a517ea430338f8474d89418cd92886b8e_cgraph" id="aclassMOSTAverage_a517ea430338f8474d89418cd92886b8e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,49,160,90"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="208,5,299,32"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="234,56,273,83"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="217,107,290,133"/>
+<area shape="rect" title=" " alt="" coords="5,89,160,131"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="208,5,391,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="254,71,345,98"/>
+<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="280,122,319,149"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="263,173,336,199"/>
 </map>
 </div>
 <div class="dynheader">
@@ -3339,7 +3348,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        amrex::ignore_unused(found);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(found, <span class="stringliteral">&quot;MOSTAverage: Height above terrain not found, try increasing z_ref!&quot;</span>);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(found, <span class="stringliteral">&quot;MOSTAverage: Height above terrain not found, try increasing z_ref!&quot;</span>);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="comment">// NOTE: This is the point ahead of the current i,j (e.g. i/j_new + 1)</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keyword">const</span> amrex::RealVect lx(ireal + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, jreal + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>, zval);</div>
@@ -3370,6 +3379,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69">compute_plane_averages()</a>, and <a class="el" href="classMOSTAverage.html#a38361381cf969ee42ba45f73ae499973">compute_region_averages()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classMOSTAverage_aefb42b9f2a5c3347e7ab87abdfcab3d7_cgraph.png" border="0" usemap="#aclassMOSTAverage_aefb42b9f2a5c3347e7ab87abdfcab3d7_cgraph" alt=""/></div>
+<map name="aclassMOSTAverage_aefb42b9f2a5c3347e7ab87abdfcab3d7_cgraph" id="aclassMOSTAverage_aefb42b9f2a5c3347e7ab87abdfcab3d7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,176,47"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="224,5,407,47"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

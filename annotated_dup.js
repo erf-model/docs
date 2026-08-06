@@ -1,5 +1,9 @@
 var annotated_dup =
 [
+    [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", [
+      [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
+      [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ]
+    ] ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", [
       [ "PrecipSlots", "structerf__noahmp_1_1PrecipSlots.html", "structerf__noahmp_1_1PrecipSlots" ],
       [ "ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", "structerf__noahmp_1_1ClampedPrecipCell" ],
@@ -21,6 +25,9 @@ var annotated_dup =
       [ "ParsedWallScalarBC", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html", "structerf__wall__scalar__bc_1_1ParsedWallScalarBC" ],
       [ "ParsedWallFaceScalars", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars.html", "structerf__wall__scalar__bc_1_1ParsedWallFaceScalars" ],
       [ "WallFaceParseResult", "structerf__wall__scalar__bc_1_1WallFaceParseResult.html", "structerf__wall__scalar__bc_1_1WallFaceParseResult" ]
+    ] ],
+    [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", [
+      [ "Face", "structerf__wall__thermodynamics_1_1Face.html", "structerf__wall__thermodynamics_1_1Face" ]
     ] ],
     [ "module_libmassv", "namespacemodule__libmassv.html", [
       [ "vrec", "interfacemodule__libmassv_1_1vrec.html", "interfacemodule__libmassv_1_1vrec" ],
@@ -75,6 +82,7 @@ var annotated_dup =
     [ "CENTERED2", "structCENTERED2.html", "structCENTERED2" ],
     [ "CENTERED4", "structCENTERED4.html", "structCENTERED4" ],
     [ "CENTERED6", "structCENTERED6.html", "structCENTERED6" ],
+    [ "CloudChamberBudget", "classCloudChamberBudget.html", "classCloudChamberBudget" ],
     [ "custom_flux", "structcustom__flux.html", "structcustom__flux" ],
     [ "DampingChoice", "structDampingChoice.html", "structDampingChoice" ],
     [ "DiffChoice", "structDiffChoice.html", "structDiffChoice" ],

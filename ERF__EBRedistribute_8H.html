@@ -88,6 +88,9 @@ $(document).ready(function(){initNavTree('ERF__EBRedistribute_8H.html',''); init
 <div class="title">ERF_EBRedistribute.H File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Declares embedded-boundary conservative redistribution helpers.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;AMReX.H&gt;</code><br />
 <code>#include &lt;AMReX_MultiFab.H&gt;</code><br />
 <code>#include &lt;AMReX_Geometry.H&gt;</code><br />
@@ -99,18 +102,18 @@ Include dependency graph for ERF_EBRedistribute.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EBRedistribute_8H__incl.png" border="0" usemap="#aSource_2EB_2ERF__EBRedistribute_8H" alt=""/></div>
 <map name="aSource_2EB_2ERF__EBRedistribute_8H" id="aSource_2EB_2ERF__EBRedistribute_8H">
-<area shape="rect" title=" " alt="" coords="525,5,759,32"/>
+<area shape="rect" title="Declares embedded&#45;boundary conservative redistribution helpers." alt="" coords="525,5,759,32"/>
 <area shape="rect" title=" " alt="" coords="271,80,354,107"/>
 <area shape="rect" title=" " alt="" coords="379,80,524,107"/>
 <area shape="rect" title=" " alt="" coords="763,229,916,256"/>
 <area shape="rect" title=" " alt="" coords="731,80,863,107"/>
 <area shape="rect" title=" " alt="" coords="887,80,1018,107"/>
-<area shape="rect" href="ERF__EB_8H.html" title=" " alt="" coords="549,80,634,107"/>
+<area shape="rect" href="ERF__EB_8H.html" title="Declares the embedded&#45;boundary factory manager used by ERF levels." alt="" coords="549,80,634,107"/>
 <area shape="rect" title=" " alt="" coords="516,229,739,256"/>
 <area shape="rect" title=" " alt="" coords="5,229,153,256"/>
 <area shape="rect" title=" " alt="" coords="178,229,293,256"/>
 <area shape="rect" title=" " alt="" coords="317,229,492,256"/>
-<area shape="rect" href="ERF__EBAux_8H.html" title=" " alt="" coords="443,155,553,181"/>
+<area shape="rect" href="ERF__EBAux_8H.html" title="Declares auxiliary EB factories for face&#45;centered data." alt="" coords="443,155,553,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -118,8 +121,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__EBRedistribute_8H__dep__incl.png" border="0" usemap="#aSource_2EB_2ERF__EBRedistribute_8Hdep" alt=""/></div>
 <map name="aSource_2EB_2ERF__EBRedistribute_8Hdep" id="aSource_2EB_2ERF__EBRedistribute_8Hdep">
-<area shape="rect" title=" " alt="" coords="253,5,487,32"/>
-<area shape="rect" href="ERF__EBRedistribute_8cpp.html" title=" " alt="" coords="5,87,252,114"/>
+<area shape="rect" title="Declares embedded&#45;boundary conservative redistribution helpers." alt="" coords="253,5,487,32"/>
+<area shape="rect" href="ERF__EBRedistribute_8cpp.html" title="Implements EB redistribution for native and auxiliary EB factories." alt="" coords="5,87,252,114"/>
 <area shape="rect" href="ERF__AdvanceDycore_8cpp.html" title=" " alt="" coords="277,80,463,121"/>
 <area shape="rect" href="ERF__SlowRhsPost_8cpp.html" title=" " alt="" coords="488,80,663,121"/>
 </map>
@@ -131,9 +134,12 @@ This graph shows which files directly or indirectly include this file:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a0c6cdd0bd3eb10a5d89fe53b2c590666"><td class="memTemplParams" colspan="2">template&lt;typename EBFactType &gt; </td></tr>
 <tr class="memitem:a0c6cdd0bd3eb10a5d89fe53b2c590666"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="ERF__EBRedistribute_8H.html#a0c6cdd0bd3eb10a5d89fe53b2c590666">redistribute_term</a> (int ncomp, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;result, amrex::MultiFab &amp;result_tmp, amrex::MultiFab const &amp;state, EBFactType const &amp;ebfact, amrex::BCRec const *bc, double dt, int const igrid=-1)</td></tr>
+<tr class="memdesc:a0c6cdd0bd3eb10a5d89fe53b2c590666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply EB state redistribution to a temporary tendency field.  <a href="ERF__EBRedistribute_8H.html#a0c6cdd0bd3eb10a5d89fe53b2c590666">More...</a><br /></td></tr>
 <tr class="separator:a0c6cdd0bd3eb10a5d89fe53b2c590666"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Declares embedded-boundary conservative redistribution helpers. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a0c6cdd0bd3eb10a5d89fe53b2c590666"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c6cdd0bd3eb10a5d89fe53b2c590666">&#9670;&nbsp;</a></span>redistribute_term()</h2>
 
@@ -203,6 +209,28 @@ template&lt;typename EBFactType &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Apply EB state redistribution to a temporary tendency field. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">EBFactType</td><td>EB factory interface type, either AMReX native or <a class="el" href="classERF.html">ERF</a> auxiliary. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ncomp</td><td>Number of components to redistribute. </td></tr>
+    <tr><td class="paramname">geom</td><td>Geometry associated with the result field. </td></tr>
+    <tr><td class="paramname">result</td><td>Output redistributed field. </td></tr>
+    <tr><td class="paramname">result_tmp</td><td>Input temporary field before redistribution. </td></tr>
+    <tr><td class="paramname">state</td><td>State field used by redistribution slopes. </td></tr>
+    <tr><td class="paramname">ebfact</td><td>EB factory supplying flags and geometric moments. </td></tr>
+    <tr><td class="paramname">bc</td><td>Boundary conditions for the state components. </td></tr>
+    <tr><td class="paramname">dt</td><td>Time-step size used by the redistribution operator. </td></tr>
+    <tr><td class="paramname">igrid</td><td>Optional <a class="el" href="classERF.html">ERF</a> integer-variable index for staggered grids; -1 means cell-centered. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

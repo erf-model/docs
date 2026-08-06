@@ -38,5 +38,6 @@ var dir_528efc400cc48bc5f175d9531879efeb =
     [ "ERF_TimeInterpolatedData.H", "ERF__TimeInterpolatedData_8H.html", [
       [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ]
     ] ],
-    [ "ERF_WallScalarBC.H", "ERF__WallScalarBC_8H.html", "ERF__WallScalarBC_8H" ]
+    [ "ERF_WallScalarBC.H", "ERF__WallScalarBC_8H.html", "ERF__WallScalarBC_8H" ],
+    [ "ERF_WallThermodynamics.H", "ERF__WallThermodynamics_8H.html", "ERF__WallThermodynamics_8H" ]
 ];

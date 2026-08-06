@@ -380,7 +380,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux__donelan.html#ab3b7307051954c791dcf73bb13213e9f">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / (std::log(zref / <a class="code" href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a>) - psi_m);</div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            ++iter;</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux__donelan.html#a5c30fb789d7f02cb9533948d32011947">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(iter &lt; max_iters,</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(iter &lt; max_iters,</div>
 <div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;                                         <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
 <div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160; </div>
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;        <span class="comment">// Populate the stored MOST arrays</span></div>
@@ -403,6 +403,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ScalarAdvDiff_8H_html_a3686b9abefe6dda622283bf7109e68fe"><div class="ttname"><a href="ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe">z0</a></div><div class="ttdeci">Real z0</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ScalarAdvDiff.H:8</div></div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aERF__MOSTRoughness_8H_html_a5b6ef1e185702e95631d5f22ff728860"><div class="ttname"><a href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860">Donelan_roughness</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Donelan_roughness(amrex::Real ustar)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTRoughness.H:35</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__Wstar_8H_html_ad7f15bc4a50b75f60a55909ec006c547"><div class="ttname"><a href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547">calc_wstar</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real calc_wstar(const amrex::Real &amp;ust, const amrex::Real &amp;tst, const amrex::Real &amp;qst, const amrex::Real &amp;pblh, const amrex::Real &amp;th, const amrex::Real &amp;thv, const amrex::Real &amp;qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_Wstar.H:13</div></div>
@@ -420,11 +421,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsurface__flux__donelan_aed90f8d0aee3cdc3ac8b177aaf8b70c7_cgraph.png" border="0" usemap="#astructsurface__flux__donelan_aed90f8d0aee3cdc3ac8b177aaf8b70c7_cgraph" alt=""/></div>
 <map name="astructsurface__flux__donelan_aed90f8d0aee3cdc3ac8b177aaf8b70c7_cgraph" id="astructsurface__flux__donelan_aed90f8d0aee3cdc3ac8b177aaf8b70c7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,100,165,141"/>
-<area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="213,5,367,47"/>
-<area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="213,71,367,112"/>
-<area shape="rect" href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547" title=" " alt="" coords="245,137,335,163"/>
-<area shape="rect" href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860" title=" " alt="" coords="215,187,365,214"/>
+<area shape="rect" title=" " alt="" coords="5,136,165,177"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="213,5,396,47"/>
+<area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="228,71,381,112"/>
+<area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="228,136,381,177"/>
+<area shape="rect" href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547" title=" " alt="" coords="259,202,350,229"/>
+<area shape="rect" href="ERF__MOSTRoughness_8H.html#a5b6ef1e185702e95631d5f22ff728860" title=" " alt="" coords="229,253,380,279"/>
 </map>
 </div>
 

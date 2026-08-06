@@ -139,6 +139,10 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a7e65668ebad061e4f91fee27dc041208"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f85d50fe35885cc85198ca50d0e9bd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6">SHmax</a> = <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4)</td></tr>
 <tr class="separator:a1f85d50fe35885cc85198ca50d0e9bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced785de363616db2d7f46f1d0965c37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMYNNLevel25.html#aced785de363616db2d7f46f1d0965c37">SQmin</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="separator:aced785de363616db2d7f46f1d0965c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa305aaaa173ea079c45de3fbc8dc82d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMYNNLevel25.html#afa305aaaa173ea079c45de3fbc8dc82d">SQmax</a> = <a class="el" href="structMYNNLevel25.html#a448ce1797630512782e92212036b675e">SQfac</a> * <a class="el" href="structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6">SHmax</a></td></tr>
+<tr class="separator:afa305aaaa173ea079c45de3fbc8dc82d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6065f4b0ba5299d0be0f92a614188034"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__MYNNStruct_8H.html#a103de8b695a78549c43fa852d9c4dd25">MYNNConfigType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMYNNLevel25.html#a6065f4b0ba5299d0be0f92a614188034">config</a></td></tr>
 <tr class="separator:a6065f4b0ba5299d0be0f92a614188034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af677ab24bae6b1f78751489a8df5b1be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMYNNLevel25.html#af677ab24bae6b1f78751489a8df5b1be">diffuse_moistvars</a> = false</td></tr>
@@ -216,7 +220,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> D = Phi2*Phi4 + Phi5*Phi3;      <span class="comment">// NN09 Eqn. 31</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        SM = alphac * <a class="code" href="structMYNNLevel25.html#af059aaff0f5dd837293d497198c5ca02">A1</a> * (Phi3 - 3*<a class="code" href="structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7">C1</a>*Phi4) / D;  <span class="comment">// NN09 Eqn. 27</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        SH = alphac * <a class="code" href="structMYNNLevel25.html#a767313a41fbd7da7ede8d5f4037e4e6a">A2</a> * (Phi2 + 3*<a class="code" href="structMYNNLevel25.html#a56b79a6d80bf23bedd64223516746ae7">C1</a>*Phi5) / D;  <span class="comment">// NN09 Eqn. 28</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        SQ = <a class="code" href="structMYNNLevel25.html#a448ce1797630512782e92212036b675e">SQfac</a> * SM;                            <span class="comment">// NN09 Eqn. 67</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        SQ = <a class="code" href="structMYNNLevel25.html#a448ce1797630512782e92212036b675e">SQfac</a>  * SM;                           <span class="comment">// NN09 Eqn. 67</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
@@ -277,7 +281,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">TurbChoice::display()</a>, <a class="el" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">TurbChoice::init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">TurbChoice::display()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">TurbChoice::init_params()</a>.</p>
 
 </div>
 </div>
@@ -484,6 +488,34 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="reference">Referenced by <a class="el" href="structMYNNLevel25.html#a70d44c2f16e177d51dda170db9624c67">calc_stability_funcs()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">TurbChoice::init_params()</a>.</p>
+
+</div>
+</div>
+<a id="afa305aaaa173ea079c45de3fbc8dc82d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa305aaaa173ea079c45de3fbc8dc82d">&#9670;&nbsp;</a></span>SQmax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> MYNNLevel25::SQmax = <a class="el" href="structMYNNLevel25.html#a448ce1797630512782e92212036b675e">SQfac</a> * <a class="el" href="structMYNNLevel25.html#a1f85d50fe35885cc85198ca50d0e9bd6">SHmax</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aced785de363616db2d7f46f1d0965c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced785de363616db2d7f46f1d0965c37">&#9670;&nbsp;</a></span>SQmin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> MYNNLevel25::SQmin = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -137,15 +137,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="ERF__AdvectionSrcForMom__N_8H.html" title=" " alt="" coords="720,80,919,121"/>
 <area shape="rect" href="ERF__AdvectionSrcForMom__T_8H.html" title=" " alt="" coords="491,80,686,121"/>
 <area shape="rect" href="ERF__AdvectionSrcForScalars_8H.html" title=" " alt="" coords="1223,80,1418,121"/>
-<area shape="rect" href="ERF__EBAdvectionSrcForMom_8H.html" title=" " alt="" coords="987,80,1193,121"/>
-<area shape="rect" href="ERF__EBAdvectionSrcForScalars_8H.html" title=" " alt="" coords="1442,80,1647,121"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForMom_8H.html" title="Defines EB momentum&#45;advection flux builders for higher&#45;order stencils." alt="" coords="987,80,1193,121"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForScalars_8H.html" title="Defines EB scalar&#45;advection flux builders for higher&#45;order stencils." alt="" coords="1442,80,1647,121"/>
 <area shape="rect" href="ERF__AdvectionSrcForMom_8cpp.html" title=" " alt="" coords="245,177,439,218"/>
 <area shape="rect" href="ERF__AdvectionSrcForMom__ConstantDz_8cpp.html" title=" " alt="" coords="463,169,695,225"/>
 <area shape="rect" href="ERF__AdvectionSrcForMom__EB_8cpp.html" title=" " alt="" coords="981,177,1199,218"/>
 <area shape="rect" href="ERF__AdvectionSrcForMom__StretchedDz_8cpp.html" title=" " alt="" coords="720,169,956,225"/>
 <area shape="rect" href="ERF__AdvectionSrcForMom__TF_8cpp.html" title=" " alt="" coords="5,177,220,218"/>
 <area shape="rect" href="ERF__AdvectionSrcForState_8cpp.html" title=" " alt="" coords="1223,177,1418,218"/>
-<area shape="rect" href="ERF__EBAdvectionSrcForState_8cpp.html" title=" " alt="" coords="1442,177,1647,218"/>
+<area shape="rect" href="ERF__EBAdvectionSrcForState_8cpp.html" title="Implements EB advection source terms for density and scalar state." alt="" coords="1442,177,1647,218"/>
 </map>
 </div>
 </div>
@@ -240,10 +240,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Interpolation_8H_a7db2e03d98477dc9033d7c99e2223898_cgraph.png" border="0" usemap="#aERF__Interpolation_8H_a7db2e03d98477dc9033d7c99e2223898_cgraph" alt=""/></div>
 <map name="aERF__Interpolation_8H_a7db2e03d98477dc9033d7c99e2223898_cgraph" id="aERF__Interpolation_8H_a7db2e03d98477dc9033d7c99e2223898_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,208,47"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#a54ee27dfac22fc3f49cdde05d2ec5871" title=" " alt="" coords="256,13,433,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="481,13,603,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="651,5,833,47"/>
+<area shape="rect" title=" " alt="" coords="5,39,208,80"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#a54ee27dfac22fc3f49cdde05d2ec5871" title=" " alt="" coords="256,46,433,73"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="481,46,603,73"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="651,5,833,47"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="651,71,833,112"/>
 </map>
 </div>
 
@@ -311,7 +312,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5">isSupportedInterpolationAdvType</a>(adv_type),</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="stringliteral">&quot;interpolatedVal only supports Centered_2nd, Upwind_3rd, Centered_4th, Upwind_5th, and Centered_6th&quot;</span>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
@@ -328,7 +329,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a>) {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        myInterpolatedVal = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(37.0)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(60.0))*avg1 -(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(15.0))*avg2 +(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1)/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(60.0))*avg3;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">false</span>,</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="stringliteral">&quot;interpolatedVal only supports Centered_2nd, Upwind_3rd, Centered_4th, Upwind_5th, and Centered_6th&quot;</span>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
@@ -340,6 +341,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a">AdvType::Upwind_5th</a></div><div class="ttdeci">@ Upwind_5th</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9">AdvType::Centered_6th</a></div><div class="ttdeci">@ Centered_6th</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a></div><div class="ttdeci">@ Centered_2nd</div></div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aERF__Interpolation_8H_html_a2ae498a03776b5a73ffa7a30169f46b5"><div class="ttname"><a href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5">isSupportedInterpolationAdvType</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool isSupportedInterpolationAdvType(const AdvType adv_type) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation.H:17</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
@@ -349,8 +351,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph.png" border="0" usemap="#aERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph" alt=""/></div>
 <map name="aERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph" id="aERF__Interpolation_8H_aa4b88a88257b89505c133a7ba9cba462_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,127,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="175,5,357,47"/>
+<area shape="rect" title=" " alt="" coords="5,46,127,73"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="175,5,357,47"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="175,71,357,112"/>
 </map>
 </div>
 <div class="dynheader">
@@ -455,9 +458,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Interpolation_8H_ae8940bdc1f155614d26ce3c5502bd918_cgraph.png" border="0" usemap="#aERF__Interpolation_8H_ae8940bdc1f155614d26ce3c5502bd918_cgraph" alt=""/></div>
 <map name="aERF__Interpolation_8H_ae8940bdc1f155614d26ce3c5502bd918_cgraph" id="aERF__Interpolation_8H_ae8940bdc1f155614d26ce3c5502bd918_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,120,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="168,13,289,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="337,5,520,47"/>
+<area shape="rect" title=" " alt="" coords="5,46,120,73"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="168,46,289,73"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="337,5,520,47"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="337,71,520,112"/>
 </map>
 </div>
 
@@ -547,9 +551,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Interpolation_8H_ad9844abfa5c6530dc10d582e1adbb26c_cgraph.png" border="0" usemap="#aERF__Interpolation_8H_ad9844abfa5c6530dc10d582e1adbb26c_cgraph" alt=""/></div>
 <map name="aERF__Interpolation_8H_ad9844abfa5c6530dc10d582e1adbb26c_cgraph" id="aERF__Interpolation_8H_ad9844abfa5c6530dc10d582e1adbb26c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,119,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="167,13,288,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="336,5,519,47"/>
+<area shape="rect" title=" " alt="" coords="5,46,119,73"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="167,46,288,73"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="336,5,519,47"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="336,71,519,112"/>
 </map>
 </div>
 
@@ -638,9 +643,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Interpolation_8H_a0623363b49ea9794f302ec9e69c525ea_cgraph.png" border="0" usemap="#aERF__Interpolation_8H_a0623363b49ea9794f302ec9e69c525ea_cgraph" alt=""/></div>
 <map name="aERF__Interpolation_8H_a0623363b49ea9794f302ec9e69c525ea_cgraph" id="aERF__Interpolation_8H_a0623363b49ea9794f302ec9e69c525ea_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,120,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="168,13,289,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="337,5,520,47"/>
+<area shape="rect" title=" " alt="" coords="5,46,120,73"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="168,46,289,73"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="337,5,520,47"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="337,71,520,112"/>
 </map>
 </div>
 
@@ -794,9 +800,10 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Interpolation_8H_a54ee27dfac22fc3f49cdde05d2ec5871_cgraph.png" border="0" usemap="#aERF__Interpolation_8H_a54ee27dfac22fc3f49cdde05d2ec5871_cgraph" alt=""/></div>
 <map name="aERF__Interpolation_8H_a54ee27dfac22fc3f49cdde05d2ec5871_cgraph" id="aERF__Interpolation_8H_a54ee27dfac22fc3f49cdde05d2ec5871_cgraph">
-<area shape="rect" title=" " alt="" coords="5,13,183,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="231,13,352,39"/>
-<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="400,5,583,47"/>
+<area shape="rect" title=" " alt="" coords="5,46,183,73"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#aa4b88a88257b89505c133a7ba9cba462" title=" " alt="" coords="231,46,352,73"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="400,5,583,47"/>
+<area shape="rect" href="ERF__Interpolation_8H.html#a2ae498a03776b5a73ffa7a30169f46b5" title=" " alt="" coords="400,71,583,112"/>
 </map>
 </div>
 <div class="dynheader">

@@ -176,6 +176,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a987746c147545a1a7d0efd21e5e34a12 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75e2d77cb28efa62759818d066b53bb9 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a75e2d77cb28efa62759818d066b53bb9">~NullMoist</a> ()=default</td></tr>
 <tr class="separator:a75e2d77cb28efa62759818d066b53bb9 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249cee0a1587485f45658a2946bccd07 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a249cee0a1587485f45658a2946bccd07">Update_Micro_Vars</a> (amrex::MultiFab &amp;cons_in, const amrex::MultiFab *)</td></tr>
+<tr class="separator:a249cee0a1587485f45658a2946bccd07 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2088fbb6bbb51945f5d5c80da2bfff3 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aa2088fbb6bbb51945f5d5c80da2bfff3">Qstate_NonMoist_Size</a> ()</td></tr>
 <tr class="separator:aa2088fbb6bbb51945f5d5c80da2bfff3 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab152441d33a347f6d8a81ab33509065d inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#ab152441d33a347f6d8a81ab33509065d">GetPlotVarNames</a> (amrex::Vector&lt; std::string &gt; &amp;a_vec) const</td></tr>
@@ -493,7 +495,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>    = <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> SAM_moisture_type = 1;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a7d4876bb5d730e9efae7a3f32f754d52">sam_is_no_ice</a>(sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>)) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a7d4876bb5d730e9efae7a3f32f754d52">sam_is_no_ice</a>(sc.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a>)) {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        SAM_moisture_type = 2;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
@@ -652,7 +654,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructSAMCloudPhaseChange_html_a81a59063e29391f2c11607d630c0c0b9"><div class="ttname"><a href="structSAMCloudPhaseChange.html#a81a59063e29391f2c11607d630c0c0b9">SAMCloudPhaseChange::delta_qc</a></div><div class="ttdeci">amrex::Real delta_qc</div><div class="ttdef"><b>Definition:</b> ERF_SAMUtils.H:25</div></div>
 <div class="ttc" id="astructSAMCloudPhaseChange_html_a897a5ea4342b0a4908221e858b2ecb4b"><div class="ttname"><a href="structSAMCloudPhaseChange.html#a897a5ea4342b0a4908221e858b2ecb4b">SAMCloudPhaseChange::omn</a></div><div class="ttdeci">amrex::Real omn</div><div class="ttdef"><b>Definition:</b> ERF_SAMUtils.H:23</div></div>
 <div class="ttc" id="astructSAMCloudPhaseChange_html_ac9dd29ba6b8c24c925a0fe7f156868d2"><div class="ttname"><a href="structSAMCloudPhaseChange.html#ac9dd29ba6b8c24c925a0fe7f156868d2">SAMCloudPhaseChange::qci</a></div><div class="ttdeci">amrex::Real qci</div><div class="ttdef"><b>Definition:</b> ERF_SAMUtils.H:29</div></div>
-<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1422</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1d8e70e8c6b75e93d5e0492f27c94aad"><div class="ttname"><a href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdoc">Moisture or microphysics model.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1587</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSAM.html#a012056ae20ded7928adf1be8afa665b9">Advance()</a>.</p>
 <div class="dynheader">
@@ -1196,29 +1198,29 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aab112947c592c330b45a2d7e5529ec07">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classSAM.html#a3d34d2f5ba527c4ed1e75ea27618f1af">m_moisture_type</a> = sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>  = <a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>  = <a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">m_axis</a>     = sc.<a class="code" href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">ave_plane</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>    = sc.<a class="code" href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">rdOcp</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classSAM.html#a3d34d2f5ba527c4ed1e75ea27618f1af">m_moisture_type</a> = sc.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classSAM.html#a66b0ffc2f98c96c5a3b3c760a854be95">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a> / sc.<a class="code" href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">c_p</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classSAM.html#a53d38219476c32ba2dd751c02bcae53c">m_fac_fus</a>  = <a class="code" href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a> / sc.<a class="code" href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">c_p</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classSAM.html#a8653cbf2c13ac3595f5f8710a3f1beec">m_fac_sub</a>  = <a class="code" href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a> / sc.<a class="code" href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">c_p</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classSAM.html#a37854ec84283a4229cf86b54cfcfc72b">m_axis</a>     = sc.<a class="code" href="structSolverChoice.html#a2a8692be6bad4b699043f5b4f9d5343c">ave_plane</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7">m_rdOcp</a>    = sc.<a class="code" href="structSolverChoice.html#a589f19d02c6d96671671759c59eca579">rdOcp</a>;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classSAM.html#a61a5a9e710fb010dd585b3e65e86ab25">m_do_cond</a>  = (!sc.<a class="code" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">uses_shoc_family</a>());</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0f65ea12b4405c50f1d777f7ca82dcfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd">lfus</a></div><div class="ttdeci">constexpr amrex::Real lfus</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:110</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a3ab435b88eae71bef826cb01254ff33d"><div class="ttname"><a href="ERF__Constants_8H.html#a3ab435b88eae71bef826cb01254ff33d">lsub</a></div><div class="ttdeci">constexpr amrex::Real lsub</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:111</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a7b45c0074d559f423ac2d48e1b171518"><div class="ttname"><a href="ERF__Constants_8H.html#a7b45c0074d559f423ac2d48e1b171518">lcond</a></div><div class="ttdeci">constexpr amrex::Real lcond</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:109</div></div>
 <div class="ttc" id="aclassSAM_html_a3d34d2f5ba527c4ed1e75ea27618f1af"><div class="ttname"><a href="classSAM.html#a3d34d2f5ba527c4ed1e75ea27618f1af">SAM::m_moisture_type</a></div><div class="ttdeci">MoistureType m_moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_SAM.H:360</div></div>
-<div class="ttc" id="astructSolverChoice_html_a2e1ef762ee1dc1bd3d4cbd08125c758a"><div class="ttname"><a href="structSolverChoice.html#a2e1ef762ee1dc1bd3d4cbd08125c758a">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1327</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1326</div></div>
-<div class="ttc" id="astructSolverChoice_html_a8a7e37fdfc7a226a7c1428ad7dc1051c"><div class="ttname"><a href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">SolverChoice::uses_shoc_family</a></div><div class="ttdeci">bool uses_shoc_family() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1392</div></div>
-<div class="ttc" id="astructSolverChoice_html_afdd906d035384fd962efab24e7a6da7c"><div class="ttname"><a href="structSolverChoice.html#afdd906d035384fd962efab24e7a6da7c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1436</div></div>
+<div class="ttc" id="astructSolverChoice_html_a2a8692be6bad4b699043f5b4f9d5343c"><div class="ttname"><a href="structSolverChoice.html#a2a8692be6bad4b699043f5b4f9d5343c">SolverChoice::ave_plane</a></div><div class="ttdeci">int ave_plane</div><div class="ttdoc">Averaging plane index used by diagnostics.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1601</div></div>
+<div class="ttc" id="astructSolverChoice_html_a589f19d02c6d96671671759c59eca579"><div class="ttname"><a href="structSolverChoice.html#a589f19d02c6d96671671759c59eca579">SolverChoice::rdOcp</a></div><div class="ttdeci">amrex::Real rdOcp</div><div class="ttdoc">Ratio of dry-air gas constant to c_p.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1460</div></div>
+<div class="ttc" id="astructSolverChoice_html_a8a7e37fdfc7a226a7c1428ad7dc1051c"><div class="ttname"><a href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">SolverChoice::uses_shoc_family</a></div><div class="ttdeci">bool uses_shoc_family() const noexcept</div><div class="ttdoc">Query whether any SHOC-family PBL scheme is active.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1549</div></div>
+<div class="ttc" id="astructSolverChoice_html_ae97bb05183f60e5c3732c0db19dd6e1a"><div class="ttname"><a href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdoc">Specific heat at constant pressure for dry air [J/(kg-K)].</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1459</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSAM_aba6460f2d34882d6b512574106e44531_cgraph.png" border="0" usemap="#aclassSAM_aba6460f2d34882d6b512574106e44531_cgraph" alt=""/></div>
 <map name="aclassSAM_aba6460f2d34882d6b512574106e44531_cgraph" id="aclassSAM_aba6460f2d34882d6b512574106e44531_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,108,39"/>
-<area shape="rect" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c" title=" " alt="" coords="156,5,301,47"/>
+<area shape="rect" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c" title="Query whether any SHOC&#45;family PBL scheme is active." alt="" coords="156,5,301,47"/>
 </map>
 </div>
 
@@ -1295,7 +1297,7 @@ Here is the call graph for this function:</div>
 <p>Sedimentation of cloud ice (A32) </p>
 <div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                         {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a7d4876bb5d730e9efae7a3f32f754d52">sam_is_no_ice</a>(sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>))</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a7d4876bb5d730e9efae7a3f32f754d52">sam_is_no_ice</a>(sc.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a>))</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dtn  = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
@@ -1813,7 +1815,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordtype">bool</span> valid_solution = (std::abs(F) &lt;= tol &amp;&amp; niter &lt; max_iter);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(valid_solution, <span class="stringliteral">&quot;SAM mixed phase saturation adjustment failed to converge.&quot;</span>);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(valid_solution, <span class="stringliteral">&quot;SAM mixed phase saturation adjustment failed to converge.&quot;</span>);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="comment">// Partition the change in non-precipitating q</span></div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        qv_array(i,j,k) = qsatm;</div>
@@ -1825,6 +1827,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="comment">// Return to temperature</span></div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceMicVar.html#aeaaf08a117b8b331611f63d8487bc415aaf3c3122dd3954fe2b19abfc5c27b3dc">tabs</a>;</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a41126403c4da6ee876e9e391f3f67699"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699">erf_dtqsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:244</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a7baba5d74922033bf93526933a0d77ec"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec">erf_dtqsati</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_dtqsati(amrex::Real t, amrex::Real p, amrex::Real &amp;dtqsati)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:235</div></div>
 <div class="ttc" id="aERF__SAMUtils_8H_html_a3da5788eb5baf924d5be16f9cc8872f7"><div class="ttname"><a href="ERF__SAMUtils_8H.html#a3da5788eb5baf924d5be16f9cc8872f7">sam_newton_residual</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real sam_newton_residual(const amrex::Real &amp;tabs_new, const amrex::Real &amp;tabs_old, const amrex::Real fcond, const amrex::Real &amp;qv, const amrex::Real &amp;qsatm, const amrex::Real ffus, const amrex::Real &amp;qi, const amrex::Real &amp;qif) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SAMUtils.H:376</div></div>
@@ -1837,29 +1840,30 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph.png" border="0" usemap="#aclassSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph" alt=""/></div>
 <map name="aclassSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph" id="aclassSAM_a6a026e55301974c43aaf48ebb424b9f4_cgraph">
-<area shape="rect" title=" " alt="" coords="5,284,159,311"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec" title=" " alt="" coords="257,56,349,83"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="253,208,352,235"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="263,107,342,133"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="259,157,346,184"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#aea441120e2a4dc4c5c34f05042b0246c" title=" " alt="" coords="207,259,399,285"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#a408b56e69fd9d3e1a6e02415ac08976d" title=" " alt="" coords="227,309,379,336"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#aff35d1a586c8c9dacb139f0a561874fb" title=" " alt="" coords="221,360,384,387"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#af5da731c81a30e0e7c1112cb59828b89" title=" " alt="" coords="237,411,369,437"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#a3da5788eb5baf924d5be16f9cc8872f7" title=" " alt="" coords="221,461,385,488"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html#ac66655018392e4f8fb9181ff6111b539" title=" " alt="" coords="221,513,385,554"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f" title=" " alt="" coords="481,5,573,32"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac3237967bf8818774c3b24565d02c5b2" title=" " alt="" coords="447,157,608,184"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="488,56,567,83"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="670,31,853,57"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8" title=" " alt="" coords="478,259,577,285"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="484,208,571,235"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8" title=" " alt="" coords="701,335,821,361"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4a77fa91e0b719d43336b4afea42c586" title=" " alt="" coords="672,284,851,311"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="656,233,867,260"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="915,183,1080,209"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="708,183,815,209"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570" title=" " alt="" coords="453,107,601,133"/>
+<area shape="rect" title=" " alt="" coords="5,274,159,301"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="211,5,394,47"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec" title=" " alt="" coords="257,71,349,98"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="253,223,352,250"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3" title=" " alt="" coords="263,122,342,149"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="259,173,346,199"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#aea441120e2a4dc4c5c34f05042b0246c" title=" " alt="" coords="207,274,399,301"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#a408b56e69fd9d3e1a6e02415ac08976d" title=" " alt="" coords="227,325,379,351"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#aff35d1a586c8c9dacb139f0a561874fb" title=" " alt="" coords="221,375,384,402"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#af5da731c81a30e0e7c1112cb59828b89" title=" " alt="" coords="237,426,369,453"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#a3da5788eb5baf924d5be16f9cc8872f7" title=" " alt="" coords="221,477,385,503"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html#ac66655018392e4f8fb9181ff6111b539" title=" " alt="" coords="221,528,385,569"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f" title=" " alt="" coords="481,21,573,47"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#ac3237967bf8818774c3b24565d02c5b2" title=" " alt="" coords="447,173,608,199"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4ea516e89f4e87b4ffc305504e8f0bf1" title=" " alt="" coords="488,71,567,98"/>
+<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="670,46,853,73"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8" title=" " alt="" coords="478,274,577,301"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5" title=" " alt="" coords="484,223,571,250"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8" title=" " alt="" coords="701,350,821,377"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a4a77fa91e0b719d43336b4afea42c586" title=" " alt="" coords="672,299,851,326"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a167b40a4456327e814191f02f472dfb6" title=" " alt="" coords="656,249,867,275"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a49d1f6280ff381290a926b6954775608" title=" " alt="" coords="915,198,1080,225"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8" title=" " alt="" coords="708,198,815,225"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a6d191b122d8b5541ef4b8515ce55d570" title=" " alt="" coords="453,122,601,149"/>
 </map>
 </div>
 
@@ -1882,7 +1886,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Autoconversion (A30), Accretion (A28), Evaporation (A24) </p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a8047e72ed57a8e2bb884fc5e7fc85087">sam_is_no_precip</a>(sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a8047e72ed57a8e2bb884fc5e7fc85087">sam_is_no_precip</a>(sc.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a>)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> powr1 = (<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a> + <a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>) / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(4.0);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> powr2 = (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(5.0) + <a class="code" href="ERF__Constants_8H.html#a73a3e2e084667177abe0e4d2cd3da51c">b_rain</a>) / <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(8.0);</div>
@@ -1914,7 +1918,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> dtn = <a class="code" href="classSAM.html#af9ffbd0c3f98c0c5d0a7ac4b1fb3dec9">dt</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> SAM_moisture_type = 1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::SAM_NoIce) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (sc.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a> == MoistureType::SAM_NoIce) {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        SAM_moisture_type = 2;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
@@ -2078,7 +2082,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a8047e72ed57a8e2bb884fc5e7fc85087">sam_is_no_precip</a>(sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>)) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__SAMUtils_8H.html#a8047e72ed57a8e2bb884fc5e7fc85087">sam_is_no_precip</a>(sc.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a>)) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// Conservative component-sedimentation contract: rain, snow, and graupel</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// sediment with separate component fluxes. Each face flux is limited by</span></div>

@@ -378,7 +378,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            u_star_arr(i,j,k) = <a class="code" href="structsurface__flux.html#a960909fe387424192cf802afccdc7bed">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm / (std::log(zref / z0_arr(i,j,k)) - psi_m);</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            ++iter;</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;        } <span class="keywordflow">while</span> ((std::abs(u_star_arr(i,j,k) - ustar) &gt; <a class="code" href="structsurface__flux.html#abd16b92a75ae384f9fe490b59f046b6a">tol</a>) &amp;&amp; iter &lt;= max_iters);</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(iter &lt; max_iters,</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(iter &lt; max_iters,</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                                         <span class="stringliteral">&quot;Maximum number of MOST iterations reached.&quot;</span>);</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;        <span class="comment">// Populate the stored MOST arrays</span></div>
@@ -399,6 +399,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__Wstar_8H_html_ad7f15bc4a50b75f60a55909ec006c547"><div class="ttname"><a href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547">calc_wstar</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real calc_wstar(const amrex::Real &amp;ust, const amrex::Real &amp;tst, const amrex::Real &amp;qst, const amrex::Real &amp;pblh, const amrex::Real &amp;th, const amrex::Real &amp;thv, const amrex::Real &amp;qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_Wstar.H:13</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_a2dd8a06cb41059636688602f49bafad2ad6e699523a4bae904aafb6116e60c833"><div class="ttname"><a href="namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2ad6e699523a4bae904aafb6116e60c833">plotfile2d::DiagnosticID::Olen</a></div><div class="ttdeci">@ Olen</div></div>
@@ -415,10 +416,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph.png" border="0" usemap="#astructsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph" alt=""/></div>
 <map name="astructsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph" id="astructsurface__flux_a6327a8246ae840acf1e96863ae767713_cgraph">
-<area shape="rect" title=" " alt="" coords="5,78,188,105"/>
-<area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="236,5,389,47"/>
-<area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="236,71,389,112"/>
-<area shape="rect" href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547" title=" " alt="" coords="267,137,358,163"/>
+<area shape="rect" title=" " alt="" coords="5,111,188,138"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="236,5,419,47"/>
+<area shape="rect" href="structsimilarity__funs.html#a7dcb32f637eab66d2314902d03289bc2" title=" " alt="" coords="251,71,404,112"/>
+<area shape="rect" href="structsimilarity__funs.html#a21cb206b0dd78dc2ac7211de8dbcb8d2" title=" " alt="" coords="251,136,404,177"/>
+<area shape="rect" href="ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547" title=" " alt="" coords="282,202,373,229"/>
 </map>
 </div>
 

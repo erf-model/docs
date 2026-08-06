@@ -125,9 +125,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae6f104e6b42a2b0a9c9f3d71985880f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">Advance</a> (const int &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, const int &amp;, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;, const <a class="el" href="structSolverChoice.html">SolverChoice</a> &amp;, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;, const amrex::GpuArray&lt; <a class="el" href="ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9">ERF_BC</a>, AMREX_SPACEDIM *2 &gt; &amp;)=0</td></tr>
 <tr class="memdesc:ae6f104e6b42a2b0a9c9f3d71985880f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance microphysics for one time step  <a href="classMicrophysics.html#ae6f104e6b42a2b0a9c9f3d71985880f0">More...</a><br /></td></tr>
 <tr class="separator:ae6f104e6b42a2b0a9c9f3d71985880f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b8a14f003da6293f7a9ee118bc60149"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">Update_Micro_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;)=0</td></tr>
-<tr class="memdesc:a6b8a14f003da6293f7a9ee118bc60149"><td class="mdescLeft">&#160;</td><td class="mdescRight">update microphysics variables from <a class="el" href="classERF.html">ERF</a> state variables  <a href="classMicrophysics.html#a6b8a14f003da6293f7a9ee118bc60149">More...</a><br /></td></tr>
-<tr class="separator:a6b8a14f003da6293f7a9ee118bc60149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8374e68d4a12ffbcad7a2d029eee5400"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a8374e68d4a12ffbcad7a2d029eee5400">Update_Micro_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;, const amrex::MultiFab *base_state=nullptr)=0</td></tr>
+<tr class="memdesc:a8374e68d4a12ffbcad7a2d029eee5400"><td class="mdescLeft">&#160;</td><td class="mdescRight">update microphysics variables from <a class="el" href="classERF.html">ERF</a> state variables  <a href="classMicrophysics.html#a8374e68d4a12ffbcad7a2d029eee5400">More...</a><br /></td></tr>
+<tr class="separator:a8374e68d4a12ffbcad7a2d029eee5400"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bd2a2c836d10f3d3f8444319dcefa82"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMicrophysics.html#a8bd2a2c836d10f3d3f8444319dcefa82">Update_State_Vars_Lev</a> (const int &amp;, amrex::MultiFab &amp;, const amrex::MultiFab &amp;)=0</td></tr>
 <tr class="memdesc:a8bd2a2c836d10f3d3f8444319dcefa82"><td class="mdescLeft">&#160;</td><td class="mdescRight">update <a class="el" href="classERF.html">ERF</a> state variables from microphysics variables  <a href="classMicrophysics.html#a8bd2a2c836d10f3d3f8444319dcefa82">More...</a><br /></td></tr>
 <tr class="separator:a8bd2a2c836d10f3d3f8444319dcefa82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -334,7 +334,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>average down moisture multifabs from finest_level to 0 (AMR coverage); no-op for non-Lagrangian models </p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -679,9 +679,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>get total number of conserved state variables </p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Get_Qstate_Moist_Size</a>() + <a class="code" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Get_Qstate_NonMoist_Size</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Get_Qstate_Moist_Size</a>() + <a class="code" href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Get_Qstate_NonMoist_Size</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="ttc" id="aclassMicrophysics_html_a1bc7275c0c3fe8bcff83a1548ea7199e"><div class="ttname"><a href="classMicrophysics.html#a1bc7275c0c3fe8bcff83a1548ea7199e">Microphysics::Get_Qstate_NonMoist_Size</a></div><div class="ttdeci">virtual int Get_Qstate_NonMoist_Size()=0</div><div class="ttdoc">get the number of microphysics conserved non-moist (non-water, i.e., other vapor/condensed species) s...</div></div>
 <div class="ttc" id="aclassMicrophysics_html_a61069a1549c51d922e27c8af78c1e692"><div class="ttname"><a href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692">Microphysics::Get_Qstate_Moist_Size</a></div><div class="ttdeci">virtual int Get_Qstate_Moist_Size()=0</div><div class="ttdoc">get the number of microphysics conserved moist (water-related) state variables</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -724,9 +724,9 @@ Here is the call graph for this function:</div>
 <p>get scheme-native surface precipitation accumulators and their kg/m^2 conversion factors </p>
 
 <p>Reimplemented in <a class="el" href="classEulerianMicrophysics.html#a2e27d543f805d1ac0df5eda8daa526b0">EulerianMicrophysics</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -901,26 +901,26 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>query if a specified moisture model is Eulerian or Lagrangian </p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == MoistureType::SAM)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoIce)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoPrecip_NoIce)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;             || (a_moisture_type == MoistureType::Morrison)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;             || (a_moisture_type == MoistureType::Morrison_NoIce)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;             || (a_moisture_type == MoistureType::WSM6)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;             || (a_moisture_type == MoistureType::Kessler)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;             || (a_moisture_type == MoistureType::Kessler_NoRain)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;             || (a_moisture_type == MoistureType::SatAdj)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;             || (a_moisture_type == MoistureType::MoistNoCondensation)</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;             || (a_moisture_type == MoistureType::None) ) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Eulerian;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (a_moisture_type == MoistureType::SuperDroplets) ) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Lagrangian;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Undefined;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span> (    (a_moisture_type == MoistureType::SAM)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoIce)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;             || (a_moisture_type == MoistureType::SAM_NoPrecip_NoIce)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;             || (a_moisture_type == MoistureType::Morrison)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;             || (a_moisture_type == MoistureType::Morrison_NoIce)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;             || (a_moisture_type == MoistureType::WSM6)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;             || (a_moisture_type == MoistureType::Kessler)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;             || (a_moisture_type == MoistureType::Kessler_NoRain)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;             || (a_moisture_type == MoistureType::SatAdj)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;             || (a_moisture_type == MoistureType::MoistNoCondensation)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;             || (a_moisture_type == MoistureType::None) ) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Eulerian;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( (a_moisture_type == MoistureType::SuperDroplets) ) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Lagrangian;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Dont know this moisture_type!&quot;</span>) ;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">return</span> MoistureModelType::Undefined;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a8355d14a7672f4d863064300ee42d6f7">ERF::advance_microphysics()</a>, <a class="el" href="classEulerianMicrophysics.html#a26a985c76efcd1dd68b5c853bbd264f6">EulerianMicrophysics::EulerianMicrophysics()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="classERF.html#afc2898daad269536c1a15443abf3fa75">ERF::initializeMicrophysics()</a>, <a class="el" href="classERF.html#af285247b24b173cd851fe49799d17f42">ERF::ReadCheckpointFile()</a>, <a class="el" href="classERF.html#aec117226dacf933f7ba47907102413c6">ERF::timeStep()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -983,8 +983,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6b8a14f003da6293f7a9ee118bc60149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b8a14f003da6293f7a9ee118bc60149">&#9670;&nbsp;</a></span>Update_Micro_Vars_Lev()</h2>
+<a id="a8374e68d4a12ffbcad7a2d029eee5400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8374e68d4a12ffbcad7a2d029eee5400">&#9670;&nbsp;</a></span>Update_Micro_Vars_Lev()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1002,7 +1002,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const amrex::MultiFab *&#160;</td>
+          <td class="paramname"><em>base_state</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1019,7 +1025,7 @@ Here is the caller graph for this function:</div>
 
 <p>update microphysics variables from <a class="el" href="classERF.html">ERF</a> state variables </p>
 
-<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a0f8fc766c44f4331bfc86337eb43f6cc">EulerianMicrophysics</a>.</p>
+<p>Implemented in <a class="el" href="classEulerianMicrophysics.html#a1625dd42fc2cd16e13155e530770028f">EulerianMicrophysics</a>.</p>
 
 </div>
 </div>

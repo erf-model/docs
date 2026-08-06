@@ -53,10 +53,16 @@ var namespaces_dup =
     ] ],
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
+    [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", "namespaceerf__cloud__chamber" ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],
     [ "erf_provenance", "namespaceerf__provenance.html", "namespaceerf__provenance" ],
+    [ "erf_resolved_wall_flux", "namespaceerf__resolved__wall__flux.html", [
+      [ "apply", "namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef", null ],
+      [ "apply_face", "namespaceerf__resolved__wall__flux.html#a93798997819b7545b87581a414a85bf5", null ]
+    ] ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", "namespaceerf__wall__scalar__bc" ],
+    [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", "namespaceerf__wall__thermodynamics" ],
     [ "ERFBCType", "namespaceERFBCType.html", [
       [ "mathematicalBndryTypes", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01c", [
         [ "bogus", "namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca5e7251ff4badd9a198c0601a7929b1c4", null ],

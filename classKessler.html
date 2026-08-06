@@ -162,6 +162,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a987746c147545a1a7d0efd21e5e34a12 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75e2d77cb28efa62759818d066b53bb9 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a75e2d77cb28efa62759818d066b53bb9">~NullMoist</a> ()=default</td></tr>
 <tr class="separator:a75e2d77cb28efa62759818d066b53bb9 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249cee0a1587485f45658a2946bccd07 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a249cee0a1587485f45658a2946bccd07">Update_Micro_Vars</a> (amrex::MultiFab &amp;cons_in, const amrex::MultiFab *)</td></tr>
+<tr class="separator:a249cee0a1587485f45658a2946bccd07 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2088fbb6bbb51945f5d5c80da2bfff3 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#aa2088fbb6bbb51945f5d5c80da2bfff3">Qstate_NonMoist_Size</a> ()</td></tr>
 <tr class="separator:aa2088fbb6bbb51945f5d5c80da2bfff3 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab152441d33a347f6d8a81ab33509065d inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#ab152441d33a347f6d8a81ab33509065d">GetPlotVarNames</a> (amrex::Vector&lt; std::string &gt; &amp;a_vec) const</td></tr>
@@ -347,8 +349,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classKessler_adbfb72df664abc2f02fede6b91b066b6_cgraph.png" border="0" usemap="#aclassKessler_adbfb72df664abc2f02fede6b91b066b6_cgraph" alt=""/></div>
 <map name="aclassKessler_adbfb72df664abc2f02fede6b91b066b6_cgraph" id="aclassKessler_adbfb72df664abc2f02fede6b91b066b6_cgraph">
-<area shape="rect" title=" " alt="" coords="5,441,139,468"/>
-<area shape="rect" href="classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef" title=" " alt="" coords="187,441,367,468"/>
+<area shape="rect" title=" " alt="" coords="5,412,139,439"/>
+<area shape="rect" href="classKessler.html#ab67e26d4eb01a6e25707b73ca47714ef" title=" " alt="" coords="187,412,367,439"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="439,41,621,82"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="481,107,579,133"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="487,157,573,184"/>
 <area shape="rect" href="ERF__KesslerUtils_8H.html#af826e8d68a07c7a4418f90820149a2a1" title=" " alt="" coords="449,208,611,235"/>
@@ -398,7 +401,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">auto</span> domain  = <a class="code" href="classKessler.html#a48f29ab8e5d1232ee83851fd904e9354">m_geom</a>.Domain();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> k_lo = domain.smallEnd(2);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> k_hi = domain.bigEnd(2);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::Kessler)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a> == MoistureType::Kessler)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        MultiFab fz;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">auto</span> ba    = <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a7cde81843cd190a3122d7c3912a39b74">tabs</a>-&gt;boxArray();</div>
@@ -510,7 +513,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                                         });</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordtype">int</span> n_substep = <a class="code" href="ERF__KesslerUtils_8H.html#a56d0a424c3719378f317ad69013d7cea">kessler_num_sedimentation_substeps</a>(get&lt;0&gt;(max_terminal_velocity),</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                                           <a class="code" href="classKessler.html#a86cf1c45a302d0e4a860860dab3dbe65">dt</a>, <a class="code" href="classKessler.html#a5f19a4b87eda7b68f4a7f4fe3e7cad3f">m_dzmin</a>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        AMREX_ALWAYS_ASSERT_WITH_MESSAGE(n_substep &gt;= 1,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(n_substep &gt;= 1,</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                         <span class="stringliteral">&quot;Kessler: Number of precipitation substeps must be greater than 0!&quot;</span>);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        coef /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        dtn  /= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(n_substep);</div>
@@ -588,7 +591,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        }</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a> == MoistureType::Kessler_NoRain) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (solverChoice.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a> == MoistureType::Kessler_NoRain) {</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">if</span> (!do_cond) { <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">for</span> ( MFIter mfi(*<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a7cde81843cd190a3122d7c3912a39b74">tabs</a>,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keyword">auto</span> qv_array    = <a class="code" href="classKessler.html#aa11214a3e579cc9d6309359b1c05e5ab">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a>]-&gt;array(mfi);</div>
@@ -634,6 +637,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aERF__KesslerUtils_8H_html_a292fc43f742fd0f825cd77259d7e5cfb"><div class="ttname"><a href="ERF__KesslerUtils_8H.html#a292fc43f742fd0f825cd77259d7e5cfb">kessler_saturation_adjustment</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE KesslerSaturationAdjustment kessler_saturation_adjustment(const amrex::Real qv, const amrex::Real qc, const amrex::Real qsat, const amrex::Real dtqsat, const bool do_cond, const amrex::Real latent_over_cp) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:88</div></div>
 <div class="ttc" id="aERF__KesslerUtils_8H_html_a56d0a424c3719378f317ad69013d7cea"><div class="ttname"><a href="ERF__KesslerUtils_8H.html#a56d0a424c3719378f317ad69013d7cea">kessler_num_sedimentation_substeps</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int kessler_num_sedimentation_substeps(const amrex::Real current_reduced_value, const amrex::Real dt, const amrex::Real dzmin) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:61</div></div>
 <div class="ttc" id="aERF__KesslerUtils_8H_html_a79466ef8454f1ac41fcaa18982676754"><div class="ttname"><a href="ERF__KesslerUtils_8H.html#a79466ef8454f1ac41fcaa18982676754">kessler_face_state</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE KesslerFaceState kessler_face_state(const int k, const int k_hi, const amrex::Real rho_km1, const amrex::Real rho_k, const amrex::Real qp_km1, const amrex::Real qp_k) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:113</div></div>
@@ -675,7 +679,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructKesslerSourceTerms_html_a56c1a6dcb5868f1d3007af8cedb03bae"><div class="ttname"><a href="structKesslerSourceTerms.html#a56c1a6dcb5868f1d3007af8cedb03bae">KesslerSourceTerms::dq_cloud_to_vapor</a></div><div class="ttdeci">amrex::Real dq_cloud_to_vapor</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:16</div></div>
 <div class="ttc" id="astructKesslerSourceTerms_html_a9fd1cd79d1f959f399314e99a9b9351b"><div class="ttname"><a href="structKesslerSourceTerms.html#a9fd1cd79d1f959f399314e99a9b9351b">KesslerSourceTerms::dq_cloud_to_rain</a></div><div class="ttdeci">amrex::Real dq_cloud_to_rain</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:17</div></div>
 <div class="ttc" id="astructKesslerSourceTerms_html_ab4087e5bcf61c7d467e94bcda7b648a5"><div class="ttname"><a href="structKesslerSourceTerms.html#ab4087e5bcf61c7d467e94bcda7b648a5">KesslerSourceTerms::dq_vapor_to_cloud</a></div><div class="ttdeci">amrex::Real dq_vapor_to_cloud</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:15</div></div>
-<div class="ttc" id="astructSolverChoice_html_aacbfbe6f4a3040db3efdc6dbf8fa291b"><div class="ttname"><a href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1422</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1d8e70e8c6b75e93d5e0492f27c94aad"><div class="ttname"><a href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdoc">Moisture or microphysics model.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1587</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classKessler.html#adbfb72df664abc2f02fede6b91b066b6">Advance()</a>.</p>
 <div class="dynheader">
@@ -683,7 +687,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classKessler_ab67e26d4eb01a6e25707b73ca47714ef_cgraph.png" border="0" usemap="#aclassKessler_ab67e26d4eb01a6e25707b73ca47714ef_cgraph" alt=""/></div>
 <map name="aclassKessler_ab67e26d4eb01a6e25707b73ca47714ef_cgraph" id="aclassKessler_ab67e26d4eb01a6e25707b73ca47714ef_cgraph">
-<area shape="rect" title=" " alt="" coords="5,441,185,468"/>
+<area shape="rect" title=" " alt="" coords="5,412,185,439"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="257,41,440,82"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a41126403c4da6ee876e9e391f3f67699" title=" " alt="" coords="299,107,398,133"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615" title=" " alt="" coords="305,157,392,184"/>
 <area shape="rect" href="ERF__KesslerUtils_8H.html#af826e8d68a07c7a4418f90820149a2a1" title=" " alt="" coords="267,208,430,235"/>
@@ -930,23 +935,23 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classNullMoist.html#aab112947c592c330b45a2d7e5529ec07">NullMoist</a>.</p>
 <div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classKessler.html#a0b09674286454ed9add0c8c6dc5aea3d">m_moisture_type</a> = sc.<a class="code" href="structSolverChoice.html#aacbfbe6f4a3040db3efdc6dbf8fa291b">moisture_type</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classKessler.html#a0b09674286454ed9add0c8c6dc5aea3d">m_moisture_type</a> = sc.<a class="code" href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">moisture_type</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Use one latent-over-cp factor for both the saturation solve and theta</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// update. L_v comes from ERF_Constants.H; c_p comes from SolverChoice.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classKessler.html#a74746cef2381fd949a06be46f99a05c7">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a> / sc.<a class="code" href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">c_p</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classKessler.html#a74746cef2381fd949a06be46f99a05c7">m_fac_cond</a> = <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a> / sc.<a class="code" href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">c_p</a>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classKessler.html#a9768f16e7d0dc1320927d6169fc4cc39">m_do_cond</a>  = (!sc.<a class="code" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">uses_shoc_family</a>());</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:59</div></div>
 <div class="ttc" id="aclassKessler_html_a0b09674286454ed9add0c8c6dc5aea3d"><div class="ttname"><a href="classKessler.html#a0b09674286454ed9add0c8c6dc5aea3d">Kessler::m_moisture_type</a></div><div class="ttdeci">MoistureType m_moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:185</div></div>
-<div class="ttc" id="astructSolverChoice_html_a43d16f0628ba5fbe64a813de7f25f56a"><div class="ttname"><a href="structSolverChoice.html#a43d16f0628ba5fbe64a813de7f25f56a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1326</div></div>
-<div class="ttc" id="astructSolverChoice_html_a8a7e37fdfc7a226a7c1428ad7dc1051c"><div class="ttname"><a href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">SolverChoice::uses_shoc_family</a></div><div class="ttdeci">bool uses_shoc_family() const noexcept</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1392</div></div>
+<div class="ttc" id="astructSolverChoice_html_a8a7e37fdfc7a226a7c1428ad7dc1051c"><div class="ttname"><a href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">SolverChoice::uses_shoc_family</a></div><div class="ttdeci">bool uses_shoc_family() const noexcept</div><div class="ttdoc">Query whether any SHOC-family PBL scheme is active.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1549</div></div>
+<div class="ttc" id="astructSolverChoice_html_ae97bb05183f60e5c3732c0db19dd6e1a"><div class="ttname"><a href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdoc">Specific heat at constant pressure for dry air [J/(kg-K)].</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1459</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph.png" border="0" usemap="#aclassKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph" alt=""/></div>
 <map name="aclassKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph" id="aclassKessler_a5e989e5755fb57a853e2f1f0ec4c49e8_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,124,39"/>
-<area shape="rect" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c" title=" " alt="" coords="172,5,317,47"/>
+<area shape="rect" href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c" title="Query whether any SHOC&#45;family PBL scheme is active." alt="" coords="172,5,317,47"/>
 </map>
 </div>
 

@@ -117,9 +117,9 @@ Include dependency graph for ERF_ComputeDiffusivityMYJ.cpp:</div>
 <area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="871,393,1025,420"/>
 <area shape="rect" href="ERF__MOSTAverage_8H.html" title=" " alt="" coords="1801,244,1959,271"/>
 <area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="1968,319,2128,345"/>
-<area shape="rect" href="ERF__EB_8H.html" title=" " alt="" coords="1563,319,1648,345"/>
+<area shape="rect" href="ERF__EB_8H.html" title="Declares the embedded&#45;boundary factory manager used by ERF levels." alt="" coords="1563,319,1648,345"/>
 <area shape="rect" href="ERF__MOSTStress_8H.html" title=" " alt="" coords="800,319,947,345"/>
-<area shape="rect" href="ERF__EBMOSTStress_8H.html" title=" " alt="" coords="971,319,1133,345"/>
+<area shape="rect" href="ERF__EBMOSTStress_8H.html" title="Defines EB Monin&#45;Obukhov surface&#45;layer flux functors." alt="" coords="971,319,1133,345"/>
 <area shape="rect" href="ERF__SurfaceDiagnosticSource_8H.html" title=" " alt="" coords="94,244,325,271"/>
 <area shape="rect" href="ERF__PBLHeight_8H.html" title=" " alt="" coords="654,244,789,271"/>
 <area shape="rect" href="ERF__MicrophysicsUtils_8H.html" title=" " alt="" coords="257,468,439,495"/>
@@ -138,7 +138,7 @@ Include dependency graph for ERF_ComputeDiffusivityMYJ.cpp:</div>
 <area shape="rect" title=" " alt="" coords="1346,468,1494,495"/>
 <area shape="rect" title=" " alt="" coords="1519,468,1633,495"/>
 <area shape="rect" title=" " alt="" coords="1658,468,1833,495"/>
-<area shape="rect" href="ERF__EBAux_8H.html" title=" " alt="" coords="1459,393,1570,420"/>
+<area shape="rect" href="ERF__EBAux_8H.html" title="Declares auxiliary EB factories for face&#45;centered data." alt="" coords="1459,393,1570,420"/>
 <area shape="rect" href="ERF__MOSTRoughness_8H.html" title=" " alt="" coords="566,468,743,495"/>
 <area shape="rect" href="ERF__Wstar_8H.html" title=" " alt="" coords="767,468,873,495"/>
 <area shape="rect" title=" " alt="" coords="93,319,272,345"/>
@@ -397,7 +397,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="comment">// Locate PBL k index and set qvel</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> q2 = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(q2 &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <span class="stringliteral">&quot;KE must have a positive value&quot;</span>);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(q2 &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <span class="stringliteral">&quot;KE must have a positive value&quot;</span>);</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    qvel(i,j,k) = std::sqrt(q2);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <span class="keywordflow">if</span> (q2&lt;=EPSQ2*FH) {</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        k_arr(i,j,0) = std::min(k,k_arr(i,j,0));</div>
@@ -418,7 +418,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <span class="comment">// Locate PBL k index and set qvel</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k(klo); k&lt;=<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>; ++k) {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> q2 = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) / cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    AMREX_ALWAYS_ASSERT_WITH_MESSAGE(q2 &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <span class="stringliteral">&quot;KE must have a positive value&quot;</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(q2 &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>, <span class="stringliteral">&quot;KE must have a positive value&quot;</span>);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    qvel(i,j,k) = std::sqrt(q2);</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    <span class="keywordflow">if</span> (q2&lt;=EPSQ2*FH) {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                        k_arr(i,j,0) = std::min(k,k_arr(i,j,0));</div>
@@ -614,6 +614,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a0e309d9162590f5d8287ae33be5c24ff"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a></div><div class="ttdeci">const int khi</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:21</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:107</div></div>
+<div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__PBLModels_8H_html_a36adc2a35482ea04a4692b95d982c848"><div class="ttname"><a href="ERF__PBLModels_8H.html#a36adc2a35482ea04a4692b95d982c848">ComputeVerticalDerivativesPBL</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeVerticalDerivativesPBL(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const PBLDerivativeDzInv &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:254</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
@@ -639,15 +640,16 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__ComputeDiffusivityMYJ_8cpp_a41eaf7ac4fa83d9e930118925fcc1e58_cgraph.png" border="0" usemap="#aERF__ComputeDiffusivityMYJ_8cpp_a41eaf7ac4fa83d9e930118925fcc1e58_cgraph" alt=""/></div>
 <map name="aERF__ComputeDiffusivityMYJ_8cpp_a41eaf7ac4fa83d9e930118925fcc1e58_cgraph" id="aERF__ComputeDiffusivityMYJ_8cpp_a41eaf7ac4fa83d9e930118925fcc1e58_cgraph">
-<area shape="rect" title=" " alt="" coords="5,107,177,133"/>
+<area shape="rect" title=" " alt="" coords="5,148,177,175"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="249,5,431,32"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="230,56,450,83"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="239,107,441,133"/>
-<area shape="rect" href="ERF__PBLModels_8H.html#a36adc2a35482ea04a4692b95d982c848" title=" " alt="" coords="225,157,455,184"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="295,208,385,235"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d" title=" " alt="" coords="503,157,593,184"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a7aeb5dcc6b510a14357233c04b16a8c1" title=" " alt="" coords="641,132,905,159"/>
-<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="708,183,839,209"/>
+<area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="249,57,431,98"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a32eeeb066c70da970aa6a60918515987" title=" " alt="" coords="230,123,450,149"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565" title=" " alt="" coords="239,173,441,200"/>
+<area shape="rect" href="ERF__PBLModels_8H.html#a36adc2a35482ea04a4692b95d982c848" title=" " alt="" coords="225,224,455,251"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="295,275,385,301"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d" title=" " alt="" coords="503,224,593,251"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a7aeb5dcc6b510a14357233c04b16a8c1" title=" " alt="" coords="641,199,905,225"/>
+<area shape="rect" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19" title=" " alt="" coords="708,249,839,276"/>
 </map>
 </div>
 <div class="dynheader">

@@ -91,13 +91,16 @@ $(document).ready(function(){initNavTree('structadiabatic__eb.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
+<p>EB surface-layer model for adiabatic constant-roughness fluxes.  
+ <a href="structadiabatic__eb.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ERF__EBMOSTStress_8H_source.html">ERF_EBMOSTStress.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for adiabatic_eb:</div>
 <div class="dyncontent">
 <div class="center"><img src="structadiabatic__eb__coll__graph.png" border="0" usemap="#aadiabatic__eb_coll__map" alt="Collaboration graph"/></div>
 <map name="aadiabatic__eb_coll__map" id="aadiabatic__eb_coll__map">
-<area shape="rect" title=" " alt="" coords="87,331,192,357"/>
+<area shape="rect" title="EB surface&#45;layer model for adiabatic constant&#45;roughness fluxes." alt="" coords="87,331,192,357"/>
 <area shape="rect" href="structmost__data.html" title=" " alt="" coords="162,241,253,268"/>
 <area shape="rect" title=" " alt="" coords="115,5,166,32"/>
 <area shape="rect" href="structsimilarity__funs.html" title=" " alt="" coords="5,241,124,268"/>
@@ -108,8 +111,10 @@ Collaboration diagram for adiabatic_eb:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5c4ffa19839e4be4e3d41b23e5a68665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structadiabatic__eb.html#a5c4ffa19839e4be4e3d41b23e5a68665">adiabatic_eb</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Tflux, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Qvflux)</td></tr>
+<tr class="memdesc:a5c4ffa19839e4be4e3d41b23e5a68665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an adiabatic EB flux functor.  <a href="structadiabatic__eb.html#a5c4ffa19839e4be4e3d41b23e5a68665">More...</a><br /></td></tr>
 <tr class="separator:a5c4ffa19839e4be4e3d41b23e5a68665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c4d4c360bfc98c83596b21ed6e8b751"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structadiabatic__eb.html#a1c4d4c360bfc98c83596b21ed6e8b751">iterate_flux</a> (const int &amp;i, const int &amp;j, const int &amp;k, const int &amp;, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;zref_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;z0_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;umm_arr, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;u_star_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;t_star_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;q_star_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;olen_arr, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;, const amrex::Array4&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; &amp;) const</td></tr>
+<tr class="memdesc:a1c4d4c360bfc98c83596b21ed6e8b751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate neutral MOST flux scales for an adiabatic EB surface.  <a href="structadiabatic__eb.html#a1c4d4c360bfc98c83596b21ed6e8b751">More...</a><br /></td></tr>
 <tr class="separator:a1c4d4c360bfc98c83596b21ed6e8b751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -120,7 +125,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:abb59a44fa38c0876cda97ad063621535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Adiabatic with constant roughness </p>
+<div class="textblock"><p>EB surface-layer model for adiabatic constant-roughness fluxes. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5c4ffa19839e4be4e3d41b23e5a68665"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c4ffa19839e4be4e3d41b23e5a68665">&#9670;&nbsp;</a></span>adiabatic_eb()</h2>
@@ -155,11 +160,20 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>  = Tflux;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> = Qvflux;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="ttc" id="astructadiabatic__eb_html_a6c4c07ff44ca997237cd09d5685f76ed"><div class="ttname"><a href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">adiabatic_eb::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_EBMOSTStress.H:52</div></div>
+
+<p>Construct an adiabatic EB flux functor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Tflux</td><td>Prescribed surface temperature flux. </td></tr>
+    <tr><td class="paramname">Qvflux</td><td>Prescribed surface moisture flux. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">mdata</a>.<a class="code" href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">surf_temp_flux</a>  = Tflux;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">mdata</a>.<a class="code" href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">surf_moist_flux</a> = Qvflux;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="ttc" id="astructadiabatic__eb_html_a6c4c07ff44ca997237cd09d5685f76ed"><div class="ttname"><a href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">adiabatic_eb::mdata</a></div><div class="ttdeci">most_data mdata</div><div class="ttdef"><b>Definition:</b> ERF_EBMOSTStress.H:60</div></div>
 <div class="ttc" id="astructmost__data_html_a0171f1cdf5ab8c1685475e5212246888"><div class="ttname"><a href="structmost__data.html#a0171f1cdf5ab8c1685475e5212246888">most_data::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdoc">Moisture flux.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:19</div></div>
 <div class="ttc" id="astructmost__data_html_af1d069399319831cf4ae17fba1dda19f"><div class="ttname"><a href="structmost__data.html#af1d069399319831cf4ae17fba1dda19f">most_data::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdoc">Heat flux TODO: decide whether this is &lt;θ'w'&gt; or &lt;θv'w'&gt; under moist conditions.</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:18</div></div>
 </div><!-- fragment -->
@@ -313,12 +327,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        olen_arr(i,j,k)   = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,0) / std::log(zref_arr(i,j,0) / z0_arr(i,j,k));</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        q_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+
+<p>Populate neutral MOST flux scales for an adiabatic EB surface. </p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        olen_arr(i,j,k)   = <a class="code" href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        u_star_arr(i,j,k) = <a class="code" href="structadiabatic__eb.html#a6c4c07ff44ca997237cd09d5685f76ed">mdata</a>.<a class="code" href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">kappa</a> * umm_arr(i,j,0) / std::log(zref_arr(i,j,0) / z0_arr(i,j,k));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        t_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        q_star_arr(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="astructmost__data_html_a73da7dc37cb1555348e956a4e2c932fe"><div class="ttname"><a href="structmost__data.html#a73da7dc37cb1555348e956a4e2c932fe">most_data::kappa</a></div><div class="ttdeci">amrex::Real kappa</div><div class="ttdoc">von Karman constant</div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:16</div></div>

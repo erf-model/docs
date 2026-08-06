@@ -2,14 +2,14 @@ var structDiffChoice =
 [
     [ "display", "structDiffChoice.html#adc2925cf95fd6058bb83e1748fd1b765", null ],
     [ "init_params", "structDiffChoice.html#adbfceae5178b5ad8131b755454fb616a", null ],
-    [ "alpha_C", "structDiffChoice.html#a9a4435111bba7cde59e3187e4ea85d6d", null ],
-    [ "alpha_T", "structDiffChoice.html#a7013ac6c12a0fab52b3c212457441517", null ],
-    [ "dynamic_viscosity", "structDiffChoice.html#afaba089738f1b77e58dd43bf1c964817", null ],
-    [ "eb_diff_constraint_x", "structDiffChoice.html#a6cffc14e23f7747b82409a891201d2d9", null ],
-    [ "eb_diff_constraint_y", "structDiffChoice.html#a7d73ccd2760c7a3615ed78c4426cd6d6", null ],
-    [ "eb_diff_constraint_z", "structDiffChoice.html#a536538ab3b67d379fe0017806d0fabc1", null ],
-    [ "molec_diff_type", "structDiffChoice.html#aed5c75ec58e358a735d97869147b2baf", null ],
-    [ "rho0_trans", "structDiffChoice.html#a4df179b6e7d84efc89a22ac5900f98c8", null ],
-    [ "rhoAlpha_C", "structDiffChoice.html#a553bdd290d667cca9699ed37f86f7e22", null ],
-    [ "rhoAlpha_T", "structDiffChoice.html#a574cf6ad397fd50169cafe025c9da5f3", null ]
+    [ "alpha_C", "structDiffChoice.html#aa508ec9bd928f67a8e3abd917d09e199", null ],
+    [ "alpha_T", "structDiffChoice.html#ae94877ad7cdc7fa7efa30d8f7c3a231a", null ],
+    [ "dynamic_viscosity", "structDiffChoice.html#ad2d06825dd39cb2326ef5231536f688a", null ],
+    [ "eb_diff_constraint_x", "structDiffChoice.html#ad04dd0de55ca7217182bcdd475f0940c", null ],
+    [ "eb_diff_constraint_y", "structDiffChoice.html#a9b719dff490bd4c49e0410e3846c1b5c", null ],
+    [ "eb_diff_constraint_z", "structDiffChoice.html#a1f664c5d58a6ef7779297fb6b526ecdf", null ],
+    [ "molec_diff_type", "structDiffChoice.html#a566863f96424952c0d690ddc2d2a7673", null ],
+    [ "rho0_trans", "structDiffChoice.html#ae4a13d78575df2a258cc2f1e7f098c5c", null ],
+    [ "rhoAlpha_C", "structDiffChoice.html#afc17a4e0ab7ba165017df6cdc8b278e2", null ],
+    [ "rhoAlpha_T", "structDiffChoice.html#a7b4d1ae86aa4be3cfde424590f754d07", null ]
 ];
