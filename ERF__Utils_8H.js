@@ -17,7 +17,7 @@ var ERF__Utils_8H =
     [ "MomentumToVelocity", "ERF__Utils_8H.html#a0b812d5c2bdd531d6df797b1b227b335", null ],
     [ "quad_interp_1d", "ERF__Utils_8H.html#a8a7082410a1edc74e8646da2befba604", null ],
     [ "realbdy_bc_bxs_xy", "ERF__Utils_8H.html#ab8d345634b200fdd14e878954e222f4a", null ],
-    [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a054e8506d03c1d3224cdb4dc6a3e151f", null ],
+    [ "realbdy_compute_interior_ghost_rhs", "ERF__Utils_8H.html#ad1666017aac31be969ffc2bfef813af0", null ],
     [ "realbdy_compute_relaxation", "ERF__Utils_8H.html#ac2249529c08cee787c0b9b56259d3447", null ],
     [ "realbdy_interior_bxs_xy", "ERF__Utils_8H.html#abc480bd281f755246fa9e6faf149b588", null ],
     [ "rebalance_columns", "ERF__Utils_8H.html#a3742f619397543dafbbe2a182d5cdf33", null ],
