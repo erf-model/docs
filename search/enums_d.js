@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wallface_10520',['WallFace',['../namespaceerf__cloud__chamber.html#a09412b9da4a2870290d1055915395ad5',1,'erf_cloud_chamber']]],
-  ['wallscalarbcintent_10521',['WallScalarBCIntent',['../namespaceerf__wall__scalar__bc.html#a1f1163d39a8a7203c4f60b38f2984eb4',1,'erf_wall_scalar_bc']]]
+  ['variationoperator_10610',['VariationOperator',['../ERF__NodalReconstruction_8H.html#ab1907b5d4348191ee7380df457e62c01',1,'ERF_NodalReconstruction.H']]]
 ];

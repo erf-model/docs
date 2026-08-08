@@ -134,6 +134,7 @@ var structSolverChoice =
     [ "use_real_bcs", "structSolverChoice.html#a61cdb6605cf73a5d0ae7b8822efc097f", null ],
     [ "use_rotate_surface_flux", "structSolverChoice.html#a39beb16581711ed2d988c797d5129b12", null ],
     [ "use_wrf_bdy_density", "structSolverChoice.html#a4f62f449a246afbf129b4caed7af7e6d", null ],
+    [ "use_wrf_height_grid", "structSolverChoice.html#a6e331c5e7833545982548b2fb23ceb6a", null ],
     [ "variable_coriolis", "structSolverChoice.html#a1cb04fa3407e20be6f56e452d9811140", null ],
     [ "vert_implicit_fac", "structSolverChoice.html#a9ac16def71f4784d83b89cd9dc3864d7", null ],
     [ "windfarm_airfoil_tables", "structSolverChoice.html#a980895d582de33aa4288dc3b73ca8018", null ],

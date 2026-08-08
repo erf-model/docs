@@ -84,6 +84,7 @@ var hierarchy =
     [ "ncutils::NCVar", "structncutils_1_1NCVar.html", null ],
     [ "NDArray< DataType >", "structNDArray.html", null ],
     [ "erf_noahmp::NoahmpBlockViews", "structerf__noahmp_1_1NoahmpBlockViews.html", null ],
+    [ "NodalReconstruction", "classNodalReconstruction.html", null ],
     [ "NullMoist", "classNullMoist.html", [
       [ "Kessler", "classKessler.html", null ],
       [ "MoistNoCondensation", "classMoistNoCondensation.html", null ],
@@ -173,6 +174,7 @@ var hierarchy =
     [ "ShocStructure", "classShocStructure.html", null ],
     [ "ShocTKE", "classShocTKE.html", null ],
     [ "similarity_funs", "structsimilarity__funs.html", null ],
+    [ "SolveInfo", "structSolveInfo.html", null ],
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "near_surface_diagnostics::Sources", "structnear__surface__diagnostics_1_1Sources.html", null ],
     [ "SpongeChoice", "structSpongeChoice.html", null ],
