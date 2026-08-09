@@ -1,8 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"ERF__InitCustomPert__RICO_8H.html#ab1d1c6c4acc974f1e1fd35a6a27223fc":[3,0,1,15,17,10],
-"ERF__InitCustomPert__RICO_8H.html#ab4be8c0629cb41156ecd4551a77c0588":[3,0,1,15,17,6],
-"ERF__InitCustomPert__RICO_8H.html#abaff3abfc836a0511a62d304bc98083f":[3,0,1,15,17,11],
 "ERF__InitCustomPert__RICO_8H.html#abe2b10aa4adb81c2db73cc81b2fa7245":[3,0,1,15,17,5],
 "ERF__InitCustomPert__RICO_8H.html#abe7cb86f410e1e74b8a17ec220df2864":[3,0,1,15,17,18],
 "ERF__InitCustomPert__RICO_8H.html#abf4a4c55a1ef41d3e0264139fe1cb631":[3,0,1,15,17,21],
@@ -237,17 +234,20 @@ var NAVTREEINDEX6 =
 "ERF__InitDensityHSE_8H.html#ab73f3a6e798cc452e3c79d93e8a6bd65":[3,0,1,15,44,3],
 "ERF__InitDensityHSE_8H_source.html":[3,0,1,15,44],
 "ERF__InitForEnsemble_8cpp.html":[3,0,1,6,4],
+"ERF__InitForEnsemble_8cpp.html#a08cce1a23e551dac900062fd55ef9269":[3,0,1,6,4,5],
 "ERF__InitForEnsemble_8cpp.html#a2042fe63732a9e3b81dc3683f3338aae":[3,0,1,6,4,0],
 "ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de":[3,0,1,6,4,2],
 "ERF__InitForEnsemble_8cpp.html#a24d9d7aee224e8f78aa3c7efc19164c2":[3,0,1,6,4,6],
 "ERF__InitForEnsemble_8cpp.html#a5d1d342ccca530682906a3e930477d04":[3,0,1,6,4,1],
 "ERF__InitForEnsemble_8cpp.html#abf5492c9d12faf4aa0d426745efdcbc1":[3,0,1,6,4,4],
-"ERF__InitForEnsemble_8cpp.html#abf6556afcdd8d4ac5579e32c72fa4c27":[3,0,1,6,4,5],
 "ERF__InitForEnsemble_8cpp.html#adba67d112a55cf54965314caf4129aad":[3,0,1,6,4,7],
 "ERF__InitForEnsemble_8cpp.html#af8d8572feb89e881d41ba2a97c4b3cff":[3,0,1,6,4,3],
 "ERF__InitFromHSE_8cpp.html":[3,0,1,6,5],
 "ERF__InitFromInputSounding_8cpp.html":[3,0,1,6,6],
 "ERF__InitFromInputSounding_8cpp.html#a07fae553ecd15cf313965e41b364cc54":[3,0,1,6,6,1],
 "ERF__InitFromInputSounding_8cpp.html#a224283923036dd178590612b6c40606c":[3,0,1,6,6,2],
-"ERF__InitFromInputSounding_8cpp.html#ac89f178facffdb031a3826a2e63a9f5b":[3,0,1,6,6,0]
+"ERF__InitFromInputSounding_8cpp.html#ac89f178facffdb031a3826a2e63a9f5b":[3,0,1,6,6,0],
+"ERF__InitFromMetgrid_8cpp.html":[3,0,1,6,7],
+"ERF__InitFromNCFile_8cpp.html":[3,0,1,6,8],
+"ERF__InitFromWRFInput_8cpp.html":[3,0,1,6,9]
 };

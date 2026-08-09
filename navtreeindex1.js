@@ -1,8 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"ERF__Constants_8H.html#a4e1c44dade7fcd7648d3e87ba5bba4c1":[3,0,1,24,22],
-"ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc":[3,0,1,24,33],
-"ERF__Constants_8H.html#a583248545708b1481d513f2c9621f0ba":[3,0,1,24,81],
 "ERF__Constants_8H.html#a5b9ceb4b022305781565b213273b24df":[3,0,1,24,8],
 "ERF__Constants_8H.html#a630c4c3e10ef44d50ca4c6939a59b6a3":[3,0,1,24,26],
 "ERF__Constants_8H.html#a650da208ce885c0f6c9c742d26dc4b0e":[3,0,1,24,49],
@@ -249,5 +246,8 @@ var NAVTREEINDEX1 =
 "ERF__EBPolygon_8H_source.html":[3,0,1,5,12],
 "ERF__EBRedistribute_8H.html":[3,0,1,5,14],
 "ERF__EBRedistribute_8H.html#a0c6cdd0bd3eb10a5d89fe53b2c590666":[3,0,1,5,14,0],
-"ERF__EBRedistribute_8H_source.html":[3,0,1,5,14]
+"ERF__EBRedistribute_8H_source.html":[3,0,1,5,14],
+"ERF__EBRedistribute_8cpp.html":[3,0,1,5,13],
+"ERF__EBRedistribute_8cpp.html#af9fcc1fae78e00e2472e3bf85a793e0e":[3,0,1,5,13,0],
+"ERF__EBSlopes_8H.html":[3,0,1,5,15]
 };

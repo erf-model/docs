@@ -5,8 +5,6 @@ var ERF__SrcHeaders_8H =
     [ "ApplySpongeZoneBCsForCC", "ERF__SrcHeaders_8H.html#aad9964c24e355093b3930768e4e80b2f", null ],
     [ "ApplySpongeZoneBCsForMom", "ERF__SrcHeaders_8H.html#af3c752479136ad9502f0bae7f6caaaaf", null ],
     [ "ApplySpongeZoneBCsForMom_ReadFromFile", "ERF__SrcHeaders_8H.html#acb54c33a007d2d0e105102983da18eac", null ],
-    [ "ApplySurfaceTreatment_BulkCoeff_CC", "ERF__SrcHeaders_8H.html#ad16481b503e165d9ac684468ec8091c3", null ],
-    [ "ApplySurfaceTreatment_BulkCoeff_Mom", "ERF__SrcHeaders_8H.html#a16eedc7495a4d75f55f920829fa69cef", null ],
     [ "compute_gradp", "ERF__SrcHeaders_8H.html#a43c544fdc0bdd13ca5993185c835880e", null ],
     [ "compute_gradp_interpz", "ERF__SrcHeaders_8H.html#a7b28afc46a4e7ef5307af00f235dd980", null ],
     [ "compute_gradp_xy", "ERF__SrcHeaders_8H.html#ab99ba4f6e8dc4a8e8850ad2d159cdb6e", null ],
