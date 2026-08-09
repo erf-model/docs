@@ -387,9 +387,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">// We need velocity in the interior ghost cells (init == real)</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        Box bx = mfi.tilebox();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Box tbx = surroundingNodes(bx,0);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Box tby = surroundingNodes(bx,1);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Box tbz = surroundingNodes(bx,2);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        Box tbz = mfi.nodaltilebox(2);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> ( (bx.smallEnd(0) == domain.smallEnd(0)) &amp;&amp;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;             ( (bc_ptr_h[<a class="code" href="namespaceBCVars.html#a00367571247ba920989360b94c156f4aaaf601346b01655b32acf66d07b856aec">BCVars::cons_bc</a>].lo(0) == <a class="code" href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4b16988b22c277c9f812ddb5fb1539af">ERFBCType::ext_dir</a>) ||</div>
