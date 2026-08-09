@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"ERF__Morrison__Fortran__Interface_8H_source.html":[3,0,1,11,2,7],
+"ERF__Morrison__Plot_8cpp.html":[3,0,1,11,2,8],
+"ERF__NCColumnFile_8cpp.html":[3,0,1,7,2],
 "ERF__NCInterface_8H.html":[3,0,1,7,4],
 "ERF__NCInterface_8H_source.html":[3,0,1,7,4],
 "ERF__NCInterface_8cpp.html":[3,0,1,7,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__Plotfile2DFill_8cpp.html#a7b7045adfab32b10e82a435e8cb63d8d":[3,0,1,7,12,2],
 "ERF__Plotfile2DFill_8cpp.html#a84481bdd7c59867e8c0232353a2afd36":[3,0,1,7,12,5],
 "ERF__Plotfile2DFill_8cpp.html#acb28b20f496f4566f60d199906230951":[3,0,1,7,12,3],
-"ERF__Plotfile2DFill_8cpp.html#ad90bdb7677d838059d3b1f2b97ac5e14":[3,0,1,7,12,1],
-"ERF__Plotfile2DFill_8cpp.html#aee0c54e52d986ec450e95dc0e6daa1d8":[3,0,1,7,12,4],
-"ERF__Plotfile2DInterpolator_8H.html":[3,0,1,7,15],
-"ERF__Plotfile2DInterpolator_8H.html#aa7c8afd44c727285c8fc62581bdf265d":[3,0,1,7,15,3]
+"ERF__Plotfile2DFill_8cpp.html#ad90bdb7677d838059d3b1f2b97ac5e14":[3,0,1,7,12,1]
 };

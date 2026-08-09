@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"ERF__EBRedistribute_8cpp.html":[3,0,1,5,13],
+"ERF__EBRedistribute_8cpp.html#af9fcc1fae78e00e2472e3bf85a793e0e":[3,0,1,5,13,0],
+"ERF__EBSlopes_8H.html":[3,0,1,5,15],
+"ERF__EBSlopes_8H.html#a044f0522faef6563bee7e856de5db7d5":[3,0,1,5,15,0],
 "ERF__EBSlopes_8H.html#a1a4979f3fa6900c0d51f6fa0ed972dc3":[3,0,1,5,15,1],
 "ERF__EBSlopes_8H.html#ab60af3414161d7b02e0c6ddebe842791":[3,0,1,5,15,3],
 "ERF__EBSlopes_8H.html#af77db2c09d5b34ca21e60e3918cdf257":[3,0,1,5,15,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__InitCustomPertVels__ABL_8H.html#ad3f35fb74a893ceb0d8afcc39e39a84b":[3,0,1,15,26,12],
 "ERF__InitCustomPertVels__ABL_8H.html#ada6bdc46e2435400f2c431495eaa6ffb":[3,0,1,15,26,24],
 "ERF__InitCustomPertVels__ABL_8H.html#afa36b585cf4468f615e2d4739bc65905":[3,0,1,15,26,0],
-"ERF__InitCustomPertVels__ABL_8H_source.html":[3,0,1,15,26],
-"ERF__InitCustomPertVels__Bomex_8H.html":[3,0,1,15,27],
-"ERF__InitCustomPertVels__Bomex_8H.html#a11b10535de2a1b98bd4902dabf4afa82":[3,0,1,15,27,15],
-"ERF__InitCustomPertVels__Bomex_8H.html#a155fb830415977abca1947c0148065df":[3,0,1,15,27,13],
-"ERF__InitCustomPertVels__Bomex_8H.html#a1799cab9edb6f4551b2158e66c70fc7e":[3,0,1,15,27,1]
+"ERF__InitCustomPertVels__ABL_8H_source.html":[3,0,1,15,26]
 };

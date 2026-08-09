@@ -47,6 +47,7 @@ var hierarchy =
     [ "amrex::GPUable", null, [
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],
+    [ "erf_cloud_chamber::InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],
     [ "erf_noahmp::InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", null ],

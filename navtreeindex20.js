@@ -1,5 +1,8 @@
 var NAVTREEINDEX20 =
 {
+"classPlaneAverage.html#ae359b042dfa8a0b951a3d34706c3c385":[2,0,84,22],
+"classPlaneAverage.html#ae90ae5492fc58db64f54c342c800f59a":[2,0,84,3],
+"classPlaneAverage.html#af07d85c4bd48f4bedc0b180001c728dc":[2,0,84,30],
 "classPlaneAverage.html#af12478c0cb46a8afc438846f8f24e949":[2,0,84,9],
 "classPlaneAverage.html#af2bdf5b94ffc67066949be787ab66be2":[2,0,84,23],
 "classProblemBase.html":[2,0,87],
@@ -246,8 +249,5 @@ var NAVTREEINDEX20 =
 "classSAM.html#a301ce0c7f6cff77d6388c2d706e73a42":[2,0,93,2],
 "classSAM.html#a3117e23160d027ccb4dacf744a477a40":[2,0,93,36],
 "classSAM.html#a363b3bb27b6e6cdad8693363b3262419":[2,0,93,11],
-"classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e":[2,0,93,53],
-"classSAM.html#a37854ec84283a4229cf86b54cfcfc72b":[2,0,93,41],
-"classSAM.html#a3b461d5620f6b9a08a1e62b60a463af7":[2,0,93,51],
-"classSAM.html#a3d34d2f5ba527c4ed1e75ea27618f1af":[2,0,93,49]
+"classSAM.html#a36ee9e1e1a94d22304f46e064f16e11e":[2,0,93,53]
 };

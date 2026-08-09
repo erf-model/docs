@@ -113,13 +113,11 @@ Variables</h2></td></tr>
 <tr class="separator:afa66beffe7aab5cfb2959409424b13f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb050a3a017427c3a07cbb64f11b9352"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#abb050a3a017427c3a07cbb64f11b9352">theta_hi</a> = 301.0</td></tr>
 <tr class="separator:abb050a3a017427c3a07cbb64f11b9352"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a831edc3141288c83d302cfba10ef7f31"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a831edc3141288c83d302cfba10ef7f31">prob_lo</a> = geomdata.ProbLo()</td></tr>
-<tr class="separator:a831edc3141288c83d302cfba10ef7f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae130889f2d9b097b11dacc77d5f1db69"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#ae130889f2d9b097b11dacc77d5f1db69">prob_hi</a> = geomdata.ProbHi()</td></tr>
-<tr class="separator:ae130889f2d9b097b11dacc77d5f1db69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aada30199a52709bfe69b46aa5a2b9731"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize()</td></tr>
-<tr class="separator:aada30199a52709bfe69b46aa5a2b9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7817547f51392c7251d45619d61b1a39"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a> = <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>]</td></tr>
+<tr class="memitem:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a></td></tr>
+<tr class="separator:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f3b481e7aa974743b56c5f4b2835cc"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a00f3b481e7aa974743b56c5f4b2835cc">dx</a></td></tr>
+<tr class="separator:a00f3b481e7aa974743b56c5f4b2835cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7817547f51392c7251d45619d61b1a39"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a7817547f51392c7251d45619d61b1a39">length</a> = geomdata.ProbHi(<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>) - geomdata.ProbLo(<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>)</td></tr>
 <tr class="separator:a7817547f51392c7251d45619d61b1a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -296,18 +294,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aada30199a52709bfe69b46aa5a2b9731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aada30199a52709bfe69b46aa5a2b9731">&#9670;&nbsp;</a></span>dx</h2>
+<a id="a00f3b481e7aa974743b56c5f4b2835cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f3b481e7aa974743b56c5f4b2835cc">&#9670;&nbsp;</a></span>dx</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto dx = geomdata.CellSize()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM&gt; dx</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    geomdata.CellSize(0), geomdata.CellSize(1), geomdata.CellSize(2)}</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#afc4fc64f92aed2b0edd51499d7e4b5d7">ParallelFor()</a>.</p>
 
 </div>
@@ -319,7 +319,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> length = <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#adabdab8cbc4042ba055d63061a693830">prob_hi</a>[<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>] - <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f">prob_lo</a>[<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>]</td>
+          <td class="memname">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> length = geomdata.ProbHi(<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>) - geomdata.ProbLo(<a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#a884869744ebf14a092b339ae65c2af37">axis</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -328,34 +328,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ae130889f2d9b097b11dacc77d5f1db69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae130889f2d9b097b11dacc77d5f1db69">&#9670;&nbsp;</a></span>prob_hi</h2>
+<a id="aa9fd06f7fe187d6c39d38c7473e19c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fd06f7fe187d6c39d38c7473e19c7c">&#9670;&nbsp;</a></span>prob_lo</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto prob_hi = geomdata.ProbHi()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM&gt; prob_lo</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="reference">Referenced by <a class="el" href="ERF__InitCustomPertVels__CouettePoiseuille_8H.html#a97a9e6046b40a66048f69630ef62c537">if()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="ERF__InitCustomPert__EBPoiseuille_8H.html#ad540554f5f5532554a9ef766ccf57430">ParallelFor()</a>, <a class="el" href="ERF__InitCustomPert__Bomex_8H.html#ab6d7fdc23be42c7d49b8c1362cae2ea8">ParallelForRNG()</a>, and <a class="el" href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile()</a>.</p>
-
-</div>
-</div>
-<a id="a831edc3141288c83d302cfba10ef7f31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a831edc3141288c83d302cfba10ef7f31">&#9670;&nbsp;</a></span>prob_lo</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const auto prob_lo = geomdata.ProbLo()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    geomdata.ProbLo(0), geomdata.ProbLo(1), geomdata.ProbLo(2)}</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aa11ca2a40c0214f96e0fdfe445f86aa4">ERF::ComputeGlobalMinLocation()</a>, <a class="el" href="classForestDrag.html#a3fcd26d6f5274c804db6bebceb267c2b">ForestDrag::define_drag_field()</a>, <a class="el" href="classERF.html#a18e6dbbf968b4492e78aa427791620f4">ERF::ErrorEst()</a>, <a class="el" href="classERF.html#a489b764a2e6fdbb983c1beea2cc80e00">ERF::FillForecastStateMultiFabs()</a>, <a class="el" href="classERF.html#add8dd48cc5fab80e2b807fc9674b9027">ERF::FillSurfaceStateMultiFabs()</a>, <a class="el" href="classERF.html#a2e077291b715bbe369f9f1f414778545">ERF::FindInitialEye()</a>, <a class="el" href="classERF.html#a3f126da985f31c6522c1d45a95bec062">ERF::HurricaneEyeTrackerNotInitial()</a>, <a class="el" href="classERF.html#a546e5fb0df4f5b1c61e92ba8c9e1e3c9">ERF::HurricaneMaxVelTracker()</a>, <a class="el" href="classERF.html#aa5c7eff8fe01b01054d38c3866f01c14">ERF::HurricaneMinPressureTracker()</a>, <a class="el" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a73484c1c798d584237590b57a77af992">if()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#ac89f178facffdb031a3826a2e63a9f5b">init_state_from_input_sounding()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a07fae553ecd15cf313965e41b364cc54">init_state_from_input_sounding_hse()</a>, <a class="el" href="ERF__InitFromInputSounding_8cpp.html#a224283923036dd178590612b6c40606c">init_velocities_from_input_sounding()</a>, <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="ERF__InitCustomPert__AnelasticWallDiffusion_8H.html#afc4fc64f92aed2b0edd51499d7e4b5d7">ParallelFor()</a>, <a class="el" href="ERF__InitCustomPert__Bomex_8H.html#ab6d7fdc23be42c7d49b8c1362cae2ea8">ParallelForRNG()</a>, <a class="el" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239">ERF::poisson_wall_dist()</a>, <a class="el" href="classERF.html#ae27a45d751287a887769df20dea60633">ERF::setSpongeRefFromSounding()</a>, <a class="el" href="ERF__RefineHurricane_8cpp.html#a661478614baa822c243e10e73731de2a">tag_on_distance_from_eye()</a>, <a class="el" href="ERF__ThinBodyWallDist_8cpp.html#ac7d883d31653c6ddcbb78bebbdf9339c">thinbody_wall_dist()</a>, and <a class="el" href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile()</a>.</p>
 
 </div>

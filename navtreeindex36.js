@@ -1,5 +1,18 @@
 var NAVTREEINDEX36 =
 {
+"structsurface__flux__donelan.html#aa0c92783f88aeb52db12fd0b1b40bca7":[2,0,134,6],
+"structsurface__flux__donelan.html#ab3b7307051954c791dcf73bb13213e9f":[2,0,134,2],
+"structsurface__flux__donelan.html#acbf1958c05bd1da59200cff1bffec3ab":[2,0,134,3],
+"structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7":[2,0,134,1],
+"structsurface__flux__eb.html":[2,0,135],
+"structsurface__flux__eb.html#a5d88d4c5c4b6a3a4ff1878cd80f42d62":[2,0,135,6],
+"structsurface__flux__eb.html#a928b29a8f6afb96b8a5418ca1216c984":[2,0,135,3],
+"structsurface__flux__eb.html#aaaaec1afbc96682a35455eb5738fcb7f":[2,0,135,5],
+"structsurface__flux__eb.html#ab42b18b0bfc9fef667627f31c3dcc032":[2,0,135,2],
+"structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085":[2,0,135,1],
+"structsurface__flux__eb.html#ae73547cd4cae85523f2888b84f6c7d58":[2,0,135,4],
+"structsurface__flux__eb.html#af43312469a16f64fe24416314d7b8fde":[2,0,135,0],
+"structsurface__flux__mod__charnock.html":[2,0,136],
 "structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9":[2,0,136,1],
 "structsurface__flux__mod__charnock.html#a45a62f7d959cb8241d71a6efc2947b9c":[2,0,136,0],
 "structsurface__flux__mod__charnock.html#a47b9c65ba7662c9f860179104b67b9d8":[2,0,136,6],

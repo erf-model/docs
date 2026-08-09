@@ -109,10 +109,10 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a0544c3fe466e421738dae463968b70ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a0544c3fe466e421738dae463968b70ba">else</a></td></tr>
 <tr class="separator:a0544c3fe466e421738dae463968b70ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a831edc3141288c83d302cfba10ef7f31"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a831edc3141288c83d302cfba10ef7f31">prob_lo</a> = geomdata.ProbLo()</td></tr>
-<tr class="separator:a831edc3141288c83d302cfba10ef7f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aada30199a52709bfe69b46aa5a2b9731"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#aada30199a52709bfe69b46aa5a2b9731">dx</a> = geomdata.CellSize()</td></tr>
-<tr class="separator:aada30199a52709bfe69b46aa5a2b9731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#aa9fd06f7fe187d6c39d38c7473e19c7c">prob_lo</a></td></tr>
+<tr class="separator:aa9fd06f7fe187d6c39d38c7473e19c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f3b481e7aa974743b56c5f4b2835cc"><td class="memItemLeft" align="right" valign="top">const GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a00f3b481e7aa974743b56c5f4b2835cc">dx</a></td></tr>
+<tr class="separator:a00f3b481e7aa974743b56c5f4b2835cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9817d9cd1bbbc2d0f1b08e0d6fb73e64"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a9817d9cd1bbbc2d0f1b08e0d6fb73e64">config</a> = m_cloud_chamber_config</td></tr>
 <tr class="separator:a9817d9cd1bbbc2d0f1b08e0d6fb73e64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46e52004c860b2aef260fce99d025bce"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a> = sc.rdOcp</td></tr>
@@ -313,18 +313,20 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aada30199a52709bfe69b46aa5a2b9731"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aada30199a52709bfe69b46aa5a2b9731">&#9670;&nbsp;</a></span>dx</h2>
+<a id="a00f3b481e7aa974743b56c5f4b2835cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f3b481e7aa974743b56c5f4b2835cc">&#9670;&nbsp;</a></span>dx</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto dx = geomdata.CellSize()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM&gt; dx</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    geomdata.CellSize(0), geomdata.CellSize(1), geomdata.CellSize(2)}</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a772f38fa0b92f8f2bd3621e88f49fe2e">ParallelFor()</a>.</p>
 
 </div>
@@ -347,18 +349,20 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a831edc3141288c83d302cfba10ef7f31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a831edc3141288c83d302cfba10ef7f31">&#9670;&nbsp;</a></span>prob_lo</h2>
+<a id="aa9fd06f7fe187d6c39d38c7473e19c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fd06f7fe187d6c39d38c7473e19c7c">&#9670;&nbsp;</a></span>prob_lo</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const auto prob_lo = geomdata.ProbLo()</td>
+          <td class="memname">const GpuArray&lt;<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>, AMREX_SPACEDIM&gt; prob_lo</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    geomdata.ProbLo(0), geomdata.ProbLo(1), geomdata.ProbLo(2)}</div>
+</div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__InitCustomPert__CloudChamber_8H.html#a772f38fa0b92f8f2bd3621e88f49fe2e">ParallelFor()</a>.</p>
 
 </div>

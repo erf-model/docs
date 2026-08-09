@@ -2,6 +2,11 @@ var namespaceerf__cloud__chamber =
 [
     [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
     [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
+    [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ],
+    [ "InitializationMode", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7", [
+      [ "PhysicalTemperatureRH", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7a771279d249d1fa5c25e791ef3971f8ee", null ],
+      [ "LegacyThetaQv", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7ae30f844e44d8afad7ee7383f32e676bf", null ]
+    ] ],
     [ "WallFace", "namespaceerf__cloud__chamber.html#a09412b9da4a2870290d1055915395ad5", [
       [ "XLo", "namespaceerf__cloud__chamber.html#a09412b9da4a2870290d1055915395ad5a95c9f94ba1764e963103695dd8374612", null ],
       [ "XHi", "namespaceerf__cloud__chamber.html#a09412b9da4a2870290d1055915395ad5aa9f49a8cf6fd188bd1fd4d47fb416eff", null ],
@@ -13,6 +18,7 @@ var namespaceerf__cloud__chamber =
     [ "deterministic_perturbation", "namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857", null ],
     [ "face_name", "namespaceerf__cloud__chamber.html#a67fcb81762b86cfdf22570f0254e97a5", null ],
     [ "finite", "namespaceerf__cloud__chamber.html#ad6386a142314152cfe77637718c16780", null ],
+    [ "initialization_contract_error", "namespaceerf__cloud__chamber.html#ad3f6951a379b4ce5e0bf2cc2d7325a5a", null ],
     [ "linear_profile", "namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710", null ],
     [ "parse_config", "namespaceerf__cloud__chamber.html#a94686331be24678ca6a5bd1487d7c195", null ],
     [ "qv_at", "namespaceerf__cloud__chamber.html#a46a65552d8289e77b63c9e427d07b364", null ],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"ERF__InitFromMetgrid_8cpp.html":[3,0,1,6,7],
+"ERF__InitFromNCFile_8cpp.html":[3,0,1,6,8],
+"ERF__InitFromWRFInput_8cpp.html":[3,0,1,6,9],
 "ERF__InitGeowind_8cpp.html":[3,0,1,6,10],
 "ERF__InitImmersedForcing_8cpp.html":[3,0,1,6,11],
 "ERF__InitKessler_8cpp.html":[3,0,1,11,0,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__Morrison__Fortran__Interface_8H.html":[3,0,1,11,2,7],
 "ERF__Morrison__Fortran__Interface_8H.html#a21ab06e6cce1c19faefc9aa069b54b07":[3,0,1,11,2,7,1],
 "ERF__Morrison__Fortran__Interface_8H.html#af516bd1e1ed0913cf54a9932f8f40138":[3,0,1,11,2,7,2],
-"ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681":[3,0,1,11,2,7,0],
-"ERF__Morrison__Fortran__Interface_8H_source.html":[3,0,1,11,2,7],
-"ERF__Morrison__Plot_8cpp.html":[3,0,1,11,2,8],
-"ERF__NCColumnFile_8cpp.html":[3,0,1,7,2]
+"ERF__Morrison__Fortran__Interface_8H.html#aff6bd4d2d4ab8af93b3b93f250364681":[3,0,1,11,2,7,0]
 };

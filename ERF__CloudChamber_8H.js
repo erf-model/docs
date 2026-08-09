@@ -2,6 +2,11 @@ var ERF__CloudChamber_8H =
 [
     [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
     [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
+    [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ],
+    [ "InitializationMode", "ERF__CloudChamber_8H.html#ab52895612e608d5a84cdf153660b82a7", [
+      [ "PhysicalTemperatureRH", "ERF__CloudChamber_8H.html#ab52895612e608d5a84cdf153660b82a7a771279d249d1fa5c25e791ef3971f8ee", null ],
+      [ "LegacyThetaQv", "ERF__CloudChamber_8H.html#ab52895612e608d5a84cdf153660b82a7ae30f844e44d8afad7ee7383f32e676bf", null ]
+    ] ],
     [ "WallFace", "ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5", [
       [ "XLo", "ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5a95c9f94ba1764e963103695dd8374612", null ],
       [ "XHi", "ERF__CloudChamber_8H.html#a09412b9da4a2870290d1055915395ad5aa9f49a8cf6fd188bd1fd4d47fb416eff", null ],
@@ -13,6 +18,7 @@ var ERF__CloudChamber_8H =
     [ "deterministic_perturbation", "ERF__CloudChamber_8H.html#a1f7c4bf60b72bae7dc737fe831037857", null ],
     [ "face_name", "ERF__CloudChamber_8H.html#a67fcb81762b86cfdf22570f0254e97a5", null ],
     [ "finite", "ERF__CloudChamber_8H.html#ad6386a142314152cfe77637718c16780", null ],
+    [ "initialization_contract_error", "ERF__CloudChamber_8H.html#ad3f6951a379b4ce5e0bf2cc2d7325a5a", null ],
     [ "linear_profile", "ERF__CloudChamber_8H.html#ada393f7c2dc2faf21670956a8869c710", null ],
     [ "parse_config", "ERF__CloudChamber_8H.html#a94686331be24678ca6a5bd1487d7c195", null ],
     [ "qv_at", "ERF__CloudChamber_8H.html#a46a65552d8289e77b63c9e427d07b364", null ],

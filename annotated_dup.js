@@ -2,7 +2,8 @@ var annotated_dup =
 [
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", [
       [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
-      [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ]
+      [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
+      [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ]
     ] ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", [
       [ "PrecipSlots", "structerf__noahmp_1_1PrecipSlots.html", "structerf__noahmp_1_1PrecipSlots" ],
