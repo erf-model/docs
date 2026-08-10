@@ -139,13 +139,13 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:a737713ea9ad59cb13fd2e1763a36c7f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device pointer to stretched vertical cell sizes.  <a href="classTerrainIF.html#a737713ea9ad59cb13fd2e1763a36c7f6">More...</a><br /></td></tr>
 <tr class="separator:a737713ea9ad59cb13fd2e1763a36c7f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ef300b60a513a54e515d7230c9fa6b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">dx</a></td></tr>
-<tr class="memdesc:a9ef300b60a513a54e515d7230c9fa6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform computational mesh spacing in each direction.  <a href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">More...</a><br /></td></tr>
+<tr class="memdesc:a9ef300b60a513a54e515d7230c9fa6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform computational grid spacing in each direction.  <a href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">More...</a><br /></td></tr>
 <tr class="separator:a9ef300b60a513a54e515d7230c9fa6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac74d67f8ed14ea0779e6c29c4bd28477"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#ac74d67f8ed14ea0779e6c29c4bd28477">dy</a></td></tr>
-<tr class="memdesc:ac74d67f8ed14ea0779e6c29c4bd28477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform computational mesh spacing in y.  <a href="classTerrainIF.html#ac74d67f8ed14ea0779e6c29c4bd28477">More...</a><br /></td></tr>
+<tr class="memdesc:ac74d67f8ed14ea0779e6c29c4bd28477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform computational grid spacing in y.  <a href="classTerrainIF.html#ac74d67f8ed14ea0779e6c29c4bd28477">More...</a><br /></td></tr>
 <tr class="separator:ac74d67f8ed14ea0779e6c29c4bd28477"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecd6581c288aa552c200147254af5f80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#aecd6581c288aa552c200147254af5f80">dz</a></td></tr>
-<tr class="memdesc:aecd6581c288aa552c200147254af5f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform computational mesh spacing in z.  <a href="classTerrainIF.html#aecd6581c288aa552c200147254af5f80">More...</a><br /></td></tr>
+<tr class="memdesc:aecd6581c288aa552c200147254af5f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uniform computational grid spacing in z.  <a href="classTerrainIF.html#aecd6581c288aa552c200147254af5f80">More...</a><br /></td></tr>
 <tr class="separator:aecd6581c288aa552c200147254af5f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a173b6335da7186e54da1a21d2c710053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrainIF.html#a173b6335da7186e54da1a21d2c710053">prob_lo_x</a></td></tr>
 <tr class="memdesc:a173b6335da7186e54da1a21d2c710053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low problem bounds used for interpolation.  <a href="classTerrainIF.html#a173b6335da7186e54da1a21d2c710053">More...</a><br /></td></tr>
@@ -221,7 +221,7 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">a_z_terrain</td><td>Terrain elevation values on the horizontal mesh. </td></tr>
-    <tr><td class="paramname">a_geom</td><td>Geometry used for mesh spacing and problem bounds. </td></tr>
+    <tr><td class="paramname">a_geom</td><td>Geometry used for grid spacing and problem bounds. </td></tr>
     <tr><td class="paramname">a_dz_stretched</td><td>Device vector of stretched vertical cell sizes. </td></tr>
   </table>
   </dd>
@@ -246,12 +246,12 @@ Protected Attributes</h2></td></tr>
 <div class="ttc" id="aclassTerrainIF_html_a5a2b6c58e209754e0c53b237af85b6a2"><div class="ttname"><a href="classTerrainIF.html#a5a2b6c58e209754e0c53b237af85b6a2">TerrainIF::k_hi</a></div><div class="ttdeci">int k_hi</div><div class="ttdoc">Number of vertical cells (one past the highest valid dz_s index).</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:164</div></div>
 <div class="ttc" id="aclassTerrainIF_html_a61ba7f6df699e91cb09f22254ce15756"><div class="ttname"><a href="classTerrainIF.html#a61ba7f6df699e91cb09f22254ce15756">TerrainIF::prob_lo_y</a></div><div class="ttdeci">amrex::Real prob_lo_y</div><div class="ttdoc">Low problem bound in y.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:158</div></div>
 <div class="ttc" id="aclassTerrainIF_html_a737713ea9ad59cb13fd2e1763a36c7f6"><div class="ttname"><a href="classTerrainIF.html#a737713ea9ad59cb13fd2e1763a36c7f6">TerrainIF::dz_s</a></div><div class="ttdeci">amrex::Real const  * dz_s</div><div class="ttdoc">Device pointer to stretched vertical cell sizes.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:154</div></div>
-<div class="ttc" id="aclassTerrainIF_html_a9ef300b60a513a54e515d7230c9fa6b6"><div class="ttname"><a href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">TerrainIF::dx</a></div><div class="ttdeci">amrex::Real dx</div><div class="ttdoc">Uniform computational mesh spacing in each direction.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:156</div></div>
+<div class="ttc" id="aclassTerrainIF_html_a9ef300b60a513a54e515d7230c9fa6b6"><div class="ttname"><a href="classTerrainIF.html#a9ef300b60a513a54e515d7230c9fa6b6">TerrainIF::dx</a></div><div class="ttdeci">amrex::Real dx</div><div class="ttdoc">Uniform computational grid spacing in each direction.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:156</div></div>
 <div class="ttc" id="aclassTerrainIF_html_aac642e338bc723b2634616e0bf394332"><div class="ttname"><a href="classTerrainIF.html#aac642e338bc723b2634616e0bf394332">TerrainIF::prob_lo_z</a></div><div class="ttdeci">amrex::Real prob_lo_z</div><div class="ttdoc">Low problem bound in z.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:158</div></div>
 <div class="ttc" id="aclassTerrainIF_html_ab4cd1fad98e4360ccdc55688eafbb1e2"><div class="ttname"><a href="classTerrainIF.html#ab4cd1fad98e4360ccdc55688eafbb1e2">TerrainIF::j_hi</a></div><div class="ttdeci">int j_hi</div><div class="ttdoc">Highest terrain-array index in y.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:162</div></div>
 <div class="ttc" id="aclassTerrainIF_html_ac0d5a1af6e129489c058ac5308936f8f"><div class="ttname"><a href="classTerrainIF.html#ac0d5a1af6e129489c058ac5308936f8f">TerrainIF::i_hi</a></div><div class="ttdeci">int i_hi</div><div class="ttdoc">Highest terrain-array index in the x and y directions.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:162</div></div>
-<div class="ttc" id="aclassTerrainIF_html_ac74d67f8ed14ea0779e6c29c4bd28477"><div class="ttname"><a href="classTerrainIF.html#ac74d67f8ed14ea0779e6c29c4bd28477">TerrainIF::dy</a></div><div class="ttdeci">amrex::Real dy</div><div class="ttdoc">Uniform computational mesh spacing in y.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:156</div></div>
-<div class="ttc" id="aclassTerrainIF_html_aecd6581c288aa552c200147254af5f80"><div class="ttname"><a href="classTerrainIF.html#aecd6581c288aa552c200147254af5f80">TerrainIF::dz</a></div><div class="ttdeci">amrex::Real dz</div><div class="ttdoc">Uniform computational mesh spacing in z.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:156</div></div>
+<div class="ttc" id="aclassTerrainIF_html_ac74d67f8ed14ea0779e6c29c4bd28477"><div class="ttname"><a href="classTerrainIF.html#ac74d67f8ed14ea0779e6c29c4bd28477">TerrainIF::dy</a></div><div class="ttdeci">amrex::Real dy</div><div class="ttdoc">Uniform computational grid spacing in y.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:156</div></div>
+<div class="ttc" id="aclassTerrainIF_html_aecd6581c288aa552c200147254af5f80"><div class="ttname"><a href="classTerrainIF.html#aecd6581c288aa552c200147254af5f80">TerrainIF::dz</a></div><div class="ttdeci">amrex::Real dz</div><div class="ttdoc">Uniform computational grid spacing in z.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:156</div></div>
 <div class="ttc" id="aclassTerrainIF_html_af34c8abff7e400498701029213ad57e2"><div class="ttname"><a href="classTerrainIF.html#af34c8abff7e400498701029213ad57e2">TerrainIF::prob_hi_y</a></div><div class="ttdeci">amrex::Real prob_hi_y</div><div class="ttdoc">High problem bound in y.</div><div class="ttdef"><b>Definition:</b> ERF_EBIFTerrain.H:160</div></div>
 </div><!-- fragment -->
 </div>
@@ -450,7 +450,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Uniform computational mesh spacing in each direction. </p>
+<p>Uniform computational grid spacing in each direction. </p>
 
 <p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>.</p>
 
@@ -476,7 +476,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Uniform computational mesh spacing in y. </p>
+<p>Uniform computational grid spacing in y. </p>
 
 <p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>.</p>
 
@@ -502,7 +502,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Uniform computational mesh spacing in z. </p>
+<p>Uniform computational grid spacing in z. </p>
 
 <p class="reference">Referenced by <a class="el" href="classTerrainIF.html#ad7eb62071230ad12fbaa91ec2a13f110">operator()()</a>.</p>
 

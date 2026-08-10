@@ -348,7 +348,7 @@ template&lt;typename InterpType_H &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>x-component of velocity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>y-component of velocity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>z-component of velocity </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse mesh spacing </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse grid spacing </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">stretched_dz_d</td><td>device vector of vertical cell spacing </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_mx</td><td>x map factor on cell centers </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_ux_inv</td><td>inverse x map factor on x-faces </td></tr>
@@ -703,7 +703,7 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
     <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td>x-component of velocity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>y-component of velocity </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>z-component of velocity </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse mesh spacing </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cellSizeInv</td><td>inverse grid spacing </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">stretched_dz_d</td><td>device vector of vertical cell spacing </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_mx</td><td>x map factor on cell centers </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_ux_inv</td><td>inverse x map factor on x-faces </td></tr>
@@ -904,9 +904,9 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_ux_inv</td><td>inverse x map factor on x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_uy_inv</td><td>inverse y map factor on x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_vx_inv</td><td>inverse x map factor on y-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dxInv</td><td>inverse mesh spacing in x </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dyInv</td><td>inverse mesh spacing in y </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dzInv</td><td>inverse mesh spacing in z </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dxInv</td><td>inverse grid spacing in x </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dyInv</td><td>inverse grid spacing in y </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dzInv</td><td>inverse grid spacing in z </td></tr>
   </table>
   </dd>
 </dl>
@@ -1093,9 +1093,9 @@ template&lt;typename InterpType_H , typename InterpType_V &gt; </div>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_uy_inv</td><td>inverse y map factor on x-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_vx_inv</td><td>inverse x map factor on y-faces </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mf_vy_inv</td><td>inverse y map factor on y-faces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dxInv</td><td>inverse mesh spacing in x </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dyInv</td><td>inverse mesh spacing in y </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dzInv</td><td>inverse mesh spacing in z </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dxInv</td><td>inverse grid spacing in x </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dyInv</td><td>inverse grid spacing in y </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dzInv</td><td>inverse grid spacing in z </td></tr>
   </table>
   </dd>
 </dl>
@@ -1322,9 +1322,9 @@ template&lt;typename InterpType_H , typename InterpType_V , typename WallInterpT
     <tr><td class="paramdir">[in]</td><td class="paramname">vert_adv_type</td><td>vertical advection stencil </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">lo_z_face</td><td>minimum z-face k-index at this level </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">hi_z_face</td><td>maximum z-face k-index at this level </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dxInv</td><td>inverse mesh spacing in x </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dyInv</td><td>inverse mesh spacing in y </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dzInv</td><td>inverse mesh spacing in z </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dxInv</td><td>inverse grid spacing in x </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dyInv</td><td>inverse grid spacing in y </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dzInv</td><td>inverse grid spacing in z </td></tr>
   </table>
   </dd>
 </dl>
