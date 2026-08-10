@@ -164,12 +164,12 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                                                    {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;box = mfi.tilebox();</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keyword">auto</span> state_arr = state.const_array(mfi);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;            <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>[k] = state_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        });</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__SineMassFlux_8H_html_a250b5b8817230db7d56e064212449a23"><div class="ttname"><a href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a></div><div class="ttdeci">auto rho_arr</div><div class="ttdef"><b>Definition:</b> ERF_UpdateWSubsidence_SineMassFlux.H:3</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -177,7 +177,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph.png" border="0" usemap="#aERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph" alt=""/></div>
 <map name="aERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph" id="aERF__UpdateWSubsidence__SineMassFlux_8H_a6943f40d7a8c7284077d83bc352c0212_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,45,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="93,5,184,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="93,5,184,32"/>
 </map>
 </div>
 

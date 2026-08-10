@@ -621,7 +621,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// x-momentum</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (u_type == FabType::regular) {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_ux(i,j,0) * mf_uy(i,j,0);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
@@ -635,7 +635,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (u_type == FabType::singlevalued) {</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">if</span> (u_volfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
@@ -752,7 +752,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// y-momentum</span></div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span> (v_type == FabType::regular) {</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_vx(i,j,0) * mf_vy(i,j,0);</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
@@ -765,7 +765,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        });</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v_type == FabType::singlevalued) {</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="keywordflow">if</span> (v_volfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
@@ -880,7 +880,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="comment">// z-momentum</span></div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keywordflow">if</span> (w_type == FabType::regular) {</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_mx(i,j,0) * mf_my(i,j,0);</div>
 <div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
@@ -894,7 +894,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (w_type == FabType::singlevalued) {</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            <span class="keywordflow">if</span> (w_volfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
@@ -1027,7 +1027,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:17</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a3d480c71a8d13543a4a79124b1b694e5"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a></div><div class="ttdeci">const Real dy</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:24</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aclasseb___html_a3073f9ff05faf3d2351395ef6d293dae"><div class="ttname"><a href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae">eb_::get_w_const_factory</a></div><div class="ttdeci">eb_aux_ const  * get_w_const_factory() const noexcept</div><div class="ttdoc">Return the ERF auxiliary z-face EB factory.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:123</div></div>
 <div class="ttc" id="aclasseb___html_abfdaa6b21118610551e115d123390be9"><div class="ttname"><a href="classeb__.html#abfdaa6b21118610551e115d123390be9">eb_::get_v_const_factory</a></div><div class="ttdeci">eb_aux_ const  * get_v_const_factory() const noexcept</div><div class="ttdoc">Return the ERF auxiliary y-face EB factory.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:121</div></div>
 <div class="ttc" id="aclasseb___html_af4353f7a064c08410ba9cb82e67be66f"><div class="ttname"><a href="classeb__.html#af4353f7a064c08410ba9cb82e67be66f">eb_::get_u_const_factory</a></div><div class="ttdeci">eb_aux_ const  * get_u_const_factory() const noexcept</div><div class="ttdoc">Return the ERF auxiliary x-face EB factory.</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:119</div></div>
@@ -1059,7 +1059,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title="Return the ERF auxiliary y&#45;face EB factory." alt="" coords="254,239,438,265"/>
 <area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title="Return the ERF auxiliary z&#45;face EB factory." alt="" coords="253,289,439,316"/>
 <area shape="rect" href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29" title="Return the reconstructed EB cell flags." alt="" coords="231,340,461,367"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="301,391,391,417"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="301,391,391,417"/>
 </map>
 </div>
 

@@ -568,7 +568,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keyword">auto</span>  Nturb_array = mf_Nturb.array(mfi);</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd_arr = z_phys_nd-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordtype">int</span> k0 = bx.smallEnd()[2];</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, i_lo), i_hi);</div>
 <div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
@@ -629,7 +629,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassWindFarm_html_a18280646bd55077f0a59ea45506a630b"><div class="ttname"><a href="classWindFarm.html#a18280646bd55077f0a59ea45506a630b">WindFarm::yloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; yloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:153</div></div>
 <div class="ttc" id="aclassWindFarm_html_a70d65d49e7ee4191c7f009416ab6ba27"><div class="ttname"><a href="classWindFarm.html#a70d65d49e7ee4191c7f009416ab6ba27">WindFarm::zloc</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Real &gt; zloc</div><div class="ttdef"><b>Definition:</b> ERF_WindFarm.H:153</div></div>
@@ -640,7 +640,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classWindFarm_ac57fc0cf5e0666fd8aabbf7863412eb5_cgraph.png" border="0" usemap="#aclassWindFarm_ac57fc0cf5e0666fd8aabbf7863412eb5_cgraph" alt=""/></div>
 <map name="aclassWindFarm_ac57fc0cf5e0666fd8aabbf7863412eb5_cgraph" id="aclassWindFarm_ac57fc0cf5e0666fd8aabbf7863412eb5_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,160,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="208,13,299,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="208,13,299,39"/>
 </map>
 </div>
 
@@ -759,7 +759,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_cc_arr = z_phys_cc-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            gbx,</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            {</div>
@@ -896,7 +896,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classWindFarm_ad4c606e93225c44abd0e854081602c2a_cgraph.png" border="0" usemap="#aclassWindFarm_ad4c606e93225c44abd0e854081602c2a_cgraph" alt=""/></div>
 <map name="aclassWindFarm_ad4c606e93225c44abd0e854081602c2a_cgraph" id="aclassWindFarm_ad4c606e93225c44abd0e854081602c2a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,164,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="212,13,303,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="212,13,303,39"/>
 </map>
 </div>
 
@@ -967,7 +967,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; z_nd_arr = z_phys_nd-&gt;const_array(mfi);</div>
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        <span class="keywordtype">int</span> k0 = std::max(gbx.smallEnd(2), geom.Domain().smallEnd(2));</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            <span class="keywordflow">if</span>(Nturb_array(i,j,k,0) &gt; 0) {</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                <span class="keywordtype">int</span> li = amrex::min(amrex::max(i, i_lo), i_hi);</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                <span class="keywordtype">int</span> lj = amrex::min(amrex::max(j, j_lo), j_hi);</div>
@@ -991,7 +991,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph.png" border="0" usemap="#aclassWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph" alt=""/></div>
 <map name="aclassWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph" id="aclassWindFarm_a74983b05c969cace5b73aeae42830d2c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,221,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="269,13,360,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="269,13,360,39"/>
 </map>
 </div>
 

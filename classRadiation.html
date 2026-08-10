@@ -1409,7 +1409,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>     = <a class="code" href="classRadiation.html#aefebb8c34aa4462de81826dc6209e73d">m_col_offsets</a>[mfi.index()];</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; q_arr = <a class="code" href="classRadiation.html#a8b6687dc65c676f5cf454b6a15ad93c3">m_qheating_rates</a>-&gt;array(mfi);</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; f_arr = <a class="code" href="classRadiation.html#a5b9e77332a518e2220de5dd295bbc23a">m_rad_fluxes</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx, [=]</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(vbx, [=]</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                    AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        {</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
@@ -1440,7 +1440,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            <span class="keywordflow">if</span> (lsm_output_ptrs[ivar]) {</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keyword">auto</span> rrtmgp_for_fill = rrtmgp_out_vars[ivar];</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                <span class="keyword">const</span> Array4&lt;Real&gt;&amp; lsm_out_arr = lsm_output_ptrs[ivar]-&gt;array(mfi);</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(sbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(sbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                {</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                    <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> icol   = (j-jmin)*nx + (i-imin) + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1455,7 +1455,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_af138df04a1c81f39657c2a5a3337f4bb"><div class="ttname"><a href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a></div><div class="ttdeci">constexpr amrex::Real RdoCp</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:54</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_ab415ab4061cbbea05723267a0bf82c6b"><div class="ttname"><a href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b">getExnergivenP</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getExnergivenP(const amrex::Real P, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:141</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ReadBndryPlanes_8cpp_html_a63d3125f6fd361f61d697799f46da817"><div class="ttname"><a href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a></div><div class="ttdeci">AMREX_FORCE_INLINE IntVect offset(const int face_dir, const int normal)</div><div class="ttdef"><b>Definition:</b> ERF_ReadBndryPlanes.cpp:31</div></div>
 <div class="ttc" id="aclassRadiation_html_a2126fa23092ac733c130ce5a4de97fe8"><div class="ttname"><a href="classRadiation.html#a2126fa23092ac733c130ce5a4de97fe8">Radiation::m_cons_in</a></div><div class="ttdeci">amrex::MultiFab * m_cons_in</div><div class="ttdef"><b>Definition:</b> ERF_Radiation.H:268</div></div>
 <div class="ttc" id="aclassRadiation_html_a5b9e77332a518e2220de5dd295bbc23a"><div class="ttname"><a href="classRadiation.html#a5b9e77332a518e2220de5dd295bbc23a">Radiation::m_rad_fluxes</a></div><div class="ttdeci">amrex::MultiFab * m_rad_fluxes</div><div class="ttdef"><b>Definition:</b> ERF_Radiation.H:274</div></div>
@@ -1468,7 +1468,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,49,195,90"/>
 <area shape="rect" href="ERF__EOS_8H.html#ab415ab4061cbbea05723267a0bf82c6b" title=" " alt="" coords="243,5,367,32"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="275,56,334,83"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="259,107,350,133"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="259,107,350,133"/>
 </map>
 </div>
 
@@ -1554,7 +1554,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                                                          Array4&lt;const Real&gt;{};</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; lon_arr  = (<a class="code" href="classRadiation.html#a0069d200496f037a5bffa96e4bf9bce0">m_lon</a>)    ? <a class="code" href="classRadiation.html#a0069d200496f037a5bffa96e4bf9bce0">m_lon</a>-&gt;const_array(mfi) :</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                                                          Array4&lt;const Real&gt;{};</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        {</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> icol   = (j-jmin)*nx + (i-imin) + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1675,7 +1675,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                                                                  Array4&lt;const Real&gt; {};</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;                <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; lsm_in_arr = (lsm_input_ptrs[ivar]) ? lsm_input_ptrs[ivar]-&gt;array(mfi) :</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                                                                                Array4&lt;      Real&gt; {};</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(sbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(sbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                {</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                    <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> icol   = (j-jmin)*nx + (i-imin) + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1739,7 +1739,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9" title=" " alt="" coords="253,5,363,32"/>
 <area shape="rect" href="ERF__EOS_8H.html#a5e63b66e00cbd68e3b3fdcc6c0770b92" title=" " alt="" coords="236,56,380,83"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="279,107,337,133"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="263,157,353,184"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="263,157,353,184"/>
 </map>
 </div>
 
@@ -1814,7 +1814,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>     = <a class="code" href="classRadiation.html#aefebb8c34aa4462de81826dc6209e73d">m_col_offsets</a>[mfi.index()];</div>
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; dst_arr = <a class="code" href="classRadiation.html#a230f1c962f8cca773e2d08c4d19778c3">datalog_mf</a>.array(mfi);</div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp;   q_arr = <a class="code" href="classRadiation.html#a8b6687dc65c676f5cf454b6a15ad93c3">m_qheating_rates</a>-&gt;array(mfi);</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        {</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> icol = (j-jmin)*nx + (i-imin) + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -1871,7 +1871,7 @@ Here is the call graph for this function:</div>
 <map name="aclassRadiation_a470698cb4f2251f1f3fb85f755a9185e_cgraph" id="aclassRadiation_a470698cb4f2251f1f3fb85f755a9185e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,225,57"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="289,5,348,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="273,56,364,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="273,56,364,83"/>
 </map>
 </div>
 
@@ -2702,7 +2702,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> jmin       = vbx.smallEnd(1);</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>     = <a class="code" href="classRadiation.html#aefebb8c34aa4462de81826dc6209e73d">m_col_offsets</a>[mfi.index()];</div>
 <div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; dst_arr = mf_flux.array(mfi);</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        {</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            <span class="comment">// map [i,j,k] 0-based to [icol, ilay] 0-based</span></div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> icol = (j-jmin)*nx + (i-imin) + <a class="code" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817">offset</a>;</div>
@@ -2730,7 +2730,7 @@ Here is the call graph for this function:</div>
 <map name="aclassRadiation_aba28af1cb28622e8f8aa674f9a3b9cda_cgraph" id="aclassRadiation_aba28af1cb28622e8f8aa674f9a3b9cda_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,181,65"/>
 <area shape="rect" href="ERF__ReadBndryPlanes_8cpp.html#a63d3125f6fd361f61d697799f46da817" title=" " alt="" coords="245,5,304,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="229,56,320,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="229,56,320,83"/>
 </map>
 </div>
 

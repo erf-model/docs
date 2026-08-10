@@ -183,7 +183,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    {</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        BL_PROFILE(<span class="stringliteral">&quot;SHOC::advance::pdf::main_kernel&quot;</span>);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(cell_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(cell_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span>) noexcept</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        {</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> thl_first = thetal(ic,k,0);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> qw_first = qw(ic,k,0);</div>
@@ -266,7 +266,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        });</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    }</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;}</div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceHSEutils_html_a93a5cf59ff6896ff699626bd7b605bd0"><div class="ttname"><a href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0">HSEutils::compute_temperature</a></div><div class="ttdeci">AMREX_FORCE_INLINE AMREX_GPU_HOST_DEVICE Real compute_temperature(const Real p_b, const Real q_t, const Real eq_pot_temp, const bool use_empirical, const int which_zone, const Real scaled_height)</div><div class="ttdef"><b>Definition:</b> ERF_HSEUtils.H:478</div></div>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a42154713da839635b12b12b71f5fb2b2a303d40eec1484ea54cc0317349380d33"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a42154713da839635b12b12b71f5fb2b2a303d40eec1484ea54cc0317349380d33">WSM6SedCellScratch::qn2</a></div><div class="ttdeci">@ qn2</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:103</div></div>
@@ -301,7 +301,7 @@ Here is the call graph for this function:</div>
 <map name="aclassShocPDF_a4f06d230cd1f338a9fe4d21f9a7ff17c_cgraph" id="aclassShocPDF_a4f06d230cd1f338a9fe4d21f9a7ff17c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,126,179,153"/>
 <area shape="rect" href="namespaceHSEutils.html#a93a5cf59ff6896ff699626bd7b605bd0" title=" " alt="" coords="227,101,456,127"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="296,151,387,178"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="296,151,387,178"/>
 <area shape="rect" href="namespaceHSEutils.html#a881776b214b9d819cea9a32ab97384e7" title=" " alt="" coords="504,93,660,135"/>
 <area shape="rect" href="namespaceHSEutils.html#a9a2b96b3435039d14223cafb5415ef58" title=" " alt="" coords="708,5,907,47"/>
 <area shape="rect" href="namespaceHSEutils.html#a2fb7000d65654e1bd6a9e4d31f9b8ead" title=" " alt="" coords="955,64,1169,105"/>

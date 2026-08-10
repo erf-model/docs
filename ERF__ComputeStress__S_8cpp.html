@@ -366,7 +366,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (cell_data)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// constant alpha (stored in mu_eff)</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx,</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            rhoAlpha(i,j,k) = cell_data(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * mu_eff;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        });</div>
@@ -374,7 +374,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// constant mu_eff</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx,</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            rhoAlpha(i,j,k) = mu_eff;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        });</div>
@@ -383,7 +383,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// First block: cell centered stresses</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> OneThird   = (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfx = mf_mx(i,j,0);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfy = mf_my(i,j,0);</div>
@@ -399,7 +399,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Second block: off diagonal stresses</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbxxy,tbxxz,tbxyz,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbxxy,tbxxz,tbxyz,</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfx = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (mf_ux(i,j,0) + mf_ux(i,j-1,0));</div>
@@ -450,7 +450,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a></div><div class="ttdeci">@ tau21</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:38</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a></div><div class="ttdeci">@ tau13</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:38</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>.</p>
@@ -460,7 +460,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__ComputeStress__S_8cpp_aaabd035d28f925c3cf4edd4e7eab0ba6_cgraph.png" border="0" usemap="#aERF__ComputeStress__S_8cpp_aaabd035d28f925c3cf4edd4e7eab0ba6_cgraph" alt=""/></div>
 <map name="aERF__ComputeStress__S_8cpp_aaabd035d28f925c3cf4edd4e7eab0ba6_cgraph" id="aERF__ComputeStress__S_8cpp_aaabd035d28f925c3cf4edd4e7eab0ba6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,200,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="248,5,339,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="248,5,339,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -693,7 +693,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (cell_data)</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// constant alpha (stored in mu_eff)</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx,</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            rhoAlpha(i,j,k) = cell_data(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * mu_eff;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        });</div>
@@ -701,7 +701,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="comment">// constant mu_eff</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(gbx,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx,</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            rhoAlpha(i,j,k) = mu_eff;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        });</div>
@@ -710,7 +710,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// First block: cell centered stresses</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> OneThird   = (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxcc, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfx = mf_mx(i,j,0);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfy = mf_my(i,j,0);</div>
@@ -728,7 +728,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// Second block: off diagonal stresses</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">//***********************************************************************************</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbxxy,tbxxz,tbxyz,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbxxy,tbxxz,tbxyz,</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfx = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (mf_ux(i,j,0) + mf_ux(i,j-1,0));</div>
@@ -785,7 +785,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__ComputeStress__S_8cpp_aa33b044758af0015cf0e1f3b75cdc8c9_cgraph.png" border="0" usemap="#aERF__ComputeStress__S_8cpp_aa33b044758af0015cf0e1f3b75cdc8c9_cgraph" alt=""/></div>
 <map name="aERF__ComputeStress__S_8cpp_aa33b044758af0015cf0e1f3b75cdc8c9_cgraph" id="aERF__ComputeStress__S_8cpp_aa33b044758af0015cf0e1f3b75cdc8c9_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,189,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="237,5,328,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="237,5,328,32"/>
 </map>
 </div>
 <div class="dynheader">

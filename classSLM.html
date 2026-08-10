@@ -353,7 +353,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classSLM.html#ac051c05d408c3471b0206f232c5f1fbc" title=" " alt="" coords="176,5,316,32"/>
 <area shape="rect" href="classSLM.html#aaafd49733163332a7f9616374d103cbb" title=" " alt="" coords="167,56,325,83"/>
 <area shape="rect" href="classSLM.html#a0db509945fed4bf6ffae276c1c183707" title=" " alt="" coords="173,107,319,133"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="373,56,464,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="373,56,464,83"/>
 </map>
 </div>
 
@@ -384,13 +384,13 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__SLM.html#aade57530ecba051b2aa9978992798ad4a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keyword">auto</span> theta_flux  = <a class="code" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__SLM.html#aade57530ecba051b2aa9978992798ad4a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            theta_array(i,j,k) += dt * ( theta_flux(i,j,k+1) - theta_flux(i,j,k) ) * dzInv;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        });</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aclassSLM_html_a3bb65074894448f02b2e58b015dd580c"><div class="ttname"><a href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">SLM::lsm_fab_flux</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_SLM::NumVars &gt; lsm_fab_flux</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:145</div></div>
 <div class="ttc" id="aclassSLM_html_a6fa497f40e1d0994cb3c2fb121faf40a"><div class="ttname"><a href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">SLM::lsm_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, LsmVar_SLM::NumVars &gt; lsm_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:142</div></div>
@@ -404,7 +404,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSLM_ac051c05d408c3471b0206f232c5f1fbc_cgraph.png" border="0" usemap="#aclassSLM_ac051c05d408c3471b0206f232c5f1fbc_cgraph" alt=""/></div>
 <map name="aclassSLM_ac051c05d408c3471b0206f232c5f1fbc_cgraph" id="aclassSLM_ac051c05d408c3471b0206f232c5f1fbc_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,145,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="193,5,284,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="193,5,284,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -448,7 +448,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__SLM.html#aade57530ecba051b2aa9978992798ad4a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">auto</span> theta_flux  = <a class="code" href="classSLM.html#a3bb65074894448f02b2e58b015dd580c">lsm_fab_flux</a>[<a class="code" href="namespaceLsmVar__SLM.html#aade57530ecba051b2aa9978992798ad4a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>( box3d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            theta_flux(i,j,k) = Dsoil * ( theta_array(i,j,k) - theta_array(i,j,k-1) ) * dzInv;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        });</div>
@@ -465,7 +465,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSLM_aaafd49733163332a7f9616374d103cbb_cgraph.png" border="0" usemap="#aclassSLM_aaafd49733163332a7f9616374d103cbb_cgraph" alt=""/></div>
 <map name="aclassSLM_aaafd49733163332a7f9616374d103cbb_cgraph" id="aclassSLM_aaafd49733163332a7f9616374d103cbb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,164,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="212,5,303,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="212,5,303,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -503,7 +503,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSLM.html#a6fa497f40e1d0994cb3c2fb121faf40a">lsm_fab_vars</a>[<a class="code" href="namespaceLsmVar__SLM.html#aade57530ecba051b2aa9978992798ad4a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>( box2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> )</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>( box2d, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> )</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            theta_array(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>+1) = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.5)*theta_array(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>) - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*theta_array(i,j,<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a0e309d9162590f5d8287ae33be5c24ff">khi</a>-1);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        });</div>
@@ -518,7 +518,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSLM_a0db509945fed4bf6ffae276c1c183707_cgraph.png" border="0" usemap="#aclassSLM_a0db509945fed4bf6ffae276c1c183707_cgraph" alt=""/></div>
 <map name="aclassSLM_a0db509945fed4bf6ffae276c1c183707_cgraph" id="aclassSLM_a0db509945fed4bf6ffae276c1c183707_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,152,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="200,5,291,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="200,5,291,32"/>
 </map>
 </div>
 <div class="dynheader">

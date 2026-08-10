@@ -271,7 +271,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span>(use_zlo_sponge_damping)<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(zlo_sponge_end   &gt; ProbLoArr[2]);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span>(use_zhi_sponge_damping)<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>(zhi_sponge_start &lt; ProbHiArr[2]);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, domlo_x), domhi_x);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j, domlo_y), domhi_y);</div>
@@ -329,7 +329,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    });</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tby, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tby, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i, domlo_x), domhi_x);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">int</span> jj = amrex::min(amrex::max(j, domlo_y), domhi_y);</div>
@@ -394,7 +394,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructSpongeChoice_html_a0da79c264491e8e3454ae0754b94b4ec"><div class="ttname"><a href="structSpongeChoice.html#a0da79c264491e8e3454ae0754b94b4ec">SpongeChoice::zlo_sponge_end</a></div><div class="ttdeci">amrex::Real zlo_sponge_end</div><div class="ttdoc">Physical end location of the low-z sponge layer.</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:104</div></div>
 <div class="ttc" id="astructSpongeChoice_html_a3c5a84c2a67ba6f3b8adf7b29d096cdc"><div class="ttname"><a href="structSpongeChoice.html#a3c5a84c2a67ba6f3b8adf7b29d096cdc">SpongeChoice::xlo_sponge_end</a></div><div class="ttdeci">amrex::Real xlo_sponge_end</div><div class="ttdoc">Physical end location of the low-x sponge layer.</div><div class="ttdef"><b>Definition:</b> ERF_SpongeStruct.H:102</div></div>
@@ -418,7 +418,7 @@ Here is the call graph for this function:</div>
 <map name="aERF__ApplySpongeZoneBCs__ReadFromFile_8cpp_a9bd7c438851be0734e672135ae63d11e_cgraph" id="aERF__ApplySpongeZoneBCs__ReadFromFile_8cpp_a9bd7c438851be0734e672135ae63d11e_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,224,65"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="272,5,455,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="318,56,409,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="318,56,409,83"/>
 </map>
 </div>
 <div class="dynheader">

@@ -447,7 +447,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_vx_inv = mf_vx_invFAB.array();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> Array4&lt;Real&gt;&amp; mf_vy_inv = mf_vy_invFAB.array();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box2d_u, box2d_v,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(box2d_u, box2d_v,</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span>) noexcept</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        mf_ux_inv(i,j,0) = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / mf_ux(i,j,0);</div>
@@ -524,7 +524,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">if</span> (horiz_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a> &amp;&amp; vert_adv_type == <a class="code" href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a>)</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    {</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">// Fluxes for x-momentum</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx_grown[0], bxx_grown[1], bxx_grown[2],</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx_grown[0], bxx_grown[1], bxx_grown[2],</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">if</span> (u_type != FabType::covered) {</div>
@@ -567,7 +567,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            }</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        });</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="comment">// Fluxes for y-momentum</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy_grown[0], bxy_grown[1], bxy_grown[2],</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy_grown[0], bxy_grown[1], bxy_grown[2],</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keywordflow">if</span> (v_type != FabType::covered) {</div>
@@ -610,7 +610,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            }</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        });</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">// Fluxes for z-momentum</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz_grown[0], bxz_grown[1], bxz_grown[2],</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz_grown[0], bxz_grown[1], bxz_grown[2],</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        {</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordflow">if</span> (w_type != FabType::covered) {</div>
@@ -725,7 +725,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="comment">// Update momentum RHS using the fluxes</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">if</span> (already_on_centroids) {</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx,</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx,</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        {</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            <span class="keywordflow">if</span> (u_vfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
@@ -740,7 +740,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            }</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        });</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy,</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy,</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        {</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keywordflow">if</span> (v_vfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
@@ -755,7 +755,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            }</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        });</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz,</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz,</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        {</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordflow">if</span> (w_vfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
@@ -779,13 +779,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">if</span> (u_type == FabType::covered) {</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;                rho_u_rhs(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            });</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (u_type == FabType::regular) {</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_ux(i,j,0) * mf_uy(i,j,0);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;                rho_u_rhs(i, j, k) = - ( (flx_u_arr[0](i+1, j  , k  ) - flx_u_arr[0](i, j, k)) * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> * mfsq</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                                        + (flx_u_arr[1](i  , j+1, k  ) - flx_u_arr[1](i, j, k)) * dyInv * mfsq</div>
@@ -794,7 +794,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (u_type == FabType::singlevalued) {</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                <span class="keywordflow">if</span> (u_vfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_ux(i,j,0) * mf_uy(i,j,0);</div>
@@ -896,13 +896,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="keywordflow">if</span> (v_type == FabType::covered) {</div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                rho_v_rhs(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            });</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v_type == FabType::regular) {</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_vx(i,j,0) * mf_vy(i,j,0);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                rho_v_rhs(i, j, k) = - ( (flx_v_arr[0](i+1, j  , k  ) - flx_v_arr[0](i, j, k)) * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> * mfsq</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                                        + (flx_v_arr[1](i  , j+1, k  ) - flx_v_arr[1](i, j, k)) * dyInv * mfsq</div>
@@ -911,7 +911,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (v_type == FabType::singlevalued) {</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                <span class="keywordflow">if</span> (v_vfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_vx(i,j,0) * mf_vy(i,j,0);</div>
@@ -1012,13 +1012,13 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160; </div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;        <span class="keywordflow">if</span> (w_type == FabType::covered) {</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                rho_w_rhs(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            });</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (w_type == FabType::regular) {</div>
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_mx(i,j,0) * mf_my(i,j,0);</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                rho_w_rhs(i, j, k) = - ( (flx_w_arr[0](i+1, j  , k  ) - flx_w_arr[0](i, j, k)) * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> * mfsq</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                                        + (flx_w_arr[1](i  , j+1, k  ) - flx_w_arr[1](i, j, k)) * dyInv * mfsq</div>
@@ -1027,7 +1027,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160; </div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (w_type == FabType::singlevalued) {</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                <span class="keywordflow">if</span> (w_vfrac(i,j,k)&gt;<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> mfsq = mf_mx(i,j,0) * mf_my(i,j,0);</div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
@@ -1142,7 +1142,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada570868919bafaab1776170229a7049">AdvType::Centered_2nd</a></div><div class="ttdeci">@ Centered_2nd</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:17</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__Plotfile2DInterpolator_8cpp_html_a658e24fc592c43471ed399f60665a22f"><div class="ttname"><a href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a></div><div class="ttdeci">Real w</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DInterpolator.cpp:22</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__Bomex_8H_html_ad901c6409ddad63abb2fb7ddb13cc824"><div class="ttname"><a href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ASSERT_WITH_MESSAGE(wbar_cutoff_min &gt; wbar_cutoff_max, &quot;ERROR: wbar_cutoff_min &lt; wbar_cutoff_max&quot;)</div></div>
@@ -1166,7 +1166,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="classeb__.html#abfdaa6b21118610551e115d123390be9" title="Return the ERF auxiliary y&#45;face EB factory." alt="" coords="265,157,449,184"/>
 <area shape="rect" href="classeb__.html#a3073f9ff05faf3d2351395ef6d293dae" title="Return the ERF auxiliary z&#45;face EB factory." alt="" coords="263,208,450,235"/>
 <area shape="rect" href="classeb__aux__.html#aa782343e2bd11203f360485eb4395a29" title="Return the reconstructed EB cell flags." alt="" coords="241,259,472,285"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="311,309,402,336"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="311,309,402,336"/>
 </map>
 </div>
 

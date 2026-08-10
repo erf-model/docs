@@ -692,7 +692,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="337,56,375,83"/>
 <area shape="rect" href="classProblemBase.html#a9a654c18cb5e4c393cf9aea268c3609a" title=" " alt="" coords="256,107,456,149"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="504,89,687,116"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="550,140,641,167"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="550,140,641,167"/>
 </map>
 </div>
 
@@ -1110,7 +1110,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="321,56,359,83"/>
 <area shape="rect" href="classProblemBase.html#a9a654c18cb5e4c393cf9aea268c3609a" title=" " alt="" coords="240,107,440,149"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="488,89,671,116"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="534,140,625,167"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="534,140,625,167"/>
 </map>
 </div>
 
@@ -1341,7 +1341,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        amrex::Box zbx = terrain_fab.box();</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        amrex::Array4&lt;amrex::Real&gt; <span class="keyword">const</span>&amp; z_arr = terrain_fab.array();</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(zbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(zbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;        {</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            <span class="comment">// Clip indices for ghost cells</span></div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;            <span class="keywordtype">int</span> ii = amrex::min(amrex::max(i,ilo),ihi);</div>
@@ -1482,7 +1482,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classProblemBase.html#a96b2ce1685de79fecbafe197709cb044">init_buildings_surface()</a>, and <a class="el" href="classProblemBase.html#a0e52cd97bdd2fe10c2c731f534c34a5b">init_terrain_surface()</a>.</p>
@@ -1493,7 +1493,7 @@ Here is the call graph for this function:</div>
 <map name="aclassProblemBase_a9a654c18cb5e4c393cf9aea268c3609a_cgraph" id="aclassProblemBase_a9a654c18cb5e4c393cf9aea268c3609a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,205,65"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="253,5,436,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="299,56,390,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="299,56,390,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1683,7 +1683,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; qsrc_arr = qsrc-&gt;array(mfi);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="comment">// src is a spatial function if erf.spatial_moisture_forcing = true</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="comment">// otherwise, qsrc_arr is defined only in over Z (box x and y dimensions are 1)</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                <span class="comment">// set RHS term of RhoQ1 equation based on time, z_cc here</span></div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                qsrc_arr(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
@@ -1697,7 +1697,7 @@ Here is the call graph for this function:</div>
 <map name="aclassProblemBase_a956d9a1b9a9e57e0f20a397cae483113_cgraph" id="aclassProblemBase_a956d9a1b9a9e57e0f20a397cae483113_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,167,65"/>
 <area shape="rect" href="classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791" title=" " alt="" coords="215,5,368,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="246,56,337,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="246,56,337,83"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="416,5,455,32"/>
 </map>
 </div>
@@ -1769,7 +1769,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; src_arr = src-&gt;array(mfi);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">// src is a spatial function if erf.spatial_rhotheta_forcing = true</span></div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="comment">// otherwise, qsrc_arr is defined only in over Z (box x and y dimensions are 1)</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="comment">// const amrex::Real z_cc = prob_lo[2] + (k+myhalf)* dx[2];</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="comment">// set RHS term of RhoTheta equation based on time, z_cc here</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                src_arr(i, j, k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
@@ -1783,7 +1783,7 @@ Here is the call graph for this function:</div>
 <map name="aclassProblemBase_a50e61a69c8e4429e6f2321bad3c03d9d_cgraph" id="aclassProblemBase_a50e61a69c8e4429e6f2321bad3c03d9d_cgraph">
 <area shape="rect" title=" " alt="" coords="5,23,167,65"/>
 <area shape="rect" href="classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791" title=" " alt="" coords="215,5,368,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="246,56,337,83"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="246,56,337,83"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="416,5,455,32"/>
 </map>
 </div>

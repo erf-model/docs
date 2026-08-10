@@ -239,7 +239,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// NOTE: Indices (i,j,k) correspond to data that is ON the open bdy.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> sgn = 1; <span class="keywordflow">if</span> (do_lo) sgn = -1;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> c_o_star = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(sgn)*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(30.0);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=,zero_d=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        IntVect ivu1(i,j,k); <span class="keywordflow">if</span> ( do_lo) ivu1[dir] -= sgn; <span class="comment">// Vel indexed into domain for do_lo</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        IntVect ivu2(i,j,k); <span class="keywordflow">if</span> (!do_lo) ivu2[dir] -= sgn; <span class="comment">// Vel indexed into domain for do_hi</span></div>
@@ -258,7 +258,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:17</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -266,7 +266,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__AdvectionSrcForOpenBC_8cpp_a9724c4268388a35a651fbe8e0b8d8e15_cgraph.png" border="0" usemap="#aERF__AdvectionSrcForOpenBC_8cpp_a9724c4268388a35a651fbe8e0b8d8e15_cgraph" alt=""/></div>
 <map name="aERF__AdvectionSrcForOpenBC_8cpp_a9724c4268388a35a651fbe8e0b8d8e15_cgraph" id="aERF__AdvectionSrcForOpenBC_8cpp_a9724c4268388a35a651fbe8e0b8d8e15_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,184,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="232,13,323,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="232,13,323,39"/>
 </map>
 </div>
 
@@ -514,7 +514,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, ncomp, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="keywordflow">if</span> (detJ(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> cons_index = icomp + n;</div>
@@ -558,7 +558,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="278,122,369,149"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="278,122,369,149"/>
 </map>
 </div>
 
@@ -672,7 +672,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxx,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (ax(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> xflux_hi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * (rho_u(i, j  , k) + rho_u(i+1, j  , k)) * (u(i+1,j,k) + u(i,j,k)) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (ax(i,j,k) + ax(i+1,j,k));</div>
@@ -701,7 +701,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="278,122,369,149"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="278,122,369,149"/>
 </map>
 </div>
 
@@ -815,7 +815,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxy,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxy,[=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">if</span> (ay(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> yflux_hi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * (rho_v(i  ,j+1,k) + rho_v(i  ,j  ,k)) * (v(i,j+1,k) + v(i,j,k)) * <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * (ay(i,j,k) + ay(i,j+1,k));</div>
@@ -843,7 +843,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="278,122,369,149"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="278,122,369,149"/>
 </map>
 </div>
 
@@ -974,7 +974,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0], dyInv = cellSizeInv[1], dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bxz, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> (az(i,j,k) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> xflux_hi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a>*(rho_u(i+1,j  ,k) + rho_u(i+1, j, k-1)) * (<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>(i+1,j,k) + <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>(i,j,k)) *</div>
@@ -1018,7 +1018,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,64,184,105"/>
 <area shape="rect" href="ERF__AdvectionSrcForOpenBC_8cpp.html#ac6e7a792c85a42fe5c0679a2b1f763ec" title=" " alt="" coords="234,5,413,47"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="232,71,415,98"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="278,122,369,149"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="278,122,369,149"/>
 </map>
 </div>
 

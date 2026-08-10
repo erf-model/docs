@@ -356,11 +356,11 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            amrex::Box ubx = pbx &amp; vbx;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="keywordflow">if</span> (ubx.ok()) {</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                <span class="keywordflow">if</span> (comp == -1) { <span class="comment">// vertical velocity perturbations</span></div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                        src_arr(i,j,k) += pert_cell(i,j,k);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                    });</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                        src_arr(i,j,k,comp) += pert_cell(i,j,k);</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                        <span class="comment">// For box region debug only</span></div>
@@ -372,7 +372,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            }</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        }</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    }</div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_aca6d9e7183d281d5f8093853e263d0cb"><div class="ttname"><a href="structTurbulentPerturbation.html#aca6d9e7183d281d5f8093853e263d0cb">TurbulentPerturbation::pb_ba</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BoxArray &gt; pb_ba</div><div class="ttdoc">Perturbation-box BoxArray for each AMR level.</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:749</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_ad9dde5214bcf1f1555bf9edea9a9e68a"><div class="ttname"><a href="structTurbulentPerturbation.html#ad9dde5214bcf1f1555bf9edea9a9e68a">TurbulentPerturbation::pt_type</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; pt_type</div><div class="ttdoc">Integer perturbation type for each AMR level.</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:746</div></div>
@@ -384,7 +384,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_cgraph" id="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_cgraph">
 <area shape="rect" title="Apply stored turbulent perturbations to a source or state array." alt="" coords="5,5,168,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="216,13,307,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="216,13,307,39"/>
 </map>
 </div>
 <div class="dynheader">
@@ -613,7 +613,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="preprocessor">                #ifdef USE_VOLUME_AVERAGE</span></div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> norm = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ubx_u.numPts());</div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubx_u, [=]</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubx_u, [=]</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[0], xvel_arry(i,j,k)*norm, handler);</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;                });</div>
@@ -626,13 +626,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> norm_hi = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ubxSlab_hi.numPts());</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                <span class="comment">// Average u in the low slab</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_lo, [=]</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_lo, [=]</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[0], xvel_arry(i,j,k)*norm_lo, handler);</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                });</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                <span class="comment">// Average u in the high slab</span></div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_hi, [=]</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_hi, [=]</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[2], xvel_arry(i,j,k)*norm_hi, handler);</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                });</div>
@@ -645,7 +645,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160; </div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="preprocessor">                #ifdef USE_VOLUME_AVERAGE</span></div>
 <div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> norm = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ubx_v.numPts());</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubx_v, [=]</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubx_v, [=]</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[1], yvel_arry(i,j,k)*norm, handler);</div>
 <div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                });</div>
@@ -658,13 +658,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> norm_hi = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ubxSlab_hi.numPts());</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                <span class="comment">// Average v in the low slab</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_lo, [=]</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_lo, [=]</div>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[1], yvel_arry(i,j,k)*norm_lo, handler);</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                });</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160; </div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                <span class="comment">// Average v in the high slab</span></div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_hi, [=]</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubxSlab_hi, [=]</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[3], yvel_arry(i,j,k)*norm_hi, handler);</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                });</div>
@@ -699,7 +699,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph" id="astructTurbulentPerturbation_ac2f49dd6a95ab0bb291fa4977d9682e5_cgraph">
 <area shape="rect" title="Compute mean horizontal velocity magnitude and direction for one perturbation box." alt="" coords="5,23,211,65"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="259,5,349,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="259,5,349,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="267,56,341,83"/>
 </map>
 </div>
@@ -904,7 +904,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1" title="Assign pseudo&#45;random perturbations to cells in one perturbation box." alt="" coords="237,332,400,373"/>
 <area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title="Return a pseudo&#45;random real value in a closed interval." alt="" coords="469,391,632,432"/>
 <area shape="rect" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9" title="Reset CPM perturbation amplitudes in one perturbation box to zero." alt="" coords="237,136,400,177"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="505,183,596,210"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="505,183,596,210"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,234,587,261"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#adf71fa682aa7ea70d3f8e216ee168e77" title=" " alt="" coords="491,339,610,366"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="680,339,768,366"/>
@@ -1396,7 +1396,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;            <span class="keywordflow">if</span> (ubx.ok()) {</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; pert_cell = <a class="code" href="structTurbulentPerturbation.html#ab007a297a4fdfaf46da7a3b9e7803b6d">pb_cell</a>[lev].const_array(mfi);</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> norm = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / <span class="keyword">static_cast&lt;</span><a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a><span class="keyword">&gt;</span>(ubx.numPts());</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubx, [=]</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(amrex::Gpu::KernelInfo().setReduction(<span class="keyword">true</span>), ubx, [=]</div>
 <div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, amrex::Gpu::Handler <span class="keyword">const</span>&amp; handler) noexcept {</div>
 <div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                    amrex::Gpu::deviceReduceSum(&amp;avg[0], pert_cell(i,j,k)*norm, handler);</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                });</div>
@@ -1415,7 +1415,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph" id="astructTurbulentPerturbation_acf1a844ac4076c4af8ef38963f3fcc60_cgraph">
 <area shape="rect" title="Accumulate the mean perturbation contribution for net&#45;zero buoyancy enforcement." alt="" coords="5,23,168,65"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="216,5,307,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="216,5,307,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="225,56,298,83"/>
 </map>
 </div>
@@ -1483,7 +1483,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;            <span class="keywordflow">if</span> (ubx.ok()) {</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;               <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> adjust = <a class="code" href="structTurbulentPerturbation.html#a1f7e043e065ceb48645cdf50a9f3ac06">tpi_pert_adjust</a>;</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;               <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; pert_cell = <a class="code" href="structTurbulentPerturbation.html#ab007a297a4fdfaf46da7a3b9e7803b6d">pb_cell</a>[lev].array(mfi);</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;               <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;               <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                   pert_cell(i,j,k) -= adjust;</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;               });</div>
 <div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;            }</div>
@@ -1497,7 +1497,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_a573c68aeec901ddf7c3cfe102430e527_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_a573c68aeec901ddf7c3cfe102430e527_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_a573c68aeec901ddf7c3cfe102430e527_cgraph" id="astructTurbulentPerturbation_a573c68aeec901ddf7c3cfe102430e527_cgraph">
 <area shape="rect" title="Adjust perturbation cells so the net buoyant forcing is zero." alt="" coords="5,23,181,65"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="229,5,320,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="229,5,320,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="238,56,311,83"/>
 </map>
 </div>
@@ -1574,7 +1574,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
 <div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structTurbulentPerturbation.html#ad9dde5214bcf1f1555bf9edea9a9e68a">pt_type</a>[lev] == 2  || <a class="code" href="structTurbulentPerturbation.html#ad9dde5214bcf1f1555bf9edea9a9e68a">pt_type</a>[lev] == 3) { <span class="comment">// CPM</span></div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rand_number_const = <a class="code" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7">RandomReal</a>(-<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>, <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>);</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                        pert_cell(i,j,k) = rand_number_const * amp_copy;</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                    });</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                } <span class="keywordflow">else</span> {</div>
@@ -1596,7 +1596,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph" id="astructTurbulentPerturbation_a1dfc591297a8af23c941b06ed5fabba1_cgraph">
 <area shape="rect" title="Assign pseudo&#45;random perturbations to cells in one perturbation box." alt="" coords="5,78,168,119"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="252,5,343,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="252,5,343,32"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#adf71fa682aa7ea70d3f8e216ee168e77" title=" " alt="" coords="238,56,357,83"/>
 <area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title="Return a pseudo&#45;random real value in a closed interval." alt="" coords="216,107,379,149"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,173,334,200"/>
@@ -1735,7 +1735,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;            amrex::Box ubx = pbx &amp; vbx;</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;            <span class="keywordflow">if</span> (ubx.ok()) {</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; pert_cell = <a class="code" href="structTurbulentPerturbation.html#ab007a297a4fdfaf46da7a3b9e7803b6d">pb_cell</a>[lev].array(mfi);</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(ubx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                    pert_cell(i,j,k) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;                });</div>
 <div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;            }</div>
@@ -1749,7 +1749,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_ab818d5a843f6fc2c60443036daf63ad9_cgraph.png" border="0" usemap="#astructTurbulentPerturbation_ab818d5a843f6fc2c60443036daf63ad9_cgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_ab818d5a843f6fc2c60443036daf63ad9_cgraph" id="astructTurbulentPerturbation_ab818d5a843f6fc2c60443036daf63ad9_cgraph">
 <area shape="rect" title="Reset CPM perturbation amplitudes in one perturbation box to zero." alt="" coords="5,23,168,65"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="216,5,307,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="216,5,307,32"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="225,56,298,83"/>
 </map>
 </div>

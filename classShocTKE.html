@@ -148,7 +148,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> layout = col.<a class="code" href="structShocColumnData.html#abb95aacab1568120c49cf176a5a35990">layout</a>;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">const</span> Box col_box(IntVect(0,0,0), IntVect(layout.ncell - 1, 0, 0));</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(col_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(col_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) noexcept</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        sterm(ic,0,0) = 0.0_rt;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        sterm(ic,layout.nlev,0) = 0.0_rt;</div>
@@ -160,7 +160,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    });</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceWSM6SedNodeScratch_html_a5586a4705f4e473d848c0bc5a210140fac5a1c1e00ce981829474ed88c561baae"><div class="ttname"><a href="namespaceWSM6SedNodeScratch.html#a5586a4705f4e473d848c0bc5a210140fac5a1c1e00ce981829474ed88c561baae">WSM6SedNodeScratch::zi</a></div><div class="ttdeci">@ zi</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:133</div></div>
 <div class="ttc" id="astructShocColumnData_html_abb95aacab1568120c49cf176a5a35990"><div class="ttname"><a href="structShocColumnData.html#abb95aacab1568120c49cf176a5a35990">ShocColumnData::layout</a></div><div class="ttdeci">ShocColumnLayout layout</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:205</div></div>
@@ -176,7 +176,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classShocTKE_a2355748a23f1680c33838abd8f767c1b_cgraph.png" border="0" usemap="#aclassShocTKE_a2355748a23f1680c33838abd8f767c1b_cgraph" alt=""/></div>
 <map name="aclassShocTKE_a2355748a23f1680c33838abd8f767c1b_cgraph" id="aclassShocTKE_a2355748a23f1680c33838abd8f767c1b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,192,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="240,13,331,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="240,13,331,39"/>
 </map>
 </div>
 
@@ -255,7 +255,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> layout = col.<a class="code" href="structShocColumnData.html#abb95aacab1568120c49cf176a5a35990">layout</a>;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">const</span> Box col_box(IntVect(0,0,0), IntVect(layout.ncell - 1, 0, 0));</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(col_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) noexcept</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(col_box, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>) noexcept</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> z_sfc = <a class="code" href="namespaceWSM6SedNodeScratch.html#a5586a4705f4e473d848c0bc5a210140fac5a1c1e00ce981829474ed88c561baae">zi</a>(ic,0,0);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> brunt_int = 0.0_rt;</div>
@@ -359,7 +359,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,74,177,115"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="225,5,408,32"/>
 <area shape="rect" href="namespaceshoc.html#a1fc6e813cc0c436e72ec66433be27e1e" title=" " alt="" coords="253,56,381,83"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="271,107,362,133"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="271,107,362,133"/>
 <area shape="rect" href="ERF__ShocTypes_8H.html#ae52cf9346cba60958ce41fbf56586257" title=" " alt="" coords="267,157,366,184"/>
 </map>
 </div>

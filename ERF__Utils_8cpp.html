@@ -203,7 +203,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// We may need &gt; one ghost cells of prim in order to compute higher order advective terms</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;       <span class="comment">//</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;       <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">amrex::ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;       <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;       {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;           <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>       = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;           <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_theta = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
@@ -218,7 +218,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:55</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:107</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:49</div></div>
 </div><!-- fragment -->
@@ -229,7 +229,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="ERF__Utils_8cpp_a202ec5e8277d63b1994d1f515a24ee43_cgraph.png" border="0" usemap="#aERF__Utils_8cpp_a202ec5e8277d63b1994d1f515a24ee43_cgraph" alt=""/></div>
 <map name="aERF__Utils_8cpp_a202ec5e8277d63b1994d1f515a24ee43_cgraph" id="aERF__Utils_8cpp_a202ec5e8277d63b1994d1f515a24ee43_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,115,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="163,5,253,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="163,5,253,32"/>
 </map>
 </div>
 <div class="dynheader">

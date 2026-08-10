@@ -509,7 +509,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSatAdj_aabcac053905358d1e1818730eaa64235_cgraph" id="aclassSatAdj_aabcac053905358d1e1818730eaa64235_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,133,32"/>
 <area shape="rect" href="classSatAdj.html#ac8aac0161bb9518a1c0909cd99d4c4d6" title=" " alt="" coords="181,5,352,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="400,5,491,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="400,5,491,32"/>
 </map>
 </div>
 
@@ -552,7 +552,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">auto</span> theta_array = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92ca0afe2a4054f7555add0acedfdb74cd91">MicVar_SatAdj::theta</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">auto</span> pres_array  = <a class="code" href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">mic_fab_vars</a>[<a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92ca5a09034692ed5833456ae20e7c8954b0">MicVar_SatAdj::pres</a>]-&gt;array(mfi);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a>  = tabs_array(i,j,k);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWSM6Ind.html#ac09947730b2c2472a094e5ea2d76a0e3ad6cb403596ec7a348234a3a3bf0221bc">p</a>  = pres_array(i,j,k);</div>
@@ -570,7 +570,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a5228a8c068ba9176fb8ae3d6e61fc7c1"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a5228a8c068ba9176fb8ae3d6e61fc7c1">T</a></div><div class="ttdeci">Real T</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:106</div></div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a89b790ef7920b41eb3a892be684ca07d"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a></div><div class="ttdeci">ParallelFor(grown_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
+<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aclassSatAdj_html_a05ead2fec0c8e0ee4f396112db4e6316"><div class="ttname"><a href="classSatAdj.html#a05ead2fec0c8e0ee4f396112db4e6316">SatAdj::AdjustSatAdjCell</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE void AdjustSatAdjCell(const amrex::Real fac_cond, const amrex::Real rdOcp, amrex::Real &amp;tabs, const amrex::Real pres_mbar, amrex::Real &amp;theta, amrex::Real &amp;qv, amrex::Real &amp;qc)</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:218</div></div>
 <div class="ttc" id="aclassSatAdj_html_a0ae1171544417b83878bf00916cefb64"><div class="ttname"><a href="classSatAdj.html#a0ae1171544417b83878bf00916cefb64">SatAdj::m_fac_cond</a></div><div class="ttdeci">amrex::Real m_fac_cond</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:318</div></div>
 <div class="ttc" id="aclassSatAdj_html_a26ca294f334ada4b91534e1e9e105442"><div class="ttname"><a href="classSatAdj.html#a26ca294f334ada4b91534e1e9e105442">SatAdj::mic_fab_vars</a></div><div class="ttdeci">amrex::Array&lt; FabPtr, MicVar_SatAdj::NumVars &gt; mic_fab_vars</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:323</div></div>
@@ -588,7 +588,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSatAdj_ac8aac0161bb9518a1c0909cd99d4c4d6_cgraph.png" border="0" usemap="#aclassSatAdj_ac8aac0161bb9518a1c0909cd99d4c4d6_cgraph" alt=""/></div>
 <map name="aclassSatAdj_ac8aac0161bb9518a1c0909cd99d4c4d6_cgraph" id="aclassSatAdj_ac8aac0161bb9518a1c0909cd99d4c4d6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,176,32"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="224,5,315,32"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="224,5,315,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -649,7 +649,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// Density is intentionally not written back. SatAdj does not modify density;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// it uses the copied rho only to form conserved rhoTheta, rhoQv, and rhoQc</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// from the adjusted specific variables.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*theta_arr(i,j,k);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            states_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>)    = <a class="code" href="ERF__UpdateWSubsidence__SineMassFlux_8H.html#a250b5b8817230db7d56e064212449a23">rho_arr</a>(i,j,k)*<a class="code" href="ERF__InitCustomPert__MultiSpeciesBubble_8H.html#a7273a950bb1ec56806b23066b09df921">qv_arr</a>(i,j,k);</div>
@@ -676,7 +676,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph.png" border="0" usemap="#aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph" alt=""/></div>
 <map name="aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph" id="aclassSatAdj_aa509cad79c881773e02fbdc9d78630f3_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,153,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="201,13,292,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="201,13,292,39"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1314,7 +1314,7 @@ Here is the call graph for this function:</div>
 <map name="aclassSatAdj_a423a7a77f71d504cac86a6f9f33b9ca6_cgraph" id="aclassSatAdj_a423a7a77f71d504cac86a6f9f33b9ca6_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,200,39"/>
 <area shape="rect" href="classSatAdj.html#aa509cad79c881773e02fbdc9d78630f3" title=" " alt="" coords="248,5,396,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a89b790ef7920b41eb3a892be684ca07d" title=" " alt="" coords="444,13,535,39"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="444,13,535,39"/>
 </map>
 </div>
 
