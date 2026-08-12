@@ -13,6 +13,8 @@ var classSLM =
     [ "Lsm_Data_Size", "classSLM.html#accf5369cbeeab014dd8aab4ed28c3516", null ],
     [ "Lsm_DataName", "classSLM.html#aa184e09e8d8e0c1123e5b1f79574dda1", null ],
     [ "Lsm_Flux_Ptr", "classSLM.html#a0f620560951627b138e0d6311fd47caa", null ],
+    [ "Lsm_Flux_Size", "classSLM.html#a8dd77244163b032e22f1bf7ecc6e0eda", null ],
+    [ "Lsm_FluxName", "classSLM.html#ac39c8fa006d56c4248f5608666dfff54", null ],
     [ "Lsm_Geom", "classSLM.html#a8f171cb4d7b8c32b5158f7ac7d518ad7", null ],
     [ "khi_lsm", "classSLM.html#a22738df1091f651c9c541abda9e2d5e7", null ],
     [ "lsm_fab_flux", "classSLM.html#a3bb65074894448f02b2e58b015dd580c", null ],

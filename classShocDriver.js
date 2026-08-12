@@ -60,6 +60,7 @@ var classShocDriver =
     [ "m_diss_tke_cc", "classShocDriver.html#a1e5ab1be67ab5c8f4c8eebc50f263883", null ],
     [ "m_eddy_coeffs_cc", "classShocDriver.html#a48251ba90dcf87b47853b2713f23d9b3", null ],
     [ "m_eddy_diffs_ptr", "classShocDriver.html#adbab16cc0731ff5e87569f903619e381", null ],
+    [ "m_geom_ptr", "classShocDriver.html#a48b292a82e8da73c1f95485fe0b64198", null ],
     [ "m_hfx3_ptr", "classShocDriver.html#af8eb6846f52419492f3770577361ff97", null ],
     [ "m_isotropy_cc", "classShocDriver.html#ae6f2132805b38080b9c0b80082ab05c5", null ],
     [ "m_lev", "classShocDriver.html#adb8519ab4bc1f932f00eddb82058bc69", null ],

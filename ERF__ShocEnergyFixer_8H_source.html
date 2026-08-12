@@ -239,26 +239,28 @@ $(document).ready(function(){initNavTree('ERF__ShocEnergyFixer_8H_source.html','
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceshoc.html#a54869a642372eb758c54218d9250998e">shoc::diagnose_active_top</a>(tke, ic, nlev);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classShocEnergyFixer.html#a9d8cdee59bf835a5cec3ab7a9b958d30">apply_column</a> (<span class="keyword">const</span> <a class="code" href="structShocColumnData.html">ShocColumnData</a>&amp; col,</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                              <span class="keywordtype">int</span> ic,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                              <span class="keywordtype">double</span> dt,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; thl_old,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qv_old,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qc_old,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qi_old,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; u_old,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; v_old,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; tke_old,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                              amrex::Vector&lt;amrex::Real&gt;&amp; thl_new,</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qv_new,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qc_new,</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qi_new,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; u_new,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; v_new,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; tke_new);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;};</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// Host-only wrapper: col&#39;s FArrayBoxes and all vectors must be host-accessible.</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Device-owned column data must be staged before calling this routine.</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classShocEnergyFixer.html#a9d8cdee59bf835a5cec3ab7a9b958d30">apply_column</a> (<span class="keyword">const</span> <a class="code" href="structShocColumnData.html">ShocColumnData</a>&amp; col,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                              <span class="keywordtype">int</span> ic,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                              <span class="keywordtype">double</span> dt,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; thl_old,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qv_old,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qc_old,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qi_old,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; u_old,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; v_old,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; tke_old,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                              amrex::Vector&lt;amrex::Real&gt;&amp; thl_new,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qv_new,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qc_new,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; qi_new,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; u_new,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; v_new,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                              <span class="keyword">const</span> amrex::Vector&lt;amrex::Real&gt;&amp; tke_new);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;};</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a1ee33e063343c8fb15ed025c456ebd46"><div class="ttname"><a href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a></div><div class="ttdeci">constexpr amrex::Real Cp_d</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:49</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:59</div></div>

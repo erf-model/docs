@@ -96,21 +96,47 @@ Collaboration diagram for SolveInfo:</div>
 <div class="dyncontent">
 <div class="center"><img src="structSolveInfo__coll__graph.png" border="0" usemap="#aSolveInfo_coll__map" alt="Collaboration graph"/></div>
 <map name="aSolveInfo_coll__map" id="aSolveInfo_coll__map">
-<area shape="rect" title=" " alt="" coords="81,95,163,121"/>
+<area shape="rect" title=" " alt="" coords="93,197,175,224"/>
 <area shape="rect" title=" " alt="" coords="5,5,44,32"/>
-<area shape="rect" title=" " alt="" coords="97,5,147,32"/>
-<area shape="rect" title=" " alt="" coords="201,5,251,32"/>
+<area shape="rect" title=" " alt="" coords="109,5,159,32"/>
+<area shape="rect" title=" " alt="" coords="213,5,263,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a3f66f397dadc4e279df154a066dea329"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#a3f66f397dadc4e279df154a066dea329">iterations</a> = 0</td></tr>
+<tr class="memdesc:a3f66f397dadc4e279df154a066dea329"><td class="mdescLeft">&#160;</td><td class="mdescRight">total CG iterations, summed over attempts  <a href="structSolveInfo.html#a3f66f397dadc4e279df154a066dea329">More...</a><br /></td></tr>
 <tr class="separator:a3f66f397dadc4e279df154a066dea329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04c85bd99ce940a2377419d3d0bc1b68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#a04c85bd99ce940a2377419d3d0bc1b68">final_residual</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:a04c85bd99ce940a2377419d3d0bc1b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">CG residual of the accepted solve.  <a href="structSolveInfo.html#a04c85bd99ce940a2377419d3d0bc1b68">More...</a><br /></td></tr>
 <tr class="separator:a04c85bd99ce940a2377419d3d0bc1b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa94f7031acf9da28797efe2764c0481f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#aa94f7031acf9da28797efe2764c0481f">converged</a> = false</td></tr>
 <tr class="separator:aa94f7031acf9da28797efe2764c0481f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35f718b583aa30f2383486c047a9bc9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#ad35f718b583aa30f2383486c047a9bc9">refinements</a> = 0</td></tr>
+<tr class="memdesc:ad35f718b583aa30f2383486c047a9bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">times the regularization had to be raised  <a href="structSolveInfo.html#ad35f718b583aa30f2383486c047a9bc9">More...</a><br /></td></tr>
+<tr class="separator:ad35f718b583aa30f2383486c047a9bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33b4153dc19935456fedea06a706e6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#af33b4153dc19935456fedea06a706e6f">regularization</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:af33b4153dc19935456fedea06a706e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">accepted value of mu  <a href="structSolveInfo.html#af33b4153dc19935456fedea06a706e6f">More...</a><br /></td></tr>
+<tr class="separator:af33b4153dc19935456fedea06a706e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae46594f24f713a496e072242df242a56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#ae46594f24f713a496e072242df242a56">deviation</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:ae46594f24f713a496e072242df242a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">max |S - S_ref|  <a href="structSolveInfo.html#ae46594f24f713a496e072242df242a56">More...</a><br /></td></tr>
+<tr class="separator:ae46594f24f713a496e072242df242a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89e96fb56755755b0edf41db37591e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#ae89e96fb56755755b0edf41db37591e6">deviation_cap</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:ae89e96fb56755755b0edf41db37591e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">bound imposed on the above  <a href="structSolveInfo.html#ae89e96fb56755755b0edf41db37591e6">More...</a><br /></td></tr>
+<tr class="separator:ae89e96fb56755755b0edf41db37591e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccac24bcf6e535c3f9c57eef5535c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#a4ccac24bcf6e535c3f9c57eef5535c92">max_average_error</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:a4ccac24bcf6e535c3f9c57eef5535c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">max |avg4(S) - T|  <a href="structSolveInfo.html#a4ccac24bcf6e535c3f9c57eef5535c92">More...</a><br /></td></tr>
+<tr class="separator:a4ccac24bcf6e535c3f9c57eef5535c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1229d1bfdfbca3dd964437bd5cbc20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#aea1229d1bfdfbca3dd964437bd5cbc20">interp_average_error</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:aea1229d1bfdfbca3dd964437bd5cbc20"><td class="mdescLeft">&#160;</td><td class="mdescRight">max |avg4(S_ref) - T|, for comparison  <a href="structSolveInfo.html#aea1229d1bfdfbca3dd964437bd5cbc20">More...</a><br /></td></tr>
+<tr class="separator:aea1229d1bfdfbca3dd964437bd5cbc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7697f7b566e3b2ed7221703ffb3e4896"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#a7697f7b566e3b2ed7221703ffb3e4896">min_value</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:a7697f7b566e3b2ed7221703ffb3e4896"><td class="mdescLeft">&#160;</td><td class="mdescRight">min over nodes of S  <a href="structSolveInfo.html#a7697f7b566e3b2ed7221703ffb3e4896">More...</a><br /></td></tr>
+<tr class="separator:a7697f7b566e3b2ed7221703ffb3e4896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb96438ee2a5ac278b50d63e05a76a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSolveInfo.html#a5bb96438ee2a5ac278b50d63e05a76a4">max_value</a> = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td></tr>
+<tr class="memdesc:a5bb96438ee2a5ac278b50d63e05a76a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">max over nodes of S  <a href="structSolveInfo.html#a5bb96438ee2a5ac278b50d63e05a76a4">More...</a><br /></td></tr>
+<tr class="separator:a5bb96438ee2a5ac278b50d63e05a76a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="aa94f7031acf9da28797efe2764c0481f"></a>
@@ -124,6 +150,44 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
+
+</div>
+</div>
+<a id="ae46594f24f713a496e072242df242a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae46594f24f713a496e072242df242a56">&#9670;&nbsp;</a></span>deviation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SolveInfo::deviation = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>max |S - S_ref| </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
+
+</div>
+</div>
+<a id="ae89e96fb56755755b0edf41db37591e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae89e96fb56755755b0edf41db37591e6">&#9670;&nbsp;</a></span>deviation_cap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SolveInfo::deviation_cap = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bound imposed on the above </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
 
 </div>
 </div>
@@ -139,7 +203,27 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#ab6e76375f0880aa03edc1600bd6fae9e">NodalReconstruction::conjugateGradient()</a>.</p>
+<p>CG residual of the accepted solve. </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a20e19d4e2000484562e7efaab17bed3e">NodalReconstruction::conjugateGradient()</a>, and <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
+
+</div>
+</div>
+<a id="aea1229d1bfdfbca3dd964437bd5cbc20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea1229d1bfdfbca3dd964437bd5cbc20">&#9670;&nbsp;</a></span>interp_average_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SolveInfo::interp_average_error = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>max |avg4(S_ref) - T|, for comparison </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
 
 </div>
 </div>
@@ -154,6 +238,100 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>total CG iterations, summed over attempts </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
+
+</div>
+</div>
+<a id="a4ccac24bcf6e535c3f9c57eef5535c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ccac24bcf6e535c3f9c57eef5535c92">&#9670;&nbsp;</a></span>max_average_error</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SolveInfo::max_average_error = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>max |avg4(S) - T| </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#ab232bea6ab123855997320ee795355d5">NodalReconstruction::computeDiagnostics()</a>.</p>
+
+</div>
+</div>
+<a id="a5bb96438ee2a5ac278b50d63e05a76a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb96438ee2a5ac278b50d63e05a76a4">&#9670;&nbsp;</a></span>max_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SolveInfo::max_value = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>max over nodes of S </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#ab232bea6ab123855997320ee795355d5">NodalReconstruction::computeDiagnostics()</a>.</p>
+
+</div>
+</div>
+<a id="a7697f7b566e3b2ed7221703ffb3e4896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7697f7b566e3b2ed7221703ffb3e4896">&#9670;&nbsp;</a></span>min_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SolveInfo::min_value = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>min over nodes of S </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#ab232bea6ab123855997320ee795355d5">NodalReconstruction::computeDiagnostics()</a>.</p>
+
+</div>
+</div>
+<a id="ad35f718b583aa30f2383486c047a9bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad35f718b583aa30f2383486c047a9bc9">&#9670;&nbsp;</a></span>refinements</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SolveInfo::refinements = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>times the regularization had to be raised </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
+
+</div>
+</div>
+<a id="af33b4153dc19935456fedea06a706e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33b4153dc19935456fedea06a706e6f">&#9670;&nbsp;</a></span>regularization</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> SolveInfo::regularization = <a class="el" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>accepted value of mu </p>
+
+<p class="reference">Referenced by <a class="el" href="classNodalReconstruction.html#a7e35dad639fa0884b87a96ca8f5c42af">NodalReconstruction::solve()</a>.</p>
 
 </div>
 </div>

@@ -74,6 +74,7 @@ var structSolverChoice =
     [ "if_Cd_momentum", "structSolverChoice.html#a22d441e53b28ba1c505f04017fa62cdf", null ],
     [ "if_Cd_scalar", "structSolverChoice.html#ab1ffc3b644c6678c43a1c0fc7998bb1e", null ],
     [ "if_damp_alpha", "structSolverChoice.html#a7fc1c5a57eb8aae17a438328e75d034f", null ],
+    [ "if_implicit_drag", "structSolverChoice.html#ae9c43af2530ee06b771174590c2974aa", null ],
     [ "if_init_surf_temp", "structSolverChoice.html#abf53a5a18e0e7a3d733b2a83b36c456c", null ],
     [ "if_Olen_in", "structSolverChoice.html#a2351afe28b7bb409bd859cf9fbe37e25", null ],
     [ "if_stability_correction", "structSolverChoice.html#aef5ab1ae0ae705e3c7019f7e299bfcbb", null ],

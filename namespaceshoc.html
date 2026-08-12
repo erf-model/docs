@@ -119,8 +119,8 @@ Functions</h2></td></tr>
 <tr class="separator:af7236b4e3fee03a433b238fc1770702b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefd267cac0eb62ad46ec5190278a19bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db">InitRunOn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshoc.html#aefd267cac0eb62ad46ec5190278a19bb">default_init_run_on</a> ()</td></tr>
 <tr class="separator:aefd267cac0eb62ad46ec5190278a19bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad11d4c7cd2e3143059fa3e65e81f784d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshoc.html#ad11d4c7cd2e3143059fa3e65e81f784d">set_fab_val</a> (amrex::FArrayBox &amp;fab, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>, <a class="el" href="namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db">InitRunOn</a>)</td></tr>
-<tr class="separator:ad11d4c7cd2e3143059fa3e65e81f784d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaf1586a65cd1201b95f0f357a4d71a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshoc.html#aeaf1586a65cd1201b95f0f357a4d71a5">set_fab_val</a> (amrex::FArrayBox &amp;fab, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>, <a class="el" href="namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db">InitRunOn</a> run_on)</td></tr>
+<tr class="separator:aeaf1586a65cd1201b95f0f357a4d71a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fc6e813cc0c436e72ec66433be27e1e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshoc.html#a1fc6e813cc0c436e72ec66433be27e1e">height_agl</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z_sfc) noexcept</td></tr>
 <tr class="separator:a1fc6e813cc0c436e72ec66433be27e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7345cb6a28f25c872f5fbe82f8abba8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceshoc.html#a7345cb6a28f25c872f5fbe82f8abba8b">sync_if_needed</a> ()</td></tr>
@@ -340,11 +340,11 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a> * amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         + <a class="code" href="namespaceshoc.html#af984a1839991048a21e0b142fb57b2a0">latent_sublimation</a>() * amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), <a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a> * amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), <a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         + <a class="code" href="namespaceshoc.html#af984a1839991048a21e0b142fb57b2a0">latent_sublimation</a>() * amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="anamespaceMicVar__SatAdj_html_a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:40</div></div>
-<div class="ttc" id="anamespaceMicVar__WSM6_html_a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">MicVar_WSM6::qi</a></div><div class="ttdeci">@ qi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:27</div></div>
+<div class="ttc" id="anamespaceMicVar__SatAdj_html_a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:40</div></div>
+<div class="ttc" id="anamespaceMicVar__WSM6_html_a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">MicVar_WSM6::qi</a></div><div class="ttdeci">@ qi</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:27</div></div>
 <div class="ttc" id="anamespaceshoc_html_af984a1839991048a21e0b142fb57b2a0"><div class="ttname"><a href="namespaceshoc.html#af984a1839991048a21e0b142fb57b2a0">shoc::latent_sublimation</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real latent_sublimation() noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocThermoUtils.H:12</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceshoc.html#aa0bc0d7d7c20d5cf7ab14a285ed53d33">temperature_from_thetal()</a>, <a class="el" href="namespaceshoc.html#ac404270665343fd3e2e91b7a26aadb61">theta_from_thetal()</a>, and <a class="el" href="namespaceshoc.html#ad15cadfc5ee5c8f9fe59ebf7a1634300">thetal_from_theta()</a>.</p>
@@ -532,9 +532,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), z - z_sfc);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), z - z_sfc);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classShocStructure.html#a4ccb8e60a12a324bd1d5b20e227f1d7f">ShocStructure::diagnose_length_and_brunt()</a>, <a class="el" href="classShocStructure.html#a454f7464558c16da055d1a2521ae2b2b">ShocStructure::diagnose_pblh()</a>, <a class="el" href="classShocStructure.html#a6f7bf7494f7320953e76f7210e98a340">ShocStructure::diagnose_surface_layer()</a>, and <a class="el" href="classShocTKE.html#ab74a60609640c835f3460f855f3a0e13">ShocTKE::diagnose_tke_and_diffusivities()</a>.</p>
 <div class="dynheader">
@@ -769,18 +769,18 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Ice-reference moist energy has no explicit qi term; qi is retained in</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// the signature so callers pass a complete vapor/liquid/ice state.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    amrex::ignore_unused(<a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a7cde81843cd190a3122d7c3912a39b74">tabs</a></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    amrex::ignore_unused(<a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a7cde81843cd190a3122d7c3912a39b74">tabs</a></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;         + <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;         + <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.5) * (u * u + v * v)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;         + tke</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;         + <a class="code" href="namespaceshoc.html#af984a1839991048a21e0b142fb57b2a0">latent_sublimation</a>() * <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         + <a class="code" href="namespaceshoc_1_1constants.html#a4ba132855a9c0907d93e45d98bf3710d">constants::latent_ice</a>() * amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;         + <a class="code" href="namespaceshoc.html#af984a1839991048a21e0b142fb57b2a0">latent_sublimation</a>() * <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         + <a class="code" href="namespaceshoc_1_1constants.html#a4ba132855a9c0907d93e45d98bf3710d">constants::latent_ice</a>() * amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), <a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a>);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:64</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">Coord::z</a></div><div class="ttdeci">@ z</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a85b72afd818a2edc139d25065aabfd63a7cde81843cd190a3122d7c3912a39b74"><div class="ttname"><a href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a7cde81843cd190a3122d7c3912a39b74">MicVar_Kess::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
-<div class="ttc" id="anamespaceMicVar__Kess_html_a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35"><div class="ttname"><a href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a4ba34ad6c66d27b420df9071019d1e94a7cde81843cd190a3122d7c3912a39b74"><div class="ttname"><a href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a7cde81843cd190a3122d7c3912a39b74">MicVar_Kess::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:26</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35"><div class="ttname"><a href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceshoc.html#af7236b4e3fee03a433b238fc1770702b">apply_energy_fix_column()</a>.</p>
 <div class="dynheader">
@@ -889,10 +889,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qi_total = <a class="code" href="ERF__ShocTypes_8H.html#ae52cf9346cba60958ce41fbf56586257">shoc_clamp</a>(qi_seed, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), qw));</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> ql_total = <a class="code" href="ERF__ShocTypes_8H.html#ae52cf9346cba60958ce41fbf56586257">shoc_clamp</a>(pdf_ql, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), qw - qi_total));</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a> = ql_total;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a> = qi_total;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a7cde81843cd190a3122d7c3912a39b74">tabs</a> = <a class="code" href="namespaceshoc.html#aa0bc0d7d7c20d5cf7ab14a285ed53d33">temperature_from_thetal</a>(thetal, <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a>, exner);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63af099273d19f4b8cdca199c5177231e35">qv</a> = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), qw - <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a> - <a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a> = ql_total;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a> = qi_total;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a7cde81843cd190a3122d7c3912a39b74">tabs</a> = <a class="code" href="namespaceshoc.html#aa0bc0d7d7c20d5cf7ab14a285ed53d33">temperature_from_thetal</a>(thetal, <a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a>, exner);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a> = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), qw - <a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a> - <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a>);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="ttc" id="aERF__ShocTypes_8H_html_ae52cf9346cba60958ce41fbf56586257"><div class="ttname"><a href="ERF__ShocTypes_8H.html#ae52cf9346cba60958ce41fbf56586257">shoc_clamp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE T shoc_clamp(T value, T lo, T hi)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:382</div></div>
 </div><!-- fragment -->
@@ -926,8 +926,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad11d4c7cd2e3143059fa3e65e81f784d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad11d4c7cd2e3143059fa3e65e81f784d">&#9670;&nbsp;</a></span>set_fab_val()</h2>
+<a id="aeaf1586a65cd1201b95f0f357a4d71a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaf1586a65cd1201b95f0f357a4d71a5">&#9670;&nbsp;</a></span>set_fab_val()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -951,7 +951,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="namespaceshoc.html#a0fd3544e2e21f10cd9d621c81fd419db">InitRunOn</a>&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>run_on</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -966,16 +966,20 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    fab.template setVal&lt;amrex::RunOn::Device&gt;(<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (run_on == InitRunOn::Host) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        fab.template setVal&lt;amrex::RunOn::Host&gt;(<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        fab.template setVal&lt;amrex::RunOn::Device&gt;(<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_abd5746c9a8c4bf217e5294c6c702559b"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a></div><div class="ttdeci">Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.cpp:30</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__ShocColumnData_8H.html#aeb60a3371d3ba05df905697847990b9c">reset_shoc_column_data()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceshoc_ad11d4c7cd2e3143059fa3e65e81f784d_icgraph.png" border="0" usemap="#anamespaceshoc_ad11d4c7cd2e3143059fa3e65e81f784d_icgraph" alt=""/></div>
-<map name="anamespaceshoc_ad11d4c7cd2e3143059fa3e65e81f784d_icgraph" id="anamespaceshoc_ad11d4c7cd2e3143059fa3e65e81f784d_icgraph">
+<div class="center"><img src="namespaceshoc_aeaf1586a65cd1201b95f0f357a4d71a5_icgraph.png" border="0" usemap="#anamespaceshoc_aeaf1586a65cd1201b95f0f357a4d71a5_icgraph" alt=""/></div>
+<map name="anamespaceshoc_aeaf1586a65cd1201b95f0f357a4d71a5_icgraph" id="anamespaceshoc_aeaf1586a65cd1201b95f0f357a4d71a5_icgraph">
 <area shape="rect" title=" " alt="" coords="901,53,1036,79"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#aeb60a3371d3ba05df905697847990b9c" title=" " alt="" coords="671,53,853,79"/>
 <area shape="rect" href="ERF__ShocColumnData_8H.html#a9ffc0b7122de44dc3954d0d476beed6b" title=" " alt="" coords="432,27,623,54"/>
@@ -1009,14 +1013,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Test-owned helper for host-side assertions. Production SHOC code should</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// keep synchronization out of the runtime path and use this only through</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// shoc_test::run_and_sync or other explicit test utilities.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    amrex::Gpu::streamSynchronize();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Test-owned helper for host-side assertions. Production SHOC code should</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// keep synchronization out of the runtime path and use this only through</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// shoc_test::run_and_sync or other explicit test utilities.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    amrex::Gpu::streamSynchronize();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1068,7 +1072,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> amrex::max(<a class="code" href="namespaceshoc_1_1constants.html#a644eab268aa0c13ef2e8dc50045a53f2">constants::min_temp</a>(),</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                      thetal * amrex::max(exner, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-12))</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                      + <a class="code" href="namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e">condensate_latent_heat</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a>) / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                      + <a class="code" href="namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e">condensate_latent_heat</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a>) / <a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
 <div class="ttc" id="anamespaceshoc_1_1constants_html_a644eab268aa0c13ef2e8dc50045a53f2"><div class="ttname"><a href="namespaceshoc_1_1constants.html#a644eab268aa0c13ef2e8dc50045a53f2">shoc::constants::min_temp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real min_temp() noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocConstants.H:16</div></div>
 <div class="ttc" id="anamespaceshoc_html_a3e4ca8275ed177700891da61cbbe405e"><div class="ttname"><a href="namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e">shoc::condensate_latent_heat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real condensate_latent_heat(amrex::Real qc, amrex::Real qi) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocThermoUtils.H:19</div></div>
@@ -1150,7 +1154,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> thetal</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         + <a class="code" href="namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e">condensate_latent_heat</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a>)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         + <a class="code" href="namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e">condensate_latent_heat</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a>)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;           / (<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * amrex::max(exner, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-12)));</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment --><div class="dynheader">
@@ -1213,11 +1217,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">theta</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         - <a class="code" href="namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e">condensate_latent_heat</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a84e3720d8c061814986cc6a1ffa902f3a2e4ccbba255f9b0f754305108fa30a05">qi</a>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceLsmVar__SLM.html#aa5e13b3eb28daf2dc656cfcff9bddfd2a8cbbe7ff58f91759c10f65b097bcfc0f">theta</a></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         - <a class="code" href="namespaceshoc.html#a3e4ca8275ed177700891da61cbbe405e">condensate_latent_heat</a>(<a class="code" href="namespaceMicVar__SatAdj.html#a7b4b96eb320d12b415ff161d82048b20aea3777efcbbb3712ce373924287c2cb3">qc</a>, <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a2e4ccbba255f9b0f754305108fa30a05">qi</a>)</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;           / (<a class="code" href="ERF__Constants_8H.html#a1ee33e063343c8fb15ed025c456ebd46">Cp_d</a> * amrex::max(exner, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.0e-12)));</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="ttc" id="anamespaceLsmVar__MM5_html_a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68"><div class="ttname"><a href="namespaceLsmVar__MM5.html#a8c11facff68629f69a4072e975a6f992af198df5800148ff3680d005b5fb09c68">LsmVar_MM5::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_MM5.H:20</div></div>
+<div class="ttc" id="anamespaceLsmVar__SLM_html_aa5e13b3eb28daf2dc656cfcff9bddfd2a8cbbe7ff58f91759c10f65b097bcfc0f"><div class="ttname"><a href="namespaceLsmVar__SLM.html#aa5e13b3eb28daf2dc656cfcff9bddfd2a8cbbe7ff58f91759c10f65b097bcfc0f">LsmVar_SLM::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_SLM.H:20</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>.</p>
 <div class="dynheader">

@@ -240,9 +240,9 @@ $(document).ready(function(){initNavTree('ERF__LagrangianMicrophysics_8H_source.
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="structSurfacePrecipAccumulationSources.html">SurfacePrecipAccumulationSources</a></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="classMicrophysics.html#a83cbd89a2fa72446a5ba053f103e53b7">Get_Surface_Precip_Accumulation_Ptrs</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;)<span class="keyword"> const override</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="classMicrophysics.html#a83cbd89a2fa72446a5ba053f103e53b7">Get_Surface_Precip_Accumulation_Ptrs</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; lev)<span class="keyword"> const override</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">return</span> m_moist_model-&gt;Get_Surface_Precip_Accumulation_Ptrs(lev);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment">    /*! \brief initialize particles in particle container at level a_lev */</span></div>

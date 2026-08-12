@@ -120,7 +120,6 @@ var annotated_dup =
     [ "MaterialProperties", "structMaterialProperties.html", "structMaterialProperties" ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", "structMaterialPropertiesCore" ],
     [ "Microphysics", "classMicrophysics.html", "classMicrophysics" ],
-    [ "MM5", "classMM5.html", "classMM5" ],
     [ "moeng_flux", "structmoeng__flux.html", "structmoeng__flux" ],
     [ "moeng_flux_eb", "structmoeng__flux__eb.html", "structmoeng__flux__eb" ],
     [ "MoistNoCondensation", "classMoistNoCondensation.html", "classMoistNoCondensation" ],
