@@ -23,7 +23,7 @@ var classERF =
     [ "check_vels_for_nans", "classERF.html#a0b24b45ed078134ee80c1d32fa5e36bc", null ],
     [ "ClearLevel", "classERF.html#ac44e400a7ce68e18fa44e9416cb1344e", null ],
     [ "cloud_fraction", "classERF.html#a81fa277d77ece7c8529574dad842fdb4", null ],
-    [ "compute_divergence", "classERF.html#a757e8303ce8ed936c05f559349f10aa5", null ],
+    [ "compute_divergence", "classERF.html#ac7691d015f62162630c254a9e160a674", null ],
     [ "compute_max_pressure_gradient_diagnostic", "classERF.html#a68cadb0e228fe398bd1ee7bd96788bb4", null ],
     [ "compute_native_shoc_tendencies", "classERF.html#adcf965c25181c18eb375c3d4be16d058", null ],
     [ "ComputeAndWriteEnsemblePerturbations", "classERF.html#a60ce05dd26d2f3170eef00c52c486012", null ],
