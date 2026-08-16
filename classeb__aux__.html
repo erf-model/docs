@@ -826,14 +826,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;            aux_flag(i,j,k).setSingleValued();</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            <span class="comment">// one Volume Fraction</span></div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;            <span class="comment">// 1. Volume Fraction</span></div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_vol {lo_eb_cc.volume()}; AMREX_ASSERT(lo_vol &gt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> &amp;&amp; lo_vol &lt;= <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hi_vol {hi_eb_cc.volume()}; AMREX_ASSERT(hi_vol &gt;= <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a> &amp;&amp; hi_vol &lt;= <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            aux_vfrac(i,j,k) = lo_vol + hi_vol;</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <span class="comment">// two Volume Centroid</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            <span class="comment">// 2. Volume Centroid</span></div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;            <span class="comment">/* centVol() returns the coordinates based on m_rbx.</span></div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;<span class="comment">              The coordinates in the a_idim direction are in [zero,myhalf] for the low cell and in [-myhalf,zero] for the hi cell.</span></div>
@@ -853,7 +853,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            aux_vcent(i,j,k,1) = ( lo_vol * lo_vcent[1] + hi_vol * hi_vcent[1] ) / aux_vfrac(i,j,k);</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            aux_vcent(i,j,k,2) = ( lo_vol * lo_vcent[2] + hi_vol * hi_vcent[2] ) / aux_vfrac(i,j,k);</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="comment">// three Area Fraction</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="comment">// 3. Area Fraction</span></div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_areaLo_x {lo_eb_cc.areaLo(0)};</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_areaLo_y {lo_eb_cc.areaLo(1)};</div>
@@ -883,7 +883,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;              aux_afrac_z(i,j,k+1) = (a_idim == 2) ? hi_areaHi_z : lo_areaHi_z + hi_areaHi_z;</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            }</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <span class="comment">// Real(4.) Face Centroid</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            <span class="comment">// 4. Face Centroid</span></div>
 <div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160; </div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            <span class="comment">/* fcentLo returns the coordinates based on m_rbx.</span></div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;<span class="comment">              The coordinates in the a_idim direction are in [zero,myhalf] for the low cell and in [-myhalf,zero] for the hi cell.</span></div>
@@ -1045,14 +1045,14 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;              }</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            }</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160; </div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="comment">// Real(5.) Boundary Area</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="comment">// 5. Boundary Area</span></div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
 <div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> lo_areaBoun {lo_eb_cc.areaBoun()};</div>
 <div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> hi_areaBoun {hi_eb_cc.areaBoun()};</div>
 <div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
 <div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;            aux_barea(i,j,k) = lo_areaBoun + hi_areaBoun;</div>
 <div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            <span class="comment">// Real(6.) Boundary Centroid</span></div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            <span class="comment">// 6. Boundary Centroid</span></div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            RealVect lo_centBoun {lo_eb_cc.centBoun()};</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            RealVect hi_centBoun {hi_eb_cc.centBoun()};</div>
@@ -1071,7 +1071,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;              aux_bcent(i,j,k,2) = ( lo_areaBoun * (lo_centBoun[2]-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) + hi_areaBoun * (hi_centBoun[2]+<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) ) / aux_barea(i,j,k);  <span class="comment">// z (mapped)</span></div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;            }</div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160; </div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            <span class="comment">// Real(7.) Boundary Normal</span></div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;            <span class="comment">// 7. Boundary Normal</span></div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;            RealVect eb_normal = ( lo_areaBoun * lo_normal + hi_areaBoun * hi_normal )/ aux_barea(i,j,k);</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160; </div>
@@ -1622,10 +1622,10 @@ Here is the caller graph for this function:</div>
 <map name="aclasseb__aux___aa782343e2bd11203f360485eb4395a29_icgraph" id="aclasseb__aux___aa782343e2bd11203f360485eb4395a29_icgraph">
 <area shape="rect" title="Return the reconstructed EB cell flags." alt="" coords="679,81,909,108"/>
 <area shape="rect" href="ERF__AdvectionSrcForMom__EB_8cpp.html#a11d2db019c9a71328fe4e1a3e785f3d0" title=" " alt="" coords="447,5,631,32"/>
-<area shape="rect" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca" title=" " alt="" coords="465,56,612,83"/>
-<area shape="rect" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc" title=" " alt="" coords="470,107,607,133"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca" title="Compute the horizontal components of the pressure gradient." alt="" coords="465,56,612,83"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc" title="Compute the vertical component of the pressure gradient." alt="" coords="470,107,607,133"/>
 <area shape="rect" href="ERF__DiffusionSrcForMom__EB_8cpp.html#a217f28098691e31e956a8d7d8d0bc555" title=" " alt="" coords="450,157,627,184"/>
-<area shape="rect" href="ERF__MakeGradP_8cpp.html#a9a52172038f8506a516a5802e5cc5a0f" title=" " alt="" coords="270,56,393,83"/>
+<area shape="rect" href="ERF__MakeGradP_8cpp.html#a9a52172038f8506a516a5802e5cc5a0f" title="Compute the full pressure gradient." alt="" coords="270,56,393,83"/>
 <area shape="rect" href="ERF__MakeGradP_8cpp.html#a27ef9d804e42b02bbf43018eef6f1e55" title=" " alt="" coords="264,107,399,133"/>
 <area shape="rect" href="classERF.html#a68cadb0e228fe398bd1ee7bd96788bb4" title=" " alt="" coords="5,19,216,61"/>
 <area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="33,85,188,112"/>

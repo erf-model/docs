@@ -6,6 +6,7 @@ var structInputSoundingData =
     [ "host_to_device", "structInputSoundingData.html#a0e0cddb5da1a173092eeaf3c9489dfb8", null ],
     [ "read_from_file", "structInputSoundingData.html#aa015e8e9cc3f6ccf45e7327ce13cdce7", null ],
     [ "resize_arrays", "structInputSoundingData.html#a42fe67445aa283176274575444cbf7ef", null ],
+    [ "set_start_time", "structInputSoundingData.html#a80066b762e6d881f62c428da415c162f", null ],
     [ "size", "structInputSoundingData.html#ae67ebe7a35af74165a1d2e7ee31a1bbc", null ],
     [ "assume_dry", "structInputSoundingData.html#a49c3a7ae840a9decf0880a3f0281a1e5", null ],
     [ "input_sounding_file", "structInputSoundingData.html#ab84a8954af1837c95945e74c67b399cc", null ],

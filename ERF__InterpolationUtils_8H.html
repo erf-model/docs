@@ -121,9 +121,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__InterpolationUtils_8H__dep__incl.png" border="0" usemap="#aSource_2Utils_2ERF__InterpolationUtils_8Hdep" alt=""/></div>
 <map name="aSource_2Utils_2ERF__InterpolationUtils_8Hdep" id="aSource_2Utils_2ERF__InterpolationUtils_8Hdep">
-<area shape="rect" title="Utility functions for field interpolation at particle positions." alt="" coords="141,5,359,47"/>
-<area shape="rect" href="ERF__SuperDropletPCMassChange_8cpp.html" title=" " alt="" coords="5,95,247,136"/>
-<area shape="rect" href="ERF__SuperDropletPCRecycle_8cpp.html" title=" " alt="" coords="271,95,480,136"/>
+<area shape="rect" title="Utility functions for field interpolation at particle positions." alt="" coords="281,5,500,47"/>
+<area shape="rect" href="ERF__SuperDropletPCCoalescence_8cpp.html" title=" " alt="" coords="5,95,245,136"/>
+<area shape="rect" href="ERF__SuperDropletPCMassChange_8cpp.html" title=" " alt="" coords="270,95,511,136"/>
+<area shape="rect" href="ERF__SuperDropletPCRecycle_8cpp.html" title=" " alt="" coords="535,95,745,136"/>
 </map>
 </div>
 </div>
@@ -142,6 +143,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ab1b8576c9ac7ae9803bd445af83f2bfe"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">ERF::Interpolation::interpolateFields</a> (const ParticleType &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dxi, const amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt; *field_arrays, amrex::ParticleReal *result_values, int num_fields)</td></tr>
 <tr class="memdesc:ab1b8576c9ac7ae9803bd445af83f2bfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interpolate multiple field values at a particle position using CIC.  <a href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">More...</a><br /></td></tr>
 <tr class="separator:ab1b8576c9ac7ae9803bd445af83f2bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117832d8de5c92e7ba2983d5168770ce"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType , typename Array4Type &gt; </td></tr>
+<tr class="memitem:a117832d8de5c92e7ba2983d5168770ce"><td class="memTemplItemLeft" align="right" valign="top">AMREX_GPU_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceERF_1_1Interpolation.html#a117832d8de5c92e7ba2983d5168770ce">ERF::Interpolation::stencilOutOfBoundsZ</a> (const ParticleType &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, AMREX_SPACEDIM &gt; &amp;dxi, const Array4Type &amp;zheight) noexcept</td></tr>
+<tr class="memdesc:a117832d8de5c92e7ba2983d5168770ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether a particle's vertical CIC stencil reads past the local fab. cic_interpolate reads cell-centered data at k0+1 and k0+2 with k0 in {pk-1, pk}, so the maximum read offset is pk+2. Returns true if the stencil is out of bounds and the caller should skip the particle.  <a href="namespaceERF_1_1Interpolation.html#a117832d8de5c92e7ba2983d5168770ce">More...</a><br /></td></tr>
+<tr class="separator:a117832d8de5c92e7ba2983d5168770ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utility functions for field interpolation at particle positions. </p>

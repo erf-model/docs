@@ -52,12 +52,14 @@ var hierarchy =
     [ "InputSpongeData", "structInputSpongeData.html", null ],
     [ "erf_noahmp::InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", null ],
     [ "IRadiation", "classIRadiation.html", [
-      [ "Radiation", "classRadiation.html", null ]
+      [ "Radiation", "classRadiation.html", null ],
+      [ "RadiationSimple", "classRadiationSimple.html", null ]
     ] ],
     [ "KesslerFaceState", "structKesslerFaceState.html", null ],
     [ "KesslerSaturationAdjustment", "structKesslerSaturationAdjustment.html", null ],
     [ "KesslerSourceTerms", "structKesslerSourceTerms.html", null ],
     [ "LandSurface", "classLandSurface.html", null ],
+    [ "LargeScaleForcingData", "structLargeScaleForcingData.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [
       [ "MaterialProperties", "structMaterialProperties.html", null ]

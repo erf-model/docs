@@ -149,10 +149,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPBLDerivativeDzInv.html">PBLDerivativeDzInv</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPBLDerivativeDzInv__N.html">PBLDerivativeDzInv_N</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor for inverse vertical spacings with constant grid spacing.  <a href="structPBLDerivativeDzInv__N.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPBLDerivativeDzInv__S.html">PBLDerivativeDzInv_S</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor for inverse vertical spacings for stretched grids using a spacing array.  <a href="structPBLDerivativeDzInv__S.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPBLDerivativeDzInv__T.html">PBLDerivativeDzInv_T</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor for inverse vertical spacings for terrain-following grids using cell-center heights.  <a href="structPBLDerivativeDzInv__T.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -1084,58 +1087,58 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">// Compute some relevant derivatives</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dthetadz, dudz, dvdz;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> source_term = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="ERF__PBLModels_8H.html#a36adc2a35482ea04a4692b95d982c848">ComputeVerticalDerivativesPBL</a>(i, j, k,</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                  uvel, vvel, cell_data, izmin, izmax, dz_inv,</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                  c_ext_dir_on_zlo, c_ext_dir_on_zhi,</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                  u_ext_dir_on_zlo, u_ext_dir_on_zhi,</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                  v_ext_dir_on_zlo, v_ext_dir_on_zhi,</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                  dthetadz, dudz, dvdz,</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                  moisture_indices);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="comment">// Notes:</span></div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">// - We transport TKE = myhalf*QKE rather than QKE, so the RHS terms do not</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">//   have a factor of two.</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="comment">// - Transport terms due to turbulence and pressure are included when</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="comment">//   DiffusionSrcForState_* is called from ERF_slow_rhs_post.</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="comment">// - Eddy diffusivities are updated at the beginning of each time step only.</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">// Second-order turbulent fluxes, e.g.:</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// -&lt;uw&gt; = L q SM dU/dz  (NN09, Eqn. 18)</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">//       = Kmv/rho dU/dz</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="comment">// Shear Production</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="comment">// Buoyancy Production</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    source_term -= (<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">// Dissipation (NN09, Eqn. 12)</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qke = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> (std::abs(qke) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        source_term -= cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.5)) /</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                       (pbl_mynn_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>));</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    }</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">return</span> source_term;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;{</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="comment">// Compute some relevant derivatives</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dthetadz, dudz, dvdz;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> source_term = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordtype">int</span> izmin = domain.smallEnd(2);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordtype">int</span> izmax = domain.bigEnd(2);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <a class="code" href="ERF__PBLModels_8H.html#a36adc2a35482ea04a4692b95d982c848">ComputeVerticalDerivativesPBL</a>(i, j, k,</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                  uvel, vvel, cell_data, izmin, izmax, dz_inv,</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                  c_ext_dir_on_zlo, c_ext_dir_on_zhi,</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                                  u_ext_dir_on_zlo, u_ext_dir_on_zhi,</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                                  v_ext_dir_on_zlo, v_ext_dir_on_zhi,</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                                  dthetadz, dudz, dvdz,</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                                  moisture_indices);</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">// Notes:</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// - We transport TKE = myhalf*QKE rather than QKE, so the RHS terms do not</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">//   have a factor of two.</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="comment">// - Transport terms due to turbulence and pressure are included when</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="comment">//   DiffusionSrcForState_* is called from ERF_slow_rhs_post.</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="comment">// - Eddy diffusivities are updated at the beginning of each time step only.</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="comment">// Second-order turbulent fluxes, e.g.:</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="comment">// -&lt;uw&gt; = L q SM dU/dz  (NN09, Eqn. 18)</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="comment">//       = Kmv/rho dU/dz</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="comment">// Shear Production</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    source_term += K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a>) * (dudz*dudz + dvdz*dvdz);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="comment">// Buoyancy Production</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    source_term -= (<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>/theta_mean)*K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a>)*dthetadz;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="comment">// Dissipation (NN09, Eqn. 12)</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> qke = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> * cell_prim(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a>);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordflow">if</span> (std::abs(qke) &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        source_term -= cell_data(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>) * std::pow(qke,<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.5)) /</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                       (pbl_mynn_B1_l * K_turb(i,j,k,<a class="code" href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a>));</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">return</span> source_term;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:64</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a9ab6bf01b348d4b7cef99f3655c9dbb2"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a></div><div class="ttdeci">#define PrimKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:56</div></div>
-<div class="ttc" id="aERF__PBLModels_8H_html_a36adc2a35482ea04a4692b95d982c848"><div class="ttname"><a href="ERF__PBLModels_8H.html#a36adc2a35482ea04a4692b95d982c848">ComputeVerticalDerivativesPBL</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeVerticalDerivativesPBL(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const PBLDerivativeDzInv &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:254</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:39</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a9ab6bf01b348d4b7cef99f3655c9dbb2"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2">PrimKE_comp</a></div><div class="ttdeci">#define PrimKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:59</div></div>
+<div class="ttc" id="aERF__PBLModels_8H_html_a36adc2a35482ea04a4692b95d982c848"><div class="ttname"><a href="ERF__PBLModels_8H.html#a36adc2a35482ea04a4692b95d982c848">ComputeVerticalDerivativesPBL</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void ComputeVerticalDerivativesPBL(int i, int j, int k, const amrex::Array4&lt; const amrex::Real &gt; &amp;uvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;vvel, const amrex::Array4&lt; const amrex::Real &gt; &amp;cell_data, const int izmin, const int izmax, const PBLDerivativeDzInv &amp;dz_inv, const bool c_ext_dir_on_zlo, const bool c_ext_dir_on_zhi, const bool u_ext_dir_on_zlo, const bool u_ext_dir_on_zhi, const bool v_ext_dir_on_zlo, const bool v_ext_dir_on_zhi, amrex::Real &amp;dthetadz, amrex::Real &amp;dudz, amrex::Real &amp;dvdz, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:277</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:212</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a></div><div class="ttdeci">@ Turb_lengthscale</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:216</div></div>
-<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:211</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a0af64d676c5c6f4312eb892f9a7a46cd">EddyDiff::Theta_v</a></div><div class="ttdeci">@ Theta_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:215</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a1fd996857fe3699ac7f9454e88d6ae76">EddyDiff::Turb_lengthscale</a></div><div class="ttdeci">@ Turb_lengthscale</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:219</div></div>
+<div class="ttc" id="anamespaceEddyDiff_html_ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82"><div class="ttname"><a href="namespaceEddyDiff.html#ab21f065008f527d980eaad08e1352205a61ed124b350a1b26da1bd26aebfa5f82">EddyDiff::Mom_v</a></div><div class="ttdeci">@ Mom_v</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:214</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738">if()</a>.</p>
 <div class="dynheader">
@@ -1155,15 +1158,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__PBLModels_8H_ab9cfd39702eb878961d5cbcc23b07a0d_icgraph.png" border="0" usemap="#aERF__PBLModels_8H_ab9cfd39702eb878961d5cbcc23b07a0d_icgraph" alt=""/></div>
 <map name="aERF__PBLModels_8H_ab9cfd39702eb878961d5cbcc23b07a0d_icgraph" id="aERF__PBLModels_8H_ab9cfd39702eb878961d5cbcc23b07a0d_icgraph">
-<area shape="rect" title=" " alt="" coords="832,89,1023,115"/>
-<area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="745,89,784,115"/>
+<area shape="rect" title=" " alt="" coords="832,114,1023,141"/>
+<area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="745,114,784,141"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a5d1d342ccca530682906a3e930477d04" title=" " alt="" coords="506,13,653,39"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36" title=" " alt="" coords="468,63,691,90"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a071df6c8f36e2dd4b911a10f28fd1917" title=" " alt="" coords="461,114,697,141"/>
-<area shape="rect" href="classERF.html#ad71a033b3fd107465a8621eaf7c77b28" title=" " alt="" coords="475,165,684,191"/>
+<area shape="rect" href="ERF__FillZeroAreaFaceFluxes_8cpp.html#a107da7bd2e6038750f7763c95925ec7d" title=" " alt="" coords="493,165,665,191"/>
+<area shape="rect" href="classERF.html#ad71a033b3fd107465a8621eaf7c77b28" title=" " alt="" coords="475,215,684,242"/>
 <area shape="rect" href="classERF.html#a504a6a2a4d68c9a82ae3f1a3436393f4" title=" " alt="" coords="224,5,403,47"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444" title=" " alt="" coords="213,93,413,119"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,93,165,119"/>
+<area shape="rect" href="ERF__SolveWithEBMLMG_8cpp.html#a408b85b0e876adc4ba51d2784213233e" title=" " alt="" coords="233,165,394,191"/>
 </map>
 </div>
 
@@ -1296,44 +1301,69 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;{</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// ext_dir ghost values hold the value at the physical boundary, which is</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">// half a ghost-center spacing from the adjacent cell center. Use a</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// two-point, first-order boundary-to-center difference with inverse</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// distance 2/dz.</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; c_ext_dir_on_zhi ) {</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        dthetadz = ( <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k+1,cell_data,moisture_indices)</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    -<a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k  ,cell_data,moisture_indices) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a2b004e670d67dcbd40fb17c9bd7e0911">dirichlet_hi</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; c_ext_dir_on_zlo ) {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        dthetadz = ( <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k  ,cell_data,moisture_indices)</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    -<a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k-1,cell_data,moisture_indices) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a84d3cd57827f6cc021998b1738822551">dirichlet_lo</a>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        dthetadz = ( <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k+1,cell_data,moisture_indices)</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    -<a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k-1,cell_data,moisture_indices) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a3ee4a48bdcfd812c802736f6f811cae8">interior</a>;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; u_ext_dir_on_zhi ) {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        dudz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( uvel(i  ,j,k+1) - uvel(i  ,j,k)</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                       +uvel(i+1,j,k+1) - uvel(i+1,j,k) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a2b004e670d67dcbd40fb17c9bd7e0911">dirichlet_hi</a>;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; u_ext_dir_on_zlo ) {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        dudz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( uvel(i  ,j,k) - uvel(i  ,j,k-1)</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                       +uvel(i+1,j,k) - uvel(i+1,j,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a84d3cd57827f6cc021998b1738822551">dirichlet_lo</a>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        dudz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( uvel(i  ,j,k+1) - uvel(i  ,j,k-1)</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                       +uvel(i+1,j,k+1) - uvel(i+1,j,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a3ee4a48bdcfd812c802736f6f811cae8">interior</a>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; v_ext_dir_on_zhi ) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        dvdz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( vvel(i,j  ,k+1) - vvel(i,j  ,k)</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                       +vvel(i,j+1,k+1) - vvel(i,j+1,k) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a2b004e670d67dcbd40fb17c9bd7e0911">dirichlet_hi</a>;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; v_ext_dir_on_zlo ) {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        dvdz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( vvel(i,j  ,k) - vvel(i,j  ,k-1)</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                       +vvel(i,j+1,k) - vvel(i,j+1,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a84d3cd57827f6cc021998b1738822551">dirichlet_lo</a>;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        dvdz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( vvel(i,j  ,k+1) - vvel(i,j  ,k-1)</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                       +vvel(i,j+1,k+1) - vvel(i,j+1,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a3ee4a48bdcfd812c802736f6f811cae8">interior</a>;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+<p>Compute vertical derivatives of potential temperature and velocity for PBL models.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">i</td><td>x-index </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">j</td><td>y-index </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">k</td><td>z-index </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uvel</td><td>x-velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vvel</td><td>y-velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cell_data</td><td>conserved cell-center variables </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">izmin</td><td>lower z-index limit </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">izmax</td><td>upper z-index limit </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dz_inv</td><td>inverse physical distance spacings </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c_ext_dir_on_zlo</td><td>Dirichlet condition on z-low face for cell data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c_ext_dir_on_zhi</td><td>Dirichlet condition on z-high face for cell data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u_ext_dir_on_zlo</td><td>Dirichlet condition on z-low face for u-velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">u_ext_dir_on_zhi</td><td>Dirichlet condition on z-high face for u-velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v_ext_dir_on_zlo</td><td>Dirichlet condition on z-low face for v-velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v_ext_dir_on_zhi</td><td>Dirichlet condition on z-high face for v-velocity </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dthetadz</td><td>computed vertical derivative of potential temperature </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dudz</td><td>computed vertical derivative of x-velocity </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dvdz</td><td>computed vertical derivative of y-velocity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">moisture_indices</td><td>moisture variable component indices </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;{</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// ext_dir ghost values hold the value at the physical boundary, which is</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// half a ghost-center spacing from the adjacent cell center. Use a</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">// two-point, first-order boundary-to-center difference with inverse</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// distance 2/dz.</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; c_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        dthetadz = ( <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k+1,cell_data,moisture_indices)</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    -<a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k  ,cell_data,moisture_indices) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a2b004e670d67dcbd40fb17c9bd7e0911">dirichlet_hi</a>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; c_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        dthetadz = ( <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k  ,cell_data,moisture_indices)</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    -<a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k-1,cell_data,moisture_indices) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a84d3cd57827f6cc021998b1738822551">dirichlet_lo</a>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        dthetadz = ( <a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k+1,cell_data,moisture_indices)</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    -<a class="code" href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a>(i,j,k-1,cell_data,moisture_indices) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a3ee4a48bdcfd812c802736f6f811cae8">interior</a>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; u_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        dudz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( uvel(i  ,j,k+1) - uvel(i  ,j,k)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                       +uvel(i+1,j,k+1) - uvel(i+1,j,k) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a2b004e670d67dcbd40fb17c9bd7e0911">dirichlet_hi</a>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; u_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        dudz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( uvel(i  ,j,k) - uvel(i  ,j,k-1)</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                       +uvel(i+1,j,k) - uvel(i+1,j,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a84d3cd57827f6cc021998b1738822551">dirichlet_lo</a>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        dudz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( uvel(i  ,j,k+1) - uvel(i  ,j,k-1)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                       +uvel(i+1,j,k+1) - uvel(i+1,j,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a3ee4a48bdcfd812c802736f6f811cae8">interior</a>;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> ( k==izmax &amp;&amp; v_ext_dir_on_zhi ) {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        dvdz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( vvel(i,j  ,k+1) - vvel(i,j  ,k)</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                       +vvel(i,j+1,k+1) - vvel(i,j+1,k) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a2b004e670d67dcbd40fb17c9bd7e0911">dirichlet_hi</a>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( k==izmin &amp;&amp; v_ext_dir_on_zlo ) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        dvdz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( vvel(i,j  ,k) - vvel(i,j  ,k-1)</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                       +vvel(i,j+1,k) - vvel(i,j+1,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a84d3cd57827f6cc021998b1738822551">dirichlet_lo</a>;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        dvdz = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*( vvel(i,j  ,k+1) - vvel(i,j  ,k-1)</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                       +vvel(i,j+1,k+1) - vvel(i,j+1,k-1) )*dz_inv.<a class="code" href="structPBLDerivativeDzInv.html#a3ee4a48bdcfd812c802736f6f811cae8">interior</a>;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__MoistUtils_8H_html_a56f0a685c1a466fb561a472825b0a74d"><div class="ttname"><a href="ERF__MoistUtils_8H.html#a56f0a685c1a466fb561a472825b0a74d">GetThetav</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real GetThetav(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; amrex::Real const &gt; &amp;cell_data, const MoistureComponentIndices &amp;moisture_indices)</div><div class="ttdef"><b>Definition:</b> ERF_MoistUtils.H:72</div></div>
 <div class="ttc" id="astructPBLDerivativeDzInv_html_a2b004e670d67dcbd40fb17c9bd7e0911"><div class="ttname"><a href="structPBLDerivativeDzInv.html#a2b004e670d67dcbd40fb17c9bd7e0911">PBLDerivativeDzInv::dirichlet_hi</a></div><div class="ttdeci">amrex::Real dirichlet_hi</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:248</div></div>
@@ -1361,18 +1391,20 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__ComputeDiffusivityMRF_8cpp.html#a39c51475b0c6804d0f2d3c61d1291d63" title=" " alt="" coords="759,5,936,32"/>
 <area shape="rect" href="ERF__ComputeDiffusivityMYJ_8cpp.html#a41eaf7ac4fa83d9e930118925fcc1e58" title=" " alt="" coords="761,56,933,83"/>
 <area shape="rect" href="ERF__ComputeDiffusivityMYNN25_8cpp.html#a906231db6cd588c98d4c233904c54e74" title=" " alt="" coords="745,107,949,133"/>
-<area shape="rect" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a94d360dcba34c57abb9134621c07689f" title=" " alt="" coords="997,157,1224,184"/>
+<area shape="rect" href="ERF__ComputeDiffusivityMYNNEDMF_8cpp.html#a94d360dcba34c57abb9134621c07689f" title="Compute eddy viscosity and diffusivity coefficients using the MYNN&#45;EDMF closure." alt="" coords="997,157,1224,184"/>
 <area shape="rect" href="ERF__ComputeDiffusivityYSU_8cpp.html#aeeae6157fd771bdd8ba7a2eff9478577" title=" " alt="" coords="1023,208,1198,235"/>
 <area shape="rect" href="ERF__ComputeDiffusivityYSUNew_8cpp.html#aeb152470a0581ca53468577d8f500866" title=" " alt="" coords="1009,259,1212,285"/>
 <area shape="rect" href="ERF__PBLModels_8H.html#ab9cfd39702eb878961d5cbcc23b07a0d" title=" " alt="" coords="1015,335,1206,361"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444" title=" " alt="" coords="213,183,413,209"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,183,165,209"/>
-<area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="828,360,867,387"/>
+<area shape="rect" href="ERF__AddQKESources_8H.html#ad212ca7498a026ec3f73cef6a5f29738" title=" " alt="" coords="828,385,867,412"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a5d1d342ccca530682906a3e930477d04" title=" " alt="" coords="506,411,653,437"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36" title=" " alt="" coords="468,309,691,336"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a071df6c8f36e2dd4b911a10f28fd1917" title=" " alt="" coords="461,360,697,387"/>
-<area shape="rect" href="classERF.html#ad71a033b3fd107465a8621eaf7c77b28" title=" " alt="" coords="475,461,684,488"/>
-<area shape="rect" href="classERF.html#a504a6a2a4d68c9a82ae3f1a3436393f4" title=" " alt="" coords="224,403,403,445"/>
+<area shape="rect" href="ERF__FillZeroAreaFaceFluxes_8cpp.html#a107da7bd2e6038750f7763c95925ec7d" title=" " alt="" coords="493,461,665,488"/>
+<area shape="rect" href="classERF.html#ad71a033b3fd107465a8621eaf7c77b28" title=" " alt="" coords="475,512,684,539"/>
+<area shape="rect" href="classERF.html#a504a6a2a4d68c9a82ae3f1a3436393f4" title=" " alt="" coords="224,399,403,441"/>
+<area shape="rect" href="ERF__SolveWithEBMLMG_8cpp.html#a408b85b0e876adc4ba51d2784213233e" title=" " alt="" coords="233,465,394,492"/>
 </map>
 </div>
 

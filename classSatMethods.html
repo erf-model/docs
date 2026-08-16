@@ -91,37 +91,54 @@ $(document).ready(function(){initNavTree('classSatMethods.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
+<p>Methods for estimating the saturation vapor pressure of water.  
+ <a href="classSatMethods.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ERF__SatMethods_8H_source.html">ERF_SatMethods.H</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a25e9dd28dcfcfd4e060472815e8389fa"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">wv_sat_svp_to_qsat</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;es, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>)</td></tr>
+<tr class="memdesc:a25e9dd28dcfcfd4e060472815e8389fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get saturation specific humidity given pressure and SVP.  <a href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">More...</a><br /></td></tr>
 <tr class="separator:a25e9dd28dcfcfd4e060472815e8389fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bd54f09d16625512acdb6118a2ed887"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887">wv_sat_qsat_water</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;es, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;qs, const int <a class="el" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>=1)</td></tr>
+<tr class="memdesc:a4bd54f09d16625512acdb6118a2ed887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate SVP over water and saturation specific humidity.  <a href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887">More...</a><br /></td></tr>
 <tr class="separator:a4bd54f09d16625512acdb6118a2ed887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56fe37f0cb4e8c7cc1ecb8a3daa0c579"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579">wv_sat_qsat_ice</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;es, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;qs, const int <a class="el" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>=1)</td></tr>
+<tr class="memdesc:a56fe37f0cb4e8c7cc1ecb8a3daa0c579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate SVP over ice and saturation specific humidity.  <a href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579">More...</a><br /></td></tr>
 <tr class="separator:a56fe37f0cb4e8c7cc1ecb8a3daa0c579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04e5fc642c88eda0767e507a9183682b"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b">wv_sat_qsat_trans</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#af83c1918e681461dc4cc7ed4c0828b2c">p</a>, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;es, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;qs, const int <a class="el" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>=1)</td></tr>
+<tr class="memdesc:a04e5fc642c88eda0767e507a9183682b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate transition SVP and saturation specific humidity.  <a href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b">More...</a><br /></td></tr>
 <tr class="separator:a04e5fc642c88eda0767e507a9183682b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c4bb9729c75dd1160d45ae638635766"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, const int <a class="el" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>=1)</td></tr>
+<tr class="memdesc:a1c4bb9729c75dd1160d45ae638635766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatcher for saturation vapor pressure over water.  <a href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">More...</a><br /></td></tr>
 <tr class="separator:a1c4bb9729c75dd1160d45ae638635766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add2fde8076c60c19ed9f4f78c9891e0e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, const int <a class="el" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>=1)</td></tr>
+<tr class="memdesc:add2fde8076c60c19ed9f4f78c9891e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatcher for saturation vapor pressure over ice.  <a href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">More...</a><br /></td></tr>
 <tr class="separator:add2fde8076c60c19ed9f4f78c9891e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2fa5e55257c6021e9e7fd897f4950b7"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">wv_sat_svp_trans</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>, const int <a class="el" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>=1)</td></tr>
+<tr class="memdesc:ac2fa5e55257c6021e9e7fd897f4950b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate transition saturation vapor pressure.  <a href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">More...</a><br /></td></tr>
 <tr class="separator:ac2fa5e55257c6021e9e7fd897f4950b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a264a283910d028a29c374900fc03017f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a264a283910d028a29c374900fc03017f">GoffGratch_svp_water</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>)</td></tr>
+<tr class="memdesc:a264a283910d028a29c374900fc03017f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Goff &amp; Gratch (1946) saturation vapor pressure over water.  <a href="classSatMethods.html#a264a283910d028a29c374900fc03017f">More...</a><br /></td></tr>
 <tr class="separator:a264a283910d028a29c374900fc03017f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e929b8ac05dbeaa78dc158159f84758"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758">GoffGratch_svp_ice</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>)</td></tr>
+<tr class="memdesc:a9e929b8ac05dbeaa78dc158159f84758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Goff &amp; Gratch (1946) saturation vapor pressure over ice.  <a href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758">More...</a><br /></td></tr>
 <tr class="separator:a9e929b8ac05dbeaa78dc158159f84758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac1daa9a38464e217df80a4f9613bcb3"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3">MurphyKoop_svp_water</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>)</td></tr>
+<tr class="memdesc:aac1daa9a38464e217df80a4f9613bcb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Murphy &amp; Koop (2005) saturation vapor pressure over water.  <a href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3">More...</a><br /></td></tr>
 <tr class="separator:aac1daa9a38464e217df80a4f9613bcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87786f42b9d0601dc1d22f635906a76f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f">MurphyKoop_svp_ice</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>)</td></tr>
+<tr class="memdesc:a87786f42b9d0601dc1d22f635906a76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Murphy &amp; Koop (2005) saturation vapor pressure over ice.  <a href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f">More...</a><br /></td></tr>
 <tr class="separator:a87786f42b9d0601dc1d22f635906a76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8458bd6a233082c463c070ddc692080f"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f">OldGoffGratch_svp_water</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>)</td></tr>
+<tr class="memdesc:a8458bd6a233082c463c070ddc692080f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Old CAM implementation of Goff &amp; Gratch (1946) SVP over water.  <a href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f">More...</a><br /></td></tr>
 <tr class="separator:a8458bd6a233082c463c070ddc692080f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a185a448ec1db160bc61f23cbda63f4bd"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd">OldGoffGratch_svp_ice</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>)</td></tr>
+<tr class="memdesc:a185a448ec1db160bc61f23cbda63f4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice.  <a href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd">More...</a><br /></td></tr>
 <tr class="separator:a185a448ec1db160bc61f23cbda63f4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a128ccad46f784c2d1aaeda372833dab6"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">Bolton_svp_water</a> (const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;<a class="el" href="ERF__InitCustomPert__SuperCell_8H.html#a748073e3cbb41e2b837a69b95dbbf3a0">t</a>)</td></tr>
+<tr class="memdesc:a128ccad46f784c2d1aaeda372833dab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bolton (1980) saturation vapor pressure over water.  <a href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">More...</a><br /></td></tr>
 <tr class="separator:a128ccad46f784c2d1aaeda372833dab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
@@ -137,7 +154,9 @@ Private Types</h2></td></tr>
  }</td></tr>
 <tr class="separator:a62096d95f324cd2a3504554437067ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Methods for estimating the saturation vapor pressure of water. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a62096d95f324cd2a3504554437067ef7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62096d95f324cd2a3504554437067ef7">&#9670;&nbsp;</a></span>Type</h2>
 
@@ -164,18 +183,18 @@ Private Types</h2></td></tr>
 <tr><td class="fieldname"><a id="a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a"></a>MurphyKoop&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d"></a>Bolton&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;              {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb">Invalid</a> = -1,</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">OldGoffGratch</a> = 0,</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">GoffGratch</a> = 1,</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">MurphyKoop</a> = 2,</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">Bolton</a> = 3</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    };</div>
-<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">SatMethods::MurphyKoop</a></div><div class="ttdeci">@ MurphyKoop</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:251</div></div>
-<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb">SatMethods::Invalid</a></div><div class="ttdeci">@ Invalid</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:248</div></div>
-<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">SatMethods::Bolton</a></div><div class="ttdeci">@ Bolton</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:252</div></div>
-<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">SatMethods::GoffGratch</a></div><div class="ttdeci">@ GoffGratch</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:250</div></div>
-<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">SatMethods::OldGoffGratch</a></div><div class="ttdeci">@ OldGoffGratch</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:249</div></div>
+<div class="fragment"><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;              {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb">Invalid</a> = -1,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">OldGoffGratch</a> = 0,</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">GoffGratch</a> = 1,</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">MurphyKoop</a> = 2,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;               <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">Bolton</a> = 3</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    };</div>
+<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">SatMethods::MurphyKoop</a></div><div class="ttdeci">@ MurphyKoop</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:337</div></div>
+<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aacd427431253b9fe6b472b6db3685edb">SatMethods::Invalid</a></div><div class="ttdeci">@ Invalid</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:334</div></div>
+<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">SatMethods::Bolton</a></div><div class="ttdeci">@ Bolton</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:338</div></div>
+<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">SatMethods::GoffGratch</a></div><div class="ttdeci">@ GoffGratch</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:336</div></div>
+<div class="ttc" id="aclassSatMethods_html_a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db"><div class="ttname"><a href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">SatMethods::OldGoffGratch</a></div><div class="ttdeci">@ OldGoffGratch</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:335</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -203,12 +222,21 @@ Private Types</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                                           {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        constexpr <span class="keyword">auto</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(611.2);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        constexpr <span class="keyword">auto</span> <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(17.67);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        constexpr <span class="keyword">auto</span> c3 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(243.5);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a>*exp( (<a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a>*(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>))/((<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>)+c3) );</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
+
+<p>Bolton (1980) saturation vapor pressure over water. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                           {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        constexpr <span class="keyword">auto</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(611.2);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        constexpr <span class="keyword">auto</span> <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(17.67);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        constexpr <span class="keyword">auto</span> c3 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(243.5);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a>*exp( (<a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a>*(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>))/((<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>)+c3) );</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a764526b482e006cd52004d3f53467b57"><div class="ttname"><a href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a></div><div class="ttdeci">constexpr amrex::Real tmelt</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:130</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceWSM6Ind_html_a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419"><div class="ttname"><a href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">WSM6Ind::t</a></div><div class="ttdeci">@ t</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:183</div></div>
@@ -221,13 +249,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a128ccad46f784c2d1aaeda372833dab6_icgraph.png" border="0" usemap="#aclassSatMethods_a128ccad46f784c2d1aaeda372833dab6_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a128ccad46f784c2d1aaeda372833dab6_icgraph" id="aclassSatMethods_a128ccad46f784c2d1aaeda372833dab6_icgraph">
-<area shape="rect" title=" " alt="" coords="609,72,759,113"/>
-<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="408,104,561,145"/>
-<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
-<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title=" " alt="" coords="207,136,360,177"/>
+<area shape="rect" title="Bolton (1980) saturation vapor pressure over water." alt="" coords="609,72,759,113"/>
+<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title="Dispatcher for saturation vapor pressure over water." alt="" coords="408,104,561,145"/>
+<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title="Calculate SVP over ice and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
+<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title="Calculate SVP over water and saturation specific humidity." alt="" coords="207,136,360,177"/>
 </map>
 </div>
 
@@ -256,12 +284,21 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                                                             {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">// good down to -100 C</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.09718)*(<a class="code" href="ERF__Constants_8H.html#af5689377f29be012360a846bd447e278">h2otrip</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.56654)*</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                         log10(<a class="code" href="ERF__Constants_8H.html#af5689377f29be012360a846bd447e278">h2otrip</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)+<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.876793)*(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1)-<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>/<a class="code" href="ERF__Constants_8H.html#af5689377f29be012360a846bd447e278">h2otrip</a>)+</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                         log10(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(6.1071))))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+
+<p>Goff &amp; Gratch (1946) saturation vapor pressure over ice. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                                             {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="comment">// good down to -100 C</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="keywordflow">return</span> pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.09718)*(<a class="code" href="ERF__Constants_8H.html#af5689377f29be012360a846bd447e278">h2otrip</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.56654)*</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                         log10(<a class="code" href="ERF__Constants_8H.html#af5689377f29be012360a846bd447e278">h2otrip</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)+<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.876793)*(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1)-<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>/<a class="code" href="ERF__Constants_8H.html#af5689377f29be012360a846bd447e278">h2otrip</a>)+</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                         log10(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(6.1071))))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_af5689377f29be012360a846bd447e278"><div class="ttname"><a href="ERF__Constants_8H.html#af5689377f29be012360a846bd447e278">h2otrip</a></div><div class="ttdeci">constexpr amrex::Real h2otrip</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:131</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice()</a>.</p>
@@ -270,11 +307,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a9e929b8ac05dbeaa78dc158159f84758_icgraph.png" border="0" usemap="#aclassSatMethods_a9e929b8ac05dbeaa78dc158159f84758_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a9e929b8ac05dbeaa78dc158159f84758_icgraph" id="aclassSatMethods_a9e929b8ac05dbeaa78dc158159f84758_icgraph">
-<area shape="rect" title=" " alt="" coords="609,39,787,80"/>
-<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Goff &amp; Gratch (1946) saturation vapor pressure over ice." alt="" coords="609,39,787,80"/>
+<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title="Calculate SVP over ice and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -303,14 +340,23 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                                               {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="comment">// uncertain below -70 C</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">return</span> pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7.90298)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))+</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.02808)*std::log10(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)-</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.3816e-7)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(11.344)*(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1)-<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>/<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>)))-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))+</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.1328e-3)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.49149)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))))-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))+</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                         std::log10(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1013.246))))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+
+<p>Goff &amp; Gratch (1946) saturation vapor pressure over water. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                                               {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="comment">// uncertain below -70 C</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">return</span> pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7.90298)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))+</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.02808)*std::log10(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)-</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.3816e-7)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(11.344)*(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1)-<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>/<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>)))-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))+</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                         <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.1328e-3)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.), (-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.49149)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))))-<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))+</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                         std::log10(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1013.246))))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a123bd9756d4f11bae80bb918f88cbd3f"><div class="ttname"><a href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a></div><div class="ttdeci">constexpr amrex::Real tboil</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:132</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water()</a>.</p>
@@ -319,11 +365,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a264a283910d028a29c374900fc03017f_icgraph.png" border="0" usemap="#aclassSatMethods_a264a283910d028a29c374900fc03017f_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a264a283910d028a29c374900fc03017f_icgraph" id="aclassSatMethods_a264a283910d028a29c374900fc03017f_icgraph">
-<area shape="rect" title=" " alt="" coords="609,39,787,80"/>
-<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Goff &amp; Gratch (1946) saturation vapor pressure over water." alt="" coords="609,39,787,80"/>
+<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title="Dispatcher for saturation vapor pressure over water." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title="Calculate SVP over water and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -352,11 +398,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                                             {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// (good down to 110 K)</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">return</span> exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.550426) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5723.265) / <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.53068) * log(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>))</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                   - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.00728332) * <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>));</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+
+<p>Murphy &amp; Koop (2005) saturation vapor pressure over ice. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                                             {</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">// (good down to 110 K)</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">return</span> exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.550426) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5723.265) / <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.53068) * log(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>))</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                   - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.00728332) * <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>));</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice()</a>.</p>
 <div class="dynheader">
@@ -364,11 +419,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a87786f42b9d0601dc1d22f635906a76f_icgraph.png" border="0" usemap="#aclassSatMethods_a87786f42b9d0601dc1d22f635906a76f_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a87786f42b9d0601dc1d22f635906a76f_icgraph" id="aclassSatMethods_a87786f42b9d0601dc1d22f635906a76f_icgraph">
-<area shape="rect" title=" " alt="" coords="609,39,797,80"/>
-<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Murphy &amp; Koop (2005) saturation vapor pressure over ice." alt="" coords="609,39,797,80"/>
+<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title="Calculate SVP over ice and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -397,13 +452,22 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                                               {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">// (good for 123 &lt; T &lt; 332 K)</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(54.842763) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(6763.22) / <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.210) * log(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)) +</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                   (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.000367) * <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) + (tanh(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0415) * (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(218.8))) *</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                     (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(53.878) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1331.22) / <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.44523) * log(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)) +</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.014025) * <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)));</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+
+<p>Murphy &amp; Koop (2005) saturation vapor pressure over water. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                                               {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="comment">// (good for 123 &lt; T &lt; 332 K)</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span> exp(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(54.842763) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(6763.22) / <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(4.210) * log(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)) +</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                   (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.000367) * <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) + (tanh(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0415) * (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(218.8))) *</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                     (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(53.878) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1331.22) / <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) - (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(9.44523) * log(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)) +</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                      <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.014025) * <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)));</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water()</a>.</p>
 <div class="dynheader">
@@ -411,11 +475,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_aac1daa9a38464e217df80a4f9613bcb3_icgraph.png" border="0" usemap="#aclassSatMethods_aac1daa9a38464e217df80a4f9613bcb3_icgraph" alt=""/></div>
 <map name="aclassSatMethods_aac1daa9a38464e217df80a4f9613bcb3_icgraph" id="aclassSatMethods_aac1daa9a38464e217df80a4f9613bcb3_icgraph">
-<area shape="rect" title=" " alt="" coords="609,39,797,80"/>
-<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Murphy &amp; Koop (2005) saturation vapor pressure over water." alt="" coords="609,39,797,80"/>
+<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title="Dispatcher for saturation vapor pressure over water." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title="Calculate SVP over water and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -444,12 +508,21 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                                                                {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keyword">auto</span> term1 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.01889049)/(<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keyword">auto</span> term2 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.56654)*log(<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        <span class="keyword">auto</span> term3 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(20.947031)*(<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(575.185606e10)*exp(-(term1 + term2 + term3));</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+
+<p>Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                                                {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keyword">auto</span> term1 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(2.01889049)/(<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keyword">auto</span> term2 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.56654)*log(<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keyword">auto</span> term3 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(20.947031)*(<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(575.185606e10)*exp(-(term1 + term2 + term3));</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice()</a>.</p>
 <div class="dynheader">
@@ -457,11 +530,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a185a448ec1db160bc61f23cbda63f4bd_icgraph.png" border="0" usemap="#aclassSatMethods_a185a448ec1db160bc61f23cbda63f4bd_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a185a448ec1db160bc61f23cbda63f4bd_icgraph" id="aclassSatMethods_a185a448ec1db160bc61f23cbda63f4bd_icgraph">
-<area shape="rect" title=" " alt="" coords="609,39,808,80"/>
-<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice." alt="" coords="609,39,808,80"/>
+<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title="Calculate SVP over ice and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -490,18 +563,27 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keyword">auto</span> ps = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1013.246);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keyword">auto</span> e1 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(11.344)*(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>/<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keyword">auto</span> e2 = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.49149)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1));</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keyword">auto</span> f1 = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7.90298)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1));</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keyword">auto</span> f2 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.02808)*log10(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keyword">auto</span> f3 = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.3816)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.0), e1) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10000000.0);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keyword">auto</span> f4 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.1328)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.0), e2) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1000.0);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keyword">auto</span> f5 = log10(ps);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keyword">auto</span> f  = f1 + f2 + f3 + f4 + f5;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">return</span> (pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.0), f))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+
+<p>Old CAM implementation of Goff &amp; Gratch (1946) SVP over water. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keyword">auto</span> ps = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1013.246);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keyword">auto</span> e1 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(11.344)*(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>/<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keyword">auto</span> e2 = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(3.49149)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1));</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keyword">auto</span> f1 = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(7.90298)*(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1));</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keyword">auto</span> f2 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(5.02808)*log10(<a class="code" href="ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f">tboil</a>/<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keyword">auto</span> f3 = -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1.3816)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.0), e1) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10000000.0);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="keyword">auto</span> f4 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(8.1328)*(pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.0), e2) - <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1))/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1000.0);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keyword">auto</span> f5 = log10(ps);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keyword">auto</span> f  = f1 + f2 + f3 + f4 + f5;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">return</span> (pow(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(10.0), f))*<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(100.0);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water()</a>.</p>
 <div class="dynheader">
@@ -509,11 +591,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a8458bd6a233082c463c070ddc692080f_icgraph.png" border="0" usemap="#aclassSatMethods_a8458bd6a233082c463c070ddc692080f_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a8458bd6a233082c463c070ddc692080f_icgraph" id="aclassSatMethods_a8458bd6a233082c463c070ddc692080f_icgraph">
-<area shape="rect" title=" " alt="" coords="609,39,808,80"/>
-<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over water." alt="" coords="609,39,808,80"/>
+<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title="Dispatcher for saturation vapor pressure over water." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title="Calculate SVP over water and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -570,21 +652,33 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                                                  {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">// Purpose:</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">//   Calculate SVP over ice at a given temperature, and then</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">//   calculate and return saturation specific humidity.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        es = <a class="code" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>, <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5">qs</a> = <a class="code" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">wv_sat_svp_to_qsat</a>(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// Ensures returned es is consistent with limiters on qs.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        es = std::min(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+
+<p>Calculate SVP over ice and saturation specific humidity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>Total pressure. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">es</td><td>Saturation vapor pressure. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">qs</td><td>Saturation specific humidity. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Scheme index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                                                  {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">// Purpose:</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//   Calculate SVP over ice at a given temperature, and then</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//   calculate and return saturation specific humidity.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        es = <a class="code" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>, <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5">qs</a> = <a class="code" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">wv_sat_svp_to_qsat</a>(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">// Ensures returned es is consistent with limiters on qs.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        es = std::min(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
 <div class="ttc" id="aERF__InitForEnsemble_8cpp_html_a221b1f8dc1b747f1e88990c65e3681de"><div class="ttname"><a href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE int idx(int i, int j, int k, int nx, int ny)</div><div class="ttdef"><b>Definition:</b> ERF_InitForEnsemble.cpp:365</div></div>
-<div class="ttc" id="aclassSatMethods_html_a25e9dd28dcfcfd4e060472815e8389fa"><div class="ttname"><a href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">SatMethods::wv_sat_svp_to_qsat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_to_qsat(const amrex::Real &amp;es, const amrex::Real &amp;p)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:42</div></div>
-<div class="ttc" id="aclassSatMethods_html_add2fde8076c60c19ed9f4f78c9891e0e"><div class="ttname"><a href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">SatMethods::wv_sat_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_ice(const amrex::Real &amp;t, const int idx=1)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:114</div></div>
+<div class="ttc" id="aclassSatMethods_html_a25e9dd28dcfcfd4e060472815e8389fa"><div class="ttname"><a href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">SatMethods::wv_sat_svp_to_qsat</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_to_qsat(const amrex::Real &amp;es, const amrex::Real &amp;p)</div><div class="ttdoc">Get saturation specific humidity given pressure and SVP.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:51</div></div>
+<div class="ttc" id="aclassSatMethods_html_add2fde8076c60c19ed9f4f78c9891e0e"><div class="ttname"><a href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">SatMethods::wv_sat_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_ice(const amrex::Real &amp;t, const int idx=1)</div><div class="ttdoc">Dispatcher for saturation vapor pressure over ice.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:159</div></div>
 <div class="ttc" id="anamespaceMicVar__WSM6_html_a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5"><div class="ttname"><a href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5">MicVar_WSM6::qs</a></div><div class="ttdeci">@ qs</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:29</div></div>
 <div class="ttc" id="anamespaceWSM6Ind_html_a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:191</div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -592,14 +686,14 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a56fe37f0cb4e8c7cc1ecb8a3daa0c579_cgraph.png" border="0" usemap="#aclassSatMethods_a56fe37f0cb4e8c7cc1ecb8a3daa0c579_cgraph" alt=""/></div>
 <map name="aclassSatMethods_a56fe37f0cb4e8c7cc1ecb8a3daa0c579_cgraph" id="aclassSatMethods_a56fe37f0cb4e8c7cc1ecb8a3daa0c579_cgraph">
-<area shape="rect" title=" " alt="" coords="5,106,159,147"/>
+<area shape="rect" title="Calculate SVP over ice and saturation specific humidity." alt="" coords="5,106,159,147"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="486,5,529,32"/>
-<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="207,106,360,147"/>
-<area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title=" " alt="" coords="207,171,360,213"/>
-<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title=" " alt="" coords="433,57,582,98"/>
-<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title=" " alt="" coords="419,122,596,163"/>
-<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title=" " alt="" coords="413,187,601,229"/>
-<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title=" " alt="" coords="408,253,607,294"/>
+<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="207,106,360,147"/>
+<area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title="Get saturation specific humidity given pressure and SVP." alt="" coords="207,171,360,213"/>
+<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title="Bolton (1980) saturation vapor pressure over water." alt="" coords="433,57,582,98"/>
+<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title="Goff &amp; Gratch (1946) saturation vapor pressure over ice." alt="" coords="419,122,596,163"/>
+<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title="Murphy &amp; Koop (2005) saturation vapor pressure over ice." alt="" coords="413,187,601,229"/>
+<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice." alt="" coords="408,253,607,294"/>
 </map>
 </div>
 
@@ -656,37 +750,49 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                                                                                    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Purpose:</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">//   Calculate SVP over ice at a given temperature, and then</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">//   calculate and return saturation specific humidity.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        es = <a class="code" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">wv_sat_svp_trans</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>, <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5">qs</a> = <a class="code" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">wv_sat_svp_to_qsat</a>(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// Ensures returned es is consistent with limiters on qs.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        es = std::min(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="ttc" id="aclassSatMethods_html_ac2fa5e55257c6021e9e7fd897f4950b7"><div class="ttname"><a href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">SatMethods::wv_sat_svp_trans</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_trans(const amrex::Real &amp;t, const int idx=1)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:131</div></div>
+
+<p>Calculate transition SVP and saturation specific humidity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>Total pressure. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">es</td><td>Saturation vapor pressure. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">qs</td><td>Saturation specific humidity. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Scheme index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                                                                    {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="comment">// Purpose:</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">//   Calculate SVP over ice at a given temperature, and then</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">//   calculate and return saturation specific humidity.</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        es = <a class="code" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">wv_sat_svp_trans</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>, <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5">qs</a> = <a class="code" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">wv_sat_svp_to_qsat</a>(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// Ensures returned es is consistent with limiters on qs.</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        es = std::min(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="ttc" id="aclassSatMethods_html_ac2fa5e55257c6021e9e7fd897f4950b7"><div class="ttname"><a href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">SatMethods::wv_sat_svp_trans</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_trans(const amrex::Real &amp;t, const int idx=1)</div><div class="ttdoc">Calculate transition saturation vapor pressure.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:182</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a04e5fc642c88eda0767e507a9183682b_cgraph.png" border="0" usemap="#aclassSatMethods_a04e5fc642c88eda0767e507a9183682b_cgraph" alt=""/></div>
 <map name="aclassSatMethods_a04e5fc642c88eda0767e507a9183682b_cgraph" id="aclassSatMethods_a04e5fc642c88eda0767e507a9183682b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,264,159,305"/>
+<area shape="rect" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,264,159,305"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="687,267,730,294"/>
-<area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title=" " alt="" coords="207,329,360,371"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,264,360,305"/>
-<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="408,144,561,185"/>
-<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="408,319,561,360"/>
-<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title=" " alt="" coords="634,201,783,243"/>
-<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title=" " alt="" coords="620,5,797,47"/>
-<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title=" " alt="" coords="615,71,803,112"/>
-<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title=" " alt="" coords="609,136,808,177"/>
-<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title=" " alt="" coords="620,449,797,491"/>
-<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title=" " alt="" coords="615,319,803,360"/>
-<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title=" " alt="" coords="609,384,808,425"/>
+<area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title="Get saturation specific humidity given pressure and SVP." alt="" coords="207,329,360,371"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,264,360,305"/>
+<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="408,144,561,185"/>
+<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title="Dispatcher for saturation vapor pressure over water." alt="" coords="408,319,561,360"/>
+<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title="Bolton (1980) saturation vapor pressure over water." alt="" coords="634,201,783,243"/>
+<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title="Goff &amp; Gratch (1946) saturation vapor pressure over ice." alt="" coords="620,5,797,47"/>
+<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title="Murphy &amp; Koop (2005) saturation vapor pressure over ice." alt="" coords="615,71,803,112"/>
+<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice." alt="" coords="609,136,808,177"/>
+<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title="Goff &amp; Gratch (1946) saturation vapor pressure over water." alt="" coords="620,449,797,491"/>
+<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title="Murphy &amp; Koop (2005) saturation vapor pressure over water." alt="" coords="615,319,803,360"/>
+<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over water." alt="" coords="609,384,808,425"/>
 </map>
 </div>
 
@@ -743,32 +849,44 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                                                    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// Purpose:</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment">//   Calculate SVP over water at a given temperature, and then</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//   calculate and return saturation specific humidity.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        es = <a class="code" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>, <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5">qs</a> = <a class="code" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">wv_sat_svp_to_qsat</a>(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// Ensures returned es is consistent with limiters on qs.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        es = std::min(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="ttc" id="aclassSatMethods_html_a1c4bb9729c75dd1160d45ae638635766"><div class="ttname"><a href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">SatMethods::wv_sat_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_water(const amrex::Real &amp;t, const int idx=1)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:97</div></div>
+
+<p>Calculate SVP over water and saturation specific humidity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>Total pressure. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">es</td><td>Saturation vapor pressure. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">qs</td><td>Saturation specific humidity. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Scheme index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                                                    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">// Purpose:</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">//   Calculate SVP over water at a given temperature, and then</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">//   calculate and return saturation specific humidity.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        es = <a class="code" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>, <a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="namespaceMicVar__WSM6.html#a4915c5cdd757ac8c6949f91354d1b5b9a60749dacb5a22877b6b655d82a082ec5">qs</a> = <a class="code" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa">wv_sat_svp_to_qsat</a>(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// Ensures returned es is consistent with limiters on qs.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        es = std::min(es, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="ttc" id="aclassSatMethods_html_a1c4bb9729c75dd1160d45ae638635766"><div class="ttname"><a href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">SatMethods::wv_sat_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real wv_sat_svp_water(const amrex::Real &amp;t, const int idx=1)</div><div class="ttdoc">Dispatcher for saturation vapor pressure over water.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:136</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a4bd54f09d16625512acdb6118a2ed887_cgraph.png" border="0" usemap="#aclassSatMethods_a4bd54f09d16625512acdb6118a2ed887_cgraph" alt=""/></div>
 <map name="aclassSatMethods_a4bd54f09d16625512acdb6118a2ed887_cgraph" id="aclassSatMethods_a4bd54f09d16625512acdb6118a2ed887_cgraph">
-<area shape="rect" title=" " alt="" coords="5,57,159,98"/>
+<area shape="rect" title="Calculate SVP over water and saturation specific humidity." alt="" coords="5,57,159,98"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="486,5,529,32"/>
-<area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title=" " alt="" coords="207,57,360,98"/>
-<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="207,122,360,163"/>
-<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title=" " alt="" coords="433,57,582,98"/>
-<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title=" " alt="" coords="419,122,596,163"/>
-<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title=" " alt="" coords="413,187,601,229"/>
-<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title=" " alt="" coords="408,253,607,294"/>
+<area shape="rect" href="classSatMethods.html#a25e9dd28dcfcfd4e060472815e8389fa" title="Get saturation specific humidity given pressure and SVP." alt="" coords="207,57,360,98"/>
+<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title="Dispatcher for saturation vapor pressure over water." alt="" coords="207,122,360,163"/>
+<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title="Bolton (1980) saturation vapor pressure over water." alt="" coords="433,57,582,98"/>
+<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title="Goff &amp; Gratch (1946) saturation vapor pressure over water." alt="" coords="419,122,596,163"/>
+<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title="Murphy &amp; Koop (2005) saturation vapor pressure over water." alt="" coords="413,187,601,229"/>
+<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over water." alt="" coords="408,253,607,294"/>
 </map>
 </div>
 
@@ -807,25 +925,35 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                                                            {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> es;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">GoffGratch</a>:</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                es = <a class="code" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758">GoffGratch_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">MurphyKoop</a>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                es = <a class="code" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f">MurphyKoop_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">OldGoffGratch</a>:</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                es = <a class="code" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd">OldGoffGratch_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">Bolton</a>:</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                es = <a class="code" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">Bolton_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">return</span> es;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
-<div class="ttc" id="aclassSatMethods_html_a128ccad46f784c2d1aaeda372833dab6"><div class="ttname"><a href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">SatMethods::Bolton_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real Bolton_svp_water(const amrex::Real &amp;t)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:237</div></div>
-<div class="ttc" id="aclassSatMethods_html_a185a448ec1db160bc61f23cbda63f4bd"><div class="ttname"><a href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd">SatMethods::OldGoffGratch_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real OldGoffGratch_svp_ice(const amrex::Real &amp;t)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:221</div></div>
-<div class="ttc" id="aclassSatMethods_html_a87786f42b9d0601dc1d22f635906a76f"><div class="ttname"><a href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f">SatMethods::MurphyKoop_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real MurphyKoop_svp_ice(const amrex::Real &amp;t)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:186</div></div>
-<div class="ttc" id="aclassSatMethods_html_a9e929b8ac05dbeaa78dc158159f84758"><div class="ttname"><a href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758">SatMethods::GoffGratch_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real GoffGratch_svp_ice(const amrex::Real &amp;t)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:168</div></div>
+
+<p>Dispatcher for saturation vapor pressure over ice. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Scheme index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure over ice. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                                                            {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> es;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">GoffGratch</a>:</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                es = <a class="code" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758">GoffGratch_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">MurphyKoop</a>:</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                es = <a class="code" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f">MurphyKoop_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">OldGoffGratch</a>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                es = <a class="code" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd">OldGoffGratch_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">Bolton</a>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                es = <a class="code" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">Bolton_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> es;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+<div class="ttc" id="aclassSatMethods_html_a128ccad46f784c2d1aaeda372833dab6"><div class="ttname"><a href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">SatMethods::Bolton_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real Bolton_svp_water(const amrex::Real &amp;t)</div><div class="ttdoc">Bolton (1980) saturation vapor pressure over water.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:323</div></div>
+<div class="ttc" id="aclassSatMethods_html_a185a448ec1db160bc61f23cbda63f4bd"><div class="ttname"><a href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd">SatMethods::OldGoffGratch_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real OldGoffGratch_svp_ice(const amrex::Real &amp;t)</div><div class="ttdoc">Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:302</div></div>
+<div class="ttc" id="aclassSatMethods_html_a87786f42b9d0601dc1d22f635906a76f"><div class="ttname"><a href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f">SatMethods::MurphyKoop_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real MurphyKoop_svp_ice(const amrex::Real &amp;t)</div><div class="ttdoc">Murphy &amp; Koop (2005) saturation vapor pressure over ice.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:257</div></div>
+<div class="ttc" id="aclassSatMethods_html_a9e929b8ac05dbeaa78dc158159f84758"><div class="ttname"><a href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758">SatMethods::GoffGratch_svp_ice</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real GoffGratch_svp_ice(const amrex::Real &amp;t)</div><div class="ttdoc">Goff &amp; Gratch (1946) saturation vapor pressure over ice.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:229</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579">wv_sat_qsat_ice()</a>, and <a class="el" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">wv_sat_svp_trans()</a>.</p>
 <div class="dynheader">
@@ -833,12 +961,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_cgraph.png" border="0" usemap="#aclassSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_cgraph" alt=""/></div>
 <map name="aclassSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_cgraph" id="aclassSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,129,159,171"/>
-<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title=" " alt="" coords="231,5,381,47"/>
-<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title=" " alt="" coords="217,71,395,112"/>
+<area shape="rect" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="5,129,159,171"/>
+<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title="Bolton (1980) saturation vapor pressure over water." alt="" coords="231,5,381,47"/>
+<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title="Goff &amp; Gratch (1946) saturation vapor pressure over ice." alt="" coords="217,71,395,112"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="285,137,327,163"/>
-<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title=" " alt="" coords="212,188,400,229"/>
-<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title=" " alt="" coords="207,253,405,295"/>
+<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title="Murphy &amp; Koop (2005) saturation vapor pressure over ice." alt="" coords="212,188,400,229"/>
+<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice." alt="" coords="207,253,405,295"/>
 </map>
 </div>
 <div class="dynheader">
@@ -846,10 +974,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_icgraph.png" border="0" usemap="#aclassSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_icgraph" alt=""/></div>
 <map name="aclassSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_icgraph" id="aclassSatMethods_add2fde8076c60c19ed9f4f78c9891e0e_icgraph">
-<area shape="rect" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title="Calculate SVP over ice and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 
@@ -888,13 +1016,23 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                                  {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// If pressure is less than SVP, set qs to maximum of amrex::Real(1)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> ( (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a> - es) &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0) )</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a630c4c3e10ef44d50ca4c6939a59b6a3">epsilo</a>*es / (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a> - <a class="code" href="ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222">omeps</a>*es);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+
+<p>Get saturation specific humidity given pressure and SVP. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">es</td><td>Saturation vapor pressure. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>Total pressure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation specific humidity. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                                                  {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// If pressure is less than SVP, set qs to maximum of amrex::Real(1)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> ( (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a> - es) &lt;= <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0) )</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="ERF__Constants_8H.html#a630c4c3e10ef44d50ca4c6939a59b6a3">epsilo</a>*es / (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a> - <a class="code" href="ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222">omeps</a>*es);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a630c4c3e10ef44d50ca4c6939a59b6a3"><div class="ttname"><a href="ERF__Constants_8H.html#a630c4c3e10ef44d50ca4c6939a59b6a3">epsilo</a></div><div class="ttdeci">constexpr amrex::Real epsilo</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:134</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_af04ee89db2f653c028681f044bd16222"><div class="ttname"><a href="ERF__Constants_8H.html#af04ee89db2f653c028681f044bd16222">omeps</a></div><div class="ttdeci">constexpr amrex::Real omeps</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:135</div></div>
 </div><!-- fragment -->
@@ -904,10 +1042,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a25e9dd28dcfcfd4e060472815e8389fa_icgraph.png" border="0" usemap="#aclassSatMethods_a25e9dd28dcfcfd4e060472815e8389fa_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a25e9dd28dcfcfd4e060472815e8389fa_icgraph" id="aclassSatMethods_a25e9dd28dcfcfd4e060472815e8389fa_icgraph">
-<area shape="rect" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title=" " alt="" coords="5,5,159,47"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
-<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title=" " alt="" coords="5,136,159,177"/>
+<area shape="rect" title="Get saturation specific humidity given pressure and SVP." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a56fe37f0cb4e8c7cc1ecb8a3daa0c579" title="Calculate SVP over ice and saturation specific humidity." alt="" coords="5,5,159,47"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
+<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title="Calculate SVP over water and saturation specific humidity." alt="" coords="5,136,159,177"/>
 </map>
 </div>
 
@@ -946,29 +1084,39 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                                              {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> esice;      <span class="comment">// Saturation vapor pressure over ice</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> weight;     <span class="comment">// Intermediate scratch variable for es transition</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> es;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// Water</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> &gt;= (<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a> - <a class="code" href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a>))</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            es = <a class="code" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>,<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            es = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment">// Ice</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> &lt; <a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>) {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            esice = <a class="code" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>,<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">if</span> ( (<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a> - <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) &gt; <a class="code" href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a> )</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                weight = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                weight = (<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a> - <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)/<a class="code" href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            es = weight*esice + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - weight)*es;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">return</span> es;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+
+<p>Calculate transition saturation vapor pressure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Scheme index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transition saturation vapor pressure. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                                                                              {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> esice;      <span class="comment">// Saturation vapor pressure over ice</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> weight;     <span class="comment">// Intermediate scratch variable for es transition</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> es;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// Water</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> &gt;= (<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a> - <a class="code" href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a>))</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            es = <a class="code" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766">wv_sat_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>,<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            es = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="comment">// Ice</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a> &lt; <a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a>) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            esice = <a class="code" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e">wv_sat_svp_ice</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>,<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">if</span> ( (<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a> - <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>) &gt; <a class="code" href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a> )</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                weight = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                weight = (<a class="code" href="ERF__Constants_8H.html#a764526b482e006cd52004d3f53467b57">tmelt</a> - <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>)/<a class="code" href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            es = weight*esice + (<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(1) - weight)*es;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">return</span> es;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a9b3da60e1e65429fe546d18c9c926105"><div class="ttname"><a href="ERF__Constants_8H.html#a9b3da60e1e65429fe546d18c9c926105">ttrice</a></div><div class="ttdeci">constexpr amrex::Real ttrice</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:133</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b">wv_sat_qsat_trans()</a>.</p>
@@ -977,17 +1125,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_cgraph.png" border="0" usemap="#aclassSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_cgraph" alt=""/></div>
 <map name="aclassSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_cgraph" id="aclassSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_cgraph">
-<area shape="rect" title=" " alt="" coords="5,195,159,236"/>
+<area shape="rect" title="Calculate transition saturation vapor pressure." alt="" coords="5,195,159,236"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="486,202,529,229"/>
-<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title=" " alt="" coords="207,285,360,327"/>
-<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title=" " alt="" coords="207,136,360,177"/>
-<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title=" " alt="" coords="433,253,582,295"/>
-<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title=" " alt="" coords="419,449,596,491"/>
-<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title=" " alt="" coords="413,319,601,360"/>
-<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title=" " alt="" coords="408,384,607,425"/>
-<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title=" " alt="" coords="419,71,596,112"/>
-<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title=" " alt="" coords="413,136,601,177"/>
-<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title=" " alt="" coords="408,5,607,47"/>
+<area shape="rect" href="classSatMethods.html#add2fde8076c60c19ed9f4f78c9891e0e" title="Dispatcher for saturation vapor pressure over ice." alt="" coords="207,285,360,327"/>
+<area shape="rect" href="classSatMethods.html#a1c4bb9729c75dd1160d45ae638635766" title="Dispatcher for saturation vapor pressure over water." alt="" coords="207,136,360,177"/>
+<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title="Bolton (1980) saturation vapor pressure over water." alt="" coords="433,253,582,295"/>
+<area shape="rect" href="classSatMethods.html#a9e929b8ac05dbeaa78dc158159f84758" title="Goff &amp; Gratch (1946) saturation vapor pressure over ice." alt="" coords="419,449,596,491"/>
+<area shape="rect" href="classSatMethods.html#a87786f42b9d0601dc1d22f635906a76f" title="Murphy &amp; Koop (2005) saturation vapor pressure over ice." alt="" coords="413,319,601,360"/>
+<area shape="rect" href="classSatMethods.html#a185a448ec1db160bc61f23cbda63f4bd" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over ice." alt="" coords="408,384,607,425"/>
+<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title="Goff &amp; Gratch (1946) saturation vapor pressure over water." alt="" coords="419,71,596,112"/>
+<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title="Murphy &amp; Koop (2005) saturation vapor pressure over water." alt="" coords="413,136,601,177"/>
+<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over water." alt="" coords="408,5,607,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -995,8 +1143,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_icgraph.png" border="0" usemap="#aclassSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_icgraph" alt=""/></div>
 <map name="aclassSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_icgraph" id="aclassSatMethods_ac2fa5e55257c6021e9e7fd897f4950b7_icgraph">
-<area shape="rect" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,5,159,47"/>
+<area shape="rect" title="Calculate transition saturation vapor pressure." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,5,159,47"/>
 </map>
 </div>
 
@@ -1035,24 +1183,34 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                                                              {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> es;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">GoffGratch</a>:</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                es = <a class="code" href="classSatMethods.html#a264a283910d028a29c374900fc03017f">GoffGratch_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">MurphyKoop</a>:</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                es = <a class="code" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3">MurphyKoop_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">OldGoffGratch</a>:</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                es = <a class="code" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f">OldGoffGratch_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">Bolton</a>:</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                es = <a class="code" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">Bolton_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> es;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="ttc" id="aclassSatMethods_html_a264a283910d028a29c374900fc03017f"><div class="ttname"><a href="classSatMethods.html#a264a283910d028a29c374900fc03017f">SatMethods::GoffGratch_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real GoffGratch_svp_water(const amrex::Real &amp;t)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:158</div></div>
-<div class="ttc" id="aclassSatMethods_html_a8458bd6a233082c463c070ddc692080f"><div class="ttname"><a href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f">SatMethods::OldGoffGratch_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real OldGoffGratch_svp_water(const amrex::Real &amp;t)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:207</div></div>
-<div class="ttc" id="aclassSatMethods_html_aac1daa9a38464e217df80a4f9613bcb3"><div class="ttname"><a href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3">SatMethods::MurphyKoop_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real MurphyKoop_svp_water(const amrex::Real &amp;t)</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:177</div></div>
+
+<p>Dispatcher for saturation vapor pressure over water. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Temperature. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Scheme index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Saturation vapor pressure over water. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                                                              {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> es;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">switch</span>(<a class="code" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de">idx</a>)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7ab35ed313acae6ed02218056f81d56455">GoffGratch</a>:</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                es = <a class="code" href="classSatMethods.html#a264a283910d028a29c374900fc03017f">GoffGratch_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7a614be0679f050250e4d5494708d1136a">MurphyKoop</a>:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                es = <a class="code" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3">MurphyKoop_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aebef486906cc4e78c948e4b43f6680db">OldGoffGratch</a>:</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                es = <a class="code" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f">OldGoffGratch_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="classSatMethods.html#a62096d95f324cd2a3504554437067ef7aad1ba505f7c25afbfb5c6fe45f03789d">Bolton</a>:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                es = <a class="code" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6">Bolton_svp_water</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98acd9c9ab9115542c95cb81d1fccb59419">t</a>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordflow">return</span> es;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="ttc" id="aclassSatMethods_html_a264a283910d028a29c374900fc03017f"><div class="ttname"><a href="classSatMethods.html#a264a283910d028a29c374900fc03017f">SatMethods::GoffGratch_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real GoffGratch_svp_water(const amrex::Real &amp;t)</div><div class="ttdoc">Goff &amp; Gratch (1946) saturation vapor pressure over water.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:214</div></div>
+<div class="ttc" id="aclassSatMethods_html_a8458bd6a233082c463c070ddc692080f"><div class="ttname"><a href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f">SatMethods::OldGoffGratch_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real OldGoffGratch_svp_water(const amrex::Real &amp;t)</div><div class="ttdoc">Old CAM implementation of Goff &amp; Gratch (1946) SVP over water.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:283</div></div>
+<div class="ttc" id="aclassSatMethods_html_aac1daa9a38464e217df80a4f9613bcb3"><div class="ttname"><a href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3">SatMethods::MurphyKoop_svp_water</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE static AMREX_FORCE_INLINE amrex::Real MurphyKoop_svp_water(const amrex::Real &amp;t)</div><div class="ttdoc">Murphy &amp; Koop (2005) saturation vapor pressure over water.</div><div class="ttdef"><b>Definition:</b> ERF_SatMethods.H:243</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887">wv_sat_qsat_water()</a>, and <a class="el" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7">wv_sat_svp_trans()</a>.</p>
 <div class="dynheader">
@@ -1060,12 +1218,12 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a1c4bb9729c75dd1160d45ae638635766_cgraph.png" border="0" usemap="#aclassSatMethods_a1c4bb9729c75dd1160d45ae638635766_cgraph" alt=""/></div>
 <map name="aclassSatMethods_a1c4bb9729c75dd1160d45ae638635766_cgraph" id="aclassSatMethods_a1c4bb9729c75dd1160d45ae638635766_cgraph">
-<area shape="rect" title=" " alt="" coords="5,129,159,171"/>
-<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title=" " alt="" coords="231,5,381,47"/>
-<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title=" " alt="" coords="217,71,395,112"/>
+<area shape="rect" title="Dispatcher for saturation vapor pressure over water." alt="" coords="5,129,159,171"/>
+<area shape="rect" href="classSatMethods.html#a128ccad46f784c2d1aaeda372833dab6" title="Bolton (1980) saturation vapor pressure over water." alt="" coords="231,5,381,47"/>
+<area shape="rect" href="classSatMethods.html#a264a283910d028a29c374900fc03017f" title="Goff &amp; Gratch (1946) saturation vapor pressure over water." alt="" coords="217,71,395,112"/>
 <area shape="rect" href="ERF__InitForEnsemble_8cpp.html#a221b1f8dc1b747f1e88990c65e3681de" title=" " alt="" coords="285,137,327,163"/>
-<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title=" " alt="" coords="212,188,400,229"/>
-<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title=" " alt="" coords="207,253,405,295"/>
+<area shape="rect" href="classSatMethods.html#aac1daa9a38464e217df80a4f9613bcb3" title="Murphy &amp; Koop (2005) saturation vapor pressure over water." alt="" coords="212,188,400,229"/>
+<area shape="rect" href="classSatMethods.html#a8458bd6a233082c463c070ddc692080f" title="Old CAM implementation of Goff &amp; Gratch (1946) SVP over water." alt="" coords="207,253,405,295"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1073,10 +1231,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSatMethods_a1c4bb9729c75dd1160d45ae638635766_icgraph.png" border="0" usemap="#aclassSatMethods_a1c4bb9729c75dd1160d45ae638635766_icgraph" alt=""/></div>
 <map name="aclassSatMethods_a1c4bb9729c75dd1160d45ae638635766_icgraph" id="aclassSatMethods_a1c4bb9729c75dd1160d45ae638635766_icgraph">
-<area shape="rect" title=" " alt="" coords="408,39,561,80"/>
-<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title=" " alt="" coords="207,5,360,47"/>
-<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title=" " alt="" coords="207,71,360,112"/>
-<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title=" " alt="" coords="5,71,159,112"/>
+<area shape="rect" title="Dispatcher for saturation vapor pressure over water." alt="" coords="408,39,561,80"/>
+<area shape="rect" href="classSatMethods.html#a4bd54f09d16625512acdb6118a2ed887" title="Calculate SVP over water and saturation specific humidity." alt="" coords="207,5,360,47"/>
+<area shape="rect" href="classSatMethods.html#ac2fa5e55257c6021e9e7fd897f4950b7" title="Calculate transition saturation vapor pressure." alt="" coords="207,71,360,112"/>
+<area shape="rect" href="classSatMethods.html#a04e5fc642c88eda0767e507a9183682b" title="Calculate transition SVP and saturation specific humidity." alt="" coords="5,71,159,112"/>
 </map>
 </div>
 

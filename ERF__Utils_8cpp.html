@@ -151,6 +151,8 @@ Include dependency graph for ERF_Utils.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a202ec5e8277d63b1994d1f515a24ee43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8cpp.html#a202ec5e8277d63b1994d1f515a24ee43">cons_to_prim</a> (const MultiFab &amp;cons_state, MultiFab &amp;S_prim, int ng)</td></tr>
 <tr class="separator:a202ec5e8277d63b1994d1f515a24ee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a461af2794b7a1c392dde63073d5fb9ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8cpp.html#a461af2794b7a1c392dde63073d5fb9ae">fill_wall_dist_ghost_cells</a> (MultiFab &amp;wdist, const Geometry &amp;geom)</td></tr>
+<tr class="separator:a461af2794b7a1c392dde63073d5fb9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d250a926aa7492952d578142423a181"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__Utils_8cpp.html#a2d250a926aa7492952d578142423a181">make_qt</a> (const MultiFab &amp;cons_state, MultiFab &amp;qt, int n_qstate_into_total)</td></tr>
 <tr class="separator:a2d250a926aa7492952d578142423a181"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -186,40 +188,49 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;cons_to_prim()&quot;</span>);</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">int</span> ncomp_prim = S_prim.nComp();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cons_state,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#a383f67acb3079b5f50851667cca71a4ea281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cons_arr     = cons_state.array(mfi);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; prim_arr     = S_prim.array(mfi);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">// We may need &gt; one ghost cells of prim in order to compute higher order advective terms</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;       <span class="comment">//</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;       <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;       {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;           <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>       = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;           <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_theta = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;           prim_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) = rho_theta / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;           <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 1; n &lt; ncomp_prim; ++n) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;               prim_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a> + n) = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a> + n) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;           }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;       });</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    } <span class="comment">// mfi</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:55</div></div>
-<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:107</div></div>
+<p>Convert conservative variables to primitive variables.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cons_state</td><td>MultiFab containing conservative state variables </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S_prim</td><td>MultiFab to be filled with primitive state variables </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ng</td><td>Number of ghost cells </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;cons_to_prim()&quot;</span>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> ncomp_prim = S_prim.nComp();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifdef _OPENMP</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#pragma omp parallel if (amrex::Gpu::notInLaunchRegion())</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(cons_state,TilingIfNotGPU()); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(<a class="code" href="namespaceMicVar__Morr.html#a383f67acb3079b5f50851667cca71a4ea281c2ff050bdb2a9349d3408926af821">ng</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> Array4&lt;const Real&gt;&amp; cons_arr     = cons_state.array(mfi);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">const</span> Array4&lt;      Real&gt;&amp; prim_arr     = S_prim.array(mfi);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">// We may need &gt; one ghost cells of prim in order to compute higher order advective terms</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;       <span class="comment">//</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;       <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">amrex::ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;       {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;           <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a>       = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;           <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> rho_theta = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;           prim_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a>) = rho_theta / <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;           <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 1; n &lt; ncomp_prim; ++n) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;               prim_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a> + n) = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a> + n) / <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;           }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;       });</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:39</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:40</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a8b9c5b827b61f426a3879bc5d2883040"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a8b9c5b827b61f426a3879bc5d2883040">PrimTheta_comp</a></div><div class="ttdeci">#define PrimTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:58</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:24</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a383f67acb3079b5f50851667cca71a4ea281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#a383f67acb3079b5f50851667cca71a4ea281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:49</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc">ERF::advance_dycore()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
@@ -240,6 +251,99 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="213,31,323,57"/>
 <area shape="rect" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc" title=" " alt="" coords="5,5,165,32"/>
 <area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="8,56,163,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a461af2794b7a1c392dde63073d5fb9ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a461af2794b7a1c392dde63073d5fb9ae">&#9670;&nbsp;</a></span>fill_wall_dist_ghost_cells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fill_wall_dist_ghost_cells </td>
+          <td>(</td>
+          <td class="paramtype">MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>wdist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Geometry &amp;&#160;</td>
+          <td class="paramname"><em>geom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fill the ghost cells of the wall distance field.</p>
+<p>The wall distance is only computed on the valid region of each box (whether from the analytic shortcuts, the Poisson solve, or the thin-body correction), so without this the ghost cells still hold the large sentinel value they were initialized with. Any operator that reads wall distance from a grown box &ndash; e.g. the RANS Dirichlet-k boundary condition in <a class="el" href="classSurfaceLayer.html#a0aa56068c40954efbad722bae1ab243a">SurfaceLayer::update_fluxes</a> &ndash; would then propagate that sentinel into the state.</p>
+<p>Ghost cells shared with a neighboring box or across a periodic boundary are filled by FillBoundary; ghost cells outside the domain in a non-periodic direction are filled by zero-order extrapolation. Note that the analytic wall distances vary only with k, so the extrapolation is exact in those cases.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">wdist</td><td>MultiFab holding the wall distance </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">geom</td><td>Geometry at this level </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;fill_wall_dist_ghost_cells()&quot;</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    wdist.FillBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dom_lo = amrex::lbound(domain);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dom_hi = amrex::ubound(domain);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">const</span> GpuArray&lt;int,AMREX_SPACEDIM&gt; is_per = {AMREX_D_DECL(geom.isPeriodic(0),</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                                              geom.isPeriodic(1),</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                              geom.isPeriodic(2))};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(wdist); mfi.isValid(); ++mfi)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">const</span> Box&amp; gbx = mfi.fabbox();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keyword">const</span> Array4&lt;Real&gt;&amp; d_arr = wdist.array(mfi);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// Note that the cells we read from are always inside the domain in</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// every non-periodic direction, hence already filled, and are disjoint</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// from the cells we write to.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">//</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> ii = (is_per[0]) ? i : amrex::min(amrex::max(i,dom_lo.x),dom_hi.x);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> jj = (is_per[1]) ? j : amrex::min(amrex::max(j,dom_lo.y),dom_hi.y);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> kk = (is_per[2]) ? k : amrex::min(amrex::max(k,dom_lo.z),dom_hi.z);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (ii != i || jj != j || kk != k) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                d_arr(i,j,k) = d_arr(ii,jj,kk);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        });</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    } <span class="comment">// mfi</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, and <a class="el" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239">ERF::poisson_wall_dist()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_cgraph.png" border="0" usemap="#aERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_cgraph" alt=""/></div>
+<map name="aERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_cgraph" id="aERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,152,47"/>
+<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="200,13,291,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="ERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_icgraph.png" border="0" usemap="#aERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_icgraph" alt=""/></div>
+<map name="aERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_icgraph" id="aERF__Utils_8cpp_a461af2794b7a1c392dde63073d5fb9ae_icgraph">
+<area shape="rect" title=" " alt="" coords="223,23,369,65"/>
+<area shape="rect" href="classERF.html#aa8b243c093bd872b6f7592603ff97792" title=" " alt="" coords="19,5,161,32"/>
+<area shape="rect" href="classERF.html#a984c145a81739ab4c7f8fd03a334d239" title=" " alt="" coords="5,56,175,83"/>
 </map>
 </div>
 
@@ -276,19 +380,28 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;make_qt()&quot;</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// All moisture models are guaranteed to have RhoQ1_comp.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    MultiFab::Copy(<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 1; n &lt; n_qstate_into_total; ++n) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        MultiFab::Add(<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>+n, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    MultiFab::Divide(<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
+<p>Compute the total water mixing ratio from conservative variables.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cons_state</td><td>MultiFab containing conservative state variables </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">qt</td><td>MultiFab to store the total water mixing ratio </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_qstate_into_total</td><td>Number of moisture components to include in the total </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    BL_PROFILE(<span class="stringliteral">&quot;make_qt()&quot;</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// All moisture models are guaranteed to have RhoQ1_comp.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    MultiFab::Copy(<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 1; n &lt; n_qstate_into_total; ++n) {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        MultiFab::Add(<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>+n, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    MultiFab::Divide(<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>, cons_state, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>, 0, 1, <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">qt</a>.nGrowVect());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:45</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03"><div class="ttname"><a href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a9f81c8a38dd25b5ae5821d48e8878b03">MicVar_Kess::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:29</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a68cadb0e228fe398bd1ee7bd96788bb4">ERF::compute_max_pressure_gradient_diagnostic()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>

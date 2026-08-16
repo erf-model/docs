@@ -121,13 +121,35 @@ $(document).ready(function(){initNavTree('ERF__InterpolationUtils_8H_source.html
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cic_interpolate(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <span class="comment">// namespace Interpolation</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <span class="comment">// namespace ERF</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_INTERPOLATION_UTILS_H</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * @brief Test whether a particle&#39;s vertical CIC stencil reads past the local</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> *        fab.  cic_interpolate reads cell-centered data at k0+1 and k0+2 with</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> *        k0 in {pk-1, pk}, so the maximum read offset is pk+2.  Returns true</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> *        if the stencil is out of bounds and the caller should skip the</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> *        particle.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> ParticleType, <span class="keyword">typename</span> Array4Type&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;AMREX_GPU_DEVICE AMREX_FORCE_INLINE</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespaceERF_1_1Interpolation.html#a117832d8de5c92e7ba2983d5168770ce">   46</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespaceERF_1_1Interpolation.html#a117832d8de5c92e7ba2983d5168770ce">stencilOutOfBoundsZ</a>(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> ParticleType&amp; <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; plo,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> amrex::GpuArray&lt;amrex::Real, AMREX_SPACEDIM&gt;&amp; dxi,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> Array4Type&amp; zheight</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;) noexcept</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> pk = int(amrex::Math::floor((<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">p</a>.pos(AMREX_SPACEDIM-1) - plo[AMREX_SPACEDIM-1])</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                          * dxi[AMREX_SPACEDIM-1]));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> (pk &lt; zheight.begin[2] || pk + 2 &gt;= zheight.end[2]);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace Interpolation</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace ERF</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_INTERPOLATION_UTILS_H</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__TerrainConversion_8H_html"><div class="ttname"><a href="ERF__TerrainConversion_8H.html">ERF_TerrainConversion.H</a></div></div>
+<div class="ttc" id="anamespaceERF_1_1Interpolation_html_a117832d8de5c92e7ba2983d5168770ce"><div class="ttname"><a href="namespaceERF_1_1Interpolation.html#a117832d8de5c92e7ba2983d5168770ce">ERF::Interpolation::stencilOutOfBoundsZ</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE bool stencilOutOfBoundsZ(const ParticleType &amp;p, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxi, const Array4Type &amp;zheight) noexcept</div><div class="ttdoc">Test whether a particle's vertical CIC stencil reads past the local fab. cic_interpolate reads cell-c...</div><div class="ttdef"><b>Definition:</b> ERF_InterpolationUtils.H:46</div></div>
 <div class="ttc" id="anamespaceERF_1_1Interpolation_html_ab1b8576c9ac7ae9803bd445af83f2bfe"><div class="ttname"><a href="namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe">ERF::Interpolation::interpolateFields</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void interpolateFields(const ParticleType &amp;p, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;plo, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxi, const amrex::Array4&lt; const amrex::Real &gt; *field_arrays, amrex::ParticleReal *result_values, int num_fields)</div><div class="ttdoc">Interpolate multiple field values at a particle position using CIC.</div><div class="ttdef"><b>Definition:</b> ERF_InterpolationUtils.H:24</div></div>
 <div class="ttc" id="anamespaceERF_html"><div class="ttname"><a href="namespaceERF.html">ERF</a></div><div class="ttdef"><b>Definition:</b> ERF_InterpolationUtils.H:16</div></div>
 <div class="ttc" id="anamespaceWSM6Ind_html_a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98ad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:191</div></div>

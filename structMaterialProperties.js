@@ -8,6 +8,7 @@ var structMaterialProperties =
     [ "print", "structMaterialProperties.html#a89ef062ca1ae53473a5df19ef7f41ab2", null ],
     [ "setProperties_agua", "structMaterialProperties.html#acb770dd37785f1959f65ae719beba36e", null ],
     [ "setProperties_H2O", "structMaterialProperties.html#ac2420acd6e85c5850262d8188d41c15f", null ],
+    [ "setProperties_ice", "structMaterialProperties.html#a6a545d828d88d33932a066e5bb8f5ef9", null ],
     [ "setProperties_NaCl", "structMaterialProperties.html#a8fe310f02a1bd3c9795bb06beee4b883", null ],
     [ "setProperties_NH42SO4", "structMaterialProperties.html#a795ab3f69cf3b254d1f383743ee96e7c", null ],
     [ "setProperties_NH4HSO4", "structMaterialProperties.html#a6c221b83b4b30a5543e290b6b26bc01b", null ],

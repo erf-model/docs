@@ -1,7 +1,9 @@
 var ERF__MaterialProperties_8cpp =
 [
     [ "compute_saturation_pressure_H2O", "ERF__MaterialProperties_8cpp.html#aa675e7b5c5296bdfa641923e202f3372", null ],
+    [ "compute_saturation_pressure_ice", "ERF__MaterialProperties_8cpp.html#aba5559eb44895b9b07bded4d5e18578a", null ],
     [ "compute_saturation_pressure_null", "ERF__MaterialProperties_8cpp.html#a1068a24a60a53feeaafbf97fb09ee2c1", null ],
     [ "compute_saturation_vapfrac_H2O", "ERF__MaterialProperties_8cpp.html#a34214d4be4561f8950fadf2b4fafc5a5", null ],
+    [ "compute_saturation_vapfrac_ice", "ERF__MaterialProperties_8cpp.html#aea709a084013fba6b646d59efb3cb3c5", null ],
     [ "compute_saturation_vapfrac_null", "ERF__MaterialProperties_8cpp.html#a3457f65a811cff737b96b5ff40332063", null ]
 ];

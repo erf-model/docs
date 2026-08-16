@@ -91,13 +91,16 @@ $(document).ready(function(){initNavTree('structerf__cloud__chamber_1_1Config.ht
 </div><!--header-->
 <div class="contents">
 
+<p>Configuration parameters for cloud chamber initialization.  
+ <a href="structerf__cloud__chamber_1_1Config.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ERF__CloudChamber_8H_source.html">ERF_CloudChamber.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for erf_cloud_chamber::Config:</div>
 <div class="dyncontent">
 <div class="center"><img src="structerf__cloud__chamber_1_1Config__coll__graph.png" border="0" usemap="#aerf__cloud__chamber_1_1Config_coll__map" alt="Collaboration graph"/></div>
 <map name="aerf__cloud__chamber_1_1Config_coll__map" id="aerf__cloud__chamber_1_1Config_coll__map">
-<area shape="rect" title=" " alt="" coords="404,116,559,157"/>
+<area shape="rect" title="Configuration parameters for cloud chamber initialization." alt="" coords="404,116,559,157"/>
 <area shape="rect" title=" " alt="" coords="5,5,187,47"/>
 <area shape="rect" title=" " alt="" coords="5,71,187,127"/>
 <area shape="rect" title=" " alt="" coords="71,161,121,187"/>
@@ -108,6 +111,7 @@ Collaboration diagram for erf_cloud_chamber::Config:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a16aef4ec3cdf8a3d2cae8b93903ad613"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceerf__wall__thermodynamics.html#aec0132049f0ab9366caa42da20ada261">erf_wall_thermodynamics::Boundary</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__cloud__chamber_1_1Config.html#a16aef4ec3cdf8a3d2cae8b93903ad613">wall_boundary</a> () const noexcept</td></tr>
+<tr class="memdesc:a16aef4ec3cdf8a3d2cae8b93903ad613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collect thermodynamic boundary conditions for all chamber walls.  <a href="structerf__cloud__chamber_1_1Config.html#a16aef4ec3cdf8a3d2cae8b93903ad613">More...</a><br /></td></tr>
 <tr class="separator:a16aef4ec3cdf8a3d2cae8b93903ad613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -143,7 +147,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a088bfdd79096b8a99f818ff9a671291b"><td class="memItemLeft" align="right" valign="top">amrex::GpuArray&lt; <a class="el" href="structerf__cloud__chamber_1_1WallSpec.html">WallSpec</a>, 2 *AMREX_SPACEDIM &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__cloud__chamber_1_1Config.html#a088bfdd79096b8a99f818ff9a671291b">walls</a> = {}</td></tr>
 <tr class="separator:a088bfdd79096b8a99f818ff9a671291b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration parameters for cloud chamber initialization. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a16aef4ec3cdf8a3d2cae8b93903ad613"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16aef4ec3cdf8a3d2cae8b93903ad613">&#9670;&nbsp;</a></span>wall_boundary()</h2>
 
@@ -166,24 +172,27 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="namespaceerf__wall__thermodynamics.html#aec0132049f0ab9366caa42da20ada261">erf_wall_thermodynamics::Boundary</a> boundary{};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; 2 * AMREX_SPACEDIM; ++n) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            boundary[n] = <a class="code" href="structerf__cloud__chamber_1_1Config.html#a088bfdd79096b8a99f818ff9a671291b">walls</a>[n].thermodynamics;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> boundary;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+
+<p>Collect thermodynamic boundary conditions for all chamber walls. </p>
+<dl class="section return"><dt>Returns</dt><dd>Boundary array containing thermodynamics for each face. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="namespaceerf__wall__thermodynamics.html#aec0132049f0ab9366caa42da20ada261">erf_wall_thermodynamics::Boundary</a> boundary{};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> n = 0; n &lt; 2 * AMREX_SPACEDIM; ++n) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            boundary[n] = <a class="code" href="structerf__cloud__chamber_1_1Config.html#a088bfdd79096b8a99f818ff9a671291b">walls</a>[n].thermodynamics;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> boundary;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aec0132049f0ab9366caa42da20ada261"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aec0132049f0ab9366caa42da20ada261">erf_wall_thermodynamics::Boundary</a></div><div class="ttdeci">amrex::GpuArray&lt; Face, 2 *AMREX_SPACEDIM &gt; Boundary</div><div class="ttdef"><b>Definition:</b> ERF_WallThermodynamics.H:34</div></div>
-<div class="ttc" id="astructerf__cloud__chamber_1_1Config_html_a088bfdd79096b8a99f818ff9a671291b"><div class="ttname"><a href="structerf__cloud__chamber_1_1Config.html#a088bfdd79096b8a99f818ff9a671291b">erf_cloud_chamber::Config::walls</a></div><div class="ttdeci">amrex::GpuArray&lt; WallSpec, 2 *AMREX_SPACEDIM &gt; walls</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamber.H:50</div></div>
+<div class="ttc" id="astructerf__cloud__chamber_1_1Config_html_a088bfdd79096b8a99f818ff9a671291b"><div class="ttname"><a href="structerf__cloud__chamber_1_1Config.html#a088bfdd79096b8a99f818ff9a671291b">erf_cloud_chamber::Config::walls</a></div><div class="ttdeci">amrex::GpuArray&lt; WallSpec, 2 *AMREX_SPACEDIM &gt; walls</div><div class="ttdef"><b>Definition:</b> ERF_CloudChamber.H:56</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a1dddff5af25f727f633da7aec7c14972">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structerf__cloud__chamber_1_1Config_a16aef4ec3cdf8a3d2cae8b93903ad613_icgraph.png" border="0" usemap="#astructerf__cloud__chamber_1_1Config_a16aef4ec3cdf8a3d2cae8b93903ad613_icgraph" alt=""/></div>
 <map name="astructerf__cloud__chamber_1_1Config_a16aef4ec3cdf8a3d2cae8b93903ad613_icgraph" id="astructerf__cloud__chamber_1_1Config_a16aef4ec3cdf8a3d2cae8b93903ad613_icgraph">
-<area shape="rect" title=" " alt="" coords="192,23,359,65"/>
-<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a1dddff5af25f727f633da7aec7c14972" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" title="Collect thermodynamic boundary conditions for all chamber walls." alt="" coords="192,23,359,65"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171" title=" " alt="" coords="5,5,144,32"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47" title=" " alt="" coords="9,56,141,83"/>
 </map>
 </div>
@@ -275,7 +284,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a1dddff5af25f727f633da7aec7c14972">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2">ERF::ERF_shared()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, and <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>.</p>
 
 </div>
 </div>

@@ -91,13 +91,16 @@ $(document).ready(function(){initNavTree('structPBLDerivativeDzInv__T.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>Functor for inverse vertical spacings for terrain-following grids using cell-center heights.  
+ <a href="structPBLDerivativeDzInv__T.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ERF__PBLModels_8H_source.html">ERF_PBLModels.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for PBLDerivativeDzInv_T:</div>
 <div class="dyncontent">
 <div class="center"><img src="structPBLDerivativeDzInv__T__coll__graph.png" border="0" usemap="#aPBLDerivativeDzInv__T_coll__map" alt="Collaboration graph"/></div>
 <map name="aPBLDerivativeDzInv__T_coll__map" id="aPBLDerivativeDzInv__T_coll__map">
-<area shape="rect" title=" " alt="" coords="5,109,172,136"/>
+<area shape="rect" title="Functor for inverse vertical spacings for terrain&#45;following grids using cell&#45;center heights." alt="" coords="5,109,172,136"/>
 <area shape="rect" title=" " alt="" coords="8,5,169,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -112,7 +115,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a93ded8c4f053d5952935687b5bb3a42a"><td class="memItemLeft" align="right" valign="top">amrex::Array4&lt; const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a></td></tr>
 <tr class="separator:a93ded8c4f053d5952935687b5bb3a42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Functor for inverse vertical spacings for terrain-following grids using cell-center heights. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab9641af110509c84ccb431cbf949618d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9641af110509c84ccb431cbf949618d">&#9670;&nbsp;</a></span>operator()()</h2>
 
@@ -152,14 +157,23 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    {</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (<a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k+1) - <a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k-1)),</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (<a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k  ) - <a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k-1)),</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (<a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k+1) - <a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k  ))};</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    }</div>
+<p>Return inverse vertical spacings for terrain-following grids. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>x-index </td></tr>
+    <tr><td class="paramname">j</td><td>y-index </td></tr>
+    <tr><td class="paramname">k</td><td>z-index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structPBLDerivativeDzInv.html">PBLDerivativeDzInv</a> inverse spacing values </dd></dl>
+<div class="fragment"><div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    {</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> / (<a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k+1) - <a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k-1)),</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (<a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k  ) - <a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k-1)),</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (<a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k+1) - <a class="code" href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">z_cc</a>(i,j,k  ))};</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
-<div class="ttc" id="astructPBLDerivativeDzInv__T_html_a93ded8c4f053d5952935687b5bb3a42a"><div class="ttname"><a href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">PBLDerivativeDzInv_T::z_cc</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; z_cc</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:417</div></div>
+<div class="ttc" id="astructPBLDerivativeDzInv__T_html_a93ded8c4f053d5952935687b5bb3a42a"><div class="ttname"><a href="structPBLDerivativeDzInv__T.html#a93ded8c4f053d5952935687b5bb3a42a">PBLDerivativeDzInv_T::z_cc</a></div><div class="ttdeci">amrex::Array4&lt; const amrex::Real &gt; z_cc</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:458</div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -23,15 +23,15 @@ var namespaces_dup =
       [ "erf_dermagvelsq", "namespacederived.html#a73c1e1bed53bf6998df09bfd3a01a961", null ],
       [ "erf_dermagvelsq", "namespacederived.html#a047b18c7cb8f69e3ffbaa31c1e211382", null ],
       [ "erf_dermaxreflectivity", "namespacederived.html#ad2a98426b3ae7eccfb19578dd593c7aa", null ],
-      [ "erf_dermaxreflectivity", "namespacederived.html#ac60badd494eb8b125d85826538d0f8ce", null ],
+      [ "erf_dermaxreflectivity", "namespacederived.html#af1d55daa7759e72f93563e6ce899d375", null ],
       [ "erf_dermoisttemp", "namespacederived.html#ae7aff8d5c152597cc23d8946c1f47766", null ],
       [ "erf_dermoisttemp", "namespacederived.html#a591cb412598c637cf413d45840c34331", null ],
       [ "erf_dermucape", "namespacederived.html#a95e8691e3da0b2cf93da2c92e4b973c5", null ],
-      [ "erf_dermucape", "namespacederived.html#abfe5a3f0570951aa4a160af26a0288d2", null ],
+      [ "erf_dermucape", "namespacederived.html#aee8374cee1420bcd1da6e0e85ea8cae1", null ],
       [ "erf_dernull", "namespacederived.html#ac149fb421d49cbdb1804fbbe2472a307", null ],
       [ "erf_dernull", "namespacederived.html#aac38ebccfd26fccd9ed0c3209312046b", null ],
       [ "erf_derprecipitable", "namespacederived.html#a1d705a95a69d25c44cff59b05cb358e1", null ],
-      [ "erf_derprecipitable", "namespacederived.html#ac2e6f1fd28969aaf6241512e6e8f137d", null ],
+      [ "erf_derprecipitable", "namespacederived.html#aaf81bbd59c401a4ae87df8685d110d07", null ],
       [ "erf_derreflectivity", "namespacederived.html#a1403187af70a286ecec7628b614499ee", null ],
       [ "erf_derreflectivity", "namespacederived.html#ac1f7a8081649073a58ff89c1f542324b", null ],
       [ "erf_derrhodivide", "namespacederived.html#a9935603239fe8510b11179da8e76c39c", null ],
@@ -574,10 +574,14 @@ var namespaces_dup =
     [ "saturation_funcs", "namespacesaturation__funcs.html", [
       [ "compute_saturation_pressure_H2O", "namespacesaturation__funcs.html#aab3649a423971059794f41d2a34c234a", null ],
       [ "compute_saturation_pressure_H2O", "namespacesaturation__funcs.html#aa675e7b5c5296bdfa641923e202f3372", null ],
+      [ "compute_saturation_pressure_ice", "namespacesaturation__funcs.html#a49fb8e196f8a40d9590fe9da77ce7e74", null ],
+      [ "compute_saturation_pressure_ice", "namespacesaturation__funcs.html#aba5559eb44895b9b07bded4d5e18578a", null ],
       [ "compute_saturation_pressure_null", "namespacesaturation__funcs.html#a9bb07940e7d0b53e0f608dc4a5c9921a", null ],
       [ "compute_saturation_pressure_null", "namespacesaturation__funcs.html#a1068a24a60a53feeaafbf97fb09ee2c1", null ],
       [ "compute_saturation_vapfrac_H2O", "namespacesaturation__funcs.html#ab60ab340659e270ccf6fff1085eaac64", null ],
       [ "compute_saturation_vapfrac_H2O", "namespacesaturation__funcs.html#a34214d4be4561f8950fadf2b4fafc5a5", null ],
+      [ "compute_saturation_vapfrac_ice", "namespacesaturation__funcs.html#a79a910dfe8dcd315ba57111260ed3832", null ],
+      [ "compute_saturation_vapfrac_ice", "namespacesaturation__funcs.html#aea709a084013fba6b646d59efb3cb3c5", null ],
       [ "compute_saturation_vapfrac_null", "namespacesaturation__funcs.html#a9bd43c8bbe5f9fe965027489b52e6441", null ],
       [ "compute_saturation_vapfrac_null", "namespacesaturation__funcs.html#a3457f65a811cff737b96b5ff40332063", null ]
     ] ],
@@ -598,7 +602,7 @@ var namespaces_dup =
     ] ],
     [ "shoc", "namespaceshoc.html", "namespaceshoc" ],
     [ "Species", "namespaceSpecies.html", [
-      [ "AMREX_ENUM", "namespaceSpecies.html#af398940141c9daafeeae1dd0a54be259", null ]
+      [ "AMREX_ENUM", "namespaceSpecies.html#a271e3c94d9778cd31a3f8bb02a5860ee", null ]
     ] ],
     [ "SupDropInit", "namespaceSupDropInit.html", [
       [ "num_aerosols_max", "namespaceSupDropInit.html#a281fc9f3c461b471e1d64f979f724c49", null ],

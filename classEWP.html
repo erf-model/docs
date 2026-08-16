@@ -373,9 +373,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aclassEWP_html_a4f28000173748f88919eda5fbed1368e"><div class="ttname"><a href="classEWP.html#a4f28000173748f88919eda5fbed1368e">EWP::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceEWP.cpp:128</div></div>
+<div class="ttc" id="aclassEWP_html_a4f28000173748f88919eda5fbed1368e"><div class="ttname"><a href="classEWP.html#a4f28000173748f88919eda5fbed1368e">EWP::source_terms_cellcentered</a></div><div class="ttdeci">void source_terms_cellcentered(const amrex::Geometry &amp;geom, const amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;mf_vars, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_Nturb)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceEWP.cpp:133</div></div>
 <div class="ttc" id="aclassEWP_html_a7bcacd251e0186aa8b2d78cc150073e2"><div class="ttname"><a href="classEWP.html#a7bcacd251e0186aa8b2d78cc150073e2">EWP::compute_power_output</a></div><div class="ttdeci">void compute_power_output(const amrex::MultiFab &amp;cons_in, const amrex::MultiFab &amp;U_old, const amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;W_old, const amrex::MultiFab &amp;mf_SMark, const amrex::MultiFab &amp;mf_Nturb, const double &amp;time)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceEWP.cpp:29</div></div>
-<div class="ttc" id="aclassEWP_html_ad890827c159123f2eac4303d3c03923b"><div class="ttname"><a href="classEWP.html#ad890827c159123f2eac4303d3c03923b">EWP::update</a></div><div class="ttdeci">void update(const double &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_ewp)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceEWP.cpp:94</div></div>
+<div class="ttc" id="aclassEWP_html_ad890827c159123f2eac4303d3c03923b"><div class="ttname"><a href="classEWP.html#ad890827c159123f2eac4303d3c03923b">EWP::update</a></div><div class="ttdeci">void update(const double &amp;dt_advance, amrex::MultiFab &amp;cons_in, amrex::MultiFab &amp;U_old, amrex::MultiFab &amp;V_old, const amrex::MultiFab &amp;mf_vars_ewp)</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceEWP.cpp:99</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -468,37 +468,42 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">auto</span> u_vel          = U_old.array(mfi);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">auto</span> v_vel          = V_old.array(mfi);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">auto</span> w_vel          = W_old.array(mfi);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span>(SMark_array(i,j,k,0) == <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> avg_vel = std::pow(u_vel(i,j,k)*u_vel(i,j,k) +</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                        v_vel(i,j,k)*v_vel(i,j,k) +</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                        w_vel(i,j,k)*w_vel(i,j,k),<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> turb_power = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(d_wind_speed_ptr, d_power_ptr, avg_vel, n_spec_table);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                turb_power = turb_power*Nturb_array(i,j,k,0);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                Gpu::Atomic::Add(d_total_power_ptr,turb_power);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        });</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_total_power = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    Gpu::copy(Gpu::deviceToHost, d_total_power.dataPtr(), d_total_power.dataPtr()+1, &amp;h_total_power);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    amrex::ParallelAllReduce::Sum(&amp;h_total_power, 1, amrex::ParallelContext::CommunicatorAll());</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// NOTE: this reduction is driven by the cell-centered SMark/Nturb, so it</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">//       must run over the cell-centered tilebox. Using nodaltilebox(0)</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">//       here would include the plane at bigEnd(0)+1, which is a ghost</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">//       cell of this box and a valid cell of its x-neighbor, and so</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">//       would count that plane twice in the power sum below.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        Box tbx = mfi.tilebox();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span>(SMark_array(i,j,k,0) == <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> avg_vel = std::pow(u_vel(i,j,k)*u_vel(i,j,k) +</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                        v_vel(i,j,k)*v_vel(i,j,k) +</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                        w_vel(i,j,k)*w_vel(i,j,k),<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> turb_power = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(d_wind_speed_ptr, d_power_ptr, avg_vel, n_spec_table);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                turb_power = turb_power*Nturb_array(i,j,k,0);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                Gpu::Atomic::Add(d_total_power_ptr,turb_power);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        });</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">static</span> std::ofstream file(<span class="stringliteral">&quot;power_output_EWP.txt&quot;</span>, std::ios::app);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Check if the file opened successfully</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (!file.is_open()) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;Error opening file!&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            Abort(<span class="stringliteral">&quot;Could not open file to write power output in ERF_AdvanceSimpleAD.cpp&quot;</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        file &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; h_total_power &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        file.flush();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> h_total_power = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Gpu::copy(Gpu::deviceToHost, d_total_power.dataPtr(), d_total_power.dataPtr()+1, &amp;h_total_power);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    amrex::ParallelAllReduce::Sum(&amp;h_total_power, 1, amrex::ParallelContext::CommunicatorAll());</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (ParallelDescriptor::IOProcessor()){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">static</span> std::ofstream file(<span class="stringliteral">&quot;power_output_EWP.txt&quot;</span>, std::ios::app);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Check if the file opened successfully</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (!file.is_open()) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            std::cerr &lt;&lt; <span class="stringliteral">&quot;Error opening file!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            Abort(<span class="stringliteral">&quot;Could not open file to write power output in ERF_AdvanceSimpleAD.cpp&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        file &lt;&lt; time &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; h_total_power &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        file.flush();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__Interpolation__1D_8H_html_a803d0d35d4ca4791556cbe02bbf51cbb"><div class="ttname"><a href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real interpolate_1d(const amrex::Real *alpha, const amrex::Real *beta, const amrex::Real alpha_interp, const int alpha_size)</div><div class="ttdef"><b>Definition:</b> ERF_Interpolation_1D.H:14</div></div>
@@ -582,77 +587,77 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">get_turb_spec</a>(<a class="code" href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">rotor_rad</a>, <a class="code" href="classEWP.html#a2ee471b0dcad3057297b809f4c5141ab">hub_height</a>, <a class="code" href="classEWP.html#a22f50393881ced019cae2a74ee04cdea">thrust_coeff_standing</a>,</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                  <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>, <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>, <a class="code" href="classEWP.html#ab9a34e54d36268a3f7a0b376543bbff5">power</a>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom.CellSizeArray();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sigma_0 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.7)*<a class="code" href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">rotor_rad</a>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_rotor_rad = <a class="code" href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">rotor_rad</a>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_hub_height = <a class="code" href="classEWP.html#a2ee471b0dcad3057297b809f4c5141ab">hub_height</a>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  Gpu::DeviceVector&lt;Real&gt; d_wind_speed(<a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.size());</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  Gpu::DeviceVector&lt;Real&gt; d_thrust_coeff(<a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.size());</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="comment">// Copy data from host vectors to device vectors</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.begin(), <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.end(), d_wind_speed.begin());</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.begin(), <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.end(), d_thrust_coeff.begin());</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <a class="code" href="classNullWindFarm.html#a11fd7bf185b205f71197da8ba41edfb6">get_turb_spec</a>(<a class="code" href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">rotor_rad</a>, <a class="code" href="classEWP.html#a2ee471b0dcad3057297b809f4c5141ab">hub_height</a>, <a class="code" href="classEWP.html#a22f50393881ced019cae2a74ee04cdea">thrust_coeff_standing</a>,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                  <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>, <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>, <a class="code" href="classEWP.html#ab9a34e54d36268a3f7a0b376543bbff5">power</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a> = geom.CellSizeArray();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="keyword">auto</span> ProbLoArr = geom.ProbLoArray();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sigma_0 = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.7)*<a class="code" href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">rotor_rad</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_rotor_rad = <a class="code" href="classEWP.html#ac89ee08eabbf2cc7a64a7908a449f016">rotor_rad</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> d_hub_height = <a class="code" href="classEWP.html#a2ee471b0dcad3057297b809f4c5141ab">hub_height</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  Gpu::DeviceVector&lt;Real&gt; d_wind_speed(<a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.size());</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  Gpu::DeviceVector&lt;Real&gt; d_thrust_coeff(<a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.size());</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">// Domain valid box</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordtype">int</span> domhi_z = domain.bigEnd(2) + 1;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">// Copy data from host vectors to device vectors</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.begin(), <a class="code" href="classEWP.html#a30275b7045b523cfe7afb5683f66d87a">wind_speed</a>.end(), d_wind_speed.begin());</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  Gpu::copy(Gpu::hostToDevice, <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.begin(), <a class="code" href="classEWP.html#a9cdc57dc5a1a63c4a4e62ba85dffecc4">thrust_coeff</a>.end(), d_thrust_coeff.begin());</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="comment">// The order of variables are - Vabs dVabsdt, dudt, dvdt, dTKEdt</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  mf_vars_ewp.setVal(0.0);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="comment">// Domain valid box</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keyword">const</span> amrex::Box&amp; domain = geom.Domain();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">int</span> domlo_z = domain.smallEnd(2);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordtype">int</span> domhi_z = domain.bigEnd(2) + 1;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(1);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">auto</span> ewp_array = mf_vars_ewp.array(mfi);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keyword">auto</span> Nturb_array = mf_Nturb.array(mfi);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keyword">auto</span> u_vel       = U_old.array(mfi);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keyword">auto</span> v_vel       = V_old.array(mfi);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">auto</span> w_vel       = W_old.array(mfi);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* wind_speed_d     = d_wind_speed.dataPtr();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* thrust_coeff_d   = d_thrust_coeff.dataPtr();</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> n_spec_table = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(d_wind_speed.size());</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, domlo_z), domhi_z);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = ProbLoArr[2] + (kk+<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">// The order of variables are - Vabs dVabsdt, dudt, dvdt, dTKEdt</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  mf_vars_ewp.setVal(0.0);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">const</span> Box&amp; gbx = mfi.growntilebox(1);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">auto</span> ewp_array = mf_vars_ewp.array(mfi);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">auto</span> Nturb_array = mf_Nturb.array(mfi);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">auto</span> u_vel       = U_old.array(mfi);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">auto</span> v_vel       = V_old.array(mfi);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keyword">auto</span> w_vel       = W_old.array(mfi);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* wind_speed_d     = d_wind_speed.dataPtr();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>* thrust_coeff_d   = d_thrust_coeff.dataPtr();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> n_spec_table = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(d_wind_speed.size());</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="comment">// Compute Fitch source terms</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Vabs = std::pow(u_vel(i,j,k)*u_vel(i,j,k) +</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                                 v_vel(i,j,k)*v_vel(i,j,k) +</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                                 w_vel(i,j,kk)*w_vel(i,j,kk), <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> C_T = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(wind_speed_d, thrust_coeff_d, Vabs, n_spec_table);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> C_TKE = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> K_turb = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(6.0);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordtype">int</span> kk = amrex::min(amrex::max(k, domlo_z), domhi_z);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> = ProbLoArr[2] + (kk+<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>) * <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[2];</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="comment">// Compute Fitch source terms</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Vabs = std::pow(u_vel(i,j,k)*u_vel(i,j,k) +</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                 v_vel(i,j,k)*v_vel(i,j,k) +</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                 w_vel(i,j,kk)*w_vel(i,j,kk), <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> L_wake = std::pow(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1],<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sigma_e = Vabs/(<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*K_turb*L_wake)*</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                           (std::pow(<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*K_turb*L_wake/Vabs + std::pow(sigma_0,2),<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>) - amrex::Math::powi&lt;3&gt;(sigma_0));</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phi     = std::atan2(v_vel(i,j,k),u_vel(i,j,k)); <span class="comment">// Wind direction w.r.t the x-dreiction</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = -std::pow(<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(8.0),<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)*C_T*amrex::Math::powi&lt;2&gt;(d_rotor_rad)*</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                        amrex::Math::powi&lt;2&gt;(Vabs)/(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1]*sigma_e)*</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                        std::exp(-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*amrex::Math::powi&lt;2&gt;((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - d_hub_height)/sigma_e));</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            ewp_array(i,j,k,0) = fac*std::cos(phi)*Nturb_array(i,j,k);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            ewp_array(i,j,k,1) = fac*std::sin(phi)*Nturb_array(i,j,k);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            ewp_array(i,j,k,2) = C_TKE*<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;         });</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> C_T = <a class="code" href="ERF__Interpolation__1D_8H.html#a803d0d35d4ca4791556cbe02bbf51cbb">interpolate_1d</a>(wind_speed_d, thrust_coeff_d, Vabs, n_spec_table);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> C_TKE = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> K_turb = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(6.0);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> L_wake = std::pow(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1],<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> sigma_e = Vabs/(<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>*K_turb*L_wake)*</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                           (std::pow(<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*K_turb*L_wake/Vabs + std::pow(sigma_0,2),<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>) - amrex::Math::powi&lt;3&gt;(sigma_0));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phi     = std::atan2(v_vel(i,j,k),u_vel(i,j,k)); <span class="comment">// Wind direction w.r.t the x-dreiction</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> fac = -std::pow(<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>/<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(8.0),<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>)*C_T*amrex::Math::powi&lt;2&gt;(d_rotor_rad)*</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                        amrex::Math::powi&lt;2&gt;(Vabs)/(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[0]*<a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>[1]*sigma_e)*</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        std::exp(-<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*amrex::Math::powi&lt;2&gt;((<a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7">z</a> - d_hub_height)/sigma_e));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            ewp_array(i,j,k,0) = fac*std::cos(phi)*Nturb_array(i,j,k);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            ewp_array(i,j,k,1) = fac*std::sin(phi)*Nturb_array(i,j,k);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            ewp_array(i,j,k,2) = C_TKE*<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;         });</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:42</div></div>
@@ -714,35 +719,35 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        Box bx  = mfi.tilebox();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">auto</span> cons_array  = cons_in.array(mfi);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">auto</span> ewp_array = mf_vars_ewp.array(mfi);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keyword">auto</span> u_vel       = U_old.array(mfi);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keyword">auto</span> v_vel       = V_old.array(mfi);</div>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span> ( MFIter mfi(cons_in,TilingIfNotGPU()); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        Box bx  = mfi.tilebox();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        Box tbx = mfi.nodaltilebox(0);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        Box tby = mfi.nodaltilebox(1);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, tby, bx,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            u_vel(i,j,k) = u_vel(i,j,k) + (ewp_array(i-1,j,k,0) + ewp_array(i,j,k,0))/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*dt_advance;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        },</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            v_vel(i,j,k) = v_vel(i,j,k) + (ewp_array(i,j-1,k,1) + ewp_array(i,j,k,1))/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*dt_advance;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        },</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) + ewp_array(i,j,k,2)*dt_advance;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        });</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keyword">auto</span> cons_array  = cons_in.array(mfi);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">auto</span> ewp_array = mf_vars_ewp.array(mfi);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keyword">auto</span> u_vel       = U_old.array(mfi);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keyword">auto</span> v_vel       = V_old.array(mfi);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(tbx, tby, bx,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            u_vel(i,j,k) = u_vel(i,j,k) + (ewp_array(i-1,j,k,0) + ewp_array(i,j,k,0))/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*dt_advance;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        },</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            v_vel(i,j,k) = v_vel(i,j,k) + (ewp_array(i,j-1,k,1) + ewp_array(i,j,k,1))/<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*dt_advance;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        },</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = cons_array(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) + ewp_array(i,j,k,2)*dt_advance;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        });</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:41</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

@@ -16,6 +16,7 @@ var dir_fbd11baa4baa1a8b78c4a3d08373cbc6 =
     [ "ERF_SuperDropletPCMassChange.H", "ERF__SuperDropletPCMassChange_8H.html", null ],
     [ "ERF_SuperDropletPCProcess.H", "ERF__SuperDropletPCProcess_8H.html", null ],
     [ "ERF_SuperDropletPCRecycle.cpp", "ERF__SuperDropletPCRecycle_8cpp.html", null ],
+    [ "ERF_SuperDropletPCRiming.H", "ERF__SuperDropletPCRiming_8H.html", null ],
     [ "ERF_SuperDropletPCUtils.cpp", "ERF__SuperDropletPCUtils_8cpp.html", null ],
     [ "ERFPC.H", "ERFPC_8H.html", null ],
     [ "ERFPCEvolve.cpp", "ERFPCEvolve_8cpp.html", null ],

@@ -23,7 +23,7 @@ var classLandSurface =
     [ "Has_Model", "classLandSurface.html#af9a3276f0bdb9a0345fb2c851ccf24d6", null ],
     [ "Init", "classLandSurface.html#a0da0c6d8ce85001f0240e94c7e0077f7", null ],
     [ "Plot", "classLandSurface.html#a4ee0eb34736ea67b8de898bc3dc045ce", null ],
-    [ "Plot_Lsm_Data", "classLandSurface.html#ae14b01e348564662a9f2eeeac23080f6", null ],
+    [ "Plot_Lsm_Data", "classLandSurface.html#a601d9d63a29cb3eb7d6f97b617cebfb5", null ],
     [ "Read_Lsm_Restart", "classLandSurface.html#a3bdcd06d33be9f3fde998de23c1530ba", null ],
     [ "ReSize", "classLandSurface.html#a58bc8a6e1b1369cd863f8b4f424a6270", null ],
     [ "Set_Lev0_Data_Ptr", "classLandSurface.html#a5408c8431b8d66558ce3a689e899dae1", null ],

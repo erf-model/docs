@@ -128,6 +128,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMaterialPropertiesCore.html">MaterialPropertiesCore</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base structure containing material property constants and methods for GPU usage.  <a href="structMaterialPropertiesCore.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMaterialProperties.html">MaterialProperties</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,20 +142,26 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af398940141c9daafeeae1dd0a54be259"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSpecies.html#af398940141c9daafeeae1dd0a54be259">Species::AMREX_ENUM</a> (Name, H2O, NaCl, NH42SO4, NH4HSO4, soil, water, agua, none)</td></tr>
-<tr class="separator:af398940141c9daafeeae1dd0a54be259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271e3c94d9778cd31a3f8bb02a5860ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSpecies.html#a271e3c94d9778cd31a3f8bb02a5860ee">Species::AMREX_ENUM</a> (Name, H2O, ice, NaCl, NH42SO4, NH4HSO4, soil, water, agua, none)</td></tr>
+<tr class="separator:a271e3c94d9778cd31a3f8bb02a5860ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bb07940e7d0b53e0f608dc4a5c9921a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesaturation__funcs.html#a9bb07940e7d0b53e0f608dc4a5c9921a">saturation_funcs::compute_saturation_pressure_null</a> (amrex::MultiFab &amp;, const amrex::MultiFab &amp;)</td></tr>
 <tr class="memdesc:a9bb07940e7d0b53e0f608dc4a5c9921a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Null function for saturation pressure.  <a href="namespacesaturation__funcs.html#a9bb07940e7d0b53e0f608dc4a5c9921a">More...</a><br /></td></tr>
 <tr class="separator:a9bb07940e7d0b53e0f608dc4a5c9921a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab3649a423971059794f41d2a34c234a"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesaturation__funcs.html#aab3649a423971059794f41d2a34c234a">saturation_funcs::compute_saturation_pressure_H2O</a> (amrex::MultiFab &amp;, const amrex::MultiFab &amp;)</td></tr>
 <tr class="memdesc:aab3649a423971059794f41d2a34c234a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute saturation pressure for moist air.  <a href="namespacesaturation__funcs.html#aab3649a423971059794f41d2a34c234a">More...</a><br /></td></tr>
 <tr class="separator:aab3649a423971059794f41d2a34c234a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fb8e196f8a40d9590fe9da77ce7e74"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesaturation__funcs.html#a49fb8e196f8a40d9590fe9da77ce7e74">saturation_funcs::compute_saturation_pressure_ice</a> (amrex::MultiFab &amp;, const amrex::MultiFab &amp;)</td></tr>
+<tr class="memdesc:a49fb8e196f8a40d9590fe9da77ce7e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute saturation pressure for icy air.  <a href="namespacesaturation__funcs.html#a49fb8e196f8a40d9590fe9da77ce7e74">More...</a><br /></td></tr>
+<tr class="separator:a49fb8e196f8a40d9590fe9da77ce7e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bd43c8bbe5f9fe965027489b52e6441"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesaturation__funcs.html#a9bd43c8bbe5f9fe965027489b52e6441">saturation_funcs::compute_saturation_vapfrac_null</a> (amrex::MultiFab &amp;, const amrex::MultiFab &amp;, const amrex::MultiFab &amp;)</td></tr>
 <tr class="memdesc:a9bd43c8bbe5f9fe965027489b52e6441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Null function for saturation vapour fraction.  <a href="namespacesaturation__funcs.html#a9bd43c8bbe5f9fe965027489b52e6441">More...</a><br /></td></tr>
 <tr class="separator:a9bd43c8bbe5f9fe965027489b52e6441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab60ab340659e270ccf6fff1085eaac64"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesaturation__funcs.html#ab60ab340659e270ccf6fff1085eaac64">saturation_funcs::compute_saturation_vapfrac_H2O</a> (amrex::MultiFab &amp;, const amrex::MultiFab &amp;, const amrex::MultiFab &amp;)</td></tr>
 <tr class="memdesc:ab60ab340659e270ccf6fff1085eaac64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute saturation vapour fraction for moist air.  <a href="namespacesaturation__funcs.html#ab60ab340659e270ccf6fff1085eaac64">More...</a><br /></td></tr>
 <tr class="separator:ab60ab340659e270ccf6fff1085eaac64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a910dfe8dcd315ba57111260ed3832"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesaturation__funcs.html#a79a910dfe8dcd315ba57111260ed3832">saturation_funcs::compute_saturation_vapfrac_ice</a> (amrex::MultiFab &amp;, const amrex::MultiFab &amp;, const amrex::MultiFab &amp;)</td></tr>
+<tr class="memdesc:a79a910dfe8dcd315ba57111260ed3832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute saturation vapour fraction for icy air.  <a href="namespacesaturation__funcs.html#a79a910dfe8dcd315ba57111260ed3832">More...</a><br /></td></tr>
+<tr class="separator:a79a910dfe8dcd315ba57111260ed3832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

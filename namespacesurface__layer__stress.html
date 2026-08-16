@@ -97,7 +97,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5a26fea3011e6a5d2d9bbe1c770c98dd"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">conservative_to_kinematic_stress</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> conservative_stress, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="el" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>)</td></tr>
+<tr class="memitem:a5a26fea3011e6a5d2d9bbe1c770c98dd"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesurface__layer__stress.html#a5a26fea3011e6a5d2d9bbe1c770c98dd">conservative_to_kinematic_stress</a> (<a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> conservative_stress, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho)</td></tr>
 <tr class="separator:a5a26fea3011e6a5d2d9bbe1c770c98dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d425fafa54ebef732ceefe39db61f3c"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">lsm_flux_is_valid</a> (bool has_flux, bool is_land, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> flux, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> undefined)</td></tr>
 <tr class="separator:a5d425fafa54ebef732ceefe39db61f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,9 +256,9 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">return</span> conservative_stress / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">return</span> conservative_stress / <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:107</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:24</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespacesurface__layer__stress.html#a9a45b74e34f33537f0c28bb17da95cdd">combine_lsm_and_most_stress()</a>.</p>
 <div class="dynheader">

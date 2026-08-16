@@ -10,6 +10,8 @@ var dir_7c1c0d2e2a0285e12a54f57a60f809aa =
     [ "ERF_ForestDrag.H", "ERF__ForestDrag_8H.html", [
       [ "ForestDrag", "classForestDrag.html", "classForestDrag" ]
     ] ],
+    [ "ERF_ImmersedForcing.cpp", "ERF__ImmersedForcing_8cpp.html", "ERF__ImmersedForcing_8cpp" ],
+    [ "ERF_ImmersedForcing.H", "ERF__ImmersedForcing_8H.html", "ERF__ImmersedForcing_8H" ],
     [ "ERF_MakeBuoyancy.cpp", "ERF__MakeBuoyancy_8cpp.html", "ERF__MakeBuoyancy_8cpp" ],
     [ "ERF_MakeGradP.cpp", "ERF__MakeGradP_8cpp.html", "ERF__MakeGradP_8cpp" ],
     [ "ERF_MakeMomSources.cpp", "ERF__MakeMomSources_8cpp.html", "ERF__MakeMomSources_8cpp" ],

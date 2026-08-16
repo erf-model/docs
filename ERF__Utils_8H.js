@@ -9,6 +9,7 @@ var ERF__Utils_8H =
     [ "enforceInOutSolvability", "ERF__Utils_8H.html#af201d25507c085bccb92d2dc74c3cb90", null ],
     [ "enforceInOutSolvability_bdy", "ERF__Utils_8H.html#a8a4cb18ee065a40fbb1a1ee1d6985315", null ],
     [ "ERFPostProcessBaseGrids", "ERF__Utils_8H.html#aa333d30d88adfbad5d860b704845f857", null ],
+    [ "fill_wall_dist_ghost_cells", "ERF__Utils_8H.html#a60e8e097c41bbb67aef2c27f5a15a836", null ],
     [ "fine_compute_interior_ghost_rhs", "ERF__Utils_8H.html#a980857d0da78387b8b54ce93246f19fe", null ],
     [ "make_areas", "ERF__Utils_8H.html#afd5f5cf174d096726815e6d7dc325c41", null ],
     [ "make_J", "ERF__Utils_8H.html#accb87d367dfa749571761aa789fd3fea", null ],

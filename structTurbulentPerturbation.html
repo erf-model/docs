@@ -123,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9eb937c8506d428288706afb6db72146"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbulentPerturbation.html#a9eb937c8506d428288706afb6db72146">init_tpi_type</a> (const int lev, const PerturbationType &amp;pert_type, const int max_level)</td></tr>
 <tr class="memdesc:a9eb937c8506d428288706afb6db72146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store the integer perturbation-type selector for one AMR level.  <a href="structTurbulentPerturbation.html#a9eb937c8506d428288706afb6db72146">More...</a><br /></td></tr>
 <tr class="separator:a9eb937c8506d428288706afb6db72146"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3b92b2f04862419a5d17f20f7918be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbulentPerturbation.html#aa3b92b2f04862419a5d17f20f7918be5">init_tpi</a> (const int lev, const amrex::Vector&lt; amrex::BoxArray &gt; &amp;subdomains_lev, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 3 &gt; <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3D_8H.html#af86870893f5668cb38278635773abd97">dx</a>, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, const int ngrow_state, std::string pp_prefix, const amrex::Vector&lt; amrex::IntVect &gt; refRatio, const int max_level)</td></tr>
+<tr class="memitem:aa3b92b2f04862419a5d17f20f7918be5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbulentPerturbation.html#aa3b92b2f04862419a5d17f20f7918be5">init_tpi</a> (const int lev, const amrex::Vector&lt; amrex::BoxArray &gt; &amp;subdomains_lev, const amrex::GpuArray&lt; <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>, 3 &gt; <a class="el" href="ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97">dx</a>, const amrex::BoxArray &amp;ba, const amrex::DistributionMapping &amp;dm, const int ngrow_state, std::string pp_prefix, const amrex::Vector&lt; amrex::IntVect &gt; refRatio, const int max_level)</td></tr>
 <tr class="memdesc:aa3b92b2f04862419a5d17f20f7918be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize turbulent perturbation regions and per-box storage.  <a href="structTurbulentPerturbation.html#aa3b92b2f04862419a5d17f20f7918be5">More...</a><br /></td></tr>
 <tr class="separator:aa3b92b2f04862419a5d17f20f7918be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d2fd2ba00dbdab6b9d789c456c9d586"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTurbulentPerturbation.html#a0d2fd2ba00dbdab6b9d789c456c9d586">calc_tpi_update</a> (const int lev, const double dt, amrex::MultiFab &amp;mf_xvel, amrex::MultiFab &amp;mf_yvel, amrex::MultiFab &amp;mf_cons)</td></tr>
@@ -377,7 +377,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="astructTurbulentPerturbation_html_aca6d9e7183d281d5f8093853e263d0cb"><div class="ttname"><a href="structTurbulentPerturbation.html#aca6d9e7183d281d5f8093853e263d0cb">TurbulentPerturbation::pb_ba</a></div><div class="ttdeci">amrex::Vector&lt; amrex::BoxArray &gt; pb_ba</div><div class="ttdoc">Perturbation-box BoxArray for each AMR level.</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:749</div></div>
 <div class="ttc" id="astructTurbulentPerturbation_html_ad9dde5214bcf1f1555bf9edea9a9e68a"><div class="ttname"><a href="structTurbulentPerturbation.html#ad9dde5214bcf1f1555bf9edea9a9e68a">TurbulentPerturbation::pt_type</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; pt_type</div><div class="ttdoc">Integer perturbation type for each AMR level.</div><div class="ttdef"><b>Definition:</b> ERF_TurbPertStruct.H:746</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a7650432748b57652dfdfb1b51d0a9bca">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeSources_8cpp.html#a0c6f1bcd73c2e3bbb0c2f6b4f3912a2d">make_sources()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -393,7 +393,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="structTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph.png" border="0" usemap="#astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph" alt=""/></div>
 <map name="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph" id="astructTurbulentPerturbation_adcb414231654ad9f5232a1a3377c30f2_icgraph">
 <area shape="rect" title="Apply stored turbulent perturbations to a source or state array." alt="" coords="168,5,331,47"/>
-<area shape="rect" href="ERF__MakeSources_8cpp.html#a7650432748b57652dfdfb1b51d0a9bca" title=" " alt="" coords="5,13,120,39"/>
+<area shape="rect" href="ERF__MakeSources_8cpp.html#a0c6f1bcd73c2e3bbb0c2f6b4f3912a2d" title=" " alt="" coords="5,13,120,39"/>
 </map>
 </div>
 
@@ -907,7 +907,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="505,183,596,210"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="514,234,587,261"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#adf71fa682aa7ea70d3f8e216ee168e77" title=" " alt="" coords="491,339,610,366"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="680,339,768,366"/>
 </map>
 </div>
 
@@ -1600,7 +1599,6 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#adf71fa682aa7ea70d3f8e216ee168e77" title=" " alt="" coords="238,56,357,83"/>
 <area shape="rect" href="structTurbulentPerturbation.html#ad1831bbc1cee603520e0b66692cebfa7" title="Return a pseudo&#45;random real value in a closed interval." alt="" coords="216,107,379,149"/>
 <area shape="rect" href="ERF__TileNoZ_8H.html#a8da113f1d5603f7297fe1d03e5013f00" title=" " alt="" coords="261,173,334,200"/>
-<area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a11b78b3f4301fc4dfeda074092c105dc" title=" " alt="" coords="427,56,515,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1876,7 +1874,7 @@ Here is the caller graph for this function:</div>
 
 <p>Per-cell perturbation amplitude storage. </p>
 
-<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#aa3b92b2f04862419a5d17f20f7918be5">init_tpi()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a7650432748b57652dfdfb1b51d0a9bca">make_sources()</a>, <a class="el" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60">netZeroBuoyantAdd()</a>, <a class="el" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527">netZeroBuoyantAdjust()</a>, <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">pseudoRandomPert()</a>, and <a class="el" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9">zero_amp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structTurbulentPerturbation.html#aa3b92b2f04862419a5d17f20f7918be5">init_tpi()</a>, <a class="el" href="ERF__MakeSources_8cpp.html#a0c6f1bcd73c2e3bbb0c2f6b4f3912a2d">make_sources()</a>, <a class="el" href="structTurbulentPerturbation.html#acf1a844ac4076c4af8ef38963f3fcc60">netZeroBuoyantAdd()</a>, <a class="el" href="structTurbulentPerturbation.html#a573c68aeec901ddf7c3cfe102430e527">netZeroBuoyantAdjust()</a>, <a class="el" href="structTurbulentPerturbation.html#a1dfc591297a8af23c941b06ed5fabba1">pseudoRandomPert()</a>, and <a class="el" href="structTurbulentPerturbation.html#ab818d5a843f6fc2c60443036daf63ad9">zero_amp()</a>.</p>
 
 </div>
 </div>

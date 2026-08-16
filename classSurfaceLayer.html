@@ -221,6 +221,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6d9a5d774162242d94bc6ee3d4cc8a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e41539f9a2484694bac2674921704f9"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a1e41539f9a2484694bac2674921704f9">get_w_star</a> (const int &amp;lev)</td></tr>
 <tr class="separator:a1e41539f9a2484694bac2674921704f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6180431efcbe86bc99d6d4159bd834"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a4c6180431efcbe86bc99d6d4159bd834">computes_w_star</a> () const</td></tr>
+<tr class="separator:a4c6180431efcbe86bc99d6d4159bd834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab34b3ab96f6ef3304d286dc76e6b470c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#ab34b3ab96f6ef3304d286dc76e6b470c">computes_pblh</a> () const</td></tr>
+<tr class="separator:ab34b3ab96f6ef3304d286dc76e6b470c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a981f802b2baa6bb362d0770115c0710d"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a981f802b2baa6bb362d0770115c0710d">get_t_star</a> (const int &amp;lev)</td></tr>
 <tr class="separator:a981f802b2baa6bb362d0770115c0710d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d00c067e8c4c7d6b671fbf2dd0fef67"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSurfaceLayer.html#a9d00c067e8c4c7d6b671fbf2dd0fef67">get_q_star</a> (const int &amp;lev)</td></tr>
@@ -443,14 +447,14 @@ Private Attributes</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a840dbc7f009282fdf8951863d37c6db7a31b342f23cb16952131736824b9ccdd1"></a>RICO&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;                           {</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;    MOENG = 0, <span class="comment">///&lt; Moeng functional form</span></div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;    DONELAN,   <span class="comment">///&lt; Donelan functional form</span></div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;    CUSTOM,    <span class="comment">///&lt; Custom constant flux functional form</span></div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;    BULK_COEFF, <span class="comment">///&lt; Bulk transfer coefficient functional form</span></div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;    ROTATE,     <span class="comment">///&lt; Terrain rotation flux functional form</span></div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;    <a class="code" href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1">RICO</a></div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;  };</div>
+<div class="fragment"><div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;                           {</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;    MOENG = 0, <span class="comment">///&lt; Moeng functional form</span></div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;    DONELAN,   <span class="comment">///&lt; Donelan functional form</span></div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;    CUSTOM,    <span class="comment">///&lt; Custom constant flux functional form</span></div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;    BULK_COEFF, <span class="comment">///&lt; Bulk transfer coefficient functional form</span></div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;    ROTATE,     <span class="comment">///&lt; Terrain rotation flux functional form</span></div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    <a class="code" href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1">RICO</a></div>
+<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;  };</div>
 <div class="ttc" id="anamespacesurface__diagnostics_html_a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1"><div class="ttname"><a href="namespacesurface__diagnostics.html#a788a892bdc18efb61a3dc23fab28dccfa31b342f23cb16952131736824b9ccdd1">surface_diagnostics::SurfaceDiagnosticSource::RICO</a></div><div class="ttdeci">@ RICO</div></div>
 </div><!-- fragment -->
 </div>
@@ -481,11 +485,11 @@ Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a8898847042b3605fcf460f374cb6df8ea38e9829fdc4878924805b745f211bf5e"></a>SURFACE_MOISTURE&#160;</td><td class="fielddoc"><p>Surface Qv specified. </p>
 </td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;                            {</div>
-<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;    ADIABATIC = 0,</div>
-<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;    MOISTURE_FLUX,      <span class="comment">///&lt; Qv-flux specified</span></div>
-<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;    SURFACE_MOISTURE    <span class="comment">///&lt; Surface Qv specified</span></div>
-<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;  };</div>
+<div class="fragment"><div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;                            {</div>
+<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;    ADIABATIC = 0,</div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;    MOISTURE_FLUX,      <span class="comment">///&lt; Qv-flux specified</span></div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;    SURFACE_MOISTURE    <span class="comment">///&lt; Surface Qv specified</span></div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;  };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -515,7 +519,7 @@ Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="aa5f148dc4ac0a6b9ae49204ce28a00f7ab573e0bb23d2f8009358b4d851deb66e"></a>MRF&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa5f148dc4ac0a6b9ae49204ce28a00f7ae780cb32389b86c4ca5eefb074c6c4e7"></a>YSUNew&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;{ <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754">None</a>, MYNN25, YSU, MRF, YSUNew };</div>
+<div class="fragment"><div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;{ <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754">None</a>, MYNN25, YSU, MRF, YSUNew };</div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754">erf_wall_thermodynamics::TransferModel::None</a></div><div class="ttdeci">@ None</div></div>
 </div><!-- fragment -->
 </div>
@@ -547,13 +551,13 @@ Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="ac8f97e7515d4b4b32ad5749cd5405d05afbf950ece84b8c4c7ebcf6492db726f7"></a>DONELAN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ac8f97e7515d4b4b32ad5749cd5405d05a3e1545d84d0cc7da6edf47adda8a80f9"></a>WAVE_COUPLED&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;                            {</div>
-<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    CONSTANT = 0, <span class="comment">///&lt; Constant z0</span></div>
-<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    CHARNOCK,</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    MODIFIED_CHARNOCK,</div>
-<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;    DONELAN,</div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;    WAVE_COUPLED</div>
-<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;  };</div>
+<div class="fragment"><div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;                            {</div>
+<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;    CONSTANT = 0, <span class="comment">///&lt; Constant z0</span></div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;    CHARNOCK,</div>
+<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;    MODIFIED_CHARNOCK,</div>
+<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;    DONELAN,</div>
+<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;    WAVE_COUPLED</div>
+<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;  };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -583,11 +587,11 @@ Private Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1"></a>SURFACE_TEMPERATURE&#160;</td><td class="fielddoc"><p>Surface temperature specified. </p>
 </td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;                            {</div>
-<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;    ADIABATIC = 0,</div>
-<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;    HEAT_FLUX,          <span class="comment">///&lt; Heat-flux specified</span></div>
-<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;    SURFACE_TEMPERATURE <span class="comment">///&lt; Surface temperature specified</span></div>
-<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;  };</div>
+<div class="fragment"><div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;                            {</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    ADIABATIC = 0,</div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    HEAT_FLUX,          <span class="comment">///&lt; Heat-flux specified</span></div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;    SURFACE_TEMPERATURE <span class="comment">///&lt; Surface temperature specified</span></div>
+<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;  };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -932,29 +936,29 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__UpdateWSubsidence__Bomex_8H_html_ad901c6409ddad63abb2fb7ddb13cc824"><div class="ttname"><a href="ERF__UpdateWSubsidence__Bomex_8H.html#ad901c6409ddad63abb2fb7ddb13cc824">AMREX_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ASSERT_WITH_MESSAGE(wbar_cutoff_min &gt; wbar_cutoff_max, &quot;ERROR: wbar_cutoff_min &lt; wbar_cutoff_max&quot;)</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a04b1da10746efb765fd82ec1f8663487"><div class="ttname"><a href="classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487">SurfaceLayer::theta_type</a></div><div class="ttdeci">ThetaCalcType theta_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1010</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a07f0ee519b7c55db56a3d75c21b00234"><div class="ttname"><a href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">SurfaceLayer::m_include_wstar</a></div><div class="ttdeci">bool m_include_wstar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1024</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a0ad36597cc8f0ed60fa37e185f1e4c40"><div class="ttname"><a href="classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40">SurfaceLayer::m_rotate</a></div><div class="ttdeci">bool m_rotate</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1019</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a0c710ff08c54b2538731afa31246b4df"><div class="ttname"><a href="classSurfaceLayer.html#a0c710ff08c54b2538731afa31246b4df">SurfaceLayer::pblh_type</a></div><div class="ttdeci">PBLHeightCalcType pblh_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1014</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a124971cde8469a5121a53d0acdc27c1f"><div class="ttname"><a href="classSurfaceLayer.html#a124971cde8469a5121a53d0acdc27c1f">SurfaceLayer::m_final_low_time</a></div><div class="ttdeci">double m_final_low_time</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1021</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a15946fd94cdd1dd7a3dd46d701b023a3"><div class="ttname"><a href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">SurfaceLayer::use_moisture</a></div><div class="ttdeci">bool use_moisture</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1047</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a2133b5126f1b89016b54847f602886d3"><div class="ttname"><a href="classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3">SurfaceLayer::m_Cq</a></div><div class="ttdeci">amrex::Real m_Cq</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1055</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a21a638e2bd1af6e391c5ec35f8d1d530"><div class="ttname"><a href="classSurfaceLayer.html#a21a638e2bd1af6e391c5ec35f8d1d530">SurfaceLayer::m_eb_vec</a></div><div class="ttdeci">amrex::Vector&lt; const eb_ * &gt; m_eb_vec</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1059</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a250daf2121b839f703f06692d5ed1206"><div class="ttname"><a href="classSurfaceLayer.html#a250daf2121b839f703f06692d5ed1206">SurfaceLayer::rough_type_land</a></div><div class="ttdeci">RoughCalcType rough_type_land</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1012</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a2ac3aa7e042bc2f249101e7c70ce6dd0"><div class="ttname"><a href="classSurfaceLayer.html#a2ac3aa7e042bc2f249101e7c70ce6dd0">SurfaceLayer::z0_const</a></div><div class="ttdeci">amrex::Real z0_const</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1025</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a2d5f39701610bed292158c9ccff486b5"><div class="ttname"><a href="classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5">SurfaceLayer::cnk_a</a></div><div class="ttdeci">amrex::Real cnk_a</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1038</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a2d9040ed167429e929a7c590e6390e58"><div class="ttname"><a href="classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58">SurfaceLayer::m_Ch</a></div><div class="ttdeci">amrex::Real m_Ch</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1054</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a32494099aa0b1b6885e875d1051687b7"><div class="ttname"><a href="classSurfaceLayer.html#a32494099aa0b1b6885e875d1051687b7">SurfaceLayer::surf_temp</a></div><div class="ttdeci">amrex::Real surf_temp</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1027</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a37dd3f320929ae1d026d096fb6398df8"><div class="ttname"><a href="classSurfaceLayer.html#a37dd3f320929ae1d026d096fb6398df8">SurfaceLayer::m_start_low_time</a></div><div class="ttdeci">double m_start_low_time</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1020</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a4009eb7e829d0943f1c06c4424b132f1"><div class="ttname"><a href="classSurfaceLayer.html#a4009eb7e829d0943f1c06c4424b132f1">SurfaceLayer::rico_qsat_z0</a></div><div class="ttdeci">amrex::Real rico_qsat_z0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1045</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a42f2ea8254d96d83b11928180e318576"><div class="ttname"><a href="classSurfaceLayer.html#a42f2ea8254d96d83b11928180e318576">SurfaceLayer::m_update_k_rans</a></div><div class="ttdeci">bool m_update_k_rans</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1086</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a5240b8723a523daee75ac2ab5d6a8a05"><div class="ttname"><a href="classSurfaceLayer.html#a5240b8723a523daee75ac2ab5d6a8a05">SurfaceLayer::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1032</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a5c5e1a3512ea98b5bf80eede7d9e105e"><div class="ttname"><a href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">SurfaceLayer::rough_type_sea</a></div><div class="ttdeci">RoughCalcType rough_type_sea</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1013</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a66d011088a1a5f798a84b3d8da262e39"><div class="ttname"><a href="classSurfaceLayer.html#a66d011088a1a5f798a84b3d8da262e39">SurfaceLayer::surf_moist</a></div><div class="ttdeci">amrex::Real surf_moist</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1031</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a68d96eb41fb99f71e74c5d1b368d03d8"><div class="ttname"><a href="classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8">SurfaceLayer::m_ignore_sst</a></div><div class="ttdeci">bool m_ignore_sst</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1057</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a6e12726ec0c20286ea0002b2426db30d"><div class="ttname"><a href="classSurfaceLayer.html#a6e12726ec0c20286ea0002b2426db30d">SurfaceLayer::m_low_time_interval</a></div><div class="ttdeci">double m_low_time_interval</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1022</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a7c0d9de6442add19ce264d9cb222ccfc"><div class="ttname"><a href="classSurfaceLayer.html#a7c0d9de6442add19ce264d9cb222ccfc">SurfaceLayer::custom_qstar</a></div><div class="ttdeci">amrex::Real custom_qstar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1035</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a7f7445d3fa3b3015b3db61ec78ce9c31"><div class="ttname"><a href="classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31">SurfaceLayer::custom_rhosurf</a></div><div class="ttdeci">amrex::Real custom_rhosurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1036</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a04b1da10746efb765fd82ec1f8663487"><div class="ttname"><a href="classSurfaceLayer.html#a04b1da10746efb765fd82ec1f8663487">SurfaceLayer::theta_type</a></div><div class="ttdeci">ThetaCalcType theta_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1022</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a07f0ee519b7c55db56a3d75c21b00234"><div class="ttname"><a href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">SurfaceLayer::m_include_wstar</a></div><div class="ttdeci">bool m_include_wstar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1036</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a0ad36597cc8f0ed60fa37e185f1e4c40"><div class="ttname"><a href="classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40">SurfaceLayer::m_rotate</a></div><div class="ttdeci">bool m_rotate</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1031</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a0c710ff08c54b2538731afa31246b4df"><div class="ttname"><a href="classSurfaceLayer.html#a0c710ff08c54b2538731afa31246b4df">SurfaceLayer::pblh_type</a></div><div class="ttdeci">PBLHeightCalcType pblh_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1026</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a124971cde8469a5121a53d0acdc27c1f"><div class="ttname"><a href="classSurfaceLayer.html#a124971cde8469a5121a53d0acdc27c1f">SurfaceLayer::m_final_low_time</a></div><div class="ttdeci">double m_final_low_time</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1033</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a15946fd94cdd1dd7a3dd46d701b023a3"><div class="ttname"><a href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">SurfaceLayer::use_moisture</a></div><div class="ttdeci">bool use_moisture</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1059</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a2133b5126f1b89016b54847f602886d3"><div class="ttname"><a href="classSurfaceLayer.html#a2133b5126f1b89016b54847f602886d3">SurfaceLayer::m_Cq</a></div><div class="ttdeci">amrex::Real m_Cq</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1067</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a21a638e2bd1af6e391c5ec35f8d1d530"><div class="ttname"><a href="classSurfaceLayer.html#a21a638e2bd1af6e391c5ec35f8d1d530">SurfaceLayer::m_eb_vec</a></div><div class="ttdeci">amrex::Vector&lt; const eb_ * &gt; m_eb_vec</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1071</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a250daf2121b839f703f06692d5ed1206"><div class="ttname"><a href="classSurfaceLayer.html#a250daf2121b839f703f06692d5ed1206">SurfaceLayer::rough_type_land</a></div><div class="ttdeci">RoughCalcType rough_type_land</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1024</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a2ac3aa7e042bc2f249101e7c70ce6dd0"><div class="ttname"><a href="classSurfaceLayer.html#a2ac3aa7e042bc2f249101e7c70ce6dd0">SurfaceLayer::z0_const</a></div><div class="ttdeci">amrex::Real z0_const</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1037</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a2d5f39701610bed292158c9ccff486b5"><div class="ttname"><a href="classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5">SurfaceLayer::cnk_a</a></div><div class="ttdeci">amrex::Real cnk_a</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1050</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a2d9040ed167429e929a7c590e6390e58"><div class="ttname"><a href="classSurfaceLayer.html#a2d9040ed167429e929a7c590e6390e58">SurfaceLayer::m_Ch</a></div><div class="ttdeci">amrex::Real m_Ch</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1066</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a32494099aa0b1b6885e875d1051687b7"><div class="ttname"><a href="classSurfaceLayer.html#a32494099aa0b1b6885e875d1051687b7">SurfaceLayer::surf_temp</a></div><div class="ttdeci">amrex::Real surf_temp</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1039</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a37dd3f320929ae1d026d096fb6398df8"><div class="ttname"><a href="classSurfaceLayer.html#a37dd3f320929ae1d026d096fb6398df8">SurfaceLayer::m_start_low_time</a></div><div class="ttdeci">double m_start_low_time</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1032</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a4009eb7e829d0943f1c06c4424b132f1"><div class="ttname"><a href="classSurfaceLayer.html#a4009eb7e829d0943f1c06c4424b132f1">SurfaceLayer::rico_qsat_z0</a></div><div class="ttdeci">amrex::Real rico_qsat_z0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1057</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a42f2ea8254d96d83b11928180e318576"><div class="ttname"><a href="classSurfaceLayer.html#a42f2ea8254d96d83b11928180e318576">SurfaceLayer::m_update_k_rans</a></div><div class="ttdeci">bool m_update_k_rans</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1098</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a5240b8723a523daee75ac2ab5d6a8a05"><div class="ttname"><a href="classSurfaceLayer.html#a5240b8723a523daee75ac2ab5d6a8a05">SurfaceLayer::surf_moist_flux</a></div><div class="ttdeci">amrex::Real surf_moist_flux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1044</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a5c5e1a3512ea98b5bf80eede7d9e105e"><div class="ttname"><a href="classSurfaceLayer.html#a5c5e1a3512ea98b5bf80eede7d9e105e">SurfaceLayer::rough_type_sea</a></div><div class="ttdeci">RoughCalcType rough_type_sea</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1025</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a66d011088a1a5f798a84b3d8da262e39"><div class="ttname"><a href="classSurfaceLayer.html#a66d011088a1a5f798a84b3d8da262e39">SurfaceLayer::surf_moist</a></div><div class="ttdeci">amrex::Real surf_moist</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1043</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a68d96eb41fb99f71e74c5d1b368d03d8"><div class="ttname"><a href="classSurfaceLayer.html#a68d96eb41fb99f71e74c5d1b368d03d8">SurfaceLayer::m_ignore_sst</a></div><div class="ttdeci">bool m_ignore_sst</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1069</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a6e12726ec0c20286ea0002b2426db30d"><div class="ttname"><a href="classSurfaceLayer.html#a6e12726ec0c20286ea0002b2426db30d">SurfaceLayer::m_low_time_interval</a></div><div class="ttdeci">double m_low_time_interval</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1034</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a7c0d9de6442add19ce264d9cb222ccfc"><div class="ttname"><a href="classSurfaceLayer.html#a7c0d9de6442add19ce264d9cb222ccfc">SurfaceLayer::custom_qstar</a></div><div class="ttdeci">amrex::Real custom_qstar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1047</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a7f7445d3fa3b3015b3db61ec78ce9c31"><div class="ttname"><a href="classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31">SurfaceLayer::custom_rhosurf</a></div><div class="ttdeci">amrex::Real custom_rhosurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1048</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a840dbc7f009282fdf8951863d37c6db7a0525d4394471c332f3c0a497584923d5"><div class="ttname"><a href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a0525d4394471c332f3c0a497584923d5">SurfaceLayer::FluxCalcType::MOENG</a></div><div class="ttdeci">@ MOENG</div><div class="ttdoc">Moeng functional form.</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a840dbc7f009282fdf8951863d37c6db7a31b342f23cb16952131736824b9ccdd1"><div class="ttname"><a href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a31b342f23cb16952131736824b9ccdd1">SurfaceLayer::FluxCalcType::RICO</a></div><div class="ttdeci">@ RICO</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a840dbc7f009282fdf8951863d37c6db7a5c7f33152e3d00ddc3dad805e55f3f71"><div class="ttname"><a href="classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a5c7f33152e3d00ddc3dad805e55f3f71">SurfaceLayer::FluxCalcType::BULK_COEFF</a></div><div class="ttdeci">@ BULK_COEFF</div><div class="ttdoc">Bulk transfer coefficient functional form.</div></div>
@@ -964,35 +968,35 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassSurfaceLayer_html_a8898847042b3605fcf460f374cb6df8ea10548012f42e962e7945ce998b571c5c"><div class="ttname"><a href="classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea10548012f42e962e7945ce998b571c5c">SurfaceLayer::MoistCalcType::ADIABATIC</a></div><div class="ttdeci">@ ADIABATIC</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a8898847042b3605fcf460f374cb6df8ea38e9829fdc4878924805b745f211bf5e"><div class="ttname"><a href="classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea38e9829fdc4878924805b745f211bf5e">SurfaceLayer::MoistCalcType::SURFACE_MOISTURE</a></div><div class="ttdeci">@ SURFACE_MOISTURE</div><div class="ttdoc">Surface Qv specified.</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a8898847042b3605fcf460f374cb6df8ea59038f4bd084275104842422a6eec21c"><div class="ttname"><a href="classSurfaceLayer.html#a8898847042b3605fcf460f374cb6df8ea59038f4bd084275104842422a6eec21c">SurfaceLayer::MoistCalcType::MOISTURE_FLUX</a></div><div class="ttdeci">@ MOISTURE_FLUX</div><div class="ttdoc">Qv-flux specified.</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a8b6a95c0f5f67a32f6c6dc62cf55ab75"><div class="ttname"><a href="classSurfaceLayer.html#a8b6a95c0f5f67a32f6c6dc62cf55ab75">SurfaceLayer::depth</a></div><div class="ttdeci">amrex::Real depth</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1040</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a9003fa201aacccbb349c0455bc221166"><div class="ttname"><a href="classSurfaceLayer.html#a9003fa201aacccbb349c0455bc221166">SurfaceLayer::default_land_surf_moist</a></div><div class="ttdeci">amrex::Real default_land_surf_moist</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1030</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a8b6a95c0f5f67a32f6c6dc62cf55ab75"><div class="ttname"><a href="classSurfaceLayer.html#a8b6a95c0f5f67a32f6c6dc62cf55ab75">SurfaceLayer::depth</a></div><div class="ttdeci">amrex::Real depth</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1052</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a9003fa201aacccbb349c0455bc221166"><div class="ttname"><a href="classSurfaceLayer.html#a9003fa201aacccbb349c0455bc221166">SurfaceLayer::default_land_surf_moist</a></div><div class="ttdeci">amrex::Real default_land_surf_moist</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1042</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_aa5f148dc4ac0a6b9ae49204ce28a00f7a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7a6adf97f83acf6453d4a6a4b1070f3754">SurfaceLayer::PBLHeightCalcType::None</a></div><div class="ttdeci">@ None</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_aa5f148dc4ac0a6b9ae49204ce28a00f7ab573e0bb23d2f8009358b4d851deb66e"><div class="ttname"><a href="classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7ab573e0bb23d2f8009358b4d851deb66e">SurfaceLayer::PBLHeightCalcType::MRF</a></div><div class="ttdeci">@ MRF</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_aa5f148dc4ac0a6b9ae49204ce28a00f7abdeb9a753db1d1f3fe0e944eab1d0601"><div class="ttname"><a href="classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7abdeb9a753db1d1f3fe0e944eab1d0601">SurfaceLayer::PBLHeightCalcType::MYNN25</a></div><div class="ttdeci">@ MYNN25</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_aa5f148dc4ac0a6b9ae49204ce28a00f7ad032bccff1ff2e272cc68da5a0de09fe"><div class="ttname"><a href="classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7ad032bccff1ff2e272cc68da5a0de09fe">SurfaceLayer::PBLHeightCalcType::YSU</a></div><div class="ttdeci">@ YSU</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_aaae804c5e9298848d4dfe6dde0c6e101"><div class="ttname"><a href="classSurfaceLayer.html#aaae804c5e9298848d4dfe6dde0c6e101">SurfaceLayer::rico_theta_z0</a></div><div class="ttdeci">amrex::Real rico_theta_z0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1044</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_aad234585f665d6b2dcd0e827cc7ed45d"><div class="ttname"><a href="classSurfaceLayer.html#aad234585f665d6b2dcd0e827cc7ed45d">SurfaceLayer::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1029</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_aae7bf4d16c747cdf2045d05c323b36a6"><div class="ttname"><a href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">SurfaceLayer::m_geom</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1018</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ab42e3d5f087e857887b82d4bd0690d0f"><div class="ttname"><a href="classSurfaceLayer.html#ab42e3d5f087e857887b82d4bd0690d0f">SurfaceLayer::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1088</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_abdfd114c2c1f4d35dd479b3f99c3b6c9"><div class="ttname"><a href="classSurfaceLayer.html#abdfd114c2c1f4d35dd479b3f99c3b6c9">SurfaceLayer::custom_tstar</a></div><div class="ttdeci">amrex::Real custom_tstar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1034</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ac426bda8ee3b5511eb981073e623ed52"><div class="ttname"><a href="classSurfaceLayer.html#ac426bda8ee3b5511eb981073e623ed52">SurfaceLayer::cnk_visc</a></div><div class="ttdeci">bool cnk_visc</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1039</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ac66a562329299d51f4e7f7daff685dfc"><div class="ttname"><a href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">SurfaceLayer::surf_heating_rate</a></div><div class="ttdeci">amrex::Real surf_heating_rate</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1028</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_aaae804c5e9298848d4dfe6dde0c6e101"><div class="ttname"><a href="classSurfaceLayer.html#aaae804c5e9298848d4dfe6dde0c6e101">SurfaceLayer::rico_theta_z0</a></div><div class="ttdeci">amrex::Real rico_theta_z0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1056</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_aad234585f665d6b2dcd0e827cc7ed45d"><div class="ttname"><a href="classSurfaceLayer.html#aad234585f665d6b2dcd0e827cc7ed45d">SurfaceLayer::surf_temp_flux</a></div><div class="ttdeci">amrex::Real surf_temp_flux</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1041</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_aae7bf4d16c747cdf2045d05c323b36a6"><div class="ttname"><a href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">SurfaceLayer::m_geom</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Geometry &gt; m_geom</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1030</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ab42e3d5f087e857887b82d4bd0690d0f"><div class="ttname"><a href="classSurfaceLayer.html#ab42e3d5f087e857887b82d4bd0690d0f">SurfaceLayer::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1100</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_abdfd114c2c1f4d35dd479b3f99c3b6c9"><div class="ttname"><a href="classSurfaceLayer.html#abdfd114c2c1f4d35dd479b3f99c3b6c9">SurfaceLayer::custom_tstar</a></div><div class="ttdeci">amrex::Real custom_tstar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1046</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ac426bda8ee3b5511eb981073e623ed52"><div class="ttname"><a href="classSurfaceLayer.html#ac426bda8ee3b5511eb981073e623ed52">SurfaceLayer::cnk_visc</a></div><div class="ttdeci">bool cnk_visc</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1051</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ac66a562329299d51f4e7f7daff685dfc"><div class="ttname"><a href="classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc">SurfaceLayer::surf_heating_rate</a></div><div class="ttdeci">amrex::Real surf_heating_rate</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1040</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ac8f97e7515d4b4b32ad5749cd5405d05a266bf3048d67b1b3187c0189bc232fde"><div class="ttname"><a href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a266bf3048d67b1b3187c0189bc232fde">SurfaceLayer::RoughCalcType::MODIFIED_CHARNOCK</a></div><div class="ttdeci">@ MODIFIED_CHARNOCK</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ac8f97e7515d4b4b32ad5749cd5405d05a3e1545d84d0cc7da6edf47adda8a80f9"><div class="ttname"><a href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a3e1545d84d0cc7da6edf47adda8a80f9">SurfaceLayer::RoughCalcType::WAVE_COUPLED</a></div><div class="ttdeci">@ WAVE_COUPLED</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ac8f97e7515d4b4b32ad5749cd5405d05a8d6b5cada83510220f59e00ce86d4d92"><div class="ttname"><a href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05a8d6b5cada83510220f59e00ce86d4d92">SurfaceLayer::RoughCalcType::CONSTANT</a></div><div class="ttdeci">@ CONSTANT</div><div class="ttdoc">Constant z0.</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ac8f97e7515d4b4b32ad5749cd5405d05addbb8213265f3ad773f7af2cb8147062"><div class="ttname"><a href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05addbb8213265f3ad773f7af2cb8147062">SurfaceLayer::RoughCalcType::CHARNOCK</a></div><div class="ttdeci">@ CHARNOCK</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_ac8f97e7515d4b4b32ad5749cd5405d05afbf950ece84b8c4c7ebcf6492db726f7"><div class="ttname"><a href="classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05afbf950ece84b8c4c7ebcf6492db726f7">SurfaceLayer::RoughCalcType::DONELAN</a></div><div class="ttdeci">@ DONELAN</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_acbb6236c8f0741cafba01dbbf20cd713"><div class="ttname"><a href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">SurfaceLayer::flux_type</a></div><div class="ttdeci">FluxCalcType flux_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1009</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ace92867e82baf1acb7b6a5d3deb30ac1"><div class="ttname"><a href="classSurfaceLayer.html#ace92867e82baf1acb7b6a5d3deb30ac1">SurfaceLayer::moist_type</a></div><div class="ttdeci">MoistCalcType moist_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1011</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ad5d1ac2bd5634d6b507b86cdad265900"><div class="ttname"><a href="classSurfaceLayer.html#ad5d1ac2bd5634d6b507b86cdad265900">SurfaceLayer::inv_Cmu2</a></div><div class="ttdeci">amrex::Real inv_Cmu2</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1087</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_addfd74a8e57a125a502f57675cbd1484"><div class="ttname"><a href="classSurfaceLayer.html#addfd74a8e57a125a502f57675cbd1484">SurfaceLayer::custom_ustar</a></div><div class="ttdeci">amrex::Real custom_ustar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1033</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ae895bf19520480b90f8171c262f17426"><div class="ttname"><a href="classSurfaceLayer.html#ae895bf19520480b90f8171c262f17426">SurfaceLayer::m_Cd</a></div><div class="ttdeci">amrex::Real m_Cd</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1053</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_af1266da71fa17b289ba856fb79937b83"><div class="ttname"><a href="classSurfaceLayer.html#af1266da71fa17b289ba856fb79937b83">SurfaceLayer::default_land_surf_temp</a></div><div class="ttdeci">amrex::Real default_land_surf_temp</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1026</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_acbb6236c8f0741cafba01dbbf20cd713"><div class="ttname"><a href="classSurfaceLayer.html#acbb6236c8f0741cafba01dbbf20cd713">SurfaceLayer::flux_type</a></div><div class="ttdeci">FluxCalcType flux_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1021</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ace92867e82baf1acb7b6a5d3deb30ac1"><div class="ttname"><a href="classSurfaceLayer.html#ace92867e82baf1acb7b6a5d3deb30ac1">SurfaceLayer::moist_type</a></div><div class="ttdeci">MoistCalcType moist_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1023</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ad5d1ac2bd5634d6b507b86cdad265900"><div class="ttname"><a href="classSurfaceLayer.html#ad5d1ac2bd5634d6b507b86cdad265900">SurfaceLayer::inv_Cmu2</a></div><div class="ttdeci">amrex::Real inv_Cmu2</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1099</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_addfd74a8e57a125a502f57675cbd1484"><div class="ttname"><a href="classSurfaceLayer.html#addfd74a8e57a125a502f57675cbd1484">SurfaceLayer::custom_ustar</a></div><div class="ttdeci">amrex::Real custom_ustar</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1045</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ae895bf19520480b90f8171c262f17426"><div class="ttname"><a href="classSurfaceLayer.html#ae895bf19520480b90f8171c262f17426">SurfaceLayer::m_Cd</a></div><div class="ttdeci">amrex::Real m_Cd</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1065</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_af1266da71fa17b289ba856fb79937b83"><div class="ttname"><a href="classSurfaceLayer.html#af1266da71fa17b289ba856fb79937b83">SurfaceLayer::default_land_surf_temp</a></div><div class="ttdeci">amrex::Real default_land_surf_temp</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1038</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_af5f36f58474c1c542f4138a36d468f04a10548012f42e962e7945ce998b571c5c"><div class="ttname"><a href="classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04a10548012f42e962e7945ce998b571c5c">SurfaceLayer::ThetaCalcType::ADIABATIC</a></div><div class="ttdeci">@ ADIABATIC</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1"><div class="ttname"><a href="classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04a317cef85d14b4909f1d76becb00dc0f1">SurfaceLayer::ThetaCalcType::SURFACE_TEMPERATURE</a></div><div class="ttdeci">@ SURFACE_TEMPERATURE</div><div class="ttdoc">Surface temperature specified.</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_af5f36f58474c1c542f4138a36d468f04ac03b743c56d9316fbd3d327453b22226"><div class="ttname"><a href="classSurfaceLayer.html#af5f36f58474c1c542f4138a36d468f04ac03b743c56d9316fbd3d327453b22226">SurfaceLayer::ThetaCalcType::HEAT_FLUX</a></div><div class="ttdeci">@ HEAT_FLUX</div><div class="ttdoc">Heat-flux specified.</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_afa0bc95f97f8908363af7f5d7049493e"><div class="ttname"><a href="classSurfaceLayer.html#afa0bc95f97f8908363af7f5d7049493e">SurfaceLayer::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1060</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_afe7f143e6fa426e965a7e655a4139b6a"><div class="ttname"><a href="classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a">SurfaceLayer::m_ma</a></div><div class="ttdeci">MOSTAverage m_ma</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1061</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_afa0bc95f97f8908363af7f5d7049493e"><div class="ttname"><a href="classSurfaceLayer.html#afa0bc95f97f8908363af7f5d7049493e">SurfaceLayer::m_terrain_type</a></div><div class="ttdeci">TerrainType m_terrain_type</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1072</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_afe7f143e6fa426e965a7e655a4139b6a"><div class="ttname"><a href="classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a">SurfaceLayer::m_ma</a></div><div class="ttdeci">MOSTAverage m_ma</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1073</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a8aff14ee510fe368c6991bc969cb5721"><div class="ttname"><a href="namespacemodule__model__constants.html#a8aff14ee510fe368c6991bc969cb5721">module_model_constants::epsilon</a></div><div class="ttdeci">real(c_double), parameter epsilon</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:12</div></div>
 <div class="ttc" id="astructTurbChoice_html_a2ae286befd8c38445f513d13cffc314e"><div class="ttname"><a href="structTurbChoice.html#a2ae286befd8c38445f513d13cffc314e">TurbChoice::rans_type</a></div><div class="ttdeci">RANSType rans_type</div><div class="ttdoc">Selected RANS closure.</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:599</div></div>
 <div class="ttc" id="astructTurbChoice_html_a30ed87028177f672f1b6d62e6c43ba41"><div class="ttname"><a href="structTurbChoice.html#a30ed87028177f672f1b6d62e6c43ba41">TurbChoice::theta_ref</a></div><div class="ttdeci">amrex::Real theta_ref</div><div class="ttdoc">Reference potential temperature for stable stratification.</div><div class="ttdef"><b>Definition:</b> ERF_TurbStruct.H:588</div></div>
@@ -1189,9 +1193,9 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            });</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="comment">// EB</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">std::is_same&lt;FluxIter, adiabatic_eb&gt;::value</a> ||</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">std::is_same&lt;FluxIter, surface_temp_eb&gt;::value</a> ||</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <a class="code" href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">std::is_same&lt;FluxIter, surface_flux_eb&gt;::value</a>) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordflow">if</span> (std::is_same&lt;FluxIter, adiabatic_eb&gt;::value ||</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                std::is_same&lt;FluxIter, surface_temp_eb&gt;::value ||</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                std::is_same&lt;FluxIter, surface_flux_eb&gt;::value) {</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gtbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                {</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    <span class="keywordflow">if</span> (( is_land &amp;&amp; lmask_arr(i,j,0) == 1) ||</div>
@@ -1217,24 +1221,23 @@ template&lt;typename FluxIter &gt; </div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        }</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    }</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
-<div class="ttc" id="aERF__HurricaneDiagnostics_8cpp_html_abd5746c9a8c4bf217e5294c6c702559b"><div class="ttname"><a href="ERF__HurricaneDiagnostics_8cpp.html#abd5746c9a8c4bf217e5294c6c702559b">value</a></div><div class="ttdeci">Real value</div><div class="ttdef"><b>Definition:</b> ERF_HurricaneDiagnostics.cpp:30</div></div>
 <div class="ttc" id="aERF__InitCustomPert__MovingTerrain_8H_html_aa4e0dee689ddc7dd5e6396443f03e9f4"><div class="ttname"><a href="ERF__InitCustomPert__MovingTerrain_8H.html#aa4e0dee689ddc7dd5e6396443f03e9f4">get</a></div><div class="ttdeci">pp get(&quot;wavelength&quot;, wavelength)</div></div>
 <div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_a815d3e6377a2356c9859807874066d37"><div class="ttname"><a href="classMOSTAverage.html#a815d3e6377a2356c9859807874066d37">MOSTAverage::get_zref</a></div><div class="ttdeci">amrex::MultiFab * get_zref(const int &amp;lev) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:242</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_ac08baeafe98b80401526bfe20562aa5d"><div class="ttname"><a href="classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d">MOSTAverage::get_average</a></div><div class="ttdeci">const amrex::MultiFab * get_average(const int &amp;lev, const int &amp;comp) const</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.H:235</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a0f71ec0b683a3a9fa7530b070fa37aa2"><div class="ttname"><a href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">SurfaceLayer::m_lmask_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::iMultiFab * &gt; &gt; m_lmask_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1077</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a29a63e7fc9ea6026a7044649a163afb0"><div class="ttname"><a href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">SurfaceLayer::t_surf</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_surf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1068</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a373bea15dedd27321c3ba917f28a62d4"><div class="ttname"><a href="classSurfaceLayer.html#a373bea15dedd27321c3ba917f28a62d4">SurfaceLayer::q_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; q_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1065</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a4700be8203f4f5899182104936bf3929"><div class="ttname"><a href="classSurfaceLayer.html#a4700be8203f4f5899182104936bf3929">SurfaceLayer::m_Lwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Lwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1083</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a4dbf05db6c485ab9afa6a7e39c5e1ee2"><div class="ttname"><a href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">SurfaceLayer::z_0</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; z_0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1041</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a682e8f6431b496598cc714b5be4810e3"><div class="ttname"><a href="classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3">SurfaceLayer::w_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; w_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1063</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a7c2f77b55037499d5dd7f597c017e272"><div class="ttname"><a href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">SurfaceLayer::u_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; u_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1062</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a7faee03e46d3adf23aaa8a43e7edd539"><div class="ttname"><a href="classSurfaceLayer.html#a7faee03e46d3adf23aaa8a43e7edd539">SurfaceLayer::q_surf</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; q_surf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1069</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a8f6d99542dedec217b52dfa6368b4cad"><div class="ttname"><a href="classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad">SurfaceLayer::m_Hwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Hwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1082</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_aaf823aaf71baf1d39ecf290b266922ba"><div class="ttname"><a href="classSurfaceLayer.html#aaf823aaf71baf1d39ecf290b266922ba">SurfaceLayer::t_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1064</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ad790829cebbd7ab51e215d89f45b975f"><div class="ttname"><a href="classSurfaceLayer.html#ad790829cebbd7ab51e215d89f45b975f">SurfaceLayer::m_eddyDiffs_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_eddyDiffs_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1084</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ae0ef57726e45173a45b3835904543d54"><div class="ttname"><a href="classSurfaceLayer.html#ae0ef57726e45173a45b3835904543d54">SurfaceLayer::olen</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; olen</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1066</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_aec05c4944fa291578b695cb83456355b"><div class="ttname"><a href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">SurfaceLayer::pblh</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; pblh</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1067</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a0f71ec0b683a3a9fa7530b070fa37aa2"><div class="ttname"><a href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">SurfaceLayer::m_lmask_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::iMultiFab * &gt; &gt; m_lmask_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1089</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a29a63e7fc9ea6026a7044649a163afb0"><div class="ttname"><a href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">SurfaceLayer::t_surf</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_surf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1080</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a373bea15dedd27321c3ba917f28a62d4"><div class="ttname"><a href="classSurfaceLayer.html#a373bea15dedd27321c3ba917f28a62d4">SurfaceLayer::q_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; q_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1077</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a4700be8203f4f5899182104936bf3929"><div class="ttname"><a href="classSurfaceLayer.html#a4700be8203f4f5899182104936bf3929">SurfaceLayer::m_Lwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Lwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1095</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a4dbf05db6c485ab9afa6a7e39c5e1ee2"><div class="ttname"><a href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">SurfaceLayer::z_0</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab &gt; z_0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1053</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a682e8f6431b496598cc714b5be4810e3"><div class="ttname"><a href="classSurfaceLayer.html#a682e8f6431b496598cc714b5be4810e3">SurfaceLayer::w_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; w_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1075</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a7c2f77b55037499d5dd7f597c017e272"><div class="ttname"><a href="classSurfaceLayer.html#a7c2f77b55037499d5dd7f597c017e272">SurfaceLayer::u_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; u_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1074</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a7faee03e46d3adf23aaa8a43e7edd539"><div class="ttname"><a href="classSurfaceLayer.html#a7faee03e46d3adf23aaa8a43e7edd539">SurfaceLayer::q_surf</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; q_surf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1081</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a8f6d99542dedec217b52dfa6368b4cad"><div class="ttname"><a href="classSurfaceLayer.html#a8f6d99542dedec217b52dfa6368b4cad">SurfaceLayer::m_Hwave_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_Hwave_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1094</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_aaf823aaf71baf1d39ecf290b266922ba"><div class="ttname"><a href="classSurfaceLayer.html#aaf823aaf71baf1d39ecf290b266922ba">SurfaceLayer::t_star</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; t_star</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1076</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ad790829cebbd7ab51e215d89f45b975f"><div class="ttname"><a href="classSurfaceLayer.html#ad790829cebbd7ab51e215d89f45b975f">SurfaceLayer::m_eddyDiffs_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::MultiFab * &gt; m_eddyDiffs_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1096</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ae0ef57726e45173a45b3835904543d54"><div class="ttname"><a href="classSurfaceLayer.html#ae0ef57726e45173a45b3835904543d54">SurfaceLayer::olen</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; olen</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1078</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_aec05c4944fa291578b695cb83456355b"><div class="ttname"><a href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">SurfaceLayer::pblh</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; pblh</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1079</div></div>
 <div class="ttc" id="anamespaceMicVar__Morr_html_a383f67acb3079b5f50851667cca71a4ea281c2ff050bdb2a9349d3408926af821"><div class="ttname"><a href="namespaceMicVar__Morr.html#a383f67acb3079b5f50851667cca71a4ea281c2ff050bdb2a9349d3408926af821">MicVar_Morr::ng</a></div><div class="ttdeci">@ ng</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:49</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1369,7 +1372,7 @@ template&lt;typename PBLHeightEstimator &gt; </div>
 <div class="line"><a name="l01356"></a><span class="lineno"> 1356</span>&#160;                     vars[lev][<a class="code" href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a>],<a class="code" href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">m_lmask_lev</a>[lev][0],</div>
 <div class="line"><a name="l01357"></a><span class="lineno"> 1357</span>&#160;                     moisture_indices);</div>
 <div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;}</div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:176</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa47abe072e12c61d29cde15a509a0664b">Vars::cons</a></div><div class="ttdeci">@ cons</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:179</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1463,9 +1466,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;            <span class="keywordtype">int</span> is_land = (lmask_arr) ? lmask_arr(i,j,0) : 1;</div>
 <div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;            <span class="comment">// Skip cells the LSM did not have a valid flux (lsm_undefined).</span></div>
 <div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;            <span class="keywordflow">if</span> (is_land &amp;&amp; lsm_t_flux_arr &amp;&amp; lsm_t_flux_arr(i,j,0) &lt; <a class="code" href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a>) {</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Thd = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a>  = (has_moisture) ? cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Thd = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a>  = (has_moisture) ? cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Thv = Thd * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + <a class="code" href="ERF__Constants_8H.html#a088792be9376259df72347c43ae1ab13">epsv</a>*<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
 <div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tau = std::sqrt( lsm_tau13_arr(i,j,0)*lsm_tau13_arr(i,j,0)</div>
 <div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;                                    + lsm_tau23_arr(i,j,0)*lsm_tau23_arr(i,j,0) );</div>
@@ -1491,12 +1494,12 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:64</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_aedc589a54f2b3ed39a16c75375014017"><div class="ttname"><a href="ERF__Constants_8H.html#aedc589a54f2b3ed39a16c75375014017">lsm_undefined</a></div><div class="ttdeci">constexpr amrex::Real lsm_undefined</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:35</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:36</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:37</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:42</div></div>
-<div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_ab8ec92cc3ea8422c9349409bae98d2a0"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div><div class="ttdeci">rho</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_Bubble.H:107</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a9d379ba3c4916cbf3910c1e6d3265298"><div class="ttname"><a href="classSurfaceLayer.html#a9d379ba3c4916cbf3910c1e6d3265298">SurfaceLayer::m_lsm_flux_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_flux_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1079</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_afc2584c96f2d8231ade66f2cc364ec05"><div class="ttname"><a href="classSurfaceLayer.html#afc2584c96f2d8231ade66f2cc364ec05">SurfaceLayer::m_lsm_flux_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_lsm_flux_name</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1081</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:39</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:40</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:45</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a9d379ba3c4916cbf3910c1e6d3265298"><div class="ttname"><a href="classSurfaceLayer.html#a9d379ba3c4916cbf3910c1e6d3265298">SurfaceLayer::m_lsm_flux_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_flux_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1091</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_afc2584c96f2d8231ade66f2cc364ec05"><div class="ttname"><a href="classSurfaceLayer.html#afc2584c96f2d8231ade66f2cc364ec05">SurfaceLayer::m_lsm_flux_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_lsm_flux_name</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1093</div></div>
+<div class="ttc" id="anamespaceMicVar__Kess_html_a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61"><div class="ttname"><a href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">MicVar_Kess::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:24</div></div>
 <div class="ttc" id="anamespaceMicVar__Kess_html_a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35"><div class="ttname"><a href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">MicVar_Kess::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:30</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1999,26 +2002,26 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            <span class="keywordtype">bool</span> l_use_moisture = <a class="code" href="classSurfaceLayer.html#a15946fd94cdd1dd7a3dd46d701b023a3">use_moisture</a>;</div>
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(bx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> <span class="comment">/*k*/</span>)</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            {</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Thd = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>;</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a>  = (l_use_moisture) ? cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Thd = cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a>;</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a>  = (l_use_moisture) ? cons_arr(i,j,klo,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> Thv = Thd * (<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + <a class="code" href="ERF__Constants_8H.html#a088792be9376259df72347c43ae1ab13">epsv</a>*<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94af099273d19f4b8cdca199c5177231e35">qv</a>);</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tau = std::sqrt( t13_arr(i,j,klo)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * t13_arr(i,j,klo)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a></div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                                    + t23_arr(i,j,klo)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * t23_arr(i,j,klo)/<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> );</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tau = std::sqrt( t13_arr(i,j,klo)/<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * t13_arr(i,j,klo)/<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                                    + t23_arr(i,j,klo)/<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * t23_arr(i,j,klo)/<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> );</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                u_star_arr(i,j,0) = amrex::max(std::sqrt(tau),eps);</div>
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                <span class="keywordflow">if</span> (hfx3_arr(i,j,klo)&gt;=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                    t_star_arr(i,j,0) = amrex::min(-hfx3_arr(i,j,klo) / (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * u_star_arr(i,j,0)),-eps);</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                    t_star_arr(i,j,0) = amrex::min(-hfx3_arr(i,j,klo) / (<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * u_star_arr(i,j,0)),-eps);</div>
 <div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                    t_star_arr(i,j,0) = amrex::max(-hfx3_arr(i,j,klo) / (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * u_star_arr(i,j,0)),eps);</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                    t_star_arr(i,j,0) = amrex::max(-hfx3_arr(i,j,klo) / (<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * u_star_arr(i,j,0)),eps);</div>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                }</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                <span class="keywordflow">if</span> (!l_use_moisture) {</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                    q_star_arr(i,j,0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (qfx3_arr(i,j,klo)&gt;=<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                    q_star_arr(i,j,0) = amrex::min(-qfx3_arr(i,j,klo) / (<a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * u_star_arr(i,j,0)),-eps);</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                    q_star_arr(i,j,0) = amrex::min(-qfx3_arr(i,j,klo) / (<a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * u_star_arr(i,j,0)),-eps);</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                    q_star_arr(i,j,0) = amrex::max(-qfx3_arr(i,j,klo) / ( <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * u_star_arr(i,j,0)),eps);</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                    q_star_arr(i,j,0) = amrex::max(-qfx3_arr(i,j,klo) / ( <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * u_star_arr(i,j,0)),eps);</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                }</div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                olen_arr(i,j,0)   = ( u_star_arr(i,j,0) * u_star_arr(i,j,0) * Thv ) /</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;                                    ( <a class="code" href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a> * <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * t_star_arr(i,j,0) );</div>
@@ -2039,12 +2042,12 @@ template&lt;typename FluxCalc &gt; </div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391">tau21</a></div><div class="ttdeci">@ tau21</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:38</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e"><div class="ttname"><a href="ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e">tau13</a></div><div class="ttdeci">@ tau13</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:38</div></div>
 <div class="ttc" id="aERF__InitCustomPertVels__ParticleTests_8H_html_ae44ee844a27ad92e3e12a8cfc523ca15"><div class="ttname"><a href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a></div><div class="ttdeci">amrex::GpuArray&lt; Real, AMREX_SPACEDIM &gt; dxInv</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPertVels_ParticleTests.H:17</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a648544a94d2694aa6ea7e3e037f3eaae"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_scalar_flux(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi1_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi2_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi3_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:611</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a9b3eb880f98843461a7d64193ee6879b"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_stress_tensor(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;w_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau11_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau22_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau33_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau12_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau21_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau13_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau31_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau23_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau32_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:632</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a2c5da51e5a124e511df1a182b1cdef20"><div class="ttname"><a href="classSurfaceLayer.html#a2c5da51e5a124e511df1a182b1cdef20">SurfaceLayer::surface_diagnostic_source</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; surface_diagnostic_source</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1073</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:177</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:179</div></div>
-<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:178</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a648544a94d2694aa6ea7e3e037f3eaae"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_scalar_flux(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi1_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi2_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi3_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:956</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a9b3eb880f98843461a7d64193ee6879b"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_stress_tensor(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;w_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau11_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau22_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau33_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau12_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau21_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau13_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau31_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau23_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau32_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:999</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a2c5da51e5a124e511df1a182b1cdef20"><div class="ttname"><a href="classSurfaceLayer.html#a2c5da51e5a124e511df1a182b1cdef20">SurfaceLayer::surface_diagnostic_source</a></div><div class="ttdeci">amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt; &gt; surface_diagnostic_source</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1085</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa2a10a6e726515894b07621908abd4c0c">Vars::xvel</a></div><div class="ttdeci">@ xvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:180</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa48ee63b17bc216e9661511c33c68bd8b">Vars::zvel</a></div><div class="ttdeci">@ zvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:182</div></div>
+<div class="ttc" id="anamespaceVars_html_abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6"><div class="ttname"><a href="namespaceVars.html#abe828d925ca6d1854b33e0aa386344afa81793b83204cfa56d4683bc676fbbfb6">Vars::yvel</a></div><div class="ttdeci">@ yvel</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:181</div></div>
 <div class="ttc" id="anamespacesurface__diagnostics_html_a8952f0baf16086becb3702d82d00d158"><div class="ttname"><a href="namespacesurface__diagnostics.html#a8952f0baf16086becb3702d82d00d158">surface_diagnostics::to_plot_value</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real to_plot_value(SurfaceDiagnosticSource source) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceDiagnosticSource.H:45</div></div>
 <div class="ttc" id="anamespacesurface__diagnostics_html_a9122f8c636e3844b424279a993fa59b3"><div class="ttname"><a href="namespacesurface__diagnostics.html#a9122f8c636e3844b424279a993fa59b3">surface_diagnostics::classify_scalar_source</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE SurfaceDiagnosticSource classify_scalar_source(bool is_custom, bool is_rico, bool is_land, bool has_lsm_flux, bool lsm_flux_is_valid) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceDiagnosticSource.H:61</div></div>
 <div class="ttc" id="anamespacesurface__layer__stress_html_a5d425fafa54ebef732ceefe39db61f3c"><div class="ttname"><a href="namespacesurface__layer__stress.html#a5d425fafa54ebef732ceefe39db61f3c">surface_layer_stress::lsm_flux_is_valid</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool lsm_flux_is_valid(bool has_flux, bool is_land, amrex::Real flux, amrex::Real undefined)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayerStress.H:35</div></div>
@@ -2470,6 +2473,60 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="ab34b3ab96f6ef3304d286dc76e6b470c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab34b3ab96f6ef3304d286dc76e6b470c">&#9670;&nbsp;</a></span>computes_pblh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SurfaceLayer::computes_pblh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Do we actually compute the PBL height? If not then the field returned by get_pblh holds only the value it was initialized with, and must not be reported as a diagnostic. </p>
+<div class="fragment"><div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;{ <span class="keywordflow">return</span> (<a class="code" href="classSurfaceLayer.html#a0c710ff08c54b2538731afa31246b4df">pblh_type</a> != <a class="code" href="classSurfaceLayer.html#aa5f148dc4ac0a6b9ae49204ce28a00f7a6adf97f83acf6453d4a6a4b1070f3754">PBLHeightCalcType::None</a>); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4c6180431efcbe86bc99d6d4159bd834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c6180431efcbe86bc99d6d4159bd834">&#9670;&nbsp;</a></span>computes_w_star()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SurfaceLayer::computes_w_star </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Do we actually compute w*? If not then the field returned by get_w_star holds only the value it was initialized with, and must not be reported as a diagnostic. </p>
+<div class="fragment"><div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a07f0ee519b7c55db56a3d75c21b00234">m_include_wstar</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a49a97b3f9132567b9437015b10771fef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a49a97b3f9132567b9437015b10771fef">&#9670;&nbsp;</a></span>fill_qsurf_with_qsat()</h2>
 
@@ -2560,7 +2617,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
 <div class="ttc" id="aERF__EOS_8H_html_ad01b9a993767756c8e6498b986650be9"><div class="ttname"><a href="ERF__EOS_8H.html#ad01b9a993767756c8e6498b986650be9">getPgivenRTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getPgivenRTh(const amrex::Real rhotheta, const amrex::Real qv=amrex::Real(0))</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:81</div></div>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a8e4b0c6ed8b95c2040dc0c9e8fcb8615"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615">erf_qsatw</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void erf_qsatw(amrex::Real t, amrex::Real p, amrex::Real &amp;qsatw)</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:228</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a41f9b3a5604791daf44935b10a55a565"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Zrel_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:389</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a41f9b3a5604791daf44935b10a55a565"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a41f9b3a5604791daf44935b10a55a565">Compute_Zrel_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Zrel_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:661</div></div>
 <div class="ttc" id="anamespaceWSM6SedCellScratch_html_a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903ab29d385bf2b39091cb8fd1a92247de70">WSM6SedCellScratch::dz</a></div><div class="ttdeci">@ dz</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:104</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_ae007f8b65adffbef80c98ebbec48bb6da2e5deda3717abe0b21f464e0b8b9e54d"><div class="ttname"><a href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da2e5deda3717abe0b21f464e0b8b9e54d">plotfile2d::SampledFieldID::Qv</a></div><div class="ttdeci">@ Qv</div></div>
 <div class="ttc" id="anamespaceplotfile2d_html_ae007f8b65adffbef80c98ebbec48bb6da7216bcf464203aec4864fbeea158a0db"><div class="ttname"><a href="namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da7216bcf464203aec4864fbeea158a0db">plotfile2d::SampledFieldID::Rho</a></div><div class="ttdeci">@ Rho</div></div>
@@ -2709,8 +2766,8 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    <a class="code" href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">t_surf</a>[lev]-&gt;FillBoundary(<a class="code" href="classSurfaceLayer.html#aae7bf4d16c747cdf2045d05c323b36a6">m_geom</a>[lev].periodicity());</div>
 <div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a7faf9946493893cfdebea2ab7fe4caee"><div class="ttname"><a href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">SurfaceLayer::m_sst_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_sst_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1075</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ab789868247235aeb66757e34685008df"><div class="ttname"><a href="classSurfaceLayer.html#ab789868247235aeb66757e34685008df">SurfaceLayer::m_tsk_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_tsk_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1076</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a7faf9946493893cfdebea2ab7fe4caee"><div class="ttname"><a href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">SurfaceLayer::m_sst_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_sst_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1087</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ab789868247235aeb66757e34685008df"><div class="ttname"><a href="classSurfaceLayer.html#ab789868247235aeb66757e34685008df">SurfaceLayer::m_tsk_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_tsk_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1088</div></div>
 <div class="ttc" id="anamespacemp__wsm6_html_a4a88c88896fa77fa7284821ab2e9dfc4"><div class="ttname"><a href="namespacemp__wsm6.html#a4a88c88896fa77fa7284821ab2e9dfc4">mp_wsm6::alpha</a></div><div class="ttdeci">real(kind=kind_phys), parameter, public alpha</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_wsm6.F90:44</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -2755,7 +2812,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">m_lmask_lev</a>[lev][0]; }</div>
+<div class="fragment"><div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a0f71ec0b683a3a9fa7530b070fa37aa2">m_lmask_lev</a>[lev][0]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2823,10 +2880,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;        });</div>
 <div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;    }</div>
 <div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;}</div>
-<div class="ttc" id="aclassSurfaceLayer_html_a07168bc6be4d07fd31d0877a347975b0"><div class="ttname"><a href="classSurfaceLayer.html#a07168bc6be4d07fd31d0877a347975b0">SurfaceLayer::m_lsm_data_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_lsm_data_name</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1080</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a379215a64a8eaa1cd6e7b2a5edce4a75"><div class="ttname"><a href="classSurfaceLayer.html#a379215a64a8eaa1cd6e7b2a5edce4a75">SurfaceLayer::m_lsm_tsurf_indx</a></div><div class="ttdeci">int m_lsm_tsurf_indx</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1051</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a7ae5f72c36d81939bde3acd6e4498a6d"><div class="ttname"><a href="classSurfaceLayer.html#a7ae5f72c36d81939bde3acd6e4498a6d">SurfaceLayer::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1078</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_ac81f8f23d0bde8616e2bb1fcaa35063a"><div class="ttname"><a href="classSurfaceLayer.html#ac81f8f23d0bde8616e2bb1fcaa35063a">SurfaceLayer::m_has_ocean_lsm_tsurf</a></div><div class="ttdeci">bool m_has_ocean_lsm_tsurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1050</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a07168bc6be4d07fd31d0877a347975b0"><div class="ttname"><a href="classSurfaceLayer.html#a07168bc6be4d07fd31d0877a347975b0">SurfaceLayer::m_lsm_data_name</a></div><div class="ttdeci">amrex::Vector&lt; std::string &gt; m_lsm_data_name</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1092</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a379215a64a8eaa1cd6e7b2a5edce4a75"><div class="ttname"><a href="classSurfaceLayer.html#a379215a64a8eaa1cd6e7b2a5edce4a75">SurfaceLayer::m_lsm_tsurf_indx</a></div><div class="ttdeci">int m_lsm_tsurf_indx</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1063</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a7ae5f72c36d81939bde3acd6e4498a6d"><div class="ttname"><a href="classSurfaceLayer.html#a7ae5f72c36d81939bde3acd6e4498a6d">SurfaceLayer::m_lsm_data_lev</a></div><div class="ttdeci">amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab * &gt; &gt; m_lsm_data_lev</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1090</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_ac81f8f23d0bde8616e2bb1fcaa35063a"><div class="ttname"><a href="classSurfaceLayer.html#ac81f8f23d0bde8616e2bb1fcaa35063a">SurfaceLayer::m_has_ocean_lsm_tsurf</a></div><div class="ttdeci">bool m_has_ocean_lsm_tsurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1062</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2880,9 +2937,9 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;  {</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a">m_ma</a>.<a class="code" href="classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d">get_average</a>(lev, comp);</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;  }</div>
+<div class="fragment"><div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;  {</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a">m_ma</a>.<a class="code" href="classMOSTAverage.html#ac08baeafe98b80401526bfe20562aa5d">get_average</a>(lev, comp);</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;  }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2925,7 +2982,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#ae0ef57726e45173a45b3835904543d54">olen</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#ae0ef57726e45173a45b3835904543d54">olen</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2959,7 +3016,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#aec05c4944fa291578b695cb83456355b">pblh</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2993,7 +3050,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a373bea15dedd27321c3ba917f28a62d4">q_star</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a373bea15dedd27321c3ba917f28a62d4">q_star</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3027,7 +3084,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a7faee03e46d3adf23aaa8a43e7edd539">q_surf</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a7faee03e46d3adf23aaa8a43e7edd539">q_surf</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3061,7 +3118,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a2c5da51e5a124e511df1a182b1cdef20">surface_diagnostic_source</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a2c5da51e5a124e511df1a182b1cdef20">surface_diagnostic_source</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3095,7 +3152,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#aaf823aaf71baf1d39ecf290b266922ba">t_star</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#aaf823aaf71baf1d39ecf290b266922ba">t_star</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3129,7 +3186,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">t_surf</a>[lev].get(); }</div>
+<div class="fragment"><div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">t_surf</a>[lev].get(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3231,7 +3288,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;{ <span class="keywordflow">return</span> &amp;<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev]; }</div>
+<div class="fragment"><div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;{ <span class="keywordflow">return</span> &amp;<a class="code" href="classSurfaceLayer.html#a4dbf05db6c485ab9afa6a7e39c5e1ee2">z_0</a>[lev]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3265,7 +3322,7 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;{ <span class="keywordflow">return</span> (<a class="code" href="classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a">m_ma</a>.<a class="code" href="classMOSTAverage.html#a815d3e6377a2356c9859807874066d37">get_zref</a>(lev))-&gt;min(0); }</div>
+<div class="fragment"><div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;{ <span class="keywordflow">return</span> (<a class="code" href="classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a">m_ma</a>.<a class="code" href="classMOSTAverage.html#a815d3e6377a2356c9859807874066d37">get_zref</a>(lev))-&gt;min(0); }</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3301,8 +3358,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 <p>Return whether variable sea roughness is active. </p>
-<div class="fragment"><div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c">m_var_z0</a>; }</div>
-<div class="ttc" id="aclassSurfaceLayer_html_a9525ef430eb742c528545d4bee7aa39c"><div class="ttname"><a href="classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c">SurfaceLayer::m_var_z0</a></div><div class="ttdeci">bool m_var_z0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1042</div></div>
+<div class="fragment"><div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c">m_var_z0</a>; }</div>
+<div class="ttc" id="aclassSurfaceLayer_html_a9525ef430eb742c528545d4bee7aa39c"><div class="ttname"><a href="classSurfaceLayer.html#a9525ef430eb742c528545d4bee7aa39c">SurfaceLayer::m_var_z0</a></div><div class="ttdeci">bool m_var_z0</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1054</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -3452,7 +3509,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Unknown surface layer flux calculation type&quot;</span>);</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;}</div>
-<div class="ttc" id="aclassSurfaceLayer_html_a0988970eee96a31040dc991bdd7fd9e4"><div class="ttname"><a href="classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4">SurfaceLayer::specified_rho_surf</a></div><div class="ttdeci">bool specified_rho_surf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1037</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a0988970eee96a31040dc991bdd7fd9e4"><div class="ttname"><a href="classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4">SurfaceLayer::specified_rho_surf</a></div><div class="ttdeci">bool specified_rho_surf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1049</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_a5bc864f0c26c9488d5f84fc7bd89947f"><div class="ttname"><a href="classSurfaceLayer.html#a5bc864f0c26c9488d5f84fc7bd89947f">SurfaceLayer::compute_SurfaceLayer_bcs</a></div><div class="ttdeci">void compute_SurfaceLayer_bcs(const int &amp;lev, amrex::Vector&lt; const amrex::MultiFab * &gt; mfs, amrex::Vector&lt; std::unique_ptr&lt; amrex::MultiFab &gt;&gt; &amp;Tau_lev, amrex::MultiFab *xheat_flux, amrex::MultiFab *yheat_flux, amrex::MultiFab *zheat_flux, amrex::MultiFab *xqv_flux, amrex::MultiFab *yqv_flux, amrex::MultiFab *zqv_flux, const amrex::MultiFab *z_phys, const FluxCalc &amp;flux_comp)</div></div>
 <div class="ttc" id="astructbulk__coeff__flux_html"><div class="ttname"><a href="structbulk__coeff__flux.html">bulk_coeff_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2582</div></div>
 <div class="ttc" id="astructcustom__flux_html"><div class="ttname"><a href="structcustom__flux.html">custom_flux</a></div><div class="ttdef"><b>Definition:</b> ERF_MOSTStress.H:2428</div></div>
@@ -3689,22 +3746,22 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01420"></a><span class="lineno"> 1420</span>&#160; </div>
 <div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(vbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;        {</div>
-<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a>  = cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a>  = cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> ust  = u_star_arr(i, j, 0);</div>
 <div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> tke0 = tkefac * ust * ust; <span class="comment">// surface value</span></div>
 <div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> zagl = <a class="code" href="ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739">Compute_Z_AtCellCenter</a>(i, j, k, z_phys_arr) - z_surf_arr(i,j,0);</div>
 <div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160; </div>
 <div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;            <span class="comment">// linearly tapering profile --  following WRF, approximate top of</span></div>
 <div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;            <span class="comment">// PBL as ustar * zscale</span></div>
-<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;            cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * tke0 * std::max(</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;            cons_arr(i, j, k, <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * tke0 * std::max(</div>
 <div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;                (ust * zscale - zagl) / (std::max(ust, small) * zscale),</div>
 <div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;                small);</div>
 <div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;        });</div>
 <div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;    }</div>
 <div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;}</div>
 <div class="ttc" id="aERF__Constants_8H_html_a51fd20c46a81551dee3956734c5f7bcc"><div class="ttname"><a href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a></div><div class="ttdeci">constexpr amrex::Real fourth</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:14</div></div>
-<div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:38</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a5592160d4fcea8fa203b4028037ad739"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739">Compute_Z_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Z_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:361</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:41</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a5592160d4fcea8fa203b4028037ad739"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739">Compute_Z_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Z_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:615</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3759,23 +3816,23 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;  {</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;      <span class="keywordtype">int</span> lmask_min = amrex::ReduceMin(lmask, nghost, [=] AMREX_GPU_HOST_DEVICE(</div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;                      amrex::Box <span class="keyword">const</span>&amp; bx, amrex::Array4&lt;int const&gt; <span class="keyword">const</span>&amp; lm_arr) -&gt; <span class="keywordtype">int</span></div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;                      {</div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;                          <span class="keywordtype">int</span> locmin = std::numeric_limits&lt;int&gt;::max();</div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> lo = lbound(bx);</div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> hi = ubound(bx);</div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;                          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
-<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;                              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
-<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;                                  locmin = std::min(locmin, lm_arr(i, j, 0));</div>
-<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;                              }</div>
-<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;                          }</div>
-<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;                          <span class="keywordflow">return</span> locmin;</div>
-<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;                      });</div>
-<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160; </div>
-<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;      <span class="keywordflow">return</span> lmask_min;</div>
-<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;  }</div>
+<div class="fragment"><div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;  {</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;      <span class="keywordtype">int</span> lmask_min = amrex::ReduceMin(lmask, nghost, [=] AMREX_GPU_HOST_DEVICE(</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;                      amrex::Box <span class="keyword">const</span>&amp; bx, amrex::Array4&lt;int const&gt; <span class="keyword">const</span>&amp; lm_arr) -&gt; <span class="keywordtype">int</span></div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;                      {</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;                          <span class="keywordtype">int</span> locmin = std::numeric_limits&lt;int&gt;::max();</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> lo = lbound(bx);</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;                          <span class="keyword">const</span> <span class="keyword">auto</span> hi = ubound(bx);</div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;                          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = lo.y; j &lt;= hi.y; ++j) {</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;                              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = lo.x; i &lt;= hi.x; ++i) {</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;                                  locmin = std::min(locmin, lm_arr(i, j, 0));</div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;                              }</div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                          }</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;                          <span class="keywordflow">return</span> locmin;</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                      });</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160; </div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;      <span class="keywordflow">return</span> lmask_min;</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;  }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">make_SurfaceLayer_at_level()</a>.</p>
 <div class="dynheader">
@@ -4158,9 +4215,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a319ff1c970342978d83ed3795c78afa7"><div class="ttname"><a href="ERF__Constants_8H.html#a319ff1c970342978d83ed3795c78afa7">bogus_large_value</a></div><div class="ttdeci">constexpr amrex::Real bogus_large_value</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:26</div></div>
 <div class="ttc" id="aclassMOSTAverage_html_aceb8c4ce27021d371b85abb7350a36db"><div class="ttname"><a href="classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db">MOSTAverage::make_MOSTAverage_at_level</a></div><div class="ttdeci">void make_MOSTAverage_at_level(const int &amp;lev, const amrex::Vector&lt; amrex::MultiFab * &gt; &amp;vars_old, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Theta_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qv_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;Qr_prim, std::unique_ptr&lt; amrex::MultiFab &gt; &amp;z_phys_nd)</div><div class="ttdef"><b>Definition:</b> ERF_MOSTAverage.cpp:104</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a04ccc2ab0ba1ae8e24316fe2f10ad424"><div class="ttname"><a href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424">SurfaceLayer::lmask_min_reduce</a></div><div class="ttdeci">int lmask_min_reduce(amrex::iMultiFab &amp;lmask, const int &amp;nghost)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:936</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a1dcdb82f4a2c3676732791255cfa9656"><div class="ttname"><a href="classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656">SurfaceLayer::m_has_lsm_tsurf</a></div><div class="ttdeci">bool m_has_lsm_tsurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1049</div></div>
-<div class="ttc" id="aclassSurfaceLayer_html_a4110ab7c1edcce288acc3f626466e6df"><div class="ttname"><a href="classSurfaceLayer.html#a4110ab7c1edcce288acc3f626466e6df">SurfaceLayer::m_has_lsm_fluxes</a></div><div class="ttdeci">bool m_has_lsm_fluxes</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1048</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a04ccc2ab0ba1ae8e24316fe2f10ad424"><div class="ttname"><a href="classSurfaceLayer.html#a04ccc2ab0ba1ae8e24316fe2f10ad424">SurfaceLayer::lmask_min_reduce</a></div><div class="ttdeci">int lmask_min_reduce(amrex::iMultiFab &amp;lmask, const int &amp;nghost)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:948</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a1dcdb82f4a2c3676732791255cfa9656"><div class="ttname"><a href="classSurfaceLayer.html#a1dcdb82f4a2c3676732791255cfa9656">SurfaceLayer::m_has_lsm_tsurf</a></div><div class="ttdeci">bool m_has_lsm_tsurf</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1061</div></div>
+<div class="ttc" id="aclassSurfaceLayer_html_a4110ab7c1edcce288acc3f626466e6df"><div class="ttname"><a href="classSurfaceLayer.html#a4110ab7c1edcce288acc3f626466e6df">SurfaceLayer::m_has_lsm_fluxes</a></div><div class="ttdeci">bool m_has_lsm_fluxes</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.H:1060</div></div>
 <div class="ttc" id="aclassSurfaceLayer_html_af866fe6c505ef4e5a551486d9aa3941b"><div class="ttname"><a href="classSurfaceLayer.html#af866fe6c505ef4e5a551486d9aa3941b">SurfaceLayer::read_custom_roughness</a></div><div class="ttdeci">void read_custom_roughness(const int &amp;lev, const std::string &amp;fname)</div><div class="ttdef"><b>Definition:</b> ERF_SurfaceLayer.cpp:1445</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -4359,7 +4416,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a9dd4e461268c8034f5c8564e155c67a6">Coord::x</a></div><div class="ttdeci">@ x</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
-<div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:248</div></div>
+<div class="ttc" id="anamespaceERFBCType_html_a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846"><div class="ttname"><a href="namespaceERFBCType.html#a40fbdd5a379a92debb4bcaaccac6e01ca4a8d85af949a1ce567934e55c69c2846">ERFBCType::foextrap</a></div><div class="ttdeci">@ foextrap</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:251</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ac6a4fad547654feecab3a69e37309f50">make_SurfaceLayer_at_level()</a>.</p>
 <div class="dynheader">
@@ -4426,7 +4483,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;{ <a class="code" href="classSurfaceLayer.html#a7faee03e46d3adf23aaa8a43e7edd539">q_surf</a>[lev]-&gt;setVal(qsurf); }</div>
+<div class="fragment"><div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;{ <a class="code" href="classSurfaceLayer.html#a7faee03e46d3adf23aaa8a43e7edd539">q_surf</a>[lev]-&gt;setVal(qsurf); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4471,7 +4528,7 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;{ <a class="code" href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">t_surf</a>[lev]-&gt;setVal(tsurf); }</div>
+<div class="fragment"><div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;{ <a class="code" href="classSurfaceLayer.html#a29a63e7fc9ea6026a7044649a163afb0">t_surf</a>[lev]-&gt;setVal(tsurf); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -4772,7 +4829,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gpbx, [=] AMREX_GPU_DEVICE(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            {</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> = cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keywordflow">if</span> (t_star_arr(i,j,0) &lt; -1e-8) {</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    <span class="comment">// Only destabilizing buoyancy flux affects the boundary k</span></div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <span class="comment">// tstar &lt; 0 ==&gt; B &gt; 0</span></div>
@@ -4783,13 +4840,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    }</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    <span class="comment">// Axell &amp; Liungman 2001, Eqn. 16</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * l_inv_Cmu2 *</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * l_inv_Cmu2 *</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        std::pow(</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                            u_star_arr(i,j,0) * u_star_arr(i,j,0) * u_star_arr(i,j,0)</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                            + <a class="code" href="ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093">KAPPA</a> * B * dist_arr(i,j,k),</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                        <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>/<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>);</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#ab8ec92cc3ea8422c9349409bae98d2a0">rho</a> * l_inv_Cmu2 * u_star_arr(i,j,0) * u_star_arr(i,j,0);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    cons_arr(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>) = <a class="code" href="namespaceMicVar__Kess.html#a4ba34ad6c66d27b420df9071019d1e94a89de8c3bfc941080efb960e5119fbd61">rho</a> * l_inv_Cmu2 * u_star_arr(i,j,0) * u_star_arr(i,j,0);</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                }</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            });</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        }</div>
@@ -4983,7 +5040,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;    }</div>
 <div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;}</div>
 <div class="ttc" id="aclassSurfaceLayer_html_a33bed820551a152ab22cf2ebd34c7fb6"><div class="ttname"><a href="classSurfaceLayer.html#a33bed820551a152ab22cf2ebd34c7fb6">SurfaceLayer::compute_pblh</a></div><div class="ttdeci">void compute_pblh(const int &amp;lev, amrex::Vector&lt; amrex::Vector&lt; amrex::MultiFab &gt;&gt; &amp;vars, amrex::MultiFab *z_phys_cc, const PBLHeightEstimator &amp;est, const MoistureComponentIndices &amp;moisture_indice)</div></div>
-<div class="ttc" id="astructMYNNPBLH_html"><div class="ttname"><a href="structMYNNPBLH.html">MYNNPBLH</a></div><div class="ttdef"><b>Definition:</b> ERF_PBLHeight.H:8</div></div>
+<div class="ttc" id="astructMYNNPBLH_html"><div class="ttname"><a href="structMYNNPBLH.html">MYNNPBLH</a></div><div class="ttdoc">Diagnostic utility for the planetary boundary layer height.</div><div class="ttdef"><b>Definition:</b> ERF_PBLHeight.H:11</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -5035,9 +5092,9 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                                                                              {</div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;      <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev][itime] = sst_ptr;</div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;  }</div>
+<div class="fragment"><div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;                                                                              {</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;      <a class="code" href="classSurfaceLayer.html#a7faf9946493893cfdebea2ab7fe4caee">m_sst_lev</a>[lev][itime] = sst_ptr;</div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -5135,9 +5192,9 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                                                                              {</div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;      <a class="code" href="classSurfaceLayer.html#ab789868247235aeb66757e34685008df">m_tsk_lev</a>[lev][itime] = tsk_ptr;</div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;  }</div>
+<div class="fragment"><div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;                                                                              {</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;      <a class="code" href="classSurfaceLayer.html#ab789868247235aeb66757e34685008df">m_tsk_lev</a>[lev][itime] = tsk_ptr;</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -5680,6 +5737,8 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#a4c6180431efcbe86bc99d6d4159bd834">computes_w_star()</a>.</p>
+
 </div>
 </div>
 <a id="a0f71ec0b683a3a9fa7530b070fa37aa2"></a>
@@ -6131,6 +6190,8 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="reference">Referenced by <a class="el" href="classSurfaceLayer.html#ab34b3ab96f6ef3304d286dc76e6b470c">computes_pblh()</a>.</p>
 
 </div>
 </div>

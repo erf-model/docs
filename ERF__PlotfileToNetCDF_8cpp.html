@@ -178,14 +178,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    amrex::SetVerbose(0);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    amrex::Initialize(argc, argv, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">int</span> status = <a class="code" href="ERF__PlotfileToNetCDF_8cpp.html#a48f25d96ba44c01a1ffc27d5268c44c1">main_main</a>();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    amrex::Finalize();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> status;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
-<div class="ttc" id="aERF__PlotfileToNetCDF_8cpp_html_a48f25d96ba44c01a1ffc27d5268c44c1"><div class="ttname"><a href="ERF__PlotfileToNetCDF_8cpp.html#a48f25d96ba44c01a1ffc27d5268c44c1">main_main</a></div><div class="ttdeci">int main_main()</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileToNetCDF.cpp:49</div></div>
+<p>Application entry point.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">argc</td><td>Argument count. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">argv</td><td>Argument vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Execution status. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    amrex::SetVerbose(0);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    amrex::Initialize(argc, argv, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">int</span> status = <a class="code" href="ERF__PlotfileToNetCDF_8cpp.html#a48f25d96ba44c01a1ffc27d5268c44c1">main_main</a>();</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    amrex::Finalize();</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> status;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="ttc" id="aERF__PlotfileToNetCDF_8cpp_html_a48f25d96ba44c01a1ffc27d5268c44c1"><div class="ttname"><a href="ERF__PlotfileToNetCDF_8cpp.html#a48f25d96ba44c01a1ffc27d5268c44c1">main_main</a></div><div class="ttdeci">int main_main()</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileToNetCDF.cpp:57</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -214,96 +223,98 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> narg = amrex::command_argument_count();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (narg == 0) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="ERF__PlotfileToNetCDF_8cpp.html#a4290650f260962f4a94f126651df64e1">PrintUsage</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> verbose = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::string iFile;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> farg = 1;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">while</span> (farg &lt;= narg) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">const</span> std::string fname = amrex::get_command_argument(farg);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (fname == <span class="stringliteral">&quot;-h&quot;</span> || fname == <span class="stringliteral">&quot;--help&quot;</span>) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;          <a class="code" href="ERF__PlotfileToNetCDF_8cpp.html#a4290650f260962f4a94f126651df64e1">PrintUsage</a>();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fname == <span class="stringliteral">&quot;-v&quot;</span>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          verbose = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            iFile = fname;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        ++farg;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (iFile.empty()) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;No plotfilename specified &quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// Remove trailing backslash if present</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (iFile.back() == <span class="charliteral">&#39;/&#39;</span>) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            iFile.pop_back();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (verbose) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;           amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading &quot;</span> &lt;&lt; iFile &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    PlotFileData pf_data(iFile);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> finest_level = pf_data.finestLevel();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> ncomp = pf_data.nComp();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (verbose) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Finished defining pf with finest level &quot;</span> &lt;&lt; finest_level &lt;&lt; <span class="stringliteral">&quot; and ncomp &quot;</span> &lt;&lt; ncomp &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<p>Convert a multilevel AMReX plotfile into NetCDF format.</p>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, otherwise an error code. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> narg = amrex::command_argument_count();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (narg == 0) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <a class="code" href="ERF__PlotfileToNetCDF_8cpp.html#a4290650f260962f4a94f126651df64e1">PrintUsage</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> verbose = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::string iFile;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> farg = 1;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">while</span> (farg &lt;= narg) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">const</span> std::string fname = amrex::get_command_argument(farg);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (fname == <span class="stringliteral">&quot;-h&quot;</span> || fname == <span class="stringliteral">&quot;--help&quot;</span>) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;          <a class="code" href="ERF__PlotfileToNetCDF_8cpp.html#a4290650f260962f4a94f126651df64e1">PrintUsage</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (fname == <span class="stringliteral">&quot;-v&quot;</span>) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;          verbose = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            iFile = fname;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        ++farg;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (iFile.empty()) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;No plotfilename specified &quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">// Remove trailing backslash if present</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (iFile.back() == <span class="charliteral">&#39;/&#39;</span>) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            iFile.pop_back();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (verbose) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;           amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Reading &quot;</span> &lt;&lt; iFile &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    PlotFileData pf_data(iFile);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; varnames = pf_data.varNames();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> finest_level = pf_data.finestLevel();</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Vector&lt;int&gt; istep{3};</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">double</span> time = pf_data.time();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> max_grid_size = 64;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    Vector&lt;MultiFab&gt; mfvec(finest_level+1);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    Vector&lt;Geometry&gt; geom(finest_level+1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span> ncomp = pf_data.nComp();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (verbose) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Finished defining pf with finest level &quot;</span> &lt;&lt; finest_level &lt;&lt; <span class="stringliteral">&quot; and ncomp &quot;</span> &lt;&lt; ncomp &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> Vector&lt;std::string&gt;&amp; varnames = pf_data.varNames();</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">double</span> start_bdy_time = time;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// A plotfile does not carry the solver configuration, and the only thing</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// writeNCPlotFile takes from it is the mesh type.  A plotfile also does not</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// record the staggered z levels needed for a stretched mesh, so we can only</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// write the (x,y,z) grid for a constant-dz mesh -- which is the default.</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="structSolverChoice.html">SolverChoice</a> solverChoice;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    Vector&lt;Real&gt; zlevels_stag;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        mfvec[lev].define(pf_data.boxArray(lev), pf_data.DistributionMap(lev), ncomp, 0);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; ncomp; icomp++) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            MultiFab tmp_data = pf_data.get(lev, varnames[icomp]);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            MultiFab::Copy(mfvec[lev],tmp_data,0,icomp,1,0);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">// We assume only one &quot;subdomain&quot; at each level that holds all the grids</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        BoxArray ba(pf_data.boxArray(lev));</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        Box bounding_region = (lev == 0) ? pf_data.probDomain(lev) : ba.minimalBox();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="comment">// We assume only one &quot;subdomain&quot; at each level</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordtype">int</span> which = 0;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile</a>(lev, which, iFile, GetVecOfConstPtrs(mfvec), varnames, istep,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                        pf_data.probLo(), pf_data.probHi(), pf_data.cellSize(lev), bounding_region,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                        time, start_bdy_time, solverChoice, zlevels_stag);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    Vector&lt;int&gt; istep{3};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">double</span> time = pf_data.time();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">int</span> max_grid_size = 64;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    Vector&lt;MultiFab&gt; mfvec(finest_level+1);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    Vector&lt;Geometry&gt; geom(finest_level+1);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">double</span> start_bdy_time = time;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// A plotfile does not carry the solver configuration, and the only thing</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// writeNCPlotFile takes from it is the mesh type.  A plotfile also does not</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// record the staggered z levels needed for a stretched mesh, so we can only</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// write the (x,y,z) grid for a constant-dz mesh -- which is the default.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="structSolverChoice.html">SolverChoice</a> solverChoice;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Vector&lt;Real&gt; zlevels_stag;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> lev = 0; lev &lt;= finest_level; lev++)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        mfvec[lev].define(pf_data.boxArray(lev), pf_data.DistributionMap(lev), ncomp, 0);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icomp = 0; icomp &lt; ncomp; icomp++) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            MultiFab tmp_data = pf_data.get(lev, varnames[icomp]);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            MultiFab::Copy(mfvec[lev],tmp_data,0,icomp,1,0);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="comment">// We assume only one &quot;subdomain&quot; at each level that holds all the grids</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        BoxArray ba(pf_data.boxArray(lev));</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        Box bounding_region = (lev == 0) ? pf_data.probDomain(lev) : ba.minimalBox();</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="comment">// We assume only one &quot;subdomain&quot; at each level</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordtype">int</span> which = 0;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile</a>(lev, which, iFile, GetVecOfConstPtrs(mfvec), varnames, istep,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        pf_data.probLo(), pf_data.probHi(), pf_data.cellSize(lev), bounding_region,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        time, start_bdy_time, solverChoice, zlevels_stag);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
 <div class="ttc" id="aERF__NCPlotFile_8cpp_html_a551323f9a8390bd5fcf558c050e4480a"><div class="ttname"><a href="ERF__NCPlotFile_8cpp.html#a551323f9a8390bd5fcf558c050e4480a">writeNCPlotFile</a></div><div class="ttdeci">void writeNCPlotFile(int lev, int which_subdomain, const std::string &amp;dir, const Vector&lt; const MultiFab * &gt; &amp;plotMF, const Vector&lt; std::string &gt; &amp;plot_var_names, const Vector&lt; int &gt; &amp;, Array&lt; Real, AMREX_SPACEDIM &gt; prob_lo, Array&lt; Real, AMREX_SPACEDIM &gt; prob_hi, Array&lt; Real, AMREX_SPACEDIM &gt; dx_in, const Box &amp;subdomain, const double &amp;time, const double &amp;start_bdy_time, const SolverChoice &amp;solverChoice, const Vector&lt; Real &gt; &amp;zlevels_stag)</div><div class="ttdef"><b>Definition:</b> ERF_NCPlotFile.cpp:20</div></div>
-<div class="ttc" id="aERF__PlotfileToNetCDF_8cpp_html_a4290650f260962f4a94f126651df64e1"><div class="ttname"><a href="ERF__PlotfileToNetCDF_8cpp.html#a4290650f260962f4a94f126651df64e1">PrintUsage</a></div><div class="ttdeci">static void PrintUsage()</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileToNetCDF.cpp:34</div></div>
+<div class="ttc" id="aERF__PlotfileToNetCDF_8cpp_html_a4290650f260962f4a94f126651df64e1"><div class="ttname"><a href="ERF__PlotfileToNetCDF_8cpp.html#a4290650f260962f4a94f126651df64e1">PrintUsage</a></div><div class="ttdeci">static void PrintUsage()</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileToNetCDF.cpp:37</div></div>
 <div class="ttc" id="astructSolverChoice_html"><div class="ttname"><a href="structSolverChoice.html">SolverChoice</a></div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:241</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__PlotfileToNetCDF_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main()</a>.</p>
@@ -351,18 +362,19 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    amrex::Print()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; Convert a multilevel AMReX-formatted plotfile into one netcdf file per level \n&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; usage:\n&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;   main*exe [-v] plotfilename\n&quot;</span></div>
+<p>Print the usage message and exit. </p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    amrex::Print()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; Convert a multilevel AMReX-formatted plotfile into one netcdf file per level \n&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; optional arguments:\n&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;    -v verbosity            : verbose if set, otherwise silent \n&quot;</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  exit(1);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; usage:\n&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;   main*exe [-v] plotfilename\n&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        &lt;&lt; <span class="stringliteral">&quot; optional arguments:\n&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        &lt;&lt; <span class="stringliteral">&quot;    -v verbosity            : verbose if set, otherwise silent \n&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  exit(1);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="ERF__PlotfileToNetCDF_8cpp.html#a48f25d96ba44c01a1ffc27d5268c44c1">main_main()</a>.</p>
 <div class="dynheader">

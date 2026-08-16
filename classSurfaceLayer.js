@@ -42,6 +42,8 @@ var classSurfaceLayer =
     [ "compute_SurfaceLayer_bcs", "classSurfaceLayer.html#a4f57753d5aa5893c395ffe3a9aa14a33", null ],
     [ "compute_SurfaceLayer_bcs_EB", "classSurfaceLayer.html#aa8ccd843f27b8b5594ed403332c2c04f", null ],
     [ "compute_SurfaceLayer_bcs_EB", "classSurfaceLayer.html#afacb49749e5898238b7d71b7638ce209", null ],
+    [ "computes_pblh", "classSurfaceLayer.html#ab34b3ab96f6ef3304d286dc76e6b470c", null ],
+    [ "computes_w_star", "classSurfaceLayer.html#a4c6180431efcbe86bc99d6d4159bd834", null ],
     [ "fill_qsurf_with_qsat", "classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef", null ],
     [ "fill_tsurf_with_sst_and_tsk", "classSurfaceLayer.html#abd8b4d0eae4e11884229501c74fd4921", null ],
     [ "get_lmask", "classSurfaceLayer.html#a14804fd1d84bfe303a7b353d231d2d10", null ],

@@ -6,6 +6,7 @@ var ERF__IndexDefines_8H =
     [ "NPRIMVAR_max", "ERF__IndexDefines_8H.html#a19169754519601f5fe52ede728af2138", null ],
     [ "NSCALARS", "ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9", null ],
     [ "NVAR_max", "ERF__IndexDefines_8H.html#a46e292b965f80d15acfbdc11ffe1e0f0", null ],
+    [ "NVAR_MOIST_max", "ERF__IndexDefines_8H.html#aef23aa54c5c6c2458de93772f28534b5", null ],
     [ "PrimKE_comp", "ERF__IndexDefines_8H.html#a9ab6bf01b348d4b7cef99f3655c9dbb2", null ],
     [ "PrimQ10_comp", "ERF__IndexDefines_8H.html#acdc71ab031ec1f8ffd3568c58ab6075c", null ],
     [ "PrimQ11_comp", "ERF__IndexDefines_8H.html#a7fb02ae8fd2f46fd9cb1b247b058bd46", null ],

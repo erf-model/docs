@@ -128,46 +128,57 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCProcess_8H_source.h
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ParticleReal* vterm_ptr{<span class="keyword">nullptr</span>};</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ParticleReal* mult_ptr{<span class="keyword">nullptr</span>};</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Species and aerosol mass arrays</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    SDSpeciesMassArr sp_mass_ptrs{};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    SDAerosolMassArr ae_mass_ptrs{};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Material properties (read-only)</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> ParticleReal* sp_rho_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* sp_sol_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> ParticleReal* sp_ion_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> ParticleReal* sp_mw_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> ParticleReal* ae_rho_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* ae_sol_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> ParticleReal* ae_ion_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> ParticleReal* ae_mw_arr{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">/*! \brief Context data that doesn&#39;t change per-tile */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">struct </span>ProcessContext {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Geometry</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; plo;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; phi;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxi;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    GpuArray&lt;int, AMREX_SPACEDIM&gt; is_periodic;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    Box domain;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cell_volume{0.0};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Species/aerosol counts and indices</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> num_species{0};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> num_aerosols{0};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> idx_water{-1};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Material densities (commonly used)</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ParticleReal rho_water{0.0};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Ice properties</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ParticleReal* Tfz_ptr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    ParticleReal* a_ptr{<span class="keyword">nullptr</span>};     <span class="comment">// equatorial radius</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ParticleReal* c_ptr{<span class="keyword">nullptr</span>};     <span class="comment">// polar radius</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    ParticleReal* mrime_ptr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    ParticleReal* nmono_ptr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Species and aerosol mass arrays</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    SDSpeciesMassArr sp_mass_ptrs{};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    SDAerosolMassArr ae_mass_ptrs{};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Material properties (read-only)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> ParticleReal* sp_rho_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* sp_sol_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> ParticleReal* sp_ion_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> ParticleReal* sp_mw_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* sp_INP_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> ParticleReal* ae_rho_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* ae_sol_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> ParticleReal* ae_ion_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> ParticleReal* ae_mw_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span>* ae_INP_arr{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/*! \brief Context data that doesn&#39;t change per-tile */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">struct </span>ProcessContext {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Geometry</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; plo;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; phi;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; dxi;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    GpuArray&lt;Real, AMREX_SPACEDIM&gt; <a class="code" href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    GpuArray&lt;int, AMREX_SPACEDIM&gt; is_periodic;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    Box domain;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> cell_volume{0.0};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// namespace SDProcess</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_USE_PARTICLES</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_SUPERDROPLET_PC_PROCESS_H_</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Species/aerosol counts and indices</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">int</span> num_species{0};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">int</span> num_aerosols{0};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> idx_water{-1};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> idx_ice{-1};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Material densities (commonly used)</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ParticleReal rho_water{0.0};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ParticleReal rho_ice{0.0};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace SDProcess</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_USE_PARTICLES</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ERF_SUPERDROPLET_PC_PROCESS_H_</span></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_af9913ed40bcb0ccf6257c6727b2960b0"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#af9913ed40bcb0ccf6257c6727b2960b0">dx</a></div><div class="ttdeci">const Real dx</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:23</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="aERF__SuperDropletPCDefinitions_8H_html"><div class="ttname"><a href="ERF__SuperDropletPCDefinitions_8H.html">ERF_SuperDropletPCDefinitions.H</a></div></div>

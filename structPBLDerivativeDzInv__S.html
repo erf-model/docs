@@ -91,13 +91,16 @@ $(document).ready(function(){initNavTree('structPBLDerivativeDzInv__S.html','');
 </div><!--header-->
 <div class="contents">
 
+<p>Functor for inverse vertical spacings for stretched grids using a spacing array.  
+ <a href="structPBLDerivativeDzInv__S.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ERF__PBLModels_8H_source.html">ERF_PBLModels.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for PBLDerivativeDzInv_S:</div>
 <div class="dyncontent">
 <div class="center"><img src="structPBLDerivativeDzInv__S__coll__graph.png" border="0" usemap="#aPBLDerivativeDzInv__S_coll__map" alt="Collaboration graph"/></div>
 <map name="aPBLDerivativeDzInv__S_coll__map" id="aPBLDerivativeDzInv__S_coll__map">
-<area shape="rect" title=" " alt="" coords="5,109,172,136"/>
+<area shape="rect" title="Functor for inverse vertical spacings for stretched grids using a spacing array." alt="" coords="5,109,172,136"/>
 <area shape="rect" title=" " alt="" coords="32,5,71,32"/>
 <area shape="rect" title=" " alt="" coords="95,5,157,32"/>
 </map>
@@ -117,7 +120,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aaeb70928ba5c51f3c9e13c1397c705db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPBLDerivativeDzInv__S.html#aaeb70928ba5c51f3c9e13c1397c705db">khi</a></td></tr>
 <tr class="separator:aaeb70928ba5c51f3c9e13c1397c705db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Functor for inverse vertical spacings for stretched grids using a spacing array. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9c20dbca5aa8e5a12d220e9720bf61f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c20dbca5aa8e5a12d220e9720bf61f3">&#9670;&nbsp;</a></span>operator()()</h2>
 
@@ -157,19 +162,26 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    {</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="comment">// Adjacent cell centers are separated by half the sum of their widths.</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_lo = <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[(k &gt; <a class="code" href="structPBLDerivativeDzInv__S.html#aa127676757b882cdba368d99af6b6a6d">klo</a>) ? k-1 : k];</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_hi = <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[(k &lt; <a class="code" href="structPBLDerivativeDzInv__S.html#aaeb70928ba5c51f3c9e13c1397c705db">khi</a>) ? k+1 : k];</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_lo + <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[k] + dz_hi),</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[k],</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[k]};</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
+<p>Return inverse vertical spacings for stretched grids. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">k</td><td>z-index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structPBLDerivativeDzInv.html">PBLDerivativeDzInv</a> inverse spacing values </dd></dl>
+<div class="fragment"><div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    {</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;        <span class="comment">// Adjacent cell centers are separated by half the sum of their widths.</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_lo = <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[(k &gt; <a class="code" href="structPBLDerivativeDzInv__S.html#aa127676757b882cdba368d99af6b6a6d">klo</a>) ? k-1 : k];</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dz_hi = <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[(k &lt; <a class="code" href="structPBLDerivativeDzInv__S.html#aaeb70928ba5c51f3c9e13c1397c705db">khi</a>) ? k+1 : k];</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordflow">return</span> {<a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / (dz_lo + <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*<a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[k] + dz_hi),</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[k],</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a> / <a class="code" href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">dz</a>[k]};</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="astructPBLDerivativeDzInv__S_html_a2d127ab19610d7041d56827b0aa55a04"><div class="ttname"><a href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">PBLDerivativeDzInv_S::dz</a></div><div class="ttdeci">const amrex::Real * dz</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:399</div></div>
-<div class="ttc" id="astructPBLDerivativeDzInv__S_html_aa127676757b882cdba368d99af6b6a6d"><div class="ttname"><a href="structPBLDerivativeDzInv__S.html#aa127676757b882cdba368d99af6b6a6d">PBLDerivativeDzInv_S::klo</a></div><div class="ttdeci">int klo</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:400</div></div>
-<div class="ttc" id="astructPBLDerivativeDzInv__S_html_aaeb70928ba5c51f3c9e13c1397c705db"><div class="ttname"><a href="structPBLDerivativeDzInv__S.html#aaeb70928ba5c51f3c9e13c1397c705db">PBLDerivativeDzInv_S::khi</a></div><div class="ttdeci">int khi</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:401</div></div>
+<div class="ttc" id="astructPBLDerivativeDzInv__S_html_a2d127ab19610d7041d56827b0aa55a04"><div class="ttname"><a href="structPBLDerivativeDzInv__S.html#a2d127ab19610d7041d56827b0aa55a04">PBLDerivativeDzInv_S::dz</a></div><div class="ttdeci">const amrex::Real * dz</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:432</div></div>
+<div class="ttc" id="astructPBLDerivativeDzInv__S_html_aa127676757b882cdba368d99af6b6a6d"><div class="ttname"><a href="structPBLDerivativeDzInv__S.html#aa127676757b882cdba368d99af6b6a6d">PBLDerivativeDzInv_S::klo</a></div><div class="ttdeci">int klo</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:433</div></div>
+<div class="ttc" id="astructPBLDerivativeDzInv__S_html_aaeb70928ba5c51f3c9e13c1397c705db"><div class="ttname"><a href="structPBLDerivativeDzInv__S.html#aaeb70928ba5c51f3c9e13c1397c705db">PBLDerivativeDzInv_S::khi</a></div><div class="ttdeci">int khi</div><div class="ttdef"><b>Definition:</b> ERF_PBLModels.H:434</div></div>
 </div><!-- fragment -->
 </div>
 </div>

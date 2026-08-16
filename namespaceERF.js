@@ -1,7 +1,8 @@
 var namespaceERF =
 [
     [ "Interpolation", "namespaceERF_1_1Interpolation.html", [
-      [ "interpolateFields", "namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe", null ]
+      [ "interpolateFields", "namespaceERF_1_1Interpolation.html#ab1b8576c9ac7ae9803bd445af83f2bfe", null ],
+      [ "stencilOutOfBoundsZ", "namespaceERF_1_1Interpolation.html#a117832d8de5c92e7ba2983d5168770ce", null ]
     ] ],
     [ "ParticlePos", "namespaceERF_1_1ParticlePos.html", [
       [ "z_face_at_xy", "namespaceERF_1_1ParticlePos.html#a2409924dd7bece2d339b1e7ebadd33ea", null ],

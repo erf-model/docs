@@ -91,13 +91,16 @@ $(document).ready(function(){initNavTree('structTerminalVelocity.html',''); init
 </div><!--header-->
 <div class="contents">
 
+<p>Provide terminal velocity calculations for atmospheric particles.  
+ <a href="structTerminalVelocity.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ERF__TerminalVelocity_8H_source.html">ERF_TerminalVelocity.H</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for TerminalVelocity&lt; RT &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTerminalVelocity__coll__graph.png" border="0" usemap="#aTerminalVelocity_3_01RT_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aTerminalVelocity_3_01RT_01_4_coll__map" id="aTerminalVelocity_3_01RT_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="5,95,181,121"/>
+<area shape="rect" title="Provide terminal velocity calculations for atmospheric particles." alt="" coords="5,109,181,136"/>
 <area shape="rect" title=" " alt="" coords="74,5,113,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -122,13 +125,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a24c7b2e3ab3ea44c7050b6bd8a9b67f8"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTerminalVelocity.html#a24c7b2e3ab3ea44c7050b6bd8a9b67f8">vz_c_x</a> (const RT a_x) const noexcept</td></tr>
 <tr class="memdesc:a24c7b2e3ab3ea44c7050b6bd8a9b67f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute vc_b(x)  <a href="structTerminalVelocity.html#a24c7b2e3ab3ea44c7050b6bd8a9b67f8">More...</a><br /></td></tr>
 <tr class="separator:a24c7b2e3ab3ea44c7050b6bd8a9b67f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614738505d97809132544dacf1bdb486"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE RT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTerminalVelocity.html#a614738505d97809132544dacf1bdb486">IceBohm</a> (const RT a_m, const RT a_a, const RT a_c, const RT a_rhoi, const RT a_rho, const RT a_T) const noexcept</td></tr>
+<tr class="memdesc:a614738505d97809132544dacf1bdb486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminal velocity - ice particles (Bohm's theory) Ref: Shima et al., 2020, "Predicting the morphology of ice particles in deep convection using the super-droplet method: development and evaluation of SCALE-SDM 0.2.5-2.2.0, -2.2.1, and -2.2.2.", Geosci. Model Dev., 13, 4107–4157, 2020.  <a href="structTerminalVelocity.html#a614738505d97809132544dacf1bdb486">More...</a><br /></td></tr>
+<tr class="separator:a614738505d97809132544dacf1bdb486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06531475d0e8b8636ca8c381894cced2"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTerminalVelocity.html#a06531475d0e8b8636ca8c381894cced2">MeltBlendWeight</a> (const RT a_ell) const noexcept</td></tr>
+<tr class="memdesc:a06531475d0e8b8636ca8c381894cced2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frick et al. (2013, Geosci. Model Dev. 6, Eq. 15) liquid-water-fraction weight for the fall speed of a melting (mixed) particle. Rises from 0 (dry ice) to 1 (fully melted) as the meltwater mass fraction a_ell goes 0 -&gt; 1.  <a href="structTerminalVelocity.html#a06531475d0e8b8636ca8c381894cced2">More...</a><br /></td></tr>
+<tr class="separator:a06531475d0e8b8636ca8c381894cced2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b96c3f35fc6f0748551b9cd55a50120"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTerminalVelocity.html#a5b96c3f35fc6f0748551b9cd55a50120">MixedPhaseVterm</a> (const RT a_v_ice, const RT a_v_rain, const RT a_ell) const noexcept</td></tr>
+<tr class="memdesc:a5b96c3f35fc6f0748551b9cd55a50120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminal velocity of a melting (mixed) ice-water particle, interpolated between the dry-ice (Bohm) fall speed and the equivalent-raindrop fall speed by the meltwater mass fraction (Frick et al. 2013, Eq. 14).  <a href="structTerminalVelocity.html#a5b96c3f35fc6f0748551b9cd55a50120">More...</a><br /></td></tr>
+<tr class="separator:a5b96c3f35fc6f0748551b9cd55a50120"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a31e44fff89c6807e0f42f3389b23d962"><td class="memItemLeft" align="right" valign="top">RT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTerminalVelocity.html#a31e44fff89c6807e0f42f3389b23d962">m_rho_w</a></td></tr>
 <tr class="separator:a31e44fff89c6807e0f42f3389b23d962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc7051a86635f3c1faee94447050e979"><td class="memItemLeft" align="right" valign="top">RT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTerminalVelocity.html#acc7051a86635f3c1faee94447050e979">m_rho_i</a></td></tr>
+<tr class="separator:acc7051a86635f3c1faee94447050e979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename RT&gt;<br />
+struct TerminalVelocity&lt; RT &gt;</h3>
+
+<p>Provide terminal velocity calculations for atmospheric particles. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RT</td><td>Real-valued type. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad98dfe5eb73be66f6f6c569a2e404611"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad98dfe5eb73be66f6f6c569a2e404611">&#9670;&nbsp;</a></span>AtlasUlbrich()</h2>
 
@@ -156,12 +181,12 @@ template&lt;typename RT &gt; </div>
 </div><div class="memdoc">
 
 <p>Terminal velocity - Atlas &amp; Ulbrich, 1977. </p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> RT a = RT(3.778);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> RT b = RT(0.67);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        RT D = RT(2)*a_r*RT(1000); <span class="comment">// meter -&gt; mm</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> a*(std::exp(b*std::log(D)));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> RT a = RT(3.778);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> RT b = RT(0.67);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        RT D = RT(2)*a_r*RT(1000); <span class="comment">// meter -&gt; mm</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> a*(std::exp(b*std::log(D)));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -223,68 +248,67 @@ template&lt;typename RT &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        RT lb4l = RT(6.62E-6);    <span class="comment">// base length[cm] for mean free path  of air molecules</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        RT visb4l = RT(1.818E-4); <span class="comment">// base dynamic viscosity[g/(cm*s)] for mean free path of air molecules</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        RT pb4l = RT(1013.25);    <span class="comment">// base pressure[hPa] for mean free path of air molecules</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        RT tb4l = RT(293.15);     <span class="comment">// base temperature[20C] for mean free path of air molecules</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        RT P_hPa = a_P / RT(100.0);           <span class="comment">// [Pa] -&gt; [hPa]</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        RT diameter_cm = RT(2.0)*a_r*RT(100.0);   <span class="comment">// [m] -&gt; [cm]</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        RT rho_mat_cgs = <a class="code" href="structTerminalVelocity.html#a31e44fff89c6807e0f42f3389b23d962">m_rho_w</a>/RT(1000.0);  <span class="comment">// [kg/m^3] -&gt; [g/cm^3]</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        RT rho_air_cgs = a_rho/RT(1000.0);    <span class="comment">// [kg/m^3] -&gt; [g/cm^3]</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        RT grav_cgs = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * RT(100);   <span class="comment">// [m/s^2] -&gt; [cm/s^2]</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        RT gxdrow = grav_cgs * ( rho_mat_cgs - rho_air_cgs );</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        RT viscosity = <a class="code" href="structTerminalVelocity.html#a5f8d1323c2c72c150f1d108e1bd43a0f">viscCoeff</a>(a_T);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        RT v_terminal = RT(0.0);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (diameter_cm &lt; RT(1.9e-3)) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">// small cloud droplets</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            RT sd_l = lb4l * (viscosity/visb4l) * (pb4l/P_hPa) * std::sqrt(a_T/tb4l);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            RT <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a>  = gxdrow / (RT(18.0)*viscosity);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            RT csc = RT(1.0) + RT(2.510) * (sd_l/diameter_cm);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            v_terminal = <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a> * csc * diameter_cm * diameter_cm;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (diameter_cm &lt; RT(1.07e-1)) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="comment">// large cloud droplets and small raindrops</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            RT sd_l = lb4l * (viscosity/visb4l) * (pb4l/P_hPa) * std::sqrt(a_T/tb4l);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            RT <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> = rho_air_cgs * (RT(4.0)*gxdrow)/(RT(<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>)*viscosity*viscosity);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            RT nda = <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> * diameter_cm * diameter_cm * diameter_cm;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            RT csc = RT(1.0) + RT(2.510) * ( sd_l / diameter_cm );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            RT nre = csc * std::exp(<a class="code" href="structTerminalVelocity.html#a093f03eb3b9a5d2353a39162249cb1c6">vz_b_x</a>(std::log(nda)));</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            v_terminal = (viscosity*nre)/(rho_air_cgs*diameter_cm);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="comment">// large raindrops</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            RT tau = RT(1.0) - a_T/RT(647.0960);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> = RT(0.2358) * std::exp( RT(1.2560)*std::log(tau) )</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                * ( RT(1.0) - RT(0.6250)*tau );</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span>( a_T&lt;RT(267.5) ) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                tau = std::tanh( (a_T-RT(243.9))/RT(35.35) );</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> = <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> - RT(2.854E-3) * tau + RT(1.666E-3);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> = <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> * RT(1.E+3); <span class="comment">// N/m =&gt; g/s^2</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            RT c3 = (RT(4.0)*gxdrow)/(RT(<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>)*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            RT bond = c3 * diameter_cm * diameter_cm;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            RT npp =    (rho_air_cgs*rho_air_cgs) * (<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                        / (gxdrow*viscosity*viscosity*viscosity*viscosity);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            npp = std::exp( std::log(npp)/RT(6.0) );</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            RT nre = npp * std::exp(<a class="code" href="structTerminalVelocity.html#a24c7b2e3ab3ea44c7050b6bd8a9b67f8">vz_c_x</a>(std::log(bond*npp)));</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            v_terminal = (viscosity*nre)/(rho_air_cgs*diameter_cm);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        v_terminal /= RT(100.0); <span class="comment">// [cm/s] -&gt; [m/s]</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> v_terminal;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        RT lb4l = RT(6.62E-6);    <span class="comment">// base length[cm] for mean free path  of air molecules</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        RT visb4l = RT(1.818E-4); <span class="comment">// base dynamic viscosity[g/(cm*s)] for mean free path of air molecules</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        RT pb4l = RT(1013.25);    <span class="comment">// base pressure[hPa] for mean free path of air molecules</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        RT tb4l = RT(293.15);     <span class="comment">// base temperature[20C] for mean free path of air molecules</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        RT P_hPa = a_P / RT(100.0);           <span class="comment">// [Pa] -&gt; [hPa]</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        RT diameter_cm = RT(2.0)*std::min(a_r,RT(0.004))*RT(100.0);   <span class="comment">// [m] -&gt; [cm]</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        RT rho_mat_cgs = <a class="code" href="structTerminalVelocity.html#a31e44fff89c6807e0f42f3389b23d962">m_rho_w</a>/RT(1000.0);  <span class="comment">// [kg/m^3] -&gt; [g/cm^3]</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        RT rho_air_cgs = a_rho/RT(1000.0);    <span class="comment">// [kg/m^3] -&gt; [g/cm^3]</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        RT grav_cgs = <a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a> * RT(100);   <span class="comment">// [m/s^2] -&gt; [cm/s^2]</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        RT gxdrow = grav_cgs * ( rho_mat_cgs - rho_air_cgs );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        RT viscosity = <a class="code" href="structTerminalVelocity.html#a5f8d1323c2c72c150f1d108e1bd43a0f">viscCoeff</a>(a_T);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        RT v_terminal = RT(0.0);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (diameter_cm &lt; RT(1.9e-3)) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="comment">// small cloud droplets</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            RT sd_l = lb4l * (viscosity/visb4l) * (pb4l/P_hPa) * std::sqrt(a_T/tb4l);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            RT <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a>  = gxdrow / (RT(18.0)*viscosity);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            RT csc = RT(1.0) + RT(2.510) * (sd_l/diameter_cm);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            v_terminal = <a class="code" href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">c1</a> * csc * diameter_cm * diameter_cm;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (diameter_cm &lt; RT(1.07e-1)) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// large cloud droplets and small raindrops</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            RT sd_l = lb4l * (viscosity/visb4l) * (pb4l/P_hPa) * std::sqrt(a_T/tb4l);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            RT <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> = rho_air_cgs * (RT(4.0)*gxdrow)/(RT(<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>)*viscosity*viscosity);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            RT nda = <a class="code" href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">c2</a> * diameter_cm * diameter_cm * diameter_cm;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            RT csc = RT(1.0) + RT(2.510) * ( sd_l / diameter_cm );</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            RT nre = csc * std::exp(<a class="code" href="structTerminalVelocity.html#a093f03eb3b9a5d2353a39162249cb1c6">vz_b_x</a>(std::log(nda)));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            v_terminal = (viscosity*nre)/(rho_air_cgs*diameter_cm);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="comment">// large raindrops</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            RT tau = RT(1.0) - a_T/RT(647.0960);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            RT <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> = RT(0.2358) * std::exp( RT(1.2560)*std::log(tau) )</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                                * ( RT(1.0) - RT(0.6250)*tau );</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">if</span>( a_T&lt;RT(267.5) ) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                tau = std::tanh( (a_T-RT(243.9))/RT(35.35) );</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> = <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> - RT(2.854E-3) * tau + RT(1.666E-3);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> = <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a> * RT(1.E+3); <span class="comment">// N/m =&gt; g/s^2</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            RT c3 = (RT(4.0)*gxdrow)/(RT(<a class="code" href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a>)*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            RT bond = c3 * diameter_cm * diameter_cm;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            RT npp =    (rho_air_cgs*rho_air_cgs) * (<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a>)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        / (gxdrow*viscosity*viscosity*viscosity*viscosity);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            npp = std::exp( std::log(npp)/RT(6.0) );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            RT nre = npp * std::exp(<a class="code" href="structTerminalVelocity.html#a24c7b2e3ab3ea44c7050b6bd8a9b67f8">vz_c_x</a>(std::log(bond*npp)));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            v_terminal = (viscosity*nre)/(rho_air_cgs*diameter_cm);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        v_terminal /= RT(100.0); <span class="comment">// [cm/s] -&gt; [m/s]</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> v_terminal;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_a0aec04a101a1a92c2f32ff394b510bfd"><div class="ttname"><a href="ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd">three</a></div><div class="ttdeci">constexpr amrex::Real three</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:11</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_ac2d0c304ab1117368778efcda612de43"><div class="ttname"><a href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a></div><div class="ttdeci">constexpr amrex::Real CONST_GRAV</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:64</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a5e9caa74b9ef9befb527201d7e904801"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a5e9caa74b9ef9befb527201d7e904801">sigma</a></div><div class="ttdeci">amrex::Real sigma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:11</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_ae746419ec0ae3521a26369d366c01247"><div class="ttname"><a href="namespacemodule__model__constants.html#ae746419ec0ae3521a26369d366c01247">module_model_constants::c2</a></div><div class="ttdeci">real(c_double), parameter c2</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:35</div></div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a5921cee170609ce1181cd5025f636653"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a5921cee170609ce1181cd5025f636653">module_mp_morr_two_moment::c1</a></div><div class="ttdeci">real(c_double), private c1</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:212</div></div>
-<div class="ttc" id="astructTerminalVelocity_html_a093f03eb3b9a5d2353a39162249cb1c6"><div class="ttname"><a href="structTerminalVelocity.html#a093f03eb3b9a5d2353a39162249cb1c6">TerminalVelocity::vz_b_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT vz_b_x(const RT a_x) const noexcept</div><div class="ttdoc">Compute vz_b(x)</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:116</div></div>
-<div class="ttc" id="astructTerminalVelocity_html_a24c7b2e3ab3ea44c7050b6bd8a9b67f8"><div class="ttname"><a href="structTerminalVelocity.html#a24c7b2e3ab3ea44c7050b6bd8a9b67f8">TerminalVelocity::vz_c_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT vz_c_x(const RT a_x) const noexcept</div><div class="ttdoc">Compute vc_b(x)</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:133</div></div>
-<div class="ttc" id="astructTerminalVelocity_html_a31e44fff89c6807e0f42f3389b23d962"><div class="ttname"><a href="structTerminalVelocity.html#a31e44fff89c6807e0f42f3389b23d962">TerminalVelocity::m_rho_w</a></div><div class="ttdeci">RT m_rho_w</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:11</div></div>
-<div class="ttc" id="astructTerminalVelocity_html_a5f8d1323c2c72c150f1d108e1bd43a0f"><div class="ttname"><a href="structTerminalVelocity.html#a5f8d1323c2c72c150f1d108e1bd43a0f">TerminalVelocity::viscCoeff</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto viscCoeff(const RT a_T) const noexcept</div><div class="ttdoc">Compute viscosity coefficient - Pruppacher &amp; Klett, 1997.</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:15</div></div>
+<div class="ttc" id="astructTerminalVelocity_html_a093f03eb3b9a5d2353a39162249cb1c6"><div class="ttname"><a href="structTerminalVelocity.html#a093f03eb3b9a5d2353a39162249cb1c6">TerminalVelocity::vz_b_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT vz_b_x(const RT a_x) const noexcept</div><div class="ttdoc">Compute vz_b(x)</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:120</div></div>
+<div class="ttc" id="astructTerminalVelocity_html_a24c7b2e3ab3ea44c7050b6bd8a9b67f8"><div class="ttname"><a href="structTerminalVelocity.html#a24c7b2e3ab3ea44c7050b6bd8a9b67f8">TerminalVelocity::vz_c_x</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT vz_c_x(const RT a_x) const noexcept</div><div class="ttdoc">Compute vc_b(x)</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:137</div></div>
+<div class="ttc" id="astructTerminalVelocity_html_a31e44fff89c6807e0f42f3389b23d962"><div class="ttname"><a href="structTerminalVelocity.html#a31e44fff89c6807e0f42f3389b23d962">TerminalVelocity::m_rho_w</a></div><div class="ttdeci">RT m_rho_w</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:15</div></div>
+<div class="ttc" id="astructTerminalVelocity_html_a5f8d1323c2c72c150f1d108e1bd43a0f"><div class="ttname"><a href="structTerminalVelocity.html#a5f8d1323c2c72c150f1d108e1bd43a0f">TerminalVelocity::viscCoeff</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE auto viscCoeff(const RT a_T) const noexcept</div><div class="ttdoc">Compute viscosity coefficient - Pruppacher &amp; Klett, 1997.</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:20</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -294,6 +318,246 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="structTerminalVelocity.html#a5f8d1323c2c72c150f1d108e1bd43a0f" title="Compute viscosity coefficient &#45; Pruppacher &amp; Klett, 1997." alt="" coords="256,5,453,32"/>
 <area shape="rect" href="structTerminalVelocity.html#a093f03eb3b9a5d2353a39162249cb1c6" title="Compute vz_b(x)" alt="" coords="263,56,446,83"/>
 <area shape="rect" href="structTerminalVelocity.html#a24c7b2e3ab3ea44c7050b6bd8a9b67f8" title="Compute vc_b(x)" alt="" coords="264,107,445,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a614738505d97809132544dacf1bdb486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a614738505d97809132544dacf1bdb486">&#9670;&nbsp;</a></span>IceBohm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE RT <a class="el" href="structTerminalVelocity.html">TerminalVelocity</a>&lt; RT &gt;::IceBohm </td>
+          <td>(</td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_rhoi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_rho</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Terminal velocity - ice particles (Bohm's theory) Ref: Shima et al., 2020, "Predicting the morphology of ice particles in deep convection using the super-droplet method: development and evaluation of SCALE-SDM 0.2.5-2.2.0, -2.2.1, and -2.2.2.", Geosci. Model Dev., 13, 4107–4157, 2020. </p>
+<p>and</p>
+<p>Code: <a href="https://doi.org/10.5281/zenodo.3483650">https://doi.org/10.5281/zenodo.3483650</a> File: [...]/contrib/SDM/sdm_motion.f90 Copyright (c) 2012-2014, Team SCALE, All rights reserved. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_m</td><td>mass </td></tr>
+    <tr><td class="paramname">a_a</td><td>ice particle equatorial radius </td></tr>
+    <tr><td class="paramname">a_c</td><td>ice particle polar radius </td></tr>
+    <tr><td class="paramname">a_rhoi</td><td>ice particle density </td></tr>
+    <tr><td class="paramname">a_rho</td><td>density </td></tr>
+    <tr><td class="paramname">a_T</td><td>temperature </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        RT <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> = RT(0.1) * <a class="code" href="structTerminalVelocity.html#a5f8d1323c2c72c150f1d108e1bd43a0f">viscCoeff</a>(a_T); <span class="comment">// viscCoeff is CGS poise; IceBohm is SI -&gt; Pa.s</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keyword">auto</span> phi = a_c / a_a; <span class="comment">// aspect ratio</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keyword">auto</span> d = RT(2.0) * a_a; <span class="comment">// characteristic length</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keyword">auto</span> <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a> = std::exp( std::exp(-phi) * std::log(a_rhoi/<a class="code" href="structTerminalVelocity.html#acc7051a86635f3c1faee94447050e979">m_rho_i</a>) ); <span class="comment">// area ratio</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        RT X0 = RT(2.8e06);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keyword">auto</span> t3 = RT(<a class="code" href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a>) * <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a>*<a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> * std::max(phi,RT(1.0)) * std::max(std::sqrt(std::sqrt(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>)), <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keyword">auto</span> X = (RT(8.0)*a_m*RT(<a class="code" href="ERF__Constants_8H.html#ac2d0c304ab1117368778efcda612de43">CONST_GRAV</a>)*a_rho) / t3;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">auto</span> Xp = X * (RT(1.0) + (X/X0)*(X/X0)) / (RT(1.0) + RT(1.6)*(X/X0)*(X/X0));</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">auto</span> k = std::min( std::max(RT(0.82)+RT(0.18)*phi, RT(0.85)),</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                           std::min( RT(0.37) + RT(0.63)/std::sqrt(phi),</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                                     RT(1.33)/(std::max(std::log(phi),RT(0.0))+RT(1.19)) ));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keyword">auto</span> phi_poly = RT(3.76)-RT(8.41)*phi+RT(9.18)*phi*phi-RT(3.53)*phi*phi*phi;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keyword">auto</span> TVGamma = std::max( RT(1.0), std::min(RT(1.98), phi_poly) );</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">auto</span> C_DPS = std::max(RT(0.292)*k*TVGamma, RT(0.492) - RT(0.2)/std::sqrt(phi));</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keyword">auto</span> C_DP  = std::max(RT(1.0), <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>*(RT(1.46)*<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>-RT(0.46))) * C_DPS;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keyword">auto</span> C_DO = RT(4.5) * k*k * std::max(phi, RT(1.0));</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keyword">auto</span> t2 = RT(1.0) + C_DP/(RT(6.0)*k) * std::sqrt(Xp/C_DP);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keyword">auto</span> <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a> = std::sqrt(t2) - RT(1.0);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keyword">auto</span> TVgamma = (C_DO-C_DP) / (RT(4.0)*C_DP);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">auto</span> t1 = RT(1.0) + (RT(2.0)*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>*std::exp(-<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>*TVgamma)) / ((RT(2.0)+<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>)*(RT(1.0)+<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>));</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">auto</span> N_Re = (RT(6.0)*k/C_DP) * <a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a>*<a class="code" href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a> * t1;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keyword">auto</span> vterm = (<a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a>*N_Re)/(a_rho*d);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">return</span> vterm;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="ttc" id="aERF__Constants_8H_html_a988c4efd6fd0d855e241e77a73191428"><div class="ttname"><a href="ERF__Constants_8H.html#a988c4efd6fd0d855e241e77a73191428">PI</a></div><div class="ttdeci">constexpr amrex::Real PI</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:42</div></div>
+<div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aaa538a485890f44f3ec785846ea09b12"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a></div><div class="ttdeci">amrex::Real beta</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:10</div></div>
+<div class="ttc" id="anamespaceMORRInd_html_ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:92</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:184</div></div>
+<div class="ttc" id="astructTerminalVelocity_html_acc7051a86635f3c1faee94447050e979"><div class="ttname"><a href="structTerminalVelocity.html#acc7051a86635f3c1faee94447050e979">TerminalVelocity::m_rho_i</a></div><div class="ttdeci">RT m_rho_i</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:16</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structTerminalVelocity_a614738505d97809132544dacf1bdb486_cgraph.png" border="0" usemap="#astructTerminalVelocity_a614738505d97809132544dacf1bdb486_cgraph" alt=""/></div>
+<map name="astructTerminalVelocity_a614738505d97809132544dacf1bdb486_cgraph" id="astructTerminalVelocity_a614738505d97809132544dacf1bdb486_cgraph">
+<area shape="rect" title="Terminal velocity &#45; ice particles (Bohm&#39;s theory) Ref: Shima et al., 2020, &quot;Predicting the morphology..." alt="" coords="5,5,200,32"/>
+<area shape="rect" href="structTerminalVelocity.html#a5f8d1323c2c72c150f1d108e1bd43a0f" title="Compute viscosity coefficient &#45; Pruppacher &amp; Klett, 1997." alt="" coords="248,5,445,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a06531475d0e8b8636ca8c381894cced2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06531475d0e8b8636ca8c381894cced2">&#9670;&nbsp;</a></span>MeltBlendWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT <a class="el" href="structTerminalVelocity.html">TerminalVelocity</a>&lt; RT &gt;::MeltBlendWeight </td>
+          <td>(</td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_ell</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frick et al. (2013, Geosci. Model Dev. 6, Eq. 15) liquid-water-fraction weight for the fall speed of a melting (mixed) particle. Rises from 0 (dry ice) to 1 (fully melted) as the meltwater mass fraction a_ell goes 0 -&gt; 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_ell</td><td>meltwater (liquid) mass fraction in [0,1] </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> RT(0.246)*a_ell + RT(0.754)*a_ell*a_ell*a_ell*a_ell*a_ell*a_ell*a_ell;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structTerminalVelocity.html#a5b96c3f35fc6f0748551b9cd55a50120">TerminalVelocity&lt; RT &gt;::MixedPhaseVterm()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structTerminalVelocity_a06531475d0e8b8636ca8c381894cced2_icgraph.png" border="0" usemap="#astructTerminalVelocity_a06531475d0e8b8636ca8c381894cced2_icgraph" alt=""/></div>
+<map name="astructTerminalVelocity_a06531475d0e8b8636ca8c381894cced2_icgraph" id="astructTerminalVelocity_a06531475d0e8b8636ca8c381894cced2_icgraph">
+<area shape="rect" title="Frick et al. (2013, Geosci. Model Dev. 6, Eq. 15) liquid&#45;water&#45;fraction weight for the fall speed of ..." alt="" coords="268,5,471,47"/>
+<area shape="rect" href="structTerminalVelocity.html#a5b96c3f35fc6f0748551b9cd55a50120" title="Terminal velocity of a melting (mixed) ice&#45;water particle, interpolated between the dry&#45;ice (Bohm) fa..." alt="" coords="5,5,220,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5b96c3f35fc6f0748551b9cd55a50120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b96c3f35fc6f0748551b9cd55a50120">&#9670;&nbsp;</a></span>MixedPhaseVterm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT <a class="el" href="structTerminalVelocity.html">TerminalVelocity</a>&lt; RT &gt;::MixedPhaseVterm </td>
+          <td>(</td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_v_ice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_v_rain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const RT&#160;</td>
+          <td class="paramname"><em>a_ell</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Terminal velocity of a melting (mixed) ice-water particle, interpolated between the dry-ice (Bohm) fall speed and the equivalent-raindrop fall speed by the meltwater mass fraction (Frick et al. 2013, Eq. 14). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_v_ice</td><td>dry-ice (Bohm) fall speed of the ice core </td></tr>
+    <tr><td class="paramname">a_v_rain</td><td>fall speed of the equivalent raindrop </td></tr>
+    <tr><td class="paramname">a_ell</td><td>meltwater (liquid) mass fraction in [0,1] </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">return</span> a_v_ice + (a_v_rain - a_v_ice) * <a class="code" href="structTerminalVelocity.html#a06531475d0e8b8636ca8c381894cced2">MeltBlendWeight</a>(a_ell);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    }</div>
+<div class="ttc" id="astructTerminalVelocity_html_a06531475d0e8b8636ca8c381894cced2"><div class="ttname"><a href="structTerminalVelocity.html#a06531475d0e8b8636ca8c381894cced2">TerminalVelocity::MeltBlendWeight</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE RT MeltBlendWeight(const RT a_ell) const noexcept</div><div class="ttdoc">Frick et al. (2013, Geosci. Model Dev. 6, Eq. 15) liquid-water-fraction weight for the fall speed of ...</div><div class="ttdef"><b>Definition:</b> ERF_TerminalVelocity.H:206</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structTerminalVelocity_a5b96c3f35fc6f0748551b9cd55a50120_cgraph.png" border="0" usemap="#astructTerminalVelocity_a5b96c3f35fc6f0748551b9cd55a50120_cgraph" alt=""/></div>
+<map name="astructTerminalVelocity_a5b96c3f35fc6f0748551b9cd55a50120_cgraph" id="astructTerminalVelocity_a5b96c3f35fc6f0748551b9cd55a50120_cgraph">
+<area shape="rect" title="Terminal velocity of a melting (mixed) ice&#45;water particle, interpolated between the dry&#45;ice (Bohm) fa..." alt="" coords="5,5,220,47"/>
+<area shape="rect" href="structTerminalVelocity.html#a06531475d0e8b8636ca8c381894cced2" title="Frick et al. (2013, Geosci. Model Dev. 6, Eq. 15) liquid&#45;water&#45;fraction weight for the fall speed of ..." alt="" coords="268,5,471,47"/>
 </map>
 </div>
 
@@ -326,10 +590,10 @@ template&lt;typename RT &gt; </div>
 </div><div class="memdoc">
 
 <p>Terminal velocity - Rogers &amp; Yau, 1989. </p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> RT <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = RT(1.233e8); <span class="comment">// m^{-1} s^{-1}</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> * a_r * a_r);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> RT <a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> = RT(1.233e8); <span class="comment">// m^{-1} s^{-1}</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">k1</a> * a_r * a_r);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="ttc" id="anamespacemodule__mp__morr__two__moment_html_a1a6252db6f85ddc3b4e92d44682ad20a"><div class="ttname"><a href="namespacemodule__mp__morr__two__moment.html#a1a6252db6f85ddc3b4e92d44682ad20a">module_mp_morr_two_moment::k1</a></div><div class="ttdeci">real(c_double), private k1</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_morr_two_moment.F90:213</div></div>
 </div><!-- fragment -->
 </div>
@@ -367,26 +631,27 @@ template&lt;typename RT &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        RT T_degC = a_T - RT(273.15); <span class="comment">// [K] -&gt; [deg Celsius]</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        RT viscosity = RT(0.0);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (T_degC &gt;= RT(0)) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            viscosity = (RT(1.7180) + RT(4.9e-3)*T_degC) * RT(1.0e-4);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            viscosity = (  RT(1.7180) + RT(4.9e-3)*T_degC</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                         - RT(1.2e-5)*T_degC*T_degC     ) * RT(1.0e-4);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> viscosity;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        RT T_degC = a_T - RT(273.15); <span class="comment">// [K] -&gt; [deg Celsius]</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        RT viscosity = RT(0.0);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (T_degC &gt;= RT(0)) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            viscosity = (RT(1.7180) + RT(4.9e-3)*T_degC) * RT(1.0e-4);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            viscosity = (  RT(1.7180) + RT(4.9e-3)*T_degC</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                         - RT(1.2e-5)*T_degC*T_degC     ) * RT(1.0e-4);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> viscosity;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="structTerminalVelocity.html#a99c52f483f0294536106aae37f3c93ac">TerminalVelocity&lt; RT &gt;::CloudRainShima()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structTerminalVelocity.html#a99c52f483f0294536106aae37f3c93ac">TerminalVelocity&lt; RT &gt;::CloudRainShima()</a>, and <a class="el" href="structTerminalVelocity.html#a614738505d97809132544dacf1bdb486">TerminalVelocity&lt; RT &gt;::IceBohm()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTerminalVelocity_a5f8d1323c2c72c150f1d108e1bd43a0f_icgraph.png" border="0" usemap="#astructTerminalVelocity_a5f8d1323c2c72c150f1d108e1bd43a0f_icgraph" alt=""/></div>
 <map name="astructTerminalVelocity_a5f8d1323c2c72c150f1d108e1bd43a0f_icgraph" id="astructTerminalVelocity_a5f8d1323c2c72c150f1d108e1bd43a0f_icgraph">
-<area shape="rect" title="Compute viscosity coefficient &#45; Pruppacher &amp; Klett, 1997." alt="" coords="256,13,453,39"/>
+<area shape="rect" title="Compute viscosity coefficient &#45; Pruppacher &amp; Klett, 1997." alt="" coords="256,42,453,69"/>
 <area shape="rect" href="structTerminalVelocity.html#a99c52f483f0294536106aae37f3c93ac" title="Terminal velocity &#45; cloud/rain droplets Shima et al., 2009, &quot;The super&#45;droplet method for the numeric..." alt="" coords="5,5,208,47"/>
+<area shape="rect" href="structTerminalVelocity.html#a614738505d97809132544dacf1bdb486" title="Terminal velocity &#45; ice particles (Bohm&#39;s theory) Ref: Shima et al., 2020, &quot;Predicting the morphology..." alt="" coords="9,71,204,98"/>
 </map>
 </div>
 
@@ -425,19 +690,19 @@ template&lt;typename RT &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        RT x1 = a_x;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        RT x2 = x1 * x1;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        RT x3 = x1 * x2;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        RT <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = - RT(0.318657E+1)</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;               + RT(0.9926960)    * x1</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;               - RT(0.153193E-2)  * x2</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;               - RT(0.987059E-3)  * x3</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;               - RT(0.578878e-3)  * x2*x2</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;               + RT(0.855176E-4)  * x3*x2</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;               - RT(0.327815E-5)  * x3*x3;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        RT x1 = a_x;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        RT x2 = x1 * x1;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        RT x3 = x1 * x2;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        RT <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = - RT(0.318657E+1)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;               + RT(0.9926960)    * x1</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;               - RT(0.153193E-2)  * x2</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;               - RT(0.987059E-3)  * x3</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;               - RT(0.578878e-3)  * x2*x2</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;               + RT(0.855176E-4)  * x3*x2</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;               - RT(0.327815E-5)  * x3*x3;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
 <div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">Coord::y</a></div><div class="ttdeci">@ y</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTerminalVelocity.html#a99c52f483f0294536106aae37f3c93ac">TerminalVelocity&lt; RT &gt;::CloudRainShima()</a>.</p>
@@ -486,18 +751,18 @@ template&lt;typename RT &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        RT x1 = a_x;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        RT x2 = x1 * x1;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        RT x3 = x1 * x2;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        RT <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = - RT(0.500015E+1)</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;               + RT(0.523778E+1)  * x1</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;               - RT(0.204914E+1)  * x2</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;               + RT(0.47529400)   * x3</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;               - RT(0.542819E-1)  * x2*x2</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;               + RT(0.238449E-2)  * x3*x2;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        RT x1 = a_x;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        RT x2 = x1 * x1;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        RT x3 = x1 * x2;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        RT <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a> = - RT(0.500015E+1)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;               + RT(0.523778E+1)  * x1</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;               - RT(0.204914E+1)  * x2</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;               + RT(0.47529400)   * x3</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;               - RT(0.542819E-1)  * x2*x2</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;               + RT(0.238449E-2)  * x3*x2;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01a415290769594460e2e485922904f345d">y</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="structTerminalVelocity.html#a99c52f483f0294536106aae37f3c93ac">TerminalVelocity&lt; RT &gt;::CloudRainShima()</a>.</p>
 <div class="dynheader">
@@ -513,6 +778,25 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="acc7051a86635f3c1faee94447050e979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc7051a86635f3c1faee94447050e979">&#9670;&nbsp;</a></span>m_rho_i</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">RT <a class="el" href="structTerminalVelocity.html">TerminalVelocity</a>&lt; RT &gt;::m_rho_i</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>density of ice </p>
+
+<p class="reference">Referenced by <a class="el" href="structTerminalVelocity.html#a614738505d97809132544dacf1bdb486">TerminalVelocity&lt; RT &gt;::IceBohm()</a>.</p>
+
+</div>
+</div>
 <a id="a31e44fff89c6807e0f42f3389b23d962"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31e44fff89c6807e0f42f3389b23d962">&#9670;&nbsp;</a></span>m_rho_w</h2>
 
