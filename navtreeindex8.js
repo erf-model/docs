@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3":[3,0,1,21,20,13],
 "ERF__MicrophysicsUtils_8H.html#af412f38784e2b8072356234b0474c6f5":[3,0,1,21,20,8],
 "ERF__MicrophysicsUtils_8H.html#afac5e7caca80647972b208a0248b2ed8":[3,0,1,21,20,9],
 "ERF__MicrophysicsUtils_8H_source.html":[3,0,1,21,20],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab3956a7240dabc798cd72ed10e0ef218":[3,0,1,8,11,2,16],
 "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab3be42c568dc9a6a619e79858f813850":[3,0,1,8,11,2,48],
 "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab4edfdb50d5d7d99e3cfb07703f8cd6e":[3,0,1,8,11,2,1],
-"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab79bec9081c88576f35e5593d01ccc17":[3,0,1,8,11,2,23],
-"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab7c949091bc6cc51dc36b42cdab8a789":[3,0,1,8,11,2,59]
+"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2ab79bec9081c88576f35e5593d01ccc17":[3,0,1,8,11,2,23]
 };

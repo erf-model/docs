@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"ERF__SatAdj_8H.html":[3,0,1,12,5,2],
 "ERF__SatAdj_8H_source.html":[3,0,1,12,5,2],
 "ERF__SatAdj_8cpp.html":[3,0,1,12,5,1],
 "ERF__SatMethods_8H.html":[3,0,1,21,28],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "ERF__TI__slow__headers_8H.html#a569ad372ecff803e943fa82fecba0fca":[3,0,1,19,18,2],
 "ERF__TI__slow__headers_8H.html#a62cf4ff04abac2ef6021bca0bfdd45cc":[3,0,1,19,18,0],
 "ERF__TI__slow__headers_8H.html#aa311c1c4f7c2665ee0c747d34ca225b8":[3,0,1,19,18,3],
-"ERF__TI__slow__headers_8H_source.html":[3,0,1,19,18],
-"ERF__TI__slow__rhs__post_8H.html":[3,0,1,19,19]
+"ERF__TI__slow__headers_8H_source.html":[3,0,1,19,18]
 };

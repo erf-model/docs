@@ -32,5 +32,6 @@ var ERF__TerrainMetrics_8H =
     [ "OmegaFromW", "ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055", null ],
     [ "rotate_scalar_flux", "ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae", null ],
     [ "rotate_stress_tensor", "ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b", null ],
+    [ "update_stretched_dz", "ERF__TerrainMetrics_8H.html#aa12259218315ea9e55b53683cce38442", null ],
     [ "WFromOmega", "ERF__TerrainMetrics_8H.html#afb56736aeb87667ff92b696d787b432a", null ]
 ];

@@ -85,6 +85,7 @@ var NAVTREEINDEX7 =
 "ERF__InitWindFarm_8cpp.html":[3,0,1,7,15],
 "ERF__InitZLevels_8cpp.html":[3,0,1,21,10],
 "ERF__InitZLevels_8cpp.html#a6a0ddf4ef447c8f0129b403c8fd889fd":[3,0,1,21,10,0],
+"ERF__InitZLevels_8cpp.html#ab51a9adc4114d21b49e7423246e0c310":[3,0,1,21,10,1],
 "ERF__InputSoundingData_8H.html":[3,0,1,3,5],
 "ERF__InputSoundingData_8H_source.html":[3,0,1,3,5],
 "ERF__InputSpongeData_8H.html":[3,0,1,3,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "ERF__MicrophysicsUtils_8H.html#a7baba5d74922033bf93526933a0d77ec":[3,0,1,21,20,5],
 "ERF__MicrophysicsUtils_8H.html#a8e4b0c6ed8b95c2040dc0c9e8fcb8615":[3,0,1,21,20,14],
 "ERF__MicrophysicsUtils_8H.html#abd125e107924437493cbcbac9a97c017":[3,0,1,21,20,11],
-"ERF__MicrophysicsUtils_8H.html#ac3237967bf8818774c3b24565d02c5b2":[3,0,1,21,20,4],
-"ERF__MicrophysicsUtils_8H.html#ac39ef2a869ef543f708d5ed7da4754d3":[3,0,1,21,20,13]
+"ERF__MicrophysicsUtils_8H.html#ac3237967bf8818774c3b24565d02c5b2":[3,0,1,21,20,4]
 };

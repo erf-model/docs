@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"ERF__PlotfileSelection_8H.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99":[3,0,1,8,28,4],
 "ERF__PlotfileSelection_8H_source.html":[3,0,1,8,28],
 "ERF__PlotfileToNetCDF_8cpp.html":[3,0,1,20,0],
 "ERF__PlotfileToNetCDF_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,20,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "ERF__SLM_8H_source.html":[3,0,1,9,3,1],
 "ERF__SLM_8cpp.html":[3,0,1,9,3,0],
 "ERF__SampleData_8H.html":[3,0,1,8,41],
-"ERF__SampleData_8H_source.html":[3,0,1,8,41],
-"ERF__SatAdj_8H.html":[3,0,1,12,5,2]
+"ERF__SampleData_8H_source.html":[3,0,1,8,41]
 };

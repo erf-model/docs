@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"structInputSoundingData.html#a133d3c13161dbdbbf9a808c43575c7bd":[2,0,49,18],
+"structInputSoundingData.html#a14347a117d3eaf2869ba59683e9e27cd":[2,0,49,28],
 "structInputSoundingData.html#a2a838e4f47cffda3241d82a611542a05":[2,0,49,15],
 "structInputSoundingData.html#a2bdcd8294e7fe04d0c4795166a23ce39":[2,0,49,19],
 "structInputSoundingData.html#a2fb9569a3bbbf02aa1fd5b9346919096":[2,0,49,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "structSAMCloudPhaseChange.html#a4588f0f78eb67a0949c64463cf253845":[2,0,95,6],
 "structSAMCloudPhaseChange.html#a47387b82631d9fc1277673e10acf8c70":[2,0,95,9],
 "structSAMCloudPhaseChange.html#a55dee3ce5e4ea1acff6787f90ded3f75":[2,0,95,7],
-"structSAMCloudPhaseChange.html#a5717477792770181649a49bd0c7c02ea":[2,0,95,8],
-"structSAMCloudPhaseChange.html#a6a4354591ff59f8e0e4bf26bd428878e":[2,0,95,2],
-"structSAMCloudPhaseChange.html#a81a59063e29391f2c11607d630c0c0b9":[2,0,95,0]
+"structSAMCloudPhaseChange.html#a5717477792770181649a49bd0c7c02ea":[2,0,95,8]
 };

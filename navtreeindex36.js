@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html#a0e4d7c00ae16d635cef72255dc65047c":[2,0,4,0,0],
+"structerf__wall__scalar__bc_1_1ParsedWallScalarBC.html#a21f539c4ced0b92f8bc221350b17d8f7":[2,0,4,0,1],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html":[2,0,4,2],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html#a697bcbb1f3c8c27b12d7f05b92c81c03":[2,0,4,2,0],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html#ad18b31ad3d5171192fad9afbbaecb7ca":[2,0,4,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "structsurface__flux__mod__charnock.html#a23f28b507477e760ce15dae3420e75c9":[2,0,137,1],
 "structsurface__flux__mod__charnock.html#a45a62f7d959cb8241d71a6efc2947b9c":[2,0,137,0],
 "structsurface__flux__mod__charnock.html#a47b9c65ba7662c9f860179104b67b9d8":[2,0,137,6],
-"structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46":[2,0,137,2],
-"structsurface__flux__mod__charnock.html#aae8cc1659e38005000cf238c3461d0af":[2,0,137,4],
-"structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba":[2,0,137,5]
+"structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46":[2,0,137,2]
 };
