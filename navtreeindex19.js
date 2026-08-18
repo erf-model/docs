@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"classMRISplitIntegrator.html#a088e107111ca012e026908b0c0b3cef7":[2,0,69,24],
 "classMRISplitIntegrator.html#a0c49cf3ecc2130a2064d7b0d3d8e7cbf":[2,0,69,6],
 "classMRISplitIntegrator.html#a10fa09211f3b0a6b7357ab79dbadbb80":[2,0,69,34],
 "classMRISplitIntegrator.html#a12a849ebde5d8e4b676f9a31c38f2236":[2,0,69,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "classNullSurf.html#a1f3524fc1bb0b983978b1bf17b67cf5c":[2,0,77,9],
 "classNullSurf.html#a23e0e00071c6220b8d1495cac4073ce3":[2,0,77,10],
 "classNullSurf.html#a254ae8b16a03a3b95c54eeddf0589601":[2,0,77,15],
-"classNullSurf.html#a3943b8ca0bfd25215d05cdc33a5efa5a":[2,0,77,24],
-"classNullSurf.html#a3ee75b63861ce70d6fb5110635d2aa16":[2,0,77,22]
+"classNullSurf.html#a3943b8ca0bfd25215d05cdc33a5efa5a":[2,0,77,24]
 };

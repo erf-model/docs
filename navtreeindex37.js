@@ -1,5 +1,7 @@
 var NAVTREEINDEX37 =
 {
+"structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,137,3],
+"structsurface__flux__wave__coupled.html":[2,0,138],
 "structsurface__flux__wave__coupled.html#a10d71fe6dd2f38c54562aa3ab207ef25":[2,0,138,7],
 "structsurface__flux__wave__coupled.html#a4c0cea2d40a99fa00638c364db6b5781":[2,0,138,0],
 "structsurface__flux__wave__coupled.html#a4f273873e2304563f10674c497cfad30":[2,0,138,9],

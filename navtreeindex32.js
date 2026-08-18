@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"structSAMCloudPhaseChange.html#a897a5ea4342b0a4908221e858b2ecb4b":[2,0,95,3],
+"structSAMCloudPhaseChange.html#ac9dd29ba6b8c24c925a0fe7f156868d2":[2,0,95,4],
 "structSAMCoefficientRow.html":[2,0,96],
 "structSAMCoefficientRow.html#a009965343155295da5d9a8ddac755a2b":[2,0,96,5],
 "structSAMCoefficientRow.html#a0be100c0d3f5c0079e9664ac7d9e1e1c":[2,0,96,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "structShocColumnData.html#a2f07668d1ddf205bc42d1d9154ee2112":[2,0,113,60],
 "structShocColumnData.html#a306c5e03896f4c1c0e56d26b3518fc2a":[2,0,113,44],
 "structShocColumnData.html#a3303135724099955d94c16124ae6e087":[2,0,113,59],
-"structShocColumnData.html#a3a954609570ba3de080d4eab899ddf8a":[2,0,113,57],
-"structShocColumnData.html#a3c410d0cefc4b0028cd93d316845d12f":[2,0,113,32],
-"structShocColumnData.html#a3cd9317196f1fe648c1f00cb0d0a1274":[2,0,113,52]
+"structShocColumnData.html#a3a954609570ba3de080d4eab899ddf8a":[2,0,113,57]
 };

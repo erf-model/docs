@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"structerf__wall__scalar__bc_1_1WallFaceParseResult.html":[2,0,4,2],
+"structerf__wall__scalar__bc_1_1WallFaceParseResult.html#a697bcbb1f3c8c27b12d7f05b92c81c03":[2,0,4,2,0],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html#ad18b31ad3d5171192fad9afbbaecb7ca":[2,0,4,2,2],
 "structerf__wall__scalar__bc_1_1WallFaceParseResult.html#ae9e2c0c7984b235826f7bbd76c234b81":[2,0,4,2,1],
 "structerf__wall__thermodynamics_1_1Face.html":[2,0,5,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "structsurface__flux__mod__charnock.html#a47b9c65ba7662c9f860179104b67b9d8":[2,0,137,6],
 "structsurface__flux__mod__charnock.html#a6fa441221eb1f30d65437ce890adfd46":[2,0,137,2],
 "structsurface__flux__mod__charnock.html#aae8cc1659e38005000cf238c3461d0af":[2,0,137,4],
-"structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba":[2,0,137,5],
-"structsurface__flux__mod__charnock.html#adb4a96d510f1e437c9efc41ba5fd16f9":[2,0,137,3],
-"structsurface__flux__wave__coupled.html":[2,0,138]
+"structsurface__flux__mod__charnock.html#ac01a07a59f56ff6683dd9942b4d500ba":[2,0,137,5]
 };
