@@ -6,6 +6,6 @@ var namespacemodule__libmassv =
     [ "vrec_s", "namespacemodule__libmassv.html#ae0bbb8fe8e4b23995e46c2213ce7c10d", null ],
     [ "vsqrt_d", "namespacemodule__libmassv.html#ab54c4b7d0616070ba041e252089d4d0a", null ],
     [ "vsqrt_s", "namespacemodule__libmassv.html#a5001cd07638bf94d52c862dfbeda70a9", null ],
-    [ "r4kind", "namespacemodule__libmassv.html#a108fe3edbec2fd3157333a2c619fd886", null ],
-    [ "r8kind", "namespacemodule__libmassv.html#ac3ee45d355d6cb5c324dfe0f1016802a", null ]
+    [ "r4kind", "namespacemodule__libmassv.html#a79419dd50968dc5920dd18f9f750598a", null ],
+    [ "r8kind", "namespacemodule__libmassv.html#ad575e42b7e17fd5e0a952ad932a4f040", null ]
 ];

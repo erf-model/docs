@@ -19,6 +19,7 @@ var classMicrophysics =
     [ "Init", "classMicrophysics.html#a4e781e2a953a088477cfc5a1e3691f2e", null ],
     [ "modelType", "classMicrophysics.html#ac10e6fce2e6cb49373d56ca0e1a5b366", null ],
     [ "Set_dzmin", "classMicrophysics.html#abe0044f23ab9fb60ca3d3948ad056c12", null ],
+    [ "Set_Lmask", "classMicrophysics.html#aaba0a179bf629a02282d115aad857549", null ],
     [ "Update_Micro_Vars_Lev", "classMicrophysics.html#a8374e68d4a12ffbcad7a2d029eee5400", null ],
     [ "Update_State_Vars_Lev", "classMicrophysics.html#a8bd2a2c836d10f3d3f8444319dcefa82", null ]
 ];

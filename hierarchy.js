@@ -94,6 +94,7 @@ var hierarchy =
       [ "Morrison", "classMorrison.html", null ],
       [ "SAM", "classSAM.html", null ],
       [ "SatAdj", "classSatAdj.html", null ],
+      [ "WDM6", "classWDM6.html", null ],
       [ "WSM6", "classWSM6.html", null ]
     ] ],
     [ "NullSurf", "classNullSurf.html", [

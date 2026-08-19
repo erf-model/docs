@@ -182,6 +182,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7a3408e4deaeb1faf6d87c62cf811140 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c9bad761a07463fcd5ed87c3a341d47 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a6c9bad761a07463fcd5ed87c3a341d47">getDiagnosticsInterval</a> () const</td></tr>
 <tr class="separator:a6c9bad761a07463fcd5ed87c3a341d47 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a64424cb065761991b28385fb910738 inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a9a64424cb065761991b28385fb910738">Set_Lmask</a> (amrex::iMultiFab *)</td></tr>
+<tr class="memdesc:a9a64424cb065761991b28385fb910738 inherit pub_methods_classNullMoist"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import <a class="el" href="classERF.html">ERF</a>'s land/water mask. Only schemes whose physics branches on land vs water need to override this.  <a href="classNullMoist.html#a9a64424cb065761991b28385fb910738">More...</a><br /></td></tr>
+<tr class="separator:a9a64424cb065761991b28385fb910738 inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88b448069b86e3f1e16b8e28dc38b3bb inherit pub_methods_classNullMoist"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNullMoist.html#a88b448069b86e3f1e16b8e28dc38b3bb">Set_RealWidth</a> (const int)</td></tr>
 <tr class="separator:a88b448069b86e3f1e16b8e28dc38b3bb inherit pub_methods_classNullMoist"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -709,7 +712,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructKesslerSourceTerms_html_a56c1a6dcb5868f1d3007af8cedb03bae"><div class="ttname"><a href="structKesslerSourceTerms.html#a56c1a6dcb5868f1d3007af8cedb03bae">KesslerSourceTerms::dq_cloud_to_vapor</a></div><div class="ttdeci">amrex::Real dq_cloud_to_vapor</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:16</div></div>
 <div class="ttc" id="astructKesslerSourceTerms_html_a9fd1cd79d1f959f399314e99a9b9351b"><div class="ttname"><a href="structKesslerSourceTerms.html#a9fd1cd79d1f959f399314e99a9b9351b">KesslerSourceTerms::dq_cloud_to_rain</a></div><div class="ttdeci">amrex::Real dq_cloud_to_rain</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:17</div></div>
 <div class="ttc" id="astructKesslerSourceTerms_html_ab4087e5bcf61c7d467e94bcda7b648a5"><div class="ttname"><a href="structKesslerSourceTerms.html#ab4087e5bcf61c7d467e94bcda7b648a5">KesslerSourceTerms::dq_vapor_to_cloud</a></div><div class="ttdeci">amrex::Real dq_vapor_to_cloud</div><div class="ttdef"><b>Definition:</b> ERF_KesslerUtils.H:15</div></div>
-<div class="ttc" id="astructSolverChoice_html_a1d8e70e8c6b75e93d5e0492f27c94aad"><div class="ttname"><a href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdoc">Moisture or microphysics model.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1616</div></div>
+<div class="ttc" id="astructSolverChoice_html_a1d8e70e8c6b75e93d5e0492f27c94aad"><div class="ttname"><a href="structSolverChoice.html#a1d8e70e8c6b75e93d5e0492f27c94aad">SolverChoice::moisture_type</a></div><div class="ttdeci">MoistureType moisture_type</div><div class="ttdoc">Moisture or microphysics model.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1640</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classKessler.html#adbfb72df664abc2f02fede6b91b066b6">Advance()</a>.</p>
 <div class="dynheader">
@@ -974,8 +977,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
 <div class="ttc" id="aERF__Constants_8H_html_aee80ef06f62b6528b776d02de062cdd5"><div class="ttname"><a href="ERF__Constants_8H.html#aee80ef06f62b6528b776d02de062cdd5">L_v</a></div><div class="ttdeci">constexpr amrex::Real L_v</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:59</div></div>
 <div class="ttc" id="aclassKessler_html_a0b09674286454ed9add0c8c6dc5aea3d"><div class="ttname"><a href="classKessler.html#a0b09674286454ed9add0c8c6dc5aea3d">Kessler::m_moisture_type</a></div><div class="ttdeci">MoistureType m_moisture_type</div><div class="ttdef"><b>Definition:</b> ERF_Kessler.H:187</div></div>
-<div class="ttc" id="astructSolverChoice_html_a8a7e37fdfc7a226a7c1428ad7dc1051c"><div class="ttname"><a href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">SolverChoice::uses_shoc_family</a></div><div class="ttdeci">bool uses_shoc_family() const noexcept</div><div class="ttdoc">Query whether any SHOC-family PBL scheme is active.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1578</div></div>
-<div class="ttc" id="astructSolverChoice_html_ae97bb05183f60e5c3732c0db19dd6e1a"><div class="ttname"><a href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdoc">Specific heat at constant pressure for dry air [J/(kg-K)].</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1479</div></div>
+<div class="ttc" id="astructSolverChoice_html_a8a7e37fdfc7a226a7c1428ad7dc1051c"><div class="ttname"><a href="structSolverChoice.html#a8a7e37fdfc7a226a7c1428ad7dc1051c">SolverChoice::uses_shoc_family</a></div><div class="ttdeci">bool uses_shoc_family() const noexcept</div><div class="ttdoc">Query whether any SHOC-family PBL scheme is active.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1602</div></div>
+<div class="ttc" id="astructSolverChoice_html_ae97bb05183f60e5c3732c0db19dd6e1a"><div class="ttname"><a href="structSolverChoice.html#ae97bb05183f60e5c3732c0db19dd6e1a">SolverChoice::c_p</a></div><div class="ttdeci">amrex::Real c_p</div><div class="ttdoc">Specific heat at constant pressure for dry air [J/(kg-K)].</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:1503</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1377,7 +1380,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{ }</div>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1444,10 +1447,10 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                               {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classKessler.html#aece7a50f16bf40e3e9d536cc030458f7">Update_Micro_Vars</a>(cons_in);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="ttc" id="aclassKessler_html_aece7a50f16bf40e3e9d536cc030458f7"><div class="ttname"><a href="classKessler.html#aece7a50f16bf40e3e9d536cc030458f7">Kessler::Update_Micro_Vars</a></div><div class="ttdeci">virtual void Update_Micro_Vars(amrex::MultiFab &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:35</div></div>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                               {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classKessler.html#aece7a50f16bf40e3e9d536cc030458f7">Update_Micro_Vars</a>(cons_in);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="ttc" id="aclassKessler_html_aece7a50f16bf40e3e9d536cc030458f7"><div class="ttname"><a href="classKessler.html#aece7a50f16bf40e3e9d536cc030458f7">Kessler::Update_Micro_Vars</a></div><div class="ttdeci">virtual void Update_Micro_Vars(amrex::MultiFab &amp;)</div><div class="ttdef"><b>Definition:</b> ERF_NullMoist.H:36</div></div>
 </div><!-- fragment -->
 </div>
 </div>

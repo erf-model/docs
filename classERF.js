@@ -166,6 +166,7 @@ var classERF =
     [ "SamplePoint", "classERF.html#a9095d1b641b4d7f32ca5acb679786891", null ],
     [ "SamplePointLog", "classERF.html#af5f6c32cc5463e52901f21117d3156c7", null ],
     [ "SamplePointLogName", "classERF.html#aa87242f053bfae4efb2a7698ef417ab9", null ],
+    [ "SetDirsForPlotfilesAndCheckpointsForDA", "classERF.html#a6a071397bd44723c68cabcf586b93495", null ],
     [ "SetDriverAtmosToOceanStateContract", "classERF.html#a18cafbdecf34cc805dde0f4ab2841301", null ],
     [ "setPlotVariables", "classERF.html#a1fcb440c67da60c86372aec1fe871cb7", null ],
     [ "setPlotVariables2D", "classERF.html#a5fa03e1202cf07d822b399a972f967ec", null ],

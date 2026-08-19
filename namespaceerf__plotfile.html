@@ -154,26 +154,26 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;density&quot;</span>)  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhotheta&quot;</span>) <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoKE&quot;</span>)    <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoadv_0&quot;</span>) <span class="keywordflow">return</span> 3;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.size() &gt; 4 &amp;&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.compare(0, 4, <span class="stringliteral">&quot;rhoQ&quot;</span>) == 0) {</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">const</span> std::string suffix = <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.substr(4);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">if</span> (!suffix.empty() &amp;&amp; std::all_of(suffix.cbegin(), suffix.cend(),</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                                           [] (<span class="keyword">const</span> <span class="keywordtype">char</span> c) { return c &gt;= <span class="stringliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="stringliteral">&#39;9&#39;</span>; })) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a> = std::stoi(suffix);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;density&quot;</span>)  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhotheta&quot;</span>) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoKE&quot;</span>)    <span class="keywordflow">return</span> 2;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoadv_0&quot;</span>) <span class="keywordflow">return</span> 3;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.size() &gt; 4 &amp;&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.compare(0, 4, <span class="stringliteral">&quot;rhoQ&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keyword">const</span> std::string suffix = <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.substr(4);</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span> (!suffix.empty() &amp;&amp; std::all_of(suffix.cbegin(), suffix.cend(),</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                           [] (<span class="keyword">const</span> <span class="keywordtype">char</span> c) { return c &gt;= <span class="stringliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="stringliteral">&#39;9&#39;</span>; })) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">q</a> = std::stoi(suffix);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
 <div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:101</div></div>
-<div class="ttc" id="anamespaceWSM6Ind_html_a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:184</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a11cf3940bc14ad31912d5df8d5f81402"><div class="ttname"><a href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">erf_plotfile::plot3d_q_conserved_component_index</a></div><div class="ttdeci">int plot3d_q_conserved_component_index(const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:173</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:184</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a11cf3940bc14ad31912d5df8d5f81402"><div class="ttname"><a href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">erf_plotfile::plot3d_q_conserved_component_index</a></div><div class="ttdeci">int plot3d_q_conserved_component_index(const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:190</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -223,31 +223,31 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;{</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* names[] = {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="stringliteral">&quot;temp&quot;</span>, <span class="stringliteral">&quot;theta&quot;</span>, <span class="stringliteral">&quot;KE&quot;</span>, <span class="stringliteral">&quot;scalar&quot;</span>, <span class="stringliteral">&quot;soundspeed&quot;</span>, <span class="stringliteral">&quot;reflectivity&quot;</span>,</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="stringliteral">&quot;max_reflectivity&quot;</span>, <span class="stringliteral">&quot;mucape&quot;</span>, <span class="stringliteral">&quot;vorticity_x&quot;</span>, <span class="stringliteral">&quot;vorticity_y&quot;</span>, <span class="stringliteral">&quot;vorticity_z&quot;</span>,</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="stringliteral">&quot;helicity&quot;</span>, <span class="stringliteral">&quot;local_helicity&quot;</span>, <span class="stringliteral">&quot;magvel&quot;</span>, <span class="stringliteral">&quot;divU&quot;</span>, <span class="stringliteral">&quot;pres_hse&quot;</span>, <span class="stringliteral">&quot;dens_hse&quot;</span>,</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="stringliteral">&quot;theta_hse&quot;</span>, <span class="stringliteral">&quot;qv_hse&quot;</span>, <span class="stringliteral">&quot;pressure&quot;</span>, <span class="stringliteral">&quot;pert_pres&quot;</span>, <span class="stringliteral">&quot;pert_dens&quot;</span>, <span class="stringliteral">&quot;buoyancy&quot;</span>,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="stringliteral">&quot;eq_pot_temp&quot;</span>, <span class="stringliteral">&quot;VPD&quot;</span>, <span class="stringliteral">&quot;dpdx&quot;</span>, <span class="stringliteral">&quot;dpdy&quot;</span>, <span class="stringliteral">&quot;dpdz&quot;</span>, <span class="stringliteral">&quot;pres_hse_x&quot;</span>, <span class="stringliteral">&quot;pres_hse_y&quot;</span>,</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="stringliteral">&quot;pres_hse_z&quot;</span>, <span class="stringliteral">&quot;z_phys&quot;</span>, <span class="stringliteral">&quot;detJ&quot;</span>, <span class="stringliteral">&quot;mapfac&quot;</span>, <span class="stringliteral">&quot;lat_m&quot;</span>, <span class="stringliteral">&quot;lon_m&quot;</span>, <span class="stringliteral">&quot;pblh&quot;</span>,</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <span class="stringliteral">&quot;shoc_cldfrac&quot;</span>, <span class="stringliteral">&quot;shoc_ql&quot;</span>, <span class="stringliteral">&quot;shoc_ql2&quot;</span>, <span class="stringliteral">&quot;shoc_cond&quot;</span>, <span class="stringliteral">&quot;wqls_sec&quot;</span>, <span class="stringliteral">&quot;wthv_sec&quot;</span>,</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="stringliteral">&quot;w_sec&quot;</span>, <span class="stringliteral">&quot;thl_sec&quot;</span>, <span class="stringliteral">&quot;qw_sec&quot;</span>, <span class="stringliteral">&quot;qwthl_sec&quot;</span>, <span class="stringliteral">&quot;wthl_sec&quot;</span>, <span class="stringliteral">&quot;wqw_sec&quot;</span>, <span class="stringliteral">&quot;w3&quot;</span>,</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="stringliteral">&quot;brunt&quot;</span>, <span class="stringliteral">&quot;isotropy&quot;</span>, <span class="stringliteral">&quot;shear_prod&quot;</span>, <span class="stringliteral">&quot;buoy_prod&quot;</span>, <span class="stringliteral">&quot;diss_tke&quot;</span>,</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <span class="stringliteral">&quot;terrain_IB_mask&quot;</span>, <span class="stringliteral">&quot;volfrac&quot;</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    };</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* candidate : names) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == candidate) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;xvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;yvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;zvel_err&quot;</span> ||</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* names[] = {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="stringliteral">&quot;temp&quot;</span>, <span class="stringliteral">&quot;theta&quot;</span>, <span class="stringliteral">&quot;KE&quot;</span>, <span class="stringliteral">&quot;scalar&quot;</span>, <span class="stringliteral">&quot;soundspeed&quot;</span>, <span class="stringliteral">&quot;reflectivity&quot;</span>,</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="stringliteral">&quot;max_reflectivity&quot;</span>, <span class="stringliteral">&quot;mucape&quot;</span>, <span class="stringliteral">&quot;vorticity_x&quot;</span>, <span class="stringliteral">&quot;vorticity_y&quot;</span>, <span class="stringliteral">&quot;vorticity_z&quot;</span>,</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="stringliteral">&quot;helicity&quot;</span>, <span class="stringliteral">&quot;local_helicity&quot;</span>, <span class="stringliteral">&quot;magvel&quot;</span>, <span class="stringliteral">&quot;divU&quot;</span>, <span class="stringliteral">&quot;pres_hse&quot;</span>, <span class="stringliteral">&quot;dens_hse&quot;</span>,</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="stringliteral">&quot;theta_hse&quot;</span>, <span class="stringliteral">&quot;qv_hse&quot;</span>, <span class="stringliteral">&quot;pressure&quot;</span>, <span class="stringliteral">&quot;pert_pres&quot;</span>, <span class="stringliteral">&quot;pert_dens&quot;</span>, <span class="stringliteral">&quot;buoyancy&quot;</span>,</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="stringliteral">&quot;eq_pot_temp&quot;</span>, <span class="stringliteral">&quot;VPD&quot;</span>, <span class="stringliteral">&quot;dpdx&quot;</span>, <span class="stringliteral">&quot;dpdy&quot;</span>, <span class="stringliteral">&quot;dpdz&quot;</span>, <span class="stringliteral">&quot;pres_hse_x&quot;</span>, <span class="stringliteral">&quot;pres_hse_y&quot;</span>,</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="stringliteral">&quot;pres_hse_z&quot;</span>, <span class="stringliteral">&quot;z_phys&quot;</span>, <span class="stringliteral">&quot;detJ&quot;</span>, <span class="stringliteral">&quot;mapfac&quot;</span>, <span class="stringliteral">&quot;lat_m&quot;</span>, <span class="stringliteral">&quot;lon_m&quot;</span>, <span class="stringliteral">&quot;pblh&quot;</span>,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="stringliteral">&quot;shoc_cldfrac&quot;</span>, <span class="stringliteral">&quot;shoc_ql&quot;</span>, <span class="stringliteral">&quot;shoc_ql2&quot;</span>, <span class="stringliteral">&quot;shoc_cond&quot;</span>, <span class="stringliteral">&quot;wqls_sec&quot;</span>, <span class="stringliteral">&quot;wthv_sec&quot;</span>,</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="stringliteral">&quot;w_sec&quot;</span>, <span class="stringliteral">&quot;thl_sec&quot;</span>, <span class="stringliteral">&quot;qw_sec&quot;</span>, <span class="stringliteral">&quot;qwthl_sec&quot;</span>, <span class="stringliteral">&quot;wthl_sec&quot;</span>, <span class="stringliteral">&quot;wqw_sec&quot;</span>, <span class="stringliteral">&quot;w3&quot;</span>,</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="stringliteral">&quot;brunt&quot;</span>, <span class="stringliteral">&quot;isotropy&quot;</span>, <span class="stringliteral">&quot;shear_prod&quot;</span>, <span class="stringliteral">&quot;buoy_prod&quot;</span>, <span class="stringliteral">&quot;diss_tke&quot;</span>,</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="stringliteral">&quot;terrain_IB_mask&quot;</span>, <span class="stringliteral">&quot;volfrac&quot;</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    };</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* candidate : names) {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == candidate) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;xvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;yvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;zvel_err&quot;</span> ||</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>.</p>
 <div class="dynheader">
@@ -297,79 +297,82 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;{</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cons_comp = <a class="code" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">if</span> (cons_comp &gt;= 0) <span class="keywordflow">return</span> cons_comp &lt; caps.conserved_state_size;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;u_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;v_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;w_t_avg&quot;</span> ||</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;umag_t_avg&quot;</span>) {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">return</span> caps.time_average_storage;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_sw&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_lw&quot;</span>) {</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">return</span> caps.radiation_heating_storage;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nut&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmh&quot;</span> ||</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khh&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Lturb&quot;</span>) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">return</span> caps.eddy_diffusivity_storage;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;diss&quot;</span>) <span class="keywordflow">return</span> caps.dissipation_storage;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;walldist&quot;</span>) <span class="keywordflow">return</span> caps.wall_distance_storage;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; moisture = caps.moisture;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;moist_density&quot;</span>) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">return</span> moisture.vapor &amp;&amp; moisture.cloud_liquid &amp;&amp;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">plot3d_nonprecipitating_q_range</a>(caps.moist_state_size));</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qv&quot;</span>)    <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qc&quot;</span>)    <span class="keywordflow">return</span> moisture.cloud_liquid &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 2);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qi&quot;</span>)    <span class="keywordflow">return</span> moisture.cloud_ice &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 3);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qrain&quot;</span>) <span class="keywordflow">return</span> moisture.rain &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        caps, caps.moist_state_size &gt; 3 ? 4 : 3);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsnow&quot;</span>) <span class="keywordflow">return</span> moisture.snow &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 5);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qgraup&quot;</span>) <span class="keywordflow">return</span> moisture.graupel &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 6);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nc&quot;</span>) <span class="keywordflow">return</span> moisture.cloud_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 7);</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ni&quot;</span>) <span class="keywordflow">return</span> moisture.ice_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 8);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nr&quot;</span>) <span class="keywordflow">return</span> moisture.rain_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 9);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ns&quot;</span>) <span class="keywordflow">return</span> moisture.snow_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 10);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ng&quot;</span>) <span class="keywordflow">return</span> moisture.graupel_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 11);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qt&quot;</span>) {</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">return</span> moisture.vapor &amp;&amp;</div>
+<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;{</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cons_comp = <a class="code" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">if</span> (cons_comp &gt;= 0) <span class="keywordflow">return</span> cons_comp &lt; caps.conserved_state_size;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;u_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;v_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;w_t_avg&quot;</span> ||</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;umag_t_avg&quot;</span>) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">return</span> caps.time_average_storage;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_sw&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_lw&quot;</span>) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">return</span> caps.radiation_heating_storage;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nut&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmh&quot;</span> ||</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khh&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Lturb&quot;</span>) {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">return</span> caps.eddy_diffusivity_storage;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    }</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;diss&quot;</span>) <span class="keywordflow">return</span> caps.dissipation_storage;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;walldist&quot;</span>) <span class="keywordflow">return</span> caps.wall_distance_storage;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; moisture = caps.moisture;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;moist_density&quot;</span>) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <span class="keywordflow">return</span> moisture.vapor &amp;&amp; moisture.cloud_liquid &amp;&amp;</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">plot3d_total_mass_q_range</a>(</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                    caps.moist_state_size, caps.moist_numconc_size));</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qn&quot;</span>) {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">return</span> moisture.cloud_liquid &amp;&amp;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">plot3d_nonprecipitating_q_range</a>(caps.moist_state_size));</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qp&quot;</span>) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordflow">return</span> moisture.rain &amp;&amp;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">plot3d_precipitating_q_range</a>(</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    caps.moist_state_size, caps.moist_numconc_size));</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    }</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span>) <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;precipitable&quot;</span>) <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rain_accum&quot;</span>) <span class="keywordflow">return</span> moisture.rain_accumulation &amp;&amp;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        caps.qmoist_size &gt;= (caps.moisture_type == MoistureType::SuperDroplets ? 7 : 1);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;snow_accum&quot;</span>) <span class="keywordflow">return</span> moisture.snow_accumulation &amp;&amp; caps.qmoist_size &gt;= 2;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;graup_accum&quot;</span>) <span class="keywordflow">return</span> moisture.graupel_accumulation &amp;&amp; caps.qmoist_size &gt;= 3;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) <span class="keywordflow">return</span> moisture.relative_humidity_diagnostic &amp;&amp;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        (caps.moisture_type == MoistureType::SatAdj || caps.qmoist_size &gt;= 6);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;condensation_rate&quot;</span>) <span class="keywordflow">return</span> moisture.condensation_rate_diagnostic &amp;&amp; caps.qmoist_size &gt;= 4;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">plot3d_fixed_unconditional_diagnostic</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a23d66d264e5f6467ddc684cafb62b4e9"><div class="ttname"><a href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">erf_plotfile::plot3d_moist_q_component_available</a></div><div class="ttdeci">bool plot3d_moist_q_component_available(const Plot3DSelectionCapabilities &amp;caps, const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:214</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a2a0598d635fec5686185ce5597c9e985"><div class="ttname"><a href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">erf_plotfile::plot3d_conserved_component_index</a></div><div class="ttdeci">int plot3d_conserved_component_index(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:180</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a51563683acf5983b904732cd0c4a7d9f"><div class="ttname"><a href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">erf_plotfile::plot3d_precipitating_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_precipitating_q_range(const int moist_state_size, const int moist_numconc_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:243</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a6302a98fe450561c3c23d6b29e072fe7"><div class="ttname"><a href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">erf_plotfile::plot3d_nonprecipitating_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_nonprecipitating_q_range(const int moist_state_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:236</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a66f027f3966928ab7502c21109e99c0d"><div class="ttname"><a href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">erf_plotfile::plot3d_total_mass_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_total_mass_q_range(const int moist_state_size, const int moist_numconc_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:222</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a976489bd70dd01700700f097f40e6a92"><div class="ttname"><a href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">erf_plotfile::plot3d_q_range_available</a></div><div class="ttdeci">bool plot3d_q_range_available(const Plot3DSelectionCapabilities &amp;caps, const Plot3DQRange range)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:256</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_ac81e0b7ccab2ab9b895be8d5ec8a0d99"><div class="ttname"><a href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">erf_plotfile::plot3d_fixed_unconditional_diagnostic</a></div><div class="ttdeci">bool plot3d_fixed_unconditional_diagnostic(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:265</div></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">plot3d_nonprecipitating_q_range</a>(caps.moist_state_size));</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qv&quot;</span>)    <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qc&quot;</span>)    <span class="keywordflow">return</span> moisture.cloud_liquid &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 2);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qi&quot;</span>)    <span class="keywordflow">return</span> moisture.cloud_ice &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 3);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qrain&quot;</span>) <span class="keywordflow">return</span> moisture.rain &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        caps, caps.moist_state_size &gt; 3 ? 4 : 3);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsnow&quot;</span>) <span class="keywordflow">return</span> moisture.snow &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 5);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qgraup&quot;</span>) <span class="keywordflow">return</span> moisture.graupel &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 6);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nc&quot;</span>) <span class="keywordflow">return</span> moisture.cloud_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 7);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ni&quot;</span>) <span class="keywordflow">return</span> moisture.ice_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 8);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nr&quot;</span>) <span class="keywordflow">return</span> moisture.rain_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 9);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ns&quot;</span>) <span class="keywordflow">return</span> moisture.snow_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 10);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ng&quot;</span>) <span class="keywordflow">return</span> moisture.graupel_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 11);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="comment">// nn shares slot 8 with ni, but the two are mutually exclusive by scheme:</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// WDM6 declares ccn_number and leaves ice_number false, Morrison the reverse.</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nn&quot;</span>) <span class="keywordflow">return</span> moisture.ccn_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 8);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qt&quot;</span>) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">return</span> moisture.vapor &amp;&amp;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">plot3d_total_mass_q_range</a>(</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    caps.moist_state_size, caps.moist_numconc_size));</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qn&quot;</span>) {</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">return</span> moisture.cloud_liquid &amp;&amp;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">plot3d_nonprecipitating_q_range</a>(caps.moist_state_size));</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qp&quot;</span>) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">return</span> moisture.rain &amp;&amp;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">plot3d_precipitating_q_range</a>(</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    caps.moist_state_size, caps.moist_numconc_size));</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    }</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span>) <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;precipitable&quot;</span>) <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rain_accum&quot;</span>) <span class="keywordflow">return</span> moisture.rain_accumulation &amp;&amp;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        caps.qmoist_size &gt;= (caps.moisture_type == MoistureType::SuperDroplets ? 7 : 1);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;snow_accum&quot;</span>) <span class="keywordflow">return</span> moisture.snow_accumulation &amp;&amp; caps.qmoist_size &gt;= 2;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;graup_accum&quot;</span>) <span class="keywordflow">return</span> moisture.graupel_accumulation &amp;&amp; caps.qmoist_size &gt;= 3;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) <span class="keywordflow">return</span> moisture.relative_humidity_diagnostic &amp;&amp;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        (caps.moisture_type == MoistureType::SatAdj || caps.qmoist_size &gt;= 6);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;condensation_rate&quot;</span>) <span class="keywordflow">return</span> moisture.condensation_rate_diagnostic &amp;&amp; caps.qmoist_size &gt;= 4;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">plot3d_fixed_unconditional_diagnostic</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;}</div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a23d66d264e5f6467ddc684cafb62b4e9"><div class="ttname"><a href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">erf_plotfile::plot3d_moist_q_component_available</a></div><div class="ttdeci">bool plot3d_moist_q_component_available(const Plot3DSelectionCapabilities &amp;caps, const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:231</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a2a0598d635fec5686185ce5597c9e985"><div class="ttname"><a href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">erf_plotfile::plot3d_conserved_component_index</a></div><div class="ttdeci">int plot3d_conserved_component_index(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:197</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a51563683acf5983b904732cd0c4a7d9f"><div class="ttname"><a href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">erf_plotfile::plot3d_precipitating_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_precipitating_q_range(const int moist_state_size, const int moist_numconc_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:260</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a6302a98fe450561c3c23d6b29e072fe7"><div class="ttname"><a href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">erf_plotfile::plot3d_nonprecipitating_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_nonprecipitating_q_range(const int moist_state_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:253</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a66f027f3966928ab7502c21109e99c0d"><div class="ttname"><a href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">erf_plotfile::plot3d_total_mass_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_total_mass_q_range(const int moist_state_size, const int moist_numconc_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:239</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a976489bd70dd01700700f097f40e6a92"><div class="ttname"><a href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">erf_plotfile::plot3d_q_range_available</a></div><div class="ttdeci">bool plot3d_q_range_available(const Plot3DSelectionCapabilities &amp;caps, const Plot3DQRange range)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:273</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_ac81e0b7ccab2ab9b895be8d5ec8a0d99"><div class="ttname"><a href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">erf_plotfile::plot3d_fixed_unconditional_diagnostic</a></div><div class="ttdeci">bool plot3d_fixed_unconditional_diagnostic(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:282</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>.</p>
 <div class="dynheader">
@@ -427,9 +430,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;{</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">return</span> caps.moisture_type != MoistureType::None &amp;&amp; caps.moist_state_size &gt; 0;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> caps.moisture_type != MoistureType::None &amp;&amp; caps.moist_state_size &gt; 0;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available()</a>.</p>
 <div class="dynheader">
@@ -482,11 +485,11 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;{</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a> &gt;= 1 &amp;&amp; <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a> &lt;= caps.moist_state_size &amp;&amp;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a2d0c92e538b6434c11807bafdd0c8109"><div class="ttname"><a href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">erf_plotfile::plot3d_source_component_available</a></div><div class="ttdeci">bool plot3d_source_component_available(const Plot3DSelectionCapabilities &amp;caps, const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:206</div></div>
+<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">q</a> &gt;= 1 &amp;&amp; <a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">q</a> &lt;= caps.moist_state_size &amp;&amp;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, <a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a2d0c92e538b6434c11807bafdd0c8109"><div class="ttname"><a href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">erf_plotfile::plot3d_source_component_available</a></div><div class="ttdeci">bool plot3d_source_component_available(const Plot3DSelectionCapabilities &amp;caps, const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:223</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>.</p>
 <div class="dynheader">
@@ -537,108 +540,122 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    Plot3DMoistureCapabilities caps;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">switch</span> (moisture_type) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">case</span> MoistureType::None:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">case</span> MoistureType::MoistNoCondensation:</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// The second moist conserved component is the canonical cloud-water</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// state even when this model supplies no condensation source.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">case</span> MoistureType::SatAdj:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        caps.relative_humidity_diagnostic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">case</span> MoistureType::Kessler_NoRain:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">case</span> MoistureType::Kessler:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM_NoPrecip_NoIce:</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM_NoIce:</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM:</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">case</span> MoistureType::Morrison_NoIce:</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">case</span> MoistureType::Morrison:</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        caps.ice_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        caps.snow_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        caps.graupel_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">case</span> MoistureType::WSM6:</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">case</span> MoistureType::SuperDroplets:</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="comment">// graupel accumulation is not advertised because nothing writes it</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        caps.relative_humidity_diagnostic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        caps.condensation_rate_diagnostic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Unknown MoistureType in plot3d_moisture_capabilities&quot;</span>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> caps;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Plot3DMoistureCapabilities caps;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">switch</span> (moisture_type) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">case</span> MoistureType::None:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">case</span> MoistureType::MoistNoCondensation:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// The second moist conserved component is the canonical cloud-water</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// state even when this model supplies no condensation source.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">case</span> MoistureType::SatAdj:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        caps.relative_humidity_diagnostic = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">case</span> MoistureType::Kessler_NoRain:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">case</span> MoistureType::Kessler:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM_NoPrecip_NoIce:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM_NoIce:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">case</span> MoistureType::Morrison_NoIce:</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">case</span> MoistureType::Morrison:</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        caps.ice_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        caps.snow_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        caps.graupel_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">case</span> MoistureType::WSM6:</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">case</span> MoistureType::WDM6:</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        caps.ccn_number = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">case</span> MoistureType::SuperDroplets:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// graupel accumulation is not advertised because nothing writes it</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        caps.relative_humidity_diagnostic = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        caps.condensation_rate_diagnostic = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Unknown MoistureType in plot3d_moisture_capabilities&quot;</span>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> caps;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>.</p>
 <div class="dynheader">
@@ -677,20 +694,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> : names) {</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pressure&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pert_pres&quot;</span> ||</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdx&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdy&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdz&quot;</span> ||</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;eq_pot_temp&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;VPD&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span> ||</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;{</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> : names) {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pressure&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pert_pres&quot;</span> ||</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdx&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdy&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdz&quot;</span> ||</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;eq_pot_temp&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;VPD&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span> ||</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) {</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        }</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -728,10 +745,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="keywordflow">if</span> (moist_state_size &lt; 2) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">return</span> {1, moist_state_size &gt; 3 ? 3 : 2};</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (moist_state_size &lt; 2) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> {1, moist_state_size &gt; 3 ? 3 : 2};</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -782,15 +799,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;{</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keyword">const</span> Plot3DQRange <a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a> =</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">plot3d_total_mass_q_range</a>(moist_state_size, moist_numconc_size);</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a>.valid()) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> first_precip_q = moist_state_size &gt; 3 ? 4 : 3;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a>.last_q &lt; first_precip_q) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">return</span> {first_precip_q, <a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a>.last_q};</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">const</span> Plot3DQRange <a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a> =</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">plot3d_total_mass_q_range</a>(moist_state_size, moist_numconc_size);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a>.valid()) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> first_precip_q = moist_state_size &gt; 3 ? 4 : 3;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a>.last_q &lt; first_precip_q) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> {first_precip_q, <a class="code" href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">total</a>.last_q};</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
 <div class="ttc" id="anamespaceNoahmpPrecipSlot_html_addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43"><div class="ttname"><a href="namespaceNoahmpPrecipSlot.html#addcb0eeb07b685c81c3ef3608546d9b3a638e63e2eaf3841c6a21e182c8a90d43">NoahmpPrecipSlot::total</a></div><div class="ttdeci">@ total</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:130</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
@@ -841,10 +858,10 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (q &lt; 1 || q &gt; 11) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">return</span> 3 + <a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>; <span class="comment">// RhoQ1_comp + q - 1 in the fixed conserved layout.</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span> (q &lt; 1 || q &gt; 11) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> 3 + <a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">q</a>; <span class="comment">// RhoQ1_comp + q - 1 in the fixed conserved layout.</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index()</a>, <a class="el" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -899,11 +916,11 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">return</span> range.valid() &amp;&amp;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, range.first_q) &amp;&amp;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, range.last_q);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">return</span> range.valid() &amp;&amp;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, range.first_q) &amp;&amp;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, range.last_q);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>.</p>
 <div class="dynheader">
@@ -965,22 +982,22 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;{</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    amrex::Vector&lt;std::string&gt; selected;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; count_name : requested) {</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        constexpr std::size_t suffix_size = 6; <span class="comment">// &quot;_count&quot;</span></div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">if</span> (count_name.size() &gt; suffix_size &amp;&amp;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            count_name.compare(count_name.size() - suffix_size, suffix_size, <span class="stringliteral">&quot;_count&quot;</span>) == 0) {</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="keyword">const</span> std::string container = count_name.substr(0, count_name.size() - suffix_size);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordflow">if</span> (std::find(configured.cbegin(), configured.cend(), container) == configured.cend() ||</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                std::find(selected.cbegin(), selected.cend(), container) != selected.cend()) {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            }</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            selected.push_back(container);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        }</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">return</span> selected;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;{</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    amrex::Vector&lt;std::string&gt; selected;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; count_name : requested) {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        constexpr std::size_t suffix_size = 6; <span class="comment">// &quot;_count&quot;</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">if</span> (count_name.size() &gt; suffix_size &amp;&amp;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            count_name.compare(count_name.size() - suffix_size, suffix_size, <span class="stringliteral">&quot;_count&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="keyword">const</span> std::string container = count_name.substr(0, count_name.size() - suffix_size);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <span class="keywordflow">if</span> (std::find(configured.cbegin(), configured.cend(), container) == configured.cend() ||</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;                std::find(selected.cbegin(), selected.cend(), container) != selected.cend()) {</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            }</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            selected.push_back(container);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordflow">return</span> selected;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
@@ -1030,11 +1047,11 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> comp = <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#a2b5587ccbc994060d5c6b99ebc48fb98a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7">plot3d_has_moist_state</a>(caps) &amp;&amp; comp &gt;= 0 &amp;&amp; comp &lt; caps.conserved_state_size;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a789043b59572f8a03937d51d9e5924c7"><div class="ttname"><a href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7">erf_plotfile::plot3d_has_moist_state</a></div><div class="ttdeci">bool plot3d_has_moist_state(const Plot3DSelectionCapabilities &amp;caps)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:200</div></div>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> comp = <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7">plot3d_has_moist_state</a>(caps) &amp;&amp; comp &gt;= 0 &amp;&amp; comp &lt; caps.conserved_state_size;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a789043b59572f8a03937d51d9e5924c7"><div class="ttname"><a href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7">erf_plotfile::plot3d_has_moist_state</a></div><div class="ttdeci">bool plot3d_has_moist_state(const Plot3DSelectionCapabilities &amp;caps)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:217</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available()</a>, and <a class="el" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available()</a>.</p>
 <div class="dynheader">
@@ -1096,16 +1113,16 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span> (moist_state_size &lt;= 0 || moist_numconc_size &lt; 0 ||</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        moist_numconc_size &gt; moist_state_size) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mass_count = moist_state_size - moist_numconc_size;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">if</span> (mass_count &lt;= 0) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> {1, mass_count};</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (moist_state_size &lt;= 0 || moist_numconc_size &lt; 0 ||</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        moist_numconc_size &gt; moist_state_size) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mass_count = moist_state_size - moist_numconc_size;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (mass_count &lt;= 0) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">return</span> {1, mass_count};</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, <a class="el" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">plot3d_precipitating_q_range()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">

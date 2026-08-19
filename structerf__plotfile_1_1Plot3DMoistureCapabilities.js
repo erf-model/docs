@@ -1,5 +1,6 @@
 var structerf__plotfile_1_1Plot3DMoistureCapabilities =
 [
+    [ "ccn_number", "structerf__plotfile_1_1Plot3DMoistureCapabilities.html#a2fdc19c232a27f4c02f12499830c7826", null ],
     [ "cloud_ice", "structerf__plotfile_1_1Plot3DMoistureCapabilities.html#af95563e9e091ea226e6974b6ace1d0f3", null ],
     [ "cloud_liquid", "structerf__plotfile_1_1Plot3DMoistureCapabilities.html#a0edf02d87f73a4f836c3541ce4edb586", null ],
     [ "cloud_number", "structerf__plotfile_1_1Plot3DMoistureCapabilities.html#a3f9bb540ee2bf741398271a579416b11", null ],

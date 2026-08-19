@@ -1212,7 +1212,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        }</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        FArrayBox ccfab(cslope_bx, ncomp*AMREX_SPACEDIM, The_Async_Arena());</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">tmp</a> = ccfab.array();</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        Array4&lt;Real&gt; <span class="keyword">const</span>&amp; <a class="code" href="namespaceWSM6SedCellScratch.html#ab28530c734d700f920bb18c37bbdc366a381cd8133166e8909183cb00eaec8da1">tmp</a> = ccfab.array();</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        Array4&lt;Real const&gt; <span class="keyword">const</span>&amp; ctmp = ccfab.const_array();</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">#ifdef AMREX_USE_GPU</span></div>
@@ -1224,7 +1224,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        AMREX_HOST_DEVICE_PARALLEL_FOR_4D_FLAG(RunOn::Gpu, cslope_bx, ncomp, i, j, k, n,</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        {</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            mf_cell_cons_lin_interp_mcslope(i,j,k,n, <a class="code" href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">tmp</a>, crse_arr, 0, ncomp,</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            mf_cell_cons_lin_interp_mcslope(i,j,k,n, <a class="code" href="namespaceWSM6SedCellScratch.html#ab28530c734d700f920bb18c37bbdc366a381cd8133166e8909183cb00eaec8da1">tmp</a>, crse_arr, 0, ncomp,</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                                            cdomain, ratio, bcrp);</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        });</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
@@ -1235,7 +1235,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        });</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    } <span class="comment">// MFIter</span></div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;}</div>
-<div class="ttc" id="anamespaceWSM6SedCellScratch_html_a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#a785ada0beecb7ad47e59ae6f522cf903a381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:114</div></div>
+<div class="ttc" id="anamespaceWSM6SedCellScratch_html_ab28530c734d700f920bb18c37bbdc366a381cd8133166e8909183cb00eaec8da1"><div class="ttname"><a href="namespaceWSM6SedCellScratch.html#ab28530c734d700f920bb18c37bbdc366a381cd8133166e8909183cb00eaec8da1">WSM6SedCellScratch::tmp</a></div><div class="ttdeci">@ tmp</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceWSM6.cpp:114</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classERFFillPatcher.html#a1293b67fb21389c95c423465d04eb686">Fill()</a>.</p>
 <div class="dynheader">
