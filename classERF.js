@@ -70,6 +70,7 @@ var classERF =
     [ "GetOceanToAtmosCornerCoordinates", "classERF.html#a76d58f6ea3611f5b55b220597ed5bf0c", null ],
     [ "GetOceanToAtmosSurfaceLayout", "classERF.html#a0443022f1256fcff9e645ce43a4f046b", null ],
     [ "GotoNextLine", "classERF.html#aaee255b031e63bd9b5807f6612739dbd", null ],
+    [ "HasCloudWater", "classERF.html#a7dd5ab74895cdcefc3c415bda75c697c", null ],
     [ "HasRadiation", "classERF.html#a6f22953cb4365e97b0f70c13caa5e677", null ],
     [ "HurricaneEyeTracker", "classERF.html#a68ddf00e97506ef65d649d9141f153a6", null ],
     [ "HurricaneEyeTrackerInitial", "classERF.html#a6a6c10a853da6d47dc83174da79e699f", null ],

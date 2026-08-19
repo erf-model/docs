@@ -1,5 +1,10 @@
 var NAVTREEINDEX34 =
 {
+"structPlaneSampler.html#ab91f2108cf2f8dfb8e96e3a4607c25ca":[2,0,85,0],
+"structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7":[2,0,85,9],
+"structPlaneSampler.html#ae9a09812ff412cf39a9b999f688c1d76":[2,0,85,1],
+"structProbParmDefaults.html":[2,0,88],
+"structProbParmDefaults.html#a16db7fa78b123f2a956bacbce26f32c6":[2,0,88,1],
 "structProbParmDefaults.html#af75997d9e4a94ab3b221657799ef720f":[2,0,88,0],
 "structSAMCloudPhaseChange.html":[2,0,95],
 "structSAMCloudPhaseChange.html#a04f6dae6c200045e594aa8818af929a2":[2,0,95,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX34 =
 "structSHOCInterface_1_1SHOCPreprocess.html#ae749c1543848862060836ddf961a0aa6":[2,0,120,2,40],
 "structSHOCInterface_1_1SHOCPreprocess.html#aecfa9bd2aad39181342c6e444aa32e78":[2,0,120,2,18],
 "structSHOCInterface_1_1SHOCPreprocess.html#aefcf4cef59893bfb6c141703da1350ae":[2,0,120,2,28],
-"structSHOCInterface_1_1SHOCPreprocess.html#af3b070d21d472756981fc96c8a1737a1":[2,0,120,2,2],
-"structShocColumnData.html":[2,0,113],
-"structShocColumnData.html#a0b47c32b1773caa04739ff5a47c2a773":[2,0,113,40],
-"structShocColumnData.html#a0ea4b5344cd667118ea2a08dd8476f76":[2,0,113,37],
-"structShocColumnData.html#a12c4e3727a28cc716e40671a75b93f55":[2,0,113,14],
-"structShocColumnData.html#a139cad98eeec7990702474856f401af2":[2,0,113,38]
+"structSHOCInterface_1_1SHOCPreprocess.html#af3b070d21d472756981fc96c8a1737a1":[2,0,120,2,2]
 };

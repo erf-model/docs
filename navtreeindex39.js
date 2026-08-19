@@ -1,5 +1,10 @@
 var NAVTREEINDEX39 =
 {
+"structsurface__flux__donelan.html#aed90f8d0aee3cdc3ac8b177aaf8b70c7":[2,0,135,1],
+"structsurface__flux__eb.html":[2,0,136],
+"structsurface__flux__eb.html#a5d88d4c5c4b6a3a4ff1878cd80f42d62":[2,0,136,6],
+"structsurface__flux__eb.html#a928b29a8f6afb96b8a5418ca1216c984":[2,0,136,3],
+"structsurface__flux__eb.html#aaaaec1afbc96682a35455eb5738fcb7f":[2,0,136,5],
 "structsurface__flux__eb.html#ab42b18b0bfc9fef667627f31c3dcc032":[2,0,136,2],
 "structsurface__flux__eb.html#ab48baaade873c7dd4b539d33f7fa9085":[2,0,136,1],
 "structsurface__flux__eb.html#ae73547cd4cae85523f2888b84f6c7d58":[2,0,136,4],
