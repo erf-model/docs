@@ -1,6 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"ERF__SurfaceLayer_8H_source.html":[3,0,1,1,21],
 "ERF__SurfaceLayer_8cpp.html":[3,0,1,1,20],
 "ERF__SurfacePrecipitation_8H.html":[3,0,1,12,12],
 "ERF__SurfacePrecipitation_8H.html#a24488c48777f79e7ddcd5eeb1d3c8bb6":[3,0,1,12,12,6],
@@ -249,5 +248,6 @@ var NAVTREEINDEX12 =
 "ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#ad53eb451be33aeb4ef17280d99c15da7":[3,0,1,16,65,0],
 "ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#adabdab8cbc4042ba055d63061a693830":[3,0,1,16,65,6],
 "ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af5129c66ca111d5e3b26c459f5e0e88e":[3,0,1,16,65,8],
-"ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97":[3,0,1,16,65,5]
+"ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97":[3,0,1,16,65,5],
+"ERF__UpdateRhoThetaSources__SDMCongestus3DCold_8H.html#afccba40220d1f9ee1f9a38945563ecf3":[3,0,1,16,65,3]
 };

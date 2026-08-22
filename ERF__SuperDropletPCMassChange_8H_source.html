@@ -663,10 +663,10 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                    <span class="keywordflow">if</span> (isTimestepTooSmall(dt, tau)) { <span class="keywordflow">break</span>; }</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160; </div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> = RT(1.0) / dt;</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> = RT(1.0) / dt;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                    u_new = a_u;</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                    m_newton(u_new, rhs, <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                    m_newton(u_new, rhs, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                             m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s, ventFactor(a_u),</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                             res_norm_a, res_norm_r, converged);</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
@@ -724,13 +724,13 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                    <span class="keywordflow">if</span> (isTimestepTooSmall(dt, tau)) { <span class="keywordflow">break</span>; }</div>
 <div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160; </div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> = RT(1.0) / (<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt);</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> = RT(1.0) / (<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt);</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;                    RT u1 = a_u;</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;                    RT f1 = evalRHS(u1);</div>
 <div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160; </div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                    RT u2 = u1;</div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt*f1);</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                    m_newton(u2, rhs, <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                    RT rhs = <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dt*f1);</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                    m_newton(u2, rhs, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                             m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s, ventFactor(a_u),</div>
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                             res_norm_a, res_norm_r, converged);</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                    <span class="keywordflow">if</span> (u2 &lt;= 0) { dt *= <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>; <span class="keywordflow">continue</span>; }</div>
@@ -793,7 +793,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                    <span class="keywordflow">if</span> (isTimestepTooSmall(dt, tau)) {</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                    }</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> = RT(1.0) / dt;</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                    RT <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> = RT(1.0) / dt;</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                    converged = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;                    res_norm_a = RT(0.0);</div>
@@ -801,11 +801,11 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
 <div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                    RT u1 = a_u;</div>
 <div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;                    {</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * a_u;</div>
 <div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;                        RT res_norm_a_i = std::numeric_limits&lt;RT&gt;::max();</div>
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                        RT res_norm_r_i = std::numeric_limits&lt;RT&gt;::max();</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                        <span class="keywordtype">bool</span> converged_i = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                        m_newton( u1, rhs, <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;                        m_newton( u1, rhs, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;                                  m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s, ventFactor(a_u),</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;                                  res_norm_a_i, res_norm_r_i, converged_i );</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                        converged = converged &amp;&amp; converged_i;</div>
@@ -820,11 +820,11 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;                    RT u2 = u1;</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                    {</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u - dt*f1);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                        RT rhs = <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a> * (a_u - dt*f1);</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;                        RT res_norm_a_i = std::numeric_limits&lt;RT&gt;::max();</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                        RT res_norm_r_i = std::numeric_limits&lt;RT&gt;::max();</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                        <span class="keywordtype">bool</span> converged_i = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                        m_newton( u2, rhs, <a class="code" href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                        m_newton( u2, rhs, <a class="code" href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">mu</a>,</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                                  m_S, m_T, m_e_s, m_D, m_a, m_b, m_N_s, ventFactor(a_u),</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                  res_norm_a_i, res_norm_r_i, converged_i );</div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                        converged = converged &amp;&amp; converged_i;</div>
@@ -1182,7 +1182,7 @@ $(document).ready(function(){initNavTree('ERF__SuperDropletPCMassChange_8H_sourc
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_a0b6c95d9cbe21c8a94590c64b1459844"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#a0b6c95d9cbe21c8a94590c64b1459844">gamma</a></div><div class="ttdeci">amrex::Real gamma</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:9</div></div>
 <div class="ttc" id="aERF__InitCustomPert__DataAssimilation__ISV_8H_html_aaa538a485890f44f3ec785846ea09b12"><div class="ttname"><a href="ERF__InitCustomPert__DataAssimilation__ISV_8H.html#aaa538a485890f44f3ec785846ea09b12">beta</a></div><div class="ttdeci">amrex::Real beta</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_DataAssimilation_ISV.H:10</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
-<div class="ttc" id="anamespaceMORRInd_html_ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#ae07392356b7e78bb63a80c93fd424fdfae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:92</div></div>
+<div class="ttc" id="anamespaceMORRInd_html_ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807"><div class="ttname"><a href="namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae158f4ca57d44065b6af0bcc671f3807">MORRInd::mu</a></div><div class="ttdeci">@ mu</div><div class="ttdef"><b>Definition:</b> ERF_AdvanceMorrison.cpp:92</div></div>
 <div class="ttc" id="anamespacemp__wdm6_html_a5f636d0c9006367c1d9ce653613fa067"><div class="ttname"><a href="namespacemp__wdm6.html#a5f636d0c9006367c1d9ce653613fa067">mp_wdm6::alpha</a></div><div class="ttdeci">real(kind=kind_phys), parameter, private alpha</div><div class="ttdef"><b>Definition:</b> ERF_module_mp_wdm6.F90:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

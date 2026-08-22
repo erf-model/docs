@@ -156,10 +156,10 @@ template&lt;typename ParticleType &gt; </div>
 <p>Interpolate multiple field values at a particle position using CIC. </p>
 <div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_fields; ++i) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cic_interpolate(<a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1ad6cb403596ec7a348234a3a3bf0221bc">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cic_interpolate(<a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51ad6cb403596ec7a348234a3a3bf0221bc">p</a>, plo, dxi, field_arrays[i], &amp;result_values[i], 1);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="ttc" id="anamespaceWSM6Ind_html_ad8a138819e037130e8761d58d5f678b1ad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1ad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:191</div></div>
+<div class="ttc" id="anamespaceWSM6Ind_html_a633d43a464019ac3ae5e3da3ec483e51ad6cb403596ec7a348234a3a3bf0221bc"><div class="ttname"><a href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51ad6cb403596ec7a348234a3a3bf0221bc">WSM6Ind::p</a></div><div class="ttdeci">@ p</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:191</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -213,7 +213,7 @@ template&lt;typename ParticleType , typename Array4Type &gt; </div>
 
 <p>Test whether a particle's vertical CIC stencil reads past the local fab. cic_interpolate reads cell-centered data at k0+1 and k0+2 with k0 in {pk-1, pk}, so the maximum read offset is pk+2. Returns true if the stencil is out of bounds and the caller should skip the particle. </p>
 <div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> pk = int(amrex::Math::floor((<a class="code" href="namespaceWSM6Ind.html#ad8a138819e037130e8761d58d5f678b1ad6cb403596ec7a348234a3a3bf0221bc">p</a>.pos(AMREX_SPACEDIM-1) - plo[AMREX_SPACEDIM-1])</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> pk = int(amrex::Math::floor((<a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51ad6cb403596ec7a348234a3a3bf0221bc">p</a>.pos(AMREX_SPACEDIM-1) - plo[AMREX_SPACEDIM-1])</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                          * dxi[AMREX_SPACEDIM-1]));</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> (pk &lt; zheight.begin[2] || pk + 2 &gt;= zheight.end[2]);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>

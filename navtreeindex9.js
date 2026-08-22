@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a573aecd4d53f1b1c4724c74b7e071ed6":[3,0,1,8,11,2,20],
 "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a5c402aeabf404d94ed23d9722f206f72":[3,0,1,8,11,2,31],
 "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a5f7e7cf65fbb3ce112b40e636e18f505":[3,0,1,8,11,2,17],
 "ERF__Plotfile2DCatalog_8H.html#a2dd8a06cb41059636688602f49bafad2a62580e36e6295fa27e921a3f9339f6f3":[3,0,1,8,11,2,21],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "ERF__Plotfile2DWaterPath_8cpp.html#a16831e12f54effa1464aec611c228712":[3,0,1,8,26,0],
 "ERF__Plotfile2DWaterPath_8cpp.html#a374082b3440b36bee275aead97041c14":[3,0,1,8,26,6],
 "ERF__Plotfile2DWaterPath_8cpp.html#a42389a270e288068d67ea51a96e838ee":[3,0,1,8,26,1],
-"ERF__Plotfile2DWaterPath_8cpp.html#a73b508fe540950bde5d2c9ebb8725f70":[3,0,1,8,26,5]
+"ERF__Plotfile2DWaterPath_8cpp.html#a73b508fe540950bde5d2c9ebb8725f70":[3,0,1,8,26,5],
+"ERF__Plotfile2DWaterPath_8cpp.html#a7d4bc84f8f5eb9f6e43320751de0c7f4":[3,0,1,8,26,7]
 };

@@ -104,7 +104,6 @@ var namespaces_dup =
     [ "IntVars", "namespaceIntVars.html", null ],
     [ "LsmData_NOAHMP", "namespaceLsmData__NOAHMP.html", null ],
     [ "LsmFlux_NOAHMP", "namespaceLsmFlux__NOAHMP.html", null ],
-    [ "LsmVar_OceanSurf", "namespaceLsmVar__OceanSurf.html", null ],
     [ "LsmVar_SLM", "namespaceLsmVar__SLM.html", null ],
     [ "MetGridBdyVars", "namespaceMetGridBdyVars.html", null ],
     [ "MetGridTmpDstVars", "namespaceMetGridTmpDstVars.html", null ],
@@ -680,6 +679,7 @@ var namespaces_dup =
     [ "NoahmpOutputComp", "namespaceNoahmpOutputComp.html", null ],
     [ "NoahmpPrecipSlot", "namespaceNoahmpPrecipSlot.html", null ],
     [ "plotfile2d", "namespaceplotfile2d.html", "namespaceplotfile2d" ],
+    [ "RealBdyHydrometeorVars", "namespaceRealBdyHydrometeorVars.html", null ],
     [ "RealBdyVars", "namespaceRealBdyVars.html", null ],
     [ "rrtmgp", "namespacerrtmgp.html", [
       [ "compute_aerocom_cloudtop", "namespacerrtmgp.html#a49374093beae1d74627741563a8018f9", null ],
@@ -777,7 +777,10 @@ var namespaces_dup =
     ] ],
     [ "WDM6SedCellScratch", "namespaceWDM6SedCellScratch.html", null ],
     [ "WDM6SedNodeScratch", "namespaceWDM6SedNodeScratch.html", null ],
-    [ "WRFBdyVars", "namespaceWRFBdyVars.html", null ],
+    [ "WRFBdyHydrometeorVars", "namespaceWRFBdyHydrometeorVars.html", null ],
+    [ "WRFBdyVars", "namespaceWRFBdyVars.html", [
+      [ "LegacyNumTypes", "namespaceWRFBdyVars.html#a56661641c6eecad2759ac2eb8bc093dc", null ]
+    ] ],
     [ "WSM6Ind", "namespaceWSM6Ind.html", null ],
     [ "WSM6SedCellScratch", "namespaceWSM6SedCellScratch.html", null ],
     [ "WSM6SedNodeScratch", "namespaceWSM6SedNodeScratch.html", null ]

@@ -198,6 +198,7 @@ var NAVTREEINDEX2 =
 "ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b":[3,0,1,30,27],
 "ERF__IndexDefines_8H.html#a4d0a4735b7019c88a28b42c3d4787154":[3,0,1,30,15],
 "ERF__IndexDefines_8H.html#a536619efb901de654431f987753ac67c":[3,0,1,30,0],
+"ERF__IndexDefines_8H.html#a56661641c6eecad2759ac2eb8bc093dc":[3,0,1,30,39],
 "ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9":[3,0,1,30,4],
 "ERF__IndexDefines_8H.html#a7f9c844ee8a2e1930ade0911e8692667":[3,0,1,30,14],
 "ERF__IndexDefines_8H.html#a7fb02ae8fd2f46fd9cb1b247b058bd46":[3,0,1,30,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__IndexDefines_8H.html#ae74888290719af1a044a1ea566825be8":[3,0,1,30,23],
 "ERF__IndexDefines_8H.html#aef23aa54c5c6c2458de93772f28534b5":[3,0,1,30,6],
 "ERF__IndexDefines_8H_source.html":[3,0,1,30],
-"ERF__Init1D_8cpp.html":[3,0,1,7,0],
-"ERF__InitBCs_8cpp.html":[3,0,1,7,1]
+"ERF__Init1D_8cpp.html":[3,0,1,7,0]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"ERF__Plotfile2DWaterPath_8cpp.html#a7d4bc84f8f5eb9f6e43320751de0c7f4":[3,0,1,8,26,7],
 "ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb":[3,0,1,8,26,12],
 "ERF__Plotfile2DWaterPath_8cpp.html#a97844a229993c2b5f224f87b7624d875":[3,0,1,8,26,3],
 "ERF__Plotfile2DWaterPath_8cpp.html#a9c30ab2b82e9a275c74b5e81348e6e05":[3,0,1,8,26,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "ERF__SAMUtils_8H.html#ac66655018392e4f8fb9181ff6111b539":[3,0,1,12,4,6,30],
 "ERF__SAMUtils_8H.html#acd480ad96ed08bfba623065a293938cb":[3,0,1,12,4,6,19],
 "ERF__SAMUtils_8H.html#ad581220cae0d68680770a948b7f8f263":[3,0,1,12,4,6,38],
-"ERF__SAMUtils_8H.html#aea441120e2a4dc4c5c34f05042b0246c":[3,0,1,12,4,6,17]
+"ERF__SAMUtils_8H.html#aea441120e2a4dc4c5c34f05042b0246c":[3,0,1,12,4,6,17],
+"ERF__SAMUtils_8H.html#af51adca463780832af69a736113894ff":[3,0,1,12,4,6,40]
 };

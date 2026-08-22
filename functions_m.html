@@ -347,6 +347,18 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_consumed_sens_flux_cc
 : <a class="el" href="classShocDriver.html#adf8167852a27528515a609324330bf5d">ShocDriver</a>
 </li>
+<li>m_coupled_sst
+: <a class="el" href="classERF.html#af912226e3a21599be45ea6d7ddcbccfa">ERF</a>
+</li>
+<li>m_coupled_sst_lev
+: <a class="el" href="classSurfaceLayer.html#a8ba23a085f16e0a8bb3a72bcf6d95e2b">SurfaceLayer</a>
+</li>
+<li>m_coupled_sst_valid
+: <a class="el" href="classERF.html#a6cccf0325742d782db1464f0c16d1cd4">ERF</a>
+</li>
+<li>m_coupled_sst_valid_lev
+: <a class="el" href="classSurfaceLayer.html#a963c8f1509ce865ef53f366e43a74929">SurfaceLayer</a>
+</li>
 <li>m_covmr
 : <a class="el" href="classRadiation.html#aada27276720759ab1a70452bb82eb353">Radiation</a>
 </li>
@@ -385,9 +397,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>m_datastream
 : <a class="el" href="structLineSampler.html#a56da044954a236b411c1c52e42338883">LineSampler</a>
-</li>
-<li>m_default_tsurf
-: <a class="el" href="classOceanSurf.html#a58660afdcda2485c22451650ac2f4de9">OceanSurf</a>
 </li>
 <li>m_defined
 : <a class="el" href="classpolygon__.html#a0a63e984b9b965787959eecffd2dfb97">polygon_</a>
@@ -460,7 +469,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>m_dt
 : <a class="el" href="classNOAHMP.html#afe47e34a6d1544c86e65ce87ccbb32fb">NOAHMP</a>
-, <a class="el" href="classOceanSurf.html#a3d0049f10b9bc40b86ebd4ca61959358">OceanSurf</a>
 , <a class="el" href="classRadiation.html#a8c5fe3f6b398623943bd23ceb701978b">Radiation</a>
 , <a class="el" href="classSLM.html#a56233eb0e4bb9794bc54304692168af4">SLM</a>
 </li>
@@ -756,9 +764,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_has_nc_file
 : <a class="el" href="classNOAHMP.html#a97c8731a92c969175b90552f82bd3abc">NOAHMP</a>
 </li>
-<li>m_has_ocean_lsm_tsurf
-: <a class="el" href="classSurfaceLayer.html#ac81f8f23d0bde8616e2bb1fcaa35063a">SurfaceLayer</a>
-</li>
 <li>m_have_initial
 : <a class="el" href="classCloudChamberBudget.html#a7ebb3c3c15f1c045557bc4b04e7f32d3">CloudChamberBudget</a>
 </li>
@@ -997,7 +1002,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 <li>m_lsm_geom
 : <a class="el" href="classNOAHMP.html#a8378fec589eecda6ad9845298947284b">NOAHMP</a>
 , <a class="el" href="classNullSurf.html#ac722d317f14ff1793ce7a38362987513">NullSurf</a>
-, <a class="el" href="classOceanSurf.html#ae22c67616d5e1026527cbb943bcd1b6c">OceanSurf</a>
 , <a class="el" href="classSLM.html#ac41680d479e44b54678787b662c55fef">SLM</a>
 </li>
 <li>m_lsm_geom_lev
@@ -1014,7 +1018,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>m_lsm_size
 : <a class="el" href="classNullSurf.html#a00480a80b00d313460c898669225b2ef">NullSurf</a>
-, <a class="el" href="classOceanSurf.html#adaa646d6bbe35c859ceed9be974c89d2">OceanSurf</a>
 , <a class="el" href="classSLM.html#a4b4498e80099eadbb5405ec7095c07a8">SLM</a>
 </li>
 <li>m_lsm_tsurf_indx
@@ -1254,9 +1257,6 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>m_o3vmr
 : <a class="el" href="classRadiation.html#a4d990bff20c2e0ace1336f0d4af56051">Radiation</a>
-</li>
-<li>m_ocean_state
-: <a class="el" href="classOceanSurf.html#a025ff99136159ad8926266807de2c44b">OceanSurf</a>
 </li>
 <li>m_opts
 : <a class="el" href="classShocDriver.html#a1174c70420786700424bb772ff90d8cb">ShocDriver</a>
@@ -1871,6 +1871,9 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 , <a class="el" href="structUPWIND5.html#a0c2f1a95cb07c8d800c34d8fc39b963e">UPWIND5</a>
 , <a class="el" href="structUPWINDALL.html#a6b6e84db8286a3e9132a4a1ace223180">UPWINDALL</a>
 </li>
+<li>m_use_coupled_sst
+: <a class="el" href="classSurfaceLayer.html#ae0fd46e99ed7d1c1a4b34701c84562ea">SurfaceLayer</a>
+</li>
 <li>m_use_real_bcs
 : <a class="el" href="classERFPhysBCFunct__cons.html#a0e54453355d6a7c96044113c8827a008">ERFPhysBCFunct_cons</a>
 , <a class="el" href="classERFPhysBCFunct__u.html#a4a1ce4ec8f730cb61568aee6eceefe1f">ERFPhysBCFunct_u</a>
@@ -1951,6 +1954,9 @@ $(document).ready(function(){initNavTree('functions_m.html',''); initResizable()
 </li>
 <li>m_wall_scalar_bc_intent
 : <a class="el" href="classERF.html#ad150d567514daee565559987575ed1b4">ERF</a>
+</li>
+<li>m_warned_coupled_sst_declined
+: <a class="el" href="classERF.html#acc3d18c8659734e80a5307d5cab421f9">ERF</a>
 </li>
 <li>m_wind_speed
 : <a class="el" href="classNullWindFarm.html#a9beae3f8f39bb7bde432530da926d6ef">NullWindFarm</a>

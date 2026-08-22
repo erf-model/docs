@@ -80,5 +80,6 @@ var ERF__IndexDefines_8H =
       [ "neumann_int", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01caa8e7f5249fea539bf14e97cfba9074d9", null ],
       [ "open", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca2b4e1a73027449d9af83a25ed67ae914", null ],
       [ "ext_dir_upwind", "ERF__IndexDefines_8H.html#a40fbdd5a379a92debb4bcaaccac6e01ca87f4264e223d4c9fba88b023509a1c6d", null ]
-    ] ]
+    ] ],
+    [ "LegacyNumTypes", "ERF__IndexDefines_8H.html#a56661641c6eecad2759ac2eb8bc093dc", null ]
 ];
