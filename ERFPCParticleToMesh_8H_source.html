@@ -234,28 +234,36 @@ $(document).ready(function(){initNavTree('ERFPCParticleToMesh_8H_source.html',''
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keyword">auto</span> deposit = [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> ic, <span class="keywordtype">int</span> jc, <span class="keywordtype">int</span> kc, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_horiz, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> w_z)</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="comment">// Clamp kc only for dz lookup; still write to ghost rho cell.</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> kc_dz = amrex::max(0, amrex::min(k_max, kc));</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> = dz_cell(ic, jc, kc_dz);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> contrib = pval * w_horiz * w_z * inv_dxdy / <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                Gpu::Atomic::AddNoRet(&amp;<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a>(ic, jc, kc, a_comp), contrib);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            };</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            deposit(ix  , iy  , kz_lo, wx0*wy0, wz_lo);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            deposit(ix+1, iy  , kz_lo, wx1*wy0, wz_lo);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            deposit(ix  , iy+1, kz_lo, wx0*wy1, wz_lo);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            deposit(ix+1, iy+1, kz_lo, wx1*wy1, wz_lo);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            deposit(ix  , iy  , kz_hi, wx0*wy0, wz_hi);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            deposit(ix+1, iy  , kz_hi, wx1*wy0, wz_hi);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            deposit(ix  , iy+1, kz_hi, wx0*wy1, wz_hi);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            deposit(ix+1, iy+1, kz_hi, wx1*wy1, wz_hi);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        });</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    a_mf.SumBoundary(geom.periodicity());</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="comment">// A corner with zero CIC weight deposits nothing.  Skip it before</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <span class="comment">// touching dz_cell: when a particle sits exactly on a cell-center</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="comment">// plane the outermost corner lands in the ghost region, where the</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="comment">// node-averaged thickness can come out exactly zero (z_phys_nd</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="comment">// ghost nodes outside the domain are not filled), and 0/0 raises</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="comment">// an invalid-operation FPE.</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                <span class="keywordflow">if</span> (w_horiz == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0) || w_z == <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0)) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                <span class="comment">// Clamp kc only for dz lookup; still write to ghost rho cell.</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">int</span> kc_dz = amrex::max(0, amrex::min(k_max, kc));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a> = dz_cell(ic, jc, kc_dz);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> contrib = pval * w_horiz * w_z * inv_dxdy / <a class="code" href="namespaceWDM6SedCellScratch.html#ac2b9074395f5bf7c42976b74aab9a4f7aeaf93dae2185f9a45d471709664f2de7">dz</a>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                Gpu::Atomic::AddNoRet(&amp;<a class="code" href="namespaceMicVar__Kess.html#a85b72afd818a2edc139d25065aabfd63a89de8c3bfc941080efb960e5119fbd61">rho</a>(ic, jc, kc, a_comp), contrib);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            };</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            deposit(ix  , iy  , kz_lo, wx0*wy0, wz_lo);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            deposit(ix+1, iy  , kz_lo, wx1*wy0, wz_lo);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            deposit(ix  , iy+1, kz_lo, wx0*wy1, wz_lo);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            deposit(ix+1, iy+1, kz_lo, wx1*wy1, wz_lo);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            deposit(ix  , iy  , kz_hi, wx0*wy0, wz_hi);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            deposit(ix+1, iy  , kz_hi, wx1*wy0, wz_hi);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            deposit(ix  , iy+1, kz_hi, wx0*wy1, wz_hi);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            deposit(ix+1, iy+1, kz_hi, wx1*wy1, wz_hi);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        });</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    a_mf.SumBoundary(geom.periodicity());</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERFPC_8H_html"><div class="ttname"><a href="ERFPC_8H.html">ERFPC.H</a></div></div>
 <div class="ttc" id="aERF__EBStruct_8H_html_aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5"><div class="ttname"><a href="ERF__EBStruct_8H.html#aa110a77e7ef906690b001fe2dc730edbaa91c926df52ecd895a6e1ab31dcac4f5">zface</a></div><div class="ttdeci">@ zface</div><div class="ttdef"><b>Definition:</b> ERF_EBStruct.H:29</div></div>
 <div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a3d480c71a8d13543a4a79124b1b694e5"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a3d480c71a8d13543a4a79124b1b694e5">dy</a></div><div class="ttdeci">const Real dy</div><div class="ttdef"><b>Definition:</b> ERF_InitCustomPert_ABL.H:24</div></div>
