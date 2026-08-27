@@ -83,15 +83,18 @@ $(document).ready(function(){initNavTree('structMoistureComponentIndices.html','
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structMoistureComponentIndices-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MoistureComponentIndices Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Component indices for moisture species in the conserved state.  
+<p>The moisture data carried by the active microphysics scheme.  
  <a href="structMoistureComponentIndices.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&gt;</code></p>
@@ -100,63 +103,142 @@ Collaboration diagram for MoistureComponentIndices:</div>
 <div class="dyncontent">
 <div class="center"><img src="structMoistureComponentIndices__coll__graph.png" border="0" usemap="#aMoistureComponentIndices_coll__map" alt="Collaboration graph"/></div>
 <map name="aMoistureComponentIndices_coll__map" id="aMoistureComponentIndices_coll__map">
-<area shape="rect" title="Component indices for moisture species in the conserved state." alt="" coords="5,241,205,268"/>
+<area shape="rect" title="The moisture data carried by the active microphysics scheme." alt="" coords="5,241,205,268"/>
 <area shape="rect" title=" " alt="" coords="86,5,125,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices_1_1CompList.html">CompList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An ordered list of conserved-state components forming an aggregate moisture output variable (qt, qn, qp, moist_density).  <a href="structMoistureComponentIndices_1_1CompList.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices_1_1VarAvailability.html">VarAvailability</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this map decides a variable's availability, and if so whether the variable is available.  <a href="structMoistureComponentIndices_1_1VarAvailability.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9b280f59cba83c5230cfdec896e77aff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a9b280f59cba83c5230cfdec896e77aff">MoistureComponentIndices</a> (int qv_comp, int qc_comp, int qi_comp=-1, int qr_comp=-1, int qs_comp=-1, int qg_comp=-1, int nc_comp=-1, int ni_comp=-1, int nr_comp=-1, int ns_comp=-1, int ng_comp=-1, int nn_comp=-1)</td></tr>
-<tr class="memdesc:a9b280f59cba83c5230cfdec896e77aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct moisture component indices from conserved-state component numbers.  <a href="structMoistureComponentIndices.html#a9b280f59cba83c5230cfdec896e77aff">More...</a><br /></td></tr>
-<tr class="separator:a9b280f59cba83c5230cfdec896e77aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed520c5086f73f34967699009b75eda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#aeed520c5086f73f34967699009b75eda">MoistureComponentIndices</a> (int qv_comp, int qc_comp, int qi_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int qr_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int qs_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int qg_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int nc_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int ni_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int nr_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int ns_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int ng_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>, int nn_comp=<a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>)</td></tr>
+<tr class="memdesc:aeed520c5086f73f34967699009b75eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the conserved-state component map.  <a href="structMoistureComponentIndices.html#aeed520c5086f73f34967699009b75eda">More...</a><br /></td></tr>
+<tr class="separator:aeed520c5086f73f34967699009b75eda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f042d55f776f3fb987799e78220012e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a4f042d55f776f3fb987799e78220012e">MoistureComponentIndices</a> ()=default</td></tr>
-<tr class="memdesc:a4f042d55f776f3fb987799e78220012e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty set of moisture component indices.  <a href="structMoistureComponentIndices.html#a4f042d55f776f3fb987799e78220012e">More...</a><br /></td></tr>
+<tr class="memdesc:a4f042d55f776f3fb987799e78220012e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an empty map, i.e. a dry run.  <a href="structMoistureComponentIndices.html#a4f042d55f776f3fb987799e78220012e">More...</a><br /></td></tr>
 <tr class="separator:a4f042d55f776f3fb987799e78220012e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a932837208ef848f4360a81230ab635fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMoistureComponentIndices_1_1CompList.html">CompList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps</a> () const</td></tr>
+<tr class="memdesc:a932837208ef848f4360a81230ab635fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Components summed for total water, "qt": every mass mixing ratio.  <a href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">More...</a><br /></td></tr>
+<tr class="separator:a932837208ef848f4360a81230ab635fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765528c2fb96133b3f272016b27e0401"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMoistureComponentIndices_1_1CompList.html">CompList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a765528c2fb96133b3f272016b27e0401">nonprecipitating_comps</a> () const</td></tr>
+<tr class="memdesc:a765528c2fb96133b3f272016b27e0401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Components summed for non-precipitating water, "qn": vapor plus the suspended condensate. Also the moist part of "moist_density".  <a href="structMoistureComponentIndices.html#a765528c2fb96133b3f272016b27e0401">More...</a><br /></td></tr>
+<tr class="separator:a765528c2fb96133b3f272016b27e0401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcce49c12385061664c8da3cecb80dbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMoistureComponentIndices_1_1CompList.html">CompList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb">precipitating_comps</a> () const</td></tr>
+<tr class="memdesc:abcce49c12385061664c8da3cecb80dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Components summed for precipitating water, "qp": the falling species.  <a href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb">More...</a><br /></td></tr>
+<tr class="separator:abcce49c12385061664c8da3cecb80dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46bd8181eadf4de560db6db5721b2cdb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp</a> (int comp) const</td></tr>
+<tr class="memdesc:a46bd8181eadf4de560db6db5721b2cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether a conserved-state component holds one of the moisture variables this scheme carries.  <a href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">More...</a><br /></td></tr>
+<tr class="separator:a46bd8181eadf4de560db6db5721b2cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c699dba83201a89f5c1436b4f6e539"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a84c699dba83201a89f5c1436b4f6e539">has_reflectivity_species</a> () const</td></tr>
+<tr class="memdesc:a84c699dba83201a89f5c1436b4f6e539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether the active scheme carries rain, snow and graupel in the RhoQ4/RhoQ5/RhoQ6 slots assumed by erf_derreflectivity and erf_dermaxreflectivity.  <a href="structMoistureComponentIndices.html#a84c699dba83201a89f5c1436b4f6e539">More...</a><br /></td></tr>
+<tr class="separator:a84c699dba83201a89f5c1436b4f6e539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac978023269a73ddc51e599e287f6b75e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e">has_moisture</a> () const</td></tr>
+<tr class="memdesc:ac978023269a73ddc51e599e287f6b75e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether the active scheme carries any moisture at all.  <a href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e">More...</a><br /></td></tr>
+<tr class="separator:ac978023269a73ddc51e599e287f6b75e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10dfbe72f16010e992c58784087ef0e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const</td></tr>
+<tr class="memdesc:a10dfbe72f16010e992c58784087ef0e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The conserved-state component behind a single-species output name, or <code>absent</code> if the name is not a single species or the scheme does not carry it.  <a href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">More...</a><br /></td></tr>
+<tr class="separator:a10dfbe72f16010e992c58784087ef0e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc78b2ffb89db99698ec7c3925b6151f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const</td></tr>
+<tr class="memdesc:afc78b2ffb89db99698ec7c3925b6151f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The qmoist slot behind a moist diagnostic output name.  <a href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">More...</a><br /></td></tr>
+<tr class="separator:afc78b2ffb89db99698ec7c3925b6151f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add99c413d330933e48a17c246d3808f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMoistureComponentIndices_1_1VarAvailability.html">VarAvailability</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const</td></tr>
+<tr class="memdesc:add99c413d330933e48a17c246d3808f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classify an output variable name against this index map.  <a href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">More...</a><br /></td></tr>
+<tr class="separator:add99c413d330933e48a17c246d3808f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28739f30922dfbd03795594a56fb2c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2">has_derived_var</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const</td></tr>
+<tr class="memdesc:ae28739f30922dfbd03795594a56fb2c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether the moist species behind a derived/plot variable name is carried by the active scheme.  <a href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2">More...</a><br /></td></tr>
+<tr class="separator:ae28739f30922dfbd03795594a56fb2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aead1b8a1ba0bccbda963629b94e2ce1b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model</a> (const MoistureType moisture_type)</td></tr>
+<tr class="memdesc:aead1b8a1ba0bccbda963629b94e2ce1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the complete index map &ndash; conserved-state components and qmoist diagnostic slots &ndash; for a moisture model.  <a href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">More...</a><br /></td></tr>
+<tr class="separator:aead1b8a1ba0bccbda963629b94e2ce1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a5bcc49922b9bb41ec5d9f5006d64feac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a5bcc49922b9bb41ec5d9f5006d64feac">qv</a> = -1</td></tr>
-<tr class="memdesc:a5bcc49922b9bb41ec5d9f5006d64feac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Water vapor component index.  <a href="structMoistureComponentIndices.html#a5bcc49922b9bb41ec5d9f5006d64feac">More...</a><br /></td></tr>
-<tr class="separator:a5bcc49922b9bb41ec5d9f5006d64feac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88410688b3eb49ee28b7cb736f67701c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a88410688b3eb49ee28b7cb736f67701c">qc</a> = -1</td></tr>
-<tr class="memdesc:a88410688b3eb49ee28b7cb736f67701c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cloud liquid water component index.  <a href="structMoistureComponentIndices.html#a88410688b3eb49ee28b7cb736f67701c">More...</a><br /></td></tr>
-<tr class="separator:a88410688b3eb49ee28b7cb736f67701c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4522d7a53921d3eaa726a82216afe6dd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a4522d7a53921d3eaa726a82216afe6dd">qi</a> = -1</td></tr>
-<tr class="memdesc:a4522d7a53921d3eaa726a82216afe6dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cloud ice component index.  <a href="structMoistureComponentIndices.html#a4522d7a53921d3eaa726a82216afe6dd">More...</a><br /></td></tr>
-<tr class="separator:a4522d7a53921d3eaa726a82216afe6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86089710563a390d0487ed53c7f91c87"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a86089710563a390d0487ed53c7f91c87">qr</a> = -1</td></tr>
-<tr class="memdesc:a86089710563a390d0487ed53c7f91c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rain component index.  <a href="structMoistureComponentIndices.html#a86089710563a390d0487ed53c7f91c87">More...</a><br /></td></tr>
-<tr class="separator:a86089710563a390d0487ed53c7f91c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7813efcaed642cdbf114af59318d8aa5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a7813efcaed642cdbf114af59318d8aa5">qs</a> = -1</td></tr>
-<tr class="memdesc:a7813efcaed642cdbf114af59318d8aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snow component index.  <a href="structMoistureComponentIndices.html#a7813efcaed642cdbf114af59318d8aa5">More...</a><br /></td></tr>
-<tr class="separator:a7813efcaed642cdbf114af59318d8aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba1ca197e8a1249e826430aade0c043a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#aba1ca197e8a1249e826430aade0c043a">qg</a> = -1</td></tr>
-<tr class="memdesc:aba1ca197e8a1249e826430aade0c043a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Graupel component index.  <a href="structMoistureComponentIndices.html#aba1ca197e8a1249e826430aade0c043a">More...</a><br /></td></tr>
-<tr class="separator:aba1ca197e8a1249e826430aade0c043a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec0e8804f874a812820ae29529e3df76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#aec0e8804f874a812820ae29529e3df76">nc</a> = -1</td></tr>
-<tr class="memdesc:aec0e8804f874a812820ae29529e3df76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cloud liquid water number concentration component index.  <a href="structMoistureComponentIndices.html#aec0e8804f874a812820ae29529e3df76">More...</a><br /></td></tr>
-<tr class="separator:aec0e8804f874a812820ae29529e3df76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6266a6c0d8435347a88a07d328b6d09"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ae6266a6c0d8435347a88a07d328b6d09">ni</a> = -1</td></tr>
-<tr class="memdesc:ae6266a6c0d8435347a88a07d328b6d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cloud ice number concentration component index.  <a href="structMoistureComponentIndices.html#ae6266a6c0d8435347a88a07d328b6d09">More...</a><br /></td></tr>
-<tr class="separator:ae6266a6c0d8435347a88a07d328b6d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae997f0529f4b5957c918b603b4cf279f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ae997f0529f4b5957c918b603b4cf279f">nr</a> = -1</td></tr>
-<tr class="memdesc:ae997f0529f4b5957c918b603b4cf279f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rain number concentration component index.  <a href="structMoistureComponentIndices.html#ae997f0529f4b5957c918b603b4cf279f">More...</a><br /></td></tr>
-<tr class="separator:ae997f0529f4b5957c918b603b4cf279f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11d959399f351f410a6f197a312b96d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a11d959399f351f410a6f197a312b96d5">ns</a> = -1</td></tr>
-<tr class="memdesc:a11d959399f351f410a6f197a312b96d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Snow number concentration component index.  <a href="structMoistureComponentIndices.html#a11d959399f351f410a6f197a312b96d5">More...</a><br /></td></tr>
-<tr class="separator:a11d959399f351f410a6f197a312b96d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa10d221564424c2eadb716251bcfe26b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#aa10d221564424c2eadb716251bcfe26b">ng</a> = -1</td></tr>
-<tr class="memdesc:aa10d221564424c2eadb716251bcfe26b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Graupel number concentration component index.  <a href="structMoistureComponentIndices.html#aa10d221564424c2eadb716251bcfe26b">More...</a><br /></td></tr>
-<tr class="separator:aa10d221564424c2eadb716251bcfe26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1565984bb12f1eea80f422c6c46f5473"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">nn</a> = -1</td></tr>
+<tr class="memitem:a6e5a18c589f998753e87ccb458a5374b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a6e5a18c589f998753e87ccb458a5374b"><td class="mdescLeft">&#160;</td><td class="mdescRight">water vapor  <a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">More...</a><br /></td></tr>
+<tr class="separator:a6e5a18c589f998753e87ccb458a5374b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99846e54aa46d95389fd611836723e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:ab99846e54aa46d95389fd611836723e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">cloud liquid water  <a href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">More...</a><br /></td></tr>
+<tr class="separator:ab99846e54aa46d95389fd611836723e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5182498a079eeba7a43c0f96ed742991"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a5182498a079eeba7a43c0f96ed742991"><td class="mdescLeft">&#160;</td><td class="mdescRight">cloud ice  <a href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">More...</a><br /></td></tr>
+<tr class="separator:a5182498a079eeba7a43c0f96ed742991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e9e3fdce75f8cdaa1507625f47fb51a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a1e9e3fdce75f8cdaa1507625f47fb51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">rain  <a href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">More...</a><br /></td></tr>
+<tr class="separator:a1e9e3fdce75f8cdaa1507625f47fb51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a090e505686008fc4d64ffeec9b2535bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a090e505686008fc4d64ffeec9b2535bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">snow  <a href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">More...</a><br /></td></tr>
+<tr class="separator:a090e505686008fc4d64ffeec9b2535bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7311fe8e3cb4814261927cf668a80d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:ac7311fe8e3cb4814261927cf668a80d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">graupel  <a href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">More...</a><br /></td></tr>
+<tr class="separator:ac7311fe8e3cb4814261927cf668a80d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a024fcc1d4ce8e2fcba14b31543ccf282"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a024fcc1d4ce8e2fcba14b31543ccf282"><td class="mdescLeft">&#160;</td><td class="mdescRight">cloud liquid water number  <a href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">More...</a><br /></td></tr>
+<tr class="separator:a024fcc1d4ce8e2fcba14b31543ccf282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a670c08ad5fa804bd9eed27092fe4e737"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">ni</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a670c08ad5fa804bd9eed27092fe4e737"><td class="mdescLeft">&#160;</td><td class="mdescRight">cloud ice number  <a href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">More...</a><br /></td></tr>
+<tr class="separator:a670c08ad5fa804bd9eed27092fe4e737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa25b671327f117990f3bbf94bc5b868f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">nr</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:aa25b671327f117990f3bbf94bc5b868f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rain number  <a href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">More...</a><br /></td></tr>
+<tr class="separator:aa25b671327f117990f3bbf94bc5b868f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1443e2446511fa0a2f100d4da19437f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f">ns</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:ad1443e2446511fa0a2f100d4da19437f"><td class="mdescLeft">&#160;</td><td class="mdescRight">snow number  <a href="structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f">More...</a><br /></td></tr>
+<tr class="separator:ad1443e2446511fa0a2f100d4da19437f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab999dbbc73321a48d2f5fe98eb4ee86b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b">ng</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:ab999dbbc73321a48d2f5fe98eb4ee86b"><td class="mdescLeft">&#160;</td><td class="mdescRight">graupel number  <a href="structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b">More...</a><br /></td></tr>
+<tr class="separator:ab999dbbc73321a48d2f5fe98eb4ee86b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1565984bb12f1eea80f422c6c46f5473"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">nn</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a1565984bb12f1eea80f422c6c46f5473"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCN / total aerosol number.  <a href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">More...</a><br /></td></tr>
 <tr class="separator:a1565984bb12f1eea80f422c6c46f5473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a730bf067c0e6d2c5741d98d9609d156f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a730bf067c0e6d2c5741d98d9609d156f"><td class="mdescLeft">&#160;</td><td class="mdescRight">accumulated surface rain  <a href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">More...</a><br /></td></tr>
+<tr class="separator:a730bf067c0e6d2c5741d98d9609d156f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89425afaefe4d43bb52bc9ee50ef8f3e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">snow_accum</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a89425afaefe4d43bb52bc9ee50ef8f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">accumulated surface snow  <a href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">More...</a><br /></td></tr>
+<tr class="separator:a89425afaefe4d43bb52bc9ee50ef8f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f276e26d0bbef683deb2cfc1857bc6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a44f276e26d0bbef683deb2cfc1857bc6">graup_accum</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a44f276e26d0bbef683deb2cfc1857bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">accumulated surface graupel  <a href="structMoistureComponentIndices.html#a44f276e26d0bbef683deb2cfc1857bc6">More...</a><br /></td></tr>
+<tr class="separator:a44f276e26d0bbef683deb2cfc1857bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51929d302412efb3f901f32fb6703c55"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a51929d302412efb3f901f32fb6703c55">rel_hum</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a51929d302412efb3f901f32fb6703c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">relative humidity  <a href="structMoistureComponentIndices.html#a51929d302412efb3f901f32fb6703c55">More...</a><br /></td></tr>
+<tr class="separator:a51929d302412efb3f901f32fb6703c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc1762a1142a678f378f8511d2d55c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a0fc1762a1142a678f378f8511d2d55c4">cond_rate</a> = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td></tr>
+<tr class="memdesc:a0fc1762a1142a678f378f8511d2d55c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">condensation rate  <a href="structMoistureComponentIndices.html#a0fc1762a1142a678f378f8511d2d55c4">More...</a><br /></td></tr>
+<tr class="separator:a0fc1762a1142a678f378f8511d2d55c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a1f17e6bb86ba719ae314c2294fca54e3"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a> = -1</td></tr>
+<tr class="memdesc:a1f17e6bb86ba719ae314c2294fca54e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">not carried by the active scheme  <a href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">More...</a><br /></td></tr>
+<tr class="separator:a1f17e6bb86ba719ae314c2294fca54e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd4accf05f4993b98f4fec393850182"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMoistureComponentIndices.html#a5fd4accf05f4993b98f4fec393850182">computed_from_state</a> = -2</td></tr>
+<tr class="separator:a5fd4accf05f4993b98f4fec393850182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Component indices for moisture species in the conserved state. </p>
+<div class="textblock"><p>The moisture data carried by the active microphysics scheme. </p>
+<p>This struct is the single source of truth for the question "which moisture
+quantities does this run actually have?". Everything downstream of the microphysics &ndash; source terms, turbulence closures, and every output path (3D plotfiles, 2D plotfiles, subvolumes) &ndash; answers that question by querying this struct instead of enumerating MoistureType values, so a newly added scheme only has to declare its layout once, in <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b" title="Build the complete index map – conserved-state components and qmoist diagnostic slots – for a moistur...">from_moisture_model()</a> below.</p>
+<p>Two kinds of index live here:</p>
+<ol type="1">
+<li>Conserved-state components (qv ... nn). Absolute component indices into the conserved state array, i.e. one of RhoQ1_comp ... RhoQ11_comp. They name the <em>rho-weighted</em> species: state(i,j,k,qv) is rho*qv, so an output path must divide by Rho_comp to recover the mixing ratio.</li>
+<li>qmoist diagnostic slots (rain_accum ... cond_rate). Indices into the per-level qmoist vector that is filled from Microphysics::Get_Qmoist_Ptr(lev,idx). Each scheme chooses that layout independently, so the slot numbers differ between schemes and are recorded per scheme below.</li>
+</ol>
+<p>In both cases the value is <code>absent</code> when the active scheme does not carry the quantity, so <code>index &gt;= 0</code> is the criterion for "this exists and is meaningful
+to write". That is deliberately <em>not</em> the same test as "the storage is
+allocated": several schemes allocate a wider state than they integrate (the <a class="el" href="classMorrison.html">Morrison</a> class always allocates eleven moist components, so Morrison_NoIce owns ice slots it never fills), and writing those slots to a plotfile would publish untouched memory as if it were data. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9b280f59cba83c5230cfdec896e77aff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b280f59cba83c5230cfdec896e77aff">&#9670;&nbsp;</a></span>MoistureComponentIndices() <span class="overload">[1/2]</span></h2>
+<a id="aeed520c5086f73f34967699009b75eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed520c5086f73f34967699009b75eda">&#9670;&nbsp;</a></span>MoistureComponentIndices() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,61 +262,61 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>qi_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>qi_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>qr_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>qr_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>qs_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>qs_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>qg_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>qg_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nc_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>nc_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ni_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>ni_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nr_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>nr_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ns_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>ns_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ng_comp</em> = <code>-1</code>, </td>
+          <td class="paramname"><em>ng_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nn_comp</em> = <code>-1</code>&#160;</td>
+          <td class="paramname"><em>nn_comp</em> = <code><a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -249,7 +331,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct moisture component indices from conserved-state component numbers. </p>
+<p>Construct the conserved-state component map. </p>
+<p>Prefer <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b" title="Build the complete index map – conserved-state components and qmoist diagnostic slots – for a moistur...">from_moisture_model()</a> for production code: it fills in the qmoist diagnostic slots as well. This constructor exists for the callers &ndash; unit tests and kernels exercised in isolation &ndash; that only need the state map.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">qv_comp</td><td>Water vapor component index. </td></tr>
@@ -263,24 +346,25 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">nr_comp</td><td>Rain number concentration component index. </td></tr>
     <tr><td class="paramname">ns_comp</td><td>Snow number concentration component index. </td></tr>
     <tr><td class="paramname">ng_comp</td><td>Graupel number concentration component index. </td></tr>
+    <tr><td class="paramname">nn_comp</td><td>CCN / total aerosol number concentration component index. </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        : <a class="code" href="structMoistureComponentIndices.html#a5bcc49922b9bb41ec5d9f5006d64feac">qv</a>(qv_comp), <a class="code" href="structMoistureComponentIndices.html#a88410688b3eb49ee28b7cb736f67701c">qc</a>(qc_comp), <a class="code" href="structMoistureComponentIndices.html#a4522d7a53921d3eaa726a82216afe6dd">qi</a>(qi_comp), <a class="code" href="structMoistureComponentIndices.html#a86089710563a390d0487ed53c7f91c87">qr</a>(qr_comp), <a class="code" href="structMoistureComponentIndices.html#a7813efcaed642cdbf114af59318d8aa5">qs</a>(qs_comp), <a class="code" href="structMoistureComponentIndices.html#aba1ca197e8a1249e826430aade0c043a">qg</a>(qg_comp),</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                       <a class="code" href="structMoistureComponentIndices.html#aec0e8804f874a812820ae29529e3df76">nc</a>(nc_comp), <a class="code" href="structMoistureComponentIndices.html#ae6266a6c0d8435347a88a07d328b6d09">ni</a>(ni_comp), <a class="code" href="structMoistureComponentIndices.html#ae997f0529f4b5957c918b603b4cf279f">nr</a>(nr_comp), <a class="code" href="structMoistureComponentIndices.html#a11d959399f351f410a6f197a312b96d5">ns</a>(ns_comp), <a class="code" href="structMoistureComponentIndices.html#aa10d221564424c2eadb716251bcfe26b">ng</a>(ng_comp),</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                       <a class="code" href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">nn</a>(nn_comp) {}</div>
-<div class="ttc" id="astructMoistureComponentIndices_html_a11d959399f351f410a6f197a312b96d5"><div class="ttname"><a href="structMoistureComponentIndices.html#a11d959399f351f410a6f197a312b96d5">MoistureComponentIndices::ns</a></div><div class="ttdeci">int ns</div><div class="ttdoc">Snow number concentration component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:176</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_a1565984bb12f1eea80f422c6c46f5473"><div class="ttname"><a href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">MoistureComponentIndices::nn</a></div><div class="ttdeci">int nn</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:182</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_a4522d7a53921d3eaa726a82216afe6dd"><div class="ttname"><a href="structMoistureComponentIndices.html#a4522d7a53921d3eaa726a82216afe6dd">MoistureComponentIndices::qi</a></div><div class="ttdeci">int qi</div><div class="ttdoc">Cloud ice component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:169</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_a5bcc49922b9bb41ec5d9f5006d64feac"><div class="ttname"><a href="structMoistureComponentIndices.html#a5bcc49922b9bb41ec5d9f5006d64feac">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdoc">Water vapor component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:167</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_a7813efcaed642cdbf114af59318d8aa5"><div class="ttname"><a href="structMoistureComponentIndices.html#a7813efcaed642cdbf114af59318d8aa5">MoistureComponentIndices::qs</a></div><div class="ttdeci">int qs</div><div class="ttdoc">Snow component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:171</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_a86089710563a390d0487ed53c7f91c87"><div class="ttname"><a href="structMoistureComponentIndices.html#a86089710563a390d0487ed53c7f91c87">MoistureComponentIndices::qr</a></div><div class="ttdeci">int qr</div><div class="ttdoc">Rain component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:170</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_a88410688b3eb49ee28b7cb736f67701c"><div class="ttname"><a href="structMoistureComponentIndices.html#a88410688b3eb49ee28b7cb736f67701c">MoistureComponentIndices::qc</a></div><div class="ttdeci">int qc</div><div class="ttdoc">Cloud liquid water component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:168</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_aa10d221564424c2eadb716251bcfe26b"><div class="ttname"><a href="structMoistureComponentIndices.html#aa10d221564424c2eadb716251bcfe26b">MoistureComponentIndices::ng</a></div><div class="ttdeci">int ng</div><div class="ttdoc">Graupel number concentration component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:177</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_aba1ca197e8a1249e826430aade0c043a"><div class="ttname"><a href="structMoistureComponentIndices.html#aba1ca197e8a1249e826430aade0c043a">MoistureComponentIndices::qg</a></div><div class="ttdeci">int qg</div><div class="ttdoc">Graupel component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:172</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_ae6266a6c0d8435347a88a07d328b6d09"><div class="ttname"><a href="structMoistureComponentIndices.html#ae6266a6c0d8435347a88a07d328b6d09">MoistureComponentIndices::ni</a></div><div class="ttdeci">int ni</div><div class="ttdoc">Cloud ice number concentration component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:174</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_ae997f0529f4b5957c918b603b4cf279f"><div class="ttname"><a href="structMoistureComponentIndices.html#ae997f0529f4b5957c918b603b4cf279f">MoistureComponentIndices::nr</a></div><div class="ttdeci">int nr</div><div class="ttdoc">Rain number concentration component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:175</div></div>
-<div class="ttc" id="astructMoistureComponentIndices_html_aec0e8804f874a812820ae29529e3df76"><div class="ttname"><a href="structMoistureComponentIndices.html#aec0e8804f874a812820ae29529e3df76">MoistureComponentIndices::nc</a></div><div class="ttdeci">int nc</div><div class="ttdoc">Cloud liquid water number concentration component index.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:173</div></div>
+<div class="fragment"><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        : <a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>(qv_comp), <a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>(qc_comp), <a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>(qi_comp), <a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>(qr_comp), <a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>(qs_comp), <a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>(qg_comp),</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                       <a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>(nc_comp), <a class="code" href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">ni</a>(ni_comp), <a class="code" href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">nr</a>(nr_comp), <a class="code" href="structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f">ns</a>(ns_comp), <a class="code" href="structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b">ng</a>(ng_comp),</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                       <a class="code" href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">nn</a>(nn_comp) {}</div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a024fcc1d4ce8e2fcba14b31543ccf282"><div class="ttname"><a href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">MoistureComponentIndices::nc</a></div><div class="ttdeci">int nc</div><div class="ttdoc">cloud liquid water number</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:216</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a090e505686008fc4d64ffeec9b2535bf"><div class="ttname"><a href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">MoistureComponentIndices::qs</a></div><div class="ttdeci">int qs</div><div class="ttdoc">snow</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:210</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a1565984bb12f1eea80f422c6c46f5473"><div class="ttname"><a href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">MoistureComponentIndices::nn</a></div><div class="ttdeci">int nn</div><div class="ttdoc">CCN / total aerosol number.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:226</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a1e9e3fdce75f8cdaa1507625f47fb51a"><div class="ttname"><a href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">MoistureComponentIndices::qr</a></div><div class="ttdeci">int qr</div><div class="ttdoc">rain</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:209</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a5182498a079eeba7a43c0f96ed742991"><div class="ttname"><a href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">MoistureComponentIndices::qi</a></div><div class="ttdeci">int qi</div><div class="ttdoc">cloud ice</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:208</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a670c08ad5fa804bd9eed27092fe4e737"><div class="ttname"><a href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">MoistureComponentIndices::ni</a></div><div class="ttdeci">int ni</div><div class="ttdoc">cloud ice number</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:217</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a6e5a18c589f998753e87ccb458a5374b"><div class="ttname"><a href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">MoistureComponentIndices::qv</a></div><div class="ttdeci">int qv</div><div class="ttdoc">water vapor</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:206</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_aa25b671327f117990f3bbf94bc5b868f"><div class="ttname"><a href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">MoistureComponentIndices::nr</a></div><div class="ttdeci">int nr</div><div class="ttdoc">rain number</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:218</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_ab99846e54aa46d95389fd611836723e3"><div class="ttname"><a href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">MoistureComponentIndices::qc</a></div><div class="ttdeci">int qc</div><div class="ttdoc">cloud liquid water</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:207</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_ab999dbbc73321a48d2f5fe98eb4ee86b"><div class="ttname"><a href="structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b">MoistureComponentIndices::ng</a></div><div class="ttdeci">int ng</div><div class="ttdoc">graupel number</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:220</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_ac7311fe8e3cb4814261927cf668a80d3"><div class="ttname"><a href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">MoistureComponentIndices::qg</a></div><div class="ttdeci">int qg</div><div class="ttdoc">graupel</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:211</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_ad1443e2446511fa0a2f100d4da19437f"><div class="ttname"><a href="structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f">MoistureComponentIndices::ns</a></div><div class="ttdeci">int ns</div><div class="ttdoc">snow number</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:219</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,56 +391,951 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct an empty set of moisture component indices. </p>
+<p>Construct an empty map, i.e. a dry run. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a10dfbe72f16010e992c58784087ef0e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10dfbe72f16010e992c58784087ef0e4">&#9670;&nbsp;</a></span>comp_for_var()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MoistureComponentIndices::comp_for_var </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The conserved-state component behind a single-species output name, or <code>absent</code> if the name is not a single species or the scheme does not carry it. </p>
+<p>An output path can use this to copy a species without repeating the name-to-component mapping.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived or plot variable name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                                                                 {</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qv&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>; }</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qc&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>; }</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qi&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>; }</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qrain&quot;</span>)  { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>; }</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsnow&quot;</span>)  { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>; }</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qgraup&quot;</span>) { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>; }</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nc&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>; }</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ni&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">ni</a>; }</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nr&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">nr</a>; }</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ns&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f">ns</a>; }</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ng&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b">ng</a>; }</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nn&quot;</span>)     { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">nn</a>; }</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    }</div>
+<div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:101</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a1f17e6bb86ba719ae314c2294fca54e3"><div class="ttname"><a href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">MoistureComponentIndices::absent</a></div><div class="ttdeci">static constexpr int absent</div><div class="ttdoc">not carried by the active scheme</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:198</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_a10dfbe72f16010e992c58784087ef0e4_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_a10dfbe72f16010e992c58784087ef0e4_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_a10dfbe72f16010e992c58784087ef0e4_icgraph" id="astructMoistureComponentIndices_a10dfbe72f16010e992c58784087ef0e4_icgraph">
+<area shape="rect" title="The conserved&#45;state component behind a single&#45;species output name, or absent if the name is not a sin..." alt="" coords="907,67,1107,108"/>
+<area shape="rect" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map." alt="" coords="659,37,859,79"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="681,103,836,130"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="411,5,611,47"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="417,71,604,112"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,27,363,54"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,53,136,79"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,78,353,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aead1b8a1ba0bccbda963629b94e2ce1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aead1b8a1ba0bccbda963629b94e2ce1b">&#9670;&nbsp;</a></span>from_moisture_model()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> MoistureComponentIndices::from_moisture_model </td>
+          <td>(</td>
+          <td class="paramtype">const MoistureType&#160;</td>
+          <td class="paramname"><em>moisture_type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build the complete index map &ndash; conserved-state components and qmoist diagnostic slots &ndash; for a moisture model. </p>
+<p>This is the one place a scheme declares what it carries. The conserved layout must match the component the scheme reads and writes in its Copy_State_to_Micro / Copy_Micro_to_State pair, and the qmoist slots must match the order the scheme installs in its MicVarMap. A slot that a scheme allocates but never fills is left <code>absent</code> on purpose: see the class comment for why allocation is not the criterion here.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">moisture_type</td><td>Active moisture/microphysics model. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <a class="code" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> mi;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">switch</span> (moisture_type) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">case</span> MoistureType::None:</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="comment">// Dry: no moisture data of any kind.</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">case</span> MoistureType::MoistNoCondensation:</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="keywordflow">case</span> MoistureType::SAM_NoPrecip_NoIce:</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">case</span> MoistureType::Kessler_NoRain:</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="comment">// Vapor plus suspended cloud water, no precipitation and no</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <span class="comment">// accumulation diagnostics.</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a> = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a> = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">case</span> MoistureType::SatAdj:</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="comment">// As above, but relative humidity is recovered from the state at</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="comment">// output time rather than stored: SatAdj publishes no qmoist arrays.</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>      = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>      = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a51929d302412efb3f901f32fb6703c55">rel_hum</a> = <a class="code" href="structMoistureComponentIndices.html#a5fd4accf05f4993b98f4fec393850182">computed_from_state</a>;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">case</span> MoistureType::Kessler:</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="comment">// Warm rain in three moist components; qmoist is {rain_accum}.</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>         = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a> = 0;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">case</span> MoistureType::SAM_NoIce:</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            <span class="comment">// The SAM class always allocates six moist components, so rain sits</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <span class="comment">// in the fourth slot even with the ice species switched off.</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>         = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a> = 0;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">case</span> MoistureType::SAM:</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">case</span> MoistureType::WSM6:</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="comment">// Single-moment mixed phase; qmoist is</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            <span class="comment">// {rain_accum, snow_accum, graup_accum}.</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>          = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>          = <a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>          = <a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a>  = 0;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">snow_accum</a>  = 1;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a44f276e26d0bbef683deb2cfc1857bc6">graup_accum</a> = 2;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="keywordflow">case</span> MoistureType::Morrison:</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            <span class="comment">// Two-moment mixed phase: six mass species followed by five number</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="comment">// concentrations.</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>          = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>          = <a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>          = <a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>          = <a class="code" href="ERF__IndexDefines_8H.html#acbff8dd87c0e56c501b7f78e789d4d8d">RhoQ7_comp</a>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">ni</a>          = <a class="code" href="ERF__IndexDefines_8H.html#abe217ca1b1d100196fa512e1f7153759">RhoQ8_comp</a>;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">nr</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a9cdf9eec96791d8431ba6882a0d733e0">RhoQ9_comp</a>;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f">ns</a>          = <a class="code" href="ERF__IndexDefines_8H.html#ae74888290719af1a044a1ea566825be8">RhoQ10_comp</a>;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b">ng</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a843b0608565e0e58653f5ef40d682fa9">RhoQ11_comp</a>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a>  = 0;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">snow_accum</a>  = 1;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a44f276e26d0bbef683deb2cfc1857bc6">graup_accum</a> = 2;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">case</span> MoistureType::Morrison_NoIce:</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="comment">// Liquid-only Morrison: the class still allocates all eleven moist</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="comment">// components, but only vapor, cloud water and rain -- and the cloud</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <span class="comment">// and rain numbers -- are integrated, so the frozen species and</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="comment">// their numbers stay absent here.</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>         = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>         = <a class="code" href="ERF__IndexDefines_8H.html#acbff8dd87c0e56c501b7f78e789d4d8d">RhoQ7_comp</a>;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">nr</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a9cdf9eec96791d8431ba6882a0d733e0">RhoQ9_comp</a>;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a> = 0;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        <span class="keywordflow">case</span> MoistureType::WDM6:</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            <span class="comment">// Double-moment warm phase on top of single-moment ice: nn is the</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <span class="comment">// aerosol reservoir and takes the slot Morrison uses for ice number,</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="comment">// and there are no snow or graupel numbers.</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>          = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>          = <a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>          = <a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>          = <a class="code" href="ERF__IndexDefines_8H.html#acbff8dd87c0e56c501b7f78e789d4d8d">RhoQ7_comp</a>;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">nn</a>          = <a class="code" href="ERF__IndexDefines_8H.html#abe217ca1b1d100196fa512e1f7153759">RhoQ8_comp</a>;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">nr</a>          = <a class="code" href="ERF__IndexDefines_8H.html#a9cdf9eec96791d8431ba6882a0d733e0">RhoQ9_comp</a>;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a>  = 0;</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">snow_accum</a>  = 1;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a44f276e26d0bbef683deb2cfc1857bc6">graup_accum</a> = 2;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        <span class="keywordflow">case</span> MoistureType::SuperDroplets:</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <span class="comment">// Lagrangian microphysics that still carries the six Eulerian mass</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            <span class="comment">// species.  Its qmoist layout is its own (see the MicVarMap in</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="comment">// SuperDropletsMoist::Init): the graupel accumulation slot exists</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <span class="comment">// but is never filled, so it stays absent.</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>         = <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>         = <a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>         = <a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>         = <a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a0fc1762a1142a678f378f8511d2d55c4">cond_rate</a>  = 3;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a51929d302412efb3f901f32fb6703c55">rel_hum</a>    = 7;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a> = 8;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;            mi.<a class="code" href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">snow_accum</a> = 10;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            amrex::Abort(<span class="stringliteral">&quot;Unknown MoistureType in MoistureComponentIndices::from_moisture_model&quot;</span>);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        }</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">return</span> mi;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    }</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a28c5deab9008c0999c26affeff2fa6da"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a></div><div class="ttdeci">#define RhoQ4_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:48</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a3bf0a4783e82ba30db2b7c0a332c2f16"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a></div><div class="ttdeci">#define RhoQ2_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:46</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a49fe20d81f4d923a4a6ec4eb1652072b"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a></div><div class="ttdeci">#define RhoQ3_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:47</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a843b0608565e0e58653f5ef40d682fa9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a843b0608565e0e58653f5ef40d682fa9">RhoQ11_comp</a></div><div class="ttdeci">#define RhoQ11_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:55</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a9cdf9eec96791d8431ba6882a0d733e0"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a9cdf9eec96791d8431ba6882a0d733e0">RhoQ9_comp</a></div><div class="ttdeci">#define RhoQ9_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:53</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:45</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aae057dae5f599b944184a0ecf7801064"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a></div><div class="ttdeci">#define RhoQ6_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:50</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_abe217ca1b1d100196fa512e1f7153759"><div class="ttname"><a href="ERF__IndexDefines_8H.html#abe217ca1b1d100196fa512e1f7153759">RhoQ8_comp</a></div><div class="ttdeci">#define RhoQ8_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:52</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ac46d015fd5b1ee0060bbaf22e79113e7"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a></div><div class="ttdeci">#define RhoQ5_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:49</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_acbff8dd87c0e56c501b7f78e789d4d8d"><div class="ttname"><a href="ERF__IndexDefines_8H.html#acbff8dd87c0e56c501b7f78e789d4d8d">RhoQ7_comp</a></div><div class="ttdeci">#define RhoQ7_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:51</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ae74888290719af1a044a1ea566825be8"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae74888290719af1a044a1ea566825be8">RhoQ10_comp</a></div><div class="ttdeci">#define RhoQ10_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:54</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html"><div class="ttname"><a href="structMoistureComponentIndices.html">MoistureComponentIndices</a></div><div class="ttdoc">The moisture data carried by the active microphysics scheme.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:195</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a0fc1762a1142a678f378f8511d2d55c4"><div class="ttname"><a href="structMoistureComponentIndices.html#a0fc1762a1142a678f378f8511d2d55c4">MoistureComponentIndices::cond_rate</a></div><div class="ttdeci">int cond_rate</div><div class="ttdoc">condensation rate</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:239</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a44f276e26d0bbef683deb2cfc1857bc6"><div class="ttname"><a href="structMoistureComponentIndices.html#a44f276e26d0bbef683deb2cfc1857bc6">MoistureComponentIndices::graup_accum</a></div><div class="ttdeci">int graup_accum</div><div class="ttdoc">accumulated surface graupel</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:237</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a51929d302412efb3f901f32fb6703c55"><div class="ttname"><a href="structMoistureComponentIndices.html#a51929d302412efb3f901f32fb6703c55">MoistureComponentIndices::rel_hum</a></div><div class="ttdeci">int rel_hum</div><div class="ttdoc">relative humidity</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:238</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a5fd4accf05f4993b98f4fec393850182"><div class="ttname"><a href="structMoistureComponentIndices.html#a5fd4accf05f4993b98f4fec393850182">MoistureComponentIndices::computed_from_state</a></div><div class="ttdeci">static constexpr int computed_from_state</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:199</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a730bf067c0e6d2c5741d98d9609d156f"><div class="ttname"><a href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">MoistureComponentIndices::rain_accum</a></div><div class="ttdeci">int rain_accum</div><div class="ttdoc">accumulated surface rain</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:235</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a89425afaefe4d43bb52bc9ee50ef8f3e"><div class="ttname"><a href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">MoistureComponentIndices::snow_accum</a></div><div class="ttdeci">int snow_accum</div><div class="ttdoc">accumulated surface snow</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:236</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_aead1b8a1ba0bccbda963629b94e2ce1b_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_aead1b8a1ba0bccbda963629b94e2ce1b_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_aead1b8a1ba0bccbda963629b94e2ce1b_icgraph" id="astructMoistureComponentIndices_aead1b8a1ba0bccbda963629b94e2ce1b_icgraph">
+<area shape="rect" title="Build the complete index map – conserved&#45;state components and qmoist diagnostic slots – for a moistur..." alt="" coords="189,5,389,47"/>
+<area shape="rect" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be" title="Read solver&#45;wide algorithmic options from the input parameter database." alt="" coords="5,5,141,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a46bd8181eadf4de560db6db5721b2cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46bd8181eadf4de560db6db5721b2cdb">&#9670;&nbsp;</a></span>has_comp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MoistureComponentIndices::has_comp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>comp</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test whether a conserved-state component holds one of the moisture variables this scheme carries. </p>
+<p>Use this rather than enumerating moisture models when deciding whether a "rhoQn" state component is meaningful for the active scheme.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comp</td><td>Absolute component index into the conserved state array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                                                 {</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;        <span class="keywordflow">return</span> ( (comp &gt;= 0) &amp;&amp;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;                 ( (comp == <a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>) ||</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                   (comp == <a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>) ||</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                   (comp == <a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">ni</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#aa25b671327f117990f3bbf94bc5b868f">nr</a>) ||</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                   (comp == <a class="code" href="structMoistureComponentIndices.html#ad1443e2446511fa0a2f100d4da19437f">ns</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#ab999dbbc73321a48d2f5fe98eb4ee86b">ng</a>) || (comp == <a class="code" href="structMoistureComponentIndices.html#a1565984bb12f1eea80f422c6c46f5473">nn</a>) ) );</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">erf_plotfile::plot3d_fixed_variable_available()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_a46bd8181eadf4de560db6db5721b2cdb_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_a46bd8181eadf4de560db6db5721b2cdb_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_a46bd8181eadf4de560db6db5721b2cdb_icgraph" id="astructMoistureComponentIndices_a46bd8181eadf4de560db6db5721b2cdb_icgraph">
+<area shape="rect" title="Test whether a conserved&#45;state component holds one of the moisture variables this scheme carries." alt="" coords="645,23,845,65"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="411,23,597,65"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,5,353,32"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,56,363,83"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,31,136,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae28739f30922dfbd03795594a56fb2c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28739f30922dfbd03795594a56fb2c2">&#9670;&nbsp;</a></span>has_derived_var()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MoistureComponentIndices::has_derived_var </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test whether the moist species behind a derived/plot variable name is carried by the active scheme. </p>
+<p>Names this map does not govern return true, so this can be used directly as a filter over a mixed list of variable names. Use <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map.">query_var()</a> instead when the caller needs to distinguish "not a moisture variable" from "available".</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived or plot variable name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                                                                     {</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        <span class="keyword">const</span> VarAvailability status = <a class="code" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        <span class="keywordflow">return</span> (!status.governed) || status.available;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    }</div>
+<div class="ttc" id="astructMoistureComponentIndices_html_add99c413d330933e48a17c246d3808f6"><div class="ttname"><a href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">MoistureComponentIndices::query_var</a></div><div class="ttdeci">VarAvailability query_var(const std::string &amp;name) const</div><div class="ttdoc">Classify an output variable name against this index map.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:579</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#a87d5810a51d3eee73be510665803e68c">ERF::setSubVolVariables()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_cgraph.png" border="0" usemap="#astructMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_cgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_cgraph" id="astructMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_cgraph">
+<area shape="rect" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="5,169,205,211"/>
+<area shape="rect" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map." alt="" coords="253,169,453,211"/>
+<area shape="rect" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4" title="The conserved&#45;state component behind a single&#45;species output name, or absent if the name is not a sin..." alt="" coords="501,5,701,47"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a8be75082476f37839bff65bbe8a97586" title=" " alt="" coords="501,71,701,112"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e" title="Test whether the active scheme carries any moisture at all." alt="" coords="501,136,701,177"/>
+<area shape="rect" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb" title="Components summed for precipitating water, &quot;qp&quot;: the falling species." alt="" coords="501,201,701,243"/>
+<area shape="rect" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f" title="The qmoist slot behind a moist diagnostic output name." alt="" coords="501,267,701,308"/>
+<area shape="rect" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa" title="Components summed for total water, &quot;qt&quot;: every mass mixing ratio." alt="" coords="501,332,701,373"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a9007e7fad6690e7eaa82a551d007cda5" title="Append a component, ignoring the ones the scheme does not carry." alt="" coords="749,267,949,308"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_icgraph" id="astructMoistureComponentIndices_ae28739f30922dfbd03795594a56fb2c2_icgraph">
+<area shape="rect" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="411,5,611,47"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,13,363,39"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac978023269a73ddc51e599e287f6b75e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac978023269a73ddc51e599e287f6b75e">&#9670;&nbsp;</a></span>has_moisture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MoistureComponentIndices::has_moisture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test whether the active scheme carries any moisture at all. </p>
+<p>Every moist scheme allocates water vapor, so this is equivalent to testing moisture_type != MoistureType::None without needing the enum. </p>
+<div class="fragment"><div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;{ <span class="keywordflow">return</span> (<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a> &gt;= 0); }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>, <a class="el" href="classERF.html#a87d5810a51d3eee73be510665803e68c">ERF::setSubVolVariables()</a>, <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>, and <a class="el" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f">ERF::WriteSubvolume()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_ac978023269a73ddc51e599e287f6b75e_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_ac978023269a73ddc51e599e287f6b75e_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_ac978023269a73ddc51e599e287f6b75e_icgraph" id="astructMoistureComponentIndices_ac978023269a73ddc51e599e287f6b75e_icgraph">
+<area shape="rect" title="Test whether the active scheme carries any moisture at all." alt="" coords="907,155,1107,196"/>
+<area shape="rect" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map." alt="" coords="659,71,859,112"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,71,363,98"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="681,187,836,214"/>
+<area shape="rect" href="classERF.html#aac1a2bfd125f077eeaf42f3cbb5c860f" title=" " alt="" coords="677,238,840,265"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="411,71,611,112"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="417,5,604,47"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,46,136,73"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,17,353,43"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a84c699dba83201a89f5c1436b4f6e539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c699dba83201a89f5c1436b4f6e539">&#9670;&nbsp;</a></span>has_reflectivity_species()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MoistureComponentIndices::has_reflectivity_species </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test whether the active scheme carries rain, snow and graupel in the RhoQ4/RhoQ5/RhoQ6 slots assumed by erf_derreflectivity and erf_dermaxreflectivity. </p>
+<p>Those kernels read the precipitating species by hardcoded component, so this checks the layout and not just the presence of the species. </p>
+<div class="fragment"><div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                                                         {</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;        <span class="keywordflow">return</span> ( (<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a> == <a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>) &amp;&amp; (<a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a> == <a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>) &amp;&amp; (<a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a> == <a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>) );</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a765528c2fb96133b3f272016b27e0401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765528c2fb96133b3f272016b27e0401">&#9670;&nbsp;</a></span>nonprecipitating_comps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMoistureComponentIndices_1_1CompList.html">CompList</a> MoistureComponentIndices::nonprecipitating_comps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Components summed for non-precipitating water, "qn": vapor plus the suspended condensate. Also the moist part of "moist_density". </p>
+<div class="fragment"><div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                                                           {</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        CompList list;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        list.append(<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>);</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <span class="keywordflow">return</span> list;</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_cgraph.png" border="0" usemap="#astructMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_cgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_cgraph" id="astructMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_cgraph">
+<area shape="rect" title="Components summed for non&#45;precipitating water, &quot;qn&quot;: vapor plus the suspended condensate...." alt="" coords="5,5,205,47"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a9007e7fad6690e7eaa82a551d007cda5" title="Append a component, ignoring the ones the scheme does not carry." alt="" coords="253,5,453,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_icgraph" id="astructMoistureComponentIndices_a765528c2fb96133b3f272016b27e0401_icgraph">
+<area shape="rect" title="Components summed for non&#45;precipitating water, &quot;qn&quot;: vapor plus the suspended condensate...." alt="" coords="208,5,408,47"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="5,13,160,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abcce49c12385061664c8da3cecb80dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcce49c12385061664c8da3cecb80dbb">&#9670;&nbsp;</a></span>precipitating_comps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMoistureComponentIndices_1_1CompList.html">CompList</a> MoistureComponentIndices::precipitating_comps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Components summed for precipitating water, "qp": the falling species. </p>
+<div class="fragment"><div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                                                        {</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        CompList list;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        list.append(<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>);</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">return</span> list;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_cgraph.png" border="0" usemap="#astructMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_cgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_cgraph" id="astructMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_cgraph">
+<area shape="rect" title="Components summed for precipitating water, &quot;qp&quot;: the falling species." alt="" coords="5,5,205,47"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a9007e7fad6690e7eaa82a551d007cda5" title="Append a component, ignoring the ones the scheme does not carry." alt="" coords="253,5,453,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_icgraph" id="astructMoistureComponentIndices_abcce49c12385061664c8da3cecb80dbb_icgraph">
+<area shape="rect" title="Components summed for precipitating water, &quot;qp&quot;: the falling species." alt="" coords="907,67,1107,108"/>
+<area shape="rect" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map." alt="" coords="659,37,859,79"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="681,103,836,130"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="411,5,611,47"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="417,71,604,112"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,27,363,54"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,53,136,79"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,78,353,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc78b2ffb89db99698ec7c3925b6151f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc78b2ffb89db99698ec7c3925b6151f">&#9670;&nbsp;</a></span>qmoist_index_for_var()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MoistureComponentIndices::qmoist_index_for_var </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The qmoist slot behind a moist diagnostic output name. </p>
+<p>Returns <code>absent</code> when the scheme does not provide the diagnostic, and <code>computed_from_state</code> when it does provide it but not through a qmoist array &ndash; in that case the caller must derive it from the conserved state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived or plot variable name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                                                                         {</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rain_accum&quot;</span>)        { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a730bf067c0e6d2c5741d98d9609d156f">rain_accum</a>; }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;snow_accum&quot;</span>)        { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a89425afaefe4d43bb52bc9ee50ef8f3e">snow_accum</a>; }</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;graup_accum&quot;</span>)       { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a44f276e26d0bbef683deb2cfc1857bc6">graup_accum</a>; }</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>)      { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a51929d302412efb3f901f32fb6703c55">rel_hum</a>; }</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;condensation_rate&quot;</span>) { <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a0fc1762a1142a678f378f8511d2d55c4">cond_rate</a>; }</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>;</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_afc78b2ffb89db99698ec7c3925b6151f_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_afc78b2ffb89db99698ec7c3925b6151f_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_afc78b2ffb89db99698ec7c3925b6151f_icgraph" id="astructMoistureComponentIndices_afc78b2ffb89db99698ec7c3925b6151f_icgraph">
+<area shape="rect" title="The qmoist slot behind a moist diagnostic output name." alt="" coords="907,67,1107,108"/>
+<area shape="rect" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map." alt="" coords="659,37,859,79"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="681,103,836,130"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="411,5,611,47"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="417,71,604,112"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,27,363,54"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,53,136,79"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,78,353,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="add99c413d330933e48a17c246d3808f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add99c413d330933e48a17c246d3808f6">&#9670;&nbsp;</a></span>query_var()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMoistureComponentIndices_1_1VarAvailability.html">VarAvailability</a> MoistureComponentIndices::query_var </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Classify an output variable name against this index map. </p>
+<p>This is the one table pairing output names with the data behind them. It is driven off the scheme's index map rather than an enumerated list of moisture models, so it stays correct as schemes are added. Names with no moisture dependence come back not-governed, which lets a caller walk a mixed list of variable names and only defer to this map where it applies.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Derived or plot variable name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                                                                          {</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;        <span class="comment">// Single species, taken straight from the conserved state</span></div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        <span class="keywordflow">if</span> ( (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qv&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qc&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qi&quot;</span>) ||</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;             (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qrain&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsnow&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qgraup&quot;</span>) ||</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;             (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nc&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ni&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nr&quot;</span>) ||</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;             (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ns&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ng&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nn&quot;</span>) ) {</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;            <span class="keywordflow">return</span> {<span class="keyword">true</span>, <a class="code" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) &gt;= 0};</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;        }</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;        <span class="comment">// Moist diagnostics, either from a qmoist array or derived at output time</span></div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;        <span class="keywordflow">if</span> ( (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rain_accum&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;snow_accum&quot;</span>) ||</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;             (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;graup_accum&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) ||</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;             (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;condensation_rate&quot;</span>) ) {</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            <span class="keywordflow">return</span> {<span class="keyword">true</span>, <a class="code" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) != <a class="code" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a>};</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160; </div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <span class="comment">// Aggregates over several species</span></div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qt&quot;</span>) { <span class="keywordflow">return</span> {<span class="keyword">true</span>, !<a class="code" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps</a>().<a class="code" href="structMoistureComponentIndices_1_1CompList.html#a8be75082476f37839bff65bbe8a97586">empty</a>()}; }</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qp&quot;</span>) { <span class="keywordflow">return</span> {<span class="keyword">true</span>, !<a class="code" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb">precipitating_comps</a>().<a class="code" href="structMoistureComponentIndices_1_1CompList.html#a8be75082476f37839bff65bbe8a97586">empty</a>()}; }</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;        <span class="comment">// Non-precipitating water is vapor plus the suspended condensate, and</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;        <span class="comment">// moist density adds that same sum to the dry density</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;        <span class="keywordflow">if</span> ( (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qn&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;moist_density&quot;</span>) ) {</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <span class="keywordflow">return</span> {<span class="keyword">true</span>, (<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a> &gt;= 0) &amp;&amp; (<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a> &gt;= 0)};</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        }</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        <span class="comment">// Column and thermodynamic diagnostics that read vapor only</span></div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;        <span class="keywordflow">if</span> ( (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span>) || (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;precipitable&quot;</span>) ) {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            <span class="keywordflow">return</span> {<span class="keyword">true</span>, <a class="code" href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e">has_moisture</a>()};</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        }</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160; </div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="keywordflow">return</span> {<span class="keyword">false</span>, <span class="keyword">false</span>};</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    }</div>
+<div class="ttc" id="astructMoistureComponentIndices_1_1CompList_html_a8be75082476f37839bff65bbe8a97586"><div class="ttname"><a href="structMoistureComponentIndices_1_1CompList.html#a8be75082476f37839bff65bbe8a97586">MoistureComponentIndices::CompList::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:444</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a10dfbe72f16010e992c58784087ef0e4"><div class="ttname"><a href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">MoistureComponentIndices::comp_for_var</a></div><div class="ttdeci">int comp_for_var(const std::string &amp;name) const</div><div class="ttdoc">The conserved-state component behind a single-species output name, or absent if the name is not a sin...</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:525</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a932837208ef848f4360a81230ab635fa"><div class="ttname"><a href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">MoistureComponentIndices::total_water_comps</a></div><div class="ttdeci">CompList total_water_comps() const</div><div class="ttdoc">Components summed for total water, &quot;qt&quot;: every mass mixing ratio.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:452</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_abcce49c12385061664c8da3cecb80dbb"><div class="ttname"><a href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb">MoistureComponentIndices::precipitating_comps</a></div><div class="ttdeci">CompList precipitating_comps() const</div><div class="ttdoc">Components summed for precipitating water, &quot;qp&quot;: the falling species.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:472</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_ac978023269a73ddc51e599e287f6b75e"><div class="ttname"><a href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e">MoistureComponentIndices::has_moisture</a></div><div class="ttdeci">bool has_moisture() const</div><div class="ttdoc">Test whether the active scheme carries any moisture at all.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:513</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_afc78b2ffb89db99698ec7c3925b6151f"><div class="ttname"><a href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">MoistureComponentIndices::qmoist_index_for_var</a></div><div class="ttdeci">int qmoist_index_for_var(const std::string &amp;name) const</div><div class="ttdoc">The qmoist slot behind a moist diagnostic output name.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:550</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2">has_derived_var()</a>, and <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">erf_plotfile::plot3d_fixed_variable_available()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_cgraph.png" border="0" usemap="#astructMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_cgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_cgraph" id="astructMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_cgraph">
+<area shape="rect" title="Classify an output variable name against this index map." alt="" coords="5,169,205,211"/>
+<area shape="rect" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4" title="The conserved&#45;state component behind a single&#45;species output name, or absent if the name is not a sin..." alt="" coords="253,5,453,47"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a8be75082476f37839bff65bbe8a97586" title=" " alt="" coords="253,71,453,112"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e" title="Test whether the active scheme carries any moisture at all." alt="" coords="253,136,453,177"/>
+<area shape="rect" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb" title="Components summed for precipitating water, &quot;qp&quot;: the falling species." alt="" coords="253,201,453,243"/>
+<area shape="rect" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f" title="The qmoist slot behind a moist diagnostic output name." alt="" coords="253,267,453,308"/>
+<area shape="rect" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa" title="Components summed for total water, &quot;qt&quot;: every mass mixing ratio." alt="" coords="253,332,453,373"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a9007e7fad6690e7eaa82a551d007cda5" title="Append a component, ignoring the ones the scheme does not carry." alt="" coords="501,267,701,308"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_icgraph" id="astructMoistureComponentIndices_add99c413d330933e48a17c246d3808f6_icgraph">
+<area shape="rect" title="Classify an output variable name against this index map." alt="" coords="659,39,859,80"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="411,5,611,47"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="417,71,604,112"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,27,363,54"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,53,136,79"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,78,353,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a932837208ef848f4360a81230ab635fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a932837208ef848f4360a81230ab635fa">&#9670;&nbsp;</a></span>total_water_comps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMoistureComponentIndices_1_1CompList.html">CompList</a> MoistureComponentIndices::total_water_comps </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Components summed for total water, "qt": every mass mixing ratio. </p>
+<p>Number concentrations are excluded &ndash; they are counts, not masses. </p>
+<div class="fragment"><div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                                                      {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        CompList list;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        list.append(<a class="code" href="structMoistureComponentIndices.html#a6e5a18c589f998753e87ccb458a5374b">qv</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#ab99846e54aa46d95389fd611836723e3">qc</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#a5182498a079eeba7a43c0f96ed742991">qi</a>);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        list.append(<a class="code" href="structMoistureComponentIndices.html#a1e9e3fdce75f8cdaa1507625f47fb51a">qr</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#a090e505686008fc4d64ffeec9b2535bf">qs</a>); list.append(<a class="code" href="structMoistureComponentIndices.html#ac7311fe8e3cb4814261927cf668a80d3">qg</a>);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        <span class="keywordflow">return</span> list;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_cgraph.png" border="0" usemap="#astructMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_cgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_cgraph" id="astructMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_cgraph">
+<area shape="rect" title="Components summed for total water, &quot;qt&quot;: every mass mixing ratio." alt="" coords="5,5,205,47"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a9007e7fad6690e7eaa82a551d007cda5" title="Append a component, ignoring the ones the scheme does not carry." alt="" coords="253,5,453,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_icgraph.png" border="0" usemap="#astructMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_icgraph" alt=""/></div>
+<map name="astructMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_icgraph" id="astructMoistureComponentIndices_a932837208ef848f4360a81230ab635fa_icgraph">
+<area shape="rect" title="Components summed for total water, &quot;qt&quot;: every mass mixing ratio." alt="" coords="907,67,1107,108"/>
+<area shape="rect" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map." alt="" coords="659,37,859,79"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="681,103,836,130"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ae28739f30922dfbd03795594a56fb2c2" title="Test whether the moist species behind a derived/plot variable name is carried by the active scheme." alt="" coords="411,5,611,47"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="417,71,604,112"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,27,363,54"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,53,136,79"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,78,353,105"/>
+</map>
+</div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aec0e8804f874a812820ae29529e3df76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec0e8804f874a812820ae29529e3df76">&#9670;&nbsp;</a></span>nc</h2>
+<a id="a1f17e6bb86ba719ae314c2294fca54e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f17e6bb86ba719ae314c2294fca54e3">&#9670;&nbsp;</a></span>absent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int MoistureComponentIndices::absent = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>not carried by the active scheme </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var()</a>, and <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>.</p>
+
+</div>
+</div>
+<a id="a5fd4accf05f4993b98f4fec393850182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fd4accf05f4993b98f4fec393850182">&#9670;&nbsp;</a></span>computed_from_state</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int MoistureComponentIndices::computed_from_state = -2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>carried, but derived at output time from the conserved state rather than read from a qmoist slot </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+
+</div>
+</div>
+<a id="a0fc1762a1142a678f378f8511d2d55c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc1762a1142a678f378f8511d2d55c4">&#9670;&nbsp;</a></span>cond_rate</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::nc = -1</td>
+          <td class="memname">int MoistureComponentIndices::cond_rate = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cloud liquid water number concentration component index. </p>
+<p>condensation rate </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var()</a>.</p>
 
 </div>
 </div>
-<a id="aa10d221564424c2eadb716251bcfe26b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa10d221564424c2eadb716251bcfe26b">&#9670;&nbsp;</a></span>ng</h2>
+<a id="a44f276e26d0bbef683deb2cfc1857bc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f276e26d0bbef683deb2cfc1857bc6">&#9670;&nbsp;</a></span>graup_accum</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::ng = -1</td>
+          <td class="memname">int MoistureComponentIndices::graup_accum = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Graupel number concentration component index. </p>
+<p>accumulated surface graupel </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var()</a>.</p>
 
 </div>
 </div>
-<a id="ae6266a6c0d8435347a88a07d328b6d09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6266a6c0d8435347a88a07d328b6d09">&#9670;&nbsp;</a></span>ni</h2>
+<a id="a024fcc1d4ce8e2fcba14b31543ccf282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a024fcc1d4ce8e2fcba14b31543ccf282">&#9670;&nbsp;</a></span>nc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::ni = -1</td>
+          <td class="memname">int MoistureComponentIndices::nc = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cloud ice number concentration component index. </p>
+<p>cloud liquid water number </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>.</p>
+
+</div>
+</div>
+<a id="ab999dbbc73321a48d2f5fe98eb4ee86b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab999dbbc73321a48d2f5fe98eb4ee86b">&#9670;&nbsp;</a></span>ng</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MoistureComponentIndices::ng = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>graupel number </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>.</p>
+
+</div>
+</div>
+<a id="a670c08ad5fa804bd9eed27092fe4e737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a670c08ad5fa804bd9eed27092fe4e737">&#9670;&nbsp;</a></span>ni</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MoistureComponentIndices::ni = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cloud ice number </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>.</p>
 
 </div>
 </div>
@@ -367,150 +1346,212 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int MoistureComponentIndices::nn = -1</td>
+          <td class="memname">int MoistureComponentIndices::nn = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>CCN / total aerosol number. </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>.</p>
+
 </div>
 </div>
-<a id="ae997f0529f4b5957c918b603b4cf279f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae997f0529f4b5957c918b603b4cf279f">&#9670;&nbsp;</a></span>nr</h2>
+<a id="aa25b671327f117990f3bbf94bc5b868f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25b671327f117990f3bbf94bc5b868f">&#9670;&nbsp;</a></span>nr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::nr = -1</td>
+          <td class="memname">int MoistureComponentIndices::nr = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rain number concentration component index. </p>
+<p>rain number </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>.</p>
 
 </div>
 </div>
-<a id="a11d959399f351f410a6f197a312b96d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11d959399f351f410a6f197a312b96d5">&#9670;&nbsp;</a></span>ns</h2>
+<a id="ad1443e2446511fa0a2f100d4da19437f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1443e2446511fa0a2f100d4da19437f">&#9670;&nbsp;</a></span>ns</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::ns = -1</td>
+          <td class="memname">int MoistureComponentIndices::ns = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Snow number concentration component index. </p>
+<p>snow number </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>.</p>
 
 </div>
 </div>
-<a id="a88410688b3eb49ee28b7cb736f67701c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88410688b3eb49ee28b7cb736f67701c">&#9670;&nbsp;</a></span>qc</h2>
+<a id="ab99846e54aa46d95389fd611836723e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99846e54aa46d95389fd611836723e3">&#9670;&nbsp;</a></span>qc</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::qc = -1</td>
+          <td class="memname">int MoistureComponentIndices::qc = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cloud liquid water component index. </p>
+<p>cloud liquid water </p>
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">ShocDriver::apply_state_update()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a39c51475b0c6804d0f2d3c61d1291d63">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSUNew_8cpp.html#aeb152470a0581ca53468577d8f500866">ComputeDiffusivityYSUNew()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3">ComputeN2()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664">ComputeN2_EB()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a63302205e5dbb645117a410534095def">GetThetavl()</a>, <a class="el" href="classERF.html#a7dd5ab74895cdcefc3c415bda75c697c">ERF::HasCloudWater()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="classERF.html#a1004ed9b06ccb695a34659a16f4ed6be">ERF::PackAtmosphericStates()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">ShocDriver::apply_state_update()</a>, <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a39c51475b0c6804d0f2d3c61d1291d63">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSUNew_8cpp.html#aeb152470a0581ca53468577d8f500866">ComputeDiffusivityYSUNew()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3">ComputeN2()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664">ComputeN2_EB()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a63302205e5dbb645117a410534095def">GetThetavl()</a>, <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>, <a class="el" href="classERF.html#a7dd5ab74895cdcefc3c415bda75c697c">ERF::HasCloudWater()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="structMoistureComponentIndices.html#a765528c2fb96133b3f272016b27e0401">nonprecipitating_comps()</a>, <a class="el" href="classERF.html#a1004ed9b06ccb695a34659a16f4ed6be">ERF::PackAtmosphericStates()</a>, <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>, <a class="el" href="classRadiationSimple.html#af49597974da08150de29961fef03edba">RadiationSimple::RadiationSimple()</a>, <a class="el" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps()</a>, <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
 
 </div>
 </div>
-<a id="aba1ca197e8a1249e826430aade0c043a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba1ca197e8a1249e826430aade0c043a">&#9670;&nbsp;</a></span>qg</h2>
+<a id="ac7311fe8e3cb4814261927cf668a80d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7311fe8e3cb4814261927cf668a80d3">&#9670;&nbsp;</a></span>qg</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::qg = -1</td>
+          <td class="memname">int MoistureComponentIndices::qg = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Graupel component index. </p>
+<p>graupel </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>, <a class="el" href="structMoistureComponentIndices.html#a84c699dba83201a89f5c1436b4f6e539">has_reflectivity_species()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb">precipitating_comps()</a>, <a class="el" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
 
 </div>
 </div>
-<a id="a4522d7a53921d3eaa726a82216afe6dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4522d7a53921d3eaa726a82216afe6dd">&#9670;&nbsp;</a></span>qi</h2>
+<a id="a5182498a079eeba7a43c0f96ed742991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5182498a079eeba7a43c0f96ed742991">&#9670;&nbsp;</a></span>qi</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::qi = -1</td>
+          <td class="memname">int MoistureComponentIndices::qi = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cloud ice component index. </p>
+<p>cloud ice </p>
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">ShocDriver::apply_state_update()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a39c51475b0c6804d0f2d3c61d1291d63">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSUNew_8cpp.html#aeb152470a0581ca53468577d8f500866">ComputeDiffusivityYSUNew()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a63302205e5dbb645117a410534095def">GetThetavl()</a>, <a class="el" href="classERF.html#a7dd5ab74895cdcefc3c415bda75c697c">ERF::HasCloudWater()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="classERF.html#a1004ed9b06ccb695a34659a16f4ed6be">ERF::PackAtmosphericStates()</a>, <a class="el" href="classRadiation.html#a24e38c9089cbbec5e990a86b52196b41">Radiation::Radiation()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">ShocDriver::apply_state_update()</a>, <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a39c51475b0c6804d0f2d3c61d1291d63">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSUNew_8cpp.html#aeb152470a0581ca53468577d8f500866">ComputeDiffusivityYSUNew()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a63302205e5dbb645117a410534095def">GetThetavl()</a>, <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>, <a class="el" href="classERF.html#a7dd5ab74895cdcefc3c415bda75c697c">ERF::HasCloudWater()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="structMoistureComponentIndices.html#a765528c2fb96133b3f272016b27e0401">nonprecipitating_comps()</a>, <a class="el" href="classERF.html#a1004ed9b06ccb695a34659a16f4ed6be">ERF::PackAtmosphericStates()</a>, <a class="el" href="classRadiation.html#a24e38c9089cbbec5e990a86b52196b41">Radiation::Radiation()</a>, <a class="el" href="classRadiationSimple.html#af49597974da08150de29961fef03edba">RadiationSimple::RadiationSimple()</a>, <a class="el" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
 
 </div>
 </div>
-<a id="a86089710563a390d0487ed53c7f91c87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86089710563a390d0487ed53c7f91c87">&#9670;&nbsp;</a></span>qr</h2>
+<a id="a1e9e3fdce75f8cdaa1507625f47fb51a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e9e3fdce75f8cdaa1507625f47fb51a">&#9670;&nbsp;</a></span>qr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::qr = -1</td>
+          <td class="memname">int MoistureComponentIndices::qr = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Rain component index. </p>
+<p>rain </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="classERF.html#a1004ed9b06ccb695a34659a16f4ed6be">ERF::PackAtmosphericStates()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>, <a class="el" href="structMoistureComponentIndices.html#a84c699dba83201a89f5c1436b4f6e539">has_reflectivity_species()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="classERF.html#a1004ed9b06ccb695a34659a16f4ed6be">ERF::PackAtmosphericStates()</a>, <a class="el" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb">precipitating_comps()</a>, <a class="el" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
 
 </div>
 </div>
-<a id="a7813efcaed642cdbf114af59318d8aa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7813efcaed642cdbf114af59318d8aa5">&#9670;&nbsp;</a></span>qs</h2>
+<a id="a090e505686008fc4d64ffeec9b2535bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a090e505686008fc4d64ffeec9b2535bf">&#9670;&nbsp;</a></span>qs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::qs = -1</td>
+          <td class="memname">int MoistureComponentIndices::qs = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Snow component index. </p>
+<p>snow </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>, <a class="el" href="structMoistureComponentIndices.html#a84c699dba83201a89f5c1436b4f6e539">has_reflectivity_species()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb">precipitating_comps()</a>, <a class="el" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
 
 </div>
 </div>
-<a id="a5bcc49922b9bb41ec5d9f5006d64feac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bcc49922b9bb41ec5d9f5006d64feac">&#9670;&nbsp;</a></span>qv</h2>
+<a id="a6e5a18c589f998753e87ccb458a5374b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e5a18c589f998753e87ccb458a5374b">&#9670;&nbsp;</a></span>qv</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">MoistureComponentIndices::qv = -1</td>
+          <td class="memname">int MoistureComponentIndices::qv = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Water vapor component index. </p>
+<p>water vapor </p>
 
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">ShocDriver::apply_state_update()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a39c51475b0c6804d0f2d3c61d1291d63">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSUNew_8cpp.html#aeb152470a0581ca53468577d8f500866">ComputeDiffusivityYSUNew()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3">ComputeN2()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664">ComputeN2_EB()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a63302205e5dbb645117a410534095def">GetThetavl()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, and <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a44c2037c2626642d9c1a402ddc2b2608">ShocDriver::apply_state_update()</a>, <a class="el" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4">comp_for_var()</a>, <a class="el" href="ERF__ComputeDiffusivityMRF_8cpp.html#a39c51475b0c6804d0f2d3c61d1291d63">ComputeDiffusivityMRF()</a>, <a class="el" href="ERF__ComputeDiffusivityYSUNew_8cpp.html#aeb152470a0581ca53468577d8f500866">ComputeDiffusivityYSUNew()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#ac3c81017043d7d3027d85ff48698e9b3">ComputeN2()</a>, <a class="el" href="ERF__RichardsonNumber_8H.html#acca27ff2b620424a346a1222d84ff664">ComputeN2_EB()</a>, <a class="el" href="classShocPreprocess.html#af1020985491ed9af9e79d9ae46c12a71">ShocPreprocess::fill_columns()</a>, <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a84e52f9faae4809d31ca76dd95aafa19">GetMoistureVars()</a>, <a class="el" href="ERF__MoistUtils_8H.html#a63302205e5dbb645117a410534095def">GetThetavl()</a>, <a class="el" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp()</a>, <a class="el" href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e">has_moisture()</a>, <a class="el" href="structSolverChoice.html#a76659aa69edd3370626e3648cbead9be">SolverChoice::init_params()</a>, <a class="el" href="structMoistureComponentIndices.html#a765528c2fb96133b3f272016b27e0401">nonprecipitating_comps()</a>, <a class="el" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var()</a>, <a class="el" href="classRadiationSimple.html#af49597974da08150de29961fef03edba">RadiationSimple::RadiationSimple()</a>, <a class="el" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa">total_water_comps()</a>, <a class="el" href="ERF__Utils_8H.html#acbe34404c85ab6c2e7b5de6bcd4e1524">wrf_bdy_var_for_moisture_component()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+
+</div>
+</div>
+<a id="a730bf067c0e6d2c5741d98d9609d156f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a730bf067c0e6d2c5741d98d9609d156f">&#9670;&nbsp;</a></span>rain_accum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MoistureComponentIndices::rain_accum = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>accumulated surface rain </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var()</a>.</p>
+
+</div>
+</div>
+<a id="a51929d302412efb3f901f32fb6703c55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51929d302412efb3f901f32fb6703c55">&#9670;&nbsp;</a></span>rel_hum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MoistureComponentIndices::rel_hum = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>relative humidity </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, <a class="el" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
+
+</div>
+</div>
+<a id="a89425afaefe4d43bb52bc9ee50ef8f3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89425afaefe4d43bb52bc9ee50ef8f3e">&#9670;&nbsp;</a></span>snow_accum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MoistureComponentIndices::snow_accum = <a class="el" href="structMoistureComponentIndices.html#a1f17e6bb86ba719ae314c2294fca54e3">absent</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>accumulated surface snow </p>
+
+<p class="reference">Referenced by <a class="el" href="structMoistureComponentIndices.html#aead1b8a1ba0bccbda963629b94e2ce1b">from_moisture_model()</a>, and <a class="el" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f">qmoist_index_for_var()</a>.</p>
 
 </div>
 </div>

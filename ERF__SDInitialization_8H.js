@@ -1,5 +1,6 @@
 var ERF__SDInitialization_8H =
 [
+    [ "SDInputs", "structSDInputs.html", "structSDInputs" ],
     [ "SDDistributionParams", "structSDDistributionParams.html", "structSDDistributionParams" ],
     [ "SDInitProperties", "classSDInitProperties.html", "classSDInitProperties" ],
     [ "SDInjection", "classSDInjection.html", "classSDInjection" ],

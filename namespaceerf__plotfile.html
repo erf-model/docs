@@ -92,45 +92,103 @@ $(document).ready(function(){initNavTree('namespaceerf__plotfile.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__plotfile_1_1Plot3DMoistureCapabilities.html">Plot3DMoistureCapabilities</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">What the active run can supply to a 3D plotfile.  <a href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5f43286ec3ba261f39f3e26ed0ab81aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structerf__plotfile_1_1Plot3DMoistureCapabilities.html">Plot3DMoistureCapabilities</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a5f43286ec3ba261f39f3e26ed0ab81aa">plot3d_moisture_capabilities</a> (const MoistureType moisture_type)</td></tr>
-<tr class="separator:a5f43286ec3ba261f39f3e26ed0ab81aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31cf5b5f4345e0aa86fc8eeb1550d9c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a31cf5b5f4345e0aa86fc8eeb1550d9c6">plot3d_set_state_capabilities</a> (<a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;caps, const <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> &amp;mi, const int qstate_moist_size, const int qstate_size)</td></tr>
+<tr class="memdesc:a31cf5b5f4345e0aa86fc8eeb1550d9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Record the conserved-state layout of a run on its capabilities.  <a href="namespaceerf__plotfile.html#a31cf5b5f4345e0aa86fc8eeb1550d9c6">More...</a><br /></td></tr>
+<tr class="separator:a31cf5b5f4345e0aa86fc8eeb1550d9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f6a6d7d8e635d0dd1175f5ca5e2ae5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a52f6a6d7d8e635d0dd1175f5ca5e2ae5">plot3d_batch_resets_interval_means</a> (int plotfiles_written, bool interval_diagnostic_consumed, bool compute_mean_vars, const std::string &amp;reset_mode)</td></tr>
+<tr class="separator:a52f6a6d7d8e635d0dd1175f5ca5e2ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11cf3940bc14ad31912d5df8d5f81402"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a> (const int q)</td></tr>
+<tr class="memdesc:a11cf3940bc14ad31912d5df8d5f81402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conserved-state component holding the q-th moist variable, or -1 if q is outside the fixed RhoQ1..RhoQ11 layout.  <a href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">More...</a><br /></td></tr>
 <tr class="separator:a11cf3940bc14ad31912d5df8d5f81402"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a0598d635fec5686185ce5597c9e985"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr class="memdesc:a2a0598d635fec5686185ce5597c9e985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conserved-state component behind a raw state variable name ("density", "rhotheta", "rhoQ3", ...), or -1 if the name is not one.  <a href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">More...</a><br /></td></tr>
 <tr class="separator:a2a0598d635fec5686185ce5597c9e985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789043b59572f8a03937d51d9e5924c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7">plot3d_has_moist_state</a> (const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;caps)</td></tr>
-<tr class="separator:a789043b59572f8a03937d51d9e5924c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d0c92e538b6434c11807bafdd0c8109"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a> (const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;caps, const int q)</td></tr>
-<tr class="separator:a2d0c92e538b6434c11807bafdd0c8109"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23d66d264e5f6467ddc684cafb62b4e9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a> (const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;caps, const int q)</td></tr>
-<tr class="separator:a23d66d264e5f6467ddc684cafb62b4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66f027f3966928ab7502c21109e99c0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">plot3d_total_mass_q_range</a> (const int moist_state_size, const int moist_numconc_size)</td></tr>
-<tr class="separator:a66f027f3966928ab7502c21109e99c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6302a98fe450561c3c23d6b29e072fe7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">plot3d_nonprecipitating_q_range</a> (const int moist_state_size)</td></tr>
-<tr class="separator:a6302a98fe450561c3c23d6b29e072fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51563683acf5983b904732cd0c4a7d9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">plot3d_precipitating_q_range</a> (const int moist_state_size, const int moist_numconc_size)</td></tr>
-<tr class="separator:a51563683acf5983b904732cd0c4a7d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976489bd70dd01700700f097f40e6a92"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a> (const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;caps, const <a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a> range)</td></tr>
-<tr class="separator:a976489bd70dd01700700f097f40e6a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac81e0b7ccab2ab9b895be8d5ec8a0d99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">plot3d_fixed_unconditional_diagnostic</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr class="memdesc:ac81e0b7ccab2ab9b895be8d5ec8a0d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostics that every run can write, moist or dry.  <a href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">More...</a><br /></td></tr>
 <tr class="separator:ac81e0b7ccab2ab9b895be8d5ec8a0d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b32422f1d46c78c9584826bf9cfb0b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a5b32422f1d46c78c9584826bf9cfb0b7">plot3d_interval_mean_diagnostic</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr class="memdesc:a5b32422f1d46c78c9584826bf9cfb0b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a named 3D plot variable can be written by this run.  <a href="namespaceerf__plotfile.html#a5b32422f1d46c78c9584826bf9cfb0b7">More...</a><br /></td></tr>
+<tr class="separator:a5b32422f1d46c78c9584826bf9cfb0b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7b2de00bfcf71b0b6173022d1cb41b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a5e7b2de00bfcf71b0b6173022d1cb41b">plot3d_selection_has_interval_mean_diagnostic</a> (const amrex::Vector&lt; std::string &gt; &amp;names)</td></tr>
+<tr class="separator:a5e7b2de00bfcf71b0b6173022d1cb41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a906e8c5c82c85c7ff6236b36efc45f06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available</a> (const std::string &amp;<a class="el" href="ERF__Plotfile2DWaterPath_8cpp.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;caps)</td></tr>
 <tr class="separator:a906e8c5c82c85c7ff6236b36efc45f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f6d1e86b47b91cf5bb5f8151bed0ca3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#a7f6d1e86b47b91cf5bb5f8151bed0ca3">plot3d_needs_pressure</a> (const amrex::Vector&lt; std::string &gt; &amp;names)</td></tr>
+<tr class="memdesc:a7f6d1e86b47b91cf5bb5f8151bed0ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether any requested variable needs the pressure field computed.  <a href="namespaceerf__plotfile.html#a7f6d1e86b47b91cf5bb5f8151bed0ca3">More...</a><br /></td></tr>
 <tr class="separator:a7f6d1e86b47b91cf5bb5f8151bed0ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab55dc271098ed902b53a7f4090148b87"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__plotfile.html#ab55dc271098ed902b53a7f4090148b87">plot3d_selected_particle_count_names</a> (const amrex::Vector&lt; std::string &gt; &amp;requested, const amrex::Vector&lt; std::string &gt; &amp;configured)</td></tr>
 <tr class="separator:ab55dc271098ed902b53a7f4090148b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a52f6a6d7d8e635d0dd1175f5ca5e2ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f6a6d7d8e635d0dd1175f5ca5e2ae5">&#9670;&nbsp;</a></span>plot3d_batch_resets_interval_means()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool erf_plotfile::plot3d_batch_resets_interval_means </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>plotfiles_written</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>interval_diagnostic_consumed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>compute_mean_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>reset_mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> plotfiles_written &gt; 0 &amp;&amp; interval_diagnostic_consumed &amp;&amp;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;           compute_mean_vars &amp;&amp; reset_mode == <span class="stringliteral">&quot;plotfile&quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#ac27cec710525d0aa2f2978dceb45fa55">ERF::ResetIntervalMeansAfter3DPlotfileBatch()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__plotfile_a52f6a6d7d8e635d0dd1175f5ca5e2ae5_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a52f6a6d7d8e635d0dd1175f5ca5e2ae5_icgraph" alt=""/></div>
+<map name="anamespaceerf__plotfile_a52f6a6d7d8e635d0dd1175f5ca5e2ae5_icgraph" id="anamespaceerf__plotfile_a52f6a6d7d8e635d0dd1175f5ca5e2ae5_icgraph">
+<area shape="rect" title=" " alt="" coords="276,5,496,47"/>
+<area shape="rect" href="classERF.html#ac27cec710525d0aa2f2978dceb45fa55" title=" " alt="" coords="5,5,228,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a2a0598d635fec5686185ce5597c9e985"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a0598d635fec5686185ce5597c9e985">&#9670;&nbsp;</a></span>plot3d_conserved_component_index()</h2>
 
@@ -154,35 +212,41 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;density&quot;</span>)  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhotheta&quot;</span>) <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoKE&quot;</span>)    <span class="keywordflow">return</span> 2;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoadv_0&quot;</span>) <span class="keywordflow">return</span> 3;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.size() &gt; 4 &amp;&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.compare(0, 4, <span class="stringliteral">&quot;rhoQ&quot;</span>) == 0) {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keyword">const</span> std::string suffix = <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.substr(4);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span> (!suffix.empty() &amp;&amp; std::all_of(suffix.cbegin(), suffix.cend(),</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                           [] (<span class="keyword">const</span> <span class="keywordtype">char</span> c) { return c &gt;= <span class="stringliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="stringliteral">&#39;9&#39;</span>; })) {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a> = std::stoi(suffix);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        }</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;}</div>
+
+<p>Conserved-state component behind a raw state variable name ("density", "rhotheta", "rhoQ3", ...), or -1 if the name is not one. </p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;density&quot;</span>)  <span class="keywordflow">return</span> <a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhotheta&quot;</span>) <span class="keywordflow">return</span> <a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoKE&quot;</span>)    <span class="keywordflow">return</span> <a class="code" href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rhoadv_0&quot;</span>) <span class="keywordflow">return</span> <a class="code" href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.size() &gt; 4 &amp;&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.compare(0, 4, <span class="stringliteral">&quot;rhoQ&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">const</span> std::string suffix = <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>.substr(4);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (!suffix.empty() &amp;&amp; std::all_of(suffix.cbegin(), suffix.cend(),</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                           [] (<span class="keyword">const</span> <span class="keywordtype">char</span> c) { return c &gt;= <span class="stringliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="stringliteral">&#39;9&#39;</span>; })) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a> = std::stoi(suffix);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a0296f21cd48e5d8236c62ae4ce319b2f"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a0296f21cd48e5d8236c62ae4ce319b2f">RhoScalar_comp</a></div><div class="ttdeci">#define RhoScalar_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:43</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:39</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:40</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_ae15721db2cb4c2ab4732afe226bbba64"><div class="ttname"><a href="ERF__IndexDefines_8H.html#ae15721db2cb4c2ab4732afe226bbba64">RhoKE_comp</a></div><div class="ttdeci">#define RhoKE_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:41</div></div>
 <div class="ttc" id="aERF__Plotfile2DCatalog_8cpp_html_a9b45b3e13bd9167aab02e17e08916231"><div class="ttname"><a href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> ERF_Plotfile2DCatalog.cpp:101</div></div>
 <div class="ttc" id="anamespaceWSM6Ind_html_a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28"><div class="ttname"><a href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">WSM6Ind::q</a></div><div class="ttdeci">@ q</div><div class="ttdef"><b>Definition:</b> ERF_WSM6.H:184</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a11cf3940bc14ad31912d5df8d5f81402"><div class="ttname"><a href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">erf_plotfile::plot3d_q_conserved_component_index</a></div><div class="ttdeci">int plot3d_q_conserved_component_index(const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:190</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a11cf3940bc14ad31912d5df8d5f81402"><div class="ttname"><a href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">erf_plotfile::plot3d_q_conserved_component_index</a></div><div class="ttdeci">int plot3d_q_conserved_component_index(const int q)</div><div class="ttdoc">Conserved-state component holding the q-th moist variable, or -1 if q is outside the fixed RhoQ1....</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:99</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_cgraph.png" border="0" usemap="#anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_cgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_cgraph" id="anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,224,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402" title=" " alt="" coords="272,5,507,47"/>
+<area shape="rect" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="5,5,224,47"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402" title="Conserved&#45;state component holding the q&#45;th moist variable, or &#45;1 if q is outside the fixed RhoQ1...." alt="" coords="272,5,507,47"/>
 </map>
 </div>
 <div class="dynheader">
@@ -190,11 +254,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph" id="anamespaceerf__plotfile_a2a0598d635fec5686185ce5597c9e985_icgraph">
-<area shape="rect" title=" " alt="" coords="625,35,844,76"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,5,577,47"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="407,71,561,98"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
+<area shape="rect" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="645,53,864,94"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="411,23,597,65"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="427,89,581,116"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,5,353,32"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,56,363,83"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,31,136,57"/>
 </map>
 </div>
 
@@ -223,32 +288,34 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* names[] = {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="stringliteral">&quot;temp&quot;</span>, <span class="stringliteral">&quot;theta&quot;</span>, <span class="stringliteral">&quot;KE&quot;</span>, <span class="stringliteral">&quot;scalar&quot;</span>, <span class="stringliteral">&quot;soundspeed&quot;</span>, <span class="stringliteral">&quot;reflectivity&quot;</span>,</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="stringliteral">&quot;max_reflectivity&quot;</span>, <span class="stringliteral">&quot;mucape&quot;</span>, <span class="stringliteral">&quot;vorticity_x&quot;</span>, <span class="stringliteral">&quot;vorticity_y&quot;</span>, <span class="stringliteral">&quot;vorticity_z&quot;</span>,</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="stringliteral">&quot;helicity&quot;</span>, <span class="stringliteral">&quot;local_helicity&quot;</span>, <span class="stringliteral">&quot;magvel&quot;</span>, <span class="stringliteral">&quot;divU&quot;</span>, <span class="stringliteral">&quot;pres_hse&quot;</span>, <span class="stringliteral">&quot;dens_hse&quot;</span>,</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="stringliteral">&quot;theta_hse&quot;</span>, <span class="stringliteral">&quot;pi_hse&quot;</span>, <span class="stringliteral">&quot;qv_hse&quot;</span>, <span class="stringliteral">&quot;pressure&quot;</span>, <span class="stringliteral">&quot;pert_pres&quot;</span>, <span class="stringliteral">&quot;pert_dens&quot;</span>, <span class="stringliteral">&quot;buoyancy&quot;</span>,</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="stringliteral">&quot;eq_pot_temp&quot;</span>, <span class="stringliteral">&quot;VPD&quot;</span>, <span class="stringliteral">&quot;dpdx&quot;</span>, <span class="stringliteral">&quot;dpdy&quot;</span>, <span class="stringliteral">&quot;dpdz&quot;</span>, <span class="stringliteral">&quot;pres_hse_x&quot;</span>, <span class="stringliteral">&quot;pres_hse_y&quot;</span>,</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <span class="stringliteral">&quot;pres_hse_z&quot;</span>, <span class="stringliteral">&quot;z_phys&quot;</span>, <span class="stringliteral">&quot;detJ&quot;</span>, <span class="stringliteral">&quot;h_xi&quot;</span>, <span class="stringliteral">&quot;h_eta&quot;</span>, <span class="stringliteral">&quot;h_zeta&quot;</span>,</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="stringliteral">&quot;mapfac&quot;</span>, <span class="stringliteral">&quot;lat_m&quot;</span>, <span class="stringliteral">&quot;lon_m&quot;</span>, <span class="stringliteral">&quot;pblh&quot;</span>,</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="stringliteral">&quot;shoc_cldfrac&quot;</span>, <span class="stringliteral">&quot;shoc_ql&quot;</span>, <span class="stringliteral">&quot;shoc_ql2&quot;</span>, <span class="stringliteral">&quot;shoc_cond&quot;</span>, <span class="stringliteral">&quot;wqls_sec&quot;</span>, <span class="stringliteral">&quot;wthv_sec&quot;</span>,</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="stringliteral">&quot;w_sec&quot;</span>, <span class="stringliteral">&quot;thl_sec&quot;</span>, <span class="stringliteral">&quot;qw_sec&quot;</span>, <span class="stringliteral">&quot;qwthl_sec&quot;</span>, <span class="stringliteral">&quot;wthl_sec&quot;</span>, <span class="stringliteral">&quot;wqw_sec&quot;</span>, <span class="stringliteral">&quot;w3&quot;</span>,</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="stringliteral">&quot;brunt&quot;</span>, <span class="stringliteral">&quot;isotropy&quot;</span>, <span class="stringliteral">&quot;shear_prod&quot;</span>, <span class="stringliteral">&quot;buoy_prod&quot;</span>, <span class="stringliteral">&quot;diss_tke&quot;</span>,</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="stringliteral">&quot;terrain_IB_mask&quot;</span>, <span class="stringliteral">&quot;volfrac&quot;</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    };</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* candidate : names) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == candidate) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    }</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;xvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;yvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;zvel_err&quot;</span> ||</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+
+<p>Diagnostics that every run can write, moist or dry. </p>
+<div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* names[] = {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="stringliteral">&quot;temp&quot;</span>, <span class="stringliteral">&quot;theta&quot;</span>, <span class="stringliteral">&quot;KE&quot;</span>, <span class="stringliteral">&quot;scalar&quot;</span>, <span class="stringliteral">&quot;soundspeed&quot;</span>, <span class="stringliteral">&quot;reflectivity&quot;</span>,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="stringliteral">&quot;max_reflectivity&quot;</span>, <span class="stringliteral">&quot;mucape&quot;</span>, <span class="stringliteral">&quot;vorticity_x&quot;</span>, <span class="stringliteral">&quot;vorticity_y&quot;</span>, <span class="stringliteral">&quot;vorticity_z&quot;</span>,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="stringliteral">&quot;helicity&quot;</span>, <span class="stringliteral">&quot;local_helicity&quot;</span>, <span class="stringliteral">&quot;magvel&quot;</span>, <span class="stringliteral">&quot;divU&quot;</span>, <span class="stringliteral">&quot;pres_hse&quot;</span>, <span class="stringliteral">&quot;dens_hse&quot;</span>,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="stringliteral">&quot;theta_hse&quot;</span>, <span class="stringliteral">&quot;pi_hse&quot;</span>, <span class="stringliteral">&quot;qv_hse&quot;</span>, <span class="stringliteral">&quot;pressure&quot;</span>, <span class="stringliteral">&quot;pert_pres&quot;</span>, <span class="stringliteral">&quot;pert_dens&quot;</span>, <span class="stringliteral">&quot;buoyancy&quot;</span>,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="stringliteral">&quot;eq_pot_temp&quot;</span>, <span class="stringliteral">&quot;VPD&quot;</span>, <span class="stringliteral">&quot;dpdx&quot;</span>, <span class="stringliteral">&quot;dpdy&quot;</span>, <span class="stringliteral">&quot;dpdz&quot;</span>, <span class="stringliteral">&quot;pres_hse_x&quot;</span>, <span class="stringliteral">&quot;pres_hse_y&quot;</span>,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="stringliteral">&quot;pres_hse_z&quot;</span>, <span class="stringliteral">&quot;z_phys&quot;</span>, <span class="stringliteral">&quot;detJ&quot;</span>, <span class="stringliteral">&quot;h_xi&quot;</span>, <span class="stringliteral">&quot;h_eta&quot;</span>, <span class="stringliteral">&quot;h_zeta&quot;</span>,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="stringliteral">&quot;mapfac&quot;</span>, <span class="stringliteral">&quot;lat_m&quot;</span>, <span class="stringliteral">&quot;lon_m&quot;</span>, <span class="stringliteral">&quot;pblh&quot;</span>,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="stringliteral">&quot;shoc_cldfrac&quot;</span>, <span class="stringliteral">&quot;shoc_ql&quot;</span>, <span class="stringliteral">&quot;shoc_ql2&quot;</span>, <span class="stringliteral">&quot;shoc_cond&quot;</span>, <span class="stringliteral">&quot;wqls_sec&quot;</span>, <span class="stringliteral">&quot;wthv_sec&quot;</span>,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="stringliteral">&quot;w_sec&quot;</span>, <span class="stringliteral">&quot;thl_sec&quot;</span>, <span class="stringliteral">&quot;qw_sec&quot;</span>, <span class="stringliteral">&quot;qwthl_sec&quot;</span>, <span class="stringliteral">&quot;wthl_sec&quot;</span>, <span class="stringliteral">&quot;wqw_sec&quot;</span>, <span class="stringliteral">&quot;w3&quot;</span>,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="stringliteral">&quot;brunt&quot;</span>, <span class="stringliteral">&quot;isotropy&quot;</span>, <span class="stringliteral">&quot;shear_prod&quot;</span>, <span class="stringliteral">&quot;buoy_prod&quot;</span>, <span class="stringliteral">&quot;diss_tke&quot;</span>,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="stringliteral">&quot;terrain_IB_mask&quot;</span>, <span class="stringliteral">&quot;volfrac&quot;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    };</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* candidate : names) {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == candidate) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;xvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;yvel_err&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;zvel_err&quot;</span> ||</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>.</p>
 <div class="dynheader">
@@ -256,10 +323,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_ac81e0b7ccab2ab9b895be8d5ec8a0d99_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_ac81e0b7ccab2ab9b895be8d5ec8a0d99_icgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_ac81e0b7ccab2ab9b895be8d5ec8a0d99_icgraph" id="anamespaceerf__plotfile_ac81e0b7ccab2ab9b895be8d5ec8a0d99_icgraph">
-<area shape="rect" title=" " alt="" coords="625,5,780,61"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,13,577,54"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,20,343,47"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,20,136,47"/>
+<area shape="rect" title="Diagnostics that every run can write, moist or dry." alt="" coords="645,16,800,72"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="411,23,597,65"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,5,353,32"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,56,363,83"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,31,136,57"/>
 </map>
 </div>
 
@@ -298,101 +366,77 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;{</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cons_comp = <a class="code" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">if</span> (cons_comp &gt;= 0) <span class="keywordflow">return</span> cons_comp &lt; caps.conserved_state_size;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;u_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;v_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;w_t_avg&quot;</span> ||</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;umag_t_avg&quot;</span>) {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">return</span> caps.time_average_storage;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    }</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_sw&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_lw&quot;</span>) {</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <span class="keywordflow">return</span> caps.radiation_heating_storage;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nut&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmh&quot;</span> ||</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khh&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Lturb&quot;</span>) {</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">return</span> caps.eddy_diffusivity_storage;</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;diss&quot;</span>) <span class="keywordflow">return</span> caps.dissipation_storage;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;walldist&quot;</span>) <span class="keywordflow">return</span> caps.wall_distance_storage;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; moisture = caps.moisture;</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;moist_density&quot;</span>) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <span class="keywordflow">return</span> moisture.vapor &amp;&amp; moisture.cloud_liquid &amp;&amp;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">plot3d_nonprecipitating_q_range</a>(caps.moist_state_size));</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qv&quot;</span>)    <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qc&quot;</span>)    <span class="keywordflow">return</span> moisture.cloud_liquid &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 2);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qi&quot;</span>)    <span class="keywordflow">return</span> moisture.cloud_ice &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 3);</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qrain&quot;</span>) <span class="keywordflow">return</span> moisture.rain &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        caps, caps.moist_state_size &gt; 3 ? 4 : 3);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsnow&quot;</span>) <span class="keywordflow">return</span> moisture.snow &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 5);</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qgraup&quot;</span>) <span class="keywordflow">return</span> moisture.graupel &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 6);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nc&quot;</span>) <span class="keywordflow">return</span> moisture.cloud_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 7);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ni&quot;</span>) <span class="keywordflow">return</span> moisture.ice_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 8);</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nr&quot;</span>) <span class="keywordflow">return</span> moisture.rain_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 9);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ns&quot;</span>) <span class="keywordflow">return</span> moisture.snow_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 10);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;ng&quot;</span>) <span class="keywordflow">return</span> moisture.graupel_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 11);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// nn shares slot 8 with ni, but the two are mutually exclusive by scheme:</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// WDM6 declares ccn_number and leaves ice_number false, Morrison the reverse.</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nn&quot;</span>) <span class="keywordflow">return</span> moisture.ccn_number &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 8);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qt&quot;</span>) {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">return</span> moisture.vapor &amp;&amp;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">plot3d_total_mass_q_range</a>(</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    caps.moist_state_size, caps.moist_numconc_size));</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qn&quot;</span>) {</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        <span class="keywordflow">return</span> moisture.cloud_liquid &amp;&amp;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">plot3d_nonprecipitating_q_range</a>(caps.moist_state_size));</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qp&quot;</span>) {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">return</span> moisture.rain &amp;&amp;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            <a class="code" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available</a>(</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                caps, <a class="code" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">plot3d_precipitating_q_range</a>(</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                    caps.moist_state_size, caps.moist_numconc_size));</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span>) <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;precipitable&quot;</span>) <span class="keywordflow">return</span> moisture.vapor &amp;&amp; <a class="code" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available</a>(caps, 1);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rain_accum&quot;</span>) <span class="keywordflow">return</span> moisture.rain_accumulation &amp;&amp;</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        caps.qmoist_size &gt;= (caps.moisture_type == MoistureType::SuperDroplets ? 7 : 1);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;snow_accum&quot;</span>) <span class="keywordflow">return</span> moisture.snow_accumulation &amp;&amp; caps.qmoist_size &gt;= 2;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;graup_accum&quot;</span>) <span class="keywordflow">return</span> moisture.graupel_accumulation &amp;&amp; caps.qmoist_size &gt;= 3;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) <span class="keywordflow">return</span> moisture.relative_humidity_diagnostic &amp;&amp;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        (caps.moisture_type == MoistureType::SatAdj || caps.qmoist_size &gt;= 6);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;condensation_rate&quot;</span>) <span class="keywordflow">return</span> moisture.condensation_rate_diagnostic &amp;&amp; caps.qmoist_size &gt;= 4;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">plot3d_fixed_unconditional_diagnostic</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a23d66d264e5f6467ddc684cafb62b4e9"><div class="ttname"><a href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">erf_plotfile::plot3d_moist_q_component_available</a></div><div class="ttdeci">bool plot3d_moist_q_component_available(const Plot3DSelectionCapabilities &amp;caps, const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:231</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a2a0598d635fec5686185ce5597c9e985"><div class="ttname"><a href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">erf_plotfile::plot3d_conserved_component_index</a></div><div class="ttdeci">int plot3d_conserved_component_index(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:197</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a51563683acf5983b904732cd0c4a7d9f"><div class="ttname"><a href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">erf_plotfile::plot3d_precipitating_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_precipitating_q_range(const int moist_state_size, const int moist_numconc_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:260</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a6302a98fe450561c3c23d6b29e072fe7"><div class="ttname"><a href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7">erf_plotfile::plot3d_nonprecipitating_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_nonprecipitating_q_range(const int moist_state_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:253</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a66f027f3966928ab7502c21109e99c0d"><div class="ttname"><a href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">erf_plotfile::plot3d_total_mass_q_range</a></div><div class="ttdeci">Plot3DQRange plot3d_total_mass_q_range(const int moist_state_size, const int moist_numconc_size)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:239</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a976489bd70dd01700700f097f40e6a92"><div class="ttname"><a href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">erf_plotfile::plot3d_q_range_available</a></div><div class="ttdeci">bool plot3d_q_range_available(const Plot3DSelectionCapabilities &amp;caps, const Plot3DQRange range)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:273</div></div>
-<div class="ttc" id="anamespaceerf__plotfile_html_ac81e0b7ccab2ab9b895be8d5ec8a0d99"><div class="ttname"><a href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">erf_plotfile::plot3d_fixed_unconditional_diagnostic</a></div><div class="ttdeci">bool plot3d_fixed_unconditional_diagnostic(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:282</div></div>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">const</span> <a class="code" href="structMoistureComponentIndices.html">MoistureComponentIndices</a>&amp; mi = caps.moisture_indices;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// Raw conserved-state components.  Inside the moist window the moisture map</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// decides, since allocated-but-never-integrated slots must not be published</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// as data.  Below the window the state is always allocated dry-or-moist, and</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// above it are the non-water species a scheme may add -- both of those are</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// real data whenever they were allocated, so a bounds check is the right</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="comment">// test for them.</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> cons_comp = <a class="code" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span> (cons_comp &gt;= 0) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">if</span> ( (cons_comp &gt;= <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) &amp;&amp;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;             (cons_comp &lt;  <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> + caps.moist_state_size) ) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            <span class="keywordflow">return</span> mi.<a class="code" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">has_comp</a>(cons_comp);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordflow">return</span> (cons_comp &lt; caps.conserved_state_size);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">// Every moisture variable -- species, aggregates and moist diagnostics --</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// is decided by the scheme&#39;s index map.</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> moist_status = mi.<a class="code" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">query_var</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordflow">if</span> (moist_status.governed) <span class="keywordflow">return</span> moist_status.<a class="code" href="structMoistureComponentIndices_1_1VarAvailability.html#a349700a8ccdceaf4f63e2c0ad3bc0091">available</a>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;u_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;v_t_avg&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;w_t_avg&quot;</span> ||</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;umag_t_avg&quot;</span>) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">return</span> caps.time_average_storage;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceerf__plotfile.html#a5b32422f1d46c78c9584826bf9cfb0b7">plot3d_interval_mean_diagnostic</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>)) {</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="keywordflow">return</span> caps.interval_mean_storage;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_sw&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsrc_lw&quot;</span>) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">return</span> caps.radiation_heating_storage;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;nut&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Kmh&quot;</span> ||</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khv&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Khh&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;Lturb&quot;</span>) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keywordflow">return</span> caps.eddy_diffusivity_storage;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;diss&quot;</span>) <span class="keywordflow">return</span> caps.dissipation_storage;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;walldist&quot;</span>) <span class="keywordflow">return</span> caps.wall_distance_storage;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">plot3d_fixed_unconditional_diagnostic</a>(<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_aa965e9988f14d5d2a5aef4a942168a15"><div class="ttname"><a href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a></div><div class="ttdeci">#define RhoQ1_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:45</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a2a0598d635fec5686185ce5597c9e985"><div class="ttname"><a href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">erf_plotfile::plot3d_conserved_component_index</a></div><div class="ttdeci">int plot3d_conserved_component_index(const std::string &amp;name)</div><div class="ttdoc">Conserved-state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,...</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:110</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_a5b32422f1d46c78c9584826bf9cfb0b7"><div class="ttname"><a href="namespaceerf__plotfile.html#a5b32422f1d46c78c9584826bf9cfb0b7">erf_plotfile::plot3d_interval_mean_diagnostic</a></div><div class="ttdeci">bool plot3d_interval_mean_diagnostic(const std::string &amp;name)</div><div class="ttdoc">Whether a named 3D plot variable can be written by this run.</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:170</div></div>
+<div class="ttc" id="anamespaceerf__plotfile_html_ac81e0b7ccab2ab9b895be8d5ec8a0d99"><div class="ttname"><a href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99">erf_plotfile::plot3d_fixed_unconditional_diagnostic</a></div><div class="ttdeci">bool plot3d_fixed_unconditional_diagnostic(const std::string &amp;name)</div><div class="ttdoc">Diagnostics that every run can write, moist or dry.</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:133</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_1_1VarAvailability_html_a349700a8ccdceaf4f63e2c0ad3bc0091"><div class="ttname"><a href="structMoistureComponentIndices_1_1VarAvailability.html#a349700a8ccdceaf4f63e2c0ad3bc0091">MoistureComponentIndices::VarAvailability::available</a></div><div class="ttdeci">bool available</div><div class="ttdoc">the active scheme carries the data behind it</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:565</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html"><div class="ttname"><a href="structMoistureComponentIndices.html">MoistureComponentIndices</a></div><div class="ttdoc">The moisture data carried by the active microphysics scheme.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:195</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_a46bd8181eadf4de560db6db5721b2cdb"><div class="ttname"><a href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb">MoistureComponentIndices::has_comp</a></div><div class="ttdeci">bool has_comp(int comp) const</div><div class="ttdoc">Test whether a conserved-state component holds one of the moisture variables this scheme carries.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:487</div></div>
+<div class="ttc" id="astructMoistureComponentIndices_html_add99c413d330933e48a17c246d3808f6"><div class="ttname"><a href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6">MoistureComponentIndices::query_var</a></div><div class="ttdeci">VarAvailability query_var(const std::string &amp;name) const</div><div class="ttdoc">Classify an output variable name against this index map.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:579</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>, and <a class="el" href="classERF.html#a87d5810a51d3eee73be510665803e68c">ERF::setSubVolVariables()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_cgraph.png" border="0" usemap="#anamespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_cgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_cgraph" id="anamespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_cgraph">
-<area shape="rect" title=" " alt="" coords="5,194,192,235"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985" title=" " alt="" coords="516,27,735,68"/>
-<area shape="rect" href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99" title=" " alt="" coords="277,48,431,104"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9" title=" " alt="" coords="240,128,468,170"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a6302a98fe450561c3c23d6b29e072fe7" title=" " alt="" coords="257,194,451,235"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f" title=" " alt="" coords="269,324,439,366"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d" title=" " alt="" coords="545,354,705,395"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92" title=" " alt="" coords="280,259,428,300"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402" title=" " alt="" coords="783,46,1017,87"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109" title=" " alt="" coords="516,128,735,170"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7" title=" " alt="" coords="829,128,971,170"/>
-<area shape="rect" href="structerf__plotfile_1_1Plot3DQRange.html#a3dc2b3263766d0e49d20d8b462d13f17" title=" " alt="" coords="528,259,723,300"/>
+<area shape="rect" title=" " alt="" coords="5,144,192,185"/>
+<area shape="rect" href="structMoistureComponentIndices.html#a46bd8181eadf4de560db6db5721b2cdb" title="Test whether a conserved&#45;state component holds one of the moisture variables this scheme carries." alt="" coords="249,5,449,47"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="240,71,459,112"/>
+<area shape="rect" href="namespaceerf__plotfile.html#ac81e0b7ccab2ab9b895be8d5ec8a0d99" title="Diagnostics that every run can write, moist or dry." alt="" coords="272,137,427,193"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a5b32422f1d46c78c9584826bf9cfb0b7" title="Whether a named 3D plot variable can be written by this run." alt="" coords="251,217,448,259"/>
+<area shape="rect" href="structMoistureComponentIndices.html#add99c413d330933e48a17c246d3808f6" title="Classify an output variable name against this index map." alt="" coords="249,283,449,324"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402" title="Conserved&#45;state component holding the q&#45;th moist variable, or &#45;1 if q is outside the fixed RhoQ1...." alt="" coords="507,71,741,112"/>
+<area shape="rect" href="structMoistureComponentIndices.html#a10dfbe72f16010e992c58784087ef0e4" title="The conserved&#45;state component behind a single&#45;species output name, or absent if the name is not a sin..." alt="" coords="524,144,724,185"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a8be75082476f37839bff65bbe8a97586" title=" " alt="" coords="524,209,724,251"/>
+<area shape="rect" href="structMoistureComponentIndices.html#ac978023269a73ddc51e599e287f6b75e" title="Test whether the active scheme carries any moisture at all." alt="" coords="524,275,724,316"/>
+<area shape="rect" href="structMoistureComponentIndices.html#abcce49c12385061664c8da3cecb80dbb" title="Components summed for precipitating water, &quot;qp&quot;: the falling species." alt="" coords="524,340,724,381"/>
+<area shape="rect" href="structMoistureComponentIndices.html#afc78b2ffb89db99698ec7c3925b6151f" title="The qmoist slot behind a moist diagnostic output name." alt="" coords="524,405,724,447"/>
+<area shape="rect" href="structMoistureComponentIndices.html#a932837208ef848f4360a81230ab635fa" title="Components summed for total water, &quot;qt&quot;: every mass mixing ratio." alt="" coords="524,471,724,512"/>
+<area shape="rect" href="structMoistureComponentIndices_1_1CompList.html#a9007e7fad6690e7eaa82a551d007cda5" title="Append a component, ignoring the ones the scheme does not carry." alt="" coords="789,405,989,447"/>
 </map>
 </div>
 <div class="dynheader">
@@ -400,16 +444,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_icgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_icgraph" id="anamespaceerf__plotfile_a906e8c5c82c85c7ff6236b36efc45f06_icgraph">
-<area shape="rect" title=" " alt="" coords="391,5,577,47"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
+<area shape="rect" title=" " alt="" coords="411,23,597,65"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,5,353,32"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,56,363,83"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,31,136,57"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a789043b59572f8a03937d51d9e5924c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a789043b59572f8a03937d51d9e5924c7">&#9670;&nbsp;</a></span>plot3d_has_moist_state()</h2>
+<a id="a5b32422f1d46c78c9584826bf9cfb0b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b32422f1d46c78c9584826bf9cfb0b7">&#9670;&nbsp;</a></span>plot3d_interval_mean_diagnostic()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -418,10 +463,10 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool erf_plotfile::plot3d_has_moist_state </td>
+          <td class="memname">bool erf_plotfile::plot3d_interval_mean_diagnostic </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;&#160;</td>
-          <td class="paramname"><em>caps</em></td><td>)</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -431,242 +476,33 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">return</span> caps.moisture_type != MoistureType::None &amp;&amp; caps.moist_state_size &gt; 0;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a789043b59572f8a03937d51d9e5924c7_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a789043b59572f8a03937d51d9e5924c7_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a789043b59572f8a03937d51d9e5924c7_icgraph" id="anamespaceerf__plotfile_a789043b59572f8a03937d51d9e5924c7_icgraph">
-<area shape="rect" title=" " alt="" coords="1168,39,1309,80"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109" title=" " alt="" coords="901,39,1120,80"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9" title=" " alt="" coords="625,5,853,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92" title=" " alt="" coords="665,71,813,112"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,39,577,80"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,46,343,73"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,46,136,73"/>
-</map>
-</div>
 
-</div>
-</div>
-<a id="a23d66d264e5f6467ddc684cafb62b4e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23d66d264e5f6467ddc684cafb62b4e9">&#9670;&nbsp;</a></span>plot3d_moist_q_component_available()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool erf_plotfile::plot3d_moist_q_component_available </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;&#160;</td>
-          <td class="paramname"><em>caps</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>q</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;{</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a> &gt;= 1 &amp;&amp; <a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a> &lt;= caps.moist_state_size &amp;&amp;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, <a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a2d0c92e538b6434c11807bafdd0c8109"><div class="ttname"><a href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">erf_plotfile::plot3d_source_component_available</a></div><div class="ttdeci">bool plot3d_source_component_available(const Plot3DSelectionCapabilities &amp;caps, const int q)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:223</div></div>
+<p>Whether a named 3D plot variable can be written by this run. </p>
+<p>The order of the tests below is the order of authority: raw state components answer from the state layout, moisture variables answer from the active scheme's index map, optional diagnostics answer from their storage flag, and anything left is an always-available diagnostic. </p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keyword">static</span> constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* names[] = {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="stringliteral">&quot;u_mean&quot;</span>, <span class="stringliteral">&quot;v_mean&quot;</span>, <span class="stringliteral">&quot;w_mean&quot;</span>, <span class="stringliteral">&quot;theta_mean&quot;</span>,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="stringliteral">&quot;uu_mean&quot;</span>, <span class="stringliteral">&quot;vv_mean&quot;</span>, <span class="stringliteral">&quot;ww_mean&quot;</span>, <span class="stringliteral">&quot;uw_mean&quot;</span>, <span class="stringliteral">&quot;vw_mean&quot;</span>, <span class="stringliteral">&quot;wtheta_mean&quot;</span>,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="stringliteral">&quot;uu_fluct&quot;</span>, <span class="stringliteral">&quot;vv_fluct&quot;</span>, <span class="stringliteral">&quot;ww_fluct&quot;</span>, <span class="stringliteral">&quot;uw_fluct&quot;</span>, <span class="stringliteral">&quot;vw_fluct&quot;</span>, <span class="stringliteral">&quot;wtheta_fluct&quot;</span>, <span class="stringliteral">&quot;tke_resolved&quot;</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    };</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* candidate : names) {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == candidate) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>.</p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_cgraph.png" border="0" usemap="#anamespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_cgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_cgraph" id="anamespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,39,233,80"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109" title=" " alt="" coords="281,39,500,80"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7" title=" " alt="" coords="595,5,736,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402" title=" " alt="" coords="548,71,783,112"/>
-</map>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_icgraph" id="anamespaceerf__plotfile_a23d66d264e5f6467ddc684cafb62b4e9_icgraph">
-<area shape="rect" title=" " alt="" coords="625,5,853,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,5,577,47"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a5f43286ec3ba261f39f3e26ed0ab81aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f43286ec3ba261f39f3e26ed0ab81aa">&#9670;&nbsp;</a></span>plot3d_moisture_capabilities()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structerf__plotfile_1_1Plot3DMoistureCapabilities.html">Plot3DMoistureCapabilities</a> erf_plotfile::plot3d_moisture_capabilities </td>
-          <td>(</td>
-          <td class="paramtype">const MoistureType&#160;</td>
-          <td class="paramname"><em>moisture_type</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    Plot3DMoistureCapabilities caps;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">switch</span> (moisture_type) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">case</span> MoistureType::None:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">case</span> MoistureType::MoistNoCondensation:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// The second moist conserved component is the canonical cloud-water</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// state even when this model supplies no condensation source.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">case</span> MoistureType::SatAdj:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        caps.relative_humidity_diagnostic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">case</span> MoistureType::Kessler_NoRain:</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">case</span> MoistureType::Kessler:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM_NoPrecip_NoIce:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM_NoIce:</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">case</span> MoistureType::SAM:</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">case</span> MoistureType::Morrison_NoIce:</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">case</span> MoistureType::Morrison:</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        caps.ice_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        caps.snow_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        caps.graupel_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">case</span> MoistureType::WSM6:</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">case</span> MoistureType::WDM6:</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        caps.cloud_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        caps.rain_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        caps.ccn_number = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        caps.graupel_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">case</span> MoistureType::SuperDroplets:</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        caps.vapor = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        caps.cloud_liquid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        caps.cloud_ice = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        caps.rain = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        caps.snow = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        caps.graupel = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        caps.rain_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">// graupel accumulation is not advertised because nothing writes it</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        caps.snow_accumulation = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        caps.relative_humidity_diagnostic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        caps.condensation_rate_diagnostic = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        amrex::Abort(<span class="stringliteral">&quot;Unknown MoistureType in plot3d_moisture_capabilities&quot;</span>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> caps;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a5f43286ec3ba261f39f3e26ed0ab81aa_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a5f43286ec3ba261f39f3e26ed0ab81aa_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a5f43286ec3ba261f39f3e26ed0ab81aa_icgraph" id="anamespaceerf__plotfile_a5f43286ec3ba261f39f3e26ed0ab81aa_icgraph">
-<area shape="rect" title=" " alt="" coords="391,5,560,47"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
+<div class="center"><img src="namespaceerf__plotfile_a5b32422f1d46c78c9584826bf9cfb0b7_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a5b32422f1d46c78c9584826bf9cfb0b7_icgraph" alt=""/></div>
+<map name="anamespaceerf__plotfile_a5b32422f1d46c78c9584826bf9cfb0b7_icgraph" id="anamespaceerf__plotfile_a5b32422f1d46c78c9584826bf9cfb0b7_icgraph">
+<area shape="rect" title="Whether a named 3D plot variable can be written by this run." alt="" coords="645,23,843,65"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="411,23,597,65"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,5,353,32"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,56,363,83"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,31,136,57"/>
 </map>
 </div>
 
@@ -695,142 +531,31 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;{</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> : names) {</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pressure&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pert_pres&quot;</span> ||</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdx&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdy&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdz&quot;</span> ||</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;eq_pot_temp&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;VPD&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span> ||</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) {</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        }</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;}</div>
+
+<p>Whether any requested variable needs the pressure field computed. </p>
+<div class="fragment"><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;{</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> : names) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pressure&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pert_pres&quot;</span> ||</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdx&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdy&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;dpdz&quot;</span> ||</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;eq_pot_temp&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;VPD&quot;</span> || <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;qsat&quot;</span> ||</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;rel_humidity&quot;</span>) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#ifdef ERF_COMPUTE_ERROR</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a> == <span class="stringliteral">&quot;pp_err&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a7f6d1e86b47b91cf5bb5f8151bed0ca3_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a7f6d1e86b47b91cf5bb5f8151bed0ca3_icgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a7f6d1e86b47b91cf5bb5f8151bed0ca3_icgraph" id="anamespaceerf__plotfile_a7f6d1e86b47b91cf5bb5f8151bed0ca3_icgraph">
-<area shape="rect" title=" " alt="" coords="208,5,349,47"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="5,13,160,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a6302a98fe450561c3c23d6b29e072fe7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6302a98fe450561c3c23d6b29e072fe7">&#9670;&nbsp;</a></span>plot3d_nonprecipitating_q_range()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a> erf_plotfile::plot3d_nonprecipitating_q_range </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>moist_state_size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;{</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (moist_state_size &lt; 2) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> {1, moist_state_size &gt; 3 ? 3 : 2};</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a6302a98fe450561c3c23d6b29e072fe7_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a6302a98fe450561c3c23d6b29e072fe7_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a6302a98fe450561c3c23d6b29e072fe7_icgraph" id="anamespaceerf__plotfile_a6302a98fe450561c3c23d6b29e072fe7_icgraph">
-<area shape="rect" title=" " alt="" coords="625,35,820,76"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,5,577,47"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="407,71,561,98"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a51563683acf5983b904732cd0c4a7d9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51563683acf5983b904732cd0c4a7d9f">&#9670;&nbsp;</a></span>plot3d_precipitating_q_range()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a> erf_plotfile::plot3d_precipitating_q_range </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>moist_state_size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>moist_numconc_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;{</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">const</span> Plot3DQRange <a class="code" href="namespaceNoahmpPrecipSlot.html#ae61ef38d7d3347ee3160123a61314cd8a638e63e2eaf3841c6a21e182c8a90d43">total</a> =</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d">plot3d_total_mass_q_range</a>(moist_state_size, moist_numconc_size);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="namespaceNoahmpPrecipSlot.html#ae61ef38d7d3347ee3160123a61314cd8a638e63e2eaf3841c6a21e182c8a90d43">total</a>.valid()) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> first_precip_q = moist_state_size &gt; 3 ? 4 : 3;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespaceNoahmpPrecipSlot.html#ae61ef38d7d3347ee3160123a61314cd8a638e63e2eaf3841c6a21e182c8a90d43">total</a>.last_q &lt; first_precip_q) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordflow">return</span> {first_precip_q, <a class="code" href="namespaceNoahmpPrecipSlot.html#ae61ef38d7d3347ee3160123a61314cd8a638e63e2eaf3841c6a21e182c8a90d43">total</a>.last_q};</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;}</div>
-<div class="ttc" id="anamespaceNoahmpPrecipSlot_html_ae61ef38d7d3347ee3160123a61314cd8a638e63e2eaf3841c6a21e182c8a90d43"><div class="ttname"><a href="namespaceNoahmpPrecipSlot.html#ae61ef38d7d3347ee3160123a61314cd8a638e63e2eaf3841c6a21e182c8a90d43">NoahmpPrecipSlot::total</a></div><div class="ttdeci">@ total</div><div class="ttdef"><b>Definition:</b> ERF_NOAHMP_Fields.H:130</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_cgraph.png" border="0" usemap="#anamespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_cgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_cgraph" id="anamespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,176,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a66f027f3966928ab7502c21109e99c0d" title=" " alt="" coords="224,5,384,47"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_icgraph" id="anamespaceerf__plotfile_a51563683acf5983b904732cd0c4a7d9f_icgraph">
-<area shape="rect" title=" " alt="" coords="625,35,796,76"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,5,577,47"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="407,71,561,98"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
+<area shape="rect" title="Whether any requested variable needs the pressure field computed." alt="" coords="208,5,349,47"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="5,13,160,39"/>
 </map>
 </div>
 
@@ -859,92 +584,26 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span> (q &lt; 1 || q &gt; 11) <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">return</span> 3 + <a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a>; <span class="comment">// RhoQ1_comp + q - 1 in the fixed conserved layout.</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;}</div>
+
+<p>Conserved-state component holding the q-th moist variable, or -1 if q is outside the fixed RhoQ1..RhoQ11 layout. </p>
+<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (q &lt; 1 || q &gt; 11) <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a> + <a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a> - 1;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index()</a>, <a class="el" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985">plot3d_conserved_component_index()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph" alt=""/></div>
 <map name="anamespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph" id="anamespaceerf__plotfile_a11cf3940bc14ad31912d5df8d5f81402_icgraph">
-<area shape="rect" title=" " alt="" coords="1168,64,1403,105"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985" title=" " alt="" coords="901,5,1120,47"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="662,63,817,90"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109" title=" " alt="" coords="901,123,1120,164"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,115,577,156"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,122,343,149"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,122,136,149"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9" title=" " alt="" coords="625,115,853,156"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92" title=" " alt="" coords="665,180,813,221"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a976489bd70dd01700700f097f40e6a92"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a976489bd70dd01700700f097f40e6a92">&#9670;&nbsp;</a></span>plot3d_q_range_available()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool erf_plotfile::plot3d_q_range_available </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;&#160;</td>
-          <td class="paramname"><em>caps</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a>&#160;</td>
-          <td class="paramname"><em>range</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">return</span> range.valid() &amp;&amp;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, range.first_q) &amp;&amp;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <a class="code" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109">plot3d_source_component_available</a>(caps, range.last_q);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_cgraph.png" border="0" usemap="#anamespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_cgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_cgraph" id="anamespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_cgraph">
-<area shape="rect" title=" " alt="" coords="5,71,153,112"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a2d0c92e538b6434c11807bafdd0c8109" title=" " alt="" coords="201,37,420,79"/>
-<area shape="rect" href="structerf__plotfile_1_1Plot3DQRange.html#a3dc2b3263766d0e49d20d8b462d13f17" title=" " alt="" coords="213,103,408,144"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7" title=" " alt="" coords="515,5,656,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402" title=" " alt="" coords="468,71,703,112"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_icgraph" id="anamespaceerf__plotfile_a976489bd70dd01700700f097f40e6a92_icgraph">
-<area shape="rect" title=" " alt="" coords="625,5,773,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,5,577,47"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
+<area shape="rect" title="Conserved&#45;state component holding the q&#45;th moist variable, or &#45;1 if q is outside the fixed RhoQ1...." alt="" coords="912,53,1147,94"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a2a0598d635fec5686185ce5597c9e985" title="Conserved&#45;state component behind a raw state variable name (&quot;density&quot;, &quot;rhotheta&quot;,..." alt="" coords="645,53,864,94"/>
+<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="411,23,597,65"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="427,89,581,116"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,5,353,32"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,56,363,83"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,31,136,57"/>
 </map>
 </div>
 
@@ -983,24 +642,24 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    amrex::Vector&lt;std::string&gt; selected;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; count_name : requested) {</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        constexpr std::size_t suffix_size = 6; <span class="comment">// &quot;_count&quot;</span></div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <span class="keywordflow">if</span> (count_name.size() &gt; suffix_size &amp;&amp;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            count_name.compare(count_name.size() - suffix_size, suffix_size, <span class="stringliteral">&quot;_count&quot;</span>) == 0) {</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;            <span class="keyword">const</span> std::string container = count_name.substr(0, count_name.size() - suffix_size);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            <span class="keywordflow">if</span> (std::find(configured.cbegin(), configured.cend(), container) == configured.cend() ||</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                std::find(selected.cbegin(), selected.cend(), container) != selected.cend()) {</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            }</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;            selected.push_back(container);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        }</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    }</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">return</span> selected;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;{</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    amrex::Vector&lt;std::string&gt; selected;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; count_name : requested) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        constexpr std::size_t suffix_size = 6; <span class="comment">// &quot;_count&quot;</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">if</span> (count_name.size() &gt; suffix_size &amp;&amp;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            count_name.compare(count_name.size() - suffix_size, suffix_size, <span class="stringliteral">&quot;_count&quot;</span>) == 0) {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keyword">const</span> std::string container = count_name.substr(0, count_name.size() - suffix_size);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordflow">if</span> (std::find(configured.cbegin(), configured.cend(), container) == configured.cend() ||</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                std::find(selected.cbegin(), selected.cend(), container) != selected.cend()) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            selected.push_back(container);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordflow">return</span> selected;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>, and <a class="el" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3">ERF::Write3DPlotFile()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1008,15 +667,15 @@ Here is the caller graph for this function:</div>
 <map name="anamespaceerf__plotfile_ab55dc271098ed902b53a7f4090148b87_icgraph" id="anamespaceerf__plotfile_ab55dc271098ed902b53a7f4090148b87_icgraph">
 <area shape="rect" title=" " alt="" coords="391,23,625,65"/>
 <area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,5,343,32"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="186,56,341,83"/>
+<area shape="rect" href="classERF.html#ad2d56d8f39025d727c8dbfc5634d0be3" title=" " alt="" coords="186,56,341,83"/>
 <area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,5,136,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a2d0c92e538b6434c11807bafdd0c8109"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d0c92e538b6434c11807bafdd0c8109">&#9670;&nbsp;</a></span>plot3d_source_component_available()</h2>
+<a id="a5e7b2de00bfcf71b0b6173022d1cb41b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7b2de00bfcf71b0b6173022d1cb41b">&#9670;&nbsp;</a></span>plot3d_selection_has_interval_mean_diagnostic()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1025,82 +684,74 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool erf_plotfile::plot3d_source_component_available </td>
+          <td class="memname">bool erf_plotfile::plot3d_selection_has_interval_mean_diagnostic </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;&#160;</td>
+          <td class="paramtype">const amrex::Vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>names</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">return</span> std::any_of(names.begin(), names.end(),</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                       [] (<span class="keyword">const</span> std::string&amp; <a class="code" href="ERF__Plotfile2DCatalog_8cpp.html#a9b45b3e13bd9167aab02e17e08916231">name</a>) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                           return plot3d_interval_mean_diagnostic(name);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                       });</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classERF.html#aa8b243c093bd872b6f7592603ff97792">ERF::InitData_post()</a>, <a class="el" href="classERF.html#af47aaeb719fb501ac52b23fa8ddfc766">ERF::WriteAtFinalTime()</a>, and <a class="el" href="classERF.html#a12b52fa224b029029566d7a4808348ff">ERF::WriteAtIntermediateTime()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceerf__plotfile_a5e7b2de00bfcf71b0b6173022d1cb41b_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a5e7b2de00bfcf71b0b6173022d1cb41b_icgraph" alt=""/></div>
+<map name="anamespaceerf__plotfile_a5e7b2de00bfcf71b0b6173022d1cb41b_icgraph" id="anamespaceerf__plotfile_a5e7b2de00bfcf71b0b6173022d1cb41b_icgraph">
+<area shape="rect" title=" " alt="" coords="475,41,649,97"/>
+<area shape="rect" href="classERF.html#aa8b243c093bd872b6f7592603ff97792" title=" " alt="" coords="246,5,387,32"/>
+<area shape="rect" href="classERF.html#af47aaeb719fb501ac52b23fa8ddfc766" title=" " alt="" coords="233,56,400,83"/>
+<area shape="rect" href="classERF.html#a12b52fa224b029029566d7a4808348ff" title=" " alt="" coords="207,107,427,133"/>
+<area shape="rect" href="classERF.html#aa60927ead63d9f297d1420759b7addbe" title=" " alt="" coords="5,107,159,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31cf5b5f4345e0aa86fc8eeb1550d9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31cf5b5f4345e0aa86fc8eeb1550d9c6">&#9670;&nbsp;</a></span>plot3d_set_state_capabilities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void erf_plotfile::plot3d_set_state_capabilities </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structerf__plotfile_1_1Plot3DSelectionCapabilities.html">Plot3DSelectionCapabilities</a> &amp;&#160;</td>
           <td class="paramname"><em>caps</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>q</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> comp = <a class="code" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402">plot3d_q_conserved_component_index</a>(<a class="code" href="namespaceWSM6Ind.html#a633d43a464019ac3ae5e3da3ec483e51a3ccb29f130aa6df36688aa0e9a234f28">q</a>);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7">plot3d_has_moist_state</a>(caps) &amp;&amp; comp &gt;= 0 &amp;&amp; comp &lt; caps.conserved_state_size;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
-<div class="ttc" id="anamespaceerf__plotfile_html_a789043b59572f8a03937d51d9e5924c7"><div class="ttname"><a href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7">erf_plotfile::plot3d_has_moist_state</a></div><div class="ttdeci">bool plot3d_has_moist_state(const Plot3DSelectionCapabilities &amp;caps)</div><div class="ttdef"><b>Definition:</b> ERF_PlotfileSelection.H:217</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9">plot3d_moist_q_component_available()</a>, and <a class="el" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92">plot3d_q_range_available()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_cgraph.png" border="0" usemap="#anamespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_cgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_cgraph" id="anamespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_cgraph">
-<area shape="rect" title=" " alt="" coords="5,39,224,80"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a789043b59572f8a03937d51d9e5924c7" title=" " alt="" coords="319,5,460,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a11cf3940bc14ad31912d5df8d5f81402" title=" " alt="" coords="272,71,507,112"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_icgraph" id="anamespaceerf__plotfile_a2d0c92e538b6434c11807bafdd0c8109_icgraph">
-<area shape="rect" title=" " alt="" coords="901,39,1120,80"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a23d66d264e5f6467ddc684cafb62b4e9" title=" " alt="" coords="625,5,853,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a976489bd70dd01700700f097f40e6a92" title=" " alt="" coords="665,71,813,112"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,39,577,80"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,46,343,73"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,46,136,73"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a66f027f3966928ab7502c21109e99c0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66f027f3966928ab7502c21109e99c0d">&#9670;&nbsp;</a></span>plot3d_total_mass_q_range()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structerf__plotfile_1_1Plot3DQRange.html">Plot3DQRange</a> erf_plotfile::plot3d_total_mass_q_range </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>moist_state_size</em>, </td>
+          <td class="paramtype">const <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> &amp;&#160;</td>
+          <td class="paramname"><em>mi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>moist_numconc_size</em>&#160;</td>
+          <td class="paramname"><em>qstate_moist_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>qstate_size</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1114,29 +765,36 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (moist_state_size &lt;= 0 || moist_numconc_size &lt; 0 ||</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        moist_numconc_size &gt; moist_state_size) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> mass_count = moist_state_size - moist_numconc_size;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (mass_count &lt;= 0) <span class="keywordflow">return</span> {};</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">return</span> {1, mass_count};</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;}</div>
+
+<p>Record the conserved-state layout of a run on its capabilities. </p>
+<p>Every output path that selects raw state names must describe the state the same way, so the three fields are filled here rather than at each call site.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">caps</td><td>Capabilities to fill in. </td></tr>
+    <tr><td class="paramname">mi</td><td>The active scheme's component/diagnostic map. </td></tr>
+    <tr><td class="paramname">qstate_moist_size</td><td>Conserved components in the moist window (<a class="el" href="classMicrophysics.html#a61069a1549c51d922e27c8af78c1e692" title="get the number of microphysics conserved moist (water-related) state variables">Microphysics::Get_Qstate_Moist_Size()</a>). </td></tr>
+    <tr><td class="paramname">qstate_size</td><td>All conserved components the microphysics adds, moist window plus non-water species (<a class="el" href="classMicrophysics.html#aaa5855f1992b34c6e520f426ec0657d4" title="get total number of conserved state variables">Microphysics::Get_Qstate_Size()</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    caps.moisture_indices     = mi;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    caps.moist_state_size     = qstate_moist_size;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    caps.conserved_state_size = <a class="code" href="ERF__IndexDefines_8H.html#a38d6fda9ca3d40309838c64d398b54c1">NDRY</a> + <a class="code" href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a> + qstate_size;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a38d6fda9ca3d40309838c64d398b54c1"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a38d6fda9ca3d40309838c64d398b54c1">NDRY</a></div><div class="ttdeci">#define NDRY</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:13</div></div>
+<div class="ttc" id="aERF__IndexDefines_8H_html_a6773f201eef9644a5d5b7252f6d95ce9"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a6773f201eef9644a5d5b7252f6d95ce9">NSCALARS</a></div><div class="ttdeci">#define NSCALARS</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:16</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06">plot3d_fixed_variable_available()</a>, <a class="el" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f">plot3d_precipitating_q_range()</a>, and <a class="el" href="classERF.html#ad3e288d14d937e5b07433342d5bda919">ERF::Write3DPlotFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7">ERF::setPlotVariables()</a>, and <a class="el" href="classERF.html#a87d5810a51d3eee73be510665803e68c">ERF::setSubVolVariables()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceerf__plotfile_a66f027f3966928ab7502c21109e99c0d_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a66f027f3966928ab7502c21109e99c0d_icgraph" alt=""/></div>
-<map name="anamespaceerf__plotfile_a66f027f3966928ab7502c21109e99c0d_icgraph" id="anamespaceerf__plotfile_a66f027f3966928ab7502c21109e99c0d_icgraph">
-<area shape="rect" title=" " alt="" coords="844,49,1004,91"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a906e8c5c82c85c7ff6236b36efc45f06" title=" " alt="" coords="391,5,577,47"/>
-<area shape="rect" href="namespaceerf__plotfile.html#a51563683acf5983b904732cd0c4a7d9f" title=" " alt="" coords="625,49,796,91"/>
-<area shape="rect" href="classERF.html#ad3e288d14d937e5b07433342d5bda919" title=" " alt="" coords="407,86,561,113"/>
-<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="184,13,343,39"/>
-<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,13,136,39"/>
+<div class="center"><img src="namespaceerf__plotfile_a31cf5b5f4345e0aa86fc8eeb1550d9c6_icgraph.png" border="0" usemap="#anamespaceerf__plotfile_a31cf5b5f4345e0aa86fc8eeb1550d9c6_icgraph" alt=""/></div>
+<map name="anamespaceerf__plotfile_a31cf5b5f4345e0aa86fc8eeb1550d9c6_icgraph" id="anamespaceerf__plotfile_a31cf5b5f4345e0aa86fc8eeb1550d9c6_icgraph">
+<area shape="rect" title="Record the conserved&#45;state layout of a run on its capabilities." alt="" coords="411,23,581,65"/>
+<area shape="rect" href="classERF.html#a1fcb440c67da60c86372aec1fe871cb7" title=" " alt="" coords="194,5,353,32"/>
+<area shape="rect" href="classERF.html#a87d5810a51d3eee73be510665803e68c" title=" " alt="" coords="184,56,363,83"/>
+<area shape="rect" href="classERF.html#aab5871c91a4d8888c110865e9d35e8b2" title=" " alt="" coords="5,31,136,57"/>
 </map>
 </div>
 

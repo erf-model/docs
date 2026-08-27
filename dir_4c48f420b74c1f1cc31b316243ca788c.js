@@ -2,6 +2,7 @@ var dir_4c48f420b74c1f1cc31b316243ca788c =
 [
     [ "ERF_Checkpoint.cpp", "ERF__Checkpoint_8cpp.html", null ],
     [ "ERF_ConsoleIO.cpp", "ERF__ConsoleIO_8cpp.html", "ERF__ConsoleIO_8cpp" ],
+    [ "ERF_IntervalMeansCheckpoint.H", "ERF__IntervalMeansCheckpoint_8H.html", "ERF__IntervalMeansCheckpoint_8H" ],
     [ "ERF_NCColumnFile.cpp", "ERF__NCColumnFile_8cpp.html", null ],
     [ "ERF_NCInterface.cpp", "ERF__NCInterface_8cpp.html", "ERF__NCInterface_8cpp" ],
     [ "ERF_NCInterface.H", "ERF__NCInterface_8H.html", [

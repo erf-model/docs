@@ -1,5 +1,6 @@
 var ERF__Utils_8H =
 [
+    [ "Accumulate_Interval_Means", "ERF__Utils_8H.html#a668d034ff95e9d36a328cd77f7bf3ebc", null ],
     [ "ApplyInvertedMask", "ERF__Utils_8H.html#acbc6116a3309adf87b7dc24242dc50ec", null ],
     [ "ApplyMask", "ERF__Utils_8H.html#acebead6f3a33cb7737a1fea98341c3ae", null ],
     [ "ChopGrids2D", "ERF__Utils_8H.html#ae73f998519cf6628e7c4a90cea4cb4f5", null ],

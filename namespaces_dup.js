@@ -54,6 +54,12 @@ var namespaces_dup =
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", "namespaceerf__cloud__chamber" ],
+    [ "erf_forest_utils", "namespaceerf__forest__utils.html", [
+      [ "validate_cartesian_coordinates", "namespaceerf__forest__utils.html#a9137465ab2d1feaa04a833f85b8da79a", null ],
+      [ "validate_laimax", "namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476", null ]
+    ] ],
+    [ "erf_grid_utils", "namespaceerf__grid__utils.html", "namespaceerf__grid__utils" ],
+    [ "erf_interval_means", "namespaceerf__interval__means.html", "namespaceerf__interval__means" ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],
     [ "erf_provenance", "namespaceerf__provenance.html", "namespaceerf__provenance" ],

@@ -159,6 +159,9 @@ var NAVTREEINDEX0 =
 "ERF__BuoyancyUtils_8H.html#ada2dce5ab1a5af05594bbc2eae4c6dfc":[3,0,1,18,5,9],
 "ERF__BuoyancyUtils_8H.html#ae32d5d2b79af27da2337e6be0a6c932b":[3,0,1,18,5,0],
 "ERF__BuoyancyUtils_8H_source.html":[3,0,1,18,5],
+"ERF__CanopyBiophysics_8H.html":[3,0,1,18,6],
+"ERF__CanopyBiophysics_8H.html#a34537efeadf553ee28035c4ba7d484c1":[3,0,1,18,6,0],
+"ERF__CanopyBiophysics_8H_source.html":[3,0,1,18,6],
 "ERF__Checkpoint_8cpp.html":[3,0,1,8,0],
 "ERF__ChopGrids_8cpp.html":[3,0,1,21,1],
 "ERF__ChopGrids_8cpp.html#a140e3056fee7f1dcd5a295d2efdaf0b2":[3,0,1,21,1,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd":[3,0,1,25,83],
 "ERF__Constants_8H.html#a0e5683feac33352111ce4445dbedbf45":[3,0,1,25,48],
 "ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093":[3,0,1,25,39],
-"ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd":[3,0,1,25,44],
-"ERF__Constants_8H.html#a123bd9756d4f11bae80bb918f88cbd3f":[3,0,1,25,78],
-"ERF__Constants_8H.html#a16f25ab24f4aca4bb0ff8f3203b0b924":[3,0,1,25,1],
-"ERF__Constants_8H.html#a1a4a1b5aaf1d37a8a175a7b7177e9e2c":[3,0,1,25,42]
+"ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd":[3,0,1,25,44]
 };

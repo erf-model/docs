@@ -1,15 +1,19 @@
 var searchData=
 [
-  ['eddydiff_6059',['EddyDiff',['../namespaceEddyDiff.html',1,'']]],
-  ['erf_6060',['ERF',['../namespaceERF.html',1,'']]],
-  ['erf_5fcloud_5fchamber_6061',['erf_cloud_chamber',['../namespaceerf__cloud__chamber.html',1,'']]],
-  ['erf_5fnoahmp_6062',['erf_noahmp',['../namespaceerf__noahmp.html',1,'']]],
-  ['erf_5fplotfile_6063',['erf_plotfile',['../namespaceerf__plotfile.html',1,'']]],
-  ['erf_5fprovenance_6064',['erf_provenance',['../namespaceerf__provenance.html',1,'']]],
-  ['erf_5fresolved_5fwall_5fflux_6065',['erf_resolved_wall_flux',['../namespaceerf__resolved__wall__flux.html',1,'']]],
-  ['erf_5fwall_5fscalar_5fbc_6066',['erf_wall_scalar_bc',['../namespaceerf__wall__scalar__bc.html',1,'']]],
-  ['erf_5fwall_5fthermodynamics_6067',['erf_wall_thermodynamics',['../namespaceerf__wall__thermodynamics.html',1,'']]],
-  ['erfbctype_6068',['ERFBCType',['../namespaceERFBCType.html',1,'']]],
-  ['interpolation_6069',['Interpolation',['../namespaceERF_1_1Interpolation.html',1,'ERF']]],
-  ['particlepos_6070',['ParticlePos',['../namespaceERF_1_1ParticlePos.html',1,'ERF']]]
+  ['detail_6183',['detail',['../namespaceerf__interval__means_1_1detail.html',1,'erf_interval_means']]],
+  ['eddydiff_6184',['EddyDiff',['../namespaceEddyDiff.html',1,'']]],
+  ['erf_6185',['ERF',['../namespaceERF.html',1,'']]],
+  ['erf_5fcloud_5fchamber_6186',['erf_cloud_chamber',['../namespaceerf__cloud__chamber.html',1,'']]],
+  ['erf_5fforest_5futils_6187',['erf_forest_utils',['../namespaceerf__forest__utils.html',1,'']]],
+  ['erf_5fgrid_5futils_6188',['erf_grid_utils',['../namespaceerf__grid__utils.html',1,'']]],
+  ['erf_5finterval_5fmeans_6189',['erf_interval_means',['../namespaceerf__interval__means.html',1,'']]],
+  ['erf_5fnoahmp_6190',['erf_noahmp',['../namespaceerf__noahmp.html',1,'']]],
+  ['erf_5fplotfile_6191',['erf_plotfile',['../namespaceerf__plotfile.html',1,'']]],
+  ['erf_5fprovenance_6192',['erf_provenance',['../namespaceerf__provenance.html',1,'']]],
+  ['erf_5fresolved_5fwall_5fflux_6193',['erf_resolved_wall_flux',['../namespaceerf__resolved__wall__flux.html',1,'']]],
+  ['erf_5fwall_5fscalar_5fbc_6194',['erf_wall_scalar_bc',['../namespaceerf__wall__scalar__bc.html',1,'']]],
+  ['erf_5fwall_5fthermodynamics_6195',['erf_wall_thermodynamics',['../namespaceerf__wall__thermodynamics.html',1,'']]],
+  ['erfbctype_6196',['ERFBCType',['../namespaceERFBCType.html',1,'']]],
+  ['interpolation_6197',['Interpolation',['../namespaceERF_1_1Interpolation.html',1,'ERF']]],
+  ['particlepos_6198',['ParticlePos',['../namespaceERF_1_1ParticlePos.html',1,'ERF']]]
 ];

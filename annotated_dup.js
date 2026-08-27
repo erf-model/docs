@@ -5,6 +5,14 @@ var annotated_dup =
       [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
       [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ]
     ] ],
+    [ "erf_grid_utils", "namespaceerf__grid__utils.html", [
+      [ "UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", "structerf__grid__utils_1_1UniformGridMetadata" ],
+      [ "InterpolationStencil", "structerf__grid__utils_1_1InterpolationStencil.html", "structerf__grid__utils_1_1InterpolationStencil" ]
+    ] ],
+    [ "erf_interval_means", "namespaceerf__interval__means.html", [
+      [ "LevelMetadata", "structerf__interval__means_1_1LevelMetadata.html", "structerf__interval__means_1_1LevelMetadata" ],
+      [ "Metadata", "structerf__interval__means_1_1Metadata.html", "structerf__interval__means_1_1Metadata" ]
+    ] ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", [
       [ "PrecipSlots", "structerf__noahmp_1_1PrecipSlots.html", "structerf__noahmp_1_1PrecipSlots" ],
       [ "ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", "structerf__noahmp_1_1ClampedPrecipCell" ],
@@ -12,9 +20,7 @@ var annotated_dup =
       [ "NoahmpBlockViews", "structerf__noahmp_1_1NoahmpBlockViews.html", "structerf__noahmp_1_1NoahmpBlockViews" ]
     ] ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", [
-      [ "Plot3DMoistureCapabilities", "structerf__plotfile_1_1Plot3DMoistureCapabilities.html", "structerf__plotfile_1_1Plot3DMoistureCapabilities" ],
-      [ "Plot3DSelectionCapabilities", "structerf__plotfile_1_1Plot3DSelectionCapabilities.html", "structerf__plotfile_1_1Plot3DSelectionCapabilities" ],
-      [ "Plot3DQRange", "structerf__plotfile_1_1Plot3DQRange.html", "structerf__plotfile_1_1Plot3DQRange" ]
+      [ "Plot3DSelectionCapabilities", "structerf__plotfile_1_1Plot3DSelectionCapabilities.html", "structerf__plotfile_1_1Plot3DSelectionCapabilities" ]
     ] ],
     [ "erf_provenance", "namespaceerf__provenance.html", [
       [ "ExecutionProvenance", "structerf__provenance_1_1ExecutionProvenance.html", "structerf__provenance_1_1ExecutionProvenance" ],
@@ -120,6 +126,7 @@ var annotated_dup =
     [ "LineSampler", "structLineSampler.html", "structLineSampler" ],
     [ "MaterialProperties", "structMaterialProperties.html", "structMaterialProperties" ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", "structMaterialPropertiesCore" ],
+    [ "MetgridBaseStateParams", "structMetgridBaseStateParams.html", "structMetgridBaseStateParams" ],
     [ "Microphysics", "classMicrophysics.html", "classMicrophysics" ],
     [ "moeng_flux", "structmoeng__flux.html", "structmoeng__flux" ],
     [ "moeng_flux_eb", "structmoeng__flux__eb.html", "structmoeng__flux__eb" ],
@@ -171,6 +178,7 @@ var annotated_dup =
     [ "SDInitialization", "classSDInitialization.html", "classSDInitialization" ],
     [ "SDInitProperties", "classSDInitProperties.html", "classSDInitProperties" ],
     [ "SDInjection", "classSDInjection.html", "classSDInjection" ],
+    [ "SDInputs", "structSDInputs.html", "structSDInputs" ],
     [ "ShocColumnData", "structShocColumnData.html", "structShocColumnData" ],
     [ "ShocColumnLayout", "structShocColumnLayout.html", "structShocColumnLayout" ],
     [ "ShocColumnWorkspace", "classShocColumnWorkspace.html", "classShocColumnWorkspace" ],

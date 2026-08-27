@@ -11,8 +11,12 @@ var classRadiationSimple =
     [ "flux", "classRadiationSimple.html#ab09366df386ba613092b2b705341e7b5", null ],
     [ "m_ba", "classRadiationSimple.html#a6eb6d08884efceceb59305639e23a95a", null ],
     [ "m_geom", "classRadiationSimple.html#a4e247e52c3a7104810cf2f06a468e453", null ],
+    [ "m_have_qc", "classRadiationSimple.html#a5f6cdcd7fbdd04632594db4ca5ee8020", null ],
+    [ "m_have_qv", "classRadiationSimple.html#acef2dc1e7afe559091a1e8283e9e60b4", null ],
     [ "m_ice", "classRadiationSimple.html#a3ca141f060fa67975f8406d63d25f997", null ],
-    [ "m_moist", "classRadiationSimple.html#a2c8503e32559287ceddbc219d9fbe8c3", null ],
+    [ "m_qc_comp", "classRadiationSimple.html#a3261ac819e5ff4eae0c7535000b1d862", null ],
+    [ "m_qi_comp", "classRadiationSimple.html#a7c40d4330571da3246455e86093d2bc1", null ],
+    [ "m_qv_comp", "classRadiationSimple.html#abdfbfec5b21bf21daf4775f20b8f760b", null ],
     [ "radlwdn", "classRadiationSimple.html#a0d82d09fdd1585bf536abbd1542d057c", null ],
     [ "radqrlw", "classRadiationSimple.html#afbcc59e419b3bc8c6ad6240e318db1bf", null ]
 ];

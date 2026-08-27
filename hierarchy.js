@@ -19,6 +19,7 @@ var hierarchy =
     [ "CENTERED6", "structCENTERED6.html", null ],
     [ "erf_noahmp::ClampedPrecipCell", "structerf__noahmp_1_1ClampedPrecipCell.html", null ],
     [ "CloudChamberBudget", "classCloudChamberBudget.html", null ],
+    [ "MoistureComponentIndices::CompList", "structMoistureComponentIndices_1_1CompList.html", null ],
     [ "erf_cloud_chamber::Config", "structerf__cloud__chamber_1_1Config.html", null ],
     [ "custom_flux", "structcustom__flux.html", null ],
     [ "DampingChoice", "structDampingChoice.html", null ],
@@ -50,6 +51,7 @@ var hierarchy =
     [ "erf_cloud_chamber::InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],
+    [ "erf_grid_utils::InterpolationStencil", "structerf__grid__utils_1_1InterpolationStencil.html", null ],
     [ "erf_noahmp::InvariantPrecipCell", "structerf__noahmp_1_1InvariantPrecipCell.html", null ],
     [ "IRadiation", "classIRadiation.html", [
       [ "Radiation", "classRadiation.html", null ],
@@ -60,10 +62,13 @@ var hierarchy =
     [ "KesslerSourceTerms", "structKesslerSourceTerms.html", null ],
     [ "LandSurface", "classLandSurface.html", null ],
     [ "LargeScaleForcingData", "structLargeScaleForcingData.html", null ],
+    [ "erf_interval_means::LevelMetadata", "structerf__interval__means_1_1LevelMetadata.html", null ],
     [ "LineSampler", "structLineSampler.html", null ],
     [ "MaterialPropertiesCore", "structMaterialPropertiesCore.html", [
       [ "MaterialProperties", "structMaterialProperties.html", null ]
     ] ],
+    [ "erf_interval_means::Metadata", "structerf__interval__means_1_1Metadata.html", null ],
+    [ "MetgridBaseStateParams", "structMetgridBaseStateParams.html", null ],
     [ "Microphysics", "classMicrophysics.html", [
       [ "EulerianMicrophysics", "classEulerianMicrophysics.html", null ]
     ] ],
@@ -117,8 +122,6 @@ var hierarchy =
     [ "PBLDerivativeDzInv_T", "structPBLDerivativeDzInv__T.html", null ],
     [ "PlaneAverage", "classPlaneAverage.html", null ],
     [ "PlaneSampler", "structPlaneSampler.html", null ],
-    [ "erf_plotfile::Plot3DMoistureCapabilities", "structerf__plotfile_1_1Plot3DMoistureCapabilities.html", null ],
-    [ "erf_plotfile::Plot3DQRange", "structerf__plotfile_1_1Plot3DQRange.html", null ],
     [ "erf_plotfile::Plot3DSelectionCapabilities", "structerf__plotfile_1_1Plot3DSelectionCapabilities.html", null ],
     [ "plotfile2d::Plotfile2DOutputDescriptor", "structplotfile2d_1_1Plotfile2DOutputDescriptor.html", null ],
     [ "plotfile2d::PlotVariableSelection", "structplotfile2d_1_1PlotVariableSelection.html", null ],
@@ -156,6 +159,7 @@ var hierarchy =
       [ "SDInitialization", "classSDInitialization.html", null ],
       [ "SDInjection", "classSDInjection.html", null ]
     ] ],
+    [ "SDInputs", "structSDInputs.html", null ],
     [ "plotfile2d::SelectedSurfacePrecipAccumulationComponents", "structplotfile2d_1_1SelectedSurfacePrecipAccumulationComponents.html", null ],
     [ "plotfile2d::SelectedWaterPathComponents", "structplotfile2d_1_1SelectedWaterPathComponents.html", null ],
     [ "ShocColumnData", "structShocColumnData.html", null ],
@@ -199,10 +203,12 @@ var hierarchy =
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", null ],
     [ "TurbChoice", "structTurbChoice.html", null ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", null ],
+    [ "erf_grid_utils::UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", null ],
     [ "UPWIND3", "structUPWIND3.html", null ],
     [ "UPWIND3SL", "structUPWIND3SL.html", null ],
     [ "UPWIND5", "structUPWIND5.html", null ],
     [ "UPWINDALL", "structUPWINDALL.html", null ],
+    [ "MoistureComponentIndices::VarAvailability", "structMoistureComponentIndices_1_1VarAvailability.html", null ],
     [ "module_libmassv::vrec", "interfacemodule__libmassv_1_1vrec.html", null ],
     [ "module_libmassv::vsqrt", "interfacemodule__libmassv_1_1vsqrt.html", null ],
     [ "erf_wall_scalar_bc::WallFaceParseResult", "structerf__wall__scalar__bc_1_1WallFaceParseResult.html", null ],

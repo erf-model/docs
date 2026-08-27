@@ -877,7 +877,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// There is a default value of 1e-6 but the user can override the value here,</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">//   and in addition can add perturbational values.  and in addition can add perturbational values.</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.query(<span class="stringliteral">&quot;tke_min&quot;</span>,<a class="code" href="structTurbChoice.html#acaa8bbf9eacec57f45c68b404f9888d4">tke_min</a>);</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;tke_min&quot;</span>,<a class="code" href="structTurbChoice.html#acaa8bbf9eacec57f45c68b404f9888d4">tke_min</a>);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// LES constants...</span></div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="ERF__TurbStruct_8H.html#aa04592b5e585ba63b39acf1e065191e3">query_one_or_per_level</a>(<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>, <span class="stringliteral">&quot;Cs&quot;</span>, <a class="code" href="structTurbChoice.html#ac165dd9c01e74f82c11a574518014e3d">Cs</a>, lev, max_level);</div>
@@ -1127,14 +1127,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="structTurbChoice.html#ae8b6f0251bcc3adc880a2ebd553a8905">pbl_type</a> == PBLType::EAMXX_SHOC;</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, and <a class="el" href="structTurbChoice.html#a6666992840e2253334a557f9e4e10d8e">uses_shoc_family()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, and <a class="el" href="structTurbChoice.html#a6666992840e2253334a557f9e4e10d8e">uses_shoc_family()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbChoice_a5531ae916857b889a20a6e4a6551ec30_icgraph.png" border="0" usemap="#astructTurbChoice_a5531ae916857b889a20a6e4a6551ec30_icgraph" alt=""/></div>
 <map name="astructTurbChoice_a5531ae916857b889a20a6e4a6551ec30_icgraph" id="astructTurbChoice_a5531ae916857b889a20a6e4a6551ec30_icgraph">
 <area shape="rect" title="Query whether this level uses the EAMxx SHOC PBL scheme." alt="" coords="721,81,941,108"/>
-<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171" title=" " alt="" coords="520,5,659,32"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a" title=" " alt="" coords="520,5,659,32"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47" title=" " alt="" coords="523,56,655,83"/>
 <area shape="rect" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422" title="Read turbulence options for one AMR level from the input parameter database." alt="" coords="13,157,192,184"/>
 <area shape="rect" href="structTurbChoice.html#a6666992840e2253334a557f9e4e10d8e" title="Query whether this level uses any SHOC&#45;family PBL scheme." alt="" coords="505,209,673,250"/>
@@ -1177,14 +1177,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="structTurbChoice.html#ae8b6f0251bcc3adc880a2ebd553a8905">pbl_type</a> == PBLType::NATIVE_SHOC;</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;  }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a6666992840e2253334a557f9e4e10d8e">uses_shoc_family()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a6666992840e2253334a557f9e4e10d8e">uses_shoc_family()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structTurbChoice_a7588911507d5b592f8f3d24e048130c6_icgraph.png" border="0" usemap="#astructTurbChoice_a7588911507d5b592f8f3d24e048130c6_icgraph" alt=""/></div>
 <map name="astructTurbChoice_a7588911507d5b592f8f3d24e048130c6_icgraph" id="astructTurbChoice_a7588911507d5b592f8f3d24e048130c6_icgraph">
 <area shape="rect" title="Query whether this level uses the native SHOC PBL scheme." alt="" coords="721,56,937,83"/>
-<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171" title=" " alt="" coords="520,5,659,32"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a" title=" " alt="" coords="520,5,659,32"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47" title=" " alt="" coords="523,56,655,83"/>
 <area shape="rect" href="structTurbChoice.html#a6666992840e2253334a557f9e4e10d8e" title="Query whether this level uses any SHOC&#45;family PBL scheme." alt="" coords="505,107,673,149"/>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444" title=" " alt="" coords="253,35,453,61"/>
@@ -1271,7 +1271,7 @@ Here is the caller graph for this function:</div>
 
 <p>Whether TKE/QKE is advected. </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1663,7 +1663,7 @@ Here is the caller graph for this function:</div>
 
 <p>Selected LES closure. </p>
 
-<p class="reference">Referenced by <a class="el" href="structTurbChoice.html#a2ce6b65d4241baadff94fe49eb8f8771">check_params()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="structTurbChoice.html#a2ce6b65d4241baadff94fe49eb8f8771">check_params()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a313ec663ece7b514c37a0c451f0f0a36">ComputeTurbulentViscosityLES()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -1933,7 +1933,7 @@ Here is the caller graph for this function:</div>
 
 <p>Selected PBL closure. </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444">ComputeTurbulentViscosity()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, <a class="el" href="structTurbChoice.html#afda6be5303ff955c7cc5415d5deb8f18">pbl_requires_surface_layer()</a>, <a class="el" href="structTurbChoice.html#a5531ae916857b889a20a6e4a6551ec30">uses_eamxx_shoc()</a>, and <a class="el" href="structTurbChoice.html#a7588911507d5b592f8f3d24e048130c6">uses_native_shoc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444">ComputeTurbulentViscosity()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, <a class="el" href="structTurbChoice.html#afda6be5303ff955c7cc5415d5deb8f18">pbl_requires_surface_layer()</a>, <a class="el" href="structTurbChoice.html#a5531ae916857b889a20a6e4a6551ec30">uses_eamxx_shoc()</a>, and <a class="el" href="structTurbChoice.html#a7588911507d5b592f8f3d24e048130c6">uses_native_shoc()</a>.</p>
 
 </div>
 </div>
@@ -2107,7 +2107,7 @@ Here is the caller graph for this function:</div>
 
 <p>Selected RANS closure. </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a071df6c8f36e2dd4b911a10f28fd1917">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#aa2818487be1f2cb4b95344c1aa571444">ComputeTurbulentViscosity()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a071df6c8f36e2dd4b911a10f28fd1917">ComputeTurbulentViscosityRANS()</a>, <a class="el" href="structTurbChoice.html#ad2a82c43ca82f364c70ae5e61f0cd84f">display()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2325,7 +2325,7 @@ Here is the caller graph for this function:</div>
 
 <p>Whether any turbulence model is active. </p>
 
-<p class="reference">Referenced by <a class="el" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc">ERF::advance_dycore()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a7c0f3cb063d75f59254255ae2798badf">ImplicitDiffForMomLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#afb536b8b0ce92d6b0fd234c3d77c714e">ImplicitDiffForMomLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a6632715820d3fa502ab90332f34e02f1">ImplicitDiffForMomLU_T()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classERF.html#aea7b7f5b35512bd95a940f7d95d01ddc">ERF::advance_dycore()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="ERF__ImplicitDiff__N_8cpp.html#a7c0f3cb063d75f59254255ae2798badf">ImplicitDiffForMomLU_N()</a>, <a class="el" href="ERF__ImplicitDiff__S_8cpp.html#afb536b8b0ce92d6b0fd234c3d77c714e">ImplicitDiffForMomLU_S()</a>, <a class="el" href="ERF__ImplicitDiff__T_8cpp.html#a6632715820d3fa502ab90332f34e02f1">ImplicitDiffForMomLU_T()</a>, and <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>.</p>
 
 </div>
 </div>
@@ -2381,7 +2381,7 @@ Here is the caller graph for this function:</div>
 
 <p>Whether any TKE or QKE closure is active. </p>
 
-<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#a24301439a67440c5e15225fb6fd8d171">erf_slow_rhs_post()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#ac9188457bc573e3d5825d81665f5928a">make_sources()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="structTurbChoice.html#a89c67d846d361c898cf2ebda8620e422">init_params()</a>, and <a class="el" href="ERF__MakeSources_8cpp.html#ac9188457bc573e3d5825d81665f5928a">make_sources()</a>.</p>
 
 </div>
 </div>

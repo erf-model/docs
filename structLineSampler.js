@@ -1,7 +1,7 @@
 var structLineSampler =
 [
     [ "LineSampler", "structLineSampler.html#ac889ff22f183b545b4360af78068b503", null ],
-    [ "get_sample_data", "structLineSampler.html#ad4c76978d453a8610f961a646e042dea", null ],
+    [ "get_sample_data", "structLineSampler.html#a36ba5a9059641de5bd8abf2976082c05", null ],
     [ "getIndexBox", "structLineSampler.html#adcef4c97b534be5ef445ab62b1b12170", null ],
     [ "write_coords", "structLineSampler.html#a37354e74a2e1bf67b38a236a064dbbec", null ],
     [ "write_line_ascii", "structLineSampler.html#a8161657be39cddd5f8564fbafe45f8e8", null ],
