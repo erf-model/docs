@@ -1,5 +1,10 @@
 var NAVTREEINDEX39 =
 {
+"structnear__surface__diagnostics_1_1Sources.html#a8090c7ab2667e6766528fb1a82621809":[2,0,10,4,0],
+"structnear__surface__diagnostics_1_1Sources.html#a9a1ead6cef23789575ba9ee3220e3b46":[2,0,10,4,16],
+"structnear__surface__diagnostics_1_1Sources.html#aa5148be7dc689ad50bf9da115982132a":[2,0,10,4,11],
+"structnear__surface__diagnostics_1_1Sources.html#abeda864e124b99af4f900bfc0e5f012e":[2,0,10,4,6],
+"structnear__surface__diagnostics_1_1Sources.html#acb47f839b39d91683041c9852bed84f1":[2,0,10,4,8],
 "structnear__surface__diagnostics_1_1Sources.html#acca2e9723abdcbfd5178cd62aa6250e4":[2,0,10,4,1],
 "structnear__surface__diagnostics_1_1Sources.html#ae154e64e0eeb5b62e505a102d2891371":[2,0,10,4,15],
 "structnear__surface__diagnostics_1_1Sources.html#af1c517a45dfc5d673618d6f4b46bae23":[2,0,10,4,5],
