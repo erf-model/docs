@@ -11,6 +11,7 @@ var hierarchy =
       [ "ERF", "classERF.html", null ]
     ] ],
     [ "erf_provenance::ArtifactProvenance", "structerf__provenance_1_1ArtifactProvenance.html", null ],
+    [ "BaseStateParams", "structBaseStateParams.html", null ],
     [ "SHOCInterface::Buffer", "structSHOCInterface_1_1Buffer.html", null ],
     [ "bulk_coeff_flux", "structbulk__coeff__flux.html", null ],
     [ "noahmp_result_policy::CellPolicy", "structnoahmp__result__policy_1_1CellPolicy.html", null ],
@@ -68,7 +69,6 @@ var hierarchy =
       [ "MaterialProperties", "structMaterialProperties.html", null ]
     ] ],
     [ "erf_interval_means::Metadata", "structerf__interval__means_1_1Metadata.html", null ],
-    [ "MetgridBaseStateParams", "structMetgridBaseStateParams.html", null ],
     [ "Microphysics", "classMicrophysics.html", [
       [ "EulerianMicrophysics", "classEulerianMicrophysics.html", null ]
     ] ],

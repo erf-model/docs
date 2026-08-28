@@ -140,6 +140,8 @@ var NAVTREEINDEX0 =
 "ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html":[3,0,1,18,4],
 "ERF__ApplySpongeZoneBCs__ReadFromFile_8cpp.html#a9bd7c438851be0734e672135ae63d11e":[3,0,1,18,4,0],
 "ERF__AverageDown_8cpp.html":[3,0,1,21,0],
+"ERF__BaseStateParams_8H.html":[3,0,1,3,1],
+"ERF__BaseStateParams_8H_source.html":[3,0,1,3,1],
 "ERF__BoundaryConditionsBaseState_8cpp.html":[3,0,1,1,0],
 "ERF__BoundaryConditionsBndryReg_8cpp.html":[3,0,1,1,1],
 "ERF__BoundaryConditionsCons_8cpp.html":[3,0,1,1,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "ERF__Constants_8H.html#a0910a9292394778082e25954da60fe05":[3,0,1,25,0],
 "ERF__Constants_8H.html#a0ab59ff21ef0b178fde0843394f5674a":[3,0,1,25,65],
 "ERF__Constants_8H.html#a0aec04a101a1a92c2f32ff394b510bfd":[3,0,1,25,83],
-"ERF__Constants_8H.html#a0e5683feac33352111ce4445dbedbf45":[3,0,1,25,48],
-"ERF__Constants_8H.html#a0f51e1ef58cb9a3add46666cc98e6093":[3,0,1,25,39],
-"ERF__Constants_8H.html#a0f65ea12b4405c50f1d777f7ca82dcfd":[3,0,1,25,44]
+"ERF__Constants_8H.html#a0e5683feac33352111ce4445dbedbf45":[3,0,1,25,48]
 };

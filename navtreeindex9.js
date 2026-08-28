@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"ERF__PhysBCFunct_8H_source.html":[3,0,1,1,18],
+"ERF__PhysBCFunct_8cpp.html":[3,0,1,1,17],
 "ERF__PlaneAverage_8H.html":[3,0,1,21,27],
 "ERF__PlaneAverage_8H_source.html":[3,0,1,21,27],
 "ERF__Plotfile2DCatalog_8H.html":[3,0,1,8,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "ERF__Plotfile2DSampledLevel_8cpp.html#afd832a5dc34b5f5d00610d7e87bb57bd":[3,0,1,8,23,11],
 "ERF__Plotfile2DUtils_8H.html":[3,0,1,8,26],
 "ERF__Plotfile2DUtils_8H.html#a36271f5e8ea03252877e78843d8eba25":[3,0,1,8,26,3],
-"ERF__Plotfile2DUtils_8H.html#a4c4c24aee15a8bf42ca679ba0c7a45f2":[3,0,1,8,26,2],
-"ERF__Plotfile2DUtils_8H.html#a50f6133c2d0295dfc45ece3acd2273d8":[3,0,1,8,26,5],
-"ERF__Plotfile2DUtils_8H.html#aa9b36025404bf1dd71c17f3e0bc4d278":[3,0,1,8,26,4]
+"ERF__Plotfile2DUtils_8H.html#a4c4c24aee15a8bf42ca679ba0c7a45f2":[3,0,1,8,26,2]
 };

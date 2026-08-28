@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a40e712f30d56083318ab20a2402921d2":[3,0,1,30,37,0],
+"ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a5e543256c480ac577d30f76f9120eb74":[3,0,1,30,37,10],
 "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7a78e4cea7eaa21ad14a6fa92fbdc549":[3,0,1,30,37,4],
 "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9a7cef8a734855777c2a9d0caf42666e69":[3,0,1,30,37,5],
 "ERF__IndexDefines_8H.html#adf340bf1893bad34b2bf452d987d86c9aa9725058404b592f304cb28626db99ab":[3,0,1,30,37,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "ERF__InitCustomPertVels__RICO_8H.html#a9551f099ea0453a3f12e71c54e74a4d4":[3,0,1,16,37,32],
 "ERF__InitCustomPertVels__RICO_8H.html#a9b20f6fd6c0d91d1cbed0b9ecd17adbb":[3,0,1,16,37,33],
 "ERF__InitCustomPertVels__RICO_8H.html#a9d009471e1150853fe277cbb7bec9ede":[3,0,1,16,37,19],
-"ERF__InitCustomPertVels__RICO_8H.html#aa05b7d1441862703a8be2d911afdb9c5":[3,0,1,16,37,21],
-"ERF__InitCustomPertVels__RICO_8H.html#aab0721caeef18467e0169b40bc1f8dd1":[3,0,1,16,37,15],
-"ERF__InitCustomPertVels__RICO_8H.html#ab1d1c6c4acc974f1e1fd35a6a27223fc":[3,0,1,16,37,9]
+"ERF__InitCustomPertVels__RICO_8H.html#aa05b7d1441862703a8be2d911afdb9c5":[3,0,1,16,37,21]
 };
