@@ -16550,7 +16550,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <span class="keywordflow">if</span> (rel_diff &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(1.e-8)) {</div>
 <div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;max of zphys_nd &quot;</span> &lt;&lt; zmax &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;max of zlevels  &quot;</span> &lt;&lt; <a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[0][<a class="code" href="classERF.html#ace4f0c79f84075dd7a43bd2b0ede1a9b">zlevels_stag</a>[0].size()-1] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                amrex::Abort(<span class="stringliteral">&quot;Terrain is taller than domain top!&quot;</span>);</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                amrex::Warning(<span class="stringliteral">&quot;Terrain is taller than domain top!&quot;</span>);</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;            }</div>
 <div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;<span class="preprocessor">#if 0</span></div>
 <div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            <span class="comment">// This remains commented out until we verify that the stretched and variable dz pathways</span></div>
