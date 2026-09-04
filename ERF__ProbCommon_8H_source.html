@@ -806,7 +806,7 @@ $(document).ready(function(){initNavTree('ERF__ProbCommon_8H_source.html',''); i
 <div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> terrain_dy = m_yterrain[1] - m_yterrain[0];</div>
 <div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160; </div>
 <div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="keywordflow">if</span> (!mass_point_terrain &amp;&amp; !zbx.isEmpty()) {</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            amrex::Box target_box = zbx &amp; amrex::convert(geom.Domain(), amrex::IntVect(1, 1, 0));</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;            amrex::Box target_box = zbx &amp; amrex::convert(geom.Domain(), zbx.ixType());</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;            <span class="keywordflow">if</span> (!target_box.isEmpty()) {</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;                target_box.setSmall(2, zbx.smallEnd(2));</div>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;                target_box.setBig(2, zbx.smallEnd(2));</div>
