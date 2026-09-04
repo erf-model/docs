@@ -156,12 +156,12 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    {</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        amrex::ParmParse <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>(<span class="stringliteral">&quot;erf&quot;</span>);</div>
 <div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
 <div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        <span class="comment">// Count number of lo and hi points define the plane</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <span class="keywordtype">int</span> n_plane_lo  = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_lo&quot;</span>) / AMREX_SPACEDIM;</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        <span class="keywordtype">int</span> n_plane_hi  = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_hi&quot;</span>) / AMREX_SPACEDIM;</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="keywordtype">int</span> n_plane_dir = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_dir&quot;</span>);</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;        <span class="keywordtype">int</span> n_plane_lo  = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_lo&quot;</span>) / AMREX_SPACEDIM;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;        <span class="keywordtype">int</span> n_plane_hi  = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_hi&quot;</span>) / AMREX_SPACEDIM;</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <span class="keywordtype">int</span> n_plane_dir = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_dir&quot;</span>);</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( (n_plane_lo==n_plane_hi ) &amp;&amp;</div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                             (n_plane_lo==n_plane_dir) );</div>
 <div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
@@ -170,7 +170,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;            <span class="comment">// Parse lo</span></div>
 <div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;            amrex::Vector&lt;amrex::Real&gt; r_lo; r_lo.resize(n_plane_lo*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;            amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt;&gt; rv_lo;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_lo&quot;</span>,r_lo,0,n_plane_lo*AMREX_SPACEDIM);</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_lo&quot;</span>,r_lo,0,n_plane_lo*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(0); i &lt; n_plane_lo; i++) {</div>
 <div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                amrex::Vector&lt;amrex::Real&gt; rv = {r_lo[AMREX_SPACEDIM*i+0],</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                                                 r_lo[AMREX_SPACEDIM*i+1],</div>
@@ -181,7 +181,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;            <span class="comment">// Parse hi</span></div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;            amrex::Vector&lt;amrex::Real&gt; r_hi; r_hi.resize(n_plane_hi*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;            amrex::Vector&lt;amrex::Vector&lt;amrex::Real&gt;&gt; rv_hi;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_hi&quot;</span>,r_hi,0,n_plane_hi*AMREX_SPACEDIM);</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_hi&quot;</span>,r_hi,0,n_plane_hi*AMREX_SPACEDIM);</div>
 <div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i(0); i &lt; n_plane_hi; i++) {</div>
 <div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;                amrex::Vector&lt;amrex::Real&gt; rv = {r_hi[AMREX_SPACEDIM*i+0],</div>
 <div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;                                                 r_hi[AMREX_SPACEDIM*i+1],</div>
@@ -198,15 +198,15 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160; </div>
 <div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="comment">// Parse directionality</span></div>
 <div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            <a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>.resize(n_plane_dir);</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_dir&quot;</span>,<a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>,0,n_plane_dir);</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_dir&quot;</span>,<a class="code" href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">m_dir</a>,0,n_plane_dir);</div>
 <div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
 <div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;            <span class="comment">// Parse names</span></div>
 <div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;            std::string name_base = <span class="stringliteral">&quot;plt_plane_&quot;</span>;</div>
 <div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;            <a class="code" href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">m_name</a>.resize(n_plane_lo);</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            <span class="keywordtype">int</span> n_names = <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_name&quot;</span>);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;            <span class="keywordtype">int</span> n_names = <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;sample_plane_name&quot;</span>);</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            <span class="keywordflow">if</span> (n_names &gt; 0) {</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;                <a class="code" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a>( n_names==n_plane_lo );</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_name&quot;</span>,<a class="code" href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">m_name</a>,0,n_names);</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;                <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;sample_plane_name&quot;</span>,<a class="code" href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">m_name</a>,0,n_names);</div>
 <div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> iplane(0); iplane&lt;n_plane_lo; ++iplane) {</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                    <a class="code" href="structPlaneSampler.html#a609fd49ffe44b73cc1f8aa13eb48ccdc">m_name</a>[iplane] = amrex::Concatenate(name_base, iplane , 5);</div>
@@ -214,16 +214,16 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;            }</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
 <div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            <span class="comment">// Optional cap on the finest level written (-1 =&gt; all intersecting levels)</span></div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;plane_sampling_max_level&quot;</span>, <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a>);</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;            <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryAdd(<span class="stringliteral">&quot;plane_sampling_max_level&quot;</span>, <a class="code" href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">m_max_level</a>);</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;            <span class="comment">// Allocate per-plane vectors of per-level MF pointers</span></div>
 <div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            <a class="code" href="structPlaneSampler.html#a817771a435a9c0f798dd4455aa83ef5c">m_ps_mf</a>.resize(n_plane_lo);</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            <span class="comment">// Get requested vars</span></div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;plane_sampling_vars&quot;</span>) &gt; 0) {</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.countval(<span class="stringliteral">&quot;plane_sampling_vars&quot;</span>) &gt; 0) {</div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>.clear();</div>
 <div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                amrex::Vector&lt;std::string&gt; requested_vars;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;plane_sampling_vars&quot;</span>,requested_vars);</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                <a class="code" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a>.queryarr(<span class="stringliteral">&quot;plane_sampling_vars&quot;</span>,requested_vars);</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                amrex::Print() &lt;&lt; <span class="stringliteral">&quot;Selected plane sampling vars :&quot;</span>;</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a>(requested_vars, <span class="stringliteral">&quot;density&quot;</span>)) {</div>
 <div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                    <a class="code" href="structPlaneSampler.html#aba5c1bc221aa7f01fa2c38c659aba9f7">m_varnames</a>.push_back(<span class="stringliteral">&quot;density&quot;</span>);</div>
@@ -266,7 +266,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;        }</div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    }</div>
 <div class="ttc" id="aERF__Container_8H_html_a1f8554e7b211b0acfc202e8a600e7d67"><div class="ttname"><a href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67">containerHasElement</a></div><div class="ttdeci">bool containerHasElement(const V &amp;iterable, const T &amp;query)</div><div class="ttdef"><b>Definition:</b> ERF_Container.H:5</div></div>
-<div class="ttc" id="aERF__InitCustomPert__ABL_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
+<div class="ttc" id="aERF__InitCustomPert__Bomex_8H_html_a560a8df64f1b30c30d0d100ee051a1fb"><div class="ttname"><a href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb">pp</a></div><div class="ttdeci">ParmParse pp(&quot;prob&quot;)</div></div>
 <div class="ttc" id="aERF__InitCustomPert__Bubble_8H_html_a936d68f0469ff11bf837277cb2b2c768"><div class="ttname"><a href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768">AMREX_ALWAYS_ASSERT</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT(bx.length()[2]==khi+1)</div></div>
 <div class="ttc" id="astructPlaneSampler_html_a166b20f0a2cc42f436e82f327b974cb6"><div class="ttname"><a href="structPlaneSampler.html#a166b20f0a2cc42f436e82f327b974cb6">PlaneSampler::m_dir</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_dir</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:1108</div></div>
 <div class="ttc" id="astructPlaneSampler_html_a49f23621afee936443caa77e2cd0d477"><div class="ttname"><a href="structPlaneSampler.html#a49f23621afee936443caa77e2cd0d477">PlaneSampler::m_max_level</a></div><div class="ttdeci">int m_max_level</div><div class="ttdef"><b>Definition:</b> ERF_SampleData.H:1107</div></div>
@@ -282,7 +282,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,56,216,83"/>
 <area shape="rect" href="ERF__InitCustomPert__Bubble_8H.html#a936d68f0469ff11bf837277cb2b2c768" title=" " alt="" coords="264,5,447,32"/>
 <area shape="rect" href="ERF__Container_8H.html#a1f8554e7b211b0acfc202e8a600e7d67" title=" " alt="" coords="274,56,437,83"/>
-<area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="336,107,375,133"/>
+<area shape="rect" href="ERF__InitCustomPert__Bomex_8H.html#a560a8df64f1b30c30d0d100ee051a1fb" title=" " alt="" coords="336,107,375,133"/>
 <area shape="rect" href="ERF__InitCustomPert__ABL_8H.html#a66ffc27047f5d767b19fe4bb0a216192" title=" " alt="" coords="495,56,553,83"/>
 </map>
 </div>
