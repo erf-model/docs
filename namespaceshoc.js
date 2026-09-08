@@ -1,6 +1,8 @@
 var namespaceshoc =
 [
     [ "constants", "namespaceshoc_1_1constants.html", [
+      [ "active_tke_rel_margin", "namespaceshoc_1_1constants.html#a71403ba4360706ac5c4a08e71fa5c0cb", null ],
+      [ "active_tke_threshold", "namespaceshoc_1_1constants.html#a80a94b75e90f4b0c2b05f0cb4f7e2414", null ],
       [ "freezing_temp", "namespaceshoc_1_1constants.html#a4642535dbd44ac0d337fe33b641d17b2", null ],
       [ "latent_ice", "namespaceshoc_1_1constants.html#a4ba132855a9c0907d93e45d98bf3710d", null ],
       [ "min_temp", "namespaceshoc_1_1constants.html#a644eab268aa0c13ef2e8dc50045a53f2", null ],
