@@ -96,7 +96,7 @@ var searchData=
   ['init_5fgeo_5fwind_5fprofile_2254',['init_geo_wind_profile',['../classERF.html#aab564dd3009ef83466b50db6d997b563',1,'ERF']]],
   ['init_5fimmersed_5fforcing_2255',['init_immersed_forcing',['../classERF.html#ad05e23fd33316aa1a5cb081fbe714bc1',1,'ERF']]],
   ['init_5fisentropic_5fhse_5fconstant_5fdz_2256',['init_isentropic_hse_constant_dz',['../namespaceHSEutils.html#a2c3040a913cdfd72304e07ef7546e93a',1,'HSEutils']]],
-  ['init_5fisentropic_5fhse_5fno_5fterrain_2257',['init_isentropic_hse_no_terrain',['../namespaceHSEutils.html#a3bec5f0a8d87d7551ed8ff9b25e19273',1,'HSEutils']]],
+  ['init_5fisentropic_5fhse_5fno_5fterrain_2257',['init_isentropic_hse_no_terrain',['../namespaceHSEutils.html#a4b1ea7e19255c9f21bc227ed7cc0b474',1,'HSEutils']]],
   ['init_5fisentropic_5fhse_5fstretched_5fdz_2258',['init_isentropic_hse_stretched_dz',['../namespaceHSEutils.html#a14e725ac72601dc0de8c48ad36fdf809',1,'HSEutils']]],
   ['init_5fisentropic_5fhse_5fterrain_2259',['init_isentropic_hse_terrain',['../namespaceHSEutils.html#ab38b424f8934564898ddc0e0ee852b07',1,'HSEutils']]],
   ['init_5fmodule_5fmodel_5fconstants_2260',['init_module_model_constants',['../namespacemodule__model__constants.html#a3146b6094b607dc9ff5c82980ea84ac4',1,'module_model_constants']]],

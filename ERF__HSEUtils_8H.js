@@ -10,7 +10,7 @@ var ERF__HSEUtils_8H =
     [ "compute_temperature", "ERF__HSEUtils_8H.html#a93a5cf59ff6896ff699626bd7b605bd0", null ],
     [ "compute_theta", "ERF__HSEUtils_8H.html#af0aef5232439f743e9d149d64ba1018b", null ],
     [ "init_isentropic_hse_constant_dz", "ERF__HSEUtils_8H.html#a2c3040a913cdfd72304e07ef7546e93a", null ],
-    [ "init_isentropic_hse_no_terrain", "ERF__HSEUtils_8H.html#a3bec5f0a8d87d7551ed8ff9b25e19273", null ],
+    [ "init_isentropic_hse_no_terrain", "ERF__HSEUtils_8H.html#a4b1ea7e19255c9f21bc227ed7cc0b474", null ],
     [ "init_isentropic_hse_stretched_dz", "ERF__HSEUtils_8H.html#a14e725ac72601dc0de8c48ad36fdf809", null ],
     [ "init_isentropic_hse_terrain", "ERF__HSEUtils_8H.html#ab38b424f8934564898ddc0e0ee852b07", null ],
     [ "Newton_Raphson_hse", "ERF__HSEUtils_8H.html#af006ebbfafe3deddc3bf90a75f129b00", null ],
