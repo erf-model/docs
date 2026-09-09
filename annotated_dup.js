@@ -98,7 +98,6 @@ var annotated_dup =
     [ "DirectionSelector< 0 >", "structDirectionSelector_3_010_01_4.html", "structDirectionSelector_3_010_01_4" ],
     [ "DirectionSelector< 1 >", "structDirectionSelector_3_011_01_4.html", "structDirectionSelector_3_011_01_4" ],
     [ "DirectionSelector< 2 >", "structDirectionSelector_3_012_01_4.html", "structDirectionSelector_3_012_01_4" ],
-    [ "donelan_flux", "structdonelan__flux.html", "structdonelan__flux" ],
     [ "eb_", "classeb__.html", "classeb__" ],
     [ "eb_aux_", "classeb__aux__.html", "classeb__aux__" ],
     [ "eb_cut_cell_", "classeb__cut__cell__.html", "classeb__cut__cell__" ],

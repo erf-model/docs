@@ -1,5 +1,8 @@
 var NAVTREEINDEX28 =
 {
+"globals_func_h.html":[3,1,1,7],
+"globals_func_i.html":[3,1,1,8],
+"globals_func_k.html":[3,1,1,9],
 "globals_func_l.html":[3,1,1,10],
 "globals_func_m.html":[3,1,1,11],
 "globals_func_n.html":[3,1,1,12],
@@ -61,8 +64,8 @@ var NAVTREEINDEX28 =
 "globals_y.html":[3,1,0,24],
 "globals_z.html":[3,1,0,25],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
@@ -71,13 +74,13 @@ var NAVTREEINDEX28 =
 "interfacemodule__libmassv_1_1vrec.html":[2,0,8,0],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,8,0,3],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,8,0,2],
-"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,8,0,0],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,8,0,1],
+"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,8,0,0],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,8,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,8,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,8,1,0],
-"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,8,1,2],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,8,1,3],
+"interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,8,1,2],
 "main_8cpp.html":[3,0,1,35],
 "main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[3,0,1,35,1],
 "main_8cpp.html#a183e783116d02836167ccbed3b28c1d3":[3,0,1,35,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX28 =
 "namespaceerf__hash__rng.html#a31caeafc4db5b971c471833037829e04":[1,0,10,1],
 "namespaceerf__hash__rng.html#a3c58b34f95b150cc36eabdca82d7b4a8":[1,0,10,3],
 "namespaceerf__hash__rng.html#ae89d02b60008a0c8afdd38b3f1728da1":[1,0,10,2],
-"namespaceerf__interval__means.html":[1,0,11],
-"namespaceerf__interval__means.html#a0644c854d9193d3d9188688d617bd56a":[1,0,11,5],
-"namespaceerf__interval__means.html#a251a854f83d6e1f54fdb17a522270ab7":[1,0,11,6],
-"namespaceerf__interval__means.html#a4f09d1ecb9002eb43e2cd12d260387ad":[1,0,11,4]
+"namespaceerf__interval__means.html":[1,0,11]
 };

@@ -2,7 +2,6 @@ var classSurfaceLayer =
 [
     [ "FluxCalcType", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7", [
       [ "MOENG", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a0525d4394471c332f3c0a497584923d5", null ],
-      [ "DONELAN", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7afbf950ece84b8c4c7ebcf6492db726f7", null ],
       [ "CUSTOM", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a72baef04098f035e8a320b03ad197818", null ],
       [ "BULK_COEFF", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a5c7f33152e3d00ddc3dad805e55f3f71", null ],
       [ "ROTATE", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a9faf4e337734315fde20af1922cc6f9d", null ],
@@ -91,7 +90,6 @@ var classSurfaceLayer =
     [ "update_surf_temp", "classSurfaceLayer.html#ab9ef6dd5e5c64572853872c4e0b01e82", null ],
     [ "update_tsk_ptr", "classSurfaceLayer.html#a7c3ef115e1887034248880e359a232ed", null ],
     [ "cnk_a", "classSurfaceLayer.html#a2d5f39701610bed292158c9ccff486b5", null ],
-    [ "cnk_visc", "classSurfaceLayer.html#ac426bda8ee3b5511eb981073e623ed52", null ],
     [ "custom_qstar", "classSurfaceLayer.html#a7c0d9de6442add19ce264d9cb222ccfc", null ],
     [ "custom_rhosurf", "classSurfaceLayer.html#a7f7445d3fa3b3015b3db61ec78ce9c31", null ],
     [ "custom_tstar", "classSurfaceLayer.html#abdfd114c2c1f4d35dd479b3f99c3b6c9", null ],
@@ -149,6 +147,7 @@ var classSurfaceLayer =
     [ "sfc_tflux", "classSurfaceLayer.html#a0ad84c481b38f2ae6e50957022125c77", null ],
     [ "sfc_time_ind", "classSurfaceLayer.html#ab07695cb55b35b8faed25214ce6b2637", null ],
     [ "sfc_ustar", "classSurfaceLayer.html#aacfe42602d29ae90ae4725254d9c0b3b", null ],
+    [ "smooth_flow_visc", "classSurfaceLayer.html#a541a2e4eefff3bd7c15fea9a7a4334e3", null ],
     [ "specified_rho_surf", "classSurfaceLayer.html#a0988970eee96a31040dc991bdd7fd9e4", null ],
     [ "surf_heating_rate", "classSurfaceLayer.html#ac66a562329299d51f4e7f7daff685dfc", null ],
     [ "surf_moist", "classSurfaceLayer.html#a66d011088a1a5f798a84b3d8da262e39", null ],

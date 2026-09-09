@@ -1,5 +1,9 @@
 var NAVTREEINDEX13 =
 {
+"ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H.html#adb81c086391f4d7a7b68a470d79437ad":[3,0,1,16,58,2],
+"ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H.html#af5129c66ca111d5e3b26c459f5e0e88e":[3,0,1,16,58,8],
+"ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H.html#af86870893f5668cb38278635773abd97":[3,0,1,16,58,5],
+"ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H.html#afccba40220d1f9ee1f9a38945563ecf3":[3,0,1,16,58,3],
 "ERF__UpdateRhoQtSources__SDMCongestus3DCold_8H_source.html":[3,0,1,16,58],
 "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html":[3,0,1,16,57],
 "ERF__UpdateRhoQtSources__SDMCongestus3D_8H.html#a047a46a0b218ef341a97b9fb5a74c08f":[3,0,1,16,57,8],
@@ -245,9 +249,5 @@ var NAVTREEINDEX13 =
 "ERF__WriteERFBdy_8cpp.html#adfb3afe2843b15ec78776cd84495424f":[3,0,1,8,48,1],
 "ERF__WriteJobInfo_8cpp.html":[3,0,1,8,50],
 "ERF__WriteScalarProfiles_8cpp.html":[3,0,1,8,51],
-"ERF__WriteSubvolume_8cpp.html":[3,0,1,8,52],
-"ERF__Wstar_8H.html":[3,0,1,21,47],
-"ERF__Wstar_8H.html#ad7f15bc4a50b75f60a55909ec006c547":[3,0,1,21,47,1],
-"ERF__Wstar_8H.html#ae4dec2546738e08263cd23690c9028fe":[3,0,1,21,47,0],
-"ERF__Wstar_8H_source.html":[3,0,1,21,47]
+"ERF__WriteSubvolume_8cpp.html":[3,0,1,8,52]
 };

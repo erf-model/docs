@@ -21,7 +21,7 @@ var searchData=
   ['dlami_11531',['dlami',['../namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6a4b663d0a1c4aff9418dbfb07826cf990',1,'MORRInd']]],
   ['dlamr_11532',['dlamr',['../namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6ae7b2ba972f501e9c5420a42a85d13907',1,'MORRInd']]],
   ['dlams_11533',['dlams',['../namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6a5afe56c519bbd81857744b2953b2cfc5',1,'MORRInd']]],
-  ['donelan_11534',['DONELAN',['../classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05afbf950ece84b8c4c7ebcf6492db726f7',1,'SurfaceLayer::DONELAN()'],['../classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7afbf950ece84b8c4c7ebcf6492db726f7',1,'SurfaceLayer::DONELAN()']]],
+  ['donelan_11534',['DONELAN',['../classSurfaceLayer.html#ac8f97e7515d4b4b32ad5749cd5405d05afbf950ece84b8c4c7ebcf6492db726f7',1,'SurfaceLayer']]],
   ['dryimpermeable_11535',['DryImpermeable',['../namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4aeeb2783a41282e2ac39d09e514b567c1',1,'erf_wall_thermodynamics']]],
   ['dumc_11536',['dumc',['../namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6a1011050e5db3e183426fc936377ed3b6',1,'MORRInd']]],
   ['dumfnc_11537',['dumfnc',['../namespaceMORRInd.html#ab77e959232c700fcf7597c31e35443d6a093c0e64e34c38155428b590c2dbc02b',1,'MORRInd']]],

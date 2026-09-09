@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['real_11403',['Real',['../classNodalReconstruction.html#ad5556f510f1f1bca500b05865cc2ca6c',1,'NodalReconstruction']]],
-  ['real_11404',['real',['../ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21',1,'ERF_OrbCosZenith.H']]],
-  ['real_11405',['Real',['../ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57',1,'ERF_ShocInterface.H']]],
+  ['real_11404',['Real',['../classNodalReconstruction.html#ad5556f510f1f1bca500b05865cc2ca6c',1,'NodalReconstruction::Real()'],['../ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57',1,'Real():&#160;ERF_ShocInterface.H']]],
+  ['real_11405',['real',['../ERF__OrbCosZenith_8H.html#a11d147c64891830c9e79b3315b1b2e21',1,'ERF_OrbCosZenith.H']]],
   ['real1d_5fk_11406',['real1d_k',['../ERF__Kokkos_8H.html#a1c1c14451633cb7c1dda9ef23f26d846',1,'ERF_Kokkos.H']]],
   ['real2d_5fk_11407',['real2d_k',['../ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658',1,'ERF_Kokkos.H']]],
   ['real3d_5fk_11408',['real3d_k',['../ERF__Kokkos_8H.html#a5540b69a7c94dc3ece92aef8344d216a',1,'ERF_Kokkos.H']]],
