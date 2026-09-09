@@ -162,8 +162,6 @@ Include dependency graph for ERF_ShocDriver.cpp:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a8d23b09e1c6bb55804efe36247ca4c96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8cpp.html#a8d23b09e1c6bb55804efe36247ca4c96">shoc_boxarray_spans_full_height</a> (const BoxArray &amp;ba, const Box &amp;domain)</td></tr>
 <tr class="separator:a8d23b09e1c6bb55804efe36247ca4c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d2ef663dbe17a7345dd46604bc15a30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8cpp.html#a0d2ef663dbe17a7345dd46604bc15a30">shoc_fill_physical_boundary_ghosts</a> (MultiFab &amp;mf, const Geometry &amp;geom, int comp, int ncomp)</td></tr>
-<tr class="separator:a0d2ef663dbe17a7345dd46604bc15a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a8d23b09e1c6bb55804efe36247ca4c96"></a>
@@ -203,99 +201,6 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a0d2ef663dbe17a7345dd46604bc15a30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d2ef663dbe17a7345dd46604bc15a30">&#9670;&nbsp;</a></span>shoc_fill_physical_boundary_ghosts()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void shoc_fill_physical_boundary_ghosts </td>
-          <td>(</td>
-          <td class="paramtype">MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ncomp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    mf.FillBoundary(comp, ncomp, geom.periodicity());</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">const</span> Box domain = geom.Domain();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> nonperiodic_x = !geom.isPeriodic(0);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> nonperiodic_y = !geom.isPeriodic(1);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> nonperiodic_z = !geom.isPeriodic(2);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(mf, <span class="keyword">false</span>); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">const</span> Box gbx = mfi.growntilebox();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">auto</span> data = mf.array(mfi);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, ncomp,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n) noexcept {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> ii = nonperiodic_x</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                ? ((i &lt; domain.smallEnd(0)) ? domain.smallEnd(0)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                   : ((i &gt; domain.bigEnd(0)) ? domain.bigEnd(0) : i))</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                : i;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> jj = nonperiodic_y</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                ? ((j &lt; domain.smallEnd(1)) ? domain.smallEnd(1)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                   : ((j &gt; domain.bigEnd(1)) ? domain.bigEnd(1) : j))</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                : j;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> kk = nonperiodic_z</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                ? ((k &lt; domain.smallEnd(2)) ? domain.smallEnd(2)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                   : ((k &gt; domain.bigEnd(2)) ? domain.bigEnd(2) : k))</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                : k;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span> (ii != i || jj != j || kk != k) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                data(i,j,k,comp+n) = data(ii,jj,kk,comp+n);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        });</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="ttc" id="aERF__Morrison__Advance__F_8H_html_a96f0cb4e119c1e0f8b04a98c27031bae"><div class="ttname"><a href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a></div><div class="ttdeci">ParallelFor(fab_box, [=] AMREX_GPU_DEVICE(int i, int j, int k) { qrcuten_arr(i, j, k)=Real(0);qscuten_arr(i, j, k)=Real(0);qicuten_arr(i, j, k)=Real(0);})</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#acce53243fa5190d1b8e9945d196b6c58">ShocDriver::set_eddy_diffs()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_cgraph.png" border="0" usemap="#aERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_cgraph" alt=""/></div>
-<map name="aERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_cgraph" id="aERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,145,47"/>
-<area shape="rect" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae" title=" " alt="" coords="193,13,284,39"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_icgraph.png" border="0" usemap="#aERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_icgraph" alt=""/></div>
-<map name="aERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_icgraph" id="aERF__ShocDriver_8cpp_a0d2ef663dbe17a7345dd46604bc15a30_icgraph">
-<area shape="rect" title=" " alt="" coords="213,5,353,47"/>
-<area shape="rect" href="classShocDriver.html#acce53243fa5190d1b8e9945d196b6c58" title=" " alt="" coords="5,5,165,47"/>
-</map>
-</div>
-
 </div>
 </div>
 </div><!-- contents -->

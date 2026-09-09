@@ -1,7 +1,8 @@
 var searchData=
 [
+  ['w_5571',['w',['../ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f',1,'ERF_Plotfile2DInterpolator.cpp']]],
   ['w_5572',['W',['../namespaceplotfile2d.html#ae007f8b65adffbef80c98ebbec48bb6da61e9c06ea9a85a5088a499df6458d276',1,'plotfile2d']]],
-  ['w_5573',['w',['../ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f',1,'w():&#160;ERF_Plotfile2DInterpolator.cpp'],['../structShocColumnData.html#a6d27eab218bf381706d50c62d365db50',1,'ShocColumnData::w()']]],
+  ['w_5573',['w',['../structShocColumnData.html#a6d27eab218bf381706d50c62d365db50',1,'ShocColumnData']]],
   ['w2tune_5574',['w2tune',['../structShocRuntimeOptions.html#a487c81ee3eb35946163ba760996311cc',1,'ShocRuntimeOptions']]],
   ['w3_5575',['w3',['../classSHOCInterface.html#ab0392f2032e97f430ff891059ef38f9d',1,'SHOCInterface::w3()'],['../structSHOCInterface_1_1Buffer.html#a014a66993e6b505022e6f3dd0a738933',1,'SHOCInterface::Buffer::w3()'],['../structShocColumnData.html#a3303135724099955d94c16124ae6e087',1,'ShocColumnData::w3()']]],
   ['w3_5fdiagnostics_5576',['w3_diagnostics',['../classShocDriver.html#a13f6f77536767d3f4eaeb9685d6a665c',1,'ShocDriver']]],

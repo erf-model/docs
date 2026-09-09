@@ -79,6 +79,7 @@ var classSurfaceLayer =
     [ "set_coupled_sst_active", "classSurfaceLayer.html#abd3ba01290a0c8b82fc64040329d3335", null ],
     [ "set_mac_avg_initialized", "classSurfaceLayer.html#aebf068809f03540cbec4c31c09b21241", null ],
     [ "set_mac_plane_avg", "classSurfaceLayer.html#a7a2882ececdd0f242cfc7d66dbdc00b9", null ],
+    [ "set_pblh", "classSurfaceLayer.html#aa4be878f0fa9e708d4ccf93bba77a3ed", null ],
     [ "set_q_surf", "classSurfaceLayer.html#a09961f2fcf7cdc577fc29ae446c3d4de", null ],
     [ "set_t_surf", "classSurfaceLayer.html#a7af3a1d0b2ccd50e255cd5a8673bc810", null ],
     [ "update_coupled_sst_ptr", "classSurfaceLayer.html#a5e773212bdccaa4e72ad48aa23c47e3d", null ],

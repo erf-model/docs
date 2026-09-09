@@ -4,6 +4,7 @@ var ERF__PBLModels_8H =
     [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", "structPBLDerivativeDzInv__N" ],
     [ "PBLDerivativeDzInv_S", "structPBLDerivativeDzInv__S.html", "structPBLDerivativeDzInv__S" ],
     [ "PBLDerivativeDzInv_T", "structPBLDerivativeDzInv__T.html", "structPBLDerivativeDzInv__T" ],
+    [ "ApplyPBLHSmoothing", "ERF__PBLModels_8H.html#a75ed24e1352c2465bcaeac768ec796c4", null ],
     [ "ComputeDiffusivityMRF", "ERF__PBLModels_8H.html#a7a58f6417a51d288fe7b89340ab83de6", null ],
     [ "ComputeDiffusivityMYJ", "ERF__PBLModels_8H.html#ad57c39780b62db3efa16d076cee01b5d", null ],
     [ "ComputeDiffusivityMYNN25", "ERF__PBLModels_8H.html#a77a02da9edc72d7bff7f779a94dc43e8", null ],

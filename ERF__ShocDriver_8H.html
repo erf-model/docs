@@ -219,14 +219,10 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a24fa375e9116800a5a2c5e4b27cea631"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8H.html#a24fa375e9116800a5a2c5e4b27cea631">shoc_boxarray_spans_full_height</a> (const amrex::BoxArray &amp;ba, const amrex::Box &amp;domain)</td></tr>
 <tr class="separator:a24fa375e9116800a5a2c5e4b27cea631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79c2e7cca78c559714fc642e3c9ce5e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8H.html#a79c2e7cca78c559714fc642e3c9ce5e3">shoc_fill_physical_boundary_ghosts</a> (amrex::MultiFab &amp;mf, const amrex::Geometry &amp;geom, int comp, int ncomp)</td></tr>
-<tr class="separator:a79c2e7cca78c559714fc642e3c9ce5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a571ae33a4143dfaf36d4aba0b2e05a26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8H.html#a571ae33a4143dfaf36d4aba0b2e05a26">shoc_layout_requires_number_closure</a> (const <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> &amp;indices, int ncomp) noexcept</td></tr>
 <tr class="separator:a571ae33a4143dfaf36d4aba0b2e05a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a9fc935848a36dc6d5ad7d2eefde1c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8H.html#a4a9fc935848a36dc6d5ad7d2eefde1c2">shoc_driver_host_diffusion_moisture_supported</a> (const <a class="el" href="structShocRuntimeOptions.html">ShocRuntimeOptions</a> &amp;opts, MoistureType moisture_type, std::string &amp;error_message)</td></tr>
-<tr class="separator:a4a9fc935848a36dc6d5ad7d2eefde1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac35a17219952a6062ecf0026b824a96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8H.html#aac35a17219952a6062ecf0026b824a96">shoc_driver_state_update_layout_supported</a> (const <a class="el" href="structShocRuntimeOptions.html">ShocRuntimeOptions</a> &amp;opts, const <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> &amp;indices, int ncomp, std::string &amp;error_message)</td></tr>
-<tr class="separator:aac35a17219952a6062ecf0026b824a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6419aa3b87d95b2aec814ea7c60c31b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ERF__ShocDriver_8H.html#a6419aa3b87d95b2aec814ea7c60c31b2">shoc_driver_state_update_layout_supported</a> (const <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> &amp;indices, int ncomp, std::string &amp;error_message)</td></tr>
+<tr class="separator:a6419aa3b87d95b2aec814ea7c60c31b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a24fa375e9116800a5a2c5e4b27cea631"></a>
@@ -257,81 +253,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4a9fc935848a36dc6d5ad7d2eefde1c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a9fc935848a36dc6d5ad7d2eefde1c2">&#9670;&nbsp;</a></span>shoc_driver_host_diffusion_moisture_supported()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool shoc_driver_host_diffusion_moisture_supported </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structShocRuntimeOptions.html">ShocRuntimeOptions</a> &amp;&#160;</td>
-          <td class="paramname"><em>opts</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">MoistureType&#160;</td>
-          <td class="paramname"><em>moisture_type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string &amp;&#160;</td>
-          <td class="paramname"><em>error_message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__ShocTransportStruct_8H.html#a812dfb907b6bb4a5a6a9698126152c7e">shoc_uses_host_diffusion</a>(opts.<a class="code" href="structShocRuntimeOptions.html#a16f1a8d4a0e8ad7857c1d50843ad4b28">transport_mode</a>) || moisture_type == MoistureType::None) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    error_message =</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="stringliteral">&quot;Native SHOC host_diffusion with moisture is not yet supported because SHOC does not own cloud macrophysics in this mode while SHOC-family microphysics condensation is suppressed. Use state_update for moist SHOC runs, or run host_diffusion only for dry cases until a transport-aware microphysics ownership predicate is implemented.&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocTransportStruct_8H_html_a812dfb907b6bb4a5a6a9698126152c7e"><div class="ttname"><a href="ERF__ShocTransportStruct_8H.html#a812dfb907b6bb4a5a6a9698126152c7e">shoc_uses_host_diffusion</a></div><div class="ttdeci">bool shoc_uses_host_diffusion(ShocTransportMode mode)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTransportStruct.H:51</div></div>
-<div class="ttc" id="astructShocRuntimeOptions_html_a16f1a8d4a0e8ad7857c1d50843ad4b28"><div class="ttname"><a href="structShocRuntimeOptions.html#a16f1a8d4a0e8ad7857c1d50843ad4b28">ShocRuntimeOptions::transport_mode</a></div><div class="ttdeci">ShocTransportMode transport_mode</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:43</div></div>
-</div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="classShocDriver.html#a7b7d221e198d43e8bf93ece6a0bd0739">ShocDriver::ShocDriver()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_cgraph.png" border="0" usemap="#aERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_cgraph" alt=""/></div>
-<map name="aERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_cgraph" id="aERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,200,47"/>
-<area shape="rect" href="ERF__ShocTransportStruct_8H.html#a812dfb907b6bb4a5a6a9698126152c7e" title=" " alt="" coords="248,13,435,39"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="ERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_icgraph.png" border="0" usemap="#aERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_icgraph" alt=""/></div>
-<map name="aERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_icgraph" id="aERF__ShocDriver_8H_a4a9fc935848a36dc6d5ad7d2eefde1c2_icgraph">
-<area shape="rect" title=" " alt="" coords="225,5,420,47"/>
-<area shape="rect" href="classShocDriver.html#a7b7d221e198d43e8bf93ece6a0bd0739" title=" " alt="" coords="5,13,177,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="aac35a17219952a6062ecf0026b824a96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac35a17219952a6062ecf0026b824a96">&#9670;&nbsp;</a></span>shoc_driver_state_update_layout_supported()</h2>
+<a id="a6419aa3b87d95b2aec814ea7c60c31b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6419aa3b87d95b2aec814ea7c60c31b2">&#9670;&nbsp;</a></span>shoc_driver_state_update_layout_supported()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -342,12 +265,6 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">bool shoc_driver_state_update_layout_supported </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structShocRuntimeOptions.html">ShocRuntimeOptions</a> &amp;&#160;</td>
-          <td class="paramname"><em>opts</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const <a class="el" href="structMoistureComponentIndices.html">MoistureComponentIndices</a> &amp;&#160;</td>
           <td class="paramname"><em>indices</em>, </td>
         </tr>
@@ -375,80 +292,37 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__ShocTransportStruct_8H.html#ad39bfd4bf9d30a5fc706bafe46ab6908">shoc_uses_state_update</a>(opts.<a class="code" href="structShocRuntimeOptions.html#a16f1a8d4a0e8ad7857c1d50843ad4b28">transport_mode</a>) ||</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        !<a class="code" href="ERF__ShocDriver_8H.html#a571ae33a4143dfaf36d4aba0b2e05a26">shoc_layout_requires_number_closure</a>(indices, ncomp)) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    error_message =</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="stringliteral">&quot;Native SHOC state_update does not yet support number-aware microphysics layouts with cloud/ice number concentrations. A number closure is required before SHOC can update cloud mass in these layouts.&quot;</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocDriver_8H_html_a571ae33a4143dfaf36d4aba0b2e05a26"><div class="ttname"><a href="ERF__ShocDriver_8H.html#a571ae33a4143dfaf36d4aba0b2e05a26">shoc_layout_requires_number_closure</a></div><div class="ttdeci">bool shoc_layout_requires_number_closure(const MoistureComponentIndices &amp;indices, int ncomp) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:24</div></div>
-<div class="ttc" id="aERF__ShocTransportStruct_8H_html_ad39bfd4bf9d30a5fc706bafe46ab6908"><div class="ttname"><a href="ERF__ShocTransportStruct_8H.html#ad39bfd4bf9d30a5fc706bafe46ab6908">shoc_uses_state_update</a></div><div class="ttdeci">bool shoc_uses_state_update(ShocTransportMode mode)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTransportStruct.H:45</div></div>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="ERF__ShocDriver_8H.html#a571ae33a4143dfaf36d4aba0b2e05a26">shoc_layout_requires_number_closure</a>(indices, ncomp)) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    error_message =</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="stringliteral">&quot;Native SHOC state_update does not yet support number-aware microphysics layouts with cloud/ice number concentrations. A number closure is required before SHOC can update cloud mass in these layouts.&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocDriver_8H_html_a571ae33a4143dfaf36d4aba0b2e05a26"><div class="ttname"><a href="ERF__ShocDriver_8H.html#a571ae33a4143dfaf36d4aba0b2e05a26">shoc_layout_requires_number_closure</a></div><div class="ttdeci">bool shoc_layout_requires_number_closure(const MoistureComponentIndices &amp;indices, int ncomp) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_ShocDriver.H:19</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b">ShocDriver::advance()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_cgraph.png" border="0" usemap="#aERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_cgraph" alt=""/></div>
-<map name="aERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_cgraph" id="aERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_cgraph">
-<area shape="rect" title=" " alt="" coords="5,35,195,76"/>
-<area shape="rect" href="ERF__ShocDriver_8H.html#a571ae33a4143dfaf36d4aba0b2e05a26" title=" " alt="" coords="253,5,413,47"/>
-<area shape="rect" href="ERF__ShocTransportStruct_8H.html#ad39bfd4bf9d30a5fc706bafe46ab6908" title=" " alt="" coords="243,71,424,98"/>
-<area shape="rect" href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad" title=" " alt="" coords="472,13,607,39"/>
+<div class="center"><img src="ERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_cgraph.png" border="0" usemap="#aERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_cgraph" alt=""/></div>
+<map name="aERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_cgraph" id="aERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,195,47"/>
+<area shape="rect" href="ERF__ShocDriver_8H.html#a571ae33a4143dfaf36d4aba0b2e05a26" title=" " alt="" coords="243,5,403,47"/>
+<area shape="rect" href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad" title=" " alt="" coords="451,13,585,39"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="ERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_icgraph.png" border="0" usemap="#aERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_icgraph" alt=""/></div>
-<map name="aERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_icgraph" id="aERF__ShocDriver_8H_aac35a17219952a6062ecf0026b824a96_icgraph">
+<div class="center"><img src="ERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_icgraph.png" border="0" usemap="#aERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_icgraph" alt=""/></div>
+<map name="aERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_icgraph" id="aERF__ShocDriver_8H_a6419aa3b87d95b2aec814ea7c60c31b2_icgraph">
 <area shape="rect" title=" " alt="" coords="209,5,399,47"/>
 <area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a79c2e7cca78c559714fc642e3c9ce5e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79c2e7cca78c559714fc642e3c9ce5e3">&#9670;&nbsp;</a></span>shoc_fill_physical_boundary_ghosts()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void shoc_fill_physical_boundary_ghosts </td>
-          <td>(</td>
-          <td class="paramtype">amrex::MultiFab &amp;&#160;</td>
-          <td class="paramname"><em>mf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const amrex::Geometry &amp;&#160;</td>
-          <td class="paramname"><em>geom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>comp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ncomp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -485,14 +359,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad">shoc_valid_comp</a>(indices.<a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>, ncomp) || <a class="code" href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad">shoc_valid_comp</a>(indices.<a class="code" href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">ni</a>, ncomp);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="ttc" id="aERF__ShocTypes_8H_html_aabd9d324684c5066b3b05730e76769ad"><div class="ttname"><a href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad">shoc_valid_comp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool shoc_valid_comp(int comp, int ncomp)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:242</div></div>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad">shoc_valid_comp</a>(indices.<a class="code" href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">nc</a>, ncomp) || <a class="code" href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad">shoc_valid_comp</a>(indices.<a class="code" href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">ni</a>, ncomp);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="ttc" id="aERF__ShocTypes_8H_html_aabd9d324684c5066b3b05730e76769ad"><div class="ttname"><a href="ERF__ShocTypes_8H.html#aabd9d324684c5066b3b05730e76769ad">shoc_valid_comp</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE bool shoc_valid_comp(int comp, int ncomp)</div><div class="ttdef"><b>Definition:</b> ERF_ShocTypes.H:226</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_a024fcc1d4ce8e2fcba14b31543ccf282"><div class="ttname"><a href="structMoistureComponentIndices.html#a024fcc1d4ce8e2fcba14b31543ccf282">MoistureComponentIndices::nc</a></div><div class="ttdeci">int nc</div><div class="ttdoc">cloud liquid water number</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:216</div></div>
 <div class="ttc" id="astructMoistureComponentIndices_html_a670c08ad5fa804bd9eed27092fe4e737"><div class="ttname"><a href="structMoistureComponentIndices.html#a670c08ad5fa804bd9eed27092fe4e737">MoistureComponentIndices::ni</a></div><div class="ttdeci">int ni</div><div class="ttdoc">cloud ice number</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:217</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__ShocDriver_8H.html#aac35a17219952a6062ecf0026b824a96">shoc_driver_state_update_layout_supported()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__ShocDriver_8H.html#a6419aa3b87d95b2aec814ea7c60c31b2">shoc_driver_state_update_layout_supported()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -508,7 +382,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="ERF__ShocDriver_8H_a571ae33a4143dfaf36d4aba0b2e05a26_icgraph.png" border="0" usemap="#aERF__ShocDriver_8H_a571ae33a4143dfaf36d4aba0b2e05a26_icgraph" alt=""/></div>
 <map name="aERF__ShocDriver_8H_a571ae33a4143dfaf36d4aba0b2e05a26_icgraph" id="aERF__ShocDriver_8H_a571ae33a4143dfaf36d4aba0b2e05a26_icgraph">
 <area shape="rect" title=" " alt="" coords="447,5,607,47"/>
-<area shape="rect" href="ERF__ShocDriver_8H.html#aac35a17219952a6062ecf0026b824a96" title=" " alt="" coords="209,5,399,47"/>
+<area shape="rect" href="ERF__ShocDriver_8H.html#a6419aa3b87d95b2aec814ea7c60c31b2" title=" " alt="" coords="209,5,399,47"/>
 <area shape="rect" href="classShocDriver.html#a1bbc9f3b39ce3017cb625de5ab0a9d9b" title=" " alt="" coords="5,13,161,39"/>
 </map>
 </div>

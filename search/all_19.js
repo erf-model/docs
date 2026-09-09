@@ -1,8 +1,8 @@
 var searchData=
 [
   ['z_5887',['z',['../ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01afbade9e36a3f36d3d676c1b808451dd7',1,'ERF_DataStruct.H']]],
-  ['z0_5888',['Z0',['../namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a876f7a21a4873b7989bc641f83d7eb50',1,'plotfile2d']]],
-  ['z0_5889',['z0',['../ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe',1,'ERF_InitCustomPertVels_ScalarAdvDiff.H']]],
+  ['z0_5888',['z0',['../ERF__InitCustomPertVels__ScalarAdvDiff_8H.html#a3686b9abefe6dda622283bf7109e68fe',1,'ERF_InitCustomPertVels_ScalarAdvDiff.H']]],
+  ['z0_5889',['Z0',['../namespaceplotfile2d.html#a2dd8a06cb41059636688602f49bafad2a876f7a21a4873b7989bc641f83d7eb50',1,'plotfile2d']]],
   ['z0_5fconst_5890',['z0_const',['../classSurfaceLayer.html#a2ac3aa7e042bc2f249101e7c70ce6dd0',1,'SurfaceLayer::z0_const()'],['../structmost__data.html#ad18b8055b6887e821efe0c37c4076d08',1,'most_data::z0_const()']]],
   ['z0_5feps_5891',['z0_eps',['../structsurface__flux__wave__coupled.html#a6cf8c26b09960af5adea37c6e7ccbb0b',1,'surface_flux_wave_coupled::z0_eps()'],['../structsurface__temp__wave__coupled.html#abd39570dca269dda79fbb946df0a02ca',1,'surface_temp_wave_coupled::z0_eps()'],['../structadiabatic__wave__coupled.html#a7cbf5ad24a59a72131bae5b57038ff72',1,'adiabatic_wave_coupled::z0_eps()']]],
   ['z0_5fmax_5892',['z0_max',['../structsurface__flux__wave__coupled.html#a4f273873e2304563f10674c497cfad30',1,'surface_flux_wave_coupled::z0_max()'],['../structadiabatic__wave__coupled.html#afb0e6712baaff337c761988f6ec42b9b',1,'adiabatic_wave_coupled::z0_max()'],['../structsurface__temp__wave__coupled.html#aedbd53ee9bf7b4c98f5a2b88207cbb01',1,'surface_temp_wave_coupled::z0_max()']]],
