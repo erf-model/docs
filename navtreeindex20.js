@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"classMOSTAverage.html#a219026ba697d1e93f4b4c67e07d2e5e2":[2,0,71,76],
 "classMOSTAverage.html#a247925f30f45ee01c65fbcef9f677acc":[2,0,71,67],
 "classMOSTAverage.html#a24f628d2e60c7220ec17d3fe8e7eaf9a":[2,0,71,10],
 "classMOSTAverage.html#a2c167351f6655ef3276f8e5b39439e91":[2,0,71,61],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "classNodalReconstruction.html#a3dc5915c602a9bd6dff46c01730da6e6":[2,0,78,32],
 "classNodalReconstruction.html#a3f735be7012e4c42755a9d98b17c332e":[2,0,78,3],
 "classNodalReconstruction.html#a4186c36c5eafa5698538b6357885f732":[2,0,78,19],
-"classNodalReconstruction.html#a43728abe7476a165aa943edfa10948cf":[2,0,78,20],
-"classNodalReconstruction.html#a48822cd05cc97322aa1bcc38f649395e":[2,0,78,42]
+"classNodalReconstruction.html#a43728abe7476a165aa943edfa10948cf":[2,0,78,20]
 };

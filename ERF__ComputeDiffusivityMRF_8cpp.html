@@ -645,7 +645,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            <span class="comment">// weighted by cube sum so either term can dominate smoothly</span></div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> wstar = std::cbrt(wstar_shear*wstar_shear*wstar_shear +</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;                                wstar_conv*wstar_conv*wstar_conv);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;            </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;            wstar = amrex::max(wstar, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01));</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            wstar = amrex::min(wstar, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(5.0));</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
@@ -1289,7 +1289,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160;            <span class="comment">// dz_inv factor. `Fact` already carries the single grid-spacing</span></div>
 <div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;            <span class="comment">// factor needed to convert the countergradient correction into a</span></div>
 <div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;            <span class="comment">// flux-divergence contribution consistent with the K*d(phi)/dz terms</span></div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;            <span class="comment">// it is being added alongside. Adding a second dz_inv </span></div>
+<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;            <span class="comment">// it is being added alongside. Adding a second dz_inv</span></div>
 <div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;            <span class="comment">// double-counts the grid spacing and is</span></div>
 <div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;            <span class="comment">// dimensionally incorrect — do NOT &quot;fix&quot; this by inserting dz_inv</span></div>
 <div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;            <span class="comment">// into the RHS_a += Fact * gam_hi/lo terms in ERF_ImplicitDiff_T.cpp.</span></div>

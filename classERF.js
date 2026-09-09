@@ -116,6 +116,7 @@ var classERF =
     [ "is_it_time_for_action", "classERF.html#a9aca1e4b56730a954b8a93546850fa79", null ],
     [ "make_eb_box", "classERF.html#a0cf9cd65604501647629fd69a0d28bb6", null ],
     [ "make_eb_regular", "classERF.html#aeca994ecf1b09d58cdc991920504ec34", null ],
+    [ "make_lsm_at_level", "classERF.html#aa4a266ef410891dde2ac42d5bf6e5d93", null ],
     [ "make_physbcs", "classERF.html#ac81ec7f74a1be1c4a1e6e15e08385ed5", null ],
     [ "make_subdomains", "classERF.html#a7567528ba42339cf237e11617453eb5f", null ],
     [ "MakeDiagnosticAverage", "classERF.html#a93ed2dd2c2441da6853d6f48b6467324", null ],

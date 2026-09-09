@@ -1,5 +1,6 @@
 var NAVTREEINDEX39 =
 {
+"structmoeng__flux.html#af87386d788095ddf6027ffda4f7ea1ff":[2,0,65,1],
 "structmoeng__flux.html#afdde1c2c34ccc8d75c8c596c7e5290e8":[2,0,65,4],
 "structmoeng__flux__eb.html":[2,0,66],
 "structmoeng__flux__eb.html#a46303cdb0f5efc66e0f779e075d102b3":[2,0,66,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX39 =
 "structsurface__flux__wave__coupled.html#ae3f826d7a5599da490c38ee3fbb43a34":[2,0,141,5],
 "structsurface__flux__wave__coupled.html#aecd6a90471c6eaad863e41c22e38bf29":[2,0,141,1],
 "structsurface__flux__wave__coupled.html#aee14d25dbf38dc291b9c4900d737e121":[2,0,141,2],
-"structsurface__layer__stress_1_1FaceStressResult.html":[2,0,14,0],
-"structsurface__layer__stress_1_1FaceStressResult.html#a3163fff2a8055f4996a1b765250c9dd9":[2,0,14,0,0]
+"structsurface__layer__stress_1_1FaceStressResult.html":[2,0,14,0]
 };
