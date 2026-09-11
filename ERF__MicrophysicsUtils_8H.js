@@ -1,5 +1,7 @@
 var ERF__MicrophysicsUtils_8H =
 [
+    [ "MicrophysicsThermoState", "structMicrophysicsThermoState.html", "structMicrophysicsThermoState" ],
+    [ "diagnose_microphysics_thermo_state", "ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826", null ],
     [ "erf_dtesati", "ERF__MicrophysicsUtils_8H.html#a45320981110c862bac93f657781eb79f", null ],
     [ "erf_dtesatw", "ERF__MicrophysicsUtils_8H.html#a2e94fb836d3c733ebac8263bfa479ca8", null ],
     [ "erf_dtesatw_cc", "ERF__MicrophysicsUtils_8H.html#a66e2273b5b2661fa12fea623630afaf8", null ],

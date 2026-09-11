@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f":[3,0,1,6,4,1],
 "ERF__EBAdvectionSrcForScalars_8H_source.html":[3,0,1,6,4],
 "ERF__EBAdvectionSrcForState_8cpp.html":[3,0,1,6,5],
 "ERF__EBAdvectionSrcForState_8cpp.html#a244aa0250aa8b00b72cdef06c88b1137":[3,0,1,6,5,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a83aec89012c35752597047c6ebdd983a":[3,0,1,30,36,4],
 "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a88183b946cc5f0e8c96b2e66e1c74a7e":[3,0,1,30,36,13],
 "ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a8c9475eb6bfde28e5bcb5230ac2e22a9":[3,0,1,30,36,5],
-"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351":[3,0,1,30,36,7],
-"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70ada35597e5f00fa867fe6e39d651a2195":[3,0,1,30,36,6]
+"ERF__IndexDefines_8H.html#ada2d84e0dbbfb8d748defbf018748a70a9c29b64a7627155706a1cd93682b4351":[3,0,1,30,36,7]
 };

@@ -3,6 +3,7 @@ var classNullMoist =
     [ "NullMoist", "classNullMoist.html#a987746c147545a1a7d0efd21e5e34a12", null ],
     [ "~NullMoist", "classNullMoist.html#a75e2d77cb28efa62759818d066b53bb9", null ],
     [ "Advance", "classNullMoist.html#aa2f97dcd622bc4ef212421d496ee2297", null ],
+    [ "assert_base_state_available", "classNullMoist.html#aba34670a3647d365cd8de9adca54cae5", null ],
     [ "Copy_Micro_to_State", "classNullMoist.html#a11a25944d4ddb955f74e355838b9d8b0", null ],
     [ "Copy_State_to_Micro", "classNullMoist.html#aacb06ee696c6870e899d1bc26aa9933e", null ],
     [ "Define", "classNullMoist.html#aab112947c592c330b45a2d7e5529ec07", null ],
@@ -19,15 +20,18 @@ var classNullMoist =
     [ "Qstate_Moist_NumConc_Size", "classNullMoist.html#a7f95ad7c0c5562d130e6e054d88b69bd", null ],
     [ "Qstate_Moist_Size", "classNullMoist.html#af722f0334098a3e75001f799a7894ae1", null ],
     [ "Qstate_NonMoist_Size", "classNullMoist.html#aa2088fbb6bbb51945f5d5c80da2bfff3", null ],
+    [ "set_anelastic_reference_pressure_mode", "classNullMoist.html#ae7ad43016c86eeb9081d5c43e305146e", null ],
     [ "Set_dzmin", "classNullMoist.html#a47199894161e2c6ec167c8032d7181a0", null ],
     [ "Set_Lmask", "classNullMoist.html#a9a64424cb065761991b28385fb910738", null ],
     [ "Set_RealWidth", "classNullMoist.html#a88b448069b86e3f1e16b8e28dc38b3bb", null ],
-    [ "SetCurrentLevel", "classNullMoist.html#a05c734960e2e63ca00cfeb8e5c4b8936", null ],
+    [ "SetCurrentLevel", "classNullMoist.html#a41b51579a0a8f60eeae988ba9d447525", null ],
     [ "Update_Micro_Vars", "classNullMoist.html#aece7a50f16bf40e3e9d536cc030458f7", null ],
     [ "Update_Micro_Vars", "classNullMoist.html#a249cee0a1587485f45658a2946bccd07", null ],
     [ "Update_State_Vars", "classNullMoist.html#a85dd5b9865ebdf4dd44e5d13c0ce87bb", null ],
+    [ "m_level", "classNullMoist.html#a064640425bd3f3331efc420afd0dcca4", null ],
     [ "m_qmoist_size", "classNullMoist.html#a645f66b91b08d84aa7451a9da0c11a72", null ],
     [ "m_qstate_moist_numconc_size", "classNullMoist.html#a97a7bd714adf24d5e8cf5adf059a1180", null ],
     [ "m_qstate_moist_size", "classNullMoist.html#a051a8523335aa2bce3462d612de30a0e", null ],
-    [ "m_qstate_nonmoist_size", "classNullMoist.html#ab419120b42fba2664d4d937c02209b96", null ]
+    [ "m_qstate_nonmoist_size", "classNullMoist.html#ab419120b42fba2664d4d937c02209b96", null ],
+    [ "m_use_anelastic_reference_pressure", "classNullMoist.html#af618f6cf3c8c8cc44e5d5180f7422e82", null ]
 ];

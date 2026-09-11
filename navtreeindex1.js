@@ -111,6 +111,7 @@ var NAVTREEINDEX1 =
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bacec8728fd270452c9985e46f971d6935":[3,0,1,3,3,8,7],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248bad6968d5de54faf0f6a42e5629f76f391":[3,0,1,3,3,8,6],
 "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248baf5fa13cfd781cde0d363f337d7e76d7e":[3,0,1,3,3,8,4],
+"ERF__DataStruct_8H.html#a0c00b090194b0ea199bead5a10382b8b":[3,0,1,3,3,23],
 "ERF__DataStruct_8H.html#a167e3ccc662c308c584d8722a013a25c":[3,0,1,3,3,14],
 "ERF__DataStruct_8H.html#a2a5acf437a3651c5de5a1d518bf35702":[3,0,1,3,3,16],
 "ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb":[3,0,1,3,3,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ERF__EBAdvectionSrcForMom_8H.html#acef5e35b5f2c5077114c3ae672309b84":[3,0,1,6,3,1],
 "ERF__EBAdvectionSrcForMom_8H_source.html":[3,0,1,6,3],
 "ERF__EBAdvectionSrcForScalars_8H.html":[3,0,1,6,4],
-"ERF__EBAdvectionSrcForScalars_8H.html#a5c491c40d5d9bb1e7a6e507d4591a387":[3,0,1,6,4,0],
-"ERF__EBAdvectionSrcForScalars_8H.html#add5efd63d823caa0afcb44c57c9abb9f":[3,0,1,6,4,1]
+"ERF__EBAdvectionSrcForScalars_8H.html#a5c491c40d5d9bb1e7a6e507d4591a387":[3,0,1,6,4,0]
 };

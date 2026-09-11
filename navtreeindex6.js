@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"ERF__InitCustomPert__KE_8H.html#ae409ace79e1a964e72be777c33b7dc52":[3,0,1,16,14,1],
 "ERF__InitCustomPert__KE_8H.html#aeaf756a3f8a333ac6739ba67f75c15f3":[3,0,1,16,14,0],
 "ERF__InitCustomPert__KE_8H_source.html":[3,0,1,16,14],
 "ERF__InitCustomPert__MovingTerrain_8H.html":[3,0,1,16,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "ERF__InitCustomPert__SquallLine_8H.html#aca0b2a87a0ed97d95103809c92a0d3e9":[3,0,1,16,22,3],
 "ERF__InitCustomPert__SquallLine_8H.html#acdb738795d4c05fd35feeb24922603be":[3,0,1,16,22,23],
 "ERF__InitCustomPert__SquallLine_8H.html#acdfe0f2210f14b2aa8008de71d4121c8":[3,0,1,16,22,33],
-"ERF__InitCustomPert__SquallLine_8H.html#ad05208d21e7c4a4e8890f19e594028c7":[3,0,1,16,22,20],
-"ERF__InitCustomPert__SquallLine_8H.html#ae17544d1b564380ad3ec8f614d1fc5c2":[3,0,1,16,22,42]
+"ERF__InitCustomPert__SquallLine_8H.html#ad05208d21e7c4a4e8890f19e594028c7":[3,0,1,16,22,20]
 };
