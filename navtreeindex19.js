@@ -1,5 +1,7 @@
 var NAVTREEINDEX19 =
 {
+"classERFPhysBCFunct__u.html#aefe9bc994735627162154bc289a0de3c":[2,0,43,13],
+"classERFPhysBCFunct__v.html":[2,0,44],
 "classERFPhysBCFunct__v.html#a0118acb2da736e441311582af0a7c9a7":[2,0,44,2],
 "classERFPhysBCFunct__v.html#a01f7c56f64ac414f4ec69ff8c45a2f2a":[2,0,44,9],
 "classERFPhysBCFunct__v.html#a0bc0f76b47d1d805161695e977dad5fb":[2,0,44,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX19 =
 "classLandSurface.html#afcb150f2d64cc46a8fbdc817d6fb9872":[2,0,58,30],
 "classMOSTAverage.html":[2,0,70],
 "classMOSTAverage.html#a0554ee593b5deca61ef0d26ebd26f6d6":[2,0,70,53],
-"classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47":[2,0,70,64],
-"classMOSTAverage.html#a08da948d93e79175ba5bf9b48e402846":[2,0,70,38],
-"classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69":[2,0,70,6]
+"classMOSTAverage.html#a05905a4754c7eb39b766b96889b1bd47":[2,0,70,64]
 };

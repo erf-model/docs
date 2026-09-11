@@ -1,5 +1,7 @@
 var NAVTREEINDEX28 =
 {
+"globals_func_f.html":[3,1,1,5],
+"globals_func_g.html":[3,1,1,6],
 "globals_func_h.html":[3,1,1,7],
 "globals_func_i.html":[3,1,1,8],
 "globals_func_k.html":[3,1,1,9],
@@ -64,21 +66,21 @@ var NAVTREEINDEX28 =
 "globals_y.html":[3,1,0,24],
 "globals_z.html":[3,1,0,25],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#Acknowledgement":[0,4],
 "index.html#Introduction":[0,0],
 "index.html#amr":[0,1],
 "index.html#dev_model":[0,3],
 "index.html#getting_started":[0,2],
 "interfacemodule__libmassv_1_1vrec.html":[2,0,8,0],
-"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,8,0,3],
 "interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,8,0,2],
-"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,8,0,1],
+"interfacemodule__libmassv_1_1vrec.html#ac9fcccea11d63bae2477f958ec452564":[2,0,8,0,3],
 "interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,8,0,0],
+"interfacemodule__libmassv_1_1vrec.html#afc2e005ed351ebcfb9066dcb2edb3437":[2,0,8,0,1],
 "interfacemodule__libmassv_1_1vsqrt.html":[2,0,8,1],
-"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,8,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,8,1,0],
+"interfacemodule__libmassv_1_1vsqrt.html#a65f162c2a46aa21ad3bbf5f9bc18056c":[2,0,8,1,1],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,8,1,3],
 "interfacemodule__libmassv_1_1vsqrt.html#af2424ea8f9fc20f93b3bee18bbde66bb":[2,0,8,1,2],
 "main_8cpp.html":[3,0,1,35],
@@ -247,7 +249,5 @@ var NAVTREEINDEX28 =
 "namespaceerf__hash__rng.html":[1,0,10],
 "namespaceerf__hash__rng.html#a28b9b3e5eaa04319db16c9f57a0bc2ec":[1,0,10,0],
 "namespaceerf__hash__rng.html#a31caeafc4db5b971c471833037829e04":[1,0,10,1],
-"namespaceerf__hash__rng.html#a3c58b34f95b150cc36eabdca82d7b4a8":[1,0,10,3],
-"namespaceerf__hash__rng.html#ae89d02b60008a0c8afdd38b3f1728da1":[1,0,10,2],
-"namespaceerf__interval__means.html":[1,0,11]
+"namespaceerf__hash__rng.html#a3c58b34f95b150cc36eabdca82d7b4a8":[1,0,10,3]
 };

@@ -7,5 +7,6 @@ var ERF__InitForEnsemble_8cpp =
     [ "InterpolateToFineMF", "ERF__InitForEnsemble_8cpp.html#abf5492c9d12faf4aa0d426745efdcbc1", null ],
     [ "MakeFinalMultiFabs", "ERF__InitForEnsemble_8cpp.html#a08cce1a23e551dac900062fd55ef9269", null ],
     [ "NormalizeMultiFabRMS_PerComponent", "ERF__InitForEnsemble_8cpp.html#a24d9d7aee224e8f78aa3c7efc19164c2", null ],
-    [ "ReadCustomDataFile", "ERF__InitForEnsemble_8cpp.html#adba67d112a55cf54965314caf4129aad", null ]
+    [ "ReadCustomDataFile", "ERF__InitForEnsemble_8cpp.html#adba67d112a55cf54965314caf4129aad", null ],
+    [ "perturb_scale", "ERF__InitForEnsemble_8cpp.html#a2e28b70c3f9e6f0c1c6b5859b0ab9bdc", null ]
 ];
