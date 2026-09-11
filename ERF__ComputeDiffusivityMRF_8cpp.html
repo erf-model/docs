@@ -839,7 +839,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                            ? (enable_qnse_d &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                               ? (1 + qnse_am_d * HOL_bounded) / (1 + qnse_bm_d * HOL_bounded)</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                               : (1 + 5 * HOL_bounded))</div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                            : std::pow(amrex::max(1 - 16 * HOL_bounded, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01)), -one_quarter);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                            : std::pow(1 + 16 * HOL_abs, -one_quarter);</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phiM_safe = amrex::max(phiM, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01));</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;            <span class="comment">// Absolute bounds [0.01, 5.0] m/s</span></div>
@@ -1059,12 +1059,12 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                                ? (enable_qnse_d &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;                                   ? (1 + qnse_am_d * HOL_bounded) / (1 + qnse_bm_d * HOL_bounded)</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                                   : (1 + 5 * HOL_bounded))</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                                : std::pow(amrex::max(1 - 16 * HOL_bounded, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01)), -one_quarter);</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                                : std::pow(1 + 16 * HOL_abs, -one_quarter);</div>
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;                <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phit = (obuk_val &gt; 0)</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;                                ? (enable_qnse_d &gt; <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5)</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;                                   ? (1 + qnse_ah_d * HOL_bounded) / (1 + qnse_bh_d * HOL_bounded)</div>
 <div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;                                   : (1 + 5 * HOL_bounded))</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                                : std::pow(amrex::max(1 - 16 * HOL_bounded, <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.01)), -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5));</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;                                : std::pow(1 + 16 * HOL_abs, -<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.5));</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160; </div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phit_cloud = phit;</div>
 <div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;                <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a> phiM_cloud = phiM;</div>
