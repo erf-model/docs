@@ -271,7 +271,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_zeta = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * dzInv *</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      ( z_nd(i+1,j,k+1) + z_nd(i+1,j+1,k+1) + z_nd(i,j,k+1) + z_nd(i,j+1,k+1)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;       -z_nd(i+1,j,k  ) - z_nd(i+1,j+1,k  ) - z_nd(i,j,k  ) - z_nd(i,j+1,k  ) );</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      - z_nd(i+1,j,k  ) - z_nd(i+1,j+1,k  ) - z_nd(i,j,k  ) - z_nd(i,j+1,k  ) );</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
@@ -296,7 +296,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0];</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_xi   = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> *</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      ( z_nd(i+1,j,k) + z_nd(i+1,j+1,k) + z_nd(i+1,j,k+1) + z_nd(i+1,j+1,k+1)</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;       -z_nd(i  ,j,k) - z_nd(i  ,j+1,k) - z_nd(i  ,j,k+1) - z_nd(i  ,j+1,k+1) );</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      - z_nd(i  ,j,k) - z_nd(i  ,j+1,k) - z_nd(i  ,j,k+1) - z_nd(i  ,j+1,k+1) );</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
@@ -321,7 +321,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dyInv = cellSizeInv[1];</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_eta  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * dyInv *</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      ( z_nd(i,j+1,k) + z_nd(i+1,j+1,k) + z_nd(i,j+1,k+1) + z_nd(i+1,j+1,k+1)</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;       -z_nd(i,j  ,k) - z_nd(i+1,j  ,k) - z_nd(i,j  ,k+1) - z_nd(i+1,j  ,k+1) );</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      - z_nd(i,j  ,k) - z_nd(i+1,j  ,k) - z_nd(i,j  ,k+1) - z_nd(i+1,j  ,k+1) );</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
@@ -348,7 +348,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd)</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_zeta = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * cellSizeInv[2] * ( (z_nd(i,j  ,k+1) - z_nd(i,j  ,k))</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                                    + (z_nd(i,j+1,k+1) - z_nd(i,j+1,k)) );</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                                       + (z_nd(i,j+1,k+1) - z_nd(i,j+1,k)) );</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
@@ -395,7 +395,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd)</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_eta  = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * cellSizeInv[1] * ( (z_nd(i,j+1,k  ) - z_nd(i,j,k  ))</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                                    + (z_nd(i,j+1,k+1) - z_nd(i,j,k+1)) );</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                                       + (z_nd(i,j+1,k+1) - z_nd(i,j,k+1)) );</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
@@ -418,7 +418,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                        <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd)</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_zeta = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * cellSizeInv[2] * ( (z_nd(i  ,j,k+1) - z_nd(i  ,j,k  ))</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                    + (z_nd(i+1,j,k+1) - z_nd(i+1,j,k  )) );</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                       + (z_nd(i+1,j,k+1) - z_nd(i+1,j,k  )) );</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
@@ -441,7 +441,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd)</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;{</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_xi   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * cellSizeInv[0] * ( (z_nd(i+1,j,k  ) - z_nd(i,j,k  ))</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                                    + (z_nd(i+1,j,k+1) - z_nd(i,j,k+1)) );</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                                                       + (z_nd(i+1,j,k+1) - z_nd(i,j,k+1)) );</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;}</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
@@ -489,7 +489,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;{</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_zeta = <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.125) * cellSizeInv[2] *</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;      ( (z_nd(i  ,j  ,k+1) - z_nd(i  ,j  ,k-1)) + (z_nd(i+1,j  ,k+1) - z_nd(i+1,j  ,k-1)) +</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        (z_nd(i  ,j+1,k+1) - z_nd(  i,j+1,k-1)) + (z_nd(i+1,j+1,k+1) - z_nd(i+1,j+1,k-1)) );</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        (z_nd(i  ,j+1,k+1) - z_nd(i  ,j+1,k-1)) + (z_nd(i+1,j+1,k+1) - z_nd(i+1,j+1,k-1)) );</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
@@ -512,7 +512,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd)</div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;{</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_xi   = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * cellSizeInv[0] * ( (z_nd(i+1,j  ,k) - z_nd(i,j  ,k))</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                                                    + (z_nd(i+1,j+1,k) - z_nd(i,j+1,k)) );</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                                                       + (z_nd(i+1,j+1,k) - z_nd(i,j+1,k)) );</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
@@ -535,7 +535,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                       <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; z_nd)</div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;{</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_eta  = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * cellSizeInv[1] * ( (z_nd(i  ,j+1,k) - z_nd(i  ,j,k))</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                                                    + (z_nd(i+1,j+1,k) - z_nd(i+1,j,k)) );</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;                                                       + (z_nd(i+1,j+1,k) - z_nd(i+1,j,k)) );</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;}</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
@@ -589,7 +589,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0];</div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_xi  = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> *</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;      ( z_nd(i+1,j,k) + z_nd(i+1,j,k+1)</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;       -z_nd(i-1,j,k) - z_nd(i-1,j,k+1) );</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;      - z_nd(i-1,j,k) - z_nd(i-1,j,k+1) );</div>
 <div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;}</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160; </div>
@@ -614,7 +614,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dyInv = cellSizeInv[1];</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_eta = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * dyInv *</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;      ( z_nd(i,j+1,k) + z_nd(i,j+1,k+1)</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;       -z_nd(i,j-1,k) - z_nd(i,j-1,k+1) );</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;      - z_nd(i,j-1,k) - z_nd(i,j-1,k+1) );</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
@@ -640,7 +640,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;{</div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_zeta = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * dzInv * ( z_nd(i,j,k+1) + z_nd(i,j+1,k+1)</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                                             -z_nd(i,j,k-1) - z_nd(i,j+1,k-1) );</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                                              - z_nd(i,j,k-1) - z_nd(i,j+1,k-1) );</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;}</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
@@ -665,7 +665,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> = cellSizeInv[0];</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_xi = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a> *</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;      ( z_nd(i+1,j+1,k) + z_nd(i+1,j  ,k)</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;       -z_nd(i-1,j+1,k) - z_nd(i-1,j  ,k) );</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;      - z_nd(i-1,j+1,k) - z_nd(i-1,j  ,k) );</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordflow">return</span> met_h_xi;</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;}</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
@@ -714,7 +714,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;{</div>
 <div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dzInv = cellSizeInv[2];</div>
 <div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_zeta = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * dzInv * ( z_nd(i,j,k+1) + z_nd(i+1,j,k+1)</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                                             -z_nd(i,j,k-1) - z_nd(i+1,j,k-1) );</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                                              - z_nd(i,j,k-1) - z_nd(i+1,j,k-1) );</div>
 <div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordflow">return</span> met_h_zeta;</div>
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;}</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160; </div>
@@ -762,7 +762,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dyInv = cellSizeInv[1];</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> met_h_eta = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * dyInv *</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;      ( z_nd(i+1,j+1,k) + z_nd(i,j+1,k)</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;       -z_nd(i+1,j-1,k) - z_nd(i,j-1,k) );</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;      - z_nd(i+1,j-1,k) - z_nd(i,j-1,k) );</div>
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="keywordflow">return</span> met_h_eta;</div>
 <div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;}</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160; </div>
@@ -836,7 +836,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="comment">// Note: we assume the z_nd array spans from the bottom to top of the domain</span></div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="comment">// i.e. no domain decomposition across processors in vertical direction</span></div>
 <div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> z0_cc = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a>*( z_nd(i  ,j  ,0) + z_nd(i  ,j+1,0)</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                                      +z_nd(i+1,j  ,0) + z_nd(i+1,j+1,0));</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                                     + z_nd(i+1,j  ,0) + z_nd(i+1,j+1,0));</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="keywordflow">return</span> (z_cc - z0_cc);</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;}</div>
@@ -1163,7 +1163,7 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;AMREX_GPU_DEVICE</div>
 <div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;AMREX_FORCE_INLINE</div>
 <div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;<span class="keywordtype">void</span></div>
-<div class="line"><a name="l01078"></a><span class="lineno"><a class="line" href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b"> 1078</a></span>&#160;<a class="code" href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
+<div class="line"><a name="l01078"></a><span class="lineno"><a class="line" href="ERF__TerrainMetrics_8H.html#aa0f2ad6ff7803b15cbba2dd5cd84466e"> 1078</a></span>&#160;<a class="code" href="ERF__TerrainMetrics_8H.html#aa0f2ad6ff7803b15cbba2dd5cd84466e">rotate_stress_tensor</a> (<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i,</div>
 <div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; j,</div>
 <div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;                      <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; klo,</div>
 <div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;                      <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&amp; flux,</div>
@@ -1172,11 +1172,11 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; u_arr,</div>
 <div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; v_arr,</div>
 <div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;const amrex::Real&gt;&amp; w_arr,</div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau11_arr,</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau22_arr,</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau33_arr,</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau12_arr,</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau21_arr,</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; <span class="comment">/*tau11_arr*/</span>,</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; <span class="comment">/*tau22_arr*/</span>,</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; <span class="comment">/*tau33_arr*/</span>,</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; <span class="comment">/*tau12_arr*/</span>,</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; <span class="comment">/*tau21_arr*/</span>,</div>
 <div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau13_arr,</div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau31_arr,</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;                      <span class="keyword">const</span> amrex::Array4&lt;amrex::Real&gt;&amp; tau23_arr,</div>
@@ -1186,95 +1186,84 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;    amrex::Array1D&lt;amrex::Real,0,2&gt; n_hat;</div>
 <div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160; </div>
 <div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;    <span class="comment">// Unit-tangent vectors</span></div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;    amrex::Array1D&lt;amrex::Real,0,2&gt; t_hat_1;</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;    amrex::Array1D&lt;amrex::Real,0,2&gt; t_hat_2;</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;    amrex::Array1D&lt;amrex::Real,0,2&gt; u_t_hat;</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160; </div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;    <span class="comment">// Final basis vector for right-hand coord sys</span></div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;    amrex::Array1D&lt;amrex::Real,0,2&gt; a_hat;</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160; </div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    <span class="comment">// Rotation matrix</span></div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    amrex::Array2D&lt;amrex::Real,0,2,0,2&gt; R_mat;</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160; </div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="comment">// Metric data</span></div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_xi   = <a class="code" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>(i, j, klo, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr);</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_eta  = <a class="code" href="ERF__TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669">Compute_h_eta_AtIface</a>(i, j, klo, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr);</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, klo, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr);</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160; </div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    <span class="comment">// Populate the normal vector</span></div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inormn = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/std::sqrt(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + h_xi*h_xi + h_eta*h_eta);</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    n_hat(0) = Inormn*h_xi; n_hat(1) = Inormn*h_eta; n_hat(2) = -Inormn;</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160; </div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    <span class="comment">// Populate the tangent vectors: t_1 ~ (1,0,h_xi) and t_2 ~ (0,1,h_eta).</span></div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;    <span class="comment">// NOTE: the out-of-plane component of each is identically zero and must be</span></div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <span class="comment">//       set explicitly since Array1D is an aggregate with no default init.</span></div>
-<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm1 = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/std::sqrt(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + h_xi*h_xi);</div>
-<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm2 = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/std::sqrt(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + h_eta*h_eta);</div>
-<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    t_hat_1(0) = -Inorm1;      t_hat_2(0) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;    t_hat_1(1) = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;         t_hat_2(1) = -Inorm2;</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    t_hat_1(2) = -Inorm1*h_xi; t_hat_2(2) = -Inorm2*h_eta;</div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160; </div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;    <span class="comment">// Populate the u_t vector</span></div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Norm_u_t = <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mag1 = (u_arr(i,j,klo) + h_xi *w_arr(i,j,klo))*Inorm1;</div>
-<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> mag2 = (v_arr(i,j,klo) + h_eta*w_arr(i,j,klo))*Inorm2;</div>
-<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;        u_t_hat(icol) = mag1*t_hat_1(icol) + mag2*t_hat_2(icol);</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;        Norm_u_t  += u_t_hat(icol)*u_t_hat(icol);</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;    }</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;    <span class="comment">// NOTE: the direction of the tangential velocity is undefined when that</span></div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;    <span class="comment">//       velocity vanishes (a quiescent surface cell, or flow normal to the</span></div>
-<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    <span class="comment">//       terrain), so we cannot normalize. Leaving u_t_hat as the zero vector</span></div>
-<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;    <span class="comment">//       is the only rotation-invariant choice, and it is the right limit for</span></div>
-<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;    <span class="comment">//       a quiescent cell since the flux vanishes with the surface wind too.</span></div>
-<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm_u_t = (Norm_u_t &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ? <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/std::sqrt(Norm_u_t) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;        u_t_hat(icol) *= Inorm_u_t;</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    }</div>
-<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160; </div>
-<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    <span class="comment">// Populate the a_hat vector</span></div>
-<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;    a_hat(0) =   n_hat(1)*u_t_hat(2) - n_hat(2)*u_t_hat(1);</div>
-<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;    a_hat(1) = -(n_hat(0)*u_t_hat(2) - n_hat(2)*u_t_hat(0));</div>
-<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;    a_hat(2) =   n_hat(0)*u_t_hat(1) - n_hat(1)*u_t_hat(0);</div>
-<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160; </div>
-<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;    <span class="comment">// Copy column vectors into R_mat</span></div>
-<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    <span class="keywordtype">int</span> jrow;</div>
-<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;    jrow = 0;</div>
-<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;        R_mat(icol,jrow) = u_t_hat(icol);</div>
-<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    }</div>
-<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;    jrow = 1;</div>
-<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;        R_mat(icol,jrow) = a_hat(icol);</div>
-<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    }</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    jrow = 2;</div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
-<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;        R_mat(icol,jrow) = n_hat(icol);</div>
-<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    }</div>
-<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160; </div>
-<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    <span class="comment">// Body-fixed tau</span></div>
-<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T11    = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*R_mat(0,0)*R_mat(2,0)*flux;</div>
-<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T22    = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*R_mat(0,1)*R_mat(2,1)*flux;</div>
-<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T33    = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*R_mat(0,2)*R_mat(2,2)*flux;</div>
-<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T12    = (R_mat(0,0)*R_mat(2,1) + R_mat(2,0)*R_mat(0,1))*flux;</div>
-<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T13    = (R_mat(0,0)*R_mat(2,2) + R_mat(0,2)*R_mat(2,0))*flux;</div>
-<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T23    = (R_mat(0,1)*R_mat(2,2) + R_mat(0,2)*R_mat(2,1))*flux;</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;    amrex::Array1D&lt;amrex::Real,0,2&gt; u_t_hat;</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160; </div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;    <span class="comment">// Final basis vector for right-hand coord sys</span></div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;    amrex::Array1D&lt;amrex::Real,0,2&gt; a_hat;</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160; </div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;    <span class="comment">// Rotation matrix</span></div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;    amrex::Array2D&lt;amrex::Real,0,2,0,2&gt; R_mat;</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160; </div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    <span class="comment">// Metric data</span></div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_xi   =   <a class="code" href="ERF__TerrainMetrics_8H.html#a2116df83b61a39fb50b9a2d7474c00d7">Compute_h_xi_AtIface</a>(i, j, klo, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr);</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_eta  =  <a class="code" href="ERF__TerrainMetrics_8H.html#ad06b0ae003cb3d59227ce85a5fa8a669">Compute_h_eta_AtIface</a>(i, j, klo, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr);</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> h_zeta = <a class="code" href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a>(i, j, klo, <a class="code" href="ERF__InitCustomPertVels__ParticleTests_8H.html#ae44ee844a27ad92e3e12a8cfc523ca15">dxInv</a>, zphys_arr);</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160; </div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;    <span class="comment">// Populate the inward normal vector</span></div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inormn = <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/std::sqrt(<a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a> + h_xi*h_xi + h_eta*h_eta);</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    n_hat(0) = -Inormn*h_xi; n_hat(1) = -Inormn*h_eta; n_hat(2) = Inormn;</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160; </div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    <span class="comment">// Populate the u_t vector (u_t = u - (u \cdot n)n)</span></div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u    = u_arr(i,j,klo);</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> v    = <a class="code" href="ERF__Constants_8H.html#a51fd20c46a81551dee3956734c5f7bcc">fourth</a> * ( v_arr(i  ,j,klo) + v_arr(i  ,j+1,klo)</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;                                + v_arr(i-1,j,klo) + v_arr(i-1,j+1,klo) );</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>    = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * ( w_arr(i  ,j,klo) + w_arr(i-1,j  ,klo) );</div>
+<div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> u_dot_n = n_hat(0)*u + n_hat(1)*v + n_hat(2)*<a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a>;</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;    u_t_hat(0) = u - u_dot_n*n_hat(0);</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    u_t_hat(1) = v - u_dot_n*n_hat(1);</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;    u_t_hat(2) = <a class="code" href="ERF__Plotfile2DInterpolator_8cpp.html#a658e24fc592c43471ed399f60665a22f">w</a> - u_dot_n*n_hat(2);</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Norm_u_t = u_t_hat(0)*u_t_hat(0)</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;                         + u_t_hat(1)*u_t_hat(1)</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;                         + u_t_hat(2)*u_t_hat(2);</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160; </div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;    <span class="comment">// NOTE: the direction of the tangential velocity is undefined when that</span></div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;    <span class="comment">//       velocity vanishes (a quiescent surface cell, or flow normal to the</span></div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    <span class="comment">//       terrain), so we cannot normalize. Leaving u_t_hat as the zero vector</span></div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;    <span class="comment">//       is the only rotation-invariant choice, and it is the right limit for</span></div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;    <span class="comment">//       a quiescent cell since the flux vanishes with the surface wind too.</span></div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> Inorm_u_t = (Norm_u_t &gt; <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) ? <a class="code" href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a>/std::sqrt(Norm_u_t) : <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>;</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> icol(0); icol&lt;3; ++icol) {</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;        u_t_hat(icol) *= Inorm_u_t;</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;    }</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160; </div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;    <span class="comment">// Populate the a_hat = n_hat X u_t_hat vector</span></div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    a_hat(0) =   n_hat(1)*u_t_hat(2) - n_hat(2)*u_t_hat(1);</div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    a_hat(1) = -(n_hat(0)*u_t_hat(2) - n_hat(2)*u_t_hat(0));</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    a_hat(2) =   n_hat(0)*u_t_hat(1) - n_hat(1)*u_t_hat(0);</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160; </div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;    <span class="comment">// Copy column vectors into R_mat</span></div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;    <span class="comment">// NOTE: basis vectors form rows of R_mat</span></div>
+<div class="line"><a name="l01148"></a><span class="lineno"> 1148</span>&#160;    <span class="keywordtype">int</span> icol = 0;</div>
+<div class="line"><a name="l01149"></a><span class="lineno"> 1149</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jrow(0); jrow&lt;3; ++jrow) {</div>
+<div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;        R_mat(icol,jrow) = u_t_hat(jrow);</div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;    }</div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;    icol = 1;</div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jrow(0); jrow&lt;3; ++jrow) {</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;        R_mat(icol,jrow) = a_hat(jrow);</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;    }</div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;    icol = 2;</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> jrow(0); jrow&lt;3; ++jrow) {</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;        R_mat(icol,jrow) = n_hat(jrow);</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;    }</div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160; </div>
+<div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;    <span class="comment">// Body-fixed stresses</span></div>
+<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T11    = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*R_mat(0,0)*R_mat(2,0)*flux;</div>
+<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T22    = <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>*R_mat(0,1)*R_mat(2,1)*flux;</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;    <span class="comment">//amrex::Real T33    = two*R_mat(0,2)*R_mat(2,2)*flux;</span></div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T12    = (R_mat(0,0)*R_mat(2,1) + R_mat(2,0)*R_mat(0,1))*flux;</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T13    = (R_mat(0,0)*R_mat(2,2) + R_mat(0,2)*R_mat(2,0))*flux;</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;    <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> T23    = (R_mat(0,2)*R_mat(2,1) + R_mat(0,1)*R_mat(2,2))*flux;</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160; </div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;    <span class="comment">// Populate the stress tensor (apply JT)</span></div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    <span class="comment">// NOTE: We cannot set the stresses that do not live at the</span></div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;    <span class="comment">//       bottom face --- e.g., tau11/22/33/12/21.</span></div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;    tau13_arr(i,j,klo) =  -h_xi*T11 - h_eta*T12 + T13;</div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;    tau31_arr(i,j,klo) = h_zeta*T13;</div>
 <div class="line"><a name="l01174"></a><span class="lineno"> 1174</span>&#160; </div>
-<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;    <span class="comment">// Rotated stress fluxes</span></div>
-<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    tau11_arr(i,j,klo) = h_zeta*T11;</div>
-<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;    tau22_arr(i,j,klo) = h_zeta*T22;</div>
-<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;    tau33_arr(i,j,klo) = -h_xi*T13 - h_eta*T23 + T33;</div>
-<div class="line"><a name="l01179"></a><span class="lineno"> 1179</span>&#160; </div>
-<div class="line"><a name="l01180"></a><span class="lineno"> 1180</span>&#160;    tau12_arr(i,j,klo) = h_zeta*T12;</div>
-<div class="line"><a name="l01181"></a><span class="lineno"> 1181</span>&#160;    tau21_arr(i,j,klo) = h_zeta*T12; <span class="comment">// the body-fixed tensor is symmetric: T21 == T12</span></div>
-<div class="line"><a name="l01182"></a><span class="lineno"> 1182</span>&#160; </div>
-<div class="line"><a name="l01183"></a><span class="lineno"> 1183</span>&#160;    tau13_arr(i,j,klo) = -h_xi*T11 - h_eta*T12 + T13;</div>
-<div class="line"><a name="l01184"></a><span class="lineno"> 1184</span>&#160;    tau31_arr(i,j,klo) = h_zeta*T13;</div>
-<div class="line"><a name="l01185"></a><span class="lineno"> 1185</span>&#160; </div>
-<div class="line"><a name="l01186"></a><span class="lineno"> 1186</span>&#160;    tau23_arr(i,j,klo) = -h_xi*T12 - h_eta*T22 + T23;</div>
-<div class="line"><a name="l01187"></a><span class="lineno"> 1187</span>&#160;    tau32_arr(i,j,klo) = h_zeta*T23;</div>
-<div class="line"><a name="l01188"></a><span class="lineno"> 1188</span>&#160;}</div>
-<div class="line"><a name="l01189"></a><span class="lineno"> 1189</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l01175"></a><span class="lineno"> 1175</span>&#160;    tau23_arr(i,j,klo) =  -h_xi*T12 - h_eta*T22 + T23;</div>
+<div class="line"><a name="l01176"></a><span class="lineno"> 1176</span>&#160;    tau32_arr(i,j,klo) = h_zeta*T23;</div>
+<div class="line"><a name="l01177"></a><span class="lineno"> 1177</span>&#160;}</div>
+<div class="line"><a name="l01178"></a><span class="lineno"> 1178</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aERF__Constants_8H_html"><div class="ttname"><a href="ERF__Constants_8H.html">ERF_Constants.H</a></div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a2d515b2cda500f9935528386cf6c707a"><div class="ttname"><a href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a></div><div class="ttdeci">constexpr amrex::Real two</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:10</div></div>
 <div class="ttc" id="aERF__Constants_8H_html_a473379dfb979d62b5ecd9ca0a9c24baf"><div class="ttname"><a href="ERF__Constants_8H.html#a473379dfb979d62b5ecd9ca0a9c24baf">one</a></div><div class="ttdeci">constexpr amrex::Real one</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:9</div></div>
@@ -1301,14 +1290,14 @@ $(document).ready(function(){initNavTree('ERF__TerrainMetrics_8H_source.html',''
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a49831c051eee94070a9176baddde85dfa6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfa6adf97f83acf6453d4a6a4b1070f3754">FineTerrain::None</a></div><div class="ttdeci">@ None</div><div class="ttdoc">caller has not prepared a fine mesh from the coarse level</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a49831c051eee94070a9176baddde85dfad53238014015da17926bca398282211f"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a49831c051eee94070a9176baddde85dfad53238014015da17926bca398282211f">FineTerrain::Interpolate</a></div><div class="ttdeci">@ Interpolate</div><div class="ttdoc">use the coordinates interpolated from the coarse level as-is</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a5592160d4fcea8fa203b4028037ad739"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a5592160d4fcea8fa203b4028037ad739">Compute_Z_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_Z_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:694</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a5a9e39d96b7ebe9f9dbd5d32560e7d3a"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a">which_fine_terrain</a></div><div class="ttdeci">FineTerrain which_fine_terrain()</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.cpp:172</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_a5a9e39d96b7ebe9f9dbd5d32560e7d3a"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a5a9e39d96b7ebe9f9dbd5d32560e7d3a">which_fine_terrain</a></div><div class="ttdeci">FineTerrain which_fine_terrain()</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.cpp:384</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a5f352d8a029b11cfde243cd4a20ea1b4"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a5f352d8a029b11cfde243cd4a20ea1b4">init_which_terrain_grid</a></div><div class="ttdeci">void init_which_terrain_grid(int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h, FineTerrain fine_terrain=FineTerrain::None, amrex::MultiFab const *z_phys_interp=nullptr)</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a648544a94d2694aa6ea7e3e037f3eaae"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a648544a94d2694aa6ea7e3e037f3eaae">rotate_scalar_flux</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_scalar_flux(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi1_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi2_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;phi3_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:1035</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a75188f81dc8d569423d235d596361d0c"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a75188f81dc8d569423d235d596361d0c">init_fine_terrain_grid</a></div><div class="ttdeci">void init_fine_terrain_grid(int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h, FineTerrain fine_terrain, amrex::MultiFab const *z_phys_interp)</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a7c5cb4e049d2b033cfdc2dfbcdc54e60"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a7c5cb4e049d2b033cfdc2dfbcdc54e60">Compute_h_xi_AtCellCenter</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtCellCenter(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:204</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a8d96671d41364f1e24391375a2bc0f1e"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a8d96671d41364f1e24391375a2bc0f1e">Compute_h_zeta_AtIface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_zeta_AtIface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:258</div></div>
-<div class="ttc" id="aERF__TerrainMetrics_8H_html_a9b3eb880f98843461a7d64193ee6879b"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9b3eb880f98843461a7d64193ee6879b">rotate_stress_tensor</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_stress_tensor(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;w_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau11_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau22_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau33_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau12_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau21_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau13_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau31_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau23_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau32_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:1078</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_a9ec5ec17f16954e56733db6dd98fe07d"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#a9ec5ec17f16954e56733db6dd98fe07d">Compute_h_xi_AtJface</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE amrex::Real Compute_h_xi_AtJface(const int &amp;i, const int &amp;j, const int &amp;k, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;cellSizeInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;z_nd)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:351</div></div>
+<div class="ttc" id="aERF__TerrainMetrics_8H_html_aa0f2ad6ff7803b15cbba2dd5cd84466e"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#aa0f2ad6ff7803b15cbba2dd5cd84466e">rotate_stress_tensor</a></div><div class="ttdeci">AMREX_GPU_DEVICE AMREX_FORCE_INLINE void rotate_stress_tensor(const int &amp;i, const int &amp;j, const int &amp;klo, const amrex::Real &amp;flux, const amrex::GpuArray&lt; amrex::Real, AMREX_SPACEDIM &gt; &amp;dxInv, const amrex::Array4&lt; const amrex::Real &gt; &amp;zphys_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;u_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;v_arr, const amrex::Array4&lt; const amrex::Real &gt; &amp;w_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;, const amrex::Array4&lt; amrex::Real &gt; &amp;tau13_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau31_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau23_arr, const amrex::Array4&lt; amrex::Real &gt; &amp;tau32_arr)</div><div class="ttdef"><b>Definition:</b> ERF_TerrainMetrics.H:1078</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_aa12259218315ea9e55b53683cce38442"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#aa12259218315ea9e55b53683cce38442">update_stretched_dz</a></div><div class="ttdeci">void update_stretched_dz(int lev, amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; const &amp;zlevels_stag, amrex::Vector&lt; amrex::Vector&lt; amrex::Real &gt;&gt; &amp;stretched_dz_h, amrex::Vector&lt; amrex::Gpu::DeviceVector&lt; amrex::Real &gt;&gt; &amp;stretched_dz_d)</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_aa6b3cfc4e14bfe9057110d904f310908"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#aa6b3cfc4e14bfe9057110d904f310908">make_terrain_fitted_coords</a></div><div class="ttdeci">void make_terrain_fitted_coords(int lev, const amrex::Geometry &amp;geom, amrex::MultiFab &amp;z_phys_nd, amrex::Vector&lt; amrex::Real &gt; const &amp;z_levels_h, amrex::GpuArray&lt; ERF_BC, AMREX_SPACEDIM *2 &gt; &amp;phys_bc_type, FineTerrain fine_terrain=FineTerrain::None, amrex::MultiFab const *z_phys_interp=nullptr)</div></div>
 <div class="ttc" id="aERF__TerrainMetrics_8H_html_aaec90986b7b54f5e7022a582aee434a9"><div class="ttname"><a href="ERF__TerrainMetrics_8H.html#aaec90986b7b54f5e7022a582aee434a9">get_dzmin_terrain</a></div><div class="ttdeci">amrex::Real get_dzmin_terrain(amrex::MultiFab &amp;z_phys_nd)</div></div>

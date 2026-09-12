@@ -1,9 +1,10 @@
 var classMOSTAverage =
 [
-    [ "MOSTAverage", "classMOSTAverage.html#ac91c332f55f19948f69c449ccd8700d2", null ],
+    [ "MOSTAverage", "classMOSTAverage.html#ab158c25ccf2c4b014f92b60c01b815b4", null ],
     [ "~MOSTAverage", "classMOSTAverage.html#ac755f71a35f1231c8add20993364832a", null ],
     [ "MOSTAverage", "classMOSTAverage.html#acfc77dc21a0821d4b446f7be289c64d6", null ],
     [ "MOSTAverage", "classMOSTAverage.html#add74667e947201bbb2ddf2785f02ee0c", null ],
+    [ "cell_center_height", "classMOSTAverage.html#ac6cd8186e859ca08c5ba0cc6ebdbcbb1", null ],
     [ "compute_averages", "classMOSTAverage.html#a41ef10e076e2099d0fd845e318fd00a0", null ],
     [ "compute_eb_averages", "classMOSTAverage.html#af3ddc4c0c5fb5e95bc4fa8793508675e", null ],
     [ "compute_plane_averages", "classMOSTAverage.html#a094b17b7929c7b3dd680e400049d9e69", null ],
@@ -17,6 +18,8 @@ var classMOSTAverage =
     [ "get_ng_fill", "classMOSTAverage.html#af9751b66e98ab40abc0fe4604447cec0", null ],
     [ "get_plane_average", "classMOSTAverage.html#a5c69c3bffb485f9fe0e32c6ccf1dfb5f", null ],
     [ "get_zref", "classMOSTAverage.html#a815d3e6377a2356c9859807874066d37", null ],
+    [ "in_cell_z", "classMOSTAverage.html#aaf8ba26a674ef204580c6565d8eec1df", null ],
+    [ "k_index_below", "classMOSTAverage.html#a215719d573d21b73a4cdbd3a306a35ec", null ],
     [ "make_MOSTAverage_at_level", "classMOSTAverage.html#aceb8c4ce27021d371b85abb7350a36db", null ],
     [ "operator=", "classMOSTAverage.html#a56f533937767a348d7c1dff755989531", null ],
     [ "operator=", "classMOSTAverage.html#a584b986a317b2c4d799163574c43b3b3", null ],
@@ -74,6 +77,7 @@ var classMOSTAverage =
     [ "m_y_pos", "classMOSTAverage.html#a1beb0dad926be2f2d9cb1de69a1a3374", null ],
     [ "m_z_phys_nd", "classMOSTAverage.html#a3a49018467b69573ef84df9cdfd86da4", null ],
     [ "m_z_pos", "classMOSTAverage.html#a81ff1b7e8d026f0cd74147cbcc016d15", null ],
+    [ "m_zlevels_stag", "classMOSTAverage.html#ace73efcfb2d478d8a1f108667005f355", null ],
     [ "m_zref", "classMOSTAverage.html#ab9f916aea0c336c883ed954ff0ef258f", null ],
     [ "zref_default", "classMOSTAverage.html#addde3db57d53d5d309ba5e0ef4d827a4", null ],
     [ "zref_sentinel", "classMOSTAverage.html#a219026ba697d1e93f4b4c67e07d2e5e2", null ]

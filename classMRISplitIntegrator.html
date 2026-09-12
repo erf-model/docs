@@ -520,7 +520,7 @@ template&lt;class T &gt; </div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    nsubsteps = 1;</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    dtau      = <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * <a class="code" href="classMRISplitIntegrator.html#a6e4bf4ac23c215a227ae93b4b8519d88">timestep</a>;</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    nsubsteps = substep_ratio/2;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    nsubsteps = std::max(substep_ratio/2, 1);</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    dtau      = (<a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a> * <a class="code" href="classMRISplitIntegrator.html#a6e4bf4ac23c215a227ae93b4b8519d88">timestep</a>) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(nsubsteps);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                time_stage = time + <a class="code" href="classMRISplitIntegrator.html#a6e4bf4ac23c215a227ae93b4b8519d88">timestep</a> / <a class="code" href="ERF__Constants_8H.html#a2d515b2cda500f9935528386cf6c707a">two</a>;</div>

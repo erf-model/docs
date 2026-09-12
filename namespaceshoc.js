@@ -19,7 +19,7 @@ var namespaceshoc =
     [ "diagnose_active_top", "namespaceshoc.html#a54869a642372eb758c54218d9250998e", null ],
     [ "height_agl", "namespaceshoc.html#a1fc6e813cc0c436e72ec66433be27e1e", null ],
     [ "latent_sublimation", "namespaceshoc.html#af984a1839991048a21e0b142fb57b2a0", null ],
-    [ "make_energy_fixer_view", "namespaceshoc.html#acc20b19240ba5158554680570b07ecb8", null ],
+    [ "make_energy_fixer_view", "namespaceshoc.html#a56b51d2385cf38e10dd7cae941593984", null ],
     [ "moist_energy", "namespaceshoc.html#a8fe70a420266e7915d3bf161c4574f95", null ],
     [ "reconstruct_pdf_state", "namespaceshoc.html#a776af5a298fc673858c55f2b1311b2ad", null ],
     [ "set_fab_val", "namespaceshoc.html#aeaf1586a65cd1201b95f0f357a4d71a5", null ],

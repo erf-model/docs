@@ -2,6 +2,7 @@ var structshoc_1_1ShocEnergyFixerView =
 [
     [ "dz", "structshoc_1_1ShocEnergyFixerView.html#ae8dc43f5360d8e1c37303cfb9250e59b", null ],
     [ "exner", "structshoc_1_1ShocEnergyFixerView.html#a998e1d989ab5ac05ef644610689c478a", null ],
+    [ "include_momentum_energy", "structshoc_1_1ShocEnergyFixerView.html#a81ead744a4065307389af1986d7a9877", null ],
     [ "nlev", "structshoc_1_1ShocEnergyFixerView.html#a3acbbc2ea7cba157968603af683fd30b", null ],
     [ "qc_base", "structshoc_1_1ShocEnergyFixerView.html#a17f4f8e3dcca90745bc3d083a56b38b2", null ],
     [ "qi_base", "structshoc_1_1ShocEnergyFixerView.html#ac92453ab6f2ba8e446e9de0540e7d859", null ],
