@@ -103,6 +103,7 @@ var classERF =
     [ "initHSE", "classERF.html#a92c020bfaa43e40fb5ffc449427a0318", null ],
     [ "initHSE", "classERF.html#a69c8fce3b0f5b28e98240599c2ee16bb", null ],
     [ "initialize_integrator", "classERF.html#a5600f8ce250d4811012719fdf5e85f00", null ],
+    [ "initializeEB", "classERF.html#a1e79e62ce3ef2845be3bac4723b1b7a3", null ],
     [ "InitializeFromFile", "classERF.html#a2e1874d47d95c7c858c2a2336fd0eee6", null ],
     [ "InitializeLevelFromData", "classERF.html#a914f576acc2d1a54203a220cce10df62", null ],
     [ "initializeMicrophysics", "classERF.html#afc2898daad269536c1a15443abf3fa75", null ],

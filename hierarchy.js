@@ -13,6 +13,7 @@ var hierarchy =
     [ "erf_provenance::ArtifactProvenance", "structerf__provenance_1_1ArtifactProvenance.html", null ],
     [ "BaseStateParams", "structBaseStateParams.html", null ],
     [ "SHOCInterface::Buffer", "structSHOCInterface_1_1Buffer.html", null ],
+    [ "BuildingsIF", "classBuildingsIF.html", null ],
     [ "bulk_coeff_flux", "structbulk__coeff__flux.html", null ],
     [ "noahmp_result_policy::CellPolicy", "structnoahmp__result__policy_1_1CellPolicy.html", null ],
     [ "CENTERED2", "structCENTERED2.html", null ],

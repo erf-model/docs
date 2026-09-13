@@ -12,6 +12,9 @@ var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
     ] ],
     [ "ERF_EBCutCell.cpp", "ERF__EBCutCell_8cpp.html", null ],
     [ "ERF_EBCutCell.H", "ERF__EBCutCell_8H.html", "ERF__EBCutCell_8H" ],
+    [ "ERF_EBIFBuildings.H", "ERF__EBIFBuildings_8H.html", [
+      [ "BuildingsIF", "classBuildingsIF.html", "classBuildingsIF" ]
+    ] ],
     [ "ERF_EBIFTerrain.H", "ERF__EBIFTerrain_8H.html", [
       [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ]
     ] ],

@@ -17,6 +17,7 @@ var classeb__ =
     [ "make_all_factories", "classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402", null ],
     [ "make_cc_factory", "classeb__.html#a939eef3f5cd9a4befe45d389b49c3405", null ],
     [ "make_terrain", "classeb__.html#a2fd2b83d9ff044e353c71fc08e06403a", null ],
+    [ "mask_fc_from_cc", "classeb__.html#a6742441548c82724b3dd30c323f4080e", null ],
     [ "nghost_basic", "classeb__.html#adeeabbed9dbdf2241f513b5b2ef8c9d8", null ],
     [ "nghost_full", "classeb__.html#ad927cf323e89587952b632234487f9f9", null ],
     [ "nghost_volume", "classeb__.html#a8e61525cf6488d04f457068fc40f47df", null ],
