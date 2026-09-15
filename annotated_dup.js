@@ -3,7 +3,17 @@ var annotated_dup =
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", [
       [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
       [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
-      [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ]
+      [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ],
+      [ "WallTransferContract", "structerf__cloud__chamber_1_1WallTransferContract.html", "structerf__cloud__chamber_1_1WallTransferContract" ]
+    ] ],
+    [ "erf_cloud_chamber_wall_flux", "namespaceerf__cloud__chamber__wall__flux.html", [
+      [ "WallFlux", "structerf__cloud__chamber__wall__flux_1_1WallFlux.html", "structerf__cloud__chamber__wall__flux_1_1WallFlux" ],
+      [ "FaceRuntimeCoefficients", "structerf__cloud__chamber__wall__flux_1_1FaceRuntimeCoefficients.html", "structerf__cloud__chamber__wall__flux_1_1FaceRuntimeCoefficients" ],
+      [ "MostStabilityResult", "structerf__cloud__chamber__wall__flux_1_1MostStabilityResult.html", "structerf__cloud__chamber__wall__flux_1_1MostStabilityResult" ],
+      [ "ScalarWallSample", "structerf__cloud__chamber__wall__flux_1_1ScalarWallSample.html", "structerf__cloud__chamber__wall__flux_1_1ScalarWallSample" ],
+      [ "NeutralLogMomentumState", "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState.html", "structerf__cloud__chamber__wall__flux_1_1NeutralLogMomentumState" ],
+      [ "MomentumWallSample", "structerf__cloud__chamber__wall__flux_1_1MomentumWallSample.html", "structerf__cloud__chamber__wall__flux_1_1MomentumWallSample" ],
+      [ "ScalarFluxReplacement", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement.html", "structerf__cloud__chamber__wall__flux_1_1ScalarFluxReplacement" ]
     ] ],
     [ "erf_grid_utils", "namespaceerf__grid__utils.html", [
       [ "UniformGridMetadata", "structerf__grid__utils_1_1UniformGridMetadata.html", "structerf__grid__utils_1_1UniformGridMetadata" ],
@@ -34,7 +44,10 @@ var annotated_dup =
       [ "WallFaceParseResult", "structerf__wall__scalar__bc_1_1WallFaceParseResult.html", "structerf__wall__scalar__bc_1_1WallFaceParseResult" ]
     ] ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", [
-      [ "Face", "structerf__wall__thermodynamics_1_1Face.html", "structerf__wall__thermodynamics_1_1Face" ]
+      [ "ThermalBoundary", "structerf__wall__thermodynamics_1_1ThermalBoundary.html", "structerf__wall__thermodynamics_1_1ThermalBoundary" ],
+      [ "MomentumTransfer", "structerf__wall__thermodynamics_1_1MomentumTransfer.html", "structerf__wall__thermodynamics_1_1MomentumTransfer" ],
+      [ "ScalarTransfer", "structerf__wall__thermodynamics_1_1ScalarTransfer.html", "structerf__wall__thermodynamics_1_1ScalarTransfer" ],
+      [ "FaceWall", "structerf__wall__thermodynamics_1_1FaceWall.html", "structerf__wall__thermodynamics_1_1FaceWall" ]
     ] ],
     [ "module_libmassv", "namespacemodule__libmassv.html", [
       [ "vrec", "interfacemodule__libmassv_1_1vrec.html", "interfacemodule__libmassv_1_1vrec" ],
@@ -150,12 +163,15 @@ var annotated_dup =
     [ "PBLDerivativeDzInv_N", "structPBLDerivativeDzInv__N.html", "structPBLDerivativeDzInv__N" ],
     [ "PBLDerivativeDzInv_S", "structPBLDerivativeDzInv__S.html", "structPBLDerivativeDzInv__S" ],
     [ "PBLDerivativeDzInv_T", "structPBLDerivativeDzInv__T.html", "structPBLDerivativeDzInv__T" ],
+    [ "PlanarBoundary", "classPlanarBoundary.html", "classPlanarBoundary" ],
     [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ],
     [ "PlaneSampler", "structPlaneSampler.html", "structPlaneSampler" ],
     [ "polygon_", "classpolygon__.html", "classpolygon__" ],
     [ "ProblemBase", "classProblemBase.html", "classProblemBase" ],
     [ "ProbParmDefaults", "structProbParmDefaults.html", "structProbParmDefaults" ],
+    [ "RadChoice", "structRadChoice.html", "structRadChoice" ],
     [ "Radiation", "classRadiation.html", "classRadiation" ],
+    [ "RadiationDiagnostics", "classRadiationDiagnostics.html", "classRadiationDiagnostics" ],
     [ "RadiationSimple", "classRadiationSimple.html", "classRadiationSimple" ],
     [ "ReadBndryPlanes", "classReadBndryPlanes.html", "classReadBndryPlanes" ],
     [ "rico_flux", "structrico__flux.html", "structrico__flux" ],
@@ -220,6 +236,9 @@ var annotated_dup =
     [ "TimeInterpolatedData", "structTimeInterpolatedData.html", "structTimeInterpolatedData" ],
     [ "TurbChoice", "structTurbChoice.html", "structTurbChoice" ],
     [ "TurbulentPerturbation", "structTurbulentPerturbation.html", "structTurbulentPerturbation" ],
+    [ "TwoStreamLayerSW", "structTwoStreamLayerSW.html", "structTwoStreamLayerSW" ],
+    [ "TwoStreamParams", "structTwoStreamParams.html", "structTwoStreamParams" ],
+    [ "TwoStreamRadiation", "classTwoStreamRadiation.html", "classTwoStreamRadiation" ],
     [ "UPWIND3", "structUPWIND3.html", "structUPWIND3" ],
     [ "UPWIND3SL", "structUPWIND3SL.html", "structUPWIND3SL" ],
     [ "UPWIND5", "structUPWIND5.html", "structUPWIND5" ],

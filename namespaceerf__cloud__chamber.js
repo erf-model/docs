@@ -3,6 +3,7 @@ var namespaceerf__cloud__chamber =
     [ "WallSpec", "structerf__cloud__chamber_1_1WallSpec.html", "structerf__cloud__chamber_1_1WallSpec" ],
     [ "Config", "structerf__cloud__chamber_1_1Config.html", "structerf__cloud__chamber_1_1Config" ],
     [ "InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", "structerf__cloud__chamber_1_1InitializationContract" ],
+    [ "WallTransferContract", "structerf__cloud__chamber_1_1WallTransferContract.html", "structerf__cloud__chamber_1_1WallTransferContract" ],
     [ "InitializationMode", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7", [
       [ "PhysicalTemperatureRH", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7a771279d249d1fa5c25e791ef3971f8ee", null ],
       [ "LegacyThetaQv", "namespaceerf__cloud__chamber.html#ab52895612e608d5a84cdf153660b82a7ae30f844e44d8afad7ee7383f32e676bf", null ]
@@ -18,6 +19,9 @@ var namespaceerf__cloud__chamber =
     [ "deterministic_perturbation", "namespaceerf__cloud__chamber.html#a1f7c4bf60b72bae7dc737fe831037857", null ],
     [ "face_name", "namespaceerf__cloud__chamber.html#a67fcb81762b86cfdf22570f0254e97a5", null ],
     [ "finite", "namespaceerf__cloud__chamber.html#ad6386a142314152cfe77637718c16780", null ],
+    [ "initial_u_velocity_perturbation", "namespaceerf__cloud__chamber.html#a0e78153f04c88fd386ff30bbfc6ea1c4", null ],
+    [ "initial_v_velocity_perturbation", "namespaceerf__cloud__chamber.html#afd26525f3c6aeca1d4527922bd6897e1", null ],
+    [ "initial_w_velocity_perturbation", "namespaceerf__cloud__chamber.html#af2ac51aadbcdbcf6794bd3eb5bd7b427", null ],
     [ "initialization_contract_error", "namespaceerf__cloud__chamber.html#ad3f6951a379b4ce5e0bf2cc2d7325a5a", null ],
     [ "linear_profile", "namespaceerf__cloud__chamber.html#ada393f7c2dc2faf21670956a8869c710", null ],
     [ "parse_config", "namespaceerf__cloud__chamber.html#a94686331be24678ca6a5bd1487d7c195", null ],
@@ -26,6 +30,11 @@ var namespaceerf__cloud__chamber =
     [ "require_finite", "namespaceerf__cloud__chamber.html#a96147d4ef218cefa261bd3118e09418c", null ],
     [ "require_no_unsupported_geometry", "namespaceerf__cloud__chamber.html#abfe0bbc331590aa6fd5263ab04d08e6a", null ],
     [ "require_zero_periodicity", "namespaceerf__cloud__chamber.html#a02a62e6e64c8518560d8a18f75cdf911", null ],
+    [ "staggered_velocity_v_scale", "namespaceerf__cloud__chamber.html#a351d1b3b0e1974d66be40f53d0c72d36", null ],
     [ "theta_at", "namespaceerf__cloud__chamber.html#ad2673aed2ef0c6cd00fb25515d150b6f", null ],
-    [ "vapor_mixing_ratio_from_relative_humidity", "namespaceerf__cloud__chamber.html#a6a92042cd9a46f3cbc0aff4a8d1c3378", null ]
+    [ "validate_wall_roughness_geometry", "namespaceerf__cloud__chamber.html#aaf23e1de34bb37a13bc54e17628bd447", null ],
+    [ "vapor_mixing_ratio_from_relative_humidity", "namespaceerf__cloud__chamber.html#a6a92042cd9a46f3cbc0aff4a8d1c3378", null ],
+    [ "wall_coupled_most_roughness_error", "namespaceerf__cloud__chamber.html#a0aada77faf19b5efebb430c2e1b0c6a0", null ],
+    [ "wall_roughness_geometry_error", "namespaceerf__cloud__chamber.html#a331e1f3a185d6320511a2b48f1e81760", null ],
+    [ "wall_transfer_contract_error", "namespaceerf__cloud__chamber.html#a32c9dddf666fd0e3978c883fa02d44c0", null ]
 ];

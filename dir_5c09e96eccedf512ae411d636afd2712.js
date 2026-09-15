@@ -2,6 +2,8 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
 [
     [ "ERF_AverageDown.cpp", "ERF__AverageDown_8cpp.html", null ],
     [ "ERF_ChopGrids.cpp", "ERF__ChopGrids_8cpp.html", "ERF__ChopGrids_8cpp" ],
+    [ "ERF_ColumnBands.cpp", "ERF__ColumnBands_8cpp.html", "ERF__ColumnBands_8cpp" ],
+    [ "ERF_ColumnBands.H", "ERF__ColumnBands_8H.html", "ERF__ColumnBands_8H" ],
     [ "ERF_Container.H", "ERF__Container_8H.html", "ERF__Container_8H" ],
     [ "ERF_ConvertForProjection.cpp", "ERF__ConvertForProjection_8cpp.html", "ERF__ConvertForProjection_8cpp" ],
     [ "ERF_DirectionSelector.H", "ERF__DirectionSelector_8H.html", "ERF__DirectionSelector_8H" ],
@@ -45,6 +47,11 @@ var dir_5c09e96eccedf512ae411d636afd2712 =
     [ "ERF_MomentumToVelocity.cpp", "ERF__MomentumToVelocity_8cpp.html", "ERF__MomentumToVelocity_8cpp" ],
     [ "ERF_NodalReconstruction.H", "ERF__NodalReconstruction_8H.html", "ERF__NodalReconstruction_8H" ],
     [ "ERF_ParFunctions.H", "ERF__ParFunctions_8H.html", "ERF__ParFunctions_8H" ],
+    [ "ERF_PlanarBoundary.cpp", "ERF__PlanarBoundary_8cpp.html", null ],
+    [ "ERF_PlanarBoundary.H", "ERF__PlanarBoundary_8H.html", [
+      [ "PlanarBoundary", "classPlanarBoundary.html", "classPlanarBoundary" ],
+      [ "Buffer", "structPlanarBoundary_1_1Buffer.html", "structPlanarBoundary_1_1Buffer" ]
+    ] ],
     [ "ERF_PlaneAverage.H", "ERF__PlaneAverage_8H.html", [
       [ "PlaneAverage", "classPlaneAverage.html", "classPlaneAverage" ]
     ] ],

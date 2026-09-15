@@ -696,8 +696,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;            <span class="comment">// Level 0 supplies prob_lo/hi to the writer, so this object must be shared.</span></div>
 <div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;            <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> dx0 = geom[0].CellSize(dir);</div>
 <div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;            amrex::RealBox shared_rbx = bnd_rbx;</div>
-<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;            shared_rbx.setLo(dir, point - <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
-<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;            shared_rbx.setHi(dir, point + <a class="code" href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;            shared_rbx.setLo(dir, point - <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;            shared_rbx.setHi(dir, point + <a class="code" href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a>*dx0);</div>
 <div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160; </div>
 <div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;            amrex::Vector&lt;int&gt; is_per(AMREX_SPACEDIM,0);</div>
 <div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> d(0); d&lt;AMREX_SPACEDIM; ++d) { is_per[d] = geom[0].isPeriodic(d); }</div>
@@ -745,8 +745,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;                                    m_level_steps, m_ref_ratio);</div>
 <div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;        } <span class="comment">// iplane</span></div>
 <div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;    }</div>
-<div class="ttc" id="aERF__Constants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__Constants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:13</div></div>
-<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a></div><div class="ttdeci">Coord</div><div class="ttdoc">Coordinate-axis selector.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:157</div></div>
+<div class="ttc" id="aERF__DataStruct_8H_html_a627f1f843904477f763577ad1460de01"><div class="ttname"><a href="ERF__DataStruct_8H.html#a627f1f843904477f763577ad1460de01">Coord</a></div><div class="ttdeci">Coord</div><div class="ttdoc">Coordinate-axis selector.</div><div class="ttdef"><b>Definition:</b> ERF_DataStruct.H:158</div></div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a85c9f06fb84cd004c8d9e084b72855dd"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a85c9f06fb84cd004c8d9e084b72855dd">myhalf</a></div><div class="ttdeci">constexpr amrex::Real myhalf</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:26</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

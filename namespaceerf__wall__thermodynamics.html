@@ -93,13 +93,19 @@ $(document).ready(function(){initNavTree('namespaceerf__wall__thermodynamics.htm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__wall__thermodynamics_1_1Face.html">Face</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__wall__thermodynamics_1_1ThermalBoundary.html">ThermalBoundary</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__wall__thermodynamics_1_1MomentumTransfer.html">MomentumTransfer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__wall__thermodynamics_1_1ScalarTransfer.html">ScalarTransfer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structerf__wall__thermodynamics_1_1FaceWall.html">FaceWall</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aec0132049f0ab9366caa42da20ada261"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__wall__thermodynamics.html#aec0132049f0ab9366caa42da20ada261">Boundary</a> = amrex::GpuArray&lt; <a class="el" href="structerf__wall__thermodynamics_1_1Face.html">Face</a>, 2 *AMREX_SPACEDIM &gt;</td></tr>
-<tr class="separator:aec0132049f0ab9366caa42da20ada261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6e111fffb75ec5ef33e70f3be7d82f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__wall__thermodynamics.html#acf6e111fffb75ec5ef33e70f3be7d82f">Boundary</a> = amrex::GpuArray&lt; <a class="el" href="structerf__wall__thermodynamics_1_1FaceWall.html">FaceWall</a>, 2 *AMREX_SPACEDIM &gt;</td></tr>
+<tr class="separator:acf6e111fffb75ec5ef33e70f3be7d82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -112,20 +118,31 @@ Enumerations</h2></td></tr>
 , <a class="el" href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4afb85b7a901f07883cfb4dd207c320409">WetEquilibrium</a>
  }</td></tr>
 <tr class="separator:aa4abb01cec6cd74f06d3b7e0a5cc87b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf23f45bcc5494a2161213c3ec35bc28"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28">TransferModel</a> : unsigned char { <a class="el" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a1cec84fe7a8d909774f89ff2810e570b">ResolvedMolecular</a>
+<tr class="memitem:a25ccda56812eabb5eda8942c8179ec65"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65">MomentumModel</a> : unsigned char { <a class="el" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a1e462fe2740041c4bffa88431b671b14">ResolvedNoSlip</a>
+, <a class="el" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8">BulkAero</a>
+, <a class="el" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701">NeutralRoughnessLog</a>
  }</td></tr>
-<tr class="separator:aaf23f45bcc5494a2161213c3ec35bc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a25ccda56812eabb5eda8942c8179ec65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8049a8e10dc09eaf6fcf3f27e9da6363"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363">ScalarModel</a> : unsigned char { <a class="el" href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a1cec84fe7a8d909774f89ff2810e570b">ResolvedMolecular</a>
+, <a class="el" href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a8fd21f2dfc7a3c126447713c95e2f3f8">BulkAero</a>
+, <a class="el" href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a5105f56cdf666bdbf3b6194479d4d701">NeutralRoughnessLog</a>
+ }</td></tr>
+<tr class="separator:a8049a8e10dc09eaf6fcf3f27e9da6363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a00c830244c4bbc74ffa0cba677e98"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98">CoefficientProvider</a> : unsigned char { <a class="el" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a4457d440870ad6d42bab9082d9bf9b61">Fixed</a>
+, <a class="el" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c">MOST</a>
+ }</td></tr>
+<tr class="separator:a62a00c830244c4bbc74ffa0cba677e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="aec0132049f0ab9366caa42da20ada261"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec0132049f0ab9366caa42da20ada261">&#9670;&nbsp;</a></span>Boundary</h2>
+<a id="acf6e111fffb75ec5ef33e70f3be7d82f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6e111fffb75ec5ef33e70f3be7d82f">&#9670;&nbsp;</a></span>Boundary</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceerf__wall__thermodynamics.html#aec0132049f0ab9366caa42da20ada261">erf_wall_thermodynamics::Boundary</a> = typedef amrex::GpuArray&lt;<a class="el" href="structerf__wall__thermodynamics_1_1Face.html">Face</a>, 2 * AMREX_SPACEDIM&gt;</td>
+          <td class="memname">using <a class="el" href="namespaceerf__wall__thermodynamics.html#acf6e111fffb75ec5ef33e70f3be7d82f">erf_wall_thermodynamics::Boundary</a> = typedef amrex::GpuArray&lt;<a class="el" href="structerf__wall__thermodynamics_1_1FaceWall.html">FaceWall</a>, 2 * AMREX_SPACEDIM&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -133,6 +150,41 @@ Enumerations</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a62a00c830244c4bbc74ffa0cba677e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62a00c830244c4bbc74ffa0cba677e98">&#9670;&nbsp;</a></span>CoefficientProvider</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98">erf_wall_thermodynamics::CoefficientProvider</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a62a00c830244c4bbc74ffa0cba677e98a4457d440870ad6d42bab9082d9bf9b61"></a>Fixed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c"></a>MOST&#160;</td><td class="fielddoc"></td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                               : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754">None</a>,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a4457d440870ad6d42bab9082d9bf9b61">Fixed</a>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c">MOST</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a62a00c830244c4bbc74ffa0cba677e98a4457d440870ad6d42bab9082d9bf9b61"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a4457d440870ad6d42bab9082d9bf9b61">erf_wall_thermodynamics::CoefficientProvider::Fixed</a></div><div class="ttdeci">@ Fixed</div></div>
+<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a6adf97f83acf6453d4a6a4b1070f3754">erf_wall_thermodynamics::CoefficientProvider::None</a></div><div class="ttdeci">@ None</div></div>
+<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a62a00c830244c4bbc74ffa0cba677e98a882dd232c0425bb9366544f84f0a7b6c">erf_wall_thermodynamics::CoefficientProvider::MOST</a></div><div class="ttdeci">@ MOST</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="aa4abb01cec6cd74f06d3b7e0a5cc87b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4abb01cec6cd74f06d3b7e0a5cc87b4">&#9670;&nbsp;</a></span>MoistureMode</h2>
 
@@ -157,14 +209,82 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="aa4abb01cec6cd74f06d3b7e0a5cc87b4aeeb2783a41282e2ac39d09e514b567c1"></a>DryImpermeable&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa4abb01cec6cd74f06d3b7e0a5cc87b4afb85b7a901f07883cfb4dd207c320409"></a>WetEquilibrium&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                        : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e">LegacyNumerical</a>,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4aeeb2783a41282e2ac39d09e514b567c1">DryImpermeable</a>,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4afb85b7a901f07883cfb4dd207c320409">WetEquilibrium</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                        : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e">LegacyNumerical</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4aeeb2783a41282e2ac39d09e514b567c1">DryImpermeable</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4afb85b7a901f07883cfb4dd207c320409">WetEquilibrium</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aa4abb01cec6cd74f06d3b7e0a5cc87b4aeeb2783a41282e2ac39d09e514b567c1"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4aeeb2783a41282e2ac39d09e514b567c1">erf_wall_thermodynamics::MoistureMode::DryImpermeable</a></div><div class="ttdeci">@ DryImpermeable</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aa4abb01cec6cd74f06d3b7e0a5cc87b4afb85b7a901f07883cfb4dd207c320409"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aa4abb01cec6cd74f06d3b7e0a5cc87b4afb85b7a901f07883cfb4dd207c320409">erf_wall_thermodynamics::MoistureMode::WetEquilibrium</a></div><div class="ttdeci">@ WetEquilibrium</div></div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e">erf_wall_thermodynamics::ThermalMode::LegacyNumerical</a></div><div class="ttdeci">@ LegacyNumerical</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a25ccda56812eabb5eda8942c8179ec65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25ccda56812eabb5eda8942c8179ec65">&#9670;&nbsp;</a></span>MomentumModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65">erf_wall_thermodynamics::MomentumModel</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a25ccda56812eabb5eda8942c8179ec65a1e462fe2740041c4bffa88431b671b14"></a>ResolvedNoSlip&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8"></a>BulkAero&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701"></a>NeutralRoughnessLog&#160;</td><td class="fielddoc"></td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                         : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a1e462fe2740041c4bffa88431b671b14">ResolvedNoSlip</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8">BulkAero</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701">NeutralRoughnessLog</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a25ccda56812eabb5eda8942c8179ec65a1e462fe2740041c4bffa88431b671b14"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a1e462fe2740041c4bffa88431b671b14">erf_wall_thermodynamics::MomentumModel::ResolvedNoSlip</a></div><div class="ttdeci">@ ResolvedNoSlip</div></div>
+<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701">erf_wall_thermodynamics::MomentumModel::NeutralRoughnessLog</a></div><div class="ttdeci">@ NeutralRoughnessLog</div></div>
+<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8">erf_wall_thermodynamics::MomentumModel::BulkAero</a></div><div class="ttdeci">@ BulkAero</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8049a8e10dc09eaf6fcf3f27e9da6363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8049a8e10dc09eaf6fcf3f27e9da6363">&#9670;&nbsp;</a></span>ScalarModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363">erf_wall_thermodynamics::ScalarModel</a> : unsigned char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8049a8e10dc09eaf6fcf3f27e9da6363a1cec84fe7a8d909774f89ff2810e570b"></a>ResolvedMolecular&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8049a8e10dc09eaf6fcf3f27e9da6363a8fd21f2dfc7a3c126447713c95e2f3f8"></a>BulkAero&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8049a8e10dc09eaf6fcf3f27e9da6363a5105f56cdf666bdbf3b6194479d4d701"></a>NeutralRoughnessLog&#160;</td><td class="fielddoc"></td></tr>
+</table>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                       : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a1cec84fe7a8d909774f89ff2810e570b">ResolvedMolecular</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a8fd21f2dfc7a3c126447713c95e2f3f8">BulkAero</a>,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#a25ccda56812eabb5eda8942c8179ec65a5105f56cdf666bdbf3b6194479d4d701">NeutralRoughnessLog</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_a8049a8e10dc09eaf6fcf3f27e9da6363a1cec84fe7a8d909774f89ff2810e570b"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#a8049a8e10dc09eaf6fcf3f27e9da6363a1cec84fe7a8d909774f89ff2810e570b">erf_wall_thermodynamics::ScalarModel::ResolvedMolecular</a></div><div class="ttdeci">@ ResolvedMolecular</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -191,43 +311,11 @@ Enumerations</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e"></a>LegacyNumerical&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aaf06043ce86732c214aaea9bc322d4eaab7d036528108019653da1be67ec689ba"></a>FixedPhysicalTemperature&#160;</td><td class="fielddoc"></td></tr>
 </table>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                       : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e">LegacyNumerical</a>,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaab7d036528108019653da1be67ec689ba">FixedPhysicalTemperature</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                       : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaafe3330a98ba654913f5153ebf68d016e">LegacyNumerical</a>,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaab7d036528108019653da1be67ec689ba">FixedPhysicalTemperature</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
 <div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aaf06043ce86732c214aaea9bc322d4eaab7d036528108019653da1be67ec689ba"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aaf06043ce86732c214aaea9bc322d4eaab7d036528108019653da1be67ec689ba">erf_wall_thermodynamics::ThermalMode::FixedPhysicalTemperature</a></div><div class="ttdeci">@ FixedPhysicalTemperature</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aaf23f45bcc5494a2161213c3ec35bc28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf23f45bcc5494a2161213c3ec35bc28">&#9670;&nbsp;</a></span>TransferModel</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28">erf_wall_thermodynamics::TransferModel</a> : unsigned char</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aaf23f45bcc5494a2161213c3ec35bc28a1cec84fe7a8d909774f89ff2810e570b"></a>ResolvedMolecular&#160;</td><td class="fielddoc"></td></tr>
-</table>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                         : <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754">None</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a1cec84fe7a8d909774f89ff2810e570b">ResolvedMolecular</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aaf23f45bcc5494a2161213c3ec35bc28a1cec84fe7a8d909774f89ff2810e570b"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a1cec84fe7a8d909774f89ff2810e570b">erf_wall_thermodynamics::TransferModel::ResolvedMolecular</a></div><div class="ttdeci">@ ResolvedMolecular</div></div>
-<div class="ttc" id="anamespaceerf__wall__thermodynamics_html_aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="namespaceerf__wall__thermodynamics.html#aaf23f45bcc5494a2161213c3ec35bc28a6adf97f83acf6453d4a6a4b1070f3754">erf_wall_thermodynamics::TransferModel::None</a></div><div class="ttdeci">@ None</div></div>
 </div><!-- fragment -->
 </div>
 </div>

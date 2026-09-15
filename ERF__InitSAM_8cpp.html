@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('ERF__InitSAM_8cpp.html',''); initResiz
 <div class="contents">
 <div class="textblock"><code>#include &lt;AMReX_GpuContainers.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__SAM_8H_source.html">ERF_SAM.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ERF__MicrophysicsConstants_8H_source.html">ERF_MicrophysicsConstants.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__IndexDefines_8H_source.html">ERF_IndexDefines.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__PlaneAverage_8H_source.html">ERF_PlaneAverage.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__EOS_8H_source.html">ERF_EOS.H</a>&quot;</code><br />
@@ -97,56 +98,56 @@ Include dependency graph for ERF_InitSAM.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__InitSAM_8cpp__incl.png" border="0" usemap="#aSource_2Microphysics_2SAM_2ERF__InitSAM_8cpp" alt=""/></div>
 <map name="aSource_2Microphysics_2SAM_2ERF__InitSAM_8cpp" id="aSource_2Microphysics_2SAM_2ERF__InitSAM_8cpp">
-<area shape="rect" title=" " alt="" coords="2003,5,2173,47"/>
-<area shape="rect" title=" " alt="" coords="93,244,280,271"/>
-<area shape="rect" href="ERF__SAM_8H.html" title=" " alt="" coords="2536,95,2635,121"/>
-<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="3681,393,3775,420"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="583,393,737,420"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="2949,393,3067,420"/>
-<area shape="rect" href="ERF__PlaneAverage_8H.html" title=" " alt="" coords="467,169,624,196"/>
-<area shape="rect" title=" " alt="" coords="1628,393,1687,420"/>
-<area shape="rect" title=" " alt="" coords="3091,393,3154,420"/>
-<area shape="rect" title=" " alt="" coords="3064,169,3141,196"/>
-<area shape="rect" title=" " alt="" coords="2007,169,2163,196"/>
-<area shape="rect" title=" " alt="" coords="2330,393,2483,420"/>
-<area shape="rect" title=" " alt="" coords="2188,169,2343,196"/>
-<area shape="rect" title=" " alt="" coords="2647,393,2815,420"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="3280,468,3413,495"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html" title=" " alt="" coords="3151,319,3334,345"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1775,244,1913,271"/>
-<area shape="rect" href="ERF__NullMoist_8H.html" title=" " alt="" coords="2417,169,2548,196"/>
-<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="782,244,981,271"/>
-<area shape="rect" href="ERF__SAMUtils_8H.html" title=" " alt="" coords="3256,169,3384,196"/>
-<area shape="rect" title=" " alt="" coords="3378,543,3441,569"/>
-<area shape="rect" title=" " alt="" coords="3528,543,3587,569"/>
-<area shape="rect" title=" " alt="" coords="1923,543,2045,569"/>
-<area shape="rect" title=" " alt="" coords="2839,393,2924,420"/>
-<area shape="rect" title=" " alt="" coords="3280,393,3403,420"/>
-<area shape="rect" title=" " alt="" coords="3437,468,3520,495"/>
-<area shape="rect" title=" " alt="" coords="3851,468,3986,495"/>
-<area shape="rect" title=" " alt="" coords="3696,468,3827,495"/>
-<area shape="rect" title=" " alt="" coords="559,468,687,495"/>
-<area shape="rect" title=" " alt="" coords="1137,393,1217,420"/>
-<area shape="rect" title=" " alt="" coords="1402,393,1561,420"/>
-<area shape="rect" title=" " alt="" coords="1256,393,1376,420"/>
-<area shape="rect" title=" " alt="" coords="961,393,1077,420"/>
-<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="1633,319,1764,345"/>
-<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="913,319,1079,345"/>
-<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="1250,319,1379,345"/>
-<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="1103,319,1225,345"/>
-<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="1404,319,1559,345"/>
-<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="2313,319,2447,345"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="2725,319,2883,345"/>
-<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="2092,319,2289,345"/>
-<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="2159,393,2305,420"/>
-<area shape="rect" title=" " alt="" coords="2559,393,2623,420"/>
-<area shape="rect" title=" " alt="" coords="2069,393,2134,420"/>
-<area shape="rect" title=" " alt="" coords="608,244,757,271"/>
-<area shape="rect" title=" " alt="" coords="1839,319,2017,345"/>
-<area shape="rect" title=" " alt="" coords="490,319,635,345"/>
-<area shape="rect" title=" " alt="" coords="3280,244,3413,271"/>
-<area shape="rect" href="ERF__DirectionSelector_8H.html" title=" " alt="" coords="304,244,483,271"/>
-<area shape="rect" title=" " alt="" coords="249,319,364,345"/>
+<area shape="rect" title=" " alt="" coords="2565,5,2736,47"/>
+<area shape="rect" title=" " alt="" coords="43,244,229,271"/>
+<area shape="rect" href="ERF__SAM_8H.html" title=" " alt="" coords="2769,95,2868,121"/>
+<area shape="rect" href="ERF__MicrophysicsConstants_8H.html" title="Physical constants and tuning parameters used only by the moisture and cloud&#45;physics code." alt="" coords="3859,244,4077,271"/>
+<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="3550,319,3645,345"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="482,393,635,420"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="2591,393,2710,420"/>
+<area shape="rect" href="ERF__PlaneAverage_8H.html" title=" " alt="" coords="599,169,756,196"/>
+<area shape="rect" title=" " alt="" coords="1781,393,1840,420"/>
+<area shape="rect" title=" " alt="" coords="3113,319,3175,345"/>
+<area shape="rect" title=" " alt="" coords="2885,169,2963,196"/>
+<area shape="rect" title=" " alt="" coords="2987,169,3143,196"/>
+<area shape="rect" title=" " alt="" coords="853,393,1006,420"/>
+<area shape="rect" title=" " alt="" coords="3168,169,3323,196"/>
+<area shape="rect" title=" " alt="" coords="660,393,828,420"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="3715,393,3848,420"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html" title=" " alt="" coords="3289,244,3471,271"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1699,244,1837,271"/>
+<area shape="rect" href="ERF__NullMoist_8H.html" title=" " alt="" coords="1292,169,1423,196"/>
+<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="2689,244,2887,271"/>
+<area shape="rect" href="ERF__SAMUtils_8H.html" title=" " alt="" coords="3448,169,3576,196"/>
+<area shape="rect" title=" " alt="" coords="3305,468,3367,495"/>
+<area shape="rect" title=" " alt="" coords="3856,468,3915,495"/>
+<area shape="rect" title=" " alt="" coords="3340,543,3463,569"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="3429,468,3629,495"/>
+<area shape="rect" title=" " alt="" coords="2741,393,2827,420"/>
+<area shape="rect" title=" " alt="" coords="3352,319,3475,345"/>
+<area shape="rect" title=" " alt="" coords="3197,468,3280,495"/>
+<area shape="rect" title=" " alt="" coords="3401,393,3535,420"/>
+<area shape="rect" title=" " alt="" coords="3560,393,3691,420"/>
+<area shape="rect" title=" " alt="" coords="495,468,623,495"/>
+<area shape="rect" title=" " alt="" coords="1331,393,1411,420"/>
+<area shape="rect" title=" " alt="" coords="1598,393,1757,420"/>
+<area shape="rect" title=" " alt="" coords="1453,393,1573,420"/>
+<area shape="rect" title=" " alt="" coords="1162,393,1278,420"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="949,319,1080,345"/>
+<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="1685,319,1851,345"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="1155,319,1285,345"/>
+<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="1309,319,1432,345"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="1456,319,1611,345"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="2219,393,2352,420"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="2403,319,2562,345"/>
+<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="1875,319,2005,345"/>
+<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="2131,319,2328,345"/>
+<area shape="rect" title=" " alt="" coords="659,244,808,271"/>
+<area shape="rect" title=" " alt="" coords="2909,319,3088,345"/>
+<area shape="rect" title=" " alt="" coords="2689,319,2834,345"/>
+<area shape="rect" title=" " alt="" coords="3600,244,3733,271"/>
+<area shape="rect" href="ERF__DirectionSelector_8H.html" title=" " alt="" coords="405,244,584,271"/>
+<area shape="rect" title=" " alt="" coords="405,319,520,345"/>
 </map>
 </div>
 </div></div><!-- contents -->

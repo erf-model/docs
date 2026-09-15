@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('ERF__Morrison_8H.html',''); initResiza
 <code>#include &lt;AMReX_TableData.H&gt;</code><br />
 <code>#include &lt;AMReX_MultiFabUtil.H&gt;</code><br />
 <code>#include &quot;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ERF__MicrophysicsConstants_8H_source.html">ERF_MicrophysicsConstants.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__MicrophysicsUtils_8H_source.html">ERF_MicrophysicsUtils.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__IndexDefines_8H_source.html">ERF_IndexDefines.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__DataStruct_8H_source.html">ERF_DataStruct.H</a>&quot;</code><br />
@@ -110,51 +111,55 @@ Include dependency graph for ERF_Morrison.H:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Morrison_8H__incl.png" border="0" usemap="#aSource_2Microphysics_2Morrison_2ERF__Morrison_8H" alt=""/></div>
 <map name="aSource_2Microphysics_2Morrison_2ERF__Morrison_8H" id="aSource_2Microphysics_2Morrison_2ERF__Morrison_8H">
-<area shape="rect" title=" " alt="" coords="735,5,925,47"/>
-<area shape="rect" title=" " alt="" coords="1715,333,1774,360"/>
-<area shape="rect" title=" " alt="" coords="5,333,68,360"/>
-<area shape="rect" title=" " alt="" coords="279,102,357,129"/>
-<area shape="rect" title=" " alt="" coords="381,102,537,129"/>
-<area shape="rect" title=" " alt="" coords="1196,333,1349,360"/>
-<area shape="rect" title=" " alt="" coords="613,102,767,129"/>
-<area shape="rect" title=" " alt="" coords="613,333,781,360"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="717,408,850,435"/>
-<area shape="rect" href="ERF__MicrophysicsUtils_8H.html" title=" " alt="" coords="151,259,333,285"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="2449,333,2603,360"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1565,184,1703,211"/>
-<area shape="rect" href="ERF__NullMoist_8H.html" title=" " alt="" coords="998,102,1129,129"/>
-<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="2612,184,2811,211"/>
-<area shape="rect" href="ERF__Morrison__Fortran__Interface_8H.html" title=" " alt="" coords="3173,95,3337,136"/>
-<area shape="rect" title=" " alt="" coords="176,483,239,509"/>
-<area shape="rect" title=" " alt="" coords="602,483,661,509"/>
-<area shape="rect" title=" " alt="" coords="873,483,995,509"/>
-<area shape="rect" title=" " alt="" coords="943,333,1029,360"/>
-<area shape="rect" title=" " alt="" coords="314,333,437,360"/>
-<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="195,333,289,360"/>
-<area shape="rect" title=" " alt="" coords="610,408,693,435"/>
-<area shape="rect" title=" " alt="" coords="245,408,380,435"/>
-<area shape="rect" title=" " alt="" coords="405,408,535,435"/>
-<area shape="rect" title=" " alt="" coords="2361,408,2489,435"/>
-<area shape="rect" title=" " alt="" coords="1989,333,2069,360"/>
-<area shape="rect" title=" " alt="" coords="1805,333,1964,360"/>
-<area shape="rect" title=" " alt="" coords="2093,333,2213,360"/>
-<area shape="rect" title=" " alt="" coords="2237,333,2353,360"/>
-<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="1671,259,1802,285"/>
-<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="1826,259,1991,285"/>
-<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="2067,259,2196,285"/>
-<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="2221,259,2343,285"/>
-<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="2367,259,2522,285"/>
-<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="1191,259,1325,285"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="856,259,1015,285"/>
-<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="1349,259,1546,285"/>
-<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="1374,333,1521,360"/>
-<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="1053,333,1172,360"/>
-<area shape="rect" title=" " alt="" coords="855,333,919,360"/>
-<area shape="rect" title=" " alt="" coords="1545,333,1611,360"/>
-<area shape="rect" title=" " alt="" coords="1090,184,1239,211"/>
-<area shape="rect" title=" " alt="" coords="2749,259,2927,285"/>
-<area shape="rect" title=" " alt="" coords="2952,259,3097,285"/>
-<area shape="rect" title=" " alt="" coords="3214,184,3297,211"/>
+<area shape="rect" title=" " alt="" coords="627,5,817,47"/>
+<area shape="rect" title=" " alt="" coords="1405,333,1463,360"/>
+<area shape="rect" title=" " alt="" coords="5,408,68,435"/>
+<area shape="rect" title=" " alt="" coords="146,102,223,129"/>
+<area shape="rect" title=" " alt="" coords="248,102,404,129"/>
+<area shape="rect" title=" " alt="" coords="621,333,775,360"/>
+<area shape="rect" title=" " alt="" coords="479,102,634,129"/>
+<area shape="rect" title=" " alt="" coords="429,333,597,360"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="745,483,878,509"/>
+<area shape="rect" href="ERF__MicrophysicsConstants_8H.html" title="Physical constants and tuning parameters used only by the moisture and cloud&#45;physics code." alt="" coords="2631,483,2850,509"/>
+<area shape="rect" href="ERF__MicrophysicsUtils_8H.html" title=" " alt="" coords="171,333,353,360"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="2464,333,2617,360"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1445,184,1583,211"/>
+<area shape="rect" href="ERF__NullMoist_8H.html" title=" " alt="" coords="841,102,971,129"/>
+<area shape="rect" href="ERF__SurfacePrecipitation_8H.html" title=" " alt="" coords="2679,184,2877,211"/>
+<area shape="rect" href="ERF__Morrison__Fortran__Interface_8H.html" title=" " alt="" coords="2795,95,2959,136"/>
+<area shape="rect" title=" " alt="" coords="741,557,804,584"/>
+<area shape="rect" title=" " alt="" coords="599,557,658,584"/>
+<area shape="rect" title=" " alt="" coords="2430,632,2553,659"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="2090,557,2290,584"/>
+<area shape="rect" title=" " alt="" coords="690,408,775,435"/>
+<area shape="rect" title=" " alt="" coords="201,408,323,435"/>
+<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="359,408,453,435"/>
+<area shape="rect" title=" " alt="" coords="614,483,697,509"/>
+<area shape="rect" title=" " alt="" coords="349,483,484,509"/>
+<area shape="rect" title=" " alt="" coords="143,483,274,509"/>
+<area shape="rect" title=" " alt="" coords="2477,408,2605,435"/>
+<area shape="rect" title=" " alt="" coords="1671,333,1751,360"/>
+<area shape="rect" title=" " alt="" coords="1488,333,1647,360"/>
+<area shape="rect" title=" " alt="" coords="1917,333,2037,360"/>
+<area shape="rect" title=" " alt="" coords="1776,333,1892,360"/>
+<area shape="rect" href="ERF__AdvStruct_8H.html" title=" " alt="" coords="2066,259,2197,285"/>
+<area shape="rect" href="ERF__DampingStruct_8H.html" title=" " alt="" coords="1346,259,1511,285"/>
+<area shape="rect" href="ERF__DiffStruct_8H.html" title=" " alt="" coords="1536,259,1665,285"/>
+<area shape="rect" href="ERF__EBStruct_8H.html" title=" " alt="" coords="1869,259,1991,285"/>
+<area shape="rect" href="ERF__SpongeStruct_8H.html" title=" " alt="" coords="1690,259,1845,285"/>
+<area shape="rect" href="ERF__TurbStruct_8H.html" title=" " alt="" coords="2289,333,2422,360"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="789,259,948,285"/>
+<area shape="rect" href="ERF__RadStruct_8H.html" title="Radiation model type and control parameters." alt="" coords="2271,259,2402,285"/>
+<area shape="rect" href="ERF__ShocTransportStruct_8H.html" title=" " alt="" coords="973,259,1170,285"/>
+<area shape="rect" title=" " alt="" coords="2077,408,2281,435"/>
+<area shape="rect" href="ERF__MYNNStruct_8H.html" title=" " alt="" coords="2306,408,2453,435"/>
+<area shape="rect" href="ERF__TileNoZ_8H.html" title=" " alt="" coords="851,408,969,435"/>
+<area shape="rect" title=" " alt="" coords="850,333,914,360"/>
+<area shape="rect" title=" " alt="" coords="1043,333,1108,360"/>
+<area shape="rect" title=" " alt="" coords="861,184,1010,211"/>
+<area shape="rect" title=" " alt="" coords="2679,259,2858,285"/>
+<area shape="rect" title=" " alt="" coords="2883,259,3028,285"/>
+<area shape="rect" title=" " alt="" coords="2901,184,2983,211"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -162,56 +167,56 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF__Morrison_8H__dep__incl.png" border="0" usemap="#aSource_2Microphysics_2Morrison_2ERF__Morrison_8Hdep" alt=""/></div>
 <map name="aSource_2Microphysics_2Morrison_2ERF__Morrison_8Hdep" id="aSource_2Microphysics_2Morrison_2ERF__Morrison_8Hdep">
-<area shape="rect" title=" " alt="" coords="9601,5,9791,47"/>
-<area shape="rect" href="ERF__EulerianMicrophysics_8H.html" title="Contains the Eulerian microphysics class." alt="" coords="6880,102,7091,143"/>
-<area shape="rect" href="ERF__AdvanceMorrison_8cpp.html" title=" " alt="" coords="9300,377,9559,419"/>
-<area shape="rect" href="ERF__MorrisonGammaFunction_8H.html" title=" " alt="" coords="9193,273,9421,329"/>
-<area shape="rect" href="ERF__MorrisonVaporPressure_8H.html" title=" " alt="" coords="9445,273,9659,329"/>
-<area shape="rect" href="ERF__InitMorrison_8cpp.html" title=" " alt="" coords="9733,102,9957,143"/>
-<area shape="rect" href="ERF__Morrison__Plot_8cpp.html" title="Plotting and diagnostic output for Morrison two&#45;moment microphysics." alt="" coords="9981,95,10157,151"/>
-<area shape="rect" href="ERF__UpdateMorrison_8cpp.html" title=" " alt="" coords="10181,102,10432,143"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="4557,199,4664,225"/>
-<area shape="rect" href="ERF__BoundaryConditionsBndryReg_8cpp.html" title=" " alt="" coords="6983,281,7262,322"/>
-<area shape="rect" href="ERF__BoundaryConditionsRealbdy_8cpp.html" title=" " alt="" coords="7287,281,7553,322"/>
-<area shape="rect" href="ERF__FillBdyCCVels_8cpp.html" title=" " alt="" coords="7578,281,7779,322"/>
-<area shape="rect" href="ERF__FillCoarsePatch_8cpp.html" title=" " alt="" coords="7803,281,8005,322"/>
-<area shape="rect" href="ERF__FillIntermediatePatch_8cpp.html" title=" " alt="" coords="8029,281,8251,322"/>
-<area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="8275,281,8477,322"/>
-<area shape="rect" href="ERF__to__REMORA_8cpp.html" title=" " alt="" coords="8501,281,8657,322"/>
-<area shape="rect" href="ERF__EB_8cpp.html" title="Implements EB factory construction and EB cell&#45;flag connectivity fixes." alt="" coords="8681,288,8847,315"/>
-<area shape="rect" href="ERF__EBRedistribute_8cpp.html" title="Implements EB redistribution for native and auxiliary EB factories." alt="" coords="8871,288,9118,315"/>
-<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="5,288,125,315"/>
-<area shape="rect" href="ERF__Constructors_8cpp.html" title=" " alt="" coords="149,288,360,315"/>
-<area shape="rect" href="ERF__Diagnostics_8cpp.html" title=" " alt="" coords="384,288,589,315"/>
-<area shape="rect" href="ERF__MakeNewArrays_8cpp.html" title=" " alt="" coords="613,288,848,315"/>
-<area shape="rect" href="ERF__MakeNewLevel_8cpp.html" title=" " alt="" coords="873,288,1101,315"/>
-<area shape="rect" href="ERF__Init1D_8cpp.html" title=" " alt="" coords="1125,281,1275,322"/>
-<area shape="rect" href="ERF__InitBCs_8cpp.html" title=" " alt="" coords="1299,281,1450,322"/>
-<area shape="rect" href="ERF__InitCustomPertState_8cpp.html" title=" " alt="" coords="1475,281,1691,322"/>
-<area shape="rect" href="ERF__InitForEnsemble_8cpp.html" title=" " alt="" coords="1715,281,1906,322"/>
-<area shape="rect" href="ERF__InitFromHSE_8cpp.html" title=" " alt="" coords="1931,281,2096,322"/>
-<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html" title=" " alt="" coords="2120,281,2352,322"/>
-<area shape="rect" href="ERF__InitFromNCFile_8cpp.html" title=" " alt="" coords="2376,281,2557,322"/>
-<area shape="rect" href="ERF__InitFromWRFInput_8cpp.html" title=" " alt="" coords="2689,377,2892,419"/>
-<area shape="rect" href="ERF__InitGeowind_8cpp.html" title=" " alt="" coords="2909,281,3072,322"/>
-<area shape="rect" href="ERF__InitImmersedForcing_8cpp.html" title=" " alt="" coords="3096,281,3315,322"/>
-<area shape="rect" href="ERF__InitRayleigh_8cpp.html" title=" " alt="" coords="3339,281,3501,322"/>
-<area shape="rect" href="ERF__InitSponge_8cpp.html" title=" " alt="" coords="3525,281,3680,322"/>
-<area shape="rect" href="ERF__InitTurbPert_8cpp.html" title=" " alt="" coords="3705,281,3863,322"/>
-<area shape="rect" href="ERF__InitWindFarm_8cpp.html" title=" " alt="" coords="3888,281,4059,322"/>
-<area shape="rect" href="ERF__MetgridUtils_8H.html" title=" " alt="" coords="4083,281,4235,322"/>
-<area shape="rect" href="ERF__Checkpoint_8cpp.html" title=" " alt="" coords="4259,288,4479,315"/>
-<area shape="rect" href="ERF__ConsoleIO_8cpp.html" title=" " alt="" coords="4504,288,4717,315"/>
-<area shape="rect" href="ERF__NCColumnFile_8cpp.html" title=" " alt="" coords="4742,288,4981,315"/>
-<area shape="rect" href="ERF__Plotfile_8cpp.html" title=" " alt="" coords="5005,288,5197,315"/>
-<area shape="rect" href="ERF__Plotfile2D_8cpp.html" title=" " alt="" coords="5221,288,5432,315"/>
-<area shape="rect" href="ERF__ReadFromWRFBdy_8H.html" title=" " alt="" coords="2581,288,2835,315"/>
-<area shape="rect" href="ERF__TrackerOutput_8cpp.html" title=" " alt="" coords="5456,288,5693,315"/>
-<area shape="rect" href="ERF__Write1DProfiles_8cpp.html" title=" " alt="" coords="5717,288,5965,315"/>
-<area shape="rect" href="ERF__Write1DProfiles__stag_8cpp.html" title=" " alt="" coords="5989,281,6211,322"/>
-<area shape="rect" href="ERF__WriteJobInfo_8cpp.html" title=" " alt="" coords="6235,288,6461,315"/>
-<area shape="rect" href="ERF__WriteScalarProfiles_8cpp.html" title=" " alt="" coords="6485,281,6680,322"/>
-<area shape="rect" href="ERF__WriteSubvolume_8cpp.html" title=" " alt="" coords="6705,288,6959,315"/>
+<area shape="rect" title=" " alt="" coords="9536,5,9727,47"/>
+<area shape="rect" href="ERF__EulerianMicrophysics_8H.html" title="Contains the Eulerian microphysics class." alt="" coords="6862,102,7073,143"/>
+<area shape="rect" href="ERF__AdvanceMorrison_8cpp.html" title=" " alt="" coords="9235,377,9494,419"/>
+<area shape="rect" href="ERF__MorrisonGammaFunction_8H.html" title=" " alt="" coords="9128,273,9356,329"/>
+<area shape="rect" href="ERF__MorrisonVaporPressure_8H.html" title=" " alt="" coords="9381,273,9594,329"/>
+<area shape="rect" href="ERF__InitMorrison_8cpp.html" title=" " alt="" coords="9669,102,9893,143"/>
+<area shape="rect" href="ERF__Morrison__Plot_8cpp.html" title="Plotting and diagnostic output for Morrison two&#45;moment microphysics." alt="" coords="9917,95,10093,151"/>
+<area shape="rect" href="ERF__UpdateMorrison_8cpp.html" title=" " alt="" coords="10117,102,10367,143"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="4587,199,4694,225"/>
+<area shape="rect" href="ERF__BoundaryConditionsBndryReg_8cpp.html" title=" " alt="" coords="6976,281,7255,322"/>
+<area shape="rect" href="ERF__BoundaryConditionsRealbdy_8cpp.html" title=" " alt="" coords="7279,281,7546,322"/>
+<area shape="rect" href="ERF__FillBdyCCVels_8cpp.html" title=" " alt="" coords="7571,281,7772,322"/>
+<area shape="rect" href="ERF__FillCoarsePatch_8cpp.html" title=" " alt="" coords="7796,281,7997,322"/>
+<area shape="rect" href="ERF__FillIntermediatePatch_8cpp.html" title=" " alt="" coords="8021,281,8244,322"/>
+<area shape="rect" href="ERF__FillPatch_8cpp.html" title=" " alt="" coords="8268,281,8469,322"/>
+<area shape="rect" href="ERF__to__REMORA_8cpp.html" title=" " alt="" coords="8493,281,8649,322"/>
+<area shape="rect" href="ERF__EB_8cpp.html" title="Implements EB factory construction and EB cell&#45;flag connectivity fixes." alt="" coords="8673,288,8840,315"/>
+<area shape="rect" href="ERF__EBInit_8cpp.html" title=" " alt="" coords="8864,288,9052,315"/>
+<area shape="rect" href="ERF__EBRedistribute_8cpp.html" title="Implements EB redistribution for native and auxiliary EB factories." alt="" coords="5,288,252,315"/>
+<area shape="rect" href="ERF_8cpp.html" title=" " alt="" coords="277,288,397,315"/>
+<area shape="rect" href="ERF__Constructors_8cpp.html" title=" " alt="" coords="421,288,631,315"/>
+<area shape="rect" href="ERF__Diagnostics_8cpp.html" title=" " alt="" coords="655,288,861,315"/>
+<area shape="rect" href="ERF__MakeNewArrays_8cpp.html" title=" " alt="" coords="885,288,1119,315"/>
+<area shape="rect" href="ERF__MakeNewLevel_8cpp.html" title=" " alt="" coords="1144,288,1372,315"/>
+<area shape="rect" href="ERF__Init1D_8cpp.html" title=" " alt="" coords="1396,281,1547,322"/>
+<area shape="rect" href="ERF__InitBCs_8cpp.html" title=" " alt="" coords="1571,281,1721,322"/>
+<area shape="rect" href="ERF__InitCustomPertState_8cpp.html" title=" " alt="" coords="1746,281,1962,322"/>
+<area shape="rect" href="ERF__InitForEnsemble_8cpp.html" title=" " alt="" coords="1987,281,2177,322"/>
+<area shape="rect" href="ERF__InitFromHSE_8cpp.html" title=" " alt="" coords="2202,281,2367,322"/>
+<area shape="rect" href="ERF__InitFromInputSounding_8cpp.html" title=" " alt="" coords="2391,281,2623,322"/>
+<area shape="rect" href="ERF__InitFromNCFile_8cpp.html" title=" " alt="" coords="2647,281,2829,322"/>
+<area shape="rect" href="ERF__InitFromWRFInput_8cpp.html" title=" " alt="" coords="2961,377,3163,419"/>
+<area shape="rect" href="ERF__InitGeowind_8cpp.html" title=" " alt="" coords="3181,281,3343,322"/>
+<area shape="rect" href="ERF__InitImmersedForcing_8cpp.html" title=" " alt="" coords="3367,281,3586,322"/>
+<area shape="rect" href="ERF__InitRayleigh_8cpp.html" title=" " alt="" coords="3610,281,3773,322"/>
+<area shape="rect" href="ERF__InitSponge_8cpp.html" title=" " alt="" coords="3797,281,3951,322"/>
+<area shape="rect" href="ERF__InitTurbPert_8cpp.html" title=" " alt="" coords="3976,281,4135,322"/>
+<area shape="rect" href="ERF__InitWindFarm_8cpp.html" title=" " alt="" coords="4159,281,4330,322"/>
+<area shape="rect" href="ERF__MetgridUtils_8H.html" title=" " alt="" coords="4354,281,4506,322"/>
+<area shape="rect" href="ERF__Checkpoint_8cpp.html" title=" " alt="" coords="4531,288,4751,315"/>
+<area shape="rect" href="ERF__ConsoleIO_8cpp.html" title=" " alt="" coords="4775,288,4989,315"/>
+<area shape="rect" href="ERF__NCColumnFile_8cpp.html" title=" " alt="" coords="5013,288,5252,315"/>
+<area shape="rect" href="ERF__Plotfile_8cpp.html" title=" " alt="" coords="5277,288,5469,315"/>
+<area shape="rect" href="ERF__Plotfile2D_8cpp.html" title=" " alt="" coords="5493,288,5703,315"/>
+<area shape="rect" href="ERF__ReadFromWRFBdy_8H.html" title=" " alt="" coords="2853,288,3106,315"/>
+<area shape="rect" href="ERF__TrackerOutput_8cpp.html" title=" " alt="" coords="5727,288,5965,315"/>
+<area shape="rect" href="ERF__Write1DProfiles_8cpp.html" title=" " alt="" coords="5989,288,6237,315"/>
+<area shape="rect" href="ERF__Write1DProfiles__stag_8cpp.html" title=" " alt="" coords="6261,281,6482,322"/>
+<area shape="rect" href="ERF__WriteJobInfo_8cpp.html" title=" " alt="" coords="6506,288,6733,315"/>
+<area shape="rect" href="ERF__WriteScalarProfiles_8cpp.html" title=" " alt="" coords="6757,281,6951,322"/>
 </map>
 </div>
 </div>
@@ -409,30 +414,30 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_value = states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_theta = states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab60d6bdceb03bf869685c46558bcbe89">rho</a>(i,j,k) = rho_value;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7f3916bd057e43e125de3cbef18bcad3">theta</a>(i,j,k) = rho_theta / rho_value;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">qv</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / rho_value);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) / rho_value);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="namespaceMicVar__WDM6.html#a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d">qi</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>) / rho_value);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98">qn</a>(i,j,k) = <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>(i,j,k) + <a class="code" href="namespaceMicVar__WDM6.html#a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d">qi</a>(i,j,k);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89af5996f1c67f951c3d3202be1ab05b739">qt</a>(i,j,k) = <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">qv</a>(i,j,k) + <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98">qn</a>(i,j,k);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>) / rho_value);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82">qps</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>) / rho_value);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887">qpg</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>) / rho_value);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a8e3daf95f86ccf4c96771824b0175a3e">qp</a>(i,j,k) = <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>(i,j,k) + <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82">qps</a>(i,j,k) + <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887">qpg</a>(i,j,k);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a> = use_anelastic_reference_pressure</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        ? base(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">const</span> <a class="code" href="structMicrophysicsThermoState.html">MicrophysicsThermoState</a> thermo = <a class="code" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826">diagnose_microphysics_thermo_state</a>(</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        rho_value, rho_theta, <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">qv</a>(i,j,k), <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        use_anelastic_reference_pressure, <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>(i,j,k) = thermo.<a class="code" href="structMicrophysicsThermoState.html#adb7691ddb5d752061a94fa1f4d080aa5">temperature</a>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Morrison&#39;s native pressure unit is Pa.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a531c978e174d063e1cf107eae6a84073">pres</a>(i,j,k) = thermo.<a class="code" href="structMicrophysicsThermoState.html#a008e266c33bf39b3b49c8e11bb147675">pressure_pa</a>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_value = states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> rho_theta = states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab60d6bdceb03bf869685c46558bcbe89">rho</a>(i,j,k) = rho_value;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7f3916bd057e43e125de3cbef18bcad3">theta</a>(i,j,k) = rho_theta / rho_value;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">qv</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aa965e9988f14d5d2a5aef4a942168a15">RhoQ1_comp</a>) / rho_value);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a3bf0a4783e82ba30db2b7c0a332c2f16">RhoQ2_comp</a>) / rho_value);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="namespaceMicVar__WDM6.html#a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d">qi</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a49fe20d81f4d923a4a6ec4eb1652072b">RhoQ3_comp</a>) / rho_value);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98">qn</a>(i,j,k) = <a class="code" href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">qc</a>(i,j,k) + <a class="code" href="namespaceMicVar__WDM6.html#a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d">qi</a>(i,j,k);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89af5996f1c67f951c3d3202be1ab05b739">qt</a>(i,j,k) = <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">qv</a>(i,j,k) + <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98">qn</a>(i,j,k);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a>) / rho_value);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82">qps</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#ac46d015fd5b1ee0060bbaf22e79113e7">RhoQ5_comp</a>) / rho_value);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887">qpg</a>(i,j,k) = amrex::max(<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>(0.0), states(i,j,k,<a class="code" href="ERF__IndexDefines_8H.html#aae057dae5f599b944184a0ecf7801064">RhoQ6_comp</a>) / rho_value);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a8e3daf95f86ccf4c96771824b0175a3e">qp</a>(i,j,k) = <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa">qpr</a>(i,j,k) + <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82">qps</a>(i,j,k) + <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887">qpg</a>(i,j,k);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">const</span> <a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a> = use_anelastic_reference_pressure</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        ? base(i,j,k,<a class="code" href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a>) : <a class="code" href="namespaceamrex.html">amrex</a>::<a class="code" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a>(0.0);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">const</span> <a class="code" href="structMicrophysicsThermoState.html">MicrophysicsThermoState</a> thermo = <a class="code" href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826">diagnose_microphysics_thermo_state</a>(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        rho_value, rho_theta, <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">qv</a>(i,j,k), <a class="code" href="ERF__InitCustomPert__ABL_8H.html#a46e52004c860b2aef260fce99d025bce">rdOcp</a>,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        use_anelastic_reference_pressure, <a class="code" href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">p0</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7da82a8f5893f7ed1f0f3002015f15fb">tabs</a>(i,j,k) = thermo.<a class="code" href="structMicrophysicsThermoState.html#adb7691ddb5d752061a94fa1f4d080aa5">temperature</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Morrison&#39;s native pressure unit is Pa.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a531c978e174d063e1cf107eae6a84073">pres</a>(i,j,k) = thermo.<a class="code" href="structMicrophysicsThermoState.html#a008e266c33bf39b3b49c8e11bb147675">pressure_pa</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a27dcc910aeb002a0fd44727954dc0e49"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a27dcc910aeb002a0fd44727954dc0e49">Rho_comp</a></div><div class="ttdeci">#define Rho_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:39</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28c5deab9008c0999c26affeff2fa6da"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28c5deab9008c0999c26affeff2fa6da">RhoQ4_comp</a></div><div class="ttdeci">#define RhoQ4_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:48</div></div>
 <div class="ttc" id="aERF__IndexDefines_8H_html_a28f96fd04e1ff08fa7a8f53ccde0f877"><div class="ttname"><a href="ERF__IndexDefines_8H.html#a28f96fd04e1ff08fa7a8f53ccde0f877">RhoTheta_comp</a></div><div class="ttdeci">#define RhoTheta_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:40</div></div>
@@ -445,19 +450,19 @@ Functions</h2></td></tr>
 <div class="ttc" id="aERF__MicrophysicsUtils_8H_html_a53f42881e64c89dee8b44969e3099826"><div class="ttname"><a href="ERF__MicrophysicsUtils_8H.html#a53f42881e64c89dee8b44969e3099826">diagnose_microphysics_thermo_state</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE MicrophysicsThermoState diagnose_microphysics_thermo_state(const amrex::Real rho, const amrex::Real rho_theta, const amrex::Real qv, const amrex::Real rdOcp, const bool use_anelastic_reference_pressure, const amrex::Real p0) noexcept</div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:35</div></div>
 <div class="ttc" id="aERF__ShocInterface_8H_html_ab8a9d2a7cbf2084043f890c3d0a68f57"><div class="ttname"><a href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">Real</a></div><div class="ttdeci">amrex::Real Real</div><div class="ttdef"><b>Definition:</b> ERF_ShocInterface.H:19</div></div>
 <div class="ttc" id="anamespaceBaseState_html_a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e"><div class="ttname"><a href="namespaceBaseState.html#a6f8dc3597225ea7941dad615e7f22e91aa8253dc5484f2621e0bf8d51d98d635e">BaseState::p0_comp</a></div><div class="ttdeci">@ p0_comp</div><div class="ttdef"><b>Definition:</b> ERF_IndexDefines.H:77</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">MicVar_Morr::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:35</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887">MicVar_Morr::qpg</a></div><div class="ttdeci">@ qpg</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:42</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a531c978e174d063e1cf107eae6a84073"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a531c978e174d063e1cf107eae6a84073">MicVar_Morr::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:31</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a7da82a8f5893f7ed1f0f3002015f15fb"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7da82a8f5893f7ed1f0f3002015f15fb">MicVar_Morr::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:30</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a7f3916bd057e43e125de3cbef18bcad3"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7f3916bd057e43e125de3cbef18bcad3">MicVar_Morr::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:29</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a8e3daf95f86ccf4c96771824b0175a3e"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a8e3daf95f86ccf4c96771824b0175a3e">MicVar_Morr::qp</a></div><div class="ttdeci">@ qp</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:39</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82">MicVar_Morr::qps</a></div><div class="ttdeci">@ qps</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:41</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98">MicVar_Morr::qn</a></div><div class="ttdeci">@ qn</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:34</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89ab60d6bdceb03bf869685c46558bcbe89"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab60d6bdceb03bf869685c46558bcbe89">MicVar_Morr::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:28</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa">MicVar_Morr::qpr</a></div><div class="ttdeci">@ qpr</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:40</div></div>
-<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89af5996f1c67f951c3d3202be1ab05b739"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89af5996f1c67f951c3d3202be1ab05b739">MicVar_Morr::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:33</div></div>
-<div class="ttc" id="anamespaceMicVar__SatAdj_html_a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:41</div></div>
-<div class="ttc" id="anamespaceMicVar__WDM6_html_a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d"><div class="ttname"><a href="namespaceMicVar__WDM6.html#a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d">MicVar_WDM6::qi</a></div><div class="ttdeci">@ qi</div><div class="ttdef"><b>Definition:</b> ERF_WDM6.H:27</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a27ed8ba8d37ae85125221394270eceaf">MicVar_Morr::qv</a></div><div class="ttdeci">@ qv</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:36</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a434cf2c831802bb076e8bc31d16f0887">MicVar_Morr::qpg</a></div><div class="ttdeci">@ qpg</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:43</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a531c978e174d063e1cf107eae6a84073"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a531c978e174d063e1cf107eae6a84073">MicVar_Morr::pres</a></div><div class="ttdeci">@ pres</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:32</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a7da82a8f5893f7ed1f0f3002015f15fb"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7da82a8f5893f7ed1f0f3002015f15fb">MicVar_Morr::tabs</a></div><div class="ttdeci">@ tabs</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:31</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a7f3916bd057e43e125de3cbef18bcad3"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a7f3916bd057e43e125de3cbef18bcad3">MicVar_Morr::theta</a></div><div class="ttdeci">@ theta</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:30</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89a8e3daf95f86ccf4c96771824b0175a3e"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89a8e3daf95f86ccf4c96771824b0175a3e">MicVar_Morr::qp</a></div><div class="ttdeci">@ qp</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:40</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89aa1b82f9b40da8ffccead09f9e102ff82">MicVar_Morr::qps</a></div><div class="ttdeci">@ qps</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:42</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab41c6386b3e7d1c383c564f0c8552b98">MicVar_Morr::qn</a></div><div class="ttdeci">@ qn</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:35</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89ab60d6bdceb03bf869685c46558bcbe89"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab60d6bdceb03bf869685c46558bcbe89">MicVar_Morr::rho</a></div><div class="ttdeci">@ rho</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:29</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89ab77c2781abdd9ebaa8b4cc3b271b57aa">MicVar_Morr::qpr</a></div><div class="ttdeci">@ qpr</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:41</div></div>
+<div class="ttc" id="anamespaceMicVar__Morr_html_a394ae6aa50c985f232a3070a4078ff89af5996f1c67f951c3d3202be1ab05b739"><div class="ttname"><a href="namespaceMicVar__Morr.html#a394ae6aa50c985f232a3070a4078ff89af5996f1c67f951c3d3202be1ab05b739">MicVar_Morr::qt</a></div><div class="ttdeci">@ qt</div><div class="ttdef"><b>Definition:</b> ERF_Morrison.H:34</div></div>
+<div class="ttc" id="anamespaceMicVar__SatAdj_html_a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3"><div class="ttname"><a href="namespaceMicVar__SatAdj.html#a7255a41b89ea5e64ed2ea7a8e312a92caea3777efcbbb3712ce373924287c2cb3">MicVar_SatAdj::qc</a></div><div class="ttdeci">@ qc</div><div class="ttdef"><b>Definition:</b> ERF_SatAdj.H:42</div></div>
+<div class="ttc" id="anamespaceMicVar__WDM6_html_a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d"><div class="ttname"><a href="namespaceMicVar__WDM6.html#a4e34fa90bd663ec417455652b39e41cba4902b57d84491e44184f0629bb608d4d">MicVar_WDM6::qi</a></div><div class="ttdeci">@ qi</div><div class="ttdef"><b>Definition:</b> ERF_WDM6.H:28</div></div>
 <div class="ttc" id="anamespaceamrex_html"><div class="ttname"><a href="namespaceamrex.html">amrex</a></div><div class="ttdef"><b>Definition:</b> ERF_ConsoleIO.cpp:15</div></div>
 <div class="ttc" id="anamespacemodule__model__constants_html_a2dcccd992b668c86eecdd9a825970d4a"><div class="ttname"><a href="namespacemodule__model__constants.html#a2dcccd992b668c86eecdd9a825970d4a">module_model_constants::p0</a></div><div class="ttdeci">real(c_double), parameter p0</div><div class="ttdef"><b>Definition:</b> ERF_module_model_constants.F90:40</div></div>
 <div class="ttc" id="astructMicrophysicsThermoState_html"><div class="ttname"><a href="structMicrophysicsThermoState.html">MicrophysicsThermoState</a></div><div class="ttdef"><b>Definition:</b> ERF_MicrophysicsUtils.H:22</div></div>

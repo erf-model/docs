@@ -176,12 +176,12 @@ default" without asking ParmParse whether a name is present.</p>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        : <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>(a_common), <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>(a_block),</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;          <a class="code" href="structSDInputs.html#a5c2e207f31b84b32b2050d238da4d6cc">m_common_name</a>(a_common), <a class="code" href="structSDInputs.html#a0e21d3f1206808c1250cf6316876b5c8">m_block_name</a>(a_block) {}</div>
-<div class="ttc" id="astructSDInputs_html_a0e21d3f1206808c1250cf6316876b5c8"><div class="ttname"><a href="structSDInputs.html#a0e21d3f1206808c1250cf6316876b5c8">SDInputs::m_block_name</a></div><div class="ttdeci">std::string m_block_name</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:115</div></div>
-<div class="ttc" id="astructSDInputs_html_a5c2e207f31b84b32b2050d238da4d6cc"><div class="ttname"><a href="structSDInputs.html#a5c2e207f31b84b32b2050d238da4d6cc">SDInputs::m_common_name</a></div><div class="ttdeci">std::string m_common_name</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:114</div></div>
-<div class="ttc" id="astructSDInputs_html_a989b771e3dd94ce6194634e5c142cb5b"><div class="ttname"><a href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">SDInputs::m_common</a></div><div class="ttdeci">amrex::ParmParse m_common</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:112</div></div>
-<div class="ttc" id="astructSDInputs_html_add1ef4667aa2f6f27c029f13f8c95fe8"><div class="ttname"><a href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">SDInputs::m_block</a></div><div class="ttdeci">amrex::ParmParse m_block</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:113</div></div>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        : <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>(a_common), <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>(a_block),</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;          <a class="code" href="structSDInputs.html#a5c2e207f31b84b32b2050d238da4d6cc">m_common_name</a>(a_common), <a class="code" href="structSDInputs.html#a0e21d3f1206808c1250cf6316876b5c8">m_block_name</a>(a_block) {}</div>
+<div class="ttc" id="astructSDInputs_html_a0e21d3f1206808c1250cf6316876b5c8"><div class="ttname"><a href="structSDInputs.html#a0e21d3f1206808c1250cf6316876b5c8">SDInputs::m_block_name</a></div><div class="ttdeci">std::string m_block_name</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:117</div></div>
+<div class="ttc" id="astructSDInputs_html_a5c2e207f31b84b32b2050d238da4d6cc"><div class="ttname"><a href="structSDInputs.html#a5c2e207f31b84b32b2050d238da4d6cc">SDInputs::m_common_name</a></div><div class="ttdeci">std::string m_common_name</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:116</div></div>
+<div class="ttc" id="astructSDInputs_html_a989b771e3dd94ce6194634e5c142cb5b"><div class="ttname"><a href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">SDInputs::m_common</a></div><div class="ttdeci">amrex::ParmParse m_common</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:114</div></div>
+<div class="ttc" id="astructSDInputs_html_add1ef4667aa2f6f27c029f13f8c95fe8"><div class="ttname"><a href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">SDInputs::m_block</a></div><div class="ttdeci">amrex::ParmParse m_block</div><div class="ttdef"><b>Definition:</b> ERF_SDInitialization.H:115</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -227,12 +227,12 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">bool</span> from_inputs = <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.query(a_key.c_str(), a_val);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { from_inputs = <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>.query(a_key.c_str(), a_val); }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (!from_inputs &amp;&amp; a_record) { <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.add(a_key.c_str(), a_val); }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> from_inputs;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">bool</span> from_inputs = <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.query(a_key.c_str(), a_val);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { from_inputs = <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>.query(a_key.c_str(), a_val); }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (!from_inputs &amp;&amp; a_record) { <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.add(a_key.c_str(), a_val); }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> from_inputs;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSDInitialization.html#a15409ce8f6c0849032b33bd13c24e1e9">SDInitialization::readInputs()</a>, <a class="el" href="classSDInjection.html#a370518671212b17d76210c21bb7feaa8">SDInjection::readInputs()</a>, and <a class="el" href="classSDInitProperties.html#ab44c0def48dc99aa7d8e1eeff8699b2f">SDInitProperties::readInputs()</a>.</p>
 <div class="dynheader">
@@ -285,12 +285,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Array-valued form, length taken from the input. </p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">bool</span> from_inputs = <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.queryarr(a_key.c_str(), a_val);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { from_inputs = <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>.queryarr(a_key.c_str(), a_val); }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.addarr(a_key.c_str(), a_val); }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> from_inputs;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">bool</span> from_inputs = <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.queryarr(a_key.c_str(), a_val);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { from_inputs = <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>.queryarr(a_key.c_str(), a_val); }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.addarr(a_key.c_str(), a_val); }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> from_inputs;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSDInjection.html#a370518671212b17d76210c21bb7feaa8">SDInjection::readInputs()</a>, and <a class="el" href="classSDInitProperties.html#ab44c0def48dc99aa7d8e1eeff8699b2f">SDInitProperties::readInputs()</a>.</p>
 <div class="dynheader">
@@ -349,12 +349,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Array-valued form; a_num is the expected number of components. </p>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">bool</span> from_inputs = <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.queryarr(a_key.c_str(), a_val, 0, a_num);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { from_inputs = <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>.queryarr(a_key.c_str(), a_val, 0, a_num); }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.addarr(a_key.c_str(), a_val); }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> from_inputs;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">bool</span> from_inputs = <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.queryarr(a_key.c_str(), a_val, 0, a_num);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { from_inputs = <a class="code" href="structSDInputs.html#a989b771e3dd94ce6194634e5c142cb5b">m_common</a>.queryarr(a_key.c_str(), a_val, 0, a_num); }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (!from_inputs) { <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.addarr(a_key.c_str(), a_val); }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> from_inputs;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -394,7 +394,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Record a resolved value under the per-block prefix, for provenance only. Use where one of several alternative spellings of an input is in effect and only the effective one should be reported. </p>
-<div class="fragment"><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{ <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.add(a_key.c_str(), a_val); }</div>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{ <a class="code" href="structSDInputs.html#add1ef4667aa2f6f27c029f13f8c95fe8">m_block</a>.add(a_key.c_str(), a_val); }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classSDInitProperties.html#ab44c0def48dc99aa7d8e1eeff8699b2f">SDInitProperties::readInputs()</a>.</p>
 <div class="dynheader">

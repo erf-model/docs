@@ -18,6 +18,7 @@ var dir_9c08f4b6b7cd879dc853cee646ab55d3 =
     [ "ERF_EBIFTerrain.H", "ERF__EBIFTerrain_8H.html", [
       [ "TerrainIF", "classTerrainIF.html", "classTerrainIF" ]
     ] ],
+    [ "ERF_EBInit.cpp", "ERF__EBInit_8cpp.html", null ],
     [ "ERF_EBMOSTStress.H", "ERF__EBMOSTStress_8H.html", [
       [ "adiabatic_eb", "structadiabatic__eb.html", "structadiabatic__eb" ],
       [ "surface_temp_eb", "structsurface__temp__eb.html", "structsurface__temp__eb" ],

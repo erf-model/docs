@@ -1,5 +1,7 @@
 var structerf__cloud__chamber_1_1Config =
 [
+    [ "has_bulk_scalar_wall", "structerf__cloud__chamber_1_1Config.html#ad05a059afe75d41c5d6d28bdb2d4264b", null ],
+    [ "has_wall_rate_channel", "structerf__cloud__chamber_1_1Config.html#a5a53ed9ec5c4a2b1dc59535aa98b1b41", null ],
     [ "wall_boundary", "structerf__cloud__chamber_1_1Config.html#a16aef4ec3cdf8a3d2cae8b93903ad613", null ],
     [ "active", "structerf__cloud__chamber_1_1Config.html#a23475ebf69ebc39f7594e05538f84e34", null ],
     [ "cloudy", "structerf__cloud__chamber_1_1Config.html#a53347cab9f582eed821809a604c273d4", null ],

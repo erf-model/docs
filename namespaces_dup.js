@@ -1,5 +1,16 @@
 var namespaces_dup =
 [
+    [ "AL01", "namespaceAL01.html", [
+      [ "cmu", "namespaceAL01.html#a37c7b7f42dbf596b7987cd0c33d735a1", null ],
+      [ "cmu_prime", "namespaceAL01.html#a0cbef5791f55d5f5adf5879436876351", null ],
+      [ "dissipation", "namespaceAL01.html#ac3c8e89ddf9d2d7350855648587b019d", null ],
+      [ "geom_length", "namespaceAL01.html#aa00c76839efcaa15d577655fe056fc26", null ],
+      [ "richardson", "namespaceAL01.html#a28e1cae0ed88e6ede21e7f4e71295539", null ],
+      [ "smooth_Rt", "namespaceAL01.html#a86e85473281c3ee589f98d8408e66318", null ],
+      [ "turb_length", "namespaceAL01.html#a1d9ffd80c5a4c79f4649fc60a93475fb", null ],
+      [ "unstable_length_bound", "namespaceAL01.html#ab81cc5336b0823c9b573e6762765f806", null ],
+      [ "Rt_min_lower_bound", "namespaceAL01.html#a167cc7128937fc64dafa74a641622317", null ]
+    ] ],
     [ "amrex", "namespaceamrex.html", [
       [ "buildInfoGetBuildDate", "namespaceamrex.html#a8f794ff24efbc4b60058492d1a073c78", null ],
       [ "buildInfoGetComp", "namespaceamrex.html#a9d270ec83f99e836cca454cac4e0af5e", null ],
@@ -54,6 +65,22 @@ var namespaces_dup =
     [ "EddyDiff", "namespaceEddyDiff.html", null ],
     [ "ERF", "namespaceERF.html", "namespaceERF" ],
     [ "erf_cloud_chamber", "namespaceerf__cloud__chamber.html", "namespaceerf__cloud__chamber" ],
+    [ "erf_cloud_chamber_wall_dt_guard", "namespaceerf__cloud__chamber__wall__dt__guard.html", [
+      [ "enforce_fixed_dt_limit", "namespaceerf__cloud__chamber__wall__dt__guard.html#a746a20f2e661da63a6d0af43dac6f37c", null ],
+      [ "fixed_dt_exceeds_limit", "namespaceerf__cloud__chamber__wall__dt__guard.html#ad15e948390c8791cf1bc5762411fca8e", null ]
+    ] ],
+    [ "erf_cloud_chamber_wall_flux", "namespaceerf__cloud__chamber__wall__flux.html", "namespaceerf__cloud__chamber__wall__flux" ],
+    [ "erf_cloud_chamber_wall_stress", "namespaceerf__cloud__chamber__wall__stress.html", [
+      [ "apply", "namespaceerf__cloud__chamber__wall__stress.html#a912f8478bdbbe8bc52cd0ffe01d14e1c", null ],
+      [ "apply", "namespaceerf__cloud__chamber__wall__stress.html#a0aa08c2cec9e3b5d6a263c8a274624c4", null ],
+      [ "apply_face", "namespaceerf__cloud__chamber__wall__stress.html#a07a5b632659f950cfe2b6811fde912f9", null ],
+      [ "apply_tangent_stress", "namespaceerf__cloud__chamber__wall__stress.html#ae5436c562fc8c95e0de2c18e90f1b3f1", null ],
+      [ "averaged_physical_traction_component", "namespaceerf__cloud__chamber__wall__stress.html#ac4307af0458ef2f88c2981c46c747d91", null ],
+      [ "has_momentum_wall", "namespaceerf__cloud__chamber__wall__stress.html#aaa5c883b1e03d45bd71406bdf00497d1", null ],
+      [ "stored_tau_from_physical_traction", "namespaceerf__cloud__chamber__wall__stress.html#a2e89244db379d023ee386b641d5f8004", null ],
+      [ "wall_stress_requires_most_state", "namespaceerf__cloud__chamber__wall__stress.html#a80e76b3db8feed4c81d517f4bc4eae6c", null ],
+      [ "wall_traction_at_cell", "namespaceerf__cloud__chamber__wall__stress.html#a6baf56adf9584584bb23376895b4256f", null ]
+    ] ],
     [ "erf_forest_utils", "namespaceerf__forest__utils.html", [
       [ "validate_cartesian_coordinates", "namespaceerf__forest__utils.html#a9137465ab2d1feaa04a833f85b8da79a", null ],
       [ "validate_laimax", "namespaceerf__forest__utils.html#a8b363aacfb7644a85fe49067c6366476", null ]
@@ -68,10 +95,17 @@ var namespaces_dup =
     [ "erf_interval_means", "namespaceerf__interval__means.html", "namespaceerf__interval__means" ],
     [ "erf_noahmp", "namespaceerf__noahmp.html", "namespaceerf__noahmp" ],
     [ "erf_plotfile", "namespaceerf__plotfile.html", "namespaceerf__plotfile" ],
+    [ "erf_problem_dispatch", "namespaceerf__problem__dispatch.html", [
+      [ "CustomVelocityInitializer", "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7", [
+        [ "None", "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7a6adf97f83acf6453d4a6a4b1070f3754", null ],
+        [ "CloudChamber", "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7ac7d356d1dbd401f669bfebb5968cc898", null ],
+        [ "UserDefined", "namespaceerf__problem__dispatch.html#a96a71506ff56c48e90646db1761713f7ac90d702da275c4b81b75a6a0163bc2bf", null ]
+      ] ],
+      [ "custom_velocity_initializer", "namespaceerf__problem__dispatch.html#a084bccc2b3a5b2dacd15f6ac65355034", null ]
+    ] ],
     [ "erf_provenance", "namespaceerf__provenance.html", "namespaceerf__provenance" ],
     [ "erf_resolved_wall_flux", "namespaceerf__resolved__wall__flux.html", [
-      [ "apply", "namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef", null ],
-      [ "apply_face", "namespaceerf__resolved__wall__flux.html#a93798997819b7545b87581a414a85bf5", null ]
+      [ "apply", "namespaceerf__resolved__wall__flux.html#af4bb1fd6bad609edefd5f661c60672ef", null ]
     ] ],
     [ "erf_wall_scalar_bc", "namespaceerf__wall__scalar__bc.html", "namespaceerf__wall__scalar__bc" ],
     [ "erf_wall_thermodynamics", "namespaceerf__wall__thermodynamics.html", "namespaceerf__wall__thermodynamics" ],
@@ -780,6 +814,18 @@ var namespaces_dup =
       [ "sensible_heat_flux_wm2_from_rhotheta_flux", "namespacesurface__flux__diagnostics.html#a5c7726fdd46761f6211dd3e2e5cd5e0a", null ]
     ] ],
     [ "surface_layer_stress", "namespacesurface__layer__stress.html", "namespacesurface__layer__stress" ],
+    [ "TwoStreamScratch", "namespaceTwoStreamScratch.html", [
+      [ "A", "namespaceTwoStreamScratch.html#a2aafc499c48282a5ee5f76fb6bc1f1fe", null ],
+      [ "DZ", "namespaceTwoStreamScratch.html#ad014e0a9a386f2c277500c9e084e59c4", null ],
+      [ "F_DIR", "namespaceTwoStreamScratch.html#a00436be5483399b6dc80967c04cf49ff", null ],
+      [ "LW_DN", "namespaceTwoStreamScratch.html#a8941894e92ddfd442caaa9a369584d24", null ],
+      [ "LW_UP", "namespaceTwoStreamScratch.html#a7d2679c05281b8149db4adf79574f690", null ],
+      [ "NCOMP", "namespaceTwoStreamScratch.html#a366db0ef785e2dedaa5a07732e50ecc4", null ],
+      [ "S", "namespaceTwoStreamScratch.html#aaff7967bc69075022d51be6bef8bac6b", null ],
+      [ "TAU_LW", "namespaceTwoStreamScratch.html#a679fdb0a931c3a259925ab07a53cc405", null ],
+      [ "TAU_SW", "namespaceTwoStreamScratch.html#af08cd6e627d1548023067bb27bbeb062", null ],
+      [ "Z", "namespaceTwoStreamScratch.html#a31df2c84277bf65d25a76e4ae3836d4e", null ]
+    ] ],
     [ "Vars", "namespaceVars.html", null ],
     [ "wdm6_isohelper", "namespacewdm6__isohelper.html", [
       [ "mp_wdm6_init_c", "namespacewdm6__isohelper.html#accff4a99b8ef762289dc6cc2e8207aac", null ],

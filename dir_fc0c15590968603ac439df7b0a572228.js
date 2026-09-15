@@ -2,6 +2,8 @@ var dir_fc0c15590968603ac439df7b0a572228 =
 [
     [ "ERF_AddQKESources.H", "ERF__AddQKESources_8H.html", "ERF__AddQKESources_8H" ],
     [ "ERF_AddTKESources.H", "ERF__AddTKESources_8H.html", "ERF__AddTKESources_8H" ],
+    [ "ERF_CloudChamberWallFlux.H", "ERF__CloudChamberWallFlux_8H.html", "ERF__CloudChamberWallFlux_8H" ],
+    [ "ERF_CloudChamberWallStress.H", "ERF__CloudChamberWallStress_8H.html", "ERF__CloudChamberWallStress_8H" ],
     [ "ERF_ComputeStrain_EB.cpp", "ERF__ComputeStrain__EB_8cpp.html", "ERF__ComputeStrain__EB_8cpp" ],
     [ "ERF_ComputeStrain_N.cpp", "ERF__ComputeStrain__N_8cpp.html", "ERF__ComputeStrain__N_8cpp" ],
     [ "ERF_ComputeStrain_S.cpp", "ERF__ComputeStrain__S_8cpp.html", "ERF__ComputeStrain__S_8cpp" ],
@@ -24,6 +26,7 @@ var dir_fc0c15590968603ac439df7b0a572228 =
     [ "ERF_ImplicitDiff_N.cpp", "ERF__ImplicitDiff__N_8cpp.html", "ERF__ImplicitDiff__N_8cpp" ],
     [ "ERF_ImplicitDiff_S.cpp", "ERF__ImplicitDiff__S_8cpp.html", "ERF__ImplicitDiff__S_8cpp" ],
     [ "ERF_ImplicitDiff_T.cpp", "ERF__ImplicitDiff__T_8cpp.html", "ERF__ImplicitDiff__T_8cpp" ],
+    [ "ERF_RANSClosure.H", "ERF__RANSClosure_8H.html", "ERF__RANSClosure_8H" ],
     [ "ERF_ResolvedWallFlux.H", "ERF__ResolvedWallFlux_8H.html", "ERF__ResolvedWallFlux_8H" ],
     [ "ERF_RichardsonNumber.H", "ERF__RichardsonNumber_8H.html", "ERF__RichardsonNumber_8H" ],
     [ "ERF_SetupDiff.H", "ERF__SetupDiff_8H.html", null ],

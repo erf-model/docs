@@ -10,5 +10,6 @@ var ERF__PlotfileSelection_8H =
     [ "plot3d_q_conserved_component_index", "ERF__PlotfileSelection_8H.html#a11cf3940bc14ad31912d5df8d5f81402", null ],
     [ "plot3d_selected_particle_count_names", "ERF__PlotfileSelection_8H.html#ab55dc271098ed902b53a7f4090148b87", null ],
     [ "plot3d_selection_has_interval_mean_diagnostic", "ERF__PlotfileSelection_8H.html#a5e7b2de00bfcf71b0b6173022d1cb41b", null ],
-    [ "plot3d_set_state_capabilities", "ERF__PlotfileSelection_8H.html#a31cf5b5f4345e0aa86fc8eeb1550d9c6", null ]
+    [ "plot3d_set_state_capabilities", "ERF__PlotfileSelection_8H.html#a31cf5b5f4345e0aa86fc8eeb1550d9c6", null ],
+    [ "radiation_heating_storage_available", "ERF__PlotfileSelection_8H.html#adeec399e5474b8bce8830aac35becc11", null ]
 ];

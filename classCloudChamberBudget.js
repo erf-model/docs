@@ -12,6 +12,7 @@ var classCloudChamberBudget =
     [ "enabled", "classCloudChamberBudget.html#a090f5d0393176a3f07b3c8ecfd111546", null ],
     [ "record_internal_source", "classCloudChamberBudget.html#ae8d9cc3a14b0fef2229b97bbe0ba465a", null ],
     [ "report", "classCloudChamberBudget.html#a300dd037db6126205e9437fb5bc586b8", null ],
+    [ "row_status", "classCloudChamberBudget.html#aa6d61ab4b13637ad299f1ffffbda8ebb", null ],
     [ "set_initial_state", "classCloudChamberBudget.html#a5f0883d4383a82ccba88a0f47de28755", null ],
     [ "state_integrals", "classCloudChamberBudget.html#a54fca086ed47e43d684f619a188e6faa", null ],
     [ "m_cumulative", "classCloudChamberBudget.html#aa3c519111074836333fa2b618ce1bf43", null ],

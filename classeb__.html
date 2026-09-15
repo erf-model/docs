@@ -465,7 +465,7 @@ template&lt;class F &gt; </div>
 <div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">m_factory</a>; }</div>
 <div class="ttc" id="aclasseb___html_a832e47bbc65d2e895fe295ad43df8556"><div class="ttname"><a href="classeb__.html#a832e47bbc65d2e895fe295ad43df8556">eb_::m_factory</a></div><div class="ttdeci">std::unique_ptr&lt; amrex::EBFArrayBoxFactory &gt; m_factory</div><div class="ttdef"><b>Definition:</b> ERF_EB.H:153</div></div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4">ERF::estTimeStep()</a>, and <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ERF__MakeGradP_8cpp.html#ac79f2ed4bb2424ddf081b0b2f205b1ca">compute_gradp_xy()</a>, <a class="el" href="ERF__MakeGradP_8cpp.html#a608c11337867fc132f0ac05c03dd99bc">compute_gradp_z()</a>, <a class="el" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda">ComputeTurbulentViscosityLES_EB()</a>, <a class="el" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657">erf_make_tau_terms()</a>, <a class="el" href="ERF__SlowRhsPost_8cpp.html#a4940191126f8f69d8ba243554db1f5a6">erf_slow_rhs_post()</a>, <a class="el" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47">erf_slow_rhs_pre()</a>, <a class="el" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4">ERF::estTimeStep()</a>, and <a class="el" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba">make_buoyancy()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -477,7 +477,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="ERF__ComputeTurbulentViscosity_8cpp.html#a5a472a2f5426ecdf04400063bea8efda" title=" " alt="" coords="519,171,719,212"/>
 <area shape="rect" href="ERF__MakeTauTerms_8cpp.html#adac69deec7e1a9ddfc2d5d6fb0a1a657" title=" " alt="" coords="541,287,697,314"/>
 <area shape="rect" href="ERF__SlowRhsPre_8cpp.html#aa528695b0ccc64ef3ebc8d4c5571bd47" title=" " alt="" coords="305,262,437,289"/>
-<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#afc77dfd200b591080b6d6c9c035ba18a" title=" " alt="" coords="549,338,688,365"/>
+<area shape="rect" href="ERF__SlowRhsPost_8cpp.html#a4940191126f8f69d8ba243554db1f5a6" title=" " alt="" coords="549,338,688,365"/>
 <area shape="rect" href="classERF.html#aa9d099fb03ae7065ad0b55ceb1cd56c4" title=" " alt="" coords="551,389,687,415"/>
 <area shape="rect" href="ERF__MakeBuoyancy_8cpp.html#a423dc40a9974cb9a38f75bf033f2a7ba" title=" " alt="" coords="307,18,435,45"/>
 <area shape="rect" href="ERF__MakeGradP_8cpp.html#a9a52172038f8506a516a5802e5cc5a0f" title="Compute the full pressure gradient." alt="" coords="309,119,432,146"/>
@@ -1396,7 +1396,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> jj(-1); jj&lt;=1; jj++) {</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> ii(-1); ii&lt;=1; ii++)</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <span class="keywordflow">if</span> (vfrac(i+ii,j+jj,k+kk) == <a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <span class="keywordflow">if</span> (vfrac(i+ii,j+jj,k+kk) == <a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    flag(i,j,k).setDisconnected(ii,jj,kk);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                }</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            }}}</div>
@@ -1404,14 +1404,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="ERF__Morrison__Advance__F_8H.html#a96f0cb4e119c1e0f8b04a98c27031bae">ParallelFor</a>(gbx, [=] AMREX_GPU_DEVICE (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> k) noexcept</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">if</span> (vfrac(i,j,k)==<a class="code" href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">if</span> (vfrac(i,j,k)==<a class="code" href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a>) {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                flag(i,j,k).setCovered();</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        });</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="ttc" id="aERF__Constants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__Constants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:8</div></div>
+<div class="ttc" id="aERF__NumericalConstants_8H_html_a6b7c73c34b8e65d792a04602474f08b5"><div class="ttname"><a href="ERF__NumericalConstants_8H.html#a6b7c73c34b8e65d792a04602474f08b5">zero</a></div><div class="ttdeci">constexpr amrex::Real zero</div><div class="ttdef"><b>Definition:</b> ERF_NumericalConstants.H:21</div></div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="classeb__.html#a6db8bacd7f6bf7a7c7d040539782d402">make_all_factories()</a>.</p>
 <div class="dynheader">

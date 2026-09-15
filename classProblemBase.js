@@ -15,6 +15,7 @@ var classProblemBase =
     [ "init_terrain_surface", "classProblemBase.html#a0e52cd97bdd2fe10c2c731f534c34a5b", null ],
     [ "name", "classProblemBase.html#ad6cd20513f20d84578acc9732d3e0791", null ],
     [ "read_custom_terrain", "classProblemBase.html#a9a654c18cb5e4c393cf9aea268c3609a", null ],
+    [ "terrain_is_specified", "classProblemBase.html#a73a89f95a3f2251b2aac762c7347bb62", null ],
     [ "update_geostrophic_profile", "classProblemBase.html#a43f81043af75fc7ed4fca33167d9a374", null ],
     [ "update_rhoqt_sources", "classProblemBase.html#a956d9a1b9a9e57e0f20a397cae483113", null ],
     [ "update_rhotheta_sources", "classProblemBase.html#a50e61a69c8e4429e6f2321bad3c03d9d", null ],

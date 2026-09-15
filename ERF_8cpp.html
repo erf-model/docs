@@ -87,17 +87,12 @@ $(document).ready(function(){initNavTree('ERF_8cpp.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
+<code>#include &quot;<a class="el" href="ERF__Constants_8H_source.html">ERF_Constants.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__EOS_8H_source.html">ERF_EOS.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF_8H_source.html">ERF.H</a>&quot;</code><br />
 <code>#include &quot;AMReX_buildInfo.H&quot;</code><br />
 <code>#include &quot;AMReX_Random.H&quot;</code><br />
 <code>#include &quot;AMReX_WriteEBSurface.H&quot;</code><br />
-<code>#include &quot;AMReX_EB2_IF_Box.H&quot;</code><br />
-<code>#include &quot;AMReX_EB2_IF_Sphere.H&quot;</code><br />
-<code>#include &quot;AMReX_EB2_IF_Plane.H&quot;</code><br />
-<code>#include &quot;AMReX_EB2_IF_Union.H&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__EBIFTerrain_8H_source.html">ERF_EBIFTerrain.H</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ERF__EBIFBuildings_8H_source.html">ERF_EBIFBuildings.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__EpochTime_8H_source.html">ERF_EpochTime.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__IntervalMeansCheckpoint_8H_source.html">ERF_IntervalMeansCheckpoint.H</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ERF__PlotfileSelection_8H_source.html">ERF_PlotfileSelection.H</a>&quot;</code><br />
@@ -109,56 +104,56 @@ Include dependency graph for ERF.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ERF_8cpp__incl.png" border="0" usemap="#aSource_2ERF_8cpp" alt=""/></div>
 <map name="aSource_2ERF_8cpp" id="aSource_2ERF_8cpp">
-<area shape="rect" title=" " alt="" coords="1801,5,1921,32"/>
-<area shape="rect" title=" " alt="" coords="859,155,936,181"/>
-<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="1857,304,1951,331"/>
-<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2020,80,2079,107"/>
-<area shape="rect" title=" " alt="" coords="2271,80,2417,107"/>
-<area shape="rect" title=" " alt="" coords="2441,80,2585,107"/>
-<area shape="rect" title=" " alt="" coords="2610,80,2801,107"/>
-<area shape="rect" title=" " alt="" coords="2825,80,2991,107"/>
-<area shape="rect" title=" " alt="" coords="3016,80,3203,107"/>
-<area shape="rect" title=" " alt="" coords="3227,80,3405,107"/>
-<area shape="rect" title=" " alt="" coords="3429,80,3608,107"/>
-<area shape="rect" href="ERF__EBIFTerrain_8H.html" title="Defines the implicit function used to build EB terrain geometry." alt="" coords="15,379,155,405"/>
-<area shape="rect" href="ERF__EBIFBuildings_8H.html" title="Defines the implicit function wrapper for STL&#45;based building geometry." alt="" coords="819,80,976,107"/>
-<area shape="rect" href="ERF__EpochTime_8H.html" title=" " alt="" coords="43,229,183,256"/>
-<area shape="rect" href="ERF__IntervalMeansCheckpoint_8H.html" title=" " alt="" coords="208,229,443,256"/>
-<area shape="rect" href="ERF__PlotfileSelection_8H.html" title=" " alt="" coords="1213,155,1387,181"/>
-<area shape="rect" href="ERF__Utils_8H.html" title=" " alt="" coords="635,155,733,181"/>
-<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="517,229,677,256"/>
-<area shape="rect" href="ERF__SrcHeaders_8H.html" title=" " alt="" coords="2103,80,2246,107"/>
-<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="2015,379,2148,405"/>
-<area shape="rect" title=" " alt="" coords="1549,453,1611,480"/>
-<area shape="rect" title=" " alt="" coords="573,379,656,405"/>
-<area shape="rect" title=" " alt="" coords="414,379,549,405"/>
-<area shape="rect" title=" " alt="" coords="1860,379,1991,405"/>
-<area shape="rect" title=" " alt="" coords="2155,453,2213,480"/>
-<area shape="rect" title=" " alt="" coords="1463,304,1521,331"/>
-<area shape="rect" title=" " alt="" coords="1795,155,1941,181"/>
-<area shape="rect" title=" " alt="" coords="803,229,935,256"/>
-<area shape="rect" title=" " alt="" coords="2732,304,2852,331"/>
-<area shape="rect" title=" " alt="" coords="1049,304,1253,331"/>
-<area shape="rect" title=" " alt="" coords="3185,304,3343,331"/>
-<area shape="rect" title=" " alt="" coords="1617,379,1785,405"/>
-<area shape="rect" title=" " alt="" coords="1966,155,2133,181"/>
-<area shape="rect" title=" " alt="" coords="2157,155,2285,181"/>
-<area shape="rect" title=" " alt="" coords="2310,155,2485,181"/>
-<area shape="rect" title=" " alt="" coords="2509,155,2696,181"/>
-<area shape="rect" title=" " alt="" coords="2720,155,2864,181"/>
-<area shape="rect" title=" " alt="" coords="2830,229,3005,256"/>
-<area shape="rect" title=" " alt="" coords="3646,155,3831,181"/>
-<area shape="rect" title=" " alt="" coords="3856,155,4011,181"/>
-<area shape="rect" href="ERF__EB_8H.html" title="Declares the embedded&#45;boundary factory manager used by ERF levels." alt="" coords="3192,155,3277,181"/>
-<area shape="rect" href="ERF__CloudChamberBudget_8H.html" title=" " alt="" coords="1061,229,1304,256"/>
-<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="871,304,1025,331"/>
-<area shape="rect" href="ERF__CloudChamber_8H.html" title=" " alt="" coords="2187,229,2383,256"/>
-<area shape="rect" href="ERF__ProbCommon_8H.html" title=" " alt="" coords="1563,155,1719,181"/>
-<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="1683,229,1821,256"/>
-<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="1673,304,1831,331"/>
-<area shape="rect" href="ERF__BaseStateParams_8H.html" title=" " alt="" coords="2490,229,2673,256"/>
-<area shape="rect" href="ERF__InputSoundingData_8H.html" title=" " alt="" coords="3080,229,3272,256"/>
-<area shape="rect" href="ERF__LargeScaleForcingData_8H.html" title=" " alt="" coords="3302,155,3519,181"/>
+<area shape="rect" title=" " alt="" coords="770,5,890,32"/>
+<area shape="rect" title=" " alt="" coords="448,155,525,181"/>
+<area shape="rect" href="ERF__Constants_8H.html" title=" " alt="" coords="2002,379,2136,405"/>
+<area shape="rect" href="ERF__EOS_8H.html" title=" " alt="" coords="955,304,1050,331"/>
+<area shape="rect" href="ERF_8H.html" title=" " alt="" coords="2152,80,2210,107"/>
+<area shape="rect" href="ERF__TerrainMetrics_8H.html" title=" " alt="" coords="3782,229,3942,256"/>
+<area shape="rect" title=" " alt="" coords="588,80,734,107"/>
+<area shape="rect" title=" " alt="" coords="758,80,902,107"/>
+<area shape="rect" title=" " alt="" coords="927,80,1118,107"/>
+<area shape="rect" href="ERF__EpochTime_8H.html" title=" " alt="" coords="366,229,506,256"/>
+<area shape="rect" href="ERF__IntervalMeansCheckpoint_8H.html" title=" " alt="" coords="56,229,290,256"/>
+<area shape="rect" href="ERF__PlotfileSelection_8H.html" title=" " alt="" coords="1090,155,1264,181"/>
+<area shape="rect" href="ERF__Utils_8H.html" title=" " alt="" coords="3974,80,4073,107"/>
+<area shape="rect" href="ERF__SrcHeaders_8H.html" title=" " alt="" coords="1478,80,1620,107"/>
+<area shape="rect" title=" " alt="" coords="1184,453,1247,480"/>
+<area shape="rect" title=" " alt="" coords="778,453,837,480"/>
+<area shape="rect" title=" " alt="" coords="2913,528,3036,555"/>
+<area shape="rect" href="ERF__NumericalConstants_8H.html" title="Dimensionless numeric literals and pure mathematical constants." alt="" coords="2874,453,3074,480"/>
+<area shape="rect" title=" " alt="" coords="3833,379,3916,405"/>
+<area shape="rect" title=" " alt="" coords="434,379,568,405"/>
+<area shape="rect" title=" " alt="" coords="937,379,1068,405"/>
+<area shape="rect" title=" " alt="" coords="1074,304,1133,331"/>
+<area shape="rect" title=" " alt="" coords="3257,229,3404,256"/>
+<area shape="rect" title=" " alt="" coords="4116,155,4248,181"/>
+<area shape="rect" title=" " alt="" coords="2036,304,2156,331"/>
+<area shape="rect" title=" " alt="" coords="476,304,680,331"/>
+<area shape="rect" title=" " alt="" coords="1642,304,1800,331"/>
+<area shape="rect" title=" " alt="" coords="2513,379,2681,405"/>
+<area shape="rect" title=" " alt="" coords="2455,155,2622,181"/>
+<area shape="rect" title=" " alt="" coords="2646,155,2774,181"/>
+<area shape="rect" title=" " alt="" coords="2799,155,2974,181"/>
+<area shape="rect" title=" " alt="" coords="2998,155,3185,181"/>
+<area shape="rect" title=" " alt="" coords="3417,155,3561,181"/>
+<area shape="rect" title=" " alt="" coords="3380,304,3555,331"/>
+<area shape="rect" title=" " alt="" coords="728,155,914,181"/>
+<area shape="rect" title=" " alt="" coords="549,155,704,181"/>
+<area shape="rect" href="ERF__EB_8H.html" title="Declares the embedded&#45;boundary factory manager used by ERF levels." alt="" coords="3509,229,3594,256"/>
+<area shape="rect" href="ERF__CloudChamberBudget_8H.html" title=" " alt="" coords="581,229,824,256"/>
+<area shape="rect" href="ERF__IndexDefines_8H.html" title=" " alt="" coords="3903,304,4056,331"/>
+<area shape="rect" href="ERF__CloudChamber_8H.html" title=" " alt="" coords="1152,229,1348,256"/>
+<area shape="rect" href="ERF__ProbCommon_8H.html" title=" " alt="" coords="1734,155,1890,181"/>
+<area shape="rect" href="ERF__DataStruct_8H.html" title=" " alt="" coords="2150,229,2287,256"/>
+<area shape="rect" href="ERF__TurbPertStruct_8H.html" title=" " alt="" coords="2231,304,2390,331"/>
+<area shape="rect" href="ERF__BaseStateParams_8H.html" title=" " alt="" coords="2464,229,2647,256"/>
+<area shape="rect" href="ERF__InputSoundingData_8H.html" title=" " alt="" coords="1424,229,1616,256"/>
+<area shape="rect" href="ERF__LargeScaleForcingData_8H.html" title=" " alt="" coords="1440,155,1658,181"/>
+<area shape="rect" href="ERF__InputSpongeData_8H.html" title=" " alt="" coords="1894,229,2074,256"/>
+<area shape="rect" href="ERF__SurfaceLayer_8H.html" title=" " alt="" coords="3788,155,3940,181"/>
+<area shape="rect" href="ERF__Derive_8H.html" title=" " alt="" coords="2320,155,2431,181"/>
+<area shape="rect" href="ERF__ReadBndryPlanes_8H.html" title=" " alt="" coords="3210,155,3392,181"/>
 </map>
 </div>
 </div></div><!-- contents -->
