@@ -41,6 +41,8 @@ var structTurbChoice =
     [ "pbl_blend_cs", "structTurbChoice.html#a644e9df40861d026841f64357b0a53b9", null ],
     [ "pbl_blend_length", "structTurbChoice.html#a1b969b4c89785d27a46f6112ff28f12b", null ],
     [ "pbl_blend_use_smag", "structTurbChoice.html#a9d97d674d36f6f2d03fee4ab36c9ee46", null ],
+    [ "pbl_ib_aware", "structTurbChoice.html#a90f90bf784e4b39893307095bb1b4c29", null ],
+    [ "pbl_ib_z0", "structTurbChoice.html#a8ae79c79758de13ec2e886a5d107693d", null ],
     [ "pbl_mrf_const_b", "structTurbChoice.html#a5fc8383bee00c8029607020be4c03ffb", null ],
     [ "pbl_mrf_coriolis_freq", "structTurbChoice.html#ac649c819fbea4c0a7f3cef2dac7fe24c", null ],
     [ "pbl_mrf_highres_bounds", "structTurbChoice.html#a9a8d7a1fa07ff97f5d3bba71d904fdcc", null ],

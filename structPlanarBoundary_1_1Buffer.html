@@ -94,12 +94,15 @@ Collaboration diagram for PlanarBoundary::Buffer:</div>
 <div class="dyncontent">
 <div class="center"><img src="structPlanarBoundary_1_1Buffer__coll__graph.png" border="0" usemap="#aPlanarBoundary_1_1Buffer_coll__map" alt="Collaboration graph"/></div>
 <map name="aPlanarBoundary_1_1Buffer_coll__map" id="aPlanarBoundary_1_1Buffer_coll__map">
-<area shape="rect" title=" " alt="" coords="71,288,242,315"/>
-<area shape="rect" title=" " alt="" coords="5,191,44,218"/>
-<area shape="rect" title=" " alt="" coords="69,184,245,225"/>
-<area shape="rect" title=" " alt="" coords="78,95,235,121"/>
-<area shape="rect" title=" " alt="" coords="137,5,176,32"/>
-<area shape="rect" title=" " alt="" coords="269,191,357,218"/>
+<area shape="rect" title=" " alt="" coords="739,145,909,172"/>
+<area shape="rect" title=" " alt="" coords="471,5,625,32"/>
+<area shape="rect" title=" " alt="" coords="469,57,627,98"/>
+<area shape="rect" title=" " alt="" coords="529,123,567,149"/>
+<area shape="rect" title=" " alt="" coords="460,174,636,215"/>
+<area shape="rect" title=" " alt="" coords="115,181,272,208"/>
+<area shape="rect" title=" " alt="" coords="5,181,44,208"/>
+<area shape="rect" title=" " alt="" coords="504,240,592,267"/>
+<area shape="rect" title=" " alt="" coords="507,291,589,317"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -109,10 +112,44 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a911eb78af1d00ecfa0ca6a0a99b2cd41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a999e21bc14d48c00de58373e452c5d32"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlanarBoundary_1_1Buffer.html#a999e21bc14d48c00de58373e452c5d32">ncomp</a></td></tr>
 <tr class="separator:a999e21bc14d48c00de58373e452c5d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a756bebbfe01ca18aece4fbcd0c91f5f5"><td class="memItemLeft" align="right" valign="top">amrex::BoxArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlanarBoundary_1_1Buffer.html#a756bebbfe01ca18aece4fbcd0c91f5f5">ba</a></td></tr>
+<tr class="separator:a756bebbfe01ca18aece4fbcd0c91f5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b82fd4e247c5320943e50f1939030c"><td class="memItemLeft" align="right" valign="top">amrex::DistributionMapping&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlanarBoundary_1_1Buffer.html#ac7b82fd4e247c5320943e50f1939030c">dm</a></td></tr>
+<tr class="separator:ac7b82fd4e247c5320943e50f1939030c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92d9521f0caacc5d551b5a9de914bd4"><td class="memItemLeft" align="right" valign="top">amrex::Vector&lt; const amrex::MultiFab * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlanarBoundary_1_1Buffer.html#aa92d9521f0caacc5d551b5a9de914bd4">sources</a></td></tr>
+<tr class="separator:aa92d9521f0caacc5d551b5a9de914bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dcc90ff46d5a949a0edae75804abb79"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; amrex::MultiFab &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlanarBoundary_1_1Buffer.html#a8dcc90ff46d5a949a0edae75804abb79">mf</a></td></tr>
 <tr class="separator:a8dcc90ff46d5a949a0edae75804abb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a756bebbfe01ca18aece4fbcd0c91f5f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a756bebbfe01ca18aece4fbcd0c91f5f5">&#9670;&nbsp;</a></span>ba</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::BoxArray PlanarBoundary::Buffer::ba</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7b82fd4e247c5320943e50f1939030c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b82fd4e247c5320943e50f1939030c">&#9670;&nbsp;</a></span>dm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::DistributionMapping PlanarBoundary::Buffer::dm</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a911eb78af1d00ecfa0ca6a0a99b2cd41"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a911eb78af1d00ecfa0ca6a0a99b2cd41">&#9670;&nbsp;</a></span>ixtype</h2>
 
@@ -149,6 +186,20 @@ Public Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">int PlanarBoundary::Buffer::ncomp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa92d9521f0caacc5d551b5a9de914bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92d9521f0caacc5d551b5a9de914bd4">&#9670;&nbsp;</a></span>sources</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">amrex::Vector&lt;const amrex::MultiFab*&gt; PlanarBoundary::Buffer::sources</td>
         </tr>
       </table>
 </div><div class="memdoc">

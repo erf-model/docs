@@ -7,6 +7,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "Diagnostics", "dir_7c0918a439a2aa5f99bafd6b3cf35aaa.html", "dir_7c0918a439a2aa5f99bafd6b3cf35aaa" ],
     [ "Diffusion", "dir_fc0c15590968603ac439df7b0a572228.html", "dir_fc0c15590968603ac439df7b0a572228" ],
     [ "EB", "dir_9c08f4b6b7cd879dc853cee646ab55d3.html", "dir_9c08f4b6b7cd879dc853cee646ab55d3" ],
+    [ "ImmersedBoundarySEB", "dir_474797bc848e6fb9c6c58a517f541e7d.html", "dir_474797bc848e6fb9c6c58a517f541e7d" ],
     [ "Initialization", "dir_71a4420ed1f8982e7234eb6a0b7e6d5d.html", "dir_71a4420ed1f8982e7234eb6a0b7e6d5d" ],
     [ "IO", "dir_4c48f420b74c1f1cc31b316243ca788c.html", "dir_4c48f420b74c1f1cc31b316243ca788c" ],
     [ "LandSurfaceModel", "dir_9a689d3cc574517c40c68b6e60e836b7.html", "dir_9a689d3cc574517c40c68b6e60e836b7" ],

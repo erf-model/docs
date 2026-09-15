@@ -92,6 +92,8 @@ $(document).ready(function(){initNavTree('namespacerrtmgp.html',''); initResizab
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:adc9aecf882cb82c5460175133e6af645"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#adc9aecf882cb82c5460175133e6af645">resolve_surface_temperature</a> (const bool is_land, const bool has_lsm_t_sfc, const bool valid_lsm_t_sfc, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> lsm_t_sfc, const bool has_surface_layer, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> surface_layer_theta, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> surface_pressure, const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> default_t_sfc, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;t_sfc, <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *lsm_t_sfc_out)</td></tr>
+<tr class="separator:adc9aecf882cb82c5460175133e6af645"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a825e4ec715986e7ce3ccbc7fa0a16959"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a59f6ccba18ab45608124b945cdbd585e">optical_props2_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a825e4ec715986e7ce3ccbc7fa0a16959">get_cloud_optics_sw</a> (const int ncol, const int nlay, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a25c6930032b0aec94f60d91c2eecc5b7">cloud_optics_t</a> &amp;cloud_optics, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a9c30fd2f9b0dfe8470755d0601e547fc">gas_optics_t</a> &amp;kdist, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;lwp, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;iwp, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;rel, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;rei)</td></tr>
 <tr class="separator:a825e4ec715986e7ce3ccbc7fa0a16959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5880e93afd0b514fdeadc1a74b80001e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ERF__RRTMGP__Interface_8H.html#a2335228956f5a705f37b6a0ebe7d772b">optical_props1_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacerrtmgp.html#a5880e93afd0b514fdeadc1a74b80001e">get_cloud_optics_lw</a> (const int ncol, const int nlay, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a25c6930032b0aec94f60d91c2eecc5b7">cloud_optics_t</a> &amp;cloud_optics, <a class="el" href="ERF__RRTMGP__Interface_8H.html#a9c30fd2f9b0dfe8470755d0601e547fc">gas_optics_t</a> &amp;kdist, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;lwp, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;iwp, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;rel, <a class="el" href="ERF__Kokkos_8H.html#a61120dfd574103b429360e5712200658">real2d_k</a> &amp;rei)</td></tr>
@@ -1790,6 +1792,141 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="adc9aecf882cb82c5460175133e6af645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc9aecf882cb82c5460175133e6af645">&#9670;&nbsp;</a></span>resolve_surface_temperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE void rrtmgp::resolve_surface_temperature </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>is_land</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>has_lsm_t_sfc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>valid_lsm_t_sfc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>lsm_t_sfc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>has_surface_layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>surface_layer_theta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>surface_pressure</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a>&#160;</td>
+          <td class="paramname"><em>default_t_sfc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> &amp;&#160;</td>
+          <td class="paramname"><em>t_sfc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ERF__ShocInterface_8H.html#ab8a9d2a7cbf2084043f890c3d0a68f57">amrex::Real</a> *&#160;</td>
+          <td class="paramname"><em>lsm_t_sfc_out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Resolve the RRTMGP surface-temperature input from <a class="el" href="classERF.html">ERF</a>'s surface sources.</p>
+<p>RRTMGP and LSM surface-temperature fields contain absolute temperature, while the <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> field contains potential temperature. The latter must therefore be converted with the pressure of the lowest atmospheric cell before it is handed to RRTMGP.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_land</td><td>true when the column is over land </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">has_lsm_t_sfc</td><td>true when an LSM t_sfc field exists </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">valid_lsm_t_sfc</td><td>true when the LSM value is not a sentinel </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lsm_t_sfc</td><td>LSM t_sfc value, when present </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">has_surface_layer</td><td>true when a <a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> field exists </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">surface_layer_theta</td><td><a class="el" href="classSurfaceLayer.html">SurfaceLayer</a> potential temperature </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">surface_pressure</td><td>pressure in the lowest atmospheric cell </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">default_t_sfc</td><td>configured absolute-temperature fallback </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">t_sfc</td><td>resolved absolute temperature for RRTMGP </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">lsm_t_sfc_out</td><td>optional LSM fallback/writeback field </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// A valid land-model value is already absolute temperature.  A valid LSM</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// value over water follows the existing fallback chain instead.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> use_lsm_t_sfc = is_land &amp;&amp; has_lsm_t_sfc &amp;&amp; valid_lsm_t_sfc;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (use_lsm_t_sfc) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        t_sfc = lsm_t_sfc;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (has_surface_layer) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// SurfaceLayer::get_t_surf() returns theta.  RRTMGP requires T.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        t_sfc = <a class="code" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a>(surface_pressure, surface_layer_theta, <a class="code" href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        t_sfc = default_t_sfc;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Preserve the existing fallback/writeback behavior, but write the value</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// in the LSM contract: absolute temperature.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (lsm_t_sfc_out != <span class="keyword">nullptr</span> &amp;&amp; !use_lsm_t_sfc) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        *lsm_t_sfc_out = t_sfc;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="ttc" id="aERF__Constants_8H_html_af138df04a1c81f39657c2a5a3337f4bb"><div class="ttname"><a href="ERF__Constants_8H.html#af138df04a1c81f39657c2a5a3337f4bb">RdoCp</a></div><div class="ttdeci">constexpr amrex::Real RdoCp</div><div class="ttdef"><b>Definition:</b> ERF_Constants.H:41</div></div>
+<div class="ttc" id="aERF__EOS_8H_html_ae76d3ce3486d0e450849c56159f2dbd4"><div class="ttname"><a href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4">getTgivenPandTh</a></div><div class="ttdeci">AMREX_GPU_HOST_DEVICE AMREX_FORCE_INLINE amrex::Real getTgivenPandTh(const amrex::Real P, const amrex::Real th, const amrex::Real rdOcp)</div><div class="ttdef"><b>Definition:</b> ERF_EOS.H:32</div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="classRadiation.html#a9ff9b6c351ae01f25a232b9c11f15a0e">Radiation::mf_to_kokkos_buffers()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacerrtmgp_adc9aecf882cb82c5460175133e6af645_cgraph.png" border="0" usemap="#anamespacerrtmgp_adc9aecf882cb82c5460175133e6af645_cgraph" alt=""/></div>
+<map name="anamespacerrtmgp_adc9aecf882cb82c5460175133e6af645_cgraph" id="anamespacerrtmgp_adc9aecf882cb82c5460175133e6af645_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,183,47"/>
+<area shape="rect" href="ERF__EOS_8H.html#ae76d3ce3486d0e450849c56159f2dbd4" title=" " alt="" coords="231,13,365,39"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacerrtmgp_adc9aecf882cb82c5460175133e6af645_icgraph.png" border="0" usemap="#anamespacerrtmgp_adc9aecf882cb82c5460175133e6af645_icgraph" alt=""/></div>
+<map name="anamespacerrtmgp_adc9aecf882cb82c5460175133e6af645_icgraph" id="anamespacerrtmgp_adc9aecf882cb82c5460175133e6af645_icgraph">
+<area shape="rect" title=" " alt="" coords="236,5,413,47"/>
+<area shape="rect" href="classRadiation.html#a9ff9b6c351ae01f25a232b9c11f15a0e" title=" " alt="" coords="5,5,188,47"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a009ddf7de8b3d47a8732243e945e431c"></a>

@@ -7,5 +7,6 @@ var dir_6ac3198e61556f99812dcb8dcfabb874 =
     [ "ERF_RadiationInterface.H", "ERF__RadiationInterface_8H.html", [
       [ "IRadiation", "classIRadiation.html", "classIRadiation" ]
     ] ],
-    [ "ERF_RadiationModels.H", "ERF__RadiationModels_8H.html", null ]
+    [ "ERF_RadiationModels.H", "ERF__RadiationModels_8H.html", null ],
+    [ "ERF_RRTMGP_SurfaceTemperature.H", "ERF__RRTMGP__SurfaceTemperature_8H.html", "ERF__RRTMGP__SurfaceTemperature_8H" ]
 ];

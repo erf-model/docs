@@ -1,9 +1,10 @@
 var classPlanarBoundary =
 [
     [ "Buffer", "structPlanarBoundary_1_1Buffer.html", "structPlanarBoundary_1_1Buffer" ],
-    [ "buffer", "classPlanarBoundary.html#a3f0a52b533e0ab1e4851ce65ffa95966", null ],
-    [ "define", "classPlanarBoundary.html#a06f20f62791ef5c537db17459d395d6d", null ],
+    [ "buffer", "classPlanarBoundary.html#a82a3c8d2b99c297ceb94d3e8a4e2fa5f", null ],
+    [ "define", "classPlanarBoundary.html#a9fb42318d10d6be598892d6284dccbbb", null ],
     [ "fill", "classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218", null ],
+    [ "is_surface_copy", "classPlanarBoundary.html#abf8132b8538886535122f59255dee48e", null ],
     [ "surface_boxes", "classPlanarBoundary.html#af9014d99883b62ba97925b327af17e69", null ],
     [ "surface_index", "classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc", null ],
     [ "m_ba_sfc", "classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9", null ],

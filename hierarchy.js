@@ -52,6 +52,9 @@ var hierarchy =
     [ "amrex::GPUable", null, [
       [ "TerrainIF", "classTerrainIF.html", null ]
     ] ],
+    [ "IBFaceSet", "classIBFaceSet.html", null ],
+    [ "IBSEBMaterial", "structIBSEBMaterial.html", null ],
+    [ "IBSEBParams", "structIBSEBParams.html", null ],
     [ "erf_cloud_chamber::InitializationContract", "structerf__cloud__chamber_1_1InitializationContract.html", null ],
     [ "InputSoundingData", "structInputSoundingData.html", null ],
     [ "InputSpongeData", "structInputSpongeData.html", null ],
@@ -199,6 +202,7 @@ var hierarchy =
     [ "SolverChoice", "structSolverChoice.html", null ],
     [ "near_surface_diagnostics::Sources", "structnear__surface__diagnostics_1_1Sources.html", null ],
     [ "SpongeChoice", "structSpongeChoice.html", null ],
+    [ "IBFaceSet::SunState", "structIBFaceSet_1_1SunState.html", null ],
     [ "surface_flux", "structsurface__flux.html", null ],
     [ "surface_flux_charnock", "structsurface__flux__charnock.html", null ],
     [ "surface_flux_donelan", "structsurface__flux__donelan.html", null ],

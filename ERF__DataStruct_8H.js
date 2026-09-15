@@ -42,6 +42,7 @@ var ERF__DataStruct_8H =
       [ "tau32", "ERF__DataStruct_8H.html#a09df0fe8e0778d7f1052a97aa214248babcbe024a60f6921af0060fd096ac8307", null ]
     ] ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a01afbed431da562282cc06eef6fb9c88", null ],
+    [ "AMREX_ENUM", "ERF__DataStruct_8H.html#ac9d8861b171c7a0cd27791d7ea82df7b", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a73ff232ce33cae75de868385a510da5c", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a31ae75ca03a26e6ad638ba3bdf2246eb", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a34a4d2e60f7b54f450d8bc2f5bf9f32e", null ],
@@ -55,5 +56,6 @@ var ERF__DataStruct_8H =
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#acd4fd6918903c5072ef3380dcbadecc7", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#afb582070899c7011b2fb9c732a9b1f86", null ],
     [ "AMREX_ENUM", "ERF__DataStruct_8H.html#a5d2c7f49777252f2c834e5906d1f106b", null ],
-    [ "anelastic_superdroplets_configuration_invalid", "ERF__DataStruct_8H.html#a0c00b090194b0ea199bead5a10382b8b", null ]
+    [ "anelastic_superdroplets_configuration_invalid", "ERF__DataStruct_8H.html#a0c00b090194b0ea199bead5a10382b8b", null ],
+    [ "BoundaryFaceName", "ERF__DataStruct_8H.html#a01fdd737487d4a3aed4e6eb7a3913052", null ]
 ];

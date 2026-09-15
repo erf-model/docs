@@ -7,7 +7,7 @@ var classCloudChamberBudget =
       [ "NumScalars", "classCloudChamberBudget.html#a81994e964d9362cfed23ad775ae5e572aa7370335f152615c06887a837083b83a", null ]
     ] ],
     [ "CloudChamberBudget", "classCloudChamberBudget.html#a694ed0ab199a4ad183e3d70d76eaec39", null ],
-    [ "capture_stage", "classCloudChamberBudget.html#a80e05436c8354647cf1c070521a15e61", null ],
+    [ "capture_stage", "classCloudChamberBudget.html#a01070139f744321a564edab33cdc6a29", null ],
     [ "due", "classCloudChamberBudget.html#aac28175b90bc04fd4f924f7e5c1825b7", null ],
     [ "enabled", "classCloudChamberBudget.html#a090f5d0393176a3f07b3c8ecfd111546", null ],
     [ "record_internal_source", "classCloudChamberBudget.html#ae8d9cc3a14b0fef2229b97bbe0ba465a", null ],

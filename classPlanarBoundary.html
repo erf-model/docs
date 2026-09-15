@@ -115,8 +115,8 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a06f20f62791ef5c537db17459d395d6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#a06f20f62791ef5c537db17459d395d6d">define</a> (const amrex::BoxArray &amp;ba3d, const amrex::BoxArray &amp;ba2d, const amrex::DistributionMapping &amp;dm, int klo)</td></tr>
-<tr class="separator:a06f20f62791ef5c537db17459d395d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb42318d10d6be598892d6284dccbbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#a9fb42318d10d6be598892d6284dccbbb">define</a> (const amrex::BoxArray &amp;ba3d, const amrex::BoxArray &amp;ba2d, const amrex::DistributionMapping &amp;dm, int <a class="el" href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">surface_index</a>, bool is_low=true, int normal_dir=2)</td></tr>
+<tr class="separator:a9fb42318d10d6be598892d6284dccbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16323c083de3fd8114f537c1d8eb1218"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill</a> (amrex::MultiFab &amp;mf, const amrex::Periodicity &amp;period)</td></tr>
 <tr class="separator:a16323c083de3fd8114f537c1d8eb1218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9014d99883b62ba97925b327af17e69"><td class="memItemLeft" align="right" valign="top">const amrex::BoxArray &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#af9014d99883b62ba97925b327af17e69">surface_boxes</a> () const</td></tr>
@@ -125,11 +125,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afb26c0ffac627d1b497b53ec99670fcc"><td class="memItemLeft" align="right" valign="top">const amrex::Vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">surface_index</a> () const</td></tr>
 <tr class="memdesc:afb26c0ffac627d1b497b53ec99670fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of each surface copy in the planar BoxArray.  <a href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">More...</a><br /></td></tr>
 <tr class="separator:afb26c0ffac627d1b497b53ec99670fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf8132b8538886535122f59255dee48e"><td class="memItemLeft" align="right" valign="top">AMREX_GPU_HOST bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#abf8132b8538886535122f59255dee48e">is_surface_copy</a> (const int planar_index) const</td></tr>
+<tr class="memdesc:abf8132b8538886535122f59255dee48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a planar-box index is the computed copy that touches the surface.  <a href="classPlanarBoundary.html#abf8132b8538886535122f59255dee48e">More...</a><br /></td></tr>
+<tr class="separator:abf8132b8538886535122f59255dee48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a3f0a52b533e0ab1e4851ce65ffa95966"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#a3f0a52b533e0ab1e4851ce65ffa95966">buffer</a> (amrex::IndexType ixtype, int ncomp)</td></tr>
-<tr class="separator:a3f0a52b533e0ab1e4851ce65ffa95966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a3c8d2b99c297ceb94d3e8a4e2fa5f"><td class="memItemLeft" align="right" valign="top">amrex::MultiFab &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlanarBoundary.html#a82a3c8d2b99c297ceb94d3e8a4e2fa5f">buffer</a> (const amrex::MultiFab &amp;mf)</td></tr>
+<tr class="separator:a82a3c8d2b99c297ceb94d3e8a4e2fa5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -145,14 +148,14 @@ Private Attributes</h2></td></tr>
 <tr class="separator:adab4e0e3d6d7d0b8c14ae3cb849dfcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Ghost-cell fill for planar (2D) MultiFabs built on the z-collapse of a 3D BoxArray.</p>
-<p>The surface-layer fields and the MOST averages are defined on one 2D box per 3D box. When the 3D BoxArray is split in z, several 3D boxes collapse onto the same 2D box, so the planar BoxArray holds duplicate boxes with overlapping valid regions, and only the copy that belongs to the 3D box touching the surface is ever computed. A FillBoundary on such a MultiFab may fill a ghost cell from an uncomputed copy.</p>
-<p><a class="el" href="classPlanarBoundary.html#a06f20f62791ef5c537db17459d395d6d">define()</a> records which planar boxes are those surface copies. <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> copies them into a buffer without duplicates and ParallelCopies the buffer onto every planar box, valid region and ghost cells alike. Unlike FillBoundary it therefore also overwrites the valid region of the uncomputed copies, so that any copy can be read afterwards. Without duplicates <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> is a plain FillBoundary.</p>
-<p>The buffer is kept for each index type and number of components, so only the first fill of each kind allocates. For a face-centered MultiFab (the MOST velocity averages) neighbouring surface boxes share a face in the buffer. Both should hold the same value there, but nothing enforces it, so <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> gives the shared faces a single value before it copies: the lowest global box index wins, which does not depend on the decomposition or the rank count, and every copy of the field then agrees.</p>
-<p>A level none of whose boxes reaches the surface (a fine level aloft) has no computed copy to fill from, and <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> leaves the MultiFab as it is. </p>
+<div class="textblock"><p>Ghost-cell fill for planar (2D) MultiFabs built on the collapse of a 3D BoxArray along a surface-normal direction.</p>
+<p>The surface-layer fields and the MOST averages are defined on one 2D box per 3D box. When the 3D BoxArray is split in the normal direction, several 3D boxes collapse onto the same 2D box, so the planar BoxArray holds duplicate boxes with overlapping valid regions, and only the copy that belongs to the 3D box touching the surface is ever computed. A FillBoundary on such a MultiFab may fill a ghost cell from an uncomputed copy.</p>
+<p><a class="el" href="classPlanarBoundary.html#a9fb42318d10d6be598892d6284dccbbb">define()</a> records which planar boxes are those surface copies. <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> copies them into a buffer without duplicates and ParallelCopies the buffer onto every planar box, valid region and ghost cells alike. Unlike FillBoundary it therefore also overwrites the valid region of the uncomputed copies, so that any copy can be read afterwards. Without duplicates <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> is a plain FillBoundary.</p>
+<p>The buffer is kept for each target layout, index type, and number of components, so only the first fill of each kind allocates. For a face-centered MultiFab (the MOST velocity averages) neighbouring surface boxes share a face in the buffer. Both should hold the same value there, but nothing enforces it, so <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> gives the shared faces a single value before it copies: the lowest global box index wins, which does not depend on the decomposition or the rank count, and every copy of the field then agrees.</p>
+<p>A level none of whose boxes reaches the surface (a fine level away from the surface) has no computed copy to fill from, and <a class="el" href="classPlanarBoundary.html#a16323c083de3fd8114f537c1d8eb1218">fill()</a> leaves the MultiFab as it is. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3f0a52b533e0ab1e4851ce65ffa95966"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f0a52b533e0ab1e4851ce65ffa95966">&#9670;&nbsp;</a></span>buffer()</h2>
+<a id="a82a3c8d2b99c297ceb94d3e8a4e2fa5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a3c8d2b99c297ceb94d3e8a4e2fa5f">&#9670;&nbsp;</a></span>buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,19 +166,9 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">MultiFab &amp; PlanarBoundary::buffer </td>
           <td>(</td>
-          <td class="paramtype">amrex::IndexType&#160;</td>
-          <td class="paramname"><em>ixtype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const amrex::MultiFab &amp;&#160;</td>
+          <td class="paramname"><em>mf</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>ncomp</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -184,30 +177,56 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Gather buffer for one index type and number of components, allocated on first use.</p>
+<p>Gather buffer for one target layout, index type, and number of components, allocated on first use. The source MultiFab list avoids rebuilding the layout key on every fill.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ixtype</td><td>index type of the planar MultiFab </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ncomp</td><td>number of components of the planar MultiFab </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mf</td><td>planar MultiFab to buffer </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>) {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">if</span> (b.ixtype == ixtype &amp;&amp; b.ncomp == ncomp) { <span class="keywordflow">return</span> *b.mf; }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.push_back(Buffer{ixtype, ncomp,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                               std::make_unique&lt;MultiFab&gt;(convert(<a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a>, ixtype), <a class="code" href="classPlanarBoundary.html#a1b8d1a9c43bced2da11305cf9ffb5cba">m_dm_sfc</a>, ncomp, 0)});</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.back().mf;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="ttc" id="aclassPlanarBoundary_html_a1b8d1a9c43bced2da11305cf9ffb5cba"><div class="ttname"><a href="classPlanarBoundary.html#a1b8d1a9c43bced2da11305cf9ffb5cba">PlanarBoundary::m_dm_sfc</a></div><div class="ttdeci">amrex::DistributionMapping m_dm_sfc</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:81</div></div>
-<div class="ttc" id="aclassPlanarBoundary_html_aa1da3a6565979c3158e81b31a8ebbac9"><div class="ttname"><a href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">PlanarBoundary::m_ba_sfc</a></div><div class="ttdeci">amrex::BoxArray m_ba_sfc</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:80</div></div>
-<div class="ttc" id="aclassPlanarBoundary_html_adab4e0e3d6d7d0b8c14ae3cb849dfcf4"><div class="ttname"><a href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">PlanarBoundary::m_buffers</a></div><div class="ttdeci">amrex::Vector&lt; Buffer &gt; m_buffers</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:83</div></div>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">const</span> IndexType ixtype = mf.ixType();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// define() clears m_buffers whenever the underlying layout changes, so a</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// source pointer is a stable per-field cache key for the lifetime of this</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// PlanarBoundary definition.</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>) {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span> (b.ixtype == ixtype &amp;&amp; b.ncomp == ncomp &amp;&amp;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            std::find(b.sources.begin(), b.sources.end(), &amp;mf) != b.sources.end()) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">return</span> *b.mf;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Only an unfamiliar source field needs the more expensive derived-layout</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// construction below.  Fields with the same layout continue to share one</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// gather buffer.</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    BoxList bl_sfc(ixtype);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    Vector&lt;int&gt; pmap;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> src : <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        bl_sfc.push_back(mf.boxArray()[src]);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        pmap.push_back(mf.DistributionMap()[src]);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    BoxArray ba(std::move(bl_sfc));</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    DistributionMapping dm(std::move(pmap));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; b : <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">if</span> (b.ixtype == ixtype &amp;&amp; b.ncomp == ncomp &amp;&amp; b.ba == ba &amp;&amp; b.dm == dm) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            b.sources.push_back(&amp;mf);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">return</span> *b.mf;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.push_back(Buffer{ixtype, ncomp, ba, dm, {&amp;mf},</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                               std::make_unique&lt;MultiFab&gt;(ba, dm, ncomp, 0)});</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.back().mf;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="ttc" id="aclassPlanarBoundary_html_a8e2564b3f2c170f8cdbb212b5e655f36"><div class="ttname"><a href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">PlanarBoundary::m_src_index</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_src_index</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:100</div></div>
+<div class="ttc" id="aclassPlanarBoundary_html_adab4e0e3d6d7d0b8c14ae3cb849dfcf4"><div class="ttname"><a href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">PlanarBoundary::m_buffers</a></div><div class="ttdeci">amrex::Vector&lt; Buffer &gt; m_buffers</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:101</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a06f20f62791ef5c537db17459d395d6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06f20f62791ef5c537db17459d395d6d">&#9670;&nbsp;</a></span>define()</h2>
+<a id="a9fb42318d10d6be598892d6284dccbbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb42318d10d6be598892d6284dccbbb">&#9670;&nbsp;</a></span>define()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +253,19 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>klo</em>&#160;</td>
+          <td class="paramname"><em>surface_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_low</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>normal_dir</em> = <code>2</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -249,7 +280,9 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ba3d</td><td>3D BoxArray the planar BoxArray was collapsed from </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ba2d</td><td>planar BoxArray, one box per box of ba3d and in the same order </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dm</td><td>DistributionMapping shared by ba3d and ba2d </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">klo</td><td>k index of the lowest cell in the domain</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">surface_index</td><td>index of the surface cell in the normal direction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_low</td><td>whether the surface is the low side of the domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">normal_dir</td><td>normal direction of the surface</td></tr>
   </table>
   </dd>
 </dl>
@@ -259,44 +292,51 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ba3d</td><td>3D BoxArray the planar BoxArray was collapsed from </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ba2d</td><td>planar BoxArray, one box per box of ba3d and in the same order </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dm</td><td>DistributionMapping shared by ba3d and ba2d </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">klo</td><td>k index of the lowest cell in the domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">surface_index</td><td>index of the surface cell in the normal direction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">is_low</td><td>whether the surface is the low side of the domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">normal_dir</td><td>normal direction of the surface </td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(ba2d.size() == ba3d.size(),</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::define: the planar BoxArray must hold one box per 3D box&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ba2d.size());</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.clear();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.clear();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// The planar boxes are taken as they are, whatever k they were collapsed to</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    BoxList bl_sfc(IndexType::TheCellType());</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Vector&lt;int&gt; pmap;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ib = 0; ib &lt; <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>; ++ib) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (ba3d[ib].smallEnd(2) == klo) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            bl_sfc.push_back(enclosedCells(ba2d[ib]));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            pmap.push_back(dm[ib]);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.push_back(ib);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a> = BoxArray(std::move(bl_sfc));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classPlanarBoundary.html#a1b8d1a9c43bced2da11305cf9ffb5cba">m_dm_sfc</a> = DistributionMapping(std::move(pmap));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Exactly one computed copy per column: the surface boxes must not overlap</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a>.isDisjoint(),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::define: the boxes touching the surface overlap in the plane, so a &quot;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="stringliteral">&quot;planar field would have more than one computed copy per column&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(ba2d.size() == ba3d.size(),</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::define: the planar BoxArray must hold one box per 3D box&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(ba2d.size());</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.clear();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classPlanarBoundary.html#adab4e0e3d6d7d0b8c14ae3cb849dfcf4">m_buffers</a>.clear();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// The planar boxes are taken as they are, whatever index they were collapsed to</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    BoxList bl_sfc(IndexType::TheCellType());</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Vector&lt;int&gt; pmap;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> ib = 0; ib &lt; <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>; ++ib) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> touches_surface = is_low</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            ? (ba3d[ib].smallEnd(normal_dir) == <a class="code" href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">surface_index</a>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            : (ba3d[ib].bigEnd(normal_dir) == <a class="code" href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">surface_index</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (touches_surface) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            bl_sfc.push_back(enclosedCells(ba2d[ib]));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            pmap.push_back(dm[ib]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.push_back(ib);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a> = BoxArray(std::move(bl_sfc));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classPlanarBoundary.html#a1b8d1a9c43bced2da11305cf9ffb5cba">m_dm_sfc</a> = DistributionMapping(std::move(pmap));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Exactly one computed copy per column: the surface boxes must not overlap</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a>.isDisjoint(),</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::define: the boxes touching the surface overlap in the plane, so a &quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="stringliteral">&quot;planar field would have more than one computed copy per column&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="aERF__InitCustomPert__CloudChamber_8H_html_a46455971d86f4ffad58b5cc742ab3be3"><div class="ttname"><a href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a></div><div class="ttdeci">AMREX_ALWAYS_ASSERT_WITH_MESSAGE(m_cloud_chamber_config.active, &quot;Cloud Chamber: initializer reached without a parsed configuration&quot;)</div></div>
-<div class="ttc" id="aclassPlanarBoundary_html_a8e2564b3f2c170f8cdbb212b5e655f36"><div class="ttname"><a href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">PlanarBoundary::m_src_index</a></div><div class="ttdeci">amrex::Vector&lt; int &gt; m_src_index</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:82</div></div>
-<div class="ttc" id="aclassPlanarBoundary_html_abda3423e91a4092352081e3f315093cb"><div class="ttname"><a href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">PlanarBoundary::m_nplanar</a></div><div class="ttdeci">int m_nplanar</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:79</div></div>
+<div class="ttc" id="aclassPlanarBoundary_html_a1b8d1a9c43bced2da11305cf9ffb5cba"><div class="ttname"><a href="classPlanarBoundary.html#a1b8d1a9c43bced2da11305cf9ffb5cba">PlanarBoundary::m_dm_sfc</a></div><div class="ttdeci">amrex::DistributionMapping m_dm_sfc</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:99</div></div>
+<div class="ttc" id="aclassPlanarBoundary_html_aa1da3a6565979c3158e81b31a8ebbac9"><div class="ttname"><a href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">PlanarBoundary::m_ba_sfc</a></div><div class="ttdeci">amrex::BoxArray m_ba_sfc</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:98</div></div>
+<div class="ttc" id="aclassPlanarBoundary_html_abda3423e91a4092352081e3f315093cb"><div class="ttname"><a href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">PlanarBoundary::m_nplanar</a></div><div class="ttdeci">int m_nplanar</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:97</div></div>
+<div class="ttc" id="aclassPlanarBoundary_html_afb26c0ffac627d1b497b53ec99670fcc"><div class="ttname"><a href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">PlanarBoundary::surface_index</a></div><div class="ttdeci">const amrex::Vector&lt; int &gt; &amp; surface_index() const</div><div class="ttdoc">Index of each surface copy in the planar BoxArray.</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.H:75</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classPlanarBoundary_a06f20f62791ef5c537db17459d395d6d_cgraph.png" border="0" usemap="#aclassPlanarBoundary_a06f20f62791ef5c537db17459d395d6d_cgraph" alt=""/></div>
-<map name="aclassPlanarBoundary_a06f20f62791ef5c537db17459d395d6d_cgraph" id="aclassPlanarBoundary_a06f20f62791ef5c537db17459d395d6d_cgraph">
+<div class="center"><img src="classPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph.png" border="0" usemap="#aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph" alt=""/></div>
+<map name="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph" id="aclassPlanarBoundary_a9fb42318d10d6be598892d6284dccbbb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,13,177,39"/>
 <area shape="rect" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3" title=" " alt="" coords="225,5,408,47"/>
 </map>
@@ -345,46 +385,46 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(mf.size()) == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::fill: the MultiFab is not on the planar BoxArray given to define&quot;</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nsfc = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.size());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Every planar box is a surface box: no duplicates, FillBoundary is well defined</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (nsfc == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        mf.FillBoundary(period);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// No box on this level reaches the surface, so no copy holds computed data to fill</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// from; leave the MultiFab as it is</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (nsfc == 0) { <span class="keywordflow">return</span>; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    MultiFab&amp; buf = <a class="code" href="classPlanarBoundary.html#a3f0a52b533e0ab1e4851ce65ffa95966">buffer</a>(mf.ixType(), ncomp);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(buf); mfi.isValid(); ++mfi) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> src = <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>[mfi.index()];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// The surface copy must be the planar box with the same footprint, on this rank</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(bx == mf.boxArray()[src] &amp;&amp;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                         mf.DistributionMap()[src] == ParallelDescriptor::MyProc(),</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="stringliteral">&quot;PlanarBoundary::fill: surface box does not match its planar box&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        buf[mfi].copy&lt;RunOn::Device&gt;(mf[src], bx, 0, bx, 0, ncomp);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// A face-centered buffer&#39;s boxes share a face with their neighbours, and the gather above</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// takes each box&#39;s face from its own surface copy, so two boxes can hold different values</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// there.  Give every shared face one value before the ParallelCopy -- OverrideSync&#39;s</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// precedence is the lowest global box index, so the result does not depend on the</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// decomposition or the rank count -- and every copy of mf then ends up with the same</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// value.  Returns immediately for cell-centered data, which has no shared faces.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    buf.OverrideSync(period);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// Fill every copy, valid region and ghost cells, from the computed surface copies</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    mf.ParallelCopy(buf, 0, 0, ncomp, IntVect(0), mf.nGrowVect(), period);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="ttc" id="aclassPlanarBoundary_html_a3f0a52b533e0ab1e4851ce65ffa95966"><div class="ttname"><a href="classPlanarBoundary.html#a3f0a52b533e0ab1e4851ce65ffa95966">PlanarBoundary::buffer</a></div><div class="ttdeci">amrex::MultiFab &amp; buffer(amrex::IndexType ixtype, int ncomp)</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.cpp:104</div></div>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(mf.size()) == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="stringliteral">&quot;PlanarBoundary::fill: the MultiFab is not on the planar BoxArray given to define&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> nsfc = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.size());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Every planar box is a surface box: no duplicates, FillBoundary is well defined</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (nsfc == <a class="code" href="classPlanarBoundary.html#abda3423e91a4092352081e3f315093cb">m_nplanar</a>) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        mf.FillBoundary(period);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// No box on this level reaches the surface, so no copy holds computed data to fill</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// from; leave the MultiFab as it is</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span> (nsfc == 0) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> ncomp = mf.nComp();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    MultiFab&amp; buf = <a class="code" href="classPlanarBoundary.html#a82a3c8d2b99c297ceb94d3e8a4e2fa5f">buffer</a>(mf);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (MFIter mfi(buf); mfi.isValid(); ++mfi) {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> Box&amp; bx = mfi.validbox();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> src = <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>[mfi.index()];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// The surface copy must be the planar box with the same footprint, on this rank</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="ERF__InitCustomPert__CloudChamber_8H.html#a46455971d86f4ffad58b5cc742ab3be3">AMREX_ALWAYS_ASSERT_WITH_MESSAGE</a>(bx == mf.boxArray()[src] &amp;&amp;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                         mf.DistributionMap()[src] == ParallelDescriptor::MyProc(),</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="stringliteral">&quot;PlanarBoundary::fill: surface box does not match its planar box&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        buf[mfi].copy&lt;RunOn::Device&gt;(mf[src], bx, 0, bx, 0, ncomp);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// A face-centered buffer&#39;s boxes share a face with their neighbours, and the gather above</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// takes each box&#39;s face from its own surface copy, so two boxes can hold different values</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// there.  Give every shared face one value before the ParallelCopy -- OverrideSync&#39;s</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// precedence is the lowest global box index, so the result does not depend on the</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// decomposition or the rank count -- and every copy of mf then ends up with the same</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// value.  Returns immediately for cell-centered data, which has no shared faces.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    buf.OverrideSync(period);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Fill every copy, valid region and ghost cells, from the computed surface copies</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    mf.ParallelCopy(buf, 0, 0, ncomp, IntVect(0), mf.nGrowVect(), period);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="ttc" id="aclassPlanarBoundary_html_a82a3c8d2b99c297ceb94d3e8a4e2fa5f"><div class="ttname"><a href="classPlanarBoundary.html#a82a3c8d2b99c297ceb94d3e8a4e2fa5f">PlanarBoundary::buffer</a></div><div class="ttdeci">amrex::MultiFab &amp; buffer(const amrex::MultiFab &amp;mf)</div><div class="ttdef"><b>Definition:</b> ERF_PlanarBoundary.cpp:113</div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -395,6 +435,37 @@ Here is the call graph for this function:</div>
 </map>
 </div>
 
+</div>
+</div>
+<a id="abf8132b8538886535122f59255dee48e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf8132b8538886535122f59255dee48e">&#9670;&nbsp;</a></span>is_surface_copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AMREX_GPU_HOST bool PlanarBoundary::is_surface_copy </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>planar_index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a planar-box index is the computed copy that touches the surface. </p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> std::binary_search(<a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.begin(), <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>.end(), planar_index);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="af9014d99883b62ba97925b327af17e69"></a>
@@ -421,7 +492,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Cell-centered surface copies of the planar boxes, without duplicates. </p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classPlanarBoundary.html#aa1da3a6565979c3158e81b31a8ebbac9">m_ba_sfc</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -449,7 +520,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Index of each surface copy in the planar BoxArray. </p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>; }</div>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classPlanarBoundary.html#a8e2564b3f2c170f8cdbb212b5e655f36">m_src_index</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -564,7 +635,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">surface_index()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classPlanarBoundary.html#abf8132b8538886535122f59255dee48e">is_surface_copy()</a>, and <a class="el" href="classPlanarBoundary.html#afb26c0ffac627d1b497b53ec99670fcc">surface_index()</a>.</p>
 
 </div>
 </div>
