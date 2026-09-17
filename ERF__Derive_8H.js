@@ -17,6 +17,7 @@ var ERF__Derive_8H =
     [ "erf_dersoundspeed", "ERF__Derive_8H.html#a2652186cf13e326a36cfba8668216212", null ],
     [ "erf_dertemp", "ERF__Derive_8H.html#a220c8e128c78a53558dff78c07c9ca5f", null ],
     [ "erf_dertheta", "ERF__Derive_8H.html#ad929c4aac97b7749e8f23c514f74cffb", null ],
+    [ "erf_dervortstretching", "ERF__Derive_8H.html#a6646e47b82cbe787c56eae42115c3ff3", null ],
     [ "erf_dervortx", "ERF__Derive_8H.html#a6f89d05c6543b616a3da695b848eb17f", null ],
     [ "erf_dervorty", "ERF__Derive_8H.html#ac58c107a610669f70bfbbba2b81ce87a", null ],
     [ "erf_dervortz", "ERF__Derive_8H.html#af7960b1dfff66af34ef20c08ac5cb4ae", null ]

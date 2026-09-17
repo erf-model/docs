@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"ERF__SAMUtils_8H.html#ab5ec3d88eacb92bfd4b3bf54bed4afca":[3,0,1,13,4,6,14],
+"ERF__SAMUtils_8H.html#abaa7ce0f630c0571d626facca444b484":[3,0,1,13,4,6,46],
 "ERF__SAMUtils_8H.html#abf6a6fae1a3238635b3020a4a92b2f75":[3,0,1,13,4,6,38],
 "ERF__SAMUtils_8H.html#ac17dfc54de87dd8155a238455f0d31b9":[3,0,1,13,4,6,54],
 "ERF__SAMUtils_8H.html#ac4589102ca5c96f31712150bc2d0b9aa":[3,0,1,13,4,6,35],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "ERF__SurfaceDiagnosticSource_8H.html#a8952f0baf16086becb3702d82d00d158":[3,0,1,1,19,4],
 "ERF__SurfaceDiagnosticSource_8H.html#a9122f8c636e3844b424279a993fa59b3":[3,0,1,1,19,1],
 "ERF__SurfaceDiagnosticSource_8H.html#a9ae90a5f756a64856f03db4f80fe1f78":[3,0,1,1,19,3],
-"ERF__SurfaceDiagnosticSource_8H_source.html":[3,0,1,1,19],
-"ERF__SurfaceFluxDiagnostics_8H.html":[3,0,1,4,4],
-"ERF__SurfaceFluxDiagnostics_8H.html#a5c7726fdd46761f6211dd3e2e5cd5e0a":[3,0,1,4,4,1]
+"ERF__SurfaceDiagnosticSource_8H_source.html":[3,0,1,1,19]
 };

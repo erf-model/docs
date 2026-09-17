@@ -55,6 +55,8 @@ var namespaces_dup =
       [ "erf_dertemp", "namespacederived.html#a5ac9bcbf5588a917a22af159e2d498f1", null ],
       [ "erf_dertheta", "namespacederived.html#ad929c4aac97b7749e8f23c514f74cffb", null ],
       [ "erf_dertheta", "namespacederived.html#ab47480b9699e0eae636edf6574563237", null ],
+      [ "erf_dervortstretching", "namespacederived.html#a6646e47b82cbe787c56eae42115c3ff3", null ],
+      [ "erf_dervortstretching", "namespacederived.html#a1d197c2b4b81db3ec36dda6cabe2fce0", null ],
       [ "erf_dervortx", "namespacederived.html#a6f89d05c6543b616a3da695b848eb17f", null ],
       [ "erf_dervortx", "namespacederived.html#ae1b7ade68c620b638d06dc2e59153fa7", null ],
       [ "erf_dervorty", "namespacederived.html#ac58c107a610669f70bfbbba2b81ce87a", null ],
