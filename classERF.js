@@ -86,7 +86,7 @@ var classERF =
     [ "HurricaneMinPressureTracker", "classERF.html#aa5c7eff8fe01b01054d38c3866f01c14", null ],
     [ "HurricaneTracker", "classERF.html#a06f0d5e4f528b8f0ddea06569b582599", null ],
     [ "HurricaneTrackerCircle", "classERF.html#ad3ffc66d4c1d5853a82b7558a7b3aafb", null ],
-    [ "ibseb_advance", "classERF.html#a65253d477e13e9347af51841d771d0cd", null ],
+    [ "ibseb_advance", "classERF.html#a6118b86ad495168e51de0f5ce883bd68", null ],
     [ "ibseb_bulk_richardson_height", "classERF.html#ab5d7a0987c942fc5531549fc52b9ba67", null ],
     [ "ibseb_report", "classERF.html#a53338b39861a9fb0a96d45d3aa05ea7f", null ],
     [ "ibseb_write_checkpoint", "classERF.html#a0b6b30420f30a447cfdc7024e614f661", null ],

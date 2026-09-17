@@ -1,5 +1,6 @@
 var classSurfaceLayer =
 [
+    [ "PBLHColumns", "structSurfaceLayer_1_1PBLHColumns.html", "structSurfaceLayer_1_1PBLHColumns" ],
     [ "FluxCalcType", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7", [
       [ "MOENG", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a0525d4394471c332f3c0a497584923d5", null ],
       [ "CUSTOM", "classSurfaceLayer.html#a840dbc7f009282fdf8951863d37c6db7a72baef04098f035e8a320b03ad197818", null ],
@@ -43,6 +44,7 @@ var classSurfaceLayer =
     [ "compute_SurfaceLayer_bcs_EB", "classSurfaceLayer.html#afacb49749e5898238b7d71b7638ce209", null ],
     [ "computes_pblh", "classSurfaceLayer.html#ab34b3ab96f6ef3304d286dc76e6b470c", null ],
     [ "computes_w_star", "classSurfaceLayer.html#a4c6180431efcbe86bc99d6d4159bd834", null ],
+    [ "define_pblh_columns", "classSurfaceLayer.html#af675cf05720b37e857a780c58dcd446f", null ],
     [ "fill_lateral_surface_parameter_ghosts", "classSurfaceLayer.html#a8d14aff376fdda7f29f84858f976df58", null ],
     [ "fill_planar_boundary", "classSurfaceLayer.html#aa5a9a5ae71905c6ac32a144d98dde018", null ],
     [ "fill_qsurf_with_qsat", "classSurfaceLayer.html#a49a97b3f9132567b9437015b10771fef", null ],
@@ -84,6 +86,7 @@ var classSurfaceLayer =
     [ "set_q_surf", "classSurfaceLayer.html#a09961f2fcf7cdc577fc29ae446c3d4de", null ],
     [ "set_surface_layer_faces", "classSurfaceLayer.html#ab8b365231608193adf71619758611535", null ],
     [ "set_t_surf", "classSurfaceLayer.html#a7af3a1d0b2ccd50e255cd5a8673bc810", null ],
+    [ "surface_sum", "classSurfaceLayer.html#a6479440b70dec0f7f98705d4995f0b9a", null ],
     [ "update_coupled_sst_ptr", "classSurfaceLayer.html#a5e773212bdccaa4e72ad48aa23c47e3d", null ],
     [ "update_fluxes", "classSurfaceLayer.html#a0aa56068c40954efbad722bae1ab243a", null ],
     [ "update_mac_ptrs", "classSurfaceLayer.html#a325a1c27c6de3c673aa25ddf256eab7b", null ],
@@ -126,6 +129,7 @@ var classSurfaceLayer =
     [ "m_lsm_tsurf_indx", "classSurfaceLayer.html#a379215a64a8eaa1cd6e7b2a5edce4a75", null ],
     [ "m_Lwave_lev", "classSurfaceLayer.html#a4700be8203f4f5899182104936bf3929", null ],
     [ "m_ma", "classSurfaceLayer.html#afe7f143e6fa426e965a7e655a4139b6a", null ],
+    [ "m_pblh_columns", "classSurfaceLayer.html#a16edc134e23c6b629cf8f9c03b929cbf", null ],
     [ "m_planar_bndry", "classSurfaceLayer.html#a12b5b29b48349a777a8a2de98a4fdf62", null ],
     [ "m_pp_prefix", "classSurfaceLayer.html#a646ab554ea584f5ab5600edbcbfd8ce0", null ],
     [ "m_rotate", "classSurfaceLayer.html#a0ad36597cc8f0ed60fa37e185f1e4c40", null ],

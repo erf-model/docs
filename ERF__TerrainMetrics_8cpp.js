@@ -4,6 +4,7 @@ var ERF__TerrainMetrics_8cpp =
     [ "init_default_zphys", "ERF__TerrainMetrics_8cpp.html#abdaf987793d80168d401a1c0c99d5f32", null ],
     [ "init_fine_terrain_grid", "ERF__TerrainMetrics_8cpp.html#a88b88e36dd14a6ea79c844d524dee0c3", null ],
     [ "init_which_terrain_grid", "ERF__TerrainMetrics_8cpp.html#a530aca2c1d7d14121bb738e70f326579", null ],
+    [ "join_boxes_stacked_in_z", "ERF__TerrainMetrics_8cpp.html#acb050af182a451e79632e81d284aaeb8", null ],
     [ "make_areas", "ERF__TerrainMetrics_8cpp.html#a920c175414adfaaa26687bfb8e7585bb", null ],
     [ "make_J", "ERF__TerrainMetrics_8cpp.html#a9c1ecbedddfe464d9db02960e5422564", null ],
     [ "make_terrain_fitted_coords", "ERF__TerrainMetrics_8cpp.html#ad6fbf4deab43789270e79554528ae376", null ],

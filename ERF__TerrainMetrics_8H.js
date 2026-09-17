@@ -34,6 +34,7 @@ var ERF__TerrainMetrics_8H =
     [ "init_fine_terrain_grid", "ERF__TerrainMetrics_8H.html#a75188f81dc8d569423d235d596361d0c", null ],
     [ "init_which_terrain_grid", "ERF__TerrainMetrics_8H.html#a5f352d8a029b11cfde243cd4a20ea1b4", null ],
     [ "init_zlevels", "ERF__TerrainMetrics_8H.html#a32b8b3f0c8d28024951dd02521086d3b", null ],
+    [ "join_boxes_stacked_in_z", "ERF__TerrainMetrics_8H.html#a7356a119d0d3fda35dc8588103da6d7d", null ],
     [ "make_terrain_fitted_coords", "ERF__TerrainMetrics_8H.html#aa6b3cfc4e14bfe9057110d904f310908", null ],
     [ "OmegaFromW", "ERF__TerrainMetrics_8H.html#a00a82ef863424210898550c6abb4d055", null ],
     [ "rotate_scalar_flux", "ERF__TerrainMetrics_8H.html#a26ff28d8e0387cc0cb634ecff18aeb7b", null ],
